@@ -12,11 +12,11 @@ These wordlists are based on the source code of the CMSes/servers/frameworks lis
 - Tomcat
 
 There are 2 versions of each wordlist:
-- Base (example [tomcat.txt](tomcat.txt)): Lists the full paths of each file in the repository
+- Base (example [tomcat.txt](technologies/tomcat.txt)): Lists the full paths of each file in the repository
 ```
 webapps/examples/WEB-INF/classes/websocket/echo/servers.json
 ```
-- All levels (example [tomcat-all-levels.txt](tomcat-all-levels.txt)): Includes all directory levels of the files in the base wordlist - if you have tried [dsieve](https://github.com/trickest/dsieve), this is going to look familiar! This wordlist will be larger than the base wordlist but it accounts for cases where the directory structure of the repository isn't mapped perfectly on the target.
+- All levels (example [tomcat-all-levels.txt](technologies/tomcat-all-levels.txt)): Includes all directory levels of the files in the base wordlist - if you have tried [dsieve](https://github.com/trickest/dsieve), this is going to look familiar! This wordlist will be larger than the base wordlist but it accounts for cases where the directory structure of the repository isn't mapped perfectly on the target.
 ```
 webapps/examples/WEB-INF/classes/websocket/echo/servers.json
 examples/WEB-INF/classes/websocket/echo/servers.json
@@ -30,7 +30,7 @@ Note: This is a work-in-progress. More wordlists are going to be added soon!
 
 ## How it Works
 ### Technologies
-A [Trickest](https://trickest.com) workflow clones the repositories in [technology-repositories.json](technology-repositories), lists the paths of all their files, removes non-interesting files, generates combinations, and pushes the wordlists to this repository.
+A [Trickest](https://trickest.com) workflow clones the repositories in [technology-repositories.json](technology-repositories.json), lists the paths of all their files, removes non-interesting files, generates combinations, and pushes the wordlists to this repository.
 ![Trickest Workflow](screenshots/technologies.png "Trickest Workflow - wordlists/technolgies")
 
 ## Contribution
