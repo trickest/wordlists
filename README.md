@@ -1,4 +1,4 @@
-<h1 align="center">Wordlists <a href="https://twitter.com/intent/tweet?text=Trickest%20Wordlists%20-%20Real-world%20infosec%20wordlists%2C%20updated%20regularly%0A%0Ahttps%3A%2F%2Fgithub.com%2Ftrickest%2Fwordlists&hashtags=bugbounty,bugbountytips,infosec"><img src="https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social" alt="Tweet" height="20"/></a></h1>
+<h1 align="center">Wordlists <a href="https://twitter.com/intent/tweet?text=Wordlists%20-%20Real-world%20infosec%20wordlists%2C%20updated%20regularly%20by%20%40trick3st%0A%0Ahttps%3A%2F%2Fgithub.com%2Ftrickest%2Fwordlists&hashtags=bugbounty,bugbountytips,infosec"><img src="https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social" alt="Tweet" height="20"/></a></h1>
 <h3 align="center">Real-world infosec wordlists, updated regularly</h3>
 
 ![Trickest Wordlists](images/cover.png "Trickest Wordlists")
