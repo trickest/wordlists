@@ -1437,10 +1437,6 @@ plugins/fields/text/text.xml
 plugins/fields/text/text.php
 plugins/fields/text/params/text.xml
 plugins/fields/text/tmpl/text.php
-plugins/fields/menuitem/params/menuitem.xml
-plugins/fields/menuitem/menuitem.php
-plugins/fields/menuitem/menuitem.xml
-plugins/fields/menuitem/tmpl/menuitem.php
 plugins/fields/color/color.php
 plugins/fields/color/color.xml
 plugins/fields/color/tmpl/color.php
@@ -2043,6 +2039,7 @@ administrator/components/com_admin/sql/updates/mysql/4.0.0-2021-06-04.sql
 administrator/components/com_admin/sql/updates/mysql/4.2.0-2022-06-15.sql
 administrator/components/com_admin/sql/updates/mysql/4.0.0-2019-03-30.sql
 administrator/components/com_admin/sql/updates/mysql/4.0.0-2018-07-19.sql
+administrator/components/com_admin/sql/updates/mysql/4.2.1-2022-08-23.sql
 administrator/components/com_admin/sql/updates/mysql/4.1.3-2022-04-08.sql
 administrator/components/com_admin/sql/updates/mysql/4.0.0-2019-04-22.sql
 administrator/components/com_admin/sql/updates/postgresql/4.1.0-2021-12-29.sql
@@ -2088,6 +2085,7 @@ administrator/components/com_admin/sql/updates/postgresql/4.0.0-2021-06-04.sql
 administrator/components/com_admin/sql/updates/postgresql/4.0.0-2020-08-01.sql
 administrator/components/com_admin/sql/updates/postgresql/4.0.0-2019-03-30.sql
 administrator/components/com_admin/sql/updates/postgresql/4.0.0-2018-07-19.sql
+administrator/components/com_admin/sql/updates/postgresql/4.2.1-2022-08-23.sql
 administrator/components/com_admin/sql/updates/postgresql/4.1.3-2022-04-08.sql
 administrator/components/com_admin/sql/updates/postgresql/4.0.0-2019-04-22.sql
 administrator/components/com_admin/tmpl/help/langforum.php
@@ -3478,7 +3476,6 @@ administrator/language/en-GB/plg_fields_subform.ini
 administrator/language/en-GB/plg_webservices_redirect.sys.ini
 administrator/language/en-GB/plg_fields_url.sys.ini
 administrator/language/en-GB/plg_task_demotasks.ini
-administrator/language/en-GB/plg_fields_menuitem.ini
 administrator/language/en-GB/plg_system_logrotation.ini
 administrator/language/en-GB/plg_system_languagecode.sys.ini
 administrator/language/en-GB/plg_system_sessiongc.sys.ini
@@ -3630,7 +3627,6 @@ administrator/language/en-GB/mod_privacy_status.sys.ini
 administrator/language/en-GB/com_joomlaupdate.ini
 administrator/language/en-GB/plg_finder_contacts.ini
 administrator/language/en-GB/com_actionlogs.ini
-administrator/language/en-GB/plg_fields_menuitem.sys.ini
 administrator/language/en-GB/plg_twofactorauth_totp.sys.ini
 administrator/language/en-GB/plg_webservices_privacy.ini
 administrator/language/en-GB/plg_user_joomla.ini
@@ -3764,6 +3760,7 @@ build/psr12/clean_errors.php
 build/psr12/convert_pull_requests.php
 build/test-stuff/php_gmp.dll
 build/release-checklist.md
+build/update_fido_cache.php
 build/bump.php
 build/media_source/legacy/joomla.asset.json
 build/media_source/legacy/js/toolbar.es5.js
@@ -4230,6 +4227,7 @@ build/.gitignore
 build/deleted_file_check.php
 build/.eslintrc
 build/stubGenerator.php
+build/convert_or_die.php
 build/build.js
 build/.stylelintrc.json
 build/README.md
@@ -4508,6 +4506,8 @@ installation/language/ar-AA/langmetadata.xml
 installation/language/ar-AA/joomla.ini
 installation/language/pl-PL/langmetadata.xml
 installation/language/pl-PL/joomla.ini
+installation/language/lt-LT/langmetadata.xml
+installation/language/lt-LT/joomla.ini
 installation/language/zh-CN/langmetadata.xml
 installation/language/zh-CN/joomla.ini
 installation/language/ro-RO/langmetadata.xml
