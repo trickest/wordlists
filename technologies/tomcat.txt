@@ -363,6 +363,7 @@ java/org/apache/tomcat/buildutil/translate/Export.java
 java/org/apache/tomcat/buildutil/translate/BackportEnglish.java
 java/org/apache/tomcat/buildutil/translate/BackportBase.java
 java/org/apache/tomcat/buildutil/RepeatableArchive.java
+java/org/apache/tomcat/buildutil/ForceUtcTimeZone.java
 java/org/apache/tomcat/InstanceManagerBindings.java
 java/org/apache/tomcat/util/LocalStrings_ru.properties
 java/org/apache/tomcat/util/LocalStrings_de.properties
@@ -655,9 +656,11 @@ java/org/apache/tomcat/util/modeler/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/modeler/LocalStrings.properties
 java/org/apache/tomcat/util/buf/StringUtils.java
 java/org/apache/tomcat/util/buf/HexUtils.java
+java/org/apache/tomcat/util/buf/LocalStrings_de.properties
 java/org/apache/tomcat/util/buf/LocalStrings_es.properties
 java/org/apache/tomcat/util/buf/StringCache.java
 java/org/apache/tomcat/util/buf/LocalStrings_ja.properties
+java/org/apache/tomcat/util/buf/LocalStrings_cs.properties
 java/org/apache/tomcat/util/buf/UEncoder.java
 java/org/apache/tomcat/util/buf/Ascii.java
 java/org/apache/tomcat/util/buf/CharsetUtil.java
@@ -668,6 +671,7 @@ java/org/apache/tomcat/util/buf/Utf8Encoder.java
 java/org/apache/tomcat/util/buf/LocalStrings_ko.properties
 java/org/apache/tomcat/util/buf/ByteChunk.java
 java/org/apache/tomcat/util/buf/MessageBytes.java
+java/org/apache/tomcat/util/buf/LocalStrings_pt_BR.properties
 java/org/apache/tomcat/util/buf/B2CConverter.java
 java/org/apache/tomcat/util/buf/AbstractChunk.java
 java/org/apache/tomcat/util/buf/ByteBufferHolder.java
@@ -2272,6 +2276,7 @@ java/org/apache/el/util/ConcurrentCache.java
 java/org/apache/el/util/MessageFactory.java
 java/org/apache/el/util/ReflectionUtil.java
 java/org/apache/el/util/Validation.java
+java/org/apache/el/util/ExceptionUtils.java
 java/org/apache/el/LocalStrings_ko.properties
 java/org/apache/el/lang/ELArithmetic.java
 java/org/apache/el/lang/FunctionMapperFactory.java
@@ -2707,6 +2712,7 @@ test/org/apache/tomcat/util/buf/TestUriUtil40.java
 test/org/apache/tomcat/util/buf/TestUriUtilIsAbsoluteURI.java
 test/org/apache/tomcat/util/buf/TestCharChunk.java
 test/org/apache/tomcat/util/buf/TestUriUtil26.java
+test/org/apache/tomcat/util/buf/TestMessageBytesConversion.java
 test/org/apache/tomcat/util/buf/TestUEncoder.java
 test/org/apache/tomcat/util/buf/TestB2CConverter.java
 test/org/apache/tomcat/util/buf/TestStringUtils.java
@@ -3115,6 +3121,7 @@ test/org/apache/juli/logging-non-rotatable.properties
 test/org/apache/juli/TestOneLineFormatterMillisPerformance.java
 test/org/apache/juli/TestDateFormatCache.java
 test/org/apache/juli/TestOneLineFormatterPerformance.java
+test/org/apache/juli/TestAsyncFileHandlerOverflow.java
 test/org/apache/juli/TestThreadNameCache.java
 test/org/apache/juli/TestFileHandler.java
 test/org/apache/juli/TestFileHandlerNonRotatable.java
@@ -3136,6 +3143,8 @@ test/org/apache/el/TesterEnum.java
 test/org/apache/el/TesterBeanBB.java
 test/org/apache/el/util/Tester.java
 test/org/apache/el/util/TestReflectionUtil.java
+test/org/apache/el/util/TestStrings.properties
+test/org/apache/el/util/TestMessageFactory.java
 test/org/apache/el/TesterBeanF.java
 test/org/apache/el/TesterBeanC.java
 test/org/apache/el/TesterBeanA.java
@@ -3169,7 +3178,9 @@ test/org/apache/el/parser/TestAstSemicolon.java
 test/org/apache/el/parser/TestAstNot.java
 test/org/apache/el/parser/TestAstFunction.java
 test/org/apache/el/parser/TestAstSetData.java
+test/org/apache/el/parser/TestAstInteger.java
 test/org/apache/el/parser/TestAstAssign.java
+test/org/apache/el/parser/TestAstFloatingPoint.java
 test/org/apache/el/TestELInJsp.java
 test/org/apache/el/TesterFunctions.java
 test/org/apache/el/TesterBeanAA.java
