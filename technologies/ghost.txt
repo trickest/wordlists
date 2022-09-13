@@ -463,6 +463,7 @@ ghost/admin/app/controllers/settings/design/index.js
 ghost/admin/app/controllers/settings/labs.js
 ghost/admin/app/controllers/settings/navigation.js
 ghost/admin/app/controllers/settings/tier.js
+ghost/admin/app/controllers/posts/analytics.js
 ghost/admin/app/controllers/posts.js
 ghost/admin/app/controllers/lexical-editor.js
 ghost/admin/app/controllers/editor/edit-loading.js
@@ -529,6 +530,7 @@ ghost/admin/app/routes/settings/design/change-theme.js
 ghost/admin/app/routes/settings/design/index.js
 ghost/admin/app/routes/settings/labs.js
 ghost/admin/app/routes/settings/navigation.js
+ghost/admin/app/routes/posts/analytics.js
 ghost/admin/app/routes/authenticated.js
 ghost/admin/app/routes/posts.js
 ghost/admin/app/routes/lexical-editor.js
@@ -545,6 +547,7 @@ ghost/admin/app/templates/setup.hbs
 ghost/admin/app/templates/signup.hbs
 ghost/admin/app/templates/whatsnew.hbs
 ghost/admin/app/templates/tag.hbs
+ghost/admin/app/templates/posts-clicks.hbs
 ghost/admin/app/templates/posts-loading.hbs
 ghost/admin/app/templates/application-error.hbs
 ghost/admin/app/templates/members-activity.hbs
@@ -590,6 +593,7 @@ ghost/admin/app/templates/settings/labs.hbs
 ghost/admin/app/templates/settings/design/index.hbs
 ghost/admin/app/templates/settings/design/change-theme.hbs
 ghost/admin/app/templates/settings/general-loading.hbs
+ghost/admin/app/templates/posts/analytics.hbs
 ghost/admin/app/templates/designsandbox.hbs
 ghost/admin/app/templates/error.hbs
 ghost/admin/app/templates/pages.hbs
@@ -869,9 +873,11 @@ ghost/admin/app/components/gh-date-time-picker.js
 ghost/admin/app/components/gh-markdown-editor.hbs
 ghost/admin/app/components/modal-delete-user.js
 ghost/admin/app/components/modal-upgrade-host-limit.js
+ghost/admin/app/components/posts-list/list-item-clicks.hbs
 ghost/admin/app/components/posts-list/content-filter.js
 ghost/admin/app/components/posts-list/list-item.hbs
 ghost/admin/app/components/posts-list/list-item.js
+ghost/admin/app/components/posts-list/list-item-clicks.js
 ghost/admin/app/components/posts-list/content-filter.hbs
 ghost/admin/app/components/modal-regenerate-key.js
 ghost/admin/app/components/gh-feature-flag.hbs
