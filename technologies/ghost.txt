@@ -55,6 +55,13 @@ ghost/mw-cache-control/lib/mw-cache-control.js
 ghost/mw-cache-control/package.json
 ghost/mw-cache-control/index.js
 ghost/mw-cache-control/README.md
+ghost/link-tracking/test/LinkTrackingService.test.js
+ghost/link-tracking/test/.eslintrc.js
+ghost/link-tracking/.eslintrc.js
+ghost/link-tracking/lib/link-tracking.js
+ghost/link-tracking/package.json
+ghost/link-tracking/index.js
+ghost/link-tracking/README.md
 ghost/verification-trigger/test/utils/overrides.js
 ghost/verification-trigger/test/utils/assertions.js
 ghost/verification-trigger/test/utils/index.js
@@ -263,6 +270,7 @@ ghost/admin/public/assets/icons/event-logged-in--feature-attribution.svg
 ghost/admin/public/assets/icons/check.svg
 ghost/admin/public/assets/icons/arrow2-right.svg
 ghost/admin/public/assets/icons/event-opened-email.svg
+ghost/admin/public/assets/icons/lock-filled.svg
 ghost/admin/public/assets/icons/arrow-right.svg
 ghost/admin/public/assets/icons/no-members.svg
 ghost/admin/public/assets/icons/arrow-up-stroke.svg
@@ -272,6 +280,7 @@ ghost/admin/public/assets/icons/page.svg
 ghost/admin/public/assets/icons/social-facebook.svg
 ghost/admin/public/assets/icons/event-started-subscription--feature-attribution.svg
 ghost/admin/public/assets/icons/file-upload.svg
+ghost/admin/public/assets/icons/stats.svg
 ghost/admin/public/assets/icons/mountains.svg
 ghost/admin/public/assets/icons/email-header.svg
 ghost/admin/public/assets/icons/members-paid.svg
@@ -800,6 +809,7 @@ ghost/admin/app/components/dashboard/resources/newsletter.js
 ghost/admin/app/components/dashboard/resources/whats-new.js
 ghost/admin/app/components/dashboard/resources/newsletter.hbs
 ghost/admin/app/components/dashboard/resources/whats-new.hbs
+ghost/admin/app/components/dashboard/charts/attribution.js
 ghost/admin/app/components/dashboard/charts/recents.js
 ghost/admin/app/components/dashboard/charts/recents.hbs
 ghost/admin/app/components/dashboard/charts/paid-mix.hbs
@@ -812,6 +822,7 @@ ghost/admin/app/components/dashboard/charts/engagement.hbs
 ghost/admin/app/components/dashboard/charts/engagement.js
 ghost/admin/app/components/dashboard/charts/paid-mrr.js
 ghost/admin/app/components/dashboard/charts/overview.hbs
+ghost/admin/app/components/dashboard/charts/attribution.hbs
 ghost/admin/app/components/dashboard/charts/overview.js
 ghost/admin/app/components/dashboard/charts/anchor.js
 ghost/admin/app/components/dashboard/prototype/control-panel.js
@@ -1931,6 +1942,8 @@ ghost/core/test/unit/server/services/mega/mega.test.js
 ghost/core/test/unit/server/services/mega/post-email-serializer.test.js
 ghost/core/test/unit/server/services/mega/template.test.js
 ghost/core/test/unit/server/services/stripe/config.test.js
+ghost/core/test/unit/server/services/custom-redirects/api.test.js
+ghost/core/test/unit/server/services/custom-redirects/validation.test.js
 ghost/core/test/unit/server/services/xmlrpc.test.js
 ghost/core/test/unit/server/services/limits.test.js
 ghost/core/test/unit/server/services/adapter-manager/options-resolver.test.js
@@ -1975,8 +1988,6 @@ ghost/core/test/unit/server/services/permissions/can-this.test.js
 ghost/core/test/unit/server/services/permissions/providers.test.js
 ghost/core/test/unit/server/services/permissions/parse-context.test.js
 ghost/core/test/unit/server/services/permissions/index.test.js
-ghost/core/test/unit/server/services/redirects/api.test.js
-ghost/core/test/unit/server/services/redirects/validation.test.js
 ghost/core/test/unit/server/services/notifications/notifications.test.js
 ghost/core/test/unit/server/services/labs.test.js
 ghost/core/test/unit/server/services/themes/validate.test.js
@@ -2503,6 +2514,10 @@ ghost/core/core/server/services/mega/index.js
 ghost/core/core/server/services/stripe/config.js
 ghost/core/core/server/services/stripe/service.js
 ghost/core/core/server/services/stripe/index.js
+ghost/core/core/server/services/custom-redirects/validation.js
+ghost/core/core/server/services/custom-redirects/utils.js
+ghost/core/core/server/services/custom-redirects/api.js
+ghost/core/core/server/services/custom-redirects/index.js
 ghost/core/core/server/services/integrations/integrations-service.js
 ghost/core/core/server/services/members-events/index.js
 ghost/core/core/server/services/adapter-manager/config.js
@@ -2573,6 +2588,8 @@ ghost/core/core/server/services/auth/passwordreset.js
 ghost/core/core/server/services/auth/authorize.js
 ghost/core/core/server/services/auth/index.js
 ghost/core/core/server/services/member-attribution/index.js
+ghost/core/core/server/services/link-redirection/index.js
+ghost/core/core/server/services/link-replacement/index.js
 ghost/core/core/server/services/mail/GhostMailer.js
 ghost/core/core/server/services/mail/templates/raw/test.html
 ghost/core/core/server/services/mail/templates/raw/welcome.html
@@ -2604,6 +2621,7 @@ ghost/core/core/server/services/users.js
 ghost/core/core/server/services/api-version-compatibility/mw-version-rewrites.js
 ghost/core/core/server/services/api-version-compatibility/index.js
 ghost/core/core/server/services/api-version-compatibility/legacy-api-path-match.js
+ghost/core/core/server/services/link-click-tracking/index.js
 ghost/core/core/server/services/url/config.js
 ghost/core/core/server/services/url/Resource.js
 ghost/core/core/server/services/url/Resources.js
@@ -2630,10 +2648,6 @@ ghost/core/core/server/services/permissions/can-this.js
 ghost/core/core/server/services/permissions/parse-context.js
 ghost/core/core/server/services/permissions/index.js
 ghost/core/core/server/services/twitter-embed.js
-ghost/core/core/server/services/redirects/validation.js
-ghost/core/core/server/services/redirects/utils.js
-ghost/core/core/server/services/redirects/api.js
-ghost/core/core/server/services/redirects/index.js
 ghost/core/core/server/services/notifications/notifications.js
 ghost/core/core/server/services/notifications/index.js
 ghost/core/core/server/services/custom-theme-settings.js
@@ -2825,6 +2839,7 @@ ghost/core/core/server/data/migrations/versions/4.0/09-add-members-email-change-
 ghost/core/core/server/data/migrations/versions/4.37/2022-02-21-09-53-backfill-members-last-seen-at-column.js
 ghost/core/core/server/data/migrations/versions/4.11/02-add-email-verification-required-setting.js
 ghost/core/core/server/data/migrations/versions/4.11/01-add-oauth-user-data.js
+ghost/core/core/server/data/migrations/versions/5.15/2022-09-12-16-10-add-posts-lexical-column.js
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
 ghost/core/core/server/data/migrations/versions/5.6/2022-07-27-13-40-change-explore-type.js
@@ -3318,6 +3333,16 @@ ghost/members-events-service/lib/last-seen-at-updater.js
 ghost/members-events-service/lib/event-storage.js
 ghost/members-events-service/package.json
 ghost/members-events-service/index.js
+ghost/link-replacement/test/utils/overrides.js
+ghost/link-replacement/test/utils/assertions.js
+ghost/link-replacement/test/utils/index.js
+ghost/link-replacement/test/.eslintrc.js
+ghost/link-replacement/test/link-replacement.test.js
+ghost/link-replacement/.eslintrc.js
+ghost/link-replacement/lib/link-replacement.js
+ghost/link-replacement/package.json
+ghost/link-replacement/index.js
+ghost/link-replacement/README.md
 ghost/magic-link/test/.eslintrc.js
 ghost/magic-link/test/index.test.js
 ghost/magic-link/.eslintrc.js
@@ -3522,6 +3547,16 @@ ghost/domain-events/lib/index.d.ts
 ghost/domain-events/package.json
 ghost/domain-events/index.js
 ghost/domain-events/README.md
+ghost/link-redirects/test/LinkRedirectsService.test.js
+ghost/link-redirects/test/.eslintrc.js
+ghost/link-redirects/.eslintrc.js
+ghost/link-redirects/lib/RedirectEvent.js
+ghost/link-redirects/lib/link-redirects.js
+ghost/link-redirects/lib/LinkRedirect.js
+ghost/link-redirects/lib/LinkRedirectsService.js
+ghost/link-redirects/package.json
+ghost/link-redirects/index.js
+ghost/link-redirects/README.md
 ghost/members-analytics-ingress/test/utils/overrides.js
 ghost/members-analytics-ingress/test/utils/assertions.js
 ghost/members-analytics-ingress/test/utils/index.js
