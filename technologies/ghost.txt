@@ -58,6 +58,7 @@ ghost/mw-cache-control/README.md
 ghost/link-tracking/test/LinkTrackingService.test.js
 ghost/link-tracking/test/.eslintrc.js
 ghost/link-tracking/.eslintrc.js
+ghost/link-tracking/lib/LinkClick.js
 ghost/link-tracking/lib/link-tracking.js
 ghost/link-tracking/package.json
 ghost/link-tracking/index.js
@@ -207,6 +208,7 @@ ghost/admin/tests/helpers/newsletters.js
 ghost/admin/tests/helpers/members.js
 ghost/admin/tests/test-helper.js
 ghost/admin/public/assets/fonts/Inter.ttf
+ghost/admin/public/assets/videos/logo-loader.mp4
 ghost/admin/public/assets/img/twitter.svg
 ghost/admin/public/assets/img/google-docs.svg
 ghost/admin/public/assets/img/mailchimp.svg
@@ -295,6 +297,7 @@ ghost/admin/public/assets/icons/event-logged-in.svg
 ghost/admin/public/assets/icons/gallery-placeholder.svg
 ghost/admin/public/assets/icons/post.svg
 ghost/admin/public/assets/icons/event-unsubscribed-from-email.svg
+ghost/admin/public/assets/icons/import-in-progress.svg
 ghost/admin/public/assets/icons/event-subscriptions--feature-attribution.svg
 ghost/admin/public/assets/icons/grab.svg
 ghost/admin/public/assets/icons/info.svg
@@ -2019,6 +2022,7 @@ ghost/core/test/unit/server/lib/image/image-size.test.js
 ghost/core/test/unit/server/lib/image/cached-image-size-from-url.test.js
 ghost/core/test/unit/server/lib/image/gravatar.test.js
 ghost/core/test/unit/server/lib/request-external.test.js
+ghost/core/test/unit/server/lib/lexical.test.js
 ghost/core/test/unit/server/lib/events.test.js
 ghost/core/test/unit/server/models/integration.test.js
 ghost/core/test/unit/server/models/settings.test.js
@@ -2638,6 +2642,7 @@ ghost/core/core/server/services/settings/settings-bread-service.js
 ghost/core/core/server/services/settings/index.js
 ghost/core/core/server/services/settings-helpers/settings-helpers.js
 ghost/core/core/server/services/settings-helpers/index.js
+ghost/core/core/server/services/posts/stats/post-stats.js
 ghost/core/core/server/services/posts/posts-service.js
 ghost/core/core/server/services/posts/post-scheduling-service.js
 ghost/core/core/server/services/invites/invites.js
@@ -2839,6 +2844,8 @@ ghost/core/core/server/data/migrations/versions/4.0/09-add-members-email-change-
 ghost/core/core/server/data/migrations/versions/4.37/2022-02-21-09-53-backfill-members-last-seen-at-column.js
 ghost/core/core/server/data/migrations/versions/4.11/02-add-email-verification-required-setting.js
 ghost/core/core/server/data/migrations/versions/4.11/01-add-oauth-user-data.js
+ghost/core/core/server/data/migrations/versions/5.15/2022-09-14-12-46-add-email-track-clicks-setting.js
+ghost/core/core/server/data/migrations/versions/5.15/2022-09-16-08-22-add-post-revisions-table.js
 ghost/core/core/server/data/migrations/versions/5.15/2022-09-12-16-10-add-posts-lexical-column.js
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
@@ -2951,6 +2958,7 @@ ghost/core/core/server/lib/image/cached-image-size-from-url.js
 ghost/core/core/server/lib/image/image-utils.js
 ghost/core/core/server/lib/image/image-size.js
 ghost/core/core/server/lib/image/index.js
+ghost/core/core/server/lib/lexical.js
 ghost/core/core/server/lib/request-external.js
 ghost/core/core/server/lib/mobiledoc.js
 ghost/core/core/server/run-update-check.js
@@ -3013,6 +3021,7 @@ ghost/core/core/server/models/relations/index.js
 ghost/core/core/server/models/offer-redemption.js
 ghost/core/core/server/models/newsletter.js
 ghost/core/core/server/models/role.js
+ghost/core/core/server/models/post-revision.js
 ghost/core/core/server/models/member-login-event.js
 ghost/core/core/server/models/tag-public.js
 ghost/core/core/server/models/comment-like.js
