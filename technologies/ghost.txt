@@ -2850,6 +2850,8 @@ ghost/core/core/server/data/migrations/versions/5.15/2022-09-12-16-10-add-posts-
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
 ghost/core/core/server/data/migrations/versions/5.6/2022-07-27-13-40-change-explore-type.js
+ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-04-add-link-redirects-table.js
+ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-05-add-members-link-click-events-table.js
 ghost/core/core/server/data/migrations/versions/4.47/2022-05-04-10-03-transform-newsletter-header-image.js
 ghost/core/core/server/data/migrations/versions/4.47/2022-05-03-15-30-update-newsletter-sending-options.js
 ghost/core/core/server/data/migrations/versions/4.9/02-add-benefits-table.js
@@ -3006,6 +3008,7 @@ ghost/core/core/server/models/member-cancel-event.js
 ghost/core/core/server/models/label.js
 ghost/core/core/server/models/api-key.js
 ghost/core/core/server/models/member-paid-subscription-event.js
+ghost/core/core/server/models/member-link-click-event.js
 ghost/core/core/server/models/settings.js
 ghost/core/core/server/models/single-use-token.js
 ghost/core/core/server/models/invite.js
@@ -3023,6 +3026,7 @@ ghost/core/core/server/models/newsletter.js
 ghost/core/core/server/models/role.js
 ghost/core/core/server/models/post-revision.js
 ghost/core/core/server/models/member-login-event.js
+ghost/core/core/server/models/link-redirect.js
 ghost/core/core/server/models/tag-public.js
 ghost/core/core/server/models/comment-like.js
 ghost/core/core/server/models/action.js
@@ -3278,6 +3282,7 @@ ghost/constants/index.js
 ghost/member-attribution/test/utils/overrides.js
 ghost/member-attribution/test/utils/assertions.js
 ghost/member-attribution/test/utils/index.js
+ghost/member-attribution/test/referrer-translator.test.js
 ghost/member-attribution/test/attribution.test.js
 ghost/member-attribution/test/url-translator.test.js
 ghost/member-attribution/test/history.test.js
@@ -3287,6 +3292,7 @@ ghost/member-attribution/.eslintrc.js
 ghost/member-attribution/lib/attribution.js
 ghost/member-attribution/lib/url-translator.js
 ghost/member-attribution/lib/history.js
+ghost/member-attribution/lib/referrer-translator.js
 ghost/member-attribution/lib/service.js
 ghost/member-attribution/package.json
 ghost/member-attribution/index.js
