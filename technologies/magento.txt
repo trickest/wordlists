@@ -1647,6 +1647,7 @@ app/code/Magento/CurrencySymbol/Test/Mftf/Page/AdminCurrencySymbolsPage.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Page/ConfigCurrencySetupPage.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Page/AdminCurrencyRatesPage.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Data/AdminCurrencyRatesMessageData.xml
+app/code/Magento/CurrencySymbol/Test/Mftf/Data/AdminSaveCurrencySymbolMessageData.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Data/CurrencyRatesConfigData.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Data/AdminMenuData.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Test/AdminCurrencyConverterAPIConfigurationTest.xml
@@ -2122,6 +2123,7 @@ app/code/Magento/CatalogInventory/Test/Mftf/Data/CatalogInventoryItemOptionsData
 app/code/Magento/CatalogInventory/Test/Mftf/Test/AssociatedProductToConfigurableOutOfStockTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/StorefrontValidateQuantityIncrementsWithDecimalInventoryTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/StorefrontSelectionOfOutOfStockChildProductsOfConfigurableProductDisabledTest.xml
+app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminAllowMultipleBoxesForShippingAttributeTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminUncheckesReturnToStockCheckboxTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminCreateProductWithZeroMaximumQtyAllowedInShoppingCartTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Metadata/CataloginventoryItemOptionsMeta.xml
@@ -5692,6 +5694,7 @@ app/code/Magento/Backend/Test/Unit/Model/Widget/Grid/Row/UrlGeneratorTest.php
 app/code/Magento/Backend/Test/Unit/Model/AdminPathConfigTest.php
 app/code/Magento/Backend/Test/Unit/Model/Authorization/RoleLocatorTest.php
 app/code/Magento/Backend/Test/Unit/Model/Dashboard/ChartTest.php
+app/code/Magento/Backend/Test/Unit/Model/Dashboard/Chart/DateTest.php
 app/code/Magento/Backend/Test/Unit/Model/Dashboard/PeriodTest.php
 app/code/Magento/Backend/Test/Unit/Model/Session/AdminConfigTest.php
 app/code/Magento/Backend/Test/Unit/Model/Session/QuoteTest.php
@@ -7645,6 +7648,7 @@ app/code/Magento/GiftMessageGraphQl/etc/graphql/di.xml
 app/code/Magento/GiftMessageGraphQl/Model/Resolver/Cart/GiftMessage.php
 app/code/Magento/GiftMessageGraphQl/Model/Resolver/Cart/Item/GiftMessage.php
 app/code/Magento/GiftMessageGraphQl/Model/Resolver/Order/GiftMessage.php
+app/code/Magento/GiftMessageGraphQl/Model/Resolver/Order/Item/GiftMessage.php
 app/code/Magento/GiftMessageGraphQl/README.md
 app/code/Magento/CatalogRuleGraphQl/composer.json
 app/code/Magento/CatalogRuleGraphQl/Plugin/Pricing/Price/UpdateCatalogRulePrice.php
@@ -13920,6 +13924,7 @@ app/code/Magento/Catalog/view/adminhtml/web/template/form/element/helper/custom-
 app/code/Magento/Catalog/view/adminhtml/web/template/form/element/frontend-input-select.html
 app/code/Magento/Catalog/view/adminhtml/web/template/form/field.html
 app/code/Magento/Catalog/view/adminhtml/web/template/attributes/grid/paging.html
+app/code/Magento/Catalog/view/adminhtml/web/template/components/dynamic-rows-import-custom-options-per-page.html
 app/code/Magento/Catalog/view/adminhtml/web/template/components/dynamic-rows-per-page.html
 app/code/Magento/Catalog/view/adminhtml/web/template/checkbox.html
 app/code/Magento/Catalog/view/adminhtml/web/template/image-preview.html
@@ -13959,6 +13964,7 @@ app/code/Magento/Catalog/view/adminhtml/web/js/components/visible-on-option/yesn
 app/code/Magento/Catalog/view/adminhtml/web/js/components/visible-on-option/fieldset.js
 app/code/Magento/Catalog/view/adminhtml/web/js/components/attributes-fieldset.js
 app/code/Magento/Catalog/view/adminhtml/web/js/components/disable-hide-select.js
+app/code/Magento/Catalog/view/adminhtml/web/js/components/dynamic-rows-import-custom-options-per-page.js
 app/code/Magento/Catalog/view/adminhtml/web/js/components/import-handler.js
 app/code/Magento/Catalog/view/adminhtml/web/js/components/attributes-grid-paging.js
 app/code/Magento/Catalog/view/adminhtml/web/js/components/dynamic-rows-tier-price.js
@@ -14908,6 +14914,7 @@ app/code/Magento/Catalog/Test/Mftf/Section/AdminProductDropdownOrderSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/AdminCategoryScheduleDesignUpdateSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/NewProductPageSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/AdminProductFormChangeStoreSection.xml
+app/code/Magento/Catalog/Test/Mftf/Section/AdminProductCustomOptionsPaginationSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/AdminCategoryMessagesSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/AdminProductCustomizableOptionsSection/AdminProductCustomizableOptionsSection.xml
 app/code/Magento/Catalog/Test/Mftf/Section/AdminProductCustomizableOptionsSection/AdminProductImportOptionsSection.xml
@@ -15261,6 +15268,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminDeleteAllProductsFromGridAct
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/GoToAttributeSetByNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCreateAttributeVisualSwatchNthValueActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontGoToCategoryPageActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminOpenAndApplyCustomOptionRecordsPerPageActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/OpenProductAttributeFromSearchResultInGridActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminFillAttributeDataProductFormNewAttributeActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAssignCategoryToProductAndSaveActionGroup.xml
@@ -15528,6 +15536,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminRestrictedUserAddCategoryFromProduc
 app/code/Magento/Catalog/Test/Mftf/Test/AdminAddImageForCategoryTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontRememberCategoryPaginationTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontOnlyXProductLeftForSimpleProductsTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminCheckProductListPriceAttributesWithDifferentCurrencyTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateProductAttributeEntityDropdownWithSingleQuoteTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateProductAttributeEntityPriceTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateProductAttributeEntityWithReservedKeysTest.xml
@@ -15680,6 +15689,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminVerifyCreateCustomProductAttributeT
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductAttributeTextSwatchFromProductPageTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCheckSubCategoryIsNotVisibleInNavigationMenuTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCheckConfigurableProductPriceWithDisabledChildProductTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/StorefrontVerifyCompareListVisibilityForMultiWebsiteTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminAddImageToWYSIWYGCatalogTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminMassChangeProductsStatusTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductAttributeVisualSwatchFromProductPageTest.xml
@@ -15773,6 +15783,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminRemoveImageAffectsAllScopesTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminDeleteProductsImageInCaseOfMultipleStoresTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/ConfigurableOptionTextInputLengthValidationHintTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminRemoveDefaultImageSimpleProductTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminValidateSimpleProductWithCustomOptionsDragNDropPerPageTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontPurchaseProductWithCustomOptionsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AddOutOfStockProductToCompareListTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminProductGridFilteringByDateAttributeTest.xml
@@ -20823,6 +20834,7 @@ app/code/Magento/Directory/Test/Mftf/Page/AdminCurrencySetupPage.xml
 app/code/Magento/Directory/Test/Mftf/Data/CurrencyConfigData.xml
 app/code/Magento/Directory/Test/Mftf/Data/GeneralStateOptionsConfigData.xml
 app/code/Magento/Directory/Test/Mftf/Test/AdminScheduledImportSettingsHiddenTest.xml
+app/code/Magento/Directory/Test/Mftf/Test/CustomCurrencySymbolWithSpaceTest.xml
 app/code/Magento/Directory/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Directory/Test/Mftf/README.md
 app/code/Magento/Directory/LICENSE_AFL.txt
@@ -23843,6 +23855,7 @@ app/code/Magento/SalesRule/Test/Mftf/Data/SalesRuleCouponData.xml
 app/code/Magento/SalesRule/Test/Mftf/Data/SalesRuleAddressConditionsData.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/AdminCreateFixedAmountDiscountTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCartPriceRuleCountryTest.xml
+app/code/Magento/SalesRule/Test/Mftf/Test/AdminValidateCouponCodeLengthWithQuantityTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/CartPriceRuleForConfigurableProductTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/AdminDeleteActiveSalesRuleWithComplexConditionsAndVerifyDeleteMessageTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/AdminMarketingCartPriceRulesNavigateMenuTest.xml
@@ -24016,9 +24029,11 @@ app/code/Magento/SalesRule/Model/Coupon.php
 app/code/Magento/SalesRule/Model/Validator.php
 app/code/Magento/SalesRule/Model/DeltaPriceRound.php
 app/code/Magento/SalesRule/Model/Rss/Discounts.php
+app/code/Magento/SalesRule/Model/Quote/GetCouponCodeLength.php
 app/code/Magento/SalesRule/Model/Quote/Address/Total/ShippingDiscount.php
 app/code/Magento/SalesRule/Model/Quote/ChildrenValidationLocator.php
 app/code/Magento/SalesRule/Model/Quote/Discount.php
+app/code/Magento/SalesRule/Model/Quote/GetCouponCodeLengthInterface.php
 app/code/Magento/SalesRule/README.md
 app/code/Magento/ProductAlert/Block/Email/Stock.php
 app/code/Magento/ProductAlert/Block/Email/Price.php
@@ -37528,6 +37543,7 @@ dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/CreditmemoGetTest.ph
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/InvoiceCreateTest.php
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/TransactionTest.php
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/InvoiceEmailTest.php
+dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/CreditMemoGenerateIfConfigurableProductWithDecimalQuantityTest.php
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/InvoiceVoidTest.php
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/ShipmentCommentsListTest.php
 dev/tests/api-functional/testsuite/Magento/Sales/Service/V1/OrderEmailTest.php
@@ -37710,6 +37726,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductDeleteTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoryEnabledTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GiftMessage/Cart/Item/GiftMessageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GiftMessage/Cart/GiftMessageTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/GiftMessage/Order/Item/GiftMessageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GiftMessage/Order/GiftMessageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductMultipleOptionsTest.php
