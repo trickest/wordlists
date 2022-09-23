@@ -61,6 +61,7 @@ ghost/link-tracking/.eslintrc.js
 ghost/link-tracking/lib/LinkClick.js
 ghost/link-tracking/lib/LinkClickTrackingService.js
 ghost/link-tracking/lib/PostLink.js
+ghost/link-tracking/lib/FullPostLink.js
 ghost/link-tracking/lib/link-tracking.js
 ghost/link-tracking/package.json
 ghost/link-tracking/index.js
@@ -293,9 +294,9 @@ ghost/admin/public/assets/icons/feature-image.svg
 ghost/admin/public/assets/icons/arrow-up-small.svg
 ghost/admin/public/assets/icons/film-camera.svg
 ghost/admin/public/assets/icons/posts.svg
-ghost/admin/public/assets/icons/event-clicked-in-email.svg
 ghost/admin/public/assets/icons/calendar-stroke.svg
 ghost/admin/public/assets/icons/copy.svg
+ghost/admin/public/assets/icons/earth.svg
 ghost/admin/public/assets/icons/event-logged-in.svg
 ghost/admin/public/assets/icons/gallery-placeholder.svg
 ghost/admin/public/assets/icons/post.svg
@@ -367,6 +368,7 @@ ghost/admin/public/assets/icons/email-at.svg
 ghost/admin/public/assets/icons/portal-icon-5.svg
 ghost/admin/public/assets/icons/email-stroke.svg
 ghost/admin/public/assets/icons/twitter-link.svg
+ghost/admin/public/assets/icons/event-click--feature-attribution.svg
 ghost/admin/public/assets/icons/arrow-right-tail.svg
 ghost/admin/public/assets/icons/reload.svg
 ghost/admin/public/assets/icons/arrow-right-stroke.svg
@@ -389,6 +391,7 @@ ghost/admin/public/assets/icons/unsplash.svg
 ghost/admin/public/assets/icons/clock.svg
 ghost/admin/public/assets/icons/email-footer.svg
 ghost/admin/public/assets/icons/members.svg
+ghost/admin/public/assets/icons/event-click.svg
 ghost/admin/public/assets/icons/ufo-attack.svg
 ghost/admin/public/assets/icons/unsplash-heart.svg
 ghost/admin/public/assets/icons/warning-stroke.svg
@@ -695,6 +698,7 @@ ghost/admin/app/components/modal-disconnect-stripe.hbs
 ghost/admin/app/components/gh-post-settings-menu.hbs
 ghost/admin/app/components/gh-koenig-editor.hbs
 ghost/admin/app/components/modal-reset-all-passwords.hbs
+ghost/admin/app/components/member/activity-feed.js
 ghost/admin/app/components/member/activity-feed-empty.hbs
 ghost/admin/app/components/member/newsletter-preference.js
 ghost/admin/app/components/member/activity-feed.hbs
@@ -729,6 +733,10 @@ ghost/admin/app/components/modal-unsubscribe-members.hbs
 ghost/admin/app/components/gh-navitem-url-input.js
 ghost/admin/app/components/gh-view-title.js
 ghost/admin/app/components/gh-infinity-loader.js
+ghost/admin/app/components/member-attribution/source-attribution-chart.hbs
+ghost/admin/app/components/member-attribution/source-attribution-chart.js
+ghost/admin/app/components/member-attribution/source-attribution-table.hbs
+ghost/admin/app/components/member-attribution/source-attribution-table.js
 ghost/admin/app/components/gh-cm-editor.hbs
 ghost/admin/app/components/tiers/segment-select.js
 ghost/admin/app/components/tiers/segment-select.hbs
@@ -818,12 +826,14 @@ ghost/admin/app/components/dashboard/resources/whats-new.hbs
 ghost/admin/app/components/dashboard/charts/attribution.js
 ghost/admin/app/components/dashboard/charts/recents.js
 ghost/admin/app/components/dashboard/charts/recents.hbs
+ghost/admin/app/components/dashboard/charts/anchors.hbs
 ghost/admin/app/components/dashboard/charts/paid-mix.hbs
 ghost/admin/app/components/dashboard/charts/paid-breakdown.hbs
 ghost/admin/app/components/dashboard/charts/anchor.hbs
 ghost/admin/app/components/dashboard/charts/paid-breakdown.js
 ghost/admin/app/components/dashboard/charts/paid-mix.js
 ghost/admin/app/components/dashboard/charts/paid-mrr.hbs
+ghost/admin/app/components/dashboard/charts/anchors.js
 ghost/admin/app/components/dashboard/charts/engagement.hbs
 ghost/admin/app/components/dashboard/charts/engagement.js
 ghost/admin/app/components/dashboard/charts/paid-mrr.js
@@ -1031,6 +1041,7 @@ ghost/admin/app/components/modal-disconnect-stripe.js
 ghost/admin/app/components/modal-impersonate-member.hbs
 ghost/admin/app/components/members-activity/member-filter.hbs
 ghost/admin/app/components/members-activity/table.hbs
+ghost/admin/app/components/members-activity/table-row.js
 ghost/admin/app/components/members-activity/table-row.hbs
 ghost/admin/app/components/members-activity/event-type-filter.js
 ghost/admin/app/components/members-activity/event-type-filter.hbs
@@ -2359,6 +2370,7 @@ ghost/core/core/server/web/index.js
 ghost/core/core/server/api/endpoints/pages-public.js
 ghost/core/core/server/api/endpoints/config.js
 ghost/core/core/server/api/endpoints/oembed.js
+ghost/core/core/server/api/endpoints/links.js
 ghost/core/core/server/api/endpoints/notifications.js
 ghost/core/core/server/api/endpoints/explore.js
 ghost/core/core/server/api/endpoints/member-signin-urls.js
@@ -2857,6 +2869,8 @@ ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permis
 ghost/core/core/server/data/migrations/versions/5.6/2022-07-27-13-40-change-explore-type.js
 ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-04-add-link-redirects-table.js
 ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-05-add-members-link-click-events-table.js
+ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-17-44-add-referrer-columns-to-subscription-events-table.js
+ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-17-44-add-referrer-columns-to-member-events-table.js
 ghost/core/core/server/data/migrations/versions/4.47/2022-05-04-10-03-transform-newsletter-header-image.js
 ghost/core/core/server/data/migrations/versions/4.47/2022-05-03-15-30-update-newsletter-sending-options.js
 ghost/core/core/server/data/migrations/versions/4.9/02-add-benefits-table.js
@@ -3335,6 +3349,7 @@ ghost/member-events/lib/MemberPaidConversionEvent.js
 ghost/member-events/lib/SubscriptionCreatedEvent.js
 ghost/member-events/lib/MemberCreatedEvent.js
 ghost/member-events/lib/SubscriptionCancelledEvent.js
+ghost/member-events/lib/MemberLinkClickEvent.js
 ghost/member-events/lib/MemberUnsubscribeEvent.js
 ghost/member-events/lib/MemberCommentEvent.js
 ghost/member-events/lib/MemberEntryViewEvent.js
@@ -3521,12 +3536,14 @@ ghost/update-check-service/lib/update-check-service.js
 ghost/update-check-service/package.json
 ghost/update-check-service/README.md
 ghost/stats-service/test/.eslintrc.js
+ghost/stats-service/test/lib/referrers.test.js
 ghost/stats-service/test/lib/subscriptions.test.js
 ghost/stats-service/test/lib/members.test.js
 ghost/stats-service/test/lib/stats.test.js
 ghost/stats-service/test/lib/mrr.test.js
 ghost/stats-service/.eslintrc.js
 ghost/stats-service/lib/subscriptions.js
+ghost/stats-service/lib/referrers.js
 ghost/stats-service/lib/members.js
 ghost/stats-service/lib/stats.js
 ghost/stats-service/lib/mrr.js
