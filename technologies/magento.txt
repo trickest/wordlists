@@ -1939,6 +1939,7 @@ app/code/Magento/NewRelicReporting/etc/db_schema_whitelist.json
 app/code/Magento/NewRelicReporting/etc/config.xml
 app/code/Magento/NewRelicReporting/etc/events.xml
 app/code/Magento/NewRelicReporting/etc/di.xml
+app/code/Magento/NewRelicReporting/etc/csp_whitelist.xml
 app/code/Magento/NewRelicReporting/etc/adminhtml/events.xml
 app/code/Magento/NewRelicReporting/etc/adminhtml/system.xml
 app/code/Magento/NewRelicReporting/etc/crontab.xml
@@ -21126,6 +21127,7 @@ app/code/Magento/CustomerGraphQl/etc/graphql/events.xml
 app/code/Magento/CustomerGraphQl/etc/graphql/di.xml
 app/code/Magento/CustomerGraphQl/Model/Context/AddCustomerGroupToContext.php
 app/code/Magento/CustomerGraphQl/Model/Context/AddUserInfoToContext.php
+app/code/Magento/CustomerGraphQl/Model/Resolver/DeleteCustomer.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/RevokeCustomerToken.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/GenerateCustomerToken.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/CustomerAddresses.php
@@ -21141,6 +21143,7 @@ app/code/Magento/CustomerGraphQl/Model/Resolver/ResetPassword.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/UpdateCustomerEmail.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/CreateCustomerAddress.php
 app/code/Magento/CustomerGraphQl/Model/Resolver/CreateCustomer.php
+app/code/Magento/CustomerGraphQl/Model/Customer/DeleteCustomer.php
 app/code/Magento/CustomerGraphQl/Model/Customer/SaveCustomer.php
 app/code/Magento/CustomerGraphQl/Model/Customer/CreateCustomerAccount.php
 app/code/Magento/CustomerGraphQl/Model/Customer/GetCustomer.php
@@ -30429,6 +30432,7 @@ lib/internal/Magento/Framework/Url/Test/Unit/RouteParamsResolverFactoryTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/Helper/DataTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/SecurityInfoTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/QueryParamsResolverTest.php
+lib/internal/Magento/Framework/Url/Test/Unit/EncoderTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/ScopeResolverTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/HostCheckerTest.php
 lib/internal/Magento/Framework/Url/Test/Unit/ValidatorTest.php
@@ -37654,6 +37658,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerToke
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerEmailTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/LockCustomer.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/DeleteCustomerTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerV2Test.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/StoreConfigTest.php
