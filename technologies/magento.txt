@@ -11499,7 +11499,6 @@ app/code/Magento/AdobeIms/Test/Unit/Controller/Adminhtml/User/ProfileTest.php
 app/code/Magento/AdobeIms/Test/Unit/Controller/Adminhtml/OAuth/CallbackTest.php
 app/code/Magento/AdobeIms/Test/Unit/Observer/FlushUsersTokensObserverTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/UserAuthorizedTest.php
-app/code/Magento/AdobeIms/Test/Unit/Model/GetAuthorizationUrlTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/LogOutTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/IsTokenValidTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/LoginTest.php
@@ -11511,6 +11510,7 @@ app/code/Magento/AdobeIms/Test/Unit/Model/UserProfileTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/ConfigTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/GetAccessTokenTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/GetImageTest.php
+app/code/Magento/AdobeIms/Test/Unit/Model/AuthorizationTest.php
 app/code/Magento/AdobeIms/Test/Unit/Model/GetTokenTest.php
 app/code/Magento/AdobeIms/Test/Integration/DbSchemaTest.php
 app/code/Magento/AdobeIms/Test/Integration/Model/ConfigTest.php
@@ -25841,6 +25841,7 @@ app/code/Magento/AdminAdobeIms/view/adminhtml/layout/adobe_ims_login.xml
 app/code/Magento/AdminAdobeIms/view/adminhtml/layout/adminhtml_system_account_index.xml
 app/code/Magento/AdminAdobeIms/view/adminhtml/layout/adminhtml_user_edit.xml
 app/code/Magento/AdminAdobeIms/view/adminhtml/layout/adminhtml_integration_edit.xml
+app/code/Magento/AdminAdobeIms/i18n/en_US.csv
 app/code/Magento/AdminAdobeIms/Console/Command/AdminAdobeImsStatusCommand.php
 app/code/Magento/AdminAdobeIms/Console/Command/AdminAdobeImsDisableCommand.php
 app/code/Magento/AdminAdobeIms/Console/Command/AdminAdobeImsInfoCommand.php
@@ -25858,6 +25859,7 @@ app/code/Magento/AdminAdobeIms/Service/AdminLoginProcessService.php
 app/code/Magento/AdminAdobeIms/Api/ImsWebapiRepositoryInterface.php
 app/code/Magento/AdminAdobeIms/Api/Data/ImsWebapiSearchResultsInterface.php
 app/code/Magento/AdminAdobeIms/Api/Data/ImsWebapiInterface.php
+app/code/Magento/AdminAdobeIms/Api/SaveImsUserInterface.php
 app/code/Magento/AdminAdobeIms/registration.php
 app/code/Magento/AdminAdobeIms/ViewModel/LinkViewModel.php
 app/code/Magento/AdminAdobeIms/ViewModel/MessageViewModel.php
@@ -25915,6 +25917,7 @@ app/code/Magento/AdminAdobeIms/etc/db_schema.xml
 app/code/Magento/AdminAdobeIms/Model/GetAccessTokenSession.php
 app/code/Magento/AdminAdobeIms/Model/FlushUserTokens.php
 app/code/Magento/AdminAdobeIms/Model/Auth.php
+app/code/Magento/AdminAdobeIms/Model/SaveImsUser.php
 app/code/Magento/AdminAdobeIms/Model/ImsEmailNotification.php
 app/code/Magento/AdminAdobeIms/Model/ImsWebapi.php
 app/code/Magento/AdminAdobeIms/Model/GetAccessTokenProxy.php
@@ -36820,6 +36823,7 @@ dev/tests/integration/testsuite/Magento/Quote/Model/Quote/Item/RepositoryTest.ph
 dev/tests/integration/testsuite/Magento/Quote/Model/Quote/Item/UpdaterTest.php
 dev/tests/integration/testsuite/Magento/Quote/Model/Quote/Item/CartItemPersisterTest.php
 dev/tests/integration/testsuite/Magento/Quote/Model/Quote/AddressTest.php
+dev/tests/integration/testsuite/Magento/AdminAdobeIms/Model/SaveImsUserTest.php
 dev/tests/integration/testsuite/Magento/Shipping/Block/Adminhtml/Order/AddToPackageTest.php
 dev/tests/integration/testsuite/Magento/Shipping/Block/ItemsTest.php
 dev/tests/integration/testsuite/Magento/Shipping/_files/shipping_with_carrier_data_different_currency_code.php
