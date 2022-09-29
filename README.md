@@ -30,6 +30,9 @@ servers.json
 ### Robots
 Inspired by Daniel Miessler's [RobotsDisallowed](https://github.com/danielmiessler/RobotsDisallowed) project, these wordlists contain the `robots.txt` `Allow` and `Disallow` paths in the top 100, top 1000, and top 10000 websites according to [Domcop's Open PageRank dataset](https://www.domcop.com/top-10-million-websites).
 
+### Inventory Subdomains
+This wordlist contains the subdomains found for each target on the [Inventory](https://github.com/trickest/inventory) project. It consists of 1.4 million words generated from the subdomains of over 50 public bug bounty programs.
+
 And more wordlists to come!
 
 ## How it Works
