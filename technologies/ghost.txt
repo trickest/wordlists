@@ -235,6 +235,7 @@ ghost/admin/public/assets/icons/confetti.svg
 ghost/admin/public/assets/icons/check-2.svg
 ghost/admin/public/assets/icons/twitter-share.svg
 ghost/admin/public/assets/icons/event-subscriptions.svg
+ghost/admin/public/assets/icons/arrow-right-pagination.svg
 ghost/admin/public/assets/icons/arrow-left.svg
 ghost/admin/public/assets/icons/upload-fill.svg
 ghost/admin/public/assets/icons/circle-ellipsis.svg
@@ -356,6 +357,7 @@ ghost/admin/public/assets/icons/unmute.svg
 ghost/admin/public/assets/icons/paint-palette.svg
 ghost/admin/public/assets/icons/gift.svg
 ghost/admin/public/assets/icons/arrow-left-small.svg
+ghost/admin/public/assets/icons/arrow-left-pagination.svg
 ghost/admin/public/assets/icons/upload.svg
 ghost/admin/public/assets/icons/analytics.svg
 ghost/admin/public/assets/icons/ghost-logo-orb.svg
@@ -582,6 +584,7 @@ ghost/admin/app/templates/reset.hbs
 ghost/admin/app/templates/offers.hbs
 ghost/admin/app/templates/signin.hbs
 ghost/admin/app/templates/tags-loading.hbs
+ghost/admin/app/templates/lexicalsandbox.hbs
 ghost/admin/app/templates/pages-loading.hbs
 ghost/admin/app/templates/react-editor/edit-loading.hbs
 ghost/admin/app/templates/member.hbs
@@ -655,6 +658,7 @@ ghost/admin/app/components/gh-power-select/trigger.hbs
 ghost/admin/app/components/gh-power-select/trigger.js
 ghost/admin/app/components/gh-benefit-item.js
 ghost/admin/app/components/gh-tier-card.js
+ghost/admin/app/components/koenig-lexical-sandbox.js
 ghost/admin/app/components/modal-transfer-owner.hbs
 ghost/admin/app/components/modal-upload-image.hbs
 ghost/admin/app/components/gh-members-list-item.hbs
@@ -675,6 +679,7 @@ ghost/admin/app/components/gh-file-input.js
 ghost/admin/app/components/gh-date-time-picker.hbs
 ghost/admin/app/components/gh-editor-post-status.hbs
 ghost/admin/app/components/gh-nav-menu.js
+ghost/admin/app/components/koenig-lexical-sandbox.hbs
 ghost/admin/app/components/gh-billing-iframe.js
 ghost/admin/app/components/gh-psm-visibility-input.hbs
 ghost/admin/app/components/gh-members-payments-setting.hbs
@@ -696,7 +701,9 @@ ghost/admin/app/components/gh-post-settings-menu.hbs
 ghost/admin/app/components/gh-koenig-editor.hbs
 ghost/admin/app/components/modal-reset-all-passwords.hbs
 ghost/admin/app/components/member/activity-feed.js
+ghost/admin/app/components/member/subscription-detail-box.js
 ghost/admin/app/components/member/activity-feed-empty.hbs
+ghost/admin/app/components/member/subscription-detail-box.hbs
 ghost/admin/app/components/member/newsletter-preference.js
 ghost/admin/app/components/member/activity-feed.hbs
 ghost/admin/app/components/member/newsletter-preference.hbs
@@ -1996,6 +2003,7 @@ ghost/core/test/unit/server/services/webhooks/trigger.test.js
 ghost/core/test/unit/server/services/webhooks/serialize.test.js
 ghost/core/test/unit/server/services/api-version-compatibility/mw-version-rewrites.test.js
 ghost/core/test/unit/server/services/api-version-compatibility/legacy-api-path-match.test.js
+ghost/core/test/unit/server/services/api-version-compatibility/mw-content-version.test.js
 ghost/core/test/unit/server/services/users/users-service.test.js
 ghost/core/test/unit/server/services/url/Queue.test.js
 ghost/core/test/unit/server/services/url/Urls.test.js
@@ -2907,6 +2915,7 @@ ghost/core/core/server/data/migrations/versions/5.8/2022-08-03-15-28-add-trial-s
 ghost/core/core/server/data/migrations/versions/5.8/2022-08-02-06-09-add-trial-period-days-column-to-tiers.js
 ghost/core/core/server/data/migrations/versions/4.13/02-add-members-products-events-table.js
 ghost/core/core/server/data/migrations/versions/4.13/01-add-members-stripe-connect-auth-permission-to-administrators.js
+ghost/core/core/server/data/migrations/versions/5.17/2022-09-27-16-49-set-track-clicks-based-on-opens.js
 ghost/core/core/server/data/migrations/versions/4.12/01-add-email-only-column-to-posts-meta-table.js
 ghost/core/core/server/data/migrations/versions/4.12/02-fix-member-statuses.js
 ghost/core/core/server/data/migrations/versions/4.44/2022-04-13-12-00-remove-newsletter-sender-name-not-null-constraint.js
