@@ -14508,8 +14508,10 @@ app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/Product/Listing/Collector/Add
 app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/Product/Listing/Collector/PriceTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/Product/Listing/Collector/ImageTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/Product/Listing/Collector/UrlTest.php
+app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/Product/Modifier/PriceAttributesTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/DataProvider/CatalogEavValidationRulesTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/Listing/Columns/StatusTextTest.php
+app/code/Magento/Catalog/Test/Unit/Ui/Component/Listing/Columns/PriceTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/Listing/Columns/AbstractColumnTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/Listing/Columns/AttributeSetTextTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/Product/Form/Categories/OptionsTest.php
@@ -16270,6 +16272,7 @@ app/code/Magento/Catalog/Model/Product/Gallery/EntryResolver.php
 app/code/Magento/Catalog/Model/Product/Gallery/UpdateHandler.php
 app/code/Magento/Catalog/Model/Product/Gallery/Processor.php
 app/code/Magento/Catalog/Model/Product/Gallery/GalleryManagement.php
+app/code/Magento/Catalog/Model/Product/Gallery/DeleteValidator.php
 app/code/Magento/Catalog/Model/Product/Gallery/ReadHandler.php
 app/code/Magento/Catalog/Model/Product/Gallery/MimeTypeExtensionMap.php
 app/code/Magento/Catalog/Model/Product/Gallery/ImagesConfigFactoryInterface.php
@@ -17292,6 +17295,7 @@ app/code/Magento/Bundle/Test/Unit/Ui/DataProvider/Product/Form/Modifier/BundleSk
 app/code/Magento/Bundle/Test/Unit/Ui/DataProvider/Product/Form/Modifier/BundleQuantityTest.php
 app/code/Magento/Bundle/Test/Unit/Ui/DataProvider/Product/Listing/Collector/BundlePriceTest.php
 app/code/Magento/Bundle/Test/Unit/Ui/DataProvider/Product/BundleDataProviderTest.php
+app/code/Magento/Bundle/Test/Unit/Ui/DataProvider/Product/Modifier/SpecialPriceAttributesTest.php
 app/code/Magento/Bundle/Test/Unit/Helper/Catalog/Product/ConfigurationTest.php
 app/code/Magento/Bundle/Test/Unit/Helper/DataTest.php
 app/code/Magento/Bundle/Test/Unit/Pricing/Adjustment/DefaultSelectionPriceListProviderTest.php
@@ -22454,6 +22458,7 @@ app/code/Magento/Deploy/Service/DeployStaticContent.php
 app/code/Magento/Deploy/Config/BundleConfig.php
 app/code/Magento/Deploy/registration.php
 app/code/Magento/Deploy/Test/Unit/App/Mode/ConfigProviderTest.php
+app/code/Magento/Deploy/Test/Unit/Package/Processor/PreProcessor/CssTest.php
 app/code/Magento/Deploy/Test/Unit/Package/LocaleResolverTest.php
 app/code/Magento/Deploy/Test/Unit/Console/InputValidatorTest.php
 app/code/Magento/Deploy/Test/Unit/Console/Command/App/ConfigStatusCommandTest.php
@@ -22471,6 +22476,7 @@ app/code/Magento/Deploy/Test/Unit/Console/CommandListTest.php
 app/code/Magento/Deploy/Test/Unit/Service/DeployStaticContentTest.php
 app/code/Magento/Deploy/Test/Unit/Service/DeployTranslationsDictionaryTest.php
 app/code/Magento/Deploy/Test/Unit/Service/MinifyTemplatesTest.php
+app/code/Magento/Deploy/Test/Unit/Collector/CollectorTest.php
 app/code/Magento/Deploy/Test/Unit/Strategy/CompactDeployTest.php
 app/code/Magento/Deploy/Test/Unit/Model/Plugin/ConfigChangeDetectorTest.php
 app/code/Magento/Deploy/Test/Unit/Model/FilesystemTest.php
@@ -36358,6 +36364,7 @@ dev/tests/integration/testsuite/Magento/User/Model/UserTest.php
 dev/tests/integration/testsuite/Magento/User/Model/ResourceModel/UserTest.php
 dev/tests/integration/testsuite/Magento/User/Model/ResourceModel/Role/User/CollectionTest.php
 dev/tests/integration/testsuite/Magento/User/Model/ResourceModel/User/CollectionTest.php
+dev/tests/integration/testsuite/Magento/User/Model/ValidateUserDateFieldsTest.php
 dev/tests/integration/testsuite/Magento/MemoryUsageTest.php
 dev/tests/integration/testsuite/Magento/IntegrationTest.php
 dev/tests/integration/testsuite/Magento/Tax/Block/Adminhtml/Rate/TitleTest.php
@@ -38120,6 +38127,7 @@ dev/tests/js/jasmine/tests/app/code/Magento/Review/view/base/web/template/produc
 dev/tests/js/jasmine/tests/app/code/Magento/Review/view/base/web/js/product/summary.js
 dev/tests/js/jasmine/tests/app/code/Magento/Review/view/frontend/web/js/process-review.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/sticky/sticky.test.js
+dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/provider.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/controls/columns.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/controls/bookmarks/storage.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/masonry.test.js
