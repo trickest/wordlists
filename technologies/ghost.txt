@@ -203,6 +203,7 @@ ghost/admin/tests/helpers/stripe.js
 ghost/admin/tests/helpers/login-as-role.js
 ghost/admin/tests/helpers/visit.js
 ghost/admin/tests/helpers/file-upload.js
+ghost/admin/tests/helpers/forms.js
 ghost/admin/tests/helpers/labs-flag.js
 ghost/admin/tests/helpers/mailgun.js
 ghost/admin/tests/helpers/newsletters.js
@@ -242,6 +243,7 @@ ghost/admin/public/assets/icons/trash.svg
 ghost/admin/public/assets/icons/globe.svg
 ghost/admin/public/assets/icons/event-opened-email--feature-attribution.svg
 ghost/admin/public/assets/icons/eye.svg
+ghost/admin/public/assets/icons/arrow-down-fill.svg
 ghost/admin/public/assets/icons/shield-lock.svg
 ghost/admin/public/assets/icons/event-comment--feature-attribution.svg
 ghost/admin/public/assets/icons/event-email-delivery-failed.svg
@@ -676,7 +678,6 @@ ghost/admin/app/components/gh-nav-menu.js
 ghost/admin/app/components/koenig-lexical-sandbox.hbs
 ghost/admin/app/components/gh-billing-iframe.js
 ghost/admin/app/components/gh-psm-visibility-input.hbs
-ghost/admin/app/components/gh-members-payments-setting.hbs
 ghost/admin/app/components/gh-portal-links.hbs
 ghost/admin/app/components/gh-unsplash-photo.hbs
 ghost/admin/app/components/gh-members-import-table.js
@@ -742,7 +743,6 @@ ghost/admin/app/components/member-attribution/source-attribution-table.js
 ghost/admin/app/components/gh-cm-editor.hbs
 ghost/admin/app/components/tiers/segment-select.js
 ghost/admin/app/components/tiers/segment-select.hbs
-ghost/admin/app/components/gh-members-payments-setting.js
 ghost/admin/app/components/gh-search-input.hbs
 ghost/admin/app/components/gh-billing-modal.js
 ghost/admin/app/components/gh-member-avatar.hbs
@@ -939,8 +939,10 @@ ghost/admin/app/components/settings/staff/modals/upload-image.hbs
 ghost/admin/app/components/settings/newsletters/newsletter-management.hbs
 ghost/admin/app/components/settings/newsletters/newsletter-management.js
 ghost/admin/app/components/settings/members-subscription-access.hbs
+ghost/admin/app/components/settings/members/stripe-settings-form.js
 ghost/admin/app/components/settings/members/archive-tier.hbs
 ghost/admin/app/components/settings/members/archive-tier.js
+ghost/admin/app/components/settings/members/stripe-settings-form.hbs
 ghost/admin/app/components/settings/members-default-post-access.hbs
 ghost/admin/app/components/settings/newsletters.hbs
 ghost/admin/app/components/settings/members-comment-access.hbs
@@ -1225,6 +1227,7 @@ ghost/admin/app/transforms/members-segment-string.js
 ghost/admin/app/transforms/moment-date.js
 ghost/admin/app/transforms/navigation-settings.js
 ghost/admin/app/modifiers/autofocus.js
+ghost/admin/app/modifiers/select-on-click.js
 ghost/admin/app/modifiers/on-scroll.js
 ghost/admin/app/modifiers/scroll-to.js
 ghost/admin/app/modifiers/react-render.js
@@ -2225,8 +2228,12 @@ ghost/core/test/unit/frontend/helpers/test_tpl/pagination.hbs
 ghost/core/test/unit/frontend/helpers/t.test.js
 ghost/core/test/unit/frontend/helpers/cancel_link.test.js
 ghost/core/test/unit/frontend/helpers/page_url.test.js
+ghost/core/test/e2e-webhooks/__snapshots__/members.test.js.snap
+ghost/core/test/e2e-webhooks/__snapshots__/tags.test.js.snap
 ghost/core/test/e2e-webhooks/__snapshots__/posts.test.js.snap
+ghost/core/test/e2e-webhooks/members.test.js
 ghost/core/test/e2e-webhooks/posts.test.js
+ghost/core/test/e2e-webhooks/tags.test.js
 ghost/core/test/e2e-server/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-server/well-known.test.js
 ghost/core/test/e2e-server/services/stats/mrr-stats-service.test.js
@@ -2297,6 +2304,7 @@ ghost/core/test/e2e-api/admin/media.test.js
 ghost/core/test/e2e-api/admin/roles.test.js
 ghost/core/test/e2e-api/admin/slugs.test.js
 ghost/core/test/e2e-api/admin/email-previews.test.js
+ghost/core/test/e2e-api/members/__snapshots__/send-magic-link.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/webhooks.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/create-stripe-checkout-session.test.js.snap
@@ -3492,6 +3500,7 @@ ghost/portal/.yarnrc
 ghost/portal/src/App.test.js
 ghost/portal/src/utils/notifications.js
 ghost/portal/src/utils/copy-to-clipboard.js
+ghost/portal/src/utils/errors.js
 ghost/portal/src/utils/check-mode.js
 ghost/portal/src/utils/helpers.js
 ghost/portal/src/utils/fixtures.js
@@ -3587,7 +3596,6 @@ ghost/portal/.eslintignore
 ghost/portal/public/robots.txt
 ghost/portal/public/index.html
 ghost/portal/public/manifest.json
-ghost/portal/.editorconfig
 ghost/portal/.gitignore
 ghost/portal/webpack.config.js
 ghost/portal/package.json
