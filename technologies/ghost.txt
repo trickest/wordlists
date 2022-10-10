@@ -94,20 +94,20 @@ ghost/admin/tests/integration/components/gh-timezone-select-test.js
 ghost/admin/tests/integration/components/koenig-toolbar-test.js
 ghost/admin/tests/integration/components/gh-search-input-test.js
 ghost/admin/tests/integration/components/gh-members-import-table-test.js
-ghost/admin/tests/integration/components/gh-navitem-test.js
 ghost/admin/tests/integration/components/gh-date-time-picker-test.js
 ghost/admin/tests/integration/components/gh-date-picker-test.js
 ghost/admin/tests/integration/components/gh-notification-test.js
 ghost/admin/tests/integration/components/gh-alerts-test.js
 ghost/admin/tests/integration/components/gh-member-avatar-test.js
 ghost/admin/tests/integration/components/tags/tag-form-test.js
-ghost/admin/tests/integration/components/gh-navitem-url-input-test.js
 ghost/admin/tests/integration/components/gh-basic-dropdown-test.js
 ghost/admin/tests/integration/components/gh-alert-test.js
 ghost/admin/tests/integration/components/gh-unsplash-photo-test.js
 ghost/admin/tests/integration/components/gh-notifications-test.js
 ghost/admin/tests/integration/components/gh-cm-editor-test.js
 ghost/admin/tests/integration/components/gh-whats-new-test.js
+ghost/admin/tests/integration/components/settings/navigation/nav-item-test.js
+ghost/admin/tests/integration/components/settings/navigation/nav-item-url-input-test.js
 ghost/admin/tests/integration/components/gh-image-uploader-with-preview-test.js
 ghost/admin/tests/integration/components/gh-uploader-test.js
 ghost/admin/tests/integration/components/gh-trim-focus-input-test.js
@@ -489,7 +489,6 @@ ghost/admin/app/controllers/lexical-editor.js
 ghost/admin/app/controllers/editor/edit-loading.js
 ghost/admin/app/controllers/signin.js
 ghost/admin/app/routes/application.js
-ghost/admin/app/routes/explore.js
 ghost/admin/app/routes/error404.js
 ghost/admin/app/routes/offer.js
 ghost/admin/app/routes/setup.js
@@ -557,6 +556,9 @@ ghost/admin/app/routes/admin.js
 ghost/admin/app/routes/editor/new.js
 ghost/admin/app/routes/editor/index.js
 ghost/admin/app/routes/editor/edit.js
+ghost/admin/app/routes/explore/connect.js
+ghost/admin/app/routes/explore/explore-sub.js
+ghost/admin/app/routes/explore/index.js
 ghost/admin/app/routes/signin.js
 ghost/admin/app/authenticators/cookie.js
 ghost/admin/app/transitions/wormhole.js
@@ -566,7 +568,6 @@ ghost/admin/app/templates/setup.hbs
 ghost/admin/app/templates/signup.hbs
 ghost/admin/app/templates/whatsnew.hbs
 ghost/admin/app/templates/tag.hbs
-ghost/admin/app/templates/posts-clicks.hbs
 ghost/admin/app/templates/posts-loading.hbs
 ghost/admin/app/templates/application-error.hbs
 ghost/admin/app/templates/members-activity.hbs
@@ -619,7 +620,7 @@ ghost/admin/app/templates/error.hbs
 ghost/admin/app/templates/pages.hbs
 ghost/admin/app/templates/editor/edit-loading.hbs
 ghost/admin/app/templates/dashboard.hbs
-ghost/admin/app/templates/explore.hbs
+ghost/admin/app/templates/explore/connect.hbs
 ghost/admin/app/components/gh-loading-spinner.hbs
 ghost/admin/app/components/modal-stripe-connect.hbs
 ghost/admin/app/components/gh-link-to-custom-views-index.hbs
@@ -632,6 +633,7 @@ ghost/admin/app/components/gh-psm-visibility-input.js
 ghost/admin/app/components/gh-twitter-url-input.js
 ghost/admin/app/components/gh-alerts.js
 ghost/admin/app/components/gh-timezone-select.js
+ghost/admin/app/components/gh-explore-modal.hbs
 ghost/admin/app/components/gh-file-upload.js
 ghost/admin/app/components/modal-import-members/csv-file-select.js
 ghost/admin/app/components/modal-import-members/csv-file-mapping.js
@@ -648,7 +650,6 @@ ghost/admin/app/components/gh-progress-bar.js
 ghost/admin/app/components/gh-members-import-table.hbs
 ghost/admin/app/components/gh-members-filter-count.hbs
 ghost/admin/app/components/gh-notifications.js
-ghost/admin/app/components/gh-navitem.hbs
 ghost/admin/app/components/gh-app.hbs
 ghost/admin/app/components/modal-base.js
 ghost/admin/app/components/gh-text-input.hbs
@@ -658,7 +659,6 @@ ghost/admin/app/components/gh-power-select/trigger.js
 ghost/admin/app/components/gh-benefit-item.js
 ghost/admin/app/components/gh-tier-card.js
 ghost/admin/app/components/koenig-lexical-sandbox.js
-ghost/admin/app/components/gh-members-list-item.hbs
 ghost/admin/app/components/gh-tiers-price-billingperiod.hbs
 ghost/admin/app/components/gh-url-input.js
 ghost/admin/app/components/gh-koenig-editor-lexical.js
@@ -673,6 +673,7 @@ ghost/admin/app/components/gh-image-uploader.hbs
 ghost/admin/app/components/gh-email-preview-link.hbs
 ghost/admin/app/components/gh-file-input.js
 ghost/admin/app/components/gh-date-time-picker.hbs
+ghost/admin/app/components/gh-explore-modal.js
 ghost/admin/app/components/gh-editor-post-status.hbs
 ghost/admin/app/components/gh-nav-menu.js
 ghost/admin/app/components/koenig-lexical-sandbox.hbs
@@ -704,9 +705,13 @@ ghost/admin/app/components/member/newsletter-preference.js
 ghost/admin/app/components/member/activity-feed.hbs
 ghost/admin/app/components/member/newsletter-preference.hbs
 ghost/admin/app/components/modal-markdown-help.hbs
+ghost/admin/app/components/members/list-item-column.js
 ghost/admin/app/components/members/filter-value.hbs
 ghost/admin/app/components/members/filter.hbs
+ghost/admin/app/components/members/list-item.hbs
+ghost/admin/app/components/members/list-item-column.hbs
 ghost/admin/app/components/members/filter-value.js
+ghost/admin/app/components/members/list-item.js
 ghost/admin/app/components/members/modals/delete-member.js
 ghost/admin/app/components/members/modals/bulk-add-label.hbs
 ghost/admin/app/components/members/modals/bulk-delete.hbs
@@ -717,6 +722,7 @@ ghost/admin/app/components/members/modals/bulk-add-label.js
 ghost/admin/app/components/members/modals/bulk-delete.js
 ghost/admin/app/components/members/modals/bulk-remove-label.js
 ghost/admin/app/components/members/modals/bulk-unsubscribe.hbs
+ghost/admin/app/components/members/list-item-loading.hbs
 ghost/admin/app/components/members/filter.js
 ghost/admin/app/components/gh-nav-menu/footer.js
 ghost/admin/app/components/gh-nav-menu/main.js
@@ -731,7 +737,6 @@ ghost/admin/app/components/gh-theme-table.hbs
 ghost/admin/app/components/gh-member-single-label-input.hbs
 ghost/admin/app/components/epm-modal-container.hbs
 ghost/admin/app/components/modal-unsubscribe-members.hbs
-ghost/admin/app/components/gh-navitem-url-input.js
 ghost/admin/app/components/gh-view-title.js
 ghost/admin/app/components/gh-infinity-loader.js
 ghost/admin/app/components/member-attribution/source-attribution-chart.hbs
@@ -750,6 +755,7 @@ ghost/admin/app/components/modal-regenerate-key.hbs
 ghost/admin/app/components/gh-tiers-price-billingperiod.js
 ghost/admin/app/components/gh-members-segment-select.js
 ghost/admin/app/components/gh-token-input.hbs
+ghost/admin/app/components/gh-explore-iframe.js
 ghost/admin/app/components/gh-psm-authors-input.js
 ghost/admin/app/components/gh-html-iframe.js
 ghost/admin/app/components/gh-browser-preview.js
@@ -761,6 +767,7 @@ ghost/admin/app/components/gh-browser-preview.hbs
 ghost/admin/app/components/gh-editor.hbs
 ghost/admin/app/components/gh-loading-list.hbs
 ghost/admin/app/components/aspect-ratio-box.js
+ghost/admin/app/components/gh-explore-iframe.hbs
 ghost/admin/app/components/modal-members-label-form.hbs
 ghost/admin/app/components/gh-file-uploader.hbs
 ghost/admin/app/components/gh-dropdown-button.js
@@ -777,7 +784,6 @@ ghost/admin/app/components/gh-alert.js
 ghost/admin/app/components/modal-invite-new-user.js
 ghost/admin/app/components/koenig-lexical-editor.hbs
 ghost/admin/app/components/gh-image-uploader.js
-ghost/admin/app/components/gh-members-list-item-column.hbs
 ghost/admin/app/components/gh-date-picker.js
 ghost/admin/app/components/gh-member-label-input.js
 ghost/admin/app/components/modal-tier.hbs
@@ -800,7 +806,6 @@ ghost/admin/app/components/gh-simplemde.js
 ghost/admin/app/components/modal-update-snippet.js
 ghost/admin/app/components/gh-alerts.hbs
 ghost/admin/app/components/power-select-vertical-collection-options.js
-ghost/admin/app/components/gh-navitem.js
 ghost/admin/app/components/gh-custom-view-title.hbs
 ghost/admin/app/components/gh-alert.hbs
 ghost/admin/app/components/gh-user-invited.js
@@ -872,7 +877,6 @@ ghost/admin/app/components/gh-font-selector.hbs
 ghost/admin/app/components/modal-member-tier.hbs
 ghost/admin/app/components/gh-billing-iframe.hbs
 ghost/admin/app/components/gh-user-invited.hbs
-ghost/admin/app/components/gh-members-list-item.js
 ghost/admin/app/components/modal-unsubscribe-members.js
 ghost/admin/app/components/gh-scroll-trigger.js
 ghost/admin/app/components/gh-token-input/tag-token.js
@@ -894,11 +898,9 @@ ghost/admin/app/components/gh-text-input.js
 ghost/admin/app/components/gh-date-time-picker.js
 ghost/admin/app/components/gh-markdown-editor.hbs
 ghost/admin/app/components/modal-upgrade-host-limit.js
-ghost/admin/app/components/posts-list/list-item-clicks.hbs
 ghost/admin/app/components/posts-list/content-filter.js
 ghost/admin/app/components/posts-list/list-item.hbs
 ghost/admin/app/components/posts-list/list-item.js
-ghost/admin/app/components/posts-list/list-item-clicks.js
 ghost/admin/app/components/posts-list/content-filter.hbs
 ghost/admin/app/components/modal-regenerate-key.js
 ghost/admin/app/components/gh-feature-flag.hbs
@@ -921,6 +923,9 @@ ghost/admin/app/components/settings/integrations/delete-integration-modal.hbs
 ghost/admin/app/components/settings/integrations/delete-integration-modal.js
 ghost/admin/app/components/settings/members-email/default-recipients-select.hbs
 ghost/admin/app/components/settings/members-email/default-recipients-select.js
+ghost/admin/app/components/settings/navigation/nav-item.hbs
+ghost/admin/app/components/settings/navigation/nav-item-url-input.js
+ghost/admin/app/components/settings/navigation/nav-item.js
 ghost/admin/app/components/settings/members-subscription-access.js
 ghost/admin/app/components/settings/staff/modals/upload-image.js
 ghost/admin/app/components/settings/staff/modals/regenerate-staff-token.js
@@ -1119,7 +1124,6 @@ ghost/admin/app/components/modal-portal-settings.hbs
 ghost/admin/app/components/gh-unsplash.js
 ghost/admin/app/components/gh-uploader.js
 ghost/admin/app/components/gh-basic-dropdown.hbs
-ghost/admin/app/components/gh-members-list-item-column.js
 ghost/admin/app/components/gh-image-uploader-with-preview.hbs
 ghost/admin/app/components/modal-free-membership-settings.hbs
 ghost/admin/app/components/gh-user-active.js
@@ -1132,6 +1136,7 @@ ghost/admin/app/errors/member-import-error.js
 ghost/admin/app/services/lazy-loader.js
 ghost/admin/app/services/config.js
 ghost/admin/app/services/notifications.js
+ghost/admin/app/services/explore.js
 ghost/admin/app/services/member-import-validator.js
 ghost/admin/app/services/tenor.js
 ghost/admin/app/services/data-cache.js
@@ -1705,6 +1710,7 @@ ghost/staff-service/lib/email-templates/new-free-signup.txt.js
 ghost/staff-service/lib/email-templates/new-paid-cancellation.hbs
 ghost/staff-service/lib/email-templates/new-paid-cancellation.txt.js
 ghost/staff-service/lib/email-templates/new-free-signup.hbs
+ghost/staff-service/lib/email-templates/partials/preview.hbs
 ghost/staff-service/lib/email-templates/new-paid-started.hbs
 ghost/staff-service/lib/email-templates/new-paid-started.txt.js
 ghost/staff-service/package.json
@@ -2236,6 +2242,7 @@ ghost/core/test/e2e-webhooks/posts.test.js
 ghost/core/test/e2e-webhooks/tags.test.js
 ghost/core/test/e2e-server/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-server/well-known.test.js
+ghost/core/test/e2e-server/click-tracking.test.js
 ghost/core/test/e2e-server/services/stats/mrr-stats-service.test.js
 ghost/core/test/e2e-server/services/member-attribution.test.js
 ghost/core/test/e2e-server/admin.test.js
@@ -3305,7 +3312,6 @@ ghost/core/core/frontend/helpers/match.js
 ghost/core/core/boot.js
 ghost/core/.npmignore
 ghost/core/config.development.json
-ghost/core/Gruntfile.js
 ghost/core/content/public/README.md
 ghost/core/content/data/README.md
 ghost/core/content/images/README.md
