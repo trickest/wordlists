@@ -2081,6 +2081,7 @@ ghost/core/test/unit/server/models/newsletter.test.js
 ghost/core/test/unit/server/models/member-subscribe-event.test.js
 ghost/core/test/unit/server/models/custom-theme-setting.test.js
 ghost/core/test/unit/server/models/member.test.js
+ghost/core/test/unit/server/models/member-feedback.test.js
 ghost/core/test/unit/server/models/post.test.js
 ghost/core/test/unit/server/models/tag.test.js
 ghost/core/test/unit/server/models/stripe-customer-subscription.test.js
@@ -2316,8 +2317,10 @@ ghost/core/test/e2e-api/admin/email-previews.test.js
 ghost/core/test/e2e-api/members/__snapshots__/send-magic-link.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/webhooks.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/well-known.test.js.snap
+ghost/core/test/e2e-api/members/__snapshots__/feedback.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/create-stripe-checkout-session.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/middleware.test.js.snap
+ghost/core/test/e2e-api/members/feedback.test.js
 ghost/core/test/e2e-api/members/webhooks.test.js
 ghost/core/test/e2e-api/members/middleware.test.js
 ghost/core/test/e2e-api/members/well-known.test.js
@@ -2550,6 +2553,7 @@ ghost/core/core/server/api/endpoints/comments-members.js
 ghost/core/core/server/api/endpoints/custom-theme-settings.js
 ghost/core/core/server/api/endpoints/members-stripe-connect.js
 ghost/core/core/server/api/endpoints/index.js
+ghost/core/core/server/api/endpoints/feedback-members.js
 ghost/core/core/server/api/endpoints/slack.js
 ghost/core/core/server/api/endpoints/files.js
 ghost/core/core/server/api/endpoints/settings-public.js
@@ -2708,6 +2712,8 @@ ghost/core/core/server/services/notifications/notifications.js
 ghost/core/core/server/services/notifications/index.js
 ghost/core/core/server/services/custom-theme-settings.js
 ghost/core/core/server/services/xmlrpc.js
+ghost/core/core/server/services/audience-feedback/FeedbackRepository.js
+ghost/core/core/server/services/audience-feedback/index.js
 ghost/core/core/server/services/limits.js
 ghost/core/core/server/services/bulk-email/bulk-email-processor.js
 ghost/core/core/server/services/bulk-email/index.js
@@ -2900,6 +2906,8 @@ ghost/core/core/server/data/migrations/versions/5.15/2022-09-16-08-22-add-post-r
 ghost/core/core/server/data/migrations/versions/5.15/2022-09-12-16-10-add-posts-lexical-column.js
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
+ghost/core/core/server/data/migrations/versions/5.19/2022-10-10-10-05-add-members-feedback-table.js
+ghost/core/core/server/data/migrations/versions/5.19/2022-10-11-10-38-add-feedback-enabled-column-to-newsletters.js
 ghost/core/core/server/data/migrations/versions/5.6/2022-07-27-13-40-change-explore-type.js
 ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-04-add-link-redirects-table.js
 ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-05-add-members-link-click-events-table.js
@@ -3060,6 +3068,7 @@ ghost/core/core/server/models/tag.js
 ghost/core/core/server/models/posts-meta.js
 ghost/core/core/server/models/email.js
 ghost/core/core/server/models/author.js
+ghost/core/core/server/models/member-feedback.js
 ghost/core/core/server/models/stripe-customer-subscription.js
 ghost/core/core/server/models/user.js
 ghost/core/core/server/models/snippet.js
@@ -3549,6 +3558,7 @@ ghost/portal/src/components/Frame.styles.js
 ghost/portal/src/components/TriggerButton.test.js
 ghost/portal/src/components/pages/AccountHomePage.test.js
 ghost/portal/src/components/pages/UnsubscribePage.js
+ghost/portal/src/components/pages/FeedbackPage.js
 ghost/portal/src/components/pages/MagicLinkPage.test.js
 ghost/portal/src/components/pages/AccountEmailPage.js
 ghost/portal/src/components/pages/SignupPage.js
@@ -3574,6 +3584,7 @@ ghost/portal/src/tests/portal-links.test.js
 ghost/portal/src/tests/data-attributes.test.js
 ghost/portal/src/tests/SigninFlow.test.js
 ghost/portal/src/images/icons/arrow-left.svg
+ghost/portal/src/images/icons/thumbs-down.svg
 ghost/portal/src/images/icons/offer-tag.svg
 ghost/portal/src/images/icons/close.svg
 ghost/portal/src/images/icons/loader.svg
@@ -3589,6 +3600,7 @@ ghost/portal/src/images/icons/checkmark-fill.svg
 ghost/portal/src/images/icons/warning-fill.svg
 ghost/portal/src/images/icons/check-circle.svg
 ghost/portal/src/images/icons/user.svg
+ghost/portal/src/images/icons/thumbs-up.svg
 ghost/portal/src/images/icons/checkmark.svg
 ghost/portal/src/images/icons/button-icon-2.svg
 ghost/portal/src/images/icons/envelope.svg
@@ -3810,6 +3822,19 @@ ghost/express-dynamic-redirects/.eslintrc.js
 ghost/express-dynamic-redirects/lib/DynamicRedirectManager.js
 ghost/express-dynamic-redirects/package.json
 ghost/express-dynamic-redirects/index.js
+ghost/audience-feedback/test/utils/overrides.js
+ghost/audience-feedback/test/utils/assertions.js
+ghost/audience-feedback/test/utils/index.js
+ghost/audience-feedback/test/hello.test.js
+ghost/audience-feedback/test/.eslintrc.js
+ghost/audience-feedback/.eslintrc.js
+ghost/audience-feedback/lib/AudienceFeedbackService.js
+ghost/audience-feedback/lib/Feedback.js
+ghost/audience-feedback/lib/AudienceFeedbackController.js
+ghost/audience-feedback/lib/audience-feedback.js
+ghost/audience-feedback/package.json
+ghost/audience-feedback/index.js
+ghost/audience-feedback/README.md
 ghost/settings-path-manager/test/utils/overrides.js
 ghost/settings-path-manager/test/utils/assertions.js
 ghost/settings-path-manager/test/utils/index.js

@@ -739,7 +739,6 @@ java/org/apache/tomcat/util/net/LocalStrings_es.properties
 java/org/apache/tomcat/util/net/SendfileState.java
 java/org/apache/tomcat/util/net/LocalStrings_ja.properties
 java/org/apache/tomcat/util/net/LocalStrings_cs.properties
-java/org/apache/tomcat/util/net/AbstractJsseEndpoint.java
 java/org/apache/tomcat/util/net/Constants.java
 java/org/apache/tomcat/util/net/SocketProcessorBase.java
 java/org/apache/tomcat/util/net/DispatchType.java
@@ -821,6 +820,7 @@ java/org/apache/tomcat/util/net/AbstractEndpoint.java
 java/org/apache/tomcat/util/net/IPv6Utils.java
 java/org/apache/tomcat/util/net/SocketProperties.java
 java/org/apache/tomcat/util/net/SSLImplementation.java
+java/org/apache/tomcat/util/net/AbstractNetworkChannelEndpoint.java
 java/org/apache/tomcat/util/ExceptionUtils.java
 java/org/apache/tomcat/util/bcel/classfile/SimpleElementValue.java
 java/org/apache/tomcat/util/bcel/classfile/ConstantDouble.java
@@ -1912,12 +1912,9 @@ java/org/apache/catalina/users/mbeans-descriptors.xml
 java/org/apache/catalina/users/LocalStrings_ko.properties
 java/org/apache/catalina/users/AbstractGroup.java
 java/org/apache/catalina/users/GenericUser.java
-java/org/apache/catalina/users/MemoryUser.java
 java/org/apache/catalina/users/DataSourceUserDatabaseFactory.java
 java/org/apache/catalina/users/GenericRole.java
 java/org/apache/catalina/users/LocalStrings_fr.properties
-java/org/apache/catalina/users/MemoryRole.java
-java/org/apache/catalina/users/MemoryGroup.java
 java/org/apache/catalina/users/LocalStrings_zh_CN.properties
 java/org/apache/catalina/users/LocalStrings.properties
 java/org/apache/catalina/users/MemoryUserDatabase.java
@@ -2358,7 +2355,6 @@ java/org/apache/coyote/LocalStrings_es.properties
 java/org/apache/coyote/http11/Http11InputBuffer.java
 java/org/apache/coyote/http11/LocalStrings_ru.properties
 java/org/apache/coyote/http11/LocalStrings_de.properties
-java/org/apache/coyote/http11/AbstractHttp11JsseProtocol.java
 java/org/apache/coyote/http11/LocalStrings_es.properties
 java/org/apache/coyote/http11/LocalStrings_ja.properties
 java/org/apache/coyote/http11/LocalStrings_cs.properties
@@ -4394,6 +4390,11 @@ modules/openssl-java17/pom.xml
 modules/openssl-java17/openssl.h
 modules/openssl-java17/addlicense.sh
 modules/openssl-java17/README.md
+modules/loom/src/main/java/org/apache/tomcat/util/net/BioLoomEndpoint.java
+modules/loom/src/main/java/org/apache/coyote/http11/Http11BioLoomProtocol.java
+modules/loom/src/main/java/org/apache/coyote/http11/Http11LoomProcessor.java
+modules/loom/pom.xml
+modules/loom/.gitignore
 .editorconfig
 RELEASE-NOTES
 .gitignore
