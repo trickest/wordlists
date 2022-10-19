@@ -104,15 +104,8 @@ java/jakarta/servlet/jsp/tagext/BodyTagSupport.java
 java/jakarta/servlet/jsp/LocalStrings_ko.properties
 java/jakarta/servlet/jsp/JspException.java
 java/jakarta/servlet/jsp/el/ImportELResolver.java
-java/jakarta/servlet/jsp/el/ExpressionEvaluator.java
-java/jakarta/servlet/jsp/el/FunctionMapper.java
-java/jakarta/servlet/jsp/el/ELParseException.java
-java/jakarta/servlet/jsp/el/package.html
-java/jakarta/servlet/jsp/el/ELException.java
 java/jakarta/servlet/jsp/el/NotFoundELResolver.java
-java/jakarta/servlet/jsp/el/VariableResolver.java
 java/jakarta/servlet/jsp/el/ScopedAttributeELResolver.java
-java/jakarta/servlet/jsp/el/Expression.java
 java/jakarta/servlet/jsp/el/ImplicitObjectELResolver.java
 java/jakarta/servlet/jsp/LocalStrings_fr.properties
 java/jakarta/servlet/jsp/SkipPageException.java
@@ -2114,7 +2107,6 @@ java/org/apache/jasper/JspCompilationContext.java
 java/org/apache/jasper/JasperException.java
 java/org/apache/jasper/security/SecurityClassLoad.java
 java/org/apache/jasper/security/SecurityUtil.java
-java/org/apache/jasper/el/VariableResolverImpl.java
 java/org/apache/jasper/el/JasperELResolver.java
 java/org/apache/jasper/el/JspPropertyNotFoundException.java
 java/org/apache/jasper/el/JspValueExpression.java
@@ -2122,11 +2114,7 @@ java/org/apache/jasper/el/JspMethodExpression.java
 java/org/apache/jasper/el/JspPropertyNotWritableException.java
 java/org/apache/jasper/el/JspMethodNotFoundException.java
 java/org/apache/jasper/el/ELContextImpl.java
-java/org/apache/jasper/el/ELResolverImpl.java
-java/org/apache/jasper/el/FunctionMapperImpl.java
-java/org/apache/jasper/el/ExpressionImpl.java
 java/org/apache/jasper/el/JspELException.java
-java/org/apache/jasper/el/ExpressionEvaluatorImpl.java
 java/org/apache/jasper/el/ELContextWrapper.java
 java/org/apache/jasper/resources/LocalStrings_ru.properties
 java/org/apache/jasper/resources/LocalStrings_de.properties
@@ -3466,12 +3454,10 @@ test/webapp/jsp/generator/setters-01.jsp
 test/webapp/jsp/generator/forward-04.jsp
 test/webapp/jsp/generator/xml-prolog-01.jspx
 test/webapp/jsp/generator/deferred-method-01.jsp
-test/webapp/jsp/generator/plugin-01.jspx
 test/webapp/jsp/generator/scriptingvariables-01.jsp
 test/webapp/jsp/generator/usebean-08.jsp
 test/webapp/jsp/generator/customtag-04.jsp
 test/webapp/jsp/generator/deferred-method-02.jsp
-test/webapp/jsp/generator/single-threaded.jsp
 test/webapp/jsp/generator/x-powered-by.jsp
 test/webapp/jsp/generator/variable-tagfile-from-attr-nested.jsp
 test/webapp/jsp/generator/variable-tei-nested.jsp
@@ -3492,7 +3478,7 @@ test/webapp/jsp/doc-version-invalid/document-0.4.jspx
 test/webapp/jsp/doc-version-invalid/document-5.4.jspx
 test/webapp/jsp/doc-version-invalid/document-1.2.1.jspx
 test/webapp/jsp/doc-version-invalid/document-1.9.jspx
-test/webapp/jsp/doc-version-invalid/document-4.0.jspx
+test/webapp/jsp/doc-version-invalid/document-4.1.jspx
 test/webapp/jsp/encoding/bom-utf16be-prolog-utf8.jspx
 test/webapp/jsp/encoding/bom-none-prolog-none.jspx
 test/webapp/jsp/encoding/bom-utf16le-prolog-utf16le.jspx
@@ -3524,6 +3510,7 @@ test/webapp/jsp/doc-version-valid/document-3.1.jspx
 test/webapp/jsp/doc-version-valid/document-2.0.jspx
 test/webapp/jsp/doc-version-valid/document-2.2.jspx
 test/webapp/jsp/doc-version-valid/document-2.1.jspx
+test/webapp/jsp/doc-version-valid/document-4.0.jspx
 test/webapp/jsp/pageContext2.jsp
 test/webapp/el-method.jsp
 test/webapp/bug47977.jspx

@@ -96,6 +96,7 @@ ghost/admin/tests/integration/components/gh-search-input-test.js
 ghost/admin/tests/integration/components/gh-members-import-table-test.js
 ghost/admin/tests/integration/components/gh-date-time-picker-test.js
 ghost/admin/tests/integration/components/gh-date-picker-test.js
+ghost/admin/tests/integration/components/tabs/tabs-test.js
 ghost/admin/tests/integration/components/gh-notification-test.js
 ghost/admin/tests/integration/components/gh-alerts-test.js
 ghost/admin/tests/integration/components/gh-member-avatar-test.js
@@ -243,6 +244,7 @@ ghost/admin/public/assets/icons/trash.svg
 ghost/admin/public/assets/icons/globe.svg
 ghost/admin/public/assets/icons/event-opened-email--feature-attribution.svg
 ghost/admin/public/assets/icons/eye.svg
+ghost/admin/public/assets/icons/thumbs-down.svg
 ghost/admin/public/assets/icons/arrow-down-fill.svg
 ghost/admin/public/assets/icons/shield-lock.svg
 ghost/admin/public/assets/icons/event-comment--feature-attribution.svg
@@ -257,6 +259,7 @@ ghost/admin/public/assets/icons/social-twitter.svg
 ghost/admin/public/assets/icons/staff.svg
 ghost/admin/public/assets/icons/download.svg
 ghost/admin/public/assets/icons/portal-logo-stroke.svg
+ghost/admin/public/assets/icons/event-less-like-this--feature-attribution.svg
 ghost/admin/public/assets/icons/plus-large.svg
 ghost/admin/public/assets/icons/sun.svg
 ghost/admin/public/assets/icons/spinner.svg
@@ -288,6 +291,7 @@ ghost/admin/public/assets/icons/event-started-subscription--feature-attribution.
 ghost/admin/public/assets/icons/file-upload.svg
 ghost/admin/public/assets/icons/stats.svg
 ghost/admin/public/assets/icons/mountains.svg
+ghost/admin/public/assets/icons/event-less-like-this.svg
 ghost/admin/public/assets/icons/email-header.svg
 ghost/admin/public/assets/icons/members-paid.svg
 ghost/admin/public/assets/icons/offer.svg
@@ -348,10 +352,12 @@ ghost/admin/public/assets/icons/discount-bubble.svg
 ghost/admin/public/assets/icons/link.svg
 ghost/admin/public/assets/icons/portal-icon-1.svg
 ghost/admin/public/assets/icons/facebook-heart.svg
+ghost/admin/public/assets/icons/event-more-like-this--feature-attribution.svg
 ghost/admin/public/assets/icons/retry.svg
 ghost/admin/public/assets/icons/stripe-verified-partner-badge.svg
 ghost/admin/public/assets/icons/pin.svg
 ghost/admin/public/assets/icons/credit-card.svg
+ghost/admin/public/assets/icons/newsletter-analytics.svg
 ghost/admin/public/assets/icons/align-center.svg
 ghost/admin/public/assets/icons/unmute.svg
 ghost/admin/public/assets/icons/paint-palette.svg
@@ -366,6 +372,7 @@ ghost/admin/public/assets/icons/arrow2-down.svg
 ghost/admin/public/assets/icons/email-love-letter.svg
 ghost/admin/public/assets/icons/paintbrush.svg
 ghost/admin/public/assets/icons/members-post.svg
+ghost/admin/public/assets/icons/thumbs-up.svg
 ghost/admin/public/assets/icons/email-at.svg
 ghost/admin/public/assets/icons/portal-icon-5.svg
 ghost/admin/public/assets/icons/email-stroke.svg
@@ -408,6 +415,7 @@ ghost/admin/public/assets/icons/sync.svg
 ghost/admin/public/assets/icons/desert.svg
 ghost/admin/public/assets/icons/icon.svg
 ghost/admin/public/assets/icons/event-signed-up.svg
+ghost/admin/public/assets/icons/event-more-like-this.svg
 ghost/admin/public/assets/icons/arrow-up.svg
 ghost/admin/public/assets/icons/members-placeholder.svg
 ghost/admin/public/assets/icons/search.svg
@@ -737,6 +745,12 @@ ghost/admin/app/components/gh-theme-table.hbs
 ghost/admin/app/components/gh-member-single-label-input.hbs
 ghost/admin/app/components/epm-modal-container.hbs
 ghost/admin/app/components/modal-unsubscribe-members.hbs
+ghost/admin/app/components/tabs/tabs.js
+ghost/admin/app/components/tabs/tab.js
+ghost/admin/app/components/tabs/tabs.hbs
+ghost/admin/app/components/tabs/tab-panel.js
+ghost/admin/app/components/tabs/tab-panel.hbs
+ghost/admin/app/components/tabs/tab.hbs
 ghost/admin/app/components/gh-view-title.js
 ghost/admin/app/components/gh-infinity-loader.js
 ghost/admin/app/components/member-attribution/source-attribution-chart.hbs
@@ -773,7 +787,6 @@ ghost/admin/app/components/gh-file-uploader.hbs
 ghost/admin/app/components/gh-dropdown-button.js
 ghost/admin/app/components/gh-dropdown.js
 ghost/admin/app/components/gh-url-preview.hbs
-ghost/admin/app/components/modal-email-design-settings.hbs
 ghost/admin/app/components/gh-members-import-mapping-input.js
 ghost/admin/app/components/gh-textarea.js
 ghost/admin/app/components/gh-member-details.hbs
@@ -866,7 +879,6 @@ ghost/admin/app/components/gh-file-uploader.js
 ghost/admin/app/components/gh-site-iframe.hbs
 ghost/admin/app/components/gh-canvas-header.hbs
 ghost/admin/app/components/gh-benefit-item.hbs
-ghost/admin/app/components/modal-email-design-settings.js
 ghost/admin/app/components/gh-editor.js
 ghost/admin/app/components/gh-member-settings-form.hbs
 ghost/admin/app/components/modal-re-authenticate.hbs
@@ -976,9 +988,11 @@ ghost/admin/app/components/settings/history/no-events.hbs
 ghost/admin/app/components/settings/history/event-filter.js
 ghost/admin/app/components/settings/history/search.hbs
 ghost/admin/app/components/posts/links-table.js
+ghost/admin/app/components/posts/old-analytics.js
 ghost/admin/app/components/posts/analytics.js
 ghost/admin/app/components/posts/analytics.hbs
 ghost/admin/app/components/posts/links-table.hbs
+ghost/admin/app/components/posts/old-analytics.hbs
 ghost/admin/app/components/modal-update-snippet.hbs
 ghost/admin/app/components/gh-html-iframe.hbs
 ghost/admin/app/components/gh-scroll-trigger.hbs
@@ -997,6 +1011,7 @@ ghost/admin/app/components/modals/limits/custom-theme.hbs
 ghost/admin/app/components/modals/newsletters/new.hbs
 ghost/admin/app/components/modals/newsletters/confirm-newsletter-email.hbs
 ghost/admin/app/components/modals/newsletters/confirm-archive.hbs
+ghost/admin/app/components/modals/newsletters/components/feedback-button.hbs
 ghost/admin/app/components/modals/newsletters/verify-newsletter-email.js
 ghost/admin/app/components/modals/newsletters/verify-newsletter-email.hbs
 ghost/admin/app/components/modals/newsletters/new.js
@@ -1270,6 +1285,7 @@ ghost/admin/app/helpers/site-icon-style.js
 ghost/admin/app/helpers/set-has.js
 ghost/admin/app/helpers/integration-icon-style.js
 ghost/admin/app/helpers/most-recently-updated.js
+ghost/admin/app/helpers/member-fetcher.js
 ghost/admin/app/helpers/ui-text.js
 ghost/admin/app/helpers/capitalize-first-letter.js
 ghost/admin/app/helpers/feature.js
@@ -1710,6 +1726,7 @@ ghost/staff-service/lib/email-templates/new-free-signup.txt.js
 ghost/staff-service/lib/email-templates/new-paid-cancellation.hbs
 ghost/staff-service/lib/email-templates/new-paid-cancellation.txt.js
 ghost/staff-service/lib/email-templates/new-free-signup.hbs
+ghost/staff-service/lib/email-templates/partials/styles.hbs
 ghost/staff-service/lib/email-templates/partials/preview.hbs
 ghost/staff-service/lib/email-templates/new-paid-started.hbs
 ghost/staff-service/lib/email-templates/new-paid-started.txt.js
@@ -2065,6 +2082,8 @@ ghost/core/test/unit/server/lib/request-external.test.js
 ghost/core/test/unit/server/lib/lexical.test.js
 ghost/core/test/unit/server/lib/events.test.js
 ghost/core/test/unit/server/models/integration.test.js
+ghost/core/test/unit/server/models/member-click-event.test.js
+ghost/core/test/unit/server/models/member-paid-subscription-event.test.js
 ghost/core/test/unit/server/models/settings.test.js
 ghost/core/test/unit/server/models/subscription-created-event.test.js
 ghost/core/test/unit/server/models/session.test.js
@@ -2238,7 +2257,9 @@ ghost/core/test/unit/frontend/helpers/page_url.test.js
 ghost/core/test/e2e-webhooks/__snapshots__/members.test.js.snap
 ghost/core/test/e2e-webhooks/__snapshots__/tags.test.js.snap
 ghost/core/test/e2e-webhooks/__snapshots__/posts.test.js.snap
+ghost/core/test/e2e-webhooks/__snapshots__/site.test.js.snap
 ghost/core/test/e2e-webhooks/__snapshots__/pages.test.js.snap
+ghost/core/test/e2e-webhooks/site.test.js
 ghost/core/test/e2e-webhooks/members.test.js
 ghost/core/test/e2e-webhooks/posts.test.js
 ghost/core/test/e2e-webhooks/tags.test.js
@@ -2266,6 +2287,7 @@ ghost/core/test/e2e-api/admin/__snapshots__/webhooks.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/rate-limiting.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/stats.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/members-stripe-connect.test.js.snap
+ghost/core/test/e2e-api/admin/__snapshots__/activity-feed.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/site.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/settings.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/explore.test.js.snap
@@ -2284,6 +2306,7 @@ ghost/core/test/e2e-api/admin/webhooks.test.js
 ghost/core/test/e2e-api/admin/users.test.js
 ghost/core/test/e2e-api/admin/integrations.test.js
 ghost/core/test/e2e-api/admin/explore.test.js
+ghost/core/test/e2e-api/admin/activity-feed.test.js
 ghost/core/test/e2e-api/admin/members.test.js
 ghost/core/test/e2e-api/admin/posts.test.js
 ghost/core/test/e2e-api/admin/actions.test.js
@@ -2564,6 +2587,7 @@ ghost/core/core/server/views/maintenance.html
 ghost/core/core/server/views/error.hbs
 ghost/core/core/server/services/mega/email-preview.js
 ghost/core/core/server/services/mega/segment-parser.js
+ghost/core/core/server/services/mega/feedback-buttons.js
 ghost/core/core/server/services/mega/mega.js
 ghost/core/core/server/services/mega/post-email-serializer.js
 ghost/core/core/server/services/mega/template.js
@@ -2898,6 +2922,7 @@ ghost/core/core/server/data/migrations/versions/4.0/10-add-members-status-events
 ghost/core/core/server/data/migrations/versions/4.0/28-add-webhook-intergrations-foreign-key.js
 ghost/core/core/server/data/migrations/versions/4.0/26-add-cascade-on-delete.js
 ghost/core/core/server/data/migrations/versions/4.0/09-add-members-email-change-events-table.js
+ghost/core/core/server/data/migrations/versions/5.20/2022-10-18-05-39-drop-nullable-tier-id.js
 ghost/core/core/server/data/migrations/versions/4.37/2022-02-21-09-53-backfill-members-last-seen-at-column.js
 ghost/core/core/server/data/migrations/versions/4.11/02-add-email-verification-required-setting.js
 ghost/core/core/server/data/migrations/versions/4.11/01-add-oauth-user-data.js
@@ -2907,6 +2932,9 @@ ghost/core/core/server/data/migrations/versions/5.15/2022-09-12-16-10-add-posts-
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
 ghost/core/core/server/data/migrations/versions/5.19/2022-10-10-10-05-add-members-feedback-table.js
+ghost/core/core/server/data/migrations/versions/5.19/2022-10-10-06-58-add-subscriptions-table.js
+ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-25-add-columns-to-products-table.js
+ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-52-backfill-new-product-columns.js
 ghost/core/core/server/data/migrations/versions/5.19/2022-10-11-10-38-add-feedback-enabled-column-to-newsletters.js
 ghost/core/core/server/data/migrations/versions/5.6/2022-07-27-13-40-change-explore-type.js
 ghost/core/core/server/data/migrations/versions/5.16/2022-09-19-09-04-add-link-redirects-table.js
@@ -3365,6 +3393,8 @@ ghost/member-attribution/index.js
 ghost/member-attribution/README.md
 ghost/members-importer/test/importer.test.js
 ghost/members-importer/test/fixtures/single-column-with-header.csv
+ghost/members-importer/test/fixtures/subscribed-to-emails-header.csv
+ghost/members-importer/test/fixtures/member-csv-export.csv
 ghost/members-importer/test/utils/overrides.js
 ghost/members-importer/test/utils/assertions.js
 ghost/members-importer/test/utils/index.js
@@ -3374,6 +3404,18 @@ ghost/members-importer/lib/email-template.js
 ghost/members-importer/lib/importer.js
 ghost/members-importer/package.json
 ghost/members-importer/index.js
+ghost/tiers/test/TiersAPI.test.js
+ghost/tiers/test/.eslintrc.js
+ghost/tiers/test/index.test.js
+ghost/tiers/test/Tier.test.js
+ghost/tiers/.eslintrc.js
+ghost/tiers/lib/TierSlugService.js
+ghost/tiers/lib/TiersAPI.js
+ghost/tiers/lib/Tier.js
+ghost/tiers/lib/InMemoryTierRepository.js
+ghost/tiers/package.json
+ghost/tiers/index.js
+ghost/tiers/README.md
 ghost/referrers/referrers.json
 ghost/referrers/test/utils/overrides.js
 ghost/referrers/test/utils/assertions.js
@@ -3468,6 +3510,7 @@ ghost/members-api/lib/MembersAPI.js
 ghost/members-api/package.json
 ghost/members-api/index.js
 ghost/members-csv/test/fixtures/single-column-with-header.csv
+ghost/members-csv/test/fixtures/subscribed-to-emails-header.csv
 ghost/members-csv/test/fixtures/two-columns-with-header.csv
 ghost/members-csv/test/fixtures/empty.csv
 ghost/members-csv/test/fixtures/two-columns-obscure-header.csv
@@ -3825,7 +3868,7 @@ ghost/express-dynamic-redirects/index.js
 ghost/audience-feedback/test/utils/overrides.js
 ghost/audience-feedback/test/utils/assertions.js
 ghost/audience-feedback/test/utils/index.js
-ghost/audience-feedback/test/hello.test.js
+ghost/audience-feedback/test/AudienceFeedbackService.test.js
 ghost/audience-feedback/test/.eslintrc.js
 ghost/audience-feedback/.eslintrc.js
 ghost/audience-feedback/lib/AudienceFeedbackService.js
