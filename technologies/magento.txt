@@ -11052,6 +11052,7 @@ app/code/Magento/Customer/Test/Mftf/Test/AdminCreateCustomerGroupAlreadyExistsTe
 app/code/Magento/Customer/Test/Mftf/Test/AdminGridSelectAllOnPageTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/AdminChangeCustomerAssociatedWebsiteTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/AdminDeleteCustomerAddressesFromTheGridViaMassActionsTest.xml
+app/code/Magento/Customer/Test/Mftf/Test/StorefrontLoginFormCheckDuplicateValidateMessageTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontCustomerSubscribeToNewsletterAndVerifyInAdminTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontLoginWithIncorrectCredentialsTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontCreateExistingCustomerTest.xml
@@ -16085,9 +16086,11 @@ app/code/Magento/Catalog/Model/ResourceModel/Product/Compare/CompareList.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Collection/ProductLimitation.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Collection/JoinMinimalPosition.php
+app/code/Magento/Catalog/Model/ResourceModel/Product/ChildCollectionFactory.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Website/Link.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Website/SelectProcessor.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/LinkedProductSelectBuilderBySpecialPrice.php
+app/code/Magento/Catalog/Model/ResourceModel/Product/CollectionFactory.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Attribute/Backend/GroupPrice/AbstractGroupPrice.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Attribute/Backend/Image.php
 app/code/Magento/Catalog/Model/ResourceModel/Product/Attribute/Backend/Tierprice.php
@@ -19161,6 +19164,7 @@ app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckoutWithMultipleAddr
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontEditBillingAddressAtMultishippingCheckoutTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontGuestCheckingWithMultishipmentTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontProcessMultishippingCheckoutWhenCartPageIsOpenedInAnotherTabTest.xml
+app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckoutWithMultishippingIfMaximumQtyLimitWasReachedTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontDisableMultishippingModeAfterRemoveItemOnBackToCartTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontMinicartWithMultishipmentTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckoutShippingToMultipleAddressesIfMaximumQtyLimitWasReachedTest.xml
@@ -23793,6 +23797,7 @@ app/code/Magento/SalesRule/Test/Unit/Model/Converter/ToDataModelTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Converter/ToModelTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Rule/DataProviderTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Rule/Condition/ProductTest.php
+app/code/Magento/SalesRule/Test/Unit/Model/Rule/Condition/Product/CombineTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Rule/Condition/Product/SubselectTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Rule/Condition/AddressTest.php
 app/code/Magento/SalesRule/Test/Unit/Model/Rule/Metadata/_files/MetaData.php
@@ -26918,7 +26923,6 @@ lib/web/images/magento-logo.svg
 lib/web/images/sprite-gallery.svg
 lib/web/mage/dataPost.js
 lib/web/mage/url.js
-lib/web/mage/ie-class-fixer.js
 lib/web/mage/calendar.js
 lib/web/mage/msie/file-reader.js
 lib/web/mage/touch-slider.js
@@ -27279,11 +27283,11 @@ lib/web/jquery/jquery.cookie.js
 lib/web/jquery/jquery.metadata.js
 lib/web/jquery/editableMultiselect/js/jquery.editable.js
 lib/web/jquery/editableMultiselect/js/jquery.multiselect.js
-lib/web/jquery/jquery-migrate.js
 lib/web/jquery/jquery.min.js
 lib/web/jquery/compat.js
 lib/web/chartjs/chartjs-adapter-moment.js
 lib/web/chartjs/Chart.min.js
+lib/web/chartjs/es6-shim.min.js
 lib/web/prototype/validation.js
 lib/web/prototype/window_readme.txt
 lib/web/prototype/windows/MIT-LICENSE
