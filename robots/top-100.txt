@@ -12,13 +12,18 @@ $
 .css
 .emailjson
 .emailtxt
+.embed
 .git
 .git$
+.i
 .js
 .json
+.json-compact
+.json-html
 .pdf$
 .php
 .qr
+.rss
 .svg
 .vcf
 .well-known
@@ -75,7 +80,9 @@ $
 /c2
 /cache
 /claim-money?
+/comment
 /comments
+/comments/*?*sort=
 /commits
 /commits/*?author
 /commits/*?path
@@ -213,6 +220,7 @@ $
 ?*ListingID=
 ?*ProfileID=
 ?*campaignId=
+?*feed=
 ?*login=
 ?*mcubz=
 ?*outputType=accessibility
@@ -520,6 +528,7 @@ adx/bin
 ae
 affil
 affil/pal
+after=
 age-appeal
 aihub/tfhub
 ajax
@@ -740,6 +749,7 @@ be/treasury
 be/your
 bePatron
 bePatronDone
+before=
 befr
 benl
 best-countries-for-business/list
@@ -848,6 +858,7 @@ business/site
 business/switch-account
 business/top-ads
 business/update
+buttonlite.js
 buzz/post
 bw
 c/*attr_*=
@@ -1105,8 +1116,7 @@ compare
 compare/*/apply
 compressiontest
 config.js
-connect/gplus
-connect/youtube
+connect
 connections
 connector
 consumers/archive
@@ -1123,6 +1133,7 @@ coop/manage
 copyright-reporting
 corgi$
 couchmode
+counters/client-screenview
 coupons/visit
 covid19
 covid19/mobility
@@ -1320,6 +1331,7 @@ doc*_
 docs/forms/social
 docs/socialmarkup
 document
+domain/*t=
 downgrade
 download
 dp/e-mail-friend
@@ -1332,6 +1344,7 @@ drawings
 drive
 droidguard
 dw
+earth
 earth/social
 ebook
 ebooks
@@ -1680,9 +1693,11 @@ globalmarketfinder
 globalmarketfinder/*.html
 gn
 go/awards
+gold?
 google_gdn.html
 google_search.html
 googlebooks/images
+goto
 gp
 gp/aag
 gp/aag/main?*seller=ABVFEJU8LS620
@@ -2380,6 +2395,7 @@ media-manager
 memberInvite
 menu/*/feedback_form
 message
+message/compose
 message_the_business
 messages
 messaging
@@ -2471,6 +2487,7 @@ mx/treasury
 mx/your
 my
 my_etsy=
+my_shiny_metal_ass
 mymovies
 myprofile
 mz
@@ -2827,6 +2844,8 @@ polska
 pools/c
 pools/campaign
 possible_biz_owner
+post
+posts
 posttv-beta
 posttv/c/embed
 posttv/c/trendex
@@ -2887,6 +2906,13 @@ quality_form?
 query
 quiz
 r
+r/*.rss
+r/*/comments/*.rss
+r/*/config/*.rss
+r/*/submit$
+r/*/submit/$
+r/*/user
+r/*/wiki/*.rss
 rackspace/elevating-performance
 radio/aod
 radio/aod$
@@ -2916,6 +2942,7 @@ registration
 registry
 registry/wishlist
 remotelogout
+remove_email/t2_
 rep=hc
 report
 report-abuse?report=
@@ -3176,6 +3203,7 @@ signup/cold-join
 since=
 sit_rep
 sitemaps
+sitemaps/*.xml
 siteopt.js
 sites
 sites/1850brandcoffee
@@ -3480,6 +3508,10 @@ stadia/gamers
 start
 start_order
 static
+static/button/button1.html
+static/button/button1.js
+static/button/button2.html
+static/button/button3.html
 static/css
 static/images
 static/js
@@ -3527,6 +3559,7 @@ story-pin-invite
 story_feed
 story_pins
 styles/js-on.css$
+submit
 subscriptions
 support
 support/content
@@ -3538,6 +3571,9 @@ svc/crosswords
 svc/games
 svc/letter-boxed
 svc/news/v3/all/pshb.rss
+svc/shreddit/experiences
+svc/shreddit/perfMetrics
+svc/shreddit/v2j
 svc/spelling-bee
 svc/vertex
 svc/wordle
@@ -3586,6 +3622,7 @@ themacallan/worlds-together
 theme
 themes/rss
 timedtext_video
+timings/perf
 title
 title/tt*/mediaviewer/rm*/tr
 title/tt*/watchoptions
