@@ -125,6 +125,7 @@ ghost/admin/tests/integration/services/slug-generator-test.js
 ghost/admin/tests/integration/services/ajax-test.js
 ghost/admin/tests/integration/adapters/user-test.js
 ghost/admin/tests/integration/adapters/tag-test.js
+ghost/admin/tests/integration/helpers/activity-feed-fetcher-test.js
 ghost/admin/tests/integration/helpers/clean-basic-html-test.js
 ghost/admin/tests/integration/helpers/humanize-recipient-filter-test.js
 ghost/admin/tests/integration/helpers/background-image-style-test.js
@@ -440,6 +441,7 @@ ghost/admin/public/assets/icons/audio-file.svg
 ghost/admin/public/assets/icons/empty-feedback.svg
 ghost/admin/public/assets/icons/event-subscribed-to-email--feature-attribution.svg
 ghost/admin/app/session-stores/application.js
+ghost/admin/app/instance-initializers/config.js
 ghost/admin/app/utils/ctrl-or-cmd.js
 ghost/admin/app/utils/format-markdown.js
 ghost/admin/app/utils/isNumber.js
@@ -943,7 +945,6 @@ ghost/admin/app/components/gh-feature-flag.hbs
 ghost/admin/app/components/gh-unsplash.hbs
 ghost/admin/app/components/gh-recipient-filter-count.hbs
 ghost/admin/app/components/modal-early-access.hbs
-ghost/admin/app/components/modal-whats-new.js
 ghost/admin/app/components/gh-user-active.hbs
 ghost/admin/app/components/power-select-vertical-collection-options.hbs
 ghost/admin/app/components/gh-membership-tiers-alpha.js
@@ -1180,7 +1181,6 @@ ghost/admin/app/components/gh-members-segment-count.hbs
 ghost/admin/app/errors/email-failed-error.js
 ghost/admin/app/errors/member-import-error.js
 ghost/admin/app/services/lazy-loader.js
-ghost/admin/app/services/config.js
 ghost/admin/app/services/notifications.js
 ghost/admin/app/services/explore.js
 ghost/admin/app/services/member-import-validator.js
@@ -1210,6 +1210,7 @@ ghost/admin/app/services/dropdown.js
 ghost/admin/app/services/whats-new.js
 ghost/admin/app/services/unsplash.js
 ghost/admin/app/services/clock.js
+ghost/admin/app/services/config-manager.js
 ghost/admin/app/services/custom-theme-settings.js
 ghost/admin/app/services/navigation.js
 ghost/admin/app/services/custom-views.js
@@ -1277,6 +1278,7 @@ ghost/admin/app/transforms/twitter-url-user.js
 ghost/admin/app/transforms/members-segment-string.js
 ghost/admin/app/transforms/moment-date.js
 ghost/admin/app/transforms/navigation-settings.js
+ghost/admin/app/decorators/inject.js
 ghost/admin/app/modifiers/autofocus.js
 ghost/admin/app/modifiers/select-on-click.js
 ghost/admin/app/modifiers/on-scroll.js
@@ -1780,6 +1782,8 @@ ghost/data-generator/lib/tables/members-stripe-customers.js
 ghost/data-generator/lib/utils/random.js
 ghost/data-generator/lib/utils/event-generator.js
 ghost/data-generator/lib/utils/blog-info.js
+ghost/data-generator/lib/utils/json-importer.js
+ghost/data-generator/lib/utils/database-date.js
 ghost/data-generator/lib/data-generator.js
 ghost/data-generator/package.json
 ghost/data-generator/index.js
@@ -2337,8 +2341,10 @@ ghost/core/test/e2e-webhooks/members.test.js
 ghost/core/test/e2e-webhooks/posts.test.js
 ghost/core/test/e2e-webhooks/tags.test.js
 ghost/core/test/e2e-webhooks/pages.test.js
+ghost/core/test/e2e-server/__snapshots__/1-options-requests.test.js.snap
 ghost/core/test/e2e-server/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-server/well-known.test.js
+ghost/core/test/e2e-server/1-options-requests.test.js
 ghost/core/test/e2e-server/click-tracking.test.js
 ghost/core/test/e2e-server/services/stats/mrr-stats-service.test.js
 ghost/core/test/e2e-server/services/member-attribution.test.js
