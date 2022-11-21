@@ -2126,6 +2126,7 @@ app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminAllowMultipleBoxesForShipp
 app/code/Magento/CatalogInventory/Test/Mftf/Test/DisabledInventoryCheckOnePageCheckoutTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminUncheckesReturnToStockCheckboxTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminCreateProductWithZeroMaximumQtyAllowedInShoppingCartTest.xml
+app/code/Magento/CatalogInventory/Test/Mftf/Test/StoreFrontAddOutOfStockProductToShoppingCartTest.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Metadata/CataloginventoryItemOptionsMeta.xml
 app/code/Magento/CatalogInventory/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/CatalogInventory/Test/Mftf/README.md
@@ -13121,6 +13122,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/OnePageCheckoutUsingSignInLinkTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/DefaultBillingAddressShouldBeCheckedOnPaymentPageTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontRegionUpdatesAfterChangingCountryAndLeavingRegionSelectUnselectedTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontProductNameMinicartOnCheckoutPageDifferentStoreViewsTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/StorefrontValidateItemQtyShouldNotBeNegativeValueWhenPressKeyboardDownKeyTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontAddProductWithAllTypesOfCustomOptionToTheShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontUpdateShoppingCartSimpleWithCustomOptionsProductQtyTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckoutWithDifferentShippingAndBillingAddressAndProductWithTierPricesTest.xml
@@ -13199,6 +13201,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/StoreFrontCheckCustomerInfoCreatedByGue
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontAddGroupedProductToShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/AddressStateFieldShouldNotAcceptJustIntegerValuesTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/DeleteGroupedProductFromShoppingCartTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/AdminCheckZeroSubtotalOrderWithCustomStatus.xml
 app/code/Magento/Checkout/Test/Mftf/Test/ConfiguringInstantPurchaseFunctionalityTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerCheckoutOnLoginWhenGuestCheckoutIsDisabledTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontProductQuantityChangesInBackendAfterCustomerCheckoutTest.xml
@@ -13209,6 +13212,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/CheckCheckoutSuccessPageTest/CheckCheck
 app/code/Magento/Checkout/Test/Mftf/Test/CheckCheckoutSuccessPageTest/CheckCheckoutSuccessPageAsGuestTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontRefreshPageDuringGuestCheckoutTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontShoppingCartPagerForOneItemPerPageAnd2ProductsTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/AdminCheckZeroSubtotalOrderWithGeneratedInvoiceTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/UpdateProductFromShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckCartAndSummaryBlockItemDisplayWithDefaultDisplayLimitationTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckCartAndCheckoutItemsCountTest/StorefrontCartItemsCountDisplayItemsQuantitiesTest.xml
@@ -15382,6 +15386,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminFillInProductShortDescriptio
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductChangeImageAltTextActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminSaveCategoryFormActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAssertProductAttributeOnProductEditPageActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminToggleProductGridColumnByClickingItsNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminOpenAttributeSetGridPageActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductDetailPageTierPriceActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductPageGalleryImagePositionInThumbnailRibbonActionGroup.xml
@@ -15563,6 +15568,7 @@ app/code/Magento/Catalog/Test/Mftf/Data/CategoryData.xml
 app/code/Magento/Catalog/Test/Mftf/Data/TierPriceData.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StoreFrontSimpleProductWithSpecialAndTierDiscountPriceTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminAlertDoseNotAppearOnProductPageTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminChangeCategoryDisplaySettingsOnStorefrontTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminProductTypeSwitchingOnEditingTest/AdminVirtualProductTypeSwitchingToDownloadableProductTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminProductTypeSwitchingOnEditingTest/AdminDownloadableProductTypeSwitchingToSimpleProductTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithSpecialPriceInStockVisibleInCategoryAndSearchTest.xml
@@ -15862,6 +15868,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminImportCustomizableOptionToProductWi
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateAttributeSetEntityTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontProductsCompareWithEmptyAttributeTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithTierPriceInStockVisibleInCategoryAndSearchTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminProductGridCustomViewColumnDisplayTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCheckPaginationInStorefrontTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontVerifyProductAfterPartialReindexOnSeveralWebsitesTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminSortingByWebsitesTest.xml
@@ -17015,6 +17022,7 @@ app/code/Magento/QuoteGraphQl/Model/Cart/AddProductsToCart.php
 app/code/Magento/QuoteGraphQl/Model/Cart/GetCartForUser.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateEmptyCartForCustomer.php
 app/code/Magento/QuoteGraphQl/Model/Cart/AssignBillingAddressToCart.php
+app/code/Magento/QuoteGraphQl/Model/Cart/UpdateCartCurrency.php
 app/code/Magento/QuoteGraphQl/Model/Cart/PlaceOrderMutexInterface.php
 app/code/Magento/QuoteGraphQl/Model/Cart/ExtractQuoteAddressData.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateBuyRequest.php
@@ -17041,6 +17049,8 @@ app/code/Magento/QuoteGraphQl/Model/Cart/Payment/AdditionalDataProviderInterface
 app/code/Magento/QuoteGraphQl/Model/Cart/Payment/AdditionalDataProviderPool.php
 app/code/Magento/QuoteGraphQl/Model/Cart/Payment/PaymentMethodBuilder.php
 app/code/Magento/QuoteGraphQl/Model/Cart/AddSimpleProductToCart.php
+app/code/Magento/QuoteGraphQl/Model/Cart/GetCartForCheckout.php
+app/code/Magento/QuoteGraphQl/Model/Cart/IsActive.php
 app/code/Magento/QuoteGraphQl/Model/Cart/SetShippingMethodsOnCart.php
 app/code/Magento/QuoteGraphQl/Model/Cart/GetShippingAddress.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/PrecursorComposite.php
@@ -19341,6 +19351,7 @@ app/code/Magento/Email/Test/Mftf/Test/AdminEmailTemplatePreviewTest.xml
 app/code/Magento/Email/Test/Mftf/Test/TransactionalEmailsLogoUploadTest.xml
 app/code/Magento/Email/Test/Mftf/Test/AdminMarketingEmailTemplatesNavigateMenuTest.xml
 app/code/Magento/Email/Test/Mftf/Test/AdminEmailTemplatePreviewFromGridTest.xml
+app/code/Magento/Email/Test/Mftf/Test/AdminEmailTemplatePreviewFromGridNewTabTest.xml
 app/code/Magento/Email/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Email/Test/Mftf/README.md
 app/code/Magento/Email/LICENSE_AFL.txt
@@ -20885,6 +20896,7 @@ app/code/Magento/Directory/Test/Unit/Model/Country/Postcode/Config/ReaderTest.ph
 app/code/Magento/Directory/Test/Unit/Model/Country/Postcode/ConfigTest.php
 app/code/Magento/Directory/Test/Unit/Model/Country/Postcode/ValidatorTest.php
 app/code/Magento/Directory/Test/Unit/Model/CountryTest.php
+app/code/Magento/Directory/Test/Unit/Model/Currency/Import/FixerIoApiLayerTest.php
 app/code/Magento/Directory/Test/Unit/Model/Currency/Import/Source/ServiceTest.php
 app/code/Magento/Directory/Test/Unit/Model/Currency/Import/FactoryTest.php
 app/code/Magento/Directory/Test/Unit/Model/Currency/Import/FixerIoTest.php
@@ -20941,6 +20953,7 @@ app/code/Magento/Directory/Model/Currency/Import/Source/Service.php
 app/code/Magento/Directory/Model/Currency/Import/Factory.php
 app/code/Magento/Directory/Model/Currency/Import/Config.php
 app/code/Magento/Directory/Model/Currency/Import/FixerIo.php
+app/code/Magento/Directory/Model/Currency/Import/FixerIoApiLayer.php
 app/code/Magento/Directory/Model/Currency/Import/ImportInterface.php
 app/code/Magento/Directory/Model/Currency/Filter.php
 app/code/Magento/Directory/Model/Currency/DefaultLocator.php
@@ -25699,6 +25712,7 @@ app/code/Magento/Quote/Model/Cart/CartTotalManagement.php
 app/code/Magento/Quote/Model/Cart/ShippingMethod.php
 app/code/Magento/Quote/Model/Cart/AddProductsToCart.php
 app/code/Magento/Quote/Model/Cart/TotalsConverter.php
+app/code/Magento/Quote/Model/Cart/AddProductsToCartError.php
 app/code/Magento/Quote/Model/Cart/TotalSegment.php
 app/code/Magento/Quote/Model/Cart/TotalsAdditionalDataProcessor.php
 app/code/Magento/Quote/Model/Cart/Totals.php
@@ -26197,6 +26211,7 @@ app/code/Magento/Shipping/Test/Mftf/Test/StorefrontAssertShippingPricesPresentAf
 app/code/Magento/Shipping/Test/Mftf/Test/AdminValidateShippingTrackingNumberTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminDisableShipmentCommentsTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckTheConfirmationPopupTest.xml
+app/code/Magento/Shipping/Test/Mftf/Test/AdminDisableEnableShipmentCommentsAndVerifyNotifyCustomerByEmailCheckboxTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreatePartialShipmentEntityTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/EndToEndB2CAdminTest.xml
 app/code/Magento/Shipping/Test/Mftf/Metadata/ShippingOriginMeta.xml
@@ -29716,6 +29731,9 @@ lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/Five/Test.php
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/One/Test.php
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/Proxy.php
+lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/NamedArguments/MixedParametersTest.php
+lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/NamedArguments/ParentClassTest.php
+lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/NamedArguments/NamedParametersTest.php
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/ElementFactory.php
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/SevenInterface.php
 lib/internal/Magento/Framework/Code/Test/Unit/_files/app/code/Magento/SomeModule/Model/Six/Test.php
@@ -30750,9 +30768,13 @@ lib/internal/Magento/Framework/Interception/Test/Unit/Custom/Module/Model/ItemCo
 lib/internal/Magento/Framework/Interception/Test/Unit/Custom/Module/Model/StartingBackslash/Plugin.php
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/Interceptor.txt
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/Sample.php
+lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/ReflectionUnionTypeSample.php
+lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/ReflectionIntersectionTypeSampleInterceptor.txt
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/TInterceptor.txt
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/TSample.php
+lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/ReflectionIntersectionTypeSample.php
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/SampleBackendMenu.php
+lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/ReflectionUnionTypeSampleInterceptor.txt
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/_files/SampleBackendMenuInterceptor.txt
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/Generator/InterceptorTest.php
 lib/internal/Magento/Framework/Interception/Test/Unit/Code/InterfaceValidatorTest.php
@@ -31496,6 +31518,7 @@ lib/internal/Magento/Framework/Model/EntitySnapshot/AttributeProviderInterface.p
 lib/internal/Magento/Framework/Model/EntitySnapshot/AttributeProvider.php
 lib/internal/Magento/Framework/Model/AbstractModel.php
 lib/internal/Magento/Framework/Model/README.md
+lib/internal/Magento/Framework/GetReflectionMethodReturnTypeValueTrait.php
 lib/internal/Magento/Framework/Process/PhpExecutableFinderFactory.php
 lib/internal/Magento/Framework/Process/README.md
 lib/internal/Magento/Framework/Encryption/KeyValidator.php
