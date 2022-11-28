@@ -1676,12 +1676,15 @@ app/code/Magento/OpenSearch/registration.php
 app/code/Magento/OpenSearch/SearchAdapter/Mapper.php
 app/code/Magento/OpenSearch/SearchAdapter/Adapter.php
 app/code/Magento/OpenSearch/Test/Unit/Model/DataProvider/Base/SuggestionsTest.php
+app/code/Magento/OpenSearch/Test/Unit/Model/OpenSearchTest.php
+app/code/Magento/OpenSearch/Test/Mftf/Test/OpenSearchUpgradeVersion2xTest.xml
 app/code/Magento/OpenSearch/etc/module.xml
 app/code/Magento/OpenSearch/etc/config.xml
 app/code/Magento/OpenSearch/etc/di.xml
 app/code/Magento/OpenSearch/etc/adminhtml/system.xml
 app/code/Magento/OpenSearch/etc/search_engine.xml
 app/code/Magento/OpenSearch/Model/SearchClient.php
+app/code/Magento/OpenSearch/Model/OpenSearch.php
 app/code/Magento/OpenSearch/Model/Adapter/DynamicTemplates/PositionMapper.php
 app/code/Magento/OpenSearch/Model/Adapter/DynamicTemplates/PriceMapper.php
 app/code/Magento/OpenSearch/Model/Adapter/DynamicTemplates/MapperInterface.php
@@ -2067,6 +2070,7 @@ app/code/Magento/CatalogInventory/Test/Unit/Api/StockConfigurationTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Observer/UpdateItemsStockUponConfigChangeObserverTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Observer/AddInventoryDataObserverTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Observer/CheckoutAllSubmitAfterObserverTest.php
+app/code/Magento/CatalogInventory/Test/Unit/Observer/ReindexQuoteInventoryObserverTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Observer/AddStockItemsObserverTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Observer/InvalidatePriceIndexUponConfigChangeObserverTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Model/StockTest.php
@@ -6630,6 +6634,7 @@ app/code/Magento/CatalogRule/Block/Adminhtml/Promo/Catalog/Edit/Tab/Conditions.p
 app/code/Magento/CatalogRule/Block/Adminhtml/Promo/Widget/Chooser/Sku.php
 app/code/Magento/CatalogRule/Setup/Patch/Data/ConvertSerializedDataToJson.php
 app/code/Magento/CatalogRule/Setup/Patch/Data/UpdateClassAliasesForCatalogRules.php
+app/code/Magento/CatalogRule/Setup/Patch/Schema/CleanUpProductPriceReplicaTable.php
 app/code/Magento/CatalogRule/LICENSE.txt
 app/code/Magento/CatalogRule/Cron/DailyCatalogUpdate.php
 app/code/Magento/CatalogRule/composer.json
@@ -9638,6 +9643,7 @@ app/code/Magento/Sales/Test/Mftf/Metadata/CancelOrderMeta.xml
 app/code/Magento/Sales/Test/Mftf/Metadata/HoldOrderMeta.xml
 app/code/Magento/Sales/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Sales/Test/Mftf/README.md
+app/code/Magento/Sales/Test/Fixture/InvoiceComment.php
 app/code/Magento/Sales/Test/Fixture/Creditmemo.php
 app/code/Magento/Sales/Test/Fixture/Invoice.php
 app/code/Magento/Sales/Test/Fixture/Shipment.php
@@ -10774,6 +10780,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenCustomerLoginPageA
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertSignedUpNewsletterActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontNavigateToCustomerOrdersHistoryPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerInCustomersGridActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontVerifyCustomerDefaultCookieExpiryDateActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerAccountPageTitleActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCreateCustomerWithWebSiteAndGroupActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerByNameActionGroup.xml
@@ -11037,6 +11044,7 @@ app/code/Magento/Customer/Test/Mftf/Test/AdminDeleteDefaultBillingCustomerAddres
 app/code/Magento/Customer/Test/Mftf/Test/AdminAddNewDefaultBillingAndShippingCustomerAddressTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontCustomerAccountOrderListTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontLockCustomerOnLoginPageTest.xml
+app/code/Magento/Customer/Test/Mftf/Test/StorefrontRetainLocalCacheStorageTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/AdminCheckDefaultValueDisableAutoGroupChangeIsNoTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontVerifySecureURLRedirectCustomerTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontPersistedCustomerLoginTest.xml
@@ -16617,6 +16625,7 @@ app/code/Magento/MediaGalleryUi/Controller/Adminhtml/Asset/Search.php
 app/code/Magento/MediaGalleryUi/Controller/Adminhtml/Asset/GetSelected.php
 app/code/Magento/MediaGalleryUi/Test/Unit/Model/UploadImageTest.php
 app/code/Magento/MediaGalleryUi/Test/Unit/Model/ConfigTest.php
+app/code/Magento/MediaGalleryUi/Test/Unit/Model/Model/Directories/GetDirectoryTreeTest.php
 app/code/Magento/MediaGalleryUi/Test/Mftf/Section/AdminEnhancedMediaGalleryViewDetailsSection.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Section/AdminEnhancedMediaGalleryActionsSection.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Section/AdminMediaGalleryAttentionModalSection.xml
@@ -20685,10 +20694,12 @@ app/code/Magento/AdvancedSearch/view/adminhtml/layout/catalog_search_relatedgrid
 app/code/Magento/AdvancedSearch/view/adminhtml/layout/catalog_search_edit.xml
 app/code/Magento/AdvancedSearch/view/frontend/templates/search_data.phtml
 app/code/Magento/AdvancedSearch/view/frontend/layout/catalogsearch_result_index.xml
+app/code/Magento/AdvancedSearch/Helper/Data.php
 app/code/Magento/AdvancedSearch/i18n/en_US.csv
 app/code/Magento/AdvancedSearch/registration.php
 app/code/Magento/AdvancedSearch/Controller/Adminhtml/Search/System/Config/TestConnection.php
 app/code/Magento/AdvancedSearch/Test/Unit/Block/SearchDataTest.php
+app/code/Magento/AdvancedSearch/Test/Unit/Helper/DataTest.php
 app/code/Magento/AdvancedSearch/Test/Unit/Controller/Adminhtml/Search/System/Config/TestConnectionTest.php
 app/code/Magento/AdvancedSearch/Test/Unit/Model/ResourceModel/IndexTest.php
 app/code/Magento/AdvancedSearch/Test/Unit/Model/Indexer/Fulltext/Plugin/CustomerGroupTest.php
@@ -37695,6 +37706,7 @@ dev/tests/api-functional/testsuite/Magento/Customer/Api/AccountManagementMeTest.
 dev/tests/api-functional/testsuite/Magento/Customer/Api/GroupRepositoryTest.php
 dev/tests/api-functional/testsuite/Magento/Customer/Api/CustomerRepositoryTest.php
 dev/tests/api-functional/testsuite/Magento/Customer/Api/CustomerMetadataTest.php
+dev/tests/api-functional/testsuite/Magento/Customer/Api/AccountManagementRevokeCustomerTokenTest.php
 dev/tests/api-functional/testsuite/Magento/Customer/Api/CustomerGroupConfigTest.php
 dev/tests/api-functional/testsuite/Magento/Customer/Api/AddressRepositoryTest.php
 dev/tests/api-functional/testsuite/Magento/Customer/Api/GroupManagementTest.php
