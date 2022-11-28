@@ -222,6 +222,7 @@ $
 &slat
 &slng
 &solrsort
+&solved=
 &sort
 &sort*&page=
 &sort=
@@ -1430,6 +1431,7 @@ $
 /RedesignBucket
 /Results.aspx
 /Results?
+/Search/
 /SelectLocale?fromPage=
 /StatisticheProxy/proxy.jsp?action=mostVisited&domain=RaiTv
 /StatisticheProxy/tagCloudVisualizza.jsp?tagName=
@@ -1551,6 +1553,7 @@ $
 /b?ie=UTF8&node=1619732031
 /badge
 /badges
+/base-en/
 /base/logout
 /bbw
 /beaconBase$
@@ -1751,6 +1754,14 @@ $
 /document/view_more
 /document/views
 /download
+/download/Browse.aspx?
+/download/browse.aspx?
+/download/confirmation.aspx?
+/download/info.aspx?
+/download/registration-suggested.aspx?
+/download/results.aspx?
+/download/thankyou.aspx
+/download/thankyou.aspx?
 /download?
 /downloadassets
 /downloadstats
@@ -1939,6 +1950,7 @@ $
 /landing
 /lang
 /launch2005/
+/layout/
 /layoutvorlagen
 /lazy.js
 /leads/*/jsplayer_show_lead_form.html
@@ -2023,6 +2035,7 @@ $
 /makeid$
 /manage
 /marketing
+/mediaapi/
 /mediaviewer/*/tr
 /meetup_api
 /meetup_api$
@@ -2051,6 +2064,8 @@ $
 /mtlibraryrss/
 /multistore
 /munich/index_html
+/music/*/Search/
+/music/*/search/
 /music/cart
 /music/orders
 /music/user
@@ -2075,6 +2090,7 @@ $
 /newest/*rss
 /newest/*xml
 /news-release/*.html?pdf=1
+/newsearch/
 /newsletter
 /newssearch
 /nginx.conf.sample
@@ -2249,6 +2265,7 @@ $
 /search
 /search$
 /search.html?q=
+/search/
 /search/*?
 /search/?*termshttp://plurk.com/robots.txt
 /search/?q=*
@@ -2268,6 +2285,7 @@ $
 /searchsuggest
 /searchsuggest
 /secure/
+/security/search-results.aspx?
 /selectlocale-dmc?fromPage=
 /sell-now
 /seller--
@@ -2364,6 +2382,13 @@ $
 /stopartnertest/
 /store
 /store/
+/store/*/layout/
+/store/*/search/
+/store/buynow?
+/store/cart
+/store/d/groove-music-pass/cfq7ttc0k5dq/0001
+/store/locations/store-locations-sitemap.xml
+/store/music/groove-music-pass/*
 /story_pins
 /strings
 /strings$
@@ -2428,6 +2453,7 @@ $
 /undefined
 /undefined/p/undefined
 /undefinedc_fill,w_360,ar_16:9,f_auto,q_auto,g_auto/undefined
+/unsubscribe/
 /update
 /update$
 /updatecart
@@ -2487,6 +2513,7 @@ $
 /vsarticleshow/*
 /w/*
 /wait$
+/wal/
 /watch
 /watchers
 /wbg/aem
@@ -2533,6 +2560,7 @@ $
 ;preview=
 =$
 =/*x*/
+=imgmanager
 ?
 ?
 ?$
@@ -2613,9 +2641,6 @@ $
 ?*onwardjourney
 ?*origin
 ?*oseid=
-?*outputType=accessibility
-?*outputType=comment
-?*outputType=tracking
 ?*page
 ?*page=
 ?*partner=
@@ -2869,6 +2894,7 @@ $
 ?include=
 ?inline=
 ?inpageEditorUI=
+?intc=
 ?internal_ref
 ?invite
 ?isPreview=
@@ -3241,6 +3267,7 @@ AccountStatus
 ActLikeAnOwner
 ActionRecord
 Activate
+ActivityUID=
 AdRequestEventLogApi
 AddForumUser
 AddListing
@@ -4425,7 +4452,6 @@ ForumRedirect
 ForumSetSortCookie
 ForumSignIn
 ForumVote
-Fragment/SysConfig
 FreeGiftDisplayView
 FreeTools
 Friends
@@ -4446,6 +4472,8 @@ GenericRegistryPortalView
 Genieo
 GermanwingsPromo
 GermanwingsRegistration
+Germany/kleinunternehmen/euga/detail.mspx?
+Germany/kleinunternehmen/euga/results.mspx?
 GetListedAjaxGeneral
 GetListedLightbox
 GetListedUpdateAttraction
@@ -4496,6 +4524,7 @@ HotelsManageListing
 HotelsManagementCenter
 HotelsProductCart
 HpImageArchive.aspx
+HpOptOut=true$
 HubStyle/static-2.309
 HubStyle/static-2.313
 HubStyle/static-2.315
@@ -4596,6 +4625,7 @@ JSErrorRecord
 JSWidget/
 JSWidgetFeed/
 Jai-Mrug*
+Japan/DirectX/default.asp?
 JikeSpider
 Job/*_IP
 Job/bwl.htm
@@ -5163,6 +5193,7 @@ RDF/Validator/rdfval
 README.txt
 README.txt
 REST/auth/CSRFTicket
+REVAMPING
 RMHome
 RMReviewCollect
 RSContentSharing
@@ -5195,6 +5226,9 @@ Redirect
 RegActivation
 RegistrationController
 RegistrationInterceptPopup
+RegistreWeb/search/advanced.htm
+RegistreWeb/search/simple.htm
+RegistreWeb/search/typedoc.htm
 RegistryPortalCmd
 RemindMe
 RentalCarsRedirect
@@ -5417,6 +5451,7 @@ TC/spfs/asia
 TCDestinationsWidget
 TCIBContentQualityTool
 TLMCountries
+TOCLinksForCrawlers*
 Tablet
 TaggingAjax
 TagsJSONServlet
@@ -5680,8 +5715,6 @@ _adc_*/shop
 _ah
 _aid_656913.html
 _ajax
-_allComments.html
-_allCommentsClassicBlog.html
 _aoc_*/shop
 _api
 _api$
@@ -5692,7 +5725,6 @@ _blog_rss
 _borders
 _comments
 _derived
-_email.html
 _enterprise*/shop
 _escaped_fragment_
 _escaped_fragment_=aboutgroup
@@ -5719,38 +5751,23 @@ _hsenc=
 _id_86231824.html
 _internal-epp-discounted*/shop
 _jcr_content
-_jsn.json
-_jsnp.js
-_jsnpStatic.js
-_json.json
 _json/getAdsForMediaViewer
 _json/video/mon
-_jsonp.js
-_jsonpStatic.js
 _k12nonbts*/shop
 _kiosk*/shop
 _kw
 _m2/icons
 _meet$
 _meet/$
-_meta.xml
 _mm/
-_mobile.mobile
-_mobile.xml
-_modal.html
 _modules
 _multiremote
-_newsml.html
 _next/gtm
 _next/jwt
 _next/title
 _next/viewer
 _ngjs/resource
 _ngjs/resource/*/get
-_nimbusJson.json
-_nimbusJsonp.js
-_nimbusJsonpStatic.js
-_nitf.xml
 _nonbts*/shop
 _notes/
 _ok
@@ -5760,25 +5777,19 @@ _partials/wix-vod
 _preview
 _preview
 _print.htm
-_print.html
 _private
 _private/admin-tools
 _ptid=*
 _qa
-_qa.html
 _qpromo*/shop
 _query=
 _refurb-discounted*/shop
 _remote
 _rprt
-_rss.xml
 _rv/gtm
 _rv/jwt
 _rv/title
 _rv/viewer
-_search.html
-_seo.html
-_singlePage.html
 _smb_
 _smt=
 _styleguide
@@ -5885,7 +5896,6 @@ abuse/group
 ac
 ac/
 ac/globalnav/2.0/*/images/ac-globalnav/globalnav/search
-ac2
 academic-subscriptions
 academic/profile
 academic/search
@@ -5992,8 +6002,40 @@ action/showXml
 action/showXml
 action/showfeed
 action/sso
+action=accessorysearch&
+action=accessorysearch&page=2$
+action=accessorysearch&page=3$
+action=accessorysearch&page=4$
+action=accessorysearch&page=5$
+action=accessorysearch&page=6$
+action=accessorysearch&page=7$
+action=accessorysearch&page=8$
+action=accessorysearch&product=*$
+action=accessorysearch&product=*&*
+action=catalogsearch&
+action=catalogsearch&catalog_mode=grid&page=2$
+action=catalogsearch&catalog_mode=grid&page=3$
+action=catalogsearch&catalog_mode=grid&page=4$
+action=catalogsearch&catalog_mode=grid&page=5$
+action=catalogsearch&catalog_mode=grid&page=6$
+action=catalogsearch&catalog_mode=grid&page=7$
+action=catalogsearch&catalog_mode=grid&page=8$
+action=catalogsearch&catalog_mode=list&page=2$
+action=catalogsearch&catalog_mode=list&page=3$
+action=catalogsearch&catalog_mode=list&page=4$
+action=catalogsearch&catalog_mode=list&page=5$
+action=catalogsearch&catalog_mode=list&page=6$
+action=catalogsearch&catalog_mode=list&page=7$
+action=catalogsearch&catalog_mode=list&page=8$
 action=delete
 action=history
+action=overlay&
+action=productLinkAction&
+action=productSupportSearch
+action=productcompareaction&
+action=quickSearch&
+action=siteSearch
+action=writeReview
 action?
 action_code=
 actions
@@ -6019,6 +6061,8 @@ activate/self-starters/confirmation/
 activate/wdm/*
 activation_successful
 activities
+activities/committees/studies/
+activities/committees/studiesCom/
 ad
 ad/adserver.php
 ad=
@@ -6055,7 +6099,6 @@ admantx
 admin
 admin
 admin$
-admin*
 admin-preview
 admin.php
 admin/
@@ -6239,11 +6282,6 @@ amp-proxy
 amp-tealium
 amp/
 amp/authorize
-amphtml
-amphtml/blogs/test
-amphtml/classic-apps
-amphtml/news/test
-amphtml/utils
 amptest
 amturing-acm-org/
 amurl
@@ -6814,9 +6852,9 @@ backend
 backstage/help/search-results.html
 badges/profile/create
 bagon
+baidu
 ban-me-i-am-a-robot
 bancontact_checkout
-bandito
 banmyipforever.cgi
 banner.pl
 baroness
@@ -7104,6 +7142,7 @@ bkshp?*q=
 bl.uk_lddc_bot
 black-friday/0/best-amazon-black-friday-deals-2017-us
 black-friday/0/best-amazon-black-friday-weekend-deals-2017-us
+blacklisted*
 blank
 blank.html
 blast/BlastAlign.cgi
@@ -7187,11 +7226,8 @@ blogs/*+
 blogs/7faebe5debfdd358a46f2452a54eec94fce49269/
 blogs/blog.atom
 blogs/blogpost/preview
-blogs/nationals-journal-beta
 blogs/search/
-blogs/slow-ride
 blogs/technology.atom
-blogs/test
 blogsearch
 blogsearch_feeds
 blogtechnology/
@@ -7856,6 +7892,7 @@ calculator
 calendar
 calendar
 calendar$
+calendar/
 calendar/*?year
 calendar/*?year*&
 calendar/*?year=2020
@@ -7957,6 +7994,7 @@ campaigns/logout.html
 campaigns/thankyou.html
 campaignshowcase/
 campaigntrailnotused
+canada/Library/mnp/2/aspx/
 cancel
 cancel-membership
 candidates
@@ -8063,7 +8101,6 @@ capacity4dev/xmlrpc.php
 captcha
 captchas
 car-search-sitemap
-card
 card_management.php
 careers/Phoenix-Hiring-Event/
 careers/Sydney-Hiring-Event/
@@ -8251,7 +8288,6 @@ changebrowser
 changebrowser
 changeplan
 channels
-channels?q=
 chappai
 chapter
 chapter/10.1007/978-94-6209-446-8_8
@@ -8384,7 +8420,6 @@ cl2/feeds
 cl2/ical
 class
 class\x3d\x22z1asCe
-classic-apps
 classic/contact/concerts.htm
 classic/contact/default.htm
 classic/contact/eventsdiary.htm
@@ -8569,11 +8604,13 @@ commercesearch/images
 commercesearch/services
 commission_2010-2014/katainen
 commits?author=
+committees/*/studiesdownload.html
 common
 common
 common/
 common/austin-summit
 common/error
+common/mail/
 common/services
 common/ssi
 common/survey.aspx
@@ -8581,6 +8618,10 @@ common_assets/static-2.197
 common_assets/static-2.198
 commonphp/
 communities
+communities/bin.aspx?
+communities/blogs/PortalResults.mspx?
+communities/eventdetails.mspx?
+communities/rss.aspx*
 communities/sitemap
 community
 community
@@ -8632,6 +8673,7 @@ compare-used-car
 compare/*/apply
 compare=
 comparecarresultwidget
+comparl/
 competitions/best-buy/entry-thank-you/
 competitive-research
 compliance/contact-us-confirmation/
@@ -8921,6 +8963,7 @@ cp/api/logger
 cp/api/wpa
 cpds2
 cpresources
+cpro
 cpropub/univercd
 cpspa
 cr
@@ -9149,6 +9192,7 @@ de-*/
 de-at/
 de-ch/
 de-de/
+de-de/corporate/rechtliche-hinweise/impressum_de.aspx
 de-de/feedback
 de-de/lp
 de-de/search
@@ -9292,6 +9336,7 @@ deals/categories
 deals/merchant
 deals/popular
 debate
+debats/
 debug
 debug/
 deck
@@ -9308,6 +9353,7 @@ default.aspx/kb/
 default.aspx/ph/
 default.cms
 default1.cms
+delegations/*/*/members/pdf.html
 delete-comment.g
 deleteHistory
 deleteHistoryRecord
@@ -9800,6 +9846,7 @@ ec/index.html
 ec/news
 ecap
 ecaptcha
+ecard/
 eclas
 eclipse/globe
 eclipse/globe/*?
@@ -10039,6 +10086,7 @@ en-us/favourites.html
 en-us/home.html?location=home
 en-us/quick-help/*
 en-us/tracking.html?action=track
+en-us/windows/si/matrix.html
 en-usbrary
 en-za/
 en/
@@ -10125,9 +10173,9 @@ en~us/
 eo/forums
 eo/user
 eo/users
+ep-live/
 epaper
 episode_times
-episodes?q=
 erasmus-plus/404_en.htm
 err/
 error
@@ -10609,6 +10657,7 @@ fcgi-
 fckeditor
 fd/
 fdbk
+fe=true
 feature/sf-test
 feature_nine_browse-bin=
 feature_seven_browse-bin=
@@ -10647,6 +10696,7 @@ feeds.thetimes.co.uk/puzzles
 feeds.thetimes.co.uk/timescrossword
 feeds/
 feeds/*
+feeds/TechNet/fr-fr/screenshot/screenshot%20surface.jpg
 feeds/rss
 feeds/user_rss
 feeds?
@@ -10934,8 +10984,18 @@ fr-fr/feedback
 fr-fr/lp
 fr-fr/search
 fr-fr/search/$
+fr/*#!
+fr/*?*+
 fr/*?*shpxid=
+fr/*?available-online
+fr/*?awc=
+fr/*?black-friday
+fr/*?cid=
+fr/*?elqTrackId=
+fr/*?modelCode=
+fr/*?mysamsung=
 fr/*?order=
+fr/*?product1=
 fr/*color=
 fr/*customizable=
 fr/*digital_wallets/dialog
@@ -10945,6 +11005,7 @@ fr/*locationQuery=
 fr/*max=
 fr/*min=
 fr/*my_etsy=
+fr/*{{*}}
 fr/@
 fr/Home/404Page
 fr/JSWidget/
@@ -11107,6 +11168,9 @@ fragment.*.html
 fragment.*.json
 fragment.html
 fragment.json
+france/formation/centres/planning.asp?
+france/ie/default.asp?
+france/mnp_utility.mspx?
 franchise/
 free
 free-cancellation/index.
@@ -11299,7 +11363,6 @@ gd/forums
 gd/user
 gd/users
 gdpr
-gdpr-consent
 gemini/guide/YAP_analytics.html
 gemini/guide/YAP_best_practices.html
 gemini/guide/YAP_canvas_tutorial.html
@@ -11319,12 +11382,15 @@ gemini/guide/resources.html
 general.
 general/dbapps/404
 genre
+genuine/
 geo/download
 geo/tools
 geocode=
 geocoder
 geoip.php
 geooverride
+germany/library/images/mnp/
+germany/video/de/de/related*
 get
 get$
 get-author-review
@@ -11650,6 +11716,7 @@ guidatv-old$
 guidatv/lista$
 guide
 guidebooks
+guidemep_info_2009/
 gutscheine/*&code=
 gutscheine/*?code=
 gutscheine/suche?
@@ -11916,7 +11983,7 @@ homeandgarden/home/hearstmagazines
 homefeed
 homepage
 homepage-flash-testing.jsp
-homepage-video-test
+homepage/
 homepage/2013
 homepod-
 honing.html
@@ -11948,6 +12015,7 @@ hp/focus-retrocompatibile$
 hp/video/api
 hp/video/mystuff
 hp/video/profiles
+hpc/*/supported-applications.aspx?
 hpm
 hpmob
 hr
@@ -12210,6 +12278,7 @@ ie/guest-pass
 ie/help/sitemap
 ie/help/sitemap.php
 ie/herramientas/generador-de-logos/onboarding
+ie/ie40/
 ie/invites/buy
 ie/landing
 ie/learn/identity/*login
@@ -12356,6 +12425,7 @@ images/userprofileimg
 images?
 imagesrv/pdf/DIR_TSO_2531
 imagine/
+imaginecup/*
 imesync
 img
 img/placeholder.gif
@@ -12562,6 +12632,7 @@ info
 info/agb/anb-2018.html
 info/agb/crowdinvesting.html
 info/agb/starter-2018.html
+info/customerror.htm*
 info/jobs/Development-Operations-Engineer.html
 info/jobs/Kooperations-Manager.html
 info/jobs/Social-Media-Online-Kommunikation.html
@@ -12584,6 +12655,7 @@ info/jobs/software-engineer.html
 info/jobs/texterin-uxwriterin.html
 info/kontaktalt.html
 info/nachhaltigkeitsziele.html
+info/smart404.asp*
 info/startnext/corporate-identity.html
 info/startnextupdate.html
 info/tech-feedback
@@ -12682,6 +12754,7 @@ intl/node/add
 intl/search
 intl/user
 intl/user$
+intlkb/
 intro
 intro.naver
 intro.nhn
@@ -12998,6 +13071,11 @@ ja/広告
 ja/案件依頼中
 ja_jp/templates/M
 jajp/
+japan/directx/default.asp?
+japan/enable/textview.asp?
+japan/products/library/search.asp?
+japan/showcase/print/default.aspx?
+japan/terminology/query.asp?
 jasmine-runner/static-1.14
 jasmine-runner/static-1.15
 jasmine-runner/static-1.17
@@ -13031,10 +13109,6 @@ jobs
 jobs-guest
 jobs/*/apply_now
 jobs/*/more-jobs-count
-jobs/EU_UpdateJobEmployerCounter
-jobs/JS_JobSearchResult
-jobs/JS_Login
-jobs/UpdateJobEmployerCounterServlet
 jobs/a/*
 jobs/apply/*
 jobs/botrace_bot
@@ -13097,8 +13171,6 @@ journal/ent
 journal/ent$
 journal/fis
 journal/fis$
-journal/gucdd
-journal/gucdd$
 journal/hazardous_matters
 journal/hazardous_matters$
 journal/ijip
@@ -13311,7 +13383,6 @@ kmail
 kn/forums
 kn/user
 kn/users
-knowmore
 known-issues
 knowyourworth
 ko
@@ -13614,7 +13685,6 @@ libs/
 libwww
 licence-finder
 license
-licensing-syndication
 life
 lifestyle/arts/art-dealer-david-kordansky-opens-new-york-gallery-1235148149
 lifestyle/arts/michael-stipe-painting-collection-at-outsider-art-fair-1235104440
@@ -13682,6 +13752,7 @@ liked
 limit_hits
 limited-release
 link
+link?
 link_to
 linked
 linkedin
@@ -13744,10 +13815,6 @@ local
 local
 local-services-ads
 local/ajax
-local/blogsandcolumns/slow-ride-front
-local/blogsandcolumns/slow-ride-story-achenblog
-local/blogsandcolumns/slow-ride-story-tanked
-local/blogsandcolumns/slow-ride-stream-tanked
 local/cars
 local/dealership
 local/details
@@ -13902,9 +13969,11 @@ ma/corporate/press
 ma/index.html
 ma/news
 mac
+mac/help.mspx?
 macbeta
 macpreview
 macros
+mactopia/help.mspx?
 maestro
 maestro/api
 magazine
@@ -14446,6 +14515,9 @@ memebers/profile
 menu
 menu/*/feedback_form
 meo
+meps/*/eptvAjax
+meps/*/pdf*
+meps/*/xml*
 mercerreport
 merchant/*/ugcPhoto
 merchant/deals
@@ -14553,6 +14625,7 @@ mn/index.html
 mn/news
 mn/user
 mn/users
+mnp_utility.mspx?
 mnt/
 mo
 mob/tracking
@@ -14702,6 +14775,7 @@ music/*/+shoutbox
 music/*/+shoutbox?
 music/*/+wiki/shoutbox
 music/*/+wiki/shoutbox?
+music/*/wal/
 music/+noredirect
 music/album
 music/artist
@@ -14932,7 +15006,6 @@ nap
 narrative-
 nas
 nationalfilmregistry
-native
 native$
 native-android-mobile
 native-android-tablet
@@ -15070,11 +15143,8 @@ news/r-test
 news/redirect/*
 news/report
 news/sponsors
-news/tablet
 news/tags
 news/terminal
-news/test
-news/test-liveblog
 news/uknews/1533141/Life-for-father-who-killed-girl-to-pay-back-wifes-infidelity.html
 news/uknews/law-and-order/11282672/Fetish-industry-metalworker-faces-penalty-for-breaching-design-right.html
 news/uknews/law-and-order/4144587/British-tennis-player-will-not-stand-trial-for-rape-in-US.html
@@ -15084,6 +15154,7 @@ news?viewArticle
 newsArticle
 news_hub
 newsfeed$
+newsgate/
 newshour/bb/military/military.html
 newshour/indepth_coverage/middle_east/iraq/honorroll/search.php?
 newshour/mt3
@@ -15808,6 +15879,8 @@ parental-consent/confirmation
 parents/activity-finder
 parents/search
 parks/index.php
+parliament/public/traineeship/secured/
+parliament/public/transltraineeship/secured
 partNumber=
 participate/conferences.xml
 partner
@@ -15866,9 +15939,6 @@ payment_requests.php
 payments
 payments/book
 pb
-pb/gr
-pb/resource
-pb/resources
 pb/widgets
 pbs/kids/mt3
 pbs/kids/mt4
@@ -15891,6 +15961,7 @@ pda/search?
 pda?
 pdf
 pdf/documents
+pdf/traineeships/
 pdfs
 pdfs/advertorials
 pdfs/crm
@@ -16181,12 +16252,14 @@ playerhttp://support.twitter.com/robots.txt
 playlist.php
 playlists/*/user
 playstation
+plenary/*/vod.html
 pls
 plug_id
 plugin
 plugins
 plugins.
 plugins/
+plugins/search
 plusinstall
 pm/
 pmc/*.cgi
@@ -16208,7 +16281,7 @@ pmc/publisherportal/download
 pmc/publisherportal/journalmanager
 pmc/tocrender.fcgi
 pmc/utilities
-pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22dpf\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyYQocChpXYXMgbWFjaHQgZWluZSBSb2JvdHMgdHh0PwoeChxXYXMgc2luZCBSb2JvdHMgdHh0IERhdGVpZW4_Ch4KHFdvIGZpbmRlIGljaCBkaWUgUm9ib3RzIHR4dD8Q5AI\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x2294NQs7W9ixYKZLdJ5isyQjLSJnI\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22Überprüfe
+pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22dpf\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyYQocChpXYXMgbWFjaHQgZWluZSBSb2JvdHMgdHh0PwoeChxXYXMgc2luZCBSb2JvdHMgdHh0IERhdGVpZW4_Ch4KHFdvIGZpbmRlIGljaCBkaWUgUm9ib3RzIHR4dD8Q5AI\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22sAAoBImADeIY--7nZlCyz-JbkgM\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22Überprüfe
 pmcomment/
 pmm-templates
 pmo/contact/en/staff
@@ -16453,6 +16526,7 @@ popupprivacypolicy
 popups/mediaplayer
 popups/popup_gallery
 portal
+portal/
 portal/home
 portal/portal3rc.fcgi/*/*.css
 portal/portal3rc.fcgi/*/*.js
@@ -16471,12 +16545,6 @@ posts
 posts/
 posts/get_post
 posts?
-posttv-beta
-posttv/c/embed
-posttv/c/trendex
-posttv/c/video_search
-posttv/posttv/trendex
-posttv/sponsored-video
 pov_mt/mt4
 powershell/
 ppc
@@ -16886,11 +16954,11 @@ purchased-gift
 purchases
 puzzle
 puzzles/leaderboards/invite
+pv1/
+pv2/
 pv_obj_cache
 pw
 pwamp/fbi
-pwapi-proxy/pwproxy
-pwapiv2
 pwb/2000
 pwb/2002
 pwb/2004
@@ -17067,7 +17135,6 @@ recharge/dashboard/car
 recharge/dashboard/static
 recherche
 recipes/search
-recipes/search
 recommend.php
 recommendations
 recommendnews
@@ -17146,6 +17213,7 @@ remove-favorite
 remove_email/t2_
 renders
 renewal
+rep=hc
 replace
 reply?
 repo/create
@@ -17345,6 +17413,7 @@ ru$
 ru-*/
 ru-ru
 ru-ru/
+ru-ru/events/platforma/materials/default.aspx?speaker*
 ru/
 ru/*search
 ru/Analog/
@@ -17399,13 +17468,12 @@ ru/users
 ru_ru/shablony/M
 run
 rundowns/segment.php?
+rus/licensing/Unilateral.aspx/*
 rvh
 rw-reg/http://nypost.com/robots.txt
-rw/WashingtonPost/Content/Epaper
 rw/forums
 rw/user
 rw/users
-rweb
 ryan
 rye
 s
@@ -17871,6 +17939,7 @@ search_ms
 search_rss
 search_suggest
 searchbeta
+searchdeb/
 searches
 searchhistory
 searchresult?q=
@@ -17985,7 +18054,6 @@ seo-ab-testing
 seo-old
 seokicks
 series
-series?q=
 server
 server-status
 server/banners
@@ -18056,7 +18124,6 @@ settings/loid-email-unsubscribe-router
 settings/mirror_choices
 setup
 setup_organization=
-sf/test
 sf11500465=
 sg
 sg$
@@ -18177,6 +18244,7 @@ sheet/help/search-results.html
 shelf/user_shelves
 shenghuo
 shenghuo/search?
+shifen/
 shihui
 shihui?
 ship
@@ -18849,6 +18917,8 @@ sp/2for1
 sp/3for2
 sp=
 sp_url=
+spain/empresas/
+spain/medianaempresa/
 spanish-index-date-search?*
 spanish-index-search?*
 spartan
@@ -18980,7 +19050,6 @@ ssafe/
 ssi
 ssi/alert/banner.htm
 ssi/geoip_cc
-sslsingle
 sso
 sso-redirect
 sso/action/logout
@@ -19342,7 +19411,6 @@ ta/user
 ta/users
 tab=
 tabdisplay
-tablet
 tacms
 tacpage
 tag
@@ -19450,7 +19518,6 @@ teachers/edcar
 teachers/innovators/toolkit
 teachers/search/resources/?q=
 tealeaf
-team
 teamplain/
 teams
 teams/contact/thank-you
@@ -19550,9 +19617,7 @@ testcases
 testfl
 testhttp://mn.gov/robots.txt
 testing
-testpage-forhomepage
 tests/*
-tetro
 text
 textedition
 tfemail
@@ -19606,6 +19671,7 @@ theshow/
 thewar/search_results.php?
 thief.html
 things
+thinktank/*/pdf/search.html
 thirdpartyimport/*
 thirdpartyservice
 thirdpartyservice
@@ -19663,7 +19729,6 @@ tn/forums
 tn/user
 tn/users
 today
-todays_paper
 todo.txt
 toggle-favorites-collection
 token
@@ -20156,6 +20221,7 @@ uk/users
 uk/ventureone
 uk/wdc
 uk/your
+ulink?
 ulk/i
 ulk/sch
 ulk/usr
@@ -20824,6 +20890,7 @@ vote
 vote-review
 vote?
 voterinfo
+votre-europarl/
 voucher
 voyager/api
 vp
@@ -20842,7 +20909,6 @@ w.cfm
 w/
 w/api.php?action=mobileview&
 w/load.php?
-w/signup
 w/users/user_hints
 waicent/consultation
 waicent/faoinfo/agricult/agl/agll/prosoil
@@ -21690,6 +21756,13 @@ wildfox-ceo-denies-pressuring-teen-into-sex-claims-it-1258825023
 win9x/
 wincontacts/
 windows/
+windows/404.aspx?*
+windows/campaign/features-built-in-apps.aspx
+windows/campaign/meet-apps.aspx
+windows/campaign/meet-start.aspx
+windows/compatibility/windows-7/
+windows/compatibility/windows-7/*
+windows/compatibility/windows-vista/
 windows/resources/whitepapers/
 windows/server2003/access/
 windows2000/
@@ -21857,7 +21930,8 @@ wp-admin/admin-ajax.php
 wp-admin/admin-ajax.php
 wp-admin/admin-ajax.phphttp://fonts.googleapis.com/robots.txt
 wp-admin/admin-ajax.phphttp://venmo.com/robots.txt
-wp-adv
+wp-admin/load-scripts.php
+wp-admin/load-styles.php
 wp-comments-post.php
 wp-content
 wp-content/cache
@@ -21897,7 +21971,6 @@ wp-content/themes/wired/assets/images/wired_insider_1118_1000x190.jpg
 wp-content/themes/wired/assets/images/wired_video_1000x190.jpg
 wp-content/uploads
 wp-content/uploads/contentframe/
-wp-dyn
 wp-includes
 wp-includes/css
 wp-includes/js
@@ -21910,8 +21983,6 @@ wp-login
 wp-login.php
 wp-login.php
 wp-signup.php
-wp-stat/ad
-wp-stat/vrroom
 wrd.walmart.com
 write-
 write-review
@@ -21958,7 +22029,6 @@ xl
 xl/
 xls
 xml
-xml$
 xml/today/SitemapToday*.xml
 xml?
 xmlcontent
@@ -22250,6 +22320,7 @@ zz
 10m
 22minutes
 64-bit/
+100books/*/downloadPDF
 125/risk-takers-test
 326home
 327home
