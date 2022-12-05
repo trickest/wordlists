@@ -4307,6 +4307,7 @@ app/code/Magento/CatalogImportExport/Model/Import/Product/StoreResolver.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/StockProcessor.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/MediaGalleryProcessor.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/Validator.php
+app/code/Magento/CatalogImportExport/Model/Import/Product/Skip.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/RowValidatorInterface.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/CategoryProcessor.php
 app/code/Magento/CatalogImportExport/Model/StockItemImporterInterface.php
@@ -20122,15 +20123,14 @@ app/code/Magento/ImportExport/etc/db_schema.xml
 app/code/Magento/ImportExport/etc/queue_topology.xml
 app/code/Magento/ImportExport/Model/Export.php
 app/code/Magento/ImportExport/Model/Import/AbstractEntity.php
+app/code/Magento/ImportExport/Model/Import/EntityInterface.php
 app/code/Magento/ImportExport/Model/Import/Entity/AbstractEntity.php
 app/code/Magento/ImportExport/Model/Import/Entity/Factory.php
 app/code/Magento/ImportExport/Model/Import/Entity/AbstractEav.php
 app/code/Magento/ImportExport/Model/Import/ErrorProcessing/ProcessingErrorAggregatorInterface.php
 app/code/Magento/ImportExport/Model/Import/ErrorProcessing/ProcessingErrorAggregator.php
 app/code/Magento/ImportExport/Model/Import/ErrorProcessing/ProcessingError.php
-app/code/Magento/ImportExport/Model/Import/Source/Base64EncodedCsvData.php
 app/code/Magento/ImportExport/Model/Import/Source/Csv.php
-app/code/Magento/ImportExport/Model/Import/Source/Factory.php
 app/code/Magento/ImportExport/Model/Import/Source/Zip.php
 app/code/Magento/ImportExport/Model/Import/ImageDirectoryBaseProvider.php
 app/code/Magento/ImportExport/Model/Import/ConfigInterface.php
@@ -20847,6 +20847,7 @@ app/code/Magento/Directory/Setup/Patch/Data/AddDataForItaly.php
 app/code/Magento/Directory/Setup/Patch/Data/InitializeDirectoryData.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForAustralia.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForParaguay.php
+app/code/Magento/Directory/Setup/Patch/Data/AddDataForCzechia.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForArgentina.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForCroatia.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForUruguay.php
@@ -32470,6 +32471,7 @@ dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/Custom
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customer_to_import_with_one_additional_column.csv
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_to_import.csv
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/customers_to_update.csv
+dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/2k_customers.csv.gz
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/import_uk_address.csv
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/two_addresses_import_update.csv
 dev/tests/integration/testsuite/Magento/CustomerImportExport/Model/Import/_files/address_import_delete.csv
