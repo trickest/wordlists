@@ -126,6 +126,7 @@ ghost/admin/tests/integration/components/gh-notification-test.js
 ghost/admin/tests/integration/components/gh-alerts-test.js
 ghost/admin/tests/integration/components/gh-member-avatar-test.js
 ghost/admin/tests/integration/components/tags/tag-form-test.js
+ghost/admin/tests/integration/components/gh-form-group-test.js
 ghost/admin/tests/integration/components/gh-basic-dropdown-test.js
 ghost/admin/tests/integration/components/gh-alert-test.js
 ghost/admin/tests/integration/components/gh-unsplash-photo-test.js
@@ -139,7 +140,6 @@ ghost/admin/tests/integration/components/gh-uploader-test.js
 ghost/admin/tests/integration/components/posts/post-activity-feed/footer-links-test.js
 ghost/admin/tests/integration/components/gh-trim-focus-input-test.js
 ghost/admin/tests/integration/components/gh-file-uploader-test.js
-ghost/admin/tests/integration/components/gh-validation-status-container-test.js
 ghost/admin/tests/integration/components/gh-feature-flag-test.js
 ghost/admin/tests/integration/components/modal-import-members-test.js
 ghost/admin/tests/integration/components/gh-psm-visibility-input-test.js
@@ -697,6 +697,7 @@ ghost/admin/app/components/gh-link-to-custom-views-index.hbs
 ghost/admin/app/components/gh-psm-authors-input.hbs
 ghost/admin/app/components/gh-mobile-nav-bar.hbs
 ghost/admin/app/components/gh-search-input.js
+ghost/admin/app/components/gh-form-group.hbs
 ghost/admin/app/components/gh-members-segment-count.js
 ghost/admin/app/components/gh-loading-spinner.js
 ghost/admin/app/components/gh-psm-visibility-input.js
@@ -863,7 +864,6 @@ ghost/admin/app/components/gh-explore-iframe.js
 ghost/admin/app/components/gh-psm-authors-input.js
 ghost/admin/app/components/gh-html-iframe.js
 ghost/admin/app/components/gh-browser-preview.js
-ghost/admin/app/components/gh-validation-status-container.js
 ghost/admin/app/components/gh-editor-feature-image.js
 ghost/admin/app/components/gh-notification.js
 ghost/admin/app/components/gh-billing-update-button.js
@@ -882,7 +882,6 @@ ghost/admin/app/components/gh-textarea.js
 ghost/admin/app/components/gh-member-details.hbs
 ghost/admin/app/components/gh-members-recipient-select.hbs
 ghost/admin/app/components/gh-members-segment-select.hbs
-ghost/admin/app/components/gh-form-group.js
 ghost/admin/app/components/gh-alert.js
 ghost/admin/app/components/modal-invite-new-user.js
 ghost/admin/app/components/koenig-lexical-editor.hbs
@@ -1356,6 +1355,7 @@ ghost/admin/app/modifiers/scroll-to.js
 ghost/admin/app/modifiers/react-render.js
 ghost/admin/app/modifiers/ratio-zoom.js
 ghost/admin/app/modifiers/scroll-into-view.js
+ghost/admin/app/modifiers/validation-status.js
 ghost/admin/app/modifiers/scroll-top.js
 ghost/admin/app/modifiers/movable.js
 ghost/admin/app/modifiers/on-resize.js
@@ -2039,6 +2039,7 @@ ghost/core/test/utils/fixtures/images/ghost-logo.pngx
 ghost/core/test/utils/fixtures/images/ghosticon.webp
 ghost/core/test/utils/fixtures/test.hbs
 ghost/core/test/utils/fixtures/filter-param/index.js
+ghost/core/test/utils/fixtures/default-settings-browser.json
 ghost/core/test/utils/fixtures/admin-build/index.html
 ghost/core/test/utils/fixtures/settings/routes.yaml
 ghost/core/test/utils/fixtures/settings/newroutes.yaml
@@ -2112,6 +2113,7 @@ ghost/core/test/utils/e2e-framework-mock-manager.js
 ghost/core/test/utils/admin-utils.js
 ghost/core/test/utils/redirects.js
 ghost/core/test/utils/mocks/modules.js
+ghost/core/test/utils/mocks/MailgunClientMock.js
 ghost/core/test/utils/mocks/index.js
 ghost/core/test/utils/api.js
 ghost/core/test/utils/url-service-utils.js
@@ -2130,11 +2132,21 @@ ghost/core/test/integration/settings/settings.test.js
 ghost/core/test/integration/importer/v2.test.js
 ghost/core/test/integration/importer/v1.test.js
 ghost/core/test/integration/importer/legacy.test.js
+ghost/core/test/e2e-browser/admin/tiers.spec.js
+ghost/core/test/e2e-browser/admin/setup.spec.js
+ghost/core/test/e2e-browser/admin/site-settings.spec.js
+ghost/core/test/e2e-browser/admin/publishing.spec.js
+ghost/core/test/e2e-browser/admin/members.spec.js
+ghost/core/test/e2e-browser/admin/posts.spec.js
 ghost/core/test/e2e-browser/utils/global-setup.js
+ghost/core/test/e2e-browser/utils/global-teardown.js
 ghost/core/test/e2e-browser/utils/e2e-browser-utils.js
 ghost/core/test/e2e-browser/utils/index.js
-ghost/core/test/e2e-browser/admin.spec.js
-ghost/core/test/e2e-browser/frontend.spec.js
+ghost/core/test/e2e-browser/site-settings/private-site.spec.js
+ghost/core/test/e2e-browser/portal/member-actions.spec.js
+ghost/core/test/e2e-browser/portal/tiers.spec.js
+ghost/core/test/e2e-browser/portal/upgrade.spec.js
+ghost/core/test/e2e-browser/portal/offers.spec.js
 ghost/core/test/e2e-browser/README.md
 ghost/core/test/.eslintignore
 ghost/core/test/unit/server/overrides.test.js
@@ -3351,6 +3363,7 @@ ghost/core/core/shared/config/utils.js
 ghost/core/core/shared/config/env/config.development.json
 ghost/core/core/shared/config/env/config.production.json
 ghost/core/core/shared/config/env/config.testing.json
+ghost/core/core/shared/config/env/config.testing-browser.json
 ghost/core/core/shared/config/env/config.testing-mysql.json
 ghost/core/core/shared/config/loader.js
 ghost/core/core/shared/config/index.js
@@ -3707,6 +3720,7 @@ ghost/members-api/test/utils/overrides.js
 ghost/members-api/test/utils/assertions.js
 ghost/members-api/test/utils/index.js
 ghost/members-api/test/unit/lib/controllers/member/index.test.js
+ghost/members-api/test/unit/lib/controllers/router.test.js
 ghost/members-api/test/unit/lib/geolocation.test.js
 ghost/members-api/test/unit/lib/services/token.test.js
 ghost/members-api/test/unit/lib/repositories/event.test.js
