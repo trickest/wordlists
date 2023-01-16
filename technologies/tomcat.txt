@@ -36,7 +36,6 @@ bin/version.bat
 bin/version.sh
 build.properties.default
 build.xml
-conf/catalina.policy
 conf/catalina.properties
 conf/context.xml
 conf/jaspic-providers.xml
@@ -854,7 +853,6 @@ java/org/apache/catalina/realm/X509UsernameRetriever.java
 java/org/apache/catalina/realm/mbeans-descriptors.xml
 java/org/apache/catalina/realm/package.html
 java/org/apache/catalina/security/Constants.java
-java/org/apache/catalina/security/DeployXmlPermission.java
 java/org/apache/catalina/security/LocalStrings.properties
 java/org/apache/catalina/security/LocalStrings_de.properties
 java/org/apache/catalina/security/LocalStrings_es.properties
@@ -862,10 +860,7 @@ java/org/apache/catalina/security/LocalStrings_fr.properties
 java/org/apache/catalina/security/LocalStrings_ja.properties
 java/org/apache/catalina/security/LocalStrings_ko.properties
 java/org/apache/catalina/security/LocalStrings_zh_CN.properties
-java/org/apache/catalina/security/SecurityClassLoad.java
-java/org/apache/catalina/security/SecurityConfig.java
 java/org/apache/catalina/security/SecurityListener.java
-java/org/apache/catalina/security/SecurityUtil.java
 java/org/apache/catalina/servlets/CGIServlet.java
 java/org/apache/catalina/servlets/DefaultServlet.java
 java/org/apache/catalina/servlets/LocalStrings.properties
@@ -1215,6 +1210,8 @@ java/org/apache/catalina/tribes/transport/nio/PooledParallelSenderMBean.java
 java/org/apache/catalina/tribes/util/Arrays.java
 java/org/apache/catalina/tribes/util/ExceptionUtils.java
 java/org/apache/catalina/tribes/util/ExecutorFactory.java
+java/org/apache/catalina/tribes/util/Jre14Compat.java
+java/org/apache/catalina/tribes/util/JreCompat.java
 java/org/apache/catalina/tribes/util/LocalStrings.properties
 java/org/apache/catalina/tribes/util/LocalStrings_cs.properties
 java/org/apache/catalina/tribes/util/LocalStrings_de.properties
@@ -1704,8 +1701,6 @@ java/org/apache/jasper/runtime/PageContextImpl.java
 java/org/apache/jasper/runtime/ProtectedFunctionMapper.java
 java/org/apache/jasper/runtime/ServletResponseWrapperInclude.java
 java/org/apache/jasper/runtime/TagHandlerPool.java
-java/org/apache/jasper/security/SecurityClassLoad.java
-java/org/apache/jasper/security/SecurityUtil.java
 java/org/apache/jasper/servlet/JasperInitializer.java
 java/org/apache/jasper/servlet/JasperLoader.java
 java/org/apache/jasper/servlet/JspCServletContext.java
@@ -1911,7 +1906,6 @@ java/org/apache/tomcat/dbcp/pool2/impl/AbandonedConfig.java
 java/org/apache/tomcat/dbcp/pool2/impl/BaseGenericObjectPool.java
 java/org/apache/tomcat/dbcp/pool2/impl/BaseObjectPoolConfig.java
 java/org/apache/tomcat/dbcp/pool2/impl/CallStack.java
-java/org/apache/tomcat/dbcp/pool2/impl/CallStackUtils.java
 java/org/apache/tomcat/dbcp/pool2/impl/DefaultEvictionPolicy.java
 java/org/apache/tomcat/dbcp/pool2/impl/DefaultPooledObject.java
 java/org/apache/tomcat/dbcp/pool2/impl/DefaultPooledObjectInfo.java
@@ -1930,7 +1924,6 @@ java/org/apache/tomcat/dbcp/pool2/impl/LinkedBlockingDeque.java
 java/org/apache/tomcat/dbcp/pool2/impl/NoOpCallStack.java
 java/org/apache/tomcat/dbcp/pool2/impl/PoolImplUtils.java
 java/org/apache/tomcat/dbcp/pool2/impl/PooledSoftReference.java
-java/org/apache/tomcat/dbcp/pool2/impl/SecurityManagerCallStack.java
 java/org/apache/tomcat/dbcp/pool2/impl/SoftReferenceObjectPool.java
 java/org/apache/tomcat/dbcp/pool2/impl/ThrowableCallStack.java
 java/org/apache/tomcat/dbcp/pool2/impl/package.html
@@ -2406,10 +2399,6 @@ java/org/apache/tomcat/util/security/LocalStrings_ja.properties
 java/org/apache/tomcat/util/security/LocalStrings_ko.properties
 java/org/apache/tomcat/util/security/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/security/MD5Encoder.java
-java/org/apache/tomcat/util/security/PermissionCheck.java
-java/org/apache/tomcat/util/security/PrivilegedGetTccl.java
-java/org/apache/tomcat/util/security/PrivilegedSetAccessControlContext.java
-java/org/apache/tomcat/util/security/PrivilegedSetTccl.java
 java/org/apache/tomcat/util/threads/Constants.java
 java/org/apache/tomcat/util/threads/InlineExecutorService.java
 java/org/apache/tomcat/util/threads/LimitLatch.java
@@ -3021,7 +3010,6 @@ test/org/apache/catalina/connector/TestResponsePerformance.java
 test/org/apache/catalina/connector/TestSendFile.java
 test/org/apache/catalina/connector/test_content.txt
 test/org/apache/catalina/core/TestApplicationContext.java
-test/org/apache/catalina/core/TestApplicationContextFacadeSecurityManager.java
 test/org/apache/catalina/core/TestApplicationContextGetRequestDispatcher.java
 test/org/apache/catalina/core/TestApplicationContextGetRequestDispatcherB.java
 test/org/apache/catalina/core/TestApplicationContextStripPathParams.java
@@ -3087,7 +3075,6 @@ test/org/apache/catalina/realm/TestSecretKeyCredentialHandler.java
 test/org/apache/catalina/realm/TesterPrincipal.java
 test/org/apache/catalina/realm/TesterPrincipalNonSerializable.java
 test/org/apache/catalina/realm/TesterServletSecurity01.java
-test/org/apache/catalina/security/TestSecurityClassLoad.java
 test/org/apache/catalina/servlets/DefaultServletEncodingBaseTest.java
 test/org/apache/catalina/servlets/ServletOptionsBaseTest.java
 test/org/apache/catalina/servlets/TestCGIServletCmdLineArguments.java
@@ -3547,7 +3534,6 @@ test/org/apache/tomcat/util/scan/TestAbstractInputStreamJar.java
 test/org/apache/tomcat/util/scan/TestClassParser.java
 test/org/apache/tomcat/util/scan/TestJarScanner.java
 test/org/apache/tomcat/util/scan/TestStandardJarScanner.java
-test/org/apache/tomcat/util/security/SecurityManagerBaseTest.java
 test/org/apache/tomcat/util/security/TestConcurrentMessageDigest.java
 test/org/apache/tomcat/util/security/TestEscape.java
 test/org/apache/tomcat/util/threads/TestLimitLatch.java
@@ -4146,7 +4132,6 @@ webapps/docs/proxy-howto.xml
 webapps/docs/realm-howto.xml
 webapps/docs/rewrite.xml
 webapps/docs/security-howto.xml
-webapps/docs/security-manager-howto.xml
 webapps/docs/servletapi/index.html
 webapps/docs/setup.xml
 webapps/docs/ssi-howto.xml

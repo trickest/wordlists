@@ -93,8 +93,11 @@ ghost/admin/app/components/editor/modals/preview/browser.hbs
 ghost/admin/app/components/editor/modals/preview/browser.js
 ghost/admin/app/components/editor/modals/preview/email.hbs
 ghost/admin/app/components/editor/modals/preview/email.js
+ghost/admin/app/components/editor/modals/preview/email/email-subject.hbs
+ghost/admin/app/components/editor/modals/preview/email/email-subject.js
 ghost/admin/app/components/editor/modals/preview/mobile.hbs
 ghost/admin/app/components/editor/modals/preview/mobile.js
+ghost/admin/app/components/editor/modals/preview/selected-newsletter-label.hbs
 ghost/admin/app/components/editor/modals/preview/social.hbs
 ghost/admin/app/components/editor/modals/preview/social.js
 ghost/admin/app/components/editor/modals/publish-flow.hbs
@@ -252,8 +255,6 @@ ghost/admin/app/components/gh-portal-links.js
 ghost/admin/app/components/gh-post-bookmark.hbs
 ghost/admin/app/components/gh-post-settings-menu.hbs
 ghost/admin/app/components/gh-post-settings-menu.js
-ghost/admin/app/components/gh-post-settings-menu/email.hbs
-ghost/admin/app/components/gh-post-settings-menu/email.js
 ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.hbs
 ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.js
 ghost/admin/app/components/gh-power-select/trigger.hbs
@@ -379,6 +380,7 @@ ghost/admin/app/components/members/filters/label.js
 ghost/admin/app/components/members/filters/last-seen.js
 ghost/admin/app/components/members/filters/name.js
 ghost/admin/app/components/members/filters/next-billing-date.js
+ghost/admin/app/components/members/filters/offers.js
 ghost/admin/app/components/members/filters/plan-interval.js
 ghost/admin/app/components/members/filters/relation-options/contains.js
 ghost/admin/app/components/members/filters/relation-options/date.js
@@ -499,6 +501,8 @@ ghost/admin/app/components/modals/tiers/archive.hbs
 ghost/admin/app/components/modals/tiers/archive.js
 ghost/admin/app/components/modals/tiers/unarchive.hbs
 ghost/admin/app/components/modals/tiers/unarchive.js
+ghost/admin/app/components/offers/segment-select.hbs
+ghost/admin/app/components/offers/segment-select.js
 ghost/admin/app/components/posts-list/content-filter.hbs
 ghost/admin/app/components/posts-list/content-filter.js
 ghost/admin/app/components/posts-list/list-item.hbs
@@ -1254,6 +1258,7 @@ ghost/admin/mirage/config/api-keys.js
 ghost/admin/mirage/config/authentication.js
 ghost/admin/mirage/config/config.js
 ghost/admin/mirage/config/custom-theme-settings.js
+ghost/admin/mirage/config/email-preview.js
 ghost/admin/mirage/config/emails.js
 ghost/admin/mirage/config/integrations.js
 ghost/admin/mirage/config/invites.js
@@ -1577,6 +1582,7 @@ ghost/admin/tests/acceptance/custom-post-templates-test.js
 ghost/admin/tests/acceptance/dashboard-test.js
 ghost/admin/tests/acceptance/editor-test.js
 ghost/admin/tests/acceptance/editor/lexical-test.js
+ghost/admin/tests/acceptance/editor/post-email-preview-test.js
 ghost/admin/tests/acceptance/editor/publish-flow-test.js
 ghost/admin/tests/acceptance/error-handling-test.js
 ghost/admin/tests/acceptance/members-activity-test.js
@@ -1692,6 +1698,7 @@ ghost/admin/tests/unit/services/limit-test.js
 ghost/admin/tests/unit/services/member-stats-test.js
 ghost/admin/tests/unit/services/notifications-test.js
 ghost/admin/tests/unit/services/unsplash-test.js
+ghost/admin/tests/unit/services/utils-test.js
 ghost/admin/tests/unit/transforms/facebook-url-user-test.js
 ghost/admin/tests/unit/transforms/json-string-test.js
 ghost/admin/tests/unit/transforms/navigation-settings-test.js
@@ -1823,7 +1830,6 @@ ghost/core/core/frontend/helpers/ghost_head.js
 ghost/core/core/frontend/helpers/has.js
 ghost/core/core/frontend/helpers/img_url.js
 ghost/core/core/frontend/helpers/is.js
-ghost/core/core/frontend/helpers/lang.js
 ghost/core/core/frontend/helpers/link.js
 ghost/core/core/frontend/helpers/link_class.js
 ghost/core/core/frontend/helpers/match.js
@@ -2429,6 +2435,7 @@ ghost/core/core/server/data/migrations/versions/5.27/2022-12-13-16-15-add-usage-
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-12-drop-suppressions-table.js
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-13-add-suppressions-table.js
 ghost/core/core/server/data/migrations/versions/5.28/2023-01-05-15-13-add-active-theme-permissions.js
+ghost/core/core/server/data/migrations/versions/5.29/2023-01-11-02-45-truncate-suppressions.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-04-13-49-add-comments-table.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-05-09-36-add-comments-likes-table.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-05-09-47-add-comments-reports-table.js
@@ -2440,6 +2447,7 @@ ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-07-58-add-ghost-e
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-13-add-ghost-explore-integration-role-permissions.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-17-add-ghost-explore-integration.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-26-add-ghost-explore-integration-api-key.js
+ghost/core/core/server/data/migrations/versions/5.30/2023-01-13-04-25-unsubscribe-suppressed-emails.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-29-add-comment-reporting-permissions.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-31-drop-reports-reason.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-32-drop-nullable-member-id-from-likes.js
@@ -2907,6 +2915,8 @@ ghost/core/test/e2e-api/shared/__snapshots__/version.test.js.snap
 ghost/core/test/e2e-api/shared/version.test.js
 ghost/core/test/e2e-browser/README.md
 ghost/core/test/e2e-browser/admin/members.spec.js
+ghost/core/test/e2e-browser/admin/membership-settings.spec.js
+ghost/core/test/e2e-browser/admin/portal-settings.spec.js
 ghost/core/test/e2e-browser/admin/posts.spec.js
 ghost/core/test/e2e-browser/admin/publishing.spec.js
 ghost/core/test/e2e-browser/admin/setup.spec.js
@@ -2920,6 +2930,7 @@ ghost/core/test/e2e-browser/site-settings/private-site.spec.js
 ghost/core/test/e2e-browser/utils/e2e-browser-utils.js
 ghost/core/test/e2e-browser/utils/global-setup.js
 ghost/core/test/e2e-browser/utils/global-teardown.js
+ghost/core/test/e2e-browser/utils/helpers.js
 ghost/core/test/e2e-browser/utils/index.js
 ghost/core/test/e2e-frontend/advanced_url_config.test.js
 ghost/core/test/e2e-frontend/custom_routes.test.js
@@ -3048,7 +3059,6 @@ ghost/core/test/unit/frontend/helpers/ghost_head.test.js
 ghost/core/test/unit/frontend/helpers/has.test.js
 ghost/core/test/unit/frontend/helpers/img_url.test.js
 ghost/core/test/unit/frontend/helpers/is.test.js
-ghost/core/test/unit/frontend/helpers/lang.test.js
 ghost/core/test/unit/frontend/helpers/link.test.js
 ghost/core/test/unit/frontend/helpers/link_class.test.js
 ghost/core/test/unit/frontend/helpers/match.test.js
@@ -3538,6 +3548,7 @@ ghost/email-service/lib/mailgun-email-provider.js
 ghost/email-service/lib/sending-service.js
 ghost/email-service/package.json
 ghost/email-service/test/.eslintrc.js
+ghost/email-service/test/batch-sending-service.test.js
 ghost/email-service/test/email-controller.test.js
 ghost/email-service/test/email-event-processor.test.js
 ghost/email-service/test/email-event-storage.test.js

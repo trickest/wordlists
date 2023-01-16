@@ -2894,6 +2894,8 @@ core/lib/Drupal/Core/Plugin/Factory/ContainerFactory.php
 core/lib/Drupal/Core/Plugin/FilteredPluginManagerInterface.php
 core/lib/Drupal/Core/Plugin/FilteredPluginManagerTrait.php
 core/lib/Drupal/Core/Plugin/ObjectWithPluginCollectionInterface.php
+core/lib/Drupal/Core/Plugin/Plugin/Validation/Constraint/PluginExistsConstraint.php
+core/lib/Drupal/Core/Plugin/Plugin/Validation/Constraint/PluginExistsConstraintValidator.php
 core/lib/Drupal/Core/Plugin/PluginBase.php
 core/lib/Drupal/Core/Plugin/PluginDependencyTrait.php
 core/lib/Drupal/Core/Plugin/PluginFormBase.php
@@ -3668,6 +3670,7 @@ core/modules/block/tests/src/Kernel/BlockInterfaceTest.php
 core/modules/block/tests/src/Kernel/BlockRebuildTest.php
 core/modules/block/tests/src/Kernel/BlockStorageUnitTest.php
 core/modules/block/tests/src/Kernel/BlockTemplateSuggestionsTest.php
+core/modules/block/tests/src/Kernel/BlockValidationTest.php
 core/modules/block/tests/src/Kernel/BlockViewBuilderTest.php
 core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockContentTranslationTest.php
 core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php
@@ -10409,6 +10412,7 @@ core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.php
 core/modules/system/tests/src/FunctionalJavascript/FrameworkTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModalRendererTest.php
+core/modules/system/tests/src/FunctionalJavascript/ModuleFilterTest.php
 core/modules/system/tests/src/FunctionalJavascript/OffCanvasTest.php
 core/modules/system/tests/src/FunctionalJavascript/OffCanvasTestBase.php
 core/modules/system/tests/src/FunctionalJavascript/System/DateFormatTest.php
@@ -12403,7 +12407,6 @@ core/modules/views_ui/tests/src/FunctionalJavascript/AdminAjaxTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/DisplayTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/FilterCriteriaTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/FilterOptionsTest.php
-core/modules/views_ui/tests/src/FunctionalJavascript/LibraryCachingTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/PreviewTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/ViewsListingTest.php
 core/modules/views_ui/tests/src/FunctionalJavascript/ViewsWizardTest.php
@@ -13694,6 +13697,7 @@ core/tests/Drupal/KernelTests/Core/Plugin/Discovery/StaticDiscoveryTest.php
 core/tests/Drupal/KernelTests/Core/Plugin/EntityContextTypedDataTest.php
 core/tests/Drupal/KernelTests/Core/Plugin/FactoryTest.php
 core/tests/Drupal/KernelTests/Core/Plugin/InspectionTest.php
+core/tests/Drupal/KernelTests/Core/Plugin/PluginExistsConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Plugin/PluginTestBase.php
 core/tests/Drupal/KernelTests/Core/Queue/QueueSerializationTest.php
 core/tests/Drupal/KernelTests/Core/Queue/QueueTest.php
@@ -14357,6 +14361,7 @@ core/tests/Drupal/Tests/Core/Plugin/Fixtures/Plugin/DataType/TestDataTypeDeriver
 core/tests/Drupal/Tests/Core/Plugin/Fixtures/TestConfigurablePlugin.php
 core/tests/Drupal/Tests/Core/Plugin/LazyPluginCollectionTestBase.php
 core/tests/Drupal/Tests/Core/Plugin/PluginDependencyTraitTest.php
+core/tests/Drupal/Tests/Core/Plugin/PluginExistsConstraintTest.php
 core/tests/Drupal/Tests/Core/Plugin/PluginFormFactoryTest.php
 core/tests/Drupal/Tests/Core/Plugin/PluginWithFormsTraitTest.php
 core/tests/Drupal/Tests/Core/Plugin/TestPluginManager.php

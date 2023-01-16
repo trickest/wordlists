@@ -8497,6 +8497,7 @@ app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/CreateConfigurationsF
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/CreateNewAttributeActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/CreateOptionsForAttributeActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/DeleteCreatedAttributeActionGroup.xml
+app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/DeleteProductAttributeByCodeActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/FillAllRequiredFieldsActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/GenerateAndSaveConfiguredProductAfterSettingOptionsActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/GenerateConfigurationsByAttributeCodeActionGroup.xml
@@ -8629,6 +8630,7 @@ app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProduc
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductDetailsTest/StorefrontConfigurableProductOptionsTest.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductDetailsTest/StorefrontConfigurableProductVariationsTest.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductSwatchUpdateCartItemTierPriceTest.xml
+app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductViewTest/SpecialPriceForConfigurableProductBasedOnVisualSwatchAttributeTest.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductViewTest/StorefrontConfigurableProductAddToCartTest.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductViewTest/StorefrontConfigurableProductGridViewTest.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductViewTest/StorefrontConfigurableProductListViewTest.xml
@@ -19777,6 +19779,7 @@ app/code/Magento/Sales/Test/Mftf/Test/MoveLastOrderedSimpleProductOnOrderPageTes
 app/code/Magento/Sales/Test/Mftf/Test/MoveRecentlyViewedBundleFixedProductOnOrderPageTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/MoveRecentlyViewedConfigurableProductOnOrderPageTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/MoveSimpleProductsInComparedOnOrderPageTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/PlaceAnOrderAndCreditMemoItValidateTheOrderStatusIsClosedTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/PlaceOrderWithFreeShippingAndWithMinimumOrderAmountTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontCreateOrderWithDifferentAddressesTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontCreateOrdersWithMoveJSCodeBottomTest.xml
@@ -22477,6 +22480,7 @@ app/code/Magento/Tax/Test/Fixture/TaxRule.php
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AddCustomTaxRateActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AddCustomerTaxClassActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AddNewTaxRateNoZipActionGroup.xml
+app/code/Magento/Tax/Test/Mftf/ActionGroup/AddNewTaxRateNoZipUIActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AddNewTaxRuleActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AddProductTaxClassActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminAssertTaxRateInGridActionGroup.xml
@@ -32407,19 +32411,24 @@ dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/d
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/constraint_modification.mariadb10.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/constraint_modification.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/constraint_modification.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/constraint_modification.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/constraint_modification.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/installation.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/rollback.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/rollback.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/rollback.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/rollback.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_removal.mariadb10.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_removal.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_removal.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_removal.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_removal.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_rename.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_rename.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_rename.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/declarative_installer/table_rename.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/dry_run_log.mariadb106.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/dry_run_log.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/dry_run_log.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/dry_run_log_on_upgrade.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule1/fixture/foreign_key_interpreter_result.php
@@ -32455,6 +32464,7 @@ dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/etc/modul
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/fixture/shards.mariadb10.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/fixture/shards.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/fixture/shards.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/fixture/shards.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/fixture/shards.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule2/registration.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule3/Setup/InstallData.php
@@ -32529,6 +32539,7 @@ dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/etc/modul
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/fixture/declarative_installer/disabling_tables.mariadb10.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/fixture/declarative_installer/disabling_tables.mariadb106.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/fixture/declarative_installer/disabling_tables.mysql8.php
+dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/fixture/declarative_installer/disabling_tables.mysql829.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/fixture/declarative_installer/disabling_tables.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/registration.php
 dev/tests/setup-integration/_files/Magento/TestSetupDeclarationModule9/revisions/disabling_tables/db_schema.xml
