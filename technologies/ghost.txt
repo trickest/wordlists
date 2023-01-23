@@ -30,6 +30,7 @@ ghost/admin/app/adapters/email.js
 ghost/admin/app/adapters/embedded-relation-adapter.js
 ghost/admin/app/adapters/label.js
 ghost/admin/app/adapters/member.js
+ghost/admin/app/adapters/mention.js
 ghost/admin/app/adapters/newsletter.js
 ghost/admin/app/adapters/offer.js
 ghost/admin/app/adapters/page.js
@@ -617,6 +618,7 @@ ghost/admin/app/controllers/member.js
 ghost/admin/app/controllers/members-activity.js
 ghost/admin/app/controllers/members.js
 ghost/admin/app/controllers/members/import.js
+ghost/admin/app/controllers/mentions.js
 ghost/admin/app/controllers/offer.js
 ghost/admin/app/controllers/offers.js
 ghost/admin/app/controllers/pages-loading.js
@@ -737,6 +739,7 @@ ghost/admin/app/models/label.js
 ghost/admin/app/models/member-subscription.js
 ghost/admin/app/models/member-tier.js
 ghost/admin/app/models/member.js
+ghost/admin/app/models/mention.js
 ghost/admin/app/models/navigation-item.js
 ghost/admin/app/models/newsletter.js
 ghost/admin/app/models/notification.js
@@ -788,6 +791,7 @@ ghost/admin/app/routes/member/new.js
 ghost/admin/app/routes/members-activity.js
 ghost/admin/app/routes/members.js
 ghost/admin/app/routes/members/import.js
+ghost/admin/app/routes/mentions.js
 ghost/admin/app/routes/offer.js
 ghost/admin/app/routes/offer/new.js
 ghost/admin/app/routes/offers.js
@@ -913,6 +917,7 @@ ghost/admin/app/templates/member.hbs
 ghost/admin/app/templates/members-activity.hbs
 ghost/admin/app/templates/members.hbs
 ghost/admin/app/templates/members/import.hbs
+ghost/admin/app/templates/mentions.hbs
 ghost/admin/app/templates/offer.hbs
 ghost/admin/app/templates/offers.hbs
 ghost/admin/app/templates/pages-loading.hbs
@@ -1110,7 +1115,7 @@ ghost/admin/lib/koenig-editor/addon/components/koenig-text-replacement-html-inpu
 ghost/admin/lib/koenig-editor/addon/components/koenig-text-replacement-html-input.js
 ghost/admin/lib/koenig-editor/addon/components/koenig-toolbar.hbs
 ghost/admin/lib/koenig-editor/addon/components/koenig-toolbar.js
-ghost/admin/lib/koenig-editor/addon/helpers/card-is-available.js
+ghost/admin/lib/koenig-editor/addon/helpers/card-menu-items.js
 ghost/admin/lib/koenig-editor/addon/helpers/clean-basic-html.js
 ghost/admin/lib/koenig-editor/addon/helpers/kg-style.js
 ghost/admin/lib/koenig-editor/addon/helpers/sanitize-html.js
@@ -1178,7 +1183,7 @@ ghost/admin/lib/koenig-editor/app/components/koenig-slash-menu.js
 ghost/admin/lib/koenig-editor/app/components/koenig-snippet-input.js
 ghost/admin/lib/koenig-editor/app/components/koenig-text-replacement-html-input.js
 ghost/admin/lib/koenig-editor/app/components/koenig-toolbar.js
-ghost/admin/lib/koenig-editor/app/helpers/card-is-available.js
+ghost/admin/lib/koenig-editor/app/helpers/card-menu-items.js
 ghost/admin/lib/koenig-editor/app/helpers/clean-basic-html.js
 ghost/admin/lib/koenig-editor/app/helpers/kg-style.js
 ghost/admin/lib/koenig-editor/app/helpers/sanitize-html.js
@@ -1264,6 +1269,7 @@ ghost/admin/mirage/config/integrations.js
 ghost/admin/mirage/config/invites.js
 ghost/admin/mirage/config/labels.js
 ghost/admin/mirage/config/members.js
+ghost/admin/mirage/config/mentions.js
 ghost/admin/mirage/config/newsletters.js
 ghost/admin/mirage/config/offers.js
 ghost/admin/mirage/config/pages.js
@@ -1590,6 +1596,7 @@ ghost/admin/tests/acceptance/members-test.js
 ghost/admin/tests/acceptance/members/details-test.js
 ghost/admin/tests/acceptance/members/filter-test.js
 ghost/admin/tests/acceptance/members/import-test.js
+ghost/admin/tests/acceptance/mentions-test.js
 ghost/admin/tests/acceptance/offers-test.js
 ghost/admin/tests/acceptance/password-reset-test.js
 ghost/admin/tests/acceptance/settings/amp-test.js
@@ -2037,6 +2044,7 @@ ghost/core/core/server/api/endpoints/media.js
 ghost/core/core/server/api/endpoints/member-signin-urls.js
 ghost/core/core/server/api/endpoints/members-stripe-connect.js
 ghost/core/core/server/api/endpoints/members.js
+ghost/core/core/server/api/endpoints/mentions.js
 ghost/core/core/server/api/endpoints/newsletters-public.js
 ghost/core/core/server/api/endpoints/newsletters.js
 ghost/core/core/server/api/endpoints/notifications.js
@@ -2114,6 +2122,7 @@ ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/emails.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/images.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/index.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/integrations.js
+ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/mentions.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/newsletters.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/offers.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/pages.js
@@ -2448,6 +2457,9 @@ ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-13-add-ghost-e
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-17-add-ghost-explore-integration.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-06-09-26-add-ghost-explore-integration-api-key.js
 ghost/core/core/server/data/migrations/versions/5.30/2023-01-13-04-25-unsubscribe-suppressed-emails.js
+ghost/core/core/server/data/migrations/versions/5.31/2022-12-05-09-56-update-newsletter-subscriptions.js
+ghost/core/core/server/data/migrations/versions/5.31/2023-01-17-14-59-add-outbound-link-tagging-setting.js
+ghost/core/core/server/data/migrations/versions/5.31/2023-01-19-07-46-add-mentions-table.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-29-add-comment-reporting-permissions.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-31-drop-reports-reason.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-32-drop-nullable-member-id-from-likes.js
@@ -2530,6 +2542,7 @@ ghost/core/core/server/models/member-status-event.js
 ghost/core/core/server/models/member-stripe-customer.js
 ghost/core/core/server/models/member-subscribe-event.js
 ghost/core/core/server/models/member.js
+ghost/core/core/server/models/mention.js
 ghost/core/core/server/models/mobiledoc-revision.js
 ghost/core/core/server/models/newsletter.js
 ghost/core/core/server/models/offer-redemption.js
@@ -2666,12 +2679,20 @@ ghost/core/core/server/services/members/service.js
 ghost/core/core/server/services/members/stats/members-stats.js
 ghost/core/core/server/services/members/stripe-connect.js
 ghost/core/core/server/services/members/utils.js
+ghost/core/core/server/services/mentions/BookshelfMentionRepository.js
+ghost/core/core/server/services/mentions/MentionController.js
+ghost/core/core/server/services/mentions/WebmentionMetadata.js
+ghost/core/core/server/services/mentions/index.js
+ghost/core/core/server/services/mentions/service.js
 ghost/core/core/server/services/newsletters/emails/verify-email.js
 ghost/core/core/server/services/newsletters/index.js
 ghost/core/core/server/services/newsletters/service.js
-ghost/core/core/server/services/nft-oembed.js
 ghost/core/core/server/services/notifications/index.js
 ghost/core/core/server/services/notifications/notifications.js
+ghost/core/core/server/services/oembed/index.js
+ghost/core/core/server/services/oembed/nft-oembed.js
+ghost/core/core/server/services/oembed/service.js
+ghost/core/core/server/services/oembed/twitter-embed.js
 ghost/core/core/server/services/offers/index.js
 ghost/core/core/server/services/offers/service.js
 ghost/core/core/server/services/permissions/actions-map-cache.js
@@ -2719,7 +2740,6 @@ ghost/core/core/server/services/themes/validate.js
 ghost/core/core/server/services/tiers/TierRepository.js
 ghost/core/core/server/services/tiers/index.js
 ghost/core/core/server/services/tiers/service.js
-ghost/core/core/server/services/twitter-embed.js
 ghost/core/core/server/services/url/LocalFileCache.js
 ghost/core/core/server/services/url/Queue.js
 ghost/core/core/server/services/url/Resource.js
@@ -2786,6 +2806,8 @@ ghost/core/core/server/web/shared/middleware/pretty-urls.js
 ghost/core/core/server/web/shared/middleware/uncapitalise.js
 ghost/core/core/server/web/shared/middleware/url-redirects.js
 ghost/core/core/server/web/shared/utils.js
+ghost/core/core/server/web/webmentions/index.js
+ghost/core/core/server/web/webmentions/routes.js
 ghost/core/core/server/web/well-known.js
 ghost/core/core/shared/config/defaults.json
 ghost/core/core/shared/config/env/config.development.json
@@ -2913,6 +2935,7 @@ ghost/core/test/e2e-api/members/webhooks.test.js
 ghost/core/test/e2e-api/members/well-known.test.js
 ghost/core/test/e2e-api/shared/__snapshots__/version.test.js.snap
 ghost/core/test/e2e-api/shared/version.test.js
+ghost/core/test/e2e-api/webmentions/webmentions.test.js
 ghost/core/test/e2e-browser/README.md
 ghost/core/test/e2e-browser/admin/members.spec.js
 ghost/core/test/e2e-browser/admin/membership-settings.spec.js
@@ -3240,8 +3263,8 @@ ghost/core/test/unit/server/services/members/stripe-connect.test.js
 ghost/core/test/unit/server/services/members/utils.test.js
 ghost/core/test/unit/server/services/newsletters/index.test.js
 ghost/core/test/unit/server/services/newsletters/service.test.js
-ghost/core/test/unit/server/services/nft-oembed.test.js
 ghost/core/test/unit/server/services/notifications/notifications.test.js
+ghost/core/test/unit/server/services/oembed/nft-oembed.test.js
 ghost/core/test/unit/server/services/permissions/can-this.test.js
 ghost/core/test/unit/server/services/permissions/index.test.js
 ghost/core/test/unit/server/services/permissions/parse-context.test.js
@@ -3252,6 +3275,7 @@ ghost/core/test/unit/server/services/route-settings/settings-loader.test.js
 ghost/core/test/unit/server/services/route-settings/validate.test.js
 ghost/core/test/unit/server/services/route-settings/yaml-parser.test.js
 ghost/core/test/unit/server/services/settings-helpers/settings-helpers.test.js
+ghost/core/test/unit/server/services/settings/__snapshots__/settings-bread-service.test.js.snap
 ghost/core/test/unit/server/services/settings/default-settings-manager.test.js
 ghost/core/test/unit/server/services/settings/settings-bread-service.test.js
 ghost/core/test/unit/server/services/slack.test.js
@@ -3262,6 +3286,7 @@ ghost/core/test/unit/server/services/themes/loader.test.js
 ghost/core/test/unit/server/services/themes/validate.test.js
 ghost/core/test/unit/server/services/url/LocalFileCache.test.js
 ghost/core/test/unit/server/services/url/Queue.test.js
+ghost/core/test/unit/server/services/url/Resources.test.js
 ghost/core/test/unit/server/services/url/UrlGenerator.test.js
 ghost/core/test/unit/server/services/url/UrlService.test.js
 ghost/core/test/unit/server/services/url/Urls.test.js
@@ -3418,7 +3443,6 @@ ghost/core/test/utils/fixtures/themes/warnings.zip
 ghost/core/test/utils/fixtures/urls/resources.json
 ghost/core/test/utils/fixtures/urls/urls.json
 ghost/core/test/utils/index.js
-ghost/core/test/utils/mocks/MailgunClientMock.js
 ghost/core/test/utils/mocks/index.js
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/overrides.js
@@ -3487,6 +3511,14 @@ ghost/domain-events/lib/index.d.ts
 ghost/domain-events/package.json
 ghost/domain-events/test/.eslintrc.js
 ghost/domain-events/test/DomainEvents.test.js
+ghost/dynamic-routing-events/.eslintrc.js
+ghost/dynamic-routing-events/README.md
+ghost/dynamic-routing-events/index.js
+ghost/dynamic-routing-events/lib/URLResourceUpdatedEvent.js
+ghost/dynamic-routing-events/package.json
+ghost/dynamic-routing-events/test/.eslintrc.js
+ghost/dynamic-routing-events/test/dynamic-routing-events.test.js
+ghost/dynamic-routing-events/test/lib/URLResourceUpdatedEvent.test.js
 ghost/email-analytics-provider-mailgun/.eslintrc.js
 ghost/email-analytics-provider-mailgun/index.js
 ghost/email-analytics-provider-mailgun/lib/provider-mailgun.js
@@ -3586,6 +3618,16 @@ ghost/html-to-plaintext/lib/html-to-plaintext.js
 ghost/html-to-plaintext/package.json
 ghost/html-to-plaintext/test/.eslintrc.js
 ghost/html-to-plaintext/test/html-to-plaintext.test.js
+ghost/i18n/.eslintrc.js
+ghost/i18n/README.md
+ghost/i18n/i18next-parser.config.js
+ghost/i18n/index.js
+ghost/i18n/lib/i18n.js
+ghost/i18n/locales/en.json
+ghost/i18n/locales/nl.json
+ghost/i18n/package.json
+ghost/i18n/test/.eslintrc.js
+ghost/i18n/test/i18n.test.js
 ghost/importer-revue/.eslintrc.js
 ghost/importer-revue/README.md
 ghost/importer-revue/index.js
@@ -4166,5 +4208,22 @@ ghost/version-notifications-data-service/lib/version-notifications-data-service.
 ghost/version-notifications-data-service/package.json
 ghost/version-notifications-data-service/test/.eslintrc.js
 ghost/version-notifications-data-service/test/version-notificatons-data-service.test.js
+ghost/webmentions/.eslintrc.js
+ghost/webmentions/README.md
+ghost/webmentions/index.js
+ghost/webmentions/lib/InMemoryMentionRepository.js
+ghost/webmentions/lib/Mention.js
+ghost/webmentions/lib/MentionDiscoveryService.js
+ghost/webmentions/lib/MentionSendingService.js
+ghost/webmentions/lib/MentionsAPI.js
+ghost/webmentions/lib/webmentions.js
+ghost/webmentions/package.json
+ghost/webmentions/test/.eslintrc.js
+ghost/webmentions/test/InMemoryMentionRepository.test.js
+ghost/webmentions/test/Mention.test.js
+ghost/webmentions/test/MentionDiscoveryService.test.js
+ghost/webmentions/test/MentionSendingService.test.js
+ghost/webmentions/test/MentionsAPI.test.js
+ghost/webmentions/test/utils/index.js
 package.json
 yarn.lock

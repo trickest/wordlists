@@ -4422,6 +4422,7 @@ app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Flat/Table/BuilderTest.
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Flat/TableDataTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/FlatTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/FullTest.php
+app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Price/Action/RowDefaultPriceIndexerTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Price/Action/RowTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Price/Action/RowsTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Price/Plugin/CustomerGroupTest.php
@@ -4638,6 +4639,7 @@ app/code/Magento/Catalog/Test/Unit/Pricing/Render/FinalPriceBoxTest.php
 app/code/Magento/Catalog/Test/Unit/Pricing/Render/PriceBoxTest.php
 app/code/Magento/Catalog/Test/Unit/Pricing/RenderTest.php
 app/code/Magento/Catalog/Test/Unit/Setup/CategorySetupTest.php
+app/code/Magento/Catalog/Test/Unit/Setup/Patch/Data/UpdateMultiselectAttributesBackendTypesTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/AllowedProductTypesTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/ColumnFactoryTest.php
 app/code/Magento/Catalog/Test/Unit/Ui/Component/FilterFactoryTest.php
@@ -5673,6 +5675,7 @@ app/code/Magento/CatalogInventoryGraphQl/Model/Resolver/StockStatusProvider.php
 app/code/Magento/CatalogInventoryGraphQl/README.md
 app/code/Magento/CatalogInventoryGraphQl/Test/Unit/Model/Resolver/OnlyXLeftInStockResolverTest.php
 app/code/Magento/CatalogInventoryGraphQl/composer.json
+app/code/Magento/CatalogInventoryGraphQl/etc/graphql/di.xml
 app/code/Magento/CatalogInventoryGraphQl/etc/module.xml
 app/code/Magento/CatalogInventoryGraphQl/etc/schema.graphqls
 app/code/Magento/CatalogInventoryGraphQl/registration.php
@@ -26442,6 +26445,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/AddBundleProductToCart
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductMultipleOptionsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductWithDisabledProductTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/CategoryListTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoriesQuery/CategoriesFilterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoriesQuery/CategoriesPaginationTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoriesQuery/CategoryAggregationsTest.php
@@ -32246,6 +32250,7 @@ dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/cart/tota
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/checkout-data-resolver.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/error-processor.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/new-customer-address.test.js
+dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/payment-service.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/model/totals.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/region-updater.test.js
 dev/tests/js/jasmine/tests/app/code/Magento/Checkout/frontend/js/sidebar.test.js

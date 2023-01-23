@@ -1988,17 +1988,15 @@ java/org/apache/tomcat/util/buf/ByteChunk.java
 java/org/apache/tomcat/util/buf/C2BConverter.java
 java/org/apache/tomcat/util/buf/CharChunk.java
 java/org/apache/tomcat/util/buf/CharsetCache.java
+java/org/apache/tomcat/util/buf/CharsetHolder.java
 java/org/apache/tomcat/util/buf/CharsetUtil.java
 java/org/apache/tomcat/util/buf/EncodedSolidusHandling.java
 java/org/apache/tomcat/util/buf/HexUtils.java
 java/org/apache/tomcat/util/buf/LocalStrings.properties
-java/org/apache/tomcat/util/buf/LocalStrings_cs.properties
-java/org/apache/tomcat/util/buf/LocalStrings_de.properties
 java/org/apache/tomcat/util/buf/LocalStrings_es.properties
 java/org/apache/tomcat/util/buf/LocalStrings_fr.properties
 java/org/apache/tomcat/util/buf/LocalStrings_ja.properties
 java/org/apache/tomcat/util/buf/LocalStrings_ko.properties
-java/org/apache/tomcat/util/buf/LocalStrings_pt_BR.properties
 java/org/apache/tomcat/util/buf/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/buf/MessageBytes.java
 java/org/apache/tomcat/util/buf/StringCache.java
@@ -2022,7 +2020,6 @@ java/org/apache/tomcat/util/collections/ConcurrentCache.java
 java/org/apache/tomcat/util/collections/ManagedConcurrentWeakHashMap.java
 java/org/apache/tomcat/util/collections/SynchronizedQueue.java
 java/org/apache/tomcat/util/collections/SynchronizedStack.java
-java/org/apache/tomcat/util/compat/Jre16Compat.java
 java/org/apache/tomcat/util/compat/Jre19Compat.java
 java/org/apache/tomcat/util/compat/JreCompat.java
 java/org/apache/tomcat/util/compat/JrePlatform.java
@@ -2030,7 +2027,6 @@ java/org/apache/tomcat/util/compat/JreVendor.java
 java/org/apache/tomcat/util/compat/LocalStrings.properties
 java/org/apache/tomcat/util/compat/LocalStrings_fr.properties
 java/org/apache/tomcat/util/compat/LocalStrings_ja.properties
-java/org/apache/tomcat/util/compat/LocalStrings_ko.properties
 java/org/apache/tomcat/util/compat/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/descriptor/Constants.java
 java/org/apache/tomcat/util/descriptor/DigesterFactory.java
@@ -2815,6 +2811,7 @@ res/checkstyle/jakarta-checkstyle.xml
 res/checkstyle/jakarta-import-control.xml
 res/checkstyle/org-checkstyle.xml
 res/checkstyle/org-import-control.xml
+res/checkstyle/test-checkstyle.xml
 res/deployer/build.xml
 res/graal/README.md
 res/graal/build-tomcat-native-image.sh
@@ -3215,7 +3212,6 @@ test/org/apache/catalina/webresources/TestDirResourceSetInternal.java
 test/org/apache/catalina/webresources/TestDirResourceSetMount.java
 test/org/apache/catalina/webresources/TestDirResourceSetReadOnly.java
 test/org/apache/catalina/webresources/TestDirResourceSetVirtual.java
-test/org/apache/catalina/webresources/TestFileResource.java
 test/org/apache/catalina/webresources/TestFileResourceSet.java
 test/org/apache/catalina/webresources/TestFileResourceSetReadOnly.java
 test/org/apache/catalina/webresources/TestFileResourceSetVirtual.java
@@ -3249,7 +3245,6 @@ test/org/apache/coyote/http11/filters/TesterOutputBuffer.java
 test/org/apache/coyote/http11/upgrade/TestUpgrade.java
 test/org/apache/coyote/http11/upgrade/TestUpgradeInternalHandler.java
 test/org/apache/coyote/http2/Http2TestBase.java
-test/org/apache/coyote/http2/TestAbstractStream.java
 test/org/apache/coyote/http2/TestAsync.java
 test/org/apache/coyote/http2/TestAsyncFlush.java
 test/org/apache/coyote/http2/TestAsyncTimeout.java
@@ -3266,7 +3261,6 @@ test/org/apache/coyote/http2/TestHttp2Section_4_2.java
 test/org/apache/coyote/http2/TestHttp2Section_4_3.java
 test/org/apache/coyote/http2/TestHttp2Section_5_1.java
 test/org/apache/coyote/http2/TestHttp2Section_5_2.java
-test/org/apache/coyote/http2/TestHttp2Section_5_3.java
 test/org/apache/coyote/http2/TestHttp2Section_5_5.java
 test/org/apache/coyote/http2/TestHttp2Section_6_1.java
 test/org/apache/coyote/http2/TestHttp2Section_6_2.java
@@ -3282,6 +3276,7 @@ test/org/apache/coyote/http2/TestHttp2Timeouts.java
 test/org/apache/coyote/http2/TestHttp2UpgradeHandler.java
 test/org/apache/coyote/http2/TestHttpServlet.java
 test/org/apache/coyote/http2/TestLargeUpload.java
+test/org/apache/coyote/http2/TestRfc9218.java
 test/org/apache/coyote/http2/TestStream.java
 test/org/apache/coyote/http2/TestStreamProcessor.java
 test/org/apache/coyote/http2/TestStreamQueryString.java
