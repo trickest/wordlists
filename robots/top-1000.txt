@@ -350,6 +350,7 @@ $
 .element
 .emailjson
 .emailtxt
+.embed
 .en-gb.html
 .env
 .eot*************
@@ -364,6 +365,7 @@ $
 .html$
 .html?cachemode=refresh$
 .html_
+.i
 .inc$
 .jpeg$
 .jpeg*************
@@ -376,6 +378,8 @@ $
 .js**************
 .json
 .json$
+.json-compact
+.json-html
 .jsp
 .jsx
 .jsx$
@@ -403,6 +407,7 @@ $
 .qr
 .ram
 .rmm
+.rss
 .rss$
 .ru.html
 .smil
@@ -1379,6 +1384,7 @@ $
 /@async
 /ASCIISumThreshold$
 /Aes/$
+/Analog/
 /B00M3E1HJY
 /B00M3E1NYI
 /B00M3E1Q5Y
@@ -1503,6 +1509,7 @@ $
 /amp
 /amp_msp_amazon_gadget.cms*
 /anal-
+/analog/
 /annotate
 /answer
 /answer_comments
@@ -1530,7 +1537,6 @@ $
 /appointments/api
 /appointments/book/profile
 /appointments/mapbox
-/apps
 /archive
 /article/*$
 /article/eid
@@ -1570,6 +1576,7 @@ $
 /blogs/*+
 /blogvisualizer/
 /bltg
+/book
 /bookmark-*.html
 /bookmark.html
 /bookmarks
@@ -1643,6 +1650,7 @@ $
 /comment/reply/*
 /comments
 /comments
+/comments/*?*sort=
 /commit
 /commit/*.diff
 /commit/*.patch
@@ -1663,7 +1671,6 @@ $
 /composer.json
 /composer.lock
 /computer/thanks
-/conf
 /config
 /config
 /configspace/*
@@ -1759,9 +1766,7 @@ $
 /download/results.aspx?
 /download/thankyou.aspx
 /download/thankyou.aspx?
-/download?
 /downloadassets
-/downloadstats
 /dp
 /dynalist/*
 /dynamics/
@@ -1793,7 +1798,6 @@ $
 /en
 /en/categories
 /en/no-ad
-/en/webarchives/archive
 /energy-services/web/modules
 /error
 /error/
@@ -1841,7 +1845,6 @@ $
 /fork
 /forks
 /form
-/format:thumbnail
 /forum-attachment
 /forums
 /free-shipping
@@ -1853,6 +1856,7 @@ $
 /g-string
 /g00
 /galaxy-s10-buy-test
+/gated/
 /gcrnsts
 /gd-perf$
 /gd-site-hdr-dropdown$
@@ -2050,7 +2054,6 @@ $
 /metrics
 /midas
 /milestone_counts
-/misc
 /misc$
 /mobile_collapsed
 /mobile_expanded_voter_list
@@ -2511,8 +2514,6 @@ $
 /watch
 /watchers
 /watchlist
-/wbg/aem
-/wbg/services
 /webapi
 /webcheck1/
 /webcheck2/
@@ -2601,6 +2602,7 @@ $
 ?*email=
 ?*err_code=404
 ?*fbclid
+?*feed=
 ?*hl
 ?*hostSite=
 ?*hsCtaTracking
@@ -3047,7 +3049,6 @@ $
 ?reg
 ?region=
 ?replytocom
-?replytocom
 ?reported_by=
 ?returnPage=
 ?ro
@@ -3324,6 +3325,9 @@ AmazonVPC/2010-06-15
 AmazonVPC/2010-08-31
 Analog_Root/
 AppData
+App_Browsers/
+App_Data/
+App_config/
 Arabic
 Archive/New_Records_Testing
 Archive/PrintMaterial/ACS_Journal/1/files
@@ -4766,6 +4770,7 @@ SingleShipmentOrderSummaryView
 SiteBot
 SiteBot/0.1
 SiteSnagger
+Sitecore
 Sitemaps/
 Slurp
 Snap
@@ -5020,7 +5025,6 @@ _frdtcr
 _ga
 _ga=
 _generated
-_global_notifications
 _hcms/forms//embed/v3/form/53/438f4c23-5908-4c4e-a9a7-e30a3897211b/json?hutk=
 _hcms/iplookup
 _hcms/perf
@@ -5053,10 +5057,6 @@ _modules
 _multiremote
 _newsml.html
 _next/data
-_next/gtm
-_next/jwt
-_next/title
-_next/viewer
 _ngjs/resource
 _ngjs/resource/*/get
 _nimbusJson.json
@@ -5084,10 +5084,6 @@ _refurb-discounted*/shop
 _remote
 _rprt
 _rss.xml
-_rv/gtm
-_rv/jwt
-_rv/title
-_rv/viewer
 _search.html
 _seo.html
 _singlePage.html
@@ -5478,6 +5474,7 @@ africa_en
 africa_fr
 africa_pt
 afs
+after=
 afterdark
 afterdark/hot
 ag/AGP/AGPC/doc/industr
@@ -5553,6 +5550,7 @@ alertsemergencies/
 alexa-top-sites/*
 alexa-web-search/*
 alexa/*
+alink
 alkali
 all
 allegation
@@ -5838,6 +5836,7 @@ asp/demo_db_edit.asp
 aspx/
 asset-manifest.json
 assets
+assets/css
 assets/dist
 assets/dist/css/asana-apps.css
 assets/dist/css/asana-guide.css
@@ -5941,7 +5940,6 @@ atom/static-1.30
 atom/static-1.31
 atom/static-1.33
 atom/static-1.40
-atom10
 au
 au$
 au*/listing/*/favoriters
@@ -6358,6 +6356,7 @@ bearing
 bebek-anne
 become-an-author?
 beehive
+before=
 befr
 benl
 bentoapi
@@ -6841,6 +6840,7 @@ business/wp-content/uploads
 business/xmlrpc.php
 button
 buttonWidget
+buttonlite.js
 buy
 buy_buttons
 buzz/*.xml$
@@ -6852,7 +6852,6 @@ bvroute=Review
 bvrrp
 bvtab
 bw
-bwapps/syndication
 bz
 bz/corporate/contact
 bz/corporate/press
@@ -7405,6 +7404,7 @@ capacity4dev/xmlrpc.php
 captcha
 captchas
 car-search-sitemap
+card
 card_management.php
 careers
 careers/Phoenix-Hiring-Event/
@@ -7490,7 +7490,6 @@ cdn-cgi
 cdn-cgi/
 cdn-cgi/bm/cv
 cdn-cgi/challenge-platform
-cdn-error-page
 cdn.jwplayer.com/previews
 ce/item.cms
 celebritycruises/guide-to-the-globe
@@ -7600,6 +7599,7 @@ chapter/10.1007/978-94-6209-446-8_8
 chapters.html
 chapters/local-activities
 chapters/students/excellence-awards/
+charities
 charities/beta/account/login
 charity/search
 chart/*/async
@@ -7788,12 +7788,12 @@ cms_preview_ui_static
 cn
 cn-k12
 cn/*/aow
-cn/Analog/
-cn/analog/
 cn/design-center/packaging-quality-symbols-footprints/symbols-and-footprints/
 cn/en/pages/strategy-operations/articles/5g-assist-in-2019-ncov.html
-cn/gated/
+cn/license/ibis-models
 cn/license/licensing-agreement/
+cn/license/saber-models/
+cn/license/spice-models
 cn/login-messages
 cn_abc
 cn_ccb
@@ -8237,12 +8237,12 @@ corporate/microsites/tysabri/ms-assessment-tool-pageresults.html
 corporate/microsites/tysabri/ms-assessment-tool.html
 corporate/request
 corporatecommunications
-couchmode
 count.php
 countdown/create?
 countdown/eclipse?
 countdown/generic?
 countdown/to?
+counters/client-screenview
 counters/customcounter.html?day
 counters/fullscreen.html?
 counters/millennium.html?p0
@@ -8651,6 +8651,7 @@ deals/merchant
 deals/popular
 debate
 debats/
+debitcard
 debug
 debug/
 deck
@@ -8795,18 +8796,6 @@ directories/hospitals/index_html/*/state
 directories/retirement/index_html/region
 directory
 directory/
-directory/*&developmentstatus=
-directory/*&language=
-directory/*&license=
-directory/*&natlanguage=
-directory/*&os=
-directory/*&topic=
-directory/*?developmentstatus=
-directory/*?language=
-directory/*?license=
-directory/*?natlanguage=
-directory/*?os=
-directory/*?topic=
 directory/all
 directory/release_feed
 directory/sitemap
@@ -9063,6 +9052,7 @@ doi/reader
 doi/ref
 doi/xml
 dom
+domain/*t=
 domains/transfer-a-domain/transfer.aspx
 domains/whois/whois-ajax.aspx
 donations
@@ -9135,6 +9125,7 @@ e-services/
 e/*?
 earlyaccess
 earnings
+earth
 earth/social
 easypol/output/forum.asp
 easyrenewal
@@ -9398,7 +9389,6 @@ en-xa/*http://upload.wikimedia.org/robots.txt
 en-za/
 en/
 en/*automation-test-area
-en/Analog/
 en/JSWidget/
 en/JSWidgetFeed/
 en/StockQuote/
@@ -9406,7 +9396,6 @@ en/Tracker?data=*
 en/US/swassets/
 en/US/swassets/sw274/sitewide_country_language_selector.html
 en/account/
-en/analog/
 en/aroundtown/
 en/design-center/packaging-quality-symbols-footprints/symbols-and-footprints/
 en/dev-playground
@@ -9417,12 +9406,14 @@ en/edlmoney/
 en/error/
 en/foodandcooking/
 en/freelance-work
-en/gated/
 en/googlehangouts
 en/healthandsafety/
 en/internetexplorer
 en/legal/pre-release-terms/
+en/license/ibis-models
 en/license/licensing-agreement/
+en/license/saber-models/
+en/license/spice-models
 en/meetings/full-capacity
 en/news/canarias/diary
 en/offline-site
@@ -10627,7 +10618,6 @@ ga-IE/users
 ga/p
 ga_exp.js
 gaa
-gadgets
 galeria-de-fotos
 galleries
 galleries/boards
@@ -10718,6 +10708,8 @@ getstarted/
 getthebetas/
 getting-started/functional-groups/
 getting-started/functional-groups/*
+gettingstarted
+getvenmo
 gfe
 gfe_rd=
 gfx/stock
@@ -10801,6 +10793,7 @@ go/turkey
 go?
 goframe
 goglobal/
+gold?
 google
 google-search
 google-sso
@@ -10978,7 +10971,6 @@ groups/
 groups/*/-/saml/sso
 groups/*/analytics
 groups/*/contribution_analytics
-groups/*/forum
 groups/*/group_members
 groups/*/lightbox
 groups/10millionphotos
@@ -11104,7 +11096,6 @@ help/*/ask
 help/cnnx.html
 help/doc/en/salesforce_pubs_style_guide.pdf
 help/feedback
-help/forgot_login
 help/kindlecloudreader
 help/kindlefire
 help/maps/indoormaps/partners
@@ -11115,7 +11106,6 @@ help/sitemap
 help/sitemap.php
 help/sl
 help/testing
-help/verify_email
 help/vodafone
 helpdocs
 helper
@@ -11863,6 +11853,7 @@ in/ventureone
 inapp
 inbox
 inbox$
+inboxcommerce
 include
 include/
 includes
@@ -11976,6 +11967,7 @@ info/jobs/projektberater.html
 info/jobs/scrum-master.html
 info/jobs/showmaster.html
 info/jobs/social-media.html
+info/jobs/support.html
 info/jobs/texterin-uxwriterin.html
 info/kontaktalt.html
 info/nachhaltigkeitsziele.html
@@ -12555,9 +12547,7 @@ jp/*locationQuery=
 jp/*max=
 jp/*min=
 jp/*my_etsy=
-jp/Analog/
 jp/admin
-jp/analog/
 jp/api
 jp/apps
 jp/assets/pdf
@@ -12580,7 +12570,6 @@ jp/conversations
 jp/design-center/packaging-quality-symbols-footprints/symbols-and-footprints/
 jp/email-validation
 jp/ferramentas/criador-de-logo/onboarding
-jp/gated/
 jp/growth-tools-assets
 jp/guest-pass
 jp/help/sitemap
@@ -12588,7 +12577,10 @@ jp/help/sitemap.php
 jp/herramientas/generador-de-logos/onboarding
 jp/invites/buy
 jp/landing
+jp/license/ibis-models
 jp/license/licensing-agreement/
+jp/license/saber-models/
+jp/license/spice-models
 jp/listing/*/stubs
 jp/locale/overlay
 jp/locale/overlay_secure
@@ -13445,11 +13437,6 @@ media/jp/technical-documentation/design-notes/
 media/jp/technical-documentation/tech-articles/
 media/oembed
 media/popup/
-media/ru/company/sustainability-reports/
-media/ru/technical-documentation/app-notes/
-media/ru/technical-documentation/customer-case-studies/
-media/ru/technical-documentation/design-notes/
-media/ru/technical-documentation/tech-articles/
 media/thumbnails/
 media/tv/channel/credits
 media/tyfo*
@@ -13740,6 +13727,7 @@ merchant/update
 mes
 mesachatsmonquartier
 message
+message/compose
 messageID
 message_the_business
 messages
@@ -13948,7 +13936,6 @@ ms/search
 ms/user
 ms/users
 msa
-msarss
 msclkid=
 msdn-files/
 msdntv/
@@ -14000,8 +13987,6 @@ musiclp
 musics
 musicsearch
 musicsp
-musicstore/download
-musicstore/preview
 muzik-plak-enstruman
 mwlite
 mx
@@ -14149,6 +14134,7 @@ my_etsy=
 my_favorites
 my_listings
 my_playlists
+my_shiny_metal_ass
 my_videos
 my_videos_upload
 myaccount
@@ -15119,6 +15105,7 @@ patents/related
 patents?
 path,
 patronNext
+pay
 pay/images/merchant_logos
 pay/images/program_logos
 payapp
@@ -15425,6 +15412,7 @@ platform/
 platform/contextual
 platform=
 play
+play-football
 play/audios/modulosRadio
 play/clan
 play/store/web
@@ -15433,7 +15421,7 @@ player
 player/brightcove
 player/metadata/video
 playerColor=
-playerhttp://roguefitness.com/robots.txt
+playerhttp://rollingstone.com/robots.txt
 playlist.php
 playlists/*/user
 playstation
@@ -15444,6 +15432,7 @@ plugin
 plugins
 plugins.
 plugins/
+plugins/search
 plusinstall
 pm/
 pmc/*.cgi
@@ -15712,74 +15701,6 @@ portal/
 portal/home
 portal/portal3rc.fcgi/*/*.css
 portal/portal3rc.fcgi/*/*.js
-portal/site/3m
-portal/site/eon/home
-portal/site/eon/news/geography
-portal/site/eon/news/industry
-portal/site/eon/news/search
-portal/site/eon/news/subject
-portal/site/eon/search
-portal/site/eon/template.PAGE/home
-portal/site/eon/template.PAGE/news
-portal/site/eon/template.PAGE/permalink
-portal/site/exxonmobil
-portal/site/exxonmobilchemical
-portal/site/google
-portal/site/home
-portal/site/home/about/2008
-portal/site/home/about/overview
-portal/site/home/bureaus/world
-portal/site/home/business-wire
-portal/site/home/distribution/americas
-portal/site/home/distribution/global
-portal/site/home/email/alert
-portal/site/home/email/alerts
-portal/site/home/global
-portal/site/home/ir/hosting
-portal/site/home/ir/press-release-distribution
-portal/site/home/ir/services
-portal/site/home/ir/tools
-portal/site/home/media/services
-portal/site/home/membership
-portal/site/home/my-business-wire
-portal/site/home/news-online/all
-portal/site/home/news/all
-portal/site/home/news/industries
-portal/site/home/news/industry
-portal/site/home/news/language
-portal/site/home/news/languages
-portal/site/home/news/more
-portal/site/home/news/multimedia
-portal/site/home/news/sections
-portal/site/home/news/subject
-portal/site/home/news/subjects
-portal/site/home/pr/press-release-distribution
-portal/site/home/regulatory-filings
-portal/site/home/resources
-portal/site/home/rss
-portal/site/home/services/overview
-portal/site/home/template.MAXIMIZE/tradeshows
-portal/site/home/template.NDM
-portal/site/home/template.NDM/email
-portal/site/home/template.NDM/email/alert
-portal/site/home/template.NDM/email/alerts
-portal/site/home/template.NDM/permalink
-portal/site/home/template.PAGE/global
-portal/site/home/template.PAGE/menuitem.
-portal/site/home/template.PAGE/menuitem.29c1c414dc41464723632d10e6908a0c
-portal/site/home/template.PAGE/menuitem.8529ea2ad8631dcd3bb97904c6908a0c
-portal/site/home/template.PAGE/menuitem.ddfc3807cdd1e0ce315528c6e6908a0c
-portal/site/home/template.PAGE/menuitem.e23d7f2be635f4725e0fa455c6908a0c
-portal/site/home/template.PAGE/news
-portal/site/home/template.PAGE/news/all
-portal/site/home/template.PAGE/news/company
-portal/site/home/template.PAGE/permalink
-portal/site/home/template.PAGE/welcome
-portal/site/home/welcome
-portal/site/home/xbrl
-portal/site/rohmhaas
-portal/site/transcore
-portal_redirects
 portfolio
 posRating
 possible_biz_owner
@@ -16302,6 +16223,13 @@ quotes/list_rss
 r
 r.cfm
 r/
+r/*.rss
+r/*/comments/*.rss
+r/*/config/*.rss
+r/*/submit$
+r/*/submit/$
+r/*/user
+r/*/wiki/*.rss
 r/Preview
 r/instant/response
 r?
@@ -16456,6 +16384,7 @@ remotecontrol/bestpractices/jl-prototype
 remotecontrol/bestpractices/prototype
 remotelogout
 remove-favorite
+remove_email/t2_
 renders
 renewal
 rep=hc
@@ -16642,7 +16571,6 @@ rss
 rss
 rss-feed
 rss-feeds
-rss.php
 rss/*
 rss/people/*/reviews
 rss/tag
@@ -16666,14 +16594,11 @@ ru-ru/
 ru-ru/events/platforma/materials/default.aspx?speaker*
 ru/
 ru/*search
-ru/Analog/
 ru/advanced-search/x
-ru/analog/
 ru/android/collections
 ru/android/search
 ru/blogs/497c2c2d305b7dfa351d17bd3b4398dc37b0e0a4/
 ru/cdm
-ru/design-center/packaging-quality-symbols-footprints/symbols-and-footprints/
 ru/event/*/shoutbox
 ru/event/*/shoutbox?
 ru/features/partial/footer
@@ -16688,11 +16613,9 @@ ru/firefox/collections/mozilla/$
 ru/firefox/search
 ru/forum
 ru/forums
-ru/gated/
 ru/group
 ru/kb/*/discuss
 ru/label
-ru/license/licensing-agreement/
 ru/multistore
 ru/music/*/+images
 ru/music/*/+images/*/shoutbox
@@ -16810,7 +16733,6 @@ sch/i.html*_sop=12*&
 sch/i.html?*&mkcid=2
 sch/i.html?*_nkw=*&
 sch/i.html?_nkw=
-schema
 schittscreek
 schlagwoerter/personen/k/norbert-klein
 schnipsel.html
@@ -17191,7 +17113,6 @@ search?node*keywords*feature_
 search?q$
 search?q=
 search?q=%23
-search?q=*
 search?searchAuthor=*&sort=
 search?searchNarrator=*&sort=
 search?searchProvider=*&sort=
@@ -17204,7 +17125,6 @@ searchID
 searchNarrator*feature_six_browse-bin
 searchProvider*feature_six_browse-bin
 searchTerm=
-search\?
 search_album.pl
 search_diary.pl
 search_history
@@ -17314,6 +17234,7 @@ semantic-homepage
 seminar/
 semp
 send-email
+send-receive
 sendHeaderEarly
 send_to_friend
 sendarticle
@@ -17676,6 +17597,7 @@ siteSwitch
 site_prior_9-22
 sitecheck.internetseer.com
 sitecore
+sitecore
 sitecore/
 sitecore/content/home
 sitecore_files/
@@ -17689,6 +17611,7 @@ sitemap.xml
 sitemap.xml$
 sitemaps
 sitemaps/
+sitemaps/*.xml
 sitemaps/*.xml$
 sitemaps/sitemap/*.xml$
 sitemaps_v3
@@ -18089,7 +18012,6 @@ snap
 sndmsg?
 snoop
 snp
-snr_email
 sns-ap
 sns-ap
 soap/
@@ -18106,28 +18028,8 @@ socialapp/
 socialapp/SocialAppAppBoxMyAppListAsync.naver
 socialapp/SocialAppAppBoxMyAppListAsync.nhn
 socialmanager
-software/*&categories=
-software/*&company_sizes=
-software/*&deployment=
-software/*&feature_
-software/*&free_options=
-software/*&integrates_with=
-software/*&org_types=
 software/*&q=
-software/*&regions=
-software/*&support=
-software/*&training=
-software/*?categories=
-software/*?company_sizes=
-software/*?deployment=
-software/*?feature_
-software/*?free_options=
-software/*?integrates_with=
-software/*?org_types=
 software/*?q=
-software/*?regions=
-software/*?support=
-software/*?training=
 software/compare/*-vs-*-vs-*-vs-*-vs-
 software/compare/*/add-software
 software/gnun/linc
@@ -18370,6 +18272,10 @@ static/*.jpg
 static/*.js$
 static/*.js?
 static/*.png
+static/button/button1.html
+static/button/button1.js
+static/button/button2.html
+static/button/button3.html
 static/codemirror
 static/css
 static/ebsa
@@ -18637,6 +18543,7 @@ svc/letter-boxed
 svc/news/v3/all/pshb.rss
 svc/px
 svc/pxcss
+svc/shreddit
 svc/spelling-bee
 svc/vertex
 svc/wordle
@@ -18797,6 +18704,7 @@ teachers/edcar
 teachers/innovators/toolkit
 teachers/search/resources/?q=
 tealeaf
+team
 teamplain/
 teams
 teams/contact/thank-you
@@ -18947,6 +18855,7 @@ themes/*.jpg
 themes/*.js$
 themes/*.js?
 themes/*.png
+themes/*.svg
 themes/rss
 theshow/
 thewar/search_results.php?
@@ -18990,6 +18899,7 @@ timezone-utils/static-2.30
 timezone-utils/static-2.36
 timezone-utils/static-2.66
 timezone-utils/static-2.67
+timings/perf
 tip
 title
 title/tt*/mediaviewer/rm*/tr
@@ -19836,7 +19746,6 @@ user/sign-up
 user/sign-up/sso-redirect
 user/updates_rss
 user/upload
-user/verify
 user?destination=
 userNext
 userValidationKey
@@ -20156,6 +20065,7 @@ w
 w.cfm
 w/api.php?action=mobileview&
 w/load.php?
+w/signup
 w/users/user_hints
 waicent/consultation
 waicent/faoinfo/agricult/agl/agll/prosoil
@@ -20243,7 +20153,6 @@ webapp
 webapp
 webapp/wcs/stores/servlet
 webapps
-webbox
 webcasts
 webclient
 webcreation
@@ -21170,8 +21079,9 @@ wp-admin
 wp-admin/
 wp-admin/admin-ajax.php
 wp-admin/admin-ajax.php
-wp-admin/admin-ajax.phphttp://aljazeera.com/robots.txt
 wp-admin/admin-ajax.phphttp://fool.com/robots.txt
+wp-admin/load-scripts.php
+wp-admin/load-styles.php
 wp-adv
 wp-comments-post.php
 wp-content
@@ -21199,7 +21109,7 @@ wp-content/themes/Phoenix/assets/images/rad-fallback/fallback-short.jpg
 wp-content/themes/Phoenix/assets/images/rad-fallback/fallback-tall-b.jpg
 wp-content/themes/Phoenix/assets/js/vendor/picturefill.min.js
 wp-content/themes/neilpatel/js/script-comments.js
-wp-content/themes/nexstar/client/build/css/http://themeforest.net/robots.txt
+wp-content/themes/nexstar/client/build/css/http://thesun.co.uk/robots.txt
 wp-content/themes/nexstar/client/build/js
 wp-content/themes/tns-2022/assets
 wp-content/themes/tns-2022/data
@@ -21229,8 +21139,6 @@ wp-login.php
 wp-signup.php
 wp-stat/ad
 wp-stat/vrroom
-wps
-wpvi
 wrd.walmart.com
 write-
 write-review
@@ -21292,7 +21200,7 @@ xmlrpc.php
 xoonboarding
 xorouter
 xs4all
-xsl
+xsl/
 y1=
 yap/preview
 year
