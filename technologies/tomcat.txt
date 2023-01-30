@@ -1361,7 +1361,7 @@ java/org/apache/catalina/webresources/LocalStrings_pt_BR.properties
 java/org/apache/catalina/webresources/LocalStrings_zh_CN.properties
 java/org/apache/catalina/webresources/StandardRoot.java
 java/org/apache/catalina/webresources/TomcatJarInputStream.java
-java/org/apache/catalina/webresources/TomcatURLStreamHandlerFactory.java
+java/org/apache/catalina/webresources/TomcatURLStreamHandlerProvider.java
 java/org/apache/catalina/webresources/TrackedInputStream.java
 java/org/apache/catalina/webresources/VirtualResource.java
 java/org/apache/catalina/webresources/WarResource.java
@@ -2758,6 +2758,7 @@ modules/stuffed/tomcat.yaml
 modules/stuffed/webapp-jspc.ant.xml
 res/META-INF/annotations-api.jar.manifest
 res/META-INF/bootstrap.jar.manifest
+res/META-INF/catalina.jar/services/java.net.spi.URLStreamHandlerProvider
 res/META-INF/default.license
 res/META-INF/default.manifest
 res/META-INF/default.notice
@@ -2771,6 +2772,7 @@ res/META-INF/jsp-api.jar.manifest
 res/META-INF/servlet-api.jar.license
 res/META-INF/servlet-api.jar.manifest
 res/META-INF/servlet-api.jar.notice
+res/META-INF/tomcat-embed-core.jar/services/java.net.spi.URLStreamHandlerProvider
 res/META-INF/tomcat-websocket.jar/services/jakarta.servlet.ServletContainerInitializer
 res/META-INF/tomcat-websocket.jar/services/jakarta.websocket.ContainerProvider
 res/META-INF/tomcat-websocket.jar/services/jakarta.websocket.server.ServerEndpointConfig$Configurator
@@ -2833,8 +2835,10 @@ res/graal/tomcat-embed-websocket/native-image/native-image.properties
 res/graal/tomcat-embed-websocket/native-image/tomcat-reflection.json
 res/graal/tomcat-embed-websocket/native-image/tomcat-resource.json
 res/ide-support/coding-style.txt
+res/ide-support/eclipse/clean-up-asf-tomcat.xml
 res/ide-support/eclipse/eclipse.classpath
 res/ide-support/eclipse/eclipse.project
+res/ide-support/eclipse/formatting-asf-tomcat.xml
 res/ide-support/eclipse/java-compiler-errors-warnings.txt
 res/ide-support/eclipse/org.eclipse.jdt.core.prefs.properties
 res/ide-support/eclipse/start-tomcat.launch
@@ -2908,6 +2912,7 @@ res/spotbugs/filter-false-positives.xml
 res/welcome.bin.html
 res/welcome.main.html
 test/META-INF/services/jakarta.servlet.ServletContainerInitializer
+test/META-INF/services/java.net.spi.URLStreamHandlerProvider
 test/conf/jaspic-test-01.xml
 test/conf/jaspic-test-02.xml
 test/conf/jaspic-test-04.xml
@@ -3223,7 +3228,6 @@ test/org/apache/catalina/webresources/TestJarResourceSetMount.java
 test/org/apache/catalina/webresources/TestJarWarResourceSet.java
 test/org/apache/catalina/webresources/TestResourceJars.java
 test/org/apache/catalina/webresources/TestStandardRoot.java
-test/org/apache/catalina/webresources/TestTomcatURLStreamHandlerFactory.java
 test/org/apache/catalina/webresources/TesterWebResourceRoot.java
 test/org/apache/catalina/webresources/war/TestHandler.java
 test/org/apache/catalina/webresources/war/TestHandlerIntegration.java
@@ -3480,6 +3484,7 @@ test/org/apache/tomcat/util/http/parser/TestAuthorizationDigest.java
 test/org/apache/tomcat/util/http/parser/TestHttpParser.java
 test/org/apache/tomcat/util/http/parser/TestHttpParserHost.java
 test/org/apache/tomcat/util/http/parser/TestMediaType.java
+test/org/apache/tomcat/util/http/parser/TestPriority.java
 test/org/apache/tomcat/util/http/parser/TestRanges.java
 test/org/apache/tomcat/util/http/parser/TestTokenList.java
 test/org/apache/tomcat/util/http/parser/TestUpgrade.java

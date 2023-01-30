@@ -2626,6 +2626,7 @@ core/lib/Drupal/Core/FileTransfer/SSH.php
 core/lib/Drupal/Core/Flood/DatabaseBackend.php
 core/lib/Drupal/Core/Flood/FloodInterface.php
 core/lib/Drupal/Core/Flood/MemoryBackend.php
+core/lib/Drupal/Core/Flood/PrefixFloodInterface.php
 core/lib/Drupal/Core/Form/BaseFormIdInterface.php
 core/lib/Drupal/Core/Form/ConfigFormBase.php
 core/lib/Drupal/Core/Form/ConfigFormBaseTrait.php
@@ -4295,6 +4296,7 @@ core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_comment_operations.yml
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_comment_row.yml
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_comment_rss.yml
+core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_comment_schema.yml
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_comment_user_uid.yml
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_field_filters.yml
 core/modules/comment/tests/modules/comment_test_views/test_views/views.view.test_new_comments.yml
@@ -4342,6 +4344,7 @@ core/modules/comment/tests/src/Functional/Rest/CommentXmlAnonTest.php
 core/modules/comment/tests/src/Functional/Rest/CommentXmlBasicAuthTest.php
 core/modules/comment/tests/src/Functional/Rest/CommentXmlCookieTest.php
 core/modules/comment/tests/src/Functional/Views/CommentAdminTest.php
+core/modules/comment/tests/src/Functional/Views/CommentApproveLinkTest.php
 core/modules/comment/tests/src/Functional/Views/CommentEditTest.php
 core/modules/comment/tests/src/Functional/Views/CommentFieldFilterTest.php
 core/modules/comment/tests/src/Functional/Views/CommentOperationsTest.php
@@ -5868,6 +5871,11 @@ core/modules/forum/forum.permissions.yml
 core/modules/forum/forum.routing.yml
 core/modules/forum/forum.services.yml
 core/modules/forum/forum.views.inc
+core/modules/forum/help_topics/forum.concept.html.twig
+core/modules/forum/help_topics/forum.configuring.html.twig
+core/modules/forum/help_topics/forum.locking.html.twig
+core/modules/forum/help_topics/forum.moving.html.twig
+core/modules/forum/help_topics/forum.starting.html.twig
 core/modules/forum/migrations/d6_forum_settings.yml
 core/modules/forum/migrations/d7_forum_settings.yml
 core/modules/forum/migrations/state/forum.migrate_drupal.yml
@@ -6007,11 +6015,6 @@ core/modules/help_topics/help_topics/field_ui.manage_display.html.twig
 core/modules/help_topics/help_topics/field_ui.manage_form.html.twig
 core/modules/help_topics/help_topics/field_ui.reference_field.html.twig
 core/modules/help_topics/help_topics/filter.overview.html.twig
-core/modules/help_topics/help_topics/forum.concept.html.twig
-core/modules/help_topics/help_topics/forum.configuring.html.twig
-core/modules/help_topics/help_topics/forum.locking.html.twig
-core/modules/help_topics/help_topics/forum.moving.html.twig
-core/modules/help_topics/help_topics/forum.starting.html.twig
 core/modules/help_topics/help_topics/help.help_topic_search.html.twig
 core/modules/help_topics/help_topics/history.tracking_user_content.html.twig
 core/modules/help_topics/help_topics/image.style.html.twig
@@ -7943,6 +7946,7 @@ core/modules/mysql/tests/src/Kernel/mysql/DatabaseExceptionWrapperTest.php
 core/modules/mysql/tests/src/Kernel/mysql/DbDumpTest.php
 core/modules/mysql/tests/src/Kernel/mysql/LargeQueryTest.php
 core/modules/mysql/tests/src/Kernel/mysql/MysqlDriverLegacyTest.php
+core/modules/mysql/tests/src/Kernel/mysql/MysqlDriverTest.php
 core/modules/mysql/tests/src/Kernel/mysql/NextIdTest.php
 core/modules/mysql/tests/src/Kernel/mysql/PrefixInfoTest.php
 core/modules/mysql/tests/src/Kernel/mysql/SchemaTest.php
@@ -10412,6 +10416,7 @@ core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.ph
 core/modules/system/tests/src/FunctionalJavascript/FrameworkTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModalRendererTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModuleFilterTest.php
+core/modules/system/tests/src/FunctionalJavascript/ModuleUninstallFilterTest.php
 core/modules/system/tests/src/FunctionalJavascript/OffCanvasTest.php
 core/modules/system/tests/src/FunctionalJavascript/OffCanvasTestBase.php
 core/modules/system/tests/src/FunctionalJavascript/System/DateFormatTest.php
@@ -10870,8 +10875,6 @@ core/modules/text/tests/src/Kernel/TextFormatterTest.php
 core/modules/text/tests/src/Kernel/TextItemBaseTest.php
 core/modules/text/tests/src/Kernel/TextSummaryTest.php
 core/modules/text/tests/src/Kernel/TextWithSummaryItemTest.php
-core/modules/text/tests/src/Unit/Migrate/d6/TextFieldTest.php
-core/modules/text/tests/src/Unit/Migrate/d7/TextFieldTest.php
 core/modules/text/tests/src/Unit/Plugin/migrate/field/d6/TextFieldTest.php
 core/modules/text/tests/src/Unit/Plugin/migrate/field/d7/TextFieldTest.php
 core/modules/text/text.info.yml
