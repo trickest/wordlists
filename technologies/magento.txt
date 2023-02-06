@@ -1822,6 +1822,7 @@ app/code/Magento/Bundle/Test/Unit/Model/Quote/Item/Option/BundleSelectionAttribu
 app/code/Magento/Bundle/Test/Unit/Model/Quote/Item/OptionTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/Indexer/PriceTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/Selection/Collection/FilterApplierTest.php
+app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/SelectionTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/AbstractItemsTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/InvoiceTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/InvoiceTestProvider.php
@@ -6324,6 +6325,8 @@ app/code/Magento/CatalogUrlRewrite/Setup/Patch/Data/CreateUrlAttributes.php
 app/code/Magento/CatalogUrlRewrite/Setup/Patch/Data/UpdateUrlKeyForProducts.php
 app/code/Magento/CatalogUrlRewrite/Setup/Patch/Data/UpdateUrlKeySearchable.php
 app/code/Magento/CatalogUrlRewrite/Setup/Recurring.php
+app/code/Magento/CatalogUrlRewrite/Test/Fixture/CategoryUrlRewrite.php
+app/code/Magento/CatalogUrlRewrite/Test/Fixture/ProductUrlRewrite.php
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/ActionGroup/AssertStorefrontProductRewriteUrlSubCategoryActionGroup.xml
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/Data/AdminCategoryRestrictedUrlMessageData.xml
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/Data/GenerateCategoryProductUrlRewriteConfigData.xml
@@ -6586,6 +6589,11 @@ app/code/Magento/Checkout/Model/Type/Onepage.php
 app/code/Magento/Checkout/Observer/LoadCustomerQuoteObserver.php
 app/code/Magento/Checkout/Observer/SalesQuoteSaveAfterObserver.php
 app/code/Magento/Checkout/Observer/UnsetAllObserver.php
+app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeAssignBillingAddress.php
+app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforePlaceOrder.php
+app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSavePaymentInformation.php
+app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSaveShippingInformation.php
+app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSetPaymentMethod.php
 app/code/Magento/Checkout/Plugin/Model/Quote/ResetQuoteAddresses.php
 app/code/Magento/Checkout/README.md
 app/code/Magento/Checkout/Setup/Patch/Data/PrepareInitialCheckoutConfiguration.php
@@ -7036,6 +7044,8 @@ app/code/Magento/Checkout/etc/frontend/routes.xml
 app/code/Magento/Checkout/etc/frontend/sections.xml
 app/code/Magento/Checkout/etc/module.xml
 app/code/Magento/Checkout/etc/webapi.xml
+app/code/Magento/Checkout/etc/webapi_rest/di.xml
+app/code/Magento/Checkout/etc/webapi_soap/di.xml
 app/code/Magento/Checkout/i18n/en_US.csv
 app/code/Magento/Checkout/registration.php
 app/code/Magento/Checkout/view/adminhtml/email/failed_payment.html
@@ -7860,6 +7870,7 @@ app/code/Magento/CmsUrlRewrite/Plugin/Cms/Model/PageRepository/ValidationComposi
 app/code/Magento/CmsUrlRewrite/Plugin/Cms/Model/ResourceModel/Page.php
 app/code/Magento/CmsUrlRewrite/Plugin/Cms/Model/Store/View.php
 app/code/Magento/CmsUrlRewrite/README.md
+app/code/Magento/CmsUrlRewrite/Test/Fixture/CmsPageUrlRewrite.php
 app/code/Magento/CmsUrlRewrite/Test/Mftf/LICENSE.txt
 app/code/Magento/CmsUrlRewrite/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/CmsUrlRewrite/Test/Mftf/README.md
@@ -19814,6 +19825,7 @@ app/code/Magento/Sales/Test/Mftf/Test/StorefrontOrderPagerIsAbsentTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontPrintOrderFindByZipGuestTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontPrintOrderGuestTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontRedirectToOrderHistoryTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/StorefrontReorderAsCustomerCustomPrice.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontReorderAsGuestCustomerTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontReorderAsGuestTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontReorderVirtualProductAsCustomerTest.xml
@@ -24118,6 +24130,7 @@ app/code/Magento/UrlRewrite/Model/UrlRewrite.php
 app/code/Magento/UrlRewrite/README.md
 app/code/Magento/UrlRewrite/Service/V1/Data/UrlRewrite.php
 app/code/Magento/UrlRewrite/Setup/Patch/Data/ConvertSerializedDataToJson.php
+app/code/Magento/UrlRewrite/Test/Fixture/UrlRewrite.php
 app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminAddCustomUrlRewriteActionGroup.xml
 app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminAddUrlRewriteActionGroup.xml
 app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminAddUrlRewriteForProductActionGroup.xml
@@ -26688,6 +26701,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetPurchaseOrderP
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetShippingAddressOnCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetShippingMethodsOnCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/UpdateCartItemsTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/QuoteConfigurableProductInCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/RelatedProduct/GetRelatedProductsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Review/CreateProductReviewsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Review/GetProductReviewsTest.php
@@ -37019,8 +37033,10 @@ lib/internal/Magento/Framework/View/Test/Unit/Element/Text/TextList/LinkTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/TextTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/ContextTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/Control/DummyButtonTest.php
+lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/DataProvider/DocumentTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/DataProvider/FulltextFilterTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/DataProvider/SanitizerTest.php
+lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/DataProvider/SearchResultTest.php
 lib/internal/Magento/Framework/View/Test/Unit/Element/UiComponent/ProcessorTest.php
 lib/internal/Magento/Framework/View/Test/Unit/EntitySpecificHandlesListTest.php
 lib/internal/Magento/Framework/View/Test/Unit/File/Collector/BaseTest.php

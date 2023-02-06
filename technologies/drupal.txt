@@ -3537,6 +3537,9 @@ core/modules/big_pipe/src/Render/BigPipeMarkup.php
 core/modules/big_pipe/src/Render/BigPipeResponse.php
 core/modules/big_pipe/src/Render/BigPipeResponseAttachmentsProcessor.php
 core/modules/big_pipe/src/Render/Placeholder/BigPipeStrategy.php
+core/modules/big_pipe/templates/big-pipe-interface-preview.html.twig
+core/modules/big_pipe/tests/modules/big_pipe_bypass_js/big_pipe_bypass_js.info.yml
+core/modules/big_pipe/tests/modules/big_pipe_bypass_js/big_pipe_bypass_js.module
 core/modules/big_pipe/tests/modules/big_pipe_regression_test/big_pipe_regression_test.info.yml
 core/modules/big_pipe/tests/modules/big_pipe_regression_test/big_pipe_regression_test.routing.yml
 core/modules/big_pipe/tests/modules/big_pipe_regression_test/src/BigPipeRegressionTestController.php
@@ -3549,11 +3552,14 @@ core/modules/big_pipe/tests/modules/big_pipe_test/src/BigPipeTestController.php
 core/modules/big_pipe/tests/modules/big_pipe_test/src/EventSubscriber/BigPipeTestSubscriber.php
 core/modules/big_pipe/tests/modules/big_pipe_test/src/Form/BigPipeTestForm.php
 core/modules/big_pipe/tests/src/Functional/BigPipeTest.php
+core/modules/big_pipe/tests/src/FunctionalJavascript/BigPipePreviewTest.php
 core/modules/big_pipe/tests/src/FunctionalJavascript/BigPipeRegressionTest.php
+core/modules/big_pipe/tests/src/Kernel/BigPipeInterfacePreviewThemeSuggestionsTest.php
 core/modules/big_pipe/tests/src/Unit/Render/BigPipeResponseAttachmentsProcessorTest.php
 core/modules/big_pipe/tests/src/Unit/Render/ManyPlaceholderTest.php
 core/modules/big_pipe/tests/src/Unit/Render/Placeholder/BigPipeStrategyTest.php
 core/modules/big_pipe/tests/themes/big_pipe_test_theme/big_pipe_test_theme.info.yml
+core/modules/big_pipe/tests/themes/big_pipe_test_theme/templates/big-pipe-interface-preview--user-toolbar-link-builder-renderDisplayName.html.twig
 core/modules/big_pipe/tests/themes/big_pipe_test_theme/templates/field--comment.html.twig
 core/modules/block/block.api.php
 core/modules/block/block.info.yml
@@ -6707,6 +6713,7 @@ core/modules/language/tests/src/Unit/ConfigurableLanguageUnitTest.php
 core/modules/language/tests/src/Unit/ContentLanguageSettingsUnitTest.php
 core/modules/language/tests/src/Unit/LanguageNegotiationUrlTest.php
 core/modules/language/tests/src/Unit/Menu/LanguageLocalTasksTest.php
+core/modules/language/tests/src/Unit/Plugin/LanguageNegotiation/LanguageNegotiationContentEntityTest.php
 core/modules/language/tests/src/Unit/process/LanguageDomainsTest.php
 core/modules/language/tests/src/Unit/process/LanguageNegotiationTest.php
 core/modules/language/tests/src/Unit/process/LanguageTypesTest.php
@@ -12911,6 +12918,7 @@ core/profiles/demo_umami/themes/umami/images/svg/timer.svg
 core/profiles/demo_umami/themes/umami/images/svg/whisk.svg
 core/profiles/demo_umami/themes/umami/js/classy/README.txt
 core/profiles/demo_umami/themes/umami/js/classy/media_embed_ckeditor.theme.js
+core/profiles/demo_umami/themes/umami/js/components/messages/messages.js
 core/profiles/demo_umami/themes/umami/js/components/navigation/menu-main/menu-main.js
 core/profiles/demo_umami/themes/umami/layouts/oneplusfourgrid_section/layout--oneplusfourgrid-section.html.twig
 core/profiles/demo_umami/themes/umami/logo.svg
@@ -13833,6 +13841,7 @@ core/tests/Drupal/TestTools/TestVarDumper.php
 core/tests/Drupal/Tests/ApiRequestTrait.php
 core/tests/Drupal/Tests/BrowserHtmlDebugTrait.php
 core/tests/Drupal/Tests/BrowserTestBase.php
+core/tests/Drupal/Tests/CSpell/SortTest.php
 core/tests/Drupal/Tests/Component/Annotation/AnnotatedClassDiscoveryCachedTest.php
 core/tests/Drupal/Tests/Component/Annotation/AnnotatedClassDiscoveryTest.php
 core/tests/Drupal/Tests/Component/Annotation/AnnotationBaseTest.php
@@ -14454,6 +14463,7 @@ core/tests/Drupal/Tests/Core/Test/TestDatabaseTest.php
 core/tests/Drupal/Tests/Core/Test/TestDiscoveryTest.php
 core/tests/Drupal/Tests/Core/Test/TestSetupTraitTest.php
 core/tests/Drupal/Tests/Core/Test/TestSuiteBaseTest.php
+core/tests/Drupal/Tests/Core/Test/XdebugRequestTraitTest.php
 core/tests/Drupal/Tests/Core/Test/fixtures/phpunit_error.xml
 core/tests/Drupal/Tests/Core/Theme/AjaxBasePageNegotiatorTest.php
 core/tests/Drupal/Tests/Core/Theme/CoreThemesAutoloadedForTests.php
@@ -14868,6 +14878,7 @@ core/themes/olivero/fonts/metropolis/Metropolis-Regular.woff2
 core/themes/olivero/fonts/metropolis/Metropolis-SemiBold.woff2
 core/themes/olivero/images/background.svg
 core/themes/olivero/images/chevron-down.svg
+core/themes/olivero/images/drupal.svg
 core/themes/olivero/images/error.svg
 core/themes/olivero/images/info.svg
 core/themes/olivero/images/magnifying-glass.svg
@@ -15059,6 +15070,7 @@ core/themes/stable9/templates/content-edit/image-widget.html.twig
 core/themes/stable9/templates/content-edit/node-add-list.html.twig
 core/themes/stable9/templates/content-edit/node-edit-form.html.twig
 core/themes/stable9/templates/content-edit/text-format-wrapper.html.twig
+core/themes/stable9/templates/content/big-pipe-interface-preview.html.twig
 core/themes/stable9/templates/content/book-node-export-html.html.twig
 core/themes/stable9/templates/content/comment.html.twig
 core/themes/stable9/templates/content/mark.html.twig
