@@ -12,13 +12,18 @@ $
 .css
 .emailjson
 .emailtxt
+.embed
 .git
 .git$
+.i
 .js
 .json
+.json-compact
+.json-html
 .pdf$
 .php
 .qr
+.rss
 .svg
 .vcf
 .well-known
@@ -75,7 +80,9 @@ $
 /c2
 /cache
 /claim-money?
+/comment
 /comments
+/comments/*?*sort=
 /commits
 /commits/*?author
 /commits/*?path
@@ -92,6 +99,7 @@ $
 /download/results.aspx?
 /download/thankyou.aspx
 /download/thankyou.aspx?
+/download?
 /ebook
 /ece
 /edit$
@@ -99,6 +107,7 @@ $
 /followers
 /following
 /forks
+/format:thumbnail
 /forum-attachment
 /gcrnsts
 /graphs
@@ -211,6 +220,7 @@ $
 ?*ListingID=
 ?*ProfileID=
 ?*campaignId=
+?*feed=
 ?*login=
 ?*mcubz=
 ?*outputType=accessibility
@@ -251,7 +261,6 @@ $
 ?order=
 ?pt1=true$
 ?ref_src=
-?s=
 ?show_error=true
 ?src=
 ?tab=achievements&achievement=
@@ -386,6 +395,7 @@ _aoc_*/shop
 _email.html
 _enterprise*/shop
 _generated
+_global_notifications
 _internal-epp-discounted*/shop
 _jsn.json
 _jsnp.js
@@ -403,6 +413,10 @@ _mobile.mobile
 _mobile.xml
 _modal.html
 _newsml.html
+_next/gtm
+_next/jwt
+_next/title
+_next/viewer
 _ngjs/resource
 _ngjs/resource/*/get
 _nimbusJson.json
@@ -417,6 +431,10 @@ _qpromo*/shop
 _query=
 _refurb-discounted*/shop
 _rss.xml
+_rv/gtm
+_rv/jwt
+_rv/title
+_rv/viewer
 _search.html
 _seo.html
 _singlePage.html
@@ -507,6 +525,7 @@ adx/bin
 ae
 affil
 affil/pal
+after=
 age-appeal
 aihub/tfhub
 ajax
@@ -720,6 +739,7 @@ be/treasury
 be/your
 bePatron
 bePatronDone
+before=
 befr
 benl
 best-countries-for-business/list
@@ -829,6 +849,7 @@ business/site
 business/switch-account
 business/top-ads
 business/update
+buttonlite.js
 buzz/post
 bw
 c/*attr_*=
@@ -1102,6 +1123,8 @@ coop/directory
 coop/manage
 copyright-reporting
 corgi$
+couchmode
+counters/client-screenview
 coupons/visit
 covid19
 covid19/mobility
@@ -1345,6 +1368,7 @@ doc*_
 docs/forms/social
 docs/socialmarkup
 document
+domain/*t=
 downgrade
 download
 dp/e-mail-friend
@@ -1358,6 +1382,7 @@ drive
 droidguard
 dw
 e
+earth
 earth/social
 ebook
 ebooks
@@ -1521,6 +1546,7 @@ exec/obidos/tg/cm/member
 explore
 explore/*/?p=
 explore/*/lightbox
+external
 external/overture
 external_hosted
 f/healthcheck
@@ -1616,6 +1642,7 @@ food/menus/*/shopping-list
 food/recipes/*/shopping-list
 food/search*?
 foodordering
+forgot_password
 forms
 forms/perks
 fr
@@ -1702,9 +1729,11 @@ globalmarketfinder
 globalmarketfinder/*.html
 gn
 go/awards
+gold?
 google_gdn.html
 google_search.html
 googlebooks/images
+goto
 gp
 gp/aag
 gp/aag/main?*seller=ABVFEJU8LS620
@@ -1801,6 +1830,7 @@ group
 groupAnswers
 groupSharingMsg
 groups
+groups/*/forum
 groups/*/lightbox
 groups/10millionphotos
 groups?id=
@@ -1824,12 +1854,14 @@ helios
 help
 help/*/answers
 help/*/ask
+help/forgot_login
 help/maps/indoormaps/partners
 help/maps/streetview/partners/welcome
 help/sitemap
 help/sitemap.php
 help/sl
 help/testing
+help/verify_email
 help/vodafone
 hermes
 hex
@@ -2395,6 +2427,7 @@ media-manager
 memberInvite
 menu/*/feedback_form
 message
+message/compose
 message_the_business
 messages
 messaging
@@ -2431,6 +2464,8 @@ musiclp
 musics
 musicsearch
 musicsp
+musicstore/download
+musicstore/preview
 mwlite
 mx
 mx*/listing/*/favoriters
@@ -2483,6 +2518,7 @@ mx/treasury
 mx/your
 my
 my_etsy=
+my_shiny_metal_ass
 mymovies
 myprofile
 mz
@@ -2513,6 +2549,7 @@ newsroom/dae
 newsroom/notifications
 newssearch
 newsstand
+nextjs
 ng
 nl
 nl*/listing/*/favoriters
@@ -2822,7 +2859,6 @@ platform-telemetry
 play/store/web
 play/surveys/serp
 plugins.
-plugins/search
 plusinstall
 pmo/contact/en/staff
 pmo/contact/fr/staff
@@ -2832,6 +2868,8 @@ politics/e/sharing
 pools/c
 pools/campaign
 possible_biz_owner
+post
+posts
 posttv-beta
 posttv/c/embed
 posttv/c/trendex
@@ -2892,6 +2930,13 @@ quality_form?
 query
 quiz
 r
+r/*.rss
+r/*/comments/*.rss
+r/*/config/*.rss
+r/*/submit$
+r/*/submit/$
+r/*/user
+r/*/wiki/*.rss
 rackspace/elevating-performance
 radio/aod
 radio/aod$
@@ -2899,6 +2944,9 @@ radio/imda
 radio/player
 radio/player$
 random
+rd/search
+rd/search$
+rd/search?
 recently-viewed
 recharge/dashboard/car
 recharge/dashboard/static
@@ -2921,6 +2969,7 @@ registration
 registry
 registry/wishlist
 remotelogout
+remove_email/t2_
 rep=hc
 report
 report-abuse?report=
@@ -3056,6 +3105,7 @@ search?
 search?q$
 search?q=
 search?q=%23
+search\?
 search_suggest
 searchhistory
 sections
@@ -3178,6 +3228,7 @@ signup/cold-join
 since=
 sit_rep
 sitemaps
+sitemaps/*.xml
 siteopt.js
 sites
 sites/1850brandcoffee
@@ -3481,6 +3532,10 @@ stadia/gamers
 start
 start_order
 static
+static/button/button1.html
+static/button/button1.js
+static/button/button2.html
+static/button/button3.html
 static/css
 static/images
 static/js
@@ -3530,6 +3585,7 @@ story-pin-invite
 story_feed
 story_pins
 styles/js-on.css$
+submit
 subscriptions
 support
 support/content
@@ -3541,6 +3597,7 @@ svc/crosswords
 svc/games
 svc/letter-boxed
 svc/news/v3/all/pshb.rss
+svc/shreddit
 svc/spelling-bee
 svc/vertex
 svc/wordle
@@ -3589,6 +3646,7 @@ themacallan/worlds-together
 theme
 themes/rss
 timedtext_video
+timings/perf
 title
 title/tt*/mediaviewer/rm*/tr
 title/tt*/watchoptions
@@ -3739,6 +3797,7 @@ user.php
 user/*http://instagram.com/robots.txt
 user/ur*/checkins
 user/ur*/ratings
+user/verify
 userNext
 user_details
 user_details_answers_given
@@ -4226,8 +4285,6 @@ work/xhr/inviteadmin
 work/xhr/removeadmin
 wp-admin
 wp-admin/admin-ajax.php
-wp-admin/load-scripts.php
-wp-admin/load-styles.php
 wp-adv
 wp-dyn
 wp-stat/ad
