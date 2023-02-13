@@ -3781,7 +3781,6 @@ core/modules/block_content/tests/src/Functional/BlockContentSaveTest.php
 core/modules/block_content/tests/src/Functional/BlockContentTestBase.php
 core/modules/block_content/tests/src/Functional/BlockContentTranslationUITest.php
 core/modules/block_content/tests/src/Functional/BlockContentTypeTest.php
-core/modules/block_content/tests/src/Functional/BlockContentValidationTest.php
 core/modules/block_content/tests/src/Functional/PageEditTest.php
 core/modules/block_content/tests/src/Functional/Rest/BlockContentJsonAnonTest.php
 core/modules/block_content/tests/src/Functional/Rest/BlockContentJsonBasicAuthTest.php
@@ -3798,6 +3797,7 @@ core/modules/block_content/tests/src/Functional/Rest/BlockContentXmlAnonTest.php
 core/modules/block_content/tests/src/Functional/Rest/BlockContentXmlBasicAuthTest.php
 core/modules/block_content/tests/src/Functional/Rest/BlockContentXmlCookieTest.php
 core/modules/block_content/tests/src/Functional/UnpublishedBlockTest.php
+core/modules/block_content/tests/src/Functional/Update/BlockContentRemoveConstraint.php
 core/modules/block_content/tests/src/Functional/Views/BlockContentFieldFilterTest.php
 core/modules/block_content/tests/src/Functional/Views/BlockContentIntegrationTest.php
 core/modules/block_content/tests/src/Functional/Views/BlockContentRedirectTest.php
@@ -4812,6 +4812,9 @@ core/modules/content_moderation/tests/modules/content_moderation_test_local_task
 core/modules/content_moderation/tests/modules/content_moderation_test_local_task/content_moderation_test_local_task.links.task.yml
 core/modules/content_moderation/tests/modules/content_moderation_test_local_task/content_moderation_test_local_task.routing.yml
 core/modules/content_moderation/tests/modules/content_moderation_test_local_task/src/Controller/TestLocalTaskController.php
+core/modules/content_moderation/tests/modules/content_moderation_test_resave/content_moderation_test_resave.info.yml
+core/modules/content_moderation/tests/modules/content_moderation_test_resave/content_moderation_test_resave.install
+core/modules/content_moderation/tests/modules/content_moderation_test_resave/content_moderation_test_resave.module
 core/modules/content_moderation/tests/modules/content_moderation_test_views/config/install/views.view.latest.yml
 core/modules/content_moderation/tests/modules/content_moderation_test_views/config/install/views.view.test_content_moderation_field_state_test.yml
 core/modules/content_moderation/tests/modules/content_moderation_test_views/config/install/views.view.test_content_moderation_filter_via_relationship.yml
@@ -4845,6 +4848,7 @@ core/modules/content_moderation/tests/src/Functional/ViewsModerationStateFilterT
 core/modules/content_moderation/tests/src/Functional/WorkspaceContentModerationIntegrationTest.php
 core/modules/content_moderation/tests/src/Kernel/ContentModerationAccessTest.php
 core/modules/content_moderation/tests/src/Kernel/ContentModerationPermissionsTest.php
+core/modules/content_moderation/tests/src/Kernel/ContentModerationResaveTest.php
 core/modules/content_moderation/tests/src/Kernel/ContentModerationStateAccessControlHandlerTest.php
 core/modules/content_moderation/tests/src/Kernel/ContentModerationStateResourceTest.php
 core/modules/content_moderation/tests/src/Kernel/ContentModerationStateStorageSchemaTest.php
@@ -5909,6 +5913,8 @@ core/modules/forum/templates/forum-icon.html.twig
 core/modules/forum/templates/forum-list.html.twig
 core/modules/forum/templates/forum-submitted.html.twig
 core/modules/forum/templates/forums.html.twig
+core/modules/forum/tests/fixtures/drupal6.php
+core/modules/forum/tests/fixtures/drupal7.php
 core/modules/forum/tests/modules/forum_test_views/forum_test_views.info.yml
 core/modules/forum/tests/modules/forum_test_views/test_views/views.view.test_forum_index.yml
 core/modules/forum/tests/src/Functional/ForumBlockTest.php
@@ -5917,6 +5923,13 @@ core/modules/forum/tests/src/Functional/ForumNodeAccessTest.php
 core/modules/forum/tests/src/Functional/ForumTest.php
 core/modules/forum/tests/src/Functional/ForumUninstallTest.php
 core/modules/forum/tests/src/Functional/Views/ForumIntegrationTest.php
+core/modules/forum/tests/src/Functional/migrate_drupal/d6/NoMultilingualReviewPageTest.php
+core/modules/forum/tests/src/Functional/migrate_drupal/d6/Upgrade6Test.php
+core/modules/forum/tests/src/Functional/migrate_drupal/d6/files/core/tests/fixtures/files/html-1.txt
+core/modules/forum/tests/src/Functional/migrate_drupal/d7/NoMultilingualReviewPageTest.php
+core/modules/forum/tests/src/Functional/migrate_drupal/d7/Upgrade7Test.php
+core/modules/forum/tests/src/Functional/migrate_drupal/d7/files/sites/default/files/ds9.txt
+core/modules/forum/tests/src/Functional/migrate_drupal/d7/files/sites/default/private/Babylon5.txt
 core/modules/forum/tests/src/Kernel/ForumValidationTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumConfigsTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumTest.php
@@ -6049,7 +6062,6 @@ core/modules/help_topics/help_topics/search.configuring.html.twig
 core/modules/help_topics/help_topics/search.index.html.twig
 core/modules/help_topics/help_topics/search.overview.html.twig
 core/modules/help_topics/help_topics/shortcut.overview.html.twig
-core/modules/help_topics/help_topics/statistics.tracking_popular_content.html.twig
 core/modules/help_topics/help_topics/system.cache.html.twig
 core/modules/help_topics/help_topics/system.config_basic.html.twig
 core/modules/help_topics/help_topics/system.config_error.html.twig
@@ -8926,6 +8938,7 @@ core/modules/sqlite/tests/src/Unit/ConnectionTest.php
 core/modules/statistics/config/install/statistics.settings.yml
 core/modules/statistics/config/schema/statistics.schema.yml
 core/modules/statistics/config/schema/statistics.views.schema.yml
+core/modules/statistics/help_topics/statistics.tracking_popular_content.html.twig
 core/modules/statistics/migrations/state/statistics.migrate_drupal.yml
 core/modules/statistics/migrations/statistics_node_counter.yml
 core/modules/statistics/migrations/statistics_settings.yml
@@ -9512,6 +9525,7 @@ core/modules/system/tests/modules/entity_test/src/Cache/EntityTestViewGrantsCach
 core/modules/system/tests/modules/entity_test/src/Controller/EntityTestController.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntitySerializedField.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTest.php
+core/modules/system/tests/modules/entity_test/src/Entity/EntityTestAddPage.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTestAdminRoutes.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTestBaseFieldDisplay.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTestBundle.php
@@ -9769,6 +9783,7 @@ core/modules/system/tests/modules/image_test/image_test.info.yml
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/BrokenToolkit.php
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/DerivedToolkit.php
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/Operation/test/Bar.php
+core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/Operation/test/Failing.php
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/Operation/test/Foo.php
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/Operation/test/FooDerived.php
 core/modules/system/tests/modules/image_test/src/Plugin/ImageToolkit/Operation/test/OperationBase.php
@@ -10210,7 +10225,6 @@ core/modules/system/tests/modules/update_test_semver_update_n/update_test_semver
 core/modules/system/tests/modules/update_test_semver_update_n/update_test_semver_update_n.install
 core/modules/system/tests/modules/update_test_with_7x/update_test_with_7x.info.yml
 core/modules/system/tests/modules/update_test_with_7x/update_test_with_7x.install
-core/modules/system/tests/modules/url_alter_test/src/PathProcessor.php
 core/modules/system/tests/modules/url_alter_test/src/PathProcessorTest.php
 core/modules/system/tests/modules/url_alter_test/url_alter_test.info.yml
 core/modules/system/tests/modules/url_alter_test/url_alter_test.install
@@ -13313,6 +13327,7 @@ core/tests/Drupal/FunctionalTests/Installer/InstallerDatabaseErrorMessagesTest.p
 core/tests/Drupal/FunctionalTests/Installer/InstallerEmptySettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingBrokenDatabaseSettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigDirectoryTest.php
+core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigExistingSettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigMultilingualTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigNoConfigTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigNoSystemSiteTest.php
