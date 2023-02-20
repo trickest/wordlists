@@ -1210,8 +1210,6 @@ java/org/apache/catalina/tribes/transport/nio/PooledParallelSenderMBean.java
 java/org/apache/catalina/tribes/util/Arrays.java
 java/org/apache/catalina/tribes/util/ExceptionUtils.java
 java/org/apache/catalina/tribes/util/ExecutorFactory.java
-java/org/apache/catalina/tribes/util/Jre14Compat.java
-java/org/apache/catalina/tribes/util/JreCompat.java
 java/org/apache/catalina/tribes/util/LocalStrings.properties
 java/org/apache/catalina/tribes/util/LocalStrings_cs.properties
 java/org/apache/catalina/tribes/util/LocalStrings_de.properties
@@ -2993,6 +2991,7 @@ test/org/apache/catalina/authenticator/TestJaspicCallbackHandlerInAuthenticator.
 test/org/apache/catalina/authenticator/TestNonLoginAndBasicAuthenticator.java
 test/org/apache/catalina/authenticator/TestSSOnonLoginAndBasicAuthenticator.java
 test/org/apache/catalina/authenticator/TestSSOnonLoginAndDigestAuthenticator.java
+test/org/apache/catalina/authenticator/TesterCallbackHandlerImpl.java
 test/org/apache/catalina/authenticator/TesterDigestAuthenticatorPerformance.java
 test/org/apache/catalina/authenticator/jaspic/TestAuthConfigFactoryImpl.java
 test/org/apache/catalina/authenticator/jaspic/TestPersistentProviderRegistrations.java
@@ -3050,6 +3049,7 @@ test/org/apache/catalina/filters/TesterFilterConfigs.java
 test/org/apache/catalina/filters/TesterHttpServletRequest.java
 test/org/apache/catalina/filters/TesterHttpServletResponse.java
 test/org/apache/catalina/ha/context/TestReplicatedContext.java
+test/org/apache/catalina/ha/session/TestDeltaRequest.java
 test/org/apache/catalina/loader/EchoTag.java
 test/org/apache/catalina/loader/MyAnnotatedServlet.java
 test/org/apache/catalina/loader/TestVirtualContext.java
@@ -4031,6 +4031,7 @@ webapps/ROOT/asf-logo-wide.svg
 webapps/ROOT/index.jsp
 webapps/ROOT/tomcat.svg
 webapps/docs/META-INF/context.xml
+webapps/docs/WEB-INF/jsp/403.jsp
 webapps/docs/WEB-INF/web.xml
 webapps/docs/aio.xml
 webapps/docs/annotationapi/index.html
@@ -4244,6 +4245,7 @@ webapps/examples/WEB-INF/classes/websocket/snake/Location.java
 webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+webapps/examples/WEB-INF/jsp/403.jsp
 webapps/examples/WEB-INF/jsp/debug-taglib.tld
 webapps/examples/WEB-INF/jsp/example-taglib.tld
 webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld

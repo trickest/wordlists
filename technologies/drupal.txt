@@ -1300,6 +1300,7 @@ core/lib/Drupal/Component/DependencyInjection/TESTING.txt
 core/lib/Drupal/Component/DependencyInjection/composer.json
 core/lib/Drupal/Component/Diff/Diff.php
 core/lib/Drupal/Component/Diff/DiffFormatter.php
+core/lib/Drupal/Component/Diff/DiffOpOutputBuilder.php
 core/lib/Drupal/Component/Diff/Engine/DiffEngine.php
 core/lib/Drupal/Component/Diff/Engine/DiffOp.php
 core/lib/Drupal/Component/Diff/Engine/DiffOpAdd.php
@@ -5566,6 +5567,7 @@ core/modules/file/src/ComputedFileUrl.php
 core/modules/file/src/Controller/FileWidgetAjaxController.php
 core/modules/file/src/Element/ManagedFile.php
 core/modules/file/src/Entity/File.php
+core/modules/file/src/Entity/FileRouteProvider.php
 core/modules/file/src/FileAccessControlHandler.php
 core/modules/file/src/FileAccessFormatterControlHandlerInterface.php
 core/modules/file/src/FileInterface.php
@@ -5651,6 +5653,7 @@ core/modules/file/tests/modules/file_test_views/file_test_views.info.yml
 core/modules/file/tests/modules/file_test_views/test_views/views.view.file_extension_view.yml
 core/modules/file/tests/modules/file_test_views/test_views/views.view.test_file_user_file_data.yml
 core/modules/file/tests/src/Functional/DownloadTest.php
+core/modules/file/tests/src/Functional/FileAddPermissionsUpdateTest.php
 core/modules/file/tests/src/Functional/FileFieldAnonymousSubmissionTest.php
 core/modules/file/tests/src/Functional/FileFieldCreationTrait.php
 core/modules/file/tests/src/Functional/FileFieldDisplayTest.php
@@ -9804,6 +9807,7 @@ core/modules/system/tests/modules/js_deprecation_test/js_deprecation_test.routin
 core/modules/system/tests/modules/js_deprecation_test/src/Controller/JsDeprecationTestController.php
 core/modules/system/tests/modules/js_displace/js_displace.info.yml
 core/modules/system/tests/modules/js_displace/js_displace.module
+core/modules/system/tests/modules/js_errors_test/js/js_errors_async_test.js
 core/modules/system/tests/modules/js_errors_test/js/js_errors_test.js
 core/modules/system/tests/modules/js_errors_test/js_errors_test.info.yml
 core/modules/system/tests/modules/js_errors_test/js_errors_test.libraries.yml
@@ -10380,7 +10384,6 @@ core/modules/system/tests/src/Functional/System/StatusTest.php
 core/modules/system/tests/src/Functional/System/SystemAuthorizeTest.php
 core/modules/system/tests/src/Functional/System/ThemeTest.php
 core/modules/system/tests/src/Functional/System/TokenReplaceWebTest.php
-core/modules/system/tests/src/Functional/System/TokenScanTest.php
 core/modules/system/tests/src/Functional/System/TrustedHostsTest.php
 core/modules/system/tests/src/Functional/Theme/EngineNyanCatTest.php
 core/modules/system/tests/src/Functional/Theme/EngineTwigTest.php
@@ -10546,9 +10549,6 @@ core/modules/system/tests/themes/test_invalid_basetheme_sub/test_invalid_basethe
 core/modules/system/tests/themes/test_invalid_core_semver/test_invalid_core_semver.info.yml
 core/modules/system/tests/themes/test_invalid_engine/test_invalid_engine.info.yml
 core/modules/system/tests/themes/test_invalid_region/test_invalid_region.info.yml
-core/modules/system/tests/themes/test_legacy_theme/test_legacy_theme.info.yml
-core/modules/system/tests/themes/test_legacy_theme/test_legacy_theme.libraries.yml
-core/modules/system/tests/themes/test_legacy_theme/test_legacy_theme.theme
 core/modules/system/tests/themes/test_messages/templates/status-messages.html.twig
 core/modules/system/tests/themes/test_messages/test_messages.info.yml
 core/modules/system/tests/themes/test_subsubtheme/test_subsubtheme.info.yml
@@ -10617,6 +10617,8 @@ core/modules/system/tests/themes/test_theme_twig_registry_loader_theme/test_them
 core/modules/system/tests/themes/test_theme_updates/test_theme_updates.info.yml
 core/modules/system/tests/themes/test_theme_updates/test_theme_updates.post_update.php
 core/modules/system/tests/themes/test_theme_with_a_base_theme_depending_on_modules/test_theme_with_a_base_theme_depending_on_modules.info.yml
+core/modules/system/tests/themes/test_theme_with_deprecated_libraries/test_theme_with_deprecated_libraries.info.yml
+core/modules/system/tests/themes/test_theme_with_deprecated_libraries/test_theme_with_deprecated_libraries.libraries.yml
 core/modules/system/tests/themes/test_wild_west/test_wild_west.info.yml
 core/modules/taxonomy/config/install/core.entity_view_mode.taxonomy_term.full.yml
 core/modules/taxonomy/config/install/system.action.taxonomy_term_publish_action.yml
@@ -10968,6 +10970,7 @@ core/modules/tour/tests/src/Functional/TourTestBase.php
 core/modules/tour/tests/src/Functional/TourTestBasic.php
 core/modules/tour/tests/src/FunctionalJavascript/TourJavascriptTest.php
 core/modules/tour/tests/src/Kernel/TourPluginTest.php
+core/modules/tour/tests/src/Kernel/TourTipLegacyTest.php
 core/modules/tour/tests/src/Unit/Entity/TourTest.php
 core/modules/tour/tests/src/Unit/TipPluginBaseTest.php
 core/modules/tour/tests/tour_test/config/install/language/it/tour.tour.tour-test.yml
@@ -12662,10 +12665,15 @@ core/profiles/demo_umami/config/install/core.entity_form_display.block_content.d
 core/profiles/demo_umami/config/install/core.entity_form_display.block_content.footer_promo_block.default.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.contact_message.feedback.default.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.media.audio.default.yml
+core/profiles/demo_umami/config/install/core.entity_form_display.media.audio.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.media.document.default.yml
+core/profiles/demo_umami/config/install/core.entity_form_display.media.document.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.media.image.default.yml
+core/profiles/demo_umami/config/install/core.entity_form_display.media.image.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.media.remote_video.default.yml
+core/profiles/demo_umami/config/install/core.entity_form_display.media.remote_video.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.media.video.default.yml
+core/profiles/demo_umami/config/install/core.entity_form_display.media.video.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.node.article.default.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.node.page.default.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.node.recipe.default.yml
@@ -12675,18 +12683,23 @@ core/profiles/demo_umami/config/install/core.entity_view_display.block_content.b
 core/profiles/demo_umami/config/install/core.entity_view_display.block_content.disclaimer_block.default.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.block_content.footer_promo_block.default.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.audio.default.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.media.audio.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.document.default.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.media.document.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.image.default.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.media.image.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.image.medium_8_7.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.image.responsive_3x2.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.image.scale_crop_7_3_large.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.image.square.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.remote_video.default.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.media.remote_video.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.media.video.default.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.media.video.media_library.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.card.yml
+core/profiles/demo_umami/config/install/core.entity_view_display.node.article.default.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.card_common.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.card_common_alt.yml
-core/profiles/demo_umami/config/install/core.entity_view_display.node.article.default.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.full.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.rss.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.teaser.yml
@@ -12760,7 +12773,6 @@ core/profiles/demo_umami/config/install/field.storage.node.field_cooking_time.ym
 core/profiles/demo_umami/config/install/field.storage.node.field_difficulty.yml
 core/profiles/demo_umami/config/install/field.storage.node.field_ingredients.yml
 core/profiles/demo_umami/config/install/field.storage.node.field_media_image.yml
-core/profiles/demo_umami/config/install/media.type.audio.yml
 core/profiles/demo_umami/config/install/field.storage.node.field_number_of_servings.yml
 core/profiles/demo_umami/config/install/field.storage.node.field_preparation_time.yml
 core/profiles/demo_umami/config/install/field.storage.node.field_recipe_category.yml
@@ -12797,6 +12809,7 @@ core/profiles/demo_umami/config/install/language.content_settings.taxonomy_term.
 core/profiles/demo_umami/config/install/language.content_settings.taxonomy_term.tags.yml
 core/profiles/demo_umami/config/install/language.entity.es.yml
 core/profiles/demo_umami/config/install/language.negotiation.yml
+core/profiles/demo_umami/config/install/media.type.audio.yml
 core/profiles/demo_umami/config/install/media.type.document.yml
 core/profiles/demo_umami/config/install/media.type.image.yml
 core/profiles/demo_umami/config/install/media.type.remote_video.yml
@@ -13436,6 +13449,9 @@ core/tests/Drupal/KernelTests/Core/Action/EmailActionTest.php
 core/tests/Drupal/KernelTests/Core/Action/PublishActionTest.php
 core/tests/Drupal/KernelTests/Core/Action/SaveActionTest.php
 core/tests/Drupal/KernelTests/Core/Ajax/CommandsTest.php
+core/tests/Drupal/KernelTests/Core/Archiver/ArchiverTestBase.php
+core/tests/Drupal/KernelTests/Core/Archiver/TarTest.php
+core/tests/Drupal/KernelTests/Core/Archiver/ZipTest.php
 core/tests/Drupal/KernelTests/Core/Asset/AttachedAssetsTest.php
 core/tests/Drupal/KernelTests/Core/Asset/DeprecatedAssetsTest.php
 core/tests/Drupal/KernelTests/Core/Asset/LibraryDiscoveryIntegrationTest.php
@@ -13908,6 +13924,7 @@ core/tests/Drupal/Tests/Component/DependencyInjection/Fixture/container_test_fil
 core/tests/Drupal/Tests/Component/DependencyInjection/PhpArrayContainerTest.php
 core/tests/Drupal/Tests/Component/DependencyInjection/ReverseContainerTest.php
 core/tests/Drupal/Tests/Component/Diff/DiffFormatterTest.php
+core/tests/Drupal/Tests/Component/Diff/DiffOpOutputBuilderTest.php
 core/tests/Drupal/Tests/Component/Diff/Engine/DiffEngineTest.php
 core/tests/Drupal/Tests/Component/Diff/Engine/DiffOpTest.php
 core/tests/Drupal/Tests/Component/Diff/Engine/HWLDFWordAccumulatorTest.php
