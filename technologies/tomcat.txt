@@ -67,6 +67,9 @@ java/jakarta/el/ArrayELResolver.java
 java/jakarta/el/BeanELResolver.java
 java/jakarta/el/BeanNameELResolver.java
 java/jakarta/el/BeanNameResolver.java
+java/jakarta/el/BeanSupport.java
+java/jakarta/el/BeanSupportFull.java
+java/jakarta/el/BeanSupportStandalone.java
 java/jakarta/el/CompositeELResolver.java
 java/jakarta/el/ELClass.java
 java/jakarta/el/ELContext.java
@@ -1319,6 +1322,7 @@ java/org/apache/catalina/valves/rewrite/LocalStrings_ja.properties
 java/org/apache/catalina/valves/rewrite/LocalStrings_ko.properties
 java/org/apache/catalina/valves/rewrite/LocalStrings_zh_CN.properties
 java/org/apache/catalina/valves/rewrite/QuotedStringTokenizer.java
+java/org/apache/catalina/valves/rewrite/RandomizedTextRewriteMap.java
 java/org/apache/catalina/valves/rewrite/Resolver.java
 java/org/apache/catalina/valves/rewrite/ResolverImpl.java
 java/org/apache/catalina/valves/rewrite/RewriteCond.java
@@ -2913,6 +2917,8 @@ res/welcome.bin.html
 res/welcome.main.html
 test/META-INF/services/jakarta.servlet.ServletContainerInitializer
 test/META-INF/services/java.net.spi.URLStreamHandlerProvider
+test/conf/TesterRewriteMapB.txt
+test/conf/TesterRewriteMapC.txt
 test/conf/jaspic-test-01.xml
 test/conf/jaspic-test-02.xml
 test/conf/jaspic-test-04.xml
@@ -2930,10 +2936,12 @@ test/deployment/dirContext/META-INF/context.xml
 test/deployment/dirContext/index.html
 test/deployment/dirNoContext/index.html
 test/deployment/noContext.war
+test/jakarta/el/ELBaseTest.java
 test/jakarta/el/TestArrayELResolver.java
 test/jakarta/el/TestBeanELResolver.java
 test/jakarta/el/TestBeanELResolverVarargsInvocation.java
 test/jakarta/el/TestBeanNameELResolver.java
+test/jakarta/el/TestBeanSupport.java
 test/jakarta/el/TestCompositeELResolver.java
 test/jakarta/el/TestELContext.java
 test/jakarta/el/TestELProcessor.java

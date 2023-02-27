@@ -1633,6 +1633,7 @@ app/code/Magento/Bundle/Pricing/Price/FinalPrice.php
 app/code/Magento/Bundle/Pricing/Price/FinalPriceInterface.php
 app/code/Magento/Bundle/Pricing/Price/RegularPriceInterface.php
 app/code/Magento/Bundle/Pricing/Price/SpecialPrice.php
+app/code/Magento/Bundle/Pricing/Price/TaxPrice.php
 app/code/Magento/Bundle/Pricing/Price/TierPrice.php
 app/code/Magento/Bundle/Pricing/Render/FinalPriceBox.php
 app/code/Magento/Bundle/README.md
@@ -6616,6 +6617,7 @@ app/code/Magento/Checkout/Test/Fixture/SetDeliveryMethod.php
 app/code/Magento/Checkout/Test/Fixture/SetGuestEmail.php
 app/code/Magento/Checkout/Test/Fixture/SetPaymentMethod.php
 app/code/Magento/Checkout/Test/Fixture/SetShippingAddress.php
+app/code/Magento/Checkout/Test/Mftf/ActionGroup/AdminAssertDefaultTaxDestinationActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/AdminCheckoutActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/AdminOpenSalesCheckoutConfigPageActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/AdminSelectClearShoppingCartConfigurationActionGroup.xml
@@ -6675,8 +6677,8 @@ app/code/Magento/Checkout/Test/Mftf/ActionGroup/CustomerCheckoutFillNewShippingA
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/DeleteProductFromShoppingCartActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillGuestCheckoutShippingAddressFormActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillGuestCheckoutShippingAddressWithCountryActionGroup.xml
-app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillNewShippingAddressModalActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillGuestCheckoutShippingAddressWithCountryAndStateActionGroup.xml
+app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillNewShippingAddressModalActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillShippingAddressOneStreetActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillShippingZipFormActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/GoToCheckoutFromCartActionGroup.xml
@@ -6933,6 +6935,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/StorefrontDeleteDownloadableProductFrom
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontDeleteProductsWithCartItemsDisplayDefaultLimitationFromMiniShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontDeleteSimpleAndVirtualProductFromMiniShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontDeleteSimpleProductFromMiniShoppingCartTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/StorefrontEstimateShippingTaxTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutDataPersistTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutForSpecificCountriesTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutTest/StorefrontCheckoutSummaryItemsInCartLabelPluralizedTest.xml
@@ -9478,6 +9481,7 @@ app/code/Magento/Customer/Model/Address/ValidatorInterface.php
 app/code/Magento/Customer/Model/AddressRegistry.php
 app/code/Magento/Customer/Model/AddressSearchResults.php
 app/code/Magento/Customer/Model/App/Action/ContextPlugin.php
+app/code/Magento/Customer/Model/App/FrontController/DeleteCookieWhenCustomerNotExistPlugin.php
 app/code/Magento/Customer/Model/Attribute.php
 app/code/Magento/Customer/Model/Attribute/Backend/Data/Boolean.php
 app/code/Magento/Customer/Model/Attribute/Data/AbstractData.php
@@ -10242,6 +10246,7 @@ app/code/Magento/Customer/Test/Unit/Model/Address/Validator/PostcodeTest.php
 app/code/Magento/Customer/Test/Unit/Model/AddressRegistryTest.php
 app/code/Magento/Customer/Test/Unit/Model/AddressTest.php
 app/code/Magento/Customer/Test/Unit/Model/App/Action/ContextPluginTest.php
+app/code/Magento/Customer/Test/Unit/Model/App/FrontController/DeleteCookieWhenCustomerNotExistPluginTest.php
 app/code/Magento/Customer/Test/Unit/Model/Attribute/Backend/BooleanTest.php
 app/code/Magento/Customer/Test/Unit/Model/Attribute/Data/PostcodeTest.php
 app/code/Magento/Customer/Test/Unit/Model/AttributeMetadatConverterTest.php
@@ -10388,6 +10393,7 @@ app/code/Magento/Customer/Ui/Component/Listing/FulltextFilter.php
 app/code/Magento/Customer/Ui/Component/MassAction/Group/Options.php
 app/code/Magento/Customer/ViewModel/Address.php
 app/code/Magento/Customer/ViewModel/Address/RegionProvider.php
+app/code/Magento/Customer/ViewModel/Customer/Data.php
 app/code/Magento/Customer/ViewModel/Customer/Store.php
 app/code/Magento/Customer/ViewModel/Customer/StoreConfig.php
 app/code/Magento/Customer/ViewModel/Customer/Website.php
@@ -17966,6 +17972,8 @@ app/code/Magento/Reports/README.md
 app/code/Magento/Reports/Setup/Patch/Data/InitializeReportEntityTypesAndPages.php
 app/code/Magento/Reports/Setup/Patch/Data/ReportDisableNotification.php
 app/code/Magento/Reports/Setup/Recurring.php
+app/code/Magento/Reports/Test/Integration/Controller/Adminhtml/Report/Product/ExportDownloadsCsvTest.php
+app/code/Magento/Reports/Test/Integration/Controller/Adminhtml/Report/Product/ExportDownloadsExcelTest.php
 app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminAbandonedCartsReportFilterEmailActionGroup.xml
 app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminAssertNumberOfRecordsInAbandonedCartsReportActionGroup.xml
 app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminGenerateProductsOrderedReportActionGroup.xml
@@ -19602,6 +19610,7 @@ app/code/Magento/Sales/Test/Mftf/ActionGroup/SelectCheckMoneyPaymentMethodAction
 app/code/Magento/Sales/Test/Mftf/ActionGroup/SelectPurchaseOrderPaymentMethodActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/StartCreateInvoiceFromOrderPageActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/StartToCreateCreditMemoActionGroup.xml
+app/code/Magento/Sales/Test/Mftf/ActionGroup/StorefrontAssertProductQtyInMinicartActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/StorefrontAssertSalesPrintOrderBillingAddressActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/StorefrontCheckRefundGrandTotalActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/StorefrontClickContinueOnOrdersAndReturnsPageActionGroup.xml
@@ -19819,6 +19828,7 @@ app/code/Magento/Sales/Test/Mftf/Test/AdminMassOrdersOnHoldAllPaginatorTwoPerPag
 app/code/Magento/Sales/Test/Mftf/Test/AdminMassOrdersReleasePendingOrderTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminMassOrdersUpdateCancelPendingOrderTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOpenCreditmemoViewPageWithWrongCreditmemoIdTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/AdminOrderCheckCommentsHistoryTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOrderPagerTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOrdersMultiSelectActionAppliedToUncheckedNewlyCreatedOrdersTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOrdersReleaseInUnholdStatusTest.xml
@@ -20747,6 +20757,7 @@ app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleFillActionsAc
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleFillCouponInfoActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleFillMainInfoActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleFillShippingConditionActionGroup.xml
+app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleMultiCustomerActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleNotInGridActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleSaveActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleActionGroup.xml
@@ -20859,6 +20870,7 @@ app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCartRuleCouponForFreeShippin
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCartTotalValueWithFullDiscountUsingCartRuleTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCategoryRulesShouldApplyToComplexProductsTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCategoryRulesShouldApplyToGroupedProductWithInvisibleIndividualProductTest.xml
+app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCheckConfigurableProductPriceWhenChildProductPriceUpdatedTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontReuseCouponCodeAfterOrderCanceledTest.xml
 app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontZeroPriceProductWithDiscountUsingCartPriceRuleTest.xml
 app/code/Magento/SalesRule/Test/Unit/Block/Adminhtml/Promo/Quote/Edit/DeleteButtonTest.php
