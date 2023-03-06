@@ -1796,6 +1796,7 @@ core/lib/Drupal/Core/Ajax/RedirectCommand.php
 core/lib/Drupal/Core/Ajax/RemoveCommand.php
 core/lib/Drupal/Core/Ajax/ReplaceCommand.php
 core/lib/Drupal/Core/Ajax/RestripeCommand.php
+core/lib/Drupal/Core/Ajax/ScrollTopCommand.php
 core/lib/Drupal/Core/Ajax/SetDialogOptionCommand.php
 core/lib/Drupal/Core/Ajax/SetDialogTitleCommand.php
 core/lib/Drupal/Core/Ajax/SettingsCommand.php
@@ -3465,6 +3466,7 @@ core/misc/tabledrag.js
 core/misc/tableheader.js
 core/misc/tableresponsive.js
 core/misc/tableselect.js
+core/misc/time-diff.js
 core/misc/timezone.js
 core/misc/touchevents-test.js
 core/misc/vertical-tabs.js
@@ -3475,6 +3477,8 @@ core/modules/action/action.module
 core/modules/action/action.permissions.yml
 core/modules/action/action.post_update.php
 core/modules/action/action.routing.yml
+core/modules/action/help_topics/action.creating.html.twig
+core/modules/action/help_topics/action.overview.html.twig
 core/modules/action/src/ActionListBuilder.php
 core/modules/action/src/Form/ActionAddForm.php
 core/modules/action/src/Form/ActionAdminManageForm.php
@@ -5201,6 +5205,7 @@ core/modules/editor/tests/src/Functional/Rest/EditorXmlBasicAuthTest.php
 core/modules/editor/tests/src/Functional/Rest/EditorXmlCookieTest.php
 core/modules/editor/tests/src/Functional/Update/EditorAddLazyLoadImageFilterUpdateTest.php
 core/modules/editor/tests/src/FunctionalJavascript/EditorAdminTest.php
+core/modules/editor/tests/src/Kernel/EditorDeprecationTest.php
 core/modules/editor/tests/src/Kernel/EditorFileReferenceFilterTest.php
 core/modules/editor/tests/src/Kernel/EditorFileUsageTest.php
 core/modules/editor/tests/src/Kernel/EditorFilterIntegrationTest.php
@@ -5987,8 +5992,6 @@ core/modules/help_topics/help_topics.install
 core/modules/help_topics/help_topics.module
 core/modules/help_topics/help_topics.routing.yml
 core/modules/help_topics/help_topics.services.yml
-core/modules/help_topics/help_topics/action.creating.html.twig
-core/modules/help_topics/help_topics/action.overview.html.twig
 core/modules/help_topics/help_topics/ban.banning_ips.html.twig
 core/modules/help_topics/help_topics/block.configure.html.twig
 core/modules/help_topics/help_topics/block.overview.html.twig
@@ -6840,6 +6843,7 @@ core/modules/layout_builder/src/SectionStorage/SectionStorageManager.php
 core/modules/layout_builder/src/SectionStorage/SectionStorageManagerInterface.php
 core/modules/layout_builder/src/SectionStorageInterface.php
 core/modules/layout_builder/src/TempStoreIdentifierInterface.php
+core/modules/layout_builder/tests/fixtures/update/layout-builder.php
 core/modules/layout_builder/tests/modules/layout_builder_decoration_test/layout_builder_decoration_test.info.yml
 core/modules/layout_builder/tests/modules/layout_builder_decoration_test/layout_builder_decoration_test.services.yml
 core/modules/layout_builder/tests/modules/layout_builder_decoration_test/src/Controller/LayoutBuilderDecorationTestHtmlEntityFormController.php
@@ -7308,6 +7312,7 @@ core/modules/media/tests/src/FunctionalJavascript/MediaViewsWizardTest.php
 core/modules/media/tests/src/Kernel/EditorMediaDialogTest.php
 core/modules/media/tests/src/Kernel/MediaAccessControlHandlerTest.php
 core/modules/media/tests/src/Kernel/MediaCreationTest.php
+core/modules/media/tests/src/Kernel/MediaDeprecationTest.php
 core/modules/media/tests/src/Kernel/MediaEmbedFilterDisabledIntegrationsTest.php
 core/modules/media/tests/src/Kernel/MediaEmbedFilterTest.php
 core/modules/media/tests/src/Kernel/MediaEmbedFilterTestBase.php
@@ -9303,6 +9308,7 @@ core/modules/system/tests/fixtures/update/drupal-8.update-test-schema-enabled.ph
 core/modules/system/tests/fixtures/update/drupal-8.update-test-semver-update-n-enabled.php
 core/modules/system/tests/fixtures/update/drupal-9.4.0.bare.standard.php.gz
 core/modules/system/tests/fixtures/update/drupal-9.4.0.filled.standard.php.gz
+core/modules/system/tests/fixtures/update/drupal.timestamp-formatter-settings-2921810.php
 core/modules/system/tests/http.php
 core/modules/system/tests/https.php
 core/modules/system/tests/logo.svgz
@@ -10417,6 +10423,7 @@ core/modules/system/tests/src/Functional/Theme/TwigTransTest.php
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
 core/modules/system/tests/src/Functional/Update/MenuLinksetSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/README.txt
+core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/Y2038TimestampUpdateTest.php
 core/modules/system/tests/src/Functional/UpdateSystem/BrokenCacheUpdateTest.php
 core/modules/system/tests/src/Functional/UpdateSystem/DependencyHookInvocationTest.php
@@ -12086,6 +12093,7 @@ core/modules/views/tests/modules/views_test_data/views_test_data.services.yml
 core/modules/views/tests/modules/views_test_data/views_test_data.views.inc
 core/modules/views/tests/modules/views_test_data/views_test_data.views_execution.inc
 core/modules/views/tests/modules/views_test_formatter/src/Plugin/Field/FieldFormatter/AttachmentTestFormatter.php
+core/modules/views/tests/modules/views_test_formatter/test_views/views.view.formatter_timestamp_as_time_diff.yml
 core/modules/views/tests/modules/views_test_formatter/views_test_formatter.info.yml
 core/modules/views/tests/modules/views_test_language/views_test_language.info.yml
 core/modules/views/tests/modules/views_test_modal/src/Controller/TestController.php
@@ -13278,6 +13286,8 @@ core/tests/Drupal/FunctionalJavascriptTests/Ajax/MultiFormTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Ajax/ThrobberTest.php
 core/tests/Drupal/FunctionalJavascriptTests/BrowserWithJavascriptTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/CsrfTokenRaceTest.php
+core/tests/Drupal/FunctionalJavascriptTests/Core/Field/TimestampFormatterWithTimeDiffTest.php
+core/tests/Drupal/FunctionalJavascriptTests/Core/Field/TimestampFormatterWithTimeDiffViewsTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/Form/FormGroupingElementsTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/Form/JavascriptStatesTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/JsMessageTest.php
@@ -13316,7 +13326,6 @@ core/tests/Drupal/FunctionalTests/BrowserTestBaseTest.php
 core/tests/Drupal/FunctionalTests/BrowserTestBaseUserAgentTest.php
 core/tests/Drupal/FunctionalTests/Core/Config/SchemaConfigListenerTest.php
 core/tests/Drupal/FunctionalTests/Core/Container/ServiceDeprecationTest.php
-core/tests/Drupal/FunctionalTests/Core/Locale/CountryManagerTest.php
 core/tests/Drupal/FunctionalTests/Core/Test/ModuleInstallBatchTest.php
 core/tests/Drupal/FunctionalTests/Core/Test/PhpUnitBridgeTest.php
 core/tests/Drupal/FunctionalTests/Datetime/TimestampAgoFormatterTest.php

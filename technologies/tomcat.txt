@@ -1290,6 +1290,7 @@ java/org/apache/catalina/valves/ErrorReportValve.java
 java/org/apache/catalina/valves/ExtendedAccessLogValve.java
 java/org/apache/catalina/valves/HealthCheckValve.java
 java/org/apache/catalina/valves/JDBCAccessLogValve.java
+java/org/apache/catalina/valves/JsonAccessLogValve.java
 java/org/apache/catalina/valves/JsonErrorReportValve.java
 java/org/apache/catalina/valves/LoadBalancerDrainingValve.java
 java/org/apache/catalina/valves/LocalStrings.properties
@@ -1364,7 +1365,7 @@ java/org/apache/catalina/webresources/LocalStrings_pt_BR.properties
 java/org/apache/catalina/webresources/LocalStrings_zh_CN.properties
 java/org/apache/catalina/webresources/StandardRoot.java
 java/org/apache/catalina/webresources/TomcatJarInputStream.java
-java/org/apache/catalina/webresources/TomcatURLStreamHandlerProvider.java
+java/org/apache/catalina/webresources/TomcatURLStreamHandlerFactory.java
 java/org/apache/catalina/webresources/TrackedInputStream.java
 java/org/apache/catalina/webresources/VirtualResource.java
 java/org/apache/catalina/webresources/WarResource.java
@@ -2398,7 +2399,6 @@ java/org/apache/tomcat/util/security/LocalStrings_fr.properties
 java/org/apache/tomcat/util/security/LocalStrings_ja.properties
 java/org/apache/tomcat/util/security/LocalStrings_ko.properties
 java/org/apache/tomcat/util/security/LocalStrings_zh_CN.properties
-java/org/apache/tomcat/util/security/MD5Encoder.java
 java/org/apache/tomcat/util/threads/Constants.java
 java/org/apache/tomcat/util/threads/InlineExecutorService.java
 java/org/apache/tomcat/util/threads/LimitLatch.java
@@ -2762,7 +2762,6 @@ modules/stuffed/tomcat.yaml
 modules/stuffed/webapp-jspc.ant.xml
 res/META-INF/annotations-api.jar.manifest
 res/META-INF/bootstrap.jar.manifest
-res/META-INF/catalina.jar/services/java.net.spi.URLStreamHandlerProvider
 res/META-INF/default.license
 res/META-INF/default.manifest
 res/META-INF/default.notice
@@ -2776,7 +2775,6 @@ res/META-INF/jsp-api.jar.manifest
 res/META-INF/servlet-api.jar.license
 res/META-INF/servlet-api.jar.manifest
 res/META-INF/servlet-api.jar.notice
-res/META-INF/tomcat-embed-core.jar/services/java.net.spi.URLStreamHandlerProvider
 res/META-INF/tomcat-websocket.jar/services/jakarta.servlet.ServletContainerInitializer
 res/META-INF/tomcat-websocket.jar/services/jakarta.websocket.ContainerProvider
 res/META-INF/tomcat-websocket.jar/services/jakarta.websocket.server.ServerEndpointConfig$Configurator
@@ -2916,7 +2914,6 @@ res/spotbugs/filter-false-positives.xml
 res/welcome.bin.html
 res/welcome.main.html
 test/META-INF/services/jakarta.servlet.ServletContainerInitializer
-test/META-INF/services/java.net.spi.URLStreamHandlerProvider
 test/conf/TesterRewriteMapB.txt
 test/conf/TesterRewriteMapC.txt
 test/conf/jaspic-test-01.xml
@@ -3239,6 +3236,7 @@ test/org/apache/catalina/webresources/TestJarResourceSetMount.java
 test/org/apache/catalina/webresources/TestJarWarResourceSet.java
 test/org/apache/catalina/webresources/TestResourceJars.java
 test/org/apache/catalina/webresources/TestStandardRoot.java
+test/org/apache/catalina/webresources/TestTomcatURLStreamHandlerFactory.java
 test/org/apache/catalina/webresources/TesterWebResourceRoot.java
 test/org/apache/catalina/webresources/war/TestHandler.java
 test/org/apache/catalina/webresources/war/TestHandlerIntegration.java
