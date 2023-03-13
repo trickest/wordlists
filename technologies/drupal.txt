@@ -3198,9 +3198,12 @@ core/lib/Drupal/Core/Test/PerformanceTestRecorder.php
 core/lib/Drupal/Core/Test/PhpUnitTestRunner.php
 core/lib/Drupal/Core/Test/RefreshVariablesTrait.php
 core/lib/Drupal/Core/Test/RunTests/TestFileParser.php
+core/lib/Drupal/Core/Test/SimpletestTestRunResultsStorage.php
 core/lib/Drupal/Core/Test/TestDatabase.php
 core/lib/Drupal/Core/Test/TestDiscovery.php
 core/lib/Drupal/Core/Test/TestKernel.php
+core/lib/Drupal/Core/Test/TestRun.php
+core/lib/Drupal/Core/Test/TestRunResultsStorageInterface.php
 core/lib/Drupal/Core/Test/TestRunnerKernel.php
 core/lib/Drupal/Core/Test/TestSetupTrait.php
 core/lib/Drupal/Core/Test/TestStatus.php
@@ -3309,6 +3312,7 @@ core/lib/Drupal/Core/Utility/Token.php
 core/lib/Drupal/Core/Utility/UnroutedUrlAssembler.php
 core/lib/Drupal/Core/Utility/UnroutedUrlAssemblerInterface.php
 core/lib/Drupal/Core/Utility/UpdateException.php
+core/lib/Drupal/Core/Utility/link.api.php
 core/lib/Drupal/Core/Utility/token.api.php
 core/lib/Drupal/Core/Validation/Annotation/Constraint.php
 core/lib/Drupal/Core/Validation/ConstraintFactory.php
@@ -12319,6 +12323,7 @@ core/modules/views/tests/src/Unit/Plugin/field/FieldTest.php
 core/modules/views/tests/src/Unit/Plugin/filter/FilterPluginBaseTest.php
 core/modules/views/tests/src/Unit/Plugin/filter/InOperatorTest.php
 core/modules/views/tests/src/Unit/Plugin/pager/PagerPluginBaseTest.php
+core/modules/views/tests/src/Unit/Plugin/pager/SqlBaseTest.php
 core/modules/views/tests/src/Unit/Plugin/query/SqlTest.php
 core/modules/views/tests/src/Unit/Plugin/views/display/BlockTest.php
 core/modules/views/tests/src/Unit/Plugin/views/field/EntityOperationsUnitTest.php
@@ -13727,6 +13732,7 @@ core/tests/Drupal/KernelTests/Core/KeyValueStore/KeyValueContentEntityStorageTes
 core/tests/Drupal/KernelTests/Core/KeyValueStore/MemoryStorageTest.php
 core/tests/Drupal/KernelTests/Core/KeyValueStore/StorageTestBase.php
 core/tests/Drupal/KernelTests/Core/Layout/IconBuilderTest.php
+core/tests/Drupal/KernelTests/Core/Locale/CountryManagerTest.php
 core/tests/Drupal/KernelTests/Core/Lock/LockTest.php
 core/tests/Drupal/KernelTests/Core/Menu/LocalActionManagerTest.php
 core/tests/Drupal/KernelTests/Core/Menu/MenuLinkDefaultIntegrationTest.php
@@ -13794,6 +13800,9 @@ core/tests/Drupal/KernelTests/Core/Test/BrowserTestBaseTest.php
 core/tests/Drupal/KernelTests/Core/Test/Comparator/MarkupInterfaceComparatorTest.php
 core/tests/Drupal/KernelTests/Core/Test/EnvironmentCleanerTest.php
 core/tests/Drupal/KernelTests/Core/Test/PhpUnitBridgeTest.php
+core/tests/Drupal/KernelTests/Core/Test/SimpletestTestRunResultsStorageTest.php
+core/tests/Drupal/KernelTests/Core/Test/TestRunTest.php
+core/tests/Drupal/KernelTests/Core/Test/TestSetupTraitTest.php
 core/tests/Drupal/KernelTests/Core/Theme/BaseThemeMissingTest.php
 core/tests/Drupal/KernelTests/Core/Theme/BaseThemeRequiredTest.php
 core/tests/Drupal/KernelTests/Core/Theme/ClaroVerticalTabsTest.php
@@ -14625,6 +14634,7 @@ core/tests/fixtures/files/translations/drupal-8.0.0-beta2.hu.po
 core/tests/fixtures/files/translations/drupal-8.0.0.de.po
 core/tests/fixtures/files/translations/drupal-8.0.0.fr____CA.po
 core/tests/fixtures/files/translations/drupal-8.0.x.fr-CA.po
+core/tests/fixtures/test-error.log
 core/tests/fixtures/test_missing_base_theme/test_missing_base_theme.info.yml
 core/tests/fixtures/test_missing_base_theme/test_missing_base_theme.theme
 core/tests/fixtures/test_stable/test_stable.info.yml

@@ -1053,6 +1053,7 @@ ghost/admin/config/optional-features.json
 ghost/admin/config/targets.js
 ghost/admin/ember-cli-build.js
 ghost/admin/ember-cli-update.json
+ghost/admin/jsconfig.json
 ghost/admin/lib/asset-delivery/index.js
 ghost/admin/lib/asset-delivery/package.json
 ghost/admin/lib/ember-power-calendar-moment/index.js
@@ -2626,8 +2627,6 @@ ghost/core/core/server/services/auth/session/index.js
 ghost/core/core/server/services/auth/session/middleware.js
 ghost/core/core/server/services/auth/session/store.js
 ghost/core/core/server/services/auth/setup.js
-ghost/core/core/server/services/bulk-email/bulk-email-processor.js
-ghost/core/core/server/services/bulk-email/index.js
 ghost/core/core/server/services/comments/controller.js
 ghost/core/core/server/services/comments/email-templates/new-comment-reply.hbs
 ghost/core/core/server/services/comments/email-templates/new-comment-reply.txt.js
@@ -2686,13 +2685,6 @@ ghost/core/core/server/services/mail/templates/test.html
 ghost/core/core/server/services/mail/templates/welcome.html
 ghost/core/core/server/services/media-inliner/index.js
 ghost/core/core/server/services/media-inliner/service.js
-ghost/core/core/server/services/mega/email-preview.js
-ghost/core/core/server/services/mega/feedback-buttons.js
-ghost/core/core/server/services/mega/index.js
-ghost/core/core/server/services/mega/mega.js
-ghost/core/core/server/services/mega/post-email-serializer.js
-ghost/core/core/server/services/mega/segment-parser.js
-ghost/core/core/server/services/mega/template.js
 ghost/core/core/server/services/member-attribution/index.js
 ghost/core/core/server/services/members-events/index.js
 ghost/core/core/server/services/members/SingleUseTokenProvider.js
@@ -3047,7 +3039,6 @@ ghost/core/test/integration/services/email-service/batch-sending.test.js
 ghost/core/test/integration/services/email-service/email-event-storage.test.js
 ghost/core/test/integration/services/last-seen-at-updater.test.js
 ghost/core/test/integration/services/mailgun-email-suppression-list.test.js
-ghost/core/test/integration/services/mega.test.js
 ghost/core/test/integration/services/members/clean-tokens.test.js
 ghost/core/test/integration/settings/settings.test.js
 ghost/core/test/integration/url_service.test.js
@@ -3312,10 +3303,6 @@ ghost/core/test/unit/server/services/labs.test.js
 ghost/core/test/unit/server/services/limits.test.js
 ghost/core/test/unit/server/services/link-tracking/PostLinkRepository.test.js
 ghost/core/test/unit/server/services/mail/GhostMailer.test.js
-ghost/core/test/unit/server/services/mega/mega.test.js
-ghost/core/test/unit/server/services/mega/post-email-serializer.test.js
-ghost/core/test/unit/server/services/mega/segment-parser.test.js
-ghost/core/test/unit/server/services/mega/template.test.js
 ghost/core/test/unit/server/services/members/config.test.js
 ghost/core/test/unit/server/services/members/content-gating.test.js
 ghost/core/test/unit/server/services/members/middleware.test.js
@@ -3516,7 +3503,7 @@ ghost/core/test/utils/mocks/index.js
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/overrides.js
 ghost/core/test/utils/redirects.js
-ghost/core/test/utils/sleep.js
+ghost/core/test/utils/stripe-mocker.js
 ghost/core/test/utils/url-service-utils.js
 ghost/core/test/utils/urlUtils.js
 ghost/custom-theme-settings-service/.eslintrc.js
