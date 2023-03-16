@@ -477,8 +477,12 @@ ghost/admin/app/components/modals/newsletters/confirm-newsletter-email.hbs
 ghost/admin/app/components/modals/newsletters/confirm-unarchive.hbs
 ghost/admin/app/components/modals/newsletters/edit.hbs
 ghost/admin/app/components/modals/newsletters/edit.js
+ghost/admin/app/components/modals/newsletters/edit/design-labs.hbs
+ghost/admin/app/components/modals/newsletters/edit/design-labs.js
 ghost/admin/app/components/modals/newsletters/edit/design.hbs
 ghost/admin/app/components/modals/newsletters/edit/design.js
+ghost/admin/app/components/modals/newsletters/edit/preview-labs.hbs
+ghost/admin/app/components/modals/newsletters/edit/preview-labs.js
 ghost/admin/app/components/modals/newsletters/edit/preview.hbs
 ghost/admin/app/components/modals/newsletters/edit/preview.js
 ghost/admin/app/components/modals/newsletters/edit/settings.hbs
@@ -1402,6 +1406,7 @@ ghost/admin/public/assets/icons/arrow-right-small.svg
 ghost/admin/public/assets/icons/arrow-right-stroke.svg
 ghost/admin/public/assets/icons/arrow-right-tail.svg
 ghost/admin/public/assets/icons/arrow-right.svg
+ghost/admin/public/assets/icons/arrow-top-right.svg
 ghost/admin/public/assets/icons/arrow-up-small.svg
 ghost/admin/public/assets/icons/arrow-up-stroke.svg
 ghost/admin/public/assets/icons/arrow-up.svg
@@ -1422,6 +1427,7 @@ ghost/admin/public/assets/icons/circle-ellipsis.svg
 ghost/admin/public/assets/icons/clock.svg
 ghost/admin/public/assets/icons/close-stroke.svg
 ghost/admin/public/assets/icons/close.svg
+ghost/admin/public/assets/icons/comments.svg
 ghost/admin/public/assets/icons/compass.svg
 ghost/admin/public/assets/icons/confetti.svg
 ghost/admin/public/assets/icons/content.svg
@@ -1485,9 +1491,9 @@ ghost/admin/public/assets/icons/filter-dropdown-email-subscriptions.svg
 ghost/admin/public/assets/icons/filter-dropdown-feedback.svg
 ghost/admin/public/assets/icons/filter-dropdown-logins.svg
 ghost/admin/public/assets/icons/filter-dropdown-paid-subscriptions.svg
+ghost/admin/public/assets/icons/filter.svg
 ghost/admin/public/assets/icons/filter-dropdown-payments.svg
 ghost/admin/public/assets/icons/filter-dropdown-signups.svg
-ghost/admin/public/assets/icons/filter.svg
 ghost/admin/public/assets/icons/gallery-placeholder.svg
 ghost/admin/public/assets/icons/ghost-logo-orb.svg
 ghost/admin/public/assets/icons/ghost-orb-pink.svg
@@ -2496,6 +2502,10 @@ ghost/core/core/server/data/migrations/versions/5.35/2023-02-13-06-24-add-mentio
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-20-12-22-add-milestones-table.js
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-21-12-29-add-milestone-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-23-10-40-set-outbound-link-tagging-based-on-source-tracking.js
+ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-09-29-add-newsletter-show-post-title-section.js
+ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-13-11-add-newsletter-show-comment-cta.js
+ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-14-30-add-newsletter-show-subscription-details.js
+ghost/core/core/server/data/migrations/versions/5.39/2023-03-14-12-26-add-last-mentions-email-report-timestamp-setting.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-29-add-comment-reporting-permissions.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-31-drop-reports-reason.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-32-drop-nullable-member-id-from-likes.js
@@ -2659,6 +2669,7 @@ ghost/core/core/server/services/explore/index.js
 ghost/core/core/server/services/explore/service.js
 ghost/core/core/server/services/frontend-data-service/frontend-data-service.js
 ghost/core/core/server/services/frontend-data-service/index.js
+ghost/core/core/server/services/i18n.js
 ghost/core/core/server/services/integrations/integrations-service.js
 ghost/core/core/server/services/invitations/accept.js
 ghost/core/core/server/services/invitations/index.js
@@ -2707,6 +2718,10 @@ ghost/core/core/server/services/members/service.js
 ghost/core/core/server/services/members/stats/members-stats.js
 ghost/core/core/server/services/members/stripe-connect.js
 ghost/core/core/server/services/members/utils.js
+ghost/core/core/server/services/mentions-email-report/StartMentionEmailReportJob.js
+ghost/core/core/server/services/mentions-email-report/index.js
+ghost/core/core/server/services/mentions-email-report/job.js
+ghost/core/core/server/services/mentions-email-report/service.js
 ghost/core/core/server/services/mentions-jobs/index.js
 ghost/core/core/server/services/mentions-jobs/job-service.js
 ghost/core/core/server/services/mentions/BookshelfMentionRepository.js
@@ -2987,6 +3002,7 @@ ghost/core/test/e2e-browser/admin/members.spec.js
 ghost/core/test/e2e-browser/admin/membership-settings.spec.js
 ghost/core/test/e2e-browser/admin/portal-settings.spec.js
 ghost/core/test/e2e-browser/admin/posts.spec.js
+ghost/core/test/e2e-browser/admin/private-site.spec.js
 ghost/core/test/e2e-browser/admin/publishing.spec.js
 ghost/core/test/e2e-browser/admin/setup.spec.js
 ghost/core/test/e2e-browser/admin/site-settings.spec.js
@@ -2995,7 +3011,6 @@ ghost/core/test/e2e-browser/portal/member-actions.spec.js
 ghost/core/test/e2e-browser/portal/offers.spec.js
 ghost/core/test/e2e-browser/portal/tiers.spec.js
 ghost/core/test/e2e-browser/portal/upgrade.spec.js
-ghost/core/test/e2e-browser/site-settings/private-site.spec.js
 ghost/core/test/e2e-browser/utils/e2e-browser-utils.js
 ghost/core/test/e2e-browser/utils/global-setup.js
 ghost/core/test/e2e-browser/utils/global-teardown.js
@@ -3035,6 +3050,7 @@ ghost/core/test/integration/importer/legacy.test.js
 ghost/core/test/integration/importer/v1.test.js
 ghost/core/test/integration/importer/v2.test.js
 ghost/core/test/integration/migrations/migration.test.js
+ghost/core/test/integration/services/email-service/__snapshots__/batch-sending.test.js.snap
 ghost/core/test/integration/services/email-service/batch-sending.test.js
 ghost/core/test/integration/services/email-service/email-event-storage.test.js
 ghost/core/test/integration/services/last-seen-at-updater.test.js
@@ -3531,6 +3547,7 @@ ghost/data-generator/lib/tables/index.js
 ghost/data-generator/lib/tables/labels.js
 ghost/data-generator/lib/tables/members-click-events.js
 ghost/data-generator/lib/tables/members-created-events.js
+ghost/data-generator/lib/tables/members-feedback.js
 ghost/data-generator/lib/tables/members-labels.js
 ghost/data-generator/lib/tables/members-login-events.js
 ghost/data-generator/lib/tables/members-newsletters.js
@@ -3704,8 +3721,10 @@ ghost/i18n/README.md
 ghost/i18n/i18next-parser.config.js
 ghost/i18n/index.js
 ghost/i18n/lib/i18n.js
+ghost/i18n/locales/en/ghost.json
 ghost/i18n/locales/en/portal.json
 ghost/i18n/locales/en/test.json
+ghost/i18n/locales/nl/ghost.json
 ghost/i18n/locales/nl/portal.json
 ghost/i18n/locales/nl/test.json
 ghost/i18n/package.json
@@ -3918,6 +3937,13 @@ ghost/members-ssr/test/hello.test.js
 ghost/members-ssr/test/utils/assertions.js
 ghost/members-ssr/test/utils/index.js
 ghost/members-ssr/test/utils/overrides.js
+ghost/mentions-email-report/.eslintrc.js
+ghost/mentions-email-report/README.md
+ghost/mentions-email-report/index.js
+ghost/mentions-email-report/lib/MentionEmailReportJob.js
+ghost/mentions-email-report/package.json
+ghost/mentions-email-report/test/.eslintrc.js
+ghost/mentions-email-report/test/hello.test.js
 ghost/milestones/.eslintrc.js
 ghost/milestones/README.md
 ghost/milestones/index.js
@@ -4067,14 +4093,6 @@ ghost/portal/.yarnrc
 ghost/portal/README.md
 ghost/portal/jsconfig.json
 ghost/portal/package.json
-ghost/portal/public/index.html
-ghost/portal/public/manifest.json
-ghost/portal/public/robots.txt
-ghost/portal/scripts/build-combined.js
-ghost/portal/scripts/dev-mode.js
-ghost/portal/scripts/load-portal.js
-ghost/portal/scripts/start-combined.js
-ghost/portal/scripts/start-mode.js
 ghost/portal/src/App.js
 ghost/portal/src/App.test.js
 ghost/portal/src/AppContext.js
@@ -4187,6 +4205,7 @@ ghost/portal/src/utils/notifications.js
 ghost/portal/src/utils/test-fixtures.js
 ghost/portal/src/utils/test-utils.js
 ghost/portal/src/utils/validator.js
+ghost/portal/vite.config.js
 ghost/referrers/.eslintrc.js
 ghost/referrers/README.md
 ghost/referrers/package.json
@@ -4244,10 +4263,10 @@ ghost/slack-notifications/test/SlackNotificationsService.test.js
 ghost/staff-service/.eslintrc.js
 ghost/staff-service/README.md
 ghost/staff-service/index.js
+ghost/staff-service/lib/email-templates/mention-report.hbs
+ghost/staff-service/lib/email-templates/mention-report.txt.js
 ghost/staff-service/lib/email-templates/new-free-signup.hbs
 ghost/staff-service/lib/email-templates/new-free-signup.txt.js
-ghost/staff-service/lib/email-templates/new-mention-received.hbs
-ghost/staff-service/lib/email-templates/new-mention-received.txt.js
 ghost/staff-service/lib/email-templates/new-paid-cancellation.hbs
 ghost/staff-service/lib/email-templates/new-paid-cancellation.txt.js
 ghost/staff-service/lib/email-templates/new-paid-started.hbs
