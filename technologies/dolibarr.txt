@@ -2904,6 +2904,7 @@ htdocs/includes/maximebf/debugbar/composer.json
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php
+htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/NamespacedTwigProfileCollector.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/Propel2Collector.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/PropelCollector.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/Bridge/SlimCollector.php
@@ -2936,7 +2937,6 @@ htdocs/includes/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatter.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatterInterface.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/DataFormatter/DebugBarVarDumper.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/DataFormatter/VarDumper/DebugBarHtmlDumper.php
-htdocs/includes/maximebf/debugbar/src/DebugBar/DataFormatter/VarDumper/SeekingData.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/DebugBar.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/DebugBarException.php
 htdocs/includes/maximebf/debugbar/src/DebugBar/HttpDriverInterface.php
@@ -14797,6 +14797,7 @@ test/phpunit/CoreTest.php
 test/phpunit/DateLibTest.php
 test/phpunit/DateLibTzFranceTest.php
 test/phpunit/DiscountTest.php
+test/phpunit/DoliDBTest.php
 test/phpunit/EmailCollectorTest.php
 test/phpunit/EntrepotTest.php
 test/phpunit/EvalMathTest.php

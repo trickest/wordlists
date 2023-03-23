@@ -410,7 +410,6 @@ src/Umbraco.Core/Collections/OrderedHashSet.cs
 src/Umbraco.Core/Collections/StackQueue.cs
 src/Umbraco.Core/Collections/TopoGraph.cs
 src/Umbraco.Core/Collections/TypeList.cs
-src/Umbraco.Core/CompatibilitySuppressions.xml
 src/Umbraco.Core/Composing/BuilderCollectionBase.cs
 src/Umbraco.Core/Composing/CollectionBuilderBase.cs
 src/Umbraco.Core/Composing/ComponentCollection.cs
@@ -2303,6 +2302,11 @@ src/Umbraco.Core/UdiRange.cs
 src/Umbraco.Core/UdiType.cs
 src/Umbraco.Core/UdiTypeConverter.cs
 src/Umbraco.Core/Umbraco.Core.csproj
+src/Umbraco.Core/UmbracoApiControllerTypeCollection.cs
+src/Umbraco.Core/UmbracoContextReference.cs
+src/Umbraco.Core/UnknownTypeUdi.cs
+src/Umbraco.Core/UpgradeResult.cs
+src/Umbraco.Core/UriUtilityCore.cs
 src/Umbraco.Core/Web/CookieManagerExtensions.cs
 src/Umbraco.Core/Web/HybridUmbracoContextAccessor.cs
 src/Umbraco.Core/Web/ICookieManager.cs
@@ -2312,11 +2316,6 @@ src/Umbraco.Core/Web/IUmbracoContext.cs
 src/Umbraco.Core/Web/IUmbracoContextAccessor.cs
 src/Umbraco.Core/Web/IUmbracoContextFactory.cs
 src/Umbraco.Core/Web/Mvc/PluginControllerMetadata.cs
-src/Umbraco.Core/UmbracoApiControllerTypeCollection.cs
-src/Umbraco.Core/UmbracoContextReference.cs
-src/Umbraco.Core/UnknownTypeUdi.cs
-src/Umbraco.Core/UpgradeResult.cs
-src/Umbraco.Core/UriUtilityCore.cs
 src/Umbraco.Core/WebAssets/AssetFile.cs
 src/Umbraco.Core/WebAssets/AssetType.cs
 src/Umbraco.Core/WebAssets/BundlingOptions.cs
@@ -2363,7 +2362,6 @@ src/Umbraco.Infrastructure/Cache/DistributedCacheExtensions.cs
 src/Umbraco.Infrastructure/Cache/FullDataSetRepositoryCachePolicy.cs
 src/Umbraco.Infrastructure/Cache/RepositoryCachePolicyBase.cs
 src/Umbraco.Infrastructure/Cache/SingleItemsOnlyRepositoryCachePolicy.cs
-src/Umbraco.Infrastructure/CompatibilitySuppressions.xml
 src/Umbraco.Infrastructure/Configuration/JsonConfigManipulator.cs
 src/Umbraco.Infrastructure/Configuration/NCronTabParser.cs
 src/Umbraco.Infrastructure/DependencyInjection/UmbracoBuilder.Collections.cs
@@ -6013,6 +6011,7 @@ src/Umbraco.Web.Website/Routing/IPublicAccessRequestHandler.cs
 src/Umbraco.Web.Website/Routing/IUmbracoRouteValuesFactory.cs
 src/Umbraco.Web.Website/Routing/NotFoundSelectorPolicy.cs
 src/Umbraco.Web.Website/Routing/PublicAccessRequestHandler.cs
+src/Umbraco.Web.Website/Routing/SurfaceControllerMatcherPolicy.cs
 src/Umbraco.Web.Website/Routing/UmbracoRouteValueTransformer.cs
 src/Umbraco.Web.Website/Routing/UmbracoRouteValuesFactory.cs
 src/Umbraco.Web.Website/Security/MemberAuthenticationBuilder.cs

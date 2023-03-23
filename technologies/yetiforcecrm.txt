@@ -115,6 +115,9 @@ api/webservice/WebserviceStandard/Users/Record.php
 api/webservice/WebserviceStandard/Users/RecordsList.php
 api/webservice/WebserviceStandard/Users/ResetPassword.php
 api/webservice/WebserviceStandard/Users/TwoFactorAuth.php
+api/webservice/WooCommerce/Auth/Basic.php
+api/webservice/WooCommerce/Controller.php
+api/webservice/WooCommerce/Webhooks.php
 app/Anonymization.php
 app/AutoAssign.php
 app/Automatic/RecordFlowUpdater.php
@@ -1214,7 +1217,6 @@ layouts/basic/modules/Import/Import_Step3.tpl
 layouts/basic/modules/Import/Import_Step4.tpl
 layouts/basic/modules/KnowledgeBase/ContentsDefault.tpl
 layouts/basic/modules/KnowledgeBase/ContentsView.tpl
-layouts/basic/modules/KnowledgeBase/DetailViewBlockView.tpl
 layouts/basic/modules/KnowledgeBase/KnowledgeBase.tpl
 layouts/basic/modules/Leads/ConvertLead.tpl
 layouts/basic/modules/Leads/ConvertLeadError.tpl
@@ -1256,7 +1258,6 @@ layouts/basic/modules/OSSMail/index.tpl
 layouts/basic/modules/OSSMailView/ChangeType.tpl
 layouts/basic/modules/OSSMailView/Detail/PreProcess.tpl
 layouts/basic/modules/OSSMailView/Detail/Widget/PreviewMail.tpl
-layouts/basic/modules/OSSMailView/DetailViewBlockView.tpl
 layouts/basic/modules/OSSMailView/DetailViewHeaderTitle.tpl
 layouts/basic/modules/OSSMailView/MailsPreview.tpl
 layouts/basic/modules/OSSMailView/dashboards/Graf.tpl
@@ -1963,7 +1964,6 @@ layouts/basic/modules/Vtiger/RelatedListLeftSide.tpl
 layouts/basic/modules/Vtiger/RelatedTreeContent.tpl
 layouts/basic/modules/Vtiger/SendMailModal.tpl
 layouts/basic/modules/Vtiger/ShowAllComments.tpl
-layouts/basic/modules/Vtiger/SmartDetail.tpl
 layouts/basic/modules/Vtiger/SummaryWidgets.tpl
 layouts/basic/modules/Vtiger/SummaryWidgetsContent.tpl
 layouts/basic/modules/Vtiger/TilesActions.tpl
@@ -3667,7 +3667,6 @@ modules/Vtiger/views/RelatedCommentModal.php
 modules/Vtiger/views/RelatedList.php
 modules/Vtiger/views/SendMailModal.php
 modules/Vtiger/views/ShowWidget.php
-modules/Vtiger/views/SmartDetail.php
 modules/Vtiger/views/SortOrderModal.php
 modules/Vtiger/views/Tiles.php
 modules/Vtiger/views/TimeLineModal.php

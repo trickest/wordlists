@@ -3,6 +3,8 @@
 .changeset/contributors.json
 .changeset/cool-cycles-exist.md
 .changeset/early-garlics-double.md
+.changeset/late-birds-clean.md
+.changeset/types-can-upgrade.md
 .changeset/types-can-walk.md
 .codesandbox/ci.json
 .devcontainer/Dockerfile
@@ -1342,7 +1344,6 @@ examples/virtual-field/schema.prisma
 examples/virtual-field/schema.ts
 package.json
 packages/auth/CHANGELOG.md
-packages/auth/HOOKS.md
 packages/auth/LICENSE
 packages/auth/README.md
 packages/auth/package.json
@@ -1618,6 +1619,7 @@ packages/core/src/lib/server/createExpressServer.ts
 packages/core/src/lib/telemetry.ts
 packages/core/src/lib/types.d.ts
 packages/core/src/lib/utils.ts
+packages/core/src/pkg-dir.ts
 packages/core/src/schema/schema.ts
 packages/core/src/scripts/build/build.ts
 packages/core/src/scripts/cli.ts
@@ -1783,16 +1785,14 @@ packages/fields-document/src/validation.ts
 packages/fields-document/src/views.tsx
 packages/fields-document/structure-views/package.json
 packages/fields-document/views/package.json
-patches/@whatwg-node+fetch+0.6.1.patch
+pnpm-lock.yaml
+pnpm-workspace.yaml
 prisma-utils/CHANGELOG.md
 prisma-utils/README.md
 prisma-utils/package.json
 prisma-utils/src/index.ts
 renovate.json
 scripts/changelog.js
-scripts/generate-artifacts-for-projects/CHANGELOG.md
-scripts/generate-artifacts-for-projects/package.json
-scripts/generate-artifacts-for-projects/src/index.ts
 tests/admin-ui-tests/CHANGELOG.md
 tests/admin-ui-tests/README.md
 tests/admin-ui-tests/filters.test.ts
@@ -1969,4 +1969,3 @@ tests/test-projects/live-reloading/schemas/runtime-error.ts
 tests/test-projects/live-reloading/schemas/second.ts
 tests/test-projects/live-reloading/schemas/syntax-error.js
 tsconfig.json
-yarn.lock

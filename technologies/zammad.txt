@@ -20,9 +20,11 @@
 .eslint-plugin-zammad/lib/index.js
 .eslint-plugin-zammad/lib/rules/zammad-copyright.js
 .eslint-plugin-zammad/lib/rules/zammad-detect-translatable-string.js
+.eslint-plugin-zammad/lib/rules/zammad-tailwind-ltr.js
 .eslint-plugin-zammad/package.json
 .eslint-plugin-zammad/tests/lib/rules/zammad-copyright.js
 .eslint-plugin-zammad/tests/lib/rules/zammad-detect-translatable-string.js
+.eslint-plugin-zammad/tests/lib/rules/zammad-tailwind-ltr.js
 .eslint-plugin-zammad/yarn.lock
 .eslintignore
 .eslintrc
@@ -89,6 +91,7 @@
 .rubocop/cop/zammad/exists_date_time_precision.rb
 .rubocop/cop/zammad/exists_db_strategy.rb
 .rubocop/cop/zammad/exists_reset_column_information.rb
+.rubocop/cop/zammad/faker_unique.rb
 .rubocop/cop/zammad/forbid_default_scope.rb
 .rubocop/cop/zammad/forbid_rand.rb
 .rubocop/cop/zammad/forbid_translatable_marker.rb
@@ -1562,6 +1565,7 @@ app/frontend/apps/mobile/pages/search/plugins/ticket.ts
 app/frontend/apps/mobile/pages/search/plugins/user.ts
 app/frontend/apps/mobile/pages/search/routes.ts
 app/frontend/apps/mobile/pages/search/views/SearchOverview.vue
+app/frontend/apps/mobile/pages/ticket/__tests__/article-list/subscription.spec.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/mocks/detail-view.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/mocks/overview.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/ticket-a11y.spec.ts
@@ -1583,7 +1587,6 @@ app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSeparat
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSeparatorNew.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSystem.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticlesList.vue
-app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticlesPullDown.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/TicketActionChangeCustomerDialog.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/__tests__/TicketActionChangeCustomerDialog.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketActionsDialog.vue
@@ -2279,6 +2282,7 @@ app/frontend/shared/form/plugins/__tests__/extendDataAttributes.spec.ts
 app/frontend/shared/form/plugins/__tests__/requiredValidation.spec.ts
 app/frontend/shared/form/plugins/global/bindEmit.ts
 app/frontend/shared/form/plugins/global/extendDataAttributes.ts
+app/frontend/shared/form/plugins/global/extendLabel.ts
 app/frontend/shared/form/plugins/global/requiredValidation.ts
 app/frontend/shared/form/sections/arrow.ts
 app/frontend/shared/form/sections/block.ts
@@ -2442,6 +2446,7 @@ app/frontend/tests/fixtures/graphqlSampleTypes.ts
 app/frontend/tests/support/assertions/index.ts
 app/frontend/tests/support/assertions/toBeAvatarElement.ts
 app/frontend/tests/support/assertions/toHaveClasses.ts
+app/frontend/tests/support/assertions/toHaveImagePreview.ts
 app/frontend/tests/support/components/LayoutTest.vue
 app/frontend/tests/support/components/iconQueries.ts
 app/frontend/tests/support/components/index.ts
@@ -2534,6 +2539,9 @@ app/graphql/gql/queries/tickets_by_overview.rb
 app/graphql/gql/queries/translations.rb
 app/graphql/gql/queries/user.rb
 app/graphql/gql/record_loader.rb
+app/graphql/gql/resolvers/belongs_to_resolver.rb
+app/graphql/gql/resolvers/has_one_resolver.rb
+app/graphql/gql/resolvers/lookup_resolver.rb
 app/graphql/gql/subscriptions/app_maintenance.rb
 app/graphql/gql/subscriptions/base_subscription.rb
 app/graphql/gql/subscriptions/config_updates.rb
@@ -2564,9 +2572,13 @@ app/graphql/gql/types/base_object.rb
 app/graphql/gql/types/base_scalar.rb
 app/graphql/gql/types/base_union.rb
 app/graphql/gql/types/binary_string_type.rb
+app/graphql/gql/types/concerns/has_default_model_fields.rb
+app/graphql/gql/types/concerns/has_default_model_user_relations.rb
 app/graphql/gql/types/concerns/has_internal_id_field.rb
 app/graphql/gql/types/concerns/has_internal_note_field.rb
+app/graphql/gql/types/concerns/has_model_relations.rb
 app/graphql/gql/types/concerns/has_pundit_authorization.rb
+app/graphql/gql/types/concerns/has_scoped_model_user_relations.rb
 app/graphql/gql/types/concerns/is_model_object.rb
 app/graphql/gql/types/data_privacy_task_type.rb
 app/graphql/gql/types/email/address_type.rb
@@ -2852,6 +2864,7 @@ app/models/core_workflow/custom/admin_core_workflow.rb
 app/models/core_workflow/custom/admin_sla.rb
 app/models/core_workflow/custom/backend.rb
 app/models/core_workflow/custom/pending_time.rb
+app/models/core_workflow/custom/secondary_organization.rb
 app/models/core_workflow/result.rb
 app/models/core_workflow/result/add_option.rb
 app/models/core_workflow/result/auto_select.rb
@@ -3234,6 +3247,7 @@ app/views/mailer/admin_password_auth/hr.html.erb
 app/views/mailer/admin_password_auth/hu.html.erb
 app/views/mailer/admin_password_auth/it.html.erb
 app/views/mailer/admin_password_auth/nb.html.erb
+app/views/mailer/admin_password_auth/nl.html.erb
 app/views/mailer/admin_password_auth/pl.html.erb
 app/views/mailer/admin_password_auth/pt-br.html.erb
 app/views/mailer/admin_password_auth/pt.html.erb
@@ -3251,6 +3265,7 @@ app/views/mailer/email_oversized/fr.txt.erb
 app/views/mailer/email_oversized/hr.txt.erb
 app/views/mailer/email_oversized/hu.txt.erb
 app/views/mailer/email_oversized/it.txt.erb
+app/views/mailer/email_oversized/nl.txt.erb
 app/views/mailer/email_oversized/pl.txt.erb
 app/views/mailer/email_oversized/pt-br.txt.erb
 app/views/mailer/email_oversized/ru.txt.erb
@@ -3264,6 +3279,7 @@ app/views/mailer/password_change/fr.html.erb
 app/views/mailer/password_change/hr.html.erb
 app/views/mailer/password_change/hu.html.erb
 app/views/mailer/password_change/it.html.erb
+app/views/mailer/password_change/nl.html.erb
 app/views/mailer/password_change/pl.html.erb
 app/views/mailer/password_change/pt-br.html.erb
 app/views/mailer/password_change/ru.html.erb
@@ -3279,6 +3295,7 @@ app/views/mailer/password_reset/fr.html.erb
 app/views/mailer/password_reset/hr.html.erb
 app/views/mailer/password_reset/hu.html.erb
 app/views/mailer/password_reset/it.html.erb
+app/views/mailer/password_reset/nl.html.erb
 app/views/mailer/password_reset/pl.html.erb
 app/views/mailer/password_reset/pt-br.html.erb
 app/views/mailer/password_reset/ru.html.erb
@@ -3294,6 +3311,7 @@ app/views/mailer/signup/fr.html.erb
 app/views/mailer/signup/hr.html.erb
 app/views/mailer/signup/hu.html.erb
 app/views/mailer/signup/it.html.erb
+app/views/mailer/signup/nl.html.erb
 app/views/mailer/signup/pl.html.erb
 app/views/mailer/signup/pt-br.html.erb
 app/views/mailer/signup/ru.html.erb
@@ -3310,6 +3328,7 @@ app/views/mailer/signup_taken_reset/fr.html.erb
 app/views/mailer/signup_taken_reset/hr.html.erb
 app/views/mailer/signup_taken_reset/hu.html.erb
 app/views/mailer/signup_taken_reset/it.html.erb
+app/views/mailer/signup_taken_reset/nl.html.erb
 app/views/mailer/signup_taken_reset/pl.html.erb
 app/views/mailer/signup_taken_reset/pt-br.html.erb
 app/views/mailer/signup_taken_reset/ru.html.erb
@@ -3323,6 +3342,7 @@ app/views/mailer/test_ticket/fr.html.erb
 app/views/mailer/test_ticket/hr.html.erb
 app/views/mailer/test_ticket/hu.html.erb
 app/views/mailer/test_ticket/it.html.erb
+app/views/mailer/test_ticket/nl.html.erb
 app/views/mailer/test_ticket/pl.html.erb
 app/views/mailer/test_ticket/pt-br.html.erb
 app/views/mailer/test_ticket/ru.html.erb
@@ -3338,6 +3358,7 @@ app/views/mailer/ticket_create/fr.html.erb
 app/views/mailer/ticket_create/hr.html.erb
 app/views/mailer/ticket_create/hu.html.erb
 app/views/mailer/ticket_create/it.html.erb
+app/views/mailer/ticket_create/nl.html.erb
 app/views/mailer/ticket_create/pl.html.erb
 app/views/mailer/ticket_create/pt-br.html.erb
 app/views/mailer/ticket_create/ru.html.erb
@@ -3353,6 +3374,7 @@ app/views/mailer/ticket_escalation/fr.html.erb
 app/views/mailer/ticket_escalation/hr.html.erb
 app/views/mailer/ticket_escalation/hu.html.erb
 app/views/mailer/ticket_escalation/it.html.erb
+app/views/mailer/ticket_escalation/nl.html.erb
 app/views/mailer/ticket_escalation/pl.html.erb
 app/views/mailer/ticket_escalation/pt-br.html.erb
 app/views/mailer/ticket_escalation/ru.html.erb
@@ -3368,6 +3390,7 @@ app/views/mailer/ticket_escalation_warning/fr.html.erb
 app/views/mailer/ticket_escalation_warning/hr.html.erb
 app/views/mailer/ticket_escalation_warning/hu.html.erb
 app/views/mailer/ticket_escalation_warning/it.html.erb
+app/views/mailer/ticket_escalation_warning/nl.html.erb
 app/views/mailer/ticket_escalation_warning/pl.html.erb
 app/views/mailer/ticket_escalation_warning/pt-br.html.erb
 app/views/mailer/ticket_escalation_warning/ru.html.erb
@@ -3382,6 +3405,7 @@ app/views/mailer/ticket_reminder_reached/es.html.erb
 app/views/mailer/ticket_reminder_reached/fr.html.erb
 app/views/mailer/ticket_reminder_reached/hr.html.erb
 app/views/mailer/ticket_reminder_reached/it.html.erb
+app/views/mailer/ticket_reminder_reached/nl.html.erb
 app/views/mailer/ticket_reminder_reached/pl.html.erb
 app/views/mailer/ticket_reminder_reached/pt-br.html.erb
 app/views/mailer/ticket_reminder_reached/ru.html.erb
@@ -3397,6 +3421,7 @@ app/views/mailer/ticket_update/fr.html.erb
 app/views/mailer/ticket_update/hr.html.erb
 app/views/mailer/ticket_update/hu.html.erb
 app/views/mailer/ticket_update/it.html.erb
+app/views/mailer/ticket_update/nl.html.erb
 app/views/mailer/ticket_update/pl.html.erb
 app/views/mailer/ticket_update/pt-br.html.erb
 app/views/mailer/ticket_update/ru.html.erb
@@ -3412,6 +3437,7 @@ app/views/mailer/ticket_update_merged_into/fr.html.erb
 app/views/mailer/ticket_update_merged_into/hr.html.erb
 app/views/mailer/ticket_update_merged_into/hu.html.erb
 app/views/mailer/ticket_update_merged_into/it.html.erb
+app/views/mailer/ticket_update_merged_into/nl.html.erb
 app/views/mailer/ticket_update_merged_into/pl.html.erb
 app/views/mailer/ticket_update_merged_into/pt-br.html.erb
 app/views/mailer/ticket_update_merged_into/ru.html.erb
@@ -3426,6 +3452,7 @@ app/views/mailer/ticket_update_received_merge/hr.html.erb
 app/views/mailer/ticket_update_received_merge/hu.html.erb
 app/views/mailer/ticket_update_received_merge/it.html.erb
 app/views/mailer/ticket_update_received_merge/nb.html.erb
+app/views/mailer/ticket_update_received_merge/nl.html.erb
 app/views/mailer/ticket_update_received_merge/pl.html.erb
 app/views/mailer/ticket_update_received_merge/pt-br.html.erb
 app/views/mailer/ticket_update_received_merge/pt.html.erb
@@ -3439,6 +3466,8 @@ app/views/mailer/user_auth_provider/en.html.erb
 app/views/mailer/user_auth_provider/es.html.erb
 app/views/mailer/user_auth_provider/fr.html.erb
 app/views/mailer/user_auth_provider/hu.html.erb
+app/views/mailer/user_auth_provider/nl.html.erb
+app/views/mailer/user_auth_provider/pl.html.erb
 app/views/mailer/user_auth_provider/pt-br.html.erb
 app/views/mailer/user_auth_provider/sr-latn-rs.html.erb
 app/views/mailer/user_auth_provider/sr.html.erb
@@ -3450,6 +3479,7 @@ app/views/mailer/user_device_new/fr.html.erb
 app/views/mailer/user_device_new/hr.html.erb
 app/views/mailer/user_device_new/hu.html.erb
 app/views/mailer/user_device_new/it.html.erb
+app/views/mailer/user_device_new/nl.html.erb
 app/views/mailer/user_device_new/pl.html.erb
 app/views/mailer/user_device_new/pt-br.html.erb
 app/views/mailer/user_device_new/pt.html.erb
@@ -3467,6 +3497,7 @@ app/views/mailer/user_device_new_location/fr.html.erb
 app/views/mailer/user_device_new_location/hr.html.erb
 app/views/mailer/user_device_new_location/hu.html.erb
 app/views/mailer/user_device_new_location/it.html.erb
+app/views/mailer/user_device_new_location/nl.html.erb
 app/views/mailer/user_device_new_location/pl.html.erb
 app/views/mailer/user_device_new_location/pt-br.html.erb
 app/views/mailer/user_device_new_location/pt.html.erb
@@ -3485,6 +3516,7 @@ app/views/mailer/user_invite/fr.html.erb
 app/views/mailer/user_invite/hr.html.erb
 app/views/mailer/user_invite/hu.html.erb
 app/views/mailer/user_invite/it.html.erb
+app/views/mailer/user_invite/nl.html.erb
 app/views/mailer/user_invite/pl.html.erb
 app/views/mailer/user_invite/pt-br.erb
 app/views/mailer/user_invite/pt-br.html.erb
@@ -4093,6 +4125,8 @@ db/migrate/20230209083829_html_sanitizer_processing_timeout.rb
 db/migrate/20230224134546_duplicate_setting_titles.rb
 db/migrate/20230224160814_issue4505_inconsistent_screen_view_active_attribute.rb
 db/migrate/20230303092229_session_spool_cleanup.rb
+db/migrate/20230310122944_core_workflow_secondary_organization.rb
+db/migrate/20230312210126_email_addresses_email_match_user_email.rb
 db/seeds.rb
 db/seeds/channels.rb
 db/seeds/chats.rb
@@ -4158,6 +4192,7 @@ i18n/zammad.fr-fr.po
 i18n/zammad.he-il.po
 i18n/zammad.hi-in.po
 i18n/zammad.hr.po
+i18n/zammad.ht.po
 i18n/zammad.hu.po
 i18n/zammad.is.po
 i18n/zammad.it-it.po
@@ -5086,6 +5121,8 @@ public/assets/images/icons/danger.svg
 public/assets/images/icons/dashboard.svg
 public/assets/images/icons/diagonal-cross.svg
 public/assets/images/icons/document.svg
+public/assets/images/icons/double-arrow-left.svg
+public/assets/images/icons/double-arrow-right.svg
 public/assets/images/icons/download.svg
 public/assets/images/icons/draft-modifier.svg
 public/assets/images/icons/draggable.svg
@@ -5304,6 +5341,7 @@ spec/db/migrate/active_job_lock_cleanup_job_scheduler_spec.rb
 spec/db/migrate/add_object_attribute_relation_fields_belongs_to_value_spec.rb
 spec/db/migrate/and_or_conditions_setting_default_spec.rb
 spec/db/migrate/check_for_object_attributes_spec.rb
+spec/db/migrate/email_addresses_email_match_user_email_spec.rb
 spec/db/migrate/forget_insecure_sessions_spec.rb
 spec/db/migrate/html_sanitizer_processing_timeout_spec.rb
 spec/db/migrate/issue2641_kb_color_change_limit_spec.rb
@@ -5366,8 +5404,8 @@ spec/db/migrate/issue_4411_setting_saml_custom_uid_attribute_spec.rb
 spec/db/migrate/issue_4412_setting_saml_idp_cert_switch_textarea_spec.rb
 spec/db/migrate/issue_4412_setting_saml_logout_url_spec.rb
 spec/db/migrate/issue_4461_kb_feed_token_persistent_spec.rb
-spec/db/migrate/maintenance_improve_setting_preferences_spec.rb
 spec/db/migrate/mention_init_spec.rb
+spec/db/migrate/maintenance_improve_setting_preferences_spec.rb
 spec/db/migrate/maintenance_remove_active_ldap_sessions_spec.rb
 spec/db/migrate/normalize_setting_ticket_number_ignore_system_id_spec.rb
 spec/db/migrate/object_manager_attribute_date_remove_future_past_spec.rb
@@ -6039,6 +6077,7 @@ spec/models/concerns/can_be_imported_examples.rb
 spec/models/concerns/can_csv_import_examples.rb
 spec/models/concerns/can_csv_import_organization_examples.rb
 spec/models/concerns/can_csv_import_ticket_examples.rb
+spec/models/concerns/can_csv_import_user_examples.rb
 spec/models/concerns/checks_core_workflow_examples.rb
 spec/models/concerns/checks_kb_client_notification_examples.rb
 spec/models/concerns/has_collection_update_examples.rb
@@ -6095,6 +6134,7 @@ spec/models/object_manager/attribute/set_defaults_spec.rb
 spec/models/object_manager/attribute_spec.rb
 spec/models/object_manager/object_spec.rb
 spec/models/object_manager_spec.rb
+spec/models/online_notification_spec.rb
 spec/models/organization_spec.rb
 spec/models/overview_spec.rb
 spec/models/package_spec.rb
@@ -6297,6 +6337,7 @@ spec/rspec/time_helper_spec.rb
 spec/rspec_extensions.rb
 spec/rubocop/cop/zammad/active_record_reorder_spec.rb
 spec/rubocop/cop/zammad/enforce_in_modal_spec.rb
+spec/rubocop/cop/zammad/faker_unique_spec.rb
 spec/rubocop/cop/zammad/forbid_default_scope_spec.rb
 spec/rubocop/cop/zammad/migration_scheduler_last_run_spec.rb
 spec/rubocop/cop/zammad/to_forbid_over_not_to_permit_spec.rb
@@ -6399,6 +6440,7 @@ spec/system/apps/mobile/account/avatar_spec.rb
 spec/system/apps/mobile/account_spec.rb
 spec/system/apps/mobile/app_links_spec.rb
 spec/system/apps/mobile/app_maintenance_spec.rb
+spec/system/apps/mobile/basic/invalid_session_handling_spec.rb
 spec/system/apps/mobile/basic/logout_frontend_store_reset_spec.rb
 spec/system/apps/mobile/basic/shared_authentication_state_spec.rb
 spec/system/apps/mobile/examples/core_workflow_examples.rb
@@ -6501,6 +6543,7 @@ spec/system/manage/text_modules_spec.rb
 spec/system/manage/trigger_spec.rb
 spec/system/manage/users_spec.rb
 spec/system/manage/webhooks_spec.rb
+spec/system/navigation_spec.rb
 spec/system/online_notification_spec.rb
 spec/system/organization/profile_spec.rb
 spec/system/organization_profile_spec.rb
@@ -7038,7 +7081,6 @@ test/unit/ticket_test.rb
 test/unit/ticket_trigger_extended_test.rb
 test/unit/ticket_trigger_recursive_disabled_test.rb
 test/unit/ticket_trigger_test.rb
-test/unit/user_csv_import_test.rb
 test/unit/user_test.rb
 tmp/pids/.keep
 tsconfig.base.json

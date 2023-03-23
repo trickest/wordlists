@@ -4421,7 +4421,6 @@ app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Flat/StateTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Flat/System/Config/ModeTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/FlatTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Action/RowsTest.php
-app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Plugin/ImportTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Plugin/MviewStateTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Plugin/StoreGroupTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Plugin/StoreViewTest.php
@@ -4429,7 +4428,6 @@ app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/Plugin/TableRe
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/Product/RowSizeEstimatorTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Category/ProductTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Category/Action/RowsTest.php
-app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Category/Plugin/ImportTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/CategoryTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Eav/AbstractActionTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Indexer/Product/Eav/Action/FullTest.php
@@ -5377,12 +5375,8 @@ app/code/Magento/CatalogImportExport/Model/Import/Product/Validator/Weight.php
 app/code/Magento/CatalogImportExport/Model/Import/Proxy/Product.php
 app/code/Magento/CatalogImportExport/Model/Import/Proxy/Product/ResourceModel.php
 app/code/Magento/CatalogImportExport/Model/Import/Uploader.php
-app/code/Magento/CatalogImportExport/Model/Indexer/Category/Product/Plugin/Import.php
-app/code/Magento/CatalogImportExport/Model/Indexer/Product/Category/Plugin/Import.php
 app/code/Magento/CatalogImportExport/Model/Indexer/Product/Eav/Plugin/Import.php
 app/code/Magento/CatalogImportExport/Model/Indexer/Product/Flat/Plugin/Import.php
-app/code/Magento/CatalogImportExport/Model/Indexer/Product/Price/Plugin/Import.php
-app/code/Magento/CatalogImportExport/Model/Indexer/Stock/Plugin/Import.php
 app/code/Magento/CatalogImportExport/Model/StockItemImporter.php
 app/code/Magento/CatalogImportExport/Model/StockItemImporterInterface.php
 app/code/Magento/CatalogImportExport/Model/StockItemProcessor.php
@@ -5446,8 +5440,6 @@ app/code/Magento/CatalogImportExport/Test/Unit/Model/Import/Product/ValidatorTes
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Import/ProductTest.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Import/UploaderTest.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Indexer/Product/Flat/Plugin/ImportTest.php
-app/code/Magento/CatalogImportExport/Test/Unit/Model/Indexer/Product/Price/Plugin/ImportTest.php
-app/code/Magento/CatalogImportExport/Test/Unit/Model/Indexer/Stock/Plugin/ImportTest.php
 app/code/Magento/CatalogImportExport/composer.json
 app/code/Magento/CatalogImportExport/etc/config.xml
 app/code/Magento/CatalogImportExport/etc/di.xml
@@ -17583,6 +17575,7 @@ app/code/Magento/QuoteGraphQl/Model/Cart/BuyRequest/CustomizableOptionsDataProvi
 app/code/Magento/QuoteGraphQl/Model/Cart/BuyRequest/QuantityDataProvider.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CheckCartCheckoutAllowance.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateBuyRequest.php
+app/code/Magento/QuoteGraphQl/Model/Cart/CreateBuyRequestDataProviderInterface.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateEmptyCartForCustomer.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateEmptyCartForGuest.php
 app/code/Magento/QuoteGraphQl/Model/Cart/ExtractQuoteAddressData.php
@@ -17613,6 +17606,7 @@ app/code/Magento/QuoteGraphQl/Model/Cart/UpdateCartItem.php
 app/code/Magento/QuoteGraphQl/Model/Cart/ValidateAddressFromSchema.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/CartItemUidArgsProcessor.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/CartItemsUidArgsProcessor.php
+app/code/Magento/QuoteGraphQl/Model/CartItem/CustomizableOptionUidArgsProcessor.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/DataProvider/CustomizableOption.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/DataProvider/CustomizableOptionValue/Composite.php
 app/code/Magento/QuoteGraphQl/Model/CartItem/DataProvider/CustomizableOptionValue/Dropdown.php
@@ -22039,6 +22033,7 @@ app/code/Magento/Store/Test/Unit/Model/Config/Importer/Processor/ProcessorFactor
 app/code/Magento/Store/Test/Unit/Model/Config/Importer/Processor/UpdateTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/ImporterTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/PlaceholderTest.php
+app/code/Magento/Store/Test/Unit/Model/Config/Processor/FallbackTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/Processor/PlaceholderTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/Reader/Source/Dynamic/DefaultScopeTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/Reader/Source/Dynamic/StoreTest.php
@@ -28495,6 +28490,7 @@ dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/Product
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductCategoriesTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductImagesTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductImportImagesTest.php
+dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductIndexersInvalidationTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductMultipleStoresTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductOptionsTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductOtherTest.php
@@ -28631,6 +28627,7 @@ dev/tests/integration/testsuite/Magento/CatalogInventory/_files/configurable_opt
 dev/tests/integration/testsuite/Magento/CatalogInventory/_files/configurable_options_with_low_stock.php
 dev/tests/integration/testsuite/Magento/CatalogRule/Model/CatalogRuleRepositoryTest.php
 dev/tests/integration/testsuite/Magento/CatalogRule/Model/Indexer/BatchIndexTest.php
+dev/tests/integration/testsuite/Magento/CatalogRule/Model/Indexer/IndexerBuilderInScheduledModeTest.php
 dev/tests/integration/testsuite/Magento/CatalogRule/Model/Indexer/IndexerBuilderTest.php
 dev/tests/integration/testsuite/Magento/CatalogRule/Model/Indexer/Product/PriceTest.php
 dev/tests/integration/testsuite/Magento/CatalogRule/Model/Indexer/ProductRuleTest.php
@@ -31277,6 +31274,7 @@ dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quo
 dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/NewConditionHtmlTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Coupon/CodeLimitManagerTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Coupon/QuoteRepositoryTest.php
+dev/tests/integration/testsuite/Magento/SalesRule/Model/CouponTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Observer/AssignCouponDataAfterOrderCustomerAssignTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Quote/Address/Total/ShippingTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Quote/DiscountTest.php
@@ -35790,12 +35788,14 @@ lib/internal/Magento/Framework/Mview/View/ChangelogTableNotExistsException.php
 lib/internal/Magento/Framework/Mview/View/Collection.php
 lib/internal/Magento/Framework/Mview/View/CollectionFactory.php
 lib/internal/Magento/Framework/Mview/View/CollectionInterface.php
+lib/internal/Magento/Framework/Mview/View/CompositeSubscriptionStatementPostprocessor.php
 lib/internal/Magento/Framework/Mview/View/State/CollectionFactory.php
 lib/internal/Magento/Framework/Mview/View/State/CollectionInterface.php
 lib/internal/Magento/Framework/Mview/View/StateInterface.php
 lib/internal/Magento/Framework/Mview/View/Subscription.php
 lib/internal/Magento/Framework/Mview/View/SubscriptionFactory.php
 lib/internal/Magento/Framework/Mview/View/SubscriptionInterface.php
+lib/internal/Magento/Framework/Mview/View/SubscriptionStatementPostprocessorInterface.php
 lib/internal/Magento/Framework/Mview/View/SubscriptionTriggersInterface.php
 lib/internal/Magento/Framework/Mview/ViewInterface.php
 lib/internal/Magento/Framework/Mview/ViewSubscriptionInterface.php

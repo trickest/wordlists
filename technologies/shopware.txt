@@ -2,6 +2,7 @@
 .danger.php
 .editorconfig
 .envrc
+.gitattributes
 .gitlab-ci.yml
 .gitlab/CODEOWNERS
 .gitlab/base.yml
@@ -52,12 +53,6 @@
 .run/Storefront Stylelint.run.xml
 .run/Storefront Watcher.run.xml
 .vscode/settings.json
-2020-08-12-implement-app-system-inside-platform.md
-2021-09-14-technical-concept-custom-entities.md
-2021-10-21-app-scripting.md
-2022-01-06-custom-app-api-endpoints.md
-2022-02-21-rule-scripting-in-apps.md
-2022-04-19-integrate-app-into-flow-action.md
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE
@@ -74,6 +69,7 @@ adr/2020-07-02-implement-sales-channel-context-token-requirement.md
 adr/2020-08-03-implement-new-changelog.md
 adr/2020-08-10-feature-flag-system.md
 adr/2020-08-12-document-template-refactoring.md
+adr/2020-08-12-implement-app-system-inside-platform.md
 adr/2020-08-14-implement-individual-sorting.md
 adr/2020-08-14-merchant-registration.md
 adr/2020-08-19-handling-feature-flags.md
@@ -96,9 +92,11 @@ adr/2021-08-10-storefront-coding-standards.md
 adr/2021-08-11-make-platform-stand-alone.md
 adr/2021-08-31-refactor-admin-build-process-to-webpack-multi-compiler-mode.md
 adr/2021-09-06-make-core-mail-templates-independent-from-storefront-urls.md
+adr/2021-09-14-technical-concept-custom-entities.md
 adr/2021-09-22-refactor-theme-inheritance.md
 adr/2021-10-01-payment-flow.md
 adr/2021-10-13-refund-handling.md
+adr/2021-10-21-app-scripting.md
 adr/2021-11-02-preparing-data-for-rule-evaluation.md
 adr/2021-11-05-adjust-adr-approval-rules.md
 adr/2021-11-09-increment-pattern.md
@@ -106,8 +104,10 @@ adr/2021-11-22-merge-e2e-projects-into-a-single-project.md
 adr/2021-11-23-add-possibility-for-plugin-to-add-a-html-file.md
 adr/2021-12-07-admin-extension-api-standards.md
 adr/2022-01-05-add-feature-flag-support-for-storefront-scss.md
+adr/2022-01-06-custom-app-api-endpoints.md
 adr/2022-01-20-feature-flags-for-major-versions.md
 adr/2022-02-09-controller-configuration-route-defaults.md
+adr/2022-02-21-rule-scripting-in-apps.md
 adr/2022-02-24-domain-exceptions.md
 adr/2022-02-28-consistent-deprecation-notices-in-core.md
 adr/2022-03-09-reset-class-state-during-requests.md
@@ -122,6 +122,7 @@ adr/2022-03-25-profiler-integrations.md
 adr/2022-03-25-redis-cart-persister.md
 adr/2022-03-29-specify-priority-of-translations-in-dal-write-payloads.md
 adr/2022-04-06-add-default-cms-layouts-to-products-and-categories.md
+adr/2022-04-19-integrate-app-into-flow-action.md
 adr/2022-04-28-tax-providers.md
 adr/2022-05-12-remove-static-analysis-with-psalm.md
 adr/2022-05-23-rule-condition-field-abstraction.md
@@ -142,6 +143,7 @@ adr/2022-27-09-vue-2.7-update.md
 adr/2023-01-10-atomic-theme-compilation.md
 adr/2023-01-30-image-lazy-loading.md
 adr/2023-02-02-deprecate-autoload-true-in-dal-associations.md
+adr/2023-02-02-flow-storer-with-scalar-values.md
 adr/2023-02-13-follow-test-pyramid.md
 adr/2023-02-20-unstructured-adrs.md
 adr/2023-02-27-native-extension-system-with-vue.md
@@ -196,6 +198,7 @@ changelog/_unreleased/2021-12-15-moved-admin-dashboard-statistics-into-separate-
 changelog/_unreleased/2021-12-30-save-theme-compilation.md
 changelog/_unreleased/2022-01-10-webpack-alias-refactor.md
 changelog/_unreleased/2022-01-18-make-line-item-conditions-only-consider-goods-where-necessary.md
+changelog/_unreleased/2022-01-19-switch-storefront-plugin-data-attribute-selectors-to-match-their--option-naming.md
 changelog/_unreleased/2022-01-28-add-active-customer-condition.md
 changelog/_unreleased/2022-02-10-implement-rule-awareness.md
 changelog/_unreleased/2022-02-11-add-new-customer-address-conditions.md
@@ -214,11 +217,11 @@ changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.m
 changelog/_unreleased/2022-05-18-change-component-name.md
 changelog/_unreleased/2022-05-18-handle-form-validation-on-the-modal.md
 changelog/_unreleased/2022-05-31-cms-favorites.md
-changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2022-06-03-add-rule-awareness-to-the-flow-builder.md
 changelog/_unreleased/2022-06-06-modify-create-document-modal.md
 changelog/_unreleased/2022-06-22-message-queue-v2.md
 changelog/_unreleased/2022-07-04-add-tax-provider-entity.md
+changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2022-07-12-create-a-new-customer-rule-conditions-for-flow-builder.md
 changelog/_unreleased/2022-07-13-Implementation-addresses-markup.md
 changelog/_unreleased/2022-07-29-add-component-wrap-method-to-async-component-factory-for-supporting-typescript-in-async-components.md
@@ -272,6 +275,7 @@ changelog/_unreleased/2022-10-16-add-snippet-for-url-label.md
 changelog/_unreleased/2022-10-16-fix-fetch-association-in-bulk-edit.md
 changelog/_unreleased/2022-10-17-fix-wrong-created-date-in-order-detail.md
 changelog/_unreleased/2022-10-18-filter-blocks-and-elements-based-on-page-type.md
+changelog/_unreleased/2022-10-20-rename-sw-sidebar-collaps.md
 changelog/_unreleased/2022-10-18-fix-toggling-automatic-promotion-in-order-ux-overrides-intermediate-changes.md
 changelog/_unreleased/2022-10-19-change-cursor-on-collapse-sidebar.md
 changelog/_unreleased/2022-10-19-fixed-malformed-sync-operations-issue-in-sync-api.md
@@ -279,7 +283,6 @@ changelog/_unreleased/2022-10-19-remove-shadow-from-admin-sw-hero-card.md
 changelog/_unreleased/2022-10-19-show-translated-unit-name-in-product-detail-price-unit.md
 changelog/_unreleased/2022-10-20-admin-search-dropdown-show-duplicated-results-when-fast-typing.md
 changelog/_unreleased/2022-10-20-consider-inheritance-in-product-stream-mapping.md
-changelog/_unreleased/2022-10-20-rename-sw-sidebar-collaps.md
 changelog/_unreleased/2022-10-21-add-administration-meta-test.md
 changelog/_unreleased/2022-10-21-strip-tags-and-sanitize-reviews.md
 changelog/_unreleased/2022-10-23-fix-customer-recipient-not-changed-when-update-customer-profile.md
@@ -328,8 +331,8 @@ changelog/_unreleased/2022-11-04-deprecrate-storeclient-ping.md
 changelog/_unreleased/2022-11-06-update-dead-link.md
 changelog/_unreleased/2022-11-07-add-test-eslint-rules.md
 changelog/_unreleased/2022-11-07-announce-upcoming-major-version-changes-for-billing-and-shipping-display-in-the-storefront.md
-changelog/_unreleased/2022-11-07-announce-upcoming-major-version-changes-for-quantity-select-in-the-storefront.md
 changelog/_unreleased/2022-11-07-change-title-entry-point-service-navigation.md
+changelog/_unreleased/2022-11-07-announce-upcoming-major-version-changes-for-quantity-select-in-the-storefront.md
 changelog/_unreleased/2022-11-07-deprecate-app-manifest-version-1.0.md
 changelog/_unreleased/2022-11-08-add-the-label-created-by-admin-for-manual-customer.md
 changelog/_unreleased/2022-11-08-make-firstRunWizardClient-depend-less-on-storeService.md
@@ -386,6 +389,7 @@ changelog/_unreleased/2022-11-22-added-composer-commands.md
 changelog/_unreleased/2022-11-22-flysystem-v3.md
 changelog/_unreleased/2022-11-23-added-the-abstractavailablecombinationloader-to-make-the-availablecombinationloader-expandable.md
 changelog/_unreleased/2022-11-23-remove-framework-api-deprecations.md
+changelog/_unreleased/2023-01-04-update-dompdf.md
 changelog/_unreleased/2022-11-23-remove-migration-deprecations.md
 changelog/_unreleased/2022-11-23-remove-vendor-chunk-and-optimize-code-splitting.md
 changelog/_unreleased/2022-11-23-use-env-local-for-web-installer.md
@@ -447,10 +451,11 @@ changelog/_unreleased/2022-12-13-create-type-for-promotion-module.md
 changelog/_unreleased/2022-12-13-elasticsearch-deprecations.md
 changelog/_unreleased/2022-12-13-removed-availability-block-in-buy-widget.md
 changelog/_unreleased/2022-12-14-convert-rare-core-components-to-lazy-load.md
+changelog/_unreleased/2023-01-05-update-babel.md
 changelog/_unreleased/2022-12-14-deprecate-seo-url-association-field.md
 changelog/_unreleased/2022-12-14-fix-component-library.md
-changelog/_unreleased/2022-12-14-remove-module-sw-my-apps.md
 changelog/_unreleased/2022-12-14-improved-warning-message-when-saving-flow-template.md
+changelog/_unreleased/2022-12-14-remove-module-sw-my-apps.md
 changelog/_unreleased/2022-12-14-update-admin-dependencies.md
 changelog/_unreleased/2022-12-15-fix-webpack-watcher-assets.md
 changelog/_unreleased/2022-12-15-limit-upper-version-of-php-constraints.md
@@ -508,11 +513,9 @@ changelog/_unreleased/2023-01-04-add-yalc-to-devenv.md
 changelog/_unreleased/2023-01-04-fix-console-error-on-ajax-modal.md
 changelog/_unreleased/2023-01-04-implement-custom-entity-seo-tab.md
 changelog/_unreleased/2023-01-04-some-icons-are-not-compatible-with-trunk-on-admin-category.md
-changelog/_unreleased/2023-01-04-update-dompdf.md
 changelog/_unreleased/2023-01-05-added-condition-for-total-of-purchas-prices.md
 changelog/_unreleased/2023-01-05-fix-code-sample-in-nested-line-items.md
 changelog/_unreleased/2023-01-05-reduce-german-ambiguity-on-items-in-administration-snippet.md
-changelog/_unreleased/2023-01-05-update-babel.md
 changelog/_unreleased/2023-01-05-update-my-extensions-cards.md
 changelog/_unreleased/2023-01-06-added-media-uploaded-event.md
 changelog/_unreleased/2023-01-06-added-product-review-form-send-event.md
@@ -548,6 +551,7 @@ changelog/_unreleased/2023-01-12-update-to-webpack-5.md
 changelog/_unreleased/2023-01-13-add-loading-indicator-back-to-button.md
 changelog/_unreleased/2023-01-13-cms-element-for-app-does-not-take-full-width-in-sw-cms-block__content.md
 changelog/_unreleased/2023-01-13-fix-letter-header-invoice-incorrect.md
+changelog/_unreleased/2023-01-13-form-preserver-iterates-through-wrong-elements.md
 changelog/_unreleased/2023-01-13-generate-css-vars-from-scss-variables.md
 changelog/_unreleased/2023-01-16-add-custom-entity-page-type-and-page-type-registry.md
 changelog/_unreleased/2023-01-16-add-shipping-status-rule-condition.md
@@ -625,14 +629,15 @@ changelog/_unreleased/2023-02-02-improve-setting-time-zones.md
 changelog/_unreleased/2023-02-02-log-themcompile-errors-after-update.md
 changelog/_unreleased/2023-02-02-provided-cart-price-taxes-are-not-calculated-into-the-cart-price-sum.md
 changelog/_unreleased/2023-02-03-make-admin-compatible-with-npm-9.md
+changelog/_unreleased/2023-02-07-adjust-login-styling.md
 changelog/_unreleased/2023-02-06-create-method-to-get-translation-of-trigger.md
 changelog/_unreleased/2023-02-06-improve-text-wrap-behavior-in-notifications.md
 changelog/_unreleased/2023-02-07-add-a-separate-guzzle-client-for-the-first-run-wizard.md
 changelog/_unreleased/2023-02-07-add-transparent-background-possibility-to-text-editor.md
-changelog/_unreleased/2023-02-07-adjust-login-styling.md
 changelog/_unreleased/2023-02-07-adjust-menu-styling.md
 changelog/_unreleased/2023-02-07-productlineitem-validator-ignores-skip-product-stock-validation.md
 changelog/_unreleased/2023-02-07-remove-debugstack-class.md
+changelog/_unreleased/2023-02-08-allow-conversion-of-units-in-the-rule-builder.md
 changelog/_unreleased/2023-02-08-update-dbal-dependency.md
 changelog/_unreleased/2023-02-09-2023-02-09-removing-cancel-button-from-extension-store-review.md
 changelog/_unreleased/2023-02-09-add-cms-element-category-navigation-twig-block.md
@@ -679,6 +684,8 @@ changelog/_unreleased/2023-02-27-fix-wrong-breadcrumb-icon-in-media-module.md
 changelog/_unreleased/2023-02-27-fix-wrong-icon-for-media-navigate-back.md
 changelog/_unreleased/2023-02-27-fixes-several-icons-in-media-module.md
 changelog/_unreleased/2023-02-28-add-provinces-for-canada-country.md
+changelog/_unreleased/2023-02-28-fix-quantity-alignment-of-order-line-item.md
+changelog/_unreleased/2023-02-28-returned-invoice-has-7-pages.md
 changelog/_unreleased/2023-03-01-add-order-by-position.md
 changelog/_unreleased/2023-03-01-remove-deprecated-autoload-true-at-associations.md
 changelog/_unreleased/2023-03-02-remove-occurrences-of-viewer-acl-permissions-inside-checkout.md
@@ -687,23 +694,31 @@ changelog/_unreleased/2023-03-06-fix-theme-assets.md
 changelog/_unreleased/2023-03-06-remove-admin-user-activity-debounce.md
 changelog/_unreleased/2023-03-07-fix-stretched-images-in-media-preview.md
 changelog/_unreleased/2023-03-07-improve-performance-cms-block-config.md
-changelog/_unreleased/2023-03-09-fix-send-mail-message-encoding.md
 changelog/_unreleased/2023-03-08-improve-grammar-of-useDefaultCookieConsent-setting.md
 changelog/_unreleased/2023-03-09-change-inheritance-switch-icons.md
 changelog/_unreleased/2023-03-09-check-existence-of-theme-route-before-registration.md
+changelog/_unreleased/2023-03-09-final-storable-flow.md
 changelog/_unreleased/2023-03-09-fix-auto-logout-multiple-tabs-behaviour.md
 changelog/_unreleased/2023-03-09-fix-fallback-icon-for-sw-search-bar.md
+changelog/_unreleased/2023-03-09-fix-send-mail-message-encoding.md
 changelog/_unreleased/2023-03-09-remove-checkbox-in-media-module-on-back-folder.md
 changelog/_unreleased/2023-03-09-suggest-shopware-dev-tools-package.md
 changelog/_unreleased/2023-03-09-update-color-of-inherited-cards.md
 changelog/_unreleased/2023-03-10-add-loading-spinner-on-checkout-register-page.md
+changelog/_unreleased/2023-03-10-change-promotion-to-payload.md
+changelog/_unreleased/2023-03-10-convert-generated-variant-listing-config-column.md
 changelog/_unreleased/2023-03-10-message-serialization.md
+changelog/_unreleased/2023-03-10-restore-the-function-of-resetting-to-the-default.md
 changelog/_unreleased/2023-03-14-added-defaultrangeindex-property-to-sw-chart-card.md
 changelog/_unreleased/2023-03-14-html-filter-in-snippets.md
 changelog/_unreleased/2023-03-14-improve-address-markup-to-remove-space-between-the-symbo.md
+changelog/_unreleased/2023-03-14-modal-selectors.md
 changelog/_unreleased/2023-03-14-refresh-plugin-list-after-running-composer.md
 changelog/_unreleased/2023-03-14-update-schedule-task-interval-after-plugin-update.md
 changelog/_unreleased/2023-03-16-added-helptext-property-to-sw-chard-card.md
+changelog/_unreleased/2023-03-16-minify-flow-storer.md
+changelog/_unreleased/2023-03-20-reduce-core-package-size.md
+changelog/_unreleased/2023-03-23-update-meteor-icon-kit-to-v5-1-0.md
 changelog/release-6-3-1-1/2020-09-04-symfony-update-4.4.11.md
 changelog/release-6-3-1-1/2020-09-07-escaping-search.md
 changelog/release-6-3-1-1/2020-09-09-fix-listing-price-view.md
@@ -4137,6 +4152,10 @@ src/Administration/Resources/app/administration/src/app/component/rule/sw-condit
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-type-select/sw-condition-type-select.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-type-select/sw-condition-type-select.scss
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-type-select/sw-condition-type-select.spec.js
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-unit-menu/index.js
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-unit-menu/sw-condition-unit-menu.html.twig
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-unit-menu/sw-condition-unit-menu.scss
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-unit-menu/sw-condition-unit-menu.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/sw-rule-modal/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/sw-rule-modal/sw-rule-modal.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/sw-rule-modal/sw-rule-modal.scss
@@ -4325,6 +4344,8 @@ src/Administration/Resources/app/administration/src/app/decorator/condition-type
 src/Administration/Resources/app/administration/src/app/decorator/index.js
 src/Administration/Resources/app/administration/src/app/decorator/state-styling-provider.decorator.js
 src/Administration/Resources/app/administration/src/app/directive/autofocus.directive.ts
+src/Administration/Resources/app/administration/src/app/directive/click-outside.directive.spec.js
+src/Administration/Resources/app/administration/src/app/directive/click-outside.directive.ts
 src/Administration/Resources/app/administration/src/app/directive/dragdrop.directive.spec.js
 src/Administration/Resources/app/administration/src/app/directive/dragdrop.directive.ts
 src/Administration/Resources/app/administration/src/app/directive/index.js
@@ -4387,6 +4408,7 @@ src/Administration/Resources/app/administration/src/app/main.ts
 src/Administration/Resources/app/administration/src/app/mixin/discard-detail-page-changes.mixin.js
 src/Administration/Resources/app/administration/src/app/mixin/form-field.mixin.js
 src/Administration/Resources/app/administration/src/app/mixin/generic-condition.mixin.js
+src/Administration/Resources/app/administration/src/app/mixin/generic-condition.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/index.js
 src/Administration/Resources/app/administration/src/app/mixin/listing.mixin.js
 src/Administration/Resources/app/administration/src/app/mixin/notification.mixin.ts
@@ -6974,6 +6996,8 @@ src/Administration/Resources/app/administration/src/module/sw-settings-rule/page
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/service/rule-assignment-configuration.service.js
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/snippet/de-DE.json
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/snippet/en-GB.json
+src/Administration/Resources/app/administration/src/module/sw-settings-rule/utils/unit-conversion.utils.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings-rule/utils/unit-conversion.utils.ts
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/view/sw-settings-rule-detail-assignments/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/view/sw-settings-rule-detail-assignments/sw-settings-rule-detail-assignments.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-rule/view/sw-settings-rule-detail-assignments/sw-settings-rule-detail-assignments.scss
@@ -7058,6 +7082,7 @@ src/Administration/Resources/app/administration/src/module/sw-settings-seo/snipp
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/acl/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-price-rule-modal/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-price-rule-modal/sw-price-rule-modal.html.twig
+src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-price-rule-modal/sw-price-rule-modal.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-settings-shipping-price-matrices/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-settings-shipping-price-matrices/sw-settings-shipping-price-matrices.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-shipping/component/sw-settings-shipping-price-matrices/sw-settings-shipping-price-matrices.scss
@@ -7398,6 +7423,7 @@ src/Administration/Test/Snippet/fixtures/caseSameLanguage/core/de-DE.json
 src/Administration/Test/Snippet/fixtures/caseSameLanguage/plugin/de-DE.json
 src/Administration/Test/System/SalesChannel/Subscriber/SalesChannelUserConfigSubscriberTest.php
 src/Administration/composer.json
+src/Core/.gitattributes
 src/Core/Checkout/Cart/AbstractCartPersister.php
 src/Core/Checkout/Cart/AbstractRuleLoader.php
 src/Core/Checkout/Cart/Address/AddressValidator.php
@@ -8600,6 +8626,7 @@ src/Core/Content/Flow/Dispatching/Action/ChangeCustomerGroupAction.php
 src/Core/Content/Flow/Dispatching/Action/ChangeCustomerStatusAction.php
 src/Core/Content/Flow/Dispatching/Action/CustomFieldActionTrait.php
 src/Core/Content/Flow/Dispatching/Action/FlowAction.php
+src/Core/Content/Flow/Dispatching/Action/FlowMailVariables.php
 src/Core/Content/Flow/Dispatching/Action/GenerateDocumentAction.php
 src/Core/Content/Flow/Dispatching/Action/GrantDownloadAccessAction.php
 src/Core/Content/Flow/Dispatching/Action/RemoveCustomerTagAction.php
@@ -8625,6 +8652,7 @@ src/Core/Content/Flow/Dispatching/Aware/OrderTransactionAware.php
 src/Core/Content/Flow/Dispatching/Aware/RecipientsAware.php
 src/Core/Content/Flow/Dispatching/Aware/ResetUrlAware.php
 src/Core/Content/Flow/Dispatching/Aware/ReviewFormDataAware.php
+src/Core/Content/Flow/Dispatching/Aware/ScalarValuesAware.php
 src/Core/Content/Flow/Dispatching/Aware/ShopNameAware.php
 src/Core/Content/Flow/Dispatching/Aware/SubjectAware.php
 src/Core/Content/Flow/Dispatching/Aware/TemplateDataAware.php
@@ -8659,6 +8687,7 @@ src/Core/Content/Flow/Dispatching/Storer/ProductStorer.php
 src/Core/Content/Flow/Dispatching/Storer/RecipientsStorer.php
 src/Core/Content/Flow/Dispatching/Storer/ResetUrlStorer.php
 src/Core/Content/Flow/Dispatching/Storer/ReviewFormDataStorer.php
+src/Core/Content/Flow/Dispatching/Storer/ScalarValuesStorer.php
 src/Core/Content/Flow/Dispatching/Storer/ShopNameStorer.php
 src/Core/Content/Flow/Dispatching/Storer/SubjectStorer.php
 src/Core/Content/Flow/Dispatching/Storer/TemplateDataStorer.php
@@ -9753,10 +9782,12 @@ src/Core/DevOps/Resources/templates/hookable-events-list.md.twig
 src/Core/DevOps/Resources/templates/service-reference.md.twig
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/DeprecatedMethodsThrowDeprecationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/FinalClassRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalMethodRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoEnvironmentHelperInsideCompilerPassRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowStoreFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoSuperGlobalsInsideCompilerPassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PHPUnitDataProviderStaticRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PackageAnnotationRule.php
@@ -10748,6 +10779,7 @@ src/Core/Framework/DependencyInjection/CompilerPass/FilesystemConfigMigrationCom
 src/Core/Framework/DependencyInjection/CompilerPass/FrameworkMigrationReplacementCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RedisPrefixCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/RemoveOldFlowStorerCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RouteScopeCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPass.php
@@ -11002,13 +11034,6 @@ src/Core/Framework/Resources/demo-media/small.avi
 src/Core/Framework/Resources/demo-media/small.mov
 src/Core/Framework/Resources/demo-media/small.mp4
 src/Core/Framework/Resources/demo-media/small.webm
-src/Core/Framework/Resources/public/swagger-ui-bundle.js
-src/Core/Framework/Resources/public/swagger-ui-bundle.js.map
-src/Core/Framework/Resources/public/swagger-ui-standalone-preset.js
-src/Core/Framework/Resources/public/swagger-ui-standalone-preset.js.map
-src/Core/Framework/Resources/public/swagger-ui.css.map
-src/Core/Framework/Resources/public/swagger-ui.js
-src/Core/Framework/Resources/public/swagger-ui.js.map
 src/Core/Framework/Resources/snippet/de_DE/messages.de-DE.base.json
 src/Core/Framework/Resources/snippet/en_GB/messages.en-GB.base.json
 src/Core/Framework/Resources/views/documents/base.html.twig
@@ -12017,6 +12042,7 @@ src/Core/Framework/Update/Struct/Version.php
 src/Core/Framework/Util/ArrayNormalizer.php
 src/Core/Framework/Util/FloatComparator.php
 src/Core/Framework/Util/HtmlSanitizer.php
+src/Core/Framework/Util/Json.php
 src/Core/Framework/Util/MemorySizeCalculator.php
 src/Core/Framework/Util/Random.php
 src/Core/Framework/Util/VersionParser.php
@@ -12908,7 +12934,9 @@ src/Core/Migration/V6_5/Migration1675247112ChangeCountryNamingConvention.php
 src/Core/Migration/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocale.php
 src/Core/Migration/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimal.php
 src/Core/Migration/V6_5/Migration1677470540AddProvincesForCanada.php
+src/Core/Migration/V6_5/Migration1678197291ConvertVariantListingConfig.php
 src/Core/Migration/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalColumn.php
+src/Core/Migration/V6_5/Migration1678969082DropVariantListingFields.php
 src/Core/Migration/V6_6/Migration1663402950SetDoubleOptinCustomerActive.php
 src/Core/Migration/V6_6/Migration1673249981MigrateIsNewCustomerRule.php
 src/Core/Migration/V6_6/Migration1673964565MigrateToReferencedColumns.php
@@ -13537,6 +13565,8 @@ src/Core/Test/CollectingMessageBus.php
 src/Core/Test/FeatureFlagExtension.php
 src/Core/Test/FixtureLoader.php
 src/Core/Test/HttpKernelTest.php
+src/Core/Test/Integration/App/GuzzleHistoryCollector.php
+src/Core/Test/Integration/App/TestAppServer.php
 src/Core/Test/Integration/Helper/MailEventListener.php
 src/Core/Test/Integration/Traits/SnapshotTesting.php
 src/Core/Test/Integration/Traits/TestShortHands.php
@@ -15825,6 +15855,7 @@ tests/integration/php/Core/Content/Category/Service/CategoryBreadcrumbBuilderTes
 tests/integration/php/Core/Content/Cms/Subscriber/CmsPageBeforeDefaultChangeSubscriberTest.php
 tests/integration/php/Core/Content/Cms/Subscriber/CmsPageBeforeDeleteSubscriberTest.php
 tests/integration/php/Core/Content/ContactForm/ContactFormRouteTest.php
+tests/integration/php/Core/Content/Flow/Dispatching/Action/FlowMailVariablesTest.php
 tests/integration/php/Core/Content/Flow/Dispatching/Action/GrantDownloadAccessActionTest.php
 tests/integration/php/Core/Content/Flow/Dispatching/FlowExecutorTest.php
 tests/integration/php/Core/Content/Flow/SendMailActionTest.php
@@ -15933,7 +15964,6 @@ tests/integration/php/Core/Framework/App/FlowAction/_fixtures/invalid/flowAction
 tests/integration/php/Core/Framework/App/FlowAction/_fixtures/invalid/flowActionWithoutRequiredChild.xml
 tests/integration/php/Core/Framework/App/FlowAction/_fixtures/invalid/flowActionsWithoutFlowAction.xml
 tests/integration/php/Core/Framework/App/FlowAction/_fixtures/valid/flowActionWithFlowActions.xml
-tests/integration/php/Core/Framework/App/GuzzleHistoryCollector.php
 tests/integration/php/Core/Framework/App/GuzzleTestClientBehaviour.php
 tests/integration/php/Core/Framework/App/Hmac/Guzzle/AuthMiddlewareTest.php
 tests/integration/php/Core/Framework/App/Hmac/QuerySignerTest.php
@@ -16064,7 +16094,6 @@ tests/integration/php/Core/Framework/App/StorefrontPluginRegistryTestBehaviour.p
 tests/integration/php/Core/Framework/App/Subscriber/AppLoadedSubscriberTest.php
 tests/integration/php/Core/Framework/App/Subscriber/CustomFieldProtectionSubscriberTest.php
 tests/integration/php/Core/Framework/App/Template/TemplateLoaderTest.php
-tests/integration/php/Core/Framework/App/TestAppServer.php
 tests/integration/php/Core/Framework/App/Validation/AppNameValidatorTest.php
 tests/integration/php/Core/Framework/App/Validation/ConfigValidatorTest.php
 tests/integration/php/Core/Framework/App/Validation/HookableValidatorTest.php
@@ -16333,7 +16362,9 @@ tests/migration/Core/V6_5/Migration1675247112ChangeCountryNamingConventionTest.p
 tests/migration/Core/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocaleTest.php
 tests/migration/Core/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimalTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
+tests/migration/Core/V6_5/Migration1678197291ConvertVariantListingConfigTest.php
 tests/migration/Core/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalColumnTest.php
+tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_6/Migration1663402950SetDoubleOptinCustomerActiveTest.php
 tests/migration/Core/V6_6/Migration1671723392AddWebhookLifetimeConfigTest.php
 tests/migration/Core/V6_6/Migration1673249981MigrateIsNewCustomerRuleTest.php
@@ -16366,6 +16397,7 @@ tests/unit/php/Administration/Snippet/SnippetExceptionTest.php
 tests/unit/php/Administration/Snippet/SnippetFinderTest.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticEntityRepository.php
+tests/unit/php/Common/Stubs/Flow/DummyEvent.php
 tests/unit/php/Common/Stubs/SystemConfigService/StaticSystemConfigService.php
 tests/unit/php/Common/UnitTestBootstrap.php
 tests/unit/php/Core/Checkout/Cart/Address/AddressValidatorTest.php
@@ -16444,6 +16476,11 @@ tests/unit/php/Core/Checkout/Cart/TaxProvider/_fixtures/TestEmptyTaxProvider.php
 tests/unit/php/Core/Checkout/Cart/TaxProvider/_fixtures/TestGenericExceptionTaxProvider.php
 tests/unit/php/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionControllerTest.php
 tests/unit/php/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexerTest.php
+tests/unit/php/Core/Checkout/Customer/Event/CustomerAccountRecoverRequestEventTest.php
+tests/unit/php/Core/Checkout/Customer/Event/CustomerBeforeLoginEventTest.php
+tests/unit/php/Core/Checkout/Customer/Event/CustomerDoubleOptInRegistrationEventTest.php
+tests/unit/php/Core/Checkout/Customer/Event/CustomerLoginEventTest.php
+tests/unit/php/Core/Checkout/Customer/Event/DoubleOptInGuestOrderEventTest.php
 tests/unit/php/Core/Checkout/Customer/Rule/AffiliateCodeRuleTest.php
 tests/unit/php/Core/Checkout/Customer/Rule/BillingCityRuleTest.php
 tests/unit/php/Core/Checkout/Customer/Rule/BillingStateRuleTest.php
@@ -16491,6 +16528,7 @@ tests/unit/php/Core/Content/Cms/CmsExceptionTest.php
 tests/unit/php/Core/Content/Cms/DataResolver/Element/ElementDataCollectionTest.php
 tests/unit/php/Core/Content/Cms/Exception/PageNotFoundExceptionTest.php
 tests/unit/php/Core/Content/Cms/Subscriber/CmsPageDefaultChangeSubscriberTest.php
+tests/unit/php/Core/Content/ContactForm/Event/ContactFormEventTest.php
 tests/unit/php/Core/Content/ContactForm/SalesChannel/ContactFormRouteTest.php
 tests/unit/php/Core/Content/ContactForm/Validation/ContactFormValidationFactoryTest.php
 tests/unit/php/Core/Content/Flow/Api/FlowActionCollectorTest.php
@@ -16535,6 +16573,7 @@ tests/unit/php/Core/Content/Flow/Dispatching/Storer/ProductStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/RecipientsStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/ResetUrlStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/ReviewFormDataStorerTest.php
+tests/unit/php/Core/Content/Flow/Dispatching/Storer/ScalarFlowStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/ShopNameStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/SubjectStorerTest.php
 tests/unit/php/Core/Content/Flow/Dispatching/Storer/TemplateDataStorerTest.php
@@ -16559,14 +16598,15 @@ tests/unit/php/Core/Content/Mail/Service/MailServiceTest.php
 tests/unit/php/Core/Content/Mail/Service/MailTest.php
 tests/unit/php/Core/Content/Mail/Service/MailerTransportDecoratorTest.php
 tests/unit/php/Core/Content/Mail/Service/MailerTransportLoaderTest.php
-tests/unit/php/Core/Content/MailTemplate/MailBeforeSentTest.php
-tests/unit/php/Core/Content/MailTemplate/MailBeforeValidateEventTest.php
-tests/unit/php/Core/Content/MailTemplate/MailErrorEventTest.php
-tests/unit/php/Core/Content/MailTemplate/MailSentTest.php
+tests/unit/php/Core/Content/MailTemplate/Service/Event/MailBeforeSentEventTest.php
+tests/unit/php/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEventTest.php
+tests/unit/php/Core/Content/MailTemplate/Service/Event/MailErrorEventTest.php
+tests/unit/php/Core/Content/MailTemplate/Service/Event/MailSentEventTest.php
 tests/unit/php/Core/Content/Media/Event/MediaUploadedEventTest.php
 tests/unit/php/Core/Content/Media/File/DownloadResponseGeneratorTest.php
 tests/unit/php/Core/Content/Media/File/FileSaverTest.php
 tests/unit/php/Core/Content/Newsletter/DataAbstractionLayer/Indexing/CustomerNewsletterSalesChannelsUpdaterTest.php
+tests/unit/php/Core/Content/Newsletter/Event/NewsletterRegisterEventTest.php
 tests/unit/php/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
 tests/unit/php/Core/Content/Product/Cart/ProductLineItemValidatorTest.php
 tests/unit/php/Core/Content/Product/Cleanup/CleanupUnusedDownloadMediaTaskHandlerTest.php
@@ -16599,6 +16639,7 @@ tests/unit/php/Core/Content/Product/SalesChannel/Suggest/CachedProductSuggestRou
 tests/unit/php/Core/Content/Product/SalesChannel/Suggest/ProductSuggestRouteTest.php
 tests/unit/php/Core/Content/Product/SearchKeyword/ProductSearchKeywordAnalyzerTest.php
 tests/unit/php/Core/Content/Product/Subscriber/ProductSubscriberTest.php
+tests/unit/php/Core/Content/ProductExport/Event/ProductExportLoggingEventTest.php
 tests/unit/php/Core/Content/ProductExport/ScheduledTask/ProductExportGenerateTaskHandlerTest.php
 tests/unit/php/Core/Content/Rule/DataAbstractionLayer/RuleAreaUpdaterTest.php
 tests/unit/php/Core/Content/Rule/RuleCollectionTest.php
@@ -16716,6 +16757,7 @@ tests/unit/php/Core/Framework/Demodata/Event/DemodataRequestCreatedEventTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/DemodataCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/EntityCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPassTest.php
+tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/RemoveOldFlowStorerCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/fixtures/firstAppPath/Resources/app/storefront/dist/.gitkeep
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/fixtures/firstAppPath/Resources/views/.gitkeep
@@ -16929,6 +16971,7 @@ tests/unit/php/Core/System/Snippet/SnippetServiceTest.php
 tests/unit/php/Core/System/SystemConfig/Api/SystemConfigControllerTest.php
 tests/unit/php/Core/System/SystemConfig/Validation/SystemConfigValidatorTest.php
 tests/unit/php/Core/System/SystemTest.php
+tests/unit/php/Core/System/User/Recovery/UserRecoveryRequestEventTest.php
 tests/unit/php/Core/Test/FeatureFlagExtensionTest.php
 tests/unit/php/Elasticsearch/Admin/AdminElasticsearchHelperTest.php
 tests/unit/php/Elasticsearch/Admin/AdminSearchControllerTest.php

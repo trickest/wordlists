@@ -39,6 +39,7 @@ app/Console/Commands/LdapSync.php
 app/Console/Commands/LdapTroubleshooter.php
 app/Console/Commands/MergeUsersByUsername.php
 app/Console/Commands/MoveUploadsToNewDisk.php
+app/Console/Commands/NormalizeUserNames.php
 app/Console/Commands/ObjectImportCommand.php
 app/Console/Commands/PaveIt.php
 app/Console/Commands/Purge.php
@@ -65,6 +66,7 @@ app/Events/CheckoutDeclined.php
 app/Events/CheckoutableCheckedIn.php
 app/Events/CheckoutableCheckedOut.php
 app/Events/Event.php
+app/Events/UserMerged.php
 app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/Handler.php
 app/Helpers/Helper.php
@@ -132,7 +134,6 @@ app/Http/Controllers/DepartmentsController.php
 app/Http/Controllers/DepreciationsController.php
 app/Http/Controllers/GroupsController.php
 app/Http/Controllers/HealthController.php
-app/Http/Controllers/ImportsController.php
 app/Http/Controllers/Kits/CheckoutKitController.php
 app/Http/Controllers/Kits/PredefinedKitsController.php
 app/Http/Controllers/Licenses/LicenseCheckinController.php
@@ -154,6 +155,7 @@ app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/ViewAssetsController.php
 app/Http/Kernel.php
 app/Http/Livewire/CustomFieldSetDefaultValuesForModel.php
+app/Http/Livewire/Importer.php
 app/Http/Livewire/LoginForm.php
 app/Http/Livewire/SlackSettingsForm.php
 app/Http/Middleware/AssetCountForSidebar.php
@@ -759,6 +761,7 @@ database/migrations/2023_01_21_225350_add_eol_date_on_assets_table.php
 database/migrations/2023_01_23_232933_add_vip_to_users.php
 database/migrations/2023_02_12_224353_fix_unescaped_customfields_format.php
 database/migrations/2023_02_28_173527_adds_webhook_option_to_settings_table.php
+database/migrations/2023_03_21_215218_update_slack_setting.php
 database/seeders/.gitkeep
 database/seeders/AccessorySeeder.php
 database/seeders/ActionlogSeeder.php
@@ -1249,10 +1252,6 @@ resources/assets/js/bootstrap/fonts/glyphicons-halflings-regular.woff2
 resources/assets/js/bootstrap/js/bootstrap.js
 resources/assets/js/bootstrap/js/bootstrap.min.js
 resources/assets/js/bootstrap/js/npm.js
-resources/assets/js/components/alert.vue
-resources/assets/js/components/importer/importer-errors.vue
-resources/assets/js/components/importer/importer-file.vue
-resources/assets/js/components/importer/importer.vue
 resources/assets/js/components/passport/AuthorizedClients.vue
 resources/assets/js/components/passport/Clients.vue
 resources/assets/js/components/passport/PersonalAccessTokens.vue
@@ -6068,7 +6067,6 @@ resources/views/hardware/quickscan-checkin.blade.php
 resources/views/hardware/quickscan.blade.php
 resources/views/hardware/requested.blade.php
 resources/views/hardware/view.blade.php
-resources/views/importer/import.blade.php
 resources/views/kits/accessory-edit.blade.php
 resources/views/kits/checkout.blade.php
 resources/views/kits/consumable-edit.blade.php
@@ -6088,6 +6086,7 @@ resources/views/licenses/edit.blade.php
 resources/views/licenses/index.blade.php
 resources/views/licenses/view.blade.php
 resources/views/livewire/custom-field-set-default-values-for-model.blade.php
+resources/views/livewire/importer.blade.php
 resources/views/livewire/login-form.blade.php
 resources/views/livewire/slack-settings-form.blade.php
 resources/views/locations/edit.blade.php
@@ -6141,6 +6140,7 @@ resources/views/partials/asset-bulk-actions.blade.php
 resources/views/partials/assets-assigned.blade.php
 resources/views/partials/bootstrap-table.blade.php
 resources/views/partials/forms/checkout-selector.blade.php
+resources/views/partials/forms/demo-mode.blade.php
 resources/views/partials/forms/edit/accessory-select.blade.php
 resources/views/partials/forms/edit/address.blade.php
 resources/views/partials/forms/edit/asset-select.blade.php
@@ -6228,6 +6228,7 @@ resources/views/suppliers/index.blade.php
 resources/views/suppliers/view.blade.php
 resources/views/users/bulk-edit.blade.php
 resources/views/users/confirm-bulk-delete.blade.php
+resources/views/users/confirm-merge.blade.php
 resources/views/users/edit.blade.php
 resources/views/users/index.blade.php
 resources/views/users/ldap.blade.php
@@ -6302,6 +6303,7 @@ tests/Browser/Pages/HomePage.php
 tests/Browser/Pages/Page.php
 tests/CreatesApplication.php
 tests/DuskTestCase.php
+tests/Feature/Api/Assets/AssetIndexTest.php
 tests/Feature/Api/Users/UsersForSelectListTest.php
 tests/TestCase.php
 tests/Unit/AccessoryTest.php
