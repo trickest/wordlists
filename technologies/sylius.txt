@@ -555,6 +555,7 @@ docs/cookbook/payments/custom-field-on-refund-payment.rst
 docs/cookbook/payments/custom-invoice.rst
 docs/cookbook/payments/custom-payment-gateway.rst
 docs/cookbook/payments/custom-type-of-refund.rst
+docs/cookbook/payments/custom-unit-refund.rst
 docs/cookbook/payments/customizing-credit-memo.rst
 docs/cookbook/payments/encrypting-gateway-config.rst
 docs/cookbook/payments/generating-invoice-after-payment.rst
@@ -1031,6 +1032,7 @@ features/product/managing_product_variants/adding_product_variant.feature
 features/product/managing_product_variants/adding_product_variant_with_only_original_price.feature
 features/product/managing_product_variants/autocomplete_product_variant_descriptor.feature
 features/product/managing_product_variants/browsing_product_variants.feature
+features/product/managing_product_variants/browsing_product_variants_in_different_locales.feature
 features/product/managing_product_variants/checking_products_in_the_shop_while_editing_their_product_variants.feature
 features/product/managing_product_variants/deleting_multiple_product_variants.feature
 features/product/managing_product_variants/deleting_product_variant.feature
@@ -1437,6 +1439,7 @@ src/Sylius/Behat/Context/Api/Admin/ChannelPricingLogEntryContext.php
 src/Sylius/Behat/Context/Api/Admin/LoginContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingAdministratorsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCatalogPromotionsContext.php
+src/Sylius/Behat/Context/Api/Admin/ManagingChannelPriceHistoryConfigsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingChannelsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCountriesContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCurrenciesContext.php
@@ -1490,6 +1493,7 @@ src/Sylius/Behat/Context/Cli/ShowingAvailablePluginsContext.php
 src/Sylius/Behat/Context/Domain/CartContext.php
 src/Sylius/Behat/Context/Domain/ManagingOrdersContext.php
 src/Sylius/Behat/Context/Domain/ManagingPaymentsContext.php
+src/Sylius/Behat/Context/Domain/ManagingPriceHistoryContext.php
 src/Sylius/Behat/Context/Domain/ManagingProductsContext.php
 src/Sylius/Behat/Context/Domain/ManagingPromotionCouponsContext.php
 src/Sylius/Behat/Context/Domain/ManagingPromotionsContext.php
@@ -1518,6 +1522,7 @@ src/Sylius/Behat/Context/Setup/GeographicalContext.php
 src/Sylius/Behat/Context/Setup/LocaleContext.php
 src/Sylius/Behat/Context/Setup/OrderContext.php
 src/Sylius/Behat/Context/Setup/PaymentContext.php
+src/Sylius/Behat/Context/Setup/PriceHistoryContext.php
 src/Sylius/Behat/Context/Setup/ProductAssociationContext.php
 src/Sylius/Behat/Context/Setup/ProductAttributeContext.php
 src/Sylius/Behat/Context/Setup/ProductContext.php
@@ -1650,6 +1655,12 @@ src/Sylius/Behat/Element/Admin/CatalogPromotion/FilterElement.php
 src/Sylius/Behat/Element/Admin/CatalogPromotion/FilterElementInterface.php
 src/Sylius/Behat/Element/Admin/CatalogPromotion/FormElement.php
 src/Sylius/Behat/Element/Admin/CatalogPromotion/FormElementInterface.php
+src/Sylius/Behat/Element/Admin/Channel/DiscountedProductsCheckingPeriodInputElement.php
+src/Sylius/Behat/Element/Admin/Channel/DiscountedProductsCheckingPeriodInputElementInterface.php
+src/Sylius/Behat/Element/Admin/Channel/ExcludeTaxonsFromShowingLowestPriceInputElement.php
+src/Sylius/Behat/Element/Admin/Channel/ExcludeTaxonsFromShowingLowestPriceInputElementInterface.php
+src/Sylius/Behat/Element/Admin/Channel/LowestPriceFlagElement.php
+src/Sylius/Behat/Element/Admin/Channel/LowestPriceFlagElementInterface.php
 src/Sylius/Behat/Element/Admin/Channel/ShippingAddressInCheckoutRequiredElement.php
 src/Sylius/Behat/Element/Admin/Channel/ShippingAddressInCheckoutRequiredElementInterface.php
 src/Sylius/Behat/Element/Admin/Channel/ShopBillingDataElement.php
@@ -1668,6 +1679,8 @@ src/Sylius/Behat/Element/Product/ShowPage/AttributesElement.php
 src/Sylius/Behat/Element/Product/ShowPage/AttributesElementInterface.php
 src/Sylius/Behat/Element/Product/ShowPage/DetailsElement.php
 src/Sylius/Behat/Element/Product/ShowPage/DetailsElementInterface.php
+src/Sylius/Behat/Element/Product/ShowPage/LowestPriceInformationElement.php
+src/Sylius/Behat/Element/Product/ShowPage/LowestPriceInformationElementInterface.php
 src/Sylius/Behat/Element/Product/ShowPage/MediaElement.php
 src/Sylius/Behat/Element/Product/ShowPage/MediaElementInterface.php
 src/Sylius/Behat/Element/Product/ShowPage/MoreDetailsElement.php
@@ -2046,6 +2059,7 @@ src/Sylius/Behat/Resources/config/suites/cli/installer.yml
 src/Sylius/Behat/Resources/config/suites/cli/showing_available_plugins.yml
 src/Sylius/Behat/Resources/config/suites/domain/cart/shopping_cart.yml
 src/Sylius/Behat/Resources/config/suites/domain/order/managing_orders.yml
+src/Sylius/Behat/Resources/config/suites/domain/product/managing_price_history.yml
 src/Sylius/Behat/Resources/config/suites/domain/product/managing_product_variants.yml
 src/Sylius/Behat/Resources/config/suites/domain/product/managing_products.yml
 src/Sylius/Behat/Resources/config/suites/domain/promotion/managing_promotion_coupons.yml
@@ -2625,6 +2639,7 @@ src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_general.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_generalHost.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_lookAndFeel.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_money.html.twig
+src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_priceHistoryConfig.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_secondColumn.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Form/_shippingAddressInCheckoutRequired.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Channel/Grid/Field/code.html.twig
@@ -2642,6 +2657,7 @@ src/Sylius/Bundle/AdminBundle/Resources/views/Common/Label/shipmentState.html.tw
 src/Sylius/Bundle/AdminBundle/Resources/views/Common/Macro/money.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Common/_address.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Common/_channel.html.twig
+src/Sylius/Bundle/AdminBundle/Resources/views/Common/_missingTranslation.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Country/Grid/Field/name.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Country/_form.html.twig
 src/Sylius/Bundle/AdminBundle/Resources/views/Crud/Block/_legacySonataEvent.html.twig
@@ -3230,6 +3246,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/CatalogPromotionActio
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/CatalogPromotionScope.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/CatalogPromotionTranslation.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/Channel.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ChannelPriceHistoryConfig.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ChannelPricing.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ChannelPricingLogEntry.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ContactRequest.xml
@@ -3286,6 +3303,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/serialization/CatalogPromotionActio
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/CatalogPromotionScope.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/CatalogPromotionTranslation.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Channel.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/serialization/ChannelPriceHistoryConfig.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/ChannelPricing.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/ChannelPricingLogEntry.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Commands/Account/ChangePasswordShopUser.xml
@@ -3389,6 +3407,8 @@ src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiOrdersSubSection.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiSection.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiUriBasedSectionResolver.php
 src/Sylius/Bundle/ApiBundle/Serializer/AddressDenormalizer.php
+src/Sylius/Bundle/ApiBundle/Serializer/ChannelDenormalizer.php
+src/Sylius/Bundle/ApiBundle/Serializer/ChannelPriceHistoryConfigDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/CommandArgumentsDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/CommandDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/CommandNormalizer.php
@@ -3528,6 +3548,8 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueShopUserEmail.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueShopUserEmailValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UpdateCartEmailNotAllowed.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UpdateCartEmailNotAllowedValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/ResourceApiInputDataPropertiesValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/ResourceInputDataPropertiesValidatorInterface.php
 src/Sylius/Bundle/ApiBundle/composer.json
 src/Sylius/Bundle/ApiBundle/docs/authorization.md
 src/Sylius/Bundle/ApiBundle/phparkitect.php
@@ -3628,6 +3650,8 @@ src/Sylius/Bundle/ApiBundle/spec/Provider/LiipProductImageFilterProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Provider/PathPrefixProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/SectionResolver/AdminApiUriBasedSectionResolverSpec.php
 src/Sylius/Bundle/ApiBundle/spec/SectionResolver/ShopApiUriBasedSectionResolverSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Serializer/ChannelDenormalizerSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Serializer/ChannelPriceHistoryConfigDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/CommandArgumentsDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/CommandDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/CommandNormalizerSpec.php
@@ -4205,6 +4229,7 @@ src/Sylius/Bundle/CoreBundle/Form/Type/CatalogPromotionScope/ForProductsScopeCon
 src/Sylius/Bundle/CoreBundle/Form/Type/CatalogPromotionScope/ForTaxonsScopeConfigurationType.php
 src/Sylius/Bundle/CoreBundle/Form/Type/CatalogPromotionScope/ForVariantsScopeConfigurationType.php
 src/Sylius/Bundle/CoreBundle/Form/Type/ChannelCollectionType.php
+src/Sylius/Bundle/CoreBundle/Form/Type/ChannelPriceHistoryConfigType.php
 src/Sylius/Bundle/CoreBundle/Form/Type/Checkout/AddressType.php
 src/Sylius/Bundle/CoreBundle/Form/Type/Checkout/ChangePaymentMethodType.php
 src/Sylius/Bundle/CoreBundle/Form/Type/Checkout/CompleteType.php
@@ -4372,19 +4397,27 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20220926113252.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20230310160512.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20230314073130.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20230314073215.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20230320174436.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20230327121633.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20230329093932.php
 src/Sylius/Bundle/CoreBundle/OAuth/UserProvider.php
 src/Sylius/Bundle/CoreBundle/Order/Checker/OrderPromotionsIntegrityChecker.php
 src/Sylius/Bundle/CoreBundle/Order/Checker/OrderPromotionsIntegrityCheckerInterface.php
 src/Sylius/Bundle/CoreBundle/Order/NumberGenerator/SequentialOrderNumberGenerator.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Command/ClearPriceHistoryCommand.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserver.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/EntityObserverInterface.php
-src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/ProcessLowestPriceOnCheckingPeriodChangeObserver.php
-src/Sylius/Bundle/CoreBundle/PriceHistory/EventListener/BeforeDenormalizationChannelValidationListener.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserver.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelPriceHistoryConfigChangeObserver.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Event/OldChannelPricingLogEntriesEvents.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EventListener/OnFlushEntityObserverListener.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/EventSubscriber/ChannelPricingLogEntryEventSubscriber.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Logger/PriceChangeLogger.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Logger/PriceChangeLoggerInterface.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessor.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessorInterface.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Remover/ChannelPricingLogEntriesRemover.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Remover/ChannelPricingLogEntriesRemoverInterface.php
 src/Sylius/Bundle/CoreBundle/Provider/ChannelBasedDefaultTaxZoneProvider.php
 src/Sylius/Bundle/CoreBundle/Provider/CustomerProvider.php
 src/Sylius/Bundle/CoreBundle/Provider/CustomerProviderInterface.php
@@ -4442,6 +4475,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/AvatarImage.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/CatalogPromotion.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/CatalogPromotionScope.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/Channel.orm.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/ChannelPriceHistoryConfig.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/ChannelPricing.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/ChannelPricingLogEntry.orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/doctrine/model/Customer.orm.xml
@@ -4517,10 +4551,15 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/installer_requirements.xm
 src/Sylius/Bundle/CoreBundle/Resources/config/services/integrations/doctrine/orm.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/integrations/hwi_oauth.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners.xml
-src/Sylius/Bundle/CoreBundle/Resources/config/services/logger.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/message_handlers.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/order_processing.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/payment.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/checkers.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/listeners.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/logger.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/processors.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/subscribers.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/promotion.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/shipping.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/state_resolvers.xml
@@ -4533,6 +4572,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/validation/AdminUser.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/AvatarImage.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/CatalogPromotionScope.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Channel.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/validation/ChannelPriceHistoryConfig.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/ChannelPricing.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Customer.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Order.xml
@@ -4672,6 +4712,7 @@ src/Sylius/Bundle/CoreBundle/Templating/Helper/PriceHelper.php
 src/Sylius/Bundle/CoreBundle/Templating/Helper/ProductVariantsPricesHelper.php
 src/Sylius/Bundle/CoreBundle/Templating/Helper/VariantResolverHelper.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/CircularDependencyBreakingErrorListenerPassTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/Compiler/BackwardsCompatibility/CancelOrderStateMachineCallbackPassTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/Compiler/RegisterTaxCalculationStrategiesPassTest.php
@@ -4830,9 +4871,12 @@ src/Sylius/Bundle/CoreBundle/spec/OAuth/UserProviderSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Order/Checker/OrderPromotionsIntegrityCheckerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Order/NumberGenerator/SequentialOrderNumberGeneratorSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserverSpec.php
-src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPriceOnCheckingPeriodChangeObserverSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserverSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelPriceHistoryConfigChangeObserverSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EventSubscriber/ChannelPricingLogEntryEventSubscriberSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/Logger/PriceChangeLoggerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessorSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/Remover/ChannelPricingLogEntriesRemoverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Provider/ChannelBasedDefaultTaxZoneProviderSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Provider/CustomerProviderSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Remover/ReviewerReviewsRemoverSpec.php
@@ -7719,6 +7763,8 @@ src/Sylius/Component/Core/Checker/OrderPaymentMethodSelectionRequirementChecker.
 src/Sylius/Component/Core/Checker/OrderPaymentMethodSelectionRequirementCheckerInterface.php
 src/Sylius/Component/Core/Checker/OrderShippingMethodSelectionRequirementChecker.php
 src/Sylius/Component/Core/Checker/OrderShippingMethodSelectionRequirementCheckerInterface.php
+src/Sylius/Component/Core/Checker/ProductVariantLowestPriceDisplayChecker.php
+src/Sylius/Component/Core/Checker/ProductVariantLowestPriceDisplayCheckerInterface.php
 src/Sylius/Component/Core/Context/ShopperContext.php
 src/Sylius/Component/Core/Context/ShopperContextInterface.php
 src/Sylius/Component/Core/Currency/Context/ChannelAwareCurrencyContext.php
@@ -7799,6 +7845,8 @@ src/Sylius/Component/Core/Model/CatalogPromotionScope.php
 src/Sylius/Component/Core/Model/CatalogPromotionScopeInterface.php
 src/Sylius/Component/Core/Model/Channel.php
 src/Sylius/Component/Core/Model/ChannelInterface.php
+src/Sylius/Component/Core/Model/ChannelPriceHistoryConfig.php
+src/Sylius/Component/Core/Model/ChannelPriceHistoryConfigInterface.php
 src/Sylius/Component/Core/Model/ChannelPricing.php
 src/Sylius/Component/Core/Model/ChannelPricingInterface.php
 src/Sylius/Component/Core/Model/ChannelPricingLogEntry.php
@@ -7978,6 +8026,7 @@ src/Sylius/Component/Core/spec/Checker/CLIContextCheckerSpec.php
 src/Sylius/Component/Core/spec/Checker/Eligibility/PromotionCouponChannelEligibilityCheckerSpec.php
 src/Sylius/Component/Core/spec/Checker/OrderPaymentMethodSelectionRequirementCheckerSpec.php
 src/Sylius/Component/Core/spec/Checker/OrderShippingMethodSelectionRequirementCheckerSpec.php
+src/Sylius/Component/Core/spec/Checker/ProductVariantLowestPriceDisplayCheckerSpec.php
 src/Sylius/Component/Core/spec/Context/ShopperContextSpec.php
 src/Sylius/Component/Core/spec/Currency/Context/ChannelAwareCurrencyContextSpec.php
 src/Sylius/Component/Core/spec/Currency/Context/StorageBasedCurrencyContextSpec.php
@@ -8014,6 +8063,7 @@ src/Sylius/Component/Core/spec/Model/AdminUserSpec.php
 src/Sylius/Component/Core/spec/Model/AvatarImageSpec.php
 src/Sylius/Component/Core/spec/Model/CatalogPromotionScopeSpec.php
 src/Sylius/Component/Core/spec/Model/CatalogPromotionSpec.php
+src/Sylius/Component/Core/spec/Model/ChannelPriceHistoryConfigSpec.php
 src/Sylius/Component/Core/spec/Model/ChannelPricingLogEntrySpec.php
 src/Sylius/Component/Core/spec/Model/ChannelPricingSpec.php
 src/Sylius/Component/Core/spec/Model/ChannelSpec.php
@@ -8562,6 +8612,7 @@ templates/bundles/TwigBundle/Exception/error500.html.twig
 templates/bundles/TwigBundle/Exception/exception.json.twig
 tests/Api/Admin/AdminUsersTest.php
 tests/Api/Admin/CatalogPromotionsTest.php
+tests/Api/Admin/ChannelPriceHistoryConfigTest.php
 tests/Api/Admin/ChannelPricingLogEntryTest.php
 tests/Api/Admin/ChannelsTest.php
 tests/Api/Admin/CountriesTest.php
@@ -8643,6 +8694,7 @@ tests/Api/Responses/Expected/admin/exchange_rate/get_exchange_rate_response.json
 tests/Api/Responses/Expected/admin/exchange_rate/get_exchange_rates_response.json
 tests/Api/Responses/Expected/admin/exchange_rate/post_exchange_rate_response.json
 tests/Api/Responses/Expected/admin/exchange_rate/put_exchange_rate_response.json
+tests/Api/Responses/Expected/admin/get_channel_price_history_config_response.json
 tests/Api/Responses/Expected/admin/get_channel_pricing_log_entries_response.json
 tests/Api/Responses/Expected/admin/get_channel_pricing_log_entry_response.json
 tests/Api/Responses/Expected/admin/get_filtered_channel_pricing_log_entries_response.json
@@ -8658,6 +8710,8 @@ tests/Api/Responses/Expected/admin/locale/get_locale_response.json
 tests/Api/Responses/Expected/admin/locale/get_locales_response.json
 tests/Api/Responses/Expected/admin/locale/post_locale_response.json
 tests/Api/Responses/Expected/admin/log_in_admin_response.json
+tests/Api/Responses/Expected/admin/post_locale_response.json
+tests/Api/Responses/Expected/admin/post_locale_with_invalid_code_response.json
 tests/Api/Responses/Expected/admin/post_product_association_type_response.json
 tests/Api/Responses/Expected/admin/product_review/accept_product_review.json
 tests/Api/Responses/Expected/admin/product_review/get_product_review.json
@@ -8674,6 +8728,7 @@ tests/Api/Responses/Expected/admin/promotion/get_promotions_response.json
 tests/Api/Responses/Expected/admin/promotion/post_promotion_response.json
 tests/Api/Responses/Expected/admin/province/get_province_response.json
 tests/Api/Responses/Expected/admin/province/put_province_response.json
+tests/Api/Responses/Expected/admin/put_channel_price_history_config_response.json
 tests/Api/Responses/Expected/admin/put_product_association_type_response.json
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_categories_response.json
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_category_response.json

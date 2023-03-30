@@ -95,7 +95,7 @@ app/bundles/ApiBundle/Event/ClientEvent.php
 app/bundles/ApiBundle/EventListener/ApiSubscriber.php
 app/bundles/ApiBundle/EventListener/ClientSubscriber.php
 app/bundles/ApiBundle/EventListener/ConfigSubscriber.php
-app/bundles/ApiBundle/EventListener/OAuthEventListener.php
+app/bundles/ApiBundle/EventListener/PreAuthorizationEventListener.php
 app/bundles/ApiBundle/EventListener/RateLimitGenerateKeySubscriber.php
 app/bundles/ApiBundle/EventListener/SearchSubscriber.php
 app/bundles/ApiBundle/Form/Type/ClientType.php
@@ -1774,7 +1774,6 @@ app/bundles/CoreBundle/Event/IconEvent.php
 app/bundles/CoreBundle/Event/MaintenanceEvent.php
 app/bundles/CoreBundle/Event/MenuEvent.php
 app/bundles/CoreBundle/Event/RouteEvent.php
-app/bundles/CoreBundle/Event/SidebarCanvasEvent.php
 app/bundles/CoreBundle/Event/StatsEvent.php
 app/bundles/CoreBundle/Event/TokenReplacementEvent.php
 app/bundles/CoreBundle/Event/UpgradeEvent.php
@@ -1961,7 +1960,6 @@ app/bundles/CoreBundle/Helper/RandomHelper/RandomHelper.php
 app/bundles/CoreBundle/Helper/RandomHelper/RandomHelperInterface.php
 app/bundles/CoreBundle/Helper/SearchStringHelper.php
 app/bundles/CoreBundle/Helper/Serializer.php
-app/bundles/CoreBundle/Helper/TemplatingHelper.php
 app/bundles/CoreBundle/Helper/ThemeHelper.php
 app/bundles/CoreBundle/Helper/ThemeHelperInterface.php
 app/bundles/CoreBundle/Helper/TrackingPixelHelper.php
@@ -2054,7 +2052,6 @@ app/bundles/CoreBundle/Resources/views/Exception/403.html.twig
 app/bundles/CoreBundle/Resources/views/Exception/404.html.twig
 app/bundles/CoreBundle/Resources/views/Exception/500.html.twig
 app/bundles/CoreBundle/Resources/views/Exception/base.html.twig
-app/bundles/CoreBundle/Resources/views/Exception/traces.html.php
 app/bundles/CoreBundle/Resources/views/Exception/traces.html.twig
 app/bundles/CoreBundle/Resources/views/FormTheme/Config/_config_coreconfig_ip_lookup_config_widget.html.twig
 app/bundles/CoreBundle/Resources/views/FormTheme/Config/_config_coreconfig_widget.html.twig
@@ -2108,6 +2105,7 @@ app/bundles/CoreBundle/Resources/views/Notification/flashes.html.twig
 app/bundles/CoreBundle/Resources/views/Notification/notification.html.twig
 app/bundles/CoreBundle/Resources/views/Notification/notification_messages.html.twig
 app/bundles/CoreBundle/Resources/views/Notification/notifications.html.twig
+app/bundles/CoreBundle/Resources/views/Offline/offline.html.twig
 app/bundles/CoreBundle/Resources/views/RightPanel/index.html.twig
 app/bundles/CoreBundle/Resources/views/Sections/one-column.html.twig
 app/bundles/CoreBundle/Resources/views/Sections/three-column.html.twig
@@ -2156,7 +2154,6 @@ app/bundles/CoreBundle/Service/FlashBag.php
 app/bundles/CoreBundle/Service/LocalFileAdapterService.php
 app/bundles/CoreBundle/Service/ProcessQueue.php
 app/bundles/CoreBundle/Session/Storage/Handler/RedisSentinelSessionHandler.php
-app/bundles/CoreBundle/Templating/Engine/PhpEngine.php
 app/bundles/CoreBundle/Templating/Helper/AnalyticsHelper.php
 app/bundles/CoreBundle/Templating/Helper/AssetsHelper.php
 app/bundles/CoreBundle/Templating/Helper/ButtonHelper.php
@@ -2169,13 +2166,10 @@ app/bundles/CoreBundle/Templating/Helper/GravatarHelper.php
 app/bundles/CoreBundle/Templating/Helper/MautibotHelper.php
 app/bundles/CoreBundle/Templating/Helper/MenuHelper.php
 app/bundles/CoreBundle/Templating/Helper/SecurityHelper.php
-app/bundles/CoreBundle/Templating/Helper/SidebarCanvasHelper.php
 app/bundles/CoreBundle/Templating/Helper/SlotsHelper.php
 app/bundles/CoreBundle/Templating/Helper/ThemeHelper.php
 app/bundles/CoreBundle/Templating/Helper/TranslatorHelper.php
 app/bundles/CoreBundle/Templating/Helper/VersionHelper.php
-app/bundles/CoreBundle/Templating/TemplateNameParser.php
-app/bundles/CoreBundle/Templating/TemplateReference.php
 app/bundles/CoreBundle/Templating/Twig/Extension/AnalyticsExtension.php
 app/bundles/CoreBundle/Templating/Twig/Extension/AppExtension.php
 app/bundles/CoreBundle/Templating/Twig/Extension/AssetExtension.php
@@ -2219,6 +2213,7 @@ app/bundles/CoreBundle/Test/Hooks/MauticExtension.php
 app/bundles/CoreBundle/Test/Hooks/SlowTestExtension.php
 app/bundles/CoreBundle/Test/IsolatedTestTrait.php
 app/bundles/CoreBundle/Test/Listeners/CleanupListener.php
+app/bundles/CoreBundle/Test/Listeners/SeparateProcessListener.php
 app/bundles/CoreBundle/Test/MauticMysqlTestCase.php
 app/bundles/CoreBundle/Test/MauticSqliteTestCase.php
 app/bundles/CoreBundle/Test/Service/FlashBagTest.php
@@ -5087,7 +5082,6 @@ media/images/mejs/bigplay.svg
 media/images/mejs/controls.svg
 media/images/mejs/mejs-controls.svg
 media/js/mautic-form-src.js
-offline.php
 package-lock.json
 package.json
 phpstan-baseline.neon

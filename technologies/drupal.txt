@@ -5558,6 +5558,7 @@ core/modules/field_ui/tests/src/FunctionalJavascript/ManageDisplayTest.php
 core/modules/field_ui/tests/src/Kernel/EntityDisplayTest.php
 core/modules/field_ui/tests/src/Kernel/EntityFormDisplayTest.php
 core/modules/field_ui/tests/src/Traits/FieldUiTestTrait.php
+core/modules/field_ui/tests/src/Unit/FieldConfigEditFormTest.php
 core/modules/field_ui/tests/src/Unit/FieldUiTableTest.php
 core/modules/field_ui/tests/src/Unit/FieldUiTest.php
 core/modules/file/config/install/file.settings.yml
@@ -5944,11 +5945,17 @@ core/modules/forum/tests/fixtures/drupal6.php
 core/modules/forum/tests/fixtures/drupal7.php
 core/modules/forum/tests/modules/forum_test_views/forum_test_views.info.yml
 core/modules/forum/tests/modules/forum_test_views/test_views/views.view.test_forum_index.yml
+core/modules/forum/tests/modules/forum_url_alter_test/forum_url_alter_test.info.yml
+core/modules/forum/tests/modules/forum_url_alter_test/forum_url_alter_test.services.yml
+core/modules/forum/tests/modules/forum_url_alter_test/src/PathProcessorTest.php
 core/modules/forum/tests/src/Functional/ForumBlockTest.php
 core/modules/forum/tests/src/Functional/ForumIndexTest.php
 core/modules/forum/tests/src/Functional/ForumNodeAccessTest.php
 core/modules/forum/tests/src/Functional/ForumTest.php
 core/modules/forum/tests/src/Functional/ForumUninstallTest.php
+core/modules/forum/tests/src/Functional/Module/DependencyTest.php
+core/modules/forum/tests/src/Functional/NodeAccessPagerTest.php
+core/modules/forum/tests/src/Functional/UrlAlterFunctionalTest.php
 core/modules/forum/tests/src/Functional/Views/ForumIntegrationTest.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/NoMultilingualReviewPageTest.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/Upgrade6Test.php
@@ -10112,6 +10119,7 @@ core/modules/system/tests/modules/system_project_namespace_test/system_project_n
 core/modules/system/tests/modules/system_status_obsolete_test/system_status_obsolete_test.info.yml
 core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
 core/modules/system/tests/modules/system_test/src/Controller/SystemTestController.php
+core/modules/system/tests/modules/system_test/src/Form/CopyFieldValueTestForm.php
 core/modules/system/tests/modules/system_test/src/MockFileTransfer.php
 core/modules/system/tests/modules/system_test/system_test.info.yml
 core/modules/system/tests/modules/system_test/system_test.module
@@ -10284,6 +10292,7 @@ core/modules/system/tests/src/Functional/Database/FakeRecord.php
 core/modules/system/tests/src/Functional/Database/SelectPagerDefaultTest.php
 core/modules/system/tests/src/Functional/Database/SelectTableSortDefaultTest.php
 core/modules/system/tests/src/Functional/Datetime/DrupalDateTimeTest.php
+core/modules/system/tests/src/Functional/Datetime/TimeZoneAbbreviationRouteTest.php
 core/modules/system/tests/src/Functional/DrupalKernel/ContainerRebuildWebTest.php
 core/modules/system/tests/src/Functional/DrupalKernel/ContentNegotiationTest.php
 core/modules/system/tests/src/Functional/Entity/EntityAddUITest.php
@@ -10436,7 +10445,6 @@ core/modules/system/tests/src/Functional/Theme/TwigLoaderTest.php
 core/modules/system/tests/src/Functional/Theme/TwigRegistryLoaderTest.php
 core/modules/system/tests/src/Functional/Theme/TwigSettingsTest.php
 core/modules/system/tests/src/Functional/Theme/TwigTransTest.php
-core/modules/system/tests/src/Functional/Update/BatchBidSerialUpdateTest.php
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
 core/modules/system/tests/src/Functional/Update/MenuLinksetSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/README.txt
@@ -10464,6 +10472,7 @@ core/modules/system/tests/src/Functional/UpdateSystem/UpdateRemovedPostUpdateTes
 core/modules/system/tests/src/Functional/UpdateSystem/UpdateSchemaTest.php
 core/modules/system/tests/src/Functional/UpdateSystem/UpdateScriptTest.php
 core/modules/system/tests/src/Functional/UpdateSystem/UpdatesWith7xTest.php
+core/modules/system/tests/src/FunctionalJavascript/CopyFieldValueTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/ElementsTableSelectTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.php
@@ -11487,6 +11496,7 @@ core/modules/user/tests/src/Kernel/Condition/UserRoleConditionTest.php
 core/modules/user/tests/src/Kernel/ContextProvider/CurrentUserContextTest.php
 core/modules/user/tests/src/Kernel/Controller/UserControllerTest.php
 core/modules/user/tests/src/Kernel/Field/UserNameFormatterTest.php
+core/modules/user/tests/src/Kernel/LegacyUserTest.php
 core/modules/user/tests/src/Kernel/Migrate/MigrateUserAdminPassTest.php
 core/modules/user/tests/src/Kernel/Migrate/MigrateUserStubTest.php
 core/modules/user/tests/src/Kernel/Migrate/d6/MigrateProfileFieldOptionTranslationTest.php
@@ -11573,7 +11583,6 @@ core/modules/user/tests/src/Unit/Plugin/views/field/UserBulkFormTest.php
 core/modules/user/tests/src/Unit/Theme/AdminNegotiatorTest.php
 core/modules/user/tests/src/Unit/UserAccessControlHandlerTest.php
 core/modules/user/tests/src/Unit/UserAuthTest.php
-core/modules/user/tests/src/Unit/UserNameItemTest.php
 core/modules/user/tests/src/Unit/UserRegistrationResourceTest.php
 core/modules/user/tests/src/Unit/Views/Argument/RolesRidTest.php
 core/modules/user/tests/themes/user_test_theme/user.html.twig
@@ -11884,6 +11893,8 @@ core/modules/views/templates/views-view-summary.html.twig
 core/modules/views/templates/views-view-table.html.twig
 core/modules/views/templates/views-view-unformatted.html.twig
 core/modules/views/templates/views-view.html.twig
+core/modules/views/tests/fixtures/update/fix-revision-id-update.php
+core/modules/views/tests/fixtures/update/views.view.test_fix_revision_id_update.yml
 core/modules/views/tests/fixtures/update/views.view.test_responsive_images.yml
 core/modules/views/tests/modules/action_bulk_test/action_bulk_test.info.yml
 core/modules/views/tests/modules/action_bulk_test/config/install/views.view.test_bulk_form.yml
@@ -12184,6 +12195,7 @@ core/modules/views/tests/src/Functional/Rest/ViewXmlCookieTest.php
 core/modules/views/tests/src/Functional/SearchIntegrationTest.php
 core/modules/views/tests/src/Functional/SearchMultilingualTest.php
 core/modules/views/tests/src/Functional/TaxonomyGlossaryTest.php
+core/modules/views/tests/src/Functional/Update/ViewsFixRevisionIdUpdateTest.php
 core/modules/views/tests/src/Functional/UserBatchActionTest.php
 core/modules/views/tests/src/Functional/UserPathTest.php
 core/modules/views/tests/src/Functional/ViewAjaxTest.php
@@ -13498,6 +13510,7 @@ core/tests/Drupal/KernelTests/Core/Asset/DeprecatedAssetsTest.php
 core/tests/Drupal/KernelTests/Core/Asset/LibraryDiscoveryIntegrationTest.php
 core/tests/Drupal/KernelTests/Core/Asset/ResolvedLibraryDefinitionsFilesMatchTest.php
 core/tests/Drupal/KernelTests/Core/Batch/BatchKernelTest.php
+core/tests/Drupal/KernelTests/Core/Batch/BatchNegotiatorTest.php
 core/tests/Drupal/KernelTests/Core/Block/MultipleBlockFormTest.php
 core/tests/Drupal/KernelTests/Core/Bootstrap/ExtensionPathResolverTest.php
 core/tests/Drupal/KernelTests/Core/Bootstrap/ResettableStaticTest.php
@@ -14361,9 +14374,7 @@ core/tests/Drupal/Tests/Core/Field/FieldInputValueNormalizerTraitTest.php
 core/tests/Drupal/Tests/Core/Field/FieldItemListTest.php
 core/tests/Drupal/Tests/Core/Field/InternalViolationTest.php
 core/tests/Drupal/Tests/Core/Field/PluginSettingsBaseTest.php
-core/tests/Drupal/Tests/Core/Field/StringItemTest.php
 core/tests/Drupal/Tests/Core/Field/TestBaseFieldDefinitionInterface.php
-core/tests/Drupal/Tests/Core/Field/UriItemTest.php
 core/tests/Drupal/Tests/Core/File/FileSystemTest.php
 core/tests/Drupal/Tests/Core/File/FileUploadSanitizeNameEventTest.php
 core/tests/Drupal/Tests/Core/Flood/MemoryBackendTest.php
@@ -14574,7 +14585,6 @@ core/tests/Drupal/Tests/ExtensionListTestTrait.php
 core/tests/Drupal/Tests/HiddenFieldSelector.php
 core/tests/Drupal/Tests/Listeners/DrupalComponentTestListenerTrait.php
 core/tests/Drupal/Tests/Listeners/DrupalListener.php
-core/tests/Drupal/Tests/Listeners/DrupalStandardsListenerTrait.php
 core/tests/Drupal/Tests/Listeners/HtmlOutputPrinter.php
 core/tests/Drupal/Tests/Listeners/HtmlOutputPrinterTrait.php
 core/tests/Drupal/Tests/PhpCs/SortTest.php

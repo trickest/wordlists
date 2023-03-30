@@ -396,7 +396,6 @@ app/assets/javascripts/app/controllers/logout.coffee
 app/assets/javascripts/app/controllers/macro.coffee
 app/assets/javascripts/app/controllers/maintenance.coffee
 app/assets/javascripts/app/controllers/manage.coffee
-app/assets/javascripts/app/controllers/mobile.coffee
 app/assets/javascripts/app/controllers/monitoring.coffee
 app/assets/javascripts/app/controllers/object_manager.coffee
 app/assets/javascripts/app/controllers/organization.coffee
@@ -1412,6 +1411,7 @@ app/frontend/apps/mobile/components/CommonSelect/CommonSelect.story.vue
 app/frontend/apps/mobile/components/CommonSelect/CommonSelect.vue
 app/frontend/apps/mobile/components/CommonSelect/CommonSelectItem.vue
 app/frontend/apps/mobile/components/CommonSelect/__tests__/CommonSelect.spec.ts
+app/frontend/apps/mobile/components/CommonSelect/composable.ts
 app/frontend/apps/mobile/components/CommonSelect/types.ts
 app/frontend/apps/mobile/components/CommonSelectPill/CommonSelectPill.vue
 app/frontend/apps/mobile/components/CommonSelectPill/__tests__/CommonSelectPill.spec.ts
@@ -1475,6 +1475,11 @@ app/frontend/apps/mobile/entities/organization/graphql/queries/organization.grap
 app/frontend/apps/mobile/entities/organization/graphql/subscriptions/organizationUpdates.api.ts
 app/frontend/apps/mobile/entities/organization/graphql/subscriptions/organizationUpdates.graphql
 app/frontend/apps/mobile/entities/ticket/__tests__/mocks/ticket-mocks.ts
+app/frontend/apps/mobile/entities/ticket/composables/useTicketOverviews.ts
+app/frontend/apps/mobile/entities/ticket/graphql/queries/ticketOverviewTicketCount.api.ts
+app/frontend/apps/mobile/entities/ticket/graphql/queries/ticketOverviewTicketCount.graphql
+app/frontend/apps/mobile/entities/ticket/graphql/subscriptions/ticketOverviewUpdates.api.ts
+app/frontend/apps/mobile/entities/ticket/graphql/subscriptions/ticketOverviewUpdates.graphql
 app/frontend/apps/mobile/entities/ticket/helpers/ticketOverviewStorage.ts
 app/frontend/apps/mobile/entities/ticket/stores/ticketOverviews.ts
 app/frontend/apps/mobile/entities/ticket/types.ts
@@ -1497,8 +1502,8 @@ app/frontend/apps/mobile/form/theme/global/getCoreClasses.ts
 app/frontend/apps/mobile/form/theme/global/utils.ts
 app/frontend/apps/mobile/form/useFormBlock.ts
 app/frontend/apps/mobile/initialize.ts
+app/frontend/apps/mobile/initializer/objectAttributes.ts
 app/frontend/apps/mobile/main.ts
-app/frontend/apps/mobile/object-attributes/initializeObjectAttributes.ts
 app/frontend/apps/mobile/pages/account/__tests__/account-a11y.spec.ts
 app/frontend/apps/mobile/pages/account/__tests__/editing-avatar.spec.ts
 app/frontend/apps/mobile/pages/account/__tests__/install-pwa.spec.ts
@@ -1566,6 +1571,7 @@ app/frontend/apps/mobile/pages/search/plugins/user.ts
 app/frontend/apps/mobile/pages/search/routes.ts
 app/frontend/apps/mobile/pages/search/views/SearchOverview.vue
 app/frontend/apps/mobile/pages/ticket/__tests__/article-list/subscription.spec.ts
+app/frontend/apps/mobile/pages/ticket/__tests__/mocks/articles.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/mocks/detail-view.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/mocks/overview.ts
 app/frontend/apps/mobile/pages/ticket/__tests__/ticket-a11y.spec.ts
@@ -1680,6 +1686,7 @@ app/frontend/apps/mobile/router/index.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/articles.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/mentions.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/publicLinks.ts
+app/frontend/apps/mobile/server/apollo/cache/initializer/ticketOverviews.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/ticketsByOverviewQuery.ts
 app/frontend/apps/mobile/server/apollo/index.ts
 app/frontend/apps/mobile/styles/main.scss
@@ -2233,6 +2240,8 @@ app/frontend/shared/entities/ticket/composables/useTicketCreate.ts
 app/frontend/shared/entities/ticket/composables/useTicketCreateArticleType.ts
 app/frontend/shared/entities/ticket/composables/useTicketFormOrganizationHandler.ts
 app/frontend/shared/entities/ticket/composables/useTicketView.ts
+app/frontend/shared/entities/ticket/graphql/fragments/overviewAttributes.api.ts
+app/frontend/shared/entities/ticket/graphql/fragments/overviewAttributes.graphql
 app/frontend/shared/entities/ticket/graphql/mutations/customerUpdate.api.ts
 app/frontend/shared/entities/ticket/graphql/mutations/customerUpdate.graphql
 app/frontend/shared/entities/ticket/graphql/mutations/merge.api.ts
@@ -2363,6 +2372,7 @@ app/frontend/shared/server/action_cable/consumer.ts
 app/frontend/shared/server/apollo/cache.ts
 app/frontend/shared/server/apollo/cache/initializer/.keep
 app/frontend/shared/server/apollo/cache/utils/registerIncomingMerge.ts
+app/frontend/shared/server/apollo/cache/utils/registerNotNormalizedObjectFieldsMerge.ts
 app/frontend/shared/server/apollo/cache/utils/registerRelayStylePagination.ts
 app/frontend/shared/server/apollo/client.ts
 app/frontend/shared/server/apollo/handler/BaseHandler.ts
@@ -2551,6 +2561,7 @@ app/graphql/gql/subscriptions/public_link_updates.rb
 app/graphql/gql/subscriptions/push_messages.rb
 app/graphql/gql/subscriptions/ticket_article_updates.rb
 app/graphql/gql/subscriptions/ticket_live_user_updates.rb
+app/graphql/gql/subscriptions/ticket_overview_updates.rb
 app/graphql/gql/subscriptions/ticket_updates.rb
 app/graphql/gql/subscriptions/user_updates.rb
 app/graphql/gql/types/activity_message_meta_object_type.rb
@@ -2815,6 +2826,7 @@ app/models/concerns/checks_kb_client_visibility.rb
 app/models/concerns/has_activity_stream_log.rb
 app/models/concerns/has_agent_allowed_params.rb
 app/models/concerns/has_collection_update.rb
+app/models/concerns/has_default_model_user_relations.rb
 app/models/concerns/has_escalation_calculation_impact.rb
 app/models/concerns/has_group_relation_definition.rb
 app/models/concerns/has_groups.rb
@@ -2963,6 +2975,7 @@ app/models/organization/search_index.rb
 app/models/organization/triggers_subscriptions.rb
 app/models/overview.rb
 app/models/overview/assets.rb
+app/models/overview/triggers_subscriptions.rb
 app/models/package.rb
 app/models/package/migration.rb
 app/models/permission.rb
@@ -4127,6 +4140,7 @@ db/migrate/20230224160814_issue4505_inconsistent_screen_view_active_attribute.rb
 db/migrate/20230303092229_session_spool_cleanup.rb
 db/migrate/20230310122944_core_workflow_secondary_organization.rb
 db/migrate/20230312210126_email_addresses_email_match_user_email.rb
+db/migrate/20230328093547_webhooks_basic_auth.rb
 db/seeds.rb
 db/seeds/channels.rb
 db/seeds/chats.rb
@@ -4960,6 +4974,8 @@ lib/tasks/zammad/package/reinstall_all.rake
 lib/tasks/zammad/package/reinstall_all.rb
 lib/tasks/zammad/package/uninstall.rake
 lib/tasks/zammad/package/uninstall.rb
+lib/tasks/zammad/package/uninstall_all_files.rake
+lib/tasks/zammad/package/uninstall_all_files.rb
 lib/tasks/zammad/search_index_es.rake
 lib/tasks/zammad/setup/auto_wizard.rake
 lib/tasks/zammad/setup/db_config.rake
@@ -5713,6 +5729,7 @@ spec/graphql/gql/subscriptions/public_link_updates_spec.rb
 spec/graphql/gql/subscriptions/push_messages_spec.rb
 spec/graphql/gql/subscriptions/ticket_article_updates_spec.rb
 spec/graphql/gql/subscriptions/ticket_live_user_updates_spec.rb
+spec/graphql/gql/subscriptions/ticket_overview_updates_spec.rb
 spec/graphql/gql/subscriptions/ticket_updates_spec.rb
 spec/graphql/gql/subscriptions/user_updates_spec.rb
 spec/graphql/gql/types/binary_string_type_spec.rb
@@ -6067,6 +6084,7 @@ spec/models/channel/filter/follow_up_possible_check_spec.rb
 spec/models/channel/filter/import_archive_spec.rb
 spec/models/channel/filter/internal_article_check_spec.rb
 spec/models/channel/filter/match/email_regex_spec.rb
+spec/models/channel/filter/monit_spec.rb
 spec/models/channel/filter/out_of_office_check_spec.rb
 spec/models/channel/filter/reply_to_based_sender_spec.rb
 spec/models/channel_spec.rb
@@ -7059,7 +7077,6 @@ test/unit/email_process_reply_to_test.rb
 test/unit/email_process_sender_is_system_address_or_agent_test.rb
 test/unit/email_process_test.rb
 test/unit/integration_icinga_test.rb
-test/unit/integration_monit_test.rb
 test/unit/integration_nagios_test.rb
 test/unit/model_test.rb
 test/unit/notification_factory_mailer_template_test.rb

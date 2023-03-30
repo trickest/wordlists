@@ -540,6 +540,7 @@ src/Libraries/Nop.Data/Migrations/UpgradeTo460/MySqlDateTimeWithPrecisionMigrati
 src/Libraries/Nop.Data/Migrations/UpgradeTo460/SchemaMigration.cs
 src/Libraries/Nop.Data/Migrations/UpgradeTo460/StoreMigration.cs
 src/Libraries/Nop.Data/Migrations/UpgradeTo460/VideoMigration.cs
+src/Libraries/Nop.Data/Migrations/UpgradeTo470/DataMigration.cs
 src/Libraries/Nop.Data/Migrations/UpgradeTo470/SchemaMigration.cs
 src/Libraries/Nop.Data/Nop.Data.csproj
 src/Libraries/Nop.Data/NopDataSettingsDefaults.cs
@@ -1115,6 +1116,13 @@ src/Plugins/Nop.Plugin.ExternalAuth.Facebook/Views/Configure.cshtml
 src/Plugins/Nop.Plugin.ExternalAuth.Facebook/Views/PublicInfo.cshtml
 src/Plugins/Nop.Plugin.ExternalAuth.Facebook/Views/_ViewImports.cshtml
 src/Plugins/Nop.Plugin.ExternalAuth.Facebook/plugin.json
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/Controllers/NopMobileAppController.cs
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/Nop.Plugin.Misc.NopMobileApp.csproj
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/NopMobilePlugin.cs
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/Notes.txt
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/Views/Configure.cshtml
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/Views/_ViewImports.cshtml
+src/Plugins/Nop.Plugin.Misc.NopMobileApp/plugin.json
 src/Plugins/Nop.Plugin.Misc.Sendinblue/Components/WidgetsSendinblueViewComponent.cs
 src/Plugins/Nop.Plugin.Misc.Sendinblue/Controllers/SendinblueController.cs
 src/Plugins/Nop.Plugin.Misc.Sendinblue/Domain/SendinblueAccountLanguage.cs
@@ -1764,9 +1772,9 @@ src/Presentation/Nop.Web.Framework/Mvc/Filters/ValidatePasswordAttribute.cs
 src/Presentation/Nop.Web.Framework/Mvc/Filters/ValidateVendorAttribute.cs
 src/Presentation/Nop.Web.Framework/Mvc/Filters/WwwRequirementAttribute.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/CustomPropertiesModelBinder.cs
-src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/CustomPropertiesModelBinderProvider.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/InvariantNumberModelBinder.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/InvariantNumberModelBinderProvider.cs
+src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/NopModelBinderProvider.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/Binders/StringModelBinder.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/IModelAttribute.cs
 src/Presentation/Nop.Web.Framework/Mvc/ModelBinding/ModelStateExtensions.cs

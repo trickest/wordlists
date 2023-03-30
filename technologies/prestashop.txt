@@ -664,6 +664,8 @@ admin-dev/themes/new-theme/js/app/cldr/number-symbol.ts
 admin-dev/themes/new-theme/js/app/cldr/specifications/number.ts
 admin-dev/themes/new-theme/js/app/cldr/specifications/price.ts
 admin-dev/themes/new-theme/js/app/components/checkbox.vue
+admin-dev/themes/new-theme/js/app/components/checkboxes-dropdown/CheckboxesDropdown.vue
+admin-dev/themes/new-theme/js/app/components/checkboxes-dropdown/types.d.ts
 admin-dev/themes/new-theme/js/app/mixins/col-size.vue
 admin-dev/themes/new-theme/js/app/pages/catalog/index.ts
 admin-dev/themes/new-theme/js/app/pages/module-card/index.ts
@@ -721,6 +723,7 @@ admin-dev/themes/new-theme/js/app/utils/serp/index.js
 admin-dev/themes/new-theme/js/app/utils/serp/serp.vue
 admin-dev/themes/new-theme/js/app/utils/sql-manager.js
 admin-dev/themes/new-theme/js/app/utils/table-sorting.ts
+admin-dev/themes/new-theme/js/app/utils/watch-symfony-debug-bar.ts
 admin-dev/themes/new-theme/js/app/widgets/ps-alert.vue
 admin-dev/themes/new-theme/js/app/widgets/ps-button.vue
 admin-dev/themes/new-theme/js/app/widgets/ps-checkbox.vue
@@ -985,6 +988,8 @@ admin-dev/themes/new-theme/js/pages/product-preferences/catalog-mode-option-hand
 admin-dev/themes/new-theme/js/pages/product-preferences/index.ts
 admin-dev/themes/new-theme/js/pages/product-preferences/product-preferences-page-map.ts
 admin-dev/themes/new-theme/js/pages/product-preferences/stock-management-option-handler.ts
+admin-dev/themes/new-theme/js/pages/product/carrier/CarrierSelector.vue
+admin-dev/themes/new-theme/js/pages/product/carrier/index.ts
 admin-dev/themes/new-theme/js/pages/product/catalog-price-rule/catalog-price-rule-renderer.ts
 admin-dev/themes/new-theme/js/pages/product/catalog-price-rule/types.d.ts
 admin-dev/themes/new-theme/js/pages/product/category/category-tree-filter.ts
@@ -1002,7 +1007,6 @@ admin-dev/themes/new-theme/js/pages/product/combination/combination-list/row-del
 admin-dev/themes/new-theme/js/pages/product/combination/combination-modal/CombinationModal.vue
 admin-dev/themes/new-theme/js/pages/product/combination/combination-modal/History.vue
 admin-dev/themes/new-theme/js/pages/product/combination/combination-modal/index.ts
-admin-dev/themes/new-theme/js/pages/product/combination/filters/FilterDropdown.vue
 admin-dev/themes/new-theme/js/pages/product/combination/filters/Filters.vue
 admin-dev/themes/new-theme/js/pages/product/combination/filters/index.ts
 admin-dev/themes/new-theme/js/pages/product/combination/form/combination-form-mapping.ts
@@ -1292,6 +1296,7 @@ app/config/routing.yml
 app/config/routing_dev.yml
 app/config/security_dev.yml
 app/config/security_prod.yml
+app/config/security_test.yml
 app/config/services.yml
 app/config/set_parameters.php
 app/phpunit.xml.dist
@@ -1692,7 +1697,6 @@ controllers/admin/AdminNotFoundController.php
 controllers/admin/AdminPdfController.php
 controllers/admin/AdminProductsController.php
 controllers/admin/AdminQuickAccessesController.php
-controllers/admin/AdminRequestSqlController.php
 controllers/admin/AdminReturnController.php
 controllers/admin/AdminSearchConfController.php
 controllers/admin/AdminSearchController.php
@@ -4119,6 +4123,7 @@ src/Adapter/ContextStateManager.php
 src/Adapter/Converter/ExcelToCsvFileConverter.php
 src/Adapter/CoreException.php
 src/Adapter/Country/CommandHandler/AddCountryHandler.php
+src/Adapter/Country/CommandHandler/DeleteCountryHandler.php
 src/Adapter/Country/CommandHandler/EditCountryHandler.php
 src/Adapter/Country/CountryDataProvider.php
 src/Adapter/Country/CountryRequiredFieldsProvider.php
@@ -4534,10 +4539,10 @@ src/Adapter/Product/Image/CommandHandler/DeleteProductImageHandler.php
 src/Adapter/Product/Image/CommandHandler/SetProductImagesForAllShopHandler.php
 src/Adapter/Product/Image/CommandHandler/UpdateProductImageHandler.php
 src/Adapter/Product/Image/ProductImagePathFactory.php
+src/Adapter/Product/Image/ProductImageProvider.php
 src/Adapter/Product/Image/QueryHandler/GetProductImageHandler.php
 src/Adapter/Product/Image/QueryHandler/GetProductImagesHandler.php
 src/Adapter/Product/Image/QueryHandler/GetShopProductImagesHandler.php
-src/Adapter/Product/Image/Repository/ProductImageMultiShopRepository.php
 src/Adapter/Product/Image/Repository/ProductImageRepository.php
 src/Adapter/Product/Image/Update/ProductImageUpdater.php
 src/Adapter/Product/Image/Uploader/ProductImageUploader.php
@@ -5264,14 +5269,18 @@ src/Core/Domain/Contact/QueryHandler/GetContactForEditingHandlerInterface.php
 src/Core/Domain/Contact/QueryResult/EditableContact.php
 src/Core/Domain/Contact/ValueObject/ContactId.php
 src/Core/Domain/Country/Command/AddCountryCommand.php
+src/Core/Domain/Country/Command/DeleteCountryCommand.php
 src/Core/Domain/Country/Command/EditCountryCommand.php
 src/Core/Domain/Country/CommandHandler/AddCountryHandlerInterface.php
+src/Core/Domain/Country/CommandHandler/DeleteCountryHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/EditCountryHandlerInterface.php
 src/Core/Domain/Country/Exception/CannotAddCountryException.php
+src/Core/Domain/Country/Exception/CannotDeleteCountryException.php
 src/Core/Domain/Country/Exception/CannotEditCountryException.php
 src/Core/Domain/Country/Exception/CountryConstraintException.php
 src/Core/Domain/Country/Exception/CountryException.php
 src/Core/Domain/Country/Exception/CountryNotFoundException.php
+src/Core/Domain/Country/Exception/DeleteCountryException.php
 src/Core/Domain/Country/Query/GetCountryForEditing.php
 src/Core/Domain/Country/Query/GetCountryRequiredFields.php
 src/Core/Domain/Country/QueryHandler/GetCountryForEditingHandlerInterface.php
@@ -5413,7 +5422,6 @@ src/Core/Domain/Customer/ValueObject/Birthday.php
 src/Core/Domain/Customer/ValueObject/CustomerDeleteMethod.php
 src/Core/Domain/Customer/ValueObject/CustomerId.php
 src/Core/Domain/Customer/ValueObject/CustomerIdInterface.php
-src/Core/Domain/Customer/ValueObject/Email.php
 src/Core/Domain/Customer/ValueObject/FirstName.php
 src/Core/Domain/Customer/ValueObject/LastName.php
 src/Core/Domain/Customer/ValueObject/NoCustomerId.php
@@ -6011,6 +6019,7 @@ src/Core/Domain/Product/Image/Exception/CannotUpdateProductImageException.php
 src/Core/Domain/Product/Image/Exception/ProductImageConstraintException.php
 src/Core/Domain/Product/Image/Exception/ProductImageException.php
 src/Core/Domain/Product/Image/Exception/ProductImageNotFoundException.php
+src/Core/Domain/Product/Image/Provider/ProductImageProviderInterface.php
 src/Core/Domain/Product/Image/Query/GetProductImage.php
 src/Core/Domain/Product/Image/Query/GetProductImages.php
 src/Core/Domain/Product/Image/Query/GetShopProductImages.php
@@ -7378,9 +7387,7 @@ src/Core/Product/ProductExporterInterface.php
 src/Core/Product/ProductExtraContent.php
 src/Core/Product/ProductExtraContentFinder.php
 src/Core/Product/ProductInterface.php
-src/Core/Product/ProductListingPresenter.php
 src/Core/Product/ProductPresentationSettings.php
-src/Core/Product/ProductPresenter.php
 src/Core/Product/Search/Exception/InvalidSortOrderDirectionException.php
 src/Core/Product/Search/Facet.php
 src/Core/Product/Search/FacetCollection.php
@@ -7392,9 +7399,7 @@ src/Core/Product/Search/ProductSearchProviderInterface.php
 src/Core/Product/Search/ProductSearchQuery.php
 src/Core/Product/Search/ProductSearchResult.php
 src/Core/Product/Search/SortOrder.php
-src/Core/Product/Search/SortOrderFactory.php
 src/Core/Product/Search/SortOrdersCollection.php
-src/Core/Product/Search/URLFragmentSerializer.php
 src/Core/Proxy/CachedFileFinderProxy.php
 src/Core/Repository/AbstractMultiShopObjectModelRepository.php
 src/Core/Repository/AbstractObjectModelRepository.php
@@ -9113,6 +9118,7 @@ src/PrestaShopBundle/Routing/Linter/SecurityAnnotationLinter.php
 src/PrestaShopBundle/Routing/YamlModuleLoader.php
 src/PrestaShopBundle/Security/Admin/Employee.php
 src/PrestaShopBundle/Security/Admin/EmployeeProvider.php
+src/PrestaShopBundle/Security/Admin/SessionRenewer.php
 src/PrestaShopBundle/Security/Annotation/AdminSecurity.php
 src/PrestaShopBundle/Security/Annotation/DemoRestricted.php
 src/PrestaShopBundle/Security/Annotation/ModuleActivated.php
@@ -9670,6 +9676,7 @@ tests/Integration/Core/Translation/Storage/Provider/MockDatabaseTranslationLoade
 tests/Integration/Core/Translation/Storage/Provider/ModuleCatalogueLayersProviderTest.php
 tests/Integration/Core/Translation/Storage/Provider/OthersCatalogueLayersProviderTest.php
 tests/Integration/Core/Translation/Storage/Provider/ThemeCatalogueLayersProviderTest.php
+tests/Integration/PrestaShopBundle/Admin/Security/SessionRenewerTest.php
 tests/Integration/PrestaShopBundle/Command/GenerateMailTemplatesCommandTest.php
 tests/Integration/PrestaShopBundle/Command/LoadLegacyClassesinCommandTest.php
 tests/Integration/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/WebserviceControllerTest.php
@@ -10152,8 +10159,12 @@ tests/UI/.env.ci
 tests/UI/.eslintrc.js
 tests/UI/.mocharc.json
 tests/UI/README.md
+tests/UI/campaigns/cldr/03_deleteCurrency.ts
+tests/UI/campaigns/cldr/07_editSymbolFormatCurrency.ts
+tests/UI/campaigns/cldr/08_resetSymbolFormatSettings.ts
 tests/UI/campaigns/cldr/09_enableDisableCurrency.ts
 tests/UI/campaigns/functional/API/01_basicTest.ts
+tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/01_authorizationEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/02_resourceEndpoint.ts
 tests/UI/campaigns/functional/BO/00_login/01_passwordReminder.ts
 tests/UI/campaigns/functional/BO/00_login/02_login.ts
@@ -10331,6 +10342,7 @@ tests/UI/campaigns/functional/BO/08_design/06_imageSettings/03_bulkDeleteImageTy
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/05_sortAndPagination.ts
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/06_deleteActions.ts
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/09_imageGenerationOptions.ts
+tests/UI/campaigns/functional/BO/08_design/06_imageSettings/10_regenerateThumbnails.ts
 tests/UI/campaigns/functional/BO/08_design/07_linkWidget/01_createAndCheckFooterLinkWidget.ts
 tests/UI/campaigns/functional/BO/09_shipping/01_carriers/01_CRUDCarrier.ts
 tests/UI/campaigns/functional/BO/09_shipping/01_carriers/02_filterSortAndPagination.ts
@@ -10531,7 +10543,12 @@ tests/UI/campaigns/functional/FO/06_homePage/04_productQuickView.ts
 tests/UI/campaigns/functional/FO/07_search/01_consultAutocompleteList.ts
 tests/UI/campaigns/functional/FO/07_search/02_searchProduct.ts
 tests/UI/campaigns/functional/FO/07_search/03_searchNoResult.ts
-tests/UI/campaigns/functional/FO/08_menuAndNavigation/01_consultCategoriesInHeader.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/01_navigateInCategories/01_consultCategoriesInHeader.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/02_sortAndFilter/01_sortProducts.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/03_navigationAndDisplay/01_displayTags.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/03_navigationAndDisplay/02_pagination.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/03_navigationAndDisplay/03_quickViewProducts.ts
+tests/UI/campaigns/functional/FO/08_menuAndNavigation/03_navigationAndDisplay/04_displayOnSaleFlag.ts
 tests/UI/campaigns/functional/FO/09_productPage/01_quickView.ts
 tests/UI/campaigns/functional/FO/09_productPage/01_quickView/01_addToCart.ts
 tests/UI/campaigns/functional/FO/09_productPage/02_addToCart.ts
@@ -10543,6 +10560,7 @@ tests/UI/campaigns/functional/FO/11_checkout/02_addresses/02_useDifferentAddress
 tests/UI/campaigns/functional/FO/11_checkout/03_shippingMethods/01_addOrderMessage.ts
 tests/UI/campaigns/functional/FO/11_checkout/03_shippingMethods/02_selectCarrier.ts
 tests/UI/campaigns/functional/FO/12_orderConfirmation/05_contactUs.ts
+tests/UI/campaigns/functional/FO/hummingbird/01_login/04_createAccount.ts
 tests/UI/campaigns/productV2/functional/01_filterProducts.ts
 tests/UI/campaigns/productV2/functional/02_CRUDStandardProduct.ts
 tests/UI/campaigns/productV2/functional/03_CRUDProductWithCombinations.ts
@@ -10592,6 +10610,7 @@ tests/UI/commonTests/BO/loginBO.ts
 tests/UI/commonTests/BO/orders/shoppingCarts.ts
 tests/UI/commonTests/BO/shopParameters/b2b.ts
 tests/UI/commonTests/FO/account.ts
+tests/UI/commonTests/FO/hummingbird.ts
 tests/UI/commonTests/FO/loginFO.ts
 tests/UI/commonTests/FO/order.ts
 tests/UI/commonTests/FO/shoppingCart.ts
@@ -10847,6 +10866,7 @@ tests/UI/pages/BO/design/pages/index.ts
 tests/UI/pages/BO/design/pages/pageCategory/add.ts
 tests/UI/pages/BO/design/positions/index.ts
 tests/UI/pages/BO/design/themeAndLogo/advancedCustomization/index.ts
+tests/UI/pages/BO/design/themeAndLogo/themeAndLogo/import.ts
 tests/UI/pages/BO/design/themeAndLogo/themeAndLogo/index.ts
 tests/UI/pages/BO/design/themeAndLogo/themeAndLogo/themeAndLogoBasePage.ts
 tests/UI/pages/BO/international/currencies/add.ts
@@ -10930,6 +10950,9 @@ tests/UI/pages/FO/cms/index.ts
 tests/UI/pages/FO/contactUs/index.ts
 tests/UI/pages/FO/delivery/index.ts
 tests/UI/pages/FO/home/index.ts
+tests/UI/pages/FO/hummingbird/home/index.ts
+tests/UI/pages/FO/hummingbird/login/index.ts
+tests/UI/pages/FO/hummingbird/myAccount/add.ts
 tests/UI/pages/FO/legalNotice/index.ts
 tests/UI/pages/FO/login/index.ts
 tests/UI/pages/FO/myAccount/add.ts
@@ -11275,7 +11298,6 @@ tests/Unit/Core/Product/Search/FacetTest.php
 tests/Unit/Core/Product/Search/FilterTest.php
 tests/Unit/Core/Product/Search/PaginationTest.php
 tests/Unit/Core/Product/Search/SortOrderTest.php
-tests/Unit/Core/Product/Search/URLFragmentSerializerTest.php
 tests/Unit/Core/Routing/EntityLinkBuilderFactoryTest.php
 tests/Unit/Core/Search/Builder/ChainedFiltersBuilderTest.php
 tests/Unit/Core/Search/Builder/ClassFiltersBuilderTest.php

@@ -3055,6 +3055,17 @@ htdocs/includes/php-iban/mistranscriptions.txt
 htdocs/includes/php-iban/oophp-iban.php
 htdocs/includes/php-iban/php-iban.php
 htdocs/includes/php-iban/registry.txt
+htdocs/includes/phpoffice/phpspreadsheet/.gitattributes
+htdocs/includes/phpoffice/phpspreadsheet/.php_cs.dist
+htdocs/includes/phpoffice/phpspreadsheet/.scrutinizer.yml
+htdocs/includes/phpoffice/phpspreadsheet/.travis.yml
+htdocs/includes/phpoffice/phpspreadsheet/CHANGELOG.PHPExcel.md
+htdocs/includes/phpoffice/phpspreadsheet/CHANGELOG.md
+htdocs/includes/phpoffice/phpspreadsheet/CONTRIBUTING.md
+htdocs/includes/phpoffice/phpspreadsheet/LICENSE
+htdocs/includes/phpoffice/phpspreadsheet/mkdocs.yml
+htdocs/includes/phpoffice/phpspreadsheet/phpunit.xml.dist
+htdocs/includes/phpoffice/phpspreadsheet/src/Bootstrap.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Calculation.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Category.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Database.php
@@ -3141,6 +3152,7 @@ htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Collection/Memory.ph
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Comment.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Document/Properties.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Document/Security.php
+htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/DocumentGenerator.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Exception.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/HashTable.php
 htdocs/includes/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Helper/Html.php
@@ -5048,7 +5060,6 @@ htdocs/install/check.php
 htdocs/install/doctemplates/README
 htdocs/install/doctemplates/boms/template_bom.odt
 htdocs/install/doctemplates/contracts/template_contract.odt
-htdocs/install/doctemplates/index.html
 htdocs/install/doctemplates/invoices/template_invoice.odt
 htdocs/install/doctemplates/mrps/template_mo.odt
 htdocs/install/doctemplates/orders/template_order.odt
@@ -5069,7 +5080,6 @@ htdocs/install/doctemplates/thirdparties/template_thirdparty.odt
 htdocs/install/doctemplates/tickets/template_ticket.odt
 htdocs/install/doctemplates/usergroups/template_usergroups.odt
 htdocs/install/doctemplates/users/template_user.odt
-htdocs/install/doctemplates/websites/index.html
 htdocs/install/doctemplates/websites/website_template-corporate/LICENSE
 htdocs/install/doctemplates/websites/website_template-corporate/README.md
 htdocs/install/doctemplates/websites/website_template-corporate/containers/.dolibarr
@@ -14828,6 +14838,7 @@ test/phpunit/MarginsLibTest.php
 test/phpunit/ModulesTest.php
 test/phpunit/MouvementStockTest.php
 test/phpunit/NumberingModulesTest.php
+test/phpunit/ODFTest.php
 test/phpunit/PaypalTest.php
 test/phpunit/PdfDocTest.php
 test/phpunit/PgsqlTest.php
@@ -14854,7 +14865,7 @@ test/phpunit/WebservicesOtherTest.php
 test/phpunit/WebservicesProductsTest.php
 test/phpunit/WebservicesThirdpartyTest.php
 test/phpunit/WebservicesUserTest.php
-test/phpunit/Website.class.php
+test/phpunit/WebsiteTest.php
 test/phpunit/XCalLibTest.php
 test/phpunit/functional/InstallTest.php
 test/phpunit/functional/README.md

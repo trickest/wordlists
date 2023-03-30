@@ -96,6 +96,11 @@ erpnext/accounts/doctype/account/chart_of_accounts/verified/standard_chart_of_ac
 erpnext/accounts/doctype/account/chart_of_accounts/verified/tw_chart_of_accounts.json
 erpnext/accounts/doctype/account/test_account.py
 erpnext/accounts/doctype/account/test_records.json
+erpnext/accounts/doctype/account_closing_balance/__init__.py
+erpnext/accounts/doctype/account_closing_balance/account_closing_balance.js
+erpnext/accounts/doctype/account_closing_balance/account_closing_balance.json
+erpnext/accounts/doctype/account_closing_balance/account_closing_balance.py
+erpnext/accounts/doctype/account_closing_balance/test_account_closing_balance.py
 erpnext/accounts/doctype/accounting_dimension/__init__.py
 erpnext/accounts/doctype/accounting_dimension/accounting_dimension.js
 erpnext/accounts/doctype/accounting_dimension/accounting_dimension.json
@@ -2559,6 +2564,7 @@ erpnext/patches/v14_0/change_autoname_for_tax_withheld_vouchers.py
 erpnext/patches/v14_0/change_is_subcontracted_fieldtype.py
 erpnext/patches/v14_0/copy_is_subcontracted_value_to_is_old_subcontracting_flow.py
 erpnext/patches/v14_0/create_accounting_dimensions_for_asset_capitalization.py
+erpnext/patches/v14_0/create_accounting_dimensions_for_closing_balance.py
 erpnext/patches/v14_0/create_accounting_dimensions_for_payment_request.py
 erpnext/patches/v14_0/create_accounting_dimensions_in_subcontracting_doctypes.py
 erpnext/patches/v14_0/create_incoterms_and_migrate_shipment.py
@@ -2586,6 +2592,7 @@ erpnext/patches/v14_0/rename_ongoing_status_in_sla_documents.py
 erpnext/patches/v14_0/set_pick_list_status.py
 erpnext/patches/v14_0/setup_clear_repost_logs.py
 erpnext/patches/v14_0/update_batch_valuation_flag.py
+erpnext/patches/v14_0/update_closing_balances.py
 erpnext/patches/v14_0/update_entry_type_for_journal_entry.py
 erpnext/patches/v14_0/update_opportunity_currency_fields.py
 erpnext/patches/v14_0/update_partial_tds_fields.py
@@ -2593,6 +2600,7 @@ erpnext/patches/v14_0/update_reference_due_date_in_journal_entry.py
 erpnext/patches/v15_0/create_asset_depreciation_schedules_from_assets.py
 erpnext/patches/v15_0/delete_saudi_doctypes.py
 erpnext/patches/v15_0/delete_taxjar_doctypes.py
+erpnext/patches/v15_0/enable_all_leads.py
 erpnext/patches/v15_0/saudi_depreciation_warning.py
 erpnext/patches/v15_0/update_asset_value_for_manual_depr_entries.py
 erpnext/patches/v15_0/update_gpa_and_ndb_for_assdeprsch.py
