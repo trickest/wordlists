@@ -2853,7 +2853,9 @@ core/lib/Drupal/Core/ParamConverter/ParamNotConvertedException.php
 core/lib/Drupal/Core/Password/DefaultPasswordGenerator.php
 core/lib/Drupal/Core/Password/PasswordGeneratorInterface.php
 core/lib/Drupal/Core/Password/PasswordInterface.php
+core/lib/Drupal/Core/Password/PhpPassword.php
 core/lib/Drupal/Core/Password/PhpassHashedPassword.php
+core/lib/Drupal/Core/Password/PhpassHashedPasswordBase.php
 core/lib/Drupal/Core/Path/CurrentPathStack.php
 core/lib/Drupal/Core/Path/PathMatcher.php
 core/lib/Drupal/Core/Path/PathMatcherInterface.php
@@ -3151,6 +3153,7 @@ core/lib/Drupal/Core/StackMiddleware/Session.php
 core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php
 core/lib/Drupal/Core/State/State.php
 core/lib/Drupal/Core/State/StateInterface.php
+core/lib/Drupal/Core/StreamWrapper/AssetsStream.php
 core/lib/Drupal/Core/StreamWrapper/LocalReadOnlyStream.php
 core/lib/Drupal/Core/StreamWrapper/LocalStream.php
 core/lib/Drupal/Core/StreamWrapper/PhpStreamWrapperInterface.php
@@ -3757,6 +3760,7 @@ core/modules/block_content/src/BlockContentTypeListBuilder.php
 core/modules/block_content/src/BlockContentUuidLookup.php
 core/modules/block_content/src/BlockContentViewBuilder.php
 core/modules/block_content/src/BlockContentViewsData.php
+core/modules/block_content/src/BlockTypeAccessControlHandler.php
 core/modules/block_content/src/Controller/BlockContentController.php
 core/modules/block_content/src/Entity/BlockContent.php
 core/modules/block_content/src/Entity/BlockContentType.php
@@ -4804,6 +4808,7 @@ core/modules/content_moderation/src/Entity/Routing/EntityModerationRouteProvider
 core/modules/content_moderation/src/EntityOperations.php
 core/modules/content_moderation/src/EntityTypeInfo.php
 core/modules/content_moderation/src/EventSubscriber/ConfigImportSubscriber.php
+core/modules/content_moderation/src/EventSubscriber/WorkspaceSubscriber.php
 core/modules/content_moderation/src/Form/ContentModerationConfigureEntityTypesForm.php
 core/modules/content_moderation/src/Form/ContentModerationConfigureForm.php
 core/modules/content_moderation/src/Form/ContentModerationStateForm.php
@@ -7024,6 +7029,7 @@ core/modules/link/tests/src/Kernel/LinkItemSerializationTest.php
 core/modules/link/tests/src/Kernel/LinkItemTest.php
 core/modules/link/tests/src/Kernel/LinkItemUrlValidationTest.php
 core/modules/link/tests/src/Kernel/Plugin/migrate/field/d7/LinkFieldTest.php
+core/modules/link/tests/src/Unit/LinkFormatterTest.php
 core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkAccessConstraintValidatorTest.php
 core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkExternalProtocolsConstraintValidatorTest.php
 core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkNotExistingInternalConstraintValidatorTest.php
@@ -7343,6 +7349,7 @@ core/modules/media/tests/src/Kernel/MediaLinkRelationsTest.php
 core/modules/media/tests/src/Kernel/MediaSourceFileTest.php
 core/modules/media/tests/src/Kernel/MediaSourceTest.php
 core/modules/media/tests/src/Kernel/MediaTest.php
+core/modules/media/tests/src/Kernel/MediaThumbnailFormatterTest.php
 core/modules/media/tests/src/Kernel/MediaTranslationTest.php
 core/modules/media/tests/src/Kernel/MediaTypeValidationTest.php
 core/modules/media/tests/src/Kernel/OEmbedIframeControllerTest.php
@@ -8495,12 +8502,19 @@ core/modules/pgsql/src/Driver/Database/pgsql/Upsert.php
 core/modules/pgsql/tests/src/Kernel/pgsql/ConnectionUnitTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/DatabaseExceptionWrapperTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/KernelTestBaseTest.php
+core/modules/pgsql/tests/src/Kernel/pgsql/NonPublicSchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/PgsqlDriverLegacyTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/SchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/SyntaxTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TemporaryQueryTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TransactionTest.php
 core/modules/pgsql/tests/src/Unit/SchemaTest.php
+core/modules/phpass/phpass.info.yml
+core/modules/phpass/phpass.module
+core/modules/phpass/phpass.services.yml
+core/modules/phpass/src/Password/PhpassHashedPassword.php
+core/modules/phpass/tests/src/Tests/LegacyPasswordHashingTest.php
+core/modules/phpass/tests/src/Tests/PasswordVerifyTest.php
 core/modules/responsive_image/config/schema/responsive_image.schema.yml
 core/modules/responsive_image/migrations/d7_responsive_image_styles.yml
 core/modules/responsive_image/migrations/state/responsive_image.migrate_drupal.yml
@@ -9329,6 +9343,7 @@ core/modules/system/tests/fixtures/update/drupal-8.update-test-schema-enabled.ph
 core/modules/system/tests/fixtures/update/drupal-8.update-test-semver-update-n-enabled.php
 core/modules/system/tests/fixtures/update/drupal-9.4.0.bare.standard.php.gz
 core/modules/system/tests/fixtures/update/drupal-9.4.0.filled.standard.php.gz
+core/modules/system/tests/fixtures/update/drupal-9.4.0.phpass.standard.php.gz
 core/modules/system/tests/fixtures/update/drupal.timestamp-formatter-settings-2921810.php
 core/modules/system/tests/http.php
 core/modules/system/tests/https.php
@@ -9419,7 +9434,9 @@ core/modules/system/tests/modules/container_rebuild_test/container_rebuild_test.
 core/modules/system/tests/modules/container_rebuild_test/src/ContainerRebuildTestServiceProvider.php
 core/modules/system/tests/modules/container_rebuild_test/src/TestController.php
 core/modules/system/tests/modules/cron_queue_test/cron_queue_test.info.yml
+core/modules/system/tests/modules/cron_queue_test/src/Plugin/Derivative/CronQueueTestDeriver.php
 core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestDatabaseDelayException.php
+core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestDeriverQueue.php
 core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestException.php
 core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestLeaseTime.php
 core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestMemoryDelayException.php
@@ -9463,6 +9480,8 @@ core/modules/system/tests/modules/default_format_test/default_format_test.routin
 core/modules/system/tests/modules/default_format_test/src/DefaultFormatTestController.php
 core/modules/system/tests/modules/delay_cache_tags_invalidation/delay_cache_tags_invalidation.info.yml
 core/modules/system/tests/modules/delay_cache_tags_invalidation/delay_cache_tags_invalidation.module
+core/modules/system/tests/modules/dependency_version_test/dependency_version_test.info.yml
+core/modules/system/tests/modules/dependency_version_test/dependency_version_test.module
 core/modules/system/tests/modules/deprecated_module/config/install/deprecated_module.settings.yml
 core/modules/system/tests/modules/deprecated_module/config/schema/deprecated_module.schema.yml
 core/modules/system/tests/modules/deprecated_module/deprecated_module.info.yml
@@ -9969,6 +9988,9 @@ core/modules/system/tests/modules/new_dependency_test/src/SetterInjection.php
 core/modules/system/tests/modules/new_dependency_test_with_service/new_dependency_test_with_service.info.yml
 core/modules/system/tests/modules/new_dependency_test_with_service/new_dependency_test_with_service.services.yml
 core/modules/system/tests/modules/new_dependency_test_with_service/src/NewService.php
+core/modules/system/tests/modules/nightwatch_theme_install_utility/nightwatch_theme_install_utility.info.yml
+core/modules/system/tests/modules/nightwatch_theme_install_utility/nightwatch_theme_install_utility.routing.yml
+core/modules/system/tests/modules/nightwatch_theme_install_utility/src/Controller/ThemeInstallController.php
 core/modules/system/tests/modules/off_canvas_test/js/resize-helper.js
 core/modules/system/tests/modules/off_canvas_test/off_canvas_test.info.yml
 core/modules/system/tests/modules/off_canvas_test/off_canvas_test.libraries.yml
@@ -10104,17 +10126,17 @@ core/modules/system/tests/modules/session_test/src/Form/SessionTestForm.php
 core/modules/system/tests/modules/session_test/src/Session/TestSessionBag.php
 core/modules/system/tests/modules/session_test/src/Session/TestSessionHandlerProxy.php
 core/modules/system/tests/modules/system_core_incompatible_semver_test/system_core_incompatible_semver_test.info.yml
+core/modules/system/tests/modules/system_module_test/system_module_test.info.yml
+core/modules/system/tests/modules/system_module_test/system_module_test.install
+core/modules/system/tests/modules/system_module_test/system_module_test.module
 core/modules/system/tests/modules/system_core_semver_test/system_core_semver_test.info.yml
 core/modules/system/tests/modules/system_dependencies_test/system_dependencies_test.info.yml
-core/modules/system/tests/modules/system_mail_failure_test/src/Plugin/Mail/TestPhpMailFailure.php
-core/modules/system/tests/modules/system_mail_failure_test/system_mail_failure_test.info.yml
 core/modules/system/tests/modules/system_incompatible_core_version_dependencies_test/system_incompatible_core_version_dependencies_test.info.yml
 core/modules/system/tests/modules/system_incompatible_module_version_dependencies_test/system_incompatible_module_version_dependencies_test.info.yml
 core/modules/system/tests/modules/system_incompatible_module_version_test/system_incompatible_module_version_test.info.yml
 core/modules/system/tests/modules/system_incompatible_php_version_test/system_incompatible_php_version_test.info.yml
-core/modules/system/tests/modules/system_module_test/system_module_test.info.yml
-core/modules/system/tests/modules/system_module_test/system_module_test.install
-core/modules/system/tests/modules/system_module_test/system_module_test.module
+core/modules/system/tests/modules/system_mail_failure_test/src/Plugin/Mail/TestPhpMailFailure.php
+core/modules/system/tests/modules/system_mail_failure_test/system_mail_failure_test.info.yml
 core/modules/system/tests/modules/system_project_namespace_test/system_project_namespace_test.info.yml
 core/modules/system/tests/modules/system_status_obsolete_test/system_status_obsolete_test.info.yml
 core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
@@ -10447,6 +10469,7 @@ core/modules/system/tests/src/Functional/Theme/TwigSettingsTest.php
 core/modules/system/tests/src/Functional/Theme/TwigTransTest.php
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
 core/modules/system/tests/src/Functional/Update/MenuLinksetSettingsUpdateTest.php
+core/modules/system/tests/src/Functional/Update/PasswordCompatibilityUpdateTest.php
 core/modules/system/tests/src/Functional/Update/README.txt
 core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/Y2038TimestampUpdateTest.php
@@ -11401,8 +11424,8 @@ core/modules/user/templates/username.html.twig
 core/modules/user/tests/modules/user_access_test/user_access_test.info.yml
 core/modules/user/tests/modules/user_access_test/user_access_test.module
 core/modules/user/tests/modules/user_access_test/user_access_test.permissions.yml
-core/modules/user/tests/modules/user_custom_phpass_params_test/user_custom_phpass_params_test.info.yml
-core/modules/user/tests/modules/user_custom_phpass_params_test/user_custom_phpass_params_test.services.yml
+core/modules/user/tests/modules/user_custom_pass_hash_params_test/user_custom_pass_hash_params_test.info.yml
+core/modules/user/tests/modules/user_custom_pass_hash_params_test/user_custom_pass_hash_params_test.services.yml
 core/modules/user/tests/modules/user_form_test/user_form_test.info.yml
 core/modules/user/tests/modules/user_form_test/user_form_test.module
 core/modules/user/tests/modules/user_form_test/user_form_test.permissions.yml
@@ -11538,6 +11561,7 @@ core/modules/user/tests/src/Kernel/UserAccountFormFieldsTest.php
 core/modules/user/tests/src/Kernel/UserAccountFormPasswordResetTest.php
 core/modules/user/tests/src/Kernel/UserActionConfigSchemaTest.php
 core/modules/user/tests/src/Kernel/UserAdminSettingsFormTest.php
+core/modules/user/tests/src/Kernel/UserAnonymousActivateTest.php
 core/modules/user/tests/src/Kernel/UserDeleteTest.php
 core/modules/user/tests/src/Kernel/UserEntityLabelTest.php
 core/modules/user/tests/src/Kernel/UserEntityReferenceTest.php
@@ -11583,6 +11607,7 @@ core/modules/user/tests/src/Unit/Plugin/views/field/UserBulkFormTest.php
 core/modules/user/tests/src/Unit/Theme/AdminNegotiatorTest.php
 core/modules/user/tests/src/Unit/UserAccessControlHandlerTest.php
 core/modules/user/tests/src/Unit/UserAuthTest.php
+core/modules/user/tests/src/Unit/UserNameItemTest.php
 core/modules/user/tests/src/Unit/UserRegistrationResourceTest.php
 core/modules/user/tests/src/Unit/Views/Argument/RolesRidTest.php
 core/modules/user/tests/themes/user_test_theme/user.html.twig
@@ -12234,6 +12259,7 @@ core/modules/views/tests/src/Kernel/Entity/LatestRevisionFilterTest.php
 core/modules/views/tests/src/Kernel/Entity/LatestTranslationAffectedRevisionTest.php
 core/modules/views/tests/src/Kernel/Entity/RowEntityRenderersTest.php
 core/modules/views/tests/src/Kernel/Entity/ViewEntityDependenciesTest.php
+core/modules/views/tests/src/Kernel/Entity/ViewSelectionEntityReferenceTest.php
 core/modules/views/tests/src/Kernel/Entity/ViewValidationTest.php
 core/modules/views/tests/src/Kernel/EventSubscriber/ViewsEntitySchemaSubscriberIntegrationTest.php
 core/modules/views/tests/src/Kernel/FieldApiDataTest.php
@@ -12588,6 +12614,9 @@ core/modules/workspaces/src/EntityQuery/QueryFactory.php
 core/modules/workspaces/src/EntityQuery/QueryTrait.php
 core/modules/workspaces/src/EntityQuery/Tables.php
 core/modules/workspaces/src/EntityTypeInfo.php
+core/modules/workspaces/src/Event/WorkspacePostPublishEvent.php
+core/modules/workspaces/src/Event/WorkspacePrePublishEvent.php
+core/modules/workspaces/src/Event/WorkspacePublishEvent.php
 core/modules/workspaces/src/EventSubscriber/EntitySchemaSubscriber.php
 core/modules/workspaces/src/EventSubscriber/WorkspaceRequestSubscriber.php
 core/modules/workspaces/src/Form/SwitchToLiveForm.php
@@ -12625,6 +12654,7 @@ core/modules/workspaces/src/WorkspaceMerger.php
 core/modules/workspaces/src/WorkspaceMergerInterface.php
 core/modules/workspaces/src/WorkspaceOperationFactory.php
 core/modules/workspaces/src/WorkspaceOperationInterface.php
+core/modules/workspaces/src/WorkspacePublishException.php
 core/modules/workspaces/src/WorkspacePublisher.php
 core/modules/workspaces/src/WorkspacePublisherInterface.php
 core/modules/workspaces/src/WorkspaceRepository.php
@@ -12659,6 +12689,7 @@ core/modules/workspaces/tests/src/Functional/WorkspacesUninstallTest.php
 core/modules/workspaces/tests/src/FunctionalJavascript/WorkspaceToolbarIntegrationTest.php
 core/modules/workspaces/tests/src/Kernel/EntityReferenceSupportedNewEntitiesConstraintValidatorTest.php
 core/modules/workspaces/tests/src/Kernel/WorkspaceAccessTest.php
+core/modules/workspaces/tests/src/Kernel/WorkspaceAssociationDeprecationTest.php
 core/modules/workspaces/tests/src/Kernel/WorkspaceCRUDTest.php
 core/modules/workspaces/tests/src/Kernel/WorkspaceIntegrationTest.php
 core/modules/workspaces/tests/src/Kernel/WorkspaceMergerTest.php
@@ -13117,6 +13148,25 @@ core/profiles/minimal/config/install/system.theme.global.yml
 core/profiles/minimal/config/install/user.settings.yml
 core/profiles/minimal/minimal.info.yml
 core/profiles/minimal/tests/src/Functional/MinimalTest.php
+core/profiles/nightwatch_a11y_testing/config/install/core.entity_form_display.node.article.default.yml
+core/profiles/nightwatch_a11y_testing/config/install/core.entity_form_display.node.page.default.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.field.node.article.body.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.field.node.article.comment.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.field.node.article.field_image.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.field.node.article.field_tags.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.field.node.page.body.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.storage.node.comment.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.storage.node.field_image.yml
+core/profiles/nightwatch_a11y_testing/config/install/field.storage.node.field_tags.yml
+core/profiles/nightwatch_a11y_testing/config/install/filter.format.restricted_html.yml
+core/profiles/nightwatch_a11y_testing/config/install/node.settings.yml
+core/profiles/nightwatch_a11y_testing/config/install/node.type.article.yml
+core/profiles/nightwatch_a11y_testing/config/install/node.type.page.yml
+core/profiles/nightwatch_a11y_testing/config/install/system.theme.yml
+core/profiles/nightwatch_a11y_testing/config/install/taxonomy.vocabulary.tags.yml
+core/profiles/nightwatch_a11y_testing/config/install/user.role.administrator.yml
+core/profiles/nightwatch_a11y_testing/config/install/user.role.anonymous.yml
+core/profiles/nightwatch_a11y_testing/nightwatch_a11y_testing.info.yml
 core/profiles/nightwatch_testing/config/optional/locale.settings.yml
 core/profiles/nightwatch_testing/nightwatch_testing.info.yml
 core/profiles/standard/config/install/automated_cron.settings.yml
@@ -13599,6 +13649,7 @@ core/tests/Drupal/KernelTests/Core/Database/RangeQueryTest.php
 core/tests/Drupal/KernelTests/Core/Database/RegressionTest.php
 core/tests/Drupal/KernelTests/Core/Database/ReplicaKillSwitchTest.php
 core/tests/Drupal/KernelTests/Core/Database/ReservedWordTest.php
+core/tests/Drupal/KernelTests/Core/Database/SchemaUniquePrefixedKeysIndexTest.php
 core/tests/Drupal/KernelTests/Core/Database/SelectCloneTest.php
 core/tests/Drupal/KernelTests/Core/Database/SelectComplexTest.php
 core/tests/Drupal/KernelTests/Core/Database/SelectExtenderTest.php
@@ -13875,6 +13926,7 @@ core/tests/Drupal/Nightwatch/Assertions/elementCount.js
 core/tests/Drupal/Nightwatch/Assertions/noDeprecationErrors.js
 core/tests/Drupal/Nightwatch/Commands/drupalCreateRole.js
 core/tests/Drupal/Nightwatch/Commands/drupalCreateUser.js
+core/tests/Drupal/Nightwatch/Commands/drupalEnableTheme.js
 core/tests/Drupal/Nightwatch/Commands/drupalInstall.js
 core/tests/Drupal/Nightwatch/Commands/drupalInstallModule.js
 core/tests/Drupal/Nightwatch/Commands/drupalLogAndEnd.js
@@ -13897,6 +13949,8 @@ core/tests/Drupal/Nightwatch/Tests/Olivero/oliveroPrimaryTabsTest.js
 core/tests/Drupal/Nightwatch/Tests/Olivero/oliveroRemoveBlockConsoleTest.js
 core/tests/Drupal/Nightwatch/Tests/Olivero/oliveroSearchFormTest.js
 core/tests/Drupal/Nightwatch/Tests/Olivero/oliveroStickyHeaderToggleTest.js
+core/tests/Drupal/Nightwatch/Tests/a11yTestAdmin.js
+core/tests/Drupal/Nightwatch/Tests/a11yTestDefault.js
 core/tests/Drupal/Nightwatch/Tests/ajaxExecutionOrderTest.js
 core/tests/Drupal/Nightwatch/Tests/claroAutocompleteTest.js
 core/tests/Drupal/Nightwatch/Tests/exampleTest.js
@@ -14374,7 +14428,9 @@ core/tests/Drupal/Tests/Core/Field/FieldInputValueNormalizerTraitTest.php
 core/tests/Drupal/Tests/Core/Field/FieldItemListTest.php
 core/tests/Drupal/Tests/Core/Field/InternalViolationTest.php
 core/tests/Drupal/Tests/Core/Field/PluginSettingsBaseTest.php
+core/tests/Drupal/Tests/Core/Field/StringItemTest.php
 core/tests/Drupal/Tests/Core/Field/TestBaseFieldDefinitionInterface.php
+core/tests/Drupal/Tests/Core/Field/UriItemTest.php
 core/tests/Drupal/Tests/Core/File/FileSystemTest.php
 core/tests/Drupal/Tests/Core/File/FileUploadSanitizeNameEventTest.php
 core/tests/Drupal/Tests/Core/Flood/MemoryBackendTest.php
@@ -14436,7 +14492,8 @@ core/tests/Drupal/Tests/Core/ParamConverter/EntityConverterTest.php
 core/tests/Drupal/Tests/Core/ParamConverter/EntityRevisionParamConverterTest.php
 core/tests/Drupal/Tests/Core/ParamConverter/ParamConverterManagerTest.php
 core/tests/Drupal/Tests/Core/Password/DefaultPasswordGeneratorTest.php
-core/tests/Drupal/Tests/Core/Password/PasswordHashingTest.php
+core/tests/Drupal/Tests/Core/Password/PasswordHashingLegacyTest.php
+core/tests/Drupal/Tests/Core/Password/PhpPasswordTest.php
 core/tests/Drupal/Tests/Core/Path/PathMatcherTest.php
 core/tests/Drupal/Tests/Core/Path/PathValidatorTest.php
 core/tests/Drupal/Tests/Core/PathProcessor/PathProcessorFrontTest.php
@@ -14947,6 +15004,7 @@ core/themes/claro/templates/views/views-ui-expose-filter-form.html.twig
 core/themes/claro/templates/views/views-ui-view-preview-section--exposed.html.twig
 core/themes/engines/twig/twig.engine
 core/themes/engines/twig/twig.info.yml
+core/themes/olivero/README.md
 core/themes/olivero/config/install/core.date_format.olivero_medium.yml
 core/themes/olivero/config/install/olivero.settings.yml
 core/themes/olivero/config/optional/block.block.olivero_account_menu.yml

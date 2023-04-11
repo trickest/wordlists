@@ -49,6 +49,8 @@ UPGRADE-API-1.11.md
 UPGRADE-API-1.12.md
 UPGRADE-API-1.8.md
 UPGRADE-API-1.9.md
+UPGRADE-FROM-1.12-WITH-PRICE-HISTORY-PLUGIN-TO-1.13-LEGACY.md
+UPGRADE-FROM-1.12-WITH-PRICE-HISTORY-PLUGIN-TO-1.13.md
 adr/2020_03_03_api_product_option_values.md
 adr/2020_03_03_api_translations.md
 adr/2020_03_03_feature_coverage_in_api.md
@@ -3207,6 +3209,7 @@ src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductSlugEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductVariantEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
 src/Sylius/Bundle/ApiBundle/Exception/NoRouteMatchesException.php
+src/Sylius/Bundle/ApiBundle/Exception/OrderItemNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
 src/Sylius/Bundle/ApiBundle/Exception/ProvinceCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
@@ -4394,17 +4397,17 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20220728115129.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20220803125615.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20220912091947.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20220926113252.php
-src/Sylius/Bundle/CoreBundle/Migrations/Version20230310160512.php
-src/Sylius/Bundle/CoreBundle/Migrations/Version20230314073130.php
-src/Sylius/Bundle/CoreBundle/Migrations/Version20230314073215.php
-src/Sylius/Bundle/CoreBundle/Migrations/Version20230320174436.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20230327121633.php
-src/Sylius/Bundle/CoreBundle/Migrations/Version20230329093932.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20230331091850.php
 src/Sylius/Bundle/CoreBundle/OAuth/UserProvider.php
 src/Sylius/Bundle/CoreBundle/Order/Checker/OrderPromotionsIntegrityChecker.php
 src/Sylius/Bundle/CoreBundle/Order/Checker/OrderPromotionsIntegrityCheckerInterface.php
 src/Sylius/Bundle/CoreBundle/Order/NumberGenerator/SequentialOrderNumberGenerator.php
-src/Sylius/Bundle/CoreBundle/PriceHistory/Command/ClearPriceHistoryCommand.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Cli/Command/ClearPriceHistoryCommand.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/Command/ApplyLowestPriceOnChannelPricings.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/CommandDispatcher/ApplyLowestPriceOnChannelPricingsCommandDispatcherInterface.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/CommandDispatcher/BatchedApplyLowestPriceOnChannelPricingsCommandDispatcher.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/CommandHandler/ApplyLowestPriceOnChannelPricingsHandler.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserver.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/EntityObserverInterface.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserver.php
@@ -4556,6 +4559,8 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/order_processing.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/payment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/checkers.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/command_dispatcher.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/command_handler.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/listeners.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/logger.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/processors.xml
@@ -4577,10 +4582,12 @@ src/Sylius/Bundle/CoreBundle/Resources/config/validation/ChannelPricing.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Customer.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Order.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/OrderItem.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/validation/Payment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/PaymentMethod.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Product.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/ProductImage.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/ProductReview.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/validation/ProductTaxon.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/ProductVariant.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/PromotionCoupon.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/RequestResetPasswordEmail.xml
@@ -4712,7 +4719,7 @@ src/Sylius/Bundle/CoreBundle/Templating/Helper/PriceHelper.php
 src/Sylius/Bundle/CoreBundle/Templating/Helper/ProductVariantsPricesHelper.php
 src/Sylius/Bundle/CoreBundle/Templating/Helper/VariantResolverHelper.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
-src/Sylius/Bundle/CoreBundle/Tests/Command/ClearPriceHistoryCommandTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/CircularDependencyBreakingErrorListenerPassTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/Compiler/BackwardsCompatibility/CancelOrderStateMachineCallbackPassTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/Compiler/RegisterTaxCalculationStrategiesPassTest.php
@@ -4870,6 +4877,8 @@ src/Sylius/Bundle/CoreBundle/spec/MessageHandler/Admin/Account/SendResetPassword
 src/Sylius/Bundle/CoreBundle/spec/OAuth/UserProviderSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Order/Checker/OrderPromotionsIntegrityCheckerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Order/NumberGenerator/SequentialOrderNumberGeneratorSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/CommandDispatcher/BatchedApplyLowestPriceOnChannelPricingsCommandDispatcherSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/CommandHandler/ApplyLowestPriceOnChannelPricingsHandlerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelPriceHistoryConfigChangeObserverSpec.php
@@ -6908,6 +6917,7 @@ src/Sylius/Bundle/ShopBundle/Tests/DependencyInjection/ConfigurationTest.php
 src/Sylius/Bundle/ShopBundle/Tests/DependencyInjection/SyliusShopExtensionTest.php
 src/Sylius/Bundle/ShopBundle/Twig/OrderItemOriginalPriceToDisplayExtension.php
 src/Sylius/Bundle/ShopBundle/Twig/OrderItemsSubtotalExtension.php
+src/Sylius/Bundle/ShopBundle/Twig/OrderPaymentsExtension.php
 src/Sylius/Bundle/ShopBundle/Twig/OrderTaxesTotalExtension.php
 src/Sylius/Bundle/ShopBundle/composer.json
 src/Sylius/Bundle/ShopBundle/gulpfile.babel.js
@@ -6930,6 +6940,7 @@ src/Sylius/Bundle/ShopBundle/spec/EventListener/UserRegistrationListenerSpec.php
 src/Sylius/Bundle/ShopBundle/spec/Router/LocaleStrippingRouterSpec.php
 src/Sylius/Bundle/ShopBundle/spec/SectionResolver/ShopUriBasedSectionResolverSpec.php
 src/Sylius/Bundle/ShopBundle/spec/Twig/OrderItemOriginalPriceToDisplayExtensionSpec.php
+src/Sylius/Bundle/ShopBundle/spec/Twig/OrderPaymentsExtensionSpec.php
 src/Sylius/Bundle/TaxationBundle/.gitattributes
 src/Sylius/Bundle/TaxationBundle/DependencyInjection/Compiler/RegisterCalculatorsPass.php
 src/Sylius/Bundle/TaxationBundle/DependencyInjection/Configuration.php

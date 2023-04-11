@@ -747,6 +747,7 @@ application/Espo/Core/Formula/Functions/EntityGroup/IsNewType.php
 application/Espo/Core/Formula/Functions/EntityGroup/IsRelatedType.php
 application/Espo/Core/Formula/Functions/EntityGroup/RemoveLinkMultipleIdType.php
 application/Espo/Core/Formula/Functions/EntityGroup/SetAttributeType.php
+application/Espo/Core/Formula/Functions/EntityGroup/SetLinkMultipleColumnType.php
 application/Espo/Core/Formula/Functions/EntityGroup/SumRelatedType.php
 application/Espo/Core/Formula/Functions/EnvGroup/UserAttributeType.php
 application/Espo/Core/Formula/Functions/ExtGroup/CurrencyGroup/ConvertType.php
@@ -5585,7 +5586,11 @@ application/Espo/Tools/App/AppParam.php
 application/Espo/Tools/App/AppService.php
 application/Espo/Tools/App/Jobs/ClearCache.php
 application/Espo/Tools/App/Jobs/Rebuild.php
+application/Espo/Tools/App/Language/AclDependencyItem.php
+application/Espo/Tools/App/Language/AclDependencyProvider.php
 application/Espo/Tools/App/LanguageService.php
+application/Espo/Tools/App/Metadata/AclDependencyItem.php
+application/Espo/Tools/App/Metadata/AclDependencyProvider.php
 application/Espo/Tools/App/MetadataService.php
 application/Espo/Tools/App/PreferencesService.php
 application/Espo/Tools/App/SettingsService.php
@@ -6594,6 +6599,7 @@ client/src/views/admin/field-manager/fields/foreign/link.js
 client/src/views/admin/field-manager/fields/link-multiple/default.js
 client/src/views/admin/field-manager/fields/link/default.js
 client/src/views/admin/field-manager/fields/not-actual-options.js
+client/src/views/admin/field-manager/fields/options-reference.js
 client/src/views/admin/field-manager/fields/options-with-style.js
 client/src/views/admin/field-manager/fields/options.js
 client/src/views/admin/field-manager/fields/options/default.js
@@ -7691,6 +7697,8 @@ tests/integration/Espo/Record/DuplicateFindTest.php
 tests/integration/Espo/Record/FieldValidationTest.php
 tests/integration/Espo/Record/RestoreDeletedTest.php
 tests/integration/Espo/Settings/AccessTest.php
+tests/integration/Espo/Tools/App/LanguageTest.php
+tests/integration/Espo/Tools/App/MetadataTest.php
 tests/integration/Espo/Upgrade/GeneralTest.php
 tests/integration/Espo/User/AclAdminTest.php
 tests/integration/Espo/User/AclTest.php
@@ -8018,6 +8026,8 @@ upgrades/7.2/data.json
 upgrades/7.2/scripts/AfterUpgrade.php
 upgrades/7.3/data.json
 upgrades/7.3/scripts/BeforeUpgrade.php
+upgrades/7.4.0-7.4.1/data.json
+upgrades/7.4.0-7.4.1/scripts/AfterUpgrade.php
 upgrades/7.4/data.json
 upgrades/7.4/scripts/AfterUpgrade.php
 upgrades/7.4/scripts/BeforeUpgrade.php

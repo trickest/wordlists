@@ -149,6 +149,7 @@ adr/2023-02-20-unstructured-adrs.md
 adr/2023-02-27-native-extension-system-with-vue.md
 adr/2023-03-27-admin-text-editor-evaluation.md
 adr/2023-04-01-mocking-repositories.md
+adr/2023-04-03-disable-css-autoprefixer.md
 adr/2023-16-01-npm-packages-pre-release-versions.md
 adr/YYYY-MM-DD-template.md
 adr/assets/payment-flow/after-order-payment.svg
@@ -526,6 +527,7 @@ changelog/_unreleased/2023-01-08-fix-admin-product-detail-promise-resolution.md
 changelog/_unreleased/2023-01-09-added-days-since-first-login-rule-condition.md
 changelog/_unreleased/2023-01-09-remove-the-concept-of-cart-names.md
 changelog/_unreleased/2023-01-10-add-customer-salutation-rule-condition.md
+changelog/_unreleased/2023-01-10-fix-credit-note-document-cannot-preview.md
 changelog/_unreleased/2023-01-10-fixed-custom-field-set-renderer-without-custom-fields-inside.md
 changelog/_unreleased/2023-01-10-flow-edit-action-for-stop-flow.md
 changelog/_unreleased/2023-01-10-removed-storefront-csrf-implementation.md
@@ -630,13 +632,13 @@ changelog/_unreleased/2023-02-02-fix-encoder.md
 changelog/_unreleased/2023-02-02-fix-html-line-breaker-at-address-format.md
 changelog/_unreleased/2023-02-02-improve-setting-time-zones.md
 changelog/_unreleased/2023-02-02-log-themcompile-errors-after-update.md
-changelog/_unreleased/2023-02-07-adjust-login-styling.md
 changelog/_unreleased/2023-02-02-provided-cart-price-taxes-are-not-calculated-into-the-cart-price-sum.md
 changelog/_unreleased/2023-02-03-make-admin-compatible-with-npm-9.md
 changelog/_unreleased/2023-02-06-create-method-to-get-translation-of-trigger.md
 changelog/_unreleased/2023-02-06-improve-text-wrap-behavior-in-notifications.md
 changelog/_unreleased/2023-02-07-add-a-separate-guzzle-client-for-the-first-run-wizard.md
 changelog/_unreleased/2023-02-07-add-transparent-background-possibility-to-text-editor.md
+changelog/_unreleased/2023-02-07-adjust-login-styling.md
 changelog/_unreleased/2023-02-07-adjust-menu-styling.md
 changelog/_unreleased/2023-02-07-productlineitem-validator-ignores-skip-product-stock-validation.md
 changelog/_unreleased/2023-02-07-remove-debugstack-class.md
@@ -688,10 +690,10 @@ changelog/_unreleased/2023-02-27-fix-wrong-breadcrumb-icon-in-media-module.md
 changelog/_unreleased/2023-02-27-fix-wrong-icon-for-media-navigate-back.md
 changelog/_unreleased/2023-02-27-fixes-several-icons-in-media-module.md
 changelog/_unreleased/2023-02-27-improve-errors-in-order-new-customer-modal.md
+changelog/_unreleased/2023-03-01-add-order-by-position.md
 changelog/_unreleased/2023-02-28-add-provinces-for-canada-country.md
 changelog/_unreleased/2023-02-28-fix-quantity-alignment-of-order-line-item.md
 changelog/_unreleased/2023-02-28-returned-invoice-has-7-pages.md
-changelog/_unreleased/2023-03-01-add-order-by-position.md
 changelog/_unreleased/2023-03-01-remove-deprecated-autoload-true-at-associations.md
 changelog/_unreleased/2023-03-02-remove-occurrences-of-viewer-acl-permissions-inside-checkout.md
 changelog/_unreleased/2023-03-06-fix-svg-image-is-not-displayed-in-the-desktop-view.md
@@ -719,6 +721,7 @@ changelog/_unreleased/2023-03-14-added-defaultrangeindex-property-to-sw-chart-ca
 changelog/_unreleased/2023-03-14-adjust-savewithsync-function-catch-block.md
 changelog/_unreleased/2023-03-14-html-filter-in-snippets.md
 changelog/_unreleased/2023-03-14-improve-address-markup-to-remove-space-between-the-symbo.md
+changelog/_unreleased/2023-03-14-install-shopware-success-with-another-locale.md
 changelog/_unreleased/2023-03-14-modal-selectors.md
 changelog/_unreleased/2023-03-14-refresh-plugin-list-after-running-composer.md
 changelog/_unreleased/2023-03-14-update-schedule-task-interval-after-plugin-update.md
@@ -730,6 +733,7 @@ changelog/_unreleased/2023-03-20-fix-bug-invalid-data-included-flow-can-be-saved
 changelog/_unreleased/2023-03-20-reduce-core-package-size.md
 changelog/_unreleased/2023-03-20-separate-criteria-in-sw-media-library.md
 changelog/_unreleased/2023-03-21-add-condition-for-properties-to-rule-builder.md
+changelog/_unreleased/2023-03-21-es-date-fields.md
 changelog/_unreleased/2023-03-21-fix-datepicker-date-format.md
 changelog/_unreleased/2023-03-21-migrate-account-type-for-customer.md
 changelog/_unreleased/2023-03-22-add-utility-css-classes-for-font-styling-in-the-admin.md
@@ -737,15 +741,38 @@ changelog/_unreleased/2023-03-22-add-warning-state-to-sw-tabs-item.md
 changelog/_unreleased/2023-03-23-hide-import-settings-on-an-export.md
 changelog/_unreleased/2023-03-23-there-are-some-configs-missing-in-action.md
 changelog/_unreleased/2023-03-23-update-meteor-icon-kit-to-v5-1-0.md
+changelog/_unreleased/2023-03-24-respect-inherit-flag-for-system-config-controller.md
 changelog/_unreleased/2023-03-27-add-sort-criteria-to-shipping-method-selection.md
 changelog/_unreleased/2023-03-27-dont-require-already-required-plugins.md
 changelog/_unreleased/2023-03-28-add-neutral-variant-to-sw-alert-component.md
 changelog/_unreleased/2023-03-28-added-header-account-widget-dropdown-blocks.md
 changelog/_unreleased/2023-03-28-documents-should-be-listed-in-descending-order-based-on-the-creation-date-in-the-storefront.md
 changelog/_unreleased/2023-03-28-update-webpack-plugin-injector.md
+changelog/_unreleased/2023-03-29-active-payment-methods-are-partially-not-taken.md
+changelog/_unreleased/2023-03-29-custom-field-helper.md
 changelog/_unreleased/2023-03-29-fix-jest-fail-on-console.md
+changelog/_unreleased/2023-03-29-fix-order-filter-error.md
+changelog/_unreleased/2023-03-29-getting-errors-when-removing-tags-from-order.md
 changelog/_unreleased/2023-03-29-link-component-library-icons-to-new-icon-set.md
 changelog/_unreleased/2023-03-29-the-swinternallink-component-allows-non-router-links.md
+changelog/_unreleased/2023-03-30-context-button-leads-opening-modal.md
+changelog/_unreleased/2023-03-30-fix-asset-service-google-cloud.md
+changelog/_unreleased/2023-03-30-fix-plugin-uninstall-for-composer-plugins.md
+changelog/_unreleased/2023-03-30-show-extension-update-notification-if-permissions-to-update-those-are-given.md
+changelog/_unreleased/2023-03-30-unset-configurable-flag-in-apps.md
+changelog/_unreleased/2023-04-03-check-customer-email-valid-when-adding-new-order-from-order-detail.md
+changelog/_unreleased/2023-04-03-disable-auto-prefixer.md
+changelog/_unreleased/2023-04-03-fix-responsive-modal-content-without-header.md
+changelog/_unreleased/2023-04-03-remove-creating-order-version-initially.md
+changelog/_unreleased/2023-04-04-add-symplify-phpstan-rules.md
+changelog/_unreleased/2023-04-04-fix-import-export-entity-listing.md
+changelog/_unreleased/2023-04-04-impossible-to-save-draft-with-a-sidebar-block.md
+changelog/_unreleased/2023-04-04-reduce-admin-package-size.md
+changelog/_unreleased/2023-04-04-use-configured-twig-cache-dir-for-twig-cache.md
+changelog/_unreleased/2023-04-05-fix-document-credit-note-can-not-create-without-credit-line-items.md
+changelog/_unreleased/2023-04-05-fix-entity-mapping-service.md
+changelog/_unreleased/2023-04-05-frontend-cart-access.md
+changelog/_unreleased/2023-04-06-document-can-not-be-send.md
 changelog/release-6-3-1-1/2020-09-04-symfony-update-4.4.11.md
 changelog/release-6-3-1-1/2020-09-07-escaping-search.md
 changelog/release-6-3-1-1/2020-09-09-fix-listing-price-view.md
@@ -3357,7 +3384,6 @@ devenv.nix
 devenv.yaml
 docker-compose.yaml
 ecs.php
-intellij.yaml
 phpbench.json
 phpstan-baseline.neon
 phpstan.neon.dist
@@ -3366,7 +3392,9 @@ public/.htaccess.dist
 public/index.php
 rector.php
 sonar-project.properties
+src/Administration/.gitattributes
 src/Administration/Administration.php
+src/Administration/Command/DeleteAdminFilesAfterBuildCommand.php
 src/Administration/Controller/AdminExtensionApiController.php
 src/Administration/Controller/AdminProductStreamController.php
 src/Administration/Controller/AdminSearchController.php
@@ -3450,6 +3478,7 @@ src/Administration/Resources/app/administration/build/nuxt-component-library/ass
 src/Administration/Resources/app/administration/build/nuxt-component-library/assets/img/sw-icons-multicolor.svg
 src/Administration/Resources/app/administration/build/nuxt-component-library/assets/img/sw-icons.svg
 src/Administration/Resources/app/administration/build/nuxt-component-library/component-library.conf.js
+src/Administration/Resources/app/administration/build/nuxt-component-library/components/deprecation-warning.vue
 src/Administration/Resources/app/administration/build/nuxt-component-library/components/dynamic-renderer.vue
 src/Administration/Resources/app/administration/build/nuxt-component-library/components/example.vue
 src/Administration/Resources/app/administration/build/nuxt-component-library/components/static-renderer.vue
@@ -3479,6 +3508,7 @@ src/Administration/Resources/app/administration/build/nuxt-component-library/nux
 src/Administration/Resources/app/administration/build/nuxt-component-library/package-lock.json
 src/Administration/Resources/app/administration/build/nuxt-component-library/package.json
 src/Administration/Resources/app/administration/build/nuxt-component-library/pages/components/_name.vue
+src/Administration/Resources/app/administration/build/nuxt-component-library/pages/faq.vue
 src/Administration/Resources/app/administration/build/nuxt-component-library/pages/index.vue
 src/Administration/Resources/app/administration/build/nuxt-component-library/plugins/shopware.js
 src/Administration/Resources/app/administration/build/nuxt-component-library/plugins/vue-prism.js
@@ -4691,7 +4721,8 @@ src/Administration/Resources/app/administration/src/core/service/jsonapi-parser.
 src/Administration/Resources/app/administration/src/core/service/jsonapi-parser.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/login.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/login.service.ts
-src/Administration/Resources/app/administration/src/core/service/plugin-updates-listener.service.js
+src/Administration/Resources/app/administration/src/core/service/plugin-updates-listener.service.spec.js
+src/Administration/Resources/app/administration/src/core/service/plugin-updates-listener.service.ts
 src/Administration/Resources/app/administration/src/core/service/shopware-updates-listener.service.js
 src/Administration/Resources/app/administration/src/core/service/support/user-config.class.spec.js
 src/Administration/Resources/app/administration/src/core/service/support/user-config.class.ts
@@ -7414,6 +7445,7 @@ src/Administration/Resources/app/administration/twigVuePlugin/lib/processors/twi
 src/Administration/Resources/app/administration/twigVuePlugin/package.json
 src/Administration/Resources/app/administration/webpack.config.js
 src/Administration/Resources/config/routes.xml
+src/Administration/Resources/config/services.xml
 src/Administration/Resources/ide-twig.json
 src/Administration/Resources/views/administration/index.html.twig
 src/Administration/Service/AdminSearcher.php
@@ -11663,7 +11695,6 @@ src/Core/Framework/Test/DependencyInjection/CompilerPass/BusinessEventRegisterCo
 src/Core/Framework/Test/DependencyInjection/CompilerPass/ContainerVisibilityCompilerPass.php
 src/Core/Framework/Test/DependencyInjection/CompilerPass/FilesystemConfigMigrationCompilerPassTest.php
 src/Core/Framework/Test/DependencyInjection/CompilerPass/FrameworkMigrationReplacementCompilerPassTest.php
-src/Core/Framework/Test/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPassTest.php
 src/Core/Framework/Test/DependencyInjection/fixtures/TestActionEventCompilerPass.php
 src/Core/Framework/Test/DependencyInjection/fixtures/TestBusinessEvents.php
 src/Core/Framework/Test/DependencyInjection/fixtures/TestEvent.php
@@ -15882,6 +15913,7 @@ tests/integration/php/Core/Content/Flow/SendMailActionTest.php
 tests/integration/php/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializerTest.php
 tests/integration/php/Core/Content/ImportExport/Processing/Pipe/DefaultMappingsTest.php
 tests/integration/php/Core/Content/Mail/Service/MailServiceTest.php
+tests/integration/php/Core/Content/MailTemplate/Api/MailActionControllerTest.php
 tests/integration/php/Core/Content/Media/File/FileFetcherTest.php
 tests/integration/php/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
 tests/integration/php/Core/Content/Product/DataAbstractionLayer/ProductCategoryDenormalizerTest.php
@@ -16142,6 +16174,7 @@ tests/integration/php/Core/Framework/Changelog/_fixture/template/minimal-templat
 tests/integration/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/RangeAggregationTest.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
+tests/integration/php/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPassTest.php
 tests/integration/php/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
 tests/integration/php/Core/Framework/RateLimiter/Policy/RateLimiterFactoryTest.php
 tests/integration/php/Core/Framework/RateLimiter/Policy/TimeBackoffLimiterTest.php
@@ -16433,6 +16466,7 @@ tests/performance/bench/Storefront/StorefrontSearchBench.php
 tests/performance/bench/data.json
 tests/performance/locust/.gitkeep
 tests/unit/php/Administration/AdministrationTest.php
+tests/unit/php/Administration/Controller/AdministrationControllerTest.php
 tests/unit/php/Administration/Notfication/Subscriber/UpdateSubscriberTest.php
 tests/unit/php/Administration/Snippet/AppAdministrationSnippetPersisterTest.php
 tests/unit/php/Administration/Snippet/SnippetExceptionTest.php
@@ -16553,6 +16587,7 @@ tests/unit/php/Core/Checkout/Customer/Validation/CustomerProfileValidationFactor
 tests/unit/php/Core/Checkout/Customer/Validation/CustomerZipcodeValidatorTest.php
 tests/unit/php/Core/Checkout/Document/Service/DocumentMergerTest.php
 tests/unit/php/Core/Checkout/Document/Service/PdfRendererTest.php
+tests/unit/php/Core/Checkout/Document/Service/ReferenceInvoiceLoaderTest.php
 tests/unit/php/Core/Checkout/Document/Twig/DocumentTemplateRendererTest.php
 tests/unit/php/Core/Checkout/Order/Aggregate/OrderLineItem/OrderLineItemCollectionTest.php
 tests/unit/php/Core/Checkout/Order/Aggregate/OrderLineItemDownload/OrderLineItemDownloadCollectionTest.php
@@ -16646,6 +16681,7 @@ tests/unit/php/Core/Content/Mail/Service/MailServiceTest.php
 tests/unit/php/Core/Content/Mail/Service/MailTest.php
 tests/unit/php/Core/Content/Mail/Service/MailerTransportDecoratorTest.php
 tests/unit/php/Core/Content/Mail/Service/MailerTransportLoaderTest.php
+tests/unit/php/Core/Content/MailTemplate/Api/MailActionControllerTest.php
 tests/unit/php/Core/Content/MailTemplate/Service/Event/MailBeforeSentEventTest.php
 tests/unit/php/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEventTest.php
 tests/unit/php/Core/Content/MailTemplate/Service/Event/MailErrorEventTest.php
@@ -16791,6 +16827,8 @@ tests/unit/php/Core/Framework/App/_fixtures/flow-actions.xml
 tests/unit/php/Core/Framework/App/_fixtures/manifest.xml
 tests/unit/php/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolverTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCustomFieldsTraitTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/PasswordFieldSerializerTest.php
