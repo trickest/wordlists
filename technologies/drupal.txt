@@ -6731,6 +6731,7 @@ core/modules/language/tests/src/Kernel/LanguageConfigFactoryOverrideTest.php
 core/modules/language/tests/src/Kernel/LanguageConfigOverrideInstallTest.php
 core/modules/language/tests/src/Kernel/LanguageDependencyInjectionTest.php
 core/modules/language/tests/src/Kernel/LanguageFallbackTest.php
+core/modules/language/tests/src/Kernel/LanguageNegotiatorPluginTest.php
 core/modules/language/tests/src/Kernel/LanguageSelectWidgetTest.php
 core/modules/language/tests/src/Kernel/LanguageTestBase.php
 core/modules/language/tests/src/Kernel/Migrate/d6/MigrateDefaultLanguageTest.php
@@ -9551,6 +9552,7 @@ core/modules/system/tests/modules/early_rendering_controller_test/src/TestDomain
 core/modules/system/tests/modules/element_info_test/element_info_test.info.yml
 core/modules/system/tests/modules/element_info_test/element_info_test.module
 core/modules/system/tests/modules/element_info_test/src/Element/Deprecated.php
+core/modules/system/tests/modules/element_info_test/src/ElementInfoTestNumberBuilder.php
 core/modules/system/tests/modules/entity_crud_hook_test/entity_crud_hook_test.info.yml
 core/modules/system/tests/modules/entity_crud_hook_test/entity_crud_hook_test.module
 core/modules/system/tests/modules/entity_reference_test/config/install/views.view.test_entity_reference.yml
@@ -9915,6 +9917,23 @@ core/modules/system/tests/modules/mail_cancel_test/mail_cancel_test.module
 core/modules/system/tests/modules/mail_html_test/mail_html_test.info.yml
 core/modules/system/tests/modules/mail_html_test/mail_html_test.module
 core/modules/system/tests/modules/mail_html_test/src/Plugin/Mail/TestHtmlMailCollector.php
+core/modules/system/tests/modules/many_assets_test/js/noop.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_a.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_b.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_c.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_115_a.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_115_b.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_a.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_b.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_c.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_d.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_e.js
+core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_f.js
+core/modules/system/tests/modules/many_assets_test/many_assets_test.info.yml
+core/modules/system/tests/modules/many_assets_test/many_assets_test.libraries.yml
+core/modules/system/tests/modules/many_assets_test/many_assets_test.module
+core/modules/system/tests/modules/many_assets_test/many_assets_test.routing.yml
+core/modules/system/tests/modules/many_assets_test/src/Controller/ManyAssetsTestController.php
 core/modules/system/tests/modules/menu_test/config/install/language/nl/menu_test.menu_item.yml
 core/modules/system/tests/modules/menu_test/config/install/menu_test.links.action.yml
 core/modules/system/tests/modules/menu_test/config/install/menu_test.menu_item.yml
@@ -10126,9 +10145,6 @@ core/modules/system/tests/modules/session_test/src/Form/SessionTestForm.php
 core/modules/system/tests/modules/session_test/src/Session/TestSessionBag.php
 core/modules/system/tests/modules/session_test/src/Session/TestSessionHandlerProxy.php
 core/modules/system/tests/modules/system_core_incompatible_semver_test/system_core_incompatible_semver_test.info.yml
-core/modules/system/tests/modules/system_module_test/system_module_test.info.yml
-core/modules/system/tests/modules/system_module_test/system_module_test.install
-core/modules/system/tests/modules/system_module_test/system_module_test.module
 core/modules/system/tests/modules/system_core_semver_test/system_core_semver_test.info.yml
 core/modules/system/tests/modules/system_dependencies_test/system_dependencies_test.info.yml
 core/modules/system/tests/modules/system_incompatible_core_version_dependencies_test/system_incompatible_core_version_dependencies_test.info.yml
@@ -10137,6 +10153,9 @@ core/modules/system/tests/modules/system_incompatible_module_version_test/system
 core/modules/system/tests/modules/system_incompatible_php_version_test/system_incompatible_php_version_test.info.yml
 core/modules/system/tests/modules/system_mail_failure_test/src/Plugin/Mail/TestPhpMailFailure.php
 core/modules/system/tests/modules/system_mail_failure_test/system_mail_failure_test.info.yml
+core/modules/system/tests/modules/system_module_test/system_module_test.info.yml
+core/modules/system/tests/modules/system_module_test/system_module_test.install
+core/modules/system/tests/modules/system_module_test/system_module_test.module
 core/modules/system/tests/modules/system_project_namespace_test/system_project_namespace_test.info.yml
 core/modules/system/tests/modules/system_status_obsolete_test/system_status_obsolete_test.info.yml
 core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
@@ -13484,6 +13503,7 @@ core/tests/Drupal/FunctionalTests/Installer/SiteNameTest.php
 core/tests/Drupal/FunctionalTests/Installer/StandardInstallerTest.php
 core/tests/Drupal/FunctionalTests/Installer/TestingProfileInstallTest.php
 core/tests/Drupal/FunctionalTests/Libraries/JqueryUiLibraryAssetsTest.php
+core/tests/Drupal/FunctionalTests/Libraries/ManyAssetsLoadOrderTest.php
 core/tests/Drupal/FunctionalTests/MailCaptureTest.php
 core/tests/Drupal/FunctionalTests/Menu/MenuActiveTrail403Test.php
 core/tests/Drupal/FunctionalTests/Rest/BaseFieldOverrideJsonAnonTest.php

@@ -30,7 +30,6 @@ app/AppCache.php
 app/AppKernel.php
 app/AppTestKernel.php
 app/README.md
-app/Resources/LightSamlSpBundle/views/discovery.html.twig
 app/assets/.htaccess
 app/assets/images/.htaccess
 app/assets/images/flags/LICENSE.txt
@@ -385,6 +384,8 @@ app/bundles/CampaignBundle/Tests/Command/TriggerCampaignCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/ValidateEventCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/campaign_schema.sql
 app/bundles/CampaignBundle/Tests/Controller/AjaxControllerFunctionalTest.php
+app/bundles/CampaignBundle/Tests/Controller/Api/CampaignApiControllerFunctionalTest.php
+app/bundles/CampaignBundle/Tests/Controller/Api/ContactCampaignApiControllerFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Controller/CampaignControllerFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Controller/CampaignControllerTest.php
 app/bundles/CampaignBundle/Tests/Controller/CampaignUnpublishedWorkflowFunctionalTest.php
@@ -2200,6 +2201,7 @@ app/bundles/CoreBundle/Tests/Functional/Helper/CommandHelperTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/LanguageHelperTest.php
 app/bundles/CoreBundle/Tests/Functional/IpLookupFactoryCest.php
 app/bundles/CoreBundle/Tests/Functional/ParametersTest.php
+app/bundles/CoreBundle/Tests/Functional/SamlTest.php
 app/bundles/CoreBundle/Tests/Functional/Service/LocalFileAdapterServiceTest.php
 app/bundles/CoreBundle/Tests/Functional/Type/GatedVideoTypeTest.php
 app/bundles/CoreBundle/Tests/Service/FlashBagTest.php
@@ -5636,6 +5638,7 @@ plugins/MauticZapierBundle/README.md
 plugins/MauticZapierBundle/composer.json
 rector.php
 robots.txt
+templates/bundles/LightSamlSpBundle/discovery.html.twig
 tests/Mautic/StageBundle/Tests/Entity/StageRepositoryTest.php
 tests/_data/.gitkeep
 tests/_support/AcceptanceTester.php

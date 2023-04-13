@@ -260,6 +260,7 @@ app/assets/javascripts/app/controllers/_ui_element/boolean.coffee
 app/assets/javascripts/app/controllers/_ui_element/business_hours.coffee
 app/assets/javascripts/app/controllers/_ui_element/checkbox.coffee
 app/assets/javascripts/app/controllers/_ui_element/checkboxTicketAttributes.coffee
+app/assets/javascripts/app/controllers/_ui_element/code_editor.coffee
 app/assets/javascripts/app/controllers/_ui_element/color.coffee
 app/assets/javascripts/app/controllers/_ui_element/column_select.coffee
 app/assets/javascripts/app/controllers/_ui_element/core_workflow_condition.coffee
@@ -528,6 +529,7 @@ app/assets/javascripts/app/lib/app_post/auth.coffee
 app/assets/javascripts/app/lib/app_post/browser.coffee
 app/assets/javascripts/app/lib/app_post/business_hours.coffee
 app/assets/javascripts/app/lib/app_post/clipboard.coffee
+app/assets/javascripts/app/lib/app_post/code_editor.coffee
 app/assets/javascripts/app/lib/app_post/collection.coffee
 app/assets/javascripts/app/lib/app_post/color.coffee
 app/assets/javascripts/app/lib/app_post/color_object.coffee
@@ -572,6 +574,7 @@ app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select.coffee
 app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select_customer_organization.coffee
 app/assets/javascripts/app/lib/base/bootstrap-tokenfield.js
 app/assets/javascripts/app/lib/base/clipboard-polyfill.promise.js
+app/assets/javascripts/app/lib/base/codemirror.js
 app/assets/javascripts/app/lib/base/cropper.js
 app/assets/javascripts/app/lib/base/desktop-notify.js
 app/assets/javascripts/app/lib/base/email-addresses.js
@@ -587,6 +590,7 @@ app/assets/javascripts/app/lib/base/jquery.hotkeys.js
 app/assets/javascripts/app/lib/base/jquery.noty.js
 app/assets/javascripts/app/lib/base/jquery.textmodule.js
 app/assets/javascripts/app/lib/base/jquery.visible.js
+app/assets/javascripts/app/lib/base/jsonlint.js
 app/assets/javascripts/app/lib/base/linkify.js
 app/assets/javascripts/app/lib/base/marked.js
 app/assets/javascripts/app/lib/base/modernizr.custom.92138.js
@@ -861,6 +865,7 @@ app/assets/javascripts/app/views/generic/autocompletion.jst.eco
 app/assets/javascripts/app/views/generic/business_hours.jst.eco
 app/assets/javascripts/app/views/generic/calender_preview.jst.eco
 app/assets/javascripts/app/views/generic/checkbox.jst.eco
+app/assets/javascripts/app/views/generic/code_editor.jst.eco
 app/assets/javascripts/app/views/generic/color.jst.eco
 app/assets/javascripts/app/views/generic/column_select.jst.eco
 app/assets/javascripts/app/views/generic/content_one.jst.eco
@@ -3609,25 +3614,7 @@ app/views/messaging/ticket_escalation_warning/sv.md.erb
 app/views/messaging/ticket_escalation_warning/th.md.erb
 app/views/messaging/ticket_escalation_warning/zh-cn.md.erb
 app/views/messaging/ticket_escalation_warning/zh-tw.md.erb
-app/views/messaging/ticket_info/cs.md.erb
-app/views/messaging/ticket_info/de.md.erb
 app/views/messaging/ticket_info/en.md.erb
-app/views/messaging/ticket_info/es.md.erb
-app/views/messaging/ticket_info/fr.md.erb
-app/views/messaging/ticket_info/hr.md.erb
-app/views/messaging/ticket_info/hu.md.erb
-app/views/messaging/ticket_info/it.md.erb
-app/views/messaging/ticket_info/nl.md.erb
-app/views/messaging/ticket_info/pl.md.erb
-app/views/messaging/ticket_info/pt-br.md.erb
-app/views/messaging/ticket_info/pt.md.erb
-app/views/messaging/ticket_info/ru.md.erb
-app/views/messaging/ticket_info/sr-latn-rs.md.erb
-app/views/messaging/ticket_info/sr.md.erb
-app/views/messaging/ticket_info/sv.md.erb
-app/views/messaging/ticket_info/th.md.erb
-app/views/messaging/ticket_info/zh-cn.md.erb
-app/views/messaging/ticket_info/zh-tw.md.erb
 app/views/messaging/ticket_reminder_reached/cs.md.erb
 app/views/messaging/ticket_reminder_reached/de.md.erb
 app/views/messaging/ticket_reminder_reached/en.md.erb
@@ -4174,6 +4161,7 @@ db/migrate/20230328100440_add_custom_payload_webhooks.rb
 db/migrate/20230330122449_relocate_unprocessable_mails.rb
 db/migrate/20230404092742_issue_4484_time_based_trigger.rb
 db/migrate/20230406114415_rename_token_fields.rb
+db/migrate/20230410202420_rename_email_realname.rb
 db/seeds.rb
 db/seeds/channels.rb
 db/seeds/chats.rb
@@ -5043,6 +5031,7 @@ lib/zammad/application/initializer/db_preflight_check/mysql2.rb
 lib/zammad/application/initializer/db_preflight_check/nulldb.rb
 lib/zammad/application/initializer/db_preflight_check/postgresql.rb
 lib/zammad/application/initializer/session_store.rb
+lib/zammad/safe_mode.rb
 log/.gitkeep
 package.json
 postcss.config.js
@@ -5324,6 +5313,7 @@ public/assets/tests/qunit/controller_observer.js
 public/assets/tests/qunit/core.js
 public/assets/tests/qunit/form.js
 public/assets/tests/qunit/form_autocompletion_ajax.js
+public/assets/tests/qunit/form_code_editor.js
 public/assets/tests/qunit/form_color.js
 public/assets/tests/qunit/form_column_select.js
 public/assets/tests/qunit/form_controller_confirm_delete.js
@@ -6391,6 +6381,7 @@ spec/requests/user/organization_spec.rb
 spec/requests/user/password_reset_spec.rb
 spec/requests/user/permission_spec.rb
 spec/requests/user_spec.rb
+spec/requests/webhooks_controller_spec.rb
 spec/rspec/time_helper_spec.rb
 spec/rspec_extensions.rb
 spec/rubocop/cop/zammad/active_record_reorder_spec.rb

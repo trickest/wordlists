@@ -553,6 +553,12 @@ ghost/admin/app/components/posts-list/list-item.hbs
 ghost/admin/app/components/posts-list/list-item.js
 ghost/admin/app/components/posts-list/list.hbs
 ghost/admin/app/components/posts-list/list.js
+ghost/admin/app/components/posts-list/modals/add-tag.hbs
+ghost/admin/app/components/posts-list/modals/add-tag.js
+ghost/admin/app/components/posts-list/modals/delete-posts.hbs
+ghost/admin/app/components/posts-list/modals/edit-posts-access.hbs
+ghost/admin/app/components/posts-list/modals/edit-posts-access.js
+ghost/admin/app/components/posts-list/modals/unpublish-posts.hbs
 ghost/admin/app/components/posts/analytics.hbs
 ghost/admin/app/components/posts/analytics.js
 ghost/admin/app/components/posts/debug.hbs
@@ -1594,6 +1600,7 @@ ghost/admin/public/assets/icons/social-facebook.svg
 ghost/admin/public/assets/icons/social-twitter.svg
 ghost/admin/public/assets/icons/spinner.svg
 ghost/admin/public/assets/icons/staff.svg
+ghost/admin/public/assets/icons/star-fill.svg
 ghost/admin/public/assets/icons/star.svg
 ghost/admin/public/assets/icons/stats.svg
 ghost/admin/public/assets/icons/stripe-verified-partner-badge.svg
@@ -1616,6 +1623,7 @@ ghost/admin/public/assets/icons/twitter-retweet.svg
 ghost/admin/public/assets/icons/twitter-share.svg
 ghost/admin/public/assets/icons/twitter.svg
 ghost/admin/public/assets/icons/ufo-attack.svg
+ghost/admin/public/assets/icons/undo.svg
 ghost/admin/public/assets/icons/unmute.svg
 ghost/admin/public/assets/icons/unsplash-heart.svg
 ghost/admin/public/assets/icons/unsplash.svg
@@ -2711,6 +2719,9 @@ ghost/core/core/server/services/invites/index.js
 ghost/core/core/server/services/invites/invites.js
 ghost/core/core/server/services/jobs/index.js
 ghost/core/core/server/services/jobs/job-service.js
+ghost/core/core/server/services/lexical-multiplayer/index.js
+ghost/core/core/server/services/lexical-multiplayer/service.js
+ghost/core/core/server/services/lexical-multiplayer/y-websocket.js
 ghost/core/core/server/services/limits.js
 ghost/core/core/server/services/link-redirection/LinkRedirectRepository.js
 ghost/core/core/server/services/link-redirection/index.js

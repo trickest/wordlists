@@ -755,6 +755,7 @@ changelog/_unreleased/2023-03-29-fix-order-filter-error.md
 changelog/_unreleased/2023-03-29-getting-errors-when-removing-tags-from-order.md
 changelog/_unreleased/2023-03-29-link-component-library-icons-to-new-icon-set.md
 changelog/_unreleased/2023-03-29-the-swinternallink-component-allows-non-router-links.md
+changelog/_unreleased/2023-03-29-update-admin-dependencies.md
 changelog/_unreleased/2023-03-30-context-button-leads-opening-modal.md
 changelog/_unreleased/2023-03-30-fix-asset-service-google-cloud.md
 changelog/_unreleased/2023-03-30-fix-plugin-uninstall-for-composer-plugins.md
@@ -769,10 +770,14 @@ changelog/_unreleased/2023-04-04-fix-import-export-entity-listing.md
 changelog/_unreleased/2023-04-04-impossible-to-save-draft-with-a-sidebar-block.md
 changelog/_unreleased/2023-04-04-reduce-admin-package-size.md
 changelog/_unreleased/2023-04-04-use-configured-twig-cache-dir-for-twig-cache.md
+changelog/_unreleased/2023-04-05-add-sw-extension-icon-component.md
 changelog/_unreleased/2023-04-05-fix-document-credit-note-can-not-create-without-credit-line-items.md
 changelog/_unreleased/2023-04-05-fix-entity-mapping-service.md
 changelog/_unreleased/2023-04-05-frontend-cart-access.md
+changelog/_unreleased/2023-04-05-public-api-rules.md
 changelog/_unreleased/2023-04-06-document-can-not-be-send.md
+changelog/_unreleased/2023-04-11-link-to-themes-store-tab-from-empty-state.md
+changelog/_unreleased/2023-04-12-fix-jwt-key-generation.md
 changelog/release-6-3-1-1/2020-09-04-symfony-update-4.4.11.md
 changelog/release-6-3-1-1/2020-09-07-escaping-search.md
 changelog/release-6-3-1-1/2020-09-09-fix-listing-price-view.md
@@ -3371,9 +3376,13 @@ changelog/release-6-4-9-0/2022-02-22-fix-wishlists-on-checkout-pages.md
 changelog/release-6-4-9-0/2022-02-28-fix-delete-of-orders-without-customer_id.md
 coding-guidelines/core/adr.md
 coding-guidelines/core/benchmarks.md
+coding-guidelines/core/decorator-pattern.md
+coding-guidelines/core/domain-exceptions.md
 coding-guidelines/core/extendability.md
+coding-guidelines/core/final-and-internal.md
 coding-guidelines/core/internal.md
 coding-guidelines/core/unit-tests.md
+coding-guidelines/core/writing-code-for-static-analysis.md
 composer.json
 config-schema.json
 config/bundles.php
@@ -3386,6 +3395,7 @@ docker-compose.yaml
 ecs.php
 phpbench.json
 phpstan-baseline.neon
+phpstan-v66-baseline.neon
 phpstan.neon.dist
 phpunit.xml.dist
 public/.htaccess.dist
@@ -3566,6 +3576,10 @@ src/Administration/Resources/app/administration/src/app/asyncComponent/base/sw-c
 src/Administration/Resources/app/administration/src/app/asyncComponent/base/sw-chart/sw-chart.html.twig
 src/Administration/Resources/app/administration/src/app/asyncComponent/base/sw-chart/sw-chart.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/base/sw-chart/sw-chart.spec.js
+src/Administration/Resources/app/administration/src/app/asyncComponent/extension/sw-extension-icon/index.ts
+src/Administration/Resources/app/administration/src/app/asyncComponent/extension/sw-extension-icon/sw-extension-icon.html.twig
+src/Administration/Resources/app/administration/src/app/asyncComponent/extension/sw-extension-icon/sw-extension-icon.scss
+src/Administration/Resources/app/administration/src/app/asyncComponent/extension/sw-extension-icon/sw-extension-icon.spec.ts
 src/Administration/Resources/app/administration/src/app/asyncComponent/form/sw-code-editor/index.js
 src/Administration/Resources/app/administration/src/app/asyncComponent/form/sw-code-editor/sw-code-editor.html.twig
 src/Administration/Resources/app/administration/src/app/asyncComponent/form/sw-code-editor/sw-code-editor.scss
@@ -4508,8 +4522,8 @@ src/Administration/Resources/app/administration/src/app/service/discount-campaig
 src/Administration/Resources/app/administration/src/app/service/discount-campaign.service.ts
 src/Administration/Resources/app/administration/src/app/service/entity-validation.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/entity-validation.service.ts
-src/Administration/Resources/app/administration/src/app/service/extension-helper.service.js
-src/Administration/Resources/app/administration/src/app/service/extension-helper.service.spec.js
+src/Administration/Resources/app/administration/src/app/service/extension-helper.service.spec.ts
+src/Administration/Resources/app/administration/src/app/service/extension-helper.service.ts
 src/Administration/Resources/app/administration/src/app/service/feature.service.ts
 src/Administration/Resources/app/administration/src/app/service/filter.service.js
 src/Administration/Resources/app/administration/src/app/service/filter.service.spec.js
@@ -5709,9 +5723,10 @@ src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/c
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-first-run-wizard-modal/sw-first-run-wizard-modal.html.twig
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-first-run-wizard-modal/sw-first-run-wizard-modal.scss
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-first-run-wizard-modal/sw-first-run-wizard-modal.spec.js
-src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-plugin-card/index.js
+src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-plugin-card/index.ts
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-plugin-card/sw-plugin-card.html.twig
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-plugin-card/sw-plugin-card.scss
+src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/component/sw-plugin-card/sw-plugin-card.spec.ts
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/index.js
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/page/index/index.js
 src/Administration/Resources/app/administration/src/module/sw-first-run-wizard/page/index/sw-first-run-wizard.html.twig
@@ -7767,6 +7782,7 @@ src/Core/Checkout/Customer/CustomerCollection.php
 src/Core/Checkout/Customer/CustomerDefinition.php
 src/Core/Checkout/Customer/CustomerEntity.php
 src/Core/Checkout/Customer/CustomerEvents.php
+src/Core/Checkout/Customer/CustomerException.php
 src/Core/Checkout/Customer/CustomerValueResolver.php
 src/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexer.php
 src/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexingMessage.php
@@ -7961,6 +7977,7 @@ src/Core/Checkout/Document/DocumentConfiguration.php
 src/Core/Checkout/Document/DocumentConfigurationFactory.php
 src/Core/Checkout/Document/DocumentDefinition.php
 src/Core/Checkout/Document/DocumentEntity.php
+src/Core/Checkout/Document/DocumentException.php
 src/Core/Checkout/Document/DocumentGenerationResult.php
 src/Core/Checkout/Document/DocumentGenerator/Counter.php
 src/Core/Checkout/Document/DocumentGeneratorController.php
@@ -8240,6 +8257,7 @@ src/Core/Checkout/Promotion/Gateway/Template/PermittedIndividualCodePromotions.p
 src/Core/Checkout/Promotion/PromotionCollection.php
 src/Core/Checkout/Promotion/PromotionDefinition.php
 src/Core/Checkout/Promotion/PromotionEntity.php
+src/Core/Checkout/Promotion/PromotionException.php
 src/Core/Checkout/Promotion/Rule/PromotionCodeOfTypeRule.php
 src/Core/Checkout/Promotion/Rule/PromotionLineItemRule.php
 src/Core/Checkout/Promotion/Rule/PromotionValueRule.php
@@ -8771,6 +8789,7 @@ src/Core/Content/Flow/FlowEntity.php
 src/Core/Content/Flow/FlowEvents.php
 src/Core/Content/Flow/FlowException.php
 src/Core/Content/Flow/Indexing/FlowIndexer.php
+src/Core/Content/Flow/Indexing/FlowIndexerSubscriber.php
 src/Core/Content/Flow/Indexing/FlowIndexingMessage.php
 src/Core/Content/Flow/Indexing/FlowPayloadUpdater.php
 src/Core/Content/Flow/Rule/FlowRuleScope.php
@@ -8792,11 +8811,13 @@ src/Core/Content/ImportExport/Command/DeleteExpiredFilesCommand.php
 src/Core/Content/ImportExport/Command/ImportEntityCommand.php
 src/Core/Content/ImportExport/Controller/ImportExportActionController.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/AbstractEntitySerializer.php
+src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/AbstractMediaSerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/CountrySerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/CustomerSerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/EntitySerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/LanguageSerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/MediaSerializer.php
+src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/MediaSerializerSubscriber.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/ProductCrossSellingSerializer.php
 src/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/ProductSerializer.php
@@ -9198,6 +9219,7 @@ src/Core/Content/Product/Cms/ProductListingCmsElementResolver.php
 src/Core/Content/Product/Cms/ProductNameCmsElementResolver.php
 src/Core/Content/Product/Cms/ProductSliderCmsElementResolver.php
 src/Core/Content/Product/DataAbstractionLayer/AbstractCheapestPriceQuantitySelector.php
+src/Core/Content/Product/DataAbstractionLayer/AbstractProductStreamUpdater.php
 src/Core/Content/Product/DataAbstractionLayer/CheapestPrice/CalculatedCheapestPrice.php
 src/Core/Content/Product/DataAbstractionLayer/CheapestPrice/CheapestPrice.php
 src/Core/Content/Product/DataAbstractionLayer/CheapestPrice/CheapestPriceAccessorBuilder.php
@@ -9444,6 +9466,7 @@ src/Core/Content/Rule/Aggregate/RuleTag/RuleTagDefinition.php
 src/Core/Content/Rule/DataAbstractionLayer/Indexing/ConditionTypeNotFound.php
 src/Core/Content/Rule/DataAbstractionLayer/RuleAreaUpdater.php
 src/Core/Content/Rule/DataAbstractionLayer/RuleIndexer.php
+src/Core/Content/Rule/DataAbstractionLayer/RuleIndexerSubscriber.php
 src/Core/Content/Rule/DataAbstractionLayer/RuleIndexingMessage.php
 src/Core/Content/Rule/DataAbstractionLayer/RulePayloadSubscriber.php
 src/Core/Content/Rule/DataAbstractionLayer/RulePayloadUpdater.php
@@ -9843,13 +9866,16 @@ src/Core/DevOps/Resources/templates/app-system-event-description-permissions.php
 src/Core/DevOps/Resources/templates/hook-reference.md.twig
 src/Core/DevOps/Resources/templates/hookable-events-list.md.twig
 src/Core/DevOps/Resources/templates/service-reference.md.twig
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DecorationPatternRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/DeprecatedMethodsThrowDeprecationRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DomainExceptionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/FinalClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalMethodRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoEnvironmentHelperInsideCompilerPassRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowEventAwareExtendsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowStoreFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoSuperGlobalsInsideCompilerPassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PHPUnitDataProviderStaticRule.php
@@ -16482,6 +16508,7 @@ tests/unit/php/Core/Checkout/Cart/Delivery/DeliveryBuilderTest.php
 tests/unit/php/Core/Checkout/Cart/Delivery/DeliveryCalculatorTest.php
 tests/unit/php/Core/Checkout/Cart/Delivery/DeliveryPositionCollectionTest.php
 tests/unit/php/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
+tests/unit/php/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/php/Core/Checkout/Cart/Exception/TaxProviderExceptionsTest.php
 tests/unit/php/Core/Checkout/Cart/LineItem/LineItemCollectionTest.php
 tests/unit/php/Core/Checkout/Cart/LineItem/LineItemFlatCollectionTest.php
