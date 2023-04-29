@@ -2696,6 +2696,7 @@ application/Espo/Core/Record/Hook/UpdateHook.php
 application/Espo/Core/Record/Hook/DeleteHook.php
 application/Espo/Core/Record/Hook/Type.php
 application/Espo/Core/Record/Hook/ReadHook.php
+application/Espo/Core/Record/Formula/Processor.php
 application/Espo/Core/Record/Select/ApplierClassNameListProvider.php
 application/Espo/Core/Record/Access/LinkCheck.php
 application/Espo/Core/Record/Service.php
@@ -2917,6 +2918,11 @@ application/Espo/Core/Formula/Functions/EntityGroup/AttributeFetchedType.php
 application/Espo/Core/Formula/Functions/AttributeType.php
 application/Espo/Core/Formula/Functions/ValueType.php
 application/Espo/Core/Formula/Functions/AssignType.php
+application/Espo/Core/Formula/Functions/RecordServiceGroup/SkipDuplicateCheckType.php
+application/Espo/Core/Formula/Functions/RecordServiceGroup/ThrowForbiddenType.php
+application/Espo/Core/Formula/Functions/RecordServiceGroup/ThrowConflictType.php
+application/Espo/Core/Formula/Functions/RecordServiceGroup/ThrowBadRequestType.php
+application/Espo/Core/Formula/Functions/RecordServiceGroup/ThrowDuplicateConflictType.php
 application/Espo/Core/Formula/Functions/StringGroup/SubstringType.php
 application/Espo/Core/Formula/Functions/StringGroup/UpperCaseType.php
 application/Espo/Core/Formula/Functions/StringGroup/MatchType.php
@@ -6907,6 +6913,7 @@ client/src/views/admin/user-interface.js
 client/src/views/admin/entity-manager/fields/icon-class.js
 client/src/views/admin/entity-manager/scope.js
 client/src/views/admin/entity-manager/modals/select-icon.js
+client/src/views/admin/entity-manager/modals/select-formula.js
 client/src/views/admin/entity-manager/record/edit-formula.js
 client/src/views/admin/entity-manager/record/edit.js
 client/src/views/admin/entity-manager/formula.js
