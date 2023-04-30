@@ -1327,6 +1327,7 @@ php-packages/testing/src/integration/Extend/BeginTransactionAndSetDatabase.php
 php-packages/testing/src/integration/Extend/OverrideExtensionManagerForTests.php
 php-packages/testing/src/integration/Extend/SetSettingsBeforeBoot.php
 php-packages/testing/src/integration/TestCase.php
+php-packages/testing/src/integration/RefreshesFormatterCache.php
 php-packages/testing/src/integration/Setup/SetupScript.php
 php-packages/testing/src/integration/BuildsHttpRequests.php
 php-packages/testing/src/integration/ConsoleTestCase.php
@@ -1413,11 +1414,13 @@ extensions/mentions/src/Notification/GroupMentionedBlueprint.php
 extensions/mentions/src/Notification/UserMentionedBlueprint.php
 extensions/mentions/src/Notification/PostMentionedBlueprint.php
 extensions/mentions/src/ConfigureMentions.php
+extensions/mentions/src/Job/SendMentionsNotificationsJob.php
 extensions/mentions/src/Api/LoadMentionedByRelationship.php
 extensions/mentions/src/Formatter/FormatGroupMentions.php
 extensions/mentions/src/Formatter/UnparsePostMentions.php
 extensions/mentions/src/Formatter/FormatUserMentions.php
 extensions/mentions/src/Formatter/FormatPostMentions.php
+extensions/mentions/src/Formatter/EagerLoadMentionedModels.php
 extensions/mentions/src/Formatter/FormatTagMentions.php
 extensions/mentions/src/Formatter/UnparseUserMentions.php
 extensions/mentions/src/Formatter/UnparseTagMentions.php
