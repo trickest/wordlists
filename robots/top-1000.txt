@@ -2036,6 +2036,8 @@ $
 /meetup_api
 /meetup_api$
 /meetup_api?
+/member/inbox
+/member/settings
 /members
 /mentions
 /merge_requests/*.diff
@@ -2124,6 +2126,7 @@ $
 /orderdetails
 /orderhistory
 /organize
+/p
 /page-*.html
 /paid-posts
 /paid-posts/
@@ -2503,6 +2506,8 @@ $
 /vsarticleshow/*
 /w--
 /w/*
+/w/?q=
+/w?q=
 /wal/
 /watch
 /watchers
@@ -2989,7 +2994,6 @@ $
 ?glid=
 ?go=
 ?go=111b735a516af85c84df92fa7be3eface405339a91bac1c0d5bf8db96e9a2fc1
-?gologin=1
 ?gonnado_ads
 ?gws_rd=ssl$
 ?hc_location
@@ -3232,6 +3236,7 @@ $
 ?status=
 ?storeId=
 ?story_id=
+?stxt=
 ?style=flat
 ?style=threaded
 ?subcat
@@ -4303,6 +4308,8 @@ BlogInfo.nhn
 Bpreview=
 Bugs
 CHANGELOG.txt
+CN
+CN$
 CNCDialer
 COAIM/cams
 COG
@@ -4412,7 +4419,6 @@ FI/figis/cams
 FRONT_PROGRAMAS?go=
 FRONT_SALA_PRENSA
 FairShare
-FatalError.html
 FeaturedShowMoreOverlay
 Features/SpinaBifidaProgram/
 Feeds
@@ -4543,7 +4549,6 @@ Jyxobot
 Kimengi
 Kimengi/nineconnections.com
 Korean
-LFE/Live.controls.sharedpages/error.aspx
 LICENSE.txt
 LP
 Landingpages.html
@@ -4710,7 +4715,6 @@ OrderItemDisplay=
 Orthogaffe
 OtherDisplayView
 Out-Of-Date
-P.mvc?_escaped_fragment_=/peopletags.aspx
 PDATOI/
 POLLSERVER
 PRBCDN10
@@ -4842,7 +4846,6 @@ SectionSearch
 SectionTagList.nhn
 SelectLocale?fromPage=
 Server
-ServerError.aspx
 Service-Search/find-a-psychological-therapies-service/find-your-gp
 Service-Search/find-a-psychological-therapies-service/results
 Service-Search/find-a-psychological-therapies-service/what-happens-when-you-refer-yourself
@@ -5263,9 +5266,6 @@ about-aws/whats-new/2009/07/24/aws-survey/
 about-which/contact-us/send-us-a-message/thank-you/
 about.html
 about/
-about/*/getting-started
-about/*/mobile
-about/*/update
 about/adrm/data-linkage
 about/ask/
 about/careers/applications
@@ -5878,6 +5878,7 @@ ar/firefox/collections/mozilla
 ar/firefox/collections/mozilla/$
 ar/firefox/search
 ar/forums
+ar/help
 ar/kb/*/discuss
 ar/motivator/
 ar/node/add
@@ -6192,7 +6193,6 @@ auth/verifychallenge
 authenticate
 authentication
 authentication$
-authkey=
 author
 author/*/date
 author/*/mostread
@@ -6287,6 +6287,7 @@ backgrounds
 backstage/help/search-results.html
 badges/profile/create
 bagon
+baidu
 ban-me-i-am-a-robot
 bancontact_checkout
 bandito
@@ -6613,9 +6614,11 @@ bl.uk_lddc_bot
 black-friday/0/best-amazon-black-friday-deals-2017-us
 black-friday/0/best-amazon-black-friday-weekend-deals-2017-us
 blacklisted*
+blank
 blank.html
 blast/BlastAlign.cgi
 blast/bl2seq/wblast2.cgi
+blockcheck.php
 blocked-crypto
 blocks
 blocks?
@@ -6824,6 +6827,7 @@ br/ferramentas/*/mostrar
 br/ferramentas/criador-de-logo/onboarding
 br/forums
 br/growth-tools-assets
+br/help
 br/herramientas/generador-de-logos/onboarding
 br/kb/*/discuss
 br/landing
@@ -6855,7 +6859,6 @@ breakingnews/toihome.html
 britishairways
 browse
 browse-2
-browse.aspx
 browse/Airplanes
 browse/Animals
 browse/Aquariums
@@ -7849,8 +7852,6 @@ chapters.html
 chapters/local-activities
 chapters/students/excellence-awards/
 charities
-charities/beta/account/login
-charity/search
 chart/*/async
 chart/*/bind
 chart/*/cancel
@@ -8029,6 +8030,7 @@ cms_content
 cms_preview_ui
 cms_preview_ui_static
 cn
+cn$
 cn-en/ae-en/
 cn-en/be-en/
 cn-en/ca-en/
@@ -8592,6 +8594,7 @@ cp/api/logger
 cp/api/wpa
 cpds2
 cpresources
+cpro
 cpropub/univercd
 cpspa
 cr
@@ -9495,7 +9498,6 @@ download/get
 downloadHistory
 downloadapp
 downloadassets
-downloadaszip
 downloads
 downloads.php
 dp/e-mail-friend
@@ -9716,7 +9718,6 @@ embed_js
 embed_video
 embeddable
 embeds
-embedservererror.aspx
 emea
 emea/corporate/careers
 emea/news
@@ -9879,6 +9880,7 @@ en_psaccent
 en_pv
 en_us/page/8948fc79-8e1f-4458-8755-86a1c036ba4e
 en_us/page/statement113017
+encrypt
 encyclopedia/search
 endorsements
 enduser
@@ -10365,6 +10367,7 @@ external_hosted
 externalservices/surveyfeedapi/api/testfeed
 extracredits
 eyeblaster
+ezinepublisher
 f
 f/*/donate/sign-in
 f/*/print
@@ -10407,7 +10410,6 @@ fashion-shows
 fashion/lookbook/38917
 fashion/search/models
 fastanswers
-fatalerror.html
 faves-i_love_u_get_away_from_me
 favicon
 favorit-hinzufuegen
@@ -10952,6 +10954,7 @@ fragment.*.html
 fragment.*.json
 fragment.html
 fragment.json
+fragments/recommendations-carousel
 france/formation/centres/planning.asp?
 france/ie/default.asp?
 france/mnp_utility.mspx?
@@ -10982,7 +10985,6 @@ fullscreen
 fun
 fun/api/
 fun/g/
-fundraiser/search
 fur/forums
 fur/kb/*/discuss
 fur/search
@@ -11105,6 +11107,7 @@ g96
 g97
 g98
 g99
+ga
 ga-IE/android/collections
 ga-IE/android/search
 ga-IE/firefox/collections
@@ -11250,7 +11253,7 @@ gl/users
 glass/images/commerce
 global
 global$
-global-infrastructure/services/get-async/http://bakespace.com/robots.txt
+global-infrastructure/services/get-async/http://baidu.com/robots.txt
 global-nav-esi
 global/RU/
 global/choose-location.html?location=home
@@ -11303,6 +11306,7 @@ goframe
 goglobal/
 gold?
 google
+google-search
 google-sso
 google97d8d43559c9b155.html
 google_gdn.html
@@ -11493,7 +11497,6 @@ group/terms
 groupAnswers
 groupSharingMsg
 groups
-groups/
 groups/*/-/saml/sso
 groups/*/analytics
 groups/*/contribution_analytics
@@ -11788,6 +11791,7 @@ hk/email-validation
 hk/en
 hk/ferramentas/criador-de-logo/onboarding
 hk/growth-tools-assets
+hk/help
 hk/herramientas/generador-de-logos/onboarding
 hk/landing
 hk/outils/createur-de-logo/onboarding
@@ -11805,6 +11809,7 @@ hlcmsresource/*.txt$
 hlcmsresource/*.xml$
 hockey-player-burns-girlfriends-love-letters-loses-con-1753605753
 holiday-spotlight
+holidaylogos
 holidays-celebrations
 home
 home
@@ -11821,6 +11826,7 @@ homefeed
 homepage
 homepage-flash-testing.jsp
 homepage-video-test
+homepage/
 homepage/2013
 homepod-
 honing.html
@@ -12474,6 +12480,7 @@ include
 include/
 includes
 includes/
+includes/adsense
 includes/re.php
 incoming
 independentlens/film-lists/watch-online
@@ -13399,6 +13406,8 @@ kr/blogs/technology.atom
 kr/blogsearch
 kr/cannabis
 kr/email-validation
+kr/en
+kr/en$
 kr/ferramentas/criador-de-logo/onboarding
 kr/growth-tools-assets
 kr/herramientas/generador-de-logos/onboarding
@@ -13646,6 +13655,7 @@ limit=
 limit_hits
 limited-release
 link
+link?
 link_to
 linked
 linkedin
@@ -13972,10 +13982,12 @@ main/local_scene
 main/search
 main/search_artist
 main/search_song
+maintenance.html
 make/request
 makeorder
 manage
 manage-listing
+manage-subscriptions
 manage/*
 manage/global
 manage_friend.pl
@@ -14471,6 +14483,8 @@ misc/*.jpg
 misc/*.js$
 misc/*.js?
 misc/*.png
+missing.html
+missing.php
 missing_link
 mk
 mk/android/collections
@@ -14529,8 +14543,6 @@ mobile=no*
 mobile_login
 mobileformat=
 mobileonly
-mobilepagenotfounderror.aspx
-mobileservererror.aspx
 mod
 mod.php
 mod=
@@ -15661,6 +15673,7 @@ osview
 otc
 otherContacts
 otomobil-motor-aksesuar
+out.php
 outbound
 outils/createur-de-logo/onboarding
 over-de-vpro/aangemeld$
@@ -15777,7 +15790,6 @@ pagead/js/adsbygoogle.js
 pagead/show_ads.js
 pagead/show_ads.js
 pageitem
-pagenotfounderror.aspx
 pages-extensions/FollowCompany
 pages/NoJsAandE.aspx
 pages/de$
@@ -15926,8 +15938,6 @@ people/search
 people/setup-guide.html
 people/thankyou.html
 people/time-management.html
-peopleoptions.aspx
-peopletags.aspx
 pepe
 perfil
 performance/
@@ -16223,6 +16233,7 @@ plugins
 plugins-libraries
 plugins.
 plugins/
+plugins/search
 plus/r
 plusinstall
 pm/
@@ -16569,6 +16580,7 @@ press-release
 press-this.php
 press/founders/
 press/leadership/
+pressreleases.html
 pressroom
 prestobots/docs
 prettyearth/assets
@@ -16673,6 +16685,7 @@ products/world-war-i/?category=
 products;
 products?
 products_
+prof_recommend.php
 professional-certificates-noperf
 professional-certificates-perf
 professionals/*/s
@@ -17026,7 +17039,6 @@ questions/tagged/*%20*
 questions/tagged/*+*
 queue
 qui-sommes-nous
-quickadd.aspx
 quickcast
 quickstart
 quickstart/promo
@@ -17134,6 +17146,7 @@ recharge/dashboard/static
 recherche
 recipes/search
 recipes/search
+recommend.php
 recommendations
 recommendnews
 reconnect
@@ -17223,6 +17236,8 @@ report
 report-abuse
 report-abuse?report=
 report-abuse?url=
+report-this-article
+report-this-author
 report=
 report_abuse.gne
 reportabuse
@@ -17397,6 +17412,7 @@ route?
 router
 row
 royalty-free-subscriptions.php
+rpc
 rpg.php
 rpk/artist_stats
 rpk/played_song
@@ -18103,11 +18119,9 @@ security/introducing-s2n-new-open-source-TLS-implementation
 seek-and-destroy
 select
 selectedImage
-selectembed.aspx
 selectlocale-dmc?fromPage=
 selectpayment
 self-registration
-self.aspx
 sell/audio
 sell/cart
 sell/mywants$
@@ -18153,7 +18167,6 @@ server/source
 server/staging
 server/top-addendum
 server/trans-map.html
-servererror.aspx
 service
 service-search/find-a-psychological-therapies-service/find-your-gp
 service-search/find-a-psychological-therapies-service/results
@@ -18318,7 +18331,6 @@ share-image-generator
 share-post-menu.g
 share-post.g
 share-study
-share-success/
 share.php?
 shareArticle
 shareables
@@ -18326,8 +18338,6 @@ shared
 shared/*?wtime
 shared/ad-enablers
 shared/ad-iframe-busting-enablers
-sharedfavorite.aspx
-sharefavorite.aspx
 sharehub
 sharing
 sharing/files
@@ -18336,6 +18346,7 @@ sheet/help/search-results.html
 shelf/user_shelves
 shenghuo
 shenghuo/search?
+shifen/
 shihui
 shihui?
 ship
@@ -19269,6 +19280,7 @@ stcejorp
 sticky-ad-iframe.html
 stock-ranker
 stoken
+stopwords.txt
 storage
 store
 store-locator/search-results-print
@@ -19906,6 +19918,7 @@ thank-you/
 thank_you
 thanks-for-subscribing/
 thanksgiving-spotlight
+thankyou
 thanx?
 the
 the-ascent/search
@@ -19929,6 +19942,7 @@ themes/*.svg
 themes/rss
 theshow/
 thewar/search_results.php?
+thief.html
 things
 thinktank/*/pdf/search.html
 thirdpartyimport/*
@@ -20218,6 +20232,7 @@ trs/user
 trs/users
 true/select-store-cookies.html
 trust.php
+trusted-results
 trustedstores/images
 trustedstores/js
 trustedstores/s
@@ -20506,6 +20521,7 @@ uk/users
 uk/ventureone
 uk/wdc
 uk/your
+ulink?
 ulk/i
 ulk/sch
 ulk/usr
@@ -20785,7 +20801,6 @@ usedcarwidget
 user
 user
 user$
-user-account/
 user-activation
 user-document-collections
 user-panel
@@ -20937,6 +20952,7 @@ uxtest/ux/
 uy
 uy/corporate/careers
 uy/corporate/contact
+uy/help
 uy/index.html
 uy/news
 uz/en/
@@ -21055,6 +21071,7 @@ video/*/preview
 video/*/search
 video/*filmId=
 video/?
+video/amp/embed
 video/browse
 video/dizi-izle
 video/dizi-izle/?
@@ -21119,7 +21136,6 @@ vip
 virginaustralia
 virtual
 virtualization/
-viruswarning.aspx
 visual-gps/insights/results
 visualj/
 visuals/services
@@ -21312,7 +21328,6 @@ webview
 weekly/signup
 welcome
 welcome-email
-welcome.aspx
 wetter/*p=
 wewantyou/
 wgbh/americanexperience/about/search/search_results.html
@@ -22206,7 +22221,8 @@ wp-admin/admin-ajax.php
 wp-admin/admin-ajax.php
 wp-admin/admin-ajax.phphttp://aljazeera.com/robots.txt
 wp-admin/admin-ajax.phphttp://fool.com/robots.txt
-wp-admin/admin-ajax.phphttp://openstreetmap.org/robots.txt
+wp-admin/load-scripts.php
+wp-admin/load-styles.php
 wp-adv
 wp-comments-post.php
 wp-content
@@ -22265,6 +22281,7 @@ wp-signup.php
 wp-stat/ad
 wp-stat/vrroom
 wp-trackback.php
+wpm/*.js
 wpost/proxy
 wrd.walmart.com
 write-
@@ -22295,6 +22312,7 @@ xc/
 xclick-auction
 xd/en/
 xdoor
+xf/help
 xfinity
 xfsearch
 xfx7
@@ -22311,7 +22329,9 @@ xhtml?
 xims/nars
 xl
 xl/
+xl/help
 xls
+xm/help
 xml
 xml/today/SitemapToday*.xml
 xml?
