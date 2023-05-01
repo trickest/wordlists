@@ -718,6 +718,7 @@ application/Espo/Modules/Crm/Resources/metadata/app/metadata.json
 application/Espo/Modules/Crm/Resources/metadata/app/templates.json
 application/Espo/Modules/Crm/Resources/metadata/app/popupNotifications.json
 application/Espo/Modules/Crm/Resources/metadata/app/calendar.json
+application/Espo/Modules/Crm/Resources/metadata/app/entityManagerParams.json
 application/Espo/Modules/Crm/Resources/metadata/app/jsLibs.json
 application/Espo/Modules/Crm/Resources/metadata/app/formula.json
 application/Espo/Modules/Crm/Resources/metadata/app/webSocket.json
@@ -988,6 +989,7 @@ application/Espo/Modules/Crm/Resources/i18n/en_US/DocumentFolder.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/User.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/MassEmail.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/KnowledgeBaseCategory.json
+application/Espo/Modules/Crm/Resources/i18n/en_US/EntityManager.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/Contact.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/Calendar.json
 application/Espo/Modules/Crm/Resources/i18n/en_US/CampaignLogRecord.json
@@ -3453,6 +3455,9 @@ application/Espo/Tools/FieldManager/FieldManager.php
 application/Espo/Tools/Currency/RateService.php
 application/Espo/Tools/Currency/Api/PutUpdate.php
 application/Espo/Tools/Currency/Api/Get.php
+application/Espo/Tools/Currency/Conversion/DefaultEntityConverter.php
+application/Espo/Tools/Currency/Conversion/EntityConverter.php
+application/Espo/Tools/Currency/Conversion/EntityConverterFactory.php
 application/Espo/Tools/Notification/HookProcessor.php
 application/Espo/Tools/Notification/RecordService.php
 application/Espo/Tools/Notification/Service.php
@@ -4144,6 +4149,7 @@ application/Espo/Resources/metadata/app/defaultDashboardOptions.json
 application/Espo/Resources/metadata/app/complexExpression.json
 application/Espo/Resources/metadata/app/templateHelpers.json
 application/Espo/Resources/metadata/app/authentication.json
+application/Espo/Resources/metadata/app/currencyConversion.json
 application/Espo/Resources/metadata/app/recordId.json
 application/Espo/Resources/metadata/app/dateTime.json
 application/Espo/Resources/metadata/app/addressFormats.json
@@ -7469,6 +7475,7 @@ client/modules/crm/src/views/document/fields/name.js
 client/modules/crm/src/views/document/fields/file.js
 client/modules/crm/src/views/document/list.js
 client/modules/crm/src/views/document/modals/select-records.js
+client/modules/crm/src/views/admin/entity-manager/fields/status-list.js
 client/modules/crm/src/views/scheduler/scheduler.js
 client/modules/crm/src/views/mass-email/fields/email-template.js
 client/modules/crm/src/views/mass-email/fields/smtp-account.js

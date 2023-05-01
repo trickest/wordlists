@@ -476,11 +476,13 @@ packages/js/product-editor/changelog/add-37266
 packages/js/product-editor/changelog/fix-37348
 packages/js/product-editor/changelog/add-37663
 packages/js/product-editor/changelog/add-toggle-content-block-37253
+packages/js/product-editor/changelog/add-shipping-class-creation-37886
 packages/js/product-editor/changelog/add-37898
 packages/js/product-editor/changelog/add-37103
 packages/js/product-editor/changelog/add-37406
 packages/js/product-editor/changelog/add-37408
 packages/js/product-editor/changelog/update-select_tree_dropdown
+packages/js/product-editor/changelog/fix-more-menu-width-38001
 packages/js/product-editor/changelog/add-37400
 packages/js/product-editor/changelog/add-37241-blocks-build
 packages/js/product-editor/changelog/fix-37249
@@ -502,6 +504,7 @@ packages/js/product-editor/changelog/add-inventory-advanced-37401
 packages/js/product-editor/changelog/update-36719
 packages/js/product-editor/changelog/add-37888
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
+packages/js/product-editor/changelog/add-37911
 packages/js/product-editor/package.json
 packages/js/product-editor/composer.json
 packages/js/product-editor/composer.lock
@@ -647,6 +650,9 @@ packages/js/product-editor/src/components/header/hooks/use-preview/use-preview.t
 packages/js/product-editor/src/components/header/style.scss
 packages/js/product-editor/src/components/header/preview-button/index.ts
 packages/js/product-editor/src/components/header/preview-button/preview-button.tsx
+packages/js/product-editor/src/components/add-new-shipping-class-modal/add-new-shipping-class-modal.tsx
+packages/js/product-editor/src/components/add-new-shipping-class-modal/index.ts
+packages/js/product-editor/src/components/add-new-shipping-class-modal/style.scss
 packages/js/product-editor/src/hooks/use-product-mvp-ces-footer/index.ts
 packages/js/product-editor/src/hooks/use-product-mvp-ces-footer/use-product-mvp-ces-footer.ts
 packages/js/product-editor/src/hooks/use-product-helper.ts
@@ -3210,9 +3216,6 @@ plugins/woocommerce-admin/client/products/product-breadcrumbs.tsx
 plugins/woocommerce-admin/client/products/shared/posts-navigation/posts-navigation.tsx
 plugins/woocommerce-admin/client/products/shared/posts-navigation/posts-navigation.scss
 plugins/woocommerce-admin/client/products/shared/posts-navigation/index.ts
-plugins/woocommerce-admin/client/products/shared/add-new-shipping-class-modal/add-new-shipping-class-modal.tsx
-plugins/woocommerce-admin/client/products/shared/add-new-shipping-class-modal/index.ts
-plugins/woocommerce-admin/client/products/shared/add-new-shipping-class-modal/add-new-shipping-class-modal.scss
 plugins/woocommerce-admin/client/products/product-title.tsx
 plugins/woocommerce-admin/client/products/hooks/use-product-attributes.ts
 plugins/woocommerce-admin/client/products/hooks/use-product-variations-helper.ts
@@ -3306,6 +3309,7 @@ plugins/woocommerce-admin/client/header/index.js
 plugins/woocommerce-admin/.eslintignore
 plugins/woocommerce-admin/tsconfig.json
 plugins/woocommerce/changelog/update-34885_category_field_in_product_editor
+plugins/woocommerce/changelog/fix-37659
 plugins/woocommerce/changelog/fix-36698
 plugins/woocommerce/changelog/fix-line-endings
 plugins/woocommerce/changelog/fix-k6-order-id-hpos
@@ -3344,6 +3348,7 @@ plugins/woocommerce/changelog/fix-36785
 plugins/woocommerce/changelog/fix-35860
 plugins/woocommerce/changelog/fix-34420
 plugins/woocommerce/changelog/add-rest-api-products-featured-image
+plugins/woocommerce/changelog/add-shipping-class-creation-37886
 plugins/woocommerce/changelog/fix-37604
 plugins/woocommerce/changelog/fix-update-wp-env-error-message
 plugins/woocommerce/changelog/update-check-external-testing-instructions
@@ -5776,6 +5781,7 @@ plugins/woocommerce-beta-tester/changelog/dev-pin-wp-deps-6
 plugins/woocommerce-beta-tester/changelog/fix-rest-api-filter
 plugins/woocommerce-beta-tester/changelog/dev-live-branches-userscript
 plugins/woocommerce-beta-tester/changelog/fix-test-helper-option-modal
+plugins/woocommerce-beta-tester/changelog/update-beta-tester-woorelease
 plugins/woocommerce-beta-tester/changelog/fix-beta-tester-tsconfig
 plugins/woocommerce-beta-tester/changelog/dev-add-smooth-generator-user-script
 plugins/woocommerce-beta-tester/changelog/dev-integrate-combo-box-live-branch
