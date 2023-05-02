@@ -4,15 +4,23 @@ directus/cli.js
 directus/license
 package.json
 pnpm-lock.yaml
+.changeset/wicked-scissors-confess.md
 .changeset/six-emus-joke.md
 .changeset/quiet-eagles-reflect.md
 .changeset/shy-crews-laugh.md
+.changeset/hip-cats-pump.md
+.changeset/wise-chefs-love.md
 .changeset/stale-kiwis-greet.md
 .changeset/breezy-numbers-brake.md
 .changeset/grumpy-moles-protect.md
+.changeset/smooth-forks-breathe.md
+.changeset/green-stingrays-shake.md
 .changeset/slimy-windows-jog.md
+.changeset/light-laws-love.md
 .changeset/calm-glasses-enjoy.md
+.changeset/modern-eels-judge.md
 .changeset/config.json
+.changeset/sharp-suits-think.md
 .changeset/breezy-nails-allow.md
 .changeset/chilly-pugs-pay.md
 .changeset/tame-students-listen.md
@@ -30,6 +38,7 @@ tests/blackbox/routes/server/health.test.ts
 tests/blackbox/routes/collections/schema-cache.test.ts
 tests/blackbox/routes/collections/crud.test.ts
 tests/blackbox/routes/collections/files.test.ts
+tests/blackbox/routes/flows/webhook.test.ts
 tests/blackbox/routes/assets/concurrency.test.ts
 tests/blackbox/routes/assets/limit.test.ts
 tests/blackbox/routes/assets/read.test.ts
@@ -306,6 +315,7 @@ packages/extensions-sdk/src/cli/utils/get-sdk-version.test.ts
 packages/extensions-sdk/src/cli/utils/get-template-path.ts
 packages/extensions-sdk/src/cli/utils/get-package-manager-agent.test.ts
 packages/extensions-sdk/src/cli/utils/languages.ts
+packages/extensions-sdk/src/cli/utils/file.ts
 packages/extensions-sdk/src/cli/utils/get-package-manager.ts
 packages/extensions-sdk/src/cli/utils/detect-json-indent.ts
 packages/extensions-sdk/src/cli/utils/get-package-manager.test.ts
@@ -764,6 +774,7 @@ app/src/composables/use-event-listener.ts
 app/src/composables/use-event-listener.test.ts
 app/src/composables/use-clipboard.ts
 app/src/composables/use-relation-permissions.ts
+app/src/composables/use-alias-fields.test.ts
 app/src/composables/use-field-tree.ts
 app/src/composables/use-translation-strings.ts
 app/src/composables/use-shortcut.test.ts

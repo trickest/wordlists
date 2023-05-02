@@ -228,11 +228,13 @@ src/Libraries/Nop.Services/Catalog/Caching/PredefinedProductAttributeValueCacheE
 src/Libraries/Nop.Services/Catalog/Caching/ProductSpecificationAttributeCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeCombinationCacheEventConsumer.cs
+src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeCombinationPictureCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductWarehouseInventoryCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeValueCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductManufacturerCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductCategoryCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeMappingCacheEventConsumer.cs
+src/Libraries/Nop.Services/Catalog/Caching/ProductAttributeValuePictureCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ProductProductTagMappingCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/ManufacturerCacheEventConsumer.cs
 src/Libraries/Nop.Services/Catalog/Caching/SpecificationAttributeGroupCacheEventConsumer.cs
@@ -641,6 +643,7 @@ src/Libraries/Nop.Data/Mapping/Builders/Shipping/WarehouseBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Shipping/ShipmentItemBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Shipping/ShippingMethodCountryMappingBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Seo/UrlRecordBuilder.cs
+src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductAttributeValuePictureBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductTemplateBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductAttributeCombinationBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductManufacturerBuilder.cs
@@ -652,6 +655,7 @@ src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductReviewReviewTypeMappingBu
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/SpecificationAttributeGroupBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductCategoryBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/RelatedProductBuilder.cs
+src/Libraries/Nop.Data/Mapping/Builders/Catalog/ProductAttributeCombinationPictureBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/PredefinedProductAttributeValueBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/CategoryBuilder.cs
 src/Libraries/Nop.Data/Mapping/Builders/Catalog/CategoryTemplateBuilder.cs
@@ -930,6 +934,7 @@ src/Libraries/Nop.Core/Domain/Seo/WwwRequirement.cs
 src/Libraries/Nop.Core/Domain/Seo/UrlRecord.cs
 src/Libraries/Nop.Core/Domain/Seo/SeoSettings.cs
 src/Libraries/Nop.Core/Domain/Seo/PageTitleSeoAdjustment.cs
+src/Libraries/Nop.Core/Domain/Catalog/ProductAttributeCombinationPicture.cs
 src/Libraries/Nop.Core/Domain/Catalog/ProductTag.cs
 src/Libraries/Nop.Core/Domain/Catalog/RentalPricePeriod.cs
 src/Libraries/Nop.Core/Domain/Catalog/AttributeValueType.cs
@@ -944,6 +949,7 @@ src/Libraries/Nop.Core/Domain/Catalog/Manufacturer.cs
 src/Libraries/Nop.Core/Domain/Catalog/ManufacturerTemplate.cs
 src/Libraries/Nop.Core/Domain/Catalog/SpecificationAttributeGroup.cs
 src/Libraries/Nop.Core/Domain/Catalog/ProductAttributeCombination.cs
+src/Libraries/Nop.Core/Domain/Catalog/ProductAttributeValuePicture.cs
 src/Libraries/Nop.Core/Domain/Catalog/ProductManufacturer.cs
 src/Libraries/Nop.Core/Domain/Catalog/ProductType.cs
 src/Libraries/Nop.Core/Domain/Catalog/RelatedProduct.cs

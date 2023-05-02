@@ -989,6 +989,7 @@ app/controllers/ticket_articles_controller.rb
 app/controllers/templates_controller.rb
 app/controllers/channels_google_controller.rb
 app/controllers/jobs_controller.rb
+app/controllers/settings/ticket_agent_default_notifications_controller.rb
 app/controllers/getting_started_controller.rb
 app/controllers/calendars_controller.rb
 app/controllers/search_controller.rb
@@ -1285,6 +1286,7 @@ app/assets/javascripts/app/controllers/_manage/branding.coffee
 app/assets/javascripts/app/controllers/_manage/ticket_auto_assignment.coffee
 app/assets/javascripts/app/controllers/_manage/ticket.coffee
 app/assets/javascripts/app/controllers/_manage/system.coffee
+app/assets/javascripts/app/controllers/_manage/ticket_notification.coffee
 app/assets/javascripts/app/controllers/agent_ticket_create.coffee
 app/assets/javascripts/app/controllers/translation.coffee
 app/assets/javascripts/app/controllers/template.coffee
@@ -1326,6 +1328,7 @@ app/assets/javascripts/app/controllers/_ui_element/user_permission.coffee
 app/assets/javascripts/app/controllers/_ui_element/autocompletion_ajax.coffee
 app/assets/javascripts/app/controllers/_ui_element/user_autocompletion_search.coffee
 app/assets/javascripts/app/controllers/_ui_element/searchable_select.coffee
+app/assets/javascripts/app/controllers/_ui_element/notification_matrix.coffee
 app/assets/javascripts/app/controllers/_ui_element/checkbox.coffee
 app/assets/javascripts/app/controllers/_ui_element/tag.coffee
 app/assets/javascripts/app/controllers/_ui_element/sla_times.coffee
@@ -1789,6 +1792,7 @@ app/assets/javascripts/app/views/generic/attachment.jst.eco
 app/assets/javascripts/app/views/generic/drox.jst.eco
 app/assets/javascripts/app/views/generic/datetime.jst.eco
 app/assets/javascripts/app/views/generic/multi_locales_row.jst.eco
+app/assets/javascripts/app/views/generic/notification_matrix.jst.eco
 app/assets/javascripts/app/views/generic/navbar_level2/navbar.jst.eco
 app/assets/javascripts/app/views/generic/navbar_level2/index.jst.eco
 app/assets/javascripts/app/views/generic/postmaster_set_row.jst.eco
@@ -1873,6 +1877,7 @@ app/assets/javascripts/app/views/settings/proxy.jst.eco
 app/assets/javascripts/app/views/settings/form.jst.eco
 app/assets/javascripts/app/views/settings/item.jst.eco
 app/assets/javascripts/app/views/settings/ticket_number.jst.eco
+app/assets/javascripts/app/views/settings/ticket_notifications.jst.eco
 app/assets/javascripts/app/views/settings/switch.jst.eco
 app/assets/javascripts/app/views/settings/ticket_number_date.jst.eco
 app/assets/javascripts/app/views/profile/devices.jst.eco
@@ -1995,6 +2000,7 @@ app/assets/javascripts/app/lib/app_init/queue_manager.coffee
 app/assets/javascripts/app/lib/mixins/knowledge_base_translationable.coffee
 app/assets/javascripts/app/lib/mixins/popover_providable.coffee
 app/assets/javascripts/app/lib/mixins/knowledge_base_actions.coffee
+app/assets/javascripts/app/lib/mixins/ticket_notification_matrix.coffee
 app/assets/javascripts/app/lib/mixins/knowledge_base_access.coffee
 app/assets/javascripts/app/lib/mixins/ticket_mass_updatable.coffee
 app/assets/javascripts/app/lib/mixins/permission_helper.coffee
@@ -3024,6 +3030,7 @@ app/policies/controllers/http_logs_controller_policy.rb
 app/policies/controllers/calendars_controller_policy.rb
 app/policies/controllers/taskbar_controller_policy.rb
 app/policies/controllers/application_controller_policy.rb
+app/policies/controllers/settings/ticket_agent_default_notifications_controller_policy.rb
 app/policies/controllers/ticket_states_controller_policy.rb
 app/policies/controllers/attachments_controller_policy.rb
 app/policies/controllers/overviews_controller_policy.rb
@@ -3108,6 +3115,7 @@ app/jobs/ticket_online_notification_seen_job.rb
 app/jobs/concerns/has_active_job_lock.rb
 app/jobs/communicate_twitter_job.rb
 app/jobs/taskbar_cleanup_job.rb
+app/jobs/reset_notifications_preferences_job.rb
 app/jobs/application_job/has_queuing_priority.rb
 app/jobs/application_job/has_custom_logging.rb
 app/jobs/application_job/has_delayed_job_monitoring_compatibilty.rb
@@ -4456,6 +4464,7 @@ lib/zammad/application/initializer/db_preflight_check/mysql2.rb
 lib/zammad/application/initializer/db_preflight_check/postgresql.rb
 lib/zammad/application/initializer/db_preflight_check/base.rb
 lib/zammad/safe_mode.rb
+lib/zammad/logging.rb
 lib/event_buffer.rb
 lib/generators/zammad/translation_catalog_generator.rb
 lib/generators/zammad/graphql_introspection_generator.rb
@@ -5270,6 +5279,7 @@ spec/system/profile/password_spec.rb
 spec/system/profile/preferences_token_access_spec.rb
 spec/system/profile/preferences_permission_check_spec.rb
 spec/system/profile/overviews_spec.rb
+spec/system/profile/notifications_spec.rb
 spec/system/profile/out_of_office_spec.rb
 spec/system/profile/preferences_language_spec.rb
 spec/system/profile/appearance_spec.rb
@@ -5630,6 +5640,7 @@ spec/models/token_spec.rb
 spec/models/data_privacy_task_spec.rb
 spec/models/permission_spec.rb
 spec/models/webhook/pre_defined_spec.rb
+spec/models/webhook/pre_defined/microsoft_teams_spec.rb
 spec/models/webhook/pre_defined/mattermost_spec.rb
 spec/models/webhook/pre_defined/slack_spec.rb
 spec/models/http_log_spec.rb
@@ -5747,6 +5758,7 @@ spec/requests/online_notifications_controller_spec.rb
 spec/requests/time_accounting_spec.rb
 spec/requests/organization_spec.rb
 spec/requests/form_spec.rb
+spec/requests/settings/ticket_agent_default_notifications_controller_spec.rb
 spec/requests/search_spec.rb
 spec/requests/channels_google_spec.rb
 spec/requests/api_auth_spec.rb
@@ -6239,6 +6251,7 @@ spec/db/migrate/relocate_unprocessable_mails_spec.rb
 spec/db/migrate/issue_2455_follow_up_assignment_spec.rb
 spec/db/migrate/check_for_object_attributes_spec.rb
 spec/db/migrate/object_manager_update_user_password_spec.rb
+spec/jobs/reset_notifications_preferences_job_spec.rb
 spec/jobs/data_privacy_task_job_spec.rb
 spec/jobs/search_index_job_spec.rb
 spec/jobs/app_version_restart_job_spec.rb
@@ -6637,6 +6650,7 @@ db/migrate/20230120163410_taskbars_add_apps_support.rb
 db/migrate/20210823112140_issue_2455_follow_up_assignment.rb
 db/migrate/20210914153600_issue_3194_update_permissions.rb
 db/migrate/20190131000001_setting_change_ticket_zoom_attachment_preview.rb
+db/migrate/20230425094249_setting_add_ticket_agent_default_notifications.rb
 db/migrate/20180226085743_issue_1660_fix_tree_select_configurations.rb
 db/migrate/20211028072158_maintenance_remove_active_ldap_sessions.rb
 db/migrate/20120101000001_create_base.rb
