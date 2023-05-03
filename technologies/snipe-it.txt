@@ -5333,6 +5333,7 @@ database/migrations/.gitkeep
 database/migrations/2017_01_14_002418_create_imports_table.php
 database/migrations/2014_10_16_200626_add_rtd_location_to_assets.php
 database/migrations/2023_04_12_135822_add_supplier_to_components.php
+database/migrations/2023_04_25_085912_add_autoadd_to_customfields.php
 database/migrations/2018_10_19_154013_add_kits_models_table.php
 database/migrations/2016_09_28_231359_add_company_to_logs.php
 database/migrations/2019_02_12_182750_add_actiondate_to_actionlog.php
@@ -5918,6 +5919,7 @@ app/Console/Commands/CheckoutLicenseToAllUsers.php
 app/Console/Commands/MergeUsersByUsername.php
 app/Importer/ComponentImporter.php
 app/Importer/ConsumableImporter.php
+app/Importer/LocationImporter.php
 app/Importer/AssetImporter.php
 app/Importer/ItemImporter.php
 app/Importer/Importer.php
@@ -5950,6 +5952,7 @@ sample_csvs/MOCK_ASSETS_BAD.csv
 sample_csvs/MOCK_ACCESSORIES.csv
 sample_csvs/MOCK_USERS.csv
 sample_csvs/MOCK_LICENSES.csv
+sample_csvs/MOCK_LOCATIONS.csv
 sample_csvs/MOCK_CONSUMABLES.csv
 .env.testing.example
 _config.yml

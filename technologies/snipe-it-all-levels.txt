@@ -28931,6 +28931,9 @@ migrations/2014_10_16_200626_add_rtd_location_to_assets.php
 database/migrations/2023_04_12_135822_add_supplier_to_components.php
 migrations/2023_04_12_135822_add_supplier_to_components.php
 2023_04_12_135822_add_supplier_to_components.php
+database/migrations/2023_04_25_085912_add_autoadd_to_customfields.php
+migrations/2023_04_25_085912_add_autoadd_to_customfields.php
+2023_04_25_085912_add_autoadd_to_customfields.php
 database/migrations/2018_10_19_154013_add_kits_models_table.php
 migrations/2018_10_19_154013_add_kits_models_table.php
 2018_10_19_154013_add_kits_models_table.php
@@ -30914,6 +30917,9 @@ ComponentImporter.php
 app/Importer/ConsumableImporter.php
 Importer/ConsumableImporter.php
 ConsumableImporter.php
+app/Importer/LocationImporter.php
+Importer/LocationImporter.php
+LocationImporter.php
 app/Importer/AssetImporter.php
 Importer/AssetImporter.php
 AssetImporter.php
@@ -30975,6 +30981,8 @@ sample_csvs/MOCK_USERS.csv
 MOCK_USERS.csv
 sample_csvs/MOCK_LICENSES.csv
 MOCK_LICENSES.csv
+sample_csvs/MOCK_LOCATIONS.csv
+MOCK_LOCATIONS.csv
 sample_csvs/MOCK_CONSUMABLES.csv
 MOCK_CONSUMABLES.csv
 .env.testing.example
