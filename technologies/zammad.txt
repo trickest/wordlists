@@ -1284,6 +1284,7 @@ app/assets/javascripts/app/controllers/_manage/knowledge_base.coffee
 app/assets/javascripts/app/controllers/_manage/security.coffee
 app/assets/javascripts/app/controllers/_manage/branding.coffee
 app/assets/javascripts/app/controllers/_manage/ticket_auto_assignment.coffee
+app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee
 app/assets/javascripts/app/controllers/_manage/ticket.coffee
 app/assets/javascripts/app/controllers/_manage/system.coffee
 app/assets/javascripts/app/controllers/_manage/ticket_notification.coffee
@@ -1342,6 +1343,7 @@ app/assets/javascripts/app/controllers/_ui_element/radio_graphic.coffee
 app/assets/javascripts/app/controllers/_ui_element/_application_action.coffee
 app/assets/javascripts/app/controllers/_ui_element/object_manager_attribute.coffee
 app/assets/javascripts/app/controllers/_ui_element/radio.coffee
+app/assets/javascripts/app/controllers/_ui_element/ticket_duplicate_detection.coffee
 app/assets/javascripts/app/controllers/_ui_element/core_workflow_perform.coffee
 app/assets/javascripts/app/controllers/_ui_element/business_hours.coffee
 app/assets/javascripts/app/controllers/_ui_element/ical_feed.coffee
@@ -1725,6 +1727,7 @@ app/assets/javascripts/app/views/generic/history.jst.eco
 app/assets/javascripts/app/views/generic/input.jst.eco
 app/assets/javascripts/app/views/generic/actions.jst.eco
 app/assets/javascripts/app/views/generic/attachments.jst.eco
+app/assets/javascripts/app/views/generic/ticket_duplicate_detection.jst.eco
 app/assets/javascripts/app/views/generic/multi_locales.jst.eco
 app/assets/javascripts/app/views/generic/admin/index.jst.eco
 app/assets/javascripts/app/views/generic/admin/empty.jst.eco
@@ -1737,6 +1740,7 @@ app/assets/javascripts/app/views/generic/checkbox.jst.eco
 app/assets/javascripts/app/views/generic/ical_feed.jst.eco
 app/assets/javascripts/app/views/generic/sidebar_tabs_item.jst.eco
 app/assets/javascripts/app/views/generic/tabs.jst.eco
+app/assets/javascripts/app/views/generic/ticket_duplicate_detection/warning.jst.eco
 app/assets/javascripts/app/views/generic/sidebar_tabs.jst.eco
 app/assets/javascripts/app/views/generic/content_two.jst.eco
 app/assets/javascripts/app/views/generic/application_selector_subclause.jst.eco
@@ -1868,6 +1872,7 @@ app/assets/javascripts/app/views/getting_started/admin.jst.eco
 app/assets/javascripts/app/views/getting_started/base.jst.eco
 app/assets/javascripts/app/views/getting_started/email_pre_configured.jst.eco
 app/assets/javascripts/app/views/getting_started/auto_wizard_splash.jst.eco
+app/assets/javascripts/app/views/settings/ticket_duplicate_detection.jst.eco
 app/assets/javascripts/app/views/settings/logo.jst.eco
 app/assets/javascripts/app/views/settings/ticket_hook_position.jst.eco
 app/assets/javascripts/app/views/settings/ticket_number_increment.jst.eco
@@ -2312,6 +2317,7 @@ app/models/core_workflow/condition.rb
 app/models/core_workflow/result.rb
 app/models/core_workflow/assets.rb
 app/models/core_workflow/custom/admin_sla.rb
+app/models/core_workflow/custom/ticket_duplicate_detection.rb
 app/models/core_workflow/custom/secondary_organization.rb
 app/models/core_workflow/custom/admin_core_workflow.rb
 app/models/core_workflow/custom/pending_time.rb
@@ -2920,6 +2926,7 @@ app/views/mailer/user_auth_provider/sr-latn-rs.html.erb
 app/views/mailer/user_auth_provider/pt-br.html.erb
 app/views/mailer/user_auth_provider/fr.html.erb
 app/views/mailer/user_auth_provider/cs.html.erb
+app/views/mailer/user_auth_provider/pt.html.erb
 app/views/mailer/user_auth_provider/sr.html.erb
 app/views/mailer/user_auth_provider/hu.html.erb
 app/views/mailer/user_auth_provider/ru.html.erb
@@ -3459,6 +3466,7 @@ app/frontend/shared/form/features/__tests__/translateWrapperProps.spec.ts
 app/frontend/shared/form/features/__tests__/formUpdaterTrigger.spec.ts
 app/frontend/shared/form/features/hideField.ts
 app/frontend/shared/form/features/removeValuesForNonExistingOptions.ts
+app/frontend/shared/form/features/defaultEmptyValueString.ts
 app/frontend/shared/form/features/translateWrapperProps.ts
 app/frontend/shared/form/features/addLink.ts
 app/frontend/shared/form/index.ts
@@ -3909,6 +3917,8 @@ app/frontend/shared/router/guards/before/__tests__/permission.spec.ts
 app/frontend/stories/types/form.ts
 app/frontend/stories/support/form/field/defaultArgTypes.ts
 app/frontend/stories/support/setupHistoire.ts
+app/frontend/stories/support/setupGlobals.ts
+app/frontend/public-build/.keep
 app/frontend/build/manualChunks.js
 app/frontend/build/transforms/transformTestId.js
 app/frontend/apps/mobile/main.ts
@@ -4040,6 +4050,7 @@ app/frontend/apps/mobile/pages/ticket/routes.ts
 app/frontend/apps/mobile/pages/ticket/composable/useTicketArticlesVariables.ts
 app/frontend/apps/mobile/pages/ticket/composable/useTicketEditForm.ts
 app/frontend/apps/mobile/pages/ticket/composable/useArticleToggleMore.ts
+app/frontend/apps/mobile/pages/ticket/composable/useTicketDuplicateDetectionHandler.ts
 app/frontend/apps/mobile/pages/ticket/composable/useArticleAttachments.ts
 app/frontend/apps/mobile/pages/ticket/composable/useTicketEdit.ts
 app/frontend/apps/mobile/pages/ticket/composable/useTicketArticlesRows.ts
@@ -4153,7 +4164,9 @@ app/frontend/apps/mobile/components/transition/TransitionViewNavigation/Transiti
 app/frontend/apps/mobile/components/transition/TransitionViewNavigation/__tests__/TransitionViewNavigation.spec.ts
 app/frontend/apps/mobile/components/Ticket/TicketItem.vue
 app/frontend/apps/mobile/components/Ticket/types.ts
+app/frontend/apps/mobile/components/Ticket/TicketDuplicateDetectionDialog.vue
 app/frontend/apps/mobile/components/Ticket/__tests__/TicketItem.spec.ts
+app/frontend/apps/mobile/components/Ticket/__tests__/TicketDuplicateDetectionDialog.spec.ts
 app/frontend/apps/mobile/components/Ticket/TicketItem.story.vue
 app/frontend/apps/mobile/components/CommonFilePreview/CommonFilePreview.vue
 app/frontend/apps/mobile/components/CommonFilePreview/CommonFilePreview.story.vue
@@ -5182,6 +5195,7 @@ spec/system/ticket/shared_draft_start_spec.rb
 spec/system/ticket/shared_draft_zoom_spec.rb
 spec/system/ticket/create_spec.rb
 spec/system/ticket/view_spec.rb
+spec/system/ticket/create/ticket_duplicate_detection_spec.rb
 spec/system/ticket/idoit_spec.rb
 spec/system/ticket/update/email_reply_spec.rb
 spec/system/ticket/update/simultaneously_with_two_user_spec.rb
@@ -5301,6 +5315,7 @@ spec/system/apps/mobile/tickets/viewer/live_users_spec.rb
 spec/system/apps/mobile/tickets/ticket_spec.rb
 spec/system/apps/mobile/tickets/ticket_information_customer_edit_spec.rb
 spec/system/apps/mobile/tickets/ticket_list_spec.rb
+spec/system/apps/mobile/tickets/create/ticket_duplicate_detection_spec.rb
 spec/system/apps/mobile/tickets/articles/create_spec.rb
 spec/system/apps/mobile/tickets/articles/list_subscription_spec.rb
 spec/system/apps/mobile/tickets/ticket_mention_spec.rb
@@ -5596,6 +5611,7 @@ spec/models/user_group_spec.rb
 spec/models/group_spec.rb
 spec/models/chat_spec.rb
 spec/models/core_workflow/attributes_spec.rb
+spec/models/core_workflow/custom/ticket_duplicate_detection_spec.rb
 spec/models/avatar_spec.rb
 spec/models/sla/has_escalation_calculation_impact_examples.rb
 spec/models/application_model_examples.rb
@@ -6383,6 +6399,7 @@ db/migrate/20220124104955_update_object_attributes.rb
 db/migrate/20210717101728_issue_3647_custom_object_attribute_integer.rb
 db/migrate/20180327170847_issue_1905_exchange_login_from_remote_id.rb
 db/migrate/20210903072144_map_translation_time_fields.rb
+db/migrate/20230426143104_add_ticket_duplicate_detection.rb
 db/migrate/20171123000001_email_process_customer_selection_based_on_sender_recipient.rb
 db/migrate/20180913000002_permission_add_time_accounting.rb
 db/migrate/20221010142630_issue_2401_convert_user_login_email_to_unicode.rb
@@ -7079,6 +7096,7 @@ public/assets/tests/qunit/form_core_workflow.js
 public/assets/tests/qunit/table_extended.js
 public/assets/tests/qunit/form_controller_confirm_delete.js
 public/assets/tests/qunit/ticket_selector.js
+public/assets/tests/qunit/form_ticket_duplicate_detection.js
 public/assets/tests/qunit/model.js
 public/assets/tests/qunit/color_object.js
 public/assets/tests/qunit/form_validation.js

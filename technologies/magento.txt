@@ -5880,6 +5880,7 @@ dev/tests/api-functional/framework/Magento/TestFramework/WebapiWorkaround/Overri
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/WebapiAbstract.php
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQl/ResponseContainsErrorsException.php
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQl/Client.php
+dev/tests/api-functional/framework/Magento/TestFramework/TestCase/GraphQl/ResolverCacheAbstract.php
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/Webapi/Adapter/Rest.php
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/Webapi/Adapter/Rest/RestClient.php
 dev/tests/api-functional/framework/Magento/TestFramework/TestCase/Webapi/Adapter/Rest/DocumentationGenerator.php
@@ -6088,6 +6089,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogCustomer/TierPricesFor
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogCustomer/PriceTiersTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogCustomer/TierPricesForCustomersTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogCustomer/SpecialPriceTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/CmsGraphQl/Model/Resolver/BlockTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CmsGraphQl/Model/Resolver/PageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogInventory/ProductOnlyXLeftInStockTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogInventory/AddProductToCartTest.php
@@ -10105,6 +10107,7 @@ app/code/Magento/SwaggerWebapi/etc/frontend/di.xml
 app/code/Magento/SwaggerWebapi/LICENSE.txt
 app/code/Magento/SwaggerWebapi/registration.php
 app/code/Magento/CmsGraphQl/composer.json
+app/code/Magento/CmsGraphQl/Model/Resolver/Block/ResolverCacheIdentity.php
 app/code/Magento/CmsGraphQl/Model/Resolver/Block/Identity.php
 app/code/Magento/CmsGraphQl/Model/Resolver/Blocks.php
 app/code/Magento/CmsGraphQl/Model/Resolver/DataProvider/Block.php
