@@ -1366,6 +1366,7 @@ app/bundles/ChannelBundle/Entity/MessageRepository.php
 app/bundles/ChannelBundle/Tests/Model/ChannelActionModelTest.php
 app/bundles/ChannelBundle/Tests/Model/MessageQueueModelTest.php
 app/bundles/ChannelBundle/Tests/Model/FrequencyActionModelTest.php
+app/bundles/ChannelBundle/Tests/Event/ChannelBroadcastEventTest.php
 app/bundles/ChannelBundle/Tests/EventListener/CampaignSubscriberTest.php
 app/bundles/ChannelBundle/Tests/Controller/Api/MessageApiControllerTest.php
 app/bundles/ChannelBundle/Tests/Entity/MessageTest.php
@@ -3649,7 +3650,6 @@ app/bundles/CoreBundle/Assets/js/libraries/8b.ui.js
 app/bundles/CoreBundle/Assets/js/libraries/4h.jquery.caret.js
 app/bundles/CoreBundle/Assets/js/libraries/4k.codemirror.addon.hint.js
 app/bundles/CoreBundle/Assets/js/libraries/3b.chosen.ajax.js
-app/bundles/CoreBundle/Assets/js/libraries/3a.chosen.jquery.js
 app/bundles/CoreBundle/Assets/js/libraries/13.jquery.quicksearch.js
 app/bundles/CoreBundle/Assets/js/libraries/4i.jquery.at.js
 app/bundles/CoreBundle/Assets/js/libraries/4g.jquery.color.js
@@ -5925,6 +5925,7 @@ app/migrations/Version20180921144421.php
 app/migrations/Version20200409102100.php
 app/migrations/Version20200805185714.php
 app/migrations/Version20201207114926.php
+app/migrations/Version20230307083702.php
 app/migrations/Version20180821144204.php
 app/migrations/Version20201228041109.php
 app/migrations/Version20201207140911.php
@@ -5954,6 +5955,7 @@ UPGRADE-5.0.md
 LICENSE.txt
 UPGRADE-3.0.md
 package-lock.json
+patches/chosen-js+1.8.7.patch
 phpstan.neon
 .ddev/config.yaml
 .ddev/redis/redis.conf

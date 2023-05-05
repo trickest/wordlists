@@ -2577,6 +2577,7 @@ changelog/_unreleased/2023-03-20-separate-criteria-in-sw-media-library.md
 changelog/_unreleased/2023-02-27-fix-wrong-breadcrumb-icon-in-media-module.md
 changelog/_unreleased/2023-03-09-slider-images-drag-and-drop.md
 changelog/_unreleased/2023-04-17-enable-eslint-jest-recommended.md
+changelog/_unreleased/2023-04-14-payload-protection.md
 changelog/_unreleased/2023-02-22-change-standart-to-standard.md
 changelog/_unreleased/2023-02-20-improve-setting-snippet-e2e-tests.md
 changelog/_unreleased/2023-04-13-cms-layout-background-image-for-element-blocks-its-content.md
@@ -2592,6 +2593,7 @@ changelog/_unreleased/2023-01-18-add-cart-condition-amount-of-shipping-costs.md
 changelog/_unreleased/2022-10-20-consider-inheritance-in-product-stream-mapping.md
 changelog/_unreleased/2023-04-21-fix-review-stars-in-administration.md
 changelog/_unreleased/2023-01-23-sw-text-editor-toolbar-does-not-disappear.md
+changelog/_unreleased/2023-05-02-fix-loading-order-of-commercial-plugin.md
 changelog/_unreleased/2023-01-26-set-no-auto-cache-controll-on-httpcache-routes.md
 changelog/_unreleased/2023-03-14-added-defaultrangeindex-property-to-sw-chart-card.md
 changelog/_unreleased/2023-02-07-add-transparent-background-possibility-to-text-editor.md
@@ -2612,10 +2614,12 @@ changelog/_unreleased/2023-02-21-fix-multiple-recipients-throwing-type-error.md
 changelog/_unreleased/2023-02-09-add-cms-element-category-navigation-twig-block.md
 changelog/_unreleased/2023-04-18-map-doctrine-type-enum-to-varchar.md
 changelog/_unreleased/2023-03-14-html-filter-in-snippets.md
+changelog/_unreleased/2023-05-03-fix-tab-bar-underline-position-bug.md
 changelog/_unreleased/2023-03-27-add-sort-criteria-to-shipping-method-selection.md
 changelog/_unreleased/2023-01-27-fix-duplicated-position-identifier-in-dashboard-charts.md
 changelog/_unreleased/2023-02-06-improve-text-wrap-behavior-in-notifications.md
 changelog/_unreleased/2023-04-04-impossible-to-save-draft-with-a-sidebar-block.md
+changelog/_unreleased/2023-05-04-add-phpstan-naming-rules.md
 changelog/_unreleased/2023-03-14-update-schedule-task-interval-after-plugin-update.md
 changelog/_unreleased/2023-04-27-fix-typehint-for-variation-in-product-entity.md
 changelog/_unreleased/2023-03-28-update-webpack-plugin-injector.md
@@ -2636,6 +2640,7 @@ changelog/_unreleased/2023-02-09-add-order-created-by-admin-rule.md
 changelog/_unreleased/2023-03-10-message-serialization.md
 changelog/_unreleased/2023-02-01-add-sorting-for-merged-documents.md
 changelog/_unreleased/2023-01-30-add-native-lazy-loading-of-images-to-storefront.md
+changelog/_unreleased/2023-05-05-promotion-performance.md
 changelog/_unreleased/2023-02-22-update-monolog.md
 changelog/_unreleased/2023-03-27-dont-require-already-required-plugins.md
 changelog/_unreleased/2023-03-06-fix-svg-image-is-not-displayed-in-the-desktop-view.md
@@ -3854,7 +3859,6 @@ tests/integration/php/Core/Framework/App/ActionButton/ExecutorTest.php
 tests/integration/php/Core/Framework/App/ActionButton/AppActionTest.php
 tests/integration/php/Core/Framework/App/AppUrlChangeResolver/MoveShopPermanentlyStrategyTest.php
 tests/integration/php/Core/Framework/App/AppUrlChangeResolver/UninstallAppsStrategyTest.php
-tests/integration/php/Core/Framework/App/AppUrlChangeResolver/AbstractStrategyTest.php
 tests/integration/php/Core/Framework/App/AppUrlChangeResolver/ReinstallAppsStrategyTest.php
 tests/integration/php/Core/Framework/App/Subscriber/AppLoadedSubscriberTest.php
 tests/integration/php/Core/Framework/App/Subscriber/CustomFieldProtectionSubscriberTest.php
@@ -4450,6 +4454,7 @@ tests/unit/php/Core/Content/Media/UnusedMediaPurgerTest.php
 tests/unit/php/Core/Content/Media/MediaEntityTest.php
 tests/unit/php/Core/Content/Media/Event/UnusedMediaSearchEventTest.php
 tests/unit/php/Core/Content/Media/Event/MediaUploadedEventTest.php
+tests/unit/php/Core/Content/Media/Pathname/UrlGeneratorTest.php
 tests/unit/php/Core/Content/Media/Commands/DeleteNotUsedMediaCommandTest.php
 tests/unit/php/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscriberTest.php
 tests/unit/php/Core/Content/Media/File/DownloadResponseGeneratorTest.php
@@ -4557,14 +4562,22 @@ tests/unit/php/Core/Content/Sitemap/SalesChannel/CachedSitemapRouteTest.php
 tests/unit/php/Core/Content/ContactForm/Event/ContactFormEventTest.php
 tests/unit/php/Core/Content/ContactForm/SalesChannel/ContactFormRouteTest.php
 tests/unit/php/Core/Content/ContactForm/Validation/ContactFormValidationFactoryTest.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/no-autoload-param.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/in-core-namespace.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/not-in-namespace.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/in-test-namespace.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/no-entity-name.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/autoload-false.php
-tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/no-dal-autoload/not-in-class.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/no-autoload-param.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-core-namespace.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/not-in-namespace.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-test-namespace.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/no-entity-name.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/autoload-false.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/not-in-class.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipVoidSetter.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipEmptyReturn.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SomeSetterClass.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipSetUp.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/FluentSetterClass.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipArrayFilter.php
 tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoDALAutoloadTest.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
+tests/unit/php/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/unit/php/Core/DevOps/System/Command/SyncComposerVersionCommandTest.php
 tests/unit/php/Core/DevOps/ADRValidationTest.php
 tests/unit/php/Core/Framework/DependencyInjection/ConfigurationTest.php
@@ -4685,6 +4698,7 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/VariantListin
 tests/unit/php/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/EntityIndexingSubscriberTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/EntityTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Grouping/FieldGroupingTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/FilterAggregationTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/DateHistogramAggregationTest.php
@@ -4708,6 +4722,7 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/Search/CriteriaTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/ApiCriteriaValidatorTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCustomFieldsTraitTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Cache/EntityCacheKeyGeneratorTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
@@ -4746,6 +4761,7 @@ tests/unit/php/Core/Framework/App/Manifest/Xml/PaymentMethodTest.php
 tests/unit/php/Core/Framework/App/ActiveAppsLoaderTest.php
 tests/unit/php/Core/Framework/App/AppPayloadServiceHelperTest.php
 tests/unit/php/Core/Framework/App/Exception/AppAlreadyInstalledExceptionTest.php
+tests/unit/php/Core/Framework/App/AppUrlChangeResolver/ResolverTest.php
 tests/unit/php/Core/Framework/Demodata/Command/DemodataCommandTest.php
 tests/unit/php/Core/Framework/Demodata/Event/DemodataRequestCreatedEventTest.php
 tests/unit/php/Core/Framework/Util/HtmlSanitizerTest.php
@@ -4938,6 +4954,7 @@ tests/unit/php/Core/Checkout/Cart/Promotion/Subscriber/PromotionIndividualCodeRe
 tests/unit/php/Core/Checkout/Cart/Exception/TaxProviderExceptionsTest.php
 tests/unit/php/Core/Checkout/Promotion/Rule/PromotionLineItemRuleTest.php
 tests/unit/php/Core/Checkout/Promotion/Api/PromotionActionControllerTest.php
+tests/unit/php/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
 tests/unit/php/Core/Installer/Finish/NotifierTest.php
 tests/unit/php/Core/Installer/Finish/SystemLockerTest.php
 tests/unit/php/Core/Installer/Finish/UniqueIdGeneratorTest.php
@@ -5017,7 +5034,7 @@ tests/unit/php/Storefront/Page/Checkout/Offcanvas/OffcanvasCartPageLoaderTest.ph
 tests/unit/php/Administration/Snippet/AppAdministrationSnippetPersisterTest.php
 tests/unit/php/Administration/Snippet/SnippetExceptionTest.php
 tests/unit/php/Administration/Snippet/SnippetFinderTest.php
-tests/unit/php/Administration/Notfication/Subscriber/UpdateSubscriberTest.php
+tests/unit/php/Administration/Notification/Subscriber/UpdateSubscriberTest.php
 tests/unit/php/Administration/AdministrationTest.php
 tests/unit/php/Administration/Controller/AdministrationControllerTest.php
 tests/unit/php/Elasticsearch/DependencyInjection/ConfigurationTest.php
@@ -5081,6 +5098,7 @@ tests/unit/php/Elasticsearch/Exception/ServerNotAvailableExceptionTest.php
 tests/unit/php/Elasticsearch/Exception/ElasticsearchIndexingExceptionTest.php
 tests/unit/php/Elasticsearch/Exception/NoIndexedDocumentsExceptionTest.php
 tests/performance/locust/.gitkeep
+tests/performance/bench/AbstractBenchCase.php
 tests/performance/bench/data.json
 tests/performance/bench/Storefront/CartOrderRouteBench.php
 tests/performance/bench/Storefront/ProductDetailRouteBench.php
@@ -5090,11 +5108,10 @@ tests/performance/bench/.gitkeep
 tests/performance/bench/Administration/.gitkeep
 tests/performance/bench/BenchBootstrap.php
 tests/performance/bench/README.md
-tests/performance/bench/GroupAwareExtension.php
+tests/performance/bench/AbstractGroupAwareExtension.php
 tests/performance/bench/Cases/CategoryBench.php
 tests/performance/bench/Cases/ProductBench.php
 tests/performance/bench/Cases/RuleAreaUpdaterBench.php
-tests/performance/bench/BenchCase.php
 tests/performance/bench/BenchExtension.php
 tests/performance/bench/Fixtures.php
 .vscode/settings.json
@@ -7886,7 +7903,6 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Type/CollectionHasSpecifyingExtension.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleAreasFlagNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PackageAnnotationRule.php
-src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PHPUnitDataProviderStaticRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoSuperGlobalsInsideCompilerPassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleConditionHasRuleConfigRule.php
@@ -7898,6 +7914,8 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowEventAwareExtendsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DecorationPatternRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/ScheduledTaskTooLowIntervalRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DomainExceptionRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitDataProviderStaticRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/CoversAnnotationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
@@ -8619,7 +8637,6 @@ src/Core/Framework/Test/DataAbstractionLayer/Write/Entity/DefaultsChildDefinitio
 src/Core/Framework/Test/DataAbstractionLayer/Write/Entity/DeleteCascadeParentDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Write/Entity/DefaultsDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Write/WriterExtensionTest.php
-src/Core/Framework/Test/DataAbstractionLayer/EntityTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Reader/EntityReaderTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/EntityAggregatorTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/Term/Filter/TokenFilterTest.php
@@ -8672,7 +8689,6 @@ src/Core/Framework/Test/DataAbstractionLayer/Facade/RepositoryFacadeTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Facade/RepositoryWriterFacadeTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Validation/EntityNotExistsValidatorTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Validation/EntityExistsValidatorTest.php
-src/Core/Framework/Test/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/UpdatedByFieldTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/CalculatedPriceFieldTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/DateFieldTest.php
@@ -8839,7 +8855,6 @@ src/Core/Framework/Test/Api/OAuth/BearerTokenValidatorTest.php
 src/Core/Framework/Test/Api/OAuth/ClientRepositoryTest.php
 src/Core/Framework/Test/Api/Context/AdminApiSourceTest.php
 src/Core/Framework/Test/Api/EventListener/ExpectationSubscriberTest.php
-src/Core/Framework/Test/Api/EventListener/ErrorResponseFactoryTest.php
 src/Core/Framework/Test/Api/Serializer/JsonEntityEncoderTest.php
 src/Core/Framework/Test/Api/Serializer/JsonSalesChannelApiEncoderTest.php
 src/Core/Framework/Test/Api/Serializer/fixtures/TestCollectionWithToOneRelationship.php
@@ -11187,6 +11202,7 @@ src/Core/Checkout/Promotion/Cart/Discount/Filter/SetGroupScopeFilter.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/Picker/HorizontalPicker.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/Picker/VerticalPicker.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/FilterPickerInterface.php
+src/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/AbstractPriceSorter.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceDesc.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceAsc.php
 src/Core/Checkout/Promotion/Cart/Discount/Filter/PackageFilter.php
