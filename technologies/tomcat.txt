@@ -546,6 +546,7 @@ test/org/apache/catalina/util/TestServerInfo.java
 test/org/apache/catalina/util/TestParameterMap.java
 test/org/apache/catalina/util/TestURLEncoder.java
 test/org/apache/catalina/util/TestContextName.java
+test/org/apache/catalina/util/TestTimeBucketCounter.java
 test/org/apache/catalina/tribes/TesterUtil.java
 test/org/apache/catalina/tribes/test/TribesTestSuite.java
 test/org/apache/catalina/tribes/test/transport/SocketNioSend.java
@@ -644,6 +645,7 @@ test/org/apache/catalina/connector/TestCoyoteInputStream.java
 test/org/apache/catalina/connector/TestCoyoteOutputStream.java
 test/org/apache/catalina/filters/TestRemoteIpFilter.java
 test/org/apache/catalina/filters/TestCsrfPreventionFilter2.java
+test/org/apache/catalina/filters/TestRateLimitFilter.java
 test/org/apache/catalina/filters/TestCsrfPreventionFilter.java
 test/org/apache/catalina/filters/TestRestCsrfPreventionFilter.java
 test/org/apache/catalina/filters/TesterHttpServletRequest.java
@@ -1892,6 +1894,7 @@ java/org/apache/catalina/util/CharsetMapper.java
 java/org/apache/catalina/util/ResourceSet.java
 java/org/apache/catalina/util/CharsetMapperDefault.properties
 java/org/apache/catalina/util/ServerInfo.java
+java/org/apache/catalina/util/TimeBucketCounter.java
 java/org/apache/catalina/util/LocalStrings_ru.properties
 java/org/apache/catalina/util/ToStringUtil.java
 java/org/apache/catalina/util/LifecycleBase.java
@@ -2393,6 +2396,7 @@ java/org/apache/catalina/filters/SetCharacterEncodingFilter.java
 java/org/apache/catalina/filters/RequestFilter.java
 java/org/apache/catalina/filters/RestCsrfPreventionFilter.java
 java/org/apache/catalina/filters/LocalStrings_ru.properties
+java/org/apache/catalina/filters/RateLimitFilter.java
 java/org/apache/catalina/filters/Constants.java
 java/org/apache/catalina/filters/LocalStrings_ja.properties
 java/org/apache/catalina/filters/AddDefaultCharsetFilter.java
