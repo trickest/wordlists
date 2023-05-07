@@ -134,6 +134,7 @@ framework/core/less/forum/Post.less
 framework/core/less/forum/DiscussionListItem.less
 framework/core/less/forum/Slidable.less
 framework/core/less/admin/PermissionsPage.less
+framework/core/less/admin/CreateUserModal.less
 framework/core/less/admin/DashboardPage.less
 framework/core/less/admin/ExtensionPage.less
 framework/core/less/admin/EditGroupModal.less
@@ -260,6 +261,7 @@ framework/core/src/Update/UpdateServiceProvider.php
 framework/core/src/Update/Controller/IndexController.php
 framework/core/src/Update/Controller/UpdateController.php
 framework/core/src/Filter/FilterServiceProvider.php
+framework/core/src/Filter/ValidateFilterTrait.php
 framework/core/src/Filter/FilterState.php
 framework/core/src/Filter/FilterInterface.php
 framework/core/src/Filter/AbstractFilterer.php
@@ -870,6 +872,7 @@ framework/core/js/dist-typings/admin/components/ExtensionPermissionGrid.d.ts
 framework/core/js/dist-typings/admin/components/AdminHeader.d.ts
 framework/core/js/dist-typings/admin/components/DebugWarningWidget.d.ts
 framework/core/js/dist-typings/admin/components/BasicsPage.d.ts
+framework/core/js/dist-typings/admin/components/CreateUserModal.d.ts
 framework/core/js/dist-typings/admin/components/MailPage.d.ts
 framework/core/js/dist-typings/admin/components/AdminNav.d.ts
 framework/core/js/dist-typings/admin/components/SessionDropdown.d.ts
@@ -991,7 +994,6 @@ framework/core/js/dist-typings/@types/tooltips/index.d.ts
 framework/core/js/dist-typings/@types/translator-icu-rich.d.ts
 framework/core/js/dist-typings/@types/translator-icu.d.ts
 framework/core/js/tsconfig.test.json
-framework/core/js/src/forum/ForumApplication.ts
 framework/core/js/src/forum/compat.ts
 framework/core/js/src/forum/index.ts
 framework/core/js/src/forum/utils/isSafariMobile.ts
@@ -1003,6 +1005,7 @@ framework/core/js/src/forum/utils/History.ts
 framework/core/js/src/forum/utils/UserControls.js
 framework/core/js/src/forum/utils/Pane.js
 framework/core/js/src/forum/resolvers/DiscussionPageResolver.ts
+framework/core/js/src/forum/ForumApplication.tsx
 framework/core/js/src/forum/states/PostStreamState.ts
 framework/core/js/src/forum/states/DiscussionListState.ts
 framework/core/js/src/forum/states/GlobalSearchState.ts
@@ -1077,7 +1080,6 @@ framework/core/js/src/admin/utils/isExtensionEnabled.js
 framework/core/js/src/admin/utils/saveSettings.js
 framework/core/js/src/admin/utils/ExtensionData.ts
 framework/core/js/src/admin/resolvers/ExtensionPageResolver.ts
-framework/core/js/src/admin/AdminApplication.ts
 framework/core/js/src/admin/components/StatusWidget.js
 framework/core/js/src/admin/components/SettingDropdown.tsx
 framework/core/js/src/admin/components/AdminNav.js
@@ -1102,6 +1104,7 @@ framework/core/js/src/admin/components/AppearancePage.tsx
 framework/core/js/src/admin/components/DashboardPage.tsx
 framework/core/js/src/admin/components/MailPage.tsx
 framework/core/js/src/admin/components/PermissionsPage.tsx
+framework/core/js/src/admin/components/CreateUserModal.tsx
 framework/core/js/src/admin/components/SettingsModal.tsx
 framework/core/js/src/admin/components/LoadingModal.tsx
 framework/core/js/src/admin/components/SessionDropdown.tsx
@@ -1111,6 +1114,7 @@ framework/core/js/src/admin/components/DebugWarningWidget.tsx
 framework/core/js/src/admin/routes.ts
 framework/core/js/src/admin/app.ts
 framework/core/js/src/admin/models/ExtensionReadme.js
+framework/core/js/src/admin/AdminApplication.tsx
 framework/core/js/src/common/compat.ts
 framework/core/js/src/common/Fragment.ts
 framework/core/js/src/common/Application.tsx
@@ -2276,7 +2280,7 @@ extensions/pusher/js/dist/forum.js.map
 extensions/pusher/js/dist/forum.js.LICENSE.txt
 extensions/pusher/js/dist-typings/forum/index.d.ts
 extensions/pusher/js/dist-typings/admin/index.d.ts
-extensions/pusher/js/src/forum/index.ts
+extensions/pusher/js/src/forum/index.tsx
 extensions/pusher/js/src/forum/shims.d.ts
 extensions/pusher/js/src/admin/index.ts
 extensions/pusher/js/forum.ts
