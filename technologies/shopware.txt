@@ -2596,6 +2596,7 @@ changelog/_unreleased/2023-01-23-sw-text-editor-toolbar-does-not-disappear.md
 changelog/_unreleased/2023-05-02-fix-loading-order-of-commercial-plugin.md
 changelog/_unreleased/2023-01-26-set-no-auto-cache-controll-on-httpcache-routes.md
 changelog/_unreleased/2023-03-14-added-defaultrangeindex-property-to-sw-chart-card.md
+changelog/_unreleased/2023-04-18-added-setting-to-make-custom-fields-exposable-in-cart.md
 changelog/_unreleased/2023-02-07-add-transparent-background-possibility-to-text-editor.md
 changelog/_unreleased/2023-02-17-align-buttons-in-the-snippet-resetting-modal.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
@@ -2647,6 +2648,7 @@ changelog/_unreleased/2023-03-06-fix-svg-image-is-not-displayed-in-the-desktop-v
 changelog/_unreleased/2023-04-18-add-ai-copilot-badge-component.md
 changelog/_unreleased/2023-04-04-add-symplify-phpstan-rules.md
 changelog/_unreleased/2023-03-30-fix-plugin-uninstall-for-composer-plugins.md
+changelog/_unreleased/2023-05-03-fix-price-field-behavior-when-allow-empty-is-true.md
 changelog/release-6-3-4-1/2020-12-08-add-guest-auth-for-order-deeplinks.md
 changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/release-6-4-8-0/2021-11-25-always-remove-required-before-saving.md
@@ -3512,6 +3514,7 @@ tests/migration/Core/V6_5/Migration1672934282ReviewFormSendFlowTest.php
 tests/migration/Core/V6_5/Migration1671003201RemoveDeprecatedColumnsTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
 tests/migration/Core/V6_5/Migration1673426317ImproveStateMachineHistoryQueryPerformanceTest.php
+tests/migration/Core/V6_5/Migration1681382023AddCustomFieldAllowCartExposeTest.php
 tests/migration/Core/V6_5/Migration1662533751AddCustomEntityTypeIdToCategoryTest.php
 tests/migration/Core/V6_5/Migration1676272000AddAccountTypeToCustomerTest.php
 tests/migration/Core/V6_5/Migration1675082889DropUnusedTablesTest.php
@@ -7498,6 +7501,7 @@ src/Core/Migration/V6_5/Migration1669291632MigrateLineItemsInCartRule.php
 src/Core/Migration/V6_5/Migration1678197291ConvertVariantListingConfig.php
 src/Core/Migration/V6_5/Migration1674200008UpdateOrderViewerRolePrivileges.php
 src/Core/Migration/V6_5/Migration1675247112ChangeCountryNamingConvention.php
+src/Core/Migration/V6_5/Migration1681382023AddCustomFieldAllowCartExpose.php
 src/Core/Migration/V6_5/Migration1668435503ChangeStornoDocumentTranslationName.php
 src/Core/Migration/V6_5/Migration1679584289AddCustomerReviewCount.php
 src/Core/Migration/V6_5/Migration1674704527UpdateVATPatternForCyprusCountry.php
@@ -14136,6 +14140,7 @@ src/Administration/Resources/app/administration/src/app/component/rule/condition
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic/sw-condition-generic.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic/sw-condition-generic.scss
+src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-custom-field/sw-condition-line-item-custom-field.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-custom-field/sw-condition-line-item-custom-field.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-custom-field/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-custom-field/sw-condition-line-item-custom-field.scss

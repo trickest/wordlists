@@ -5088,6 +5088,7 @@ tests/Browser/Pages/Page.php
 tests/Browser/LoginTest.php
 tests/api.suite.yml
 tests/TestCase.php
+tests/Feature/CheckoutAcceptances/AccessoryAcceptanceTest.php
 tests/Feature/Users/UpdateUserTest.php
 tests/Feature/Notifications/ConsumableWebhookTest.php
 tests/Feature/Notifications/ComponentWebhookTest.php
@@ -5208,6 +5209,7 @@ database/seeders/DatabaseSeeder.php
 database/seeders/AssetModelSeeder.php
 database/seeders/CategorySeeder.php
 database/seeders/ActionlogSeeder.php
+database/factories/CheckoutAcceptanceFactory.php
 database/factories/UserFactory.php
 database/factories/LicenseSeatFactory.php
 database/factories/AssetMaintenanceFactory.php
@@ -5548,6 +5550,7 @@ database/migrations/2022_10_05_163044_add_start_termination_date_to_users.php
 database/migrations/2020_08_11_200712_add_saml_key_rollover.php
 database/migrations/2014_11_04_231416_update_group_field_for_reporting.php
 database/migrations/2016_10_16_015024_rename_modelno_to_model_number.php
+database/migrations/2023_05_08_132921_increase_state_to_more_than_3.php
 database/migrations/2017_05_08_195520_increase_size_of_field_values_in_custom_fields.php
 database/migrations/2018_07_28_023826_create_checkout_acceptances_table.php
 database/migrations/2022_08_25_213308_adds_ldap_default_group_to_settings_table.php
