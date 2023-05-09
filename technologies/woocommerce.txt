@@ -473,6 +473,7 @@ packages/js/product-editor/changelog/update-layout-context-for-blocks
 packages/js/product-editor/changelog/dev-update-eslint-plugin
 packages/js/product-editor/changelog/add-stock-status-37884
 packages/js/product-editor/changelog/dev-pin-wp-deps-6
+packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-37771
 packages/js/product-editor/changelog/add-37249
 packages/js/product-editor/changelog/add-37930
@@ -1543,6 +1544,7 @@ packages/js/data/changelog/update-changelogger
 packages/js/data/changelog/add-34387
 packages/js/data/changelog/try-support-multiple-fills
 packages/js/data/changelog/fix-34112
+packages/js/data/changelog/update-migrate-purchase-task-to-ts
 packages/js/data/changelog/.gitkeep
 packages/js/data/changelog/update-remove-notes-exceeding-characters-warning
 packages/js/data/changelog/fix-with-current-user-hydration
@@ -2802,7 +2804,6 @@ plugins/woocommerce-admin/client/tasks/back-button.tsx
 plugins/woocommerce-admin/client/tasks/hooks/useActiveSetupList.ts
 plugins/woocommerce-admin/client/tasks/back-button.scss
 plugins/woocommerce-admin/client/tasks/task-list-menu.tsx
-plugins/woocommerce-admin/client/tasks/fills/purchase.js
 plugins/woocommerce-admin/client/tasks/fills/Marketing/PluginList.tsx
 plugins/woocommerce-admin/client/tasks/fills/Marketing/Plugin.tsx
 plugins/woocommerce-admin/client/tasks/fills/Marketing/test/index.tsx
@@ -2816,6 +2817,7 @@ plugins/woocommerce-admin/client/tasks/fills/import-products/index.tsx
 plugins/woocommerce-admin/client/tasks/fills/import-products/CardList.tsx
 plugins/woocommerce-admin/client/tasks/fills/import-products/cards.scss
 plugins/woocommerce-admin/client/tasks/fills/import-products/style.scss
+plugins/woocommerce-admin/client/tasks/fills/index.ts
 plugins/woocommerce-admin/client/tasks/fills/tax/utils.ts
 plugins/woocommerce-admin/client/tasks/fills/tax/manual-configuration/configure.tsx
 plugins/woocommerce-admin/client/tasks/fills/tax/manual-configuration/index.tsx
@@ -2885,6 +2887,7 @@ plugins/woocommerce-admin/client/tasks/fills/components/load-sample-product-moda
 plugins/woocommerce-admin/client/tasks/fills/components/load-sample-product-confirm-modal.tsx
 plugins/woocommerce-admin/client/tasks/fills/woocommerce-payments.tsx
 plugins/woocommerce-admin/client/tasks/fills/utils.js
+plugins/woocommerce-admin/client/tasks/fills/purchase.tsx
 plugins/woocommerce-admin/client/tasks/fills/products/index.scss
 plugins/woocommerce-admin/client/tasks/fills/products/test/utils.ts
 plugins/woocommerce-admin/client/tasks/fills/products/test/index.tsx
@@ -2901,7 +2904,6 @@ plugins/woocommerce-admin/client/tasks/fills/products/icon/link_24px.js
 plugins/woocommerce-admin/client/tasks/fills/products/utils.tsx
 plugins/woocommerce-admin/client/tasks/fills/products/footer.tsx
 plugins/woocommerce-admin/client/tasks/fills/products/constants.tsx
-plugins/woocommerce-admin/client/tasks/fills/index.js
 plugins/woocommerce-admin/client/tasks/fills/PaymentGatewaySuggestions/test/utils.js
 plugins/woocommerce-admin/client/tasks/fills/PaymentGatewaySuggestions/test/index.js
 plugins/woocommerce-admin/client/tasks/fills/PaymentGatewaySuggestions/components/List/Placeholder.js
@@ -2992,6 +2994,7 @@ plugins/woocommerce-admin/client/core-profiler/components/progress-bar/progress-
 plugins/woocommerce-admin/client/core-profiler/components/progress-bar/progress-bar.tsx
 plugins/woocommerce-admin/client/core-profiler/index.tsx
 plugins/woocommerce-admin/client/core-profiler/style.scss
+plugins/woocommerce-admin/client/dashboard/utils.ts
 plugins/woocommerce-admin/client/dashboard/section-controls.js
 plugins/woocommerce-admin/client/dashboard/leaderboards/style.scss
 plugins/woocommerce-admin/client/dashboard/leaderboards/index.js
@@ -3007,7 +3010,6 @@ plugins/woocommerce-admin/client/dashboard/components/settings/general/test/stor
 plugins/woocommerce-admin/client/dashboard/components/settings/general/store-address.tsx
 plugins/woocommerce-admin/client/dashboard/README.md
 plugins/woocommerce-admin/client/dashboard/customizable.js
-plugins/woocommerce-admin/client/dashboard/utils.js
 plugins/woocommerce-admin/client/dashboard/default-sections.js
 plugins/woocommerce-admin/client/dashboard/style.scss
 plugins/woocommerce-admin/client/dashboard/index.js
@@ -3358,6 +3360,7 @@ plugins/woocommerce/changelog/fix-line-endings
 plugins/woocommerce/changelog/fix-k6-order-id-hpos
 plugins/woocommerce/changelog/dev-post-release-tasks-7.6.1-update-stable
 plugins/woocommerce/changelog/fix-incorrect-variation-count
+plugins/woocommerce/changelog/add-38118
 plugins/woocommerce/changelog/fix-remove-hardcoded-notices
 plugins/woocommerce/changelog/dev-xstate-inspector-toggling
 plugins/woocommerce/changelog/e2e-pw-add-merchant-create-post
@@ -3373,8 +3376,10 @@ plugins/woocommerce/changelog/add-37741-add-navigation-component-for-core-profil
 plugins/woocommerce/changelog/e2e-update-wsl-setup-instructions
 plugins/woocommerce/changelog/fix-k6-api-40X-errors
 plugins/woocommerce/changelog/fix-37681
+plugins/woocommerce/changelog/update-migrate-purchase-task-to-ts
 plugins/woocommerce/changelog/26827-checkout-place-order-events
 plugins/woocommerce/changelog/number_of_variations_imported
+plugins/woocommerce/changelog/woocommer-thumb-issue
 plugins/woocommerce/changelog/fix-tasklist-completion-message
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-e2e-test-docs
@@ -3385,12 +3390,14 @@ plugins/woocommerce/changelog/fix-37954_update_image_description
 plugins/woocommerce/changelog/2023-05-02-09-36-02-782439
 plugins/woocommerce/changelog/update-layout-context-for-blocks
 plugins/woocommerce/changelog/add-stock-status-37884
+plugins/woocommerce/changelog/update-tax-location-form
 plugins/woocommerce/changelog/pr-35232
 plugins/woocommerce/changelog/fix-issue-36668
 plugins/woocommerce/changelog/add-37771
 plugins/woocommerce/changelog/tweak-37603
 plugins/woocommerce/changelog/fix-decimal-points-for-sek-huf-czk
 plugins/woocommerce/changelog/fix-product-data-field-description-styling.
+plugins/woocommerce/changelog/dev-38080_rename_generate_variations_button
 plugins/woocommerce/changelog/add-37266
 plugins/woocommerce/changelog/fix-37600
 plugins/woocommerce/changelog/fix-36027
@@ -3398,6 +3405,7 @@ plugins/woocommerce/changelog/fix-36785
 plugins/woocommerce/changelog/fix-37502
 plugins/woocommerce/changelog/fix-35860
 plugins/woocommerce/changelog/fix-tabs-reordering-38002
+plugins/woocommerce/changelog/fix-woocommerce_admin_updated-does-not-run
 plugins/woocommerce/changelog/fix-34420
 plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/enhancement-add-held-stock-note
@@ -3406,10 +3414,13 @@ plugins/woocommerce/changelog/add-core-profiler-welcome-woo
 plugins/woocommerce/changelog/add-rest-api-products-featured-image
 plugins/woocommerce/changelog/add-shipping-class-creation-37886
 plugins/woocommerce/changelog/fix-37604
+plugins/woocommerce/changelog/remove-qs
 plugins/woocommerce/changelog/fix-update-wp-env-error-message
 plugins/woocommerce/changelog/update-check-external-testing-instructions
+plugins/woocommerce/changelog/remove-onboarding-hook
 plugins/woocommerce/changelog/dev-remove-deasync-dep
 plugins/woocommerce/changelog/fix-28214
+plugins/woocommerce/changelog/fix-wc-experimental-i18n
 plugins/woocommerce/changelog/fix-tt2-comment-list
 plugins/woocommerce/changelog/pr-37916
 plugins/woocommerce/changelog/add-37704
@@ -3417,6 +3428,7 @@ plugins/woocommerce/changelog/fix-36749
 plugins/woocommerce/changelog/fix-issue-36960
 plugins/woocommerce/changelog/update-product-section-icon-37711
 plugins/woocommerce/changelog/update-block-editor-global-styling-37687
+plugins/woocommerce/changelog/update-hide-logo-step-if-not-support
 plugins/woocommerce/changelog/fix-37089
 plugins/woocommerce/changelog/update-contributor-notes
 plugins/woocommerce/changelog/dev-37989_allow_dropdown_recording_for_wc_settings
@@ -3428,6 +3440,7 @@ plugins/woocommerce/changelog/update-woo-L1-support-policy
 plugins/woocommerce/changelog/add-37844
 plugins/woocommerce/changelog/update-change-product-category-metabox-enqueue
 plugins/woocommerce/changelog/enchancement-37630-theme-element-class-name
+plugins/woocommerce/changelog/dev-38122_remove_separator_between_buttons_and_empty_state_screen
 plugins/woocommerce/changelog/tweak-37458
 plugins/woocommerce/changelog/fix-env-specific-phpunit-tests
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.0.4
@@ -6057,6 +6070,7 @@ tools/monorepo-utils/src/core/util.ts
 tools/monorepo-utils/src/core/environment.ts
 tools/monorepo-utils/src/core/git.ts
 tools/monorepo-utils/src/core/version.ts
+tools/monorepo-utils/src/core/__tests__/logger.ts
 tools/monorepo-utils/src/core/github/repo.ts
 tools/monorepo-utils/src/core/github/__tests__/index.ts
 tools/monorepo-utils/src/core/github/api.ts

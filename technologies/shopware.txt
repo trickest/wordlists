@@ -2438,6 +2438,7 @@ changelog/_unreleased/2023-02-12-improve-handling-to-link-line-items-to-custom-l
 changelog/_unreleased/2023-04-03-check-customer-email-valid-when-adding-new-order-from-order-detail.md
 changelog/_unreleased/2023-04-11-link-to-themes-store-tab-from-empty-state.md
 changelog/_unreleased/2023-02-02-add-american-english-in-installer.md
+changelog/_unreleased/2023-04-27-recalculated-carts-should-not-be-persisted.md
 changelog/_unreleased/2023-02-08-allow-conversion-of-units-in-the-rule-builder.md
 changelog/_unreleased/2023-04-05-allow-request-service.md
 changelog/_unreleased/2023-03-16-clear-container-cache-after-plugin-extraction.md
@@ -2548,6 +2549,7 @@ changelog/_unreleased/2023-01-06-added-media-uploaded-event.md
 changelog/_unreleased/2023-02-24-search-configuration-requires-unintuitive-double-clicking-values-to-change-something.md
 changelog/_unreleased/2023-03-06-remove-admin-user-activity-debounce.md
 changelog/_unreleased/2023-03-29-fix-order-filter-error.md
+changelog/_unreleased/2023-04-21-allow-custom-entities-to-be-referenced-in-custom-fields.md
 changelog/_unreleased/2023-04-24-add-jest-tests-for-init-folder.md
 changelog/_unreleased/2023-03-10-change-promotion-to-payload.md
 changelog/_unreleased/2023-01-31-prevent-unfiltered-cms-demo-category-media-search.md
@@ -2563,6 +2565,7 @@ changelog/_unreleased/2023-03-14-modal-selectors.md
 changelog/_unreleased/2023-04-25-add-aibadge-support-system-config.md
 changelog/_unreleased/2023-03-14-adjust-savewithsync-function-catch-block.md
 changelog/_unreleased/2023-02-27-fix-checkbox-checkmark-in-media-component.md
+changelog/_unreleased/2023-05-05-add-ai-copilot-hint-component.md
 changelog/_unreleased/2023-01-24-add-app-action-buttons-to-cms-page.md
 changelog/_unreleased/2023-04-03-disable-auto-prefixer.md
 changelog/_unreleased/2023-03-10-convert-generated-variant-listing-config-column.md
@@ -2635,6 +2638,7 @@ changelog/_unreleased/2023-04-05-fix-entity-mapping-service.md
 changelog/_unreleased/2023-03-13-improve-assets-intall.md
 changelog/_unreleased/2023-03-07-fix-stretched-images-in-media-preview.md
 changelog/_unreleased/2023-02-11-storefront-watcher-with-an-uri.md
+changelog/_unreleased/2023-04-27-display-created-by-admin-pill-without-salutation.md
 changelog/_unreleased/2023-03-14-improve-address-markup-to-remove-space-between-the-symbo.md
 changelog/_unreleased/2023-03-08-improve-grammar-of-useDefaultCookieConsent-setting.md
 changelog/_unreleased/2023-02-09-add-order-created-by-admin-rule.md
@@ -3520,6 +3524,7 @@ tests/migration/Core/V6_5/Migration1676272000AddAccountTypeToCustomerTest.php
 tests/migration/Core/V6_5/Migration1675082889DropUnusedTablesTest.php
 tests/migration/Core/V6_5/Migration1675247112ChangeCountryNamingConventionTest.php
 tests/migration/Core/V6_5/Migration1670854818RemoveEventActionTableTest.php
+tests/migration/Core/V6_5/Migration1680789830AddCustomFieldsAwareToCustomEntitiesTest.php
 tests/migration/Core/V6_5/Migration1673860323ChangeDefaultProductComparisonIconTest.php
 tests/migration/Core/V6_5/Migration1678197291ConvertVariantListingConfigTest.php
 tests/migration/Core/V6_5/Migration1669298267AddIconCacheDefaultValueTest.php
@@ -3895,6 +3900,7 @@ tests/integration/php/Core/Checkout/Document/fixtures/theme/Resources/theme.json
 tests/integration/php/Core/Checkout/Document/Service/DocumentGeneratorTest.php
 tests/integration/php/Core/Checkout/Payment/SalesChannel/PaymentMethodRouteTest.php
 tests/integration/php/Core/Checkout/Cart/LineItemFactoryRegistryTest.php
+tests/integration/php/Core/Checkout/Cart/fixtures/cart.blob
 tests/integration/php/Core/Checkout/Cart/PriceActionControllerTest.php
 tests/integration/php/Core/Checkout/Cart/SalesChannel/CartOrderRouteTest.php
 tests/integration/php/Core/Checkout/Cart/Facade/_fixtures/cart-facade-tests/manifest.xml
@@ -3919,6 +3925,7 @@ tests/integration/php/Core/Checkout/Cart/Facade/CartFacadeTest.php
 tests/integration/php/Core/Checkout/Cart/Facade/CartTestHook.php
 tests/integration/php/Core/Checkout/Cart/TaxProvider/TaxProviderRegistryTest.php
 tests/integration/php/Core/Checkout/Cart/TaxProvider/TaxAdjustmentTest.php
+tests/integration/php/Core/Checkout/Cart/CartPersisterTest.php
 tests/integration/php/Core/Installer/Configuration/ShopConfigurationServiceTest.php
 tests/integration/php/Storefront/Theme/ThemeLifecycleHandlerTest.php
 tests/integration/php/Storefront/Theme/ConfigLoader/DatabaseAvailableThemeProviderTest.php
@@ -4335,6 +4342,7 @@ tests/unit/php/Core/Profiling/Doctrine/ConnectionProfilerTest.php
 tests/unit/php/Core/Profiling/Controller/ProfilerControllerTest.php
 tests/unit/php/Core/Profiling/ProfilingTest.php
 tests/unit/php/Core/Profiling/Subscriber/ActiveRulesDataCollectorSubscriberTest.php
+tests/unit/php/Core/System/CustomEntity/CustomEntityEntityTest.php
 tests/unit/php/Core/System/CustomEntity/_fixtures/CustomEntityLifecycleServiceTest/withCustomEntitiesAndAdminUis/plugin/src/Resources/entities.xml
 tests/unit/php/Core/System/CustomEntity/_fixtures/CustomEntityLifecycleServiceTest/withCustomEntitiesAndAdminUis/plugin/src/Resources/config/admin-ui.xml
 tests/unit/php/Core/System/CustomEntity/_fixtures/CustomEntityLifecycleServiceTest/withCustomEntitiesAndAdminUis/app/Resources/entities.xml
@@ -4361,6 +4369,7 @@ tests/unit/php/Core/System/CustomEntity/_fixtures/AdminUiXmlSchemaValidatorTest/
 tests/unit/php/Core/System/CustomEntity/_fixtures/AdminUiXmlSchemaValidatorTest/duplicateReferences/inCard/admin-ui.xml
 tests/unit/php/Core/System/CustomEntity/_fixtures/AdminUiXmlSchemaValidatorTest/duplicateReferences/inColumns/entities.xml
 tests/unit/php/Core/System/CustomEntity/_fixtures/AdminUiXmlSchemaValidatorTest/duplicateReferences/inColumns/admin-ui.xml
+tests/unit/php/Core/System/CustomEntity/CustomEntityExceptionTest.php
 tests/unit/php/Core/System/CustomEntity/CustomEntityLifecycleServiceTest.php
 tests/unit/php/Core/System/CustomEntity/Xml/Config/AdminUi/AdminUiXmlSchemaValidatorTest.php
 tests/unit/php/Core/System/CustomEntity/Xml/Config/AdminUi/XmlElements/ColumnTest.php
@@ -4377,6 +4386,8 @@ tests/unit/php/Core/System/CustomEntity/Xml/Config/AdminUi/AdminUiXmlSchemaTest.
 tests/unit/php/Core/System/CustomEntity/Xml/Config/ConfigXmlElementTest.php
 tests/unit/php/Core/System/CustomEntity/Xml/Config/CustomEntityEnrichmentServiceTest.php
 tests/unit/php/Core/System/CustomEntity/Xml/Config/CmsAware/CmsAwareFieldsTest.php
+tests/unit/php/Core/System/CustomEntity/Xml/EntityTest.php
+tests/unit/php/Core/System/CustomEntity/Xml/CustomEntityXmlSchemaValidatorTest.php
 tests/unit/php/Core/System/CustomEntity/Schema/CustomEntitySchemaUpdaterTest.php
 tests/unit/php/Core/System/CustomEntity/Schema/SchemaUpdaterTest.php
 tests/unit/php/Core/System/CustomEntity/CustomEntityRegistrarTest.php
@@ -5294,6 +5305,7 @@ src/Core/System/CustomEntity/CustomEntityEntity.php
 src/Core/System/CustomEntity/CustomEntityRegistrar.php
 src/Core/System/CustomEntity/CustomEntityCollection.php
 src/Core/System/CustomEntity/Api/CustomEntityApiController.php
+src/Core/System/CustomEntity/CustomEntityException.php
 src/Core/System/CustomEntity/CustomEntityLifecycleService.php
 src/Core/System/CustomEntity/Xml/Config/CustomEntityEnrichmentService.php
 src/Core/System/CustomEntity/Xml/Config/AdminUi/AdminUiXmlSchema.php
@@ -7527,6 +7539,7 @@ src/Core/Migration/V6_5/Migration1669298267AddIconCacheDefaultValue.php
 src/Core/Migration/V6_5/Migration1661505878ChangeDefaultValueOfShippingMethodActiveField.php
 src/Core/Migration/V6_5/Migration1673860323ChangeDefaultProductComparisonIcon.php
 src/Core/Migration/V6_5/Migration1672934282ReviewFormSendFlow.php
+src/Core/Migration/V6_5/Migration1680789830AddCustomFieldsAwareToCustomEntities.php
 src/Core/Migration/V6_5/Migration1662533751AddCustomEntityTypeIdToCategory.php
 src/Core/Migration/V6_5/Migration1676272000AddAccountTypeToCustomer.php
 src/Core/Migration/V6_3/Migration1574695657ProductCrossSelling.php
@@ -10515,7 +10528,6 @@ src/Core/Checkout/Test/Cart/Validator/Container/NotRuleTest.php
 src/Core/Checkout/Test/Cart/Validator/RuleCollectionTest.php
 src/Core/Checkout/Test/Cart/AddressValidatorTest.php
 src/Core/Checkout/Test/Cart/CartSerializationCleanerTest.php
-src/Core/Checkout/Test/Cart/fixtures/cart.blob
 src/Core/Checkout/Test/Cart/SalesChannel/CartItemRemoveRouteTest.php
 src/Core/Checkout/Test/Cart/SalesChannel/CartDeleteRouteTest.php
 src/Core/Checkout/Test/Cart/SalesChannel/CartItemAddRouteTest.php
@@ -10524,7 +10536,6 @@ src/Core/Checkout/Test/Cart/SalesChannel/CartLoadRouteTest.php
 src/Core/Checkout/Test/Cart/Delivery/DeliveryProcessorTest.php
 src/Core/Checkout/Test/Cart/Delivery/DeliveryBuilderTest.php
 src/Core/Checkout/Test/Cart/Delivery/DeliveryCalculatorTest.php
-src/Core/Checkout/Test/Cart/CartPersisterTest.php
 src/Core/Checkout/Test/Cart/Token/JWTConfigurationFactoryTest.php
 src/Core/Checkout/Test/Cart/ProcessorTest.php
 src/Core/Checkout/Test/Cart/CartServiceTest.php
@@ -14199,6 +14210,10 @@ src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/
 src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-badge/sw-ai-copilot-badge.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-badge/sw-ai-copilot-badge.html.twig
 src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-badge/sw-ai-copilot-badge.spec.js
+src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-warning/sw-ai-copilot-warning.html.twig
+src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-warning/index.ts
+src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-warning/sw-ai-copilot-warning.spec.js
+src/Administration/Resources/app/administration/src/app/asyncComponent/feedback/sw-ai-copilot-warning/sw-ai-copilot-warning.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-modal-folder-settings/sw-media-modal-folder-settings.html.twig
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-modal-folder-settings/index.js
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-modal-folder-settings/sw-media-modal-folder-settings.scss

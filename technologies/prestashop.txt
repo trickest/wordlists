@@ -147,6 +147,7 @@ tests/Integration/Behaviour/Features/Context/Domain/SearchEngineFeatureContext.p
 tests/Integration/Behaviour/Features/Context/Domain/ContactFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CustomerServiceFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/AliasFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderCustomerFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderShippingFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CategoryFeatureContext.php
@@ -295,6 +296,7 @@ tests/Integration/Behaviour/Features/Scenario/Webservice/webservice_key_manageme
 tests/Integration/Behaviour/Features/Scenario/Webservice/Endpoints/addresses.feature
 tests/Integration/Behaviour/Features/Scenario/Meta/meta_management.feature
 tests/Integration/Behaviour/Features/Scenario/SearchEngine/search_engine_management.feature
+tests/Integration/Behaviour/Features/Scenario/Search/add_alias.feature
 tests/Integration/Behaviour/Features/Scenario/TaxRulesGroup/tax_rule_group_management.feature
 tests/Integration/Behaviour/Features/Scenario/Security/security_configuration.feature
 tests/Integration/Behaviour/Features/Scenario/Product/update_customization_fields.feature
@@ -1662,6 +1664,7 @@ tests/Unit/Core/Domain/OrderReturn/QueryResult/OrderReturnForEditingReturnTest.p
 tests/Unit/Core/Domain/OrderReturn/ValueObject/OrderReturnIdTest.php
 tests/Unit/Core/Domain/Contact/Command/AddContactCommandTest.php
 tests/Unit/Core/Domain/Contact/Command/EditContactCommandTest.php
+tests/Unit/Core/Domain/Alias/ValueObject/AliasIdTest.php
 tests/Unit/Core/Domain/Customer/Group/Command/AddCustomerGroupCommandTest.php
 tests/Unit/Core/Domain/Customer/Group/ValueObject/GroupIdTest.php
 tests/Unit/Core/Domain/Customer/ValueObject/CustomerIdTest.php
@@ -5855,6 +5858,10 @@ src/Adapter/CatalogPriceRule/Repository/CatalogPriceRuleRepository.php
 src/Adapter/CatalogPriceRule/AbstractCatalogPriceRuleHandler.php
 src/Adapter/CatalogPriceRule/QueryHandler/GetCatalogPriceRuleListForProductHandler.php
 src/Adapter/CatalogPriceRule/QueryHandler/GetCatalogPriceRuleForEditingHandler.php
+src/Adapter/Alias/CommandHandler/AddAliasHandler.php
+src/Adapter/Alias/Repository/AliasRepository.php
+src/Adapter/Alias/Validate/AliasValidator.php
+src/Adapter/Alias/QueryHandler/GetAliasForEditingHandler.php
 src/Adapter/Customer/CommandHandler/SetPrivateNoteAboutCustomerHandler.php
 src/Adapter/Customer/CommandHandler/AbstractCustomerHandler.php
 src/Adapter/Customer/CommandHandler/SetRequiredFieldsForCustomerHandler.php
@@ -7919,6 +7926,16 @@ src/Core/Domain/CatalogPriceRule/Exception/CatalogPriceRuleNotFoundException.php
 src/Core/Domain/CatalogPriceRule/Exception/CatalogPriceRuleException.php
 src/Core/Domain/CatalogPriceRule/QueryHandler/GetCatalogPriceRuleForEditingHandlerInterface.php
 src/Core/Domain/CatalogPriceRule/QueryHandler/GetCatalogPriceRuleListForProductHandlerInterface.php
+src/Core/Domain/Alias/CommandHandler/AddAliasHandlerInterface.php
+src/Core/Domain/Alias/QueryResult/AliasForEditing.php
+src/Core/Domain/Alias/Command/AddAliasCommand.php
+src/Core/Domain/Alias/Query/GetAliasForEditing.php
+src/Core/Domain/Alias/ValueObject/AliasId.php
+src/Core/Domain/Alias/Exception/CannotAddAliasException.php
+src/Core/Domain/Alias/Exception/AliasException.php
+src/Core/Domain/Alias/Exception/AliasConstraintException.php
+src/Core/Domain/Alias/Exception/AliasNotFoundException.php
+src/Core/Domain/Alias/QueryHandler/GetAliasForEditingHandlerInterface.php
 src/Core/Domain/Customer/CommandHandler/EditCustomerHandlerInterface.php
 src/Core/Domain/Customer/CommandHandler/BulkDeleteCustomerHandlerInterface.php
 src/Core/Domain/Customer/CommandHandler/SetRequiredFieldsForCustomerHandlerInterface.php
@@ -10438,6 +10455,7 @@ src/PrestaShopBundle/Resources/config/services/adapter/common.yml
 src/PrestaShopBundle/Resources/config/services/adapter/data_provider_common.yml
 src/PrestaShopBundle/Resources/config/services/adapter/theme.yml
 src/PrestaShopBundle/Resources/config/services/adapter/feature.yml
+src/PrestaShopBundle/Resources/config/services/adapter/alias.yml
 src/PrestaShopBundle/Resources/config/services/adapter/group.yml
 src/PrestaShopBundle/Resources/config/services/adapter/profile.yml
 src/PrestaShopBundle/Resources/config/services/adapter/webservice.yml

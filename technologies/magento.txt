@@ -10150,6 +10150,7 @@ app/code/Magento/ProductVideo/Test/Unit/Controller/Adminhtml/Product/Gallery/Ret
 app/code/Magento/ProductVideo/Test/Mftf/Metadata/ProductVideoConfigMeta.xml
 app/code/Magento/ProductVideo/Test/Mftf/Test/AdminAddRemoveDefaultVideoVirtualProductTest.xml
 app/code/Magento/ProductVideo/Test/Mftf/Test/AdminValidatePrivacyOnVimeoGetVideoInformationTest.xml
+app/code/Magento/ProductVideo/Test/Mftf/Test/StorefrontProductVideoAutoplayOnGalleryFullscreenModeTest.xml
 app/code/Magento/ProductVideo/Test/Mftf/Test/VimeoVideoControlButtonsOnProductPageTest.xml
 app/code/Magento/ProductVideo/Test/Mftf/Test/AdminAddRemoveDefaultVideoSimpleProductTest.xml
 app/code/Magento/ProductVideo/Test/Mftf/Test/AdminAddRemoveDefaultVideoDownloadableProductTest.xml
@@ -16904,10 +16905,12 @@ app/code/Magento/Cms/Model/Page/Source/IsActive.php
 app/code/Magento/Cms/Model/Page/Source/CustomLayout.php
 app/code/Magento/Cms/Model/Page/DomValidationState.php
 app/code/Magento/Cms/Model/Page/IdentityMap.php
+app/code/Magento/Cms/Model/Page/TargetUrlBuilder.php
 app/code/Magento/Cms/Model/Page/Authorization.php
 app/code/Magento/Cms/Model/Page/CustomLayoutManagerInterface.php
 app/code/Magento/Cms/Model/Page/CustomLayoutRepositoryInterface.php
 app/code/Magento/Cms/Model/Page/DataProvider.php
+app/code/Magento/Cms/Model/Page/TargetUrlBuilderInterface.php
 app/code/Magento/Cms/Model/Page/CustomLayout/Data/CustomLayoutSelectedInterface.php
 app/code/Magento/Cms/Model/Page/CustomLayout/Data/CustomLayoutSelected.php
 app/code/Magento/Cms/Model/Page/CustomLayout/CustomLayoutValidator.php
@@ -20665,6 +20668,7 @@ app/code/Magento/ImportExport/Cron/ImportDataTableCleanup.php
 app/code/Magento/ImportExport/i18n/en_US.csv
 app/code/Magento/ImportExport/Test/Unit/Model/Source/Export/FormatTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/Source/Export/EntityTest.php
+app/code/Magento/ImportExport/Test/Unit/Model/Source/UploadTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/Source/Import/AbstractBehaviorTestCase.php
 app/code/Magento/ImportExport/Test/Unit/Model/Source/Import/BehaviorAbstractTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/Source/Import/Behavior/CustomTest.php
@@ -26859,6 +26863,7 @@ app/code/Magento/MessageQueue/Model/ResourceModel/PoisonPill.php
 app/code/Magento/MessageQueue/Test/Integration/PoisonPillApplyAfterCommandRunTest.php
 app/code/Magento/MessageQueue/Test/Unit/Model/Cron/ConsumersRunnerTest.php
 app/code/Magento/MessageQueue/Test/Unit/Model/ConsumerRunnerTest.php
+app/code/Magento/MessageQueue/Test/Unit/Model/CheckIsAvailableMessagesInQueueTest.php
 app/code/Magento/MessageQueue/Test/Unit/Model/ResourceModel/LockTest.php
 app/code/Magento/MessageQueue/Test/Unit/_files/pid_consumer_functions_mocks.php
 app/code/Magento/MessageQueue/Test/Unit/_files/consumers_runner_functions_mocks.php
@@ -27641,9 +27646,11 @@ app/code/Magento/CatalogRuleGraphQl/registration.php
 app/code/Magento/CmsUrlRewrite/composer.json
 app/code/Magento/CmsUrlRewrite/Model/CmsPageUrlRewriteGenerator.php
 app/code/Magento/CmsUrlRewrite/Model/CmsPageUrlPathGenerator.php
+app/code/Magento/CmsUrlRewrite/Model/Page/TargetUrlBuilder.php
 app/code/Magento/CmsUrlRewrite/i18n/en_US.csv
 app/code/Magento/CmsUrlRewrite/Test/Unit/Model/CmsPageUrlRewriteGeneratorTest.php
 app/code/Magento/CmsUrlRewrite/Test/Unit/Model/CmsPageUrlPathGeneratorTest.php
+app/code/Magento/CmsUrlRewrite/Test/Unit/Model/Page/TargetUrlBuilderTest.php
 app/code/Magento/CmsUrlRewrite/Test/Unit/Plugin/Cms/Model/Store/ViewTest.php
 app/code/Magento/CmsUrlRewrite/Test/Unit/Plugin/Cms/Model/ResourceModel/PageTest.php
 app/code/Magento/CmsUrlRewrite/Test/Unit/Observer/ProcessUrlRewriteSavingObserverTest.php
@@ -33486,6 +33493,7 @@ app/code/Magento/GraphQlCache/Model/Cache/Query/Resolver/Result/ResolverIdentity
 app/code/Magento/GraphQlCache/i18n/en_US.csv
 app/code/Magento/GraphQlCache/Test/Unit/Model/CacheId/CacheIdCalculatorTest.php
 app/code/Magento/GraphQlCache/Test/Unit/Model/CacheableQueryHandlerTest.php
+app/code/Magento/GraphQlCache/Test/Unit/Controller/Plugin/GraphQlTest.php
 app/code/Magento/GraphQlCache/README.md
 app/code/Magento/GraphQlCache/etc/module.xml
 app/code/Magento/GraphQlCache/etc/graphql/di.xml
@@ -37038,6 +37046,7 @@ lib/internal/Magento/Framework/MessageQueue/registration.php
 lib/internal/Magento/Framework/MessageQueue/DefaultValueProvider.php
 lib/internal/Magento/Framework/MessageQueue/MessageIdGenerator.php
 lib/internal/Magento/Framework/MessageQueue/EnvelopeInterface.php
+lib/internal/Magento/Framework/MessageQueue/CountableQueueInterface.php
 lib/internal/Magento/Framework/MessageQueue/CallbackInvokerInterface.php
 lib/internal/Magento/Framework/MessageQueue/Publisher.php
 lib/internal/Magento/Framework/MessageQueue/Config.php
