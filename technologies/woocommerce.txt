@@ -59,6 +59,7 @@ packages/js/internal-js-tests/src/mocks/style-mock.js
 packages/js/internal-js-tests/src/mocks/api-request.js
 packages/js/internal-js-tests/src/mocks/static.js
 packages/js/internal-js-tests/src/mocks/tinymce.js
+packages/js/internal-js-tests/src/mocks/woocommerce-tracks.js
 packages/js/internal-js-tests/src/mocks/woocommerce-settings.js
 packages/js/internal-js-tests/jest-preset.js
 packages/js/internal-js-tests/tsconfig.json
@@ -2437,6 +2438,7 @@ plugins/woocommerce-admin/client/analytics/components/report-table/utils.js
 plugins/woocommerce-admin/client/analytics/components/report-table/download-icon.js
 plugins/woocommerce-admin/client/analytics/components/report-table/style.scss
 plugins/woocommerce-admin/client/analytics/components/report-table/index.js
+plugins/woocommerce-admin/client/analytics/components/report-filters/test/index.js
 plugins/woocommerce-admin/client/analytics/components/report-filters/index.js
 plugins/woocommerce-admin/client/analytics/components/report-error/index.js
 plugins/woocommerce-admin/client/analytics/components/index.js
@@ -3353,6 +3355,7 @@ plugins/woocommerce-admin/client/header/index.js
 plugins/woocommerce-admin/.eslintignore
 plugins/woocommerce-admin/tsconfig.json
 plugins/woocommerce/changelog/fix-37613-cross-sells-display-cart
+plugins/woocommerce/changelog/fix-manage-store-panel-padding
 plugins/woocommerce/changelog/update-34885_category_field_in_product_editor
 plugins/woocommerce/changelog/fix-37659
 plugins/woocommerce/changelog/fix-36698
@@ -3381,8 +3384,12 @@ plugins/woocommerce/changelog/26827-checkout-place-order-events
 plugins/woocommerce/changelog/number_of_variations_imported
 plugins/woocommerce/changelog/woocommer-thumb-issue
 plugins/woocommerce/changelog/fix-tasklist-completion-message
+plugins/woocommerce/changelog/e2e-playwright-1_33
+plugins/woocommerce/changelog/fix-38093-tracks-id-mismatch
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-e2e-test-docs
+plugins/woocommerce/changelog/update-attribute-empty-state
+plugins/woocommerce/changelog/fix-shipping-tour
 plugins/woocommerce/changelog/update-payfast
 plugins/woocommerce/changelog/fix-typo-in-regenerate_report_data-doc
 plugins/woocommerce/changelog/dev-update-pnpm8
@@ -3402,10 +3409,13 @@ plugins/woocommerce/changelog/add-37266
 plugins/woocommerce/changelog/fix-37600
 plugins/woocommerce/changelog/fix-36027
 plugins/woocommerce/changelog/fix-36785
+plugins/woocommerce/changelog/fix-37451-store-details-complete
 plugins/woocommerce/changelog/fix-37502
 plugins/woocommerce/changelog/fix-35860
+plugins/woocommerce/changelog/fix-tt3-order-details-item-meta-styling
 plugins/woocommerce/changelog/fix-tabs-reordering-38002
 plugins/woocommerce/changelog/fix-woocommerce_admin_updated-does-not-run
+plugins/woocommerce/changelog/dev-add-tracks-tests
 plugins/woocommerce/changelog/fix-34420
 plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/enhancement-add-held-stock-note
@@ -3422,6 +3432,7 @@ plugins/woocommerce/changelog/dev-remove-deasync-dep
 plugins/woocommerce/changelog/fix-28214
 plugins/woocommerce/changelog/fix-wc-experimental-i18n
 plugins/woocommerce/changelog/fix-tt2-comment-list
+plugins/woocommerce/changelog/p
 plugins/woocommerce/changelog/pr-37916
 plugins/woocommerce/changelog/add-37704
 plugins/woocommerce/changelog/fix-36749
@@ -3433,6 +3444,7 @@ plugins/woocommerce/changelog/fix-37089
 plugins/woocommerce/changelog/update-contributor-notes
 plugins/woocommerce/changelog/dev-37989_allow_dropdown_recording_for_wc_settings
 plugins/woocommerce/changelog/add-37263_category_field_block
+plugins/woocommerce/changelog/add-tracker_unique_payment_method
 plugins/woocommerce/changelog/add-37985
 plugins/woocommerce/changelog/fix-tt3-variation-select-height-flicker
 plugins/woocommerce/changelog/add-27803

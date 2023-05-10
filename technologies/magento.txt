@@ -2093,6 +2093,7 @@ dev/tests/integration/testsuite/Magento/GraphQl/FedEx/_files/enable_fedex_shippi
 dev/tests/integration/testsuite/Magento/GraphQl/FedEx/_files/enable_fedex_shipping_method_rollback.php
 dev/tests/integration/testsuite/Magento/GraphQl/Service/GraphQlRequest.php
 dev/tests/integration/testsuite/Magento/GraphQl/Controller/GraphQlControllerTest.php
+dev/tests/integration/testsuite/Magento/GraphQl/Controller/HttpRequestValidator/HttpVerbValidatorTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/GraphQlIntrospectionTest.php
 dev/tests/integration/testsuite/Magento/Eav/Model/TypeLocatorTest.php
 dev/tests/integration/testsuite/Magento/Eav/Model/AttributeRepositoryTest.php
@@ -15359,7 +15360,6 @@ app/code/Magento/GraphQl/Model/Mutation/Resolver/ErrorTypeResolver.php
 app/code/Magento/GraphQl/Test/Unit/Model/Config/DisableSessionTest.php
 app/code/Magento/GraphQl/Test/Unit/Model/Backpressure/BackpressureContextFactoryTest.php
 app/code/Magento/GraphQl/Test/Unit/Plugin/DisableSessionTest.php
-app/code/Magento/GraphQl/Test/Unit/Controller/HttpRequestValidator/HttpVerbValidatorTest.php
 app/code/Magento/GraphQl/Test/Mftf/README.md
 app/code/Magento/GraphQl/Helper/Error/AggregateExceptionMessageFormatter.php
 app/code/Magento/GraphQl/Helper/Error/MessageFormatters/NoSuchEntityExceptionMessageFormatter.php
@@ -21115,6 +21115,7 @@ app/code/Magento/CheckoutAgreements/Test/Mftf/Test/AdminCreateEnabledTextTermOnM
 app/code/Magento/CheckoutAgreements/Test/Mftf/Test/AdminUpdateEnabledTextTermEntityTest.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/Test/AdminCreateActiveHtmlTermEntityTest.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminTermsConditionsEditTermByNameActionGroup.xml
+app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminDeleteAllTermConditionsActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AssertAdminTermsConditionsInGridActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminAssertTermAbsentInGridActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/StorefrontProcessCheckoutToPaymentActionGroup.xml
@@ -21129,6 +21130,7 @@ app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AssertStorefrontTermAb
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminTermsConditionsFillTermEditFormActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminTermsConditionsOpenNewTermPageActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminTermsConditionsDeleteTermByNameActionGroup.xml
+app/code/Magento/CheckoutAgreements/Test/Mftf/Helper/CheckoutAgreementsHelpers.php
 app/code/Magento/CheckoutAgreements/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/CheckoutAgreements/Test/Mftf/README.md
 app/code/Magento/CheckoutAgreements/Test/Mftf/LICENSE.txt
@@ -34834,6 +34836,7 @@ lib/internal/Magento/Framework/GraphQl/Query/Resolver/Factory.php
 lib/internal/Magento/Framework/GraphQl/Query/BatchContractResolverWrapper.php
 lib/internal/Magento/Framework/GraphQl/Query/ErrorHandlerInterface.php
 lib/internal/Magento/Framework/GraphQl/Query/FieldTranslator.php
+lib/internal/Magento/Framework/GraphQl/Query/QueryParser.php
 lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php
 lib/internal/Magento/Framework/GraphQl/Query/ErrorHandler.php
 lib/internal/Magento/Framework/GraphQl/Query/PostFetchProcessorInterface.php

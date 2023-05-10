@@ -502,6 +502,7 @@ resources/views/settings/ldap.blade.php
 resources/views/settings/phpinfo.blade.php
 resources/views/settings/logins.blade.php
 resources/views/settings/branding.blade.php
+resources/views/settings/google.blade.php
 resources/views/departments/edit.blade.php
 resources/views/departments/index.blade.php
 resources/views/departments/view.blade.php
@@ -5486,6 +5487,7 @@ database/migrations/2017_01_09_040429_create_locations_ldap_query_field.php
 database/migrations/2013_11_15_190327_create_assets_table.php
 database/migrations/2017_12_12_033618_add_actionlog_meta.php
 database/migrations/2015_02_26_233005_add_category_type.php
+database/migrations/2023_05_10_001836_add_google_auth_to_settings.php
 database/migrations/2012_12_06_225988_migration_cartalyst_sentry_install_throttle.php
 database/migrations/2013_11_20_130248_create_status_labels.php
 database/migrations/2016_07_22_054850_one_more_mac_addr_fix.php
@@ -5803,6 +5805,7 @@ app/Http/Controllers/Auth/SamlController.php
 app/Http/Controllers/Auth/ResetPasswordController.php
 app/Http/Controllers/Auth/RegisterController.php
 app/Http/Controllers/Auth/ForgotPasswordController.php
+app/Http/Controllers/GoogleAuthController.php
 app/Http/Controllers/HealthController.php
 app/Http/Controllers/Users/LDAPImportController.php
 app/Http/Controllers/Users/UserFilesController.php
@@ -6416,5 +6419,6 @@ docker/000-default.conf
 docker/docker-entrypoint.sh
 docker/docker.env
 docker/supervisord.conf
+.chipperci.yml
 app.json
 snipeit.sh

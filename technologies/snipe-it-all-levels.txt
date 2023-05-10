@@ -2357,6 +2357,10 @@ resources/views/settings/branding.blade.php
 views/settings/branding.blade.php
 settings/branding.blade.php
 branding.blade.php
+resources/views/settings/google.blade.php
+views/settings/google.blade.php
+settings/google.blade.php
+google.blade.php
 resources/views/departments/edit.blade.php
 views/departments/edit.blade.php
 departments/edit.blade.php
@@ -29391,6 +29395,9 @@ migrations/2017_12_12_033618_add_actionlog_meta.php
 database/migrations/2015_02_26_233005_add_category_type.php
 migrations/2015_02_26_233005_add_category_type.php
 2015_02_26_233005_add_category_type.php
+database/migrations/2023_05_10_001836_add_google_auth_to_settings.php
+migrations/2023_05_10_001836_add_google_auth_to_settings.php
+2023_05_10_001836_add_google_auth_to_settings.php
 database/migrations/2012_12_06_225988_migration_cartalyst_sentry_install_throttle.php
 migrations/2012_12_06_225988_migration_cartalyst_sentry_install_throttle.php
 2012_12_06_225988_migration_cartalyst_sentry_install_throttle.php
@@ -30425,6 +30432,10 @@ Http/Controllers/Auth/ForgotPasswordController.php
 Controllers/Auth/ForgotPasswordController.php
 Auth/ForgotPasswordController.php
 ForgotPasswordController.php
+app/Http/Controllers/GoogleAuthController.php
+Http/Controllers/GoogleAuthController.php
+Controllers/GoogleAuthController.php
+GoogleAuthController.php
 app/Http/Controllers/HealthController.php
 Http/Controllers/HealthController.php
 Controllers/HealthController.php
@@ -33033,5 +33044,6 @@ docker/docker.env
 docker.env
 docker/supervisord.conf
 supervisord.conf
+.chipperci.yml
 app.json
 snipeit.sh
