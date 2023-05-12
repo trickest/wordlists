@@ -12590,6 +12590,7 @@ app/code/Magento/Catalog/Model/Product/Option/Type/File/ValidatorInfo.php
 app/code/Magento/Catalog/Model/Product/Option/Type/File/ValidateFactory.php
 app/code/Magento/Catalog/Model/Product/Option/Type/File/ExistingValidate.php
 app/code/Magento/Catalog/Model/Product/Option/Type/File/Validator.php
+app/code/Magento/Catalog/Model/Product/Option/Type/File/RequestAwareValidatorFile.php
 app/code/Magento/Catalog/Model/Product/Option/Type/File/ValidatorFile.php
 app/code/Magento/Catalog/Model/Product/Option/Repository.php
 app/code/Magento/Catalog/Model/Product/Option/Converter.php
@@ -25717,6 +25718,7 @@ app/code/Magento/Indexer/Console/Command/IndexerShowDimensionsModeCommand.php
 app/code/Magento/Indexer/Console/Command/IndexerResetStateCommand.php
 app/code/Magento/Indexer/Console/Command/IndexerReindexCommand.php
 app/code/Magento/Indexer/Console/Command/IndexerStatusCommand.php
+app/code/Magento/Indexer/Console/Command/IndexerSetDimensionsModeCommand/ModeInputArgument.php
 app/code/Magento/Indexer/Console/Command/AbstractIndexerCommand.php
 app/code/Magento/Indexer/Console/Command/IndexerSetModeCommand.php
 app/code/Magento/Reports/composer.json
@@ -35874,6 +35876,7 @@ lib/internal/Magento/Framework/Webapi/Rest/Response/RendererFactory.php
 lib/internal/Magento/Framework/Webapi/Rest/RequestValidatorInterface.php
 lib/internal/Magento/Framework/Webapi/Rest/Response.php
 lib/internal/Magento/Framework/Webapi/ServiceInputProcessor.php
+lib/internal/Magento/Framework/Webapi/RequestAwareErrorProcessor.php
 lib/internal/Magento/Framework/Webapi/ServiceTypeToEntityTypeMap.php
 lib/internal/Magento/Framework/Webapi/README.md
 lib/internal/Magento/Framework/Webapi/Backpressure/RestContext.php
@@ -36114,6 +36117,7 @@ lib/internal/Magento/Framework/ObjectManager/Factory/Dynamic/Developer.php
 lib/internal/Magento/Framework/ObjectManager/Factory/Dynamic/Production.php
 lib/internal/Magento/Framework/ObjectManager/Factory/Compiled.php
 lib/internal/Magento/Framework/ObjectManager/RelationsInterface.php
+lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php
 lib/internal/Magento/Framework/ObjectManager/ConfigLoaderInterface.php
 lib/internal/Magento/Framework/ObjectManager/TMap.php
 lib/internal/Magento/Framework/ObjectManager/InterceptableValidator.php
@@ -36196,6 +36200,7 @@ lib/internal/Magento/Framework/ObjectManager/Relations/Runtime.php
 lib/internal/Magento/Framework/ObjectManager/ConfigInterface.php
 lib/internal/Magento/Framework/ObjectManager/FactoryInterface.php
 lib/internal/Magento/Framework/ObjectManager/DynamicConfigInterface.php
+lib/internal/Magento/Framework/ObjectManager/RegisterShutdownInterface.php
 lib/internal/Magento/Framework/ObjectManager/README.md
 lib/internal/Magento/Framework/ObjectManager/etc/config.xsd
 lib/internal/Magento/Framework/ObjectManager/Code/Generator/Proxy.php
@@ -37226,6 +37231,7 @@ lib/internal/Magento/Framework/Session/Test/Unit/_files/mock_ini_set.php
 lib/internal/Magento/Framework/Session/Test/Unit/_files/mock_session_regenerate_id.php
 lib/internal/Magento/Framework/Session/Test/Unit/SaveHandlerTest.php
 lib/internal/Magento/Framework/Session/Test/Unit/SessionManagerTest.php
+lib/internal/Magento/Framework/Session/RequestAwareSessionManager.php
 lib/internal/Magento/Framework/Session/SaveHandler/Redis/Logger.php
 lib/internal/Magento/Framework/Session/SaveHandler/Redis/Config.php
 lib/internal/Magento/Framework/Session/SaveHandler/Native.php

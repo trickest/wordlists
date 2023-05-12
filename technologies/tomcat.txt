@@ -2546,6 +2546,7 @@ java/org/apache/catalina/session/StoreBase.java
 java/org/apache/catalina/core/AprLifecycleListener.java
 java/org/apache/catalina/core/ApplicationHttpResponse.java
 java/org/apache/catalina/core/AsyncListenerWrapper.java
+java/org/apache/catalina/core/StandardVirtualThreadExecutor.java
 java/org/apache/catalina/core/RestrictedListeners.properties
 java/org/apache/catalina/core/StandardEngineValve.java
 java/org/apache/catalina/core/ApplicationHttpRequest.java
@@ -3318,6 +3319,7 @@ java/org/apache/tomcat/util/scan/JarFileUrlNestedJar.java
 java/org/apache/tomcat/util/scan/JarFactory.java
 java/org/apache/tomcat/util/threads/InlineExecutorService.java
 java/org/apache/tomcat/util/threads/Constants.java
+java/org/apache/tomcat/util/threads/VirtualThreadExecutor.java
 java/org/apache/tomcat/util/threads/LocalStrings_ja.properties
 java/org/apache/tomcat/util/threads/LocalStrings_fr.properties
 java/org/apache/tomcat/util/threads/LocalStrings_es.properties
@@ -4273,7 +4275,6 @@ modules/stuffed/tomcat-jni.json
 modules/stuffed/Dockerfile
 modules/stuffed/tomcat-reflection.json
 modules/loom/pom.xml
-modules/loom/src/main/java/org/apache/catalina/core/LoomExecutor.java
 modules/loom/src/main/java/org/apache/tomcat/util/net/BioLoomEndpoint.java
 modules/loom/src/main/java/org/apache/coyote/http11/Http11BioLoomProtocol.java
 modules/loom/src/main/java/org/apache/coyote/http11/Http11LoomProcessor.java

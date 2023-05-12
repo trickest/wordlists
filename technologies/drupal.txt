@@ -4525,6 +4525,7 @@ core/lib/Drupal/Core/DependencyInjection/ServiceProviderInterface.php
 core/lib/Drupal/Core/DependencyInjection/ContainerInjectionInterface.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/StackedSessionHandlerPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/TaggedHandlersPass.php
+core/lib/Drupal/Core/DependencyInjection/Compiler/DevelopmentSettingsPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/ContextProvidersPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/StackedKernelPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/RegisterServicesForDestructionPass.php
@@ -6804,6 +6805,7 @@ core/modules/system/tests/src/FunctionalJavascript/CopyFieldValueTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/ElementsTableSelectTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.php
+core/modules/system/tests/src/FunctionalJavascript/Form/DevelopmentSettingsFormTest.php
 core/modules/system/tests/src/Functional/Theme/TwigRegistryLoaderTest.php
 core/modules/system/tests/src/Functional/Theme/ThemeUpdateTest.php
 core/modules/system/tests/src/Functional/Theme/TwigSettingsTest.php
@@ -8209,6 +8211,7 @@ core/modules/system/src/Form/ModulesListForm.php
 core/modules/system/src/Form/ImageToolkitForm.php
 core/modules/system/src/Form/MenuLinksetSettingsForm.php
 core/modules/system/src/Form/ModulesUninstallForm.php
+core/modules/system/src/Form/DevelopmentSettingsForm.php
 core/modules/system/src/Form/PrepareModulesEntityUninstallForm.php
 core/modules/system/src/Form/ThemeAdminForm.php
 core/modules/system/src/Form/SystemMenuOffCanvasForm.php

@@ -449,6 +449,7 @@ packages/js/product-editor/changelog/add-37082
 packages/js/product-editor/changelog/update-move-product-hooks
 packages/js/product-editor/changelog/update-webpack-invalid-export-error
 packages/js/product-editor/changelog/update-product_rest_config
+packages/js/product-editor/changelog/fix-product-summary-field-margin
 packages/js/product-editor/changelog/fix-37897
 packages/js/product-editor/changelog/dev-consolidate-eslint-versions
 packages/js/product-editor/changelog/add-block-attributes-37728
@@ -3359,8 +3360,11 @@ plugins/woocommerce-admin/tsconfig.json
 plugins/woocommerce/changelog/fix-37613-cross-sells-display-cart
 plugins/woocommerce/changelog/fix-manage-store-panel-padding
 plugins/woocommerce/changelog/update-34885_category_field_in_product_editor
+plugins/woocommerce/changelog/fix-34804-2
 plugins/woocommerce/changelog/fix-37659
 plugins/woocommerce/changelog/fix-36698
+plugins/woocommerce/changelog/update-woocommerce-blocks-10.2.0
+plugins/woocommerce/changelog/fix-34127
 plugins/woocommerce/changelog/fix-line-endings
 plugins/woocommerce/changelog/fix-k6-order-id-hpos
 plugins/woocommerce/changelog/e2e-readme-playwright-ui-mode
@@ -3403,6 +3407,7 @@ plugins/woocommerce/changelog/fix-37954_update_image_description
 plugins/woocommerce/changelog/2023-05-02-09-36-02-782439
 plugins/woocommerce/changelog/update-layout-context-for-blocks
 plugins/woocommerce/changelog/add-stock-status-37884
+plugins/woocommerce/changelog/fix-move_template_addition_to_featureflag
 plugins/woocommerce/changelog/update-tax-location-form
 plugins/woocommerce/changelog/pr-35232
 plugins/woocommerce/changelog/fix-issue-36668
@@ -3427,10 +3432,12 @@ plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/enhancement-add-held-stock-note
 plugins/woocommerce/changelog/fix-38069-fix-product-task-imports
 plugins/woocommerce/changelog/add-core-profiler-welcome-woo
+plugins/woocommerce/changelog/fix-37601
 plugins/woocommerce/changelog/add-rest-api-products-featured-image
 plugins/woocommerce/changelog/add-shipping-class-creation-37886
 plugins/woocommerce/changelog/fix-37604
 plugins/woocommerce/changelog/remove-qs
+plugins/woocommerce/changelog/fix-265-add-k6-hpos-baseline
 plugins/woocommerce/changelog/fix-update-wp-env-error-message
 plugins/woocommerce/changelog/update-check-external-testing-instructions
 plugins/woocommerce/changelog/remove-onboarding-hook
@@ -4623,6 +4630,7 @@ plugins/woocommerce/tests/performance/bin/init-sample-products.sh
 plugins/woocommerce/tests/performance/tests/wc-regression-test-load.js
 plugins/woocommerce/tests/performance/tests/gh-action-daily-ext-requests.js
 plugins/woocommerce/tests/performance/tests/gh-action-pr-requests.js
+plugins/woocommerce/tests/performance/tests/hpos-baseline-load.js
 plugins/woocommerce/tests/performance/tests/example-all-requests-arrival-rate.js
 plugins/woocommerce/tests/performance/tests/wc-baseline-load.js
 plugins/woocommerce/tests/performance/tests/simple-all-requests.js
