@@ -2458,6 +2458,7 @@ changelog/_unreleased/2023-02-13-add-order-transaction-status-rule.md
 changelog/_unreleased/2023-01-25-add-line-item-factory-to-cartlineitemcontroller.md
 changelog/_unreleased/2023-02-13-improve-search-results-behavior.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2023-05-08-moved-closing-div-in-correct-twig-block.md
 changelog/_unreleased/2023-03-23-hide-import-settings-on-an-export.md
 changelog/_unreleased/2023-04-19-add-media-uploaded-webhook.md
 changelog/_unreleased/2023-02-13-fix-label-incl-vat-display-with-intra-community-b2b.md
@@ -2521,6 +2522,7 @@ changelog/_unreleased/2023-04-12-improve-loading-speed-of-product-listing-pages.
 changelog/_unreleased/2023-03-09-fix-fallback-icon-for-sw-search-bar.md
 changelog/_unreleased/2023-04-12-improve-store-filters.md
 changelog/_unreleased/2023-03-22-improve-delete-unused-media-command.md
+changelog/_unreleased/2023-04-26-add-aibadge-option-for-sw-card.md
 changelog/_unreleased/2023-02-27-fix-chevron-icon-size-of-media-sidebar.md
 changelog/_unreleased/2023-01-31-alphabetical-sorting-of-countries-and-states.md
 changelog/_unreleased/2023-02-13-change-column-tax-rate-allow-3-decimal.md
@@ -2563,6 +2565,7 @@ changelog/_unreleased/2023-03-24-respect-inherit-flag-for-system-config-controll
 changelog/_unreleased/2022-11-11-fix-typos-in-criteria.md
 changelog/_unreleased/2023-02-16-fix-js-error-in-account-overview.md
 changelog/_unreleased/2023-03-13-fix-notification-opening-direction.md
+changelog/_unreleased/2023-04-25-serialize-and-unserialize-message-queue.md
 changelog/_unreleased/2023-04-17-add-shopware-version-to-app-scripts.md
 changelog/_unreleased/2023-03-14-modal-selectors.md
 changelog/_unreleased/2023-04-25-add-aibadge-support-system-config.md
@@ -3604,7 +3607,9 @@ tests/integration/php/Core/Content/Mail/Service/MailServiceTest.php
 tests/integration/php/Core/Content/Cms/Subscriber/UnusedMediaSubscriberTest.php
 tests/integration/php/Core/Content/Cms/Subscriber/CmsPageBeforeDeleteSubscriberTest.php
 tests/integration/php/Core/Content/Cms/Subscriber/CmsPageBeforeDefaultChangeSubscriberTest.php
+tests/integration/php/Core/Content/ImportExport/Message/ImportExportHandlerTest.php
 tests/integration/php/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializerTest.php
+tests/integration/php/Core/Content/ImportExport/fixtures/properties.csv
 tests/integration/php/Core/Content/ImportExport/Processing/Pipe/DefaultMappingsTest.php
 tests/integration/php/Core/Content/Media/UnusedMediaPurgerTest.php
 tests/integration/php/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscriberTest.php
@@ -3877,6 +3882,7 @@ tests/integration/php/Core/Framework/App/Subscriber/AppLoadedSubscriberTest.php
 tests/integration/php/Core/Framework/App/Subscriber/CustomFieldProtectionSubscriberTest.php
 tests/integration/php/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
 tests/integration/php/Core/Framework/Api/Controller/Fixtures/AdminExtensionApiPluginWithLocalEntryPoint/Resources/public/administration/index.html
+tests/integration/php/Core/Framework/Api/Controller/Fixtures/InfoControllerWithMarker/Resources/.administration-js
 tests/integration/php/Core/Framework/Api/Controller/Fixtures/InfoController/Resources/public/administration/js/some-functionality-bundle.js
 tests/integration/php/Core/Framework/Api/Controller/Fixtures/AdminExtensionApiApp/manifest.xml
 tests/integration/php/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/address/first_name.html.twig
@@ -4470,6 +4476,7 @@ tests/unit/php/Core/Content/Cms/CmsExceptionTest.php
 tests/unit/php/Core/Content/Cms/Exception/PageNotFoundExceptionTest.php
 tests/unit/php/Core/Content/Cms/Subscriber/CmsPageDefaultChangeSubscriberTest.php
 tests/unit/php/Core/Content/Cms/Subscriber/UnusedMediaSubscriberTest.php
+tests/unit/php/Core/Content/ImportExport/Message/ImportExportHandlerTest.php
 tests/unit/php/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializerTest.php
 tests/unit/php/Core/Content/ImportExport/Processing/Mapping/MappingCollectionTest.php
 tests/unit/php/Core/Content/ImportExport/Processing/Pipe/KeyMappingPipeTest.php
@@ -5063,6 +5070,7 @@ tests/unit/php/Storefront/Page/Checkout/Offcanvas/OffcanvasCartPageLoaderTest.ph
 tests/unit/php/Administration/Snippet/AppAdministrationSnippetPersisterTest.php
 tests/unit/php/Administration/Snippet/SnippetExceptionTest.php
 tests/unit/php/Administration/Snippet/SnippetFinderTest.php
+tests/unit/php/Administration/Command/DeleteExtensionLocalPublicFilesCommandTest.php
 tests/unit/php/Administration/Notification/Subscriber/UpdateSubscriberTest.php
 tests/unit/php/Administration/AdministrationTest.php
 tests/unit/php/Administration/Controller/AdministrationControllerTest.php
@@ -6236,7 +6244,6 @@ src/Core/Content/Test/Cms/SlotDataResolver/CriteriaCollectionTest.php
 src/Core/Content/Test/Cms/SalesChannel/SalesChannelCmsPageLoaderTest.php
 src/Core/Content/Test/Cms/SalesChannel/CmsRouteTest.php
 src/Core/Content/Test/ImportExport/TestSubscriber.php
-src/Core/Content/Test/ImportExport/Message/ImportExportHandlerTest.php
 src/Core/Content/Test/ImportExport/Repository/ImportExportFileRepositoryTest.php
 src/Core/Content/Test/ImportExport/Repository/ImportExportLogRepositoryTest.php
 src/Core/Content/Test/ImportExport/Repository/ImportExportProfileRepositoryTest.php
@@ -13090,6 +13097,7 @@ src/Administration/Snippet/CachedSnippetFinder.php
 src/Administration/Snippet/SnippetException.php
 src/Administration/Events/PreResetExcludedSearchTermEvent.php
 src/Administration/Command/DeleteAdminFilesAfterBuildCommand.php
+src/Administration/Command/DeleteExtensionLocalPublicFilesCommand.php
 src/Administration/Test/DependencyInjection/AdminMigrationCompilerPassTest.php
 src/Administration/Test/RateLimiter/RateLimiterTest.php
 src/Administration/Test/Snippet/SnippetFinderTest.php

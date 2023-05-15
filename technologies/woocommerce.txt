@@ -471,6 +471,7 @@ packages/js/product-editor/changelog/add-37272
 packages/js/product-editor/changelog/add-name-block-37007
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/update-37686
+packages/js/product-editor/changelog/add-38044
 packages/js/product-editor/changelog/update-layout-context-for-blocks
 packages/js/product-editor/changelog/dev-update-eslint-plugin
 packages/js/product-editor/changelog/add-stock-status-37884
@@ -754,6 +755,10 @@ packages/js/product-editor/src/blocks/radio/index.ts
 packages/js/product-editor/src/blocks/radio/types.ts
 packages/js/product-editor/src/blocks/radio/edit.tsx
 packages/js/product-editor/src/blocks/radio/block.json
+packages/js/product-editor/src/blocks/shipping-class/index.ts
+packages/js/product-editor/src/blocks/shipping-class/types.ts
+packages/js/product-editor/src/blocks/shipping-class/edit.tsx
+packages/js/product-editor/src/blocks/shipping-class/block.json
 packages/js/product-editor/src/blocks/pricing/index.ts
 packages/js/product-editor/src/blocks/pricing/types.ts
 packages/js/product-editor/src/blocks/pricing/editor.scss
@@ -772,10 +777,6 @@ packages/js/product-editor/src/blocks/category/index.ts
 packages/js/product-editor/src/blocks/category/editor.scss
 packages/js/product-editor/src/blocks/category/edit.tsx
 packages/js/product-editor/src/blocks/category/block.json
-packages/js/product-editor/src/blocks/shipping-fee/index.ts
-packages/js/product-editor/src/blocks/shipping-fee/types.ts
-packages/js/product-editor/src/blocks/shipping-fee/edit.tsx
-packages/js/product-editor/src/blocks/shipping-fee/block.json
 packages/js/product-editor/src/blocks/schedule-sale/index.ts
 packages/js/product-editor/src/blocks/schedule-sale/types.ts
 packages/js/product-editor/src/blocks/schedule-sale/editor.scss
@@ -3405,10 +3406,13 @@ plugins/woocommerce/changelog/fix-e2e-test-docs
 plugins/woocommerce/changelog/update-attribute-empty-state
 plugins/woocommerce/changelog/fix-shipping-tour
 plugins/woocommerce/changelog/update-payfast
+plugins/woocommerce/changelog/fix-order-upshifting
 plugins/woocommerce/changelog/fix-typo-in-regenerate_report_data-doc
 plugins/woocommerce/changelog/dev-update-pnpm8
 plugins/woocommerce/changelog/update-wp-env-7.0.0
 plugins/woocommerce/changelog/fix-37954_update_image_description
+plugins/woocommerce/changelog/e2e-update-timeout-readme
+plugins/woocommerce/changelog/add-38044
 plugins/woocommerce/changelog/2023-05-02-09-36-02-782439
 plugins/woocommerce/changelog/update-layout-context-for-blocks
 plugins/woocommerce/changelog/add-stock-status-37884
@@ -3452,6 +3456,7 @@ plugins/woocommerce/changelog/fix-28214
 plugins/woocommerce/changelog/fix-wc-experimental-i18n
 plugins/woocommerce/changelog/fix-tt2-comment-list
 plugins/woocommerce/changelog/p
+plugins/woocommerce/changelog/add-wp-env-unit-tests
 plugins/woocommerce/changelog/pr-37916
 plugins/woocommerce/changelog/add-37704
 plugins/woocommerce/changelog/fix-36749
@@ -3476,6 +3481,7 @@ plugins/woocommerce/changelog/update-change-product-category-metabox-enqueue
 plugins/woocommerce/changelog/enchancement-37630-theme-element-class-name
 plugins/woocommerce/changelog/dev-38122_remove_separator_between_buttons_and_empty_state_screen
 plugins/woocommerce/changelog/tweak-37458
+plugins/woocommerce/changelog/fix-k6-api-batch-orders
 plugins/woocommerce/changelog/fix-env-specific-phpunit-tests
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.0.4
 plugins/woocommerce/changelog/try-download-ssr
