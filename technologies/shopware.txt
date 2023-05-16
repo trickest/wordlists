@@ -2412,6 +2412,7 @@ changelog/release-6-4-13-0/2022-06-08-show-cross-selling-titles-in-mobile-view.m
 changelog/_unreleased/2023-03-07-improve-performance-cms-block-config.md
 changelog/_unreleased/2023-02-09-2023-02-09-removing-cancel-button-from-extension-store-review.md
 changelog/_unreleased/2023-02-07-add-a-separate-guzzle-client-for-the-first-run-wizard.md
+changelog/_unreleased/2023-05-15-fix-bug-cannot-edit-snippet-on-snippet-detail.md
 changelog/_unreleased/2023-03-21-add-condition-for-properties-to-rule-builder.md
 changelog/_unreleased/2023-03-09-fix-auto-logout-multiple-tabs-behaviour.md
 changelog/_unreleased/2023-03-09-fix-send-mail-message-encoding.md
@@ -2433,6 +2434,7 @@ changelog/_unreleased/2023-01-16-publish-cms-page-data-from-category-detail-page
 changelog/_unreleased/2022-11-29-compile-themes-only-for-active-sales-channels.md
 changelog/_unreleased/2023-02-09-add-customer-default-payment-method-rule-condition.md
 changelog/_unreleased/2023-03-16-added-helptext-property-to-sw-chard-card.md
+changelog/_unreleased/2023-05-16-fix-bug-wrong-icon-name-on-settings-logs-page.md
 changelog/_unreleased/2023-04-25-correct-get-current-payment-method-id.md
 changelog/_unreleased/2023-02-12-improve-handling-to-link-line-items-to-custom-links.md
 changelog/_unreleased/2023-04-03-check-customer-email-valid-when-adding-new-order-from-order-detail.md
@@ -2462,6 +2464,7 @@ changelog/_unreleased/2023-05-08-moved-closing-div-in-correct-twig-block.md
 changelog/_unreleased/2023-03-23-hide-import-settings-on-an-export.md
 changelog/_unreleased/2023-04-19-add-media-uploaded-webhook.md
 changelog/_unreleased/2023-02-13-fix-label-incl-vat-display-with-intra-community-b2b.md
+changelog/_unreleased/2023-05-15-add-styling-property-to-sw-checkbox-field.md
 changelog/_unreleased/2023-03-22-add-utility-css-classes-for-font-styling-in-the-admin.md
 changelog/_unreleased/2023-04-11-improve-twig-security-extension.md
 changelog/_unreleased/2022-07-04-mail-attach.md
@@ -2601,6 +2604,7 @@ changelog/_unreleased/2023-03-09-remove-checkbox-in-media-module-on-back-folder.
 changelog/_unreleased/2023-01-18-add-cart-condition-amount-of-shipping-costs.md
 changelog/_unreleased/2022-10-20-consider-inheritance-in-product-stream-mapping.md
 changelog/_unreleased/2023-04-21-fix-review-stars-in-administration.md
+changelog/_unreleased/2023-05-11-display-rebuild-search-index-search-config-for-non-elasticsearch-shop.md
 changelog/_unreleased/2023-01-23-sw-text-editor-toolbar-does-not-disappear.md
 changelog/_unreleased/2023-05-02-fix-loading-order-of-commercial-plugin.md
 changelog/_unreleased/2023-01-26-set-no-auto-cache-controll-on-httpcache-routes.md
@@ -4341,6 +4345,7 @@ tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticDefinitionInstanceRegistr
 tests/unit/php/Common/Stubs/SystemConfigService/StaticSystemConfigService.php
 tests/unit/php/Common/Stubs/Flow/DummyEvent.php
 tests/unit/php/Core/Maintenance/User/Service/UserProvisionerTest.php
+tests/unit/php/Core/Maintenance/System/Command/SystemIsInstalledCommandTest.php
 tests/unit/php/Core/Maintenance/System/Command/SystemSetupCommandTest.php
 tests/unit/php/Core/Maintenance/System/Command/SystemInstallCommandTest.php
 tests/unit/php/Core/Maintenance/System/Struct/DatabaseConnectionInformationTest.php
@@ -4705,6 +4710,7 @@ tests/unit/php/Core/Framework/Store/Authentication/FrwRequestOptionsProviderTest
 tests/unit/php/Core/Framework/Store/Authentication/LocaleProviderTest.php
 tests/unit/php/Core/Framework/FeatureTest.php
 tests/unit/php/Core/Framework/Plugin/KernelPluginLoader/KernelPluginLoaderTest.php
+tests/unit/php/Core/Framework/Plugin/Command/Lifecycle/PluginUpdateAllCommandTest.php
 tests/unit/php/Core/Framework/Plugin/_fixtures/AdminBundle/Resources/public/static/js/app.js
 tests/unit/php/Core/Framework/Plugin/_fixtures/AdminBundle/Resources/public/one.js
 tests/unit/php/Core/Framework/Plugin/_fixtures/AdminBundle/Resources/public/two.js
@@ -4723,6 +4729,7 @@ tests/unit/php/Core/Framework/Plugin/PluginManagementServiceTest.php
 tests/unit/php/Core/Framework/Routing/DeprecatedAnnotationsTest.php
 tests/unit/php/Core/Framework/Routing/Facade/RequestFacadeTest.php
 tests/unit/php/Core/Framework/Routing/Facade/RequestFacadeFactoryTest.php
+tests/unit/php/Core/Framework/Routing/RouteParamsCleanupListenerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/PasswordFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/PriceDefinitionFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/VariantListingConfigFieldSerializerTest.php
@@ -5240,6 +5247,7 @@ src/Core/Maintenance/User/Command/UserChangePasswordCommand.php
 src/Core/Maintenance/User/Service/UserProvisioner.php
 src/Core/Maintenance/System/Command/SystemUpdateFinishCommand.php
 src/Core/Maintenance/System/Command/SystemSetupCommand.php
+src/Core/Maintenance/System/Command/SystemIsInstalledCommand.php
 src/Core/Maintenance/System/Command/SystemConfigureShopCommand.php
 src/Core/Maintenance/System/Command/SystemGenerateJwtSecretCommand.php
 src/Core/Maintenance/System/Command/SystemGenerateAppSecretCommand.php
@@ -9026,6 +9034,7 @@ src/Core/Framework/Plugin/Command/PluginZipImportCommand.php
 src/Core/Framework/Plugin/Command/BundleDumpCommand.php
 src/Core/Framework/Plugin/Command/PluginRefreshCommand.php
 src/Core/Framework/Plugin/Command/Lifecycle/PluginUpdateCommand.php
+src/Core/Framework/Plugin/Command/Lifecycle/PluginUpdateAllCommand.php
 src/Core/Framework/Plugin/Command/Lifecycle/PluginInstallCommand.php
 src/Core/Framework/Plugin/Command/Lifecycle/AbstractPluginLifecycleCommand.php
 src/Core/Framework/Plugin/Command/Lifecycle/PluginActivateCommand.php
@@ -13818,6 +13827,7 @@ src/Administration/Resources/app/administration/src/app/component/form/sw-snippe
 src/Administration/Resources/app/administration/src/app/component/form/sw-checkbox-field/sw-checkbox-field.scss
 src/Administration/Resources/app/administration/src/app/component/form/sw-checkbox-field/index.js
 src/Administration/Resources/app/administration/src/app/component/form/sw-checkbox-field/sw-checkbox-field.html.twig
+src/Administration/Resources/app/administration/src/app/component/form/sw-checkbox-field/sw-checkbox-field.spec.js
 src/Administration/Resources/app/administration/src/app/component/form/sw-compact-colorpicker/sw-compact-colorpicker.scss
 src/Administration/Resources/app/administration/src/app/component/form/sw-compact-colorpicker/sw-compact-colorpicker.html.twig
 src/Administration/Resources/app/administration/src/app/component/form/sw-compact-colorpicker/index.js
@@ -14871,6 +14881,7 @@ src/Administration/Resources/app/administration/src/module/sw-settings-search/sn
 src/Administration/Resources/app/administration/src/module/sw-settings-search/snippet/de-DE.json
 src/Administration/Resources/app/administration/src/module/sw-settings-search/acl/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-search/view/sw-settings-search-view-live-search/sw-settings-search-view-live-search.html.twig
+src/Administration/Resources/app/administration/src/module/sw-settings-search/view/sw-settings-search-view-live-search/sw-settings-search-view-live-search.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-search/view/sw-settings-search-view-live-search/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-search/view/sw-settings-search-view-general/sw-settings-search-view-general.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-search/view/sw-settings-search-view-general/index.js

@@ -475,6 +475,7 @@ public_html/layouts/basic/modules/Settings/AutomaticAssignment/resources/Edit.mi
 public_html/layouts/basic/modules/Settings/Colors/resources/Index.js
 public_html/layouts/basic/modules/Settings/Colors/resources/Index.min.js
 public_html/layouts/basic/modules/Settings/Colors/resources/Index.min.js.map
+public_html/layouts/basic/modules/Settings/MailSignature/resources/Edit.js
 public_html/layouts/basic/modules/Settings/RealizationProcesses/resources/RealizationProcesses.min.js.map
 public_html/layouts/basic/modules/Settings/RealizationProcesses/resources/RealizationProcesses.min.js
 public_html/layouts/basic/modules/Settings/RealizationProcesses/resources/RealizationProcesses.js
@@ -1153,6 +1154,7 @@ languages/en-US/Settings/TreesManager.json
 languages/en-US/Settings/Companies.json
 languages/en-US/Settings/ModTracker.json
 languages/en-US/Settings/SupportProcesses.json
+languages/en-US/Settings/MailSignature.json
 languages/en-US/Settings/Kanban.json
 languages/en-US/Settings/SalesProcesses.json
 languages/en-US/Settings/SMSNotifier.json
@@ -1665,6 +1667,7 @@ layouts/basic/modules/Settings/AutomaticAssignment/Edit/Field/Owner.tpl
 layouts/basic/modules/Settings/Colors/TabPicklistValuesColors.tpl
 layouts/basic/modules/Settings/Colors/TabFieldColors.tpl
 layouts/basic/modules/Settings/Colors/Index.tpl
+layouts/basic/modules/Settings/MailSignature/Edit.tpl
 layouts/basic/modules/Settings/RealizationProcesses/Index.tpl
 layouts/basic/modules/Settings/EmailTemplate/ListContents.tpl
 layouts/basic/modules/Settings/Companies/EditView.tpl
@@ -3370,6 +3373,11 @@ modules/Settings/AutomaticAssignment/views/List.php
 modules/Settings/Colors/actions/SaveAjax.php
 modules/Settings/Colors/views/IndexAjax.php
 modules/Settings/Colors/views/Index.php
+modules/Settings/MailSignature/models/Record.php
+modules/Settings/MailSignature/models/Module.php
+modules/Settings/MailSignature/actions/SaveAjax.php
+modules/Settings/MailSignature/actions/DeleteAjax.php
+modules/Settings/MailSignature/views/Edit.php
 modules/Settings/RealizationProcesses/models/Module.php
 modules/Settings/RealizationProcesses/actions/SaveGeneral.php
 modules/Settings/RealizationProcesses/views/Index.php
@@ -4024,6 +4032,7 @@ modules/Vtiger/widgets/FastEdit.php
 modules/Vtiger/widgets/RelatedModule.php
 modules/Vtiger/widgets/Activities.php
 modules/Vtiger/widgets/SummaryCategory.php
+modules/Vtiger/relations/GetAdvancedReferences.php
 modules/Vtiger/relations/GetRelatedList.php
 modules/Vtiger/relations/GetManyToMany.php
 modules/Vtiger/relations/GetDependentsList.php

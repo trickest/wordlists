@@ -2076,6 +2076,9 @@ dev/tests/integration/testsuite/Magento/GraphQl/Tax/_files/tax_calculation_shipp
 dev/tests/integration/testsuite/Magento/GraphQl/Helper/Query/Logger/LogDataTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/Usps/_files/enable_usps_shipping_method.php
 dev/tests/integration/testsuite/Magento/GraphQl/Usps/_files/enable_usps_shipping_method_rollback.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/Collector.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/Comparator.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/GraphQlStateTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/Sales/_files/customer_order_with_simple_shipment_rollback.php
 dev/tests/integration/testsuite/Magento/GraphQl/Sales/_files/customer_order_with_simple_shipment.php
 dev/tests/integration/testsuite/Magento/GraphQl/Sales/_files/order_with_totals.php
@@ -2092,6 +2095,8 @@ dev/tests/integration/testsuite/Magento/GraphQl/Sales/_files/customer_order_with
 dev/tests/integration/testsuite/Magento/GraphQl/FedEx/_files/enable_fedex_shipping_method.php
 dev/tests/integration/testsuite/Magento/GraphQl/FedEx/_files/enable_fedex_shipping_method_rollback.php
 dev/tests/integration/testsuite/Magento/GraphQl/Service/GraphQlRequest.php
+dev/tests/integration/testsuite/Magento/GraphQl/_files/state-filter-list.php
+dev/tests/integration/testsuite/Magento/GraphQl/_files/state-skip-list.php
 dev/tests/integration/testsuite/Magento/GraphQl/Controller/GraphQlControllerTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/Controller/HttpRequestValidator/HttpVerbValidatorTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/GraphQlIntrospectionTest.php
@@ -37392,6 +37397,7 @@ lib/internal/Magento/Framework/TestFramework/Test/Unit/Unit/Utility/_files/valid
 lib/internal/Magento/Framework/TestFramework/Test/Unit/Unit/Utility/_files/valid.xml
 lib/internal/Magento/Framework/TestFramework/README.md
 lib/internal/Magento/Framework/TestFramework/Unit/Listener/GarbageCleanup.php
+lib/internal/Magento/Framework/TestFramework/Unit/Listener/ReplaceObjectManager/TestProvidesServiceInterface.php
 lib/internal/Magento/Framework/TestFramework/Unit/Listener/ReplaceObjectManager.php
 lib/internal/Magento/Framework/TestFramework/Unit/Module/Config.php
 lib/internal/Magento/Framework/TestFramework/Unit/Matcher/MethodInvokedAtIndex.php

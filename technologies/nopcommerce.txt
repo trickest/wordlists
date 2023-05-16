@@ -2232,6 +2232,17 @@ src/Presentation/Nop.Web/Models/Profile/ProfileIndexModel.cs
 src/Presentation/Nop.Web/Models/Profile/ProfilePostsModel.cs
 src/Presentation/Nop.Web/Models/Polls/PollModel.cs
 src/Presentation/Nop.Web/Models/Topics/TopicModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdPersonModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdCreatedEvent.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdOfferModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdBreadcrumbListItemModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdBrandModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdBreadcrumbListModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdRatingModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdBreadcrumbItemModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdReviewModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdProductModel.cs
+src/Presentation/Nop.Web/Models/JsonLD/JsonLdAggregateRatingModel.cs
 src/Presentation/Nop.Web/Models/PrivateMessages/PrivateMessageListModel.cs
 src/Presentation/Nop.Web/Models/PrivateMessages/SendPrivateMessageModel.cs
 src/Presentation/Nop.Web/Models/PrivateMessages/PrivateMessageModel.cs
@@ -2303,6 +2314,7 @@ src/Presentation/Nop.Web/Factories/ICommonModelFactory.cs
 src/Presentation/Nop.Web/Factories/ReturnRequestModelFactory.cs
 src/Presentation/Nop.Web/Factories/ExternalAuthenticationModelFactory.cs
 src/Presentation/Nop.Web/Factories/VendorModelFactory.cs
+src/Presentation/Nop.Web/Factories/JsonLdModelFactory.cs
 src/Presentation/Nop.Web/Factories/IOrderModelFactory.cs
 src/Presentation/Nop.Web/Factories/CheckoutModelFactory.cs
 src/Presentation/Nop.Web/Factories/ICountryModelFactory.cs
@@ -2331,6 +2343,7 @@ src/Presentation/Nop.Web/Factories/PrivateMessagesModelFactory.cs
 src/Presentation/Nop.Web/Factories/ShoppingCartModelFactory.cs
 src/Presentation/Nop.Web/Factories/ISitemapModelFactory.cs
 src/Presentation/Nop.Web/Factories/INewsletterModelFactory.cs
+src/Presentation/Nop.Web/Factories/IJsonLdModelFactory.cs
 src/Presentation/Nop.Web/Factories/IPollModelFactory.cs
 src/Presentation/Nop.Web/Factories/ICheckoutModelFactory.cs
 src/Presentation/Nop.Web/Factories/IReturnRequestModelFactory.cs
@@ -2452,7 +2465,6 @@ src/Presentation/Nop.Web/Views/Product/CompareProducts.cshtml
 src/Presentation/Nop.Web/Views/Product/_ProductSpecifications.cshtml
 src/Presentation/Nop.Web/Views/Product/_ProductEmailAFriendButton.cshtml
 src/Presentation/Nop.Web/Views/Product/_BackInStockSubscription.cshtml
-src/Presentation/Nop.Web/Views/Product/_Microdata.cshtml
 src/Presentation/Nop.Web/Views/Product/_ProductManufacturers.cshtml
 src/Presentation/Nop.Web/Views/Product/_Discontinued.cshtml
 src/Presentation/Nop.Web/Views/Product/_ProductTags.cshtml

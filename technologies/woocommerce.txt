@@ -471,6 +471,7 @@ packages/js/product-editor/changelog/add-37272
 packages/js/product-editor/changelog/add-name-block-37007
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/update-37686
+packages/js/product-editor/changelog/fix-38020-2
 packages/js/product-editor/changelog/add-38044
 packages/js/product-editor/changelog/update-layout-context-for-blocks
 packages/js/product-editor/changelog/dev-update-eslint-plugin
@@ -519,6 +520,7 @@ packages/js/product-editor/changelog/add-37263_category_field_block
 packages/js/product-editor/changelog/add-37985
 packages/js/product-editor/changelog/add-inventory-advanced-37401
 packages/js/product-editor/changelog/update-36719
+packages/js/product-editor/changelog/add-38200
 packages/js/product-editor/changelog/add-37888
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
 packages/js/product-editor/changelog/add-37911
@@ -943,6 +945,7 @@ packages/js/components/changelog/update-36610-support-variations-alternate
 packages/js/components/changelog/update-tree-item
 packages/js/components/changelog/add-input-props-to-exp-select
 packages/js/components/changelog/dev-migrate-tag-component-to-ts
+packages/js/components/changelog/fix-38210
 packages/js/components/changelog/update-34885_category_field_in_product_editor_select_control
 packages/js/components/package.json
 packages/js/components/composer.json
@@ -1598,6 +1601,7 @@ packages/js/data/changelog/add-crud_get_total_count_selector
 packages/js/data/changelog/fix-use-plugins-hydration-hook
 packages/js/data/changelog/add-36164
 packages/js/data/changelog/add-35786
+packages/js/data/changelog/dev-add-resolve-select-types
 packages/js/data/changelog/update-jest-merge
 packages/js/data/changelog/dev-33839-migrate-data-navigation-store-to-ts
 packages/js/data/changelog/add-33443_shipping_zones_data_store
@@ -1751,6 +1755,7 @@ packages/js/data/src/reviews/actions.ts
 packages/js/data/src/reviews/reducer.ts
 packages/js/data/src/types/index.ts
 packages/js/data/src/types/wp-data.ts
+packages/js/data/src/types/promiseify-selectors.ts
 packages/js/data/src/types/query-params.ts
 packages/js/data/src/types/rule-processor.ts
 packages/js/data/src/types/api.ts
@@ -2991,6 +2996,8 @@ plugins/woocommerce-admin/client/core-profiler/pages/BusinessLocation.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/BusinessInfo.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/IntroOptIn.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/UserProfile.tsx
+plugins/woocommerce-admin/client/core-profiler/test/__snapshots__/core-profiler-machine.test.tsx.snap
+plugins/woocommerce-admin/client/core-profiler/test/core-profiler-machine.test.tsx
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-desktop.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-mobile.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/loader-lightbulb.svg
@@ -3364,6 +3371,7 @@ plugins/woocommerce-admin/client/header/index.js
 plugins/woocommerce-admin/.eslintignore
 plugins/woocommerce-admin/tsconfig.json
 plugins/woocommerce/changelog/fix-37613-cross-sells-display-cart
+plugins/woocommerce/changelog/fix-37806
 plugins/woocommerce/changelog/fix-manage-store-panel-padding
 plugins/woocommerce/changelog/update-34885_category_field_in_product_editor
 plugins/woocommerce/changelog/fix-34804-2
@@ -3381,6 +3389,7 @@ plugins/woocommerce/changelog/fix-remove-hardcoded-notices
 plugins/woocommerce/changelog/dev-xstate-inspector-toggling
 plugins/woocommerce/changelog/e2e-pw-add-merchant-create-post
 plugins/woocommerce/changelog/add-block-attributes-37728
+plugins/woocommerce/changelog/fix-option-notice
 plugins/woocommerce/changelog/fix-display-stats-na
 plugins/woocommerce/changelog/update-trunk-stable-tag
 plugins/woocommerce/changelog/fix-undismissable-notice
@@ -3436,7 +3445,9 @@ plugins/woocommerce/changelog/fix-tt3-order-details-item-meta-styling
 plugins/woocommerce/changelog/fix-tabs-reordering-38002
 plugins/woocommerce/changelog/fix-woocommerce_admin_updated-does-not-run
 plugins/woocommerce/changelog/add-core-profiler-business-location
+plugins/woocommerce/changelog/add-tt3-comp-button-classes
 plugins/woocommerce/changelog/dev-add-tracks-tests
+plugins/woocommerce/changelog/dev-core-profiler-model-tests
 plugins/woocommerce/changelog/fix-34420
 plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/enhancement-add-held-stock-note
@@ -3483,6 +3494,7 @@ plugins/woocommerce/changelog/dev-38122_remove_separator_between_buttons_and_emp
 plugins/woocommerce/changelog/tweak-37458
 plugins/woocommerce/changelog/fix-k6-api-batch-orders
 plugins/woocommerce/changelog/fix-env-specific-phpunit-tests
+plugins/woocommerce/changelog/add-38200
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.0.4
 plugins/woocommerce/changelog/try-download-ssr
 plugins/woocommerce/changelog/fix-auto-draft-post-time-38075
@@ -4215,6 +4227,7 @@ plugins/woocommerce/tests/php/includes/data-stores/class-wc-product-data-store-c
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-product-variable-data-store-cpt-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-download-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-shipping-zone-data-store-test.php
+plugins/woocommerce/tests/php/includes/data-stores/class-wc-webhook-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-data-store-session-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-order-data-store-cpt-test.php
@@ -5625,6 +5638,7 @@ plugins/woocommerce/src/Internal/DataStores/Orders/OrdersTableRefundDataStore.ph
 plugins/woocommerce/src/Internal/DataStores/Orders/OrdersTableQuery.php
 plugins/woocommerce/src/Internal/DataStores/Orders/OrdersTableSearchQuery.php
 plugins/woocommerce/src/Internal/DataStores/CustomMetaDataStore.php
+plugins/woocommerce/src/Internal/Utilities/WebhookUtil.php
 plugins/woocommerce/src/Internal/Utilities/HtmlSanitizer.php
 plugins/woocommerce/src/Internal/Utilities/BlocksUtil.php
 plugins/woocommerce/src/Internal/Utilities/Users.php
