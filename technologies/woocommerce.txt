@@ -487,6 +487,7 @@ packages/js/product-editor/changelog/add-37266
 packages/js/product-editor/changelog/fix-tabbed-navigation-37932
 packages/js/product-editor/changelog/fix-37348
 packages/js/product-editor/changelog/add-37663
+packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
 packages/js/product-editor/changelog/fix-tabs-reordering-38002
 packages/js/product-editor/changelog/add-toggle-content-block-37253
 packages/js/product-editor/changelog/update-38117
@@ -521,7 +522,9 @@ packages/js/product-editor/changelog/add-37263_category_field_block
 packages/js/product-editor/changelog/add-37985
 packages/js/product-editor/changelog/add-inventory-advanced-37401
 packages/js/product-editor/changelog/update-36719
+packages/js/product-editor/changelog/fix-38149
 packages/js/product-editor/changelog/add-38200
+packages/js/product-editor/changelog/add-38215
 packages/js/product-editor/changelog/add-37888
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
 packages/js/product-editor/changelog/add-37911
@@ -558,6 +561,7 @@ packages/js/product-editor/src/utils/test/get-derived-product-type.ts
 packages/js/product-editor/src/utils/test/get-product-title.test.ts
 packages/js/product-editor/src/utils/test/get-product-variation-title.ts
 packages/js/product-editor/src/utils/test/prevent-leaving-product-form.test.ts
+packages/js/product-editor/src/utils/test/get-product-error-message.ts
 packages/js/product-editor/src/utils/test/get-product-status.ts
 packages/js/product-editor/src/utils/test/get-product-stock-status.test.ts
 packages/js/product-editor/src/utils/create-ordered-children.tsx
@@ -569,6 +573,7 @@ packages/js/product-editor/src/utils/get-product-variation-title.ts
 packages/js/product-editor/src/utils/get-header-title.ts
 packages/js/product-editor/src/utils/sanitize-html.ts
 packages/js/product-editor/src/utils/product-apifetch-middleware.ts
+packages/js/product-editor/src/utils/get-product-error-message.ts
 packages/js/product-editor/src/utils/get-product-status.ts
 packages/js/product-editor/src/utils/sift.ts
 packages/js/product-editor/src/utils/get-product-title.ts
@@ -2430,6 +2435,7 @@ plugins/woocommerce-admin/docs/examples/extensions/sql-modification/woocommerce-
 plugins/woocommerce-admin/docs/examples/extensions/sql-modification/js/index.js
 plugins/woocommerce-admin/docs/examples/extensions/add-report/woocommerce-admin-add-report-example.php
 plugins/woocommerce-admin/docs/examples/extensions/add-report/js/index.js
+plugins/woocommerce-admin/docs/examples/extensions/add-task/class-mytask.php
 plugins/woocommerce-admin/docs/examples/extensions/add-task/js/index.js
 plugins/woocommerce-admin/docs/examples/extensions/add-task/woocommerce-admin-add-task-example.php
 plugins/woocommerce-admin/docs/examples/extensions/table-column/js/index.js
@@ -3026,6 +3032,7 @@ plugins/woocommerce-admin/client/core-profiler/pages/tests/intro-opt-in.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/BusinessLocation.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/BusinessInfo.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/IntroOptIn.tsx
+plugins/woocommerce-admin/client/core-profiler/pages/Extensions.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/UserProfile.tsx
 plugins/woocommerce-admin/client/core-profiler/test/__snapshots__/core-profiler-machine.test.tsx.snap
 plugins/woocommerce-admin/client/core-profiler/test/core-profiler-machine.test.tsx
@@ -3231,6 +3238,7 @@ plugins/woocommerce-admin/client/layout/transient-notices/index.js
 plugins/woocommerce-admin/client/layout/navigation.js
 plugins/woocommerce-admin/client/layout/controller.js
 plugins/woocommerce-admin/client/layout/NoMatch.tsx
+plugins/woocommerce-admin/client/layout/hooks/use-page-classes.ts
 plugins/woocommerce-admin/client/layout/footer/index.ts
 plugins/woocommerce-admin/client/layout/footer/footer.scss
 plugins/woocommerce-admin/client/layout/footer/footer.tsx
@@ -3280,6 +3288,7 @@ plugins/woocommerce-admin/client/products/product-breadcrumbs.tsx
 plugins/woocommerce-admin/client/products/shared/posts-navigation/posts-navigation.tsx
 plugins/woocommerce-admin/client/products/shared/posts-navigation/posts-navigation.scss
 plugins/woocommerce-admin/client/products/shared/posts-navigation/index.ts
+plugins/woocommerce-admin/client/products/add-edit-product-page.scss
 plugins/woocommerce-admin/client/products/product-title.tsx
 plugins/woocommerce-admin/client/products/hooks/use-product-variations-helper.ts
 plugins/woocommerce-admin/client/products/hooks/use-product-variation-navigation.ts
@@ -3433,14 +3442,17 @@ plugins/woocommerce/changelog/fix-issue-36668
 plugins/woocommerce/changelog/add-37771
 plugins/woocommerce/changelog/tweak-37603
 plugins/woocommerce/changelog/fix-decimal-points-for-sek-huf-czk
+plugins/woocommerce/changelog/fix-38317
 plugins/woocommerce/changelog/fix-product-data-field-description-styling.
 plugins/woocommerce/changelog/dev-38080_rename_generate_variations_button
 plugins/woocommerce/changelog/add-37266
 plugins/woocommerce/changelog/fix-37600
 plugins/woocommerce/changelog/fix-36027
 plugins/woocommerce/changelog/fix-36785
+plugins/woocommerce/changelog/fix-38242_editor_hidden_in_firefox
 plugins/woocommerce/changelog/e2e-increase-timeouts
 plugins/woocommerce/changelog/fix-37451-store-details-complete
+plugins/woocommerce/changelog/dev-update-task-list-docs-example
 plugins/woocommerce/changelog/fix-37502
 plugins/woocommerce/changelog/fix-35860
 plugins/woocommerce/changelog/fix-tt3-order-details-item-meta-styling
@@ -3459,7 +3471,9 @@ plugins/woocommerce/changelog/fix-37601
 plugins/woocommerce/changelog/add-rest-api-products-featured-image
 plugins/woocommerce/changelog/add-shipping-class-creation-37886
 plugins/woocommerce/changelog/fix-37604
+plugins/woocommerce/changelog/add-plugin-install-queue-endpoint
 plugins/woocommerce/changelog/remove-qs
+plugins/woocommerce/changelog/pr-36868
 plugins/woocommerce/changelog/fix-265-add-k6-hpos-baseline
 plugins/woocommerce/changelog/fix-update-wp-env-error-message
 plugins/woocommerce/changelog/dev-clean-up-task-list
@@ -3484,6 +3498,7 @@ plugins/woocommerce/changelog/fix-activity-icon
 plugins/woocommerce/changelog/update-contributor-notes
 plugins/woocommerce/changelog/dev-37989_allow_dropdown_recording_for_wc_settings
 plugins/woocommerce/changelog/add-37263_category_field_block
+plugins/woocommerce/changelog/add-core-profiler-fetch-extensions
 plugins/woocommerce/changelog/add-tracker_unique_payment_method
 plugins/woocommerce/changelog/add-37985
 plugins/woocommerce/changelog/add-credit-card-i18n-context
@@ -3499,6 +3514,7 @@ plugins/woocommerce/changelog/dev-38122_remove_separator_between_buttons_and_emp
 plugins/woocommerce/changelog/tweak-37458
 plugins/woocommerce/changelog/fix-k6-api-batch-orders
 plugins/woocommerce/changelog/fix-env-specific-phpunit-tests
+plugins/woocommerce/changelog/fix-38149
 plugins/woocommerce/changelog/add-38200
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.0.4
 plugins/woocommerce/changelog/try-download-ssr
@@ -4252,6 +4268,7 @@ plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingChannelsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingRecommendationsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignTypesTest.php
+plugins/woocommerce/tests/php/src/Admin/API/OnboardingPluginsTest.php
 plugins/woocommerce/tests/php/src/Admin/Marketing/MarketingCampaignTest.php
 plugins/woocommerce/tests/php/src/Admin/Marketing/MarketingChannelsTest.php
 plugins/woocommerce/tests/php/src/Database/Migrations/CustomOrderTable/PostsToOrdersMigrationControllerTest.php
@@ -5371,9 +5388,12 @@ plugins/woocommerce/src/Proxies/LegacyProxy.php
 plugins/woocommerce/src/Autoloader.php
 plugins/woocommerce/src/README.md
 plugins/woocommerce/src/Admin/ReportExporter.php
+plugins/woocommerce/src/Admin/PluginsInstallLoggers/PluginsInstallLogger.php
+plugins/woocommerce/src/Admin/PluginsInstallLoggers/AsynPluginsInstallLogger.php
 plugins/woocommerce/src/Admin/DeprecatedClassFacade.php
 plugins/woocommerce/src/Admin/API/OnboardingTasks.php
 plugins/woocommerce/src/Admin/API/Taxes.php
+plugins/woocommerce/src/Admin/API/OnboardingPlugins.php
 plugins/woocommerce/src/Admin/API/NoteActions.php
 plugins/woocommerce/src/Admin/API/Marketing.php
 plugins/woocommerce/src/Admin/API/Leaderboards.php

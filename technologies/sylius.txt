@@ -673,6 +673,7 @@ features/product/managing_product_attributes/deleting_multiple_product_attribute
 features/product/managing_product_attributes/adding_float_product_attribute.feature
 features/product/managing_product_attributes/adding_select_product_attribute.feature
 features/product/managing_product_attributes/text_product_attribute_validation.feature
+features/product/viewing_product_variants/viewing_list_of_product_variants_with_corresponding_prices_and_options.feature
 features/product/viewing_product_variants/viewing_product_variant.feature
 features/product/viewing_product_reviews/viewing_product_reviews_on_product_reviews_page.feature
 features/product/viewing_product_reviews/viewing_product_reviews_on_product_details_page.feature
@@ -3825,6 +3826,7 @@ src/Sylius/Bundle/PromotionBundle/Resources/config/validation/PromotionRule.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/CatalogPromotionAction.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/CatalogPromotion.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/Promotion.xml
+src/Sylius/Bundle/PromotionBundle/Resources/config/validation/PromotionTranslation.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/serializer/Model.PromotionCoupon.yml
 src/Sylius/Bundle/PromotionBundle/Resources/config/serializer/Model.Promotion.yml
 src/Sylius/Bundle/PromotionBundle/Form/DataTransformer/MoneyIntToLocalizedStringTransformer.php
@@ -4168,6 +4170,7 @@ src/Sylius/Bundle/ApiBundle/CommandHandler/Checkout/CompleteOrderHandler.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Checkout/ChoosePaymentMethodHandler.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Checkout/ShipShipmentHandler.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Checkout/SendShipmentConfirmationEmailHandler.php
+src/Sylius/Bundle/ApiBundle/CommandHandler/Checkout/Exception/OrderTotalHasChangedException.php
 src/Sylius/Bundle/ApiBundle/composer.json
 src/Sylius/Bundle/ApiBundle/Changer/PaymentMethodChanger.php
 src/Sylius/Bundle/ApiBundle/Changer/PaymentMethodChangerInterface.php

@@ -3,6 +3,7 @@
 package.json
 pnpm-lock.yaml
 .changeset/add-base-path.md
+.changeset/add-cookie-name.md
 .changeset/less-system-exports.md
 .changeset/no-filters-needed.md
 .changeset/update-prisma-414.md
@@ -12,6 +13,7 @@ pnpm-lock.yaml
 .changeset/README.md
 .changeset/fifty-meals-look.md
 .changeset/fix-enable-logging.md
+.changeset/more-session-types.md
 .changeset/config.json
 .changeset/less-is-more.md
 .changeset/small-games-bathe.md
@@ -1632,6 +1634,13 @@ examples/framework-nextjs-two-servers/keystone-server/src/seed/index.ts
 examples/framework-nextjs-two-servers/keystone-server/src/seed/users.json
 examples/framework-nextjs-two-servers/keystone-server/schema.prisma
 examples/framework-nextjs-two-servers/keystone-server/schema.graphql
+examples/custom-session-invalidation/sandbox.config.json
+examples/custom-session-invalidation/package.json
+examples/custom-session-invalidation/keystone.ts
+examples/custom-session-invalidation/schema.ts
+examples/custom-session-invalidation/README.md
+examples/custom-session-invalidation/schema.prisma
+examples/custom-session-invalidation/schema.graphql
 examples/usecase-versioning/sandbox.config.json
 examples/usecase-versioning/package.json
 examples/usecase-versioning/keystone.ts
@@ -1649,13 +1658,6 @@ examples/testing/babel.config.js
 examples/testing/README.md
 examples/testing/schema.prisma
 examples/testing/schema.graphql
-examples/custom-session-validation/sandbox.config.json
-examples/custom-session-validation/package.json
-examples/custom-session-validation/keystone.ts
-examples/custom-session-validation/schema.ts
-examples/custom-session-validation/README.md
-examples/custom-session-validation/schema.prisma
-examples/custom-session-validation/schema.graphql
 examples/framework-remix/package.json
 examples/framework-remix/keystone.ts
 examples/framework-remix/remix.config.js
@@ -1781,7 +1783,6 @@ examples/usecase-roles/sandbox.config.json
 examples/usecase-roles/package.json
 examples/usecase-roles/keystone.ts
 examples/usecase-roles/schema.ts
-examples/usecase-roles/types.ts
 examples/usecase-roles/README.md
 examples/usecase-roles/schema.prisma
 examples/usecase-roles/access.ts
@@ -1845,6 +1846,13 @@ examples/virtual-field/schema.ts
 examples/virtual-field/README.md
 examples/virtual-field/schema.prisma
 examples/virtual-field/schema.graphql
+examples/usecase-blog-moderated/sandbox.config.json
+examples/usecase-blog-moderated/package.json
+examples/usecase-blog-moderated/keystone.ts
+examples/usecase-blog-moderated/schema.ts
+examples/usecase-blog-moderated/keystone-example.db
+examples/usecase-blog-moderated/schema.prisma
+examples/usecase-blog-moderated/schema.graphql
 examples/extend-graphql-schema-graphql-tools/sandbox.config.json
 examples/extend-graphql-schema-graphql-tools/package.json
 examples/extend-graphql-schema-graphql-tools/keystone.ts
