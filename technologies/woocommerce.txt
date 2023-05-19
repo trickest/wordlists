@@ -482,6 +482,7 @@ packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-37771
 packages/js/product-editor/changelog/add-37249
 packages/js/product-editor/changelog/add-37930
+packages/js/product-editor/changelog/update-parent-categ
 packages/js/product-editor/changelog/fix-38021
 packages/js/product-editor/changelog/add-37266
 packages/js/product-editor/changelog/fix-tabbed-navigation-37932
@@ -921,6 +922,7 @@ packages/js/components/changelog/fix-setstate-diff-component
 packages/js/components/changelog/dev-update-pnpm8
 packages/js/components/changelog/dev-migrate-section-component-to-ts
 packages/js/components/changelog/dev-update-eslint-plugin
+packages/js/components/changelog/improve-selecttree-label
 packages/js/components/changelog/dev-pin-wp-deps-6
 packages/js/components/changelog/fix-typescript-incremental-regression
 packages/js/components/changelog/update-34885_category_field_in_product_editor_tree_changes
@@ -1981,6 +1983,7 @@ packages/js/onboarding/changelog/.gitkeep
 packages/js/onboarding/changelog/dev-update-pnpm8
 packages/js/onboarding/changelog/dev-update-eslint-plugin
 packages/js/onboarding/changelog/dev-pin-wp-deps-6
+packages/js/onboarding/changelog/dev-move-geolocation-utils
 packages/js/onboarding/changelog/fix-typescript-package-isolation
 packages/js/onboarding/package.json
 packages/js/onboarding/composer.json
@@ -2004,6 +2007,12 @@ packages/js/onboarding/src/images/cards/cb.js
 packages/js/onboarding/src/images/cards/unionpay.js
 packages/js/onboarding/src/images/wcpay-logo.tsx
 packages/js/onboarding/src/index.ts
+packages/js/onboarding/src/utils/countries/tests/utils/locations.ts
+packages/js/onboarding/src/utils/countries/tests/utils/country-options.ts
+packages/js/onboarding/src/utils/countries/tests/utils/location-mapping.test.ts
+packages/js/onboarding/src/utils/countries/tests/utils/index.test.ts
+packages/js/onboarding/src/utils/countries/index.ts
+packages/js/onboarding/src/utils/countries/location-mapping.ts
 packages/js/onboarding/src/components/WooOnboardingTaskListHeader/index.ts
 packages/js/onboarding/src/components/WooOnboardingTaskListHeader/WooOnboardingTaskListHeader.tsx
 packages/js/onboarding/src/components/RecommendedRibbon/index.ts
@@ -2054,6 +2063,7 @@ packages/js/onboarding/src/components/WooPaymentGatewaySetup/WooPaymentGatewaySe
 packages/js/onboarding/src/style.scss
 packages/js/onboarding/typings/global.d.ts
 packages/js/onboarding/typings/index.d.ts
+packages/js/onboarding/jest.config.json
 packages/js/onboarding/CHANGELOG.md
 packages/js/onboarding/tsconfig.json
 packages/js/api/changelog/dev-adjust-sync
@@ -2733,6 +2743,9 @@ plugins/woocommerce-admin/client/marketing/types/Campaign.ts
 plugins/woocommerce-admin/client/marketing/types/CampaignType.ts
 plugins/woocommerce-admin/client/utils/static-form-helper.ts
 plugins/woocommerce-admin/client/utils/admin-settings.js
+plugins/woocommerce-admin/client/utils/features/index.ts
+plugins/woocommerce-admin/client/utils/features/types.ts
+plugins/woocommerce-admin/client/utils/features/features.ts
 plugins/woocommerce-admin/client/utils/test/url-helpers.spec.ts
 plugins/woocommerce-admin/client/utils/test/index.js
 plugins/woocommerce-admin/client/utils/test/static-form-helper.spec.tsx
@@ -3391,6 +3404,7 @@ plugins/woocommerce/changelog/update-woocommerce-blocks-10.2.0
 plugins/woocommerce/changelog/fix-34127
 plugins/woocommerce/changelog/fix-line-endings
 plugins/woocommerce/changelog/fix-k6-order-id-hpos
+plugins/woocommerce/changelog/fix-remove-product-attribute-message
 plugins/woocommerce/changelog/e2e-readme-playwright-ui-mode
 plugins/woocommerce/changelog/dev-post-release-tasks-7.6.1-update-stable
 plugins/woocommerce/changelog/fix-incorrect-variation-count
@@ -3407,6 +3421,7 @@ plugins/woocommerce/changelog/fix-37599
 plugins/woocommerce/changelog/fix-issue-36360
 plugins/woocommerce/changelog/add-37931
 plugins/woocommerce/changelog/add-tracks-product-type-options
+plugins/woocommerce/changelog/e2e-gutenberg-latest-nightly
 plugins/woocommerce/changelog/update-interpolate-advanced-filters
 plugins/woocommerce/changelog/add-37741-add-navigation-component-for-core-profiler
 plugins/woocommerce/changelog/e2e-update-wsl-setup-instructions
@@ -3420,6 +3435,7 @@ plugins/woocommerce/changelog/fix-tasklist-completion-message
 plugins/woocommerce/changelog/e2e-playwright-1_33
 plugins/woocommerce/changelog/fix-38093-tracks-id-mismatch
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/e2e-breakdown-create-variable-spec
 plugins/woocommerce/changelog/fix-26543
 plugins/woocommerce/changelog/fix-e2e-test-docs
 plugins/woocommerce/changelog/update-attribute-empty-state
@@ -3430,6 +3446,7 @@ plugins/woocommerce/changelog/fix-typo-in-regenerate_report_data-doc
 plugins/woocommerce/changelog/dev-update-pnpm8
 plugins/woocommerce/changelog/update-wp-env-7.0.0
 plugins/woocommerce/changelog/fix-37954_update_image_description
+plugins/woocommerce/changelog/update-cart-fragments-enqueue
 plugins/woocommerce/changelog/e2e-update-timeout-readme
 plugins/woocommerce/changelog/add-38044
 plugins/woocommerce/changelog/2023-05-02-09-36-02-782439
@@ -3442,7 +3459,9 @@ plugins/woocommerce/changelog/fix-issue-36668
 plugins/woocommerce/changelog/add-37771
 plugins/woocommerce/changelog/tweak-37603
 plugins/woocommerce/changelog/fix-decimal-points-for-sek-huf-czk
+plugins/woocommerce/changelog/dev-37219_add_hook_to_remove_order_items
 plugins/woocommerce/changelog/fix-38317
+plugins/woocommerce/changelog/fix-product-add-attributes-race-condition
 plugins/woocommerce/changelog/fix-product-data-field-description-styling.
 plugins/woocommerce/changelog/dev-38080_rename_generate_variations_button
 plugins/woocommerce/changelog/add-37266
@@ -3465,26 +3484,33 @@ plugins/woocommerce/changelog/dev-core-profiler-model-tests
 plugins/woocommerce/changelog/fix-34420
 plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/enhancement-add-held-stock-note
+plugins/woocommerce/changelog/fix-38320
 plugins/woocommerce/changelog/fix-38069-fix-product-task-imports
 plugins/woocommerce/changelog/add-core-profiler-welcome-woo
+plugins/woocommerce/changelog/update-product_attributes_add
 plugins/woocommerce/changelog/fix-37601
 plugins/woocommerce/changelog/add-rest-api-products-featured-image
+plugins/woocommerce/changelog/update-variations-empty-state
 plugins/woocommerce/changelog/add-shipping-class-creation-37886
+plugins/woocommerce/changelog/add-shipping-tracks
 plugins/woocommerce/changelog/fix-37604
 plugins/woocommerce/changelog/add-plugin-install-queue-endpoint
 plugins/woocommerce/changelog/remove-qs
 plugins/woocommerce/changelog/pr-36868
 plugins/woocommerce/changelog/fix-265-add-k6-hpos-baseline
 plugins/woocommerce/changelog/fix-update-wp-env-error-message
+plugins/woocommerce/changelog/try-install-optim-2
 plugins/woocommerce/changelog/dev-clean-up-task-list
 plugins/woocommerce/changelog/update-check-external-testing-instructions
 plugins/woocommerce/changelog/remove-onboarding-hook
+plugins/woocommerce/changelog/add-36989
 plugins/woocommerce/changelog/dev-remove-deasync-dep
 plugins/woocommerce/changelog/fix-28214
 plugins/woocommerce/changelog/fix-wc-experimental-i18n
 plugins/woocommerce/changelog/fix-tt2-comment-list
 plugins/woocommerce/changelog/p
 plugins/woocommerce/changelog/add-wp-env-unit-tests
+plugins/woocommerce/changelog/fix-37108
 plugins/woocommerce/changelog/pr-37916
 plugins/woocommerce/changelog/fix-tt3-attributes-table
 plugins/woocommerce/changelog/add-37704
@@ -3502,6 +3528,7 @@ plugins/woocommerce/changelog/add-core-profiler-fetch-extensions
 plugins/woocommerce/changelog/add-tracker_unique_payment_method
 plugins/woocommerce/changelog/add-37985
 plugins/woocommerce/changelog/add-credit-card-i18n-context
+plugins/woocommerce/changelog/update-remove-sample-data-from-product-templates
 plugins/woocommerce/changelog/e2e-pw-add-merchant-create-page
 plugins/woocommerce/changelog/fix-tt3-variation-select-height-flicker
 plugins/woocommerce/changelog/update-update-rin-transformers-doc
@@ -3524,6 +3551,7 @@ plugins/woocommerce/changelog/add-scaffolding-for-new-core-profiler
 plugins/woocommerce/changelog/hide_state_from_ethiopia_and_rwanda
 plugins/woocommerce/changelog/fix-33389
 plugins/woocommerce/changelog/add-37888
+plugins/woocommerce/changelog/remove-wp-env-workaround
 plugins/woocommerce/changelog/update-generated-variations-snackbar
 plugins/woocommerce/changelog/fix-requires-php-version-7.3
 plugins/woocommerce/changelog/fix-32023
@@ -4295,6 +4323,7 @@ plugins/woocommerce/tests/php/src/Internal/Traits/AccessiblePrivateMethodsTest.p
 plugins/woocommerce/tests/php/src/Internal/AssignDefaultCategoryTest.php
 plugins/woocommerce/tests/php/src/Internal/Features/FeaturesControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/COTRedirectionControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Orders/EditLockTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsUtilTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsCommentsOverridesTest.php
@@ -5022,7 +5051,6 @@ plugins/woocommerce/tests/README.md
 plugins/woocommerce/tests/wp-cli.yml
 plugins/woocommerce/tests/e2e-pw/WSL_SETUP_INSTRUCTIONS.md
 plugins/woocommerce/tests/e2e-pw/ignore-plugin-tests.playwright.config.js
-plugins/woocommerce/tests/e2e-pw/bin/update-wp-env.php
 plugins/woocommerce/tests/e2e-pw/bin/test-env-setup.sh
 plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/overview.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/coupons.spec.js
@@ -5044,7 +5072,10 @@ plugins/woocommerce/tests/e2e-pw/tests/merchant/create-simple-product.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/product-edit.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-coupon.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-refund.spec.js
-plugins/woocommerce/tests/e2e-pw/tests/merchant/create-variable-product.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-variations.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/update-variations.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-variable-product.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-product-attributes.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-emails.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/page-loads.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-status-filter.spec.js
@@ -5078,6 +5109,7 @@ plugins/woocommerce/tests/e2e-pw/utils/site.js
 plugins/woocommerce/tests/e2e-pw/utils/wordpress.js
 plugins/woocommerce/tests/e2e-pw/utils/onboarding.js
 plugins/woocommerce/tests/e2e-pw/utils/plugin-utils.js
+plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/global-setup.js
 plugins/woocommerce/tests/e2e-pw/daily.playwright.config.js
@@ -5702,6 +5734,7 @@ plugins/woocommerce/src/Internal/Admin/Orders/MetaBoxes/CustomMetaBox.php
 plugins/woocommerce/src/Internal/Admin/Orders/PostsRedirectionController.php
 plugins/woocommerce/src/Internal/Admin/Orders/ListTable.php
 plugins/woocommerce/src/Internal/Admin/Orders/Edit.php
+plugins/woocommerce/src/Internal/Admin/Orders/EditLock.php
 plugins/woocommerce/src/Internal/Admin/Orders/PageController.php
 plugins/woocommerce/src/Internal/Admin/Orders/COTRedirectionController.php
 plugins/woocommerce/src/Internal/Admin/Notes/PaymentsMoreInfoNeeded.php
@@ -5932,6 +5965,7 @@ plugins/woocommerce/.eslintignore
 plugins/woocommerce/tsconfig.json
 plugins/woocommerce-beta-tester/changelog/fix-typescript-incremental-builds
 plugins/woocommerce-beta-tester/changelog/dev-check-logger-exists
+plugins/woocommerce-beta-tester/changelog/fix-reload-when-toggle
 plugins/woocommerce-beta-tester/changelog/dev-consolidate-eslint-versions
 plugins/woocommerce-beta-tester/changelog/dev-bump-pnpm-version-restraint
 plugins/woocommerce-beta-tester/changelog/update-changelogger

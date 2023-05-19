@@ -2429,6 +2429,7 @@ changelog/_unreleased/2023-03-28-added-header-account-widget-dropdown-blocks.md
 changelog/_unreleased/2023-02-23-fix-storefront-theme-asset-paths.md
 changelog/_unreleased/2022-12-20-fix-adding-new-customer-functionality.md
 changelog/_unreleased/2023-04-05-frontend-cart-access.md
+changelog/_unreleased/2023-03-28-add-module-sw-settings-usage-data.md
 changelog/_unreleased/2023-02-12-fixing-seo-url-twig.md
 changelog/_unreleased/2022-01-19-switch-storefront-plugin-data-attribute-selectors-to-match-their--option-naming.md
 changelog/_unreleased/2023-03-29-getting-errors-when-removing-tags-from-order.md
@@ -2448,6 +2449,7 @@ changelog/_unreleased/2023-04-05-allow-request-service.md
 changelog/_unreleased/2023-05-05-improve-redirect-manipulation.md
 changelog/_unreleased/2023-03-16-clear-container-cache-after-plugin-extraction.md
 changelog/_unreleased/2023-03-06-fix-theme-assets.md
+changelog/_unreleased/2023-05-16-fix-admin-management-of-composer-plugins.md
 changelog/_unreleased/2023-04-06-document-can-not-be-send.md
 changelog/_unreleased/2023-04-04-fix-import-export-entity-listing.md
 changelog/_unreleased/2023-04-04-use-configured-twig-cache-dir-for-twig-cache.md
@@ -2460,6 +2462,7 @@ changelog/_unreleased/2023-01-31-fix-cms-service-collect-function-for-array-valu
 changelog/_unreleased/2023-03-29-custom-field-helper.md
 changelog/_unreleased/2023-02-13-add-order-transaction-status-rule.md
 changelog/_unreleased/2023-01-25-add-line-item-factory-to-cartlineitemcontroller.md
+changelog/_unreleased/2023-05-17-fix-elasticsearch-visibility-mapping-definition.md
 changelog/_unreleased/2023-02-13-improve-search-results-behavior.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2023-05-08-moved-closing-div-in-correct-twig-block.md
@@ -2584,6 +2587,7 @@ changelog/_unreleased/2023-03-10-convert-generated-variant-listing-config-column
 changelog/_unreleased/2023-02-02-provided-cart-price-taxes-are-not-calculated-into-the-cart-price-sum.md
 changelog/_unreleased/2023-02-06-create-method-to-get-translation-of-trigger.md
 changelog/_unreleased/.keep
+changelog/_unreleased/2023-05-17-update-lazy-function-for-breaking-change.md
 changelog/_unreleased/2023-04-12-fixing-the-style-of-selection-list-load-more.md
 changelog/_unreleased/2023-01-30-make-user-activity-tab-overarching.md
 changelog/_unreleased/2023-03-10-add-loading-spinner-on-checkout-register-page.md
@@ -2664,6 +2668,7 @@ changelog/_unreleased/2023-05-15-alphabetical-sorting-of-countries-and-states.md
 changelog/_unreleased/2023-02-22-update-monolog.md
 changelog/_unreleased/2023-03-27-dont-require-already-required-plugins.md
 changelog/_unreleased/2023-03-06-fix-svg-image-is-not-displayed-in-the-desktop-view.md
+changelog/_unreleased/2023-05-16-fix-sdk-tabs-issue.md
 changelog/_unreleased/2023-04-18-add-ai-copilot-badge-component.md
 changelog/_unreleased/2023-04-04-add-symplify-phpstan-rules.md
 changelog/_unreleased/2023-03-30-fix-plugin-uninstall-for-composer-plugins.md
@@ -4447,6 +4452,8 @@ tests/unit/php/Core/System/SalesChannel/Context/SalesChannelContextServiceTest.p
 tests/unit/php/Core/System/Country/SalesChannel/CachedCountryRouteTest.php
 tests/unit/php/Core/System/Country/SalesChannel/CachedCountryStateRouteTest.php
 tests/unit/php/Core/System/SystemTest.php
+tests/unit/php/Core/System/Metrics/Api/MetricControllerTest.php
+tests/unit/php/Core/System/Metrics/Approval/ApprovalDetectorTest.php
 tests/unit/php/Core/System/Locale/LocaleExceptionTest.php
 tests/unit/php/Core/System/Language/SalesChannel/CachedLanguageRouteTest.php
 tests/unit/php/Core/System/SystemConfig/Command/ConfigGetCommandTest.php
@@ -4726,7 +4733,13 @@ tests/unit/php/Core/Framework/Plugin/_fixtures/ExampleBundle/FeatureB/FeatureB.p
 tests/unit/php/Core/Framework/Plugin/_fixtures/ExampleBundle/ExampleBundle.php
 tests/unit/php/Core/Framework/Plugin/_fixtures/ExampleBundle/Resources/public/test.txt
 tests/unit/php/Core/Framework/Plugin/Composer/FactoryTest.php
+tests/unit/php/Core/Framework/Plugin/Util/PluginFinderTest.php
 tests/unit/php/Core/Framework/Plugin/Util/AssetServiceTest.php
+tests/unit/php/Core/Framework/Plugin/Util/VersionSanitizerTest.php
+tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/composer.json
+tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/vendor/swag/test/composer.json
+tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/vendor/composer/installed.json
+tests/unit/php/Core/Framework/Plugin/Util/_fixture/LocallyInstalledPlugins/SwagTest/composer.json
 tests/unit/php/Core/Framework/Plugin/Event/PluginPostDeactivationFailedEventTest.php
 tests/unit/php/Core/Framework/Plugin/PluginLifecycleServiceTest.php
 tests/unit/php/Core/Framework/Plugin/PluginManagementServiceTest.php
@@ -5200,7 +5213,7 @@ UPGRADE-6.1.md
 .gitlab/CODEOWNERS
 .gitlab/bin/install_store_plugin.bash
 .gitlab/bin/split.sh
-.gitlab/bin/create_downstream_branch.sh
+.gitlab/bin/branch.sh
 .gitlab/bin/git_sync.bash
 .gitlab/templates/theme.yml
 .gitlab/templates/plugin.yml
@@ -5215,6 +5228,7 @@ UPGRADE-6.1.md
 .gitlab/stages/21-security.yml
 .gitlab/stages/70-visual.yml
 .gitlab/stages/60-deploy.yml
+.gitlab/stages/41-saas-deployment-prep.yml
 .gitlab/stages/40-downstream.yml
 .gitlab/stages/20-unit.yml
 .gitlab/stages/10-lint.yml
@@ -5327,6 +5341,7 @@ src/Core/System/DependencyInjection/user.xml
 src/Core/System/DependencyInjection/state_machine.xml
 src/Core/System/DependencyInjection/salutation.xml
 src/Core/System/DependencyInjection/integration.xml
+src/Core/System/DependencyInjection/metrics.xml
 src/Core/System/DependencyInjection/tax_provider.xml
 src/Core/System/DependencyInjection/number_range.xml
 src/Core/System/DependencyInjection/tag.xml
@@ -5744,6 +5759,8 @@ src/Core/System/Country/CountryDefinition.php
 src/Core/System/Country/CountryEntity.php
 src/Core/System/Country/Exception/CountryStateNotFoundException.php
 src/Core/System/Country/Exception/CountryNotFoundException.php
+src/Core/System/Metrics/Api/MetricController.php
+src/Core/System/Metrics/Approval/ApprovalDetector.php
 src/Core/System/Unit/Aggregate/UnitTranslation/UnitTranslationDefinition.php
 src/Core/System/Unit/Aggregate/UnitTranslation/UnitTranslationCollection.php
 src/Core/System/Unit/Aggregate/UnitTranslation/UnitTranslationEntity.php
@@ -8538,12 +8555,6 @@ src/Core/Framework/Test/Plugin/PluginTestsHelper.php
 src/Core/Framework/Test/Plugin/Composer/PackageProviderTest.php
 src/Core/Framework/Test/Plugin/Composer/_fixture/invalid/composer.json
 src/Core/Framework/Test/Plugin/Composer/_fixture/valid/composer.json
-src/Core/Framework/Test/Plugin/Util/PluginFinderTest.php
-src/Core/Framework/Test/Plugin/Util/VersionSanitizerTest.php
-src/Core/Framework/Test/Plugin/Util/_fixture/ComposerProject/composer.json
-src/Core/Framework/Test/Plugin/Util/_fixture/ComposerProject/vendor/swag/test/composer.json
-src/Core/Framework/Test/Plugin/Util/_fixture/ComposerProject/vendor/composer/installed.json
-src/Core/Framework/Test/Plugin/Util/_fixture/LocallyInstalledPlugins/SwagTest/composer.json
 src/Core/Framework/Test/Plugin/_assertion/PluginListCommandTest-testCommand.txt
 src/Core/Framework/Test/Plugin/BundleConfigGeneratorTest.php
 src/Core/Framework/Test/Plugin/PluginAclTest.php
@@ -10121,6 +10132,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/document.js
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/cache_info.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/message-queue.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/container_cache.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/metrics.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_delivery.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/cache.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/sync.json
@@ -13529,6 +13541,14 @@ src/Administration/Resources/app/administration/src/app/component/extension-api/
 src/Administration/Resources/app/administration/src/app/component/extension-api/sw-extension-component-section/sw-extension-component-section.html.twig
 src/Administration/Resources/app/administration/src/app/component/extension-api/sw-extension-component-section/index.ts
 src/Administration/Resources/app/administration/src/app/component/extension-api/sw-extension-component-section/sw-extension-component-section.spec.js
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.html.twig
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.scss
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/index.ts
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.spec.js
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/index.ts
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.html.twig
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.spec.js
+src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.scss
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/sw-inherit-wrapper.scss
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/sw-inherit-wrapper.html.twig
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/index.js
@@ -13887,8 +13907,8 @@ src/Administration/Resources/app/administration/src/app/component/structure/sw-s
 src/Administration/Resources/app/administration/src/app/component/structure/sw-search-bar/sw-search-bar.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-search-bar/index.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin/index.ts
-src/Administration/Resources/app/administration/src/app/component/structure/sw-admin/index.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin/sw-admin.html.twig
+src/Administration/Resources/app/administration/src/app/component/structure/sw-admin/sw-admin.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-desktop/sw-desktop.scss
 src/Administration/Resources/app/administration/src/app/component/structure/sw-desktop/index.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-desktop/sw-desktop.spec.js
@@ -14477,6 +14497,7 @@ src/Administration/Resources/app/administration/src/core/service/api/user-valida
 src/Administration/Resources/app/administration/src/core/service/api/customer-validation.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/message-queue.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/custom-snippet.api.service.spec.js
+src/Administration/Resources/app/administration/src/core/service/api/metrics.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/calculate-price.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/checkout-store.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/app-action-button.service.spec.js
@@ -14505,6 +14526,7 @@ src/Administration/Resources/app/administration/src/core/service/api/import-expo
 src/Administration/Resources/app/administration/src/core/service/api/acl.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/document.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/extension-sdk.service.ts
+src/Administration/Resources/app/administration/src/core/service/api/metrics.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/document.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/app-cms-blocks.service.js
 src/Administration/Resources/app/administration/src/core/service/api/app-modules.service.spec.js
@@ -14698,6 +14720,14 @@ src/Administration/Resources/app/administration/src/module/sw-settings-number-ra
 src/Administration/Resources/app/administration/src/module/sw-settings-number-range/page/sw-settings-number-range-detail/sw-settings-number-range-detail.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-number-range/page/sw-settings-number-range-detail/sw-settings-number-range-detail.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-number-range/page/sw-settings-number-range-detail/index.js
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/snippet/en-GB.json
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/snippet/de-DE.json
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/sw-settings-usage-data.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/index.ts
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/page/sw-settings-usage-data/sw-settings-usage-data.html.twig
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/page/sw-settings-usage-data/sw-settings-usage-data.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/page/sw-settings-usage-data/index.ts
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/page/sw-settings-usage-data/sw-settings-usage-data.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-payment/snippet/en-GB.json
 src/Administration/Resources/app/administration/src/module/sw-settings-payment/snippet/de-DE.json
 src/Administration/Resources/app/administration/src/module/sw-settings-payment/state/overview-cards.store.ts

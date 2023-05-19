@@ -6170,6 +6170,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoryAnchorTest.ph
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductSearchPriceFilterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQl/GraphQlSessionTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Eav/CustomAttributesMetadataCacheTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Eav/CustomAttributesMetadataV2CacheTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/SendFriend/StoreConfigTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/SendFriend/SendFriendTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GiftMessage/Order/GiftMessageTest.php
@@ -6190,6 +6191,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerV2Test
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerEmailTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerV2WithCustomAttributesTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/RequestPasswordResetEmailTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerAddressWithCustomAttributesV2Test.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/IsEmailAvailableTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/MultiselectTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/ImageTest.php
@@ -6215,6 +6217,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/DeleteCustomerAddres
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/ResetPasswordTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GetAddressesTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerAddressWithCustomAttributesV2Test.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/UpdateCustomerV2Test.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/RevokeCustomerTokenTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Wishlist/WishlistTest.php
@@ -28088,6 +28091,7 @@ app/code/Magento/EavGraphQl/Model/Resolver/AttributeOptions.php
 app/code/Magento/EavGraphQl/Model/Resolver/Query/Attribute.php
 app/code/Magento/EavGraphQl/Model/Resolver/Query/Type.php
 app/code/Magento/EavGraphQl/Model/Resolver/CustomAttributeMetadata.php
+app/code/Magento/EavGraphQl/Model/Resolver/Cache/CustomAttributeMetadataV2Identity.php
 app/code/Magento/EavGraphQl/Model/Resolver/Cache/CustomAttributeMetadataIdentity.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesList.php
 app/code/Magento/EavGraphQl/Model/Resolver/DataProvider/AttributeOptions.php

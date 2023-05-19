@@ -654,7 +654,6 @@ app/graphql/gql/fields/internal_field.rb
 app/graphql/gql/fields/scoped_field.rb
 app/graphql/gql/queries/application_config.rb
 app/graphql/gql/queries/knowledge_base/answer/suggestions.rb
-app/graphql/gql/queries/session_id.rb
 app/graphql/gql/queries/object_manager/frontend_attributes.rb
 app/graphql/gql/queries/ticket/signature.rb
 app/graphql/gql/queries/ticket/articles.rb
@@ -680,6 +679,7 @@ app/graphql/gql/queries/autocomplete_search/user.rb
 app/graphql/gql/queries/autocomplete_search/organization.rb
 app/graphql/gql/queries/organization.rb
 app/graphql/gql/queries/search.rb
+app/graphql/gql/queries/session.rb
 app/graphql/gql/queries/account/avatar/active.rb
 app/graphql/gql/queries/product/about.rb
 app/graphql/gql/context/current_user_aware.rb
@@ -738,6 +738,7 @@ app/graphql/gql/types/ticket/live_user/app_type.rb
 app/graphql/gql/types/ticket/priority_type.rb
 app/graphql/gql/types/ticket/live_user_type.rb
 app/graphql/gql/types/knowledge_base_type.rb
+app/graphql/gql/types/user_two_factor_methods_type.rb
 app/graphql/gql/types/base_argument.rb
 app/graphql/gql/types/group_type.rb
 app/graphql/gql/types/overview_type.rb
@@ -752,6 +753,7 @@ app/graphql/gql/types/search_result_type.rb
 app/graphql/gql/types/tags_interface.rb
 app/graphql/gql/types/mention_type.rb
 app/graphql/gql/types/organization_type.rb
+app/graphql/gql/types/session/after_auth_type.rb
 app/graphql/gql/types/stored_file_type.rb
 app/graphql/gql/types/enum/public_links_screen_type.rb
 app/graphql/gql/types/enum/searchable_models_type.rb
@@ -764,7 +766,9 @@ app/graphql/gql/types/enum/form_updater_id_type.rb
 app/graphql/gql/types/enum/object_manager_objects_type.rb
 app/graphql/gql/types/enum/text_direction_type.rb
 app/graphql/gql/types/enum/user_contact_type.rb
+app/graphql/gql/types/enum/after_auth_type_type.rb
 app/graphql/gql/types/enum/taskbar_app_type.rb
+app/graphql/gql/types/enum/two_factor_method_type.rb
 app/graphql/gql/types/user/permission_type.rb
 app/graphql/gql/types/public_link_type.rb
 app/graphql/gql/types/base_object.rb
@@ -780,6 +784,7 @@ app/graphql/gql/types/autocomplete_search/recipient_entry_type.rb
 app/graphql/gql/types/autocomplete_search/merge_ticket_entry_type.rb
 app/graphql/gql/types/autocomplete_search/numeric_entry_type.rb
 app/graphql/gql/types/autocomplete_search/user_entry_type.rb
+app/graphql/gql/types/session_type.rb
 app/graphql/gql/types/locale_type.rb
 app/graphql/gql/types/concerns/has_scoped_model_user_relations.rb
 app/graphql/gql/types/concerns/has_pundit_authorization.rb
@@ -943,6 +948,8 @@ app/controllers/links_controller.rb
 app/controllers/groups_controller.rb
 app/controllers/user_access_token_controller.rb
 app/controllers/monitoring_controller.rb
+app/controllers/user/two_factors_controller.rb
+app/controllers/user/after_auth_controller.rb
 app/controllers/user/overview_sortings_controller.rb
 app/controllers/http_logs_controller.rb
 app/controllers/email_addresses_controller.rb
@@ -1215,10 +1222,12 @@ app/assets/javascripts/app/controllers/_plugin/electron_events.coffee
 app/assets/javascripts/app/controllers/_plugin/translation_support.coffee
 app/assets/javascripts/app/controllers/_plugin/app_config_update.coffee
 app/assets/javascripts/app/controllers/_plugin/translation_inline.coffee
+app/assets/javascripts/app/controllers/_plugin/after_auth.coffee
 app/assets/javascripts/app/controllers/_plugin/theme.coffee
 app/assets/javascripts/app/controllers/_application_controller/app_content.coffee
 app/assets/javascripts/app/controllers/_application_controller/_generic_index.coffee
 app/assets/javascripts/app/controllers/_application_controller/full_page.coffee
+app/assets/javascripts/app/controllers/_application_controller/after_auth_modal.coffee
 app/assets/javascripts/app/controllers/_application_controller/observer.coffee
 app/assets/javascripts/app/controllers/_application_controller/_modal_generic_confirm.coffee
 app/assets/javascripts/app/controllers/_application_controller/_modal_generic_new.coffee
@@ -1246,6 +1255,7 @@ app/assets/javascripts/app/controllers/_application_controller/modal_loading.cof
 app/assets/javascripts/app/controllers/_application_controller/wizard_modal_full_screen.coffee
 app/assets/javascripts/app/controllers/_application_controller/form.coffee
 app/assets/javascripts/app/controllers/password_reset.coffee
+app/assets/javascripts/app/controllers/user/manage_two_factor.coffee
 app/assets/javascripts/app/controllers/email_verify.coffee
 app/assets/javascripts/app/controllers/import_zendesk.coffee
 app/assets/javascripts/app/controllers/_settings/area_item.coffee
@@ -1384,6 +1394,7 @@ app/assets/javascripts/app/controllers/public_link.coffee
 app/assets/javascripts/app/controllers/sla.coffee
 app/assets/javascripts/app/controllers/text_module.coffee
 app/assets/javascripts/app/controllers/dashboard.coffee
+app/assets/javascripts/app/controllers/after_auth/two_factor_configuration.coffee
 app/assets/javascripts/app/controllers/default_route.coffee
 app/assets/javascripts/app/controllers/widget/placeholder.coffee
 app/assets/javascripts/app/controllers/widget/import.coffee
@@ -1402,6 +1413,11 @@ app/assets/javascripts/app/controllers/widget/ticket_list.coffee
 app/assets/javascripts/app/controllers/widget/online_notification.coffee
 app/assets/javascripts/app/controllers/widget/import_result.coffee
 app/assets/javascripts/app/controllers/widget/import_try_result.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/method.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/authenticator_app.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/authenticator_app.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/password_check.coffee
 app/assets/javascripts/app/controllers/widget/invite_user.coffee
 app/assets/javascripts/app/controllers/widget/shared_draft.coffee
 app/assets/javascripts/app/controllers/widget/sidebar.coffee
@@ -1639,6 +1655,7 @@ app/assets/javascripts/app/views/dashboard/first_steps.jst.eco
 app/assets/javascripts/app/views/calendar/holiday_selector.jst.eco
 app/assets/javascripts/app/views/calendar/index.jst.eco
 app/assets/javascripts/app/views/calendar/holiday_selector_placeholder.jst.eco
+app/assets/javascripts/app/views/login_two_factor_authenticator_app.jst.eco
 app/assets/javascripts/app/views/ticket_overview/batch_overlay.jst.eco
 app/assets/javascripts/app/views/ticket_overview/index.jst.eco
 app/assets/javascripts/app/views/ticket_overview/batch_overlay_macro.jst.eco
@@ -1672,6 +1689,8 @@ app/assets/javascripts/app/views/microsoft365/list.jst.eco
 app/assets/javascripts/app/views/microsoft365/admin_consent.jst.eco
 app/assets/javascripts/app/views/microsoft365/app_config.jst.eco
 app/assets/javascripts/app/views/microsoft365/index.jst.eco
+app/assets/javascripts/app/views/login_two_factor_methods.jst.eco
+app/assets/javascripts/app/views/user/manage_two_factor.jst.eco
 app/assets/javascripts/app/views/dashboard.jst.eco
 app/assets/javascripts/app/views/popover/user_ticket_list.jst.eco
 app/assets/javascripts/app/views/popover/single_object_generic.jst.eco
@@ -1913,6 +1932,8 @@ app/assets/javascripts/app/views/import/otrs.jst.eco
 app/assets/javascripts/app/views/import/index.jst.eco
 app/assets/javascripts/app/views/import/zendesk.jst.eco
 app/assets/javascripts/app/views/import/kayako.jst.eco
+app/assets/javascripts/app/views/after_auth/two_factor_configuration.jst.eco
+app/assets/javascripts/app/views/after_auth/two_factor_configuration/method_buttons.jst.eco
 app/assets/javascripts/app/views/widget/button_with_dropdown.jst.eco
 app/assets/javascripts/app/views/widget/ticket_stats_list.jst.eco
 app/assets/javascripts/app/views/widget/invite_user.jst.eco
@@ -1922,6 +1943,7 @@ app/assets/javascripts/app/views/widget/http_log.jst.eco
 app/assets/javascripts/app/views/widget/text_module.jst.eco
 app/assets/javascripts/app/views/widget/mention.jst.eco
 app/assets/javascripts/app/views/widget/organization.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_configuration/authenticator_app.jst.eco
 app/assets/javascripts/app/views/widget/task_item.jst.eco
 app/assets/javascripts/app/views/widget/user.jst.eco
 app/assets/javascripts/app/views/widget/ticket_stats.jst.eco
@@ -1954,11 +1976,13 @@ app/assets/javascripts/app/lib/app_post/auth.coffee
 app/assets/javascripts/app/lib/app_post/column_select.coffee
 app/assets/javascripts/app/lib/app_post/task_manager.coffee
 app/assets/javascripts/app/lib/app_post/audio.coffee
+app/assets/javascripts/app/lib/app_post/two_factor_methods.coffee
 app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select.coffee
 app/assets/javascripts/app/lib/app_post/image_service.coffee
 app/assets/javascripts/app/lib/app_post/searchable_select.coffee
 app/assets/javascripts/app/lib/app_post/_object_organization_autocompletion.coffee
 app/assets/javascripts/app/lib/app_post/collection.coffee
+app/assets/javascripts/app/lib/app_post/two_factor_methods/authenticator_app.coffee
 app/assets/javascripts/app/lib/app_post/full_quote_header.coffee
 app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select_customer_organization.coffee
 app/assets/javascripts/app/lib/app_post/plugin.coffee
@@ -2026,6 +2050,7 @@ app/assets/javascripts/app/lib/spine/list.coffee
 app/assets/javascripts/app/lib/core/underscore-1.8.3.js
 app/assets/javascripts/app/lib/core/jquery-ui-1.11.4.js
 app/assets/javascripts/app/lib/core/jquery-3.6.0.js
+app/assets/javascripts/app/lib/base/qrcodegen.js
 app/assets/javascripts/app/lib/base/jquery.visible.js
 app/assets/javascripts/app/lib/base/bootstrap-tokenfield.js
 app/assets/javascripts/app/lib/base/jsonlint.js
@@ -2383,6 +2408,7 @@ app/models/store/file.rb
 app/models/store/object.rb
 app/models/user/avatar.rb
 app/models/user/touches_organization.rb
+app/models/user/two_factor_preference.rb
 app/models/user/updates_ticket_organization.rb
 app/models/user/triggers_subscriptions.rb
 app/models/user/assets.rb
@@ -2390,6 +2416,7 @@ app/models/user/overview_sorting.rb
 app/models/user/performs_geo_lookup.rb
 app/models/user/search_index.rb
 app/models/user/search.rb
+app/models/user/has_two_factor.rb
 app/models/knowledge_base.rb
 app/models/form_updater/updater/ticket/create.rb
 app/models/form_updater/updater/ticket/edit.rb
@@ -3016,6 +3043,7 @@ app/policies/controllers/links_controller_policy.rb
 app/policies/controllers/sessions_controller_policy.rb
 app/policies/controllers/ticket_shared_draft_zoom_controller_policy.rb
 app/policies/controllers/user/overview_sortings_controller_policy.rb
+app/policies/controllers/user/two_factors_controller_policy.rb
 app/policies/controllers/channels_facebook_controller_policy.rb
 app/policies/controllers/text_modules_controller_policy.rb
 app/policies/controllers/tickets_shared_draft_starts_controller_policy.rb
@@ -3200,13 +3228,13 @@ app/frontend/shared/graphql/queries/translations.api.ts
 app/frontend/shared/graphql/queries/about.api.ts
 app/frontend/shared/graphql/queries/translations.graphql
 app/frontend/shared/graphql/queries/currentUser.graphql
+app/frontend/shared/graphql/queries/session.graphql
 app/frontend/shared/graphql/queries/applicationConfig.graphql
 app/frontend/shared/graphql/queries/locales.graphql
+app/frontend/shared/graphql/queries/session.api.ts
 app/frontend/shared/graphql/queries/applicationConfig.api.ts
 app/frontend/shared/graphql/queries/applicationBuildChecksum.graphql
-app/frontend/shared/graphql/queries/sessionId.graphql
 app/frontend/shared/graphql/queries/locales.api.ts
-app/frontend/shared/graphql/queries/sessionId.api.ts
 app/frontend/shared/graphql/types.ts
 app/frontend/shared/graphql/fragments/userAttributes.graphql
 app/frontend/shared/graphql/fragments/currentUserAttributes.graphql
@@ -3366,6 +3394,9 @@ app/frontend/shared/entities/public-links/graphql/queries/links.graphql
 app/frontend/shared/entities/public-links/graphql/subscriptions/currentLinks.api.ts
 app/frontend/shared/entities/public-links/graphql/subscriptions/currentLinks.graphql
 app/frontend/shared/entities/public-links/__tests__/mocks/mockPublicLinks.ts
+app/frontend/shared/entities/two-factor/composables/useTwoFactorPlugins.ts
+app/frontend/shared/entities/two-factor/types.ts
+app/frontend/shared/entities/two-factor/plugins/authenticator_app.ts
 app/frontend/shared/entities/organization/utils/getAutoCompleteOption.ts
 app/frontend/shared/entities/organization/stores/objectAttributes.ts
 app/frontend/shared/entities/user/utils/getUserDisplayName.ts
@@ -3517,6 +3548,7 @@ app/frontend/shared/components/CommonIcon/assets/mobile/list.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/notification-subscribed.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/settings.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/more-vertical.svg
+app/frontend/shared/components/CommonIcon/assets/mobile/mobile-code.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/macros.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/apple.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/loading.svg
@@ -3611,6 +3643,7 @@ app/frontend/shared/components/CommonIcon/assets/mobile/link.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/check-circle-yes.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/edit.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/task.svg
+app/frontend/shared/components/CommonIcon/assets/mobile/key.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/phone-in.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/gitlab.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/calendar.svg
@@ -3970,16 +4003,30 @@ app/frontend/apps/mobile/entities/user/composables/useUserDetail.ts
 app/frontend/apps/mobile/entities/user/composables/useUserCreate.ts
 app/frontend/apps/mobile/entities/user/__tests__/mocks/user-mocks.ts
 app/frontend/apps/mobile/entities/user/__tests__/mocks/managerAttributes.json
+app/frontend/apps/mobile/pages/login/after-auth/types.ts
+app/frontend/apps/mobile/pages/login/after-auth/plugins/twoFactorSetup.ts
+app/frontend/apps/mobile/pages/login/after-auth/composable/useAfterAuthPlugins.ts
+app/frontend/apps/mobile/pages/login/components/LoginTwoFactorMethods.vue
+app/frontend/apps/mobile/pages/login/components/LoginHeader.vue
 app/frontend/apps/mobile/pages/login/components/__tests__/LoginThirdParty.spec.ts
+app/frontend/apps/mobile/pages/login/components/LoginFooter.vue
+app/frontend/apps/mobile/pages/login/components/LoginTwoFactor.vue
+app/frontend/apps/mobile/pages/login/components/LoginCredentialsForm.vue
+app/frontend/apps/mobile/pages/login/components/AfterAuth/TwoFactorConfiguration.vue
 app/frontend/apps/mobile/pages/login/components/LoginThirdParty.vue
 app/frontend/apps/mobile/pages/login/routes.ts
+app/frontend/apps/mobile/pages/login/composable/usePublicLinks.ts
 app/frontend/apps/mobile/pages/login/views/Login.vue
+app/frontend/apps/mobile/pages/login/views/LoginAfterAuth.vue
 app/frontend/apps/mobile/pages/login/__tests__/login-maintenance.spec.ts
+app/frontend/apps/mobile/pages/login/__tests__/login-after-auth.spec.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-error-handling.spec.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-public-links.spec.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-a11y.spec.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-password-login.spec.ts
+app/frontend/apps/mobile/pages/login/__tests__/login-two-factor.spec.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-product-branding.spec.ts
+app/frontend/apps/mobile/pages/login/types/login.ts
 app/frontend/apps/mobile/pages/online-notification/components/NotificationItem.vue
 app/frontend/apps/mobile/pages/online-notification/components/__tests__/NotificationItem.spec.ts
 app/frontend/apps/mobile/pages/online-notification/routes.ts
@@ -4307,6 +4354,14 @@ rake
 browserlist
 Procfile
 tsconfig.base.json
+lib/auth/two_factor.rb
+lib/auth/after_auth.rb
+lib/auth/two_factor/method.rb
+lib/auth/two_factor/method/authenticator_app.rb
+lib/auth/error/two_factor_required.rb
+lib/auth/error/authentication_failed.rb
+lib/auth/error/base.rb
+lib/auth/error/two_factor_failed.rb
 lib/auth/user.rb
 lib/auth/request_cache.rb
 lib/auth/backend.rb
@@ -4314,6 +4369,8 @@ lib/auth/backend/developer.rb
 lib/auth/backend/ldap.rb
 lib/auth/backend/base.rb
 lib/auth/backend/internal.rb
+lib/auth/after_auth/two_factor_configuration.rb
+lib/auth/after_auth/backend.rb
 lib/email_address_validation.rb
 lib/enrichment/clearbit/user.rb
 lib/enrichment/clearbit/organization.rb
@@ -5098,6 +5155,7 @@ spec/graphql/gql/queries/object_manager/frontend_attributes_spec.rb
 spec/graphql/gql/queries/ticket/signature_spec.rb
 spec/graphql/gql/queries/ticket/overviews_spec.rb
 spec/graphql/gql/queries/ticket/articles_spec.rb
+spec/graphql/gql/queries/session_spec.rb
 spec/graphql/gql/queries/ticket_spec.rb
 spec/graphql/gql/queries/form_updater_spec.rb
 spec/graphql/gql/queries/text_module/suggestions_spec.rb
@@ -5107,7 +5165,6 @@ spec/graphql/gql/queries/current_user_spec.rb
 spec/graphql/gql/queries/locales_spec.rb
 spec/graphql/gql/queries/application_build_checksum_spec.rb
 spec/graphql/gql/queries/mention/suggestions_spec.rb
-spec/graphql/gql/queries/session_id_spec.rb
 spec/graphql/gql/queries/autocomplete_search/merge_ticket_spec.rb
 spec/graphql/gql/queries/autocomplete_search/recipient_spec.rb
 spec/graphql/gql/queries/autocomplete_search/tag_spec.rb
@@ -5277,6 +5334,7 @@ spec/system/manage/calendars_spec.rb
 spec/system/password_reset_spec.rb
 spec/system/basic/authentication_spec.rb
 spec/system/basic/session_takeover_spec.rb
+spec/system/basic/after_auth_spec.rb
 spec/system/basic/redirects_spec.rb
 spec/system/basic/assets_spec.rb
 spec/system/basic/richtext_spec.rb
@@ -5286,6 +5344,7 @@ spec/system/getting_started/admin_spec.rb
 spec/system/js/q_unit_spec.rb
 spec/system/admin_password_auth_spec.rb
 spec/system/examples/core_workflow_examples.rb
+spec/system/examples/authenticator_app_setup_examples.rb
 spec/system/examples/macros_examples.rb
 spec/system/examples/pagination_examples.rb
 spec/system/examples/text_modules_examples.rb
@@ -5303,6 +5362,7 @@ spec/system/profile/notifications_spec.rb
 spec/system/profile/out_of_office_spec.rb
 spec/system/profile/preferences_language_spec.rb
 spec/system/profile/appearance_spec.rb
+spec/system/apps/mobile/after_auth_spec.rb
 spec/system/apps/mobile/search_overview_spec.rb
 spec/system/apps/mobile/login_spec.rb
 spec/system/apps/mobile/online_notifications_spec.rb
@@ -5760,6 +5820,8 @@ spec/requests/robots_txt_spec.rb
 spec/requests/channels_twitter_spec.rb
 spec/requests/upload_cache_spec.rb
 spec/requests/external_credentials_spec.rb
+spec/requests/user/after_auth_spec.rb
+spec/requests/user/two_factor_spec.rb
 spec/requests/user/permission_spec.rb
 spec/requests/user/password_reset_spec.rb
 spec/requests/user/organization_spec.rb
@@ -5786,6 +5848,10 @@ spec/requests/channels_google_spec.rb
 spec/requests/api_auth_spec.rb
 spec/requests/links_spec.rb
 spec/requests/user_spec.rb
+spec/lib/auth/after_auth_spec.rb
+spec/lib/auth/two_factor_spec.rb
+spec/lib/auth/two_factor/method_spec.rb
+spec/lib/auth/two_factor/method/authenticator_app_spec.rb
 spec/lib/auth/backend/developer_spec.rb
 spec/lib/auth/backend/internal_spec.rb
 spec/lib/auth/backend/base_spec.rb
@@ -6078,6 +6144,7 @@ spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/categories_controller_policy_spec.rb
 spec/policies/controllers/tickets_shared_draft_starts_controller_policy_spec.rb
 spec/policies/controllers/tags_controller_policy_spec.rb
+spec/policies/controllers/user/two_factors_controller_policy_spec.rb
 spec/policies/controllers/attachments_controller_policy_spec.rb
 spec/policies/controllers/mentions_controller_policy_spec.rb
 spec/policies/ticket_policy_spec.rb
@@ -6158,6 +6225,7 @@ spec/factories/history/type.rb
 spec/factories/history/object.rb
 spec/factories/external_sync.rb
 spec/factories/ldap_source.rb
+spec/factories/user/two_factor_preference.rb
 spec/factories/user/overview_sorting.rb
 spec/factories/knowledge_base.rb
 spec/factories/report/profile.rb
@@ -6527,6 +6595,7 @@ db/migrate/20171002091043_change_note_char_limit_for_users_and_organizations.rb
 db/migrate/20210827095053_add_ticket_article_type_facebook_direct_message.rb
 db/migrate/20210113000001_gitlab_support.rb
 db/migrate/20230404092742_issue_4484_time_based_trigger.rb
+db/migrate/20230510102126_two_factor_authentication_setup.rb
 db/migrate/20180716060129_issue_2019_fix_double_domain_links_in_trigger_emails.rb
 db/migrate/20230310122944_core_workflow_secondary_organization.rb
 db/migrate/20201005084847_agent_customer_permission.rb
@@ -6913,6 +6982,8 @@ public/assets/images/icons/double-arrow-right.svg
 public/assets/images/icons/overviews.svg
 public/assets/images/icons/report.svg
 public/assets/images/icons/list.svg
+public/assets/images/icons/two-factor.svg
+public/assets/images/icons/mobile-code.svg
 public/assets/images/icons/loading.svg
 public/assets/images/icons/mobile-edit.svg
 public/assets/images/icons/mute.svg
@@ -7039,6 +7110,7 @@ public/assets/images/icons/one-ticket.svg
 public/assets/images/icons/cloud.svg
 public/assets/images/icons/zoom-out.svg
 public/assets/images/icons/outbound-calls.svg
+public/assets/images/icons/key.svg
 public/assets/images/icons/sso-button.svg
 public/assets/images/icons/gitlab-button.svg
 public/assets/images/icons/file-archive.svg
@@ -7051,6 +7123,7 @@ public/assets/images/icons/spinner-small.svg
 public/assets/images/icons/reload.svg
 public/assets/images/icons/help.svg
 public/assets/images/icons/horizontal-rule.svg
+public/assets/images/icons/security-key.svg
 public/assets/images/icons/arrow-down.svg
 public/assets/images/icons/inactive-user.svg
 public/assets/images/yarn.lock

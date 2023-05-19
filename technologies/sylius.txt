@@ -54,6 +54,7 @@ features/promotion/managing_catalog_promotions/seeing_catalog_promotion_details.
 features/promotion/managing_catalog_promotions/validating_catalog_promotion_creation.feature
 features/promotion/managing_catalog_promotions/browsing_variants_affected_by_catalog_promotions.feature
 features/promotion/managing_catalog_promotions/creating_catalog_promotion.feature
+features/promotion/managing_catalog_promotions/sorting_catalog_promotions.feature
 features/promotion/receiving_discount/applying_only_promotions_enabled_for_given_channel.feature
 features/promotion/receiving_discount/receiving_fixed_discount_on_products_from_specific_taxon.feature
 features/promotion/receiving_discount/receiving_percentage_discount_promotion_on_order.feature
@@ -87,6 +88,7 @@ features/promotion/managing_coupons/preventing_deletion_of_coupons_in_use.featur
 features/promotion/managing_coupons/coupon_generate_validation.feature
 features/promotion/managing_coupons/browsing_coupon.feature
 features/promotion/managing_coupons/editing_coupon.feature
+features/promotion/managing_coupons/sorting_coupons.feature
 features/promotion/managing_coupons/generating_coupon_with_prefix_and_suffix.feature
 features/promotion/managing_coupons/generating_coupon.feature
 features/promotion/managing_coupons/coupon_unique_code_validation.feature
@@ -964,6 +966,7 @@ tests/Api/Responses/Expected/shop/get_channel_by_code_response.json
 tests/Api/Responses/Expected/shop/get_order_adjustments_response.json
 tests/Api/Responses/Expected/shop/catalog_promotion/get_catalog_promotion_response.json
 tests/Api/Responses/Expected/shop/get_exchange_rate_usdpln_response.json
+tests/Api/Responses/Expected/shop/get_taxonomy_item_response.json
 tests/Api/Responses/Expected/shop/get_exchange_rate_cnyusd_response.json
 tests/Api/Responses/Expected/shop/product/get_product_with_de_DE_locale_translation.json
 tests/Api/Responses/Expected/shop/product/get_product_option_value.json
@@ -4307,6 +4310,8 @@ src/Sylius/Bundle/ApiBundle/Mapper/AddressMapper.php
 src/Sylius/Bundle/ApiBundle/Context/TokenValueBasedCartContext.php
 src/Sylius/Bundle/ApiBundle/Context/TokenBasedUserContext.php
 src/Sylius/Bundle/ApiBundle/Context/UserContextInterface.php
+src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/TaxonItemExtension.php
+src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/EnabledProductInProductAssociationItemExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/AddressItemExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/EnabledProductVariantItemExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/OrderVisitorItemExtension.php
@@ -4457,6 +4462,8 @@ src/Sylius/Bundle/ApiBundle/spec/Context/TokenBasedUserContextSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Context/TokenValueBasedCartContextSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/AddressItemExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/EnabledProductVariantItemExtensionSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/EnabledProductInProductAssociationItemExtensionSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/TaxonItemExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/OrderVisitorItemExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/OrderShopUserItemExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/LocaleCollectionExtensionSpec.php
