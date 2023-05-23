@@ -1752,9 +1752,6 @@ packages/core/admin/admin/src/hooks/useInjectReducer/index.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/reducer.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/index.js
-packages/core/admin/admin/src/hooks/useModels/tests/reducer.test.js
-packages/core/admin/admin/src/hooks/useModels/reducer.js
-packages/core/admin/admin/src/hooks/useModels/index.js
 packages/core/admin/admin/src/hooks/useDebounce/index.js
 packages/core/admin/admin/src/hooks/useSettingsMenu/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useSettingsMenu/reducer.js
@@ -1803,6 +1800,9 @@ packages/core/admin/admin/src/hooks/index.js
 packages/core/admin/admin/src/hooks/useFetchRole/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useFetchRole/reducer.js
 packages/core/admin/admin/src/hooks/useFetchRole/index.js
+packages/core/admin/admin/src/hooks/useContentTypes/tests/useContentTypes.test.js
+packages/core/admin/admin/src/hooks/useContentTypes/index.js
+packages/core/admin/admin/src/hooks/useContentTypes/useContentTypes.js
 packages/core/admin/admin/src/reducers.js
 packages/core/admin/admin/src/index.html
 packages/core/admin/admin/src/index.js
@@ -2444,12 +2444,14 @@ packages/core/helper-plugin/src/hooks/useAPIErrorHandler/utils/formatAPIError/te
 packages/core/helper-plugin/src/hooks/useAPIErrorHandler/utils/formatAPIError/index.js
 packages/core/helper-plugin/src/hooks/useAPIErrorHandler/index.js
 packages/core/helper-plugin/src/hooks/tests/useFilter.test.js
+packages/core/helper-plugin/src/hooks/tests/useClipboard.test.js
 packages/core/helper-plugin/src/hooks/tests/useCollator.test.js
 packages/core/helper-plugin/src/hooks/useLockScroll/index.js
 packages/core/helper-plugin/src/hooks/useLockScroll/useLockScroll.stories.mdx
 packages/core/helper-plugin/src/hooks/useQuery/index.js
 packages/core/helper-plugin/src/hooks/useQueryParams/index.js
 packages/core/helper-plugin/src/hooks/useFormattedMessage/index.js
+packages/core/helper-plugin/src/hooks/useClipboard.js
 packages/core/helper-plugin/src/hooks/useSelectionState/tests/useSelectionState.test.js
 packages/core/helper-plugin/src/hooks/useSelectionState/useSelectionState.stories.mdx
 packages/core/helper-plugin/src/hooks/useSelectionState/index.js
@@ -3974,6 +3976,7 @@ docs/docs/docs/01-core/admin/03-settings/_category_.json
 docs/docs/docs/01-core/helper-plugin/_category_.json
 docs/docs/docs/01-core/helper-plugin/hooks/use-fetch-client.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-api-error-handler.mdx
+docs/docs/docs/01-core/helper-plugin/hooks/use-clipboard.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-callback-ref.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/_category_.json
 docs/docs/docs/01-core/helper-plugin/hooks/use-collator.mdx

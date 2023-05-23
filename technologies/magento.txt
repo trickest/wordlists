@@ -21234,6 +21234,7 @@ app/code/Magento/Bundle/Model/Sales/Order/Pdf/Items/Shipment.php
 app/code/Magento/Bundle/Model/Sales/Order/Pdf/Items/AbstractItems.php
 app/code/Magento/Bundle/Model/Sales/Order/Pdf/Items/Invoice.php
 app/code/Magento/Bundle/Model/Sales/Order/Pdf/Items/Creditmemo.php
+app/code/Magento/Bundle/Model/Sales/Order/BundleOrderTypeValidator.php
 app/code/Magento/Bundle/Model/ProductOptionProcessor.php
 app/code/Magento/Bundle/Model/OptionTypeList.php
 app/code/Magento/Bundle/Model/Product/CatalogPrice.php
@@ -21309,6 +21310,7 @@ app/code/Magento/Bundle/Test/Unit/Model/Plugin/Frontend/ProductIdentitiesExtende
 app/code/Magento/Bundle/Test/Unit/Model/Plugin/QuoteItemTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Plugin/PriceBackendTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Plugin/ItemTest.php
+app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/BundleOrderTypeValidatorTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/InvoiceTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/InvoiceTestProvider.php
 app/code/Magento/Bundle/Test/Unit/Model/Sales/Order/Pdf/Items/AbstractItemsTest.php
@@ -21319,11 +21321,13 @@ app/code/Magento/Bundle/Test/Unit/Model/Product/OptionListTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Product/Attribute/Source/Price/ViewTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Product/LinksListTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Product/TypeTest.php
+app/code/Magento/Bundle/Test/Unit/Model/Product/SaveHandlerTest.php
 app/code/Magento/Bundle/Test/Unit/Model/CartItemProcessorTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/SelectionTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/Indexer/PriceTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ResourceModel/Selection/Collection/FilterApplierTest.php
 app/code/Magento/Bundle/Test/Unit/Model/Option/ValidatorTest.php
+app/code/Magento/Bundle/Test/Unit/Model/Option/SaveActionTest.php
 app/code/Magento/Bundle/Test/Unit/Model/ProductOptionProcessorTest.php
 app/code/Magento/Bundle/Test/Unit/Pricing/Price/TierPriceTest.php
 app/code/Magento/Bundle/Test/Unit/Pricing/Price/BundleSelectionPriceTest.php
@@ -21560,6 +21564,7 @@ app/code/Magento/Bundle/Api/Data/OptionTypeInterface.php
 app/code/Magento/Bundle/Api/Data/OptionInterface.php
 app/code/Magento/Bundle/Api/Data/BundleOptionInterface.php
 app/code/Magento/Bundle/Api/Data/LinkInterface.php
+app/code/Magento/Bundle/Api/ProductLinkManagementAddChildrenInterface.php
 app/code/Magento/Bundle/view/adminhtml/templates/catalog/product/edit/tab/attributes/extend.phtml
 app/code/Magento/Bundle/view/adminhtml/templates/sales/shipment/create/items/renderer.phtml
 app/code/Magento/Bundle/view/adminhtml/templates/sales/shipment/view/items/renderer.phtml

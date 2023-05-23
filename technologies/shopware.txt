@@ -2529,6 +2529,7 @@ changelog/_unreleased/2023-03-09-update-color-of-inherited-cards.md
 changelog/_unreleased/2023-03-28-documents-should-be-listed-in-descending-order-based-on-the-creation-date-in-the-storefront.md
 changelog/_unreleased/2023-04-12-improve-loading-speed-of-product-listing-pages.md
 changelog/_unreleased/2023-03-09-fix-fallback-icon-for-sw-search-bar.md
+changelog/_unreleased/2023-05-22-fix-error-route-on-account-login.md
 changelog/_unreleased/2023-04-12-improve-store-filters.md
 changelog/_unreleased/2023-03-22-improve-delete-unused-media-command.md
 changelog/_unreleased/2023-04-26-add-aibadge-option-for-sw-card.md
@@ -2570,6 +2571,7 @@ changelog/_unreleased/2023-01-31-prevent-unfiltered-cms-demo-category-media-sear
 changelog/_unreleased/2023-02-16-add-missing-company-phone-number-to-documentconfiguration.md
 changelog/_unreleased/2023-02-28-fix-quantity-alignment-of-order-line-item.md
 changelog/_unreleased/2023-01-19-fix-form-cms-element-snippet.md
+changelog/_unreleased/2023-05-22-change-customer-group-detail-page.md
 changelog/_unreleased/2023-03-24-respect-inherit-flag-for-system-config-controller.md
 changelog/_unreleased/2022-11-11-fix-typos-in-criteria.md
 changelog/_unreleased/2023-05-18-correct-the-behavior-of-order-status-change.md
@@ -4358,6 +4360,7 @@ tests/unit/php/Common/Stubs/Flow/DummyEvent.php
 tests/unit/php/Core/Maintenance/User/Service/UserProvisionerTest.php
 tests/unit/php/Core/Maintenance/System/Command/SystemIsInstalledCommandTest.php
 tests/unit/php/Core/Maintenance/System/Command/SystemSetupCommandTest.php
+tests/unit/php/Core/Maintenance/System/Command/SystemGenerateJwtSecretCommandTest.php
 tests/unit/php/Core/Maintenance/System/Command/SystemInstallCommandTest.php
 tests/unit/php/Core/Maintenance/System/Struct/DatabaseConnectionInformationTest.php
 tests/unit/php/Core/Maintenance/System/Service/AppUrlVerifierTest.php
@@ -4740,6 +4743,7 @@ tests/unit/php/Core/Framework/Plugin/Util/AssetServiceTest.php
 tests/unit/php/Core/Framework/Plugin/Util/VersionSanitizerTest.php
 tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/composer.json
 tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/vendor/swag/test/composer.json
+tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/vendor/swag/test2/composer.json
 tests/unit/php/Core/Framework/Plugin/Util/_fixture/ComposerProject/vendor/composer/installed.json
 tests/unit/php/Core/Framework/Plugin/Util/_fixture/LocallyInstalledPlugins/SwagTest/composer.json
 tests/unit/php/Core/Framework/Plugin/Event/PluginPostDeactivationFailedEventTest.php
@@ -7968,8 +7972,11 @@ src/Core/DevOps/Environment/EnvironmentHelper.php
 src/Core/DevOps/Environment/EnvironmentHelperTransformerInterface.php
 src/Core/DevOps/StaticAnalyze/Rector/ClassPackageRector.php
 src/Core/DevOps/StaticAnalyze/StaticAnalyzeKernel.php
-src/Core/DevOps/StaticAnalyze/PHPStan/phpstan-bootstrap.php
+src/Core/DevOps/StaticAnalyze/PHPStan/composer.json
+src/Core/DevOps/StaticAnalyze/PHPStan/extension.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/Type/CollectionHasSpecifyingExtension.php
+src/Core/DevOps/StaticAnalyze/PHPStan/README.md
+src/Core/DevOps/StaticAnalyze/PHPStan/core-rules.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleAreasFlagNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PackageAnnotationRule.php
@@ -7990,7 +7997,9 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/CoversAnnotationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalMethodRule.php
-src/Core/DevOps/StaticAnalyze/PHPStan/console-application.php
+src/Core/DevOps/StaticAnalyze/PHPStan/rules.neon
+src/Core/DevOps/StaticAnalyze/phpstan-bootstrap.php
+src/Core/DevOps/StaticAnalyze/console-application.php
 src/Core/DevOps/Resources/templates/service-reference.md.twig
 src/Core/DevOps/Resources/templates/hookable-events-list.md.twig
 src/Core/DevOps/Resources/templates/hook-reference.md.twig
@@ -9139,6 +9148,7 @@ src/Core/Framework/Routing/SalesChannelRequestContextResolver.php
 src/Core/Framework/Routing/RouteParamsCleanupListener.php
 src/Core/Framework/Routing/Event/SalesChannelContextResolvedEvent.php
 src/Core/Framework/Routing/ApiRouteScope.php
+src/Core/Framework/Routing/RoutingException.php
 src/Core/Framework/Routing/RouteScopeCheckTrait.php
 src/Core/Framework/Routing/Facade/RequestFacadeFactory.php
 src/Core/Framework/Routing/Facade/RequestFacade.php
