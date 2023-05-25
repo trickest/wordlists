@@ -120,6 +120,7 @@ api/src/utils/get-accountability-for-role.ts
 api/src/utils/sanitize-error.ts
 api/src/utils/validate-env.ts
 api/src/utils/jwt.test.ts
+api/src/utils/should-clear-cache.test.ts
 api/src/utils/get-column.ts
 api/src/utils/get-module-default.ts
 api/src/utils/get-default-value.ts
@@ -178,6 +179,7 @@ api/src/utils/stall.ts
 api/src/utils/get-relation-info.test.ts
 api/src/utils/generate-hash.ts
 api/src/utils/merge-permissions.test.ts
+api/src/utils/should-clear-cache.ts
 api/src/utils/get-ast-from-query.ts
 api/src/utils/is-directus-jwt.test.ts
 api/src/utils/get-auth-providers.ts
@@ -307,6 +309,7 @@ api/src/database/migrations/20220802A-add-custom-aspect-ratios.ts
 api/src/database/migrations/20201029B-remove-system-collections.ts
 api/src/database/migrations/20220314A-add-translation-strings.ts
 api/src/database/migrations/20220614A-rename-hook-trigger-to-event.ts
+api/src/database/migrations/20230525A-add-preview-settings.ts
 api/src/database/migrations/20210721A-add-default-folder.ts
 api/src/database/migrations/20210506A-rename-interfaces.ts
 api/src/database/migrations/20210924A-add-collection-organization.ts
@@ -354,6 +357,7 @@ api/src/exceptions/range-not-satisfiable.ts
 api/src/exceptions/invalid-token.ts
 api/src/exceptions/invalid-provider.ts
 api/src/exceptions/invalid-credentials.ts
+api/src/exceptions/content-too-large.ts
 api/src/exceptions/invalid-config.ts
 api/src/exceptions/unexpected-response.ts
 api/src/exceptions/invalid-otp.ts
@@ -590,6 +594,8 @@ tests/blackbox/setup/sequentialTests.d.ts
 tests/blackbox/setup/customSequencer.js
 tests/blackbox/docker-compose.yml
 tests/blackbox/logger/redact.test.ts
+tests/blackbox/app/cache.seed.ts
+tests/blackbox/app/cache.test.ts
 tests/blackbox/tsconfig.json
 tests/blackbox/schema/uuid/index.ts
 tests/blackbox/schema/timezone/timezone.test.ts
@@ -619,9 +625,14 @@ package.json
 code_of_conduct.md
 .changeset/hip-crabs-rhyme.md
 .changeset/itchy-rockets-confess.md
+.changeset/eighty-sloths-tickle.md
+.changeset/curvy-bugs-fry.md
 .changeset/long-planets-move.md
 .changeset/stupid-pens-divide.md
 .changeset/config.json
+.changeset/red-snails-tap.md
+.changeset/weak-bottles-travel.md
+.changeset/tricky-pants-shake.md
 .changeset/moody-poems-pump.md
 .changeset/strange-ears-pull.md
 .changeset/stupid-pumas-care.md
@@ -630,11 +641,17 @@ code_of_conduct.md
 .changeset/friendly-rocks-sell.md
 .changeset/clean-needles-nail.md
 .changeset/bright-pens-give.md
+.changeset/orange-moose-punch.md
 .changeset/tough-crews-shout.md
+.changeset/rare-bananas-melt.md
 .changeset/cool-jobs-smoke.md
 .changeset/giant-ligers-nail.md
+.changeset/good-ligers-teach.md
 .changeset/warm-pumas-provide.md
 .changeset/wet-beds-fold.md
+.changeset/smart-files-protect.md
+.changeset/green-boxes-hope.md
+.changeset/silver-baboons-give.md
 license
 contributing.md
 docker-compose.yml
@@ -1258,6 +1275,9 @@ docs/guides/headless-cms/trigger-static-builds/index.md
 docs/guides/headless-cms/build-static-website/nuxt-3.md
 docs/guides/headless-cms/build-static-website/next-13.md
 docs/guides/headless-cms/build-static-website/index.md
+docs/guides/headless-cms/live-preview/nuxt-3.md
+docs/guides/headless-cms/live-preview/index.md
+docs/guides/headless-cms/live-preview/nextjs.md
 docs/guides/headless-cms/approval-workflows.md
 docs/guides/migration/node.md
 docs/guides/migration/index.md
@@ -1892,6 +1912,7 @@ app/src/components/v-chip.vue
 app/src/components/v-chip.test.ts
 app/src/components/v-dialog.vue
 app/src/components/v-divider.vue
+app/src/components/v-resizeable.vue
 app/src/components/v-overlay.stories.ts
 app/src/components/v-pagination.vue
 app/src/components/v-form/form-field-raw-editor.vue
@@ -1983,7 +2004,6 @@ app/src/components/v-tabs-items.vue
 app/src/components/v-slider.test.ts
 app/src/components/v-fancy-select.test.ts
 app/src/components/v-breadcrumb.vue
-app/src/components/v-nav.vue
 app/src/components/v-checkbox-tree.stories.ts
 app/src/components/v-table/v-table.vue
 app/src/components/v-table/types.ts
@@ -2237,6 +2257,7 @@ app/src/modules/files/index.ts
 app/src/modules/files/components/file-info-sidebar-detail.vue
 app/src/modules/files/components/add-folder.vue
 app/src/modules/files/components/replace-file.vue
+app/src/modules/content/routes/preview.vue
 app/src/modules/content/routes/item.vue
 app/src/modules/content/routes/no-collections.vue
 app/src/modules/content/routes/collection-or-item.vue
@@ -2244,6 +2265,7 @@ app/src/modules/content/routes/collection.vue
 app/src/modules/content/routes/not-found.vue
 app/src/modules/content/index.ts
 app/src/modules/content/composables/use-navigation.ts
+app/src/modules/content/components/live-preview.vue
 app/src/modules/content/components/navigation.vue
 app/src/modules/content/components/navigation-item-content.vue
 app/src/modules/content/components/navigation-item.vue
