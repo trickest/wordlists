@@ -6271,6 +6271,7 @@ src/Core/Framework/Migration/MigrationSource.php
 src/Core/Framework/Migration/MakeVersionableMigrationHelper.php
 src/Core/Framework/Migration/MigrationCompilerPass.php
 src/Core/Framework/Migration/InheritanceUpdaterTrait.php
+src/Core/Framework/Plugin/PluginException.php
 src/Core/Framework/Plugin/Event/PluginPreActivateEvent.php
 src/Core/Framework/Plugin/Event/PluginPostInstallEvent.php
 src/Core/Framework/Plugin/Event/PluginPreUpdateEvent.php
@@ -6531,6 +6532,7 @@ src/Core/Framework/Store/Services/AbstractStoreAppLifecycleService.php
 src/Core/Framework/Store/Services/StoreService.php
 src/Core/Framework/Store/Services/InstanceService.php
 src/Core/Framework/Store/Services/AbstractExtensionDataProvider.php
+src/Core/Framework/Store/StoreException.php
 src/Core/Framework/Util/VersionParser.php
 src/Core/Framework/Util/HtmlSanitizer.php
 src/Core/Framework/Util/MemorySizeCalculator.php
@@ -7709,6 +7711,7 @@ src/Core/Framework/App/Delta/PermissionsDeltaProvider.php
 src/Core/Framework/App/Delta/AbstractAppDeltaProvider.php
 src/Core/Framework/App/Delta/AppConfirmationDeltaProvider.php
 src/Core/Framework/App/Delta/DomainsDeltaProvider.php
+src/Core/Framework/App/AppException.php
 src/Core/Framework/App/TaxProvider/Response/TaxProviderResponse.php
 src/Core/Framework/App/TaxProvider/Payload/TaxProviderPayloadService.php
 src/Core/Framework/App/TaxProvider/Payload/TaxProviderPayload.php
@@ -8148,6 +8151,7 @@ src/Core/Framework/DataAbstractionLayer/MappingEntityDefinition.php
 src/Core/Framework/DataAbstractionLayer/DefinitionValidator.php
 src/Core/Framework/DataAbstractionLayer/ExtensionRegistry.php
 src/Core/Framework/DataAbstractionLayer/EntityDefinition.php
+src/Core/Framework/DataAbstractionLayer/DataAbstractionLayerException.php
 src/Core/Framework/DataAbstractionLayer/TaxFreeConfig.php
 src/Core/Framework/DataAbstractionLayer/EntityWriteResult.php
 src/Core/Framework/DataAbstractionLayer/EntityTranslationDefinition.php
@@ -9634,7 +9638,6 @@ src/Core/Checkout/Test/Order/Aggregate/OrderTransaction/OrderTransactionBuilder.
 src/Core/Checkout/Test/Order/Aggregate/OrderTransactionCaptureRefund/OrderTransactionCaptureRefundBuilder.php
 src/Core/Checkout/Test/Order/Listener/OrderStateChangeEventListenerTest.php
 src/Core/Checkout/Test/Order/OrderRepositoryTest.php
-src/Core/Checkout/Test/Promotion/Util/PromotionCodeServiceTest.php
 src/Core/Checkout/Test/Promotion/Cart/PromotionCalculatorTest.php
 src/Core/Checkout/Test/Promotion/DataAbstractionLayer/PromotionIndexerTest.php
 src/Core/Checkout/Test/Promotion/DataAbstractionLayer/PromotionRedemptionUpdaterTest.php
@@ -12555,6 +12558,7 @@ tests/integration/php/Core/Checkout/Customer/Rule/ShippingCityRuleTest.php
 tests/integration/php/Core/Checkout/Customer/Rule/AffiliateCodeRuleTest.php
 tests/integration/php/Core/Checkout/Customer/Rule/CustomerTagRuleTest.php
 tests/integration/php/Core/Checkout/Payment/SalesChannel/PaymentMethodRouteTest.php
+tests/integration/php/Core/Checkout/Promotion/Util/PromotionCodeServiceTest.php
 tests/integration/php/Core/Checkout/Document/Service/DocumentGeneratorTest.php
 tests/integration/php/Core/Checkout/Document/Renderer/InvoiceRendererTest.php
 tests/integration/php/Core/Checkout/Document/fixtures/theme/manifest.xml
@@ -13391,7 +13395,6 @@ tests/unit/php/Core/Framework/Store/Exception/ExtensionThemeStillInUseExceptionT
 tests/unit/php/Core/Framework/Store/Exception/ShopSecretInvalidExceptionTest.php
 tests/unit/php/Core/Framework/Store/Exception/StoreLicenseDomainMissingExceptionTest.php
 tests/unit/php/Core/Framework/Store/Exception/InvalidExtensionIdExceptionTest.php
-tests/unit/php/Core/Framework/Store/Exception/CanNotDownloadPluginManagedByComposerExceptionTest.php
 tests/unit/php/Core/Framework/Store/Exception/InvalidExtensionRatingValueExceptionTest.php
 tests/unit/php/Core/Framework/Store/Exception/StoreInvalidCredentialsExceptionTest.php
 tests/unit/php/Core/Framework/Store/Exception/StoreApiExceptionTest.php
@@ -14084,21 +14087,25 @@ changelog/release-6-4-18-1/2022-12-12-fix-quantity-issues-on-duplicate-product-l
 changelog/release-6-4-18-1/2023-01-03-add-minimum-password-requirement-to-admin-user.md
 changelog/release-6-4-18-1/2022-12-29-implement-logout-for-inactive-users.md
 changelog/_unreleased/2023-05-20-should-be-able-to-extend-criteria-before-loading-entity-inside-flow-storer.md
+changelog/_unreleased/2023-05-24-introduce-new-domainexceptions.md
 changelog/_unreleased/2023-05-10-deprecate-large-button-variant.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-05-19-add-product-states-to-product-stream-conditions.md
+changelog/_unreleased/2023-05-23-allow-composer-app-install.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-05-16-fix-admin-management-of-composer-plugins.md
 changelog/_unreleased/2023-05-16-fix-sdk-tabs-issue.md
 changelog/_unreleased/2023-05-07-do-not-use-request-locale-to-format-the-rich-snippet-product-release-date.md
 changelog/_unreleased/2023-05-08-moved-closing-div-in-correct-twig-block.md
+changelog/_unreleased/2023-05-25-added-exception-on-invalid-promotion-code-pattern.md
 changelog/_unreleased/2023-05-15-fix-bug-cannot-edit-snippet-on-snippet-detail.md
 changelog/_unreleased/2023-05-16-fix-bug-wrong-icon-name-on-settings-logs-page.md
 changelog/_unreleased/2023-03-28-add-module-sw-settings-usage-data.md
 changelog/_unreleased/2023-05-11-display-rebuild-search-index-search-config-for-non-elasticsearch-shop.md
 changelog/_unreleased/2023-05-17-fix-elasticsearch-visibility-mapping-definition.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2023-05-25-salutation-change-is-not-possible-in-the-storefront.md
 changelog/_unreleased/2023-05-15-add-styling-property-to-sw-checkbox-field.md
 changelog/_unreleased/2023-05-22-fix-error-route-on-account-login.md
 changelog/_unreleased/2023-05-15-alphabetical-sorting-of-countries-and-states.md

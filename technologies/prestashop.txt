@@ -121,6 +121,7 @@ translations/default/ModulesContactinfoAdmin.xlf
 translations/default/AdminAdvparametersHelp.xlf
 translations/default/ModulesLegalcomplianceShop.xlf
 translations/default/ModulesCheckpaymentShop.xlf
+translations/default/ModulesPsgdprCustomeraccount.xlf
 translations/default/ModulesEmailalertsAdmin.xlf
 translations/default/ModulesCashondeliveryShop.xlf
 translations/default/ShopThemeActions.xlf
@@ -2648,7 +2649,6 @@ src/Core/Search/Filters/SearchEngineFilters.php
 src/Core/Search/Filters/StateFilters.php
 src/Core/Search/Filters/ContactFilters.php
 src/Core/Search/Filters/CountryFilters.php
-src/Core/Search/SearchParameters.php
 src/Core/Search/Builder/ChainedFiltersBuilder.php
 src/Core/Search/Builder/AbstractFiltersBuilder.php
 src/Core/Search/Builder/ClassFiltersBuilder.php
@@ -2663,7 +2663,6 @@ src/Core/Search/Builder/EventFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/ProductCombinationFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/TypedFiltersBuilderInterface.php
 src/Core/Search/ControllerAction.php
-src/Core/Search/SearchParametersInterface.php
 src/Core/Search/Filters.php
 src/Core/Search/SearchPanelInterface.php
 src/Core/Search/SearchPanel.php
@@ -6320,7 +6319,6 @@ src/PrestaShopBundle/Controller/Admin/MultistoreController.php
 src/PrestaShopBundle/Controller/Admin/ProductImageController.php
 src/PrestaShopBundle/Controller/Exception/FieldNotFoundException.php
 src/PrestaShopBundle/Controller/BulkActionsTrait.php
-src/PrestaShopBundle/Controller/ArgumentResolver/SearchParametersResolver.php
 src/PrestaShopBundle/Controller/ArgumentResolver/FiltersBuilderResolver.php
 src/PrestaShopBundle/Controller/Api/Improve/Design/PositionsController.php
 src/PrestaShopBundle/Controller/Api/OAuth2/AccessTokenController.php
@@ -8964,9 +8962,14 @@ tests/UI/campaigns/functional/BO/02_orders/03_creditSlips/02_sortAndPaginationCr
 tests/UI/campaigns/functional/BO/02_orders/03_creditSlips/03_generateCreditSlipsByDate.ts
 tests/UI/campaigns/functional/BO/02_orders/03_creditSlips/01_createFilterCreditSlips.ts
 tests/UI/campaigns/functional/BO/02_orders/03_creditSlips/04_creditSlipOptions.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/09_configureModule.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/06_installUninstallModule.ts
 tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/02_filterModulesByCategories.ts
 tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/01_filterModulesByStatus.ts
-tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/03_configureModule.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/03_searchModule.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/07_bulkActions.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/05_resetModule.ts
+tests/UI/campaigns/functional/BO/07_modules/01_moduleManager/04_enableDisableModule.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/04_filterSortAndPaginationShops.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/06_quickEditAndbulkActionsShopUrls.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/01_CRUDShopGroups.ts
@@ -9738,7 +9741,6 @@ tests/Unit/Core/Routing/EntityLinkBuilderFactoryTest.php
 tests/Unit/Core/Filter/HashMapWhitelistFilterTest.php
 tests/Unit/Core/Filter/CollectionFilterTest.php
 tests/Unit/Core/Search/Filters/ProductCombinationFiltersTest.php
-tests/Unit/Core/Search/SearchParametersTest.php
 tests/Unit/Core/Search/ControllerActionTest.php
 tests/Unit/Core/Search/Builder/ChainedFiltersBuilderTest.php
 tests/Unit/Core/Search/Builder/RequestFiltersBuilderTest.php
@@ -9853,6 +9855,7 @@ tests/Unit/Core/Module/ModuleCollectionTest.php
 tests/Unit/Core/Module/ConfigReaderTest.php
 tests/Unit/Core/Module/ModuleRepositoryTest.php
 tests/Unit/Core/Util/Url/UrlFileCheckerTest.php
+tests/Unit/Core/Util/Url/UrlCleanerTest.php
 tests/Unit/Core/Util/Url/BackUrlProviderTest.php
 tests/Unit/Core/Util/YamlParserTest.php
 tests/Unit/Core/Util/BoolParserTest.php
@@ -10058,7 +10061,6 @@ tests/Unit/PrestaShopBundle/Utils/FloatParserTest.php
 tests/Unit/PrestaShopBundle/Utils/TreeTest.php
 tests/Unit/PrestaShopBundle/AppKernelTest.php
 tests/Unit/PrestaShopBundle/PassVsprintfContraintTest.php
-tests/Unit/PrestaShopBundle/Controller/ArgumentResolver/SearchParametersResolverTest.php
 tests/Unit/PrestaShopBundle/EventListener/BackUrlRedirectResponseListenerTest.php
 tests/Unit/PrestaShopBundle/EventListener/ShopConstraintListenerTest.php
 tests/Unit/PrestaShopBundle/Twig/Extension/EntitySearchExtensionTest.php
