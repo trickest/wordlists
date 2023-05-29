@@ -1,5 +1,6 @@
 translations/.htaccess
 UPGRADE-5.0.md
+modernizr-config.json
 templates/bundles/LightSamlSpBundle/discovery.html.twig
 .htaccess
 .gitpod.yml
@@ -887,6 +888,7 @@ app/migrations/Version20190724110039.php
 app/migrations/Version20221014061125.php
 app/migrations/Version20200513162918.php
 app/migrations/Version20200729170800.php
+app/migrations/Version20230525202700.php
 app/migrations/Version20221010121758.php
 app/migrations/Version20220722074516.php
 app/migrations/Version20180702014364.php
@@ -1925,7 +1927,6 @@ app/bundles/CoreBundle/Assets/js/libraries/froala/languages/id.js
 app/bundles/CoreBundle/Assets/js/libraries/2d.jquery.custom.js
 app/bundles/CoreBundle/Assets/js/libraries/3c.bootstrap-overflow-tabs.js
 app/bundles/CoreBundle/Assets/js/libraries/52a.jquery.vmap.world.js
-app/bundles/CoreBundle/Assets/js/libraries/1.modernizr.js
 app/bundles/CoreBundle/Assets/js/libraries/10.jquery.idletimer.js
 app/bundles/CoreBundle/Assets/js/12.tabs.js
 app/bundles/CoreBundle/Assets/js/1a.content.js
@@ -3618,8 +3619,8 @@ app/bundles/EmailBundle/Swiftmailer/Momentum/Metadata/MetadataProcessor.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/ContentDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/OptionsDTO.php
+app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/ContentDTO/AttachmentDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/ContentDTO/FromDTO.php
-app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/ContentDTO/AttachementDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/RecipientDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/DTO/TransmissionDTO/RecipientDTO/AddressDTO.php
 app/bundles/EmailBundle/Swiftmailer/Momentum/Facade/MomentumFacadeInterface.php
@@ -5006,10 +5007,8 @@ app/AppTestKernel.php
 app/release_metadata.json
 app/.github/workflows/close_pull_requests.yml
 app/assets/.htaccess
-app/assets/js/mautic-form.js
-app/assets/js/app.js
-app/assets/js/libraries.js
 app/assets/js/mautic-form-src.js
+app/assets/scaffold/files/modernizr-config.json
 app/assets/scaffold/files/gitkeep
 app/assets/scaffold/files/autoload.php
 app/assets/scaffold/files/package.json

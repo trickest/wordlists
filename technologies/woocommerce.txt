@@ -806,6 +806,7 @@ plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/ArrayKeys.ph
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/README.md
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/ArrayFlatten.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/ArrayColumn.php
+plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/PrepareUrl.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/Transformers/ArraySearch.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/NotRuleProcessor.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/OnboardingProfileRuleProcessor.php
@@ -1959,6 +1960,7 @@ plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notif
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/array-flatten.php
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/array-column.php
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/array-search.php
+plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/prepare-url.php
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/dot-notation.php
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/count.php
 plugins/woocommerce/tests/legacy/unit-tests/woocommerce-admin/remote-inbox-notifications/Transformers/array-keys.php
@@ -2249,6 +2251,7 @@ plugins/woocommerce/changelog/update-product-section-icon-37711
 plugins/woocommerce/changelog/update-contributor-notes
 plugins/woocommerce/changelog/fix-37600
 plugins/woocommerce/changelog/update-cart-fragments-enqueue
+plugins/woocommerce/changelog/fix-default-selected-state-for-country
 plugins/woocommerce/changelog/dev-xstate-inspector-toggling
 plugins/woocommerce/changelog/fix-37604
 plugins/woocommerce/changelog/fix-line-endings
@@ -2318,6 +2321,7 @@ plugins/woocommerce/changelog/fix-e2e-test-docs
 plugins/woocommerce/changelog/add-tracker_unique_payment_method
 plugins/woocommerce/changelog/dev-post-release-tasks-7.6.1-update-stable
 plugins/woocommerce/changelog/add-block-attributes-37728
+plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
 plugins/woocommerce/changelog/fix-37613-cross-sells-display-cart
 plugins/woocommerce/changelog/update-generated-variations-snackbar
 plugins/woocommerce/changelog/fix-37954_update_image_description
@@ -2341,9 +2345,11 @@ plugins/woocommerce/changelog/update-attribute-empty-state
 plugins/woocommerce/changelog/fix-env-specific-phpunit-tests
 plugins/woocommerce/changelog/update-payfast
 plugins/woocommerce/changelog/add-scaffolding-for-new-core-profiler
+plugins/woocommerce/changelog/add-211-create-extensions-page-in-core-profiler
 plugins/woocommerce/changelog/update-trunk-stable-tag
 plugins/woocommerce/changelog/dev-remove-deasync-dep
 plugins/woocommerce/changelog/add-38285-add-filter-to-free-extensions-rest-endpoint
+plugins/woocommerce/changelog/update-obw-jetpack-filter
 plugins/woocommerce/changelog/fix-load-sample-product-modal
 plugins/woocommerce/changelog/fix-activity-icon
 plugins/woocommerce/changelog/add-core-profiler-business-location
@@ -2362,6 +2368,7 @@ plugins/woocommerce/changelog/update-woo-L1-support-policy
 plugins/woocommerce/changelog/add-37844
 plugins/woocommerce/changelog/e2e-update-timeout-readme
 plugins/woocommerce/changelog/p
+plugins/woocommerce/changelog/add-38150
 plugins/woocommerce/changelog/fix-tt3-order-details-item-meta-styling
 plugins/woocommerce/changelog/try-update-wporg-listing-desc
 plugins/woocommerce/changelog/update-block-editor-global-styling-37687
@@ -2751,6 +2758,7 @@ plugins/woocommerce-admin/client/inbox-panel/dismiss-all-modal.js
 plugins/woocommerce-admin/client/inbox-panel/utils.js
 plugins/woocommerce-admin/client/core-profiler/style.scss
 plugins/woocommerce-admin/client/core-profiler/services/test/country.test.ts
+plugins/woocommerce-admin/client/core-profiler/services/installAndActivatePlugins.ts
 plugins/woocommerce-admin/client/core-profiler/services/country.ts
 plugins/woocommerce-admin/client/core-profiler/test/__snapshots__/core-profiler-machine.test.tsx.snap
 plugins/woocommerce-admin/client/core-profiler/test/core-profiler-machine.test.tsx
@@ -2767,19 +2775,23 @@ plugins/woocommerce-admin/client/core-profiler/components/navigation/test/index.
 plugins/woocommerce-admin/client/core-profiler/components/navigation/navigation.scss
 plugins/woocommerce-admin/client/core-profiler/components/navigation/navigation.tsx
 plugins/woocommerce-admin/client/core-profiler/components/navigation/woologo.tsx
+plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-card.scss
+plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-card.tsx
 plugins/woocommerce-admin/client/core-profiler/get-loader-stage-meta.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/Loader.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/tests/user-profile.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/tests/intro-opt-in.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/IntroOptIn.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/UserProfile.tsx
+plugins/woocommerce-admin/client/core-profiler/pages/Plugins.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/BusinessInfo.tsx
-plugins/woocommerce-admin/client/core-profiler/pages/Extensions.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/BusinessLocation.tsx
 plugins/woocommerce-admin/client/core-profiler/index.tsx
 plugins/woocommerce-admin/client/core-profiler/assets/images/loader-lightbulb.svg
+plugins/woocommerce-admin/client/core-profiler/assets/images/loader-developing.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-mobile.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-desktop.svg
+plugins/woocommerce-admin/client/core-profiler/assets/images/loader-layout.svg
 plugins/woocommerce-admin/client/dashboard/style.scss
 plugins/woocommerce-admin/client/dashboard/customizable.js
 plugins/woocommerce-admin/client/dashboard/README.md
@@ -4879,6 +4891,7 @@ packages/js/components/changelog/dev-migrate-link-ts
 packages/js/components/changelog/update-refactor-currency-context
 packages/js/components/changelog/update-webpack-invalid-export-error
 packages/js/components/changelog/update-migrate-category-field
+packages/js/components/changelog/fix-date-time-picker-reset
 packages/js/components/changelog/dev-migrate-rating-component-to-ts
 packages/js/components/changelog/add-35851-tree-control-expander
 packages/js/components/changelog/add-37330
@@ -4896,6 +4909,7 @@ packages/js/components/changelog/update-36610-support-variations-alternate
 packages/js/components/changelog/dev-migrate-ellipsis-menu-to-ts
 packages/js/components/changelog/add-selecttree-singlemode
 packages/js/components/changelog/fix-36614_refactor_create_ordered_children
+packages/js/components/changelog/update-date-time-picker-control-dropdown
 packages/js/components/changelog/try-support-multiple-fills
 packages/js/components/changelog/fix-typescript-package-isolation
 packages/js/components/changelog/try-product-mvp-slotfill-experiments
@@ -5406,6 +5420,7 @@ packages/js/data/changelog/dev-33838-migrate-data-notes-store-to-ts
 packages/js/data/changelog/update-get-permalink-parts-create-selector
 packages/js/data/changelog/add-track-event-for-plugins-actions
 packages/js/data/changelog/add-form-factory-tab
+packages/js/data/changelog/update-add-is_installed-and-plugins_page_skipped
 packages/js/data/changelog/add-33443_shipping_zones_data_store
 packages/js/data/changelog/update-34996
 packages/js/data/changelog/try-support-multiple-fills

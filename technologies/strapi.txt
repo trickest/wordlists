@@ -209,6 +209,7 @@ api-tests/plugins/i18n/content-manager/crud.test.api.js
 api-tests/plugins/i18n/graphql.test.api.js
 api-tests/plugins/i18n/locales.test.api.js
 api-tests/core/upload/content-api/upload-automatic-folder.test.api.js
+api-tests/core/upload/content-api/private-file-signing.test.api.js
 api-tests/core/upload/content-api/upload.test.api.js
 api-tests/core/upload/content-api/graphql-upload-automatic-folder.test.api.js
 api-tests/core/upload/content-api/graphql-upload.test.api.js
@@ -1285,8 +1286,11 @@ packages/core/upload/server/services/metrics/weekly-metrics.js
 packages/core/upload/server/services/index.js
 packages/core/upload/server/services/extensions/content-manager/entity-manager.js
 packages/core/upload/server/services/extensions/content-manager/index.js
-packages/core/upload/server/services/extensions/content-manager/__tests__/entity-manager.test.js
 packages/core/upload/server/services/extensions/index.js
+packages/core/upload/server/services/extensions/core/index.js
+packages/core/upload/server/services/extensions/core/entity-service.js
+packages/core/upload/server/services/extensions/__tests__/sign-media.test.js
+packages/core/upload/server/services/extensions/utils.js
 packages/core/upload/server/services/api-upload-folder.js
 packages/core/upload/server/services/folder.js
 packages/core/upload/server/services/__tests__/upload/formatFileInfo.test.js
@@ -4197,10 +4201,11 @@ docs/docs/docs/01-core/content-manager/hooks/_category_.json
 docs/docs/docs/01-core/content-manager/_category_.json
 docs/docs/docs/01-core/utils/_category_.json
 docs/docs/docs/01-core/utils/async.md
+docs/docs/docs/01-core/database/02-transactions.md
 docs/docs/docs/01-core/database/00-intro.md
 docs/docs/docs/01-core/database/_category_.json
-docs/docs/docs/01-core/database/relations/reordering.mdx
-docs/docs/docs/01-core/database/relations/_category_.json
+docs/docs/docs/01-core/database/01-relations/reordering.mdx
+docs/docs/docs/01-core/database/01-relations/_category_.json
 docs/docs/docs/01-core/helper-plugin/hooks/use-clipboard.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-filter.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-fetch-client.mdx
