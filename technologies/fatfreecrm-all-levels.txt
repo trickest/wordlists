@@ -503,6 +503,9 @@ assert_select.rb
 spec/support/feature_helpers.rb
 support/feature_helpers.rb
 feature_helpers.rb
+spec/support/active_storage.rb
+support/active_storage.rb
+active_storage.rb
 spec/support/uploaded_file.rb
 support/uploaded_file.rb
 uploaded_file.rb
@@ -1273,6 +1276,9 @@ migrate/20120224073107_remove_default_value_and_clear_settings.rb
 db/migrate/20120314080441_add_subscribed_users_to_entities.rb
 migrate/20120314080441_add_subscribed_users_to_entities.rb
 20120314080441_add_subscribed_users_to_entities.rb
+db/migrate/20230526212613_convert_to_active_storage.rb
+migrate/20230526212613_convert_to_active_storage.rb
+20230526212613_convert_to_active_storage.rb
 db/migrate/20120801032706_add_pair_id_to_fields.rb
 migrate/20120801032706_add_pair_id_to_fields.rb
 20120801032706_add_pair_id_to_fields.rb
@@ -1393,6 +1399,9 @@ migrate/20180103223438_add_minlength_to_field.rb
 db/migrate/20100928030618_add_admin_to_users.rb
 migrate/20100928030618_add_admin_to_users.rb
 20100928030618_add_admin_to_users.rb
+db/migrate/20230526211831_create_active_storage_tables.active_storage.rb
+migrate/20230526211831_create_active_storage_tables.active_storage.rb
+20230526211831_create_active_storage_tables.active_storage.rb
 db/migrate/20120405080727_change_subscribed_users_to_set.rb
 migrate/20120405080727_change_subscribed_users_to_set.rb
 20120405080727_change_subscribed_users_to_set.rb

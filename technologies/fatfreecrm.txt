@@ -133,6 +133,7 @@ spec/support/macros.rb
 spec/support/devise_helpers.rb
 spec/support/assert_select.rb
 spec/support/feature_helpers.rb
+spec/support/active_storage.rb
 spec/support/uploaded_file.rb
 spec/support/mail_processor_mocks.rb
 spec/lib/errors_spec.rb
@@ -377,6 +378,7 @@ db/migrate/20120216031616_create_versions.rb
 db/migrate/20120510025219_add_not_null_constraints_for_timestamp_columns.rb
 db/migrate/20120224073107_remove_default_value_and_clear_settings.rb
 db/migrate/20120314080441_add_subscribed_users_to_entities.rb
+db/migrate/20230526212613_convert_to_active_storage.rb
 db/migrate/20120801032706_add_pair_id_to_fields.rb
 db/migrate/20140916011927_add_created_at_index_on_versions.rb
 db/migrate/20120121054235_create_lists.rb
@@ -417,6 +419,7 @@ db/migrate/20111201030535_add_field_groups_klass_name.rb
 db/migrate/20100928030623_create_addresses.rb
 db/migrate/20180103223438_add_minlength_to_field.rb
 db/migrate/20100928030618_add_admin_to_users.rb
+db/migrate/20230526211831_create_active_storage_tables.active_storage.rb
 db/migrate/20120405080727_change_subscribed_users_to_set.rb
 db/migrate/20111101083437_create_fields.rb
 db/migrate/20100928030613_create_comments.rb

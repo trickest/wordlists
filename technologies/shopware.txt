@@ -156,6 +156,7 @@ src/Storefront/Exception/VerificationHashNotConfiguredException.php
 src/Storefront/README.md
 src/Storefront/Resources/config/routes.xml
 src/Storefront/Resources/config/packages/test/framework.yaml
+src/Storefront/Resources/config/packages/framework.yaml
 src/Storefront/Resources/config/packages/storefront.yaml
 src/Storefront/Resources/config/packages/translation.yaml
 src/Storefront/Resources/views/storefront/block/cms-block-category-navigation.html.twig
@@ -6964,7 +6965,6 @@ src/Core/Framework/Test/TestCaseBase/TranslationTestBehaviour.php
 src/Core/Framework/Test/AdditionalPermissionValidationTest.php
 src/Core/Framework/Test/TestCacheClearer.php
 src/Core/Framework/Test/Api/ApiAwareTest.php
-src/Core/Framework/Test/Api/Sync/SyncServiceTest.php
 src/Core/Framework/Test/Api/TranslationTest.php
 src/Core/Framework/Test/Api/Controller/UserControllerTest.php
 src/Core/Framework/Test/Api/Controller/PromotionControllerTest.php
@@ -7297,11 +7297,15 @@ src/Core/Framework/Validation/DataBag/DataBag.php
 src/Core/Framework/Validation/DataBag/RequestDataBag.php
 src/Core/Framework/Validation/DataBag/QueryDataBag.php
 src/Core/Framework/ShopwareHttpException.php
+src/Core/Framework/Api/ApiException.php
+src/Core/Framework/Api/Sync/SyncFkResolver.php
 src/Core/Framework/Api/Sync/SyncServiceInterface.php
 src/Core/Framework/Api/Sync/SyncResult.php
+src/Core/Framework/Api/Sync/AbstractFkResolver.php
 src/Core/Framework/Api/Sync/SyncService.php
 src/Core/Framework/Api/Sync/SyncOperationResult.php
 src/Core/Framework/Api/Sync/SyncBehavior.php
+src/Core/Framework/Api/Sync/FkReference.php
 src/Core/Framework/Api/Sync/SyncOperation.php
 src/Core/Framework/Api/Controller/FallbackController.php
 src/Core/Framework/Api/Controller/SyncController.php
@@ -8175,6 +8179,7 @@ src/Core/Framework/DependencyInjection/CompilerPass/RedisPrefixCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FrameworkMigrationReplacementCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FilesystemConfigMigrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetRegistrationCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/DefaultTransportCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FeatureFlagCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/ActionEventCompilerPass.php
@@ -11464,6 +11469,7 @@ src/Core/Content/Product/Hook/Pricing/ProductPricingHook.php
 src/Core/Content/Product/Hook/Pricing/ProductProxy.php
 src/Core/Content/Product/ProductEvents.php
 src/Core/Content/Product/Api/ProductActionController.php
+src/Core/Content/Product/Api/ProductNumberFkResolver.php
 src/Core/Content/Product/Cart/ProductCartProcessor.php
 src/Core/Content/Product/Cart/ProductLineItemFactory.php
 src/Core/Content/Product/Cart/ProductFeatureBuilder.php
@@ -12320,6 +12326,7 @@ tests/integration/php/Core/Framework/Store/Services/StoreSessionExpiredMiddlewar
 tests/integration/php/Core/Framework/Translation/TranslatorTest.php
 tests/integration/php/Core/Framework/Translation/Fixtures/storefront.unitTest.json
 tests/integration/php/Core/Framework/Translation/Fixtures/SnippetFile_UnitTest.php
+tests/integration/php/Core/Framework/Api/Sync/SyncServiceTest.php
 tests/integration/php/Core/Framework/Api/Controller/CustomSnippetFormatControllerTest.php
 tests/integration/php/Core/Framework/Api/Controller/InfoControllerTest.php
 tests/integration/php/Core/Framework/Api/Controller/Fixtures/AdminExtensionApiApp/manifest.xml
@@ -12542,6 +12549,7 @@ tests/integration/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Met
 tests/integration/php/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/integration/php/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPassTest.php
+tests/integration/php/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPassTest.php
 tests/integration/php/Core/Framework/Adapter/Cache/CacheDecoratorTest.php
 tests/integration/php/Core/Checkout/Shipping/SalesChannel/ShippingMethodRouteTest.php
 tests/integration/php/Core/Checkout/Customer/SalesChannel/ChangeProfileRouteTest.php
@@ -13448,7 +13456,9 @@ tests/unit/php/Core/Framework/FeatureTest.php
 tests/unit/php/Core/Framework/Validation/DataBag/DataBagTest.php
 tests/unit/php/Core/Framework/Api/Sync/SyncServiceTest.php
 tests/unit/php/Core/Framework/Api/Sync/SyncOperationTest.php
+tests/unit/php/Core/Framework/Api/Sync/SyncFkResolverTest.php
 tests/unit/php/Core/Framework/Api/Controller/CustomSnippetFormatControllerTest.php
+tests/unit/php/Core/Framework/Api/Controller/SyncControllerTest.php
 tests/unit/php/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/BundleWithCustomSnippet.php
 tests/unit/php/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/custom-snippet/custom-snippet.html.twig
 tests/unit/php/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/address/first_name.html.twig
@@ -14104,6 +14114,7 @@ changelog/_unreleased/2023-05-16-fix-bug-wrong-icon-name-on-settings-logs-page.m
 changelog/_unreleased/2023-03-28-add-module-sw-settings-usage-data.md
 changelog/_unreleased/2023-05-11-display-rebuild-search-index-search-config-for-non-elasticsearch-shop.md
 changelog/_unreleased/2023-05-17-fix-elasticsearch-visibility-mapping-definition.md
+changelog/_unreleased/2023-05-30-fix-webpack-cleanup-config.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2023-05-25-salutation-change-is-not-possible-in-the-storefront.md
 changelog/_unreleased/2023-05-15-add-styling-property-to-sw-checkbox-field.md
@@ -17506,6 +17517,7 @@ adr/2020-12-02-removing-api-version.md
 adr/2021-11-02-preparing-data-for-rule-evaluation.md
 adr/2022-06-24-add-typescript-support-for-storefront-js.md
 adr/2020-06-25-implement-architecture-decision-records.md
+adr/2023-05-25-exception-log-levels.md
 adr/2021-07-22-move-storefront-scripts-to-head.md
 adr/2021-11-05-adjust-adr-approval-rules.md
 adr/2023-03-27-admin-text-editor-evaluation.md

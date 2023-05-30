@@ -929,6 +929,8 @@ plugins/woocommerce/src/Admin/API/Reports/Orders/Stats/Controller.php
 plugins/woocommerce/src/Admin/API/Reports/Orders/Stats/DataStore.php
 plugins/woocommerce/src/Admin/API/Reports/Orders/Stats/Query.php
 plugins/woocommerce/src/Admin/API/Reports/Orders/Query.php
+plugins/woocommerce/src/Admin/API/Reports/GenericStatsController.php
+plugins/woocommerce/src/Admin/API/Reports/GenericController.php
 plugins/woocommerce/src/Admin/API/Reports/Categories/Controller.php
 plugins/woocommerce/src/Admin/API/Reports/Categories/DataStore.php
 plugins/woocommerce/src/Admin/API/Reports/Categories/Query.php
@@ -2206,6 +2208,7 @@ plugins/woocommerce/lib/packages/League/Container/Inflector/InflectorAggregate.p
 plugins/woocommerce/lib/composer.lock
 plugins/woocommerce/composer.json
 plugins/woocommerce/woocommerce.php
+plugins/woocommerce/changelog/update-options-api
 plugins/woocommerce/changelog/add-37704
 plugins/woocommerce/changelog/dev-core-profiler-model-tests
 plugins/woocommerce/changelog/fix-37108
@@ -2308,6 +2311,7 @@ plugins/woocommerce/changelog/update-remove-sample-data-from-product-templates
 plugins/woocommerce/changelog/fix-move_template_addition_to_featureflag
 plugins/woocommerce/changelog/fix-k6-api-40X-errors
 plugins/woocommerce/changelog/fix-38317
+plugins/woocommerce/changelog/add-core-profiler-business-info
 plugins/woocommerce/changelog/fix-woocommerce_admin_updated-does-not-run
 plugins/woocommerce/changelog/add-core-profiler-fetch-extensions
 plugins/woocommerce/changelog/update-38260
@@ -2358,6 +2362,7 @@ plugins/woocommerce/changelog/fix-option-notice
 plugins/woocommerce/changelog/update-tax-location-form
 plugins/woocommerce/changelog/add-38200
 plugins/woocommerce/changelog/dev-38122_remove_separator_between_buttons_and_empty_state_screen
+plugins/woocommerce/changelog/update-use-shipping-partner-suggestions
 plugins/woocommerce/changelog/fix-tt3-attributes-table
 plugins/woocommerce/changelog/e2e-pw-add-merchant-create-post
 plugins/woocommerce/changelog/try-install-optim-2
@@ -2376,6 +2381,7 @@ plugins/woocommerce/changelog/add-plugin-install-queue-endpoint
 plugins/woocommerce/changelog/update-34885_category_field_in_product_editor
 plugins/woocommerce/changelog/e2e-remove-daily-playwright-config
 plugins/woocommerce/changelog/add-wp-env-unit-tests
+plugins/woocommerce/changelog/dev-dry-reports
 plugins/woocommerce/changelog/fix-38093-tracks-id-mismatch
 plugins/woocommerce/changelog/dev-38080_rename_generate_variations_button
 plugins/woocommerce/changelog/add-credit-card-i18n-context
@@ -2552,9 +2558,11 @@ plugins/woocommerce/assets/images/shipping_partners/envia-column.svg
 plugins/woocommerce/assets/images/shipping_partners/discount.svg
 plugins/woocommerce/assets/images/shipping_partners/sendcloud-row.svg
 plugins/woocommerce/assets/images/shipping_partners/timer.svg
+plugins/woocommerce/assets/images/shipping_partners/printer.svg
 plugins/woocommerce/assets/images/shipping_partners/sendcloud-column.svg
 plugins/woocommerce/assets/images/shipping_partners/wcs-column.svg
 plugins/woocommerce/assets/images/shipping_partners/star.svg
+plugins/woocommerce/assets/images/shipping_partners/paper.svg
 plugins/woocommerce/assets/images/shipping_partners/shipstation-column.svg
 plugins/woocommerce/assets/images/shipping_partners/packlink-column.svg
 plugins/woocommerce/assets/images/shipping_partners/skydropx-column.svg
@@ -2779,6 +2787,7 @@ plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-car
 plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-card.tsx
 plugins/woocommerce-admin/client/core-profiler/get-loader-stage-meta.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/Loader.tsx
+plugins/woocommerce-admin/client/core-profiler/pages/tests/business-info.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/tests/user-profile.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/tests/intro-opt-in.test.tsx
 plugins/woocommerce-admin/client/core-profiler/pages/IntroOptIn.tsx
@@ -3237,7 +3246,6 @@ plugins/woocommerce-admin/client/task-lists/fills/shipping/single-partner-featur
 plugins/woocommerce-admin/client/task-lists/fills/shipping/index.js
 plugins/woocommerce-admin/client/task-lists/fills/shipping/shipping.scss
 plugins/woocommerce-admin/client/task-lists/fills/shipping/rates.js
-plugins/woocommerce-admin/client/task-lists/fills/shipping/shipping-providers/shipping-providers.ts
 plugins/woocommerce-admin/client/task-lists/fills/shipping/shipping-providers/partners.tsx
 plugins/woocommerce-admin/client/task-lists/fills/shipping/shipping-providers/assets/envia-banner-side.svg
 plugins/woocommerce-admin/client/task-lists/fills/shipping/shipping-providers/assets/shipstation-column-logo.svg
@@ -4256,6 +4264,7 @@ packages/js/onboarding/changelog/.gitkeep
 packages/js/onboarding/changelog/dev-update-eslint-plugin
 packages/js/onboarding/changelog/dev-update-pnpm8
 packages/js/onboarding/changelog/update-wp-env-8.0.0
+packages/js/onboarding/changelog/add-get-country-util
 packages/js/onboarding/changelog/update-webpack-invalid-export-error
 packages/js/onboarding/changelog/dev-move-geolocation-utils
 packages/js/onboarding/changelog/dev-pin-wp-deps-6
@@ -5264,6 +5273,16 @@ packages/js/data/src/reviews/resolvers.ts
 packages/js/data/src/reviews/actions.ts
 packages/js/data/src/reviews/action-types.ts
 packages/js/data/src/controls.ts
+packages/js/data/src/shipping-methods/reducer.ts
+packages/js/data/src/shipping-methods/selectors.ts
+packages/js/data/src/shipping-methods/types.ts
+packages/js/data/src/shipping-methods/index.ts
+packages/js/data/src/shipping-methods/test/reducer.ts
+packages/js/data/src/shipping-methods/test-helpers/stub.ts
+packages/js/data/src/shipping-methods/constants.ts
+packages/js/data/src/shipping-methods/resolvers.ts
+packages/js/data/src/shipping-methods/actions.ts
+packages/js/data/src/shipping-methods/action-types.ts
 packages/js/data/src/user/types.ts
 packages/js/data/src/user/index.ts
 packages/js/data/src/user/test/use-user-preferences.ts
@@ -5372,6 +5391,7 @@ packages/js/data/changelog/dev-adjust-sync
 packages/js/data/changelog/dev-consolidate-eslint-versions
 packages/js/data/changelog/dev-update-pnpm8
 packages/js/data/changelog/add-product-tags-data-store
+packages/js/data/changelog/add-geolocation-api-call
 packages/js/data/changelog/add-37004
 packages/js/data/changelog/fix-use-plugins-hydration-hook
 packages/js/data/changelog/dev-33839-migrate-data-navigation-store-to-ts
@@ -5419,6 +5439,7 @@ packages/js/data/changelog/fix-missing-type-definitions-dependencies
 packages/js/data/changelog/dev-33838-migrate-data-notes-store-to-ts
 packages/js/data/changelog/update-get-permalink-parts-create-selector
 packages/js/data/changelog/add-track-event-for-plugins-actions
+packages/js/data/changelog/update-use-shipping-partner-suggestions
 packages/js/data/changelog/add-form-factory-tab
 packages/js/data/changelog/update-add-is_installed-and-plugins_page_skipped
 packages/js/data/changelog/add-33443_shipping_zones_data_store
@@ -6030,6 +6051,7 @@ packages/js/product-editor/changelog/add-38215
 packages/js/product-editor/changelog/add-product-link-edit-37610
 packages/js/product-editor/changelog/add-37098_add_product_list_price_block
 packages/js/product-editor/changelog/update-38043
+packages/js/product-editor/changelog/fix-product-editor-theme-bleed
 packages/js/product-editor/changelog/fix-typescript-incremental-builds
 packages/js/product-editor/changelog/add-37656
 packages/js/product-editor/changelog/fix-37249
