@@ -33,6 +33,9 @@ Inspired by Daniel Miessler's [RobotsDisallowed](https://github.com/danielmiessl
 ### Inventory Subdomains
 This wordlist contains the subdomains found for each target on the [Inventory](https://github.com/trickest/inventory) project. It consists of 1.4 million words generated from the subdomains of over 50 public bug bounty programs.
 
+### Cloud Subdomains
+This wordlist contains the subdomains found through enumerating [cloud](https://github.com/trickest/cloud) assets. It consists of 940k words generated from the subdomains extracted from the `Common Name`s and `Subject Alternative Name`s of over 7 million SSL certificates.
+
 And more wordlists to come!
 
 ## How it Works
