@@ -804,8 +804,9 @@ spec/lib/email_helper/probe_spec.rb
 spec/lib/email_helper/idn_spec.rb
 spec/lib/auth/after_auth_spec.rb
 spec/lib/auth/two_factor_spec.rb
-spec/lib/auth/two_factor/method/authenticator_app_spec.rb
-spec/lib/auth/two_factor/method_spec.rb
+spec/lib/auth/two_factor/authentication_method_spec.rb
+spec/lib/auth/two_factor/recovery_codes_spec.rb
+spec/lib/auth/two_factor/authentication_method/authenticator_app_spec.rb
 spec/lib/auth/backend_spec.rb
 spec/lib/auth/user_spec.rb
 spec/lib/auth/backend/internal_spec.rb
@@ -2461,7 +2462,9 @@ lib/auth/error/authentication_failed.rb
 lib/auth/error/two_factor_required.rb
 lib/auth/error/two_factor_failed.rb
 lib/auth/two_factor/method.rb
-lib/auth/two_factor/method/authenticator_app.rb
+lib/auth/two_factor/authentication_method.rb
+lib/auth/two_factor/recovery_codes.rb
+lib/auth/two_factor/authentication_method/authenticator_app.rb
 lib/auth/request_cache.rb
 lib/auth/backend.rb
 lib/auth/user.rb
@@ -3268,6 +3271,7 @@ db/migrate/20170403000001_fixed_admin_user_permission_920.rb
 db/migrate/20120101000010_create_ticket.rb
 db/migrate/20210407000001_setting_add_internal_article_check.rb
 db/migrate/20221116134211_issue_2185_and_or_conditions.rb
+db/migrate/20230523104006_two_factor_authentication_recovery_codes.rb
 db/migrate/20220927155611_issue4262_admin_template_permission.rb
 db/migrate/20220922090123_issue4243_permission_fix.rb
 db/migrate/20170203000001_remove_last_login_from_history_722.rb
@@ -4419,6 +4423,7 @@ app/frontend/apps/mobile/pages/login/after-auth/composable/useAfterAuthPlugins.t
 app/frontend/apps/mobile/pages/login/views/LoginAfterAuth.vue
 app/frontend/apps/mobile/pages/login/views/Login.vue
 app/frontend/apps/mobile/pages/login/components/AfterAuth/TwoFactorConfiguration.vue
+app/frontend/apps/mobile/pages/login/components/LoginRecoveryCode.vue
 app/frontend/apps/mobile/pages/login/components/LoginTwoFactorMethods.vue
 app/frontend/apps/mobile/pages/login/components/LoginHeader.vue
 app/frontend/apps/mobile/pages/login/components/LoginCredentialsForm.vue
@@ -4734,9 +4739,9 @@ app/frontend/shared/components/CommonTicketStateIndicator/CommonTicketStateIndic
 app/frontend/shared/components/CommonTicketStateIndicator/__tests__/CommonTicketStateIndicator.spec.ts
 app/frontend/shared/components/CommonNotifications/types.ts
 app/frontend/shared/components/CommonNotifications/index.ts
-app/frontend/shared/components/CommonNotifications/composable.ts
 app/frontend/shared/components/CommonNotifications/CommonNotifications.vue
 app/frontend/shared/components/CommonNotifications/__tests__/CommonNotifications.spec.ts
+app/frontend/shared/components/CommonNotifications/useNotifications.ts
 app/frontend/shared/components/CommonNotifications/CommonNotifications.story.vue
 app/frontend/shared/components/CommonOrganizationAvatar/CommonOrganizationAvatar.story.vue
 app/frontend/shared/components/CommonOrganizationAvatar/types.ts
@@ -5890,6 +5895,8 @@ app/graphql/gql/types/input/ticket/base_input_type.rb
 app/graphql/gql/types/input/login_input_type.rb
 app/graphql/gql/types/input/object_attribute_value_input_type.rb
 app/graphql/gql/types/input/upload_file_input_type.rb
+app/graphql/gql/types/input/two_factor/authentication_input_type.rb
+app/graphql/gql/types/input/two_factor/recovery_input_type.rb
 app/graphql/gql/types/input/locator/user_input_type.rb
 app/graphql/gql/types/input/locator/organization_input_type.rb
 app/graphql/gql/types/input/locator/ticket_input_type.rb
@@ -5932,12 +5939,12 @@ app/graphql/gql/types/enum/text_direction_type.rb
 app/graphql/gql/types/enum/form_updater_id_type.rb
 app/graphql/gql/types/enum/taskbar_app_type.rb
 app/graphql/gql/types/enum/user_contact_type.rb
+app/graphql/gql/types/enum/two_factor_authentication_method_type.rb
 app/graphql/gql/types/enum/object_manager_objects_type.rb
 app/graphql/gql/types/enum/after_auth_type_type.rb
 app/graphql/gql/types/enum/searchable_models_type.rb
 app/graphql/gql/types/enum/order_direction_type.rb
 app/graphql/gql/types/enum/app_maintenance_type_type.rb
-app/graphql/gql/types/enum/two_factor_method_type.rb
 app/graphql/gql/types/enum/public_links_screen_type.rb
 app/graphql/gql/types/enum/ticket_state_color_code_type.rb
 app/graphql/gql/types/enum/security_option_type.rb
@@ -6181,7 +6188,6 @@ app/assets/javascripts/app/views/link/ticket/add.jst.eco
 app/assets/javascripts/app/views/link/kb_answer.jst.eco
 app/assets/javascripts/app/views/monitoring.jst.eco
 app/assets/javascripts/app/views/keyboard_shortcuts.jst.eco
-app/assets/javascripts/app/views/login_two_factor_authenticator_app.jst.eco
 app/assets/javascripts/app/views/reorder_modal.jst.eco
 app/assets/javascripts/app/views/customer_ticket_create.jst.eco
 app/assets/javascripts/app/views/api.jst.eco
@@ -6319,7 +6325,6 @@ app/assets/javascripts/app/views/popover/organization.jst.eco
 app/assets/javascripts/app/views/vertical_form.coffee
 app/assets/javascripts/app/views/admin_password_auth/request_sent.jst.eco
 app/assets/javascripts/app/views/admin_password_auth/request.jst.eco
-app/assets/javascripts/app/views/login_two_factor_methods.jst.eco
 app/assets/javascripts/app/views/sla/index.jst.eco
 app/assets/javascripts/app/views/ticket_zoom/time_unit.jst.eco
 app/assets/javascripts/app/views/ticket_zoom/sidebar_article_attachment.jst.eco
@@ -6434,8 +6439,12 @@ app/assets/javascripts/app/views/widget/online_notification.jst.eco
 app/assets/javascripts/app/views/widget/template.jst.eco
 app/assets/javascripts/app/views/widget/http_log.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_configuration/authenticator_app.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_configuration/recovery_codes.jst.eco
 app/assets/javascripts/app/views/widget/task_item.jst.eco
 app/assets/javascripts/app/views/widget/payload_example.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_login/try_another_method.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_login/security_code.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_login/help_text.jst.eco
 app/assets/javascripts/app/views/widget/ticket_stats_frequency.jst.eco
 app/assets/javascripts/app/views/widget/invite_user.jst.eco
 app/assets/javascripts/app/views/widget/shared_draft.jst.eco
@@ -6504,6 +6513,7 @@ app/assets/javascripts/app/views/avatar_system.jst.eco
 app/assets/javascripts/app/views/modal.jst.eco
 app/assets/javascripts/app/lib/app_post/utils.coffee
 app/assets/javascripts/app/lib/app_post/two_factor_methods/authenticator_app.coffee
+app/assets/javascripts/app/lib/app_post/two_factor_methods/recovery_codes.coffee
 app/assets/javascripts/app/lib/app_post/color.coffee
 app/assets/javascripts/app/lib/app_post/auth.coffee
 app/assets/javascripts/app/lib/app_post/overview_index_collection.coffee
@@ -7063,10 +7073,15 @@ app/assets/javascripts/app/controllers/widget/link/kb_answer.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/method.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/authenticator_app.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/recovery_codes.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/authenticator_app.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/recovery_codes.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/password_check.coffee
 app/assets/javascripts/app/controllers/widget/online_notification.coffee
 app/assets/javascripts/app/controllers/widget/link.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_login/method.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_login/method/authenticator_app.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_login/method/recovery_codes.coffee
 app/assets/javascripts/app/controllers/widget/session_message.coffee
 app/assets/javascripts/app/controllers/widget/ticket_bulk_form.coffee
 app/assets/javascripts/app/controllers/widget/ticket_stats.coffee

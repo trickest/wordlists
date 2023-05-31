@@ -5821,11 +5821,11 @@ src/Administration/Resources/app/administration/createlighthouserc.js
 src/Administration/Resources/app/administration/jsconfig.json
 src/Administration/Resources/app/administration/index.html.tpl
 src/Administration/Resources/app/administration/package-lock.json
+src/Administration/Resources/app/administration/patches/eslint+8.36.0.patch
 src/Administration/Resources/app/administration/patches/inter-ui+3.19.3.patch
-src/Administration/Resources/app/administration/patches/vue-eslint-parser+7.11.0.patch
+src/Administration/Resources/app/administration/patches/vue-eslint-parser+9.3.0.patch
 src/Administration/Resources/app/administration/patches/babel-plugin-require-context-hook+1.0.0.patch
-src/Administration/Resources/app/administration/patches/eslint+8.29.0.patch
-src/Administration/Resources/app/administration/patches/eslint-plugin-vue+7.20.0.patch
+src/Administration/Resources/app/administration/patches/eslint-plugin-vue+9.14.1.patch
 src/Administration/Resources/app/administration/jest.config.js
 src/Administration/Resources/app/administration/static/.gitkeep
 src/Administration/Resources/app/administration/static/img/dashboard-logo.svg
@@ -7076,6 +7076,10 @@ src/Core/Framework/Test/DataAbstractionLayer/Write/Validation/PreWriteValidation
 src/Core/Framework/Test/DataAbstractionLayer/Write/Validation/PostWriteValidationEventTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Write/Validation/LockValidatorTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Write/WriterTest.php
+src/Core/Framework/Test/DataAbstractionLayer/Write/NonUuidFkField/TestEntityTwoDefinition.php
+src/Core/Framework/Test/DataAbstractionLayer/Write/NonUuidFkField/NonUuidFkFieldSerializer.php
+src/Core/Framework/Test/DataAbstractionLayer/Write/NonUuidFkField/NonUuidFkField.php
+src/Core/Framework/Test/DataAbstractionLayer/Write/NonUuidFkField/TestEntityOneDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Dbal/TranslatedVersionsTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Dbal/EntityDefinitionQueryHelperTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Dbal/EntityWriteGatewayTest.php
@@ -14108,6 +14112,7 @@ changelog/_unreleased/2023-05-16-fix-admin-management-of-composer-plugins.md
 changelog/_unreleased/2023-05-16-fix-sdk-tabs-issue.md
 changelog/_unreleased/2023-05-07-do-not-use-request-locale-to-format-the-rich-snippet-product-release-date.md
 changelog/_unreleased/2023-05-08-moved-closing-div-in-correct-twig-block.md
+changelog/_unreleased/2023-04-18-fix-non-uuid-fk-fields-in-data-abstraction-layer.md
 changelog/_unreleased/2023-05-25-added-exception-on-invalid-promotion-code-pattern.md
 changelog/_unreleased/2023-05-15-fix-bug-cannot-edit-snippet-on-snippet-detail.md
 changelog/_unreleased/2023-05-16-fix-bug-wrong-icon-name-on-settings-logs-page.md
@@ -14116,7 +14121,9 @@ changelog/_unreleased/2023-05-11-display-rebuild-search-index-search-config-for-
 changelog/_unreleased/2023-05-17-fix-elasticsearch-visibility-mapping-definition.md
 changelog/_unreleased/2023-05-30-fix-webpack-cleanup-config.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2023-05-26-handle-exception-when-register-without-error-route.md
 changelog/_unreleased/2023-05-25-salutation-change-is-not-possible-in-the-storefront.md
+changelog/_unreleased/2023-05-31-update-and-evaluate-all-packages-for-vue-3.md
 changelog/_unreleased/2023-05-15-add-styling-property-to-sw-checkbox-field.md
 changelog/_unreleased/2023-05-22-fix-error-route-on-account-login.md
 changelog/_unreleased/2023-05-15-alphabetical-sorting-of-countries-and-states.md

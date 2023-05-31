@@ -19043,6 +19043,7 @@ app/code/Magento/ImportExport/Model/History.php
 app/code/Magento/ImportExport/Model/Import/Config.php
 app/code/Magento/ImportExport/Model/Import/ImageDirectoryBaseProvider.php
 app/code/Magento/ImportExport/Model/Import/SampleFileProvider.php
+app/code/Magento/ImportExport/Model/Import/RenderErrorMessages.php
 app/code/Magento/ImportExport/Model/Import/EntityInterface.php
 app/code/Magento/ImportExport/Model/Import/ErrorProcessing/ProcessingErrorAggregatorInterface.php
 app/code/Magento/ImportExport/Model/Import/ErrorProcessing/ProcessingErrorAggregator.php
@@ -24485,6 +24486,7 @@ app/code/Magento/Customer/Observer/UpgradeQuoteCustomerEmailObserver.php
 app/code/Magento/Customer/Observer/BeforeAddressSaveObserver.php
 app/code/Magento/Customer/Observer/CatalogRule/AddCustomerGroupExcludedWebsite.php
 app/code/Magento/Customer/Plugin/Webapi/Controller/Rest/ValidateCustomerData.php
+app/code/Magento/Customer/Plugin/AsyncRequestCustomerGroupAuthorization.php
 app/code/Magento/Customer/README.md
 app/code/Magento/Customer/composer.json
 app/code/Magento/Customer/Model/Context.php
@@ -24863,6 +24865,7 @@ app/code/Magento/Customer/Test/Mftf/Test/AdminCreateCustomerWithCountryUSATest.x
 app/code/Magento/Customer/Test/Mftf/Test/AdminExactMatchSearchInCustomerGridTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontCustomerSubscribeToNewsletterAndVerifyInAdminTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/AdminVerifyDisabledCustomerGroupFieldTest.xml
+app/code/Magento/Customer/Test/Mftf/Test/VerifyCustomerAddressRegionFieldTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontPersistedCustomerLoginTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/AdminCreateCustomerTest.xml
 app/code/Magento/Customer/Test/Mftf/Test/StorefrontClearAllCompareProductsTest.xml
@@ -24979,6 +24982,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/LoginToStorefrontActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerNoDefaultShippingAddressActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/DeleteCustomerFromAdminActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminNavigateToCustomerOnlinePageActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFillAndSaveCustomerAddressWithoutRegionActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminDeleteCustomerGroupActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/OpenStorefrontStoredPaymentMethodsPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontClickPrintOrderLinkOnViewOrderPageActionGroup.xml
@@ -25078,6 +25082,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/DeleteCustomerByEmailActionGroup
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerInCustomersNowOnlineGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertStorefrontAccountPasswordFieldsNotAvailableActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertSignedUpNewsletterActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminRemoveRegionFromCustomerAddressInformationActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/FillCustomerSignInPopupFormActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontGoToCustomerOrderDetailsPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerInformationFromActionGroup.xml
@@ -25116,6 +25121,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/SwitchAccountActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminSelectAllCustomersActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminUpdateCustomerGenderInCustomersGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerGridApplyInputFilterActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontRemoveRegionFromCustomerAddressFormActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenOrderViewPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertAdminCustomerAddressInAddressGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomStoreCustomerLogoutActionGroup.xml
@@ -25242,6 +25248,7 @@ app/code/Magento/Customer/Test/Unit/Observer/CatalogRule/AddCustomerGroupExclude
 app/code/Magento/Customer/Test/Unit/Observer/UpgradeCustomerPasswordObserverTest.php
 app/code/Magento/Customer/Test/Unit/Observer/UpgradeQuoteCustomerEmailObserverTest.php
 app/code/Magento/Customer/Test/Unit/Plugin/Webapi/Controller/Rest/ValidateCustomerDataTest.php
+app/code/Magento/Customer/Test/Unit/Plugin/AsyncRequestCustomerGroupAuthorizationTest.php
 app/code/Magento/Customer/Test/Unit/Model/FileProcessorTest.php
 app/code/Magento/Customer/Test/Unit/Model/AddressRegistryTest.php
 app/code/Magento/Customer/Test/Unit/Model/StoreSwitcher/RedirectDataPostprocessorTest.php
@@ -25343,6 +25350,7 @@ app/code/Magento/Customer/Test/Unit/Model/AuthenticationTest.php
 app/code/Magento/Customer/Test/Unit/Model/AddressTest.php
 app/code/Magento/Customer/Test/Unit/Model/CustomerTest.php
 app/code/Magento/Customer/Test/Unit/Model/Authorization/CustomerSessionUserContextTest.php
+app/code/Magento/Customer/Test/Unit/Model/AccountManagementApiTest.php
 app/code/Magento/Customer/Test/Unit/Model/Config/Source/GroupTest.php
 app/code/Magento/Customer/Test/Unit/Model/Config/Source/Address/TypeTest.php
 app/code/Magento/Customer/Test/Unit/Model/Config/Source/Group/MultiselectTest.php

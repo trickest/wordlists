@@ -393,6 +393,7 @@ layouts/basic/modules/FInvoice/dashboards/SummationByUserContents.tpl
 layouts/basic/modules/FInvoice/dashboards/SummationByMonthsContents.tpl
 layouts/basic/modules/Vtiger/Filters/ActivityTypes.tpl
 layouts/basic/modules/Vtiger/Filters/Groups.tpl
+layouts/basic/modules/Vtiger/Filters/ExtraSources.tpl
 layouts/basic/modules/Vtiger/Filters/Users.tpl
 layouts/basic/modules/Vtiger/AdvanceFilterCondition.tpl
 layouts/basic/modules/Vtiger/Comment.tpl
@@ -470,6 +471,7 @@ layouts/basic/modules/Vtiger/WidgetFullscreen.tpl
 layouts/basic/modules/Vtiger/Calendar/PostProcess.tpl
 layouts/basic/modules/Vtiger/Calendar/EventForm.tpl
 layouts/basic/modules/Vtiger/Calendar/CalendarView.tpl
+layouts/basic/modules/Vtiger/Calendar/ExtraSourcesModal.tpl
 layouts/basic/modules/Vtiger/Calendar/QuickCreate.tpl
 layouts/basic/modules/Vtiger/Calendar/PreProcess.tpl
 layouts/basic/modules/Vtiger/BodyContent.tpl
@@ -2160,6 +2162,7 @@ modules/Vtiger/views/SortOrderModal.php
 modules/Vtiger/views/RecordCollector.php
 modules/Vtiger/views/MergeRecord.php
 modules/Vtiger/views/MiniListWizard.php
+modules/Vtiger/views/CalendarExtraSourcesModal.php
 modules/Vtiger/views/ListPreview.php
 modules/Vtiger/views/ListAjax.php
 modules/Vtiger/views/MassQuickCreateModal.php
@@ -2275,6 +2278,7 @@ modules/Vtiger/models/Image.php
 modules/Vtiger/models/ExportToCsv.php
 modules/Vtiger/models/Processes.php
 modules/Vtiger/models/TreeCategoryModal.php
+modules/Vtiger/models/CalendarExtSource.php
 modules/Vtiger/models/Inventory.php
 modules/Vtiger/models/ExportToXml.php
 modules/Vtiger/models/CssScript.php
