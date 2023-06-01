@@ -603,6 +603,7 @@ spec/system/examples/text_modules_examples.rb
 spec/system/examples/macros_examples.rb
 spec/system/examples/authenticator_app_setup_examples.rb
 spec/system/examples/core_workflow_examples.rb
+spec/system/examples/security_keys_setup_examples.rb
 spec/system/overview/attribute_spec.rb
 spec/system/report_spec.rb
 spec/system/system/integration/sipgate_spec.rb
@@ -985,6 +986,7 @@ spec/db/migrate/issue_3763_default_date_datetime_diff_clear_spec.rb
 spec/db/migrate/issue_3567_auto_assignment_spec.rb
 spec/db/migrate/issue_4411_setting_saml_custom_uid_attribute_spec.rb
 spec/db/migrate/issue_4018_remove_old_translations_spec.rb
+spec/db/migrate/two_factor_default_authentication_method_spec.rb
 spec/db/migrate/issue_2541_fix_notification_email_without_body_spec.rb
 spec/db/migrate/issue3110_service_now_provider_spec.rb
 spec/db/migrate/issue_2867_footer_header_public_link_spec.rb
@@ -1275,6 +1277,7 @@ spec/models/role_spec.rb
 spec/models/user/has_search_index_backend_spec.rb
 spec/models/user/can_lookup_search_index_attributes_examples.rb
 spec/models/user/updates_ticket_organization_spec.rb
+spec/models/user/two_factor_preference_spec.rb
 spec/models/user/performs_geo_lookup_examples.rb
 spec/models/type_lookup_spec.rb
 spec/models/history_spec.rb
@@ -1347,6 +1350,7 @@ spec/graphql/gql/subscriptions/ticket_updates_spec.rb
 spec/graphql/gql/subscriptions/online_notifications_count_spec.rb
 spec/graphql/gql/subscriptions/ticket_live_user_updates_spec.rb
 spec/graphql/gql/zammad_schema_max_depth_spec.rb
+spec/graphql/gql/mutations/two_factor_method_initiate_authentication_spec.rb
 spec/graphql/gql/mutations/knowledge_base/answer/suggestion/content/transform_spec.rb
 spec/graphql/gql/mutations/account/locale_spec.rb
 spec/graphql/gql/mutations/account/avatar/add_spec.rb
@@ -2465,6 +2469,7 @@ lib/auth/two_factor/method.rb
 lib/auth/two_factor/authentication_method.rb
 lib/auth/two_factor/recovery_codes.rb
 lib/auth/two_factor/authentication_method/authenticator_app.rb
+lib/auth/two_factor/authentication_method/security_keys.rb
 lib/auth/request_cache.rb
 lib/auth/backend.rb
 lib/auth/user.rb
@@ -3163,6 +3168,7 @@ db/migrate/20230425094249_setting_add_ticket_agent_default_notifications.rb
 db/migrate/20201028095957_issue_3215_rename_existing_office365.rb
 db/migrate/20210310090351_activerecord_session_store114.rb
 db/migrate/20220922125446_issue4263_saml_display_name.rb
+db/migrate/20230523082822_two_factor_security_key_setup.rb
 db/migrate/20210528092410_issue_3567_auto_assignment.rb
 db/migrate/20220308072741_rename_tw_locale.rb
 db/migrate/20230129220648_taskbar_update_preference_tasks.rb
@@ -3339,6 +3345,7 @@ db/migrate/20220504134218_drop_setting_ui_client_storage.rb
 db/migrate/20210728103633_move_auth_backends_to_database.rb
 db/migrate/20210731132202_setting_update_password_max_login_failed.rb
 db/migrate/20220322094105_new_cache_clear_job.rb
+db/migrate/20230531180941_two_factor_default_authentication_method.rb
 db/migrate/20230120163410_taskbars_add_apps_support.rb
 db/migrate/20171023000001_fixed_store_upgrade_ror_45.rb
 db/migrate/20210308000001_github_support.rb
@@ -4162,9 +4169,8 @@ app/frontend/apps/mobile/components/CommonSectionPopup/index.ts
 app/frontend/apps/mobile/components/CommonSectionPopup/__tests__/CommonSectionPopup.spec.ts
 app/frontend/apps/mobile/components/CommonSectionPopup/CommonSectionPopup.story.vue
 app/frontend/apps/mobile/components/CommonConfirmation/types.ts
-app/frontend/apps/mobile/components/CommonConfirmation/index.ts
 app/frontend/apps/mobile/components/CommonConfirmation/CommonConfirmation.vue
-app/frontend/apps/mobile/components/CommonConfirmation/composable.ts
+app/frontend/apps/mobile/components/CommonConfirmation/useConfirmationDialog.ts
 app/frontend/apps/mobile/components/CommonConfirmation/__tests__/CommonConfirmation.spec.ts
 app/frontend/apps/mobile/components/CommonDialogObjectForm/useDialogObjectForm.ts
 app/frontend/apps/mobile/components/CommonDialogObjectForm/__tests__/CommonDialogObjectForm.spec.ts
@@ -4175,10 +4181,9 @@ app/frontend/apps/mobile/components/CommonDialog/CommonDialog.vue
 app/frontend/apps/mobile/components/CommonDialog/CommonDialog.story.vue
 app/frontend/apps/mobile/components/CommonDialog/__tests__/CommonDialog.spec.ts
 app/frontend/apps/mobile/components/transition/TransitionViewNavigation/types.ts
-app/frontend/apps/mobile/components/transition/TransitionViewNavigation/index.ts
-app/frontend/apps/mobile/components/transition/TransitionViewNavigation/composable.ts
 app/frontend/apps/mobile/components/transition/TransitionViewNavigation/TransitionViewNavigation.vue
 app/frontend/apps/mobile/components/transition/TransitionViewNavigation/__tests__/TransitionViewNavigation.spec.ts
+app/frontend/apps/mobile/components/transition/TransitionViewNavigation/useViewTransition.ts
 app/frontend/apps/mobile/components/transition/TransitionViewNavigation/TransitionViewNavigation.story.vue
 app/frontend/apps/mobile/components/Organization/types.ts
 app/frontend/apps/mobile/components/Organization/OrganizationItem.story.vue
@@ -4218,7 +4223,7 @@ app/frontend/apps/mobile/components/CommonLoader/CommonLoader.vue
 app/frontend/apps/mobile/components/CommonSelect/CommonSelect.vue
 app/frontend/apps/mobile/components/CommonSelect/CommonSelectItem.vue
 app/frontend/apps/mobile/components/CommonSelect/types.ts
-app/frontend/apps/mobile/components/CommonSelect/composable.ts
+app/frontend/apps/mobile/components/CommonSelect/useCommonSelect.ts
 app/frontend/apps/mobile/components/CommonSelect/CommonSelect.story.vue
 app/frontend/apps/mobile/components/CommonSelect/__tests__/CommonSelect.spec.ts
 app/frontend/apps/mobile/components/Ticket/TicketItem.vue
@@ -4430,6 +4435,7 @@ app/frontend/apps/mobile/pages/login/components/LoginCredentialsForm.vue
 app/frontend/apps/mobile/pages/login/components/LoginThirdParty.vue
 app/frontend/apps/mobile/pages/login/components/LoginTwoFactor.vue
 app/frontend/apps/mobile/pages/login/components/LoginFooter.vue
+app/frontend/apps/mobile/pages/login/components/__tests__/LoginTwoFactor.spec.ts
 app/frontend/apps/mobile/pages/login/components/__tests__/LoginThirdParty.spec.ts
 app/frontend/apps/mobile/pages/login/composable/usePublicLinks.ts
 app/frontend/apps/mobile/pages/login/__tests__/login-a11y.spec.ts
@@ -4591,11 +4597,11 @@ app/frontend/shared/components/CommonDateTime/index.ts
 app/frontend/shared/components/CommonDateTime/CommonDateTime.vue
 app/frontend/shared/components/CommonDateTime/__tests__/CommonDateTime.spec.ts
 app/frontend/shared/components/CommonIcon/CommonIcon.story.vue
+app/frontend/shared/components/CommonIcon/useRawHTMLIcon.ts
 app/frontend/shared/components/CommonIcon/types.ts
-app/frontend/shared/components/CommonIcon/index.ts
 app/frontend/shared/components/CommonIcon/CommonIcon.vue
-app/frontend/shared/components/CommonIcon/composable.ts
 app/frontend/shared/components/CommonIcon/__tests__/CommonIcon.spec.ts
+app/frontend/shared/components/CommonIcon/usePrivateIcon.ts
 app/frontend/shared/components/CommonIcon/assets/3RD-PARTY-ICONS.md
 app/frontend/shared/components/CommonIcon/assets/README.md
 app/frontend/shared/components/CommonIcon/assets/mobile/close-small.svg
@@ -4620,6 +4626,7 @@ app/frontend/shared/components/CommonIcon/assets/mobile/photos.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/google.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/mail-out.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/forward.svg
+app/frontend/shared/components/CommonIcon/assets/mobile/security-key.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/caret-right.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/all-tickets.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/close-keyboard.svg
@@ -4788,8 +4795,8 @@ app/frontend/shared/components/CommonAvatar/CommonAvatar.story.vue
 app/frontend/shared/components/CommonImageViewer/CommonImageViewer.vue
 app/frontend/shared/components/Form/FormGroup.vue
 app/frontend/shared/components/Form/FormLayout.vue
+app/frontend/shared/components/Form/useMultiStepForm.ts
 app/frontend/shared/components/Form/types.ts
-app/frontend/shared/components/Form/index.ts
 app/frontend/shared/components/Form/composables/useSelectPreselect.ts
 app/frontend/shared/components/Form/composables/useSelectOptions.ts
 app/frontend/shared/components/Form/composables/useSelectDialog.ts
@@ -4926,8 +4933,8 @@ app/frontend/shared/components/Form/fields/FieldSecurity/FieldSecurity.story.vue
 app/frontend/shared/components/Form/fields/FieldPassword/index.ts
 app/frontend/shared/components/Form/fields/FieldPassword/FieldPassword.story.vue
 app/frontend/shared/components/Form/fields/FieldPassword/__tests__/FieldPassword.spec.ts
+app/frontend/shared/components/Form/useForm.ts
 app/frontend/shared/components/Form/FormFieldLink.vue
-app/frontend/shared/components/Form/composable.ts
 app/frontend/shared/components/Form/graphql/queries/formUpdater.graphql
 app/frontend/shared/components/Form/graphql/queries/formUpdater.api.ts
 app/frontend/shared/components/Form/__tests__/mocks/additionalFrontendObjectAttributes.json
@@ -4972,7 +4979,9 @@ app/frontend/shared/graphql/subscriptions/currentUserUpdates.graphql
 app/frontend/shared/graphql/subscriptions/pushMessages.graphql
 app/frontend/shared/graphql/subscriptions/currentUserUpdates.api.ts
 app/frontend/shared/graphql/mutations/logout.graphql
+app/frontend/shared/graphql/mutations/twoFactorMethodInitiateAuthentication.graphql
 app/frontend/shared/graphql/mutations/logout.api.ts
+app/frontend/shared/graphql/mutations/twoFactorMethodInitiateAuthentication.api.ts
 app/frontend/shared/graphql/mutations/login.graphql
 app/frontend/shared/graphql/mutations/login.api.ts
 app/frontend/shared/graphql/fragments/errors.graphql
@@ -5203,6 +5212,8 @@ app/frontend/shared/entities/ticket-article/action/plugins/telegram.ts
 app/frontend/shared/entities/user/stores/objectAttributes.ts
 app/frontend/shared/entities/user/utils/getUserDisplayName.ts
 app/frontend/shared/entities/two-factor/plugins/authenticator_app.ts
+app/frontend/shared/entities/two-factor/plugins/__tests__/security_keys.spec.ts
+app/frontend/shared/entities/two-factor/plugins/security_keys.ts
 app/frontend/shared/entities/two-factor/types.ts
 app/frontend/shared/entities/two-factor/composables/useTwoFactorPlugins.ts
 app/frontend/shared/entities/tags/graphql/mutations/assignment/update.api.ts
@@ -5792,6 +5803,7 @@ app/graphql/gql/mutations/account/locale.rb
 app/graphql/gql/mutations/account/avatar/add.rb
 app/graphql/gql/mutations/account/avatar/delete.rb
 app/graphql/gql/mutations/concerns/handles_core_workflow.rb
+app/graphql/gql/mutations/two_factor_method_initiate_authentication.rb
 app/graphql/gql/mutations/ticket/live_user/upsert.rb
 app/graphql/gql/mutations/ticket/live_user/base.rb
 app/graphql/gql/mutations/ticket/live_user/delete.rb
@@ -6438,12 +6450,15 @@ app/assets/javascripts/app/views/widget/tag.jst.eco
 app/assets/javascripts/app/views/widget/online_notification.jst.eco
 app/assets/javascripts/app/views/widget/template.jst.eco
 app/assets/javascripts/app/views/widget/http_log.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_configuration/security_keys/index.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_configuration/security_keys/register.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_configuration/authenticator_app.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_configuration/recovery_codes.jst.eco
 app/assets/javascripts/app/views/widget/task_item.jst.eco
 app/assets/javascripts/app/views/widget/payload_example.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_login/try_another_method.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_login/security_code.jst.eco
+app/assets/javascripts/app/views/widget/two_factor_login/security_keys.jst.eco
 app/assets/javascripts/app/views/widget/two_factor_login/help_text.jst.eco
 app/assets/javascripts/app/views/widget/ticket_stats_frequency.jst.eco
 app/assets/javascripts/app/views/widget/invite_user.jst.eco
@@ -6514,6 +6529,7 @@ app/assets/javascripts/app/views/modal.jst.eco
 app/assets/javascripts/app/lib/app_post/utils.coffee
 app/assets/javascripts/app/lib/app_post/two_factor_methods/authenticator_app.coffee
 app/assets/javascripts/app/lib/app_post/two_factor_methods/recovery_codes.coffee
+app/assets/javascripts/app/lib/app_post/two_factor_methods/security_keys.coffee
 app/assets/javascripts/app/lib/app_post/color.coffee
 app/assets/javascripts/app/lib/app_post/auth.coffee
 app/assets/javascripts/app/lib/app_post/overview_index_collection.coffee
@@ -6698,6 +6714,7 @@ app/assets/javascripts/app/lib/base/tinycolor.js
 app/assets/javascripts/app/lib/base/clipboard-polyfill.promise.js
 app/assets/javascripts/app/lib/base/jsonlint.js
 app/assets/javascripts/app/lib/base/jquery.textmodule.js
+app/assets/javascripts/app/lib/base/webauthn-json.js
 app/assets/javascripts/app/lib/base/jquery.hotkeys.js
 app/assets/javascripts/app/lib/base/jquery.visible.js
 app/assets/javascripts/app/lib/base/jquery.enableObjectResizingShim.js
@@ -7074,14 +7091,17 @@ app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal.cof
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/method.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/authenticator_app.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/recovery_codes.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/method/security_keys.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/authenticator_app.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/recovery_codes.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/security_keys.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_configuration/modal/password_check.coffee
 app/assets/javascripts/app/controllers/widget/online_notification.coffee
 app/assets/javascripts/app/controllers/widget/link.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_login/method.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_login/method/authenticator_app.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_login/method/recovery_codes.coffee
+app/assets/javascripts/app/controllers/widget/two_factor_login/method/security_keys.coffee
 app/assets/javascripts/app/controllers/widget/session_message.coffee
 app/assets/javascripts/app/controllers/widget/ticket_bulk_form.coffee
 app/assets/javascripts/app/controllers/widget/ticket_stats.coffee

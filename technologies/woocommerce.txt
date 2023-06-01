@@ -660,6 +660,7 @@ plugins/woocommerce/includes/wccom-site/installation/installation-steps/class-wc
 plugins/woocommerce/includes/wccom-site/installation/class-wc-wccom-site-installation-state.php
 plugins/woocommerce/includes/wccom-site/installation/class-wc-wccom-site-installation-manager.php
 plugins/woocommerce/includes/wccom-site/installation/class-wc-wccom-site-installation-state-storage.php
+plugins/woocommerce/includes/wccom-site/rest-api/endpoints/class-wc-rest-wccom-site-ssr-controller.php
 plugins/woocommerce/includes/wccom-site/rest-api/endpoints/class-wc-rest-wccom-site-installer-controller.php
 plugins/woocommerce/includes/wccom-site/rest-api/endpoints/class-wc-rest-wccom-site-installer-controller-v2.php
 plugins/woocommerce/includes/wccom-site/rest-api/class-wc-rest-wccom-site-installer-error-codes.php
@@ -2091,6 +2092,7 @@ plugins/woocommerce/tests/php/src/Internal/Orders/IppFunctionsTest.php
 plugins/woocommerce/tests/php/src/Internal/Orders/MobileMessagingHandlerTest.php
 plugins/woocommerce/tests/php/src/Internal/Features/FeaturesControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/COTRedirectionControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Orders/PageControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/EditLockTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsUtilTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsCommentsOverridesTest.php
@@ -2209,6 +2211,7 @@ plugins/woocommerce/lib/composer.lock
 plugins/woocommerce/composer.json
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/changelog/update-options-api
+plugins/woocommerce/changelog/add-38202
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
@@ -2224,6 +2227,7 @@ plugins/woocommerce/changelog/add-core-profiler-business-info
 plugins/woocommerce/changelog/fix-38292-array_slice
 plugins/woocommerce/changelog/update-38260
 plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
+plugins/woocommerce/changelog/fix-38009-unsupported-operand
 plugins/woocommerce/changelog/add-211-create-extensions-page-in-core-profiler
 plugins/woocommerce/changelog/update-obw-jetpack-filter
 plugins/woocommerce/changelog/fix-37505
@@ -2231,9 +2235,11 @@ plugins/woocommerce/changelog/dev-linter-fixes
 plugins/woocommerce/changelog/update-use-shipping-partner-suggestions
 plugins/woocommerce/changelog/add-38150
 plugins/woocommerce/changelog/fix-force-ssl-null-url
+plugins/woocommerce/changelog/update-woocommerce-blocks-10.2.2
 plugins/woocommerce/changelog/dev-dry-reports
 plugins/woocommerce/changelog/fix-33322
 plugins/woocommerce/changelog/abstract-wc-products
+plugins/woocommerce/changelog/fix-37484-hpos-screen-props
 plugins/woocommerce/NEXT_CHANGELOG.md
 plugins/woocommerce/packages/README.md
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
@@ -4719,6 +4725,7 @@ packages/js/components/changelog/update-experimental-select-control
 packages/js/components/changelog/fix-38210
 packages/js/components/changelog/fix-setstate-diff-component
 packages/js/components/changelog/fix-typescript-incremental-regression
+packages/js/components/changelog/add-38202
 packages/js/components/changelog/update-36016-product-details-slotfill
 packages/js/components/changelog/add-35851-tree-control-selection
 packages/js/components/changelog/dev-migrate-select-control-to-ts
@@ -4834,6 +4841,7 @@ packages/js/customer-effort-score/README.md
 packages/js/customer-effort-score/CHANGELOG.md
 packages/js/customer-effort-score/composer.json
 packages/js/customer-effort-score/changelog/fix-plugin-installer-ts
+packages/js/customer-effort-score/changelog/add-38202
 packages/js/customer-effort-score/changelog/fix-34112
 packages/js/customer-effort-score/changelog/upgrade-pnpm-7
 packages/js/customer-effort-score/changelog/update-layout-context-for-blocks
@@ -5829,6 +5837,7 @@ packages/js/product-editor/changelog/add-37096
 packages/js/product-editor/changelog/add-37395
 packages/js/product-editor/changelog/update-37244-37245
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
+packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
 packages/js/product-editor/changelog/fix-38021
 packages/js/product-editor/changelog/fix-rest-namespace-blocks-37619
