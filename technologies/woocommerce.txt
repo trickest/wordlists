@@ -1639,6 +1639,7 @@ plugins/woocommerce/changelog/fix-force-ssl-null-url
 plugins/woocommerce/changelog/fix-order-list-table-dates
 plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/fix-33322
+plugins/woocommerce/changelog/fix-38444-unsupported-operands
 plugins/woocommerce/changelog/add-lint-branch
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
 plugins/woocommerce/changelog/update-options-api
@@ -1660,11 +1661,15 @@ plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profi
 plugins/woocommerce/changelog/fix-default-selected-state-for-country
 plugins/woocommerce/changelog/abstract-wc-products
 plugins/woocommerce/changelog/add-211-create-extensions-page-in-core-profiler
+plugins/woocommerce/changelog/add-php-74-version-bump-notice
 plugins/woocommerce/changelog/fix-37505
 plugins/woocommerce/changelog/update-38260
+plugins/woocommerce/changelog/add-core-profiler-spinner
+plugins/woocommerce/changelog/fix-38114_editing_shipping_methods_auto_saves
 plugins/woocommerce/changelog/php8-dynamic-prop-hpos
 plugins/woocommerce/changelog/update-additional-payment-task-view-logic
 plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
+plugins/woocommerce/changelog/fix-38582-restore-qs-arrays
 plugins/woocommerce/changelog/add-38150
 plugins/woocommerce/changelog/php8-dynamic-prop-shipping
 plugins/woocommerce/package.json
@@ -3166,6 +3171,8 @@ plugins/woocommerce-admin/client/dashboard/customizable.js
 plugins/woocommerce-admin/client/core-profiler/get-loader-stage-meta.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/heading.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/style.scss
+plugins/woocommerce-admin/client/core-profiler/components/profile-spinner/profile-spinner.tsx
+plugins/woocommerce-admin/client/core-profiler/components/profile-spinner/profile-spinner.scss
 plugins/woocommerce-admin/client/core-profiler/components/choice/choice.scss
 plugins/woocommerce-admin/client/core-profiler/components/choice/choice.tsx
 plugins/woocommerce-admin/client/core-profiler/components/multiple-selector/multiple-selector.tsx
@@ -3910,6 +3917,7 @@ packages/js/onboarding/src/images/cards/discover.js
 packages/js/onboarding/src/images/cards/maestro.js
 packages/js/onboarding/jest.config.json
 packages/js/onboarding/changelog/.gitkeep
+packages/js/onboarding/changelog/update-37312_replace_interpolate_components_from_onboarding
 packages/js/onboarding/changelog/update-webpack-invalid-export-error
 packages/js/onboarding/changelog/fix-typescript-incremental-builds
 packages/js/onboarding/changelog/add-get-country-util

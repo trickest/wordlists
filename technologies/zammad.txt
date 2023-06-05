@@ -4246,7 +4246,9 @@ app/frontend/shared/components/CommonOrganizationAvatar/__tests__/CommonOrganiza
 app/frontend/shared/components/CommonOrganizationAvatar/index.ts
 app/frontend/shared/components/CommonOrganizationAvatar/CommonOrganizationAvatar.vue
 app/frontend/shared/components/CommonOrganizationAvatar/types.ts
+app/frontend/shared/components/CommonIcon/injectIcons.ts
 app/frontend/shared/components/CommonIcon/usePrivateIcon.ts
+app/frontend/shared/components/CommonIcon/useIcons.ts
 app/frontend/shared/components/CommonIcon/__tests__/CommonIcon.spec.ts
 app/frontend/shared/components/CommonIcon/useRawHTMLIcon.ts
 app/frontend/shared/components/CommonIcon/types.ts
@@ -4929,6 +4931,7 @@ app/frontend/shared/i18n/index.ts
 app/frontend/shared/i18n/availableLocales.ts
 app/frontend/build/manualChunks.js
 app/frontend/build/transforms/transformTestId.js
+app/frontend/build/iconsPlugin.mjs
 app/frontend/public-build/.keep
 app/frontend/cypress/shared/composables/useStickyHeader.cy.ts
 app/frontend/cypress/shared/components/Form/FormGroup/form-group-visuals.cy.ts
@@ -7058,6 +7061,7 @@ app/assets/javascripts/knowledge_base_public_polyfills/promise.js
 .cypress/types/commands.ts
 .cypress/support/commands.js
 .cypress/support/component-index.html
+.cypress/support/prepare.js
 .cypress/support/index.js
 .cypress/visual-regression/docker-compose.amd64.yml
 .cypress/visual-regression/snapshots.sh

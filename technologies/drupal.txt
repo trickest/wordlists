@@ -1518,6 +1518,7 @@ core/lib/Drupal/Core/Routing/StackedRouteMatchInterface.php
 core/lib/Drupal/Core/Routing/RequestFormatRouteFilter.php
 core/lib/Drupal/Core/Routing/FilterInterface.php
 core/lib/Drupal/Core/Routing/CompiledRoute.php
+core/lib/Drupal/Core/Routing/PathChangedHelper.php
 core/lib/Drupal/Core/Routing/EnhancerInterface.php
 core/lib/Drupal/Core/Routing/ResettableStackedRouteMatchInterface.php
 core/lib/Drupal/Core/Routing/RouteMatchInterface.php
@@ -2470,6 +2471,7 @@ core/tests/Drupal/KernelTests/Core/Batch/BatchKernelTest.php
 core/tests/Drupal/KernelTests/Core/Routing/LegacyMatcherDumperTest.php
 core/tests/Drupal/KernelTests/Core/Routing/ExceptionHandlingTest.php
 core/tests/Drupal/KernelTests/Core/Routing/MatcherDumperTest.php
+core/tests/Drupal/KernelTests/Core/Routing/PathChangedHelperTest.php
 core/tests/Drupal/KernelTests/Core/Routing/UrlIntegrationTest.php
 core/tests/Drupal/KernelTests/Core/Routing/ContentNegotiationRoutingTest.php
 core/tests/Drupal/KernelTests/Core/Routing/RouteProviderTest.php
@@ -3020,6 +3022,7 @@ core/tests/Drupal/Tests/Core/Routing/RouteBuilderTest.php
 core/tests/Drupal/Tests/Core/Routing/CurrentRouteMatchTest.php
 core/tests/Drupal/Tests/Core/Routing/RedirectDestinationTest.php
 core/tests/Drupal/Tests/Core/Routing/AccessAwareRouterTest.php
+core/tests/Drupal/Tests/Core/Routing/PathChangedHelperTest.php
 core/tests/Drupal/Tests/Core/Routing/RequestFormatRouteFilterTest.php
 core/tests/Drupal/Tests/Core/Routing/RouteMatchTest.php
 core/tests/Drupal/Tests/Core/Routing/RouterUnsupportedTest.php
@@ -4801,6 +4804,7 @@ core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/GroupedEx
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/ContextualFilterTest.php
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/FieldTest.php
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/FilterTest.php
+core/modules/views/tests/src/FunctionalJavascript/RedirectAjaxTest.php
 core/modules/views/tests/src/FunctionalJavascript/BlockExposedFilterAJAXTest.php
 core/modules/views/tests/src/FunctionalJavascript/ExposedFilterAJAXTest.php
 core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php
@@ -7575,6 +7579,7 @@ core/modules/block_content/src/Entity/BlockContentType.php
 core/modules/block_content/src/BlockContentListBuilder.php
 core/modules/block_content/src/BlockContentForm.php
 core/modules/block_content/src/BlockContentViewBuilder.php
+core/modules/block_content/src/Routing/RouteSubscriber.php
 core/modules/block_content/src/BlockContentEvents.php
 core/modules/block_content/src/Form/BlockContentTypeDeleteForm.php
 core/modules/block_content/src/Form/BlockContentDeleteForm.php
@@ -8967,6 +8972,9 @@ core/modules/system/tests/modules/theme_suggestions_test/theme_suggestions_test.
 core/modules/system/tests/modules/theme_suggestions_test/theme_suggestions_test.module
 core/modules/system/tests/modules/entity_schema_test/entity_schema_test.module
 core/modules/system/tests/modules/entity_schema_test/entity_schema_test.info.yml
+core/modules/system/tests/modules/path_changed_helper_test/path_changed_helper_test.routing.yml
+core/modules/system/tests/modules/path_changed_helper_test/src/Controller/TestController.php
+core/modules/system/tests/modules/path_changed_helper_test/path_changed_helper_test.info.yml
 core/modules/system/tests/modules/module_info_type_comment/module_info_type_comment.info.yml
 core/modules/system/tests/modules/conneg_test/conneg_test.info.yml
 core/modules/system/tests/modules/conneg_test/src/Controller/TestController.php

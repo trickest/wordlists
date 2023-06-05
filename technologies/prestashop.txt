@@ -2616,10 +2616,8 @@ src/PrestaShopBundle/Utils/Tree.php
 src/PrestaShopBundle/Utils/FloatParser.php
 src/PrestaShopBundle/Api/QueryTranslationParamsCollection.php
 src/PrestaShopBundle/Api/QueryStockParamsCollection.php
-src/PrestaShopBundle/Api/Resource/HookStatus.php
 src/PrestaShopBundle/Api/Stock/Movement.php
 src/PrestaShopBundle/Api/Stock/MovementsCollection.php
-src/PrestaShopBundle/Api/StateProvider/HookStatusProvider.php
 src/PrestaShopBundle/Api/QueryStockMovementParamsCollection.php
 src/PrestaShopBundle/Api/Api.php
 src/PrestaShopBundle/Api/QueryParamsCollection.php
@@ -2699,6 +2697,9 @@ src/PrestaShopBundle/Routing/Converter/RouterProvider.php
 src/PrestaShopBundle/Routing/Converter/LegacyUrlConverter.php
 src/PrestaShopBundle/Routing/Converter/CacheKeyGeneratorInterface.php
 src/PrestaShopBundle/Routing/YamlModuleLoader.php
+src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
+src/PrestaShopBundle/ApiPlatform/Provider/QueryProvider.php
+src/PrestaShopBundle/ApiPlatform/Processor/CommandProcessor.php
 src/PrestaShopBundle/Form/FormHelper.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Employee/EmployeeType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Employee/EmployeeOptionsFormDataProvider.php
@@ -3762,6 +3763,7 @@ src/Core/Domain/Hook/Exception/HookConstraintException.php
 src/Core/Domain/Hook/Exception/HookUpdateHookException.php
 src/Core/Domain/Hook/Exception/CannotUpdateHookException.php
 src/Core/Domain/Hook/Exception/HookException.php
+src/Core/Domain/Hook/QueryResult/HookStatus.php
 src/Core/Domain/Hook/Command/UpdateHookStatusCommand.php
 src/Core/Domain/Hook/CommandHandler/UpdateHookStatusCommandHandlerInterface.php
 src/Core/Domain/Hook/ValueObject/HookId.php
@@ -6549,7 +6551,6 @@ tests/Unit/PrestaShopBundle/Command/DebugCommandTest.php
 tests/Unit/PrestaShopBundle/Utils/FloatParserTest.php
 tests/Unit/PrestaShopBundle/Utils/TreeTest.php
 tests/Unit/PrestaShopBundle/AppKernelTest.php
-tests/Unit/PrestaShopBundle/Api/StateProvider/HookStatusProviderTest.php
 tests/Unit/PrestaShopBundle/Api/QueryParamsCollectionTest.php
 tests/Unit/PrestaShopBundle/Translation/Exporter/ThemeExporterTest.php
 tests/Unit/PrestaShopBundle/Translation/Loader/LegacyFileLoaderTest.php
@@ -6564,6 +6565,7 @@ tests/Unit/PrestaShopBundle/Routing/Converter/LegacyUrlConverterTest.php
 tests/Unit/PrestaShopBundle/Routing/Converter/RoutingCacheKeyGeneratorTest.php
 tests/Unit/PrestaShopBundle/Routing/Converter/LegacyRouteTest.php
 tests/Unit/PrestaShopBundle/Routing/Converter/LegacyParametersConverterTest.php
+tests/Unit/PrestaShopBundle/ApiPlatform/StateProvider/QueryProviderTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/FormDataProviderTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Sell/CustomerService/MerchandiseReturn/MerchandiseReturnOptionsFormDataProviderTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Sell/Product/Details/DetailsTypeTest.php
@@ -8212,8 +8214,8 @@ tests/Integration/Behaviour/Features/Context/LanguageFeatureContext.php
 tests/Integration/Behaviour/Features/Context/StoreFeatureContext.php
 tests/Integration/Behaviour/bootstrap.php
 tests/Integration/phpunit-isolated.xml
-tests/Integration/Api/GetHookStatusTest.php
 tests/Integration/Controllers/AdminSearchControllerCoreTest.php
+tests/Integration/ApiPlatform/GetHookStatusTest.php
 tests/Integration/README.md
 tests/Integration/bootstrap.php
 tests/Integration/PrestaShopBundle/Model/Product/AdminModelAdapterTest.php
@@ -11747,7 +11749,6 @@ app/config/config_test.yml
 app/config/config_legacy_test.yml
 app/config/routing.yml
 app/config/parameters.yml.dist
-app/config/api_platform/resources.yml
 app/AppCache.php
 app/phpunit.xml.dist
 .t9n.yml
