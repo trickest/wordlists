@@ -1634,17 +1634,19 @@ plugins/woocommerce/tests/wp-cli.yml
 plugins/woocommerce/uninstall.php
 plugins/woocommerce/changelog/fix-38009-unsupported-operand
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-php8-dynamic-prop-etc
 plugins/woocommerce/changelog/dev-linter-fixes
 plugins/woocommerce/changelog/fix-force-ssl-null-url
+plugins/woocommerce/changelog/add-block-tour
 plugins/woocommerce/changelog/fix-order-list-table-dates
 plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/fix-33322
 plugins/woocommerce/changelog/fix-38444-unsupported-operands
 plugins/woocommerce/changelog/add-lint-branch
+plugins/woocommerce/changelog/dev-refactor-core-profiler-tracks
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
 plugins/woocommerce/changelog/update-options-api
 plugins/woocommerce/changelog/add-38202
-plugins/woocommerce/changelog/fix-task-header-width
 plugins/woocommerce/changelog/php8-dynamic-prop-gateways
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
 plugins/woocommerce/changelog/pr-38294
@@ -1672,6 +1674,7 @@ plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
 plugins/woocommerce/changelog/fix-38582-restore-qs-arrays
 plugins/woocommerce/changelog/add-38150
 plugins/woocommerce/changelog/php8-dynamic-prop-shipping
+plugins/woocommerce/changelog/fix-hpos-test
 plugins/woocommerce/package.json
 plugins/woocommerce/sample-data/sample_products.csv
 plugins/woocommerce/sample-data/experimental_sample_9_products.csv
@@ -3168,6 +3171,7 @@ plugins/woocommerce-admin/client/dashboard/dashboard-charts/index.js
 plugins/woocommerce-admin/client/dashboard/dashboard-charts/config.js
 plugins/woocommerce-admin/client/dashboard/README.md
 plugins/woocommerce-admin/client/dashboard/customizable.js
+plugins/woocommerce-admin/client/core-profiler/actions/tracks.tsx
 plugins/woocommerce-admin/client/core-profiler/get-loader-stage-meta.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/heading.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/style.scss
@@ -3542,6 +3546,11 @@ plugins/woocommerce-admin/client/products/layout/product-form-layout.tsx
 plugins/woocommerce-admin/client/products/product-breadcrumbs.scss
 plugins/woocommerce-admin/client/products/product-page.scss
 plugins/woocommerce-admin/client/products/tour/product-tour.tsx
+plugins/woocommerce-admin/client/products/tour/block-editor/use-block-editor-tour-options.ts
+plugins/woocommerce-admin/client/products/tour/block-editor/block-editor-guide.tsx
+plugins/woocommerce-admin/client/products/tour/block-editor/style.scss
+plugins/woocommerce-admin/client/products/tour/block-editor/block-editor-tour.tsx
+plugins/woocommerce-admin/client/products/tour/block-editor/block-editor-tour-wrapper.tsx
 plugins/woocommerce-admin/client/products/tour/product-tour-container.tsx
 plugins/woocommerce-admin/client/products/tour/test/product-tour-container.spec.tsx
 plugins/woocommerce-admin/client/products/tour/test/use-product-tour.spec.tsx
@@ -3836,6 +3845,8 @@ tsconfig.base.json
 changelog/pr-36705
 changelog/e2e-fix-allure-upload-input
 package.json
+docs/README.md
+docs/HPOS.md
 .nvmrc
 changelog.txt
 .prettierrc.js
@@ -4757,6 +4768,7 @@ packages/js/components/changelog/update-36610-support-variations-alternate
 packages/js/components/changelog/fix-38210
 packages/js/components/changelog/add-37330
 packages/js/components/changelog/dev-linter-fixes
+packages/js/components/changelog/add-block-tour
 packages/js/components/changelog/update-34885_category_field_in_product_editor_select_control
 packages/js/components/changelog/try-support-multiple-fills
 packages/js/components/changelog/update-migrate-category-field
