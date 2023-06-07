@@ -982,7 +982,6 @@ packages/core/admin/admin/src/content-manager/components/RepeatableComponent/uti
 packages/core/admin/admin/src/content-manager/components/RepeatableComponent/utils/getComponentErrorKeys.js
 packages/core/admin/admin/src/content-manager/components/RepeatableComponent/index.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/getInputType.js
-packages/core/admin/admin/src/content-manager/components/Inputs/utils/getStep.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/connect.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/VALIDATIONS_TO_OMIT.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/index.js
@@ -1022,7 +1021,6 @@ packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProv
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/tests/getAPIInnerError.test.js
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/findAllAndReplace.js
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/handleAPIError.js
-packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/schema.js
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/index.js
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/cleanData.js
 packages/core/admin/admin/src/content-manager/components/EditViewDataManagerProvider/utils/moveFields.js
@@ -1081,7 +1079,8 @@ packages/core/admin/admin/src/content-manager/components/DynamicTable/CellConten
 packages/core/admin/admin/src/content-manager/components/DynamicTable/CellContent/MultipleMedias.js
 packages/core/admin/admin/src/content-manager/components/DynamicTable/TableRows/index.js
 packages/core/admin/admin/src/content-manager/components/DynamicTable/index.js
-packages/core/admin/admin/src/content-manager/components/DynamicTable/ConfirmDialogDeleteAll/index.js
+packages/core/admin/admin/src/content-manager/components/DynamicTable/BulkActionsBar/tests/index.test.js
+packages/core/admin/admin/src/content-manager/components/DynamicTable/BulkActionsBar/index.js
 packages/core/admin/admin/src/content-manager/components/RelationInputDataManager/constants.js
 packages/core/admin/admin/src/content-manager/components/RelationInputDataManager/tests/RelationInputDataManger.test.js
 packages/core/admin/admin/src/content-manager/components/RelationInputDataManager/utils/tests/normalizeSearchResults.test.js
@@ -1126,6 +1125,7 @@ packages/core/admin/admin/src/content-manager/utils/tests/getFieldName.test.js
 packages/core/admin/admin/src/content-manager/utils/tests/formatLayoutToApi.test.js
 packages/core/admin/admin/src/content-manager/utils/tests/getMaxTempKey.test.js
 packages/core/admin/admin/src/content-manager/utils/removeKeyInObject.js
+packages/core/admin/admin/src/content-manager/utils/schema.js
 packages/core/admin/admin/src/content-manager/utils/paths.js
 packages/core/admin/admin/src/content-manager/utils/ItemTypes.js
 packages/core/admin/admin/src/content-manager/utils/getRequestUrl.js
@@ -2099,6 +2099,7 @@ packages/core/utils/lib/sanitize/index.js
 packages/core/utils/lib/sanitize/sanitizers.js
 packages/core/utils/lib/async.js
 packages/core/utils/lib/build-query.js
+packages/core/utils/lib/operators.js
 packages/core/utils/lib/string-formatting.js
 packages/core/utils/lib/pagination.js
 packages/core/utils/lib/validators.js
@@ -3536,6 +3537,8 @@ packages/plugins/i18n/admin/src/components/CMEditViewInjectedComponents/CMEditVi
 packages/plugins/i18n/admin/src/components/CMEditViewInjectedComponents/CMEditViewLocalePicker/utils/index.js
 packages/plugins/i18n/admin/src/components/CMEditViewInjectedComponents/CMEditViewLocalePicker/index.js
 packages/plugins/i18n/admin/src/components/CMListViewInjectedComponents/DeleteModalAdditionalInfos/index.js
+packages/plugins/i18n/admin/src/components/CMListViewInjectedComponents/PublishModalAdditionalInfos/index.js
+packages/plugins/i18n/admin/src/components/CMListViewInjectedComponents/UnpublishModalAdditionalInfos/index.js
 packages/plugins/i18n/admin/src/components/LocaleSelect/tests/__snapshots__/LocaleSelect.test.js.snap
 packages/plugins/i18n/admin/src/components/LocaleSelect/tests/LocaleSelect.test.js
 packages/plugins/i18n/admin/src/components/LocaleSelect/index.js

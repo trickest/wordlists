@@ -1643,6 +1643,7 @@ plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/fix-33322
 plugins/woocommerce/changelog/fix-38444-unsupported-operands
 plugins/woocommerce/changelog/add-lint-branch
+plugins/woocommerce/changelog/pr-38630
 plugins/woocommerce/changelog/dev-refactor-core-profiler-tracks
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
 plugins/woocommerce/changelog/update-options-api
@@ -1650,6 +1651,7 @@ plugins/woocommerce/changelog/add-38202
 plugins/woocommerce/changelog/php8-dynamic-prop-gateways
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
 plugins/woocommerce/changelog/pr-38294
+plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/update-wp-env-8.0.0
 plugins/woocommerce/changelog/fix-load-editor-only-blocks-in-product-editor
 plugins/woocommerce/changelog/update-obw-jetpack-filter
@@ -1662,6 +1664,7 @@ plugins/woocommerce/changelog/update-use-shipping-partner-suggestions
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
 plugins/woocommerce/changelog/fix-default-selected-state-for-country
 plugins/woocommerce/changelog/abstract-wc-products
+plugins/woocommerce/changelog/update-order-admin-page-titles
 plugins/woocommerce/changelog/add-211-create-extensions-page-in-core-profiler
 plugins/woocommerce/changelog/add-php-74-version-bump-notice
 plugins/woocommerce/changelog/fix-37505
@@ -1673,7 +1676,9 @@ plugins/woocommerce/changelog/update-additional-payment-task-view-logic
 plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
 plugins/woocommerce/changelog/fix-38582-restore-qs-arrays
 plugins/woocommerce/changelog/add-38150
+plugins/woocommerce/changelog/fix-codisto-woocommerce-name-typo
 plugins/woocommerce/changelog/php8-dynamic-prop-shipping
+plugins/woocommerce/changelog/dev-refactor-core-profiler-pages
 plugins/woocommerce/changelog/fix-hpos-test
 plugins/woocommerce/package.json
 plugins/woocommerce/sample-data/sample_products.csv
@@ -3172,7 +3177,6 @@ plugins/woocommerce-admin/client/dashboard/dashboard-charts/config.js
 plugins/woocommerce-admin/client/dashboard/README.md
 plugins/woocommerce-admin/client/dashboard/customizable.js
 plugins/woocommerce-admin/client/core-profiler/actions/tracks.tsx
-plugins/woocommerce-admin/client/core-profiler/get-loader-stage-meta.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/heading.tsx
 plugins/woocommerce-admin/client/core-profiler/components/heading/style.scss
 plugins/woocommerce-admin/client/core-profiler/components/profile-spinner/profile-spinner.tsx
@@ -3192,6 +3196,9 @@ plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-car
 plugins/woocommerce-admin/client/core-profiler/components/plugin-card/plugin-card.scss
 plugins/woocommerce-admin/client/core-profiler/test/__snapshots__/core-profiler-machine.test.tsx.snap
 plugins/woocommerce-admin/client/core-profiler/test/core-profiler-machine.test.tsx
+plugins/woocommerce-admin/client/core-profiler/utils/get-loader-stage-meta.tsx
+plugins/woocommerce-admin/client/core-profiler/utils/find-component.tsx
+plugins/woocommerce-admin/client/core-profiler/utils/test/find-component.test.tsx
 plugins/woocommerce-admin/client/core-profiler/services/country.ts
 plugins/woocommerce-admin/client/core-profiler/services/installAndActivatePlugins.ts
 plugins/woocommerce-admin/client/core-profiler/services/test/country.test.ts

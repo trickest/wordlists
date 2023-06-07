@@ -706,7 +706,6 @@ src/Adapter/PDF/PDFGenerator.php
 src/Adapter/PDF/DeliverySlipPdfGenerator.php
 src/Adapter/PDF/InvoicePdfGenerator.php
 src/Adapter/ContainerFinder.php
-src/Adapter/Security/SslMiddleware.php
 src/Adapter/Security/CommandHandler/BulkDeleteCustomerSessionsHandler.php
 src/Adapter/Security/CommandHandler/ClearOutdatedEmployeeSessionHandler.php
 src/Adapter/Security/CommandHandler/DeleteEmployeeSessionHandler.php
@@ -2516,6 +2515,7 @@ src/PrestaShopBundle/DependencyInjection/CacheAdapterFactory.php
 src/PrestaShopBundle/Security/Admin/SessionRenewer.php
 src/PrestaShopBundle/Security/Admin/EmployeeProvider.php
 src/PrestaShopBundle/Security/Admin/Employee.php
+src/PrestaShopBundle/Security/SslMiddleware.php
 src/PrestaShopBundle/Security/OAuth2/Repository/ClientRepository.php
 src/PrestaShopBundle/Security/OAuth2/Repository/AccessTokenRepository.php
 src/PrestaShopBundle/Security/OAuth2/Repository/NullScopeRepository.php
@@ -5940,7 +5940,7 @@ src/Core/Email/EmailLogEraserInterface.php
 src/Core/Email/EmailDataConfigurator.php
 src/Core/Email/MailOption.php
 src/Core/Email/EmailLister.php
-src/Core/Email/SwiftMailerValidation.php
+src/Core/Email/CyrillicCharactersInEmailValidation.php
 src/Core/Email/EmailConfigurationTesterInterface.php
 src/Core/ConstraintValidator/UniqueStateIsoCodeValidator.php
 src/Core/ConstraintValidator/NotBlankWhenRequiredValidator.php
@@ -6865,7 +6865,7 @@ tests/Unit/Core/Webservice/ServerRequirementsCheckerTest.php
 tests/Unit/Core/Payment/PaymentOptionTest.php
 tests/Unit/Core/Payment/PaymentOptionFormDecoratorTest.php
 tests/Unit/Core/Theme/ConfigReaderTest.php
-tests/Unit/Core/Email/SwiftMailerValidationTest.php
+tests/Unit/Core/Email/CyrillicCharactersInEmailValidationTest.php
 tests/Unit/Core/ConstraintValidator/CustomerNameValidatorTest.php
 tests/Unit/Core/ConstraintValidator/DefaultLanguageValidatorTest.php
 tests/Unit/Core/ConstraintValidator/CartRuleValidatorTest.php

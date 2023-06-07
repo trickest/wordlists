@@ -3274,7 +3274,6 @@ src/Sylius/Bundle/CoreBundle/Resources/config/test_services.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/order_processing.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/payment.xml
-src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/subscribers.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/command_handler.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/logger.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history/listeners.xml
@@ -3655,8 +3654,8 @@ src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/EntityObserverInterface
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserver.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserver.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/CommandHandler/ApplyLowestPriceOnChannelPricingsHandler.php
-src/Sylius/Bundle/CoreBundle/PriceHistory/EventSubscriber/ChannelPricingLogEntryEventSubscriber.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/EventListener/OnFlushEntityObserverListener.php
+src/Sylius/Bundle/CoreBundle/PriceHistory/EventListener/ChannelPricingLogEntryEventListener.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessorInterface.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessor.php
 src/Sylius/Bundle/CoreBundle/PriceHistory/Cli/Command/ClearPriceHistoryCommand.php
@@ -3741,7 +3740,7 @@ src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPrice
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/ProcessLowestPricesOnChannelChangeObserverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EntityObserver/CreateLogEntryOnPriceChangeObserverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/CommandHandler/ApplyLowestPriceOnChannelPricingsHandlerSpec.php
-src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EventSubscriber/ChannelPricingLogEntryEventSubscriberSpec.php
+src/Sylius/Bundle/CoreBundle/spec/PriceHistory/EventListener/ChannelPricingLogEntryEventListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/Processor/ProductLowestPriceBeforeDiscountProcessorSpec.php
 src/Sylius/Bundle/CoreBundle/spec/PriceHistory/CommandDispatcher/BatchedApplyLowestPriceOnChannelPricingsCommandDispatcherSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/CustomerReviewsDeleteListenerSpec.php

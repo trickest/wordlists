@@ -1070,6 +1070,7 @@ core/lib/Drupal/Core/Cache/MemoryCounterBackend.php
 core/lib/Drupal/Core/Cache/CacheableRedirectResponse.php
 core/lib/Drupal/Core/Cache/CacheableMetadata.php
 core/lib/Drupal/Core/Cache/RefinableCacheableDependencyInterface.php
+core/lib/Drupal/Core/Cache/CacheRedirect.php
 core/lib/Drupal/Core/Cache/ApcuBackend.php
 core/lib/Drupal/Core/Cache/CacheableDependencyInterface.php
 core/lib/Drupal/Core/Cache/NullBackend.php
@@ -1093,11 +1094,15 @@ core/lib/Drupal/Core/Cache/CacheBackendInterface.php
 core/lib/Drupal/Core/Cache/CacheTagsInvalidatorInterface.php
 core/lib/Drupal/Core/Cache/CacheTagsInvalidator.php
 core/lib/Drupal/Core/Cache/CacheFactoryInterface.php
+core/lib/Drupal/Core/Cache/VariationCacheFactory.php
 core/lib/Drupal/Core/Cache/ListCacheBinsPass.php
 core/lib/Drupal/Core/Cache/UnchangingCacheableDependencyTrait.php
+core/lib/Drupal/Core/Cache/VariationCacheInterface.php
 core/lib/Drupal/Core/Cache/PhpBackend.php
 core/lib/Drupal/Core/Cache/CacheFactory.php
+core/lib/Drupal/Core/Cache/VariationCache.php
 core/lib/Drupal/Core/Cache/RefinableCacheableDependencyTrait.php
+core/lib/Drupal/Core/Cache/VariationCacheFactoryInterface.php
 core/lib/Drupal/Core/Cache/CacheableDependencyTrait.php
 core/lib/Drupal/Core/Cache/Cache.php
 core/lib/Drupal/Core/Cache/MemoryBackend.php
@@ -1702,10 +1707,12 @@ core/lib/Drupal/Core/Template/AttributeString.php
 core/lib/Drupal/Core/Template/TwigEnvironment.php
 core/lib/Drupal/Core/Template/TwigPhpStorageCache.php
 core/lib/Drupal/Core/Template/TwigNodeVisitor.php
+core/lib/Drupal/Core/Template/TwigNodeVisitorCheckDeprecations.php
 core/lib/Drupal/Core/Template/AttributeValueBase.php
 core/lib/Drupal/Core/Template/Loader/ThemeRegistryLoader.php
 core/lib/Drupal/Core/Template/Loader/FilesystemLoader.php
 core/lib/Drupal/Core/Template/Loader/StringLoader.php
+core/lib/Drupal/Core/Template/TwigNodeCheckDeprecations.php
 core/lib/Drupal/Core/Template/AttributeHelper.php
 core/lib/Drupal/Core/Template/AttributeArray.php
 core/lib/Drupal/Core/Template/DebugExtension.php
@@ -2532,6 +2539,7 @@ core/tests/Drupal/KernelTests/Core/Theme/TwigWhiteListTest.php
 core/tests/Drupal/KernelTests/Core/Theme/FrontMatterTest.php
 core/tests/Drupal/KernelTests/Core/Theme/BaseThemeRequiredTest.php
 core/tests/Drupal/KernelTests/Core/Theme/ThemeSettingsTest.php
+core/tests/Drupal/KernelTests/Core/Theme/TwigDeprecationsTest.php
 core/tests/Drupal/KernelTests/Core/Menu/MenuTreeStorageTest.php
 core/tests/Drupal/KernelTests/Core/Menu/LocalActionManagerTest.php
 core/tests/Drupal/KernelTests/Core/Menu/MenuLinkTreeTest.php
@@ -2895,6 +2903,7 @@ core/tests/Drupal/Tests/Core/Cache/CacheTagsInvalidatorTest.php
 core/tests/Drupal/Tests/Core/Cache/BackendChainImplementationUnitTest.php
 core/tests/Drupal/Tests/Core/Cache/CacheTest.php
 core/tests/Drupal/Tests/Core/Cache/ChainedFastBackendTest.php
+core/tests/Drupal/Tests/Core/Cache/VariationCacheTest.php
 core/tests/Drupal/Tests/Core/Cache/CacheCollectorTest.php
 core/tests/Drupal/Tests/Core/Cache/Context/CacheContextsManagerTest.php
 core/tests/Drupal/Tests/Core/Cache/Context/SessionCacheContextTest.php
@@ -3288,6 +3297,7 @@ core/tests/Drupal/Nightwatch/Tests/jsDisplace.js
 core/tests/Drupal/Nightwatch/Tests/jsOnceTest.js
 core/tests/Drupal/Nightwatch/Tests/claroAutocompleteTest.js
 core/tests/Drupal/Nightwatch/Tests/installProfileTest.js
+core/tests/Drupal/Nightwatch/Tests/Claro/claroDrupalMessageTest.js
 core/tests/Drupal/Nightwatch/Tests/jsDeprecationTest.js
 core/tests/Drupal/Nightwatch/Tests/loginTest.js
 core/tests/Drupal/Nightwatch/Tests/langcodeTest.js
@@ -8763,13 +8773,16 @@ core/modules/system/tests/modules/theme_test/theme_test.libraries.yml
 core/modules/system/tests/modules/theme_test/templates/theme-test-suggestions.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-general-suggestions.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-specific-suggestions.html.twig
+core/modules/system/tests/modules/theme_test/templates/theme-test-deprecations-preprocess.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-render-element-children.html.twig
+core/modules/system/tests/modules/theme_test/templates/theme-test-deprecations-hook-theme.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-theme-class.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-foo.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-suggestion-provided.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-preprocess-suggestions.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme_test.template_test.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-preprocess-callback.html.twig
+core/modules/system/tests/modules/theme_test/templates/theme-test-deprecations-child.html.twig
 core/modules/system/tests/modules/theme_test/templates/theme-test-render-element.html.twig
 core/modules/system/tests/modules/theme_test/theme_test.routing.yml
 core/modules/system/tests/modules/theme_test/theme_test.inc

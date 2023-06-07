@@ -630,6 +630,7 @@ package.json
 .changeset/twelve-ghosts-juggle.md
 .changeset/popular-toes-tap.md
 .changeset/fair-clouds-exercise.md
+.changeset/clean-wasps-build.md
 .changeset/config.json
 .changeset/tough-crews-shout.md
 .changeset/beige-olives-beam.md
@@ -703,6 +704,7 @@ docs/guides/headless-cms/build-static-website/next-13.md
 docs/guides/headless-cms/live-preview/index.md
 docs/guides/headless-cms/live-preview/nextjs.md
 docs/guides/headless-cms/live-preview/nuxt-3.md
+docs/guides/headless-cms/content-translations.md
 docs/guides/headless-cms/approval-workflows.md
 docs/guides/headless-cms/schedule-content/index.md
 docs/guides/headless-cms/schedule-content/static-sites.md
@@ -1811,7 +1813,6 @@ app/src/stores/collections.ts
 app/src/stores/fields.ts
 app/src/stores/latency.ts
 app/src/stores/fields.test.ts
-app/src/stores/app.ts
 app/src/stores/settings.test.ts
 app/src/stores/relations.ts
 app/src/stores/settings.ts
@@ -2372,6 +2373,11 @@ packages/extensions-sdk/templates/interface/javascript/source/interface.vue
 packages/extensions-sdk/templates/endpoint/typescript/source/index.ts
 packages/extensions-sdk/templates/endpoint/javascript/source/index.js
 packages/extensions-sdk/cli.d.ts
+packages/stores/src/app.ts
+packages/stores/src/index.ts
+packages/stores/package.json
+packages/stores/tsconfig.json
+packages/stores/readme.md
 packages/tsconfig/license
 packages/tsconfig/package.json
 packages/tsconfig/node18-esm.json
