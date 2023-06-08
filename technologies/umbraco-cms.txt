@@ -1418,11 +1418,12 @@ src/Umbraco.Core/DeliveryApi/Accessors/NoopRequestStartItemProviderAccessor.cs
 src/Umbraco.Core/DeliveryApi/IOutputExpansionStrategyAccessor.cs
 src/Umbraco.Core/DeliveryApi/IApiContentQueryService.cs
 src/Umbraco.Core/DeliveryApi/IQueryHandler.cs
+src/Umbraco.Core/DeliveryApi/IApiRichTextMarkupParser.cs
 src/Umbraco.Core/DeliveryApi/NoopOutputExpansionStrategy.cs
 src/Umbraco.Core/DeliveryApi/IRequestCultureService.cs
-src/Umbraco.Core/DeliveryApi/IApiRichTextParser.cs
 src/Umbraco.Core/DeliveryApi/NoopRequestRedirectService.cs
 src/Umbraco.Core/DeliveryApi/NoopRequestCultureService.cs
+src/Umbraco.Core/DeliveryApi/IApiRichTextElementParser.cs
 src/Umbraco.Core/DeliveryApi/ApiElementBuilder.cs
 src/Umbraco.Core/DeliveryApi/IndexFieldValue.cs
 src/Umbraco.Core/DeliveryApi/IApiElementBuilder.cs
@@ -1537,6 +1538,7 @@ src/Umbraco.Core/Sync/NonRuntimeLevelBootStateAccessor.cs
 src/Umbraco.Core/Sync/ElectedServerRoleAccessor.cs
 src/Umbraco.Core/Sync/IServerAddress.cs
 src/Umbraco.Core/Sync/ServerRole.cs
+src/Umbraco.Core/Constants-DeliveryApi.cs
 src/Umbraco.Core/StringUdi.cs
 src/Umbraco.Core/Enum.cs
 src/Umbraco.Core/Settable.cs
@@ -3493,7 +3495,6 @@ src/Umbraco.Web.UI.Client/src/common/filters/safehtml.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/umbCmsTitleCase.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/preserveNewLineInHtml.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/umbCmsBlockCard.filter.js
-src/Umbraco.Web.UI.Client/src/common/filters/simpleMarkdown.filter.js.js
 src/Umbraco.Web.UI.Client/src/common/filters/mediaItemResolver.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/compareArrays.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/_module.js
@@ -3501,7 +3502,6 @@ src/Umbraco.Web.UI.Client/src/common/filters/umbCmsJoinArray.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/umbwordlimit.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/truncate.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/timespan.filter.js
-src/Umbraco.Web.UI.Client/src/common/filters/simpleMarkdown.filter.js
 src/Umbraco.Web.UI.Client/src/common/filters/nestedcontent.filter.js
 src/Umbraco.Web.UI.Client/src/common/services/tinymce.service.js
 src/Umbraco.Web.UI.Client/src/common/services/focus.service.js
@@ -4893,7 +4893,9 @@ src/Umbraco.Infrastructure/Cache/DistributedCacheExtensions.cs
 src/Umbraco.Infrastructure/Cache/DistributedCacheBinder_Handlers.cs
 src/Umbraco.Infrastructure/Cache/DatabaseServerMessengerNotificationHandler.cs
 src/Umbraco.Infrastructure/Macros/MacroTagParser.cs
-src/Umbraco.Infrastructure/DeliveryApi/ApiRichTextParser.cs
+src/Umbraco.Infrastructure/DeliveryApi/ApiRichTextMarkupParser.cs
+src/Umbraco.Infrastructure/DeliveryApi/ApiRichTextParserBase.cs
+src/Umbraco.Infrastructure/DeliveryApi/ApiRichTextElementParser.cs
 src/Umbraco.Infrastructure/Scoping/LegacyIScopeProvider.cs
 src/Umbraco.Infrastructure/Scoping/ScopeContext.cs
 src/Umbraco.Infrastructure/Scoping/LegacyIScope.cs
@@ -5644,6 +5646,7 @@ src/Umbraco.Web.BackOffice/Authorization/ContentPermissionsPublishBranchRequirem
 src/Umbraco.Web.BackOffice/Authorization/ContentPermissionsResource.cs
 src/Umbraco.Web.BackOffice/Authorization/ContentPermissionsPublishBranchHandler.cs
 src/Umbraco.Web.BackOffice/Authorization/MediaPermissionsQueryStringHandler.cs
+src/Umbraco.Web.BackOffice/Telemetry/ExternalLoginTelemetryProvider.cs
 src/Umbraco.Web.BackOffice/Extensions/UmbracoApplicationBuilder.Preview.cs
 src/Umbraco.Web.BackOffice/Extensions/HtmlHelperBackOfficeExtensions.cs
 src/Umbraco.Web.BackOffice/Extensions/RuntimeMinifierExtensions.cs
@@ -5984,6 +5987,7 @@ src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/UpdateDateSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/CreateDateSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/NameSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/LevelSortIndexer.cs
+src/Umbraco.Cms.Api.Delivery/Indexing/Filters/NameFilterIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Filters/ContentTypeFilterIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Selectors/DescendantsSelectorIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Selectors/ChildrenSelectorIndexer.cs

@@ -1614,11 +1614,13 @@ packages/core/admin/admin/src/pages/App/utils/unique-identifier.js
 packages/core/admin/admin/src/pages/App/index.js
 packages/core/admin/admin/src/pages/NotFoundPage/tests/index.test.js
 packages/core/admin/admin/src/pages/NotFoundPage/index.js
-packages/core/admin/admin/src/pages/ProfilePage/tests/__snapshots__/index.test.js.snap
+packages/core/admin/admin/src/pages/ProfilePage/components/UserInfo/index.js
+packages/core/admin/admin/src/pages/ProfilePage/components/Password/index.js
+packages/core/admin/admin/src/pages/ProfilePage/components/Preferences/index.js
+packages/core/admin/admin/src/pages/ProfilePage/tests/utils/serverLockedSSO.js
 packages/core/admin/admin/src/pages/ProfilePage/tests/utils/server.js
 packages/core/admin/admin/src/pages/ProfilePage/tests/index.test.js
 packages/core/admin/admin/src/pages/ProfilePage/utils/schema.js
-packages/core/admin/admin/src/pages/ProfilePage/utils/api.js
 packages/core/admin/admin/src/pages/ProfilePage/index.js
 packages/core/admin/admin/src/pages/AuthPage/components/Register/tests/index.test.js
 packages/core/admin/admin/src/pages/AuthPage/components/Register/index.js
@@ -1687,6 +1689,7 @@ packages/core/admin/admin/src/hooks/useInjectReducer/tests/useInjectReducer.test
 packages/core/admin/admin/src/hooks/useInjectReducer/index.js
 packages/core/admin/admin/src/hooks/useInjectReducer/useInjectReducer.js
 packages/core/admin/admin/src/hooks/useSettingsForm/reducer.js
+packages/core/admin/admin/src/hooks/useSettingsForm/tests/index.test.js
 packages/core/admin/admin/src/hooks/useSettingsForm/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useSettingsForm/index.js
 packages/core/admin/admin/src/hooks/useSettingsForm/init.js
@@ -1783,7 +1786,6 @@ packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/tests
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/InformationBoxEE.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/utils/customRoutes.js
-packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/tests/__snapshots__/index.test.js.snap
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/tests/server.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/tests/index.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/utils/schema.js
@@ -1867,7 +1869,9 @@ packages/core/admin/ee/server/routes/audit-logs.js
 packages/core/admin/ee/server/routes/index.js
 packages/core/admin/ee/server/routes/utils.js
 packages/core/admin/ee/server/utils/review-workflows.js
+packages/core/admin/ee/server/utils/sso-lock.js
 packages/core/admin/ee/server/utils/__tests__/persisted-tables.test.js
+packages/core/admin/ee/server/utils/__tests__/sso-lock.test.js
 packages/core/admin/ee/server/utils/index.js
 packages/core/admin/ee/server/utils/persisted-tables.js
 packages/core/admin/ee/server/services/role.js
@@ -1880,6 +1884,7 @@ packages/core/admin/ee/server/services/review-workflows/__tests__/entity-service
 packages/core/admin/ee/server/services/review-workflows/entity-service-decorator.js
 packages/core/admin/ee/server/services/review-workflows/metrics.js
 packages/core/admin/ee/server/services/user.js
+packages/core/admin/ee/server/services/auth.js
 packages/core/admin/ee/server/services/audit-logs.js
 packages/core/admin/ee/server/services/__tests__/review-workflows.test.js
 packages/core/admin/ee/server/services/__tests__/audit-logs.test.js
@@ -4046,7 +4051,7 @@ packages/providers/audit-logs-local/README.md
 packages/providers/audit-logs-local/.eslintrc.js
 packages/providers/audit-logs-local/.editorconfig
 packages/providers/upload-aws-s3/src/utils.ts
-packages/providers/upload-aws-s3/src/__tests__/getBucketFromUrl.test.ts
+packages/providers/upload-aws-s3/src/__tests__/is-url-from-bucket.test.ts
 packages/providers/upload-aws-s3/src/__tests__/upload-aws-s3.test.ts
 packages/providers/upload-aws-s3/src/index.ts
 packages/providers/upload-aws-s3/.eslintignore
