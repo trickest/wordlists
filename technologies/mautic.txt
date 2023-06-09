@@ -461,6 +461,7 @@ plugins/GrapesJsBuilderBundle/Demo/mautic/full.html
 plugins/GrapesJsBuilderBundle/Demo/mautic/index.html
 modernizr-config.json
 tests/object-manager.php
+sonar-project.properties
 rector.php
 .htaccess
 package.json
@@ -845,6 +846,7 @@ app/AppKernel.php
 app/composer.json
 app/.github/workflows/close_pull_requests.yml
 app/.htaccess
+app/console-application.php
 app/middlewares/HSTSMiddleware.php
 app/middlewares/ConfigAwareTrait.php
 app/middlewares/TrustMiddleware.php
@@ -978,7 +980,6 @@ app/bundles/InstallBundle/Translations/en_US/messages.ini
 app/bundles/InstallBundle/Config/config.php
 app/bundles/InstallBundle/Config/services.php
 app/bundles/InstallBundle/MauticInstallBundle.php
-app/bundles/InstallBundle/Tests/InstallFixtures/ORM/FakeContainerTrait.php
 app/bundles/InstallBundle/Tests/InstallFixtures/ORM/GrapeJsDataTest.php
 app/bundles/InstallBundle/Tests/Controller/InstallControllerTest.php
 app/bundles/InstallBundle/Tests/Command/InstallCommandTest.php
@@ -3704,6 +3705,7 @@ app/bundles/CoreBundle/Tests/Form/RequestTraitTest.php
 app/bundles/CoreBundle/Tests/EventListener/DashboardSubscriberTest.php
 app/bundles/CoreBundle/Tests/EventListener/CoreSubscriberTest.php
 app/bundles/CoreBundle/Tests/Service/FlashBagTest.php
+app/bundles/CoreBundle/Tests/Event/BuildJsEventTest.php
 app/bundles/CoreBundle/CoreEvents.php
 app/bundles/CoreBundle/Form/ToBcBccFieldsTrait.php
 app/bundles/CoreBundle/Form/RequestTrait.php
@@ -4942,6 +4944,7 @@ app/assets/scaffold/files/.env
 app/assets/scaffold/files/gitkeep
 app/assets/scaffold/files/modernizr-config.json
 app/assets/scaffold/files/package.json
+app/assets/scaffold/files/console-application.php
 app/assets/scaffold/files/htaccess
 app/assets/scaffold/files/translations.htaccess
 app/assets/scaffold/files/bootstrap.php

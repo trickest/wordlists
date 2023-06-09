@@ -13328,6 +13328,7 @@ app/code/Magento/Widget/Test/Mftf/Data/WidgetsData.xml
 app/code/Magento/Widget/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Widget/Test/Mftf/README.md
 app/code/Magento/Widget/Test/Mftf/LICENSE.txt
+app/code/Magento/Widget/Test/Mftf/Test/CheckDisplayingOfApostrophesInTheTextFieldBoxWhileCreatingPageWidgetTest.xml
 app/code/Magento/Widget/Test/Mftf/Test/AdminContentWidgetsNavigateMenuTest.xml
 app/code/Magento/Widget/Test/Mftf/Test/NewProductsListWidgetTest.xml
 app/code/Magento/Widget/Test/Mftf/Test/AdminContentWidgetsDisplayOnSpecificEntitiesTest.xml
@@ -15634,6 +15635,7 @@ app/code/Magento/Cms/Test/Mftf/Test/AdminCMSPageCreatePageWithBlockTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/CheckStaticBlocksTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/AdminAddImageToWYSIWYGCMSTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/AdminAddWidgetToWYSIWYGWithCMSStaticBlockTypeTest.xml
+app/code/Magento/Cms/Test/Mftf/Test/AdminConfigureStoreInformationTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/AdminCMSPageCreatePageInSingleStoreModeTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/AdminAddWidgetToWYSIWYGWithRecentlyComparedProductsTypeTest.xml
 app/code/Magento/Cms/Test/Mftf/Test/AdminCreateDuplicatedCmsPageTest.xml
@@ -16362,6 +16364,7 @@ app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/Payme
 app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/WPSOtherConfigSection.xml
 app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/WPSExpressConfigSection.xml
 app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/WebsitePaymentsPlusConfigSection.xml
+app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/PayPalPayflowProConfigSection.xml
 app/code/Magento/Paypal/Test/Mftf/Section/OtherPayPalPaymentsConfigSection/OtherPayPalPaymentsConfigSection.xml
 app/code/Magento/Paypal/Test/Mftf/Page/StorefrontCheckoutPage.xml
 app/code/Magento/Paypal/Test/Mftf/Page/AdminConfigPaymentMethodsPage.xml
@@ -16383,6 +16386,7 @@ app/code/Magento/Paypal/Test/Mftf/ActionGroup/CreatePayPalOrderWithSelectedPayme
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/AddProductToCheckoutPageActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/SwitchToPayPalGroupBtnActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/StorefrontLoginToPayPalPaymentAccountOneStepActionGroup.xml
+app/code/Magento/Paypal/Test/Mftf/ActionGroup/AdminPayPalPayflowProWithValutActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/StorefrontPaypalSwitchBackToMagentoActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/AdminPayPalExpressCheckoutPayLaterDisableActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/StorefrontPayOrderOnPayPalCheckoutActionGroup.xml
@@ -16418,6 +16422,7 @@ app/code/Magento/Paypal/Test/Mftf/Test/AdminConfigPaymentsConflictResolutionForP
 app/code/Magento/Paypal/Test/Mftf/Test/AdminConfigPaymentsConflictResolutionForPayPalTest/AdminConfigPaymentsConflictResolutionForPayPalInFranceTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminConfigPaymentsConflictResolutionForPayPalTest/AdminConfigPaymentsConflictResolutionForPayPalInItalyTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontCheckPayPalSmartButtonWithBuyNowLabelOnProductPageTest.xml
+app/code/Magento/Paypal/Test/Mftf/Test/DeleteSavedWithPayflowProCreditCardFromCustomerAccountTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminEnablePaypalExpressCheckoutAndValidateTheGuestCheckoutPaymentWorksWithPaypalExpressTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminRegionalLinkWithMerchantCountryFromConfigTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminOnePayPalSolutionsEnabledAtTheSameTimeTest.xml
@@ -16439,8 +16444,10 @@ app/code/Magento/Paypal/Test/Mftf/Test/StorefrontCheckPayPalSmartButtonWithPayPa
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontPaypalSmartButtonWithNZDCurrencyTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminSalesBillingAgreementsNavigateMenuTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontCheckPayPalSmartButtonWithPayLabelOnCartPageTest.xml
+app/code/Magento/Paypal/Test/Mftf/Test/EditOrderFromAdminWithSavedWithinPayPalPayflowProCreditCardForRegisteredCustomerTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminCheckDefaultValueOfPayPalCustomizeButtonTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/AdminReportsPayPalSettlementNavigateMenuTest.xml
+app/code/Magento/Paypal/Test/Mftf/Test/EnablePaypalExpressCheckoutAndSubmitAnOrderUsingPaypalExpressCheckoutTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontVerifySecureURLRedirectPaypalTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontCheckPayPalSmartButtonWithBuyNowLabelOnMiniCartTest.xml
 app/code/Magento/Paypal/Test/Mftf/Test/StorefrontPaypalSmartButtonWithCADCurrencyTest.xml
@@ -23570,16 +23577,20 @@ app/code/Magento/Config/Test/Mftf/ActionGroup/AdminExpandSecurityTabActionGroup.
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminOpenConfigNavItemActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminConfigureSalesGiftOptionsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminConfigFillInputFieldActionGroup.xml
+app/code/Magento/Config/Test/Mftf/ActionGroup/SetTaxClassForGiftOptionsAndShoppingCartDisplaySettingsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminExpandConfigSectionActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/SetTaxApplyOnSettingActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/ResetSearchEngineConfigurationActionGroup.xml
+app/code/Magento/Config/Test/Mftf/ActionGroup/ResetBackTaxClassForGiftOptionsAndShoppingCartDisplaySettingsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/UseStaticURLForMediaContentInWYSIWYGActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/NavigateToConfigurationGeneralPageActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AssertAdminValidationErrorActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/ResetWebUrlOptionsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/DisabledWYSIWYGActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminOpenConfigAdminPageActionGroup.xml
+app/code/Magento/Config/Test/Mftf/ActionGroup/EuropeanCountriesSystemCheckBoxActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminNavigateToConfigurationSystemSectionActionGroup.xml
+app/code/Magento/Config/Test/Mftf/ActionGroup/AdminChangeTimeZoneForDifferentWebsiteActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminUncheckUseSystemValueActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminSaveConfigActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminSetDefaultWebsiteActionGroup.xml
@@ -24741,6 +24752,7 @@ app/code/Magento/Shipping/Test/Mftf/Metadata/ShippingMethodsMeta.xml
 app/code/Magento/Shipping/Test/Mftf/README.md
 app/code/Magento/Shipping/Test/Mftf/LICENSE.txt
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckTheConfirmationPopupTest.xml
+app/code/Magento/Shipping/Test/Mftf/Test/MultipleAddressCheckoutWithTwoDifferentRatesTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/TableRatesShippingMethodForDifferentStatesTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckShippingPolicyParamsInDifferentScopesTest.xml
@@ -24748,6 +24760,7 @@ app/code/Magento/Shipping/Test/Mftf/Test/AdminValidateShippingTrackingNumberTest
 app/code/Magento/Shipping/Test/Mftf/Test/AdminDisableShipmentCommentsTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminDisableEnableShipmentCommentsAndVerifyNotifyCustomerByEmailCheckboxTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminOpenShipmentViewPageWithWrongShipmentIdTest.xml
+app/code/Magento/Shipping/Test/Mftf/Test/MultiShippingWithCreationNewCustomerAndAddressesDuringCheckoutTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateOrderCustomStoreShippingMethodTableRatesTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateOrderByFreeShippingTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateShipmentEntityTest.xml
@@ -26681,6 +26694,7 @@ app/code/Magento/Sales/Test/Mftf/Test/AdminCreateOrderSameAsBillingAddressCheckb
 app/code/Magento/Sales/Test/Mftf/Test/AddSimpleProductToOrderFromShoppingCartTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminUnassignCustomOrderStatusTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/PlaceAnOrderAndCreditMemoItValidateTheOrderStatusIsClosedTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/OrderDataGridDisplaysPurchaseDateTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontPrintOrderFindByZipGuestTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOrdersMultiSelectActionAppliedToUncheckedNewlyCreatedOrdersTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminCreateCreditMemoForOrderWithCashOnDeliveryTest.xml
@@ -29205,6 +29219,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAddMinimumAdvertisedPriceAct
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductCatalogPageOpenActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAnchorCategoryActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/CreateProductAttributeWithDatetimeFieldActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminDeleteCreatedColorSpecificAttributeActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontCategoryPageSortDescendingActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductAttributeByAttributeCodeActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/GoToCreateCategoryPageActionGroup.xml
@@ -30026,6 +30041,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateFlatCategoryAndAddProductsTes
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateCategoryWithNoAnchorFieldTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontPurchaseProductCustomOptionsDifferentStoreViewsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminSimpleProductSetEditMetaDescriptionContentTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/StorefrontVerifyCategoryPageNotCachedTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithRegularPriceOutOfStockVisibleInSearchOnlyTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateTextEditorProductAttributeTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminProductGridFilteringByDateAttributeTest.xml
@@ -32937,6 +32953,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenCustomerLoginPageA
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerGroupNotInGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerDefaultShippingAddressAgainstEntityActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomStoreNavigateToCustomerOrdersHistoryPageActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontDeleteStoredPaymentMethodActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerAddressBookNumberOfAddressesActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontAssertCustomerSidebarItemIsNotPresentActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontGoToCustomerOrderDetailsPageActionGroup.xml
@@ -32944,6 +32961,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/VerifyGroupCustomerActionGroup.x
 app/code/Magento/Customer/Test/Mftf/ActionGroup/VerifyCustomerBillingAddressActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerAddressBookNotContainsActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerNavigateToNewsletterPageActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/FillNewCustomerAddressFieldsActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertMessageCustomerChangeAccountInfoActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminSetCustomerInactiveViaGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerDeleteWishlistItemActionGroup.xml
@@ -32967,7 +32985,9 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontRemoveRegionFromCustom
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertAdminCustomerAddressInAddressGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerByNameActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerAddressNoZipNoStateActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/EnterAddressDetailsActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontClickSignOnCustomerLoginFormActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontFillCustomerCreateAnAccountActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminRemoveRegionFromCustomerAddressInformationActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertStorefrontCustomerLogoutSuccessPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomStoreLoginActionGroup.xml
@@ -34029,6 +34049,7 @@ app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontCheckoutWithMulti
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AssertStorefrontMultishippingAddressAndItemActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AssertStorefrontMultiShippingOptionIsPresentOnShoppingCartPageActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AssertStorefrontSalesOrderMatchesGrandTotalActionGroup.xml
+app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AssertStorefrontMultishippingAddressAndItemUKGEActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/SelectMultiShippingInfoActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontOpenOrderByPositionAfterMultishippingCheckoutActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/PlaceOrderActionGroup.xml
@@ -34036,12 +34057,14 @@ app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontChangeMultishippi
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/SelectSingleShippingInfoActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AdminSalesOrderActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontLeaveDefaultShippingMethodsAndGoToBillingInfoActionGroup.xml
+app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontAssertBillingAddressInBillingInfoStepGEActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/AssertStorefrontMultiShippingOptionIsNotPresentOnShoppingCartPageActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontSelectMultipleAddressesOnCheckoutActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontNavigateToShippingInformationPageActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/CheckingWithMultipleAddressesActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontMultiShippingSaveAddressActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontRemoveProductOnCheckoutActionGroup.xml
+app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontAddConfigurableProductOfSpecificColorToTheCartActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontPlaceOrderForMultipleAddressesActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/ReviewOrderActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/StorefrontCheckoutShippingSelectMultipleAddressesActionGroup.xml
@@ -34060,6 +34083,7 @@ app/code/Magento/Multishipping/Test/Mftf/LICENSE.txt
 app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontMinicartWithMultishipmentTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckoutWithMultishippingIfMaximumQtyLimitWasReachedTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/AdminDisablesMultishippingFunctionalityTest.xml
+app/code/Magento/Multishipping/Test/Mftf/Test/MultishipmentCheckoutWithDifferentProductTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontGuestCheckingWithMultishipmentTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontEditBillingAddressAtMultishippingCheckoutTest.xml
 app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontMultishippingWithCartPriceRuleMatchingTotalItemsQtyTest.xml
@@ -37896,10 +37920,12 @@ app/code/Magento/Swatches/Test/Mftf/Section/AdminNewAttributePanelSection.xml
 app/code/Magento/Swatches/Test/Mftf/Section/StorefrontProductInfoMainSection.xml
 app/code/Magento/Swatches/Test/Mftf/Section/StorefrontCategoryPageProductInfoSection.xml
 app/code/Magento/Swatches/Test/Mftf/Section/StorefrontCategorySidebarSection.xml
+app/code/Magento/Swatches/Test/Mftf/ActionGroup/AddTextSwatchToProductWithTwoOptionsActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/OpenSwatchMenuByIndexActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/AdminUpdateAttributeInputTypeActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/CreateConfigurableProductWithTextSwatchAttributeActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/StorefrontAddProductWithSwatchesToTheCartActionGroup.xml
+app/code/Magento/Swatches/Test/Mftf/ActionGroup/AddVisualSwatchActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/AssertStorefrontSwatchColorActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/StorefrontAssertSwatchOptionPriceActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/SetColorPickerByHexActionGroup.xml
@@ -37952,6 +37978,7 @@ app/code/Magento/Swatches/Test/Mftf/Test/AdminCheckTextSwatchAttributeAddedViaAp
 app/code/Magento/Swatches/Test/Mftf/Test/AdminSetUpWatermarkForSwatchImageTest.xml
 app/code/Magento/Swatches/Test/Mftf/Test/AdminCheckColorUploadChooserVisualSwatchTest.xml
 app/code/Magento/Swatches/Test/Mftf/Test/StorefrontDisplayAllCharactersOnTextSwatchTest.xml
+app/code/Magento/Swatches/Test/Mftf/Test/AdminSimpleProductwithTextandVisualSwatchTest.xml
 app/code/Magento/Swatches/Test/Mftf/Test/AdminCreateTextSwatchTest.xml
 app/code/Magento/Swatches/Test/Mftf/Test/StorefrontSwatchAttributesDisplayInWidgetCMSTest.xml
 app/code/Magento/Swatches/Test/Mftf/Test/StorefrontConfigurableProductSwatchMinimumPriceTest/StorefrontConfigurableProductSwatchMinimumPriceCategoryPageTest.xml

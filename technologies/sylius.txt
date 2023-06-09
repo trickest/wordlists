@@ -4418,6 +4418,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChooseShippingMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/RequestResetPasswordToken.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/routing.yml
 src/Sylius/Bundle/ApiBundle/Resources/config/services.xml
+src/Sylius/Bundle/ApiBundle/DependencyInjection/Compiler/ExtractorMergingCompilerPass.php
 src/Sylius/Bundle/ApiBundle/DependencyInjection/Compiler/LegacyErrorHandlingCompilerPass.php
 src/Sylius/Bundle/ApiBundle/DependencyInjection/Compiler/FlattenExceptionNormalizerDecoratorCompilerPass.php
 src/Sylius/Bundle/ApiBundle/DependencyInjection/Compiler/CommandDataTransformerPass.php
@@ -4558,6 +4559,7 @@ src/Sylius/Bundle/ApiBundle/Provider/CompositePaymentConfigurationProvider.php
 src/Sylius/Bundle/ApiBundle/Provider/PathPrefixProviderInterface.php
 src/Sylius/Bundle/ApiBundle/Provider/ProductImageFilterProviderInterface.php
 src/Sylius/Bundle/ApiBundle/Provider/LiipProductImageFilterProvider.php
+src/Sylius/Bundle/ApiBundle/Tests/DependencyInjection/Compiler/ExtractorMergingCompilerPassTest.php
 src/Sylius/Bundle/ApiBundle/Tests/DependencyInjection/Compiler/SyliusPriceHistoryLegacyAliasesPassTest.php
 src/Sylius/Bundle/ApiBundle/Tests/DependencyInjection/Compiler/CommandDataTransformerPassTest.php
 src/Sylius/Bundle/ApiBundle/Tests/DependencyInjection/Compiler/FlattenExceptionNormalizerDecoratorCompilerPassTest.php
@@ -4609,6 +4611,7 @@ src/Sylius/Bundle/ApiBundle/Tests/Application/config/bundles.php
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/Taxon.xml
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/Foo.xml
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/config.yaml
+src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/Country.xml
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/Promotion.xml
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/api_platform/FooSyliusResource.xml
 src/Sylius/Bundle/ApiBundle/Tests/Application/config/jwt/.gitkeep
@@ -4635,6 +4638,9 @@ src/Sylius/Bundle/ApiBundle/ApiPlatform/ResourceMetadataPropertyValueResolver.ph
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ApiResourceConfigurationMergerInterface.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Factory/MergingExtractorResourceMetadataFactory.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ApiResourceConfigurationMerger.php
+src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/LegacyResourceMetadataMerger.php
+src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/MetadataMergerInterface.php
+src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/MergingXmlExtractor.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ResourceMetadataPropertyValueResolverInteface.php
 src/Sylius/Bundle/ApiBundle/Swagger/ProductSlugDocumentationNormalizer.php
 src/Sylius/Bundle/ApiBundle/Swagger/ShippingMethodDocumentationNormalizer.php
@@ -4714,6 +4720,7 @@ src/Sylius/Bundle/ApiBundle/spec/Provider/PathPrefixProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Provider/CompositePaymentConfigurationProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Provider/LiipProductImageFilterProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/ApiPlatform/ResourceMetadataPropertyValueResolverSpec.php
+src/Sylius/Bundle/ApiBundle/spec/ApiPlatform/Metadata/Merger/LegacyResourceMetadataMergerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/ApiPlatform/ApiResourceConfigurationMergerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Swagger/AcceptLanguageHeaderDocumentationNormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListenerSpec.php
@@ -7744,6 +7751,7 @@ docs/cookbook/promotions/catalog-promotion-performance.rst
 docs/cookbook/images/images.rst
 docs/cookbook/images/map.rst.inc
 docs/cookbook/images/images-on-entity.rst
+docs/cookbook/images/image-on-entity.rst
 docs/cookbook/images/images-on-aws-s3.rst
 docs/_themes/sylius_rtd_theme/versions.html
 docs/_themes/sylius_rtd_theme/search.html

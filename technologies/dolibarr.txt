@@ -9044,7 +9044,6 @@ htdocs/includes/parsedown/composer.json
 htdocs/includes/parsedown/Parsedown.php
 htdocs/includes/parsedown/README.md
 htdocs/includes/parsedown/LICENSE.txt
-htdocs/includes/sabre/sabre/dav/CHANGELOG.md
 htdocs/includes/sabre/sabre/dav/.travis.yml
 htdocs/includes/sabre/sabre/dav/bin/migrateto21.php
 htdocs/includes/sabre/sabre/dav/bin/migrateto30.php
@@ -9129,6 +9128,7 @@ htdocs/includes/sabre/sabre/dav/lib/DAV/PartialUpdate/IPatchSupport.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/File.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Plugin.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Backend/BasicCallBack.php
+htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Backend/PDOBasicAuth.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Backend/IMAP.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Backend/AbstractBearer.php
 htdocs/includes/sabre/sabre/dav/lib/DAV/Auth/Backend/File.php
@@ -9285,11 +9285,9 @@ htdocs/includes/sabre/sabre/dav/lib/DAVACL/PrincipalBackend/PDO.php
 htdocs/includes/sabre/sabre/dav/lib/DAVACL/IPrincipalCollection.php
 htdocs/includes/sabre/sabre/dav/lib/DAVACL/PrincipalCollection.php
 htdocs/includes/sabre/sabre/dav/composer.json
-htdocs/includes/sabre/sabre/dav/CONTRIBUTING.md
 htdocs/includes/sabre/sabre/dav/.php_cs.dist
 htdocs/includes/sabre/sabre/dav/LICENSE
 htdocs/includes/sabre/sabre/dav/README.md
-htdocs/includes/sabre/sabre/dav/phpstan.neon
 htdocs/includes/sabre/sabre/event/CHANGELOG.md
 htdocs/includes/sabre/sabre/event/.travis.yml
 htdocs/includes/sabre/sabre/event/examples/tail.php
@@ -9340,8 +9338,6 @@ htdocs/includes/sabre/sabre/uri/lib/Version.php
 htdocs/includes/sabre/sabre/uri/lib/InvalidUriException.php
 htdocs/includes/sabre/sabre/uri/composer.json
 htdocs/includes/sabre/sabre/uri/LICENSE
-htdocs/includes/sabre/sabre/vobject/CHANGELOG.md
-htdocs/includes/sabre/sabre/vobject/.travis.yml
 htdocs/includes/sabre/sabre/vobject/bin/bench_freebusygenerator.php
 htdocs/includes/sabre/sabre/vobject/bin/bench.php
 htdocs/includes/sabre/sabre/vobject/bin/bench_manipulatevcard.php
@@ -9367,6 +9363,13 @@ htdocs/includes/sabre/sabre/vobject/lib/Settings.php
 htdocs/includes/sabre/sabre/vobject/lib/DateTimeParser.php
 htdocs/includes/sabre/sabre/vobject/lib/StringUtil.php
 htdocs/includes/sabre/sabre/vobject/lib/ParseException.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/GuessFromLicEntry.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/TimezoneGuesser.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/FindFromOffset.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/TimezoneFinder.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/GuessFromMsTzId.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/FindFromTimezoneIdentifier.php
+htdocs/includes/sabre/sabre/vobject/lib/TimezoneGuesser/FindFromTimezoneMap.php
 htdocs/includes/sabre/sabre/vobject/lib/ITip/Broker.php
 htdocs/includes/sabre/sabre/vobject/lib/ITip/ITipException.php
 htdocs/includes/sabre/sabre/vobject/lib/ITip/SameOrganizerForAllComponentsException.php
@@ -9431,10 +9434,8 @@ htdocs/includes/sabre/sabre/vobject/lib/FreeBusyData.php
 htdocs/includes/sabre/sabre/vobject/resources/schema/xcal.rng
 htdocs/includes/sabre/sabre/vobject/resources/schema/xcard.rng
 htdocs/includes/sabre/sabre/vobject/composer.json
-htdocs/includes/sabre/sabre/vobject/.php_cs.dist
 htdocs/includes/sabre/sabre/vobject/LICENSE
 htdocs/includes/sabre/sabre/vobject/README.md
-htdocs/includes/sabre/sabre/vobject/phpstan.neon
 htdocs/includes/sabre/sabre/http/CHANGELOG.md
 htdocs/includes/sabre/sabre/http/.travis.yml
 htdocs/includes/sabre/sabre/http/examples/basicauth.php
