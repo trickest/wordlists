@@ -1361,6 +1361,12 @@ plugins/woocommerce/assets/images/marketing/amazon-ebay.svg
 plugins/woocommerce/assets/images/marketing/hubspot.svg
 plugins/woocommerce/assets/images/woocommerce_logo.svg
 plugins/woocommerce/assets/images/shippingillustration.svg
+plugins/woocommerce/assets/images/core-profiler/logo-mailpoet.svg
+plugins/woocommerce/assets/images/core-profiler/logo-jetpack.svg
+plugins/woocommerce/assets/images/core-profiler/logo-google.svg
+plugins/woocommerce/assets/images/core-profiler/logo-tiktok.svg
+plugins/woocommerce/assets/images/core-profiler/logo-pinterest.svg
+plugins/woocommerce/assets/images/core-profiler/logo-woo.svg
 plugins/woocommerce/assets/images/onboarding/jetpack.svg
 plugins/woocommerce/assets/images/onboarding/mollie.svg
 plugins/woocommerce/assets/images/onboarding/google.svg
@@ -2523,10 +2529,12 @@ plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/update-additional-payment-task-view-logic
 plugins/woocommerce/changelog/add-core-profiler-spinner
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
+plugins/woocommerce/changelog/update-tourkitdesign
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
 plugins/woocommerce/changelog/update-wp-env-8.0.0
 plugins/woocommerce/changelog/e2e-fix-variation-defaults
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
+plugins/woocommerce/changelog/fix-34118
 plugins/woocommerce/changelog/fix-php-8.1-null-args-deprecation
 plugins/woocommerce/changelog/hpos-filter-query-clauses
 plugins/woocommerce/changelog/fix-38009-unsupported-operand
@@ -2539,10 +2547,12 @@ plugins/woocommerce/changelog/fix-load-editor-only-blocks-in-product-editor
 plugins/woocommerce/changelog/update-use-shipping-partner-suggestions
 plugins/woocommerce/changelog/dev-linter-fixes
 plugins/woocommerce/changelog/pr-38294
+plugins/woocommerce/changelog/add-order-model-trash-untrash
 plugins/woocommerce/changelog/fix-order-type-notice-outside-orders
 plugins/woocommerce/changelog/fix-codisto-woocommerce-name-typo
 plugins/woocommerce/changelog/add-always-show-pricinggroup
 plugins/woocommerce/changelog/pr-38630
+plugins/woocommerce/changelog/fix-wc-admin-rest-options-error
 plugins/woocommerce/changelog/fix-37484-hpos-screen-props
 plugins/woocommerce/changelog/fix-38582-restore-qs-arrays
 plugins/woocommerce/changelog/fix-encoding-in-product-exporter-in-php-8.1
@@ -2556,6 +2566,7 @@ plugins/woocommerce/changelog/fix-38642-read-children
 plugins/woocommerce/changelog/fix-38148
 plugins/woocommerce/changelog/add-product-editor-feedback-footer
 plugins/woocommerce/changelog/abstract-wc-products
+plugins/woocommerce/changelog/update-38436-additional-changes-for-plugins-page
 plugins/woocommerce/changelog/update-38260
 plugins/woocommerce/changelog/add-38243
 plugins/woocommerce/changelog/fix-37505
@@ -4754,6 +4765,7 @@ packages/js/data/changelog/add-form-factory-tab
 packages/js/data/changelog/dev-33838-migrate-data-notes-store-to-ts
 packages/js/data/changelog/fix-typescript-incremental-builds
 packages/js/data/changelog/add-36073-product-form-data-store
+packages/js/data/changelog/update-onboarding-types
 packages/js/data/changelog/upgrade-pnpm-7
 packages/js/data/changelog/update-get-permalinks-parts-selector
 packages/js/data/changelog/add-35778-data-store
@@ -5918,6 +5930,7 @@ packages/js/create-product-editor-block/plugin-templates/$slug.php.mustache
 packages/js/create-product-editor-block/plugin-templates/.prettierrc.json.mustache
 packages/js/create-product-editor-block/package.json
 packages/js/create-product-editor-block/changelog/add-create-product-editor-block
+packages/js/create-product-editor-block/changelog/update-create-product-editor-block-no-script-prop
 packages/js/create-product-editor-block/block-templates/editor.scss.mustache
 packages/js/create-product-editor-block/block-templates/edit.tsx.mustache
 packages/js/create-product-editor-block/block-templates/index.ts.mustache

@@ -789,6 +789,7 @@ tests/unit/php/Storefront/Controller/CmsControllerTest.php
 tests/unit/php/Storefront/Controller/Exception/StorefrontExceptionTest.php
 tests/unit/php/Storefront/Controller/RegisterControllerTest.php
 tests/unit/php/Storefront/Controller/ProductControllerTest.php
+tests/unit/php/Storefront/Controller/AccountOrderControllerTest.php
 tests/unit/php/Storefront/Controller/StorefrontControllerMockTrait.php
 tests/unit/php/Storefront/Controller/fixtures/TestStorefrontController.php
 tests/unit/php/Storefront/Controller/StorefrontControllerTest.php
@@ -827,6 +828,7 @@ tests/unit/php/Storefront/Framework/Cache/CacheResponseSubscriberTest.php
 tests/unit/php/Storefront/Framework/Cache/CacheStoreTest.php
 tests/unit/php/Storefront/Framework/Command/SalesChannelCreateStorefrontCommandTest.php
 tests/unit/php/Storefront/Framework/Routing/StorefrontResponseTest.php
+tests/unit/php/Storefront/Framework/Routing/RequestTransformerTest.php
 tests/unit/php/Storefront/Framework/Routing/MaintenanceModeResolverTest.php
 tests/unit/php/Storefront/Framework/Routing/StorefrontSubscriberTest.php
 tests/unit/php/Storefront/Page/Product/ProductPageLoaderTest.php
@@ -4740,6 +4742,7 @@ changelog/_unreleased/2023-05-31-update-and-evaluate-all-packages-for-vue-3.md
 changelog/_unreleased/2023-05-30-add-app-version-constraint.md
 changelog/_unreleased/2023-02-23-refactor-namespace-for-app-flow-actions.md
 changelog/_unreleased/2023-05-31-evaluate-vue-3-eslint-rules.md
+changelog/_unreleased/2023-06-09-fix-bug-where-double-slash-would-break-saleschannelrequired-check.md
 changelog/_unreleased/2023-06-03-fix-elasticsearch-datetime-criteria-parser.md
 changelog/_unreleased/2023-06-01-fixed-product-description-and-reviews-element-overflows-the-preview.md
 changelog/_unreleased/2023-03-28-add-module-sw-settings-usage-data.md
@@ -4767,7 +4770,9 @@ changelog/_unreleased/2022-06-28-update-app-lifecycle-element-for-flow-custom-ev
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-06-05-widen-the-used-space-in-storefront-account-overview-pages.md
 changelog/_unreleased/2023-05-22-remove-deprecated-autoload-true-associations.md
+changelog/_unreleased/2023-06-13-propagate-sw-base-field-slots-through-other-fields.md
 changelog/_unreleased/2023-05-30-configure-log-levels-for-domain-exceptions.md
+changelog/_unreleased/2023-06-13-fix-block-slot-combination-of-sw-sidebar-collapse.md
 changelog/_unreleased/2023-05-10-rename-markastopseller-label-in-admin-product-details.md
 changelog/_unreleased/2023-06-10-correct-version-compare-for-shopware.md
 changelog/_unreleased/2023-05-16-fix-admin-management-of-composer-plugins.md

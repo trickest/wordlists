@@ -2481,6 +2481,7 @@ ghost/core/core/server/api/endpoints/utils/serializers/output/authentication.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/notifications.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/links.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/config.js
+ghost/core/core/server/api/endpoints/utils/serializers/output/collections.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/slugs.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/index.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/themes.js
@@ -2496,6 +2497,7 @@ ghost/core/core/server/api/endpoints/utils/serializers/output/roles.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/explore.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/images.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/integrations.js
+ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/collection-posts.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/collections.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/actions.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/mappers/index.js
@@ -4119,7 +4121,6 @@ ghost/sodo-search/tailwind.config.js
 ghost/sodo-search/LICENSE
 ghost/sodo-search/postcss.config.js
 ghost/sodo-search/.yarnrc
-ghost/sodo-search/.github/workflows/test.yml
 ghost/sodo-search/public/index.html
 ghost/sodo-search/public/robots.txt
 ghost/sodo-search/public/manifest.json
@@ -4408,6 +4409,7 @@ ghost/audience-feedback/test/utils/assertions.js
 ghost/audience-feedback/test/utils/overrides.js
 ghost/audience-feedback/test/AudienceFeedbackService.test.js
 ghost/constants/.eslintrc.js
+ghost/constants/lib/constants.js
 ghost/constants/index.js
 ghost/constants/package.json
 ghost/constants/test/.eslintrc.js
@@ -4541,6 +4543,7 @@ ghost/admin-x-settings/test/utils/e2e.ts
 ghost/admin-x-settings/tsconfig.node.json
 ghost/admin-x-settings/public/vite.svg
 ghost/admin-x-settings/vite.config.ts
+ghost/admin-x-settings/src/models/themes.ts
 ghost/admin-x-settings/src/vite-env.d.ts
 ghost/admin-x-settings/src/index.tsx
 ghost/admin-x-settings/src/components/Sidebar.tsx
@@ -4549,11 +4552,16 @@ ghost/admin-x-settings/src/components/settings/membership/Access.tsx
 ghost/admin-x-settings/src/components/settings/membership/Analytics.tsx
 ghost/admin-x-settings/src/components/settings/membership/MembershipSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/DesignModal.tsx
+ghost/admin-x-settings/src/components/settings/site/ThemeModal.tsx
 ghost/admin-x-settings/src/components/settings/site/DesignSetting.tsx
 ghost/admin-x-settings/src/components/settings/site/SiteSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/ThemeSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/BrandSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/ThemePreview.tsx
+ghost/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.tsx
+ghost/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
+ghost/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
+ghost/admin-x-settings/src/components/settings/site/Theme.tsx
 ghost/admin-x-settings/src/components/settings/email/Mailgun.tsx
 ghost/admin-x-settings/src/components/settings/email/DefaultRecipients.tsx
 ghost/admin-x-settings/src/components/settings/email/EmailSettings.tsx
@@ -4717,6 +4725,8 @@ ghost/admin-x-settings/src/admin-x-ds/settings/SettingSection.tsx
 ghost/admin-x-settings/src/admin-x-ds/settings/SettingGroupContent.tsx
 ghost/admin-x-settings/src/App.tsx
 ghost/admin-x-settings/src/hooks/useSettingGroup.tsx
+ghost/admin-x-settings/src/hooks/useRequest.ts
+ghost/admin-x-settings/src/hooks/useThemes.ts
 ghost/admin-x-settings/src/hooks/useRoles.tsx
 ghost/admin-x-settings/src/hooks/useForm.tsx
 ghost/admin-x-settings/src/hooks/useStaffUsers.tsx
@@ -4993,6 +5003,7 @@ ghost/email-service/test/email-event-processor.test.js
 ghost/email-service/test/utils/index.js
 ghost/email-service/test/batch-sending-service.test.js
 ghost/mw-vhost/.eslintrc.js
+ghost/mw-vhost/lib/vhost.js
 ghost/mw-vhost/index.js
 ghost/mw-vhost/README.md
 ghost/mw-vhost/package.json

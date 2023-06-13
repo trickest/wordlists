@@ -1589,6 +1589,7 @@ lib/internal/Magento/Framework/Translate/Inline/Provider.php
 lib/internal/Magento/Framework/Translate/Inline/StateInterface.php
 lib/internal/Magento/Framework/Translate/Inline/ConfigInterface.php
 lib/internal/Magento/Framework/Translate/ResourceInterface.php
+lib/internal/Magento/Framework/RegexValidator.php
 lib/internal/Magento/Framework/Jwt/ClaimInterface.php
 lib/internal/Magento/Framework/Jwt/Exception/MalformedTokenException.php
 lib/internal/Magento/Framework/Jwt/Exception/JwtException.php
@@ -23268,7 +23269,6 @@ app/code/Magento/Customer/Model/AttributeWebsiteRequired.php
 app/code/Magento/Customer/Model/Cart/ConfigPlugin.php
 app/code/Magento/Customer/Model/Cache/Type/Notification.php
 app/code/Magento/Customer/Model/App/Action/ContextPlugin.php
-app/code/Magento/Customer/Model/App/FrontController/DeleteCookieWhenCustomerNotExistPlugin.php
 app/code/Magento/Customer/Model/Backend/Customer.php
 app/code/Magento/Customer/Model/Url.php
 app/code/Magento/Customer/Model/CustomerSearchResults.php
@@ -23737,7 +23737,6 @@ app/code/Magento/Customer/Observer/UpgradeQuoteCustomerEmailObserver.php
 app/code/Magento/Customer/Observer/LogLastLoginAtObserver.php
 app/code/Magento/Customer/LICENSE.txt
 app/code/Magento/Customer/ViewModel/Address/RegionProvider.php
-app/code/Magento/Customer/ViewModel/Customer/Data.php
 app/code/Magento/Customer/ViewModel/Customer/StoreConfig.php
 app/code/Magento/Customer/ViewModel/Customer/Store.php
 app/code/Magento/Customer/ViewModel/Customer/Website.php
@@ -23840,7 +23839,6 @@ app/code/Magento/Customer/Test/Unit/Model/Customer/Source/GroupTest.php
 app/code/Magento/Customer/Test/Unit/Model/Customer/CredentialsValidatorTest.php
 app/code/Magento/Customer/Test/Unit/Model/Customer/NotificationStorageTest.php
 app/code/Magento/Customer/Test/Unit/Model/App/Action/ContextPluginTest.php
-app/code/Magento/Customer/Test/Unit/Model/App/FrontController/DeleteCookieWhenCustomerNotExistPluginTest.php
 app/code/Magento/Customer/Test/Unit/Model/CustomerTest.php
 app/code/Magento/Customer/Test/Unit/Model/AuthenticationTest.php
 app/code/Magento/Customer/Test/Unit/Model/AccountManagementApiTest.php
@@ -25273,7 +25271,6 @@ app/code/Magento/Store/Test/Unit/Model/Config/Importer/Processor/ProcessorFactor
 app/code/Magento/Store/Test/Unit/Model/Config/Importer/Processor/CreateTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/ConverterTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/ImporterTest.php
-app/code/Magento/Store/Test/Unit/Model/Config/Processor/FallbackTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/Processor/PlaceholderTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/PlaceholderTest.php
 app/code/Magento/Store/Test/Unit/Model/Config/Reader/Source/Initial/WebsiteTest.php
@@ -36683,6 +36680,7 @@ app/code/Magento/MsrpConfigurableProduct/etc/di.xml
 app/code/Magento/MsrpConfigurableProduct/Pricing/MsrpPriceCalculator.php
 app/code/Magento/MsrpConfigurableProduct/registration.php
 app/code/Magento/MsrpConfigurableProduct/composer.json
+app/code/Magento/Fedex/Model/Config/Backend/FedexUrl.php
 app/code/Magento/Fedex/Model/Carrier.php
 app/code/Magento/Fedex/Model/Source/Generic.php
 app/code/Magento/Fedex/Model/Source/Dropoff.php
@@ -36712,6 +36710,7 @@ app/code/Magento/Fedex/i18n/en_US.csv
 app/code/Magento/Fedex/LICENSE_AFL.txt
 app/code/Magento/Fedex/LICENSE.txt
 app/code/Magento/Fedex/registration.php
+app/code/Magento/Fedex/Test/Unit/Model/Config/Backend/FedexUrlTest.php
 app/code/Magento/Fedex/Test/Unit/Model/Source/GenericTest.php
 app/code/Magento/Fedex/Test/Unit/Model/CarrierTest.php
 app/code/Magento/Fedex/Test/Unit/Plugin/Block/DataProviders/Tracking/ChangeTitleTest.php
@@ -37286,6 +37285,7 @@ app/code/Magento/PaypalGraphQl/Observer/PayflowLinkSetAdditionalData.php
 app/code/Magento/PaypalGraphQl/Observer/PayflowProSetCcData.php
 app/code/Magento/PaypalGraphQl/registration.php
 app/code/Magento/PaypalGraphQl/composer.json
+app/code/Magento/Usps/Model/Config/Backend/UspsUrl.php
 app/code/Magento/Usps/Model/Carrier.php
 app/code/Magento/Usps/Model/Source/Container.php
 app/code/Magento/Usps/Model/Source/Size.php
@@ -37311,6 +37311,7 @@ app/code/Magento/Usps/i18n/en_US.csv
 app/code/Magento/Usps/LICENSE_AFL.txt
 app/code/Magento/Usps/LICENSE.txt
 app/code/Magento/Usps/registration.php
+app/code/Magento/Usps/Test/Unit/Model/Config/Backend/UspsUrlTest.php
 app/code/Magento/Usps/Test/Unit/Model/Source/GenericTest.php
 app/code/Magento/Usps/Test/Unit/Model/CarrierTest.php
 app/code/Magento/Usps/Test/Unit/Model/_files/return_shipment_request_data.php
