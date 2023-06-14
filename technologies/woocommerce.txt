@@ -2521,8 +2521,10 @@ plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-order-functions
 plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-crud-orders.php
 plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
+plugins/woocommerce/changelog/update-add-delete-shipping
 plugins/woocommerce/changelog/add-38150
 plugins/woocommerce/changelog/fix-38444-unsupported-operands
+plugins/woocommerce/changelog/fix-38560
 plugins/woocommerce/changelog/fix-php8-dynamic-prop-wc-admin
 plugins/woocommerce/changelog/dev-refactor-core-profiler-tracks
 plugins/woocommerce/changelog/patch-1
@@ -2531,22 +2533,27 @@ plugins/woocommerce/changelog/add-core-profiler-spinner
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
 plugins/woocommerce/changelog/update-tourkitdesign
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
+plugins/woocommerce/changelog/fix-35951
 plugins/woocommerce/changelog/update-wp-env-8.0.0
 plugins/woocommerce/changelog/e2e-fix-variation-defaults
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
 plugins/woocommerce/changelog/fix-34118
 plugins/woocommerce/changelog/fix-php-8.1-null-args-deprecation
+plugins/woocommerce/changelog/update-action-scheduler-3.6.1
 plugins/woocommerce/changelog/hpos-filter-query-clauses
 plugins/woocommerce/changelog/fix-38009-unsupported-operand
 plugins/woocommerce/changelog/update-order-admin-page-titles
 plugins/woocommerce/changelog/add-38202
 plugins/woocommerce/changelog/php8-dynamic-prop-shipping
 plugins/woocommerce/changelog/update-show-feedback-bar-after-product-editor-tour
+plugins/woocommerce/changelog/fix-38660
+plugins/woocommerce/changelog/fix-38645-checklist-overlap
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.2.2
 plugins/woocommerce/changelog/fix-load-editor-only-blocks-in-product-editor
 plugins/woocommerce/changelog/update-use-shipping-partner-suggestions
 plugins/woocommerce/changelog/dev-linter-fixes
 plugins/woocommerce/changelog/pr-38294
+plugins/woocommerce/changelog/fix-38502_ces_modal_styling_fixes
 plugins/woocommerce/changelog/add-order-model-trash-untrash
 plugins/woocommerce/changelog/fix-order-type-notice-outside-orders
 plugins/woocommerce/changelog/fix-codisto-woocommerce-name-typo
@@ -2560,6 +2567,7 @@ plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-php8-dynamic-prop-etc
 plugins/woocommerce/changelog/fix-unit-test-test_query_filters
 plugins/woocommerce/changelog/fix-38114_editing_shipping_methods_auto_saves
+plugins/woocommerce/changelog/try-wc-tracker-feature-compat
 plugins/woocommerce/changelog/fix-hpos-test
 plugins/woocommerce/changelog/php8-dynamic-prop-hpos
 plugins/woocommerce/changelog/fix-38642-read-children
@@ -2570,6 +2578,7 @@ plugins/woocommerce/changelog/update-38436-additional-changes-for-plugins-page
 plugins/woocommerce/changelog/update-38260
 plugins/woocommerce/changelog/add-38243
 plugins/woocommerce/changelog/fix-37505
+plugins/woocommerce/changelog/fix-notices-overlapping-footer-2
 plugins/woocommerce/changelog/fix-33322
 plugins/woocommerce/changelog/update-options-api
 plugins/woocommerce/changelog/dev-dry-reports
@@ -2580,6 +2589,8 @@ plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/add-core-profiler-business-info
 plugins/woocommerce/changelog/update-obw-jetpack-filter
 plugins/woocommerce/changelog/dev-refactor-core-profiler-pages
+plugins/woocommerce/changelog/fix-hpos-unit-test-trait
+plugins/woocommerce/changelog/update-38626-visual-changes-for-profiler-pages
 plugins/woocommerce/changelog/fix-order-list-table-dates
 plugins/woocommerce/changelog/add-update-payment-gateways-2023-Q3
 plugins/woocommerce/changelog/add-block-tour
@@ -3679,6 +3690,7 @@ plugins/woocommerce/src/Internal/Admin/Coupons.php
 plugins/woocommerce/src/Internal/Admin/MobileAppBanner.php
 plugins/woocommerce/src/Internal/Admin/Analytics.php
 plugins/woocommerce/src/Internal/Admin/Orders/MetaBoxes/CustomMetaBox.php
+plugins/woocommerce/src/Internal/Admin/Orders/MetaBoxes/TaxonomiesMetaBox.php
 plugins/woocommerce/src/Internal/Admin/Orders/PageController.php
 plugins/woocommerce/src/Internal/Admin/Orders/PostsRedirectionController.php
 plugins/woocommerce/src/Internal/Admin/Orders/COTRedirectionController.php
@@ -4084,6 +4096,7 @@ packages/js/customer-effort-score/changelog/dev-fix-pnpm-version-engines
 packages/js/customer-effort-score/changelog/add-38202
 packages/js/customer-effort-score/changelog/dev-fix-admin-tests-pnpm7
 packages/js/customer-effort-score/changelog/update-customer-effort-score
+packages/js/customer-effort-score/changelog/fix-38502_ces_modal_styling_fixes
 packages/js/customer-effort-score/changelog/dev-update-pnpm8
 packages/js/customer-effort-score/changelog/.gitkeep
 packages/js/customer-effort-score/changelog/dev-bump-pnpm-version-restraint
@@ -4322,6 +4335,7 @@ packages/js/product-editor/changelog/add-37082
 packages/js/product-editor/changelog/update-37312_product_editor_interpolate_components
 packages/js/product-editor/changelog/add-36355_new_product_editor_package
 packages/js/product-editor/changelog/dev-linter-fixes
+packages/js/product-editor/changelog/fix-38502_ces_modal_styling_fixes
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
 packages/js/product-editor/changelog/fix-37897
 packages/js/product-editor/changelog/update-select_tree_dropdown
@@ -4363,6 +4377,7 @@ packages/js/product-editor/changelog/update-36719
 packages/js/product-editor/changelog/fix-38608
 packages/js/product-editor/changelog/fix-typescript-incremental-builds
 packages/js/product-editor/changelog/add-37103
+packages/js/product-editor/changelog/fix-notices-overlapping-footer-2
 packages/js/product-editor/changelog/fix-product-editor-theme-bleed
 packages/js/product-editor/changelog/fix-37348
 packages/js/product-editor/changelog/add-37888
@@ -4680,6 +4695,7 @@ packages/js/product-editor/src/utils/sort-fills-by-order.tsx
 packages/js/product-editor/src/utils/product-apifetch-middleware.ts
 packages/js/product-editor/src/utils/sanitize-html.ts
 packages/js/product-editor/src/utils/get-product-status.ts
+packages/js/product-editor/src/utils/validate-email.ts
 packages/js/product-editor/src/utils/get-header-title.ts
 packages/js/product-editor/src/utils/test/get-product-variation-title.ts
 packages/js/product-editor/src/utils/test/get-product-title.test.ts

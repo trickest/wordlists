@@ -1,10 +1,12 @@
 bin/command
 command
+js/transpile.js
+transpile.js
+js/transpiler/transpiler.js
+transpiler/transpiler.js
+transpiler.js
 js/lang.js
 lang.js
-js/scripts/transpile.js
-scripts/transpile.js
-transpile.js
 js/scripts/prepare-lib-original.js
 scripts/prepare-lib-original.js
 prepare-lib-original.js
@@ -23,8 +25,6 @@ bundler-general.js
 js/bundler/template-precompiler.js
 bundler/template-precompiler.js
 template-precompiler.js
-js/transpiler.js
-transpiler.js
 js/layout-template-bundler.js
 layout-template-bundler.js
 js/diff.js
@@ -7933,9 +7933,9 @@ frontend/test/spec/test.utils.js
 test/spec/test.utils.js
 spec/test.utils.js
 test.utils.js
-frontend/test/loader-init-libs.js
-test/loader-init-libs.js
-loader-init-libs.js
+frontend/test/init.js
+test/init.js
+init.js
 frontend/test/jasmine-browser.json
 test/jasmine-browser.json
 jasmine-browser.json

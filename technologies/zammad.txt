@@ -209,6 +209,7 @@ db/migrate/20220927155611_issue4262_admin_template_permission.rb
 db/migrate/20210823112140_issue_2455_follow_up_assignment.rb
 db/migrate/20220405133444_issue4049_fix_object_lookup.rb
 db/migrate/20220124101834_setting_updates2.rb
+db/migrate/20230607083454_time_accounting_enhancements.rb
 db/migrate/20170924054554_weibo_oauth2.rb
 db/migrate/20210903085041_translation_add_sync_columns.rb
 db/migrate/20210113000001_gitlab_support.rb
@@ -1182,6 +1183,7 @@ spec/system/ticket/zoom/auto_assignment_spec.rb
 spec/system/ticket/zoom/link_knowledge_base_answer_spec.rb
 spec/system/ticket/zoom/article_image_view_spec.rb
 spec/system/ticket/zoom/add_article_hint_spec.rb
+spec/system/ticket/zoom/time_accounting_spec.rb
 spec/system/ticket/zoom/merge_spec.rb
 spec/system/ticket/zoom/sidebar_spec.rb
 spec/system/ticket/inserting_knowledge_base_answer_spec.rb
@@ -1208,6 +1210,7 @@ spec/system/manage/macros_spec.rb
 spec/system/manage/trigger_spec.rb
 spec/system/manage/public_links_spec.rb
 spec/system/manage/tags_spec.rb
+spec/system/manage/time_accounting_spec.rb
 spec/system/manage/report_profiles_spec.rb
 spec/system/manage/integration_spec.rb
 spec/system/manage/calendars_spec.rb
@@ -1287,6 +1290,7 @@ spec/system/apps/mobile/tickets/ticket_information_customer_spec.rb
 spec/system/apps/mobile/tickets/ticket_information_customer_edit_spec.rb
 spec/system/apps/mobile/tickets/ticket_create_spec.rb
 spec/system/apps/mobile/tickets/ticket_merge_spec.rb
+spec/system/apps/mobile/tickets/ticket_accounted_time_spec.rb
 spec/system/apps/mobile/tickets/create/ticket_duplicate_detection_spec.rb
 spec/system/apps/mobile/tickets/ticket_article_subscription_spec.rb
 spec/system/apps/mobile/tickets/ticket_update_spec.rb
@@ -1367,6 +1371,7 @@ spec/models/ticket/has_search_index_backend_spec.rb
 spec/models/ticket/subject_spec.rb
 spec/models/ticket/overviews_spec.rb
 spec/models/ticket/current_color_spec.rb
+spec/models/ticket/time_accounting/type_spec.rb
 spec/models/ticket/search_spec.rb
 spec/models/ticket/number_spec.rb
 spec/models/ticket/enqueues_user_ticket_counter_job_examples.rb
@@ -2019,6 +2024,7 @@ spec/policies/template_policy/scope_spec.rb
 spec/policies/role_policy_spec.rb
 spec/policies/signature_policy_spec.rb
 spec/policies/knowledge_base_policy/scope_spec.rb
+spec/policies/controllers/ticket/time_accountings_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/categories_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
 spec/policies/controllers/monitoring_controller_policy_spec.rb
@@ -2046,6 +2052,7 @@ spec/factories/scheduler.rb
 spec/factories/ticket/state_type.rb
 spec/factories/ticket/shared_draft/start.rb
 spec/factories/ticket/shared_draft/zooms.rb
+spec/factories/ticket/time_accounting/types.rb
 spec/factories/ticket/state.rb
 spec/factories/ticket/time_accounting.rb
 spec/factories/ticket/article.rb
@@ -2133,6 +2140,7 @@ spec/requests/ticket/shared_draft/starts_controller_spec.rb
 spec/requests/ticket/escalation_spec.rb
 spec/requests/ticket/article/time_accounting_spec.rb
 spec/requests/ticket/article_attachments_spec.rb
+spec/requests/ticket/time_accounting_spec.rb
 spec/requests/ticket/article_spec.rb
 spec/requests/sla_spec.rb
 spec/requests/knowledge_base/feed_tokens_spec.rb
@@ -2705,6 +2713,7 @@ app/models/ticket/search_index.rb
 app/models/ticket/resets_pending_time_seconds.rb
 app/models/ticket/escalation.rb
 app/models/ticket/enqueues_user_ticket_counter_job.rb
+app/models/ticket/time_accounting/type.rb
 app/models/ticket/overviews.rb
 app/models/ticket/state.rb
 app/models/ticket/merge_history.rb
@@ -3086,6 +3095,7 @@ app/assets/javascripts/app/models/taskbar.coffee
 app/assets/javascripts/app/models/chat.coffee
 app/assets/javascripts/app/models/ticket_shared_draft_zoom.coffee
 app/assets/javascripts/app/models/mention.coffee
+app/assets/javascripts/app/models/ticket_time_accounting_type.coffee
 app/assets/javascripts/app/models/job.coffee
 app/assets/javascripts/app/models/webhook.coffee
 app/assets/javascripts/app/models/locale.coffee
@@ -3246,6 +3256,7 @@ app/assets/javascripts/app/lib/mixins/knowledge_base_can_be_published.coffee
 app/assets/javascripts/app/lib/mixins/popover_providable.coffee
 app/assets/javascripts/app/lib/mixins/ticket_number_input.coffee
 app/assets/javascripts/app/lib/mixins/security_options.coffee
+app/assets/javascripts/app/lib/mixins/time_accounting_unit.coffee
 app/assets/javascripts/app/lib/mixins/knowledge_base_translationable.coffee
 app/assets/javascripts/app/lib/mixins/permission_helper.coffee
 app/assets/javascripts/app/lib/mixins/knowledge_base_actions.coffee
@@ -3435,10 +3446,12 @@ app/assets/javascripts/app/views/agent_ticket_view/content.jst.eco
 app/assets/javascripts/app/views/ticket_zoom.jst.eco
 app/assets/javascripts/app/views/session.jst.eco
 app/assets/javascripts/app/views/search/index.jst.eco
+app/assets/javascripts/app/views/time_accounting/accounted_time.jst.eco
+app/assets/javascripts/app/views/time_accounting/types.jst.eco
 app/assets/javascripts/app/views/time_accounting/by_ticket.jst.eco
 app/assets/javascripts/app/views/time_accounting/by_organization.jst.eco
-app/assets/javascripts/app/views/time_accounting/index.jst.eco
 app/assets/javascripts/app/views/time_accounting/by_customer.jst.eco
+app/assets/javascripts/app/views/time_accounting/settings.jst.eco
 app/assets/javascripts/app/views/time_accounting/by_activity.jst.eco
 app/assets/javascripts/app/views/agent_ticket_create.jst.eco
 app/assets/javascripts/app/views/customer_not_ticket_exists.jst.eco
@@ -3695,7 +3708,6 @@ app/assets/javascripts/app/views/ticket_zoom/overview_navigator.jst.eco
 app/assets/javascripts/app/views/ticket_zoom/attribute_bar.jst.eco
 app/assets/javascripts/app/views/ticket_zoom/time_unit.jst.eco
 app/assets/javascripts/app/views/ticket_zoom/article_new.jst.eco
-app/assets/javascripts/app/views/ticket_zoom/time_accounting.jst.eco
 app/assets/javascripts/app/views/cti/caller_log.jst.eco
 app/assets/javascripts/app/views/cti/not_configured.jst.eco
 app/assets/javascripts/app/views/cti/caller_log_avatar.jst.eco
@@ -4026,6 +4038,7 @@ app/assets/javascripts/app/controllers/organization_profile.coffee
 app/assets/javascripts/app/controllers/user.coffee
 app/assets/javascripts/app/controllers/ticket_history.coffee
 app/assets/javascripts/app/controllers/overview.coffee
+app/assets/javascripts/app/controllers/time_accounting_settings.coffee
 app/assets/javascripts/app/controllers/user/manage_two_factor.coffee
 app/assets/javascripts/app/controllers/_integration/icinga.coffee
 app/assets/javascripts/app/controllers/_integration/exchange.coffee
@@ -4068,6 +4081,7 @@ app/assets/javascripts/app/controllers/admin_password_auth.coffee
 app/assets/javascripts/app/controllers/after_auth/two_factor_configuration.coffee
 app/assets/javascripts/app/controllers/ticket_customer.coffee
 app/assets/javascripts/app/controllers/version.coffee
+app/assets/javascripts/app/controllers/time_accounting_types.coffee
 app/assets/javascripts/app/controllers/search.coffee
 app/assets/javascripts/app/controllers/test.coffee
 app/assets/javascripts/app/controllers/maintenance.coffee
@@ -4116,6 +4130,7 @@ app/assets/javascripts/app/controllers/ticket_zoom/article_action/internal.coffe
 app/assets/javascripts/app/controllers/ticket_zoom/article_action/facebook_reply.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/article_action/note.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/article_action/phone_reply.coffee
+app/assets/javascripts/app/controllers/time_accounting_accounted_time.coffee
 app/assets/javascripts/app/controllers/default_route.coffee
 app/assets/javascripts/app/controllers/public_link.coffee
 app/assets/javascripts/app/controllers/calendar.coffee
@@ -5204,6 +5219,7 @@ app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleBubble.
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketDetailViewTitle.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketDetailViewHeader.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketMergeStatus.vue
+app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketObjectAttributes.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketTags.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSecurityBadge.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSeparatorNew.vue
@@ -5212,6 +5228,7 @@ app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSystem.
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/TicketActionChangeCustomerDialog.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketAction/__tests__/TicketActionChangeCustomerDialog.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleSecurityBadge.spec.ts
+app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketObjectAttributes.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketDetailedViewHeader.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketViewerItem.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketTags.spec.ts
@@ -5635,6 +5652,7 @@ app/policies/controllers/channels_microsoft365_controller_policy.rb
 app/policies/controllers/monitoring_controller_policy.rb
 app/policies/controllers/http_logs_controller_policy.rb
 app/policies/controllers/mentions_controller_policy.rb
+app/policies/controllers/ticket/time_accountings_controller_policy.rb
 app/policies/controllers/macros_controller_policy.rb
 app/policies/controllers/knowledge_base/feeds_controller_policy.rb
 app/policies/controllers/knowledge_base/categories_controller_policy.rb
@@ -5651,6 +5669,7 @@ app/policies/controllers/channels_twitter_controller_policy.rb
 app/policies/controllers/ticket_priorities_controller_policy.rb
 app/policies/controllers/calendar_subscriptions_controller_policy.rb
 app/policies/controllers/user_devices_controller_policy.rb
+app/policies/controllers/time_accounting/types_controller_policy.rb
 app/policies/controllers/cti_controller_policy.rb
 app/policies/controllers/getting_started_controller_policy.rb
 app/policies/controllers/external_credentials_controller_policy.rb
@@ -6200,6 +6219,7 @@ app/controllers/application_controller/logs_http_access.rb
 app/controllers/application_controller/prevents_csrf.rb
 app/controllers/application_controller/sets_headers.rb
 app/controllers/attachments_controller.rb
+app/controllers/ticket/time_accountings_controller.rb
 app/controllers/applications_controller.rb
 app/controllers/knowledge_base/categories_controller.rb
 app/controllers/knowledge_base/feed_tokens_controller.rb
@@ -6223,6 +6243,7 @@ app/controllers/object_manager_attributes_controller.rb
 app/controllers/user_agent_test_basic_auth_controller.rb
 app/controllers/graphql_controller.rb
 app/controllers/mobile_controller.rb
+app/controllers/time_accounting/types_controller.rb
 app/controllers/ticket_overviews_controller.rb
 app/controllers/chats_controller.rb
 app/controllers/first_steps_controller.rb
@@ -6957,7 +6978,6 @@ test/browser/admin_overview_test.rb
 test/browser/agent_ticket_create_available_types_test.rb
 test/browser/agent_ticket_overview_level0_test.rb
 test/browser/agent_ticket_zoom_hide_test.rb
-test/browser/agent_ticket_time_accounting_test.rb
 test/browser/agent_ticket_create_reset_customer_selection_test.rb
 test/browser/taskbar_session_test.rb
 test/browser/agent_ticket_create_cc_tokenizer_test.rb
@@ -7110,6 +7130,7 @@ public/assets/images/icons/email-button.svg
 public/assets/images/icons/linkedin-button.svg
 public/assets/images/icons/security-key.svg
 public/assets/images/icons/paperclip.svg
+public/assets/images/icons/inactive-reload.svg
 public/assets/images/icons/team.svg
 public/assets/images/icons/draggable.svg
 public/assets/images/icons/double-arrow-left.svg

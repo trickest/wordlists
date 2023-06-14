@@ -1,13 +1,13 @@
 bin/command
+js/transpile.js
+js/transpiler/transpiler.js
 js/lang.js
-js/scripts/transpile.js
 js/scripts/prepare-lib-original.js
 js/scripts/postinstall-cleanup.js
 js/scripts/prepare-lib.js
 js/bundler/bundler.js
 js/bundler/bundler-general.js
 js/bundler/template-precompiler.js
-js/transpiler.js
 js/layout-template-bundler.js
 js/diff.js
 js/po.js
@@ -1368,7 +1368,7 @@ frontend/test/spec/test.controller.js
 frontend/test/spec/test.acl-manager.js
 frontend/test/spec/test.cache.js
 frontend/test/spec/test.utils.js
-frontend/test/loader-init-libs.js
+frontend/test/init.js
 frontend/test/jasmine-browser.json
 frontend/less/espo/main.less
 frontend/less/espo/misc/timeline/timeline.less
