@@ -227,6 +227,7 @@ core/profiles/demo_umami/modules/demo_umami_content/tests/src/Functional/Uninsta
 core/profiles/demo_umami/modules/demo_umami_content/demo_umami_content.install
 core/profiles/demo_umami/modules/demo_umami_content/demo_umami_content.info.yml
 core/profiles/demo_umami/modules/demo_umami_content/src/InstallHelper.php
+core/profiles/demo_umami/tests/src/FunctionalJavascript/PerformanceTest.php
 core/profiles/demo_umami/tests/src/Functional/DemoUmamiProfileTest.php
 core/profiles/demo_umami/tests/src/Functional/UmamiMultilingualInstallTest.php
 core/profiles/demo_umami/config/optional/responsive_image.styles.narrow.yml
@@ -3322,9 +3323,11 @@ core/lib/Drupal/Core/Extension/ConfigImportModuleUninstallValidatorInterface.php
 core/lib/Drupal/Core/Extension/ModuleExtensionList.php
 core/lib/Drupal/Core/Extension/ExtensionDiscovery.php
 core/lib/Drupal/Core/Extension/ThemeInstallerInterface.php
+core/lib/Drupal/Core/Extension/DatabaseDriverList.php
 core/lib/Drupal/Core/Extension/MissingDependencyException.php
 core/lib/Drupal/Core/Extension/ModuleDependencyMessageTrait.php
 core/lib/Drupal/Core/Extension/DatabaseDriverUninstallValidator.php
+core/lib/Drupal/Core/Extension/DatabaseDriver.php
 core/lib/Drupal/Core/Extension/ThemeEngineExtensionList.php
 core/lib/Drupal/Core/Extension/Dependency.php
 core/lib/Drupal/Core/Extension/ExtensionNameLengthException.php
@@ -5719,6 +5722,7 @@ core/modules/system/tests/src/FunctionalJavascript/System/DateFormatTest.php
 core/modules/system/tests/src/FunctionalJavascript/CopyFieldValueTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModalRendererTest.php
 core/modules/system/tests/src/FunctionalJavascript/FrameworkTest.php
+core/modules/system/tests/src/FunctionalJavascript/NoJavaScriptAnonymousTest.php
 core/modules/system/tests/src/FunctionalJavascript/ThemeSettingsFormTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModuleFilterTest.php
 core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
@@ -5858,7 +5862,6 @@ core/modules/system/tests/src/Functional/Theme/HtmlAttributesTest.php
 core/modules/system/tests/src/Functional/Condition/ConditionFormTest.php
 core/modules/system/tests/src/Functional/Common/RenderWebTest.php
 core/modules/system/tests/src/Functional/Common/AlterTest.php
-core/modules/system/tests/src/Functional/Common/NoJavaScriptAnonymousTest.php
 core/modules/system/tests/src/Functional/Common/FormatDateTest.php
 core/modules/system/tests/src/Functional/Common/EarlyRenderingControllerTest.php
 core/modules/system/tests/src/Functional/Common/UrlTest.php
@@ -13488,6 +13491,7 @@ core/tests/Drupal/Tests/Core/Http/CacheableExceptionTest.php
 core/tests/Drupal/Tests/Core/Http/ClientFactoryTest.php
 core/tests/Drupal/Tests/Core/Http/TrustedHostsRequestFactoryTest.php
 core/tests/Drupal/Tests/Core/Database/RowCountExceptionTest.php
+core/tests/Drupal/Tests/Core/Database/DriverModuleMissingDependenciesTest.php
 core/tests/Drupal/Tests/Core/Database/DatabaseTest.php
 core/tests/Drupal/Tests/Core/Database/DatabaseEventsTest.php
 core/tests/Drupal/Tests/Core/Database/SchemaIntrospectionTestTrait.php
@@ -13496,6 +13500,8 @@ core/tests/Drupal/Tests/Core/Database/InstallerObjectTest.php
 core/tests/Drupal/Tests/Core/Database/OrderByTest.php
 core/tests/Drupal/Tests/Core/Database/ConditionTest.php
 core/tests/Drupal/Tests/Core/Database/ConnectionTest.php
+core/tests/Drupal/Tests/Core/Database/fixtures/core/modules/driver_missing_dependency_test/driver_missing_dependency_test.info.yml
+core/tests/Drupal/Tests/Core/Database/fixtures/core/modules/driver_missing_dependency_test/src/Driver/Database/MissingDependency/Install/Tasks.php
 core/tests/Drupal/Tests/Core/Database/LogTest.php
 core/tests/Drupal/Tests/Core/Database/Stub/Select.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubConnection.php
@@ -13856,6 +13862,7 @@ core/tests/Drupal/Tests/Core/Extension/modules/module_handler_test_added/module_
 core/tests/Drupal/Tests/Core/Extension/modules/module_handler_test_added/module_handler_test_added.hook.inc
 core/tests/Drupal/Tests/Core/Extension/ExtensionDiscoveryTest.php
 core/tests/Drupal/Tests/Core/Extension/DependencyTest.php
+core/tests/Drupal/Tests/Core/Extension/DatabaseDriverListTest.php
 core/tests/Drupal/Tests/Core/Extension/ExtensionListTest.php
 core/tests/Drupal/Tests/Core/Extension/ModuleHandlerTest.php
 core/tests/Drupal/Tests/Core/Extension/ExtensionSerializationTest.php
@@ -14265,6 +14272,7 @@ core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigSyncDirectory
 core/tests/Drupal/FunctionalTests/Installer/InstallerProfileRequirementsTest.php
 core/tests/Drupal/FunctionalTests/Installer/SiteNameTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigSyncDirectoryProfileMismatchTest.php
+core/tests/Drupal/FunctionalTests/Installer/InstallerDeprecatedDriverNameTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingBrokenDatabaseSettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigNoSystemSiteTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerPerformanceTest.php
@@ -14322,6 +14330,7 @@ core/tests/Drupal/KernelTests/Core/Action/SaveActionTest.php
 core/tests/Drupal/KernelTests/Core/Action/PublishActionTest.php
 core/tests/Drupal/KernelTests/Core/Http/LinkRelationsTest.php
 core/tests/Drupal/KernelTests/Core/Database/BasicSyntaxTest.php
+core/tests/Drupal/KernelTests/Core/Database/DatabaseLegacyTest.php
 core/tests/Drupal/KernelTests/Core/Database/DriverSpecificKernelTestBase.php
 core/tests/Drupal/KernelTests/Core/Database/TaggingTest.php
 core/tests/Drupal/KernelTests/Core/Database/DriverSpecificSchemaTestBase.php
@@ -14792,6 +14801,7 @@ core/tests/Drupal/FunctionalJavascriptTests/WebDriverWebAssert.php
 core/tests/Drupal/FunctionalJavascriptTests/SortableTestTrait.php
 core/tests/Drupal/FunctionalJavascriptTests/TableDrag/TableDragTest.php
 core/tests/Drupal/FunctionalJavascriptTests/JavascriptErrorsTest.php
+core/tests/Drupal/FunctionalJavascriptTests/PerformanceTestBase.php
 core/tests/Drupal/FunctionalJavascriptTests/DrupalSelenium2Driver.php
 core/tests/Drupal/FunctionalJavascriptTests/JavascriptDeprecationTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Dialog/DialogPositionTest.php

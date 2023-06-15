@@ -511,6 +511,7 @@ tests/Api/DataFixtures/ORM/product/product_variant_with_original_price.yaml
 tests/Api/DataFixtures/ORM/product/product_with_many_locales.yaml
 tests/Api/DataFixtures/ORM/product/product_image.yaml
 tests/Api/DataFixtures/ORM/product/product_review.yaml
+tests/Api/DataFixtures/ORM/product/products_with_associations.yaml
 tests/Api/DataFixtures/ORM/catalog_promotion.yaml
 tests/Api/DataFixtures/ORM/payment_method.yaml
 tests/Api/DataFixtures/ORM/taxonomy.yaml
@@ -533,6 +534,7 @@ tests/Api/Utils/OrderPlacerTrait.php
 tests/Api/JsonApiTestCase.php
 tests/Api/Admin/ShippingCategoriesTest.php
 tests/Api/Admin/TaxRatesTest.php
+tests/Api/Admin/PromotionTest.php
 tests/Api/Admin/ChannelsTest.php
 tests/Api/Admin/AdminUsersTest.php
 tests/Api/Admin/CurrenciesTest.php
@@ -665,6 +667,7 @@ tests/Api/Responses/Expected/shop/get_taxonomy_response.json
 tests/Api/Responses/Expected/shop/product/get_product_variant_with_price_response.json
 tests/Api/Responses/Expected/shop/product/get_product_attribute_with_pl_PL_locale_translation.json
 tests/Api/Responses/Expected/shop/product/get_product_option.json
+tests/Api/Responses/Expected/shop/product/get_products_collection_with_associations_response.json
 tests/Api/Responses/Expected/shop/product/get_product_variant_with_original_price_response.json
 tests/Api/Responses/Expected/shop/product/get_filtered_product_image_response.json
 tests/Api/Responses/Expected/shop/product/get_product_association_type_response.json
@@ -1420,13 +1423,13 @@ features/checkout/having_new_addresses_saved_in_address_book.feature
 features/checkout/paying_for_order/returning_from_payment_step_to_one_of_previous_steps.feature
 features/checkout/paying_for_order/preventing_payment_step_completion_without_a_selected_method.feature
 features/checkout/paying_for_order/changing_offline_payment_method_after_order_confirmation.feature
-features/checkout/paying_for_order/seeing_payment_method_instructions_on_thank_you_page.feature
 features/checkout/paying_for_order/preventing_to_pay_for_cancelled_order.feature
 features/checkout/paying_for_order/paying_with_paypal_during_checkout.feature
 features/checkout/paying_for_order/selecting_order_payment_method.feature
 features/checkout/paying_for_order/paying_offline_during_checkout.feature
 features/checkout/paying_for_order/inform_customer_about_order_total_changes.feature
 features/checkout/paying_for_order/preventing_not_available_payment_method_selection.feature
+features/checkout/paying_for_order/seeing_payment_method_instructions_after_checkout.feature
 features/checkout/paying_for_order/viewing_available_payment_methods_based_on_current_channel.feature
 features/checkout/paying_for_order/sorting_payment_method_selection.feature
 features/checkout/paying_for_order/payment_method_integrity_validation.feature
@@ -6718,6 +6721,7 @@ src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/OrdersByLoggedInUs
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/OrdersByChannelExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/ProductsByTaxonExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/ProductsWithEnableFlagExtension.php
+src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/AvailableProductAssociationsInProductCollectionExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/AcceptedProductReviewsExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/CurrencyCollectionExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryCollectionExtension/AddressesExtension.php
@@ -6766,6 +6770,7 @@ src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryItemExtension/OrderVisitorItemExt
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/OrdersByChannelExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/TaxonCollectionExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/ProductsByTaxonExtensionSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/AvailableProductAssociationsInProductCollectionExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/RestrictingFilterEagerLoadingExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/LocaleCollectionExtensionSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Doctrine/QueryCollectionExtension/CountryCollectionExtensionSpec.php
@@ -7248,9 +7253,9 @@ src/Sylius/Component/Review/spec/Model/ReviewerSpec.php
 src/Sylius/Component/Review/spec/Factory/ReviewFactorySpec.php
 src/Sylius/Component/Review/spec/Calculator/AverageRatingCalculatorSpec.php
 src/Sylius/Component/Review/phpspec.yml
+src/Sylius/Component/Review/LICENSE
 src/Sylius/Component/Review/Calculator/ReviewableRatingCalculatorInterface.php
 src/Sylius/Component/Review/Calculator/AverageRatingCalculator.php
-src/Sylius/Component/Review/LICENCE
 src/Sylius/Component/Review/composer.json
 src/Sylius/Component/Product/Model/ProductOptionValue.php
 src/Sylius/Component/Product/Model/ProductOptionValueInterface.php
@@ -7336,6 +7341,7 @@ src/Sylius/Component/Channel/spec/Context/CachedPerRequestChannelContextSpec.php
 src/Sylius/Component/Channel/spec/Context/CompositeChannelContextSpec.php
 src/Sylius/Component/Channel/phpspec.yml.dist
 src/Sylius/Component/Channel/Repository/ChannelRepositoryInterface.php
+src/Sylius/Component/Channel/LICENSE
 src/Sylius/Component/Channel/Context/CompositeChannelContext.php
 src/Sylius/Component/Channel/Context/RequestBased/CompositeRequestResolver.php
 src/Sylius/Component/Channel/Context/RequestBased/RequestResolverInterface.php
@@ -7345,7 +7351,6 @@ src/Sylius/Component/Channel/Context/ChannelNotFoundException.php
 src/Sylius/Component/Channel/Context/SingleChannelContext.php
 src/Sylius/Component/Channel/Context/CachedPerRequestChannelContext.php
 src/Sylius/Component/Channel/Context/ChannelContextInterface.php
-src/Sylius/Component/Channel/LICENCE
 src/Sylius/Component/Channel/composer.json
 src/Sylius/Component/Core/Model/Adjustment.php
 src/Sylius/Component/Core/Model/ImageInterface.php
@@ -8597,6 +8602,7 @@ src/Sylius/Behat/Context/Api/Shop/CheckoutContext.php
 src/Sylius/Behat/Context/Api/Shop/OrderContext.php
 src/Sylius/Behat/Context/Api/Shop/ProductAttributeContext.php
 src/Sylius/Behat/Context/Api/Shop/CartContext.php
+src/Sylius/Behat/Context/Api/Shop/TaxonContext.php
 src/Sylius/Behat/Context/Api/Shop/LoginContext.php
 src/Sylius/Behat/Context/Api/Shop/RegistrationContext.php
 src/Sylius/Behat/Context/Api/Shop/ContactContext.php

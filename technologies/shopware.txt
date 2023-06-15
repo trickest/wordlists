@@ -1753,6 +1753,7 @@ tests/integration/php/Core/Framework/App/Subscriber/AppLoadedSubscriberTest.php
 tests/integration/php/Core/Framework/App/ScheduledTask/DeleteCascadeAppsHandlerTest.php
 tests/integration/php/Core/Framework/App/GuzzleTestClientBehaviour.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
+tests/integration/php/Core/Framework/DataAbstractionLayer/Dbal/FieldResolver/ManyToOneAssociationFieldResolverTest.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/RangeAggregationTest.php
 tests/integration/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/integration/php/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
@@ -4763,6 +4764,7 @@ changelog/release-6-3-4-0/2020-11-23-generate-http-cache-key-when-cart-contains-
 changelog/release-6-3-4-0/2020-11-06-fix-error-on-product-property-deletion.md
 changelog/release-6-3-4-0/2020-10-15-fix-filter-aggregation-in-javascript-criteria.md
 changelog/_unreleased/2022-06-20-dal-for-app-flow-event.md
+changelog/_unreleased/2023-06-10-next-27273-text-block-translation-from-product-pages.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
@@ -4770,16 +4772,21 @@ changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
+changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
+changelog/_unreleased/2023-06-08-allow-import-of-encoded-url.md
 changelog/_unreleased/2023-02-23-refactor-namespace-for-app-flow-actions.md
 changelog/_unreleased/2023-05-31-evaluate-vue-3-eslint-rules.md
 changelog/_unreleased/2023-06-09-fix-bug-where-double-slash-would-break-saleschannelrequired-check.md
 changelog/_unreleased/2023-06-03-fix-elasticsearch-datetime-criteria-parser.md
 changelog/_unreleased/2023-06-01-fixed-product-description-and-reviews-element-overflows-the-preview.md
+changelog/_unreleased/2023-06-14-improve-ui-settings-number-range-detail-page.md
 changelog/_unreleased/2023-06-02-fix-sales-channel-analytics-definition.md
 changelog/_unreleased/2023-05-23-use-uuidv7-when-creating-new-uuids.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
+changelog/_unreleased/2023-06-07-use-value-of-before-system-config-changed-event.md
 changelog/_unreleased/2023-06-05-wrap-storefrontcontroller-render-call-in-shopwareexception.md
+changelog/_unreleased/2023-04-27-fix-versioned-many-to-one-references.md
 changelog/_unreleased/2022-07-05-add-custom-event-to-current-list-event.md
 changelog/_unreleased/2023-06-06-fix-dal-validation-for-snippet-value.md
 changelog/_unreleased/2023-05-23-document-translator-does-not-use-fallback.md
@@ -4787,6 +4794,7 @@ changelog/_unreleased/2023-05-12-fix-bulk-edit-when-empty-custom-fields-is-passe
 changelog/_unreleased/2022-06-28-update-app-lifecycle-element-for-flow-custom-event.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-06-05-widen-the-used-space-in-storefront-account-overview-pages.md
+changelog/_unreleased/2023-06-13-fix-bug-categories-of-type-internal-link-only-show-25-items.md
 changelog/_unreleased/2023-06-13-propagate-sw-base-field-slots-through-other-fields.md
 changelog/_unreleased/2023-06-13-fix-block-slot-combination-of-sw-sidebar-collapse.md
 changelog/_unreleased/.keep

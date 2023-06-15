@@ -1320,6 +1320,7 @@ package.json
 .editorconfig
 .styleci.yml
 php-packages/phpstan/README.md
+php-packages/phpstan/bootstrap.php
 php-packages/phpstan/phpstan-baseline.neon
 php-packages/phpstan/larastan-extension.neon
 php-packages/phpstan/extension.neon
@@ -1355,6 +1356,7 @@ php-packages/testing/tests/migrations/2021_05_11_000000_create_table_so_we_can_c
 php-packages/testing/tests/composer.json
 php-packages/testing/.editorconfig
 php-packages/testing/LICENSE
+php-packages/testing/bootstrap/monorepo.php
 php-packages/testing/.github/workflows/test.yml
 php-packages/testing/composer.json
 php-packages/testing/src/unit/TestCase.php
@@ -1365,6 +1367,7 @@ php-packages/testing/src/integration/UsesTmpDir.php
 php-packages/testing/src/integration/Extend/SetSettingsBeforeBoot.php
 php-packages/testing/src/integration/Extend/OverrideExtensionManagerForTests.php
 php-packages/testing/src/integration/Extend/BeginTransactionAndSetDatabase.php
+php-packages/testing/src/integration/Setup/Bootstrapper.php
 php-packages/testing/src/integration/Setup/SetupScript.php
 php-packages/testing/src/integration/TestCase.php
 php-packages/testing/src/integration/RetrievesAuthorizedUsers.php

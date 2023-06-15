@@ -3171,6 +3171,7 @@ ghost/core/core/server/services/collections/index.js
 ghost/core/core/server/services/collections/built-in-collections.js
 ghost/core/core/server/services/collections/PostsDataRepositoryBookshelf.js
 ghost/core/core/server/services/collections/update-events.js
+ghost/core/core/server/services/collections/PostsRepository.js
 ghost/core/core/server/services/link-tracking/index.js
 ghost/core/core/server/services/link-tracking/PostLinkRepository.js
 ghost/core/core/server/services/link-tracking/LinkClickRepository.js
@@ -4559,6 +4560,9 @@ ghost/admin-x-settings/src/components/settings/site/DesignModal.tsx
 ghost/admin-x-settings/src/components/settings/site/ThemeModal.tsx
 ghost/admin-x-settings/src/components/settings/site/DesignSetting.tsx
 ghost/admin-x-settings/src/components/settings/site/SiteSettings.tsx
+ghost/admin-x-settings/src/components/settings/site/Navigation.tsx
+ghost/admin-x-settings/src/components/settings/site/navigation/NavigationEditor.tsx
+ghost/admin-x-settings/src/components/settings/site/navigation/NavigationItemEditor.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/ThemeSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/BrandSettings.tsx
 ghost/admin-x-settings/src/components/settings/site/designAndBranding/ThemePreview.tsx
@@ -4566,6 +4570,7 @@ ghost/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.
 ghost/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
 ghost/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
 ghost/admin-x-settings/src/components/settings/site/Theme.tsx
+ghost/admin-x-settings/src/components/settings/site/NavigationModal.tsx
 ghost/admin-x-settings/src/components/settings/email/Mailgun.tsx
 ghost/admin-x-settings/src/components/settings/email/DefaultRecipients.tsx
 ghost/admin-x-settings/src/components/settings/email/EmailSettings.tsx
@@ -4615,10 +4620,12 @@ ghost/admin-x-settings/src/admin-x-ds/assets/icons/chevron-right.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/lock-locked.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/trash.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/close.svg
+ghost/admin-x-settings/src/admin-x-ds/assets/icons/hamburger.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/single-user-fill.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/arrow-right.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/arrow-left.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/menu-horizontal.svg
+ghost/admin-x-settings/src/admin-x-ds/assets/icons/add.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/arrow-up.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/chevron-down.svg
 ghost/admin-x-settings/src/admin-x-ds/assets/icons/lock-unlocked.svg
