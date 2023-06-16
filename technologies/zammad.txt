@@ -535,6 +535,7 @@ lib/excel_sheet/ticket.rb
 lib/stats.rb
 lib/bulk_import_info.rb
 lib/event_buffer.rb
+lib/image_helper.rb
 lib/fill_db.rb
 lib/github.rb
 lib/application_lib.rb
@@ -1044,10 +1045,12 @@ lib/search_knowledge_base_backend.rb
 lib/password_policy.rb
 lib/service/geo_ip.rb
 lib/service/geo_location.rb
+lib/service/system_assets/product_logo.rb
 lib/service/image/zammad.rb
 lib/service/geo_location/gmaps.rb
 lib/service/image.rb
 lib/service/geo_ip/zammad.rb
+lib/service/system_assets.rb
 lib/service/geo_calendar/zammad.rb
 lib/service/geo_calendar.rb
 lib/user_context.rb
@@ -1061,7 +1064,6 @@ lib/escalation/ticket_preferences.rb
 lib/escalation/ticket_biz_break.rb
 lib/auth.rb
 lib/password_hash.rb
-lib/static_assets.rb
 lib/background_services/service.rb
 lib/background_services/cli.rb
 lib/background_services/service_config.rb
@@ -1647,7 +1649,6 @@ spec/lib/validations/object_manager/attribute_validator/required_spec.rb
 spec/lib/validations/object_manager/attribute_validator/future_past_spec.rb
 spec/lib/validations/object_manager/attribute_validator/backend_examples.rb
 spec/lib/validations/object_manager/attribute_validator/min_max_spec.rb
-spec/lib/static_assets_spec.rb
 spec/lib/knowledge_base/category/permission_spec.rb
 spec/lib/knowledge_base/permissions_update_spec.rb
 spec/lib/knowledge_base/effective_permission_spec.rb
@@ -1854,12 +1855,15 @@ spec/lib/report_examples.rb
 spec/lib/search_index_backend_spec.rb
 spec/lib/user_context_spec.rb
 spec/lib/search_knowledge_base_backend_spec.rb
+spec/lib/image_helper_spec.rb
 spec/lib/report/ticket_generic_time_spec.rb
 spec/lib/report/ticket_first_solution_spec.rb
 spec/lib/report/ticket_reopened_spec.rb
 spec/lib/report/ticket_moved_spec.rb
 spec/lib/service/geo_calendar_spec.rb
+spec/lib/service/system_assets/product_logo_spec.rb
 spec/lib/service/geo_location_spec.rb
+spec/lib/service/system_assets_spec.rb
 spec/lib/service/geo_ip_spec.rb
 spec/lib/email_helper/verify_spec.rb
 spec/lib/email_helper/idn_spec.rb
@@ -2188,6 +2192,7 @@ spec/requests/api_auth_spec.rb
 spec/requests/channels_google_spec.rb
 spec/requests/public_links_spec.rb
 spec/requests/attachments_controller_spec.rb
+spec/requests/system_assets_spec.rb
 spec/requests/organization_spec.rb
 spec/requests/external_credentials_spec.rb
 spec/requests/long_polling_spec.rb
@@ -2615,6 +2620,7 @@ config/routes/job.rb
 config/routes/websocket_server.rb
 config/routes/organization.rb
 config/routes/chat_session.rb
+config/routes/system_assets.rb
 config/routes/translation.rb
 config/routes/upload_cache.rb
 config/routes/calendar_subscriptions.rb
@@ -2674,7 +2680,6 @@ config/initializers/db_preflight_check.rb
 config/initializers/log_websocket_session_store.rb
 config/initializers/action_cable_preferences.rb
 config/initializers/omniauth.rb
-config/initializers/logo.rb
 config/initializers/permissions_policy.rb
 Procfile.dev
 .rubocop/default.yml
@@ -6248,6 +6253,7 @@ app/controllers/ticket_overviews_controller.rb
 app/controllers/chats_controller.rb
 app/controllers/first_steps_controller.rb
 app/controllers/ldap_sources_controller.rb
+app/controllers/system_assets_controller.rb
 app/controllers/links_controller.rb
 app/controllers/errors_controller.rb
 app/controllers/signatures_controller.rb
@@ -6466,7 +6472,6 @@ contrib/mac_developer_scripts.app/Contents/Resources/Scripts/main.scpt
 contrib/nginx/zammad_ssl.conf
 contrib/nginx/zammad.conf
 contrib/icon-sprite.sketch
-contrib/ssl/generate-ssl.sh
 contrib/apache2/zammad_ssl.conf
 contrib/apache2/zammad.conf
 contrib/auto_wizard_test.json

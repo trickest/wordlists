@@ -931,7 +931,6 @@ layouts/basic/modules/Assets/dashboards/ExpiringSoldProducts.tpl
 layouts/basic/modules/Assets/dashboards/ExpiringSoldProductsContents.tpl
 layouts/basic/modules/OSSMailView/widgets.tpl
 layouts/basic/modules/OSSMailView/DetailViewHeaderTitle.tpl
-layouts/basic/modules/OSSMailView/dashboards/Graf.tpl
 layouts/basic/modules/OSSMailView/ChangeType.tpl
 layouts/basic/modules/OSSMailView/Detail/Widget/PreviewMail.tpl
 layouts/basic/modules/OSSMailView/Detail/PreProcess.tpl
@@ -944,8 +943,6 @@ layouts/basic/modules/Home/IndexViewPreProcess.tpl
 layouts/basic/modules/Leads/DetailViewHeaderTitle.tpl
 layouts/basic/modules/Leads/dashboards/LeadsBySource.tpl
 layouts/basic/modules/Leads/dashboards/LeadsByStatus.tpl
-layouts/basic/modules/Leads/dashboards/LeadsByStatusConverted.tpl
-layouts/basic/modules/Leads/dashboards/LeadsCreated.tpl
 layouts/basic/modules/Leads/dashboards/LeadsByIndustry.tpl
 layouts/basic/modules/Leads/ConvertLeadError.tpl
 layouts/basic/modules/Leads/ConvertLead.tpl
@@ -2663,7 +2660,6 @@ modules/OSSMailView/models/ListView.php
 modules/OSSMailView/models/DetailView.php
 modules/OSSMailView/models/Record.php
 modules/OSSMailView/models/Relation.php
-modules/OSSMailView/dashboards/Graf.php
 modules/OSSMailView/relations/GetAttachments.php
 modules/OSSMailView/relations/GetEmails.php
 modules/OSSMailView/relations/GetRecordToMails.php
@@ -2702,8 +2698,6 @@ modules/Leads/models/Record.php
 modules/Leads/dashboards/LeadsBySource.php
 modules/Leads/dashboards/LeadsByStatus.php
 modules/Leads/dashboards/LeadsByIndustry.php
-modules/Leads/dashboards/LeadsCreated.php
-modules/Leads/dashboards/LeadsByStatusConverted.php
 modules/Leads/Leads.php
 modules/Leads/summary_blocks/TotalEvent.php
 modules/Leads/summary_blocks/TotalComments.php
@@ -3681,7 +3675,6 @@ crowdin.yml
 .user.ini
 cache/security/index.html
 cache/vtlib/CSS/index.html
-cache/vtlib/URI/index.html
 cache/vtlib/HTML/index.html
 cache/session/index.html
 cache/import/index.html
@@ -3999,6 +3992,7 @@ public_html/layouts/basic/modules/Vtiger/resources/MailFoldersModal.js
 public_html/layouts/basic/modules/Vtiger/resources/SortOrderModal.js
 public_html/layouts/basic/modules/Vtiger/resources/BasicSearch.js
 public_html/layouts/basic/modules/Vtiger/resources/dashboards/ChartFilter.js
+public_html/layouts/basic/modules/Vtiger/resources/dashboards/Chart.js
 public_html/layouts/basic/modules/Vtiger/resources/dashboards/ChartFilter.min.js.map
 public_html/layouts/basic/modules/Vtiger/resources/dashboards/Widget.min.js.map
 public_html/layouts/basic/modules/Vtiger/resources/dashboards/ChartFilter.min.js

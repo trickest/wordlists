@@ -7152,6 +7152,7 @@ core/modules/mysql/tests/src/Kernel/mysql/LargeQueryTest.php
 core/modules/mysql/tests/src/Kernel/mysql/TemporaryQueryTest.php
 core/modules/mysql/tests/src/Kernel/mysql/DbDumpTest.php
 core/modules/mysql/tests/src/Kernel/mysql/PrefixInfoTest.php
+core/modules/mysql/tests/src/Kernel/mysql/SchemaUniquePrefixedKeysIndexTest.php
 core/modules/mysql/tests/src/Kernel/mysql/DatabaseExceptionWrapperTest.php
 core/modules/mysql/tests/src/Kernel/mysql/ConnectionTest.php
 core/modules/mysql/tests/src/Kernel/mysql/Console/DbDumpCommandTest.php
@@ -7473,6 +7474,7 @@ core/modules/sqlite/sqlite.module
 core/modules/sqlite/tests/src/Kernel/sqlite/TransactionTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/SyntaxTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/TemporaryQueryTest.php
+core/modules/sqlite/tests/src/Kernel/sqlite/SchemaUniquePrefixedKeysIndexTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/DatabaseExceptionWrapperTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/SchemaTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/SqliteDriverLegacyTest.php
@@ -7569,6 +7571,7 @@ core/modules/migrate_drupal_ui/tests/src/Functional/d7/IdConflictTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/MultilingualReviewPageTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/FilePathTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/NoMultilingualReviewPageTest.php
+core/modules/migrate_drupal_ui/tests/src/Functional/d7/Upgrade7TestWithContentModeration.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/DoubleSlashTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/files/sites/default/private/Babylon5.txt
 core/modules/migrate_drupal_ui/tests/src/Functional/d7/files/sites/default/files/ds9.txt
@@ -7587,6 +7590,7 @@ core/modules/migrate_drupal_ui/tests/src/Functional/d6/NodeClassicTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d6/MultilingualReviewPageTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d6/NoMultilingualReviewPageTest.php
 core/modules/migrate_drupal_ui/tests/src/Functional/d6/files/core/tests/fixtures/files/html-1.txt
+core/modules/migrate_drupal_ui/tests/src/Functional/d6/Upgrade6TestWithContentModeration.php
 core/modules/migrate_drupal_ui/migrate_drupal_ui.links.menu.yml
 core/modules/migrate_drupal_ui/migrate_drupal_ui.libraries.yml
 core/modules/migrate_drupal_ui/migrate_drupal_ui.module
@@ -9312,6 +9316,7 @@ core/modules/announcements_feed/tests/src/FunctionalJavascript/AlertsJsonFeedTes
 core/modules/announcements_feed/tests/src/FunctionalJavascript/AccessAnnouncementTest.php
 core/modules/announcements_feed/tests/src/Functional/AnnouncementsCacheTest.php
 core/modules/announcements_feed/images/announcement-bell.svg
+core/modules/announcements_feed/announcements_feed.links.menu.yml
 core/modules/announcements_feed/announcements_feed.libraries.yml
 core/modules/announcements_feed/config/install/announcements_feed.settings.yml
 core/modules/announcements_feed/config/schema/announcements_feed.schema.yml
@@ -10924,6 +10929,7 @@ core/modules/pgsql/tests/src/Kernel/pgsql/SyntaxTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/KernelTestBaseTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/PgsqlDriverLegacyTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TemporaryQueryTest.php
+core/modules/pgsql/tests/src/Kernel/pgsql/SchemaUniquePrefixedKeysIndexTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/DatabaseExceptionWrapperTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/SchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/NonPublicSchemaTest.php
@@ -13014,6 +13020,7 @@ core/modules/field_ui/tests/src/Traits/FieldUiJSTestTrait.php
 core/modules/field_ui/tests/src/Traits/FieldUiTestTrait.php
 core/modules/field_ui/tests/src/FunctionalJavascript/ManageDisplayTest.php
 core/modules/field_ui/tests/src/FunctionalJavascript/EntityDisplayTest.php
+core/modules/field_ui/tests/src/FunctionalJavascript/DisplayModeBundleSelectionTest.php
 core/modules/field_ui/tests/src/FunctionalJavascript/ManageFieldsTest.php
 core/modules/field_ui/tests/src/Functional/EntityDisplayFormBaseTest.php
 core/modules/field_ui/tests/src/Functional/EntityDisplayModeTest.php
@@ -13040,6 +13047,7 @@ core/modules/field_ui/src/Access/FormModeAccessCheck.php
 core/modules/field_ui/src/Access/ViewModeAccessCheck.php
 core/modules/field_ui/src/Access/FieldReuseAccessCheck.php
 core/modules/field_ui/src/FieldConfigListBuilder.php
+core/modules/field_ui/src/DisplayModeLocalAction.php
 core/modules/field_ui/src/Controller/EntityDisplayModeController.php
 core/modules/field_ui/src/Controller/FieldConfigListController.php
 core/modules/field_ui/src/FieldStorageConfigListBuilder.php
@@ -14343,6 +14351,7 @@ core/tests/Drupal/KernelTests/Core/Database/UpdateLobTest.php
 core/tests/Drupal/KernelTests/Core/Database/ReplicaKillSwitchTest.php
 core/tests/Drupal/KernelTests/Core/Database/TemporaryQueryTestBase.php
 core/tests/Drupal/KernelTests/Core/Database/InsertDefaultsTest.php
+core/tests/Drupal/KernelTests/Core/Database/SchemaUniquePrefixedKeysIndexTestBase.php
 core/tests/Drupal/KernelTests/Core/Database/ReservedWordTest.php
 core/tests/Drupal/KernelTests/Core/Database/DeleteTruncateTest.php
 core/tests/Drupal/KernelTests/Core/Database/StatementTest.php
@@ -14358,7 +14367,6 @@ core/tests/Drupal/KernelTests/Core/Database/DriverSpecificDatabaseTestBase.php
 core/tests/Drupal/KernelTests/Core/Database/DriverSpecificSyntaxTestBase.php
 core/tests/Drupal/KernelTests/Core/Database/MergeTest.php
 core/tests/Drupal/KernelTests/Core/Database/SelectTest.php
-core/tests/Drupal/KernelTests/Core/Database/SchemaUniquePrefixedKeysIndexTest.php
 core/tests/Drupal/KernelTests/Core/Database/CaseSensitivityTest.php
 core/tests/Drupal/KernelTests/Core/Database/SelectCloneTest.php
 core/tests/Drupal/KernelTests/Core/Database/QueryTest.php

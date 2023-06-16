@@ -824,6 +824,7 @@ tests/unit/php/Storefront/Theme/Command/ThemeCompileCommandTest.php
 tests/unit/php/Storefront/Theme/fixtures/ThemeFixtures.php
 tests/unit/php/Storefront/Theme/Subscriber/UnusedMediaSubscriberTest.php
 tests/unit/php/Storefront/Theme/Subscriber/PluginLifecycleSubscriberTest.php
+tests/unit/php/Storefront/Theme/DataAbstractionLayer/ThemeExceptionHandlerTest.php
 tests/unit/php/Storefront/Theme/ThemeServiceTest.php
 tests/unit/php/Storefront/Theme/ScssPhpCompilerTest.php
 tests/unit/php/Storefront/Theme/SeedingThemePathBuilderTest.php
@@ -857,6 +858,7 @@ tests/unit/php/Common/Stubs/SystemConfigService/StaticSystemConfigService.php
 tests/unit/php/Common/Stubs/Flow/DummyEvent.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticEntityRepository.php
+tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticEntityWriterGateway.php
 tests/unit/php/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
 tests/unit/php/Administration/Controller/AdministrationControllerTest.php
 tests/unit/php/Administration/Notification/Subscriber/UpdateSubscriberTest.php
@@ -1853,6 +1855,7 @@ tests/integration/php/Storefront/Controller/AuthControllerTest.php
 tests/integration/php/Storefront/Controller/AddressControllerTest.php
 tests/integration/php/Storefront/Controller/CountryStateControllerTest.php
 tests/integration/php/Storefront/Controller/CheckoutControllerTest.php
+tests/integration/php/Storefront/Controller/CookieControllerTest.php
 tests/integration/php/Storefront/Controller/fixtures/Plugins/TestPlugin1/Resources/views/storefront/page/plugin/index.html.twig
 tests/integration/php/Storefront/Controller/fixtures/Plugins/TestPlugin1/Resources/views/storefront/base.html.twig
 tests/integration/php/Storefront/Controller/fixtures/Storefront/Resources/views/storefront/base.html.twig
@@ -4770,6 +4773,7 @@ changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.m
 changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
 changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
+changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
 changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
@@ -4796,7 +4800,9 @@ changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-06-05-widen-the-used-space-in-storefront-account-overview-pages.md
 changelog/_unreleased/2023-06-13-fix-bug-categories-of-type-internal-link-only-show-25-items.md
 changelog/_unreleased/2023-06-13-propagate-sw-base-field-slots-through-other-fields.md
+changelog/_unreleased/2023-06-13-improvements-in-theme-listing-and-crossseller-boxes.md
 changelog/_unreleased/2023-06-13-fix-block-slot-combination-of-sw-sidebar-collapse.md
+changelog/_unreleased/2023-06-16-add-children-to-lineitem-in-order-types.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-05-31-listing-processors.md
 changelog/release-6-4-7-0/2021-10-06-import-with-update-by-mapping.md
@@ -12225,6 +12231,7 @@ src/Storefront/Resources/app/storefront/test/plugin/captcha/google-re-captcha/go
 src/Storefront/Resources/app/storefront/test/plugin/captcha/basic-captcha.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/system/plugin-configuration.template.html
 src/Storefront/Resources/app/storefront/test/plugin/system/plugin-configuration.test.js
+src/Storefront/Resources/app/storefront/test/plugin/cms-gdpr-video-element/cms-gdpr-video-element.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/cookie-configuration/cookie-configuration.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/header/account-guest-abort-button.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/header/wishlist-widget.plugin.test.js
@@ -12940,6 +12947,7 @@ src/Storefront/Theme/ThemeDefinition.php
 src/Storefront/Theme/Exception/ThemeCompileException.php
 src/Storefront/Theme/Exception/InvalidThemeBundleException.php
 src/Storefront/Theme/Exception/InvalidThemeException.php
+src/Storefront/Theme/Exception/ThemeException.php
 src/Storefront/Theme/Exception/InvalidThemeConfigException.php
 src/Storefront/Theme/Exception/ThemeAssignmentException.php
 src/Storefront/Theme/Controller/ThemeController.php
@@ -12999,6 +13007,7 @@ src/Storefront/Theme/Subscriber/FirstRunWizardSubscriber.php
 src/Storefront/Theme/Subscriber/UnusedMediaSubscriber.php
 src/Storefront/Theme/Subscriber/ThemeCompilerEnrichScssVarSubscriber.php
 src/Storefront/Theme/DataAbstractionLayer/ThemeIndexer.php
+src/Storefront/Theme/DataAbstractionLayer/ThemeExceptionHandler.php
 src/Storefront/Theme/DataAbstractionLayer/ThemeIndexingMessage.php
 src/Storefront/Theme/SalesChannelThemeLoader.php
 src/Storefront/Theme/Extension/SalesChannelExtension.php
@@ -13268,7 +13277,6 @@ src/Storefront/Test/Controller/ProductControllerTest.php
 src/Storefront/Test/Controller/AccountPaymentControllerTest.php
 src/Storefront/Test/Controller/AccountOrderControllerTest.php
 src/Storefront/Test/Controller/ControllerRateLimiterTest.php
-src/Storefront/Test/Controller/CookieControllerTest.php
 src/Storefront/Test/Controller/ContextControllerUnitTest.php
 src/Storefront/Test/Controller/ContextControllerContextTest.php
 src/Storefront/Test/Controller/SearchControllerTest.php

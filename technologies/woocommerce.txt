@@ -1034,12 +1034,12 @@ plugins/woocommerce-admin/client/analytics/settings/historical-data/test/utils.j
 plugins/woocommerce-admin/client/analytics/settings/default-date.js
 plugins/woocommerce-admin/client/payments-welcome/exit-survey-modal.tsx
 plugins/woocommerce-admin/client/payments-welcome/index.tsx
+plugins/woocommerce-admin/client/payments-welcome/incentive.svg
 plugins/woocommerce-admin/client/payments-welcome/faq-simple.tsx
-plugins/woocommerce-admin/client/payments-welcome/wcpay-offer.svg
+plugins/woocommerce-admin/client/payments-welcome/woopayments.svg
 plugins/woocommerce-admin/client/payments-welcome/apms.tsx
-plugins/woocommerce-admin/client/payments-welcome/gift.js
-plugins/woocommerce-admin/client/payments-welcome/faq.tsx
 plugins/woocommerce-admin/client/payments-welcome/style.scss
+plugins/woocommerce-admin/client/payments-welcome/payment-methods.tsx
 plugins/woocommerce-admin/client/payments-welcome/banner.tsx
 plugins/woocommerce-admin/client/payments-welcome/strings.tsx
 plugins/woocommerce-admin/client/shipping/experimental-shipping-recommendations.tsx
@@ -1623,6 +1623,7 @@ plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/variable-product-updates.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/dashboard-access.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/single-product.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-coupons.spec.js
@@ -2527,6 +2528,7 @@ plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
 plugins/woocommerce/changelog/update-add-delete-shipping
 plugins/woocommerce/changelog/add-38150
+plugins/woocommerce/changelog/single-product-tab-open-close
 plugins/woocommerce/changelog/fix-38444-unsupported-operands
 plugins/woocommerce/changelog/fix-38560
 plugins/woocommerce/changelog/fix-php8-dynamic-prop-wc-admin
@@ -2535,11 +2537,13 @@ plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/update-additional-payment-task-view-logic
 plugins/woocommerce/changelog/add-core-profiler-spinner
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
+plugins/woocommerce/changelog/fix-payment-gateway-suggestions-logic
 plugins/woocommerce/changelog/update-tourkitdesign
 plugins/woocommerce/changelog/update-38410-update-install-async-to-activate-plugins
 plugins/woocommerce/changelog/fix-35951
 plugins/woocommerce/changelog/update-wp-env-8.0.0
 plugins/woocommerce/changelog/e2e-fix-variation-defaults
+plugins/woocommerce/changelog/fix-infinite-redirect-to-core-profiler
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
 plugins/woocommerce/changelog/fix-34118
 plugins/woocommerce/changelog/fix-php-8.1-null-args-deprecation
@@ -2549,9 +2553,11 @@ plugins/woocommerce/changelog/hpos-filter-query-clauses
 plugins/woocommerce/changelog/fix-38009-unsupported-operand
 plugins/woocommerce/changelog/update-order-admin-page-titles
 plugins/woocommerce/changelog/add-38202
+plugins/woocommerce/changelog/fix-38758-fix-jetpack-redirection-when-endpoint-returns-invalid-url
 plugins/woocommerce/changelog/php8-dynamic-prop-shipping
 plugins/woocommerce/changelog/update-show-feedback-bar-after-product-editor-tour
 plugins/woocommerce/changelog/fix-38660
+plugins/woocommerce/changelog/update-wcpay-welcome-page-incentives
 plugins/woocommerce/changelog/fix-38645-checklist-overlap
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.2.2
 plugins/woocommerce/changelog/fix-load-editor-only-blocks-in-product-editor
@@ -2563,12 +2569,15 @@ plugins/woocommerce/changelog/add-order-model-trash-untrash
 plugins/woocommerce/changelog/fix-order-type-notice-outside-orders
 plugins/woocommerce/changelog/fix-codisto-woocommerce-name-typo
 plugins/woocommerce/changelog/add-always-show-pricinggroup
+plugins/woocommerce/changelog/update-woocommerce-blocks-10.4.0
 plugins/woocommerce/changelog/pr-38630
 plugins/woocommerce/changelog/fix-wc-admin-rest-options-error
 plugins/woocommerce/changelog/fix-37484-hpos-screen-props
 plugins/woocommerce/changelog/fix-38582-restore-qs-arrays
+plugins/woocommerce/changelog/update-implement-connect-to-jetpack
 plugins/woocommerce/changelog/fix-encoding-in-product-exporter-in-php-8.1
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-38524
 plugins/woocommerce/changelog/update-38627-update-track-prefix-for-core-profiler
 plugins/woocommerce/changelog/update-skipped-should-be-set
 plugins/woocommerce/changelog/fix-php8-dynamic-prop-etc
@@ -2578,6 +2587,7 @@ plugins/woocommerce/changelog/try-wc-tracker-feature-compat
 plugins/woocommerce/changelog/fix-hpos-test
 plugins/woocommerce/changelog/php8-dynamic-prop-hpos
 plugins/woocommerce/changelog/fix-38642-read-children
+plugins/woocommerce/changelog/update-woocommerce-blocks-10.4.2
 plugins/woocommerce/changelog/fix-38148
 plugins/woocommerce/changelog/add-product-editor-feedback-footer
 plugins/woocommerce/changelog/abstract-wc-products
@@ -2588,6 +2598,7 @@ plugins/woocommerce/changelog/fix-37505
 plugins/woocommerce/changelog/add-about-the-form
 plugins/woocommerce/changelog/fix-guide-new-user
 plugins/woocommerce/changelog/fix-notices-overlapping-footer-2
+plugins/woocommerce/changelog/fix-38659-core-profiler-skipped-option-plugins-step
 plugins/woocommerce/changelog/fix-33322
 plugins/woocommerce/changelog/update-options-api
 plugins/woocommerce/changelog/dev-dry-reports
@@ -2597,6 +2608,7 @@ plugins/woocommerce/changelog/pr-38621
 plugins/woocommerce/changelog/update-38687-update-storedetails-for-coreprofiler
 plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/add-core-profiler-business-info
+plugins/woocommerce/changelog/fix-38558
 plugins/woocommerce/changelog/update-obw-jetpack-filter
 plugins/woocommerce/changelog/dev-refactor-core-profiler-pages
 plugins/woocommerce/changelog/fix-hpos-unit-test-trait
@@ -4102,6 +4114,7 @@ packages/js/customer-effort-score/changelog/fix-missing-type-definitions-depende
 packages/js/customer-effort-score/changelog/dev-simplify-turbo
 packages/js/customer-effort-score/changelog/update-webpack-invalid-export-error
 packages/js/customer-effort-score/changelog/fix-34112
+packages/js/customer-effort-score/changelog/fix-38748_modal_style_obw
 packages/js/customer-effort-score/changelog/update-36327
 packages/js/customer-effort-score/changelog/add-35126_ces_exit_prompt_settings
 packages/js/customer-effort-score/changelog/dev-pin-wp-deps-6
@@ -4320,7 +4333,9 @@ packages/js/product-editor/changelog/update-webpack-invalid-export-error
 packages/js/product-editor/changelog/fix-38319
 packages/js/product-editor/changelog/add-38215
 packages/js/product-editor/changelog/add-37096-accessibility
+packages/js/product-editor/changelog/update-keep-showing-feedback-bar-after-feedback
 packages/js/product-editor/changelog/add-37264
+packages/js/product-editor/changelog/fix-38748_modal_style_obw
 packages/js/product-editor/changelog/add-shipping-class-creation-37886
 packages/js/product-editor/changelog/add-37930
 packages/js/product-editor/changelog/fix-38221
@@ -4417,6 +4432,7 @@ packages/js/product-editor/changelog/fix-rest-namespace-blocks-37619
 packages/js/product-editor/changelog/add-toggle-content-block-37253
 packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
 packages/js/product-editor/changelog/dev-consolidate-eslint-versions
+packages/js/product-editor/changelog/fix-set-attributes-to-visible-by-default
 packages/js/product-editor/changelog/update-38576
 packages/js/product-editor/changelog/add-admin-layout-package
 packages/js/product-editor/changelog/add-stock-status-37884
@@ -4737,6 +4753,7 @@ packages/js/data/changelog/add-in-app-tour-track-events
 packages/js/data/changelog/add-35786
 packages/js/data/changelog/fix-missing-type-definitions-dependencies
 packages/js/data/changelog/add-30_product_form_buttons
+packages/js/data/changelog/fix-38758-jetpack-redirection-fix
 packages/js/data/changelog/update-34996
 packages/js/data/changelog/dev-simplify-turbo
 packages/js/data/changelog/fix-34112
@@ -4764,6 +4781,7 @@ packages/js/data/changelog/add-variable-product-type-spotlight
 packages/js/data/changelog/add-data-store-attribute-terms
 packages/js/data/changelog/update-migrate-purchase-task-to-ts
 packages/js/data/changelog/dev-fix-admin-tests-pnpm7
+packages/js/data/changelog/add-38674-add-jetpack-auth-endpoint
 packages/js/data/changelog/try-support-multiple-fills
 packages/js/data/changelog/add-29_product_link_slug
 packages/js/data/changelog/update-use-shipping-partner-suggestions
@@ -4797,6 +4815,7 @@ packages/js/data/changelog/add-form-factory-tab
 packages/js/data/changelog/dev-33838-migrate-data-notes-store-to-ts
 packages/js/data/changelog/fix-typescript-incremental-builds
 packages/js/data/changelog/add-36073-product-form-data-store
+packages/js/data/changelog/fix-38659-core-profiler-skipped-option-plugins-step
 packages/js/data/changelog/update-onboarding-types
 packages/js/data/changelog/upgrade-pnpm-7
 packages/js/data/changelog/update-get-permalinks-parts-selector
@@ -5866,6 +5885,7 @@ packages/js/onboarding/tsconfig-cjs.json
 packages/js/onboarding/changelog/update-webpack-invalid-export-error
 packages/js/onboarding/changelog/update-wp-env-8.0.0
 packages/js/onboarding/changelog/dev-pin-wp-deps-6
+packages/js/onboarding/changelog/update-wcpay-welcome-page-incentives
 packages/js/onboarding/changelog/dev-move-geolocation-utils
 packages/js/onboarding/changelog/add-get-country-util
 packages/js/onboarding/changelog/dev-update-pnpm8
