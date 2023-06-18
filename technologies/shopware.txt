@@ -489,6 +489,7 @@ tests/unit/php/Core/Framework/Adapter/Cache/CacheInvalidatorTest.php
 tests/unit/php/Core/Framework/Adapter/Cache/CacheInvalidationSubscriberTest.php
 tests/unit/php/Core/Framework/Adapter/Cache/InvalidateCacheTaskTest.php
 tests/unit/php/Core/Framework/Adapter/Cache/StoreApiRouteCacheKeyEventTest.php
+tests/unit/php/Core/Framework/Adapter/Storage/MySQLKeyValueStorageTest.php
 tests/unit/php/Core/Framework/Util/XmlReaderTest.php
 tests/unit/php/Core/Framework/Util/HtmlSanitizerTest.php
 tests/unit/php/Core/Framework/Util/VersionParserTest.php
@@ -1762,6 +1763,7 @@ tests/integration/php/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSc
 tests/integration/php/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPassTest.php
 tests/integration/php/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPassTest.php
 tests/integration/php/Core/Framework/Adapter/Cache/CacheDecoratorTest.php
+tests/integration/php/Core/Framework/Adapter/Storage/MySQLKeyValueStorageTest.php
 tests/integration/php/Core/_snapshots/routes_without_schema.json
 tests/integration/php/Core/Checkout/Payment/SalesChannel/PaymentMethodRouteTest.php
 tests/integration/php/Core/Checkout/Shipping/SalesChannel/ShippingMethodRouteTest.php
@@ -4775,6 +4777,7 @@ changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
 changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
+changelog/_unreleased/2023-06-15-implement-keyvaluestorage.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
 changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
@@ -8616,6 +8619,8 @@ src/Core/Framework/Adapter/Cache/ShopwareRedisTagAwareAdapter.php
 src/Core/Framework/Adapter/Cache/CacheIdLoader.php
 src/Core/Framework/Adapter/Command/S3FilesystemVisibilityCommand.php
 src/Core/Framework/Adapter/Console/ShopwareStyle.php
+src/Core/Framework/Adapter/Storage/MySQLKeyValueStorage.php
+src/Core/Framework/Adapter/Storage/AbstractKeyValueStorage.php
 src/Core/Framework/Util/FloatComparator.php
 src/Core/Framework/Util/ArrayNormalizer.php
 src/Core/Framework/Util/MemorySizeCalculator.php
