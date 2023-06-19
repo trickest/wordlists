@@ -1025,6 +1025,7 @@ lib/zammad/application/initializer/db_preflight_check/mysql2.rb
 lib/zammad/application/initializer/db_preflight_check/postgresql.rb
 lib/zammad/application/initializer/db_preflight_check/base.rb
 lib/zammad/application/initializer/db_preflight_check/nulldb.rb
+lib/zammad/restart.rb
 lib/facebook.rb
 lib/can_be_published/state_machine.rb
 lib/sql_helper.rb
@@ -5001,6 +5002,7 @@ app/frontend/shared/types/entity.ts
 app/frontend/shared/types/env.d.ts
 app/frontend/shared/types/events.ts
 app/frontend/public-build/.keep
+app/frontend/package.json
 app/frontend/tests/support/mock-apollo-client.ts
 app/frontend/tests/support/components/mounted.ts
 app/frontend/tests/support/components/iconQueries.ts
@@ -5371,6 +5373,7 @@ app/frontend/apps/mobile/composables/usePagination.ts
 app/frontend/apps/mobile/composables/useEditedBy.ts
 app/frontend/apps/mobile/composables/useHeader.ts
 app/frontend/apps/mobile/sw/sw.ts
+app/frontend/tsconfig.json
 app/frontend/entrypoints/mobile.ts
 app/frontend/stories/support/setupHistoire.ts
 app/frontend/stories/support/form/field/defaultArgTypes.ts
@@ -5790,6 +5793,7 @@ app/views/layouts/mobile.html.erb
 app/views/mailer/ticket_update_received_merge/nb.html.erb
 app/views/mailer/ticket_update_received_merge/pt.html.erb
 app/views/mailer/ticket_update_received_merge/sr-latn-rs.html.erb
+app/views/mailer/ticket_update_received_merge/th.html.erb
 app/views/mailer/ticket_update_received_merge/fr.html.erb
 app/views/mailer/ticket_update_received_merge/it.html.erb
 app/views/mailer/ticket_update_received_merge/es.html.erb
@@ -5839,6 +5843,7 @@ app/views/mailer/ticket_escalation/pl.html.erb
 app/views/mailer/ticket_escalation/en.html.erb
 app/views/mailer/user_device_new/pt.html.erb
 app/views/mailer/user_device_new/sr-latn-rs.html.erb
+app/views/mailer/user_device_new/th.html.erb
 app/views/mailer/user_device_new/fr.html.erb
 app/views/mailer/user_device_new/it.html.erb
 app/views/mailer/user_device_new/es.html.erb
@@ -5983,6 +5988,7 @@ app/views/mailer/ticket_create/en.html.erb
 app/views/mailer/admin_password_auth/nb.html.erb
 app/views/mailer/admin_password_auth/pt.html.erb
 app/views/mailer/admin_password_auth/sr-latn-rs.html.erb
+app/views/mailer/admin_password_auth/th.html.erb
 app/views/mailer/admin_password_auth/it.html.erb
 app/views/mailer/admin_password_auth/es.html.erb
 app/views/mailer/admin_password_auth/pt-br.html.erb
@@ -5997,6 +6003,7 @@ app/views/mailer/admin_password_auth/hr.html.erb
 app/views/mailer/admin_password_auth/pl.html.erb
 app/views/mailer/admin_password_auth/en.html.erb
 app/views/mailer/user_invite/sr-latn-rs.html.erb
+app/views/mailer/user_invite/th.html.erb
 app/views/mailer/user_invite/pt-br.erb
 app/views/mailer/user_invite/fr.html.erb
 app/views/mailer/user_invite/it.html.erb
@@ -6015,6 +6022,7 @@ app/views/mailer/user_invite/pl.html.erb
 app/views/mailer/user_invite/en.html.erb
 app/views/mailer/user_auth_provider/pt.html.erb
 app/views/mailer/user_auth_provider/sr-latn-rs.html.erb
+app/views/mailer/user_auth_provider/th.html.erb
 app/views/mailer/user_auth_provider/fr.html.erb
 app/views/mailer/user_auth_provider/it.html.erb
 app/views/mailer/user_auth_provider/es.html.erb

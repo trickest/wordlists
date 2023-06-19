@@ -1887,6 +1887,9 @@ crowdin.yml
 .prettierignore
 license
 .changeset/olive-toys-fail.md
+.changeset/nice-worms-know.md
+.changeset/modern-boxes-sin.md
+.changeset/fair-years-itch.md
 .changeset/config.json
 .changeset/swift-eyes-rule.md
 .changeset/tough-crews-shout.md
@@ -1928,6 +1931,8 @@ packages/data-sql/src/converter/convert-primitive.ts
 packages/data-sql/src/converter/index.test.ts
 packages/data-sql/src/converter/index.ts
 packages/data-sql/src/converter/convert-primitive.test.ts
+packages/data-sql/src/utils/param-index-generator.ts
+packages/data-sql/src/utils/param-index-generator.test.ts
 packages/extensions-sdk/package.json
 packages/extensions-sdk/cli.js
 packages/extensions-sdk/tsconfig.prod.json
@@ -2035,10 +2040,14 @@ packages/data-driver-postgres/src/utils/escape-identifier.ts
 packages/data-driver-postgres/src/utils/escape-identifier.test.ts
 packages/data-driver-postgres/src/query/from.ts
 packages/data-driver-postgres/src/query/select.test.ts
+packages/data-driver-postgres/src/query/offset.ts
 packages/data-driver-postgres/src/query/index.test.ts
+packages/data-driver-postgres/src/query/limit.ts
 packages/data-driver-postgres/src/query/index.ts
 packages/data-driver-postgres/src/query/select.ts
 packages/data-driver-postgres/src/query/from.test.ts
+packages/data-driver-postgres/src/query/offset.test.ts
+packages/data-driver-postgres/src/query/limit.test.ts
 packages/specs/index.js
 packages/specs/package.json
 packages/specs/index.d.ts

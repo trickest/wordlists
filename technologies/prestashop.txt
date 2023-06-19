@@ -2074,7 +2074,6 @@ tests/UI/data/types/supplier.d.ts
 tests/UI/data/types/taxRule.d.ts
 tests/UI/campaigns/regression/currencies/computingPrecision_FO.ts
 tests/UI/campaigns/regression/menu/deniedAccessToModuleCatalogPage.ts
-tests/UI/campaigns/regression/menu/deniedAccessToMenuTab.ts
 tests/UI/campaigns/regression/checkout/100PercentDiscount_FO.ts
 tests/UI/campaigns/modules/ps_cashondelivery/01_installation/04_resetModule.ts
 tests/UI/campaigns/sanity/03_productsBO/03_CRUDStandardProductWithCombinationsInBO.ts
@@ -3616,6 +3615,7 @@ tests/Integration/Behaviour/Features/Scenario/Cart/Calculation/SpecificPriceRule
 tests/Integration/Behaviour/Features/Scenario/Cart/Calculation/SpecificPriceRule/mixed.feature
 tests/Integration/Behaviour/Features/Scenario/Cart/CartToOrder/cart_to_order.feature
 tests/Integration/Behaviour/Features/Scenario/Cart/Delivery/delivery_options.feature
+tests/Integration/Behaviour/Features/Scenario/Search/edit_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/add_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/toggle_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Store/store.feature
@@ -7637,13 +7637,16 @@ src/Core/Domain/Alias/Exception/AliasNotFoundException.php
 src/Core/Domain/Alias/Exception/CannotAddAliasException.php
 src/Core/Domain/Alias/Exception/BulkAliasException.php
 src/Core/Domain/Alias/Exception/CannotUpdateAliasException.php
+src/Core/Domain/Alias/Exception/CannotDeleteAliasException.php
 src/Core/Domain/Alias/CommandHandler/UpdateAliasStatusHandlerInterfaces.php
 src/Core/Domain/Alias/CommandHandler/AddAliasHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/BulkUpdateAliasStatusHandlerInterface.php
+src/Core/Domain/Alias/CommandHandler/UpdateAliasHandlerInterface.php
 src/Core/Domain/Alias/ValueObject/AliasId.php
 src/Core/Domain/Alias/QueryResult/AliasForEditing.php
 src/Core/Domain/Alias/QueryHandler/GetAliasForEditingHandlerInterface.php
 src/Core/Domain/Alias/Command/AddAliasCommand.php
+src/Core/Domain/Alias/Command/UpdateAliasCommand.php
 src/Core/Domain/Alias/Command/UpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Command/BulkUpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Query/GetAliasForEditing.php
@@ -10401,11 +10404,8 @@ src/PrestaShopBundle/Controller/Admin/Sell/Address/AddressController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Customer/CustomerController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Customer/OutstandingController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Order/InvoicesController.php
-src/PrestaShopBundle/Controller/Admin/Sell/Order/ActionsBarButtonInterface.php
 src/PrestaShopBundle/Controller/Admin/Sell/Order/DeliveryController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Order/CartController.php
-src/PrestaShopBundle/Controller/Admin/Sell/Order/ActionsBarButton.php
-src/PrestaShopBundle/Controller/Admin/Sell/Order/ActionsBarButtonsCollection.php
 src/PrestaShopBundle/Controller/Admin/Sell/Order/CreditSlipController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Order/OrderController.php
 src/PrestaShopBundle/Controller/Admin/Sell/CustomerService/MerchandiseReturnController.php
@@ -11335,6 +11335,7 @@ src/Adapter/MailTemplate/MailPartialTemplateRenderer.php
 src/Adapter/MailTemplate/MailTemplateTwigRenderer.php
 src/Adapter/Alias/Validate/AliasValidator.php
 src/Adapter/Alias/CommandHandler/UpdateAliasStatusHandler.php
+src/Adapter/Alias/CommandHandler/UpdateAliasHandler.php
 src/Adapter/Alias/CommandHandler/BulkUpdateAliasStatusHandler.php
 src/Adapter/Alias/CommandHandler/AddAliasHandler.php
 src/Adapter/Alias/Repository/AliasRepository.php
@@ -11760,6 +11761,8 @@ src/Adapter/Presenter/Order/OrderDetailLazyArray.php
 src/Adapter/Presenter/Order/OrderReturnLazyArray.php
 src/Adapter/Presenter/Order/OrderReturnPresenter.php
 src/Adapter/Presenter/Object/ObjectPresenter.php
+src/Adapter/Presenter/Supplier/SupplierPresenter.php
+src/Adapter/Presenter/Supplier/SupplierLazyArray.php
 src/Adapter/Presenter/Manufacturer/ManufacturerLazyArray.php
 src/Adapter/Presenter/Manufacturer/ManufacturerPresenter.php
 src/Adapter/LegacyLogger.php

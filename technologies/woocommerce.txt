@@ -760,7 +760,9 @@ plugins/woocommerce-admin/client/homescreen/header-banner-slot/header-banner-slo
 plugins/woocommerce-admin/client/core-profiler/shared.scss
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-desktop.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/loader-lightbulb.svg
+plugins/woocommerce-admin/client/core-profiler/assets/images/loader-openingthedoors.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/loader-layout.svg
+plugins/woocommerce-admin/client/core-profiler/assets/images/loader-hearticon.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/welcome-mobile.svg
 plugins/woocommerce-admin/client/core-profiler/assets/images/loader-developing.svg
 plugins/woocommerce-admin/client/core-profiler/index.tsx
@@ -1267,6 +1269,7 @@ plugins/woo-ai/DEVELOPMENT.md
 plugins/woo-ai/.travis.yml
 plugins/woo-ai/changelog/add-woo-ai-plugin
 plugins/woo-ai/changelog/.gitkeep
+plugins/woo-ai/changelog/add-wooai-handle-token-failure
 plugins/woo-ai/.nvmrc
 plugins/woo-ai/tsconfig.json
 plugins/woo-ai/CHANGELOG.md
@@ -1646,6 +1649,7 @@ plugins/woocommerce/tests/e2e-pw/global-teardown.js
 plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/utils/api.js
+plugins/woocommerce/tests/e2e-pw/utils/features.js
 plugins/woocommerce/tests/e2e-pw/utils/onboarding.js
 plugins/woocommerce/tests/e2e-pw/utils/wordpress.js
 plugins/woocommerce/tests/e2e-pw/utils/site.js
@@ -2536,6 +2540,7 @@ plugins/woocommerce/changelog/fix-php8-dynamic-prop-wc-admin
 plugins/woocommerce/changelog/dev-refactor-core-profiler-tracks
 plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/update-additional-payment-task-view-logic
+plugins/woocommerce/changelog/update-enable-core-profiler-in-prod
 plugins/woocommerce/changelog/add-core-profiler-spinner
 plugins/woocommerce/changelog/update-remove-non-variation-attribute-no-confirm
 plugins/woocommerce/changelog/fix-payment-gateway-suggestions-logic
@@ -2547,6 +2552,8 @@ plugins/woocommerce/changelog/e2e-fix-variation-defaults
 plugins/woocommerce/changelog/fix-infinite-redirect-to-core-profiler
 plugins/woocommerce/changelog/update-38408-update-free-extensions-for-core-profiler
 plugins/woocommerce/changelog/fix-34118
+plugins/woocommerce/changelog/update-3531-incentive-logic-minor-addition
+plugins/woocommerce/changelog/update-38626-visual-changes-for-profiler-pages-follow-up
 plugins/woocommerce/changelog/fix-php-8.1-null-args-deprecation
 plugins/woocommerce/changelog/update-action-scheduler-3.6.1
 plugins/woocommerce/changelog/update-product-editor-tour-design
@@ -2569,6 +2576,7 @@ plugins/woocommerce/changelog/fix-38502_ces_modal_styling_fixes
 plugins/woocommerce/changelog/add-order-model-trash-untrash
 plugins/woocommerce/changelog/fix-order-type-notice-outside-orders
 plugins/woocommerce/changelog/fix-codisto-woocommerce-name-typo
+plugins/woocommerce/changelog/fix-removed-core-profiler-page-spinners
 plugins/woocommerce/changelog/add-always-show-pricinggroup
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.4.0
 plugins/woocommerce/changelog/pr-38630
@@ -2580,6 +2588,7 @@ plugins/woocommerce/changelog/fix-encoding-in-product-exporter-in-php-8.1
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-38524
 plugins/woocommerce/changelog/update-38627-update-track-prefix-for-core-profiler
+plugins/woocommerce/changelog/update-used-for-var
 plugins/woocommerce/changelog/update-skipped-should-be-set
 plugins/woocommerce/changelog/fix-php8-dynamic-prop-etc
 plugins/woocommerce/changelog/fix-unit-test-test_query_filters
@@ -2605,8 +2614,10 @@ plugins/woocommerce/changelog/update-options-api
 plugins/woocommerce/changelog/dev-dry-reports
 plugins/woocommerce/changelog/update-tell-me-more
 plugins/woocommerce/changelog/try-contextual-notice-api-in-order-details
+plugins/woocommerce/changelog/update-38743-loading-changes-in-core-profiler
 plugins/woocommerce/changelog/pr-38621
 plugins/woocommerce/changelog/update-38687-update-storedetails-for-coreprofiler
+plugins/woocommerce/changelog/fix-38793-base-location-rule
 plugins/woocommerce/changelog/fix-38470
 plugins/woocommerce/changelog/add-core-profiler-business-info
 plugins/woocommerce/changelog/fix-38558
@@ -2615,6 +2626,7 @@ plugins/woocommerce/changelog/dev-refactor-core-profiler-pages
 plugins/woocommerce/changelog/fix-hpos-unit-test-trait
 plugins/woocommerce/changelog/update-38626-visual-changes-for-profiler-pages
 plugins/woocommerce/changelog/fix-core-profiler-plugins-race-condition
+plugins/woocommerce/changelog/update-38790-fix-blogname-with-html-entities
 plugins/woocommerce/changelog/fix-order-list-table-dates
 plugins/woocommerce/changelog/add-update-payment-gateways-2023-Q3
 plugins/woocommerce/changelog/add-38575
@@ -2623,10 +2635,12 @@ plugins/woocommerce/changelog/add-block-tour
 plugins/woocommerce/changelog/fix-force-ssl-null-url
 plugins/woocommerce/changelog/php8-dynamic-prop-gateways
 plugins/woocommerce/changelog/fix-38292-array_slice
+plugins/woocommerce/changelog/fix-dashboard-setup-warning
 plugins/woocommerce/changelog/add-core-profiler-url-routing
 plugins/woocommerce/changelog/fix-38167_RIM_rules_processor
 plugins/woocommerce/changelog/fix-38347_tax_report_count_number_of_orders
 plugins/woocommerce/changelog/add-lint-branch
+plugins/woocommerce/changelog/update-3531-incentive-logic
 plugins/woocommerce/changelog/dev-refactor-core-profiler-install-plugins
 plugins/woocommerce/changelog/add-211-create-extensions-page-in-core-profiler
 plugins/woocommerce/changelog/add-85

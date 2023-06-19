@@ -48,6 +48,7 @@ tests/unit/php/Elasticsearch/Admin/Indexer/CustomerAdminSearchIndexerTest.php
 tests/unit/php/Elasticsearch/Admin/Indexer/CustomerGroupAdminSearchIndexerTest.php
 tests/unit/php/Elasticsearch/Admin/Indexer/MediaAdminSearchIndexerTest.php
 tests/unit/php/Elasticsearch/Admin/Subscriber/RefreshIndexSubscriberTest.php
+tests/unit/php/Elasticsearch/Admin/ElasticsearchAdminExceptionTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchHelperTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchRegistryTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchRangeAggregationTest.php
@@ -450,6 +451,7 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
+tests/unit/php/Core/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
 tests/unit/php/Core/Framework/MessageQueue/ScheduledTask/Registry/TaskRegistryTest.php
 tests/unit/php/Core/Framework/MessageQueue/ScheduledTask/Compatibility/ScheduledTaskCompatibilitySubscriberTest.php
 tests/unit/php/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
@@ -710,7 +712,9 @@ tests/unit/php/Core/Content/Media/MediaEntityTest.php
 tests/unit/php/Core/Content/Media/File/FileSaverTest.php
 tests/unit/php/Core/Content/Media/File/DownloadResponseGeneratorTest.php
 tests/unit/php/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscriberTest.php
+tests/unit/php/Core/Content/Seo/SeoExceptionTest.php
 tests/unit/php/Core/Content/Category/Service/CategoryBreadcrumbBuilderTest.php
+tests/unit/php/Core/Content/Category/CategoryExceptionTest.php
 tests/unit/php/Core/Content/Category/SalesChannel/CachedNavigationRouteTest.php
 tests/unit/php/Core/Content/Category/SalesChannel/CachedCategoryRouteTest.php
 tests/unit/php/Core/Content/Category/Subscriber/CategorySubscriberTest.php
@@ -860,7 +864,6 @@ tests/unit/php/Common/Stubs/Flow/DummyEvent.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticEntityRepository.php
 tests/unit/php/Common/Stubs/DataAbstractionLayer/StaticEntityWriterGateway.php
-tests/unit/php/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
 tests/unit/php/Administration/Controller/AdministrationControllerTest.php
 tests/unit/php/Administration/Notification/Subscriber/UpdateSubscriberTest.php
 tests/unit/php/Administration/AdministrationTest.php
@@ -4776,12 +4779,15 @@ changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
 changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
 changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
+changelog/_unreleased/2023-05-30-apply-domain-exceptions-in-controllers.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
+changelog/_unreleased/2023-06-15-wrap-newsletter-recipient-error-shopwareexception.md
 changelog/_unreleased/2023-06-15-implement-keyvaluestorage.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
 changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
 changelog/_unreleased/2023-06-08-allow-import-of-encoded-url.md
+changelog/_unreleased/2023-06-19-fix-mail-serializer-bytes.md
 changelog/_unreleased/2023-02-23-refactor-namespace-for-app-flow-actions.md
 changelog/_unreleased/2023-05-31-evaluate-vue-3-eslint-rules.md
 changelog/_unreleased/2023-06-09-fix-bug-where-double-slash-would-break-saleschannelrequired-check.md
@@ -4804,6 +4810,7 @@ changelog/_unreleased/2023-06-05-widen-the-used-space-in-storefront-account-over
 changelog/_unreleased/2023-06-13-fix-bug-categories-of-type-internal-link-only-show-25-items.md
 changelog/_unreleased/2023-06-13-propagate-sw-base-field-slots-through-other-fields.md
 changelog/_unreleased/2023-06-13-improvements-in-theme-listing-and-crossseller-boxes.md
+changelog/_unreleased/2023-05-08-adjust-version-constraint-for-flysystem.md
 changelog/_unreleased/2023-06-13-fix-block-slot-combination-of-sw-sidebar-collapse.md
 changelog/_unreleased/2023-06-16-add-children-to-lineitem-in-order-types.md
 changelog/_unreleased/.keep
@@ -5364,6 +5371,7 @@ adr/2020-08-14-merchant-registration.md
 adr/2022-07-19-blog-concept.md
 adr/2021-08-11-make-platform-stand-alone.md
 adr/2022-21-11-replace-drop-shadow-with-box-shadow.md
+adr/2023-05-15-stock-api.md
 adr/2022-02-09-controller-configuration-route-defaults.md
 adr/2023-01-16-npm-packages-pre-release-versions.md
 adr/2023-01-10-atomic-theme-compilation.md
@@ -5426,6 +5434,7 @@ sonar-project.properties
 UPGRADE-6.3.md
 rector.php
 .phpstorm.meta.php
+qodana.yaml
 vendor-bin/rector/composer.json
 vendor-bin/cs-fixer/composer.json
 vendor-bin/roave-backward-compatibility-check/bin/verify-version.php
@@ -5520,6 +5529,7 @@ src/Elasticsearch/Admin/Indexer/PromotionAdminSearchIndexer.php
 src/Elasticsearch/Admin/Indexer/AbstractAdminIndexer.php
 src/Elasticsearch/Admin/Subscriber/RefreshIndexSubscriber.php
 src/Elasticsearch/Admin/AdminIndexingBehavior.php
+src/Elasticsearch/Admin/ElasticsearchAdminException.php
 src/Elasticsearch/Framework/ElasticsearchHelper.php
 src/Elasticsearch/Framework/ElasticsearchRangeAggregation.php
 src/Elasticsearch/Framework/ElasticsearchDateHistogramAggregation.php
@@ -7313,6 +7323,7 @@ src/Core/Framework/Script/ScriptDefinition.php
 src/Core/Framework/Script/ScriptCollection.php
 src/Core/Framework/Script/Facade/ArrayFacade.php
 src/Core/Framework/Script/ScriptEntity.php
+src/Core/Framework/Uuid/UuidException.php
 src/Core/Framework/Uuid/Exception/InvalidUuidLengthException.php
 src/Core/Framework/Uuid/Exception/InvalidUuidException.php
 src/Core/Framework/Uuid/Uuid.php
@@ -7323,6 +7334,7 @@ src/Core/Framework/Increment/Exception/IncrementGatewayNotFoundException.php
 src/Core/Framework/Increment/Controller/IncrementApiController.php
 src/Core/Framework/Increment/AbstractIncrementer.php
 src/Core/Framework/Increment/MySQLIncrementer.php
+src/Core/Framework/Increment/IncrementException.php
 src/Core/Framework/Increment/ArrayIncrementer.php
 src/Core/Framework/Increment/RedisIncrementer.php
 src/Core/Framework/Increment/IncrementerGatewayCompilerPass.php
@@ -7773,6 +7785,7 @@ src/Core/Framework/DataAbstractionLayer/TranslationEntity.php
 src/Core/Framework/MessageQueue/Api/ScheduledTaskController.php
 src/Core/Framework/MessageQueue/Api/ConsumeMessagesController.php
 src/Core/Framework/MessageQueue/SendEmailMessageJsonSerializer.php
+src/Core/Framework/MessageQueue/MessageQueueException.php
 src/Core/Framework/MessageQueue/AsyncMessageInterface.php
 src/Core/Framework/MessageQueue/Command/ScheduledTaskRunner.php
 src/Core/Framework/MessageQueue/Command/RegisterScheduledTasksCommand.php
@@ -10257,6 +10270,7 @@ src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteConfig.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteInterface.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlMapping.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteRegistry.php
+src/Core/Content/Seo/SeoException.php
 src/Core/Content/Seo/MainCategory/MainCategoryDefinition.php
 src/Core/Content/Seo/MainCategory/MainCategoryEntity.php
 src/Core/Content/Seo/MainCategory/SalesChannel/SalesChannelMainCategoryDefinition.php
@@ -10312,6 +10326,7 @@ src/Core/Content/Category/SalesChannel/AbstractCategoryListRoute.php
 src/Core/Content/Category/SalesChannel/SalesChannelCategoryDefinition.php
 src/Core/Content/Category/SalesChannel/CategoryRoute.php
 src/Core/Content/Category/SalesChannel/AbstractCategoryRoute.php
+src/Core/Content/Category/CategoryException.php
 src/Core/Content/Category/Tree/TreeItem.php
 src/Core/Content/Category/Tree/Tree.php
 src/Core/Content/Category/CategoryCollection.php
@@ -10943,6 +10958,7 @@ src/Core/Content/ContactForm/SalesChannel/ContactFormRoute.php
 src/Core/Content/ContactForm/SalesChannel/ContactFormRouteResponse.php
 src/Core/Content/ContactForm/SalesChannel/ContactFormRouteResponseStruct.php
 src/Core/Content/ContactForm/SalesChannel/AbstractContactFormRoute.php
+src/Core/Content/Newsletter/NewsletterException.php
 src/Core/Content/Newsletter/Exception/SalesChannelDomainNotFoundException.php
 src/Core/Content/Newsletter/Exception/NewsletterRecipientNotFoundException.php
 src/Core/Content/Newsletter/Exception/LanguageOfNewsletterDeleteException.php
