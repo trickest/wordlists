@@ -3615,6 +3615,7 @@ tests/Integration/Behaviour/Features/Scenario/Cart/Calculation/SpecificPriceRule
 tests/Integration/Behaviour/Features/Scenario/Cart/Calculation/SpecificPriceRule/mixed.feature
 tests/Integration/Behaviour/Features/Scenario/Cart/CartToOrder/cart_to_order.feature
 tests/Integration/Behaviour/Features/Scenario/Cart/Delivery/delivery_options.feature
+tests/Integration/Behaviour/Features/Scenario/Search/delete_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/edit_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/add_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/toggle_alias.feature
@@ -4126,6 +4127,7 @@ cache/index.php
 cache/tcpdf/index.php
 cache/sandbox/index.php
 cache/deprecated.txt
+rector.php
 phpstan.neon.dist
 CONTRIBUTING.md
 CONTRIBUTORS.md
@@ -7632,6 +7634,7 @@ src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesCommandHan
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesCommandHandler.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
 src/Core/Domain/Alias/Exception/AliasConstraintException.php
+src/Core/Domain/Alias/Exception/InvalidAliasIdException.php
 src/Core/Domain/Alias/Exception/AliasException.php
 src/Core/Domain/Alias/Exception/AliasNotFoundException.php
 src/Core/Domain/Alias/Exception/CannotAddAliasException.php
@@ -7639,6 +7642,8 @@ src/Core/Domain/Alias/Exception/BulkAliasException.php
 src/Core/Domain/Alias/Exception/CannotUpdateAliasException.php
 src/Core/Domain/Alias/Exception/CannotDeleteAliasException.php
 src/Core/Domain/Alias/CommandHandler/UpdateAliasStatusHandlerInterfaces.php
+src/Core/Domain/Alias/CommandHandler/DeleteAliasHandlerInterface.php
+src/Core/Domain/Alias/CommandHandler/BulkDeleteAliasHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/AddAliasHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/BulkUpdateAliasStatusHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/UpdateAliasHandlerInterface.php
@@ -7646,7 +7651,9 @@ src/Core/Domain/Alias/ValueObject/AliasId.php
 src/Core/Domain/Alias/QueryResult/AliasForEditing.php
 src/Core/Domain/Alias/QueryHandler/GetAliasForEditingHandlerInterface.php
 src/Core/Domain/Alias/Command/AddAliasCommand.php
+src/Core/Domain/Alias/Command/DeleteAliasCommand.php
 src/Core/Domain/Alias/Command/UpdateAliasCommand.php
+src/Core/Domain/Alias/Command/BulkDeleteAliasCommand.php
 src/Core/Domain/Alias/Command/UpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Command/BulkUpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Query/GetAliasForEditing.php
@@ -11334,9 +11341,11 @@ src/Adapter/MailTemplate/MailPreviewVariablesBuilder.php
 src/Adapter/MailTemplate/MailPartialTemplateRenderer.php
 src/Adapter/MailTemplate/MailTemplateTwigRenderer.php
 src/Adapter/Alias/Validate/AliasValidator.php
+src/Adapter/Alias/CommandHandler/DeleteAliasHandler.php
 src/Adapter/Alias/CommandHandler/UpdateAliasStatusHandler.php
 src/Adapter/Alias/CommandHandler/UpdateAliasHandler.php
 src/Adapter/Alias/CommandHandler/BulkUpdateAliasStatusHandler.php
+src/Adapter/Alias/CommandHandler/BulkDeleteAliasHandler.php
 src/Adapter/Alias/CommandHandler/AddAliasHandler.php
 src/Adapter/Alias/Repository/AliasRepository.php
 src/Adapter/Alias/QueryHandler/GetAliasForEditingHandler.php

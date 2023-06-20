@@ -4359,8 +4359,8 @@ app/frontend/shared/form/features/addSubmitEvent.ts
 app/frontend/shared/form/features/addBlurEvent.ts
 app/frontend/shared/form/features/formUpdaterTrigger.ts
 app/frontend/shared/form/features/addIcon.ts
-app/frontend/shared/form/features/removeValuesForNonExistingOptions.ts
 app/frontend/shared/form/features/addLink.ts
+app/frontend/shared/form/features/removeValuesForNonExistingOrDisabledOptions.ts
 app/frontend/shared/form/features/defaultEmptyValueString.ts
 app/frontend/shared/form/features/__tests__/translateWrapperProps.spec.ts
 app/frontend/shared/form/features/__tests__/formUpdaterTrigger.spec.ts
@@ -4402,6 +4402,10 @@ app/frontend/shared/components/CommonUserAvatar/CommonUserAvatar.vue
 app/frontend/shared/components/CommonUserAvatar/__tests__/CommonUserAvatar.spec.ts
 app/frontend/shared/components/CommonTicketStateIndicator/CommonTicketStateIndicator.vue
 app/frontend/shared/components/CommonTicketStateIndicator/__tests__/CommonTicketStateIndicator.spec.ts
+app/frontend/shared/components/CommonTooltip/types.ts
+app/frontend/shared/components/CommonTooltip/useTooltipControls.ts
+app/frontend/shared/components/CommonTooltip/CommonTooltip.vue
+app/frontend/shared/components/CommonTooltip/_tests__/CommonTooltip.spec.ts
 app/frontend/shared/components/CommonOrganizationAvatar/types.ts
 app/frontend/shared/components/CommonOrganizationAvatar/index.ts
 app/frontend/shared/components/CommonOrganizationAvatar/CommonOrganizationAvatar.story.vue
@@ -4426,7 +4430,6 @@ app/frontend/shared/components/CommonLink/__tests__/CommonLink.spec.ts
 app/frontend/shared/components/CommonInputSearch/CommonInputSearch.vue
 app/frontend/shared/components/CommonInputSearch/CommonInputSearch.story.vue
 app/frontend/shared/components/CommonInputSearch/__tests__/CommonInputSearch.spec.ts
-app/frontend/shared/components/ObjectAttributes/config.ts
 app/frontend/shared/components/ObjectAttributes/ObjectAttributes.story.vue
 app/frontend/shared/components/ObjectAttributes/types.ts
 app/frontend/shared/components/ObjectAttributes/useDisplayObjectAttributes.ts
@@ -4958,6 +4961,7 @@ app/frontend/shared/utils/__tests__/htmlCleanup.spec.ts
 app/frontend/shared/utils/__tests__/testFlags.spec.ts
 app/frontend/shared/utils/__tests__/formatters.spec.ts
 app/frontend/shared/composables/useMetaTitle.ts
+app/frontend/shared/composables/useSharedVisualConfig.ts
 app/frontend/shared/composables/useForceDesktop.ts
 app/frontend/shared/composables/useStickyHeader.ts
 app/frontend/shared/composables/useFocusWhenTyping.ts
@@ -5171,7 +5175,7 @@ app/frontend/apps/mobile/entities/organization/composables/useOrganizationTicket
 app/frontend/apps/mobile/entities/organization/composables/useOrganizationEdit.ts
 app/frontend/apps/mobile/entities/organization/composables/useOrganizationDetail.ts
 app/frontend/apps/mobile/entities/organization/__tests__/mocks/organization-mocks.ts
-app/frontend/apps/mobile/initializer/objectAttributes.ts
+app/frontend/apps/mobile/initializer/mobileVisuals.ts
 app/frontend/apps/mobile/styles/main.scss
 app/frontend/apps/mobile/initialize.ts
 app/frontend/apps/mobile/App.vue

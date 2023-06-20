@@ -451,6 +451,8 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
+tests/unit/php/Core/Framework/MessageQueue/Api/ConsumeMessagesControllerTest.php
+tests/unit/php/Core/Framework/MessageQueue/MessageQueueExceptionTest.php
 tests/unit/php/Core/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
 tests/unit/php/Core/Framework/MessageQueue/ScheduledTask/Registry/TaskRegistryTest.php
 tests/unit/php/Core/Framework/MessageQueue/ScheduledTask/Compatibility/ScheduledTaskCompatibilitySubscriberTest.php
@@ -803,6 +805,7 @@ tests/unit/php/Core/Test/FeatureFlagExtensionTest.php
 tests/unit/php/Storefront/Controller/AuthControllerTest.php
 tests/unit/php/Storefront/Controller/CmsControllerTest.php
 tests/unit/php/Storefront/Controller/Exception/StorefrontExceptionTest.php
+tests/unit/php/Storefront/Controller/CheckoutControllerTest.php
 tests/unit/php/Storefront/Controller/RegisterControllerTest.php
 tests/unit/php/Storefront/Controller/ProductControllerTest.php
 tests/unit/php/Storefront/Controller/AccountOrderControllerTest.php
@@ -4781,6 +4784,7 @@ changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
 changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
 changelog/_unreleased/2023-05-30-apply-domain-exceptions-in-controllers.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
+changelog/_unreleased/2023-06-12-fix-order-state-auto-reset-to-open-status.md
 changelog/_unreleased/2023-06-15-wrap-newsletter-recipient-error-shopwareexception.md
 changelog/_unreleased/2023-06-15-implement-keyvaluestorage.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
@@ -4801,6 +4805,8 @@ changelog/_unreleased/2023-06-07-use-value-of-before-system-config-changed-event
 changelog/_unreleased/2023-06-05-wrap-storefrontcontroller-render-call-in-shopwareexception.md
 changelog/_unreleased/2023-04-27-fix-versioned-many-to-one-references.md
 changelog/_unreleased/2022-07-05-add-custom-event-to-current-list-event.md
+changelog/_unreleased/2023-06-13-catch-payment-method-exceptions-on-finish.md
+changelog/_unreleased/2023-06-16-introduce-domain-exceptions-for-state-machine.md
 changelog/_unreleased/2023-06-06-fix-dal-validation-for-snippet-value.md
 changelog/_unreleased/2023-05-23-document-translator-does-not-use-fallback.md
 changelog/_unreleased/2023-05-12-fix-bulk-edit-when-empty-custom-fields-is-passed-it-wipes-out-all-custom-fields.md
@@ -5771,6 +5777,7 @@ src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTran
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionActions.php
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionEntity.php
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionCollection.php
+src/Core/System/StateMachine/StateMachineException.php
 src/Core/System/StateMachine/Command/WorkflowDumpCommand.php
 src/Core/System/StateMachine/StateMachineTranslationEntity.php
 src/Core/System/StateMachine/StateMachineTranslationDefinition.php

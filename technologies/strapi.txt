@@ -1891,6 +1891,7 @@ packages/core/admin/ee/server/migrations/review-workflows-stages-color.js
 packages/core/admin/ee/server/migrations/audit-logs-table.js
 packages/core/admin/ee/server/constants/default-stages.json
 packages/core/admin/ee/server/constants/workflows.js
+packages/core/admin/ee/server/constants/webhookEvents.js
 packages/core/admin/ee/server/constants/default-workflow.json
 packages/core/admin/ee/server/utils/index.js
 packages/core/admin/ee/server/utils/persisted-tables.js
@@ -2229,7 +2230,7 @@ packages/core/email/README.md
 packages/core/email/.npmignore
 packages/core/email/admin/src/index.js
 packages/core/email/admin/src/pluginId.js
-packages/core/email/admin/src/permissions.js
+packages/core/email/admin/src/constants.js
 packages/core/email/admin/src/pages/Settings/index.js
 packages/core/email/admin/src/pages/Settings/components/EmailHeader.js
 packages/core/email/admin/src/pages/Settings/components/Configuration.js
@@ -2451,7 +2452,7 @@ packages/core/content-type-builder/admin/src/components/NestedTFooter/index.js
 packages/core/content-type-builder/admin/src/components/SelectComponents/index.js
 packages/core/content-type-builder/admin/src/components/ReviewWorkflowsToggle/index.js
 packages/core/content-type-builder/admin/src/pluginId.js
-packages/core/content-type-builder/admin/src/permissions.js
+packages/core/content-type-builder/admin/src/constants.js
 packages/core/content-type-builder/admin/src/contexts/DataManagerContext.js
 packages/core/content-type-builder/admin/src/contexts/FormModalNavigationContext.js
 packages/core/content-type-builder/admin/src/icons/Curve.js
@@ -2794,7 +2795,6 @@ packages/core/upload/admin/src/components/EditFolderDialog/tests/EditFolderDialo
 packages/core/upload/admin/src/components/EditFolderDialog/EditFolderDialog.js
 packages/core/upload/admin/src/components/CopyLinkButton/index.js
 packages/core/upload/admin/src/pluginId.js
-packages/core/upload/admin/src/permissions.js
 packages/core/upload/admin/src/constants.js
 packages/core/upload/admin/src/pages/SettingsPage/index.js
 packages/core/upload/admin/src/pages/SettingsPage/tests/reducer.test.js
@@ -3077,7 +3077,7 @@ packages/plugins/documentation/admin/src/index.js
 packages/plugins/documentation/admin/src/components/FieldActionWrapper/index.js
 packages/plugins/documentation/admin/src/components/PluginIcon/index.js
 packages/plugins/documentation/admin/src/pluginId.js
-packages/plugins/documentation/admin/src/permissions.js
+packages/plugins/documentation/admin/src/constants.js
 packages/plugins/documentation/admin/src/pages/PluginPage/index.js
 packages/plugins/documentation/admin/src/pages/PluginPage/tests/server.js
 packages/plugins/documentation/admin/src/pages/PluginPage/tests/index.test.js
@@ -3375,7 +3375,7 @@ packages/plugins/i18n/admin/src/selectors/selectCollectionTypesRelatedPermission
 packages/plugins/i18n/admin/src/selectors/tests/selectors.test.js
 packages/plugins/i18n/admin/src/selectors/selectI18nLocales.js
 packages/plugins/i18n/admin/src/schemas.js
-packages/plugins/i18n/admin/src/permissions.js
+packages/plugins/i18n/admin/src/constants.js
 packages/plugins/i18n/admin/src/pages/SettingsPage/index.js
 packages/plugins/i18n/admin/src/pages/SettingsPage/tests/SettingsPage.test.js
 packages/plugins/i18n/admin/src/pages/SettingsPage/LocaleSettingsPage.js
@@ -3530,7 +3530,7 @@ packages/plugins/users-permissions/admin/src/components/UsersPermissions/tests/i
 packages/plugins/users-permissions/admin/src/components/UsersPermissions/reducer.js
 packages/plugins/users-permissions/admin/src/components/UsersPermissions/init.js
 packages/plugins/users-permissions/admin/src/pluginId.js
-packages/plugins/users-permissions/admin/src/permissions.js
+packages/plugins/users-permissions/admin/src/constants.js
 packages/plugins/users-permissions/admin/src/contexts/UsersPermissionsContext/index.js
 packages/plugins/users-permissions/admin/src/pages/Roles/ListPage/index.js
 packages/plugins/users-permissions/admin/src/pages/Roles/ListPage/components/TableBody.js
