@@ -1023,9 +1023,6 @@ packages/core/admin/admin/src/components/AuthenticatedApp/tests/index.test.js
 packages/core/admin/admin/src/components/AuthenticatedApp/utils/api.js
 packages/core/admin/admin/src/components/AuthenticatedApp/utils/tests/checkLatestStrapiVersion.test.js
 packages/core/admin/admin/src/components/AuthenticatedApp/utils/checkLatestStrapiVersion.js
-packages/core/admin/admin/src/permissions/defaultPermissions.js
-packages/core/admin/admin/src/permissions/customPermissions.js
-packages/core/admin/admin/src/permissions/index.js
 packages/core/admin/admin/src/exposedHooks.js
 packages/core/admin/admin/src/tests/StrapiApp.test.js
 packages/core/admin/admin/src/tests/__snapshots__/StrapiApp.test.js.snap
@@ -1044,6 +1041,7 @@ packages/core/admin/admin/src/core/apis/Plugin.js
 packages/core/admin/admin/src/core/apis/Middlewares.js
 packages/core/admin/admin/src/core/apis/Reducers.js
 packages/core/admin/admin/src/app.js
+packages/core/admin/admin/src/constants.js
 packages/core/admin/admin/src/tsconfig.json
 packages/core/admin/admin/src/contexts/index.js
 packages/core/admin/admin/src/contexts/Configurations/index.js
@@ -1195,7 +1193,6 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/compon
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/components/FormApiTokenContainer/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/components/ContenTypesSection/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/tests/reducer.test.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/tests/__snapshots__/index.test.js.snap
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/reducer.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/EditView/init.js
@@ -1256,7 +1253,6 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/comp
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/LogoInput/reducer.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/LogoInput/stepper.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/AdminSeatInfo/index.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/tests/server.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/utils/getFormData.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/utils/urlToFile.js
@@ -1267,7 +1263,6 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/util
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/components/LoadingView/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/components/FormTransferTokenContainer/index.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/tests/__snapshots__/index.test.js.snap
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/utils/schema.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/EditView/utils/index.js
@@ -1288,11 +1283,7 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/Pagination
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/PaginationFooter/tests/__snapshots__/index.test.js.snap
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/PaginationFooter/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/index.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/formDataModel.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/schema.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/roleSettingsForm.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/layout.js
-packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/stepper.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/ModalForm/constants.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/DynamicTable/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/DynamicTable/TableRows/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/ListPage/utils/tableHeaders.js
@@ -1328,6 +1319,7 @@ packages/core/admin/admin/src/pages/App/reducer.js
 packages/core/admin/admin/src/pages/App/constants.js
 packages/core/admin/admin/src/pages/App/utils/index.js
 packages/core/admin/admin/src/pages/App/utils/unique-identifier.js
+packages/core/admin/admin/src/pages/App/selectors.js
 packages/core/admin/admin/src/pages/Admin/index.js
 packages/core/admin/admin/src/pages/Admin/Onboarding/index.js
 packages/core/admin/admin/src/pages/Admin/Onboarding/tests/index.test.js
@@ -1375,14 +1367,11 @@ packages/core/admin/admin/src/pages/AuthPage/tests/reducer.test.js
 packages/core/admin/admin/src/pages/AuthPage/tests/init.test.js
 packages/core/admin/admin/src/pages/AuthPage/reducer.js
 packages/core/admin/admin/src/pages/AuthPage/init.js
-packages/core/admin/admin/src/pages/AuthPage/utils/index.js
-packages/core/admin/admin/src/pages/AuthPage/utils/forms.js
+packages/core/admin/admin/src/pages/AuthPage/constants.js
 packages/core/admin/admin/src/hooks/useEnterprise/index.js
 packages/core/admin/admin/src/hooks/useEnterprise/tests/useEnterprise.test.js
 packages/core/admin/admin/src/hooks/useEnterprise/useEnterprise.js
 packages/core/admin/admin/src/hooks/useMenu/index.js
-packages/core/admin/admin/src/hooks/useMenu/tests/reducer.test.js
-packages/core/admin/admin/src/hooks/useMenu/reducer.js
 packages/core/admin/admin/src/hooks/useMenu/utils/tests/getPluginSectionLinks.test.js
 packages/core/admin/admin/src/hooks/useMenu/utils/tests/getGeneralLinks.test.js
 packages/core/admin/admin/src/hooks/useMenu/utils/tests/checkPermissions.test.js
@@ -1688,7 +1677,6 @@ packages/core/admin/admin/src/content-manager/pages/App/components/ComponentDrag
 packages/core/admin/admin/src/content-manager/pages/App/components/CardDragPreview.js
 packages/core/admin/admin/src/content-manager/pages/App/tests/reducer.test.js
 packages/core/admin/admin/src/content-manager/pages/App/tests/actions.test.js
-packages/core/admin/admin/src/content-manager/pages/App/tests/index.test.js
 packages/core/admin/admin/src/content-manager/pages/App/tests/selectors.test.js
 packages/core/admin/admin/src/content-manager/pages/App/LeftMenu/index.js
 packages/core/admin/admin/src/content-manager/pages/App/reducer.js
@@ -1915,6 +1903,7 @@ packages/core/admin/ee/server/controllers/authentication/middlewares.js
 packages/core/admin/ee/server/middlewares/review-workflows.js
 packages/core/admin/ee/server/middlewares/__tests__/review-workflows.test.js
 packages/core/admin/ee/admin/permissions/customPermissions.js
+packages/core/admin/ee/admin/constants.js
 packages/core/admin/ee/admin/pages/SettingsPage/constants.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/AuditLogs/ProtectedListPage/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/AuditLogs/ListView/ComboboxFilter/index.js
@@ -1938,8 +1927,7 @@ packages/core/admin/ee/admin/pages/SettingsPage/pages/Webhooks/EditView/componen
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ApplicationInfosPage/components/AdminSeatInfo/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ApplicationInfosPage/components/AdminSeatInfo/tests/index.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/Users/ListPage/CreateAction/index.js
-packages/core/admin/ee/admin/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/formDataModel.js
-packages/core/admin/ee/admin/pages/SettingsPage/pages/Users/ListPage/ModalForm/utils/roleSettingsForm.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/Users/ListPage/ModalForm/constants.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/Users/components/MagicLink/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/ReviewWorkflows.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/index.js
@@ -1966,6 +1954,7 @@ packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/reducer/te
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/utils/getWorkflowValidationSchema.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/utils/tests/colors.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/utils/colors.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/ProtectedPage.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/tests/server.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/tests/index.test.js
@@ -1975,7 +1964,7 @@ packages/core/admin/ee/admin/pages/AuthResponse/index.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Login/index.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Providers/index.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Providers/SSOProviders.js
-packages/core/admin/ee/admin/pages/AuthPage/utils/forms.js
+packages/core/admin/ee/admin/pages/AuthPage/constants.js
 packages/core/admin/ee/admin/hooks/index.js
 packages/core/admin/ee/admin/hooks/useAuthProviders/index.js
 packages/core/admin/ee/admin/hooks/useAuthProviders/tests/reducer.test.js

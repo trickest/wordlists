@@ -3366,6 +3366,7 @@ tests/Integration/Behaviour/Features/Context/Domain/CustomerServiceFeatureContex
 tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CarrierFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderReturnFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/CartRule/CommonCartRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/EditCartRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/AbstractCartRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/DeleteCartRuleFeatureContext.php
@@ -3538,6 +3539,7 @@ tests/Integration/Behaviour/Features/Scenario/OrderState/order_state.feature
 tests/Integration/Behaviour/Features/Scenario/CatalogPriceRule/catalog_price_rules_listing.feature
 tests/Integration/Behaviour/Features/Scenario/CLDR/cldr.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/add_cart_rule.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_cart_rule_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/edit_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/delete_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/Attribute/list_attribute_groups.feature
@@ -7076,6 +7078,7 @@ src/Core/Translation/Storage/Finder/TranslationFinder.php
 src/Core/Repository/ShopConstraintTrait.php
 src/Core/Repository/RepositoryInterface.php
 src/Core/Repository/AbstractMultiShopObjectModelRepository.php
+src/Core/Repository/TransactionManagerInterface.php
 src/Core/Repository/AbstractObjectModelRepository.php
 src/Core/Customer/CustomerDataSourceInterface.php
 src/Core/CMS/CmsPageViewDataProviderInterface.php
@@ -7671,6 +7674,7 @@ src/Core/Domain/CartRule/Exception/CannotAddCartRuleException.php
 src/Core/Domain/CartRule/Exception/InvalidCartRuleDiscountValueException.php
 src/Core/Domain/CartRule/CommandHandler/ToggleCartRuleStatusHandlerInterface.php
 src/Core/Domain/CartRule/CommandHandler/EditCartRuleHandlerInterface.php
+src/Core/Domain/CartRule/CommandHandler/SetCartRuleRestrictionsHandlerInterface.php
 src/Core/Domain/CartRule/CommandHandler/AddCartRuleHandlerInterface.php
 src/Core/Domain/CartRule/CommandHandler/BulkDeleteCartRuleHandlerInterface.php
 src/Core/Domain/CartRule/CommandHandler/DeleteCartRuleHandlerInterface.php
@@ -7695,6 +7699,7 @@ src/Core/Domain/CartRule/QueryHandler/GetCartRuleForEditingHandlerInterface.php
 src/Core/Domain/CartRule/Command/DeleteCartRuleCommand.php
 src/Core/Domain/CartRule/Command/AddCartRuleCommand.php
 src/Core/Domain/CartRule/Command/BulkToggleCartRuleStatusCommand.php
+src/Core/Domain/CartRule/Command/SetCartRuleRestrictionsCommand.php
 src/Core/Domain/CartRule/Command/EditCartRuleCommand.php
 src/Core/Domain/CartRule/Command/BulkDeleteCartRuleCommand.php
 src/Core/Domain/CartRule/Command/ToggleCartRuleStatusCommand.php
@@ -8473,6 +8478,7 @@ src/Core/Domain/Language/Command/BulkToggleLanguagesStatusCommand.php
 src/Core/Domain/Language/Command/DeleteLanguageCommand.php
 src/Core/Domain/Language/Command/AddLanguageCommand.php
 src/Core/Domain/Language/Query/GetLanguageForEditing.php
+src/Core/Domain/AuthorizationServer/Model/ApiAccessRepositoryInterface.php
 src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationFactoryInterface.php
 src/Core/Domain/AuthorizationServer/Model/ApiAccessInterface.php
 src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationInterface.php
@@ -8480,10 +8486,13 @@ src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationRepositoryInterfa
 src/Core/Domain/AuthorizationServer/Exception/DuplicateApplicationNameException.php
 src/Core/Domain/AuthorizationServer/Exception/ApplicationNotFoundException.php
 src/Core/Domain/AuthorizationServer/Exception/ApplicationConstraintException.php
+src/Core/Domain/AuthorizationServer/Exception/DeleteApplicationException.php
 src/Core/Domain/AuthorizationServer/Exception/ApplicationException.php
 src/Core/Domain/AuthorizationServer/CommandHandler/AddApplicationHandler.php
+src/Core/Domain/AuthorizationServer/CommandHandler/DeleteApplicationHandler.php
 src/Core/Domain/AuthorizationServer/CommandHandler/EditApplicationHandler.php
 src/Core/Domain/AuthorizationServer/CommandHandler/EditApplicationHandlerInterface.php
+src/Core/Domain/AuthorizationServer/CommandHandler/DeleteApplicationHandlerInterface.php
 src/Core/Domain/AuthorizationServer/CommandHandler/AddApplicationHandlerInterface.php
 src/Core/Domain/AuthorizationServer/ValueObject/ApplicationId.php
 src/Core/Domain/AuthorizationServer/QueryResult/EditableApplication.php
@@ -8491,6 +8500,7 @@ src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandler
 src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandler.php
 src/Core/Domain/AuthorizationServer/Command/AddApplicationCommand.php
 src/Core/Domain/AuthorizationServer/Command/EditApplicationCommand.php
+src/Core/Domain/AuthorizationServer/Command/DeleteApplicationCommand.php
 src/Core/Domain/AuthorizationServer/Query/GetApplicationForEditing.php
 src/Core/Domain/OrderReturnState/Exception/OrderReturnStateException.php
 src/Core/Domain/OrderReturnState/Exception/DeleteOrderReturnStateException.php
@@ -10321,6 +10331,7 @@ src/PrestaShopBundle/Service/TransitionalBehavior/AdminPagePreferenceInterface.p
 src/PrestaShopBundle/Service/TransitionalBehavior/AdminUrlGeneratorFactory.php
 src/PrestaShopBundle/Service/Log/LogHandler.php
 src/PrestaShopBundle/Service/Database/DoctrineNamingStrategy.php
+src/PrestaShopBundle/Service/Database/TransactionManager.php
 src/PrestaShopBundle/Service/Database/Upgrade.php
 src/PrestaShopBundle/Service/Multistore/CustomizedConfigurationChecker.php
 src/PrestaShopBundle/Service/Grid/ControllerResponseBuilder.php
@@ -10452,6 +10463,7 @@ src/PrestaShopBundle/Controller/Admin/CategoryController.php
 src/PrestaShopBundle/Controller/Admin/ProductController.php
 src/PrestaShopBundle/Controller/Admin/SecurityController.php
 src/PrestaShopBundle/Controller/Admin/ErrorController.php
+src/PrestaShopBundle/Controller/Admin/PrestaShopAdminController.php
 src/PrestaShopBundle/Controller/Admin/CombinationController.php
 src/PrestaShopBundle/Controller/ArgumentResolver/FiltersBuilderResolver.php
 src/PrestaShopBundle/Controller/BulkActionsTrait.php
@@ -10671,7 +10683,6 @@ src/PrestaShopBundle/DependencyInjection/Compiler/RouterPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/RemoveXmlCompiledContainerPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/LoadServicesFromModulesPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/IdentifiableObjectFormTypesCollectorPass.php
-src/PrestaShopBundle/DependencyInjection/Compiler/ContainerInjectionPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/GridDefinitionServiceIdsCollectorPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/OverrideTranslatorServiceCompilerPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/CommandAndQueryCollectorPass.php
@@ -11364,6 +11375,7 @@ src/Adapter/CartRule/CommandHandler/EditCartRuleHandler.php
 src/Adapter/CartRule/CommandHandler/BulkToggleCartRuleStatusHandler.php
 src/Adapter/CartRule/CommandHandler/ToggleCartRuleStatusHandler.php
 src/Adapter/CartRule/CommandHandler/DeleteCartRuleHandler.php
+src/Adapter/CartRule/CommandHandler/SetCartRuleRestrictionsHandler.php
 src/Adapter/CartRule/CommandHandler/AddCartRuleHandler.php
 src/Adapter/CartRule/CommandHandler/BulkDeleteCartRuleHandler.php
 src/Adapter/CartRule/Repository/CartRuleRepository.php

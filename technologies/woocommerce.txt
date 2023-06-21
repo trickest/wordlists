@@ -2021,6 +2021,7 @@ plugins/woocommerce/tests/php/includes/class-wc-download-handler-tests.php
 plugins/woocommerce/tests/php/includes/cli/class-wc-cli-update-command-test.php
 plugins/woocommerce/tests/php/includes/class-wc-cart-totals-test.php
 plugins/woocommerce/tests/php/includes/wc-attribute-functions-test.php
+plugins/woocommerce/tests/php/includes/class-wc-privacy-test.php
 plugins/woocommerce/tests/php/includes/class-wc-comments-test.php
 plugins/woocommerce/tests/php/includes/class-wc-customer-test.php
 plugins/woocommerce/tests/php/src/Proxies/DynamicDecoratorTest.php
@@ -2533,10 +2534,16 @@ plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-crud-orders.php
 plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
 plugins/woocommerce/changelog/fix-help-panel-links
+plugins/woocommerce/changelog/fix-e2e-order-emails
+plugins/woocommerce/changelog/feature-38805-create-campaign-button
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-36374-use-show-index-instead-of-db-schema
+plugins/woocommerce/changelog/e2e-skip-failing-e2e-test-to-be-investigated
+plugins/woocommerce/changelog/fix-legacy-js-es6
 plugins/woocommerce/changelog/update-lint-scripts
-plugins/woocommerce/changelog/update-38695
+plugins/woocommerce/changelog/fix-24432-account-cleanup
+plugins/woocommerce/changelog/fix-issue-36560
+plugins/woocommerce/changelog/update-phpcs-changed-2.11.1
 plugins/woocommerce/phpunit.xml
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/tsconfig.json
@@ -3504,6 +3511,7 @@ plugins/woocommerce/src/Admin/Features/PaymentGatewaySuggestions/PaymentGateways
 plugins/woocommerce/src/Admin/Features/PaymentGatewaySuggestions/DefaultPaymentGateways.php
 plugins/woocommerce/src/Admin/Features/PaymentGatewaySuggestions/PaymentGatewaySuggestionsDataSourcePoller.php
 plugins/woocommerce/src/Admin/Features/PaymentGatewaySuggestions/EvaluateSuggestion.php
+plugins/woocommerce/src/Admin/Features/ProductBlockEditor/Tracks.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/Init.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/RedirectionController.php
@@ -3805,6 +3813,7 @@ plugins/woocommerce-beta-tester/.prettierrc.js
 plugins/woocommerce-beta-tester/.editorconfig
 plugins/woocommerce-beta-tester/.travis.yml
 plugins/woocommerce-beta-tester/changelog/update-beta-tester-woorelease
+plugins/woocommerce-beta-tester/changelog/fix-beta-tester-wcapp-constant
 plugins/woocommerce-beta-tester/changelog/update-test-helper-features-list
 plugins/woocommerce-beta-tester/changelog/update-woocommerce-beta-tester-readme
 plugins/woocommerce-beta-tester/changelog/update-wp-env-8.0.0
@@ -4290,6 +4299,7 @@ packages/js/product-editor/changelog/update-product_rest_config
 packages/js/product-editor/changelog/add-37771
 packages/js/product-editor/changelog/update-layout-context-for-blocks
 packages/js/product-editor/changelog/add-37096
+packages/js/product-editor/changelog/fix-38637
 packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-37663
 packages/js/product-editor/changelog/fix-product-summary-field-margin
@@ -4506,6 +4516,7 @@ packages/js/product-editor/src/components/tabs/tabs.tsx
 packages/js/product-editor/src/components/tabs/constants.ts
 packages/js/product-editor/src/components/tabs/index.ts
 packages/js/product-editor/src/components/tabs/style.scss
+packages/js/product-editor/src/components/tabs/utils/get-tab-tracks-data.ts
 packages/js/product-editor/src/components/tabs/test/tabs.spec.tsx
 packages/js/product-editor/src/components/feedback-bar/index.ts
 packages/js/product-editor/src/components/feedback-bar/style.scss
@@ -5172,6 +5183,7 @@ packages/js/components/changelog/add-37330
 packages/js/components/changelog/fix-37502
 packages/js/components/changelog/update-product_editor_packages
 packages/js/components/changelog/add-35851-tree-control-highlight-item
+packages/js/components/changelog/fix-38637
 packages/js/components/changelog/add-35851-tree-control-selection
 packages/js/components/changelog/fix-typescript-package-isolation
 packages/js/components/changelog/try-product-mvp-slotfill-experiments
