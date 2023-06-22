@@ -97,6 +97,7 @@ db/migrate/20180116000001_setting_ticket_number_ignore_system_id_support.rb
 db/migrate/20190613000001_group_dependent_text_modules.rb
 db/migrate/20190717210244_issue_2641_kb_color_change_limit.rb
 db/migrate/20180911064647_issue_2140_reset_ldap_config.rb
+db/migrate/20230509091602_add_history_source.rb
 db/migrate/20170713000001_omniauth_office365_setting.rb
 db/migrate/20230404092742_issue_4484_time_based_trigger.rb
 db/migrate/20230510102126_two_factor_authentication_setup.rb
@@ -165,6 +166,7 @@ db/migrate/20210921112300_issue_3751_missing_workflow_screens.rb
 db/migrate/20180226085743_issue_1660_fix_tree_select_configurations.rb
 db/migrate/20170403000001_fixed_admin_user_permission_920.rb
 db/migrate/20201201000001_setting_add_sender_format_agent_name.rb
+db/migrate/20230620090110_ticket_organization_reassignment.rb
 db/migrate/20220124104955_update_object_attributes.rb
 db/migrate/20220314080801_issue4009_fix_title.rb
 db/migrate/20150979000001_update_timestamps.rb
@@ -1180,6 +1182,7 @@ spec/system/ticket/history_spec.rb
 spec/system/ticket/create_spec.rb
 spec/system/ticket/zoom/autosave_spec.rb
 spec/system/ticket/zoom/link_spec.rb
+spec/system/ticket/zoom/history_spec.rb
 spec/system/ticket/zoom/readonly_spec.rb
 spec/system/ticket/zoom/email_reply_body_spec.rb
 spec/system/ticket/zoom/auto_assignment_spec.rb
@@ -1565,6 +1568,7 @@ spec/db/migrate/issue3110_service_now_provider_spec.rb
 spec/db/migrate/issue_4410_account_linking_notification_spec.rb
 spec/db/migrate/issue_2345_es_attachment_max_size_in_mb_setting_lower_default_spec.rb
 spec/db/migrate/issue2641_kb_color_change_limit_spec.rb
+spec/db/migrate/add_history_source_spec.rb
 spec/db/migrate/issue_2671_pending_till_can_be_changed_by_customer_spec.rb
 spec/db/migrate/rename_locale_on_users_spec.rb
 spec/db/migrate/issue_2401_convert_user_login_email_to_unicode_spec.rb
@@ -2645,7 +2649,6 @@ config/secrets.yml
 config/cable.yml
 config/application.rb
 config/vite.json
-config/issue_2656_workaround_for_rails_issue_33600.rb
 config/environment.rb
 config/holiday_calendars.yml
 config/initializers/delayed_jobs_verify_db_connection.rb

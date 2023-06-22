@@ -183,6 +183,9 @@ tools/monorepo-utils/src/core/wpenv.ts
 tools/monorepo-utils/src/core/logger.ts
 tools/monorepo-utils/src/core/__tests__/environment.ts
 tools/monorepo-utils/src/core/__tests__/logger.ts
+tools/monorepo-utils/src/workflow-profiler/lib/index.ts
+tools/monorepo-utils/src/workflow-profiler/commands/index.ts
+tools/monorepo-utils/src/workflow-profiler/commands/list/index.ts
 tools/monorepo-utils/src/slack/README.md
 tools/monorepo-utils/src/slack/commands/slack/slack-message.ts
 tools/monorepo-utils/src/slack/commands/slack/index.ts
@@ -2533,6 +2536,7 @@ plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-order-functions
 plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-crud-orders.php
 plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
+plugins/woocommerce/changelog/fix-38859-use-hard-redirection-from-core-profiler
 plugins/woocommerce/changelog/fix-help-panel-links
 plugins/woocommerce/changelog/fix-e2e-order-emails
 plugins/woocommerce/changelog/feature-38805-create-campaign-button
@@ -2544,6 +2548,7 @@ plugins/woocommerce/changelog/update-lint-scripts
 plugins/woocommerce/changelog/fix-24432-account-cleanup
 plugins/woocommerce/changelog/fix-issue-36560
 plugins/woocommerce/changelog/update-phpcs-changed-2.11.1
+plugins/woocommerce/changelog/fix-adding-new-attribute-failed-error
 plugins/woocommerce/phpunit.xml
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/tsconfig.json

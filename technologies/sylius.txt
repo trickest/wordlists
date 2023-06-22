@@ -5339,6 +5339,9 @@ src/Sylius/Bundle/CurrencyBundle/Form/Type/CurrencyType.php
 src/Sylius/Bundle/CurrencyBundle/Form/Type/ExchangeRateType.php
 src/Sylius/Bundle/CurrencyBundle/Form/Type/CurrencyChoiceType.php
 src/Sylius/Bundle/CurrencyBundle/composer.json
+src/Sylius/Bundle/ProductBundle/Tests/DependencyInjection/SyliusProductExtensionsTest.php
+src/Sylius/Bundle/ProductBundle/Tests/DependencyInjection/Compiler/DefaultProductVariantResolverCompilerPassTest.php
+src/Sylius/Bundle/ProductBundle/Tests/Stub/ProductVariantResolverStub.php
 src/Sylius/Bundle/ProductBundle/.gitattributes
 src/Sylius/Bundle/ProductBundle/Resources/config/services.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/services/integrations/doctrine/orm.xml
@@ -5508,6 +5511,7 @@ src/Sylius/Bundle/ProductBundle/spec/Form/EventSubscriber/BuildAttributesFormSub
 src/Sylius/Bundle/ProductBundle/spec/Form/EventSubscriber/BuildProductVariantFormSubscriberSpec.php
 src/Sylius/Bundle/ProductBundle/spec/Form/EventSubscriber/GenerateProductVariantsSubscriberSpec.php
 src/Sylius/Bundle/ProductBundle/phpspec.yml.dist
+src/Sylius/Bundle/ProductBundle/Attribute/AsProductVariantResolver.php
 src/Sylius/Bundle/ProductBundle/Validator/Constraint/UniqueSimpleProductCode.php
 src/Sylius/Bundle/ProductBundle/Validator/Constraint/ProductVariantCombination.php
 src/Sylius/Bundle/ProductBundle/Validator/UniqueSimpleProductCodeValidator.php
@@ -5516,6 +5520,7 @@ src/Sylius/Bundle/ProductBundle/phpunit.xml.dist
 src/Sylius/Bundle/ProductBundle/LICENSE
 src/Sylius/Bundle/ProductBundle/EventListener/SelectProductAttributeChoiceRemoveListener.php
 src/Sylius/Bundle/ProductBundle/SyliusProductBundle.php
+src/Sylius/Bundle/ProductBundle/DependencyInjection/Compiler/DefaultProductVariantResolverCompilerPass.php
 src/Sylius/Bundle/ProductBundle/DependencyInjection/Configuration.php
 src/Sylius/Bundle/ProductBundle/DependencyInjection/SyliusProductExtension.php
 src/Sylius/Bundle/ProductBundle/test/app/config/parameters.yml
@@ -7307,6 +7312,7 @@ src/Sylius/Component/Product/spec/Generator/ProductVariantGeneratorSpec.php
 src/Sylius/Component/Product/spec/Generator/SlugGeneratorSpec.php
 src/Sylius/Component/Product/spec/Resolver/DefaultProductVariantResolverSpec.php
 src/Sylius/Component/Product/spec/Resolver/AvailableProductOptionValuesResolverSpec.php
+src/Sylius/Component/Product/spec/Resolver/CompositeProductVariantResolverSpec.php
 src/Sylius/Component/Product/phpspec.yml.dist
 src/Sylius/Component/Product/Repository/ProductVariantRepositoryInterface.php
 src/Sylius/Component/Product/Repository/ProductAssociationTypeRepositoryInterface.php
@@ -7320,6 +7326,7 @@ src/Sylius/Component/Product/Generator/SlugGeneratorInterface.php
 src/Sylius/Component/Product/Generator/ProductVariantGeneratorInterface.php
 src/Sylius/Component/Product/LICENSE
 src/Sylius/Component/Product/Resolver/DefaultProductVariantResolver.php
+src/Sylius/Component/Product/Resolver/CompositeProductVariantResolver.php
 src/Sylius/Component/Product/Resolver/AvailableProductOptionValuesResolver.php
 src/Sylius/Component/Product/Resolver/ProductVariantResolverInterface.php
 src/Sylius/Component/Product/Resolver/AvailableProductOptionValuesResolverInterface.php

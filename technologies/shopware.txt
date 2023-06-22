@@ -475,12 +475,16 @@ tests/unit/php/Core/Framework/Adapter/Twig/TwigVariableParserTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/TwigVariableParserFactoryTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/SecurityExtensionTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/TemplateFinderTest.php
+tests/unit/php/Core/Framework/Adapter/Twig/ConfigurableFilesystemCacheTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/Node/FeatureCallSilentTokenTest.php
+tests/unit/php/Core/Framework/Adapter/Twig/TemplateScopeDetectorTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/Filter/ReplaceRecursiveFilterTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/SwEscapeFilterTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/SwGetAttributeTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/TokenParser/FeatureFlagCallTokenParserTest.php
+tests/unit/php/Core/Framework/Adapter/Twig/TokenParser/ExtendsTokenParserTest.php
 tests/unit/php/Core/Framework/Adapter/Twig/Extension/PcreExtensionTest.php
+tests/unit/php/Core/Framework/Adapter/Twig/Extension/NodeExtensionTest.php
 tests/unit/php/Core/Framework/Adapter/Database/MySQLFactoryTest.php
 tests/unit/php/Core/Framework/Adapter/Filesystem/Adapter/AwsS3v3FactoryTest.php
 tests/unit/php/Core/Framework/Adapter/Asset/AssetInstallCommandTest.php
@@ -805,6 +809,7 @@ tests/unit/php/Core/Test/FeatureFlagExtensionTest.php
 tests/unit/php/Storefront/Controller/AuthControllerTest.php
 tests/unit/php/Storefront/Controller/CmsControllerTest.php
 tests/unit/php/Storefront/Controller/Exception/StorefrontExceptionTest.php
+tests/unit/php/Storefront/Controller/AddressControllerTest.php
 tests/unit/php/Storefront/Controller/CheckoutControllerTest.php
 tests/unit/php/Storefront/Controller/RegisterControllerTest.php
 tests/unit/php/Storefront/Controller/ProductControllerTest.php
@@ -4782,17 +4787,20 @@ changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.m
 changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
 changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
+changelog/_unreleased/2023-05-09-use-indices-for-cart-cleanup.md
 changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
 changelog/_unreleased/2023-05-30-apply-domain-exceptions-in-controllers.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-06-12-fix-order-state-auto-reset-to-open-status.md
 changelog/_unreleased/2023-06-15-wrap-newsletter-recipient-error-shopwareexception.md
+changelog/_unreleased/2023-06-14-create-new-template-scopes.md
 changelog/_unreleased/2023-06-15-implement-keyvaluestorage.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
 changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-06-09-quote-table-names-for-delete-unused-media-queries.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
 changelog/_unreleased/2023-06-08-allow-import-of-encoded-url.md
+changelog/_unreleased/2023-06-22-add-loading-spinner-to-password-confirm-modal-in-user-listing.md
 changelog/_unreleased/2023-06-19-fix-mail-serializer-bytes.md
 changelog/_unreleased/2023-02-23-refactor-namespace-for-app-flow-actions.md
 changelog/_unreleased/2023-05-31-evaluate-vue-3-eslint-rules.md
@@ -4811,6 +4819,7 @@ changelog/_unreleased/2023-06-13-catch-payment-method-exceptions-on-finish.md
 changelog/_unreleased/2023-04-12-fix-date-format-in-documents-not-correct.md
 changelog/_unreleased/2023-06-16-introduce-domain-exceptions-for-state-machine.md
 changelog/_unreleased/2023-06-06-fix-dal-validation-for-snippet-value.md
+changelog/_unreleased/2023-06-04-handle-form-validation-on-the-modal.md
 changelog/_unreleased/2023-05-23-document-translator-does-not-use-fallback.md
 changelog/_unreleased/2023-05-12-fix-bulk-edit-when-empty-custom-fields-is-passed-it-wipes-out-all-custom-fields.md
 changelog/_unreleased/2022-06-28-update-app-lifecycle-element-for-flow-custom-event.md
@@ -5390,6 +5399,7 @@ adr/2021-10-13-refund-handling.md
 adr/2022-06-24-add-typescript-support-for-storefront-js.md
 adr/2022-02-21-rule-scripting-in-apps.md
 adr/2021-08-10-storefront-coding-standards.md
+adr/2023-05-09-optimise-cart-cleanup.md
 adr/2022-09-23-add-bootstrap-util.md
 adr/2020-08-21-unified-notification-titles.md
 adr/2022-03-25-profiler-integrations.md
@@ -8566,6 +8576,7 @@ src/Core/Framework/Adapter/Twig/Node/ReturnNode.php
 src/Core/Framework/Adapter/Twig/Filter/CurrencyFilter.php
 src/Core/Framework/Adapter/Twig/Filter/ReplaceRecursiveFilter.php
 src/Core/Framework/Adapter/Twig/TwigVariableParserFactory.php
+src/Core/Framework/Adapter/Twig/TemplateScopeDetector.php
 src/Core/Framework/Adapter/Twig/NamespaceHierarchy/NamespaceHierarchyBuilder.php
 src/Core/Framework/Adapter/Twig/NamespaceHierarchy/BundleHierarchyBuilder.php
 src/Core/Framework/Adapter/Twig/NamespaceHierarchy/TemplateNamespaceHierarchyBuilderInterface.php
@@ -8592,6 +8603,7 @@ src/Core/Framework/Adapter/Database/ReplicaConnection.php
 src/Core/Framework/Adapter/Database/MySQLFactory.php
 src/Core/Framework/Adapter/Doctrine/Patch/AbstractAsset.php
 src/Core/Framework/Adapter/Doctrine/Messenger/DoctrineTransportFactory.php
+src/Core/Framework/Adapter/AdapterException.php
 src/Core/Framework/Adapter/Filesystem/FilesystemFactory.php
 src/Core/Framework/Adapter/Filesystem/Exception/AdapterFactoryNotFoundException.php
 src/Core/Framework/Adapter/Filesystem/Exception/DuplicateFilesystemFactoryException.php
