@@ -595,6 +595,9 @@ migrate/20210827133800_issue_3707_checkmk.rb
 db/migrate/20200507095900_imap_authentication_migration_cleanup_job_scheduler.rb
 migrate/20200507095900_imap_authentication_migration_cleanup_job_scheduler.rb
 20200507095900_imap_authentication_migration_cleanup_job_scheduler.rb
+db/migrate/20230622095629_drop_models_searchable_setting.rb
+migrate/20230622095629_drop_models_searchable_setting.rb
+20230622095629_drop_models_searchable_setting.rb
 db/migrate/20220517065751_issue4086_fix_historical_options.rb
 migrate/20220517065751_issue4086_fix_historical_options.rb
 20220517065751_issue4086_fix_historical_options.rb
@@ -5451,6 +5454,11 @@ system/ticket/zoom/sidebar_spec.rb
 ticket/zoom/sidebar_spec.rb
 zoom/sidebar_spec.rb
 sidebar_spec.rb
+spec/system/ticket/zoom/change_customer_spec.rb
+system/ticket/zoom/change_customer_spec.rb
+ticket/zoom/change_customer_spec.rb
+zoom/change_customer_spec.rb
+change_customer_spec.rb
 spec/system/ticket/inserting_knowledge_base_answer_spec.rb
 system/ticket/inserting_knowledge_base_answer_spec.rb
 ticket/inserting_knowledge_base_answer_spec.rb
@@ -11930,9 +11938,6 @@ content_security_policy.rb
 config/initializers/active_record_lock_issue_3664.rb
 initializers/active_record_lock_issue_3664.rb
 active_record_lock_issue_3664.rb
-config/initializers/models_searchable.rb
-initializers/models_searchable.rb
-models_searchable.rb
 config/initializers/doorkeeper.rb
 initializers/doorkeeper.rb
 doorkeeper.rb
@@ -11996,6 +12001,9 @@ action_cable_preferences.rb
 config/initializers/omniauth.rb
 initializers/omniauth.rb
 omniauth.rb
+config/initializers/models_preload.rb
+initializers/models_preload.rb
+models_preload.rb
 config/initializers/permissions_policy.rb
 initializers/permissions_policy.rb
 permissions_policy.rb

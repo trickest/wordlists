@@ -5388,6 +5388,7 @@ admin-dev/themes/new-theme/js/pages/profiles/ProfilesPage.ts
 admin-dev/themes/new-theme/js/pages/profiles/index.ts
 admin-dev/themes/new-theme/js/pages/feature/index.ts
 admin-dev/themes/new-theme/js/pages/feature/form.ts
+admin-dev/themes/new-theme/js/pages/feature/feature-value/index.ts
 admin-dev/themes/new-theme/js/pages/category/index.ts
 admin-dev/themes/new-theme/js/pages/manufacturer/manufacturer-address-map.ts
 admin-dev/themes/new-theme/js/pages/manufacturer/index.ts
@@ -6692,6 +6693,7 @@ src/Core/Geolocation/GeoLite/GeoLiteCityCheckerInterface.php
 src/Core/Geolocation/GeoLite/GeoLiteCityChecker.php
 src/Core/Grid/GridFactoryInterface.php
 src/Core/Grid/Factory/CategoryGridFactoryDecorator.php
+src/Core/Grid/Factory/FeatureValueGridFactory.php
 src/Core/Grid/Action/Row/RowActionCollectionInterface.php
 src/Core/Grid/Action/Row/AbstractRowAction.php
 src/Core/Grid/Action/Row/AccessibilityChecker/DeleteOrderStatesAccessibilityChecker.php
@@ -6770,6 +6772,7 @@ src/Core/Grid/Definition/Factory/CarrierGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/BulkDeleteActionTrait.php
 src/Core/Grid/Definition/Factory/CustomerGroupsGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CustomerViewedProductGridDefinitionFactory.php
+src/Core/Grid/Definition/Factory/FeatureValueGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CustomerDiscountGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CustomerGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CustomerThreadGridDefinitionFactory.php
@@ -6906,6 +6909,7 @@ src/Core/Grid/Query/ContactQueryBuilder.php
 src/Core/Grid/Query/AuthorizedApplicationQueryBuilder.php
 src/Core/Grid/Query/CategoryQueryBuilder.php
 src/Core/Grid/Query/FeatureQueryBuilder.php
+src/Core/Grid/Query/FeatureValueQueryBuilder.php
 src/Core/Grid/Query/OrderStatesQueryBuilder.php
 src/Core/Grid/Query/AliasQueryBuilder.php
 src/Core/Grid/Query/TaxRuleQueryBuilder.php
@@ -8832,6 +8836,7 @@ src/Core/Search/Filters/CustomerCartFilters.php
 src/Core/Search/Filters/ManufacturerFilters.php
 src/Core/Search/Filters/ManufacturerAddressFilters.php
 src/Core/Search/Filters/CarrierFilters.php
+src/Core/Search/Filters/FeatureValueFilters.php
 src/Core/Search/Filters/BackupFilters.php
 src/Core/Search/Filters/ContactFilters.php
 src/Core/Search/Filters/TaxFilters.php
@@ -8902,6 +8907,7 @@ src/Core/Search/Builder/EventFiltersBuilder.php
 src/Core/Search/Builder/RequestFiltersBuilder.php
 src/Core/Search/Builder/ClassFiltersBuilder.php
 src/Core/Search/Builder/FiltersBuilderCollection.php
+src/Core/Search/Builder/TypedBuilder/FeatureValueFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/ProductCombinationFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/TypedFiltersBuilderInterface.php
 src/Core/Search/SearchPanel.php
@@ -9098,6 +9104,7 @@ src/Core/Configuration/PhpExtensionChecker.php
 src/Core/Configuration/DataConfigurationInterface.php
 src/Core/Configuration/PhpExtensionCheckerInterface.php
 src/Core/Configuration/UploadSizeConfigurationInterface.php
+src/Core/Language/ContextLanguageProviderInterface.php
 src/Core/Language/RTL/InstalledLanguageCheckerInterface.php
 src/Core/Language/LanguageActivatorInterface.php
 src/Core/Language/LanguageRepositoryInterface.php
@@ -10005,6 +10012,7 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/Blocks/disabled
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/FeatureValue/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Attachment/add.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Attachment/Blocks/form.html.twig
@@ -10403,6 +10411,7 @@ src/PrestaShopBundle/Controller/Admin/Sell/Catalog/Product/ImageController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/Product/ProductController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/Product/CombinationController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/StockController.php
+src/PrestaShopBundle/Controller/Admin/Sell/Catalog/FeatureValueController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/ManufacturerController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/HorizontalFeatureController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Catalog/SupplierController.php
@@ -11741,6 +11750,7 @@ src/Adapter/Language/LanguageImageManager.php
 src/Adapter/Language/LanguageCopier.php
 src/Adapter/Language/LanguageFlagThumbnailProvider.php
 src/Adapter/Language/LanguageActivator.php
+src/Adapter/Language/ContextLanguageProvider.php
 src/Adapter/Language/Pack/LanguagePackImporter.php
 src/Adapter/Language/LanguagePackInstaller.php
 src/Adapter/Pack/PackDataProvider.php

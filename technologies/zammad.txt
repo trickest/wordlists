@@ -202,6 +202,7 @@ db/migrate/20190718140450_forget_insecure_sessions.rb
 db/migrate/20180524182518_sms_support.rb
 db/migrate/20210827133800_issue_3707_checkmk.rb
 db/migrate/20200507095900_imap_authentication_migration_cleanup_job_scheduler.rb
+db/migrate/20230622095629_drop_models_searchable_setting.rb
 db/migrate/20220517065751_issue4086_fix_historical_options.rb
 db/migrate/20180709020509_add_group_direction_to_overviews.rb
 db/migrate/20210118095820_issue_3372_webhooks_admin_view.rb
@@ -1192,6 +1193,7 @@ spec/system/ticket/zoom/add_article_hint_spec.rb
 spec/system/ticket/zoom/time_accounting_spec.rb
 spec/system/ticket/zoom/merge_spec.rb
 spec/system/ticket/zoom/sidebar_spec.rb
+spec/system/ticket/zoom/change_customer_spec.rb
 spec/system/ticket/inserting_knowledge_base_answer_spec.rb
 spec/system/ticket/shared_draft_zoom_spec.rb
 spec/system/ticket/create/ticket_duplicate_detection_spec.rb
@@ -2662,7 +2664,6 @@ config/initializers/html_sanitizer.rb
 config/initializers/generators.rb
 config/initializers/content_security_policy.rb
 config/initializers/active_record_lock_issue_3664.rb
-config/initializers/models_searchable.rb
 config/initializers/doorkeeper.rb
 config/initializers/delayed_jobs_timeout_per_job.rb
 config/initializers/mime_types.rb
@@ -2684,6 +2685,7 @@ config/initializers/db_preflight_check.rb
 config/initializers/log_websocket_session_store.rb
 config/initializers/action_cable_preferences.rb
 config/initializers/omniauth.rb
+config/initializers/models_preload.rb
 config/initializers/permissions_policy.rb
 Procfile.dev
 .rubocop/default.yml

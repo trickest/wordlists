@@ -534,7 +534,6 @@ tests/Api/Utils/OrderPlacerTrait.php
 tests/Api/JsonApiTestCase.php
 tests/Api/Admin/ShippingCategoriesTest.php
 tests/Api/Admin/TaxRatesTest.php
-tests/Api/Admin/PromotionTest.php
 tests/Api/Admin/ChannelsTest.php
 tests/Api/Admin/AdminUsersTest.php
 tests/Api/Admin/CurrenciesTest.php
@@ -770,6 +769,7 @@ UPGRADE-1.2.md
 .editorconfig
 UPGRADE-API-1.10.md
 phparkitect.php
+phpstan-baseline.neon
 docker-compose.yml
 UPGRADE-1.7.md
 config/routes.yaml
@@ -885,8 +885,8 @@ features/admin/dashboard.feature
 features/admin/securing_access_to_account_after_using_back_button_after_logging_out.feature
 features/admin/browsing_administration_panel_in_proper_language.feature
 features/admin/resetting_password.feature
-features/admin/sign_in.feature
 features/admin/impersonating_customers.feature
+features/admin/signing_in_to_administration_panel.feature
 features/admin/blocking_login_for_disabled_administrators.feature
 features/admin/being_redirected_to_previous_filtered_page.feature
 features/product/managing_products/changing_associations_of_product.feature
@@ -3616,6 +3616,7 @@ src/Sylius/Bundle/TaxonomyBundle/Resources/config/services.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/services/integrations/doctrine/mongodb-odm.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/services/integrations/doctrine/orm.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/services/form.xml
+src/Sylius/Bundle/TaxonomyBundle/Resources/config/services/tree_repository.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/validation/Taxon.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/validation/TaxonTranslation.xml
 src/Sylius/Bundle/TaxonomyBundle/Resources/config/app/config.yml
@@ -3711,6 +3712,8 @@ src/Sylius/Bundle/TaxonomyBundle/Doctrine/ORM/TaxonRepository.php
 src/Sylius/Bundle/TaxonomyBundle/Controller/TaxonSlugController.php
 src/Sylius/Bundle/TaxonomyBundle/README.md
 src/Sylius/Bundle/TaxonomyBundle/phpspec.yml.dist
+src/Sylius/Bundle/TaxonomyBundle/Repository/TaxonTreeRepository.php
+src/Sylius/Bundle/TaxonomyBundle/Repository/TaxonTreeRepositoryInterface.php
 src/Sylius/Bundle/TaxonomyBundle/phpunit.xml.dist
 src/Sylius/Bundle/TaxonomyBundle/LICENSE
 src/Sylius/Bundle/TaxonomyBundle/DependencyInjection/Configuration.php
