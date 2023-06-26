@@ -172,6 +172,7 @@ tests/unit/php/Core/System/SystemConfig/MemoizedSystemConfigLoaderTest.php
 tests/unit/php/Core/System/SystemConfig/Command/ConfigGetCommandTest.php
 tests/unit/php/Core/System/SystemConfig/Command/ConfigSetCommandTest.php
 tests/unit/php/Core/System/SystemConfig/DecoratedMemoizedResetTestSystemConfigLoader.php
+tests/unit/php/Core/System/SystemConfig/SystemConfigServiceTest.php
 tests/unit/php/Core/System/SalesChannel/SalesChannelContextTest.php
 tests/unit/php/Core/System/SalesChannel/Rule/SalesChannelRuleTest.php
 tests/unit/php/Core/System/SalesChannel/Api/StructEncoderTest.php
@@ -381,9 +382,11 @@ tests/unit/php/Core/Framework/App/Manifest/Xml/PaymentMethodTest.php
 tests/unit/php/Core/Framework/App/Manifest/Xml/PermissionsTest.php
 tests/unit/php/Core/Framework/App/Manifest/Xml/AdminTest.php
 tests/unit/php/Core/Framework/App/Manifest/ManifestTest.php
+tests/unit/php/Core/Framework/App/_fixtures/Resources/config/config.xml
 tests/unit/php/Core/Framework/App/_fixtures/Resources/app/administration/snippet/en-GB.json
 tests/unit/php/Core/Framework/App/_fixtures/Resources/flow-action.xml
 tests/unit/php/Core/Framework/App/_fixtures/Resources/flow.xml
+tests/unit/php/Core/Framework/App/_fixtures/Resources/cms.xml
 tests/unit/php/Core/Framework/App/_fixtures/manifest.xml
 tests/unit/php/Core/Framework/App/AppUrlChangeResolver/ResolverTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/AppLifecycleTest.php
@@ -823,6 +826,7 @@ tests/unit/php/Storefront/Event/StorefrontRedirectEventTest.php
 tests/unit/php/Storefront/Theme/Twig/ThemeInheritanceBuilderTest.php
 tests/unit/php/Storefront/Theme/Twig/ThemeNamespaceHierarchyBuilderTest.php
 tests/unit/php/Storefront/Theme/CachedResolvedConfigLoaderInvalidatorTest.php
+tests/unit/php/Storefront/Theme/ThemeConfigValueAccessorTest.php
 tests/unit/php/Storefront/Theme/SalesChannelThemeLoaderTest.php
 tests/unit/php/Storefront/Theme/ThemeLifecycleHandlerTest.php
 tests/unit/php/Storefront/Theme/ThemeCompilerTest.php
@@ -4799,6 +4803,8 @@ changelog/_unreleased/2023-06-15-implement-keyvaluestorage.md
 changelog/_unreleased/2022-06-08-create-app-manifest-xsd-for-flow-custom-event.md
 changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-06-09-quote-table-names-for-delete-unused-media-queries.md
+changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
+changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
 changelog/_unreleased/2023-06-08-allow-import-of-encoded-url.md
 changelog/_unreleased/2023-06-22-add-loading-spinner-to-password-confirm-modal-in-user-listing.md
@@ -7193,7 +7199,6 @@ src/Core/Framework/App/ShopId/ShopIdProvider.php
 src/Core/Framework/App/AppEntity.php
 src/Core/Framework/App/Lifecycle/Update/AppUpdater.php
 src/Core/Framework/App/Lifecycle/Update/AbstractAppUpdater.php
-src/Core/Framework/App/Lifecycle/ScriptFileReaderInterface.php
 src/Core/Framework/App/Lifecycle/AppLifecycle.php
 src/Core/Framework/App/Lifecycle/ScriptFileReader.php
 src/Core/Framework/App/Lifecycle/Persister/FlowEventPersister.php

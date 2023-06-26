@@ -317,12 +317,20 @@ apps/admin-x-settings/test/e2e/general/twitter.test.ts
 apps/admin-x-settings/test/e2e/general/titleAndDescription.test.ts
 apps/admin-x-settings/test/e2e/general/publicationLanguage.test.ts
 apps/admin-x-settings/test/e2e/general/socialAccounts.test.ts
+apps/admin-x-settings/test/e2e/general/users/actions.test.ts
+apps/admin-x-settings/test/e2e/general/users/roles.test.ts
+apps/admin-x-settings/test/e2e/general/users/profile.test.ts
+apps/admin-x-settings/test/e2e/general/users/invite.test.ts
 apps/admin-x-settings/test/e2e/general/timeZone.test.ts
 apps/admin-x-settings/test/e2e/general/facebook.test.ts
 apps/admin-x-settings/test/hello.test.js
+apps/admin-x-settings/test/utils/responses/roles.json
+apps/admin-x-settings/test/utils/responses/users.json
 apps/admin-x-settings/test/utils/responses/settings.json
 apps/admin-x-settings/test/utils/responses/site.json
+apps/admin-x-settings/test/utils/responses/invites.json
 apps/admin-x-settings/test/utils/responses/custom_theme_settings.json
+apps/admin-x-settings/test/utils/responses/me.json
 apps/admin-x-settings/test/utils/e2e.ts
 apps/admin-x-settings/tsconfig.node.json
 apps/admin-x-settings/public/vite.svg
@@ -520,7 +528,6 @@ apps/admin-x-settings/src/admin-x-ds/settings/SettingSection.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingGroupContent.tsx
 apps/admin-x-settings/src/App.tsx
 apps/admin-x-settings/src/hooks/useSettingGroup.tsx
-apps/admin-x-settings/src/hooks/useSearchable.tsx
 apps/admin-x-settings/src/hooks/useGlobalDirtyState.tsx
 apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/hooks/useRequest.ts
@@ -529,6 +536,7 @@ apps/admin-x-settings/src/hooks/useRoles.tsx
 apps/admin-x-settings/src/hooks/useForm.tsx
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
 apps/admin-x-settings/src/utils/api.ts
+apps/admin-x-settings/src/utils/search.ts
 apps/admin-x-settings/src/utils/helpers.ts
 apps/admin-x-settings/src/types/api.ts
 ghost/oembed-service/.eslintrc.js
