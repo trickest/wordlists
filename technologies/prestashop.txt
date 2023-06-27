@@ -5388,6 +5388,7 @@ admin-dev/themes/new-theme/js/pages/profiles/index.ts
 admin-dev/themes/new-theme/js/pages/feature/index.ts
 admin-dev/themes/new-theme/js/pages/feature/form.ts
 admin-dev/themes/new-theme/js/pages/feature/feature-value/index.ts
+admin-dev/themes/new-theme/js/pages/feature/feature-value/form.ts
 admin-dev/themes/new-theme/js/pages/category/index.ts
 admin-dev/themes/new-theme/js/pages/manufacturer/manufacturer-address-map.ts
 admin-dev/themes/new-theme/js/pages/manufacturer/index.ts
@@ -5820,6 +5821,7 @@ admin-dev/themes/new-theme/scss/pages/_customer.scss
 admin-dev/themes/new-theme/scss/pages/customer_thread/customer_thread.scss
 admin-dev/themes/new-theme/scss/pages/_modules.scss
 admin-dev/themes/new-theme/scss/pages/_attribute.scss
+admin-dev/themes/new-theme/scss/pages/_authorization_server.scss
 admin-dev/themes/new-theme/scss/light_theme.scss
 admin-dev/themes/new-theme/package-lock.json
 admin-dev/themes/new-theme/.stylelintignore
@@ -6822,6 +6824,7 @@ src/Core/Grid/Definition/Factory/TaxRulesGroupGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/ProductShopsGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/MetaGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CategoryGridDefinitionFactory.php
+src/Core/Grid/Definition/Factory/ApiAccessGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/ManufacturerAddressGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/AttributeGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/GridDefinitionFactoryInterface.php
@@ -6914,6 +6917,7 @@ src/Core/Grid/Query/AliasQueryBuilder.php
 src/Core/Grid/Query/TaxRuleQueryBuilder.php
 src/Core/Grid/Query/DoctrineQueryBuilderInterface.php
 src/Core/Grid/Query/OrderReturnStatesQueryBuilder.php
+src/Core/Grid/Query/ApiAccessQueryBuilder.php
 src/Core/Grid/Query/LanguageQueryBuilder.php
 src/Core/Grid/Query/MetaQueryBuilder.php
 src/Core/Grid/Query/CustomerAddressQueryBuilder.php
@@ -7776,6 +7780,7 @@ src/Core/Domain/Feature/Exception/CannotDeleteFeatureException.php
 src/Core/Domain/Feature/Exception/FeatureValueConstraintException.php
 src/Core/Domain/Feature/Exception/CannotAddFeatureException.php
 src/Core/Domain/Feature/Exception/FeatureValueNotFoundException.php
+src/Core/Domain/Feature/FeatureValueSettings.php
 src/Core/Domain/Feature/CommandHandler/AddFeatureValueHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/AddFeatureHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/EditFeatureValueHandlerInterface.php
@@ -8495,12 +8500,16 @@ src/Core/Domain/AuthorizationServer/CommandHandler/DeleteApplicationHandlerInter
 src/Core/Domain/AuthorizationServer/CommandHandler/AddApplicationHandlerInterface.php
 src/Core/Domain/AuthorizationServer/ValueObject/ApplicationId.php
 src/Core/Domain/AuthorizationServer/QueryResult/EditableApplication.php
+src/Core/Domain/AuthorizationServer/QueryResult/ViewableApplication.php
 src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandlerInterface.php
+src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForViewingHandler.php
+src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForViewingHandlerInterface.php
 src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandler.php
 src/Core/Domain/AuthorizationServer/Command/AddApplicationCommand.php
 src/Core/Domain/AuthorizationServer/Command/EditApplicationCommand.php
 src/Core/Domain/AuthorizationServer/Command/DeleteApplicationCommand.php
 src/Core/Domain/AuthorizationServer/Query/GetApplicationForEditing.php
+src/Core/Domain/AuthorizationServer/Query/GetApplicationForViewing.php
 src/Core/Domain/OrderReturnState/Exception/OrderReturnStateException.php
 src/Core/Domain/OrderReturnState/Exception/DeleteOrderReturnStateException.php
 src/Core/Domain/OrderReturnState/Exception/InvalidOrderReturnStateRequiredFieldsException.php
@@ -8835,6 +8844,7 @@ src/Core/Search/Filters/CustomerCartFilters.php
 src/Core/Search/Filters/ManufacturerFilters.php
 src/Core/Search/Filters/ManufacturerAddressFilters.php
 src/Core/Search/Filters/CarrierFilters.php
+src/Core/Search/Filters/ApiAccessesFilters.php
 src/Core/Search/Filters/FeatureValueFilters.php
 src/Core/Search/Filters/BackupFilters.php
 src/Core/Search/Filters/ContactFilters.php
@@ -8909,6 +8919,7 @@ src/Core/Search/Builder/FiltersBuilderCollection.php
 src/Core/Search/Builder/TypedBuilder/FeatureValueFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/ProductCombinationFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/TypedFiltersBuilderInterface.php
+src/Core/Search/Builder/TypedBuilder/ApiAccessFiltersBuilder.php
 src/Core/Search/SearchPanel.php
 src/Core/Search/ControllerAction.php
 src/Core/Search/ShopFilters.php
@@ -9319,6 +9330,7 @@ src/Core/Form/IdentifiableObject/DataProvider/TitleFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CancelProductFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CmsPageCategoryFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CategoryFormDataProvider.php
+src/Core/Form/IdentifiableObject/DataProvider/FeatureValueFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/LanguageFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/OrderMessageFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CountryFormDataProvider.php
@@ -9413,6 +9425,7 @@ src/Core/Form/IdentifiableObject/DataHandler/ProfileFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CartAddressFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/OrderReturnFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/ProductShopsFormDataHandler.php
+src/Core/Form/IdentifiableObject/DataHandler/FeatureValueFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/FormDataHandlerInterface.php
 src/Core/Form/IdentifiableObject/DataHandler/FeatureFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CombinationListFormDataHandler.php
@@ -9844,6 +9857,7 @@ src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ImportDa
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ImportDataConfiguration/Blocks/import_data_configuration.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ImportDataConfiguration/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/performance.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/view.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/create.html.twig
@@ -10011,7 +10025,10 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/Blocks/disabled
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/FeatureValue/Blocks/form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/FeatureValue/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/FeatureValue/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/FeatureValue/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Features/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Attachment/add.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Attachment/Blocks/form.html.twig
@@ -10803,6 +10820,7 @@ src/PrestaShopBundle/Form/Admin/Configure/ShopParameters/OrderPreferences/GiftOp
 src/PrestaShopBundle/Form/Admin/Configure/ShopParameters/OrderPreferences/OrderPreferencesGiftOptionsFormDataProvider.php
 src/PrestaShopBundle/Form/Admin/Configure/ShopParameters/OrderPreferences/OrderPreferencesFormDataProvider.php
 src/PrestaShopBundle/Form/Admin/Configure/ShopParameters/SearchEngines/SearchEngineType.php
+src/PrestaShopBundle/Form/Admin/Sell/Catalog/FeatureValueType.php
 src/PrestaShopBundle/Form/Admin/Sell/Catalog/FeatureType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Description/DescriptionType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Description/ManufacturerType.php

@@ -3,6 +3,7 @@ bin/install-extension-npm
 bin/exec-with-env
 bin/pre-commit
 bin/shopware
+bin/ci
 bin/pre-push
 .gitpod.yml
 UPGRADE-6.1.md
@@ -1242,6 +1243,7 @@ tests/e2e/cypress/e2e/administration/general/visual-storefront-validation/regist
 tests/e2e/cypress/e2e/administration/general/visual-storefront-validation/header-menu.cy.js
 tests/e2e/cypress/e2e/administration/general/visual-storefront-validation/search.cy.js
 tests/e2e/cypress/e2e/administration/general/visual-storefront-validation/login.cy.js
+tests/e2e/cypress/e2e/administration/sdk-plugin/data/dataset.cy.js
 tests/e2e/cypress/e2e/administration/sdk-plugin/ui/modals.cy.js
 tests/e2e/cypress/e2e/administration/sdk-plugin/ui/settings-item.cy.js
 tests/e2e/cypress/e2e/administration/sdk-plugin/ui/menu-item.cy.js
@@ -1385,6 +1387,7 @@ tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/tsconfig.
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/base/mainCommands.ts
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/main.ts
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/viewRenderer.ts
+tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/views/data/dataset/index.ts
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/views/ui/main-module/add-main-module.ts
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/views/ui/modals/modals.ts
 tests/e2e/cypress/fixtures/TestPlugin/src/Resources/app/administration/src/views/ui/modals/modal-content.ts
@@ -4840,6 +4843,7 @@ changelog/_unreleased/2023-05-08-adjust-version-constraint-for-flysystem.md
 changelog/_unreleased/2023-06-13-fix-block-slot-combination-of-sw-sidebar-collapse.md
 changelog/_unreleased/2023-06-16-add-children-to-lineitem-in-order-types.md
 changelog/_unreleased/.keep
+changelog/_unreleased/2023-06-23-update-sdk-version.md
 changelog/_unreleased/2023-05-31-listing-processors.md
 changelog/release-6-4-7-0/2021-10-06-import-with-update-by-mapping.md
 changelog/release-6-4-7-0/2021-10-20-fix-cover-assignment-issue.md

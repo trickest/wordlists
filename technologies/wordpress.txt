@@ -1322,6 +1322,7 @@ wp-admin/includes/class-wp-upgrader-skin.php
 wp-admin/includes/continents-cities.php
 wp-admin/includes/class-core-upgrader.php
 wp-admin/includes/class-wp-plugins-list-table.php
+wp-admin/includes/theme-previews.php
 wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php
 wp-admin/includes/class-wp-upgrader.php
 wp-admin/includes/credits.php
@@ -1529,6 +1530,7 @@ wp-includes/js/mce-view.min.js
 wp-includes/js/customize-loader.min.js
 wp-includes/js/comment-reply.min.js
 wp-includes/js/dist/nux.min.js
+wp-includes/js/dist/router.js
 wp-includes/js/dist/api-fetch.min.js
 wp-includes/js/dist/viewport.min.js
 wp-includes/js/dist/edit-site.js
@@ -1547,12 +1549,14 @@ wp-includes/js/dist/element.min.js
 wp-includes/js/dist/private-apis.min.js
 wp-includes/js/dist/autop.js
 wp-includes/js/dist/preferences.min.js
+wp-includes/js/dist/commands.js
 wp-includes/js/dist/a11y.js
 wp-includes/js/dist/widgets.min.js
 wp-includes/js/dist/shortcode.min.js
 wp-includes/js/dist/media-utils.min.js
 wp-includes/js/dist/edit-post.js
 wp-includes/js/dist/date.min.js
+wp-includes/js/dist/core-commands.js
 wp-includes/js/dist/token-list.min.js
 wp-includes/js/dist/compose.min.js
 wp-includes/js/dist/reusable-blocks.js
@@ -1593,6 +1597,8 @@ wp-includes/js/dist/rich-text.min.js
 wp-includes/js/dist/style-engine.min.js
 wp-includes/js/dist/media-utils.js
 wp-includes/js/dist/editor.min.js
+wp-includes/js/dist/router.min.js
+wp-includes/js/dist/commands.min.js
 wp-includes/js/dist/block-serialization-default-parser.min.js
 wp-includes/js/dist/rich-text.js
 wp-includes/js/dist/preferences.js
@@ -1603,6 +1609,7 @@ wp-includes/js/dist/annotations.js
 wp-includes/js/dist/compose.js
 wp-includes/js/dist/blob.min.js
 wp-includes/js/dist/warning.min.js
+wp-includes/js/dist/core-commands.min.js
 wp-includes/js/dist/private-apis.js
 wp-includes/js/dist/keyboard-shortcuts.min.js
 wp-includes/js/dist/format-library.min.js
@@ -2003,6 +2010,7 @@ wp-includes/blocks/avatar/block.json
 wp-includes/blocks/audio/block.json
 wp-includes/blocks/pattern/block.json
 wp-includes/blocks/blocks-json.php
+wp-includes/blocks/footnotes/block.json
 wp-includes/blocks/post-date.php
 wp-includes/blocks/comment-edit-link/block.json
 wp-includes/blocks/comment-reply-link.php
@@ -2051,6 +2059,7 @@ wp-includes/blocks/post-author-name.php
 wp-includes/blocks/separator/block.json
 wp-includes/blocks/categories.php
 wp-includes/blocks/loginout/block.json
+wp-includes/blocks/details/block.json
 wp-includes/blocks/social-link.php
 wp-includes/blocks/preformatted/block.json
 wp-includes/blocks/tag-cloud/block.json
@@ -2071,6 +2080,7 @@ wp-includes/blocks/calendar/block.json
 wp-includes/blocks/template-part/block.json
 wp-includes/blocks/home-link/block.json
 wp-includes/blocks/table/block.json
+wp-includes/blocks/page-list-item.php
 wp-includes/blocks/query-pagination-previous/block.json
 wp-includes/blocks/comment-edit-link.php
 wp-includes/blocks/block/block.json
@@ -2089,6 +2099,7 @@ wp-includes/blocks/site-logo.php
 wp-includes/blocks/quote/block.json
 wp-includes/blocks/query-pagination-numbers/block.json
 wp-includes/blocks/template-part.php
+wp-includes/blocks/footnotes.php
 wp-includes/blocks/comment-author-name/block.json
 wp-includes/blocks/column/block.json
 wp-includes/blocks/navigation-link.php
@@ -2128,6 +2139,7 @@ wp-includes/class-wp-editor.php
 wp-includes/class-wp-textdomain-registry.php
 wp-includes/class-wp-network-query.php
 wp-includes/ms-default-filters.php
+wp-includes/class-wp-block-parser-block.php
 wp-includes/l10n.php
 wp-includes/media-template.php
 wp-includes/cron.php
@@ -2241,6 +2253,7 @@ wp-includes/class-wp-feed-cache-transient.php
 wp-includes/class-wp-block-patterns-registry.php
 wp-includes/class-wp-simplepie-file.php
 wp-includes/class-wp-http-response.php
+wp-includes/class-wp-classic-to-block-menu-converter.php
 wp-includes/class-wp-embed.php
 wp-includes/class-walker-nav-menu.php
 wp-includes/block-patterns.php
@@ -2248,6 +2261,7 @@ wp-includes/html-api/class-wp-html-span.php
 wp-includes/html-api/class-wp-html-attribute-token.php
 wp-includes/html-api/class-wp-html-tag-processor.php
 wp-includes/html-api/class-wp-html-text-replacement.php
+wp-includes/navigation-fallback.php
 wp-includes/class-wp-theme-json.php
 wp-includes/class-wp-block-editor-context.php
 wp-includes/ms-network.php
@@ -2364,6 +2378,7 @@ wp-includes/block-supports/border.php
 wp-includes/block-supports/generated-classname.php
 wp-includes/block-supports/position.php
 wp-includes/block-supports/settings.php
+wp-includes/block-supports/shadow.php
 wp-includes/block-supports/typography.php
 wp-includes/block-supports/duotone.php
 wp-includes/block-supports/dimensions.php
@@ -2457,6 +2472,7 @@ wp-includes/class-wp-theme-json-schema.php
 wp-includes/class-oembed.php
 wp-includes/class-wp-application-passwords.php
 wp-includes/shortcodes.php
+wp-includes/class-wp-navigation-fallback.php
 wp-includes/https-migration.php
 wp-includes/class-wp-tax-query.php
 wp-includes/error-protection.php
@@ -2534,6 +2550,7 @@ wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-site-health-controller.php
+wp-includes/rest-api/endpoints/class-wp-rest-navigation-fallback-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-blocks-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php
@@ -2564,6 +2581,7 @@ wp-includes/class-wp-oembed-controller.php
 wp-includes/class-wp-block-template.php
 wp-includes/feed-rss2-comments.php
 wp-includes/vars.php
+wp-includes/class-wp-block-parser-frame.php
 wp-includes/author-template.php
 wp-includes/class-walker-category-dropdown.php
 wp-includes/class-walker-page-dropdown.php
