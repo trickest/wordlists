@@ -874,6 +874,7 @@ features/locale/browsing_shop_in_different_than_default_locale.feature
 features/locale/switching_current_locale.feature
 features/locale/managing_locales/locale_validation.feature
 features/locale/managing_locales/adding_locale.feature
+features/locale/managing_locales/removing_locale.feature
 features/locale/managing_locales/locale_unique_code_validation.feature
 features/locale/getting_available_locales_in_current_channel.feature
 features/admin/dashboard_per_channel.feature
@@ -5018,6 +5019,7 @@ src/Sylius/Bundle/AdminBundle/spec/SectionResolver/AdminUriBasedSectionResolverS
 src/Sylius/Bundle/AdminBundle/spec/Context/AdminBasedLocaleContextSpec.php
 src/Sylius/Bundle/AdminBundle/spec/EmailManager/ShipmentEmailManagerSpec.php
 src/Sylius/Bundle/AdminBundle/spec/EmailManager/OrderEmailManagerSpec.php
+src/Sylius/Bundle/AdminBundle/spec/EventListener/LocaleListenerSpec.php
 src/Sylius/Bundle/AdminBundle/spec/EventListener/AdminFilterSubscriberSpec.php
 src/Sylius/Bundle/AdminBundle/spec/EventListener/AdminSectionCacheControlSubscriberSpec.php
 src/Sylius/Bundle/AdminBundle/spec/EventListener/ShipmentShipListenerSpec.php
@@ -5043,6 +5045,7 @@ src/Sylius/Bundle/AdminBundle/EmailManager/ShipmentEmailManager.php
 src/Sylius/Bundle/AdminBundle/EventListener/ShipmentShipListener.php
 src/Sylius/Bundle/AdminBundle/EventListener/AdminSectionCacheControlSubscriber.php
 src/Sylius/Bundle/AdminBundle/EventListener/ResourceDeleteSubscriber.php
+src/Sylius/Bundle/AdminBundle/EventListener/LocaleListener.php
 src/Sylius/Bundle/AdminBundle/EventListener/AdminFilterSubscriber.php
 src/Sylius/Bundle/AdminBundle/Command/CreateAdminUserCommand.php
 src/Sylius/Bundle/AdminBundle/Provider/StatisticsDataProviderInterface.php
@@ -6327,6 +6330,9 @@ src/Sylius/Bundle/UiBundle/Storage/FilterStorage.php
 src/Sylius/Bundle/UiBundle/Form/Type/SecurityLoginType.php
 src/Sylius/Bundle/UiBundle/composer.json
 src/Sylius/Bundle/LocaleBundle/Twig/LocaleExtension.php
+src/Sylius/Bundle/LocaleBundle/Checker/Exception/LocaleIsUsedException.php
+src/Sylius/Bundle/LocaleBundle/Checker/LocaleUsageChecker.php
+src/Sylius/Bundle/LocaleBundle/Checker/LocaleUsageCheckerInterface.php
 src/Sylius/Bundle/LocaleBundle/.gitattributes
 src/Sylius/Bundle/LocaleBundle/Resources/config/services.xml
 src/Sylius/Bundle/LocaleBundle/Resources/config/validation/Locale.xml
@@ -6418,6 +6424,7 @@ src/Sylius/Bundle/LocaleBundle/Resources/translations/validators.pt.yml
 src/Sylius/Bundle/LocaleBundle/Resources/translations/validators.ca.yml
 src/Sylius/Bundle/LocaleBundle/Resources/translations/validators.nl.yml
 src/Sylius/Bundle/LocaleBundle/README.md
+src/Sylius/Bundle/LocaleBundle/spec/Checker/LocaleUsageCheckerSpec.php
 src/Sylius/Bundle/LocaleBundle/spec/Context/RequestBasedLocaleContextSpec.php
 src/Sylius/Bundle/LocaleBundle/spec/Context/RequestHeaderBasedLocaleContextSpec.php
 src/Sylius/Bundle/LocaleBundle/spec/Templating/Helper/LocaleHelperSpec.php
@@ -6868,6 +6875,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListene
 src/Sylius/Bundle/ApiBundle/spec/EventListener/ApiCartBlamerListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/MessengerDataPersisterSpec.php
+src/Sylius/Bundle/ApiBundle/spec/DataPersister/LocaleDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ZoneDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/AddressDataPersisterSpec.php
@@ -7025,6 +7033,7 @@ src/Sylius/Bundle/ApiBundle/DataPersister/ShippingMethodDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/MessengerDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ZoneDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/AddressDataPersister.php
+src/Sylius/Bundle/ApiBundle/DataPersister/LocaleDataPersister.php
 src/Sylius/Bundle/ApiBundle/Command/Catalog/AddProductReview.php
 src/Sylius/Bundle/ApiBundle/Command/SubresourceIdAwareInterface.php
 src/Sylius/Bundle/ApiBundle/Command/CommandAwareDataTransformerInterface.php

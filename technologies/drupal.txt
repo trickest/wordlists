@@ -13275,7 +13275,9 @@ core/modules/help/tests/modules/help_test/help_test.module
 core/modules/help/tests/modules/help_test/src/SupernovaGenerator.php
 core/modules/help/tests/themes/help_topics_test_theme/help_topics_test_theme.info.yml
 core/modules/help/tests/themes/help_topics_test_theme/help_topics/help_topics_test_theme.test.html.twig
+core/modules/help/tests/fixtures/update/drupal-10.access-help-pages.php
 core/modules/help/tests/fixtures/update/help-topics-3087499.php
+core/modules/help/tests/fixtures/update/drupal-10.access-help-pages.yml
 core/modules/help/tests/fixtures/update/search.page.help_search.yml
 core/modules/help/tests/src/Kernel/HelpSearchPluginTest.php
 core/modules/help/tests/src/Kernel/HelpEmptyPageTest.php
@@ -13295,6 +13297,7 @@ core/modules/help/tests/src/Functional/HelpTopicsSyntaxTest.php
 core/modules/help/tests/src/Functional/HelpTopicTranslationTest.php
 core/modules/help/tests/src/Functional/HelpBlockTest.php
 core/modules/help/tests/src/Functional/HelpTest.php
+core/modules/help/tests/src/Functional/AddPermissionsUpdateTest.php
 core/modules/help/help.post_update.php
 core/modules/help/help_topics/block.place.html.twig
 core/modules/help/help_topics/migrate.overview.html.twig
@@ -13409,6 +13412,7 @@ core/modules/help/config/schema/help.schema.yml
 core/modules/help/help.routing.yml
 core/modules/help/help.services.yml
 core/modules/help/help.api.php
+core/modules/help/help.permissions.yml
 core/modules/help/help.links.menu.yml
 core/modules/help/help.install
 core/modules/help/help.info.yml

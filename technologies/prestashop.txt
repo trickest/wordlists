@@ -3367,6 +3367,7 @@ tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext
 tests/Integration/Behaviour/Features/Context/Domain/CarrierFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderReturnFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/EditCartRuleFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/CartRule/SetCartRuleRestrictionsFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/AbstractCartRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/DeleteCartRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CartRule/AddCartRuleFeatureContext.php
@@ -3538,8 +3539,10 @@ tests/Integration/Behaviour/Features/Scenario/OrderState/order_state.feature
 tests/Integration/Behaviour/Features/Scenario/CatalogPriceRule/catalog_price_rules_listing.feature
 tests/Integration/Behaviour/Features/Scenario/CLDR/cldr.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/add_cart_rule.feature
-tests/Integration/Behaviour/Features/Scenario/CartRule/set_cart_rule_restrictions.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_product_restrictions.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_mixed_cart_rule_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/edit_cart_rule.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_cart_rule_combination_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/delete_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/Attribute/list_attribute_groups.feature
 tests/Integration/Behaviour/Features/Scenario/Attribute/Shop/list_multishop_attribute_groups.feature
@@ -7686,6 +7689,8 @@ src/Core/Domain/CartRule/ValueObject/DiscountApplicationType.php
 src/Core/Domain/CartRule/ValueObject/CartRuleAction.php
 src/Core/Domain/CartRule/ValueObject/PercentageDiscount.php
 src/Core/Domain/CartRule/ValueObject/Discount.php
+src/Core/Domain/CartRule/ValueObject/Restriction/RestrictionRuleGroup.php
+src/Core/Domain/CartRule/ValueObject/Restriction/RestrictionRule.php
 src/Core/Domain/CartRule/ValueObject/CartRuleId.php
 src/Core/Domain/CartRule/ValueObject/GiftProduct.php
 src/Core/Domain/CartRule/CartRuleSettings.php
@@ -11034,6 +11039,7 @@ src/PrestaShopBundle/Form/Admin/Type/PriceReductionType.php
 src/PrestaShopBundle/Form/Admin/Type/ShippingInclusionChoiceType.php
 src/PrestaShopBundle/Form/Admin/Type/AccordionType.php
 src/PrestaShopBundle/Form/Admin/Type/SearchAndResetType.php
+src/PrestaShopBundle/Form/Admin/Type/FeatureChoiceType.php
 src/PrestaShopBundle/Form/Admin/Type/IpAddressType.php
 src/PrestaShopBundle/Form/Admin/Type/FormattedTextareaType.php
 src/PrestaShopBundle/Form/Admin/Type/SwitchType.php

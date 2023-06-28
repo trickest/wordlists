@@ -1270,10 +1270,7 @@ plugins/woo-ai/.prettierrc.js
 plugins/woo-ai/.editorconfig
 plugins/woo-ai/DEVELOPMENT.md
 plugins/woo-ai/.travis.yml
-plugins/woo-ai/changelog/add-woo-ai-plugin
 plugins/woo-ai/changelog/.gitkeep
-plugins/woo-ai/changelog/add-wooai-handle-token-failure
-plugins/woo-ai/changelog/update-product-slug-ai
 plugins/woo-ai/.nvmrc
 plugins/woo-ai/tsconfig.json
 plugins/woo-ai/CHANGELOG.md
@@ -2544,8 +2541,10 @@ plugins/woocommerce/changelog/fix-28480
 plugins/woocommerce/changelog/e2e-replace-deprecated-page-methods
 plugins/woocommerce/changelog/fix-38719-empty-cart-notices-with-blocks
 plugins/woocommerce/changelog/update-38903-core-profiler-plugins-selection-is-not-persisted
+plugins/woocommerce/changelog/fix-blocks-9999-products-grid-layout-in-post
 plugins/woocommerce/changelog/fix-help-panel-links
 plugins/woocommerce/changelog/fix-revert-38531
+plugins/woocommerce/changelog/update-38979-override-jetpack-data-endpont
 plugins/woocommerce/changelog/add-38880_add_variations_tab_to_product_block_editor
 plugins/woocommerce/changelog/fix-e2e-order-emails
 plugins/woocommerce/changelog/e2e-make-tests-independant-from-previous-tests
@@ -2556,6 +2555,7 @@ plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/mahmoudsaeed-trunk
 plugins/woocommerce/changelog/fix-33383-expanded-customer-search
 plugins/woocommerce/changelog/fix-36374-use-show-index-instead-of-db-schema
+plugins/woocommerce/changelog/remove-hardcoded-shop-order
 plugins/woocommerce/changelog/e2e-skip-failing-e2e-test-to-be-investigated
 plugins/woocommerce/changelog/fix-legacy-js-es6
 plugins/woocommerce/changelog/update-lint-scripts
@@ -5923,11 +5923,12 @@ packages/js/create-product-editor-block/plugin-templates/readme.txt.mustache
 packages/js/create-product-editor-block/plugin-templates/$slug.php.mustache
 packages/js/create-product-editor-block/plugin-templates/.prettierrc.json.mustache
 packages/js/create-product-editor-block/package.json
-packages/js/create-product-editor-block/changelog/add-create-product-editor-block
-packages/js/create-product-editor-block/changelog/update-create-product-editor-block-no-script-prop
+packages/js/create-product-editor-block/changelog/.gitkeep
+packages/js/create-product-editor-block/changelog/update-add_gitignore_to_package
 packages/js/create-product-editor-block/block-templates/editor.scss.mustache
 packages/js/create-product-editor-block/block-templates/edit.tsx.mustache
 packages/js/create-product-editor-block/block-templates/index.ts.mustache
+packages/js/create-product-editor-block/CHANGELOG.md
 packages/js/create-product-editor-block/composer.json
 packages/js/date/jest.config.json
 packages/js/date/.eslintrc.js

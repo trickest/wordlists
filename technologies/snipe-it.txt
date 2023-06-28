@@ -450,10 +450,18 @@ tests/_envs/testing.yml
 tests/_envs/functional-travis.yml
 tests/_envs/testing-ci.yml
 tests/Support/InteractsWithSettings.php
+tests/Support/CustomTestMacros.php
 tests/Support/Settings.php
+tests/Support/InteractsWithAuthentication.php
+tests/Feature/Api/Consumables/ConsumablesIndexTest.php
+tests/Feature/Api/Licenses/LicensesIndexTest.php
 tests/Feature/Api/Users/UsersSearchTest.php
 tests/Feature/Api/Users/UsersForSelectListTest.php
+tests/Feature/Api/Components/ComponentIndexTest.php
 tests/Feature/Api/Assets/AssetIndexTest.php
+tests/Feature/Api/Assets/AssetsForSelectListTest.php
+tests/Feature/Api/Assets/RequestableAssetsTest.php
+tests/Feature/DashboardTest.php
 tests/Feature/Notifications/ConsumableWebhookTest.php
 tests/Feature/Notifications/ComponentWebhookTest.php
 tests/Feature/Notifications/AccessoryWebhookTest.php
@@ -474,6 +482,7 @@ tests/_support/FunctionalTester.php
 tests/Unit/CustomFieldTest.php
 tests/Unit/NotificationTest.php
 tests/Unit/_bootstrap.php
+tests/Unit/CompanyScopingTest.php
 tests/Unit/CategoryTest.php
 tests/Unit/AssetMaintenanceTest.php
 tests/Unit/AssetModelTest.php

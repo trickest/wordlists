@@ -22,6 +22,7 @@ apps/comments-ui/postcss.config.cjs
 apps/comments-ui/test/unit/hello.test.js
 apps/comments-ui/test/e2e/pagination.test.ts
 apps/comments-ui/test/e2e/cta.test.ts
+apps/comments-ui/test/e2e/editor.test.ts
 apps/comments-ui/test/e2e/options.test.ts
 apps/comments-ui/test/utils/fixtures.ts
 apps/comments-ui/test/utils/MockedApi.ts
@@ -311,9 +312,11 @@ apps/admin-x-settings/postcss.config.cjs
 apps/admin-x-settings/test/e2e/membership/analytics.test.ts
 apps/admin-x-settings/test/e2e/membership/access.test.ts
 apps/admin-x-settings/test/e2e/site/design.test.ts
+apps/admin-x-settings/test/e2e/site/theme.test.ts
 apps/admin-x-settings/test/e2e/site/navigation.test.ts
 apps/admin-x-settings/test/e2e/email/defaultRecipients.test.ts
 apps/admin-x-settings/test/e2e/email/mailgun.test.ts
+apps/admin-x-settings/test/e2e/search.test.ts
 apps/admin-x-settings/test/e2e/general/metadata.test.ts
 apps/admin-x-settings/test/e2e/general/lockSite.test.ts
 apps/admin-x-settings/test/e2e/general/twitter.test.ts
@@ -327,12 +330,17 @@ apps/admin-x-settings/test/e2e/general/users/invite.test.ts
 apps/admin-x-settings/test/e2e/general/timeZone.test.ts
 apps/admin-x-settings/test/e2e/general/facebook.test.ts
 apps/admin-x-settings/test/hello.test.js
+apps/admin-x-settings/test/utils/responses/theme.zip
 apps/admin-x-settings/test/utils/responses/roles.json
 apps/admin-x-settings/test/utils/responses/users.json
 apps/admin-x-settings/test/utils/responses/settings.json
+apps/admin-x-settings/test/utils/responses/labels.json
+apps/admin-x-settings/test/utils/responses/tiers.json
 apps/admin-x-settings/test/utils/responses/site.json
 apps/admin-x-settings/test/utils/responses/invites.json
+apps/admin-x-settings/test/utils/responses/themes.json
 apps/admin-x-settings/test/utils/responses/custom_theme_settings.json
+apps/admin-x-settings/test/utils/responses/offers.json
 apps/admin-x-settings/test/utils/responses/me.json
 apps/admin-x-settings/test/utils/e2e.ts
 apps/admin-x-settings/tsconfig.node.json

@@ -2414,6 +2414,7 @@ java/jakarta/el/ResourceBundleELResolver.java
 java/jakarta/el/MethodExpression.java
 java/jakarta/el/CompositeELResolver.java
 java/jakarta/el/MapELResolver.java
+java/jakarta/el/OptionalELResolver.java
 java/jakarta/el/ELManager.java
 java/jakarta/el/ValueExpression.java
 java/jakarta/el/ELResolver.java
@@ -4063,6 +4064,7 @@ test/jakarta/servlet/jsp/el/TestScopedAttributeELResolver.java
 test/jakarta/servlet/jsp/el/TestImportELResolver.java
 test/jakarta/servlet/jsp/el/TestScopedAttributeELResolverPerformance.java
 test/jakarta/servlet/jsp/TesterPageContext.java
+test/jakarta/el/TestOptionalELResolverInJsp.java
 test/jakarta/el/TestBeanSupport.java
 test/jakarta/el/TestELResolver.java
 test/jakarta/el/TestELContext.java
@@ -4072,9 +4074,12 @@ test/jakarta/el/TestListELResolver.java
 test/jakarta/el/TestMethodReference.java
 test/jakarta/el/TestEvaluationListener.java
 test/jakarta/el/TestCompositeELResolver.java
+test/jakarta/el/TesterBeanB.java
 test/jakarta/el/TesterBean.java
+test/jakarta/el/TesterBeanA.java
 test/jakarta/el/TestImportHandler.java
 test/jakarta/el/TesterFunctions.java
+test/jakarta/el/TestOptionalELResolver.java
 test/jakarta/el/TestStaticFieldELResolver.java
 test/jakarta/el/TestImportHandlerStandardPackages.java
 test/jakarta/el/TestBeanELResolver.java
@@ -4461,4 +4466,5 @@ test/webapp/bug49nnn/bug49464-utf-8-bom.txt
 test/webapp/bug49nnn/bug49555.jsp
 test/webapp/bug49nnn/bug49464-iso-8859-1.txt
 test/webapp/bug49nnn/bug49297MultipleImport1.jsp
+test/webapp/el-optional.jsp
 test/webapp/welcome-files/index.jsp
