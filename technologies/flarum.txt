@@ -13,7 +13,7 @@ framework/core/js/dist/forum.js.LICENSE.txt
 framework/core/js/tsconfig.json
 framework/core/js/forum.ts
 framework/core/js/jest.config.cjs
-framework/core/js/dist-typings/admin/compat.d.ts
+framework/core/js/dist-typings/admin/admin.d.ts
 framework/core/js/dist-typings/admin/models/ExtensionReadme.d.ts
 framework/core/js/dist-typings/admin/AdminApplication.d.ts
 framework/core/js/dist-typings/admin/components/DashboardPage.d.ts
@@ -60,7 +60,7 @@ framework/core/js/dist-typings/@types/tooltips/index.d.ts
 framework/core/js/dist-typings/@types/translator-icu.d.ts
 framework/core/js/dist-typings/@types/global.d.ts
 framework/core/js/dist-typings/@types/translator-icu-rich.d.ts
-framework/core/js/dist-typings/forum/compat.d.ts
+framework/core/js/dist-typings/forum/forum.d.ts
 framework/core/js/dist-typings/forum/components/SettingsPage.d.ts
 framework/core/js/dist-typings/forum/components/AffixedSidebar.d.ts
 framework/core/js/dist-typings/forum/components/SessionDropdown.d.ts
@@ -138,7 +138,6 @@ framework/core/js/dist-typings/forum/utils/Pane.d.ts
 framework/core/js/dist-typings/forum/utils/UserControls.d.ts
 framework/core/js/dist-typings/forum/utils/History.d.ts
 framework/core/js/dist-typings/forum/utils/slidable.d.ts
-framework/core/js/dist-typings/common/compat.d.ts
 framework/core/js/dist-typings/common/models/User.d.ts
 framework/core/js/dist-typings/common/models/Post.d.ts
 framework/core/js/dist-typings/common/models/Group.d.ts
@@ -188,6 +187,7 @@ framework/core/js/dist-typings/common/index.d.ts
 framework/core/js/dist-typings/common/app.d.ts
 framework/core/js/dist-typings/common/Session.d.ts
 framework/core/js/dist-typings/common/Store.d.ts
+framework/core/js/dist-typings/common/registry.d.ts
 framework/core/js/dist-typings/common/helpers/fireApplicationError.d.ts
 framework/core/js/dist-typings/common/helpers/avatar.d.ts
 framework/core/js/dist-typings/common/helpers/highlight.d.ts
@@ -200,6 +200,7 @@ framework/core/js/dist-typings/common/helpers/humanTime.d.ts
 framework/core/js/dist-typings/common/helpers/fireDebugWarning.d.ts
 framework/core/js/dist-typings/common/helpers/listItems.d.ts
 framework/core/js/dist-typings/common/helpers/fullTime.d.ts
+framework/core/js/dist-typings/common/common.d.ts
 framework/core/js/dist-typings/common/Fragment.d.ts
 framework/core/js/dist-typings/common/states/PageState.d.ts
 framework/core/js/dist-typings/common/states/AlertManagerState.d.ts
@@ -214,7 +215,6 @@ framework/core/js/dist-typings/common/utils/string.d.ts
 framework/core/js/dist-typings/common/utils/evented.d.ts
 framework/core/js/dist-typings/common/utils/Stream.d.ts
 framework/core/js/dist-typings/common/utils/classList.d.ts
-framework/core/js/dist-typings/common/utils/proxifyCompat.d.ts
 framework/core/js/dist-typings/common/utils/isObject.d.ts
 framework/core/js/dist-typings/common/utils/insertText.d.ts
 framework/core/js/dist-typings/common/utils/extract.d.ts
@@ -247,6 +247,7 @@ framework/core/js/dist-typings/common/utils/escapeRegExp.d.ts
 framework/core/js/dist-typings/common/utils/bidi.d.ts
 framework/core/js/dist-typings/common/utils/throttleDebounce.d.ts
 framework/core/js/dist-typings/common/IHistory.d.ts
+framework/core/js/dist-typings/common/ExportRegistry.d.ts
 framework/core/js/src/admin/app.ts
 framework/core/js/src/admin/models/ExtensionReadme.js
 framework/core/js/src/admin/components/ExtensionsWidget.js
@@ -280,9 +281,9 @@ framework/core/js/src/admin/components/PermissionsPage.tsx
 framework/core/js/src/admin/components/PermissionGrid.tsx
 framework/core/js/src/admin/components/ExtensionPermissionGrid.tsx
 framework/core/js/src/admin/components/ExtensionLinkButton.js
-framework/core/js/src/admin/compat.ts
 framework/core/js/src/admin/index.ts
 framework/core/js/src/admin/AdminApplication.tsx
+framework/core/js/src/admin/admin.ts
 framework/core/js/src/admin/resolvers/ExtensionPageResolver.ts
 framework/core/js/src/admin/utils/isExtensionEnabled.js
 framework/core/js/src/admin/utils/ExtensionData.ts
@@ -352,7 +353,6 @@ framework/core/js/src/forum/components/EditPostComposer.js
 framework/core/js/src/forum/components/IndexPage.tsx
 framework/core/js/src/forum/components/NotificationsPage.tsx
 framework/core/js/src/forum/components/UsersSearchSource.tsx
-framework/core/js/src/forum/compat.ts
 framework/core/js/src/forum/index.ts
 framework/core/js/src/forum/states/UserSecurityPageState.ts
 framework/core/js/src/forum/states/ComposerState.js
@@ -361,6 +361,7 @@ framework/core/js/src/forum/states/SearchState.ts
 framework/core/js/src/forum/states/GlobalSearchState.ts
 framework/core/js/src/forum/states/PostStreamState.ts
 framework/core/js/src/forum/states/NotificationListState.ts
+framework/core/js/src/forum/forum.ts
 framework/core/js/src/forum/ForumApplication.tsx
 framework/core/js/src/forum/resolvers/DiscussionPageResolver.ts
 framework/core/js/src/forum/utils/PostControls.js
@@ -412,13 +413,13 @@ framework/core/js/src/common/components/LabelValue.tsx
 framework/core/js/src/common/components/ColorPreviewInput.tsx
 framework/core/js/src/common/components/Badge.tsx
 framework/core/js/src/common/components/Switch.tsx
+framework/core/js/src/common/ExportRegistry.ts
 framework/core/js/src/common/extenders/Model.ts
 framework/core/js/src/common/extenders/Store.ts
 framework/core/js/src/common/extenders/Routes.ts
 framework/core/js/src/common/extenders/index.ts
 framework/core/js/src/common/extenders/IExtender.ts
 framework/core/js/src/common/extenders/PostTypes.ts
-framework/core/js/src/common/compat.ts
 framework/core/js/src/common/index.ts
 framework/core/js/src/common/helpers/humanTime.tsx
 framework/core/js/src/common/helpers/avatar.tsx
@@ -432,6 +433,7 @@ framework/core/js/src/common/helpers/listItems.tsx
 framework/core/js/src/common/helpers/icon.tsx
 framework/core/js/src/common/helpers/highlight.tsx
 framework/core/js/src/common/helpers/textContrastClass.ts
+framework/core/js/src/common/registry.ts
 framework/core/js/src/common/states/PageState.js
 framework/core/js/src/common/states/AlertManagerState.ts
 framework/core/js/src/common/states/PaginatedListState.ts
@@ -456,7 +458,6 @@ framework/core/js/src/common/utils/insertText.ts
 framework/core/js/src/common/utils/stringToColor.ts
 framework/core/js/src/common/utils/KeyboardNavigatable.ts
 framework/core/js/src/common/utils/formatNumber.ts
-framework/core/js/src/common/utils/proxifyCompat.ts
 framework/core/js/src/common/utils/subclassOf.js
 framework/core/js/src/common/utils/arrayFlatPolyfill.ts
 framework/core/js/src/common/utils/classList.ts
@@ -480,6 +481,7 @@ framework/core/js/src/common/utils/extract.ts
 framework/core/js/src/common/utils/ItemList.ts
 framework/core/js/src/common/utils/BasicEditorDriver.ts
 framework/core/js/src/common/utils/Stream.ts
+framework/core/js/src/common/common.ts
 framework/core/js/src/common/extend.ts
 framework/core/.gitattributes
 framework/core/locale/core.yml
@@ -1384,12 +1386,24 @@ js-packages/jest-config/setup-env.js
 js-packages/jest-config/LICENSE
 js-packages/jest-config/tsconfig.json
 js-packages/jest-config/shims.d.ts
-js-packages/webpack-config/index.js
+js-packages/webpack-config/babel.config.cjs
 js-packages/webpack-config/README.md
 js-packages/webpack-config/package.json
-js-packages/webpack-config/babel.config.js
+js-packages/webpack-config/tests/compiler.js
+js-packages/webpack-config/tests/autoExportLoader.test.js
+js-packages/webpack-config/tests/src/common/Test.js
+js-packages/webpack-config/tests/src/common/support/potato.js
+js-packages/webpack-config/tests/src/common/foos/namedExports.js
+js-packages/webpack-config/tests/src/common/foos/exportFrom.js
+js-packages/webpack-config/tests/src/common/foos/exportFromWithNamedExports.js
+js-packages/webpack-config/tests/src/common/foos/exportDefaultFrom.js
+js-packages/webpack-config/tests/src/common/bars/index.js
+js-packages/webpack-config/tests/src/common/bars/Acme.js
+js-packages/webpack-config/tests/src/common/bars/Foo.js
 js-packages/webpack-config/LICENSE
 js-packages/webpack-config/.prettierrc.json
+js-packages/webpack-config/src/index.cjs
+js-packages/webpack-config/src/autoExportLoader.cjs
 js-packages/prettier-config/prettierrc.json
 js-packages/prettier-config/README.md
 js-packages/prettier-config/package.json
@@ -1469,7 +1483,7 @@ extensions/tags/js/dist/admin.js.LICENSE.txt
 extensions/tags/js/dist/forum.js.LICENSE.txt
 extensions/tags/js/tsconfig.json
 extensions/tags/js/forum.ts
-extensions/tags/js/dist-typings/admin/compat.d.ts
+extensions/tags/js/dist-typings/admin/admin.d.ts
 extensions/tags/js/dist-typings/admin/addTagsHomePageOption.d.ts
 extensions/tags/js/dist-typings/admin/addTagPermission.d.ts
 extensions/tags/js/dist-typings/admin/components/EditTagModal.d.ts
@@ -1480,8 +1494,8 @@ extensions/tags/js/dist-typings/admin/addTagChangePermission.d.ts
 extensions/tags/js/dist-typings/admin/addTagsPermissionScope.d.ts
 extensions/tags/js/dist-typings/admin/addTagSelectionSettingComponent.d.ts
 extensions/tags/js/dist-typings/@types/shims.d.ts
-extensions/tags/js/dist-typings/forum/compat.d.ts
 extensions/tags/js/dist-typings/forum/addTagList.d.ts
+extensions/tags/js/dist-typings/forum/forum.d.ts
 extensions/tags/js/dist-typings/forum/components/TagLinkButton.d.ts
 extensions/tags/js/dist-typings/forum/components/TagHero.d.ts
 extensions/tags/js/dist-typings/forum/components/TagDiscussionModal.d.ts
@@ -1495,7 +1509,6 @@ extensions/tags/js/dist-typings/forum/addTagComposer.d.ts
 extensions/tags/js/dist-typings/forum/addTagControl.d.ts
 extensions/tags/js/dist-typings/forum/addTagFilter.d.ts
 extensions/tags/js/dist-typings/forum/utils/getSelectableTags.d.ts
-extensions/tags/js/dist-typings/common/compat.d.ts
 extensions/tags/js/dist-typings/common/models/Tag.d.ts
 extensions/tags/js/dist-typings/common/components/TagSelectionModal.d.ts
 extensions/tags/js/dist-typings/common/extend.d.ts
@@ -1503,6 +1516,7 @@ extensions/tags/js/dist-typings/common/index.d.ts
 extensions/tags/js/dist-typings/common/helpers/tagLabel.d.ts
 extensions/tags/js/dist-typings/common/helpers/tagIcon.d.ts
 extensions/tags/js/dist-typings/common/helpers/tagsLabel.d.ts
+extensions/tags/js/dist-typings/common/common.d.ts
 extensions/tags/js/dist-typings/common/states/TagListState.d.ts
 extensions/tags/js/dist-typings/common/utils/sortTags.d.ts
 extensions/tags/js/src/admin/components/EditTagModal.tsx
@@ -1511,7 +1525,7 @@ extensions/tags/js/src/admin/components/TagsPage.js
 extensions/tags/js/src/admin/addTagsHomePageOption.js
 extensions/tags/js/src/admin/index.ts
 extensions/tags/js/src/admin/addTagChangePermission.js
-extensions/tags/js/src/admin/compat.js
+extensions/tags/js/src/admin/admin.ts
 extensions/tags/js/src/admin/addTagSelectionSettingComponent.tsx
 extensions/tags/js/src/admin/addTagPermission.js
 extensions/tags/js/src/admin/addTagsPermissionScope.tsx
@@ -1527,8 +1541,8 @@ extensions/tags/js/src/forum/index.ts
 extensions/tags/js/src/forum/addTagLabels.js
 extensions/tags/js/src/forum/addTagControl.js
 extensions/tags/js/src/forum/addTagComposer.js
+extensions/tags/js/src/forum/forum.ts
 extensions/tags/js/src/forum/addTagFilter.tsx
-extensions/tags/js/src/forum/compat.js
 extensions/tags/js/src/forum/utils/getSelectableTags.js
 extensions/tags/js/src/forum/extend.ts
 extensions/tags/js/src/common/models/Tag.ts
@@ -1538,8 +1552,8 @@ extensions/tags/js/src/common/helpers/tagsLabel.js
 extensions/tags/js/src/common/helpers/tagIcon.js
 extensions/tags/js/src/common/helpers/tagLabel.js
 extensions/tags/js/src/common/states/TagListState.ts
-extensions/tags/js/src/common/compat.js
 extensions/tags/js/src/common/utils/sortTags.tsx
+extensions/tags/js/src/common/common.ts
 extensions/tags/js/src/common/extend.ts
 extensions/tags/.gitattributes
 extensions/tags/locale/en.yml
@@ -1668,8 +1682,8 @@ extensions/flags/js/tsconfig.json
 extensions/flags/js/forum.ts
 extensions/flags/js/dist-typings/admin/index.d.ts
 extensions/flags/js/dist-typings/@types/shims.d.ts
-extensions/flags/js/dist-typings/forum/compat.d.ts
 extensions/flags/js/dist-typings/forum/models/Flag.d.ts
+extensions/flags/js/dist-typings/forum/forum.d.ts
 extensions/flags/js/dist-typings/forum/addFlagsDropdown.d.ts
 extensions/flags/js/dist-typings/forum/components/FlagsPage.d.ts
 extensions/flags/js/dist-typings/forum/components/FlagPostModal.d.ts
@@ -1692,7 +1706,7 @@ extensions/flags/js/src/forum/components/FlagPostModal.js
 extensions/flags/js/src/forum/components/FlagsDropdown.js
 extensions/flags/js/src/forum/index.ts
 extensions/flags/js/src/forum/states/FlagListState.js
-extensions/flags/js/src/forum/compat.js
+extensions/flags/js/src/forum/forum.ts
 extensions/flags/js/src/forum/extend.ts
 extensions/flags/.gitattributes
 extensions/flags/locale/en.yml
@@ -1832,6 +1846,7 @@ extensions/mentions/js/src/forum/components/UserMentionedNotification.js
 extensions/mentions/js/src/forum/components/MentionsDropdownItem.tsx
 extensions/mentions/js/src/forum/components/GroupMentionedNotification.js
 extensions/mentions/js/src/forum/components/PostMentionedNotification.js
+extensions/mentions/js/src/forum/forum.js
 extensions/mentions/js/src/forum/addPostReplyAction.js
 extensions/mentions/js/src/forum/extenders/Mentionables.ts
 extensions/mentions/js/src/forum/state/MentionedByModalState.ts
@@ -1848,7 +1863,6 @@ extensions/mentions/js/src/forum/mentionables/UserMention.tsx
 extensions/mentions/js/src/forum/addPostQuoteButton.js
 extensions/mentions/js/src/forum/fragments/AutocompleteDropdown.js
 extensions/mentions/js/src/forum/fragments/PostQuoteButton.js
-extensions/mentions/js/src/forum/compat.js
 extensions/mentions/js/src/forum/utils/reply.js
 extensions/mentions/js/src/forum/utils/getMentionText.js
 extensions/mentions/js/src/forum/utils/selectedText.js
@@ -2301,7 +2315,7 @@ extensions/suspend/js/src/forum/components/SuspensionInfoModal.js
 extensions/suspend/js/src/forum/components/UserUnsuspendedNotification.js
 extensions/suspend/js/src/forum/checkForSuspension.js
 extensions/suspend/js/src/forum/helpers/suspensionHelper.ts
-extensions/suspend/js/src/forum/compat.js
+extensions/suspend/js/src/forum/forum.ts
 extensions/suspend/js/src/forum/extend.ts
 extensions/suspend/.gitattributes
 extensions/suspend/locale/en.yml

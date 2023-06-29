@@ -448,6 +448,15 @@ SECURITY.md
 phpspec.yml.dist
 package.json
 webpack.config.js
+.bunnyshell/docker/nginx/Dockerfile
+.bunnyshell/docker/nginx/default.conf.template
+.bunnyshell/docker/php/Dockerfile
+.bunnyshell/docker/php/prod/php.ini
+.bunnyshell/docker/php/prod/opcache.ini
+.bunnyshell/docker/php/entrypoints/migrations-entrypoint
+.bunnyshell/docker/php/entrypoints/php-entrypoint
+.bunnyshell/docker/php/files/crontab
+.bunnyshell/templates/preview/bunnyshell.yaml
 etc/bash/common.lib.sh
 etc/bash/application.sh
 etc/psalm/LaminasPriorityQueueStub.php
@@ -1719,6 +1728,7 @@ CHANGELOG-1.9.md
 .symfony.insight.yaml
 psalm.xml
 UPGRADE-1.8.md
+.dockerignore
 UPGRADE-API-1.8.md
 UPGRADE-1.4.md
 var/.gitkeep

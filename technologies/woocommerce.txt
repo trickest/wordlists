@@ -1270,6 +1270,7 @@ plugins/woo-ai/.prettierrc.js
 plugins/woo-ai/.editorconfig
 plugins/woo-ai/DEVELOPMENT.md
 plugins/woo-ai/.travis.yml
+plugins/woo-ai/changelog/dev-update-pnpm-8.6.5
 plugins/woo-ai/changelog/.gitkeep
 plugins/woo-ai/.nvmrc
 plugins/woo-ai/tsconfig.json
@@ -1326,18 +1327,34 @@ plugins/woo-ai/src/product-name/name-utils.ts
 plugins/woo-ai/src/product-name/index.ts
 plugins/woo-ai/src/product-name/powered-by-link.tsx
 plugins/woocommerce-docs/client/data/useManifests.tsx
+plugins/woocommerce-docs/client/data/useJobs.tsx
 plugins/woocommerce-docs/client/index.tsx
+plugins/woocommerce-docs/client/components/JobLog.tsx
+plugins/woocommerce-docs/client/components/ManifestList.tsx
+plugins/woocommerce-docs/client/util/url.ts
 plugins/woocommerce-docs/composer.lock
 plugins/woocommerce-docs/.eslintrc
 plugins/woocommerce-docs/README.md
+plugins/woocommerce-docs/scripts/generate-manifest.ts
+plugins/woocommerce-docs/scripts/manifest.json
 plugins/woocommerce-docs/package.json
 plugins/woocommerce-docs/webpack.config.js
 plugins/woocommerce-docs/.prettierrc.js
 plugins/woocommerce-docs/woocommerce-docs.php
+plugins/woocommerce-docs/example-docs/get-started/README.md
+plugins/woocommerce-docs/example-docs/get-started/local-development.md
+plugins/woocommerce-docs/example-docs/get-started/troubleshooting/README.md
+plugins/woocommerce-docs/example-docs/get-started/troubleshooting/what-went-wrong.md
+plugins/woocommerce-docs/example-docs/testing/README.md
+plugins/woocommerce-docs/example-docs/testing/unit-tests.md
 plugins/woocommerce-docs/tsconfig.json
 plugins/woocommerce-docs/composer.json
 plugins/woocommerce-docs/src/API/ManifestAPI.php
+plugins/woocommerce-docs/src/API/JobAPI.php
+plugins/woocommerce-docs/src/Manifest/ManifestProcessor.php
 plugins/woocommerce-docs/src/Data/ManifestStore.php
+plugins/woocommerce-docs/src/Data/DocsStore.php
+plugins/woocommerce-docs/src/Job/ManifestJob.php
 plugins/woocommerce-docs/src/App/Bootstrap.php
 plugins/woocommerce-docs/src/views/admin.php
 plugins/woocommerce/bin/generate-feature-config.php
@@ -2537,18 +2554,19 @@ plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-crud-orders.php
 plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
 plugins/woocommerce/changelog/add-new-countries-group2-wcpay
+plugins/woocommerce/changelog/dev-update-pnpm-8.6.5
 plugins/woocommerce/changelog/fix-28480
 plugins/woocommerce/changelog/e2e-replace-deprecated-page-methods
+plugins/woocommerce/changelog/fix-errors-when-setting-order-properties-in-hpos-not-captured
 plugins/woocommerce/changelog/fix-38719-empty-cart-notices-with-blocks
 plugins/woocommerce/changelog/update-38903-core-profiler-plugins-selection-is-not-persisted
 plugins/woocommerce/changelog/fix-blocks-9999-products-grid-layout-in-post
 plugins/woocommerce/changelog/fix-help-panel-links
 plugins/woocommerce/changelog/fix-revert-38531
-plugins/woocommerce/changelog/update-38979-override-jetpack-data-endpont
+plugins/woocommerce/changelog/update-38820-enhancement-api-search-customers-with-non-empty-email-or-name-or-address
 plugins/woocommerce/changelog/add-38880_add_variations_tab_to_product_block_editor
 plugins/woocommerce/changelog/fix-e2e-order-emails
 plugins/woocommerce/changelog/e2e-make-tests-independant-from-previous-tests
-plugins/woocommerce/changelog/update-38904-optimize-jetpack-auth-redirection
 plugins/woocommerce/changelog/feature-38805-create-campaign-button
 plugins/woocommerce/changelog/fix-failing-shipping-tests
 plugins/woocommerce/changelog/.gitkeep
@@ -2556,6 +2574,7 @@ plugins/woocommerce/changelog/mahmoudsaeed-trunk
 plugins/woocommerce/changelog/fix-33383-expanded-customer-search
 plugins/woocommerce/changelog/fix-36374-use-show-index-instead-of-db-schema
 plugins/woocommerce/changelog/remove-hardcoded-shop-order
+plugins/woocommerce/changelog/fix-35495-stylesheets-not-enqueued-in-site-editor
 plugins/woocommerce/changelog/e2e-skip-failing-e2e-test-to-be-investigated
 plugins/woocommerce/changelog/fix-legacy-js-es6
 plugins/woocommerce/changelog/update-lint-scripts
@@ -2564,6 +2583,7 @@ plugins/woocommerce/changelog/fix-38841-core-profiler-ui-issues
 plugins/woocommerce/changelog/fix-37343-incompatible-plugins-list
 plugins/woocommerce/changelog/improve-hpos-cli-verbose-output
 plugins/woocommerce/changelog/fix-issue-36560
+plugins/woocommerce/changelog/fix-38996_get_default_options_not_being_loaded
 plugins/woocommerce/changelog/improve-di-related-unit-testing-infrastructure
 plugins/woocommerce/changelog/update-phpcs-changed-2.11.1
 plugins/woocommerce/changelog/fix-adding-new-attribute-failed-error
@@ -3836,6 +3856,7 @@ plugins/woocommerce-beta-tester/.prettierrc.js
 plugins/woocommerce-beta-tester/.editorconfig
 plugins/woocommerce-beta-tester/.travis.yml
 plugins/woocommerce-beta-tester/changelog/update-beta-tester-woorelease
+plugins/woocommerce-beta-tester/changelog/dev-update-pnpm-8.6.5
 plugins/woocommerce-beta-tester/changelog/fix-beta-tester-wcapp-constant
 plugins/woocommerce-beta-tester/changelog/update-test-helper-features-list
 plugins/woocommerce-beta-tester/changelog/update-woocommerce-beta-tester-readme
@@ -3955,6 +3976,7 @@ packages/js/admin-e2e-tests/composer.lock
 packages/js/admin-e2e-tests/README.md
 packages/js/admin-e2e-tests/typings/index.d.ts
 packages/js/admin-e2e-tests/package.json
+packages/js/admin-e2e-tests/changelog/dev-update-pnpm-8.6.5
 packages/js/admin-e2e-tests/changelog/update-marketing-checkbox
 packages/js/admin-e2e-tests/changelog/dev-simplify-turbo
 packages/js/admin-e2e-tests/changelog/dev-pin-wp-deps-6
@@ -4052,6 +4074,7 @@ packages/js/customer-effort-score/babel.config.js
 packages/js/customer-effort-score/PREVIOUS_CHANGELOG.md
 packages/js/customer-effort-score/tsconfig-cjs.json
 packages/js/customer-effort-score/changelog/update-move-ces-data-store
+packages/js/customer-effort-score/changelog/dev-update-pnpm-8.6.5
 packages/js/customer-effort-score/changelog/fix-missing-type-definitions-dependencies
 packages/js/customer-effort-score/changelog/dev-simplify-turbo
 packages/js/customer-effort-score/changelog/update-webpack-invalid-export-error
@@ -4130,6 +4153,7 @@ packages/js/api/README.md
 packages/js/api/package.json
 packages/js/api/.eslintignore
 packages/js/api/jest.config.js
+packages/js/api/changelog/dev-update-pnpm-8.6.5
 packages/js/api/changelog/dev-simplify-turbo
 packages/js/api/changelog/dev-pin-wp-deps-6
 packages/js/api/changelog/dev-fix-pnpm-version-engines
@@ -4701,6 +4725,7 @@ packages/js/data/babel.config.js
 packages/js/data/PREVIOUS_CHANGELOG.md
 packages/js/data/tsconfig-cjs.json
 packages/js/data/changelog/add-in-app-tour-track-events
+packages/js/data/changelog/dev-update-pnpm-8.6.5
 packages/js/data/changelog/add-35786
 packages/js/data/changelog/fix-missing-type-definitions-dependencies
 packages/js/data/changelog/add-30_product_form_buttons
@@ -5138,6 +5163,7 @@ packages/js/extend-cart-checkout-block/README.md.mustache
 packages/js/extend-cart-checkout-block/package.json
 packages/js/extend-cart-checkout-block/.gitignore.mustache
 packages/js/extend-cart-checkout-block/.eslintrc.js.mustache
+packages/js/extend-cart-checkout-block/changelog/dev-update-pnpm-8.6.5
 packages/js/extend-cart-checkout-block/changelog/.gitkeep
 packages/js/extend-cart-checkout-block/.editorconfig.mustache
 packages/js/extend-cart-checkout-block/webpack.config.js.mustache
@@ -5171,6 +5197,7 @@ packages/js/components/webpack.config.js
 packages/js/components/babel.config.js
 packages/js/components/PREVIOUS_CHANGELOG.md
 packages/js/components/tsconfig-cjs.json
+packages/js/components/changelog/dev-update-pnpm-8.6.5
 packages/js/components/changelog/add-38248
 packages/js/components/changelog/fix-36256_moving_list_item_moves_image
 packages/js/components/changelog/update-36016-product-details-slotfill
@@ -5752,6 +5779,7 @@ packages/js/navigation/package.json
 packages/js/navigation/babel.config.js
 packages/js/navigation/PREVIOUS_CHANGELOG.md
 packages/js/navigation/tsconfig-cjs.json
+packages/js/navigation/changelog/dev-update-pnpm-8.6.5
 packages/js/navigation/changelog/fix-36205
 packages/js/navigation/changelog/fix-missing-type-definitions-dependencies
 packages/js/navigation/changelog/update-36723
@@ -5787,6 +5815,7 @@ packages/js/tracks/typings/global.d.ts
 packages/js/tracks/package.json
 packages/js/tracks/PREVIOUS_CHANGELOG.md
 packages/js/tracks/tsconfig-cjs.json
+packages/js/tracks/changelog/dev-update-pnpm-8.6.5
 packages/js/tracks/changelog/dev-simplify-turbo
 packages/js/tracks/changelog/dev-fix-pnpm-version-engines
 packages/js/tracks/changelog/dev-update-pnpm8
@@ -5835,6 +5864,7 @@ packages/js/onboarding/package.json
 packages/js/onboarding/webpack.config.js
 packages/js/onboarding/PREVIOUS_CHANGELOG.md
 packages/js/onboarding/tsconfig-cjs.json
+packages/js/onboarding/changelog/dev-update-pnpm-8.6.5
 packages/js/onboarding/changelog/.gitkeep
 packages/js/onboarding/tsconfig.json
 packages/js/onboarding/.npmrc
@@ -5924,7 +5954,6 @@ packages/js/create-product-editor-block/plugin-templates/$slug.php.mustache
 packages/js/create-product-editor-block/plugin-templates/.prettierrc.json.mustache
 packages/js/create-product-editor-block/package.json
 packages/js/create-product-editor-block/changelog/.gitkeep
-packages/js/create-product-editor-block/changelog/update-add_gitignore_to_package
 packages/js/create-product-editor-block/block-templates/editor.scss.mustache
 packages/js/create-product-editor-block/block-templates/edit.tsx.mustache
 packages/js/create-product-editor-block/block-templates/index.ts.mustache
@@ -5939,6 +5968,7 @@ packages/js/date/package.json
 packages/js/date/babel.config.js
 packages/js/date/PREVIOUS_CHANGELOG.md
 packages/js/date/tsconfig-cjs.json
+packages/js/date/changelog/dev-update-pnpm-8.6.5
 packages/js/date/changelog/fix-missing-type-definitions-dependencies
 packages/js/date/changelog/dev-simplify-turbo
 packages/js/date/changelog/dev-pin-wp-deps-6
@@ -5971,6 +6001,7 @@ packages/js/experimental/webpack.config.js
 packages/js/experimental/babel.config.js
 packages/js/experimental/PREVIOUS_CHANGELOG.md
 packages/js/experimental/tsconfig-cjs.json
+packages/js/experimental/changelog/dev-update-pnpm-8.6.5
 packages/js/experimental/changelog/fix-missing-type-definitions-dependencies
 packages/js/experimental/changelog/dev-simplify-turbo
 packages/js/experimental/changelog/update-webpack-invalid-export-error
@@ -6037,6 +6068,7 @@ packages/js/create-woo-extension/package.json
 packages/js/create-woo-extension/tests/Test.php.mustache
 packages/js/create-woo-extension/.gitignore.mustache
 packages/js/create-woo-extension/.eslintrc.js.mustache
+packages/js/create-woo-extension/changelog/dev-update-pnpm-8.6.5
 packages/js/create-woo-extension/changelog/dev-update-pnpm8
 packages/js/create-woo-extension/changelog/.gitkeep
 packages/js/create-woo-extension/.editorconfig.mustache
@@ -6060,6 +6092,7 @@ packages/js/csv-export/.prettierrc.js
 packages/js/csv-export/babel.config.js
 packages/js/csv-export/PREVIOUS_CHANGELOG.md
 packages/js/csv-export/tsconfig-cjs.json
+packages/js/csv-export/changelog/dev-update-pnpm-8.6.5
 packages/js/csv-export/changelog/dev-simplify-turbo
 packages/js/csv-export/changelog/fix-typescript-incremental-regression
 packages/js/csv-export/changelog/dev-fix-pnpm-version-engines
@@ -6091,6 +6124,7 @@ packages/js/currency/package.json
 packages/js/currency/babel.config.js
 packages/js/currency/PREVIOUS_CHANGELOG.md
 packages/js/currency/tsconfig-cjs.json
+packages/js/currency/changelog/dev-update-pnpm-8.6.5
 packages/js/currency/changelog/update-36395-move-product-fields
 packages/js/currency/changelog/dev-simplify-turbo
 packages/js/currency/changelog/dev-pin-wp-deps-6
@@ -6149,6 +6183,7 @@ packages/js/number/package.json
 packages/js/number/babel.config.js
 packages/js/number/PREVIOUS_CHANGELOG.md
 packages/js/number/tsconfig-cjs.json
+packages/js/number/changelog/dev-update-pnpm-8.6.5
 packages/js/number/changelog/dev-simplify-turbo
 packages/js/number/changelog/dev-fix-pnpm-version-engines
 packages/js/number/changelog/dev-fix-admin-tests-pnpm7
@@ -6175,6 +6210,7 @@ packages/js/dependency-extraction-webpack-plugin/composer.lock
 packages/js/dependency-extraction-webpack-plugin/README.md
 packages/js/dependency-extraction-webpack-plugin/package.json
 packages/js/dependency-extraction-webpack-plugin/PREVIOUS_CHANGELOG.md
+packages/js/dependency-extraction-webpack-plugin/changelog/dev-update-pnpm-8.6.5
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-simplify-turbo
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-pin-wp-deps-6
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-fix-pnpm-version-engines
@@ -6201,6 +6237,7 @@ packages/js/eslint-plugin/index.js
 packages/js/eslint-plugin/README.md
 packages/js/eslint-plugin/package.json
 packages/js/eslint-plugin/PREVIOUS_CHANGELOG.md
+packages/js/eslint-plugin/changelog/dev-update-pnpm-8.6.5
 packages/js/eslint-plugin/changelog/dev-simplify-turbo
 packages/js/eslint-plugin/changelog/dev-pin-wp-deps-6
 packages/js/eslint-plugin/changelog/dev-fix-pnpm-version-engines
@@ -6291,6 +6328,7 @@ packages/js/explat/babel.config.js
 packages/js/explat/PREVIOUS_CHANGELOG.md
 packages/js/explat/tsconfig-cjs.json
 packages/js/explat/changelog/add-core-profiler-welcome-woo
+packages/js/explat/changelog/dev-update-pnpm-8.6.5
 packages/js/explat/changelog/fix-missing-type-definitions-dependencies
 packages/js/explat/changelog/dev-simplify-turbo
 packages/js/explat/changelog/dev-pin-wp-deps-6

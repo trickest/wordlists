@@ -9840,10 +9840,6 @@ core/modules/field/tests/src/Kernel/FieldStorageCrudTest.php
 core/modules/field/tests/src/Kernel/FieldAttachStorageTest.php
 core/modules/field/tests/src/Kernel/TestItemWithDependenciesTest.php
 core/modules/field/tests/src/Kernel/FieldImportCreateTest.php
-core/modules/field/tests/src/Kernel/String/StringFormatterTest.php
-core/modules/field/tests/src/Kernel/String/RawStringFormatterTest.php
-core/modules/field/tests/src/Kernel/String/UuidFormatterTest.php
-core/modules/field/tests/src/Kernel/String/UuidItemTest.php
 core/modules/field/tests/src/Kernel/BulkDeleteTest.php
 core/modules/field/tests/src/Kernel/FieldImportDeleteUninstallTest.php
 core/modules/field/tests/src/Kernel/Timestamp/TimestampFormatterTest.php
@@ -9854,6 +9850,10 @@ core/modules/field/tests/src/Kernel/Entity/FieldConfigValidationTest.php
 core/modules/field/tests/src/Kernel/Entity/FieldStorageConfigValidationTest.php
 core/modules/field/tests/src/Kernel/TranslationTest.php
 core/modules/field/tests/src/Kernel/Email/EmailItemTest.php
+core/modules/field/tests/src/Kernel/KernelString/StringFormatterTest.php
+core/modules/field/tests/src/Kernel/KernelString/RawStringFormatterTest.php
+core/modules/field/tests/src/Kernel/KernelString/UuidFormatterTest.php
+core/modules/field/tests/src/Kernel/KernelString/UuidItemTest.php
 core/modules/field/tests/src/Kernel/FieldImportChangeTest.php
 core/modules/field/tests/src/Kernel/Boolean/BooleanFormatterTest.php
 core/modules/field/tests/src/Kernel/Boolean/BooleanItemTest.php
@@ -9906,7 +9906,7 @@ core/modules/field/tests/src/Functional/ReEnableModuleFieldTest.php
 core/modules/field/tests/src/Functional/Views/FieldTestBase.php
 core/modules/field/tests/src/Functional/Views/FieldUITest.php
 core/modules/field/tests/src/Functional/FieldImportDeleteUninstallUiTest.php
-core/modules/field/tests/src/Functional/String/StringFieldTest.php
+core/modules/field/tests/src/Functional/FunctionalString/StringFieldTest.php
 core/modules/field/tests/src/Functional/FieldDefaultValueCallbackTest.php
 core/modules/field/tests/src/Functional/Email/EmailFieldTest.php
 core/modules/field/tests/src/Functional/FormTest.php
@@ -10723,7 +10723,9 @@ core/modules/forum/tests/modules/forum_url_alter_test/src/PathProcessorTest.php
 core/modules/forum/tests/modules/forum_test_views/test_views/views.view.test_forum_index.yml
 core/modules/forum/tests/modules/forum_test_views/forum_test_views.info.yml
 core/modules/forum/tests/fixtures/drupal7.php
+core/modules/forum/tests/fixtures/update/drupal-10.1.0.empty.standard.forum.gz
 core/modules/forum/tests/fixtures/drupal6.php
+core/modules/forum/tests/src/Kernel/ForumIndexTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d7/MigrateForumSettingsTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumConfigsTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumTest.php
@@ -10749,6 +10751,7 @@ core/modules/forum/tests/src/Functional/migrate_drupal/d6/Upgrade6Test.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/NoMultilingualReviewPageTest.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/files/core/tests/fixtures/files/html-1.txt
 core/modules/forum/tests/src/Functional/NodeAccessPagerTest.php
+core/modules/forum/tests/src/Functional/ForumIndexUpdateTest.php
 core/modules/forum/forum.views.inc
 core/modules/forum/help_topics/forum.concept.html.twig
 core/modules/forum/help_topics/forum.moving.html.twig

@@ -365,6 +365,7 @@ tests/unit/php/Core/Framework/Store/Authentication/StoreRequestOptionsProviderTe
 tests/unit/php/Core/Framework/Store/Authentication/FrwRequestOptionsProviderTest.php
 tests/unit/php/Core/Framework/Store/Authentication/LocaleProviderTest.php
 tests/unit/php/Core/Framework/App/Exception/AppAlreadyInstalledExceptionTest.php
+tests/unit/php/Core/Framework/App/AppExceptionTest.php
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/fixed-order-manifest.xml
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/random-order-manifest.xml
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/manifestWithoutMainModule.xml
@@ -388,9 +389,11 @@ tests/unit/php/Core/Framework/App/_fixtures/Resources/app/administration/snippet
 tests/unit/php/Core/Framework/App/_fixtures/Resources/flow-action.xml
 tests/unit/php/Core/Framework/App/_fixtures/Resources/flow.xml
 tests/unit/php/Core/Framework/App/_fixtures/Resources/cms.xml
+tests/unit/php/Core/Framework/App/_fixtures/manifest_no_setup.xml
 tests/unit/php/Core/Framework/App/_fixtures/manifest.xml
 tests/unit/php/Core/Framework/App/AppUrlChangeResolver/ResolverTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/AppLifecycleTest.php
+tests/unit/php/Core/Framework/App/Lifecycle/AppRegistrationServiceTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/AppLoaderTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/Persister/TaxProviderPersisterTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/Persister/FlowEventPersisterTest.php
@@ -718,6 +721,7 @@ tests/unit/php/Core/Content/Media/Commands/DeleteNotUsedMediaCommandTest.php
 tests/unit/php/Core/Content/Media/Event/UnusedMediaSearchEventTest.php
 tests/unit/php/Core/Content/Media/Event/MediaUploadedEventTest.php
 tests/unit/php/Core/Content/Media/Pathname/UrlGeneratorTest.php
+tests/unit/php/Core/Content/Media/MediaExceptionTest.php
 tests/unit/php/Core/Content/Media/MediaEntityTest.php
 tests/unit/php/Core/Content/Media/File/FileSaverTest.php
 tests/unit/php/Core/Content/Media/File/DownloadResponseGeneratorTest.php
@@ -1876,6 +1880,7 @@ tests/integration/php/Storefront/Controller/AddressControllerTest.php
 tests/integration/php/Storefront/Controller/CountryStateControllerTest.php
 tests/integration/php/Storefront/Controller/CheckoutControllerTest.php
 tests/integration/php/Storefront/Controller/CookieControllerTest.php
+tests/integration/php/Storefront/Controller/fixtures/Helper/AuthTestSubscriber.php
 tests/integration/php/Storefront/Controller/fixtures/Plugins/TestPlugin1/Resources/views/storefront/page/plugin/index.html.twig
 tests/integration/php/Storefront/Controller/fixtures/Plugins/TestPlugin1/Resources/views/storefront/base.html.twig
 tests/integration/php/Storefront/Controller/fixtures/Storefront/Resources/views/storefront/base.html.twig
@@ -4789,6 +4794,7 @@ changelog/release-6-3-4-0/2020-10-15-fix-filter-aggregation-in-javascript-criter
 changelog/_unreleased/2022-06-20-dal-for-app-flow-event.md
 changelog/_unreleased/2023-06-10-next-27273-text-block-translation-from-product-pages.md
 changelog/_unreleased/2023-07-05-fix-custom-field-elastic-search-indexing.md
+changelog/_unreleased/2023-06-22-run-state-transitions-in-system-scope.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
@@ -4809,6 +4815,7 @@ changelog/_unreleased/2023-06-14-add-active-status-to-tabs.md
 changelog/_unreleased/2023-06-09-quote-table-names-for-delete-unused-media-queries.md
 changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
 changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
+changelog/_unreleased/2023-06-20-apply-domain-exception-for-media.md
 changelog/_unreleased/2023-01-10-handle-for-unknown-trigger-at-flow-builder.md
 changelog/_unreleased/2023-06-08-allow-import-of-encoded-url.md
 changelog/_unreleased/2023-06-22-add-loading-spinner-to-password-confirm-modal-in-user-listing.md
@@ -4836,6 +4843,8 @@ changelog/_unreleased/2023-06-22-allow-disabling-html-sanitizer.md
 changelog/_unreleased/2023-06-04-handle-form-validation-on-the-modal.md
 changelog/_unreleased/2023-05-23-document-translator-does-not-use-fallback.md
 changelog/_unreleased/2023-05-12-fix-bulk-edit-when-empty-custom-fields-is-passed-it-wipes-out-all-custom-fields.md
+changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
+changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
 changelog/_unreleased/2022-06-28-update-app-lifecycle-element-for-flow-custom-event.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-06-05-widen-the-used-space-in-storefront-account-overview-pages.md
@@ -10224,6 +10233,7 @@ src/Core/Content/Media/Message/UpdateThumbnailsMessage.php
 src/Core/Content/Media/Message/DeleteFileMessage.php
 src/Core/Content/Media/Message/GenerateThumbnailsHandler.php
 src/Core/Content/Media/MediaEntity.php
+src/Core/Content/Media/MediaException.php
 src/Core/Content/Media/MediaType/ImageType.php
 src/Core/Content/Media/MediaType/MediaType.php
 src/Core/Content/Media/MediaType/VideoType.php

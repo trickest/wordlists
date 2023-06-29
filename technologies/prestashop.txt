@@ -7772,6 +7772,7 @@ src/Core/Domain/TaxRulesGroup/Command/BulkDeleteTaxRulesGroupCommand.php
 src/Core/Domain/TaxRulesGroup/Command/BulkSetTaxRulesGroupStatusCommand.php
 src/Core/Domain/TaxRulesGroup/Command/AddTaxRulesGroupCommand.php
 src/Core/Domain/TaxRulesGroup/Query/GetTaxRulesGroupForEditing.php
+src/Core/Domain/Feature/Exception/CannotDeleteFeatureValueException.php
 src/Core/Domain/Feature/Exception/FeatureNotFoundException.php
 src/Core/Domain/Feature/Exception/CannotAddFeatureValueException.php
 src/Core/Domain/Feature/Exception/FeatureConstraintException.php
@@ -7784,14 +7785,17 @@ src/Core/Domain/Feature/Exception/FeatureValueException.php
 src/Core/Domain/Feature/Exception/CannotDeleteFeatureException.php
 src/Core/Domain/Feature/Exception/FeatureValueConstraintException.php
 src/Core/Domain/Feature/Exception/CannotAddFeatureException.php
+src/Core/Domain/Feature/Exception/BulkFeatureValueException.php
 src/Core/Domain/Feature/Exception/FeatureValueNotFoundException.php
 src/Core/Domain/Feature/FeatureValueSettings.php
 src/Core/Domain/Feature/CommandHandler/AddFeatureValueHandlerInterface.php
+src/Core/Domain/Feature/CommandHandler/BulkDeleteFeatureValueHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/AddFeatureHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/EditFeatureValueHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/BulkDeleteFeatureHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/DeleteFeatureHandlerInterface.php
 src/Core/Domain/Feature/CommandHandler/EditFeatureHandlerInterface.php
+src/Core/Domain/Feature/CommandHandler/DeleteFeatureValueHandlerInterface.php
 src/Core/Domain/Feature/ValueObject/FeatureValueId.php
 src/Core/Domain/Feature/ValueObject/FeatureId.php
 src/Core/Domain/Feature/QueryResult/EditableFeatureValue.php
@@ -7800,6 +7804,8 @@ src/Core/Domain/Feature/QueryHandler/GetFeatureValueForEditingHandlerInterface.p
 src/Core/Domain/Feature/QueryHandler/GetFeatureForEditingHandlerInterface.php
 src/Core/Domain/Feature/Command/EditFeatureCommand.php
 src/Core/Domain/Feature/Command/EditFeatureValueCommand.php
+src/Core/Domain/Feature/Command/BulkDeleteFeatureValueCommand.php
+src/Core/Domain/Feature/Command/DeleteFeatureValueCommand.php
 src/Core/Domain/Feature/Command/BulkDeleteFeatureCommand.php
 src/Core/Domain/Feature/Command/DeleteFeatureCommand.php
 src/Core/Domain/Feature/Command/AddFeatureValueCommand.php
@@ -11463,9 +11469,11 @@ src/Adapter/Feature/GroupFeature.php
 src/Adapter/Feature/FeatureDataProvider.php
 src/Adapter/Feature/Validate/FeatureValueValidator.php
 src/Adapter/Feature/Validate/FeatureValidator.php
+src/Adapter/Feature/CommandHandler/DeleteFeatureValueHandler.php
 src/Adapter/Feature/CommandHandler/AddFeatureHandler.php
 src/Adapter/Feature/CommandHandler/DeleteFeatureHandler.php
 src/Adapter/Feature/CommandHandler/AddFeatureValueHandler.php
+src/Adapter/Feature/CommandHandler/BulkDeleteFeatureValueHandler.php
 src/Adapter/Feature/CommandHandler/EditFeatureHandler.php
 src/Adapter/Feature/CommandHandler/BulkDeleteFeatureHandler.php
 src/Adapter/Feature/CommandHandler/EditFeatureValueHandler.php

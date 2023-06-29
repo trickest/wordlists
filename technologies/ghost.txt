@@ -368,6 +368,7 @@ apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemePrevie
 apps/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
+apps/admin-x-settings/src/components/settings/site/ThemeInstalledModal.tsx
 apps/admin-x-settings/src/components/settings/site/Theme.tsx
 apps/admin-x-settings/src/components/settings/site/NavigationModal.tsx
 apps/admin-x-settings/src/components/settings/email/Mailgun.tsx
@@ -2680,16 +2681,19 @@ ghost/collections/.eslintrc.js
 ghost/collections/README.md
 ghost/collections/package.json
 ghost/collections/tsconfig.json
+ghost/collections/test/RepositoryUniqueChecker.test.ts
 ghost/collections/test/Collection.test.ts
 ghost/collections/test/.eslintrc.js
 ghost/collections/test/fixtures/PostsRepositoryInMemory.ts
 ghost/collections/test/fixtures/posts.ts
 ghost/collections/test/collections.test.ts
+ghost/collections/src/UniqueChecker.ts
 ghost/collections/src/libraries.d.ts
 ghost/collections/src/CollectionRepository.ts
 ghost/collections/src/CollectionsService.ts
 ghost/collections/src/Collection.ts
 ghost/collections/src/index.ts
+ghost/collections/src/RepositoryUniqueChecker.ts
 ghost/collections/src/CollectionResourceChangeEvent.ts
 ghost/collections/src/events/PostEditedEvent.ts
 ghost/collections/src/events/PostAddedEvent.ts
@@ -3186,6 +3190,7 @@ ghost/core/core/server/models/post.js
 ghost/core/core/server/models/email-recipient-failure.js
 ghost/core/core/server/models/member-feedback.js
 ghost/core/core/server/models/session.js
+ghost/core/core/server/models/collection.js
 ghost/core/core/server/models/milestone.js
 ghost/core/core/server/models/stripe-product.js
 ghost/core/core/server/models/mail-event.js
@@ -3672,7 +3677,9 @@ ghost/core/core/server/services/mentions-jobs/index.js
 ghost/core/core/server/services/i18n.js
 ghost/core/core/server/services/collections/index.js
 ghost/core/core/server/services/collections/PostsDataRepositoryBookshelf.js
+ghost/core/core/server/services/collections/BookshelfCollectionsRepository.js
 ghost/core/core/server/services/collections/model-to-domain-events-bridge.js
+ghost/core/core/server/services/collections/service.js
 ghost/core/core/server/services/collections/PostsRepository.js
 ghost/core/core/server/services/link-tracking/index.js
 ghost/core/core/server/services/link-tracking/PostLinkRepository.js
@@ -4336,9 +4343,11 @@ ghost/core/test/integration/importer/legacy.test.js
 ghost/core/test/integration/services/mailgun-email-suppression-list.test.js
 ghost/core/test/integration/services/members/clean-tokens.test.js
 ghost/core/test/integration/services/last-seen-at-updater.test.js
+ghost/core/test/integration/services/email-service/cards.test.js
 ghost/core/test/integration/services/email-service/batch-sending.test.js
 ghost/core/test/integration/services/email-service/email-event-storage.test.js
 ghost/core/test/integration/services/email-service/__snapshots__/batch-sending.test.js.snap
+ghost/core/test/integration/services/email-service/__snapshots__/cards.test.js.snap
 ghost/core/test/integration/migrations/migration.test.js
 ghost/core/test/integration/exporter/exporter.test.js
 ghost/core/test/integration/settings/settings.test.js
@@ -4366,6 +4375,7 @@ ghost/core/test/utils/agents/content-api-test-agent.js
 ghost/core/test/utils/stripe-mocker.js
 ghost/core/test/utils/e2e-framework.js
 ghost/core/test/utils/overrides.js
+ghost/core/test/utils/batch-email-utils.js
 ghost/core/test/utils/e2e-framework-mock-manager.js
 ghost/core/test/utils/redirects.js
 ghost/core/test/utils/mocha-retry-reporter.js
