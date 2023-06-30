@@ -5487,6 +5487,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/StoreConfigTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategorySpecificFieldsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/VirtualProductViewTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/GetProductWithCustomAttributesTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductSearchCategoryAggregationsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductSearchWithTranslatedMessageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductCanonicalUrlTest.php
@@ -5523,6 +5524,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/ProductSearchT
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/PriceRangeTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/CategoryTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/PriceAttributeOptionsLabelTranslateTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogGraphQl/AttributesMetadataTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/ContactUs/ContactUsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GroupedProduct/GroupedProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GroupedProduct/AddGroupedProductToWishlistTest.php
@@ -13711,6 +13713,7 @@ app/code/Magento/Catalog/ViewModel/Category/Image.php
 app/code/Magento/Catalog/Console/Command/ProductAttributesCleanUp.php
 app/code/Magento/Catalog/registration.php
 app/code/Magento/Catalog/Test/Fixture/AssignProducts.php
+app/code/Magento/Catalog/Test/Fixture/CategoryAttribute.php
 app/code/Magento/Catalog/Test/Fixture/Category.php
 app/code/Magento/Catalog/Test/Fixture/Product.php
 app/code/Magento/Catalog/Test/Fixture/Attribute.php
@@ -16240,6 +16243,7 @@ app/code/Magento/CatalogGraphQl/Model/Config/FilterAttributeReader.php
 app/code/Magento/CatalogGraphQl/Model/Config/AttributeReader.php
 app/code/Magento/CatalogGraphQl/Model/AttributesJoiner.php
 app/code/Magento/CatalogGraphQl/Model/ProductInterfaceTypeResolverComposite.php
+app/code/Magento/CatalogGraphQl/Model/Output/AttributeMetadata.php
 app/code/Magento/CatalogGraphQl/Model/Category/Hydrator.php
 app/code/Magento/CatalogGraphQl/Model/Category/CategoryFilter.php
 app/code/Magento/CatalogGraphQl/Model/Category/CategoryFilterAttributesForAst.php
@@ -16252,6 +16256,7 @@ app/code/Magento/CatalogGraphQl/Model/ProductDataProvider.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Categories/DataProvider/Category/CompositeCollectionProcessor.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Categories/DataProvider/Category/CollectionProcessorInterface.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Categories/DataProvider/Category/CollectionProcessor/CatalogProcessor.php
+app/code/Magento/CatalogGraphQl/Model/Resolver/Product/ProductCustomAttributes.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Product/CanonicalUrl.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Product/BatchProductLinks.php
 app/code/Magento/CatalogGraphQl/Model/Resolver/Product/ProductComplexTextAttribute.php
@@ -29289,6 +29294,7 @@ app/code/Magento/EavGraphQl/Model/Output/GetAttributeData.php
 app/code/Magento/EavGraphQl/Model/GetAttributeValueInterface.php
 app/code/Magento/EavGraphQl/Model/Uid.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesList.php
+app/code/Magento/EavGraphQl/Model/Resolver/AttributeFilter.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributeOptions.php
 app/code/Magento/EavGraphQl/Model/Resolver/DataProvider/AttributeOptions.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesForm.php

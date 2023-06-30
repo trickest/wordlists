@@ -448,15 +448,6 @@ SECURITY.md
 phpspec.yml.dist
 package.json
 webpack.config.js
-.bunnyshell/docker/nginx/Dockerfile
-.bunnyshell/docker/nginx/default.conf.template
-.bunnyshell/docker/php/Dockerfile
-.bunnyshell/docker/php/prod/php.ini
-.bunnyshell/docker/php/prod/opcache.ini
-.bunnyshell/docker/php/entrypoints/migrations-entrypoint
-.bunnyshell/docker/php/entrypoints/php-entrypoint
-.bunnyshell/docker/php/files/crontab
-.bunnyshell/templates/preview/bunnyshell.yaml
 etc/bash/common.lib.sh
 etc/bash/application.sh
 etc/psalm/LaminasPriorityQueueStub.php
@@ -705,6 +696,7 @@ tests/Api/Responses/Expected/shop/product_review/create_product_review.json
 tests/Api/Responses/Expected/shop/get_exchange_rates_response.json
 tests/Api/Responses/Expected/shop/updated_billing_address_on_order_response.json
 tests/Api/Responses/Expected/shop/get_country_response.json
+tests/Api/Responses/Expected/shop/updated_payment_method_on_cancelled_order_response.json
 tests/Api/Responses/Expected/shop/get_order_item_adjustments_response.json
 tests/Api/Responses/Expected/shop/get_channels_response.json
 tests/Api/Responses/Expected/shop/get_order_items_response.json
@@ -1432,6 +1424,7 @@ features/checkout/skipping_shipping_step_when_only_one_shipping_method_is_availa
 features/checkout/having_new_addresses_saved_in_address_book.feature
 features/checkout/paying_for_order/returning_from_payment_step_to_one_of_previous_steps.feature
 features/checkout/paying_for_order/preventing_payment_step_completion_without_a_selected_method.feature
+features/checkout/paying_for_order/preventing_changing_the_payment_method_of_a_cancelled_order.feature
 features/checkout/paying_for_order/changing_offline_payment_method_after_order_confirmation.feature
 features/checkout/paying_for_order/preventing_to_pay_for_cancelled_order.feature
 features/checkout/paying_for_order/paying_with_paypal_during_checkout.feature
@@ -1728,7 +1721,6 @@ CHANGELOG-1.9.md
 .symfony.insight.yaml
 psalm.xml
 UPGRADE-1.8.md
-.dockerignore
 UPGRADE-API-1.8.md
 UPGRADE-1.4.md
 var/.gitkeep
@@ -6668,6 +6660,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/validation/AdminResetPassword.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddItemToCart.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangePasswordShopUser.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/CompleteOrder.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangePaymentMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/UpdateCart.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/Product.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ProductTranslation.xml
@@ -6760,6 +6753,7 @@ src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/NoRouteMatchesException.php
+src/Sylius/Bundle/ApiBundle/Exception/PaymentMethodCannotBeChangedException.php
 src/Sylius/Bundle/ApiBundle/Controller/Payment/GetPaymentConfiguration.php
 src/Sylius/Bundle/ApiBundle/Controller/RemoveCatalogPromotionAction.php
 src/Sylius/Bundle/ApiBundle/Controller/GetProductBySlugAction.php
@@ -6857,6 +6851,7 @@ src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ConfirmResetPasswordValid
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ChangedItemQuantityInCartValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CorrectOrderAddressValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderShippingMethodEligibilityValidatorSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CanPaymentMethodBeChangedValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/UniqueShopUserEmailValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderNotEmptyValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ChosenPaymentMethodEligibilityValidatorSpec.php
@@ -6976,11 +6971,13 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderPaymentMethodEligibility.
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShipmentAlreadyShipped.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectChangeShopUserConfirmPasswordValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderItemAvailability.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/CanPaymentMethodBeChangedValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AccountVerificationTokenEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectOrderAddressValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AddingEligibleProductVariantToCart.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderShippingMethodEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderNotEmpty.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/CanPaymentMethodBeChanged.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenPaymentMethodEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderProductEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ConfirmResetPasswordValidator.php

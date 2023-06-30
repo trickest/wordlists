@@ -646,6 +646,7 @@ core/misc/icons/5181c6/chevron-disc-down.svg
 core/misc/icons/5181c6/twistie-up.svg
 core/misc/icons/5181c6/chevron-disc-up.svg
 core/misc/icons/505050/loupe.svg
+core/misc/icons/cacbd2/puzzle_piece_placeholder.svg
 core/misc/icons/73b355/globe.svg
 core/misc/icons/73b355/check.svg
 core/misc/icons/73b355/location.svg
@@ -723,6 +724,20 @@ core/misc/icons/bebebe/plus.svg
 core/misc/icons/bebebe/ex.svg
 core/misc/icons/ee0000/required.svg
 core/misc/icons/ee0000/ex.svg
+core/misc/icons/55565b/telephone.svg
+core/misc/icons/55565b/number.svg
+core/misc/icons/55565b/daterange.svg
+core/misc/icons/55565b/formatted_text.svg
+core/misc/icons/55565b/boolean.svg
+core/misc/icons/55565b/comment.svg
+core/misc/icons/55565b/file_upload.svg
+core/misc/icons/55565b/email.svg
+core/misc/icons/55565b/date_and_time.svg
+core/misc/icons/55565b/reference.svg
+core/misc/icons/55565b/plain_text.svg
+core/misc/icons/55565b/link.svg
+core/misc/icons/55565b/media.svg
+core/misc/icons/55565b/selection_list.svg
 core/misc/icons/545560/chevron-down.svg
 core/misc/icons/545560/ex.svg
 core/misc/tabledrag.js
@@ -6862,6 +6877,7 @@ core/modules/ckeditor5/src/Annotation/CKEditor5Plugin.php
 core/modules/ckeditor5/src/Annotation/CKEditor5AspectsOfCKEditor5Plugin.php
 core/modules/ckeditor5/src/EventSubscriber/CKEditor5CacheTag.php
 core/modules/telephone/telephone.module
+core/modules/telephone/telephone.libraries.yml
 core/modules/telephone/telephone.info.yml
 core/modules/telephone/tests/src/Kernel/TelephoneItemTest.php
 core/modules/telephone/tests/src/Functional/TelephoneFieldTest.php
@@ -8392,6 +8408,7 @@ core/modules/link/config/schema/link.schema.yml
 core/modules/link/migrations/state/link.migrate_drupal.yml
 core/modules/link/link.info.yml
 core/modules/link/link.module
+core/modules/link/link.libraries.yml
 core/modules/link/templates/link-formatter-link-separate.html.twig
 core/modules/link/src/Plugin/Validation/Constraint/LinkTypeConstraintValidator.php
 core/modules/link/src/Plugin/Validation/Constraint/LinkAccessConstraintValidator.php
@@ -10723,9 +10740,7 @@ core/modules/forum/tests/modules/forum_url_alter_test/src/PathProcessorTest.php
 core/modules/forum/tests/modules/forum_test_views/test_views/views.view.test_forum_index.yml
 core/modules/forum/tests/modules/forum_test_views/forum_test_views.info.yml
 core/modules/forum/tests/fixtures/drupal7.php
-core/modules/forum/tests/fixtures/update/drupal-10.1.0.empty.standard.forum.gz
 core/modules/forum/tests/fixtures/drupal6.php
-core/modules/forum/tests/src/Kernel/ForumIndexTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d7/MigrateForumSettingsTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumConfigsTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d6/MigrateForumTest.php
@@ -10751,7 +10766,6 @@ core/modules/forum/tests/src/Functional/migrate_drupal/d6/Upgrade6Test.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/NoMultilingualReviewPageTest.php
 core/modules/forum/tests/src/Functional/migrate_drupal/d6/files/core/tests/fixtures/files/html-1.txt
 core/modules/forum/tests/src/Functional/NodeAccessPagerTest.php
-core/modules/forum/tests/src/Functional/ForumIndexUpdateTest.php
 core/modules/forum/forum.views.inc
 core/modules/forum/help_topics/forum.concept.html.twig
 core/modules/forum/help_topics/forum.moving.html.twig
@@ -11675,6 +11689,7 @@ core/modules/options/tests/src/Functional/OptionsSelectDynamicValuesTest.php
 core/modules/options/tests/src/Functional/OptionsDynamicValuesTestBase.php
 core/modules/options/config/schema/options.schema.yml
 core/modules/options/migrations/state/options.migrate_drupal.yml
+core/modules/options/options.libraries.yml
 core/modules/options/options.views.inc
 core/modules/options/options.api.php
 core/modules/options/src/Plugin/migrate/field/d7/ListField.php
@@ -12929,6 +12944,7 @@ core/modules/field_ui/field_ui.module
 core/modules/field_ui/field_ui.info.yml
 core/modules/field_ui/field_ui.links.action.yml
 core/modules/field_ui/field_ui.api.php
+core/modules/field_ui/templates/form-element--new-storage-type.html.twig
 core/modules/field_ui/templates/field-ui-table.html.twig
 core/modules/field_ui/field_ui.links.menu.yml
 core/modules/field_ui/field_ui.routing.yml
@@ -13002,6 +13018,7 @@ core/modules/toolbar/src/Ajax/SetSubtreesCommand.php
 core/modules/toolbar/src/PageCache/AllowToolbarPath.php
 core/modules/datetime_range/datetime_range.module
 core/modules/datetime_range/datetime_range.views.inc
+core/modules/datetime_range/datetime_range.libraries.yml
 core/modules/datetime_range/tests/modules/datetime_range_test/datetime_range_test.module
 core/modules/datetime_range/tests/modules/datetime_range_test/datetime_range_test.info.yml
 core/modules/datetime_range/tests/src/Kernel/Views/EntityTypeWithoutViewsDataTest.php
@@ -14290,6 +14307,7 @@ core/tests/Drupal/FunctionalTests/Libraries/JqueryUiLibraryAssetsTest.php
 core/tests/Drupal/FunctionalTests/Libraries/ManyAssetsLoadOrderTest.php
 core/tests/Drupal/FunctionalTests/HttpKernel/CorsIntegrationTest.php
 core/tests/Drupal/FunctionalTests/UserHelpersTest.php
+core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTestUmami.php
 core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTest.php
 core/tests/Drupal/FunctionalTests/Image/ToolkitSetupFormTest.php
 core/tests/Drupal/FunctionalTests/Theme/ClaroTest.php
@@ -15111,6 +15129,7 @@ core/themes/stable9/templates/navigation/menu-local-tasks.html.twig
 core/themes/stable9/templates/navigation/book-tree.html.twig
 core/themes/stable9/templates/navigation/vertical-tabs.html.twig
 core/themes/stable9/templates/admin/language-content-settings-table.html.twig
+core/themes/stable9/templates/admin/form-element--new-storage-type.html.twig
 core/themes/stable9/templates/admin/image-resize-summary.html.twig
 core/themes/stable9/templates/admin/system-themes-page.html.twig
 core/themes/stable9/templates/admin/update-report.html.twig

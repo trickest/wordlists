@@ -244,6 +244,7 @@ tests/unit/php/Core/Installer/Subscriber/InstallerLocaleListenerTest.php
 tests/unit/php/Core/Framework/Demodata/Event/DemodataRequestCreatedEventTest.php
 tests/unit/php/Core/Framework/Demodata/Command/DemodataCommandTest.php
 tests/unit/php/Core/Framework/RateLimiter/Policy/SystemConfigLimiterTest.php
+tests/unit/php/Core/Framework/Log/LoggerFactoryTest.php
 tests/unit/php/Core/Framework/Log/PackageTest.php
 tests/unit/php/Core/Framework/Log/Monolog/ExcludeExceptionHandlerTest.php
 tests/unit/php/Core/Framework/Log/Monolog/AnnotatePackageHandlerTest.php
@@ -653,7 +654,9 @@ tests/unit/php/Core/Checkout/Document/Service/DocumentMergerTest.php
 tests/unit/php/Core/Checkout/Document/Service/ReferenceInvoiceLoaderTest.php
 tests/unit/php/Core/Checkout/Promotion/Rule/PromotionLineItemRuleTest.php
 tests/unit/php/Core/Checkout/Promotion/Api/PromotionActionControllerTest.php
+tests/unit/php/Core/Checkout/Promotion/Cart/Discount/ScopePackager/CartScopeDiscountPackagerTest.php
 tests/unit/php/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
+tests/unit/php/Core/Checkout/Promotion/Cart/Discount/Calculator/DiscountAbsoluteCalculatorTest.php
 tests/unit/php/Core/Content/Product/Cms/ProductSliderCmsElementResolverTest.php
 tests/unit/php/Core/Content/Product/Cms/ProductBoxCmsElementResolverTest.php
 tests/unit/php/Core/Content/Product/Exception/VariantNotFoundExceptionTest.php
@@ -4801,6 +4804,7 @@ changelog/_unreleased/2022-11-10-flow-api-to-dispatch-custom-app-event.md
 changelog/_unreleased/2023-06-03-fix-document-invoice-broken-at-letter-header.md
 changelog/_unreleased/2023-05-28-improve-warning-messsage-delay-actions.md
 changelog/_unreleased/2023-05-09-use-indices-for-cart-cleanup.md
+changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
 changelog/_unreleased/2023-06-07-add-cookie-configuration-for-youtube.md
 changelog/_unreleased/2023-05-30-apply-domain-exceptions-in-controllers.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
@@ -5410,12 +5414,14 @@ adr/2023-02-01-app-script-product-pricing.md
 adr/2023-04-14-jest-test-files-should-be-javascript-only.md
 adr/2020-11-19-dal-join-filter.md
 adr/2020-08-14-merchant-registration.md
+adr/2023-05-16-php-enums.md
 adr/2022-07-19-blog-concept.md
 adr/2021-08-11-make-platform-stand-alone.md
 adr/2022-21-11-replace-drop-shadow-with-box-shadow.md
 adr/2023-05-15-stock-api.md
 adr/2022-02-09-controller-configuration-route-defaults.md
 adr/2023-01-16-npm-packages-pre-release-versions.md
+adr/2023-05-16-symfony-dependency-management.md
 adr/2023-01-10-atomic-theme-compilation.md
 adr/2022-02-28-consistent-deprecation-notices-in-core.md
 adr/2022-04-19-integrate-app-into-flow-action.md
@@ -5510,6 +5516,7 @@ vendor-bin/roave-backward-compatibility-check/composer.json
 .run/Administration Stylelint.run.xml
 CHANGELOG.md
 phpstan.neon.dist
+coding-guidelines/core/6.5-new-php-language-features.md
 coding-guidelines/core/internal.md
 coding-guidelines/core/extendability.md
 coding-guidelines/core/adr.md
@@ -9228,6 +9235,7 @@ src/Core/Checkout/Cart/Price/Struct/QuantityPriceDefinition.php
 src/Core/Checkout/Cart/Price/Struct/AbsolutePriceDefinition.php
 src/Core/Checkout/Cart/Price/Struct/ListPrice.php
 src/Core/Checkout/Cart/Price/Struct/CurrencyPriceDefinition.php
+src/Core/Checkout/Cart/Price/Struct/FilterableInterface.php
 src/Core/Checkout/Cart/Price/Struct/PriceCollection.php
 src/Core/Checkout/Cart/Price/Struct/CalculatedPrice.php
 src/Core/Checkout/Cart/Price/Struct/ReferencePrice.php
