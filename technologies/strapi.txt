@@ -2022,6 +2022,10 @@ packages/core/helper-plugin/README.md
 packages/core/helper-plugin/package.json
 packages/core/helper-plugin/.eslintignore
 packages/core/helper-plugin/webpack.config.js
+packages/core/helper-plugin/tests/setup.js
+packages/core/helper-plugin/tests/server.js
+packages/core/helper-plugin/tests/utils.js
+packages/core/helper-plugin/jsconfig.json
 packages/core/helper-plugin/.storybook/main.js
 packages/core/helper-plugin/.storybook/preview.js
 packages/core/helper-plugin/LICENSE
@@ -2131,6 +2135,7 @@ packages/core/helper-plugin/src/icons/RemoveRoundedButton/index.js
 packages/core/helper-plugin/src/icons/RemoveRoundedButton/RemoveRoundedButton.stories.mdx
 packages/core/helper-plugin/src/hooks/useFocusWhenNavigate/index.js
 packages/core/helper-plugin/src/hooks/useFocusWhenNavigate/useFocusWhenNavigate.stories.mdx
+packages/core/helper-plugin/src/hooks/useRBAC.js
 packages/core/helper-plugin/src/hooks/useFilter.js
 packages/core/helper-plugin/src/hooks/useQuery/index.js
 packages/core/helper-plugin/src/hooks/useSelectionState/index.js
@@ -2150,14 +2155,7 @@ packages/core/helper-plugin/src/hooks/useAPIErrorHandler/utils/getPrefixedId/ind
 packages/core/helper-plugin/src/hooks/tests/useCollator.test.js
 packages/core/helper-plugin/src/hooks/tests/useFilter.test.js
 packages/core/helper-plugin/src/hooks/tests/useClipboard.test.js
-packages/core/helper-plugin/src/hooks/useRBAC/index.js
-packages/core/helper-plugin/src/hooks/useRBAC/tests/reducer.test.js
-packages/core/helper-plugin/src/hooks/useRBAC/tests/init.test.js
-packages/core/helper-plugin/src/hooks/useRBAC/reducer.js
-packages/core/helper-plugin/src/hooks/useRBAC/init.js
-packages/core/helper-plugin/src/hooks/useRBAC/utils/tests/generateResultsObject.test.js
-packages/core/helper-plugin/src/hooks/useRBAC/utils/generateResultsObject.js
-packages/core/helper-plugin/src/hooks/useRBAC/utils/generateAllowedActions.js
+packages/core/helper-plugin/src/hooks/tests/useRBAC.test.js
 packages/core/helper-plugin/src/hooks/useCollator.js
 packages/core/helper-plugin/src/hooks/useCallbackRef.js
 packages/core/helper-plugin/src/hooks/useClipboard.js

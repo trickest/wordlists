@@ -3397,6 +3397,7 @@ core/lib/Drupal/Core/Field/Plugin/Field/FieldWidget/UriWidget.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldWidget/OptionsSelectWidget.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldWidget/NumberWidget.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldWidget/OptionsWidgetBase.php
+core/lib/Drupal/Core/Field/Plugin/Field/FieldType/EntityReferenceItemInterface.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/EmailItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/CreatedItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/StringItemBase.php
@@ -3406,6 +3407,7 @@ core/lib/Drupal/Core/Field/Plugin/Field/FieldType/StringItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/DecimalItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/IntegerItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/BooleanItem.php
+core/lib/Drupal/Core/Field/Plugin/Field/FieldType/EntityReferenceItemBase.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/PasswordItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/UriItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/StringLongItem.php
@@ -6294,6 +6296,9 @@ core/modules/jsonapi/tests/modules/jsonapi_test_data_type/jsonapi_test_data_type
 core/modules/jsonapi/tests/modules/jsonapi_test_data_type/src/TraversableObject.php
 core/modules/jsonapi/tests/modules/jsonapi_test_data_type/src/Normalizer/TraversableObjectNormalizer.php
 core/modules/jsonapi/tests/modules/jsonapi_test_data_type/src/Normalizer/StringNormalizer.php
+core/modules/jsonapi/tests/modules/jsonapi_test_reference_types/jsonapi_test_reference_types.info.yml
+core/modules/jsonapi/tests/modules/jsonapi_test_reference_types/jsonapi_test_reference_types.module
+core/modules/jsonapi/tests/modules/jsonapi_test_reference_types/src/Plugin/Field/FieldType/DeprecatedReferenceItem.php
 core/modules/jsonapi/tests/modules/jsonapi_test_user/jsonapi_test_user.module
 core/modules/jsonapi/tests/modules/jsonapi_test_user/jsonapi_test_user.info.yml
 core/modules/jsonapi/tests/modules/jsonapi_test_field_type/jsonapi_test_field_type.info.yml
@@ -10802,6 +10807,7 @@ core/modules/forum/migrations/d6_forum_settings.yml
 core/modules/forum/forum.info.yml
 core/modules/forum/forum.links.task.yml
 core/modules/forum/forum.services.yml
+core/modules/forum/templates/forum-topic.html.twig
 core/modules/forum/templates/forum-submitted.html.twig
 core/modules/forum/templates/forum-list.html.twig
 core/modules/forum/templates/forums.html.twig
@@ -13476,6 +13482,7 @@ core/modules/tour/tests/tour_test/src/Plugin/tour/tip/TipPluginImageLegacy.php
 core/modules/tour/tests/tour_test/src/Plugin/tour/tip/TipPluginTextLegacy.php
 core/modules/tour/tests/src/Kernel/TourTipLegacyTest.php
 core/modules/tour/tests/src/Kernel/TourPluginTest.php
+core/modules/tour/tests/src/Kernel/TourValidationTest.php
 core/modules/tour/tests/src/Unit/TipPluginBaseTest.php
 core/modules/tour/tests/src/Unit/Entity/TourTest.php
 core/modules/tour/tests/src/FunctionalJavascript/TourJavascriptTest.php
@@ -15190,6 +15197,7 @@ core/themes/stable9/templates/user/username.html.twig
 core/themes/stable9/templates/user/user.html.twig
 core/themes/stable9/templates/announcements_feed/announcements-feed.html.twig
 core/themes/stable9/templates/announcements_feed/announcements-feed-admin.html.twig
+core/themes/stable9/templates/dataset/forum-topic.html.twig
 core/themes/stable9/templates/dataset/forum-list.html.twig
 core/themes/stable9/templates/dataset/item-list.html.twig
 core/themes/stable9/templates/dataset/table.html.twig
