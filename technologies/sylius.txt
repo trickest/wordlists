@@ -448,6 +448,15 @@ SECURITY.md
 phpspec.yml.dist
 package.json
 webpack.config.js
+.bunnyshell/docker/nginx/Dockerfile
+.bunnyshell/docker/nginx/default.conf.template
+.bunnyshell/docker/php/Dockerfile
+.bunnyshell/docker/php/prod/php.ini
+.bunnyshell/docker/php/prod/opcache.ini
+.bunnyshell/docker/php/entrypoints/migrations-entrypoint
+.bunnyshell/docker/php/entrypoints/php-entrypoint
+.bunnyshell/docker/php/files/crontab
+.bunnyshell/templates/preview/bunnyshell.yaml
 etc/bash/common.lib.sh
 etc/bash/application.sh
 etc/psalm/LaminasPriorityQueueStub.php
@@ -1721,6 +1730,7 @@ CHANGELOG-1.9.md
 .symfony.insight.yaml
 psalm.xml
 UPGRADE-1.8.md
+.dockerignore
 UPGRADE-API-1.8.md
 UPGRADE-1.4.md
 var/.gitkeep
@@ -6751,6 +6761,7 @@ src/Sylius/Bundle/ApiBundle/Exception/ProvinceCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ZoneCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
+src/Sylius/Bundle/ApiBundle/Exception/ProductNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/NoRouteMatchesException.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentMethodCannotBeChangedException.php
@@ -7751,6 +7762,7 @@ src/Sylius/Component/Core/Updater/UnpaidOrdersStateUpdater.php
 src/Sylius/Component/Core/Updater/UnpaidOrdersStateUpdaterInterface.php
 src/Sylius/Component/Core/OrderPaymentStates.php
 src/Sylius/Component/Core/Test/Tests/StringInflectorTest.php
+src/Sylius/Component/Core/Test/Tests/Taxation/Applicator/OrderItemsTaxesApplicatorTest.php
 src/Sylius/Component/Core/Test/Factory/TestPromotionFactoryInterface.php
 src/Sylius/Component/Core/Test/Factory/TestPromotionFactory.php
 src/Sylius/Component/Core/Test/Services/DefaultChannelFactory.php
@@ -8130,6 +8142,7 @@ src/Sylius/Component/Taxation/LICENSE
 src/Sylius/Component/Taxation/Resolver/TaxRateResolverInterface.php
 src/Sylius/Component/Taxation/Resolver/TaxRateResolver.php
 src/Sylius/Component/Taxation/Calculator/DelegatingCalculator.php
+src/Sylius/Component/Taxation/Calculator/DecimalCalculator.php
 src/Sylius/Component/Taxation/Calculator/DefaultCalculator.php
 src/Sylius/Component/Taxation/Calculator/CalculatorInterface.php
 src/Sylius/Component/Taxation/composer.json

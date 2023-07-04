@@ -160,6 +160,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Web.BackOffice/UrlAndDomains/DomainAndUr
 tests/Umbraco.Tests.Integration/appsettings.Tests.json
 tests/Umbraco.Tests.Integration/Umbraco.Tests.Integration.csproj
 tests/Umbraco.Tests.Integration/GlobalSetupTeardown.cs
+tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Security/MemberAuthorizeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Routing/FrontEndRouteTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/MembersServiceCollectionExtensionsTests.cs
 tests/Umbraco.Tests.Integration/TestData/Packages/Document_Type_Picker_1.1.package.xml
@@ -812,6 +813,13 @@ legacy/Umbraco.Tests/Umbraco.Tests.csproj
 legacy/Umbraco.Tests/App.config
 legacy/Umbraco.Tests/Routing/MediaUrlProviderTests.cs
 legacy/Umbraco.Tests/Routing/BaseUrlProviderTest.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/SqlServerMigrationProviderSetup.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/EFCoreSqlServerComposer.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230622184303_InitialCreate.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/UmbracoOpenIddictDbContextModelSnapshot.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230622184303_InitialCreate.Designer.cs
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/Umbraco.Cms.Persistence.EFCore.SqlServer.csproj
+src/Umbraco.Cms.Persistence.EFCore.SqlServer/SqlServerMigrationProvider.cs
 src/Umbraco.Cms.StaticAssets/umbraco/UmbracoBackOffice/Preview.cshtml
 src/Umbraco.Cms.StaticAssets/umbraco/UmbracoBackOffice/AuthorizeUpgrade.cshtml
 src/Umbraco.Cms.StaticAssets/umbraco/UmbracoBackOffice/Default.cshtml
@@ -1534,6 +1542,8 @@ src/Umbraco.Infrastructure/Persistence/UmbracoDatabase.cs
 src/Umbraco.Infrastructure/Persistence/IScalarMapper.cs
 src/Umbraco.Infrastructure/Persistence/RecordPersistenceType.cs
 src/Umbraco.Infrastructure/Persistence/IDbProviderFactoryCreator.cs
+src/Umbraco.Infrastructure/Migrations/IEFCoreMigrationExecutor.cs
+src/Umbraco.Infrastructure/Migrations/EFCoreMigration.cs
 src/Umbraco.Infrastructure/Migrations/MigrationPlan.cs
 src/Umbraco.Infrastructure/Migrations/Install/DatabaseBuilder.cs
 src/Umbraco.Infrastructure/Migrations/Install/DatabaseDataCreator.cs
@@ -1648,6 +1658,7 @@ src/Umbraco.Infrastructure/Migrations/Expressions/Insert/IInsertBuilder.cs
 src/Umbraco.Infrastructure/Migrations/NoopMigration.cs
 src/Umbraco.Infrastructure/Migrations/MigrationPlanExecutor.cs
 src/Umbraco.Infrastructure/Migrations/Notifications/UmbracoPlanExecutedNotification.cs
+src/Umbraco.Infrastructure/Migrations/Notifications/DatabaseSchemaAndDataCreatedNotification.cs
 src/Umbraco.Infrastructure/Migrations/Notifications/DatabaseSchemaCreatingNotification.cs
 src/Umbraco.Infrastructure/Migrations/Notifications/MigrationPlansExecutedNotification.cs
 src/Umbraco.Infrastructure/Migrations/Notifications/DatabaseSchemaCreatedNotification.cs
@@ -1740,6 +1751,7 @@ src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_6_0/MissingContentVersionsInde
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_6_0/AddMainDomLock.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_6_0/AddPropertyTypeValidationMessageColumns.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_12_1_0/TablesIndexesImprovement.cs
+src/Umbraco.Infrastructure/Migrations/Upgrade/V_12_1_0/AddOpenIddict.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_1_0/ConvertTinyMceAndGridMediaUrlsToLocalLink.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_1_0/RenameUserLoginDtoDateIndex.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_8_1_0/FixContentNuCascade.cs
@@ -2739,6 +2751,7 @@ src/Umbraco.Core/Models/ContentEditing/MediaTypeSave.cs
 src/Umbraco.Core/Models/ContentEditing/Language.cs
 src/Umbraco.Core/Models/ContentEditing/ContentTypeSave.cs
 src/Umbraco.Core/Models/ContentEditing/PostedFiles.cs
+src/Umbraco.Core/Models/ContentEditing/NamedUrl.cs
 src/Umbraco.Core/Models/ContentEditing/ContentTypeBasic.cs
 src/Umbraco.Core/Models/ContentEditing/DictionaryOverviewTranslationDisplay.cs
 src/Umbraco.Core/Models/ContentEditing/MemberListDisplay.cs
@@ -6445,10 +6458,16 @@ src/Umbraco.Cms.Persistence.EFCore/Scoping/IEFCoreScopeAccessor.cs
 src/Umbraco.Cms.Persistence.EFCore/Scoping/EFCoreDetachableScope.cs
 src/Umbraco.Cms.Persistence.EFCore/Scoping/IAmbientEfCoreScopeStack.cs
 src/Umbraco.Cms.Persistence.EFCore/Scoping/EFCoreScopeProvider.cs
+src/Umbraco.Cms.Persistence.EFCore/UmbracoDbContext.cs
 src/Umbraco.Cms.Persistence.EFCore/Locking/SqlServerEFCoreDistributedLockingMechanism.cs
 src/Umbraco.Cms.Persistence.EFCore/Locking/SqliteEFCoreDistributedLockingMechanism.cs
 src/Umbraco.Cms.Persistence.EFCore/Umbraco.Cms.Persistence.EFCore.csproj
+src/Umbraco.Cms.Persistence.EFCore/Migrations/IMigrationProviderSetup.cs
+src/Umbraco.Cms.Persistence.EFCore/Migrations/IMigrationProvider.cs
+src/Umbraco.Cms.Persistence.EFCore/EfCoreMigrationExecutor.cs
+src/Umbraco.Cms.Persistence.EFCore/Composition/UmbracoEFCoreComposer.cs
 src/Umbraco.Cms.Persistence.EFCore/Extensions/UmbracoEFCoreServiceCollectionExtensions.cs
+src/Umbraco.Cms.Persistence.EFCore/Extensions/BackOfficeAuthBuilderOpenIddictExtensions.cs
 src/Umbraco.Cms.Persistence.EFCore/Extensions/DbContextExtensions.cs
 src/Umbraco.Cms.Targets/Umbraco.Cms.Targets.csproj
 src/Umbraco.Cms.Targets/buildTransitive/Umbraco.Cms.Targets.props
@@ -6850,3 +6869,10 @@ src/Umbraco.New.Cms.Infrastructure/Installer/Steps/CreateUserStep.cs
 src/Umbraco.New.Cms.Infrastructure/Factories/Installer/DatabaseSettingsFactory.cs
 src/Umbraco.New.Cms.Infrastructure/Security/IBackOfficeApplicationManager.cs
 src/Umbraco.New.Cms.Infrastructure/HostedServices/OpenIddictCleanup.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/EFCoreSqliteComposer.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/SqliteMigrationProviderSetup.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/Umbraco.Cms.Persistence.EFCore.Sqlite.csproj
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/SqliteMigrationProvider.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230622183638_InitialCreate.Designer.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230622183638_InitialCreate.cs
+src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/UmbracoOpenIddictDbContextModelSnapshot.cs

@@ -3541,6 +3541,7 @@ tests/Integration/Behaviour/Features/Scenario/CLDR/cldr.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/add_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_product_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_mixed_cart_rule_restrictions.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_carrier_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/edit_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_cart_rule_combination_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/delete_cart_rule.feature
@@ -3618,6 +3619,7 @@ tests/Integration/Behaviour/Features/Scenario/Cart/SpecificPriceRule/mixed.featu
 tests/Integration/Behaviour/Features/Scenario/Search/delete_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/edit_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/add_alias.feature
+tests/Integration/Behaviour/Features/Scenario/Search/search_alias_for_association.feature
 tests/Integration/Behaviour/Features/Scenario/Search/toggle_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Store/store.feature
 tests/Integration/Behaviour/Features/Scenario/OrderReturn/order_return_management.feature
@@ -7658,6 +7660,7 @@ src/Core/Domain/Alias/CommandHandler/BulkUpdateAliasStatusHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/UpdateAliasHandlerInterface.php
 src/Core/Domain/Alias/ValueObject/AliasId.php
 src/Core/Domain/Alias/QueryResult/AliasForEditing.php
+src/Core/Domain/Alias/QueryHandler/SearchForSearchTermHandlerInterface.php
 src/Core/Domain/Alias/QueryHandler/GetAliasForEditingHandlerInterface.php
 src/Core/Domain/Alias/Command/AddAliasCommand.php
 src/Core/Domain/Alias/Command/DeleteAliasCommand.php
@@ -7666,6 +7669,7 @@ src/Core/Domain/Alias/Command/BulkDeleteAliasCommand.php
 src/Core/Domain/Alias/Command/UpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Command/BulkUpdateAliasStatusCommand.php
 src/Core/Domain/Alias/Query/GetAliasForEditing.php
+src/Core/Domain/Alias/Query/SearchForSearchTerm.php
 src/Core/Domain/CartRule/Exception/CartRuleConstraintException.php
 src/Core/Domain/CartRule/Exception/CannotDeleteCartRuleException.php
 src/Core/Domain/CartRule/Exception/BulkToggleCartRuleException.php
@@ -11393,6 +11397,7 @@ src/Adapter/Alias/CommandHandler/BulkUpdateAliasStatusHandler.php
 src/Adapter/Alias/CommandHandler/BulkDeleteAliasHandler.php
 src/Adapter/Alias/CommandHandler/AddAliasHandler.php
 src/Adapter/Alias/Repository/AliasRepository.php
+src/Adapter/Alias/QueryHandler/SearchForSearchTermHandler.php
 src/Adapter/Alias/QueryHandler/GetAliasForEditingHandler.php
 src/Adapter/AddressFactory.php
 src/Adapter/Backup/Backup.php

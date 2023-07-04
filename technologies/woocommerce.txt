@@ -318,6 +318,7 @@ plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/gift.js
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/people.js
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/automatewoo.js
+plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/klaviyo.js
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/google.js
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/salesforce.js
 plugins/woocommerce-admin/client/marketing/components/product-icon/icons/library/currency-dollar.js
@@ -2561,7 +2562,6 @@ plugins/woocommerce/changelog/e2e-replace-deprecated-page-methods
 plugins/woocommerce/changelog/fix-errors-when-setting-order-properties-in-hpos-not-captured
 plugins/woocommerce/changelog/fix-38719-empty-cart-notices-with-blocks
 plugins/woocommerce/changelog/update-38903-core-profiler-plugins-selection-is-not-persisted
-plugins/woocommerce/changelog/2023-06-30-12-49-47-720140
 plugins/woocommerce/changelog/fix-blocks-9999-products-grid-layout-in-post
 plugins/woocommerce/changelog/fix-help-panel-links
 plugins/woocommerce/changelog/fix-revert-38531
@@ -2569,9 +2569,11 @@ plugins/woocommerce/changelog/update-38820-enhancement-api-search-customers-with
 plugins/woocommerce/changelog/add-38880_add_variations_tab_to_product_block_editor
 plugins/woocommerce/changelog/fix-e2e-order-emails
 plugins/woocommerce/changelog/e2e-make-tests-independant-from-previous-tests
+plugins/woocommerce/changelog/fix-undismissable-notice3
 plugins/woocommerce/changelog/feature-38805-create-campaign-button
 plugins/woocommerce/changelog/fix-failing-shipping-tests
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/update-replace-proceed-with-continue
 plugins/woocommerce/changelog/mahmoudsaeed-trunk
 plugins/woocommerce/changelog/fix-33383-expanded-customer-search
 plugins/woocommerce/changelog/update-39040-update-header-styls
@@ -2582,6 +2584,8 @@ plugins/woocommerce/changelog/e2e-skip-failing-e2e-test-to-be-investigated
 plugins/woocommerce/changelog/fix-legacy-js-es6
 plugins/woocommerce/changelog/update-lint-scripts
 plugins/woocommerce/changelog/fix-24432-account-cleanup
+plugins/woocommerce/changelog/add-klaviyo-marketing-extension
+plugins/woocommerce/changelog/fix-38887_grey_background_when_menu_collapsed
 plugins/woocommerce/changelog/fix-37343-incompatible-plugins-list
 plugins/woocommerce/changelog/improve-hpos-cli-verbose-output
 plugins/woocommerce/changelog/fix-issue-36560
@@ -5248,6 +5252,7 @@ packages/js/components/changelog/add-35851-tree-control-selection
 packages/js/components/changelog/fix-typescript-package-isolation
 packages/js/components/changelog/try-product-mvp-slotfill-experiments
 packages/js/components/changelog/update-37955_disable_drag_and_drop_images_block
+packages/js/components/changelog/add-38876
 packages/js/components/changelog/dev-migrate-table-component-to-ts
 packages/js/components/changelog/dev-update-eslint-plugin
 packages/js/components/changelog/add-35851-tree-control-expander
