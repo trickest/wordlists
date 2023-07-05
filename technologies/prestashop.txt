@@ -590,6 +590,7 @@ composer.lock
 README.md
 modules/.htaccess
 modules/index.php
+phpstan-tmp-legacy-layout-baseline.neon
 localization/py.xml
 localization/do.xml
 localization/pl.xml
@@ -2010,6 +2011,7 @@ tests/UI/data/import/addresses.ts
 tests/UI/data/import/productsWithoutQuantities.ts
 tests/UI/data/import/disabledProducts.ts
 tests/UI/data/import/customers.ts
+tests/UI/data/xml/country.ts
 tests/UI/data/files/sample.webp
 tests/UI/data/types/orderMessage.d.ts
 tests/UI/data/types/cmsPage.d.ts
@@ -2076,6 +2078,7 @@ tests/UI/campaigns/regression/currencies/computingPrecision_FO.ts
 tests/UI/campaigns/regression/menu/deniedAccessToModuleCatalogPage.ts
 tests/UI/campaigns/regression/checkout/100PercentDiscount_FO.ts
 tests/UI/campaigns/modules/ps_cashondelivery/01_installation/04_resetModule.ts
+tests/UI/campaigns/modules/ps_facetedsearch/01_installation/04_uninstallAndDeleteModule.ts
 tests/UI/campaigns/sanity/03_productsBO/03_CRUDStandardProductWithCombinationsInBO.ts
 tests/UI/campaigns/sanity/03_productsBO/05_deleteProductsWithBulkActions.ts
 tests/UI/campaigns/sanity/03_productsBO/01_filterProducts.ts
@@ -2107,6 +2110,7 @@ tests/UI/campaigns/productV2/functional/03_CRUDProductWithCombinations.ts
 tests/UI/campaigns/productV2/functional/05_CRUDVirtualProduct.ts
 tests/UI/campaigns/productV2/functional/04_CRUDPackOfProducts.ts
 tests/UI/campaigns/productV2/functional/01_filterProducts.ts
+tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/02_resourceEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/01_authorizationEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/02_resourceEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/01_authorizationEndpoint.ts
@@ -2118,7 +2122,6 @@ tests/UI/campaigns/functional/BO/05_customerService/03_merchandiseReturns/02_del
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/01_viewMessage.ts
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/04_contactOptions.ts
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/03_respondToMessage.ts
-tests/UI/campaigns/functional/BO/05_customerService/01_customerService/01_viewCustomerService.ts
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/02_changeStatus.ts
 tests/UI/campaigns/functional/BO/05_customerService/02_orderMessages/03_paginationAndSortOrderMessages.ts
 tests/UI/campaigns/functional/BO/05_customerService/02_orderMessages/02_filterAndBulkDeleteOrderMessages.ts
@@ -2156,6 +2159,7 @@ tests/UI/campaigns/functional/BO/03_catalog/08_stocks/04_filterStocksByStatus.ts
 tests/UI/campaigns/functional/BO/03_catalog/08_stocks/03_bulkEditQuantity.ts
 tests/UI/campaigns/functional/BO/03_catalog/08_stocks/06_helpCard.ts
 tests/UI/campaigns/functional/BO/03_catalog/08_stocks/02_updateQuantity.ts
+tests/UI/campaigns/functional/BO/03_catalog/08_stocks/movements/02_sortAndPagination.ts
 tests/UI/campaigns/functional/BO/03_catalog/08_stocks/01_simpleFilterStocks.ts
 tests/UI/campaigns/functional/BO/03_catalog/07_discounts/02_catalogPriceRules/02_filterSortAndPagination.ts
 tests/UI/campaigns/functional/BO/03_catalog/07_discounts/02_catalogPriceRules/01_CRUDCatalogPriceRule.ts
@@ -2356,6 +2360,7 @@ tests/UI/campaigns/functional/BO/08_design/01_themeAndLogo/02_pagesConfiguration
 tests/UI/campaigns/functional/BO/08_design/01_themeAndLogo/02_pagesConfiguration/01_enableDisableModule.ts
 tests/UI/campaigns/functional/BO/08_design/01_themeAndLogo/02_pagesConfiguration/02_resetModule.ts
 tests/UI/campaigns/functional/BO/08_design/05_positions/02_searchHook.ts
+tests/UI/campaigns/functional/BO/08_design/05_positions/01_filterModule.ts
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/13_checkProductImageFormat.ts
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/10_regenerateThumbnails.ts
 tests/UI/campaigns/functional/BO/08_design/06_imageSettings/03_bulkDeleteImageTypes.ts
@@ -2486,6 +2491,9 @@ tests/UI/campaigns/functional/FO/classic/06_homePage/01_checkSlider.ts
 tests/UI/campaigns/functional/FO/classic/06_homePage/04_productQuickView.ts
 tests/UI/campaigns/functional/FO/classic/06_homePage/02_displaySomeProducts.ts
 tests/UI/campaigns/functional/FO/classic/06_homePage/03_allProducts.ts
+tests/UI/campaigns/functional/FO/classic/10_cart/02_cart/03_addPromoCode.ts
+tests/UI/campaigns/functional/FO/classic/10_cart/02_cart/01_changeQuantity.ts
+tests/UI/campaigns/functional/FO/classic/10_cart/02_cart/02_deleteProduct.ts
 tests/UI/campaigns/functional/FO/classic/11_checkout/01_personalInformation/02_signIn.ts
 tests/UI/campaigns/functional/FO/classic/11_checkout/01_personalInformation/05_passwordReminder.ts
 tests/UI/campaigns/functional/FO/classic/11_checkout/02_addresses/01_CRUDAddress.ts
@@ -2758,7 +2766,7 @@ tests/UI/pages/FO/passwordReminder/index.ts
 tests/UI/utils/setup.ts
 tests/UI/utils/date.ts
 tests/UI/utils/api.ts
-tests/UI/utils/ws.ts
+tests/UI/utils/xml.ts
 tests/UI/utils/keycloakHelper.ts
 tests/UI/utils/globals.ts
 tests/UI/utils/files.ts
@@ -2766,12 +2774,17 @@ tests/UI/utils/basicHelper.ts
 tests/UI/utils/testContext.ts
 tests/UI/utils/mailHelper.ts
 tests/UI/utils/helpers.ts
+tests/UI/webservices/baseXml.ts
+tests/UI/webservices/baseWs.ts
+tests/UI/webservices/country/countryWs.ts
+tests/UI/webservices/country/countryXml.ts
 tests/UI/commonTests/BO/shopParameters/b2b.ts
 tests/UI/commonTests/BO/catalog/category.ts
 tests/UI/commonTests/BO/catalog/product.ts
 tests/UI/commonTests/BO/catalog/cartRule.ts
 tests/UI/commonTests/BO/catalog/monitoring.ts
 tests/UI/commonTests/BO/catalog/features.ts
+tests/UI/commonTests/BO/modules/moduleManager.ts
 tests/UI/commonTests/BO/orders/shoppingCarts.ts
 tests/UI/commonTests/BO/advancedParameters/ws.ts
 tests/UI/commonTests/BO/advancedParameters/cache.ts
@@ -3539,6 +3552,8 @@ tests/Integration/Behaviour/Features/Scenario/OrderState/order_state.feature
 tests/Integration/Behaviour/Features/Scenario/CatalogPriceRule/catalog_price_rules_listing.feature
 tests/Integration/Behaviour/Features/Scenario/CLDR/cldr.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/add_cart_rule.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_group_restrictions.feature
+tests/Integration/Behaviour/Features/Scenario/CartRule/set_country_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_product_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_mixed_cart_rule_restrictions.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/set_carrier_restrictions.feature
@@ -9466,6 +9481,7 @@ src/PrestaShopBundle/Twig/HookExtension.php
 src/PrestaShopBundle/Twig/TranslationsExtension.php
 src/PrestaShopBundle/Twig/LayoutExtension.php
 src/PrestaShopBundle/Twig/LocaleExtension.php
+src/PrestaShopBundle/Twig/Component/QuickAccess.php
 src/PrestaShopBundle/Twig/Locator/ModuleTemplateLoader.php
 src/PrestaShopBundle/Twig/Extension/MultistoreUrlExtension.php
 src/PrestaShopBundle/Twig/Extension/EntitySearchExtension.php
@@ -10149,6 +10165,8 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/B
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/Block/timeline.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/Block/forward_thread_modal.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/quick_access.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Module/addons_store.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Payment/PaymentMethods/Blocks/payment_modules_list.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Payment/PaymentMethods/payment_methods.html.twig

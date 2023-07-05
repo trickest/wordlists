@@ -182,6 +182,7 @@ tests/unit/php/Core/System/SalesChannel/Event/SalesChannelContextCreatedEventTes
 tests/unit/php/Core/System/SalesChannel/ContextTokenResponseTest.php
 tests/unit/php/Core/System/SalesChannel/Context/BaseContextFactoryTest.php
 tests/unit/php/Core/System/SalesChannel/Context/SalesChannelContextServiceTest.php
+tests/unit/php/Core/System/SalesChannel/Context/CartRestorerTest.php
 tests/unit/php/Core/System/Currency/Rule/CurrencyRuleTest.php
 tests/unit/php/Core/System/Currency/SalesChannel/CachedCurrencyRouteTest.php
 tests/unit/php/Core/System/SystemTest.php
@@ -739,6 +740,7 @@ tests/unit/php/Core/Content/Category/SalesChannel/CachedCategoryRouteTest.php
 tests/unit/php/Core/Content/Category/Subscriber/CategorySubscriberTest.php
 tests/unit/php/Core/Content/Flow/Exception/CustomTriggerByNameNotFoundExceptionTest.php
 tests/unit/php/Core/Content/Flow/Rule/OrderTagRuleTest.php
+tests/unit/php/Core/Content/Flow/Rule/OrderDocumentTypeRuleTest.php
 tests/unit/php/Core/Content/Flow/Rule/OrderCustomFieldRuleTest.php
 tests/unit/php/Core/Content/Flow/Rule/FlowRuleScopeBuilderTest.php
 tests/unit/php/Core/Content/Flow/Rule/OrderTrackingCodeRuleTest.php
@@ -4856,6 +4858,7 @@ changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-n
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-06-05-added-handler-for-route-changes-inside-apps.md
+changelog/_unreleased/2023-07-05-update-sizing-of-icons-on-settings-searchable-content-general-component.md
 changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
 changelog/_unreleased/2023-07-03-add-generic-template-to-entityrepository.md
 changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
@@ -4866,11 +4869,13 @@ changelog/_unreleased/2023-06-28-generate-unused-media-report.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-06-22-document-inheritance-sw_extends-dont-work.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
+changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
 changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
 changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-06-29-decrease-log-level-of-export-not-found-exception.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
+changelog/_unreleased/2023-06-28-apply-domain-exceptions.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-06-23-update-sdk-version.md
 changelog/release-6-4-7-0/2021-10-06-import-with-update-by-mapping.md
@@ -8738,6 +8743,7 @@ src/Core/Checkout/Payment/PaymentMethodCollection.php
 src/Core/Checkout/Payment/Event/PaymentMethodRouteCacheKeyEvent.php
 src/Core/Checkout/Payment/Event/PaymentMethodRouteCacheTagsEvent.php
 src/Core/Checkout/Payment/Event/PaymentMethodIndexerEvent.php
+src/Core/Checkout/Payment/PaymentException.php
 src/Core/Checkout/Payment/PreparedPaymentService.php
 src/Core/Checkout/Payment/Cart/PaymentRefundProcessor.php
 src/Core/Checkout/Payment/Cart/SyncPaymentTransactionStruct.php
@@ -10420,6 +10426,7 @@ src/Core/Content/Flow/Rule/FlowRuleScope.php
 src/Core/Content/Flow/Rule/OrderStatusRule.php
 src/Core/Content/Flow/Rule/OrderDeliveryStatusRule.php
 src/Core/Content/Flow/Rule/OrderTagRule.php
+src/Core/Content/Flow/Rule/OrderDocumentTypeRule.php
 src/Core/Content/Flow/Rule/OrderCustomFieldRule.php
 src/Core/Content/Flow/Events/BeforeLoadStorableFlowDataEvent.php
 src/Core/Content/Flow/Events/FlowActionCollectorEvent.php

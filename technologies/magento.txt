@@ -10261,6 +10261,7 @@ dev/tests/integration/testsuite/Magento/SalesRule/Model/Quote/Address/Total/Ship
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Quote/DiscountTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Model/Observer/AssignCouponDataAfterOrderCustomerAssignTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/NewActionHtmlTest.php
+dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/SaveTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/NewConditionHtmlTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/ExportCoupons/ExportCouponsXmlTest.php
 dev/tests/integration/testsuite/Magento/SalesRule/Controller/Adminhtml/Promo/Quote/ExportCoupons/ExportCouponsCsvTest.php
@@ -17273,6 +17274,7 @@ app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundleCustomOption
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/StockData.php
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundleWeight.php
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundleAdvancedPricing.php
+app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/AddSelectionQtyTypeToProductsData.php
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundlePrice.php
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundleQuantity.php
 app/code/Magento/Bundle/Ui/DataProvider/Product/Form/Modifier/BundlePanel.php
@@ -17458,6 +17460,7 @@ app/code/Magento/Bundle/Test/Mftf/Test/StorefrontAddBundleOptionsToCartTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/AdminCreateBundleProductTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/BundleProductWithTierPriceWithFixedAndPercentOptionsInCartTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontAdvanceCatalogSearchBundleBySkuWithHyphenTest.xml
+app/code/Magento/Bundle/Test/Mftf/Test/AdminAddDecimalDefaultToBundleItemsTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/NewBundleProductSelectionTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontBundleProductShownInCategoryListAndGridTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/AdminBundleDynamicAttributesAfterMassUpdateTest.xml
@@ -17815,6 +17818,7 @@ app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminSearchUrlRewriteByRequest
 app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminFilterUrlRewriteGridByRequestPathAndStoreViewActionGroup.xml
 app/code/Magento/UrlRewrite/Test/Mftf/LICENSE.txt
 app/code/Magento/UrlRewrite/Test/Mftf/Page/AdminUrlRewriteIndexPage.xml
+app/code/Magento/UrlRewrite/Test/Mftf/Page/AdminUrlRewriteProductCategoryPage.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Page/AdminUrlRewriteEditPage.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Page/AdminUrlRewriteProductPage.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminProductCreateUrlRewriteForCustomStoreViewTest.xml
@@ -17852,6 +17856,7 @@ app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminDeleteCategoryUrlRewriteHypenAsR
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminCreateProductUrLRewriteAndAddPermanentRedirectTest.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminDeleteCMSPageTemporaryRedirectUrlRewriteTest.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminDeleteCmsPageUrlRewriteWithTemporaryRedirectTest.xml
+app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminDeleteCreateProductUrlRewriteTest.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminUpdateCmsPageRewriteEntityWithPermanentReirectTest.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminUpdateCmsPageRewriteEntityWithTemporaryRedirectTest.xml
 app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminGenerateUrlRewritesForProductInCategoriesSwitchOffTest.xml
