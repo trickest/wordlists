@@ -359,6 +359,7 @@ apps/admin-x-settings/src/components/Sidebar.tsx
 apps/admin-x-settings/src/components/Settings.tsx
 apps/admin-x-settings/src/components/settings/membership/Access.tsx
 apps/admin-x-settings/src/components/settings/membership/PortalModal.tsx
+apps/admin-x-settings/src/components/settings/membership/portal/PortalFrame.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalPreview.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/LookAndFeel.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/AccountPage.tsx
@@ -434,6 +435,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/user-add.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-right.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-locked.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/trash.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/upload.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/close.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/hamburger.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/single-user-fill.svg
@@ -470,13 +472,16 @@ apps/admin-x-settings/src/admin-x-ds/global/form/Select.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Select.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/URLSelect.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextField.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/HtmlField.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Checkbox.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Form.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/MultiSelect.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextField.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/HtmlEditor.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextArea.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CheckboxGroup.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextArea.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/HtmlField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Toggle.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CheckboxGroup.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Radio.tsx
@@ -1767,6 +1772,7 @@ ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.hbs
 ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.js
 ghost/admin/app/components/gh-member-label-input.js
 ghost/admin/app/components/koenig-lexical-sandbox.js
+ghost/admin/app/components/icons/eye-open-close.hbs
 ghost/admin/app/components/gh-nav-menu/design.hbs
 ghost/admin/app/components/gh-nav-menu/design.js
 ghost/admin/app/components/gh-nav-menu/footer.hbs

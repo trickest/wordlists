@@ -602,6 +602,7 @@ layouts/basic/modules/Settings/MappedFields/ListViewContents.tpl
 layouts/basic/modules/Settings/MappedFields/ListViewHeader.tpl
 layouts/basic/modules/Settings/PBX/EditModal.tpl
 layouts/basic/modules/Settings/PBX/ListView/CustomHeader.tpl
+layouts/basic/modules/Settings/PBX/ListView/BreadCrumbs.tpl
 layouts/basic/modules/Settings/WooCommerce/EditConfigModal.tpl
 layouts/basic/modules/Settings/WooCommerce/ListView/CustomHeader.tpl
 layouts/basic/modules/Settings/MailSmtp/Edit.tpl
@@ -807,6 +808,9 @@ layouts/basic/modules/Settings/Workflows/EditTask.tpl
 layouts/basic/modules/Settings/MailIntegration/Index.tpl
 layouts/basic/modules/Settings/Magento/Edit.tpl
 layouts/basic/modules/Settings/Magento/ListViewHeader.tpl
+layouts/basic/modules/Settings/Comarch/EditConfigModal.tpl
+layouts/basic/modules/Settings/Comarch/ListView/CustomHeader.tpl
+layouts/basic/modules/Settings/Comarch/ListView/BreadCrumbs.tpl
 layouts/basic/modules/Settings/RecordCollector/ConfigModal.tpl
 layouts/basic/modules/Settings/RecordCollector/List.tpl
 layouts/basic/modules/Settings/MailServers/Edit.tpl
@@ -1355,6 +1359,7 @@ modules/Accounts/models/DetailView.php
 modules/Accounts/models/Record.php
 modules/Accounts/models/Relation.php
 modules/Accounts/handlers/DuplicateVatId.php
+modules/Accounts/handlers/DuplicateShortName.php
 modules/Accounts/dashboards/AccountsByIndustry.php
 modules/Accounts/dashboards/NewAccounts.php
 modules/Accounts/dashboards/NeglectedAccounts.php
@@ -1722,11 +1727,13 @@ modules/Vtiger/crons/WooCommerce.php
 modules/Vtiger/crons/AddressBook.php
 modules/Vtiger/crons/PrivilegesUpdater.php
 modules/Vtiger/crons/Workflow.php
+modules/Vtiger/crons/DisposalLogsData.php
 modules/Vtiger/crons/BrowsingHistory.php
 modules/Vtiger/crons/Magento.php
 modules/Vtiger/crons/BatchMethods.php
 modules/Vtiger/crons/MultiReference.php
 modules/Vtiger/crons/FileUploadTemp.php
+modules/Vtiger/crons/Comarch.php
 modules/Vtiger/crons/SessionCleaner.php
 modules/Vtiger/crons/IntegrationWapro.php
 modules/Vtiger/crons/LabelUpdater.php
@@ -1814,6 +1821,7 @@ modules/Vtiger/uitypes/MailServer.php
 modules/Vtiger/uitypes/InventoryLimit.php
 modules/Vtiger/uitypes/Taxes.php
 modules/Vtiger/uitypes/Currency.php
+modules/Vtiger/uitypes/ComarchServer.php
 modules/Vtiger/uitypes/MultiDomain.php
 modules/Vtiger/uitypes/Recurrence.php
 modules/Vtiger/uitypes/Twitter.php
@@ -2359,6 +2367,15 @@ modules/Settings/Magento/actions/SaveAjax.php
 modules/Settings/Magento/actions/DeleteAjax.php
 modules/Settings/Magento/actions/Active.php
 modules/Settings/Magento/views/Edit.php
+modules/Settings/Comarch/models/Module.php
+modules/Settings/Comarch/models/ListView.php
+modules/Settings/Comarch/models/Activation.php
+modules/Settings/Comarch/models/Record.php
+modules/Settings/Comarch/actions/SaveAjax.php
+modules/Settings/Comarch/actions/DeleteAjax.php
+modules/Settings/Comarch/actions/Active.php
+modules/Settings/Comarch/views/EditConfigModal.php
+modules/Settings/Comarch/views/Edit.php
 modules/Settings/RecordCollector/models/Module.php
 modules/Settings/RecordCollector/actions/SaveAjax.php
 modules/Settings/RecordCollector/views/List.php
@@ -3224,6 +3241,7 @@ app/Integrations/SMSProvider/SMSAPI.php
 app/Integrations/SMSProvider.php
 app/Integrations/Pbx.php
 app/Integrations/OAuth.php
+app/Integrations/Comarch.php
 app/Integrations/Services.php
 app/Integrations/Magento/Connector/Token.php
 app/Integrations/Magento/Connector/Base.php
@@ -3244,6 +3262,21 @@ app/Integrations/Magento/Synchronizer/Maps/Base.php
 app/Integrations/Magento/Synchronizer/InventoryStock.php
 app/Integrations/Magento/Synchronizer/Base.php
 app/Integrations/Magento/Controller.php
+app/Integrations/Comarch/Connector/Xl.php
+app/Integrations/Comarch/Connector/Base.php
+app/Integrations/Comarch/Config.php
+app/Integrations/Comarch/Synchronizer.php
+app/Integrations/Comarch/Xl/Maps/BankAccount.php
+app/Integrations/Comarch/Xl/Maps/Account.php
+app/Integrations/Comarch/Xl/Maps/Product.php
+app/Integrations/Comarch/Xl/Synchronizer/PaymentMethods.php
+app/Integrations/Comarch/Xl/Synchronizer/ProductUnit.php
+app/Integrations/Comarch/Xl/Synchronizer/AccountTypes.php
+app/Integrations/Comarch/Xl/Synchronizer/ProductGroup.php
+app/Integrations/Comarch/Xl/Synchronizer/Accounts.php
+app/Integrations/Comarch/Xl/Synchronizer/BankAccounts.php
+app/Integrations/Comarch/Xl/Synchronizer/Products.php
+app/Integrations/Comarch/Map.php
 app/Integrations/Dav/Calendar.php
 app/Integrations/Dav/Server.php
 app/Integrations/Dav/Backend/Auth.php
@@ -3267,6 +3300,7 @@ app/Automatic/RulesPicklist.php
 app/Automatic/RecordFlowUpdater.php
 app/Layout/Icon.php
 app/Layout/Media.php
+app/SystemWarnings/Integrations/Comarch.php
 app/SystemWarnings/SystemRequirements/LanguagesUpdater.php
 app/SystemWarnings/SystemRequirements/LibraryRoundcube.php
 app/SystemWarnings/SystemRequirements/Configuration.php
@@ -3378,6 +3412,7 @@ app/YetiForce/Shop/Product/YetiForceRcNorthData.php
 app/YetiForce/Shop/Product/YetiForceGeocoder.php
 app/YetiForce/Shop/Product/YetiForcePdfPremium.php
 app/YetiForce/Shop/Product/YetiForceInstallPortalInCloud.php
+app/YetiForce/Shop/Product/YetiForceComarchXl.php
 app/YetiForce/Shop/Product/YetiForceRbl.php
 app/YetiForce/Shop/Product/YetiForceWaproERP.php
 app/YetiForce/Shop/Product/YetiForceRcPlVatPayerStatus.php
@@ -3491,6 +3526,7 @@ app/Conditions/RecordFields/UrlField.php
 app/Conditions/RecordFields/DatetimeField.php
 app/Conditions/RecordFields/TwitterField.php
 app/Conditions/RecordFields/DocumentsFileUploadField.php
+app/Conditions/RecordFields/ComarchServerField.php
 app/Conditions/RecordFields/SharedOwnerField.php
 app/Conditions/RecordFields/ChangesJsonField.php
 app/Conditions/RecordFields/MultiReferenceValueField.php
@@ -3576,6 +3612,7 @@ app/Conditions/QueryFields/UrlField.php
 app/Conditions/QueryFields/DatetimeField.php
 app/Conditions/QueryFields/TwitterField.php
 app/Conditions/QueryFields/DocumentsFileUploadField.php
+app/Conditions/QueryFields/ComarchServerField.php
 app/Conditions/QueryFields/SharedOwnerField.php
 app/Conditions/QueryFields/ChangesJsonField.php
 app/Conditions/QueryFields/MultiReferenceValueField.php
@@ -4448,6 +4485,8 @@ public_html/layouts/basic/modules/Settings/Magento/resources/List.js
 public_html/layouts/basic/modules/Settings/Magento/resources/List.min.js
 public_html/layouts/basic/modules/Settings/Magento/resources/Edit.min.js
 public_html/layouts/basic/modules/Settings/Magento/resources/List.min.js.map
+public_html/layouts/basic/modules/Settings/Comarch/resources/Edit.js
+public_html/layouts/basic/modules/Settings/Comarch/resources/List.js
 public_html/layouts/basic/modules/Settings/RecordCollector/resources/List.js
 public_html/layouts/basic/modules/Settings/RecordCollector/resources/List.min.js
 public_html/layouts/basic/modules/Settings/RecordCollector/resources/List.min.js.map
@@ -4895,6 +4934,7 @@ languages/en-US/Settings/Companies.json
 languages/en-US/Settings/SalesProcesses.json
 languages/en-US/Settings/Backup.json
 languages/en-US/Settings/FieldsDependency.json
+languages/en-US/Settings/Comarch.json
 languages/en-US/Settings/YetiForce.json
 languages/en-US/Settings/Widgets.json
 languages/en-US/Settings/AutomaticAssignment.json
