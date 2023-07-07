@@ -1984,10 +1984,13 @@ plugins/woocommerce/tests/php/includes/admin/class-wc-admin-duplicate-product-te
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-meta-boxes-test.php
 plugins/woocommerce/tests/php/includes/wc-formatting-functions-test.php
 plugins/woocommerce/tests/php/includes/class-wc-checkout-test.php
+plugins/woocommerce/tests/php/includes/class-wc-settings-tracking-test.php
+plugins/woocommerce/tests/php/includes/class-wc-orders-tracking-test.php
 plugins/woocommerce/tests/php/includes/wc-product-functions-test.php
 plugins/woocommerce/tests/php/includes/class-wc-product-downloads-test.php
 plugins/woocommerce/tests/php/includes/class-wc-tracker-test.php
 plugins/woocommerce/tests/php/includes/exporter/class-wc-product-csv-exporter-test.php
+plugins/woocommerce/tests/php/includes/class-wc-importer-tracking-test.php
 plugins/woocommerce/tests/php/includes/class-wc-webhook-tests.php
 plugins/woocommerce/tests/php/includes/class-woocommerce-test.php
 plugins/woocommerce/tests/php/includes/class-wc-auth-test.php
@@ -2021,6 +2024,7 @@ plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version2/class-wc-re
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller-test.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller-tests.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller-tests.php
+plugins/woocommerce/tests/php/includes/class-wc-products-tracking-test.php
 plugins/woocommerce/tests/php/includes/wc-core-functions-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-data-store-session-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-order-data-store-cpt-test.php
@@ -2551,6 +2555,7 @@ plugins/woocommerce/changelog/add-new-countries-group2-wcpay
 plugins/woocommerce/changelog/dev-update-pnpm-8.6.5
 plugins/woocommerce/changelog/fix-28480
 plugins/woocommerce/changelog/update-39040-update-header-styls2
+plugins/woocommerce/changelog/fix-issue-23796
 plugins/woocommerce/changelog/e2e-replace-deprecated-page-methods
 plugins/woocommerce/changelog/fix-errors-when-setting-order-properties-in-hpos-not-captured
 plugins/woocommerce/changelog/fix-38719-empty-cart-notices-with-blocks
@@ -2558,6 +2563,8 @@ plugins/woocommerce/changelog/e2e-enable-hpos-wp-option
 plugins/woocommerce/changelog/update-38903-core-profiler-plugins-selection-is-not-persisted
 plugins/woocommerce/changelog/pr-39078
 plugins/woocommerce/changelog/update-wp-env-820
+plugins/woocommerce/changelog/dev-tracks-tests
+plugins/woocommerce/changelog/update-woocommerce-blocks-10.6.0
 plugins/woocommerce/changelog/fix-blocks-9999-products-grid-layout-in-post
 plugins/woocommerce/changelog/fix-help-panel-links
 plugins/woocommerce/changelog/fix-revert-38531
@@ -2567,6 +2574,7 @@ plugins/woocommerce/changelog/fix-38969
 plugins/woocommerce/changelog/add-38880_add_variations_tab_to_product_block_editor
 plugins/woocommerce/changelog/fix-e2e-order-emails
 plugins/woocommerce/changelog/e2e-make-tests-independant-from-previous-tests
+plugins/woocommerce/changelog/fix-38948-unexpected-gap-on-ipad
 plugins/woocommerce/changelog/fix-undismissable-notice3
 plugins/woocommerce/changelog/feature-38805-create-campaign-button
 plugins/woocommerce/changelog/fix-failing-shipping-tests
@@ -2582,11 +2590,18 @@ plugins/woocommerce/changelog/fix-legacy-js-es6
 plugins/woocommerce/changelog/update-lint-scripts
 plugins/woocommerce/changelog/fix-24432-account-cleanup
 plugins/woocommerce/changelog/add-klaviyo-marketing-extension
+plugins/woocommerce/changelog/fix-test-wc-load-cart
+plugins/woocommerce/changelog/refactor-mysql-dual-table-in-favor-of-real-table
+plugins/woocommerce/changelog/fix-39103-install-extension-button-text
+plugins/woocommerce/changelog/update-39134-remove-tiktok-from-plugin-suggestions
+plugins/woocommerce/changelog/fix-html-status-report
 plugins/woocommerce/changelog/fix-38887_grey_background_when_menu_collapsed
 plugins/woocommerce/changelog/fix-37343-incompatible-plugins-list
 plugins/woocommerce/changelog/improve-hpos-cli-verbose-output
 plugins/woocommerce/changelog/fix-issue-36560
 plugins/woocommerce/changelog/improve-di-related-unit-testing-infrastructure
+plugins/woocommerce/changelog/add-onboarding-task-klaviyo
+plugins/woocommerce/changelog/add-38881
 plugins/woocommerce/changelog/update-phpcs-changed-2.11.1
 plugins/woocommerce/changelog/e2e-skip-core-profiler
 plugins/woocommerce/changelog/fix-disabled-checkbox-variations
@@ -4396,6 +4411,7 @@ packages/js/product-editor/changelog/fix-initial-package-release
 packages/js/product-editor/changelog/update-36355_product_editor_package
 packages/js/product-editor/changelog/fix-37956
 packages/js/product-editor/changelog/add-38253
+packages/js/product-editor/changelog/add-show-hide-block-inspector
 packages/js/product-editor/changelog/add-38487
 packages/js/product-editor/changelog/update-move-ces-to-product-editor
 packages/js/product-editor/changelog/add-name-block-37007
@@ -4410,6 +4426,7 @@ packages/js/product-editor/changelog/update-38576
 packages/js/product-editor/changelog/add-admin-layout-package
 packages/js/product-editor/changelog/add-stock-status-37884
 packages/js/product-editor/changelog/add-37400
+packages/js/product-editor/changelog/add-38881
 packages/js/product-editor/changelog/add-37985
 packages/js/product-editor/changelog/update-migrate-category-field
 packages/js/product-editor/tsconfig.json
@@ -4495,6 +4512,12 @@ packages/js/product-editor/src/blocks/sale-price/index.ts
 packages/js/product-editor/src/blocks/sale-price/edit.tsx
 packages/js/product-editor/src/blocks/sale-price/editor.scss
 packages/js/product-editor/src/blocks/sale-price/block.json
+packages/js/product-editor/src/blocks/variations/types.ts
+packages/js/product-editor/src/blocks/variations/index.ts
+packages/js/product-editor/src/blocks/variations/edit.tsx
+packages/js/product-editor/src/blocks/variations/editor.scss
+packages/js/product-editor/src/blocks/variations/block.json
+packages/js/product-editor/src/blocks/variations/empty-variations-image.tsx
 packages/js/product-editor/src/blocks/shipping-class/types.ts
 packages/js/product-editor/src/blocks/shipping-class/index.ts
 packages/js/product-editor/src/blocks/shipping-class/edit.tsx
@@ -4617,9 +4640,11 @@ packages/js/product-editor/src/components/iframe-editor/back-button.scss
 packages/js/product-editor/src/components/iframe-editor/iframe-editor.scss
 packages/js/product-editor/src/components/iframe-editor/hooks/use-editor-history.ts
 packages/js/product-editor/src/components/iframe-editor/resize-handle.scss
+packages/js/product-editor/src/components/iframe-editor/header-toolbar/show-block-inspector-panel.tsx
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/document-overview/types.ts
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/document-overview/index.ts
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/document-overview/document-overview.tsx
+packages/js/product-editor/src/components/iframe-editor/header-toolbar/drawer-right.tsx
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/header-toolbar.scss
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/editor-history-undo.tsx
 packages/js/product-editor/src/components/iframe-editor/header-toolbar/editor-history-redo.tsx
@@ -5874,6 +5899,7 @@ packages/js/onboarding/webpack.config.js
 packages/js/onboarding/PREVIOUS_CHANGELOG.md
 packages/js/onboarding/tsconfig-cjs.json
 packages/js/onboarding/changelog/dev-update-pnpm-8.6.5
+packages/js/onboarding/changelog/fix-38947-geolocation-compare-issue
 packages/js/onboarding/changelog/.gitkeep
 packages/js/onboarding/tsconfig.json
 packages/js/onboarding/.npmrc

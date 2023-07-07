@@ -937,6 +937,7 @@ features/product/managing_products/adding_product_with_text_attribute.feature
 features/product/managing_products/adding_product_with_float_attribute.feature
 features/product/managing_products/viewing_non_translatable_attributes.feature
 features/product/managing_products/sorting_products.feature
+features/product/managing_products/accessing_stores_product_page.feature
 features/product/managing_products/adding_product.feature
 features/product/managing_products/adding_product_with_integer_attribute.feature
 features/product/managing_products/prevent_deletion_of_purchased_product.feature
@@ -2160,6 +2161,7 @@ src/Sylius/Bundle/CoreBundle/Tests/Fixture/TaxonFixtureTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Fixture/CurrencyFixtureTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Fixture/TaxRateFixtureTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Provider/ChannelBasedProductTranslationProviderTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/ConfigurationTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/SyliusCoreExtensionTest.php
 src/Sylius/Bundle/CoreBundle/Tests/DependencyInjection/Compiler/SyliusPriceHistoryLegacyAliasesPassTest.php
@@ -2176,6 +2178,7 @@ src/Sylius/Bundle/CoreBundle/Factory/OrderFactoryInterface.php
 src/Sylius/Bundle/CoreBundle/Twig/PriceExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/CheckoutStepsExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ProductVariantsPricesExtension.php
+src/Sylius/Bundle/CoreBundle/Twig/ProductTranslationExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ChannelUrlExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ProductVariantsMapExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/FilterExtension.php
@@ -2227,6 +2230,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/integrations/doctrine/orm
 src/Sylius/Bundle/CoreBundle/Resources/config/services/installer.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/factories.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/form.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/providers.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/catalog_promotion.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/checkout.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/validation/Product.xml
@@ -2899,10 +2903,12 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20161219160441.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20220203115813.php
 src/Sylius/Bundle/CoreBundle/Calculator/DelayStampCalculator.php
 src/Sylius/Bundle/CoreBundle/Calculator/DelayStampCalculatorInterface.php
+src/Sylius/Bundle/CoreBundle/Provider/ChannelBasedProductTranslationProvider.php
 src/Sylius/Bundle/CoreBundle/Provider/CustomerProviderInterface.php
 src/Sylius/Bundle/CoreBundle/Provider/CustomerProvider.php
 src/Sylius/Bundle/CoreBundle/Provider/FlashBagProvider.php
 src/Sylius/Bundle/CoreBundle/Provider/ChannelBasedDefaultTaxZoneProvider.php
+src/Sylius/Bundle/CoreBundle/Provider/ChannelBasedProductTranslationProviderInterface.php
 src/Sylius/Bundle/CoreBundle/Provider/SessionProvider.php
 src/Sylius/Bundle/CoreBundle/MessageHandler/Admin/Account/SendResetPasswordEmailHandler.php
 src/Sylius/Bundle/CoreBundle/MessageHandler/Admin/Account/ResetPasswordHandler.php
