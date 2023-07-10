@@ -833,6 +833,7 @@ client/src/views/admin/currency.js
 client/src/views/admin/entity-manager/index.js
 client/src/views/admin/entity-manager/edit.js
 client/src/views/admin/entity-manager/fields/icon-class.js
+client/src/views/admin/entity-manager/fields/duplicate-check-field-list.js
 client/src/views/admin/entity-manager/scope.js
 client/src/views/admin/entity-manager/modals/select-icon.js
 client/src/views/admin/entity-manager/modals/select-formula.js
@@ -4087,6 +4088,7 @@ application/Espo/Core/Templates/Services/CategoryTree.php
 application/Espo/Core/Templates/Services/BasePlus.php
 application/Espo/Core/Templates/Services/Company.php
 application/Espo/Core/Templates/Services/Base.php
+application/Espo/Core/Templates/Metadata/BasePlus/recordDefs.json
 application/Espo/Core/Templates/Metadata/BasePlus/clientDefs.json
 application/Espo/Core/Templates/Metadata/BasePlus/scopes.json
 application/Espo/Core/Templates/Metadata/BasePlus/entityDefs.json
@@ -4106,6 +4108,7 @@ application/Espo/Core/Templates/Metadata/Company/recordDefs.json
 application/Espo/Core/Templates/Metadata/Company/clientDefs.json
 application/Espo/Core/Templates/Metadata/Company/scopes.json
 application/Espo/Core/Templates/Metadata/Company/entityDefs.json
+application/Espo/Core/Templates/Metadata/Base/recordDefs.json
 application/Espo/Core/Templates/Metadata/Base/clientDefs.json
 application/Espo/Core/Templates/Metadata/Base/scopes.json
 application/Espo/Core/Templates/Metadata/Base/entityDefs.json
@@ -5527,6 +5530,7 @@ application/Espo/Classes/Select/ScheduledJob/AccessControlFilters/Mandatory.php
 application/Espo/Classes/DuplicateWhereBuilders/Person.php
 application/Espo/Classes/DuplicateWhereBuilders/Name.php
 application/Espo/Classes/DuplicateWhereBuilders/Company.php
+application/Espo/Classes/DuplicateWhereBuilders/General.php
 application/Espo/Classes/Jobs/CheckNewExtensionVersion.php
 application/Espo/Classes/Jobs/Dummy.php
 application/Espo/Classes/Jobs/CheckInboundEmails.php

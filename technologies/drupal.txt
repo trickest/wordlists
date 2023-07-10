@@ -5396,7 +5396,9 @@ core/modules/system/tests/modules/entity_test/src/Routing/EntityTestRoutes.php
 core/modules/system/tests/modules/entity_reference_test/entity_reference_test.module
 core/modules/system/tests/modules/entity_reference_test/config/install/views.view.test_entity_reference_entity_test.yml
 core/modules/system/tests/modules/entity_reference_test/config/install/views.view.test_entity_reference.yml
+core/modules/system/tests/modules/entity_reference_test/config/schema/entity_reference_test.schema.yml
 core/modules/system/tests/modules/entity_reference_test/entity_reference_test.info.yml
+core/modules/system/tests/modules/entity_reference_test/src/Plugin/EntityReferenceSelection/AllExceptHostEntity.php
 core/modules/system/tests/modules/invalid_module_name_over_the_maximum_allowed_character_length/invalid_module_name_over_the_maximum_allowed_character_length.info.yml
 core/modules/system/tests/modules/requirements1_test/requirements1_test.info.yml
 core/modules/system/tests/modules/requirements1_test/requirements1_test.install
@@ -7425,6 +7427,7 @@ core/modules/workspaces/tests/src/Functional/WorkspaceViewTest.php
 core/modules/workspaces/tests/src/Functional/WorkspacesUninstallTest.php
 core/modules/workspaces/tests/src/Functional/WorkspaceCacheContextTest.php
 core/modules/workspaces/tests/src/Functional/PathWorkspacesTest.php
+core/modules/workspaces/tests/src/Functional/WorkspaceMenuLinkContentIntegrationTest.php
 core/modules/workspaces/workspaces.info.yml
 core/modules/workspaces/workspaces.links.task.yml
 core/modules/workspaces/workspaces.libraries.yml
@@ -7476,6 +7479,7 @@ core/modules/workspaces/src/EntityQuery/Query.php
 core/modules/workspaces/src/EntityQuery/QueryTrait.php
 core/modules/workspaces/src/EntityQuery/QueryFactory.php
 core/modules/workspaces/src/WorkspaceRepository.php
+core/modules/workspaces/src/WorkspacesMenuTreeStorage.php
 core/modules/workspaces/src/EntityAccess.php
 core/modules/workspaces/src/WorkspaceOperationFactory.php
 core/modules/workspaces/src/Negotiator/WorkspaceNegotiatorInterface.php
@@ -12470,6 +12474,7 @@ core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/FilterTes
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/GroupedExposedFilterTest.php
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/FieldTest.php
 core/modules/views/tests/src/FunctionalJavascript/Plugin/views/Handler/ContextualFilterTest.php
+core/modules/views/tests/src/FunctionalJavascript/Plugin/BulkOperationsTest.php
 core/modules/views/tests/src/FunctionalJavascript/RedirectAjaxTest.php
 core/modules/views/tests/src/FunctionalJavascript/ExposedFilterAJAXTest.php
 core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php
@@ -14855,6 +14860,7 @@ core/tests/Drupal/TestTools/PhpUnitCompatibility/PhpUnit9/TestCompatibilityTrait
 core/tests/Drupal/TestTools/PhpUnitCompatibility/RunnerVersion.php
 core/tests/Drupal/TestTools/Random.php
 core/tests/Drupal/TestTools/Extension/SchemaInspector.php
+core/tests/Drupal/TestTools/Extension/RequiresComposerTrait.php
 core/tests/Drupal/FunctionalJavascriptTests/Tests/JSInteractionTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Tests/JSWebAssertTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Tests/DrupalSelenium2DriverTest.php

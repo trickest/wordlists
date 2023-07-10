@@ -2996,9 +2996,9 @@ tests/Unit/Core/Search/Builder/TypedBuilder/ProductCombinationFiltersBuilderTest
 tests/Unit/Core/Search/Builder/ClassFiltersBuilderTest.php
 tests/Unit/Core/Search/FiltersTest.php
 tests/Unit/Core/Currency/ExchangeRateProviderTest.php
+tests/Unit/Core/CommandBus/MessengerCommandBusTest.php
 tests/Unit/Core/CommandBus/Parser/CommandDefinitionParserTest.php
 tests/Unit/Core/CommandBus/Parser/CommandDefinitionTest.php
-tests/Unit/Core/CommandBus/TacticianCommandBusAdapterTest.php
 tests/Unit/Core/Foundation/Database/EntityManager/QueryBuilderTest.php
 tests/Unit/Core/Foundation/Database/EntityRepositoryTest.php
 tests/Unit/Core/Foundation/VersionTest.php
@@ -4081,6 +4081,7 @@ app/AppCache.php
 app/config/services.yml
 app/config/security_prod.yml
 app/config/config_legacy_prod.yml
+app/config/messenger.yml
 app/config/doctrine.yml
 app/config/config_legacy_dev.yml
 app/config/config_test.yml
@@ -7656,8 +7657,8 @@ src/Core/Domain/Exception/BulkCommandExceptionInterface.php
 src/Core/Domain/Exception/DomainException.php
 src/Core/Domain/Exception/DomainConstraintException.php
 src/Core/Domain/Exception/FileUploadException.php
-src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesCommandHandlerInterface.php
-src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesCommandHandler.php
+src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandler.php
+src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandlerInterface.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
 src/Core/Domain/Alias/Exception/AliasConstraintException.php
 src/Core/Domain/Alias/Exception/InvalidAliasIdException.php
@@ -8251,6 +8252,8 @@ src/Core/Domain/Currency/Command/BulkToggleCurrenciesStatusCommand.php
 src/Core/Domain/Currency/Command/AddUnofficialCurrencyCommand.php
 src/Core/Domain/Currency/Command/EditUnofficialCurrencyCommand.php
 src/Core/Domain/Currency/Command/ToggleCurrencyStatusCommand.php
+src/Core/Domain/Currency/Command/AbstractAddCurrencyCommand.php
+src/Core/Domain/Currency/Command/AbstractEditCurrencyCommand.php
 src/Core/Domain/Currency/Command/DeleteCurrencyCommand.php
 src/Core/Domain/Currency/Command/RefreshExchangeRatesCommand.php
 src/Core/Domain/Currency/Command/EditCurrencyCommand.php
@@ -9036,8 +9039,8 @@ src/Core/CommandBus/Parser/CommandDefinition.php
 src/Core/CommandBus/Parser/CommandTypeParser.php
 src/Core/CommandBus/CommandBusInterface.php
 src/Core/CommandBus/ExecutedCommandRegistry.php
-src/Core/CommandBus/Middleware/CommandRegisterMiddleware.php
-src/Core/CommandBus/TacticianCommandBusAdapter.php
+src/Core/CommandBus/Attributes/AsQueryHandler.php
+src/Core/CommandBus/Attributes/AsCommandHandler.php
 src/Core/Help/Documentation.php
 src/Core/Foundation/Version.php
 src/Core/Foundation/Database/EntityDataInconsistencyException.php
@@ -10598,6 +10601,8 @@ src/PrestaShopBundle/EventListener/BackUrlRedirectResponseListener.php
 src/PrestaShopBundle/EventListener/ModuleGuardListener.php
 src/PrestaShopBundle/EventListener/MultishopCommandListener.php
 src/PrestaShopBundle/EventListener/ShopConstraintListener.php
+src/PrestaShopBundle/CommandBus/MessengerCommandBus.php
+src/PrestaShopBundle/CommandBus/Middleware/CommandRegisterMiddleware.php
 src/PrestaShopBundle/Entity/AttributeGroup.php
 src/PrestaShopBundle/Entity/AuthorizedApplication.php
 src/PrestaShopBundle/Entity/FeatureFlag.php
@@ -10739,6 +10744,7 @@ src/PrestaShopBundle/DependencyInjection/Compiler/LoadServicesFromModulesPass.ph
 src/PrestaShopBundle/DependencyInjection/Compiler/IdentifiableObjectFormTypesCollectorPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/GridDefinitionServiceIdsCollectorPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/OverrideTranslatorServiceCompilerPass.php
+src/PrestaShopBundle/DependencyInjection/Compiler/CommandAndQueryRegisterPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/CommandAndQueryCollectorPass.php
 src/PrestaShopBundle/DependencyInjection/Compiler/PopulateTranslationProvidersPass.php
 src/PrestaShopBundle/DependencyInjection/PrestaShopExtension.php

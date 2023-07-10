@@ -1258,6 +1258,7 @@ spec/system/search_spec.rb
 spec/system/overview_spec.rb
 spec/system/login_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
+spec/system/admin/knowledge_base/delete_spec.rb
 spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/import/kayako_spec.rb
 spec/system/import/otrs_spec.rb
@@ -3388,7 +3389,6 @@ app/assets/javascripts/app/views/knowledge_base/sidebar/tags.jst.eco
 app/assets/javascripts/app/views/knowledge_base/sidebar/generic_list.jst.eco
 app/assets/javascripts/app/views/knowledge_base/reader.jst.eco
 app/assets/javascripts/app/views/knowledge_base/public_menu_form_item_row.jst.eco
-app/assets/javascripts/app/views/knowledge_base/vertical_form.coffee
 app/assets/javascripts/app/views/knowledge_base/search.jst.eco
 app/assets/javascripts/app/views/knowledge_base/_answer_attachments.jst.eco
 app/assets/javascripts/app/views/knowledge_base/_reader_linked_tickets.jst.eco
@@ -3854,6 +3854,7 @@ app/assets/javascripts/app/controllers/knowledge_base/sidebar/categories.coffee
 app/assets/javascripts/app/controllers/knowledge_base/navigation.coffee
 app/assets/javascripts/app/controllers/knowledge_base/knowledge_base_reader_pagination.coffee
 app/assets/javascripts/app/controllers/knowledge_base/feed_dialog.coffee
+app/assets/javascripts/app/controllers/knowledge_base/vertical_form.coffee
 app/assets/javascripts/app/controllers/knowledge_base/delete_action.coffee
 app/assets/javascripts/app/controllers/knowledge_base/editor_coordinator.coffee
 app/assets/javascripts/app/controllers/knowledge_base/scheduled_widget.coffee
