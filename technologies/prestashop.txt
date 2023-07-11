@@ -586,6 +586,7 @@ docs/licenses/index.php
 docs/licenses/LICENSE.txt
 docs/licenses/tinymce-smarty-swift.txt
 docs/licenses/php-sql-parser.txt
+.env
 composer.lock
 README.md
 modules/.htaccess
@@ -1882,6 +1883,7 @@ tests/Resources/template-hierarchy/templates/catalog/listing/product-list.tpl
 tests/Resources/Translator/DummyTranslator.php
 tests/Resources/ResourceResetter.php
 tests/Resources/classes/TestableObjectModel.php
+tests/Resources/env/.gitkeep
 tests/Resources/translations/fr-FR/ModulesCheckpaymentShop.fr-FR.xlf
 tests/Resources/translations/fr-FR/AdminActions.fr-FR.xlf
 tests/Resources/translations/fr-FR/ModulesWirepaymentAdmin.fr-FR.xlf
@@ -2878,6 +2880,11 @@ tests/Unit/Core/Webservice/ServerRequirementsCheckerTest.php
 tests/Unit/Core/Image/Parser/ImageTagSourceParserTest.php
 tests/Unit/Core/Image/Deleter/ImageFileDeleterTest.php
 tests/Unit/Core/Image/ImageFormatConfigurationTest.php
+tests/Unit/Core/FeatureFlag/Layer/EnvLayerTest.php
+tests/Unit/Core/FeatureFlag/Layer/DbLayerTest.php
+tests/Unit/Core/FeatureFlag/Layer/QueryLayerTest.php
+tests/Unit/Core/FeatureFlag/Layer/DotEnvLayerTest.php
+tests/Unit/Core/FeatureFlag/FeatureFlagManagerTest.php
 tests/Unit/Core/Data/AbstractTypedCollectionTest.php
 tests/Unit/Core/Theme/ConfigReaderTest.php
 tests/Unit/Core/Translation/Resources/fr-FR/AdminActions.fr-FR.xlf
@@ -7046,7 +7053,14 @@ src/Core/Image/ImageTypeRepository.php
 src/Core/Image/Deleter/ImageFileDeleterInterface.php
 src/Core/Image/Deleter/ImageFileDeleter.php
 src/Core/Image/ImageFormatConfiguration.php
+src/Core/FeatureFlag/FeatureFlagManager.php
 src/Core/FeatureFlag/FeatureFlagSettings.php
+src/Core/FeatureFlag/Layer/EnvLayer.php
+src/Core/FeatureFlag/Layer/QueryLayer.php
+src/Core/FeatureFlag/Layer/DotEnvLayer.php
+src/Core/FeatureFlag/Layer/DbLayer.php
+src/Core/FeatureFlag/FeatureFlagStateCheckerInterface.php
+src/Core/FeatureFlag/TypeLayerInterface.php
 src/Core/Data/AbstractTypedCollection.php
 src/Core/Data/ImmutableCollection.php
 src/Core/Data/Layer/AbstractDataLayer.php
@@ -9618,6 +9632,7 @@ src/PrestaShopBundle/Resources/config/services/core/currency.yml
 src/PrestaShopBundle/Resources/config/services/core/employee.yml
 src/PrestaShopBundle/Resources/config/services/core/command_bus.yml
 src/PrestaShopBundle/Resources/config/services/core/grid.yml
+src/PrestaShopBundle/Resources/config/services/core/feature_flag.yml
 src/PrestaShopBundle/Resources/config/services/core/image.yml
 src/PrestaShopBundle/Resources/config/services/core/form/choice_provider_deprecated.yml
 src/PrestaShopBundle/Resources/config/services/core/form/data_formatter.yml
@@ -9885,6 +9900,7 @@ src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservi
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/webservice_settings.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/create.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/FeatureFlag/FormTheme/feature_flag_form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/FeatureFlag/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/system_information.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ImportDataConfiguration/Blocks/import_modal.html.twig
@@ -11110,6 +11126,7 @@ src/PrestaShopBundle/Form/Admin/Type/CountryChoiceType.php
 src/PrestaShopBundle/Form/Admin/Type/RadioWithChoiceChildrenType.php
 src/PrestaShopBundle/Form/Admin/Type/IntegerMinMaxFilterType.php
 src/PrestaShopBundle/Form/Admin/Type/MultistoreConfigurationType.php
+src/PrestaShopBundle/Form/Admin/Type/FeatureFlagSwitchType.php
 src/PrestaShopBundle/Form/Admin/Type/GeneratableTextType.php
 src/PrestaShopBundle/Form/Admin/Type/ButtonCollectionType.php
 src/PrestaShopBundle/Form/Admin/Type/TypeaheadProductCollectionType.php

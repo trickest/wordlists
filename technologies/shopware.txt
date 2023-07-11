@@ -1084,6 +1084,7 @@ tests/migration/Core/V6_5/Migration1688556247FixCoverMediaVersionIDTest.php
 tests/migration/Core/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimalTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
 tests/migration/Core/V6_5/Migration1674704527UpdateVATPatternForCyprusCountryTest.php
+tests/migration/Core/V6_5/Migration1688717599UpdateCreatedByIdAndUpdatedByIdInOrderAndCustomerTest.php
 tests/migration/Core/V6_5/Migration1668435503ChangeStornoDocumentTranslationNameTest.php
 tests/migration/Core/V6_5/Migration1673420896RemoveUndefinedSalutationTest.php
 tests/migration/Core/V6_5/Migration1669291632MigrateLineItemsInCartRuleTest.php
@@ -4887,10 +4888,13 @@ changelog/_unreleased/2023-05-23-store-asset-manifest-in-the-private-filesystem.
 changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
 changelog/_unreleased/2023-07-07-clear-cache-after-search-config-is-updated.md
+changelog/_unreleased/2022-12-30-dont-open-offcanvas-fullwidth-in-xs-viewport.md
 changelog/_unreleased/2023-07-05-missing-product-cover-images-when-no-version-id-is-filled.md
 changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-for-productexport-and-mailservice.md
 changelog/_unreleased/2023-06-28-generate-unused-media-report.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
+changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
+changelog/_unreleased/2023-07-07-fix-user-cannot-be-deleted-when-associating-with-a-customer.md
 changelog/_unreleased/2023-06-22-document-inheritance-sw_extends-dont-work.md
 changelog/_unreleased/2023-01-31-prevent-unfiltered-payment-method-media-search.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
@@ -11669,6 +11673,7 @@ src/Core/Migration/V6_5/Migration1672931011ReviewFormMailTemplate.php
 src/Core/Migration/V6_5/Migration1676272001AddAccountTypeToCustomerProfileImportExport.php
 src/Core/Migration/V6_5/Migration1673860323ChangeDefaultProductComparisonIcon.php
 src/Core/Migration/V6_5/Migration1662533751AddCustomEntityTypeIdToCategory.php
+src/Core/Migration/V6_5/Migration1688717599UpdateCreatedByIdAndUpdatedByIdInOrderAndCustomer.php
 src/Core/Migration/V6_5/Migration1659425718AddFlagsToCustomEntities.php
 src/Core/Migration/V6_5/Migration1674704527UpdateVATPatternForCyprusCountry.php
 src/Core/Migration/V6_5/Migration1677470540AddProvincesForCanada.php
@@ -12376,7 +12381,9 @@ src/Storefront/Resources/app/storefront/test/plugin/cookie-configuration/cookie-
 src/Storefront/Resources/app/storefront/test/plugin/header/account-guest-abort-button.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/header/wishlist-widget.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/header/search-widget.plugin.test.js
+src/Storefront/Resources/app/storefront/test/plugin/header/account-menu.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/date-picker/date-picker.plugin.test.js
+src/Storefront/Resources/app/storefront/test/plugin/main-menu/offcanvas-menu.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/address-editor/address-editor.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/offcanvas/html-offcanvas.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/offcanvas/offcanvas.plugin.test.js
