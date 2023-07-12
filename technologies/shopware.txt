@@ -74,6 +74,7 @@ tests/unit/php/Elasticsearch/Framework/Command/ElasticsearchAdminIndexingCommand
 tests/unit/php/Elasticsearch/Framework/Command/ElasticsearchIndexingCommandTest.php
 tests/unit/php/Elasticsearch/Framework/DataAbstractionLayer/ScriptIdQueryTest.php
 tests/unit/php/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearcherTest.php
+tests/unit/php/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregatorTest.php
 tests/unit/php/Elasticsearch/Framework/DataAbstractionLayer/CriteriaParserTest.php
 tests/unit/php/Elasticsearch/Profiler/ClientProfilerTest.php
 tests/unit/php/Elasticsearch/Profiler/DataCollectorTest.php
@@ -4884,6 +4885,7 @@ changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo
 changelog/_unreleased/2023-07-03-add-generic-template-to-entityrepository.md
 changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
 changelog/_unreleased/2023-06-20-apply-domain-exception-for-media.md
+changelog/_unreleased/2023-07-06-fix-data-handling-types.md
 changelog/_unreleased/2023-05-23-store-asset-manifest-in-the-private-filesystem.md
 changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
@@ -4891,7 +4893,9 @@ changelog/_unreleased/2023-07-07-clear-cache-after-search-config-is-updated.md
 changelog/_unreleased/2022-12-30-dont-open-offcanvas-fullwidth-in-xs-viewport.md
 changelog/_unreleased/2023-07-05-missing-product-cover-images-when-no-version-id-is-filled.md
 changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-for-productexport-and-mailservice.md
+changelog/_unreleased/2023-07-11-deprecate-constraint-annotations.md
 changelog/_unreleased/2023-06-28-generate-unused-media-report.md
+changelog/_unreleased/2023-07-11-fix-sync-api-json.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
 changelog/_unreleased/2023-07-07-fix-user-cannot-be-deleted-when-associating-with-a-customer.md
@@ -4903,6 +4907,7 @@ changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-adm
 changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
 changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
 changelog/_unreleased/2022-07-04-mail-attach.md
+changelog/_unreleased/2023-07-07-fix-address-validation-definition-in-register-route.md
 changelog/_unreleased/2023-07-06-fix-settings-customer-groups-listing-pagination.md
 changelog/_unreleased/2023-06-29-decrease-log-level-of-export-not-found-exception.md
 changelog/_unreleased/2023-07-10-remoce-body-from-footer-tpl.md

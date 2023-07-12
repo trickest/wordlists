@@ -4848,6 +4848,8 @@ core/modules/system/tests/modules/layout_test/templates/layout-test-1col.html.tw
 core/modules/system/tests/modules/layout_test/layout_test.module
 core/modules/system/tests/modules/layout_test/src/Plugin/Layout/LayoutTestPlugin.php
 core/modules/system/tests/modules/layout_test/src/Plugin/Layout/LayoutTestDependenciesPlugin.php
+core/modules/system/tests/modules/pgsql_test/pgsql_test.install
+core/modules/system/tests/modules/pgsql_test/pgsql_test.info.yml
 core/modules/system/tests/modules/deprecated_module_with_non_deprecated_dependency/deprecated_module_with_non_deprecated_dependency.info.yml
 core/modules/system/tests/modules/image_test/config/install/system.image.test_toolkit.yml
 core/modules/system/tests/modules/image_test/config/schema/image_test.schema.yml
@@ -10839,6 +10841,7 @@ core/modules/forum/src/Form/ForumForm.php
 core/modules/forum/src/Form/Overview.php
 core/modules/forum/src/Form/ContainerForm.php
 core/modules/forum/src/Form/DeleteForm.php
+core/modules/pgsql/tests/fixtures/update/drupal-9.pgsql-orphan-sequence.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TransactionTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/SyntaxTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/KernelTestBaseTest.php
@@ -10850,9 +10853,11 @@ core/modules/pgsql/tests/src/Kernel/pgsql/SchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/NonPublicSchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/ConnectionUnitTest.php
 core/modules/pgsql/tests/src/Unit/SchemaTest.php
+core/modules/pgsql/tests/src/Functional/Database/PostgreSqlSequenceUpdateTest.php
 core/modules/pgsql/pgsql.install
 core/modules/pgsql/pgsql.module
 core/modules/pgsql/pgsql.info.yml
+core/modules/pgsql/src/Update10101.php
 core/modules/pgsql/src/Driver/Database/pgsql/Select.php
 core/modules/pgsql/src/Driver/Database/pgsql/Install/Tasks.php
 core/modules/pgsql/src/Driver/Database/pgsql/Connection.php

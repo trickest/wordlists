@@ -9498,7 +9498,11 @@ src/PrestaShopBundle/Twig/HookExtension.php
 src/PrestaShopBundle/Twig/TranslationsExtension.php
 src/PrestaShopBundle/Twig/LayoutExtension.php
 src/PrestaShopBundle/Twig/LocaleExtension.php
+src/PrestaShopBundle/Twig/Component/Footer.php
 src/PrestaShopBundle/Twig/Component/QuickAccess.php
+src/PrestaShopBundle/Twig/Component/PHPErrors.php
+src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php
+src/PrestaShopBundle/Twig/Component/NonResponsive.php
 src/PrestaShopBundle/Twig/Locator/ModuleTemplateLoader.php
 src/PrestaShopBundle/Twig/Extension/MultistoreUrlExtension.php
 src/PrestaShopBundle/Twig/Extension/EntitySearchExtension.php
@@ -10184,8 +10188,16 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/B
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/Block/timeline.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/Block/forward_thread_modal.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/quick_access.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/employee_dropdown.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/non_responsive.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/php_errors.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/quick_access.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/employee_dropdown.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/non_responsive.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/php_errors.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Module/addons_store.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Payment/PaymentMethods/Blocks/payment_modules_list.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Payment/PaymentMethods/payment_methods.html.twig
@@ -11659,6 +11671,7 @@ src/Adapter/Category/CommandHandler/DeleteCategoryMenuThumbnailImageHandler.php
 src/Adapter/Category/CategoryDataProvider.php
 src/Adapter/Category/Repository/CategoryRepository.php
 src/Adapter/Category/Repository/CategoryPreviewRepository.php
+src/Adapter/Category/CategoriesProviderBuilder.php
 src/Adapter/Category/CategoryProductSearchProvider.php
 src/Adapter/Category/QueryHandler/GetCategoriesTreeHandler.php
 src/Adapter/Category/QueryHandler/GetCategoryForEditingHandler.php

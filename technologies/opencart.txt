@@ -4170,6 +4170,7 @@ upload/extension/opencart/catalog/view/template/total/coupon.twig
 upload/extension/opencart/catalog/view/template/total/voucher.twig
 upload/extension/opencart/catalog/view/template/total/shipping.twig
 upload/extension/opencart/catalog/view/template/total/reward.twig
+upload/extension/opencart/catalog/model/module/latest.php
 upload/extension/opencart/catalog/model/module/bestseller.php
 upload/extension/opencart/catalog/model/payment/cheque.php
 upload/extension/opencart/catalog/model/payment/free_checkout.php
@@ -4220,8 +4221,10 @@ upload/extension/opencart/admin/language/en-gb/report/product_purchased.php
 upload/extension/opencart/admin/language/en-gb/report/customer_activity.php
 upload/extension/opencart/admin/language/en-gb/report/sale_order.php
 upload/extension/opencart/admin/language/en-gb/report/customer_order.php
+upload/extension/opencart/admin/language/en-gb/report/customer.php
 upload/extension/opencart/admin/language/en-gb/report/product_viewed.php
 upload/extension/opencart/admin/language/en-gb/report/customer_subscription.php
+upload/extension/opencart/admin/language/en-gb/report/affiliate.php
 upload/extension/opencart/admin/language/en-gb/report/sale_coupon.php
 upload/extension/opencart/admin/language/en-gb/report/marketing.php
 upload/extension/opencart/admin/language/en-gb/shipping/flat.php
@@ -4277,8 +4280,10 @@ upload/extension/opencart/admin/controller/report/product_purchased.php
 upload/extension/opencart/admin/controller/report/customer_activity.php
 upload/extension/opencart/admin/controller/report/sale_order.php
 upload/extension/opencart/admin/controller/report/customer_order.php
+upload/extension/opencart/admin/controller/report/customer.php
 upload/extension/opencart/admin/controller/report/product_viewed.php
 upload/extension/opencart/admin/controller/report/customer_subscription.php
+upload/extension/opencart/admin/controller/report/affiliate.php
 upload/extension/opencart/admin/controller/report/sale_coupon.php
 upload/extension/opencart/admin/controller/report/marketing.php
 upload/extension/opencart/admin/controller/feed/index.html
@@ -4354,9 +4359,12 @@ upload/extension/opencart/admin/view/template/report/product_purchased_form.twig
 upload/extension/opencart/admin/view/template/report/customer_activity.twig
 upload/extension/opencart/admin/view/template/report/customer_activity_list.twig
 upload/extension/opencart/admin/view/template/report/sale_tax_list.twig
+upload/extension/opencart/admin/view/template/report/customer_list.twig
 upload/extension/opencart/admin/view/template/report/customer_transaction.twig
+upload/extension/opencart/admin/view/template/report/affiliate_form.twig
 upload/extension/opencart/admin/view/template/report/product_viewed.twig
 upload/extension/opencart/admin/view/template/report/customer_activity_form.twig
+upload/extension/opencart/admin/view/template/report/customer_form.twig
 upload/extension/opencart/admin/view/template/report/sale_order.twig
 upload/extension/opencart/admin/view/template/report/customer_reward_form.twig
 upload/extension/opencart/admin/view/template/report/sale_tax_form.twig
@@ -4367,6 +4375,8 @@ upload/extension/opencart/admin/view/template/report/sale_shipping.twig
 upload/extension/opencart/admin/view/template/report/sale_return.twig
 upload/extension/opencart/admin/view/template/report/sale_shipping_form.twig
 upload/extension/opencart/admin/view/template/report/sale_return_list.twig
+upload/extension/opencart/admin/view/template/report/customer.twig
+upload/extension/opencart/admin/view/template/report/affiliate.twig
 upload/extension/opencart/admin/view/template/report/sale_shipping_list.twig
 upload/extension/opencart/admin/view/template/report/product_purchased.twig
 upload/extension/opencart/admin/view/template/shipping/flat.twig
@@ -4410,6 +4420,7 @@ upload/extension/opencart/admin/model/report/customer.php
 upload/extension/opencart/admin/model/report/product_viewed.php
 upload/extension/opencart/admin/model/report/coupon.php
 upload/extension/opencart/admin/model/report/customer_subscription.php
+upload/extension/opencart/admin/model/report/affiliate.php
 upload/extension/opencart/admin/model/report/activity.php
 upload/extension/opencart/admin/model/report/marketing.php
 upload/extension/opencart/admin/model/report/returns.php
@@ -4417,7 +4428,6 @@ upload/extension/opencart/admin/model/fraud/ip.php
 upload/extension/opencart/admin/model/dashboard/map.php
 upload/extension/opencart/install.json
 upload/extension/index.html
-upload/extension/oc_language_example/admin/controller/language/german.php
 upload/image/catalog/demo/index.html
 upload/image/catalog/index.html
 upload/image/cache/index.html
