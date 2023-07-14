@@ -4200,6 +4200,8 @@ lib/internal/Magento/Framework/File/Test/Unit/_files/magento
 lib/internal/Magento/Framework/File/Test/Unit/_files/file.weird
 lib/internal/Magento/Framework/File/Test/Unit/_files/blank.html
 lib/internal/Magento/Framework/File/Test/Unit/_files/javascript.js
+lib/internal/Magento/Framework/File/Pdf/ImageResource/ImageFactory.php
+lib/internal/Magento/Framework/File/Pdf/Image.php
 lib/internal/Magento/Framework/Intl/README.md
 lib/internal/Magento/Framework/Intl/DateTimeFactory.php
 lib/internal/Magento/Framework/Bulk/BulkManagementInterface.php
@@ -4587,6 +4589,7 @@ lib/internal/Magento/Framework/Test/Unit/DB/Query/BatchIteratorTest.php
 lib/internal/Magento/Framework/Test/Unit/DB/AggregatedFieldDataConverterTest.php
 lib/internal/Magento/Framework/Test/Unit/DB/Adapter/SqlVersionProviderTest.php
 lib/internal/Magento/Framework/Test/Unit/View/Design/Theme/Label/OptionsTest.php
+lib/internal/Magento/Framework/Test/Unit/File/Pdf/ImageResource/ImageFactoryTest.php
 lib/internal/Magento/Framework/Test/Unit/_files/source.txt
 lib/internal/Magento/Framework/Test/Unit/_files/name_1.txt
 lib/internal/Magento/Framework/Test/Unit/_files/name.txt
@@ -15458,6 +15461,7 @@ app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontCustomerUpdateProductI
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontShareCustomerWishlistWithRssFeedLinkActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/AssertProductIsPresentInWishListActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/AssertStorefrontWishListInvalidEmailsMessageActionGroup.xml
+app/code/Magento/Wishlist/Test/Mftf/ActionGroup/AssertOnlyOneProductPresentedInWishlistActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontAssertCustomerWishlistIsEmptyActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontCustomerCheckProductInWishlistSidebarActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontCustomerCheckProductInWishlistActionGroup.xml
@@ -15495,6 +15499,7 @@ app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontUpdateConfigurableProductAttr
 app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontDisabledWishlistInSidebarFunctionalityTest.xml
 app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontRemoveProductsFromWishlistUsingSidebarTest.xml
 app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontMoveVirtualProductFromShoppingCartToWishlistTest.xml
+app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontAddSimpleProductWithTextFieldAndAreaAndFileOptionsToWishlistTest.xml
 app/code/Magento/Wishlist/Test/Mftf/Test/AdminDeleteCustomerWishListItemTest.xml
 app/code/Magento/Wishlist/Test/Mftf/Test/EndToEndB2CLoggedInUserTest.xml
 app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontShareWishlistWithMoreThanMaximumAllowedTextLengthLimitTest.xml
@@ -19599,6 +19604,7 @@ app/code/Magento/Directory/Setup/Patch/Data/AddDataForAustralia.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForAlbania.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForUruguay.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForEcuador.php
+app/code/Magento/Directory/Setup/Patch/Data/AddDataForCostaRica.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForSuriname.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForGuyana.php
 app/code/Magento/Directory/Setup/Patch/Data/AddDataForUkraine.php

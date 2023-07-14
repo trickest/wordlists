@@ -310,6 +310,7 @@ apps/admin-x-settings/tsconfig.json
 apps/admin-x-settings/playwright.config.ts
 apps/admin-x-settings/.eslintrc.cjs
 apps/admin-x-settings/postcss.config.cjs
+apps/admin-x-settings/test/e2e/membership/tiers.test.ts
 apps/admin-x-settings/test/e2e/membership/analytics.test.ts
 apps/admin-x-settings/test/e2e/membership/access.test.ts
 apps/admin-x-settings/test/e2e/site/design.test.ts
@@ -330,7 +331,6 @@ apps/admin-x-settings/test/e2e/general/users/profile.test.ts
 apps/admin-x-settings/test/e2e/general/users/invite.test.ts
 apps/admin-x-settings/test/e2e/general/timeZone.test.ts
 apps/admin-x-settings/test/e2e/general/facebook.test.ts
-apps/admin-x-settings/test/hello.test.js
 apps/admin-x-settings/test/utils/responses/theme.zip
 apps/admin-x-settings/test/utils/responses/roles.json
 apps/admin-x-settings/test/utils/responses/users.json
@@ -3725,7 +3725,6 @@ ghost/core/core/server/services/mentions-jobs/index.js
 ghost/core/core/server/services/i18n.js
 ghost/core/core/server/services/collections/index.js
 ghost/core/core/server/services/collections/intercept-events.js
-ghost/core/core/server/services/collections/PostsDataRepositoryBookshelf.js
 ghost/core/core/server/services/collections/BookshelfCollectionsRepository.js
 ghost/core/core/server/services/collections/service.js
 ghost/core/core/server/services/collections/PostsRepository.js
@@ -4143,7 +4142,6 @@ ghost/core/test/unit/server/services/permissions/parse-context.test.js
 ghost/core/test/unit/server/services/permissions/providers.test.js
 ghost/core/test/unit/server/services/permissions/index.test.js
 ghost/core/test/unit/server/services/collections/CollectionsServiceWrapper.test.js
-ghost/core/test/unit/server/services/collections/PostsDataRepositoryBookshelf.test.ts
 ghost/core/test/unit/server/services/link-tracking/PostLinkRepository.test.js
 ghost/core/test/unit/server/services/oembed/twitter-embed.test.js
 ghost/core/test/unit/server/services/oembed/nft-oembed.test.js

@@ -1311,10 +1311,8 @@ erpnext/tests/test_zform_loads.py
 erpnext/tests/test_webform.py
 erpnext/tests/test_init.py
 erpnext/tests/utils.py
-erpnext/tests/test_exotel.py
 erpnext/tests/test_regional.py
 erpnext/tests/test_activation.py
-erpnext/tests/exotel_test_data.py
 erpnext/tests/test_point_of_sale.py
 erpnext/shopping_cart/__init__.py
 erpnext/shopping_cart/web_template/__init__.py
@@ -1520,7 +1518,6 @@ erpnext/regional/united_arab_emirates/setup.py
 erpnext/erpnext_integrations/__init__.py
 erpnext/erpnext_integrations/workspace/erpnext_integrations/erpnext_integrations.json
 erpnext/erpnext_integrations/custom/contact.json
-erpnext/erpnext_integrations/exotel_integration.py
 erpnext/erpnext_integrations/connectors/__init__.py
 erpnext/erpnext_integrations/connectors/woocommerce_connection.py
 erpnext/erpnext_integrations/utils.py
@@ -1560,9 +1557,6 @@ erpnext/erpnext_integrations/doctype/gocardless_mandate/__init__.py
 erpnext/erpnext_integrations/doctype/gocardless_mandate/gocardless_mandate.json
 erpnext/erpnext_integrations/doctype/gocardless_mandate/gocardless_mandate.js
 erpnext/erpnext_integrations/doctype/gocardless_mandate/test_gocardless_mandate.py
-erpnext/erpnext_integrations/doctype/exotel_settings/__init__.py
-erpnext/erpnext_integrations/doctype/exotel_settings/exotel_settings.json
-erpnext/erpnext_integrations/doctype/exotel_settings/exotel_settings.py
 erpnext/erpnext_integrations/doctype/gocardless_settings/gocardless_settings.js
 erpnext/erpnext_integrations/doctype/gocardless_settings/__init__.py
 erpnext/erpnext_integrations/doctype/gocardless_settings/gocardless_settings.json
@@ -2332,6 +2326,7 @@ erpnext/patches/v15_0/update_asset_value_for_manual_depr_entries.py
 erpnext/patches/v15_0/delete_taxjar_doctypes.py
 erpnext/patches/v15_0/remove_loan_management_module.py
 erpnext/patches/v15_0/delete_saudi_doctypes.py
+erpnext/patches/v15_0/remove_exotel_integration.py
 erpnext/patches/v15_0/saudi_depreciation_warning.py
 erpnext/patches/v15_0/update_gpa_and_ndb_for_assdeprsch.py
 erpnext/patches/v15_0/create_asset_depreciation_schedules_from_assets.py

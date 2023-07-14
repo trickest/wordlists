@@ -54,6 +54,7 @@ tests/unit/php/Elasticsearch/Admin/Subscriber/RefreshIndexSubscriberTest.php
 tests/unit/php/Elasticsearch/Admin/ElasticsearchAdminExceptionTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchHelperTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchRegistryTest.php
+tests/unit/php/Elasticsearch/Framework/SystemUpdateListenerTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchRangeAggregationTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchLanguageProviderTest.php
 tests/unit/php/Elasticsearch/Framework/ElasticsearchOutdatedIndexDetectorTest.php
@@ -86,6 +87,7 @@ tests/unit/php/Elasticsearch/Profiler/DataCollectorTest.php
 tests/unit/php/Elasticsearch/Profiler/ElasticsearchProfileCompilerPassTest.php
 tests/unit/php/Elasticsearch/DependencyInjection/ElasticsearchExtensionTest.php
 tests/unit/php/Elasticsearch/DependencyInjection/ConfigurationTest.php
+tests/unit/php/Elasticsearch/DependencyInjection/ElasticsearchMigrationCompilerPassTest.php
 tests/unit/php/Elasticsearch/ElasticsearchTest.php
 tests/unit/php/Core/Maintenance/System/Service/AppUrlVerifierTest.php
 tests/unit/php/Core/Maintenance/System/Service/ShopConfiguratorTest.php
@@ -915,6 +917,7 @@ tests/unit/php/Administration/Snippet/AppAdministrationSnippetPersisterTest.php
 tests/unit/php/Administration/Snippet/SnippetFinderTest.php
 tests/unit/php/Administration/Snippet/SnippetExceptionTest.php
 tests/unit/php/Administration/Command/DeleteExtensionLocalPublicFilesCommandTest.php
+tests/migration/Elasticsearch/V6_5/Migration1689084023AdminElasticsearchIndexTaskTest.php
 tests/migration/MigrationTestTrait.php
 tests/migration/Core/V6_4/Migration1620634856UpdateRolePrivilegesTest.php
 tests/migration/Core/V6_4/Migration1633347511ChangeProductExportIntervalTest.php
@@ -925,7 +928,6 @@ tests/migration/Core/V6_4/Migration1625569667NewsletterDoiForRegisteredTest.php
 tests/migration/Core/V6_4/Migration1667983492UpdateQueuedTasksToSkippedTest.php
 tests/migration/Core/V6_4/Migration1609140710AddCmsPdpLayoutTest.php
 tests/migration/Core/V6_4/Migration1624967118updateMailTemplatesWithOptionalSalutationTest.php
-tests/migration/Core/V6_4/Migration1667731399AdminElasticsearchIndexTaskTest.php
 tests/migration/Core/V6_4/Migration1616496610CheapestPriceCustomProductGroupsTest.php
 tests/migration/Core/V6_4/Migration1642732351AddAppFlowActionIdTest.php
 tests/migration/Core/V6_4/Migration1655730949AddIsRunningColumnToProductExportTest.php
@@ -1079,6 +1081,7 @@ tests/migration/Core/V6_3/Migration1582011195FixCountryStateGermanTranslationTes
 tests/migration/Core/V6_3/Migration1606310257AddCanonicalUrlPropTest.php
 tests/migration/Core/V6_3/Migration1595492053SeoUrlTemplateTest.php
 tests/migration/Core/ImportTranslationTraitTest.php
+tests/migration/Core/V6_5/Migration1687462843ProductManufacturerMediaThumbnailsTest.php
 tests/migration/Core/V6_5/Migration1662533751AddCustomEntityTypeIdToCategoryTest.php
 tests/migration/Core/V6_5/Migration1656657834TaxProviderTest.php
 tests/migration/Core/V6_5/Migration1671003201RemoveDeprecatedColumnsTest.php
@@ -1111,6 +1114,7 @@ tests/migration/Core/V6_5/Migration1669124190AddDoctrineMessengerTableTest.php
 tests/migration/Core/V6_5/Migration1675082889DropUnusedTablesTest.php
 tests/migration/Core/V6_5/Migration1670090989AddIndexOrderOrderNumberTest.php
 tests/migration/Core/V6_5/Migration1679584289AddCustomerReviewCountTest.php
+tests/migration/Core/V6_5/Migration1687463180ProductMediaThumbnailsTest.php
 tests/migration/Core/V6_5/Migration1667208731AddDefaultDeliveryTimeConfigSettingTest.php
 tests/migration/Core/V6_5/Migration1669125399DropEnqueueTableTest.php
 tests/migration/Core/V6_5/Migration1666689977AddPluginIdToCustomEntityTest.php
@@ -1510,6 +1514,7 @@ tests/integration/php/Elasticsearch/Admin/AdminSearchControllerTest.php
 tests/integration/php/Elasticsearch/Framework/Indexing/ElasticsearchIndexerTest.php
 tests/integration/php/Elasticsearch/Framework/Command/ElasticsearchResetCommandTest.php
 tests/integration/php/Elasticsearch/Framework/Command/ElasticsearchAdminResetCommandTest.php
+tests/integration/php/Elasticsearch/Migration/Traits/ElasticsearchTriggerTraitTest.php
 tests/integration/php/Core/Maintenance/System/Service/JwtCertificateGeneratorTest.php
 tests/integration/php/Core/Maintenance/System/Service/SetupDatabaseAdapterTest.php
 tests/integration/php/Core/Maintenance/User/Command/UserCreateCommandTest.php
@@ -4899,6 +4904,7 @@ changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
 changelog/_unreleased/2023-07-11-add-a-elasticsearch-mapping-update-command.md
 changelog/_unreleased/2023-07-07-clear-cache-after-search-config-is-updated.md
+changelog/_unreleased/2023-07-12-improve-validation-in-customer-detail-address.md
 changelog/_unreleased/2022-12-30-dont-open-offcanvas-fullwidth-in-xs-viewport.md
 changelog/_unreleased/2023-07-05-missing-product-cover-images-when-no-version-id-is-filled.md
 changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-for-productexport-and-mailservice.md
@@ -4923,6 +4929,8 @@ changelog/_unreleased/2023-07-10-remoce-body-from-footer-tpl.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-06-28-apply-domain-exceptions.md
 changelog/_unreleased/2023-06-20-extend-storefront-webpack-watch-range.md
+changelog/_unreleased/2023-06-24-add-thumbnail-sizes-to-product-manufacturers.md
+changelog/_unreleased/2023-07-14-trusted-kernel-parameters.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-06-23-update-sdk-version.md
 changelog/release-6-4-7-0/2021-10-06-import-with-update-by-mapping.md
@@ -5689,6 +5697,7 @@ src/Elasticsearch/Framework/Command/ElasticsearchResetCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchStatusCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchTestAnalyzerCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchCreateAliasCommand.php
+src/Elasticsearch/Framework/SystemUpdateListener.php
 src/Elasticsearch/Framework/ElasticsearchOutdatedIndexDetector.php
 src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearchHydrator.php
 src/Elasticsearch/Framework/DataAbstractionLayer/CriteriaParser.php
@@ -5704,10 +5713,14 @@ src/Elasticsearch/Framework/ClientFactory.php
 src/Elasticsearch/Profiler/ClientProfiler.php
 src/Elasticsearch/Profiler/ElasticsearchProfileCompilerPass.php
 src/Elasticsearch/Profiler/DataCollector.php
+src/Elasticsearch/Migration/Traits/ElasticsearchTriggerTrait.php
+src/Elasticsearch/Migration/V6_5/Migration1689083660ElasticsearchIndexTask.php
+src/Elasticsearch/Migration/V6_5/Migration1689084023AdminElasticsearchIndexTask.php
 src/Elasticsearch/Test/AdminElasticsearchTestBehaviour.php
 src/Elasticsearch/Test/ElasticsearchTestTestBehaviour.php
 src/Elasticsearch/DependencyInjection/ElasticsearchExtension.php
 src/Elasticsearch/DependencyInjection/Configuration.php
+src/Elasticsearch/DependencyInjection/ElasticsearchMigrationCompilerPass.php
 src/Elasticsearch/composer.json
 src/Core/schema.sql
 src/Core/.gitattributes
@@ -11677,9 +11690,12 @@ src/Core/Migration/Traits/MailSubjectUpdate.php
 src/Core/Migration/Traits/TranslationWriteResult.php
 src/Core/Migration/Traits/UpdateMailTrait.php
 src/Core/Migration/Traits/MailUpdate.php
+src/Core/Migration/Traits/EnsureThumbnailSizesTrait.php
 src/Core/Migration/Traits/StateMachineMigrationImporter.php
 src/Core/Migration/V6_5/Migration1655697288AppFlowEvent.php
+src/Core/Migration/V6_5/Migration1687462843ProductManufacturerMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1667208731AddDefaultDeliveryTimeConfigSetting.php
+src/Core/Migration/V6_5/Migration1687463180ProductMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1674200008UpdateOrderViewerRolePrivileges.php
 src/Core/Migration/V6_5/Migration1672934282ReviewFormSendFlow.php
 src/Core/Migration/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalColumn.php
