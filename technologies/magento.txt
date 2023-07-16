@@ -2935,6 +2935,7 @@ lib/internal/Magento/Framework/App/Rss/RssManagerInterface.php
 lib/internal/Magento/Framework/App/PageCache/Identifier.php
 lib/internal/Magento/Framework/App/PageCache/Version.php
 lib/internal/Magento/Framework/App/PageCache/README.md
+lib/internal/Magento/Framework/App/PageCache/IdentifierInterface.php
 lib/internal/Magento/Framework/App/PageCache/FormKey.php
 lib/internal/Magento/Framework/App/PageCache/NotCacheableInterface.php
 lib/internal/Magento/Framework/App/PageCache/Kernel.php
@@ -5673,6 +5674,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetAvailablePa
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/RemoveItemFromCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetSpecifiedBillingAddressTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/CheckoutEndToEndTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddProductWithCustomizableOptionToCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddDownloadableProductWithCustomOptionsToCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/GetMaskedQuoteIdByReservedOrderId.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddDownloadableProductToCartSingleMutationTest.php
@@ -21730,6 +21732,7 @@ app/code/Magento/PageCache/Model/App/Response/HttpPlugin.php
 app/code/Magento/PageCache/Model/App/CacheIdentifierPlugin.php
 app/code/Magento/PageCache/Model/App/FrontController/VarnishPlugin.php
 app/code/Magento/PageCache/Model/App/FrontController/BuiltinPlugin.php
+app/code/Magento/PageCache/Model/App/Request/Http/IdentifierForSave.php
 app/code/Magento/PageCache/Model/App/PageCachePlugin.php
 app/code/Magento/PageCache/Model/VclTemplateLocatorInterface.php
 app/code/Magento/PageCache/Model/Config.php
@@ -21799,6 +21802,7 @@ app/code/Magento/PageCache/Test/Unit/Model/App/Response/HttpPluginTest.php
 app/code/Magento/PageCache/Test/Unit/Model/App/PageCachePluginTest.php
 app/code/Magento/PageCache/Test/Unit/Model/App/FrontController/VarnishPluginTest.php
 app/code/Magento/PageCache/Test/Unit/Model/App/FrontController/BuiltinPluginTest.php
+app/code/Magento/PageCache/Test/Unit/Model/App/Request/Http/IdentifierForSaveTest.php
 app/code/Magento/PageCache/Test/Unit/Model/_files/test.vcl
 app/code/Magento/PageCache/Test/Unit/Model/_files/result.vcl
 app/code/Magento/PageCache/Test/Unit/Model/DepersonalizeCheckerTest.php
@@ -23764,8 +23768,10 @@ app/code/Magento/Customer/Observer/UpgradeQuoteCustomerEmailObserver.php
 app/code/Magento/Customer/Observer/LogLastLoginAtObserver.php
 app/code/Magento/Customer/LICENSE.txt
 app/code/Magento/Customer/ViewModel/Address/RegionProvider.php
+app/code/Magento/Customer/ViewModel/Customer/Auth.php
 app/code/Magento/Customer/ViewModel/Customer/StoreConfig.php
 app/code/Magento/Customer/ViewModel/Customer/Store.php
+app/code/Magento/Customer/ViewModel/Customer/JsonSerializer.php
 app/code/Magento/Customer/ViewModel/Customer/Website.php
 app/code/Magento/Customer/ViewModel/Address.php
 app/code/Magento/Customer/Console/Command/UpgradeHashAlgorithmCommand.php
@@ -23991,6 +23997,8 @@ app/code/Magento/Customer/Test/Unit/Observer/UpgradeCustomerPasswordObserverTest
 app/code/Magento/Customer/Test/Unit/Observer/AfterAddressSaveObserverTest.php
 app/code/Magento/Customer/Test/Unit/ViewModel/Customer/WebsiteTest.php
 app/code/Magento/Customer/Test/Unit/ViewModel/Customer/StoreTest.php
+app/code/Magento/Customer/Test/Unit/ViewModel/Customer/JsonSerializerTest.php
+app/code/Magento/Customer/Test/Unit/ViewModel/Customer/AuthTest.php
 app/code/Magento/Customer/Test/Unit/Console/Command/UpgradeHashAlgorithmCommandTest.php
 app/code/Magento/Customer/Test/Mftf/README.md
 app/code/Magento/Customer/Test/Mftf/Metadata/RegionMeta.xml
@@ -27492,6 +27500,7 @@ app/code/Magento/Quote/Model/GuestCart/GuestCartTotalRepository.php
 app/code/Magento/Quote/Model/QuoteRepository.php
 app/code/Magento/Quote/Model/QuoteMutex.php
 app/code/Magento/Quote/Model/Quote/Address/BillingAddressPersister.php
+app/code/Magento/Quote/Model/Quote/Address/ShippingAddressPersister.php
 app/code/Magento/Quote/Model/Quote/Address/FreeShipping.php
 app/code/Magento/Quote/Model/Quote/Address/Rate.php
 app/code/Magento/Quote/Model/Quote/Address/TotalFactory.php
