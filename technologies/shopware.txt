@@ -1090,9 +1090,11 @@ tests/migration/Core/V6_5/Migration1659425718AddFlagsToCustomEntitiesTest.php
 tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1673860323ChangeDefaultProductComparisonIconTest.php
 tests/migration/Core/V6_5/Migration1688556247FixCoverMediaVersionIDTest.php
+tests/migration/Core/V6_5/Migration1688106315AddMissingTransactionMailTemplatesTest.php
 tests/migration/Core/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimalTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
 tests/migration/Core/V6_5/Migration1674704527UpdateVATPatternForCyprusCountryTest.php
+tests/migration/Core/V6_5/Migration1689257577AddMissingTransactionMailFlowTest.php
 tests/migration/Core/V6_5/Migration1688717599UpdateCreatedByIdAndUpdatedByIdInOrderAndCustomerTest.php
 tests/migration/Core/V6_5/Migration1668435503ChangeStornoDocumentTranslationNameTest.php
 tests/migration/Core/V6_5/Migration1673420896RemoveUndefinedSalutationTest.php
@@ -4886,6 +4888,7 @@ changelog/_unreleased/2023-07-06-fix-order-loaded-event-missing-billing-address-
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2023-06-02-add-open-api-validation-command.md
 changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
+changelog/_unreleased/2023-07-17-adding-association-for-order-storer.md
 changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-name.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
@@ -4894,6 +4897,7 @@ changelog/_unreleased/2023-06-23-use-file-extension-and-mime-type-for-validating
 changelog/_unreleased/2023-07-05-improve-bulk-edit-ui-for-the-toggle-field.md
 changelog/_unreleased/2023-07-05-update-sizing-of-icons-on-settings-searchable-content-general-component.md
 changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
+changelog/_unreleased/2023-07-12-remove-aciton-button-from-storefront-account-overview.md
 changelog/_unreleased/2023-07-03-add-generic-template-to-entityrepository.md
 changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
 changelog/_unreleased/2023-06-20-apply-domain-exception-for-media.md
@@ -4914,6 +4918,7 @@ changelog/_unreleased/2023-07-11-fix-sync-api-json.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
 changelog/_unreleased/2023-07-07-fix-user-cannot-be-deleted-when-associating-with-a-customer.md
+changelog/_unreleased/2023-07-13-product-cover-inherited-does-not-work-anymore.md
 changelog/_unreleased/2023-06-22-document-inheritance-sw_extends-dont-work.md
 changelog/_unreleased/2023-01-31-prevent-unfiltered-payment-method-media-search.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
@@ -4924,6 +4929,7 @@ changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-07-07-fix-address-validation-definition-in-register-route.md
 changelog/_unreleased/2023-07-06-fix-settings-customer-groups-listing-pagination.md
+changelog/_unreleased/2023-07-11-make-app-components-to-be-appropriately-updated.md
 changelog/_unreleased/2023-06-29-decrease-log-level-of-export-not-found-exception.md
 changelog/_unreleased/2023-07-10-remoce-body-from-footer-tpl.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
@@ -11714,6 +11720,7 @@ src/Core/Migration/V6_5/Migration1677470540AddProvincesForCanada.php
 src/Core/Migration/V6_5/Migration1666689977AddPluginIdToCustomEntity.php
 src/Core/Migration/V6_5/Migration1674204177TaxProvider.php
 src/Core/Migration/V6_5/Migration1678969082DropVariantListingFields.php
+src/Core/Migration/V6_5/Migration1689257577AddMissingTransactionMailFlow.php
 src/Core/Migration/V6_5/Migration1681382023AddCustomFieldAllowCartExpose.php
 src/Core/Migration/V6_5/Migration1669125399DropEnqueueTable.php
 src/Core/Migration/V6_5/Migration1669124190AddDoctrineMessengerTable.php
@@ -11724,6 +11731,7 @@ src/Core/Migration/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimal.
 src/Core/Migration/V6_5/Migration1671723392AddWebhookLifetimeConfig.php
 src/Core/Migration/V6_5/Migration1676272000AddAccountTypeToCustomer.php
 src/Core/Migration/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocale.php
+src/Core/Migration/V6_5/Migration1688106315AddMissingTransactionMailTemplates.php
 src/Core/Migration/V6_5/Migration1673420896RemoveUndefinedSalutation.php
 src/Core/Migration/V6_5/Migration1673946817FixMediaFolderAssociationFields.php
 src/Core/Migration/V6_5/Migration1688556247FixCoverMediaVersionID.php
@@ -11830,6 +11838,14 @@ src/Core/Migration/Fixtures/mails/order.state.open/de-html.html.twig
 src/Core/Migration/Fixtures/mails/order.state.open/en-plain.html.twig
 src/Core/Migration/Fixtures/mails/order.state.open/de-plain.html.twig
 src/Core/Migration/Fixtures/mails/order.state.open/en-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.unconfirmed/de-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.unconfirmed/en-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.unconfirmed/de-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.unconfirmed/en-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.authorized/de-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.authorized/en-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.authorized/de-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.authorized/en-html.html.twig
 src/Core/Migration/Fixtures/mails/contact_form/de-html.html.twig
 src/Core/Migration/Fixtures/mails/contact_form/en-plain.html.twig
 src/Core/Migration/Fixtures/mails/contact_form/de-plain.html.twig
@@ -11838,6 +11854,10 @@ src/Core/Migration/Fixtures/mails/order_confirmation_mail/de-html.html.twig
 src/Core/Migration/Fixtures/mails/order_confirmation_mail/en-plain.html.twig
 src/Core/Migration/Fixtures/mails/order_confirmation_mail/de-plain.html.twig
 src/Core/Migration/Fixtures/mails/order_confirmation_mail/en-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.chargeback/de-html.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.chargeback/en-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.chargeback/de-plain.html.twig
+src/Core/Migration/Fixtures/mails/order_transaction.state.chargeback/en-html.html.twig
 src/Core/Migration/Fixtures/mails/order_transaction.state.cancelled/de-html.html.twig
 src/Core/Migration/Fixtures/mails/order_transaction.state.cancelled/en-plain.html.twig
 src/Core/Migration/Fixtures/mails/order_transaction.state.cancelled/de-plain.html.twig

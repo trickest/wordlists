@@ -1941,6 +1941,7 @@ tests/UI/data/faker/CMScategory.ts
 tests/UI/data/faker/quickAccess.ts
 tests/UI/data/faker/linkWidget.ts
 tests/UI/data/faker/taxRule.ts
+tests/UI/data/faker/authorizedApplication.ts
 tests/UI/data/faker/shoppingCart.ts
 tests/UI/data/faker/invoice.ts
 tests/UI/data/faker/feature.ts
@@ -2015,6 +2016,7 @@ tests/UI/data/import/disabledProducts.ts
 tests/UI/data/import/customers.ts
 tests/UI/data/xml/country.ts
 tests/UI/data/files/sample.webp
+tests/UI/data/types/authorizedApplication.d.ts
 tests/UI/data/types/orderMessage.d.ts
 tests/UI/data/types/cmsPage.d.ts
 tests/UI/data/types/product.d.ts
@@ -2239,6 +2241,7 @@ tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/02_filterAn
 tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/04_sortPaginationAndBulkActions.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/01_CRUDWebservice.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/03_helpCard.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/12_authorizationServer/01_CRUD.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/11_newAndExperimentalFeatures/01_enableDisableExperimentalProductV2.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/02_performance/02_debugMode.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/06_quickEditAndBulkActionsShopUrls.ts
@@ -2345,9 +2348,10 @@ tests/UI/campaigns/functional/BO/02_orders/03_creditSlips/04_creditSlipOptions.t
 tests/UI/campaigns/functional/BO/01_dashboard/01_enableDisableDemoMode.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/02_helpCard.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/01_CRUDPageCategory.ts
+tests/UI/campaigns/functional/BO/08_design/04_pages/pages/04_sortPages.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/pages/02_pagesBulkActions.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/pages/01_filterAndQuickEditPages.ts
-tests/UI/campaigns/functional/BO/08_design/04_pages/pages/03_paginationAndSortPages.ts
+tests/UI/campaigns/functional/BO/08_design/04_pages/pages/03_pagination.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/categories/03_paginationAndSortCategories.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/categories/01_filterAndQuickEditCategories.ts
 tests/UI/campaigns/functional/BO/08_design/04_pages/categories/02_categoriesBulkActions.ts
@@ -2669,6 +2673,8 @@ tests/UI/pages/BO/advancedParameters/email/index.ts
 tests/UI/pages/BO/advancedParameters/featureFlag/index.ts
 tests/UI/pages/BO/advancedParameters/webservice/index.ts
 tests/UI/pages/BO/advancedParameters/webservice/add.ts
+tests/UI/pages/BO/advancedParameters/authorizationServer/index.ts
+tests/UI/pages/BO/advancedParameters/authorizationServer/add.ts
 tests/UI/pages/BO/BObasePage.ts
 tests/UI/pages/BO/payment/preferences/index.ts
 tests/UI/pages/BO/customerService/orderMessages/index.ts

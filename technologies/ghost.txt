@@ -390,8 +390,11 @@ apps/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
 apps/admin-x-settings/src/components/settings/site/Theme.tsx
 apps/admin-x-settings/src/components/settings/site/NavigationModal.tsx
+apps/admin-x-settings/src/components/settings/email/Newsletters.tsx
 apps/admin-x-settings/src/components/settings/email/Mailgun.tsx
 apps/admin-x-settings/src/components/settings/email/DefaultRecipients.tsx
+apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterDetailModal.tsx
+apps/admin-x-settings/src/components/settings/email/newsletters/NewslettersList.tsx
 apps/admin-x-settings/src/components/settings/email/EmailSettings.tsx
 apps/admin-x-settings/src/components/settings/general/TimeZone.tsx
 apps/admin-x-settings/src/components/settings/general/Metadata.tsx
@@ -438,6 +441,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/ellipsis.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/warning.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-up.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/check.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/heart.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/user-add.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-right.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-locked.svg
@@ -2935,6 +2939,7 @@ ghost/core/core/frontend/helpers/page_url.js
 ghost/core/core/frontend/helpers/ghost_head.js
 ghost/core/core/frontend/helpers/title.js
 ghost/core/core/frontend/helpers/tags.js
+ghost/core/core/frontend/helpers/collection.js
 ghost/core/core/frontend/helpers/twitter_url.js
 ghost/core/core/frontend/helpers/url.js
 ghost/core/core/frontend/helpers/date.js
@@ -3451,6 +3456,8 @@ ghost/core/core/server/data/migrations/versions/4.33/2022-01-14-11-50-add-type-c
 ghost/core/core/server/data/migrations/versions/4.33/2022-01-14-11-51-add-default-free-tier.js
 ghost/core/core/server/data/migrations/versions/4.33/2022-01-19-10-43-add-active-column-to-products-table.js
 ghost/core/core/server/data/migrations/versions/4.33/2022-01-18-09-07-remove-duplicate-offer-redemptions.js
+ghost/core/core/server/data/migrations/versions/5.55/2023-07-10-05-15-55-add-built-in-collections.js
+ghost/core/core/server/data/migrations/versions/5.55/2023-07-10-05-16-55-add-built-in-collection-posts.js
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-12-drop-suppressions-table.js
 ghost/core/core/server/data/migrations/versions/5.27/2022-12-13-16-15-add-usage-colums-to-tokens.js
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-13-add-suppressions-table.js
