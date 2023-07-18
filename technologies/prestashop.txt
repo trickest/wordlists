@@ -2083,6 +2083,7 @@ tests/UI/campaigns/regression/menu/deniedAccessToModuleCatalogPage.ts
 tests/UI/campaigns/regression/checkout/100PercentDiscount_FO.ts
 tests/UI/campaigns/modules/ps_cashondelivery/01_installation/04_resetModule.ts
 tests/UI/campaigns/modules/ps_facetedsearch/01_installation/04_uninstallAndDeleteModule.ts
+tests/UI/campaigns/modules/ps_facetedsearch/02_configuration/15_editTemplateProductBrandFilter.ts
 tests/UI/campaigns/sanity/03_productsBO/05_deleteProduct.ts
 tests/UI/campaigns/sanity/03_productsBO/06_deleteProductsWithBulkActions.ts
 tests/UI/campaigns/sanity/03_productsBO/04_CRUDVirtualProduct.ts
@@ -2627,6 +2628,8 @@ tests/UI/pages/BO/catalog/products/index.ts
 tests/UI/pages/BO/catalog/products/add.ts
 tests/UI/pages/BO/quickAccess/index.ts
 tests/UI/pages/BO/quickAccess/add.ts
+tests/UI/pages/BO/modules/psFacetedSearch/filterTemplate.ts
+tests/UI/pages/BO/modules/psFacetedSearch/index.ts
 tests/UI/pages/BO/modules/moduleConfiguration/index.ts
 tests/UI/pages/BO/modules/moduleManager/index.ts
 tests/UI/pages/BO/modules/productComments/index.ts
@@ -9507,6 +9510,7 @@ src/PrestaShopBundle/Twig/Component/MobileQuickAccess.php
 src/PrestaShopBundle/Twig/Component/PHPErrors.php
 src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php
 src/PrestaShopBundle/Twig/Component/NonResponsive.php
+src/PrestaShopBundle/Twig/Component/NotificationsCenter.php
 src/PrestaShopBundle/Twig/Locator/ModuleTemplateLoader.php
 src/PrestaShopBundle/Twig/Extension/MultistoreUrlExtension.php
 src/PrestaShopBundle/Twig/Extension/EntitySearchExtension.php
@@ -10198,6 +10202,7 @@ src/PrestaShopBundle/Resources/views/Admin/Layout/employee_dropdown.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/non_responsive.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/php_errors.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/quick_access.html.twig
@@ -10205,6 +10210,7 @@ src/PrestaShopBundle/Resources/views/Admin/Component/Layout/employee_dropdown.ht
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/non_responsive.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/php_errors.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Module/addons_store.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/Payment/PaymentMethods/Blocks/payment_modules_list.html.twig

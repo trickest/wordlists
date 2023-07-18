@@ -2482,6 +2482,8 @@ core/lib/Drupal/Core/Asset/CssOptimizer.php
 core/lib/Drupal/Core/Asset/AttachedAssetsInterface.php
 core/lib/Drupal/Core/Asset/LibraryDiscoveryCollector.php
 core/lib/Drupal/Core/Asset/AssetResolverInterface.php
+core/lib/Drupal/Core/Asset/AssetQueryStringInterface.php
+core/lib/Drupal/Core/Asset/AssetQueryString.php
 core/lib/Drupal/Core/Asset/CssCollectionGrouper.php
 core/lib/Drupal/Core/Asset/JsOptimizer.php
 core/lib/Drupal/Core/Asset/AssetGroupSetHashTrait.php
@@ -4665,6 +4667,11 @@ core/modules/system/tests/modules/accept_header_routing_test/src/AcceptHeaderMid
 core/modules/system/tests/modules/accept_header_routing_test/src/Routing/AcceptHeaderMatcher.php
 core/modules/system/tests/modules/entity_schema_test/entity_schema_test.info.yml
 core/modules/system/tests/modules/entity_schema_test/entity_schema_test.module
+core/modules/system/tests/modules/destructable_test/destructable_test.services.yml
+core/modules/system/tests/modules/destructable_test/destructable_test.routing.yml
+core/modules/system/tests/modules/destructable_test/destructable_test.info.yml
+core/modules/system/tests/modules/destructable_test/src/Controller/CallsDestructableServiceController.php
+core/modules/system/tests/modules/destructable_test/src/Destructable.php
 core/modules/system/tests/modules/session_test/session_test.services.yml
 core/modules/system/tests/modules/session_test/session_test.module
 core/modules/system/tests/modules/session_test/session_test.info.yml
@@ -14327,6 +14334,7 @@ core/tests/Drupal/FunctionalTests/Core/Test/PhpUnitBridgeTest.php
 core/tests/Drupal/FunctionalTests/Libraries/JqueryUiLibraryAssetsTest.php
 core/tests/Drupal/FunctionalTests/Libraries/ManyAssetsLoadOrderTest.php
 core/tests/Drupal/FunctionalTests/HttpKernel/CorsIntegrationTest.php
+core/tests/Drupal/FunctionalTests/HttpKernel/DestructableServiceTest.php
 core/tests/Drupal/FunctionalTests/UserHelpersTest.php
 core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTestUmami.php
 core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTest.php
@@ -14524,6 +14532,7 @@ core/tests/Drupal/KernelTests/Core/Plugin/ContextTypedDataTest.php
 core/tests/Drupal/KernelTests/Core/Plugin/DerivativeTest.php
 core/tests/Drupal/KernelTests/Core/HttpKernel/StackKernelIntegrationTest.php
 core/tests/Drupal/KernelTests/Core/StreamWrapper/StreamWrapperManagerTest.php
+core/tests/Drupal/KernelTests/Core/State/LegacyStateTest.php
 core/tests/Drupal/KernelTests/Core/Layout/IconBuilderTest.php
 core/tests/Drupal/KernelTests/Core/Ajax/CommandsTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigOverridesPriorityTest.php
@@ -14567,7 +14576,9 @@ core/tests/Drupal/KernelTests/Core/Config/ConfigLanguageOverrideTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigSchemaTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigOverrideTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigImporterTest.php
+core/tests/Drupal/KernelTests/Core/Asset/LegacyAssetTest.php
 core/tests/Drupal/KernelTests/Core/Asset/LibraryDiscoveryIntegrationTest.php
+core/tests/Drupal/KernelTests/Core/Asset/AssetQueryStringTest.php
 core/tests/Drupal/KernelTests/Core/Asset/AttachedAssetsTest.php
 core/tests/Drupal/KernelTests/Core/Asset/ResolvedLibraryDefinitionsFilesMatchTest.php
 core/tests/Drupal/KernelTests/Core/Asset/DeprecatedAssetsTest.php
