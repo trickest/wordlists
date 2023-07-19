@@ -2249,6 +2249,7 @@ tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/06_quickEdi
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/02_filterSortAndPaginationShopGroups.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/04_filterSortAndPaginationShops.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/05_filterSortAndPaginationShopUrls.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/07_editUrlOptions.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/03_CRUDShops.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/01_CRUDShopGroups.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/04_email/01_filterDeleteAndBulkActionsEmails.ts
@@ -2800,6 +2801,7 @@ tests/UI/commonTests/BO/advancedParameters/smtp.ts
 tests/UI/commonTests/BO/advancedParameters/setPermissions.ts
 tests/UI/commonTests/BO/advancedParameters/importFile.ts
 tests/UI/commonTests/BO/advancedParameters/employee.ts
+tests/UI/commonTests/BO/advancedParameters/multistore.ts
 tests/UI/commonTests/BO/customerService/merchandiseReturns.ts
 tests/UI/commonTests/BO/customers/address.ts
 tests/UI/commonTests/BO/customers/customer.ts
@@ -9506,6 +9508,7 @@ src/PrestaShopBundle/Twig/LocaleExtension.php
 src/PrestaShopBundle/Twig/Component/NavBar.php
 src/PrestaShopBundle/Twig/Component/Footer.php
 src/PrestaShopBundle/Twig/Component/QuickAccess.php
+src/PrestaShopBundle/Twig/Component/SearchForm.php
 src/PrestaShopBundle/Twig/Component/MobileQuickAccess.php
 src/PrestaShopBundle/Twig/Component/PHPErrors.php
 src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php
@@ -10198,6 +10201,7 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/B
 src/PrestaShopBundle/Resources/views/Admin/Sell/CustomerService/CustomerThread/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/quick_access.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/search_form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/employee_dropdown.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/non_responsive.html.twig
@@ -10206,6 +10210,7 @@ src/PrestaShopBundle/Resources/views/Admin/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/quick_access.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/search_form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/employee_dropdown.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/non_responsive.html.twig

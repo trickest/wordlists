@@ -395,6 +395,7 @@ apps/admin-x-settings/src/components/settings/email/Mailgun.tsx
 apps/admin-x-settings/src/components/settings/email/DefaultRecipients.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterDetailModal.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewslettersList.tsx
+apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreview.tsx
 apps/admin-x-settings/src/components/settings/email/EmailSettings.tsx
 apps/admin-x-settings/src/components/settings/general/TimeZone.tsx
 apps/admin-x-settings/src/components/settings/general/Metadata.tsx
@@ -428,11 +429,13 @@ apps/admin-x-settings/src/admin-x-ds/docs/assets/direction.svg
 apps/admin-x-settings/src/admin-x-ds/docs/About.mdx
 apps/admin-x-settings/src/admin-x-ds/docs/ErrorHandling.mdx
 apps/admin-x-settings/src/admin-x-ds/assets/images/twitter-logo.svg
+apps/admin-x-settings/src/admin-x-ds/assets/images/ghost-orb.svg
 apps/admin-x-settings/src/admin-x-ds/assets/images/facebook-logo.svg
 apps/admin-x-settings/src/admin-x-ds/assets/images/google-logo.svg
 apps/admin-x-settings/src/admin-x-ds/assets/fonts/Inter.ttf
 apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/mobile.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/thumbs-up.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/laptop.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/magnifying-glass.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/check-circle.svg
@@ -448,6 +451,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-locked.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/trash.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/upload.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/close.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/comment.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/hamburger.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/single-user-fill.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-right.svg
@@ -456,6 +460,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/add.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-up.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-unlocked.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/thumbs-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/money-bags.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-left.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/crown.svg
@@ -4835,6 +4840,7 @@ ghost/offers/lib/domain/events/OfferCodeChangeEvent.js
 ghost/offers/index.js
 ghost/offers/package.json
 ghost/offers/test/.eslintrc.js
+ghost/offers/test/lib/application/OfferRepository.test.js
 ghost/offers/test/lib/application/UniqueChecker.test.js
 ghost/offers/test/lib/domain/models/OfferDuration.test.js
 ghost/offers/test/lib/domain/models/OfferCadence.test.js

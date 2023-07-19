@@ -285,7 +285,6 @@ jsconfig.json
 CODE_OF_CONDUCT.md
 jest.config.js
 .yarnrc.yml
-cypress.json
 LICENSE
 nx.json
 .nvmrc
@@ -1709,6 +1708,7 @@ packages/core/admin/admin/src/content-manager/pages/ListView/actions.js
 packages/core/admin/admin/src/content-manager/pages/ListView/index.js
 packages/core/admin/admin/src/content-manager/pages/ListView/components/FieldPicker/index.js
 packages/core/admin/admin/src/content-manager/pages/ListView/components/ConfirmDialogDelete/index.js
+packages/core/admin/admin/src/content-manager/pages/ListView/components/TableRows/index.js
 packages/core/admin/admin/src/content-manager/pages/ListView/components/ConfirmDialogDeleteAll/index.js
 packages/core/admin/admin/src/content-manager/pages/ListView/components/CellContent/RelationSingle/index.js
 packages/core/admin/admin/src/content-manager/pages/ListView/components/CellContent/RelationSingle/tests/__snapshots__/index.test.js.snap
@@ -1977,8 +1977,6 @@ packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/WorkflowAttributes/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/WorkflowAttributes/tests/WorkflowAttributes.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/WorkflowAttributes/WorkflowAttributes.js
-packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/ProtectedPage/index.js
-packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/ProtectedPage/ProtectedPage.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/actions/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/actions/tests/index.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/constants.js
@@ -2011,6 +2009,7 @@ packages/core/admin/ee/admin/hooks/useAuthProviders/index.js
 packages/core/admin/ee/admin/hooks/useAuthProviders/tests/reducer.test.js
 packages/core/admin/ee/admin/hooks/useAuthProviders/reducer.js
 packages/core/admin/ee/admin/hooks/useSettingsMenu/constants.js
+packages/core/admin/ee/admin/hooks/useLicenseLimits/__mocks__/index.js
 packages/core/admin/ee/admin/hooks/useLicenseLimits/index.js
 packages/core/admin/ee/admin/hooks/useLicenseLimits/tests/index.test.js
 packages/core/admin/ee/admin/hooks/useLicenseLimits/useLicenseLimits.js
@@ -3064,6 +3063,7 @@ packages/admin-test-utils/src/fixtures/meta-data/index.ts
 packages/admin-test-utils/src/fixtures/permissions/admin-permissions.ts
 packages/admin-test-utils/src/fixtures/permissions/content-type-builder-permissions.ts
 packages/admin-test-utils/src/fixtures/permissions/index.ts
+packages/admin-test-utils/src/fixtures/permissions/documentation-permissions.ts
 packages/admin-test-utils/src/fixtures/permissions/content-manager-permissions.ts
 packages/admin-test-utils/src/fixtures/index.ts
 packages/admin-test-utils/src/fixtures/collection-types/address.ts
@@ -3107,20 +3107,14 @@ packages/plugins/documentation/server/public/index.html
 packages/plugins/documentation/server/public/login.html
 packages/plugins/documentation/README.md
 packages/plugins/documentation/admin/src/index.js
-packages/plugins/documentation/admin/src/components/FieldActionWrapper/index.js
-packages/plugins/documentation/admin/src/components/PluginIcon/index.js
 packages/plugins/documentation/admin/src/pluginId.js
 packages/plugins/documentation/admin/src/constants.js
 packages/plugins/documentation/admin/src/pages/PluginPage/index.js
-packages/plugins/documentation/admin/src/pages/PluginPage/tests/server.js
 packages/plugins/documentation/admin/src/pages/PluginPage/tests/index.test.js
 packages/plugins/documentation/admin/src/pages/SettingsPage/index.js
-packages/plugins/documentation/admin/src/pages/SettingsPage/tests/server.js
 packages/plugins/documentation/admin/src/pages/SettingsPage/tests/index.test.js
-packages/plugins/documentation/admin/src/pages/utils/schema.js
-packages/plugins/documentation/admin/src/pages/utils/useReactQuery.js
+packages/plugins/documentation/admin/src/hooks/useDocumentation.js
 packages/plugins/documentation/admin/src/utils/index.js
-packages/plugins/documentation/admin/src/utils/openWithNewTab.js
 packages/plugins/documentation/admin/src/utils/getTrad.js
 packages/plugins/documentation/admin/src/translations/ms.json
 packages/plugins/documentation/admin/src/translations/it.json
@@ -3148,6 +3142,8 @@ packages/plugins/documentation/admin/src/translations/ru.json
 packages/plugins/documentation/admin/src/translations/pt.json
 packages/plugins/documentation/package.json
 packages/plugins/documentation/.eslintignore
+packages/plugins/documentation/tests/setup.js
+packages/plugins/documentation/tests/server.js
 packages/plugins/documentation/jest.config.js
 packages/plugins/documentation/LICENSE
 packages/plugins/documentation/jest.config.front.js

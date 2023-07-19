@@ -600,6 +600,7 @@ tests/unit/php/Core/Checkout/Cart/Rule/LineItemPropertyValueRuleTest.php
 tests/unit/php/Core/Checkout/Cart/Rule/CartHasDeliveryFreeItemRuleTest.php
 tests/unit/php/Core/Checkout/Cart/Rule/LineItemVariantValueRuleTest.php
 tests/unit/php/Core/Checkout/Cart/Rule/LineItemProductStatesRuleTest.php
+tests/unit/php/Core/Checkout/Cart/Event/SalesChannelContextAssembledEventTest.php
 tests/unit/php/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/php/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
 tests/unit/php/Core/Checkout/Cart/CalculatorTest.php
@@ -4925,12 +4926,15 @@ changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-f
 changelog/_unreleased/2023-07-11-deprecate-constraint-annotations.md
 changelog/_unreleased/2023-06-28-generate-unused-media-report.md
 changelog/_unreleased/2023-07-11-fix-sync-api-json.md
+changelog/_unreleased/2023-07-19-add-saleschannelcontextassembledevent.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
+changelog/_unreleased/2023-07-18-deleting-a-customer-causes-errors-when-changing-the-order-state-of-his-order.md
 changelog/_unreleased/2023-07-07-fix-user-cannot-be-deleted-when-associating-with-a-customer.md
 changelog/_unreleased/2023-07-13-product-cover-inherited-does-not-work-anymore.md
 changelog/_unreleased/2023-06-22-document-inheritance-sw_extends-dont-work.md
 changelog/_unreleased/2023-01-31-prevent-unfiltered-payment-method-media-search.md
+changelog/_unreleased/2023-07-13-fix-cms-page-css-class.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
 changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
 changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-admin.md
@@ -9230,6 +9234,7 @@ src/Core/Checkout/Cart/Event/LineItemRemovedEvent.php
 src/Core/Checkout/Cart/Event/CartCreatedEvent.php
 src/Core/Checkout/Cart/Event/CartBeforeSerializationEvent.php
 src/Core/Checkout/Cart/Event/CheckoutOrderPlacedEvent.php
+src/Core/Checkout/Cart/Event/SalesChannelContextAssembledEvent.php
 src/Core/Checkout/Cart/Event/CartChangedEvent.php
 src/Core/Checkout/Cart/Event/CartSavedEvent.php
 src/Core/Checkout/Cart/Event/BeforeLineItemQuantityChangedEvent.php

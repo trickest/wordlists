@@ -1,7 +1,9 @@
 bin/pre-push.sh
 bin/packages/js/extend-cart-checkout-block/.prettierrc.js.mustache
 docs/README.md
+docs/snippets/unhook--remove-woocommerce-emails.md
 docs/snippets/README.md
+docs/snippets/number-of-products-per-row.md
 docs/snippets/before-login--register-form.md
 docs/HPOS.md
 changelog.txt
@@ -1629,6 +1631,7 @@ plugins/woocommerce/.eslintignore
 plugins/woocommerce/tests/bin/install.sh
 plugins/woocommerce/tests/bin/phpunit.sh
 plugins/woocommerce/tests/e2e-pw/bin/test-env-setup.sh
+plugins/woocommerce/tests/e2e-pw/bin/filter-setter.php
 plugins/woocommerce/tests/e2e-pw/README.md
 plugins/woocommerce/tests/e2e-pw/tests/activate-and-setup/basic-setup.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/activate-and-setup/setup-onboarding.spec.js
@@ -1694,6 +1697,7 @@ plugins/woocommerce/tests/e2e-pw/global-teardown.js
 plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/utils/api.js
+plugins/woocommerce/tests/e2e-pw/utils/filters.js
 plugins/woocommerce/tests/e2e-pw/utils/features.js
 plugins/woocommerce/tests/e2e-pw/utils/onboarding.js
 plugins/woocommerce/tests/e2e-pw/utils/wordpress.js
@@ -2584,8 +2588,14 @@ plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-order-functions
 plugins/woocommerce/tests/legacy/unit-tests/order/class-wc-tests-crud-orders.php
 plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
+plugins/woocommerce/changelog/enhancement-38823
+plugins/woocommerce/changelog/pr-39155
+plugins/woocommerce/changelog/fix-39310
+plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-39272
 plugins/woocommerce/changelog/dev-sync-pnpm
+plugins/woocommerce/changelog/fix-order-confirmation-access
 plugins/woocommerce/phpunit.xml
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/tsconfig.json
@@ -4326,6 +4336,7 @@ packages/js/product-editor/changelog/dev-pin-wp-deps-6
 packages/js/product-editor/changelog/add-37120_hydrate_product_editor_settings
 packages/js/product-editor/changelog/add-37249
 packages/js/product-editor/changelog/fix-38021
+packages/js/product-editor/changelog/enhancement-38823
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
 packages/js/product-editor/changelog/fix-tabs-reordering-38002
 packages/js/product-editor/changelog/add-38202
