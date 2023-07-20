@@ -2243,6 +2243,7 @@ erpnext/patches/v14_0/migrate_existing_lead_notes_as_per_the_new_format.py
 erpnext/patches/v14_0/delete_healthcare_doctypes.py
 erpnext/patches/v14_0/update_reference_due_date_in_journal_entry.py
 erpnext/patches/v14_0/fix_subcontracting_receipt_gl_entries.py
+erpnext/patches/v14_0/single_to_multi_dunning.py
 erpnext/patches/v14_0/rearrange_company_fields.py
 erpnext/patches/v14_0/create_accounting_dimensions_for_asset_capitalization.py
 erpnext/patches/v14_0/cleanup_workspaces.py
@@ -3513,6 +3514,9 @@ erpnext/accounts/doctype/journal_entry/test_records.json
 erpnext/accounts/doctype/journal_entry/journal_entry_list.js
 erpnext/accounts/doctype/journal_entry/journal_entry.json
 erpnext/accounts/doctype/journal_entry/journal_entry.js
+erpnext/accounts/doctype/overdue_payment/__init__.py
+erpnext/accounts/doctype/overdue_payment/overdue_payment.json
+erpnext/accounts/doctype/overdue_payment/overdue_payment.py
 erpnext/accounts/doctype/pos_opening_entry_detail/__init__.py
 erpnext/accounts/doctype/pos_opening_entry_detail/pos_opening_entry_detail.json
 erpnext/accounts/doctype/pos_opening_entry_detail/pos_opening_entry_detail.py
@@ -3716,7 +3720,6 @@ erpnext/accounts/doctype/dunning/dunning.json
 erpnext/accounts/doctype/dunning/test_dunning.py
 erpnext/accounts/doctype/dunning/dunning.py
 erpnext/accounts/doctype/dunning/dunning.js
-erpnext/accounts/doctype/dunning/dunning_dashboard.py
 erpnext/accounts/doctype/exchange_rate_revaluation_account/__init__.py
 erpnext/accounts/doctype/exchange_rate_revaluation_account/exchange_rate_revaluation_account.json
 erpnext/accounts/doctype/exchange_rate_revaluation_account/exchange_rate_revaluation_account.py
@@ -3882,6 +3885,7 @@ erpnext/accounts/doctype/payment_order_reference/__init__.py
 erpnext/accounts/doctype/payment_order_reference/payment_order_reference.json
 erpnext/accounts/doctype/dunning_type/dunning_type.py
 erpnext/accounts/doctype/dunning_type/__init__.py
+erpnext/accounts/doctype/dunning_type/test_records.json
 erpnext/accounts/doctype/dunning_type/dunning_type.js
 erpnext/accounts/doctype/dunning_type/dunning_type.json
 erpnext/accounts/doctype/dunning_type/test_dunning_type.py

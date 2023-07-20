@@ -100,6 +100,7 @@ tests/unit/php/Core/Maintenance/User/Service/UserProvisionerTest.php
 tests/unit/php/Core/Maintenance/SalesChannel/Command/SalesChannelCreateCommandTest.php
 tests/unit/php/Core/Core/System/SystemConfig/Exception/ConfigurationNotFoundExceptionTest.php
 tests/unit/php/Core/Core/System/SystemConfig/Event/SystemConfigChangedHookTest.php
+tests/unit/php/Core/Core/System/Currency/CurrencyFormatterTest.php
 tests/unit/php/Core/System/Salutation/SalutationSorterTest.php
 tests/unit/php/Core/System/Salutation/SalesChannel/CachedSalutationRouteTest.php
 tests/unit/php/Core/System/CustomEntity/CustomEntityLifecycleServiceTest.php
@@ -488,6 +489,7 @@ tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/RemoveOldFlowStor
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/EntityCompilerPassTest.php
+tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/RemoveEventListenerTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/DemodataCompilerPassTest.php
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/fixtures/secondAppPath/Resources/app/storefront/dist/.gitkeep
 tests/unit/php/Core/Framework/DependencyInjection/CompilerPass/fixtures/secondAppPath/Resources/views/.gitkeep
@@ -604,7 +606,10 @@ tests/unit/php/Core/Checkout/Cart/Event/SalesChannelContextAssembledEventTest.ph
 tests/unit/php/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/php/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
 tests/unit/php/Core/Checkout/Cart/CalculatorTest.php
+tests/unit/php/Core/Checkout/Cart/CartFactoryTest.php
+tests/unit/php/Core/Checkout/Cart/SalesChannel/CartServiceTest.php
 tests/unit/php/Core/Checkout/Cart/SalesChannel/CartItemAddRouteTest.php
+tests/unit/php/Core/Checkout/Cart/SalesChannel/CartLoadRouteTest.php
 tests/unit/php/Core/Checkout/Cart/Order/TestError.php
 tests/unit/php/Core/Checkout/Cart/Order/RedisCartPersisterTest.php
 tests/unit/php/Core/Checkout/Cart/Order/CartTest.php
@@ -615,6 +620,7 @@ tests/unit/php/Core/Checkout/Cart/Order/Transformer/CustomerTransformerTest.php
 tests/unit/php/Core/Checkout/Cart/Order/ErrorCollectionTest.php
 tests/unit/php/Core/Checkout/Cart/Order/ValidatorTest.php
 tests/unit/php/Core/Checkout/Cart/Order/RecalculationServiceTest.php
+tests/unit/php/Core/Checkout/Cart/Hook/CartHookTest.php
 tests/unit/php/Core/Checkout/Cart/Facade/ContainerFacadeTest.php
 tests/unit/php/Core/Checkout/Cart/Facade/ErrorsFacadeTest.php
 tests/unit/php/Core/Checkout/Cart/Facade/CartFacadeTest.php
@@ -639,6 +645,7 @@ tests/unit/php/Core/Checkout/Cart/TaxProvider/Struct/TaxProviderStructTest.php
 tests/unit/php/Core/Checkout/Cart/TaxProvider/TaxProviderProcessorTest.php
 tests/unit/php/Core/Checkout/Cart/TaxProvider/TaxAdjustmentCalculatorTest.php
 tests/unit/php/Core/Checkout/Cart/TaxProvider/TaxAdjustmentTest.php
+tests/unit/php/Core/Checkout/Cart/CartRuleLoaderTest.php
 tests/unit/php/Core/Checkout/Cart/Promotion/Exception/PromotionCodeNotFoundExceptionTest.php
 tests/unit/php/Core/Checkout/Cart/Promotion/Exception/CodeAlreadyRedeemedExceptionTest.php
 tests/unit/php/Core/Checkout/Cart/Promotion/PromotionEntityTest.php
@@ -905,6 +912,7 @@ tests/unit/php/Storefront/Page/Product/ProductPageLoaderTest.php
 tests/unit/php/Storefront/Page/Account/Overview/AccountOverviewPageLoaderTest.php
 tests/unit/php/Storefront/Page/Checkout/Finish/CheckoutFinishPageLoaderTest.php
 tests/unit/php/Storefront/Page/Checkout/Offcanvas/OffcanvasCartPageLoaderTest.php
+tests/unit/php/Storefront/Page/Checkout/CheckoutPageLoadedHookTest.php
 tests/unit/php/Storefront/Page/Checkout/Confirm/CheckoutConfirmPageLoaderTest.php
 tests/unit/php/Storefront/Page/LandingPage/LandingPageLoaderTest.php
 tests/unit/php/Storefront/Checkout/Payment/BlockedPaymentMethodSwitcherTest.php
@@ -1097,6 +1105,7 @@ tests/migration/Core/V6_5/Migration1659425718AddFlagsToCustomEntitiesTest.php
 tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1673860323ChangeDefaultProductComparisonIconTest.php
 tests/migration/Core/V6_5/Migration1688556247FixCoverMediaVersionIDTest.php
+tests/migration/Core/V6_5/Migration1689776940AddCartSourceFieldTest.php
 tests/migration/Core/V6_5/Migration1688106315AddMissingTransactionMailTemplatesTest.php
 tests/migration/Core/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimalTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
@@ -1852,6 +1861,7 @@ tests/integration/php/Core/Checkout/Customer/SalesChannel/RegisterRouteTest.php
 tests/integration/php/Core/Checkout/Customer/Subscriber/ProductReviewSubscriberTest.php
 tests/integration/php/Core/Checkout/Cart/CartPersisterTest.php
 tests/integration/php/Core/Checkout/Cart/PriceActionControllerTest.php
+tests/integration/php/Core/Checkout/Cart/SalesChannel/CartServiceTest.php
 tests/integration/php/Core/Checkout/Cart/SalesChannel/CartOrderRouteTest.php
 tests/integration/php/Core/Checkout/Cart/fixtures/cart.blob
 tests/integration/php/Core/Checkout/Cart/Facade/_fixtures/cart-facade-tests/Resources/scripts/add-errors/add-errors.twig
@@ -4901,6 +4911,7 @@ changelog/_unreleased/2023-07-10-remove-body-from-footer-tpl.md
 changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
 changelog/_unreleased/2023-07-17-adding-association-for-order-storer.md
 changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-name.md
+changelog/_unreleased/2023-07-18-replace-admin-worker-with-shared-worker.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-06-05-added-handler-for-route-changes-inside-apps.md
@@ -4910,11 +4921,14 @@ changelog/_unreleased/2023-07-05-update-sizing-of-icons-on-settings-searchable-c
 changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
 changelog/_unreleased/2023-07-12-remove-aciton-button-from-storefront-account-overview.md
 changelog/_unreleased/2023-07-03-add-generic-template-to-entityrepository.md
+changelog/_unreleased/2023-07-02-remove-not-needed-cache-hash-creation-for-cache-in-the-currencyformatter.md
 changelog/_unreleased/2023-05-17-allow-disabling-fine-grained-config-caching.md
 changelog/_unreleased/2023-06-20-apply-domain-exception-for-media.md
 changelog/_unreleased/2023-07-10-fix-the-render-error-message.md
 changelog/_unreleased/2023-07-06-fix-data-handling-types.md
+changelog/_unreleased/2023-07-12-add-storefront-controller-endpoints-to-change-or-delete-multiple-line-items-at-once.md
 changelog/_unreleased/2023-05-23-store-asset-manifest-in-the-private-filesystem.md
+changelog/_unreleased/2023-07-18-enhance-sorting-on-sw-entity-listing.md
 changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
 changelog/_unreleased/2023-07-11-add-a-elasticsearch-mapping-update-command.md
@@ -4938,9 +4952,11 @@ changelog/_unreleased/2023-07-13-fix-cms-page-css-class.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
 changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
 changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-admin.md
+changelog/_unreleased/2023-07-18-cache-invalidation-manipulation.md
 changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
 changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
 changelog/_unreleased/2022-07-04-mail-attach.md
+changelog/_unreleased/2023-07-19-add-cart-dependent-hooks.md
 changelog/_unreleased/2023-07-07-fix-address-validation-definition-in-register-route.md
 changelog/_unreleased/2023-07-06-fix-settings-customer-groups-listing-pagination.md
 changelog/_unreleased/2023-07-11-make-app-components-to-be-appropriately-updated.md
@@ -5478,6 +5494,7 @@ adr/2021-12-07-admin-extension-api-standards.md
 adr/2022-03-15-extract-data-handling-classes-to-extension-sdk.md
 adr/2023-02-02-flow-storer-with-scalar-values.md
 adr/2022-05-23-rule-condition-field-abstraction.md
+adr/2023-05-10-experimental-features.md
 adr/2021-11-22-merge-e2e-projects-into-a-single-project.md
 adr/2022-10-20-deprecation-handling-during-phpunit-test-execution.md
 adr/2023-02-02-deprecate-autoload-true-in-dal-associations.md
@@ -5585,8 +5602,8 @@ vendor-bin/rector/composer.json
 vendor-bin/cs-fixer/composer.json
 vendor-bin/roave-backward-compatibility-check/bin/verify-version.php
 vendor-bin/roave-backward-compatibility-check/phpunit.xml.dist
-vendor-bin/roave-backward-compatibility-check/patches/add-composer-2.patch
 vendor-bin/roave-backward-compatibility-check/patches/add-exclude-errors.patch
+vendor-bin/roave-backward-compatibility-check/patches/skip-experimental.patch
 vendor-bin/roave-backward-compatibility-check/patches/add-exclude-files.patch
 vendor-bin/roave-backward-compatibility-check/composer.json
 .run/Storefront Cypress.run.xml
@@ -6758,6 +6775,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/indexing.js
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/index-products.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_transaction_capture_refund.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/number-range.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/flowBulderActionsResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/OAuthScopes.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/businessEventsResponse.json
@@ -6791,6 +6809,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/shipping-me
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/newsletter.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/product-export.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/product-listing.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/ContextTokenResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/CrossSellingElementCollection.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/EntitySearchResult.json
@@ -8182,7 +8201,6 @@ src/Core/Framework/Test/Asset/AssetPackageServiceTest.php
 src/Core/Framework/Test/Asset/PrefixVersionStrategyTest.php
 src/Core/Framework/Test/Asset/FlysystemLastModifiedVersionStrategyTest.php
 src/Core/Framework/Test/Asset/FallbackUrlPackageTest.php
-src/Core/Framework/Test/DeprecatedTagTest.php
 src/Core/Framework/Test/IdsCollection.php
 src/Core/Framework/Test/TestBundle.php
 src/Core/Framework/Test/FeatureFlag/_fixture/featuretest.html.twig
@@ -8217,6 +8235,8 @@ src/Core/Framework/Test/Webhook/Hookable/HookableEventFactoryTest.php
 src/Core/Framework/Test/Webhook/WebhookDispatcherTest.php
 src/Core/Framework/Test/Webhook/Subscriber/RetryWebhookMessageFailedSubscriberTest.php
 src/Core/Framework/Test/Webhook/WebhookCacheClearerTest.php
+src/Core/Framework/Test/AnnotationTagTesterTest.php
+src/Core/Framework/Test/AnnotationTagTest.php
 src/Core/Framework/Test/Cache/CacheClearerTest.php
 src/Core/Framework/Test/Cache/CacheIdLoaderTest.php
 src/Core/Framework/Test/Store/Api/StoreControllerTest.php
@@ -8268,7 +8288,6 @@ src/Core/Framework/Test/Store/Struct/PermissionCollectionTest.php
 src/Core/Framework/Test/Store/Command/StoreLoginCommandTest.php
 src/Core/Framework/Test/Store/StoreClientBehaviour.php
 src/Core/Framework/Test/Store/Subscriber/LicenseHostChangedSubscriberTest.php
-src/Core/Framework/Test/DeprecationTagTester.php
 src/Core/Framework/Test/Struct/CollectionTest.php
 src/Core/Framework/Test/Script/Api/ScriptStoreApiRouteTest.php
 src/Core/Framework/Test/Script/Api/ScriptApiRouteTest.php
@@ -8639,6 +8658,7 @@ src/Core/Framework/Test/Adapter/Cache/Script/_fixtures/InvalidationCases/Resourc
 src/Core/Framework/Test/Adapter/Cache/Script/_fixtures/InvalidationCases/manifest.xml
 src/Core/Framework/Test/Adapter/Cache/Script/ScriptCacheInvalidationSubscriberTest.php
 src/Core/Framework/Test/Adapter/Cache/CacheInvalidationSubscriberTest.php
+src/Core/Framework/Test/AnnotationTagTester.php
 src/Core/Framework/Test/TestCaseBase/TranslationTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/EnvTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/MailTemplateTestBehaviour.php
@@ -8666,7 +8686,6 @@ src/Core/Framework/Test/TestCaseBase/QueueTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/BasicTestDataBehaviour.php
 src/Core/Framework/Test/TestCaseBase/RequestStackTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/FilesystemBehaviourTest.php
-src/Core/Framework/Test/DeprecationTagTesterTest.php
 src/Core/Framework/DependencyInjection/rule.xml
 src/Core/Framework/DependencyInjection/api.xml
 src/Core/Framework/DependencyInjection/message-queue.xml
@@ -8694,6 +8713,7 @@ src/Core/Framework/DependencyInjection/CompilerPass/RedisPrefixCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetRegistrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/DemodataCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RemoveOldFlowStorerCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/RemoveEventListener.php
 src/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPass.php
@@ -8711,6 +8731,7 @@ src/Core/Framework/DependencyInjection/seo.xml
 src/Core/Framework/DependencyInjection/data-abstraction-layer.xml
 src/Core/Framework/DependencyInjection/webhook.xml
 src/Core/Framework/DependencyInjection/event.xml
+src/Core/Framework/DependencyInjection/cache.xml
 src/Core/Framework/Adapter/Twig/TemplateIterator.php
 src/Core/Framework/Adapter/Twig/Exception/StringTemplateRenderingException.php
 src/Core/Framework/Adapter/Twig/TemplateFinder.php
@@ -9225,6 +9246,7 @@ src/Core/Checkout/Cart/Rule/LineItemOfManufacturerRule.php
 src/Core/Checkout/Cart/Rule/CartWeightRule.php
 src/Core/Checkout/Cart/Rule/LineItemPropertyValueRule.php
 src/Core/Checkout/Cart/Rule/LineItemProductStatesRule.php
+src/Core/Checkout/Cart/CartFactory.php
 src/Core/Checkout/Cart/CartValueResolver.php
 src/Core/Checkout/Cart/Calculator.php
 src/Core/Checkout/Cart/CartBehavior.php
@@ -9244,6 +9266,7 @@ src/Core/Checkout/Cart/Event/BeforeLineItemRemovedEvent.php
 src/Core/Checkout/Cart/Event/CartMergedEvent.php
 src/Core/Checkout/Cart/Event/BeforeLineItemAddedEvent.php
 src/Core/Checkout/Cart/Event/CartDeletedEvent.php
+src/Core/Checkout/Cart/Event/CartLoadedEvent.php
 src/Core/Checkout/Cart/Event/AfterLineItemRemovedEvent.php
 src/Core/Checkout/Cart/Event/AfterLineItemAddedEvent.php
 src/Core/Checkout/Cart/AbstractRuleLoader.php
@@ -9546,7 +9569,6 @@ src/Core/Checkout/Test/Customer/Subscriber/CustomerChangePasswordSubscriberTest.
 src/Core/Checkout/Test/Customer/Subscriber/CustomerRemoteAddressSubscriberTest.php
 src/Core/Checkout/Test/Customer/DeleteUnusedGuestCustomerServiceTest.php
 src/Core/Checkout/Test/Customer/AccountServiceTest.php
-src/Core/Checkout/Test/Cart/CartServiceTest.php
 src/Core/Checkout/Test/Cart/LineItem/LineItemQuantitySplitterTest.php
 src/Core/Checkout/Test/Cart/LineItem/Group/Packager/LineItemGroupCountPackagerTest.php
 src/Core/Checkout/Test/Cart/LineItem/Group/Packager/LineItemGroupUnitPriceGrossPackagerTest.php
@@ -11753,6 +11775,7 @@ src/Core/Migration/V6_5/Migration1669125399DropEnqueueTable.php
 src/Core/Migration/V6_5/Migration1669124190AddDoctrineMessengerTable.php
 src/Core/Migration/V6_5/Migration1675082889DropUnusedTables.php
 src/Core/Migration/V6_5/Migration1670854818RemoveEventActionTable.php
+src/Core/Migration/V6_5/Migration1689776940AddCartSourceField.php
 src/Core/Migration/V6_5/Migration1680789830AddCustomFieldsAwareToCustomEntities.php
 src/Core/Migration/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimal.php
 src/Core/Migration/V6_5/Migration1671723392AddWebhookLifetimeConfig.php
@@ -16552,10 +16575,10 @@ src/Administration/Resources/app/administration/src/module/sw-settings-store/pag
 src/Administration/Resources/app/administration/src/module/sw-settings-store/page/sw-settings-store/sw-settings-store.spec.js
 src/Administration/Resources/app/administration/src/html-shim.d.ts
 src/Administration/Resources/app/administration/src/index.ts
-src/Administration/Resources/app/administration/src/core/worker/admin-worker.worker.spec.js
 src/Administration/Resources/app/administration/src/core/worker/worker-notification-listener.js
 src/Administration/Resources/app/administration/src/core/worker/admin-notification-worker.js
-src/Administration/Resources/app/administration/src/core/worker/admin-worker.worker.js
+src/Administration/Resources/app/administration/src/core/worker/admin-worker.shared-worker.spec.js
+src/Administration/Resources/app/administration/src/core/worker/admin-worker.shared-worker.js
 src/Administration/Resources/app/administration/src/core/data/error-resolver.data.js
 src/Administration/Resources/app/administration/src/core/data/entity-hydrator.data.ts
 src/Administration/Resources/app/administration/src/core/data/error-resolver.system-config.data.spec.js

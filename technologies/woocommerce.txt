@@ -1358,8 +1358,12 @@ plugins/woocommerce-docs/package.json
 plugins/woocommerce-docs/webpack.config.js
 plugins/woocommerce-docs/tests/bootstrap.php
 plugins/woocommerce-docs/tests/src/Blocks/BlockConverterTest.php
+plugins/woocommerce-docs/tests/src/Blocks/fixtures/no-frontmatter.md
 plugins/woocommerce-docs/tests/src/Blocks/fixtures/expected.html
 plugins/woocommerce-docs/tests/src/Blocks/fixtures/test.md
+plugins/woocommerce-docs/tests/src/Manifest/PostCreatorTest.php
+plugins/woocommerce-docs/tests/src/Manifest/PostArgsTest.php
+plugins/woocommerce-docs/tests/src/Manifest/CategoryCreatorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/ManifestProcessorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/fixtures/manifest.json
 plugins/woocommerce-docs/tests/src/Manifest/fixtures/test.md
@@ -1379,7 +1383,10 @@ plugins/woocommerce-docs/composer.json
 plugins/woocommerce-docs/src/API/ManifestAPI.php
 plugins/woocommerce-docs/src/API/JobAPI.php
 plugins/woocommerce-docs/src/Blocks/BlockConverter.php
+plugins/woocommerce-docs/src/Manifest/CategoryCreator.php
 plugins/woocommerce-docs/src/Manifest/ManifestProcessor.php
+plugins/woocommerce-docs/src/Manifest/PostCreator.php
+plugins/woocommerce-docs/src/Manifest/PostArgs.php
 plugins/woocommerce-docs/src/Data/ManifestStore.php
 plugins/woocommerce-docs/src/Data/DocsStore.php
 plugins/woocommerce-docs/src/Job/ManifestJob.php
@@ -2590,12 +2597,10 @@ plugins/woocommerce/tests/legacy/unit-tests/templates/functions.php
 plugins/woocommerce/tests/legacy/unit-tests/formatting/functions.php
 plugins/woocommerce/changelog/enhancement-38823
 plugins/woocommerce/changelog/pr-39155
-plugins/woocommerce/changelog/fix-39310
 plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-39272
 plugins/woocommerce/changelog/dev-sync-pnpm
-plugins/woocommerce/changelog/fix-order-confirmation-access
 plugins/woocommerce/phpunit.xml
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/tsconfig.json
@@ -4328,6 +4333,7 @@ packages/js/product-editor/changelog/update-move-product-hooks
 packages/js/product-editor/changelog/fix-38020-2
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/update-37727
+packages/js/product-editor/changelog/update-name-validation
 packages/js/product-editor/changelog/add-37241-blocks-build
 packages/js/product-editor/changelog/update-remove-editor-styles-wrapper
 packages/js/product-editor/changelog/add-38200

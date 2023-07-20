@@ -349,6 +349,8 @@ apps/admin-x-settings/tsconfig.node.json
 apps/admin-x-settings/public/vite.svg
 apps/admin-x-settings/vite.config.ts
 apps/admin-x-settings/src/models/themes.ts
+apps/admin-x-settings/src/assets/images/stripe-emblem.svg
+apps/admin-x-settings/src/assets/images/stripe-verified.svg
 apps/admin-x-settings/src/assets/icons/portal-icon-2.svg
 apps/admin-x-settings/src/assets/icons/portal-icon-4.svg
 apps/admin-x-settings/src/assets/icons/portal-icon-3.svg
@@ -371,6 +373,7 @@ apps/admin-x-settings/src/components/settings/membership/portal/LookAndFeel.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalLinks.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/AccountPage.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/SignupOptions.tsx
+apps/admin-x-settings/src/components/settings/membership/stripe/StripeConnectModal.tsx
 apps/admin-x-settings/src/components/settings/membership/Analytics.tsx
 apps/admin-x-settings/src/components/settings/membership/MembershipSettings.tsx
 apps/admin-x-settings/src/components/settings/membership/Portal.tsx
@@ -437,6 +440,8 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/mobile.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/thumbs-up.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/laptop.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/align-left.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/align-center.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/magnifying-glass.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/check-circle.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/single-user-neutral-block.svg
@@ -461,6 +466,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-up.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-unlocked.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/thumbs-down.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/link-broken.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/money-bags.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-left.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/crown.svg
@@ -584,7 +590,9 @@ apps/admin-x-settings/src/admin-x-ds/settings/SettingSection.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingSectionHeader.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingNavItem.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingSectionHeader.tsx
+apps/admin-x-settings/src/admin-x-ds/settings/StripeButton.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingNavSection.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/settings/StripeButton.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingSection.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingGroupContent.tsx
 apps/admin-x-settings/src/App.tsx
