@@ -341,7 +341,6 @@ core/profiles/demo_umami/config/install/language.entity.es.yml
 core/profiles/demo_umami/config/install/responsive_image.styles.hero_or_banner.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.contact_message.feedback.default.yml
 core/profiles/demo_umami/config/install/node.type.recipe.yml
-core/profiles/demo_umami/config/install/views.view.related_recipes.yml
 core/profiles/demo_umami/config/install/field.field.block_content.banner_block.field_title.yml
 core/profiles/demo_umami/config/install/field.field.block_content.footer_promo_block.field_summary.yml
 core/profiles/demo_umami/config/install/media.type.document.yml
@@ -3369,11 +3368,13 @@ core/lib/Drupal/Core/Field/PreconfiguredFieldUiOptionsInterface.php
 core/lib/Drupal/Core/Field/EntityReferenceFieldItemListInterface.php
 core/lib/Drupal/Core/Field/FieldStorageDefinitionListener.php
 core/lib/Drupal/Core/Field/FieldStorageDefinitionEvent.php
+core/lib/Drupal/Core/Field/FieldTypeCategoryManager.php
 core/lib/Drupal/Core/Field/FieldItemInterface.php
 core/lib/Drupal/Core/Field/FieldItemList.php
 core/lib/Drupal/Core/Field/MapFieldItemList.php
 core/lib/Drupal/Core/Field/FieldFilteredMarkup.php
 core/lib/Drupal/Core/Field/PluginSettingsInterface.php
+core/lib/Drupal/Core/Field/FallbackFieldTypeCategory.php
 core/lib/Drupal/Core/Field/Plugin/DataType/Deriver/FieldItemDeriver.php
 core/lib/Drupal/Core/Field/Plugin/DataType/FieldItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldFormatter/MailToFormatter.php
@@ -3424,6 +3425,8 @@ core/lib/Drupal/Core/Field/Plugin/Field/FieldType/NumericItemBase.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/EntityReferenceItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/LanguageItem.php
 core/lib/Drupal/Core/Field/Plugin/Field/FieldType/ChangedItem.php
+core/lib/Drupal/Core/Field/FieldTypeCategory.php
+core/lib/Drupal/Core/Field/FieldTypeCategoryManagerInterface.php
 core/lib/Drupal/Core/Field/PluginSettingsBase.php
 core/lib/Drupal/Core/Field/EntityReferenceFieldItemList.php
 core/lib/Drupal/Core/Field/DeletedFieldsRepository.php
@@ -3452,6 +3455,7 @@ core/lib/Drupal/Core/Field/FieldItemListInterface.php
 core/lib/Drupal/Core/Field/FieldInputValueNormalizerTrait.php
 core/lib/Drupal/Core/Field/Entity/BaseFieldOverride.php
 core/lib/Drupal/Core/Field/RequiredFieldStorageDefinitionInterface.php
+core/lib/Drupal/Core/Field/FieldTypeCategoryInterface.php
 core/lib/Drupal/Core/Field/FormatterPluginManager.php
 core/lib/Drupal/Core/Field/FieldStorageDefinitionListenerInterface.php
 core/lib/Drupal/Core/Field/BaseFieldDefinition.php
@@ -5708,6 +5712,7 @@ core/modules/system/tests/src/Kernel/Scripts/DbToolsApplicationTest.php
 core/modules/system/tests/src/Kernel/Scripts/DbImportCommandTest.php
 core/modules/system/tests/src/Kernel/SecurityAdvisories/SecurityAdvisoriesFetcherTest.php
 core/modules/system/tests/src/Kernel/Mail/MailTest.php
+core/modules/system/tests/src/Kernel/ModuleAdminLinksHelperTest.php
 core/modules/system/tests/src/Kernel/PermissionsTest.php
 core/modules/system/tests/src/Kernel/DecoratedServiceTest.php
 core/modules/system/tests/src/Kernel/Extension/ModuleHandlerTest.php
@@ -5780,6 +5785,7 @@ core/modules/system/tests/src/Functional/Update/PasswordCompatibilityUpdateTest.
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
 core/modules/system/tests/src/Functional/Update/README.txt
 core/modules/system/tests/src/Functional/Update/BatchBidSerialUpdateTest.php
+core/modules/system/tests/src/Functional/Update/UpdateDescriptionConfigurationPostUpdate.php
 core/modules/system/tests/src/Functional/Update/MenuLinksetSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/Y2038TimestampUpdateTest.php
@@ -6078,6 +6084,7 @@ core/modules/system/templates/block--local-actions-block.html.twig
 core/modules/system/templates/entity-page-title.html.twig
 core/modules/system/templates/maintenance-task-list.html.twig
 core/modules/system/system.info.yml
+core/modules/system/src/ModuleAdminLinksHelper.php
 core/modules/system/src/Tests/Routing/MockRouteProvider.php
 core/modules/system/src/Tests/Routing/MockAliasManager.php
 core/modules/system/src/Element/StatusReportPage.php
@@ -7777,6 +7784,7 @@ core/modules/file/migrations/d7_file.yml
 core/modules/file/migrations/d7_file_private.yml
 core/modules/file/migrations/d6_upload_entity_display.yml
 core/modules/file/migrations/d6_upload_field_instance.yml
+core/modules/file/file.field_type_categories.yml
 core/modules/file/file.post_update.php
 core/modules/file/file.module
 core/modules/file/templates/file-video.html.twig
@@ -8471,6 +8479,7 @@ core/modules/user/tests/modules/user_test_views/user_test_views.info.yml
 core/modules/user/tests/themes/user_test_theme/user_test_theme.info.yml
 core/modules/user/tests/themes/user_test_theme/user.html.twig
 core/modules/user/tests/src/Kernel/UserAnonymousActivateTest.php
+core/modules/user/tests/src/Kernel/ModulePermissionsLinkHelperTest.php
 core/modules/user/tests/src/Kernel/UserAccountFormPasswordResetTest.php
 core/modules/user/tests/src/Kernel/Migrate/d7/MigrateUserRoleTest.php
 core/modules/user/tests/src/Kernel/Migrate/d7/ProfileFieldCheckRequirementsTest.php
@@ -8766,6 +8775,7 @@ core/modules/user/src/TimeZoneItem.php
 core/modules/user/src/RoleListBuilder.php
 core/modules/user/src/UserDataInterface.php
 core/modules/user/src/AccountForm.php
+core/modules/user/src/ModulePermissionsLinkHelper.php
 core/modules/user/src/RoleForm.php
 core/modules/user/src/UserInterface.php
 core/modules/user/src/Theme/AdminNegotiator.php
@@ -9793,6 +9803,7 @@ core/modules/field/tests/modules/field_test_views/test_views/views.view.test_vie
 core/modules/field/tests/modules/field_test_views/field_test_views.info.yml
 core/modules/field/tests/modules/field_plugins_test/field_plugins_test.info.yml
 core/modules/field/tests/modules/field_plugins_test/config/schema/field_plugins_test.schema.yml
+core/modules/field/tests/modules/field_plugins_test/field_plugins_test.field_type_categories.yml
 core/modules/field/tests/modules/field_plugins_test/src/Plugin/Field/FieldFormatter/TestTextTrimmedFormatter.php
 core/modules/field/tests/modules/field_plugins_test/src/Plugin/Field/FieldWidget/TestTextfieldWidget.php
 core/modules/field/tests/modules/field_third_party_test/field_third_party_test.info.yml
@@ -9854,6 +9865,7 @@ core/modules/field/tests/src/Kernel/Number/NumberItemTest.php
 core/modules/field/tests/src/Kernel/Views/HandlerFieldFieldTest.php
 core/modules/field/tests/src/Kernel/TestItemTest.php
 core/modules/field/tests/src/Kernel/WidgetPluginManagerTest.php
+core/modules/field/tests/src/Kernel/FieldTypeCategoryDiscoveryTest.php
 core/modules/field/tests/src/Kernel/FieldStorageCrudTest.php
 core/modules/field/tests/src/Kernel/FieldAttachStorageTest.php
 core/modules/field/tests/src/Kernel/TestItemWithDependenciesTest.php
@@ -11127,6 +11139,7 @@ core/modules/text/config/schema/text.schema.yml
 core/modules/text/migrations/state/text.migrate_drupal.yml
 core/modules/text/migrations/text_settings.yml
 core/modules/text/text.js
+core/modules/text/text.field_type_categories.yml
 core/modules/text/src/Plugin/migrate/field/d7/TextField.php
 core/modules/text/src/Plugin/migrate/field/d6/TextField.php
 core/modules/text/src/Plugin/Field/FieldFormatter/TextDefaultFormatter.php
@@ -11661,6 +11674,7 @@ core/modules/migrate/src/Row.php
 core/modules/migrate/src/EntityFieldDefinitionTrait.php
 core/modules/migrate/src/MigrateLookupInterface.php
 core/modules/migrate/src/MigrateExecutable.php
+core/modules/options/options.field_type_categories.yml
 core/modules/options/options.module
 core/modules/options/options.info.yml
 core/modules/options/tests/options_test/options_test.module
@@ -13204,6 +13218,7 @@ core/modules/update/tests/src/Functional/UpdateUploaderTestBase.php
 core/modules/update/tests/src/Functional/UpdateSemverTestBase.php
 core/modules/update/tests/src/Functional/FileTransferAuthorizeFormTest.php
 core/modules/update/tests/src/Functional/UpdateManagerUpdateTest.php
+core/modules/update/tests/src/Functional/UpdateTestTrait.php
 core/modules/update/update.permissions.yml
 core/modules/update/update.api.php
 core/modules/update/update.authorize.inc
@@ -14519,6 +14534,7 @@ core/tests/Drupal/KernelTests/Core/State/LegacyStateTest.php
 core/tests/Drupal/KernelTests/Core/Layout/IconBuilderTest.php
 core/tests/Drupal/KernelTests/Core/Ajax/CommandsTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigOverridesPriorityTest.php
+core/tests/Drupal/KernelTests/Core/Config/SimpleConfigValidationTest.php
 core/tests/Drupal/KernelTests/Core/Config/ExportStorageManagerTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigSchemaDeprecationTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigDiffTest.php
@@ -14991,6 +15007,7 @@ core/.eslintrc.legacy.json
 core/phpstan-partial.neon
 core/phpunit.xml.dist
 core/install.php
+core/core.field_type_categories.yml
 core/core.libraries.yml
 core/MAINTAINERS.txt
 core/drupalci.yml

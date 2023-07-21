@@ -7615,6 +7615,7 @@ src/Core/Domain/Meta/Command/EditMetaCommand.php
 src/Core/Domain/Meta/Command/AbstractMetaCommand.php
 src/Core/Domain/Meta/Query/GetMetaForEditing.php
 src/Core/Domain/Meta/Query/GetPagesForLayoutCustomization.php
+src/Core/Domain/OrderState/OrderStateFileUploaderInterface.php
 src/Core/Domain/OrderState/Exception/BulkDeleteOrderStateException.php
 src/Core/Domain/OrderState/Exception/MissingOrderStateRequiredFieldsException.php
 src/Core/Domain/OrderState/Exception/DeleteOrderStateException.php
@@ -7623,6 +7624,7 @@ src/Core/Domain/OrderState/Exception/OrderStateNotFoundException.php
 src/Core/Domain/OrderState/Exception/DuplicateOrderStateNameException.php
 src/Core/Domain/OrderState/Exception/OrderStateConstraintException.php
 src/Core/Domain/OrderState/Exception/InvalidOrderStateRequiredFieldsException.php
+src/Core/Domain/OrderState/Exception/OrderStateUploadFailedException.php
 src/Core/Domain/OrderState/Exception/InvalidOrderStateIdException.php
 src/Core/Domain/OrderState/CommandHandler/EditOrderStateHandlerInterface.php
 src/Core/Domain/OrderState/CommandHandler/AddOrderStateHandlerInterface.php
@@ -9527,6 +9529,7 @@ src/PrestaShopBundle/Twig/Extension/NumberExtension.php
 src/PrestaShopBundle/Twig/Extension/JsRouterMetadataExtension.php
 src/PrestaShopBundle/Twig/Extension/LocalizationExtension.php
 src/PrestaShopBundle/Twig/Extension/ColorBrightnessCalculatorExtension.php
+src/PrestaShopBundle/Twig/Extension/PathExtension.php
 src/PrestaShopBundle/Twig/Extension/DocumentationLinkExtension.php
 src/PrestaShopBundle/Resources/config/services.yml
 src/PrestaShopBundle/Resources/config/services_prod.yml
@@ -11928,6 +11931,7 @@ src/Adapter/File/HtaccessFileGenerator.php
 src/Adapter/File/RobotsTextFileGenerator.php
 src/Adapter/File/Validator/VirtualProductFileValidator.php
 src/Adapter/File/Uploader/VirtualProductFileUploader.php
+src/Adapter/File/Uploader/OrderStateFileUploader.php
 src/Adapter/File/Uploader/AttachmentFileUploader.php
 src/Adapter/Supplier/SupplierAddressProvider.php
 src/Adapter/Supplier/SupplierProductSearchProvider.php
