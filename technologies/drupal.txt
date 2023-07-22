@@ -1808,6 +1808,7 @@ core/assets/vendor/ckeditor5/heading/translations/fr.js
 core/assets/vendor/ckeditor5/heading/translations/ku.js
 core/assets/vendor/ckeditor5/heading/translations/pl.js
 core/assets/vendor/loadjs/loadjs.min.js
+core/assets/vendor/tua-body-scroll-lock/tua-bsl.umd.min.js
 core/assets/vendor/backbone/backbone.js
 core/assets/vendor/backbone/backbone-min.js.map
 core/assets/vendor/backbone/backbone-min.js
@@ -4376,6 +4377,7 @@ core/modules/config_translation/src/Plugin/Derivative/ConfigTranslationLocalTask
 core/modules/config_translation/src/Plugin/migrate/source/d6/ProfileFieldTranslation.php
 core/modules/config_translation/src/Event/ConfigTranslationEvents.php
 core/modules/config_translation/src/Event/ConfigMapperPopulateEvent.php
+core/modules/config_translation/src/ConfigEntityMapperInterface.php
 core/modules/config_translation/src/ConfigFieldMapper.php
 core/modules/config_translation/src/ConfigMapperManagerInterface.php
 core/modules/config_translation/src/ConfigMapperManager.php
@@ -5389,6 +5391,8 @@ core/modules/system/tests/modules/entity_test/src/Entity/EntityTestMulWithBundle
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTestStringId.php
 core/modules/system/tests/modules/entity_test/src/Entity/EntityTestMulRev.php
 core/modules/system/tests/modules/entity_test/src/Routing/EntityTestRoutes.php
+core/modules/system/tests/modules/unversioned_assets_test/unversioned_assets_test.info.yml
+core/modules/system/tests/modules/unversioned_assets_test/unversioned_assets_test.module
 core/modules/system/tests/modules/entity_reference_test/entity_reference_test.module
 core/modules/system/tests/modules/entity_reference_test/config/install/views.view.test_entity_reference_entity_test.yml
 core/modules/system/tests/modules/entity_reference_test/config/install/views.view.test_entity_reference.yml
@@ -7002,6 +7006,7 @@ core/modules/locale/tests/src/Kernel/LocaleConfigurableLanguageManagerTest.php
 core/modules/locale/tests/src/Kernel/LocaleStringTest.php
 core/modules/locale/tests/src/Kernel/Migrate/MigrateLocaleConfigsTest.php
 core/modules/locale/tests/src/Kernel/LocaleConfigSubscriberForeignTest.php
+core/modules/locale/tests/src/Kernel/LocaleDefaultConfigStorageTest.php
 core/modules/locale/tests/src/Kernel/LocaleTranslationTest.php
 core/modules/locale/tests/src/Kernel/LocaleConfigManagerTest.php
 core/modules/locale/tests/src/Kernel/LocaleUpdateTest.php
@@ -14333,6 +14338,7 @@ core/tests/Drupal/FunctionalTests/Libraries/ManyAssetsLoadOrderTest.php
 core/tests/Drupal/FunctionalTests/HttpKernel/CorsIntegrationTest.php
 core/tests/Drupal/FunctionalTests/HttpKernel/DestructableServiceTest.php
 core/tests/Drupal/FunctionalTests/UserHelpersTest.php
+core/tests/Drupal/FunctionalTests/Asset/UnversionedAssetTest.php
 core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTestUmami.php
 core/tests/Drupal/FunctionalTests/Asset/AssetOptimizationTest.php
 core/tests/Drupal/FunctionalTests/Image/ToolkitSetupFormTest.php
