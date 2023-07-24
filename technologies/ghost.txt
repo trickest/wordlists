@@ -472,6 +472,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-left.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/crown.svg
 apps/admin-x-settings/src/admin-x-ds/Boilerplate.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Link.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Table.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/ListHeading.tsx
 apps/admin-x-settings/src/admin-x-ds/global/List.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Button.stories.tsx
@@ -530,6 +531,7 @@ apps/admin-x-settings/src/admin-x-ds/global/modal/ModalPage.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/modal/ModalContainer.tsx
 apps/admin-x-settings/src/admin-x-ds/global/modal/Modal.tsx
 apps/admin-x-settings/src/admin-x-ds/global/modal/Modal.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/TableCell.tsx
 apps/admin-x-settings/src/admin-x-ds/global/SortableList.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Separator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Breadcrumbs.tsx
@@ -552,11 +554,13 @@ apps/admin-x-settings/src/admin-x-ds/global/ListItem.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Heading.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/SortableList.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Separator.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Table.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Icon.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Menu.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Avatar.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Breadcrumbs.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Menu.tsx
+apps/admin-x-settings/src/admin-x-ds/global/TableRow.tsx
 apps/admin-x-settings/src/admin-x-ds/experimental/assets/flow.svg
 apps/admin-x-settings/src/admin-x-ds/experimental/assets/plugin.svg
 apps/admin-x-settings/src/admin-x-ds/experimental/assets/repo.svg
@@ -1397,6 +1401,7 @@ ghost/admin/app/adapters/mention.js
 ghost/admin/app/adapters/tier.js
 ghost/admin/app/adapters/application.js
 ghost/admin/app/adapters/post.js
+ghost/admin/app/adapters/collection.js
 ghost/admin/app/adapters/base.js
 ghost/admin/app/README.md
 ghost/admin/app/routes/offer/new.js
@@ -3354,6 +3359,8 @@ ghost/core/core/server/data/migrations/versions/4.3/06-add-stripe-prices-table.j
 ghost/core/core/server/data/migrations/versions/4.3/03-add-default-product.js
 ghost/core/core/server/data/migrations/versions/4.3/04-attach-members-to-product.js
 ghost/core/core/server/data/migrations/versions/4.3/08-migrate-members-signup-setting.js
+ghost/core/core/server/data/migrations/versions/5.56/2023-07-14-10-11-12-add-email-disabled-field-to-members.js
+ghost/core/core/server/data/migrations/versions/5.56/2023-07-15-10-11-12-update-members-email-disabled-field.js
 ghost/core/core/server/data/migrations/versions/4.16/01-add-custom-theme-settings-table.js
 ghost/core/core/server/data/migrations/versions/4.1/01-fix-backup-content-permission-typo.js
 ghost/core/core/server/data/migrations/versions/4.1/02-add-unique-constraint-for-member-stripe-tables.js

@@ -927,7 +927,6 @@ erpnext/stock/dashboard_chart_source/warehouse_wise_stock_value/warehouse_wise_s
 erpnext/stock/dashboard_chart_source/warehouse_wise_stock_value/warehouse_wise_stock_value.js
 erpnext/stock/dashboard_chart_source/warehouse_wise_stock_value/warehouse_wise_stock_value.json
 erpnext/stock/utils.py
-erpnext/stock/landed_taxes_and_charges_common.js
 erpnext/stock/reorder_item.py
 erpnext/stock/print_format/__init__.py
 erpnext/stock/print_format/purchase_receipt_serial_and_batch_bundle_print/__init__.py
@@ -1340,6 +1339,7 @@ erpnext/utilities/web_form/addresses/__init__.py
 erpnext/utilities/web_form/addresses/addresses.py
 erpnext/utilities/web_form/addresses/addresses.js
 erpnext/utilities/web_form/addresses/addresses.json
+erpnext/utilities/regional.py
 erpnext/utilities/naming.py
 erpnext/utilities/bulk_transaction.py
 erpnext/utilities/report/__init__.py
@@ -1449,7 +1449,6 @@ erpnext/regional/italy/__init__.py
 erpnext/regional/italy/e-invoice.xml
 erpnext/regional/italy/utils.py
 erpnext/regional/italy/setup.py
-erpnext/regional/italy/sales_invoice.js
 erpnext/regional/south_africa/__init__.py
 erpnext/regional/south_africa/setup.py
 erpnext/regional/report/uae_vat_201/uae_vat_201.py
@@ -1588,7 +1587,6 @@ erpnext/selling/form_tour/selling_settings/selling_settings.json
 erpnext/selling/form_tour/quotation/quotation.json
 erpnext/selling/form_tour/sales_order/sales_order.json
 erpnext/selling/form_tour/customer/customer.json
-erpnext/selling/sales_common.js
 erpnext/selling/page/__init__.py
 erpnext/selling/page/sales_funnel/__init__.py
 erpnext/selling/page/sales_funnel/sales_funnel.json
@@ -4303,10 +4301,8 @@ erpnext/buying/print_format_field_template/purchase_order_taxes/purchase_order_t
 erpnext/buying/print_format_field_template/supplier_quotation_taxes/supplier_quotation_taxes.json
 erpnext/buying/print_format_field_template/supplier_quotation_taxes/__init__.py
 erpnext/public/js/queries.js
-erpnext/public/js/account_tree_grid.js
 erpnext/public/js/setup_wizard.js
 erpnext/public/js/financial_statements.js
-erpnext/public/js/agriculture/ternary_plot.js
 erpnext/public/js/projects/timer.js
 erpnext/public/js/conf.js
 erpnext/public/js/stock_analytics.js
@@ -4340,8 +4336,10 @@ erpnext/public/js/utils/contact_address_quick_entry.js
 erpnext/public/js/utils/customer_quick_entry.js
 erpnext/public/js/utils/ledger_preview.js
 erpnext/public/js/utils/crm_activities.js
+erpnext/public/js/utils/sales_common.js
 erpnext/public/js/utils/supplier_quick_entry.js
 erpnext/public/js/utils/party.js
+erpnext/public/js/utils/landed_taxes_and_charges_common.js
 erpnext/public/js/utils/barcode_scanner.js
 erpnext/public/js/utils/serial_no_batch_selector.js
 erpnext/public/js/bank_reconciliation_tool/number_card.js
@@ -4358,8 +4356,6 @@ erpnext/public/js/controllers/stock_controller.js
 erpnext/public/js/controllers/taxes_and_totals.js
 erpnext/public/js/controllers/buying.js
 erpnext/public/js/website_utils.js
-erpnext/public/js/leaflet/leaflet.js
-erpnext/public/js/leaflet/leaflet.draw.js
 erpnext/public/images/erpnext-logo.svg
 erpnext/public/images/pos.svg
 erpnext/public/images/erpnext-favicon.svg

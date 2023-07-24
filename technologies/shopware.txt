@@ -443,9 +443,12 @@ tests/unit/php/Core/Framework/Routing/RouteParamsCleanupListenerTest.php
 tests/unit/php/Core/Framework/Migration/InstallEnvironmentTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/DateIntervalFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/PriceDefinitionFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/PasswordFieldSerializerTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/CronIntervalFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/FieldSerializer/VariantListingConfigFieldSerializerTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/DataAbstractionLayerExceptionTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCustomFieldsTraitTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolverTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
@@ -474,9 +477,13 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Grouping/FieldGrouping
 tests/unit/php/Core/Framework/DataAbstractionLayer/Cache/EntityCacheKeyGeneratorTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/EntityIndexingSubscriberTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/FieldType/CronIntervalTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/FieldType/DateIntervalTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/Field/CronIntervalFieldTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/Field/DateIntervalFieldTest.php
 tests/unit/php/Core/Framework/MessageQueue/Api/ConsumeMessagesControllerTest.php
 tests/unit/php/Core/Framework/MessageQueue/MessageQueueExceptionTest.php
 tests/unit/php/Core/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
@@ -4913,6 +4920,7 @@ changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
 changelog/_unreleased/2023-07-17-adding-association-for-order-storer.md
 changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-name.md
 changelog/_unreleased/2023-07-18-replace-admin-worker-with-shared-worker.md
+changelog/_unreleased/2023-07-21-add-cron-and-date-interval-fields.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-06-05-added-handler-for-route-changes-inside-apps.md
@@ -4951,6 +4959,7 @@ changelog/_unreleased/2023-06-22-document-inheritance-sw_extends-dont-work.md
 changelog/_unreleased/2023-01-31-prevent-unfiltered-payment-method-media-search.md
 changelog/_unreleased/2023-07-13-fix-cms-page-css-class.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
+changelog/_unreleased/2023-07-23-removed-duplicate-generatethumbnailshandler-service-registration.md
 changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
 changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-admin.md
 changelog/_unreleased/2023-07-18-cache-invalidation-manipulation.md
@@ -7642,6 +7651,7 @@ src/Core/Framework/DataAbstractionLayer/FieldSerializer/StringFieldSerializer.ph
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/FieldSerializerInterface.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/CustomFieldsSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/CartPriceFieldSerializer.php
+src/Core/Framework/DataAbstractionLayer/FieldSerializer/CronIntervalFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/OneToManyAssociationFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/CreatedAtFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/ReferenceVersionFieldSerializer.php
@@ -7649,6 +7659,7 @@ src/Core/Framework/DataAbstractionLayer/FieldSerializer/IdFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/JsonFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/PHPUnserializeFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/OneToOneAssociationFieldSerializer.php
+src/Core/Framework/DataAbstractionLayer/FieldSerializer/DateIntervalFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/TaxFreeConfigFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/TimeZoneFieldSerializer.php
 src/Core/Framework/DataAbstractionLayer/FieldSerializer/LongTextFieldSerializer.php
@@ -7895,6 +7906,8 @@ src/Core/Framework/DataAbstractionLayer/Facade/AppContextCreator.php
 src/Core/Framework/DataAbstractionLayer/Facade/RepositoryWriterFacadeHookFactory.php
 src/Core/Framework/DataAbstractionLayer/Facade/SalesChannelRepositoryFacade.php
 src/Core/Framework/DataAbstractionLayer/Facade/RepositoryFacade.php
+src/Core/Framework/DataAbstractionLayer/FieldType/CronInterval.php
+src/Core/Framework/DataAbstractionLayer/FieldType/DateInterval.php
 src/Core/Framework/DataAbstractionLayer/Field/BlobField.php
 src/Core/Framework/DataAbstractionLayer/Field/ChildCountField.php
 src/Core/Framework/DataAbstractionLayer/Field/LockedField.php
@@ -7917,10 +7930,12 @@ src/Core/Framework/DataAbstractionLayer/Field/ReferenceVersionField.php
 src/Core/Framework/DataAbstractionLayer/Field/UpdatedByField.php
 src/Core/Framework/DataAbstractionLayer/Field/CashRoundingConfigField.php
 src/Core/Framework/DataAbstractionLayer/Field/CalculatedPriceField.php
+src/Core/Framework/DataAbstractionLayer/Field/CronIntervalField.php
 src/Core/Framework/DataAbstractionLayer/Field/PriceDefinitionField.php
 src/Core/Framework/DataAbstractionLayer/Field/UpdatedAtField.php
 src/Core/Framework/DataAbstractionLayer/Field/DateTimeField.php
 src/Core/Framework/DataAbstractionLayer/Field/VersionDataPayloadField.php
+src/Core/Framework/DataAbstractionLayer/Field/DateIntervalField.php
 src/Core/Framework/DataAbstractionLayer/Field/EmailField.php
 src/Core/Framework/DataAbstractionLayer/Field/VariantListingConfigField.php
 src/Core/Framework/DataAbstractionLayer/Field/TranslatedField.php
@@ -18022,6 +18037,7 @@ src/WebInstaller/src/Listener/InstallerLocaleListener.php
 src/WebInstaller/src/Kernel.php
 .gitlab/bin/split.sh
 .gitlab/bin/git_sync.bash
+.gitlab/bin/commercial_release.bash
 .gitlab/bin/install_store_plugin.bash
 .gitlab/bin/branch.sh
 .gitlab/lib/rules.yml

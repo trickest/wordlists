@@ -101,6 +101,7 @@ api/src/database/migrations/20220303A-remove-default-project-color.ts
 api/src/database/migrations/20210416A-add-collections-accountability.ts
 api/src/database/migrations/20211007A-update-presets.ts
 api/src/database/migrations/20220402A-remove-default-value-panel-icon.ts
+api/src/database/migrations/20230721A-require-shares-fields.ts
 api/src/database/migrations/20210920A-webhooks-url-not-null.ts
 api/src/database/migrations/20201029C-remove-system-fields.ts
 api/src/database/migrations/20210910A-move-module-setup.ts
@@ -1795,6 +1796,7 @@ app/src/utils/format-field-function.test.ts
 app/src/utils/translate-object-values.ts
 app/src/utils/get-root-path.test.ts
 app/src/utils/notify.ts
+app/src/utils/parse-preset.test.ts
 app/src/utils/get-default-values-from-fields.ts
 app/src/utils/md.ts
 app/src/utils/set-favicon.ts
@@ -1821,6 +1823,7 @@ app/src/utils/get-vue-component-name.ts
 app/src/utils/hide-drag-image.test.ts
 app/src/utils/router-passthrough.ts
 app/src/utils/jwt-payload.ts
+app/src/utils/parse-filter.test.ts
 app/src/utils/percentage.test.ts
 app/src/utils/get-literal-interpolated-translation.ts
 app/src/utils/format-filesize.test.ts
@@ -1928,6 +1931,7 @@ crowdin.yml
 .prettierignore
 license
 .changeset/tidy-pumas-bow.md
+.changeset/smart-plants-cry.md
 .changeset/forty-carrots-cover.md
 .changeset/selfish-berries-whisper.md
 .changeset/olive-toys-fail.md
@@ -1939,18 +1943,23 @@ license
 .changeset/slimy-fishes-love.md
 .changeset/plenty-paws-turn.md
 .changeset/eleven-bananas-hide.md
+.changeset/hot-colts-type.md
 .changeset/ten-cherries-smoke.md
 .changeset/clever-grapes-float.md
+.changeset/new-frogs-destroy.md
 .changeset/gentle-zebras-type.md
 .changeset/fresh-snails-knock.md
 .changeset/long-impalas-accept.md
 .changeset/hot-stingrays-accept.md
+.changeset/angry-suits-compete.md
 .changeset/plenty-dragons-drop.md
 .changeset/metal-sheep-attend.md
+.changeset/smooth-paws-jog.md
 .changeset/rare-buckets-walk.md
 .changeset/amazing-flying-monkey.md
 .changeset/breezy-emus-repair.md
 .changeset/tough-crews-shout.md
+.changeset/tiny-carpets-remain.md
 packages/pressure/package.json
 packages/pressure/tsconfig.prod.json
 packages/pressure/readme.md
