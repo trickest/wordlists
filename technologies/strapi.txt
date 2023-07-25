@@ -1467,7 +1467,6 @@ packages/core/admin/admin/src/utils/tests/getAttributesToDisplay.test.js
 packages/core/admin/admin/src/utils/tests/formatAPIErrors.test.js
 packages/core/admin/admin/src/utils/tests/data.js
 packages/core/admin/admin/src/utils/makeUniqueRoutes.js
-packages/core/admin/admin/src/utils/getRequestUrl.js
 packages/core/admin/admin/src/utils/getFullName.js
 packages/core/admin/admin/src/utils/sortLinks.js
 packages/core/admin/admin/src/utils/uniqueAdminHash.js
@@ -1573,8 +1572,6 @@ packages/core/admin/admin/src/content-manager/components/ListViewTable/CellConte
 packages/core/admin/admin/src/content-manager/components/ListViewTable/CellContent/PublicationState/tests/PublicationState.test.js
 packages/core/admin/admin/src/content-manager/components/ListViewTable/CellContent/PublicationState/PublicationState.js
 packages/core/admin/admin/src/content-manager/components/SingleTypeFormWrapper/index.js
-packages/core/admin/admin/src/content-manager/components/SingleTypeFormWrapper/utils/index.js
-packages/core/admin/admin/src/content-manager/components/SingleTypeFormWrapper/utils/getRequestUrl.js
 packages/core/admin/admin/src/content-manager/components/RelationInput/index.js
 packages/core/admin/admin/src/content-manager/components/RelationInput/components/RelationItem.js
 packages/core/admin/admin/src/content-manager/components/RelationInput/components/tests/__snapshots__/RelationItem.test.js.snap
@@ -1597,6 +1594,8 @@ packages/core/admin/admin/src/content-manager/components/Inputs/utils/getInputTy
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/select.js
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/Filters.js
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/index.js
+packages/core/admin/admin/src/content-manager/components/AttributeFilter/tests/AdminUsersFilter.test.js
+packages/core/admin/admin/src/content-manager/components/AttributeFilter/AdminUsersFilter.js
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/hooks/useAllowedAttributes.js
 packages/core/admin/admin/src/content-manager/sharedReducers/crudReducer/actions.js
 packages/core/admin/admin/src/content-manager/sharedReducers/crudReducer/tests/crudReducer.test.js
@@ -1661,7 +1660,6 @@ packages/core/admin/admin/src/content-manager/pages/EditSettingsView/reducer.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/init.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/hooks/useLayoutDnd.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/utils/index.js
-packages/core/admin/admin/src/content-manager/pages/EditSettingsView/utils/api.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/utils/tests/layout.test.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/utils/tests/getInputProps.test.js
 packages/core/admin/admin/src/content-manager/pages/EditSettingsView/utils/tests/createPossibleMainFieldsForModelsAndComponents.test.js
@@ -1697,10 +1695,8 @@ packages/core/admin/admin/src/content-manager/pages/ListSettingsView/components/
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/components/DraggableCard.js
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/components/SortDisplayedFields.js
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/tests/reducer.test.js
-packages/core/admin/admin/src/content-manager/pages/ListSettingsView/tests/init.test.js
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/tests/index.test.js
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/reducer.js
-packages/core/admin/admin/src/content-manager/pages/ListSettingsView/init.js
 packages/core/admin/admin/src/content-manager/pages/ListSettingsView/constants.js
 packages/core/admin/admin/src/content-manager/pages/EditViewLayoutManager/actions.js
 packages/core/admin/admin/src/content-manager/pages/EditViewLayoutManager/index.js
@@ -1783,6 +1779,7 @@ packages/core/admin/admin/src/content-manager/hooks/useFetchContentTypeLayout/ut
 packages/core/admin/admin/src/content-manager/hooks/useKeyboardDragAndDrop.js
 packages/core/admin/admin/src/content-manager/utils/schema.js
 packages/core/admin/admin/src/content-manager/utils/formatLayoutToApi.js
+packages/core/admin/admin/src/content-manager/utils/getDisplayName.js
 packages/core/admin/admin/src/content-manager/utils/createDefaultForm.js
 packages/core/admin/admin/src/content-manager/utils/index.js
 packages/core/admin/admin/src/content-manager/utils/composeRefs.js
@@ -1804,7 +1801,6 @@ packages/core/admin/admin/src/content-manager/utils/isFieldTypeNumber.js
 packages/core/admin/admin/src/content-manager/utils/getMaxTempKey.js
 packages/core/admin/admin/src/content-manager/utils/mergeMetasWithSchema.js
 packages/core/admin/admin/src/content-manager/utils/ItemTypes.js
-packages/core/admin/admin/src/content-manager/utils/getRequestUrl.js
 packages/core/admin/admin/src/content-manager/utils/getFieldName.js
 packages/core/admin/admin/src/content-manager/utils/paths.js
 packages/core/admin/admin/src/content-manager/utils/arrayMoveItem.js
@@ -2918,7 +2914,6 @@ packages/core/upload/admin/src/utils/index.js
 packages/core/upload/admin/src/utils/formatDuration.js
 packages/core/upload/admin/src/utils/tests/getBreadcrumbDataML.test.js
 packages/core/upload/admin/src/utils/tests/toSingularTypes.test.js
-packages/core/upload/admin/src/utils/tests/getRequestUrl.test.js
 packages/core/upload/admin/src/utils/tests/typeFromMime.test.js
 packages/core/upload/admin/src/utils/tests/findRecursiveFolderMetadatas.test.js
 packages/core/upload/admin/src/utils/tests/formatDuration.test.js
@@ -2935,7 +2930,6 @@ packages/core/upload/admin/src/utils/getBreadcrumbDataML.js
 packages/core/upload/admin/src/utils/moveElement.js
 packages/core/upload/admin/src/utils/findRecursiveFolderMetadatas.js
 packages/core/upload/admin/src/utils/displayedFilters.js
-packages/core/upload/admin/src/utils/getRequestUrl.js
 packages/core/upload/admin/src/utils/rawFileToAsset.js
 packages/core/upload/admin/src/utils/deleteRequest.js
 packages/core/upload/admin/src/utils/createAssetUrl.js
@@ -3621,7 +3615,6 @@ packages/plugins/users-permissions/admin/src/hooks/useRolesList/reducer.js
 packages/plugins/users-permissions/admin/src/hooks/useRolesList/init.js
 packages/plugins/users-permissions/admin/src/utils/cleanPermissions.js
 packages/plugins/users-permissions/admin/src/utils/index.js
-packages/plugins/users-permissions/admin/src/utils/getRequestURL.js
 packages/plugins/users-permissions/admin/src/utils/tests/cleanPermissions.test.js
 packages/plugins/users-permissions/admin/src/utils/tests/formatPolicies.test.js
 packages/plugins/users-permissions/admin/src/utils/formatPolicies.js

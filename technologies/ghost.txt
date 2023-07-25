@@ -3021,6 +3021,7 @@ ghost/core/core/server/api/index.js
 ghost/core/core/server/api/endpoints/files.js
 ghost/core/core/server/api/endpoints/integrations.js
 ghost/core/core/server/api/endpoints/authentication.js
+ghost/core/core/server/api/endpoints/collections-public.js
 ghost/core/core/server/api/endpoints/notifications.js
 ghost/core/core/server/api/endpoints/links.js
 ghost/core/core/server/api/endpoints/email-post.js
@@ -4268,12 +4269,14 @@ ghost/core/test/e2e-api/content/offers.test.js
 ghost/core/test/e2e-api/content/posts.test.js
 ghost/core/test/e2e-api/content/pages.test.js
 ghost/core/test/e2e-api/content/key_authentication.test.js
+ghost/core/test/e2e-api/content/collections.test.js
 ghost/core/test/e2e-api/content/tags.test.js
 ghost/core/test/e2e-api/content/settings.test.js
 ghost/core/test/e2e-api/content/utils.js
 ghost/core/test/e2e-api/content/__snapshots__/offers.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/settings.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/newsletters.test.js.snap
+ghost/core/test/e2e-api/content/__snapshots__/collections.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/posts.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/pages.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/tiers.test.js.snap
@@ -4728,6 +4731,14 @@ ghost/announcement-bar-settings/README.md
 ghost/announcement-bar-settings/package.json
 ghost/announcement-bar-settings/test/.eslintrc.js
 ghost/announcement-bar-settings/test/AnnouncementBarSettings.test.js
+ghost/nql-filter-expansions/.eslintrc.js
+ghost/nql-filter-expansions/README.md
+ghost/nql-filter-expansions/package.json
+ghost/nql-filter-expansions/tsconfig.json
+ghost/nql-filter-expansions/test/.eslintrc.js
+ghost/nql-filter-expansions/test/nql-filter-expansions.test.ts
+ghost/nql-filter-expansions/src/nql-filter-expansions.ts
+ghost/nql-filter-expansions/src/index.ts
 ghost/stats-service/.eslintrc.js
 ghost/stats-service/lib/StatsService.js
 ghost/stats-service/lib/MembersStatsService.js
@@ -5136,6 +5147,7 @@ ghost/mail-events/package.json
 ghost/mail-events/tsconfig.json
 ghost/mail-events/test/.eslintrc.js
 ghost/mail-events/test/MailEventService.test.ts
+ghost/mail-events/src/libraries.d.ts
 ghost/mail-events/src/InMemoryMailEventRepository.ts
 ghost/mail-events/src/index.ts
 ghost/mail-events/src/MailEvent.ts
