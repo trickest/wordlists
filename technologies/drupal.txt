@@ -5803,6 +5803,7 @@ core/modules/system/tests/src/Functional/Update/README.txt
 core/modules/system/tests/src/Functional/Update/BatchBidSerialUpdateTest.php
 core/modules/system/tests/src/Functional/Update/UpdateDescriptionConfigurationPostUpdate.php
 core/modules/system/tests/src/Functional/Update/MenuLinksetSettingsUpdateTest.php
+core/modules/system/tests/src/Functional/Update/GlobalThemeSettingsDefaultLogoUrlUpdateTest.php
 core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/Y2038TimestampUpdateTest.php
 core/modules/system/tests/src/Functional/Database/FakeRecord.php
@@ -10556,6 +10557,7 @@ core/modules/media/tests/src/FunctionalJavascript/MediaTypeCreationTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaSourceFileTest.php
 core/modules/media/tests/src/Functional/UrlResolverTest.php
 core/modules/media/tests/src/Functional/MediaRequirementsTest.php
+core/modules/media/tests/src/Functional/Update/MediaSettingsDefaultIframeDomainUpdateTest.php
 core/modules/media/tests/src/Functional/ResourceFetcherTest.php
 core/modules/media/tests/src/Functional/Rest/MediaTypeJsonBasicAuthTest.php
 core/modules/media/tests/src/Functional/Rest/MediaJsonCookieTest.php
@@ -11821,8 +11823,10 @@ core/modules/dynamic_page_cache/dynamic_page_cache.services.yml
 core/modules/dynamic_page_cache/src/PageCache/RequestPolicy/DefaultRequestPolicy.php
 core/modules/dynamic_page_cache/src/PageCache/ResponsePolicy/DenyAdminRoutes.php
 core/modules/dynamic_page_cache/src/EventSubscriber/DynamicPageCacheSubscriber.php
+core/modules/path_alias/path_alias.post_update.php
 core/modules/path_alias/tests/src/Kernel/AliasTest.php
 core/modules/path_alias/tests/src/Kernel/PathHooksTest.php
+core/modules/path_alias/tests/src/Kernel/PathAliasStorageSchemaTest.php
 core/modules/path_alias/tests/src/Unit/AliasManagerTest.php
 core/modules/path_alias/tests/src/Unit/PathProcessor/AliasPathProcessorTest.php
 core/modules/path_alias/tests/src/Functional/Rest/PathAliasJsonCookieTest.php
@@ -11833,6 +11837,7 @@ core/modules/path_alias/tests/src/Functional/Rest/PathAliasJsonBasicAuthTest.php
 core/modules/path_alias/tests/src/Functional/Rest/PathAliasXmlCookieTest.php
 core/modules/path_alias/tests/src/Functional/Rest/PathAliasXmlAnonTest.php
 core/modules/path_alias/tests/src/Functional/UrlAlterFunctionalTest.php
+core/modules/path_alias/tests/src/Functional/PathAliasUpdateTest.php
 core/modules/path_alias/path_alias.services.yml
 core/modules/path_alias/path_alias.info.yml
 core/modules/path_alias/src/AliasWhitelistInterface.php
@@ -13307,6 +13312,7 @@ core/modules/update/tests/src/Unit/Menu/UpdateLocalTasksTest.php
 core/modules/update/tests/src/Unit/UpdateFetcherTest.php
 core/modules/update/tests/src/Unit/ProjectReleaseTest.php
 core/modules/update/tests/src/Functional/UpdateUploadTest.php
+core/modules/update/tests/src/Functional/Update/UpdateSettingsDefaultFetchUrlUpdateTest.php
 core/modules/update/tests/src/Functional/UpdateContribTest.php
 core/modules/update/tests/src/Functional/UpdateSemverContribTest.php
 core/modules/update/tests/src/Functional/UpdateTestBase.php
@@ -14550,7 +14556,6 @@ core/tests/Drupal/KernelTests/Core/Config/ExportStorageManagerTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigSchemaDeprecationTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigDiffTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigExportStorageTest.php
-core/tests/Drupal/KernelTests/Core/Config/DefaultConfigTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigDependencyTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigExistsConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigModuleOverridesTest.php

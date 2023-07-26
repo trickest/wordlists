@@ -2244,6 +2244,7 @@ tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/04_sortPagi
 tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/01_CRUDWebservice.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/09_webservice/03_helpCard.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/12_authorizationServer/01_CRUD.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/12_authorizationServer/02_viewDetail.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/11_newAndExperimentalFeatures/01_enableDisableExperimentalProductV2.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/02_performance/02_debugMode.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/06_quickEditAndBulkActionsShopUrls.ts
@@ -2684,6 +2685,7 @@ tests/UI/pages/BO/advancedParameters/featureFlag/index.ts
 tests/UI/pages/BO/advancedParameters/webservice/index.ts
 tests/UI/pages/BO/advancedParameters/webservice/add.ts
 tests/UI/pages/BO/advancedParameters/authorizationServer/index.ts
+tests/UI/pages/BO/advancedParameters/authorizationServer/view.ts
 tests/UI/pages/BO/advancedParameters/authorizationServer/add.ts
 tests/UI/pages/BO/BObasePage.ts
 tests/UI/pages/BO/payment/preferences/index.ts
@@ -11739,6 +11741,7 @@ src/Adapter/Cache/CombineCompressCacheConfiguration.php
 src/Adapter/Cache/Clearer/SmartyCacheClearer.php
 src/Adapter/Cache/Clearer/SymfonyCacheClearer.php
 src/Adapter/Cache/Clearer/MediaCacheClearer.php
+src/Adapter/Cache/Clearer/DoctrineCacheClearer.php
 src/Adapter/Cache/Clearer/XmlCacheClearer.php
 src/Adapter/Cache/Clearer/ClassIndexCacheClearer.php
 src/Adapter/Cache/CachingConfiguration.php
