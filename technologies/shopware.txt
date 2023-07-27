@@ -553,6 +553,7 @@ tests/unit/php/Core/Checkout/Payment/JWTMock/TestSigner.php
 tests/unit/php/Core/Checkout/Payment/DataAbstractionLayer/PaymentHandlerIdentifierSubscriberTest.php
 tests/unit/php/Core/Checkout/Shipping/SalesChannel/SortedShippingMethodRouteTest.php
 tests/unit/php/Core/Checkout/Shipping/SalesChannel/CachedShippingMethodRouteTest.php
+tests/unit/php/Core/Checkout/Shipping/Aggregate/ShippingMethodPrice/ShippingMethodPriceExceptionHandlerTest.php
 tests/unit/php/Core/Checkout/Customer/CustomerExceptionTest.php
 tests/unit/php/Core/Checkout/Customer/Rule/CustomerCreatedByAdminRuleTest.php
 tests/unit/php/Core/Checkout/Customer/Rule/CustomerLoggedInRuleTest.php
@@ -4920,6 +4921,7 @@ changelog/_unreleased/2023-07-10-remove-body-from-footer-tpl.md
 changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
 changelog/_unreleased/2023-07-17-adding-association-for-order-storer.md
 changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-name.md
+changelog/_unreleased/2023-06-22-shipping-method-price-unique-quantity-start-exception-handler.md
 changelog/_unreleased/2023-07-18-replace-admin-worker-with-shared-worker.md
 changelog/_unreleased/2023-07-21-add-cron-and-date-interval-fields.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
@@ -4944,6 +4946,7 @@ changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
 changelog/_unreleased/2023-07-11-add-a-elasticsearch-mapping-update-command.md
 changelog/_unreleased/2023-07-07-clear-cache-after-search-config-is-updated.md
+changelog/_unreleased/2023-07-25-loosen-composer-constraints-to-automatically-allow-minor-updates.md
 changelog/_unreleased/2023-07-12-improve-validation-in-customer-detail-address.md
 changelog/_unreleased/2022-12-30-dont-open-offcanvas-fullwidth-in-xs-viewport.md
 changelog/_unreleased/2023-07-05-missing-product-cover-images-when-no-version-id-is-filled.md
@@ -4973,6 +4976,7 @@ changelog/_unreleased/2023-07-07-fix-address-validation-definition-in-register-r
 changelog/_unreleased/2023-07-06-fix-settings-customer-groups-listing-pagination.md
 changelog/_unreleased/2023-07-11-make-app-components-to-be-appropriately-updated.md
 changelog/_unreleased/2023-06-29-decrease-log-level-of-export-not-found-exception.md
+changelog/_unreleased/2023-07-24-change-administration-uuidv4-to-uuidv7.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-07-18-fix-redirectparameters-in-payment-form-template.md
 changelog/_unreleased/2023-06-28-apply-domain-exceptions.md
@@ -5575,6 +5579,7 @@ adr/2022-09-28-mapping-of-product-area.md
 adr/2023-05-25-exception-log-levels.md
 adr/2021-06-14-introduce-jest-fail-on-console.md
 adr/2022-10-20-test-structure.md
+adr/2023-07-13-flow-builder-preview.md
 adr/2022-01-05-add-feature-flag-support-for-storefront-scss.md
 adr/2020-06-25-implement-architecture-decision-records.md
 adr/2020-12-02-removing-api-version.md
@@ -8943,6 +8948,7 @@ src/Core/Checkout/Shipping/Event/ShippingMethodRouteCacheTagsEvent.php
 src/Core/Checkout/Shipping/Event/ShippingMethodRouteCacheKeyEvent.php
 src/Core/Checkout/Shipping/ShippingMethodEntity.php
 src/Core/Checkout/Shipping/Validator/ShippingMethodValidator.php
+src/Core/Checkout/Shipping/ShippingException.php
 src/Core/Checkout/Shipping/Cart/Error/ShippingMethodBlockedError.php
 src/Core/Checkout/Shipping/SalesChannel/AbstractShippingMethodRoute.php
 src/Core/Checkout/Shipping/SalesChannel/SortedShippingMethodRoute.php
@@ -8951,6 +8957,7 @@ src/Core/Checkout/Shipping/SalesChannel/ShippingMethodRoute.php
 src/Core/Checkout/Shipping/SalesChannel/CachedShippingMethodRoute.php
 src/Core/Checkout/Shipping/SalesChannel/SalesChannelShippingMethodDefinition.php
 src/Core/Checkout/Shipping/Hook/ShippingMethodRouteHook.php
+src/Core/Checkout/Shipping/Aggregate/ShippingMethodPrice/ShippingMethodPriceExceptionHandler.php
 src/Core/Checkout/Shipping/Aggregate/ShippingMethodPrice/ShippingMethodPriceEntity.php
 src/Core/Checkout/Shipping/Aggregate/ShippingMethodPrice/ShippingMethodPriceCollection.php
 src/Core/Checkout/Shipping/Aggregate/ShippingMethodPrice/ShippingMethodPriceDefinition.php
