@@ -5600,6 +5600,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/TextareaTe
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/MultiselectTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/DateTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/SelectTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/Attribute/AttributesFormCacheTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerV2WithCustomAttributesTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/SubscriptionStatusTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/CreateCustomerV2Test.php
@@ -5733,6 +5734,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/_files/schema_response_sdl_de
 dev/tests/api-functional/testsuite/Magento/GraphQl/Tax/ProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CmsGraphQl/Model/Resolver/PageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CmsGraphQl/Model/Resolver/BlockTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/SwatchesGraphQl/AttributesMetadataTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Swatches/ProductSearchTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Swatches/ProductSwatchDataTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/CustomerGraphQl/Model/Resolver/CustomerTest.php
@@ -20392,6 +20394,7 @@ app/code/Magento/Eav/Model/Validator/Attribute/Backend.php
 app/code/Magento/Eav/Model/ReservedAttributeCheckerInterface.php
 app/code/Magento/Eav/Model/Attribute.php
 app/code/Magento/Eav/Model/AttributeSetManagement.php
+app/code/Magento/Eav/Model/Cache/AttributesFormIdentity.php
 app/code/Magento/Eav/Model/Cache/Type.php
 app/code/Magento/Eav/Model/AttributeSetSearchResults.php
 app/code/Magento/Eav/Model/Entity/AttributeLoaderInterface.php
@@ -23778,6 +23781,7 @@ app/code/Magento/Customer/Console/Command/UpgradeHashAlgorithmCommand.php
 app/code/Magento/Customer/registration.php
 app/code/Magento/Customer/Test/Fixture/CustomerGroup.php
 app/code/Magento/Customer/Test/Fixture/Customer.php
+app/code/Magento/Customer/Test/Fixture/CustomerAttributeDefaultData.php
 app/code/Magento/Customer/Test/Fixture/CustomerAttribute.php
 app/code/Magento/Customer/Test/Unit/Model/AttributeMetadataResolverTest.php
 app/code/Magento/Customer/Test/Unit/Model/Address/Config/SchemaLocatorTest.php
@@ -29313,9 +29317,8 @@ app/code/Magento/EavGraphQl/Model/Output/GetAttributeDataComposite.php
 app/code/Magento/EavGraphQl/Model/Output/GetAttributeDataInterface.php
 app/code/Magento/EavGraphQl/Model/Output/GetAttributeData.php
 app/code/Magento/EavGraphQl/Model/GetAttributeValueInterface.php
-app/code/Magento/EavGraphQl/Model/Uid.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesList.php
-app/code/Magento/EavGraphQl/Model/Resolver/AttributeFilter.php
+app/code/Magento/EavGraphQl/Model/Resolver/GetFilteredAttributes.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributeOptions.php
 app/code/Magento/EavGraphQl/Model/Resolver/DataProvider/AttributeOptions.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesForm.php
@@ -29324,6 +29327,7 @@ app/code/Magento/EavGraphQl/Model/Resolver/Cache/CustomAttributeMetadataIdentity
 app/code/Magento/EavGraphQl/Model/Resolver/Cache/CustomAttributeMetadataV2Identity.php
 app/code/Magento/EavGraphQl/Model/Resolver/Cache/AttributesListIdentity.php
 app/code/Magento/EavGraphQl/Model/Resolver/AttributesMetadata.php
+app/code/Magento/EavGraphQl/Model/Resolver/EntityFieldChecker.php
 app/code/Magento/EavGraphQl/Model/Resolver/Query/Attribute.php
 app/code/Magento/EavGraphQl/Model/Resolver/Query/Type.php
 app/code/Magento/EavGraphQl/Model/TypeResolver/AttributeValue.php

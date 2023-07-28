@@ -982,6 +982,9 @@ migrate/20220131135531_issue3940_add_index.rb
 db/migrate/20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
 migrate/20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
 20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
+db/migrate/20230728090212_pgp_key_email_addresses.rb
+migrate/20230728090212_pgp_key_email_addresses.rb
+20230728090212_pgp_key_email_addresses.rb
 db/migrate/20170421000001_pretty_date_options_added.rb
 migrate/20170421000001_pretty_date_options_added.rb
 20170421000001_pretty_date_options_added.rb
@@ -5178,6 +5181,10 @@ lib/generators/zammad/translation_catalog_generator.rb
 generators/zammad/translation_catalog_generator.rb
 zammad/translation_catalog_generator.rb
 translation_catalog_generator.rb
+lib/generators/zammad/setting_types_generator.rb
+generators/zammad/setting_types_generator.rb
+zammad/setting_types_generator.rb
+setting_types_generator.rb
 lib/generators/zammad/translation_catalog/extracted_strings.rb
 generators/zammad/translation_catalog/extracted_strings.rb
 zammad/translation_catalog/extracted_strings.rb
@@ -7321,6 +7328,10 @@ spec/db/migrate/issue_3669_fix_domain_spec.rb
 db/migrate/issue_3669_fix_domain_spec.rb
 migrate/issue_3669_fix_domain_spec.rb
 issue_3669_fix_domain_spec.rb
+spec/db/migrate/pgp_key_email_addresses_spec.rb
+db/migrate/pgp_key_email_addresses_spec.rb
+migrate/pgp_key_email_addresses_spec.rb
+pgp_key_email_addresses_spec.rb
 spec/db/migrate/remove_duplicate_translations_spec.rb
 db/migrate/remove_duplicate_translations_spec.rb
 migrate/remove_duplicate_translations_spec.rb
@@ -28269,6 +28280,11 @@ frontend/shared/sw/register.ts
 shared/sw/register.ts
 sw/register.ts
 register.ts
+app/frontend/shared/types/config.ts
+frontend/shared/types/config.ts
+shared/types/config.ts
+types/config.ts
+config.ts
 app/frontend/shared/types/app.ts
 frontend/shared/types/app.ts
 shared/types/app.ts

@@ -1114,6 +1114,7 @@ tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1673860323ChangeDefaultProductComparisonIconTest.php
 tests/migration/Core/V6_5/Migration1688556247FixCoverMediaVersionIDTest.php
 tests/migration/Core/V6_5/Migration1689776940AddCartSourceFieldTest.php
+tests/migration/Core/V6_5/Migration1690456899AddCustomFieldPrivilegeForSaleUnitViewerTest.php
 tests/migration/Core/V6_5/Migration1688106315AddMissingTransactionMailTemplatesTest.php
 tests/migration/Core/V6_5/Migration1676274910ChangeColumnTaxRateAllowThreeDecimalTest.php
 tests/migration/Core/V6_5/Migration1677470540AddProvincesForCanadaTest.php
@@ -4955,6 +4956,7 @@ changelog/_unreleased/2023-07-11-deprecate-constraint-annotations.md
 changelog/_unreleased/2023-06-28-generate-unused-media-report.md
 changelog/_unreleased/2023-07-11-fix-sync-api-json.md
 changelog/_unreleased/2023-07-19-add-saleschannelcontextassembledevent.md
+changelog/_unreleased/2023-06-01-update-default-storefront-templates.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
 changelog/_unreleased/2023-07-18-deleting-a-customer-causes-errors-when-changing-the-order-state-of-his-order.md
@@ -4978,6 +4980,7 @@ changelog/_unreleased/2023-07-11-make-app-components-to-be-appropriately-updated
 changelog/_unreleased/2023-06-29-decrease-log-level-of-export-not-found-exception.md
 changelog/_unreleased/2023-07-24-change-administration-uuidv4-to-uuidv7.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
+changelog/_unreleased/2023-06-14-add-custom-field-set-renderer-to-units.md
 changelog/_unreleased/2023-07-18-fix-redirectparameters-in-payment-form-template.md
 changelog/_unreleased/2023-06-28-apply-domain-exceptions.md
 changelog/_unreleased/2023-06-20-extend-storefront-webpack-watch-range.md
@@ -11772,6 +11775,7 @@ src/Core/Migration/Traits/MailUpdate.php
 src/Core/Migration/Traits/EnsureThumbnailSizesTrait.php
 src/Core/Migration/Traits/StateMachineMigrationImporter.php
 src/Core/Migration/V6_5/Migration1655697288AppFlowEvent.php
+src/Core/Migration/V6_5/Migration1690456899AddCustomFieldPrivilegeForSaleUnitViewer.php
 src/Core/Migration/V6_5/Migration1687462843ProductManufacturerMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1667208731AddDefaultDeliveryTimeConfigSetting.php
 src/Core/Migration/V6_5/Migration1687463180ProductMediaThumbnails.php

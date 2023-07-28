@@ -1900,9 +1900,11 @@ packages/core/admin/ee/server/services/review-workflows/entity-service-decorator
 packages/core/admin/ee/server/services/review-workflows/workflows/index.js
 packages/core/admin/ee/server/services/review-workflows/workflows/content-types.js
 packages/core/admin/ee/server/services/review-workflows/workflows/__tests__/content-types.test.js
-packages/core/admin/ee/server/services/review-workflows/metrics.js
 packages/core/admin/ee/server/services/review-workflows/review-workflows.js
 packages/core/admin/ee/server/services/review-workflows/stages.js
+packages/core/admin/ee/server/services/review-workflows/metrics/index.js
+packages/core/admin/ee/server/services/review-workflows/metrics/weekly-metrics.js
+packages/core/admin/ee/server/services/review-workflows/metrics/__tests__/weekly-metrics.test.js
 packages/core/admin/ee/server/services/review-workflows/__tests__/entity-service-decorator.test.js
 packages/core/admin/ee/server/services/user.js
 packages/core/admin/ee/server/services/index.js
@@ -3299,9 +3301,13 @@ packages/plugins/graphql/LICENSE
 packages/plugins/graphql/strapi-admin.js
 packages/plugins/color-picker/.eslintrc.js
 packages/plugins/color-picker/strapi-server.js
-packages/plugins/color-picker/server/index.js
-packages/plugins/color-picker/server/register.js
+packages/plugins/color-picker/server/.eslintrc.js
+packages/plugins/color-picker/server/tsconfig.json
+packages/plugins/color-picker/server/tsconfig.eslint.json
+packages/plugins/color-picker/server/src/index.ts
+packages/plugins/color-picker/server/src/register.ts
 packages/plugins/color-picker/README.md
+packages/plugins/color-picker/.npmignore
 packages/plugins/color-picker/admin/src/index.js
 packages/plugins/color-picker/admin/src/components/ColorPicker/ColorPickerIcon/index.js
 packages/plugins/color-picker/admin/src/components/ColorPicker/ColorPickerInput/index.js
@@ -3317,6 +3323,7 @@ packages/plugins/color-picker/admin/src/translations/en.json
 packages/plugins/color-picker/admin/src/translations/ru.json
 packages/plugins/color-picker/package.json
 packages/plugins/color-picker/.eslintignore
+packages/plugins/color-picker/.editorconfig
 packages/plugins/color-picker/jest.config.front.js
 packages/plugins/color-picker/strapi-admin.js
 packages/plugins/i18n/oas.yml
@@ -3913,6 +3920,7 @@ packages/generators/generators/src/templates/ts/core-controller.ts.hbs
 packages/generators/generators/src/templates/ts/core-service.ts.hbs
 packages/generators/generators/src/templates/ts/service.ts.hbs
 packages/generators/generators/src/templates/ts/collection-type-routes.ts.hbs
+packages/utils/tsconfig/front.json
 packages/utils/tsconfig/package.json
 packages/utils/tsconfig/base.json
 packages/utils/api-tests/models.js
@@ -3942,9 +3950,10 @@ packages/utils/logger/src/formats/index.ts
 packages/utils/logger/src/formats/level-filter.ts
 packages/utils/logger/src/formats/pretty-print.ts
 packages/utils/logger/src/formats/log-errors.ts
+packages/utils/eslint-config-custom/front/typescript.js
+packages/utils/eslint-config-custom/back/typescript.js
 packages/utils/eslint-config-custom/front.js
 packages/utils/eslint-config-custom/package.json
-packages/utils/eslint-config-custom/typescript.js
 packages/utils/eslint-config-custom/back.js
 packages/utils/typescript/.eslintrc.js
 packages/utils/typescript/lib/index.js

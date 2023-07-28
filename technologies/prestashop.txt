@@ -3294,6 +3294,7 @@ tests/TestCase/ContextStateTestCase.php
 tests/TestCase/AbstractConfigurationTestCase.php
 tests/index.php
 tests/Integration/ApiPlatform/GetHookStatusTest.php
+tests/Integration/ApiPlatform/GetHookTest.php
 tests/Integration/Core/Module/HookRepositoryTest.php
 tests/Integration/Core/Module/ModuleRepositoryTest.php
 tests/Integration/Core/Product/ProductPresenterTest.php
@@ -6900,6 +6901,7 @@ src/Core/Grid/Data/Factory/CustomerAddressGridDataFactoryDecorator.php
 src/Core/Grid/Data/Factory/StoreGridDataFactory.php
 src/Core/Grid/Data/Factory/AttachmentGridDataFactoryDecorator.php
 src/Core/Grid/Data/Factory/TaxRuleGridDataFactory.php
+src/Core/Grid/Data/Factory/ProfileGridDataFactoryDecorator.php
 src/Core/Grid/Data/Factory/CarrierGridDataFactory.php
 src/Core/Grid/Data/Factory/OutstandingGridDataFactory.php
 src/Core/Grid/Data/Factory/OrderGridDataFactory.php
@@ -8479,9 +8481,12 @@ src/Core/Domain/Hook/Exception/HookException.php
 src/Core/Domain/Hook/CommandHandler/UpdateHookStatusCommandHandlerInterface.php
 src/Core/Domain/Hook/ValueObject/HookId.php
 src/Core/Domain/Hook/QueryResult/HookStatus.php
+src/Core/Domain/Hook/QueryResult/Hook.php
+src/Core/Domain/Hook/QueryHandler/GetHookHandlerInterface.php
 src/Core/Domain/Hook/QueryHandler/GetHookStatusHandlerInterface.php
 src/Core/Domain/Hook/Command/UpdateHookStatusCommand.php
 src/Core/Domain/Hook/Query/GetHookStatus.php
+src/Core/Domain/Hook/Query/GetHook.php
 src/Core/Domain/AbstractBulkCommandHandler.php
 src/Core/Domain/Configuration/CommandHandler/SwitchDebugModeHandlerInterface.php
 src/Core/Domain/Configuration/ShopConfigurationInterface.php
@@ -9506,6 +9511,7 @@ src/Core/Form/IdentifiableObject/DataHandler/ProductImageFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/TitleFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CategoryFormDataHandler.php
 src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
+src/PrestaShopBundle/ApiPlatform/Exception/NoExtraPropertiesFoundException.php
 src/PrestaShopBundle/ApiPlatform/Processor/CommandProcessor.php
 src/PrestaShopBundle/ApiPlatform/Provider/QueryProvider.php
 src/PrestaShopBundle/Model/Product/AdminModelAdapter.php
@@ -11169,6 +11175,7 @@ src/PrestaShopBundle/Form/Admin/Type/ShopRestrictionCheckboxType.php
 src/PrestaShopBundle/Form/Admin/Type/ResizableTextType.php
 src/PrestaShopBundle/Form/Admin/Type/ProductSearchType.php
 src/PrestaShopBundle/Form/Admin/Type/IconButtonType.php
+src/PrestaShopBundle/Form/Admin/Type/GeoCoordinatesType.php
 src/PrestaShopBundle/Form/Admin/Type/UnavailableType.php
 src/PrestaShopBundle/Form/Admin/Type/CountryChoiceType.php
 src/PrestaShopBundle/Form/Admin/Type/RadioWithChoiceChildrenType.php
@@ -11853,6 +11860,7 @@ src/Adapter/Order/Delivery/SlipPdfConfiguration.php
 src/Adapter/Hook/HookDispatcher.php
 src/Adapter/Hook/HookInformationProvider.php
 src/Adapter/Hook/CommandHandler/UpdateHookStatusCommandHandler.php
+src/Adapter/Hook/QueryHandler/GetHookHandler.php
 src/Adapter/Hook/QueryHandler/GetHookStatusHandler.php
 src/Adapter/Localization/LegacyTranslator.php
 src/Adapter/Localization/LocalizationConfiguration.php
@@ -11905,6 +11913,8 @@ src/Adapter/Presenter/Product/ProductPresenter.php
 src/Adapter/Presenter/Product/ProductListingLazyArray.php
 src/Adapter/Presenter/AbstractLazyArray.php
 src/Adapter/Presenter/PresenterInterface.php
+src/Adapter/Presenter/Category/CategoryPresenter.php
+src/Adapter/Presenter/Category/CategoryLazyArray.php
 src/Adapter/Presenter/Cart/CartPresenter.php
 src/Adapter/Presenter/Store/StorePresenter.php
 src/Adapter/Presenter/Store/StoreLazyArray.php

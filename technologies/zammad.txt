@@ -331,6 +331,7 @@ db/migrate/20220524130435_drop_setting_ui_send_client_stats.rb
 db/migrate/20221031105713_issue_4316_template_options_migration.rb
 db/migrate/20220131135531_issue3940_add_index.rb
 db/migrate/20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
+db/migrate/20230728090212_pgp_key_email_addresses.rb
 db/migrate/20170421000001_pretty_date_options_added.rb
 db/migrate/20161228000001_add_taskbar_meta.rb
 db/migrate/20181108123847_add_country_attribute_to_users.rb
@@ -1123,6 +1124,7 @@ lib/external_credential/exchange.rb
 lib/sequencer.rb
 lib/mysql_strategy.rb
 lib/generators/zammad/translation_catalog_generator.rb
+lib/generators/zammad/setting_types_generator.rb
 lib/generators/zammad/translation_catalog/extracted_strings.rb
 lib/generators/zammad/translation_catalog/extractor/form_js.rb
 lib/generators/zammad/translation_catalog/extractor/erb.rb
@@ -1627,6 +1629,7 @@ spec/db/migrate/issue_3194_update_permissions_spec.rb
 spec/db/migrate/issue_2455_follow_up_assignment_spec.rb
 spec/db/migrate/issue_2943_add_setting_enforce_special_character_spec.rb
 spec/db/migrate/issue_3669_fix_domain_spec.rb
+spec/db/migrate/pgp_key_email_addresses_spec.rb
 spec/db/migrate/remove_duplicate_translations_spec.rb
 spec/db/migrate/issue_2333_object_country_already_exists_spec.rb
 spec/db/migrate/issue_2460_fix_corrupted_twitter_ids_spec.rb
@@ -5183,6 +5186,7 @@ app/frontend/shared/composables/__tests__/useOnlineNotificationSeen.spec.ts
 app/frontend/shared/composables/__tests__/mocks/online-notification.ts
 app/frontend/shared/sw/types.ts
 app/frontend/shared/sw/register.ts
+app/frontend/shared/types/config.ts
 app/frontend/shared/types/app.ts
 app/frontend/shared/types/vite-env.d.ts
 app/frontend/shared/types/server/apollo/client.ts
