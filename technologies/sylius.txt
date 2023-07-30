@@ -1747,6 +1747,7 @@ UPGRADE-1.8.md
 UPGRADE-API-1.8.md
 UPGRADE-1.4.md
 var/.gitkeep
+templates/bundles/ApiPlatformBundle/SwaggerUi/index.html.twig
 templates/bundles/TwigBundle/Exception/exception.json.twig
 templates/bundles/TwigBundle/Exception/error500.html.twig
 templates/bundles/TwigBundle/Exception/error.html.twig
@@ -6486,7 +6487,6 @@ src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/MetadataMergerInterface.
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/LegacyResourceMetadataMerger.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/MergingXmlExtractor.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ResourceMetadataPropertyValueResolver.php
-src/Sylius/Bundle/ApiBundle/ApiPlatform/Bridge/Symfony/Bundle/Action/SwaggerUiAction.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Bridge/Symfony/Routing/CachedRouteNameResolver.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Bridge/Symfony/Routing/RouteNameResolver.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ApiResourceConfigurationMerger.php
@@ -6751,7 +6751,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ShippingMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/app/config.yaml
 src/Sylius/Bundle/ApiBundle/Resources/config/integrations/swagger.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/routing.yml
-src/Sylius/Bundle/ApiBundle/Resources/views/SwaggerUi/index.html.twig
+src/Sylius/Bundle/ApiBundle/Resources/views/index.html.twig
 src/Sylius/Bundle/ApiBundle/Resources/translations/validators.en.yaml
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryExtension/ExchangeRateExtension.php
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/OrderShopUserItemExtension.php
@@ -6928,7 +6928,6 @@ src/Sylius/Bundle/ApiBundle/spec/SerializerContextBuilder/LocaleContextBuilderSp
 src/Sylius/Bundle/ApiBundle/spec/Applicator/ProductReviewStateMachineTransitionApplicatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Applicator/PaymentStateMachineTransitionApplicatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Applicator/OrderStateMachineTransitionApplicatorSpec.php
-src/Sylius/Bundle/ApiBundle/spec/Swagger/AcceptLanguageHeaderDocumentationNormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/PropertyInfo/Extractor/EmptyPropertyListExtractorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Changer/PaymentMethodChangerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/TaxonDeletionEventSubscriberSpec.php
@@ -7049,6 +7048,17 @@ src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiUriBasedSectionResolver.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiOrdersSubSection.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/AdminApiSection.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/AdminApiUriBasedSectionResolver.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Factory/OpenApiFactory.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/PathHiderDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductVariantDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductSlugDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/DocumentationModifierInterface.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/AcceptLanguageHeaderDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductImageDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ShopAuthenticationTokenDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ShippingMethodDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/AdminAuthenticationTokenDocumentationModifier.php
 src/Sylius/Bundle/ApiBundle/Behat/Tester/ApiScenarioEventDispatchingScenarioTester.php
 src/Sylius/Bundle/ApiBundle/Behat/Extension/SyliusApiBundleExtension.php
 src/Sylius/Bundle/ApiBundle/phpunit.xml.dist
@@ -7142,15 +7152,6 @@ src/Sylius/Bundle/ApiBundle/Applicator/PaymentStateMachineTransitionApplicatorIn
 src/Sylius/Bundle/ApiBundle/Applicator/ProductReviewStateMachineTransitionApplicatorInterface.php
 src/Sylius/Bundle/ApiBundle/Applicator/ProductReviewStateMachineTransitionApplicator.php
 src/Sylius/Bundle/ApiBundle/SyliusApiBundle.php
-src/Sylius/Bundle/ApiBundle/Swagger/ProductVariantDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/PathHiderDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/AcceptLanguageHeaderDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/AdminAuthenticationTokenDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/ShopAuthenticationTokenDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/ProductDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/ShippingMethodDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/ProductImageDocumentationNormalizer.php
-src/Sylius/Bundle/ApiBundle/Swagger/ProductSlugDocumentationNormalizer.php
 src/Sylius/Bundle/ApiBundle/Converter/IriToIdentifierConverter.php
 src/Sylius/Bundle/ApiBundle/Converter/IriToIdentifierConverterInterface.php
 src/Sylius/Bundle/ApiBundle/PropertyInfo/Extractor/EmptyPropertyListExtractor.php
