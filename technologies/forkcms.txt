@@ -155,7 +155,6 @@ var/docker/php/php.ini
 UPGRADE_3.9.md
 autoload.php
 composer.json
-src/ForkCMS/ImagineController.php
 src/ForkCMS/Bundle/CoreBundle/Tests/Validator/UrlValidatorTest.php
 src/ForkCMS/Bundle/CoreBundle/Resources/config/services.yml
 src/ForkCMS/Bundle/CoreBundle/ForkCMSCoreBundle.php
@@ -205,6 +204,8 @@ src/ForkCMS/Utility/PhpSpreadsheet/Reader/Filter/ColumnsFilter.php
 src/ForkCMS/Utility/PhpSpreadsheet/Reader/Filter/ChunkReadFilter.php
 src/ForkCMS/Utility/Geolocation.php
 src/ForkCMS/Utility/Thumbnails.php
+src/ForkCMS/Utility/Akismet.php
+src/ForkCMS/Imagine/Service/FilterService.php
 src/ForkCMS/Privacy/ConsentDialog.php
 src/ForkCMS/Google/TagManager/DataLayer.php
 src/ForkCMS/Google/TagManager/TagManager.php
@@ -1987,6 +1988,7 @@ src/Backend/Modules/Pages/Engine/Model.php
 src/Backend/Modules/Pages/Engine/CacheBuilder.php
 src/Backend/Modules/Pages/info.xml
 src/Backend/Modules/Users/Js/Users.js
+src/Backend/Modules/Users/Resources/config/services.yml
 src/Backend/Modules/Users/Actions/Add.php
 src/Backend/Modules/Users/Actions/Index.php
 src/Backend/Modules/Users/Actions/Delete.php
@@ -2002,6 +2004,8 @@ src/Backend/Modules/Users/Installer/Data/locale.xml
 src/Backend/Modules/Users/Config.php
 src/Backend/Modules/Users/Engine/Model.php
 src/Backend/Modules/Users/info.xml
+src/Backend/Modules/Users/Console/ResetPasswordCommand.php
+src/Backend/Modules/Users/DependencyInjection/UsersExtension.php
 src/Backend/Modules/Users/Widgets/Statistics.php
 src/Backend/Modules/Locale/Js/Locale.js
 src/Backend/Modules/Locale/Actions/ExportAnalyse.php

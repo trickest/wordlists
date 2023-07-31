@@ -4943,6 +4943,7 @@ changelog/_unreleased/2023-07-06-fix-data-handling-types.md
 changelog/_unreleased/2023-07-12-add-storefront-controller-endpoints-to-change-or-delete-multiple-line-items-at-once.md
 changelog/_unreleased/2023-05-23-store-asset-manifest-in-the-private-filesystem.md
 changelog/_unreleased/2023-07-18-enhance-sorting-on-sw-entity-listing.md
+changelog/_unreleased/2023-07-31-fix-symfony-bundle-container-access.md
 changelog/_unreleased/2023-06-20-fix-open-api-core-spec.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
 changelog/_unreleased/2023-07-11-add-a-elasticsearch-mapping-update-command.md
@@ -9225,6 +9226,7 @@ src/Core/Checkout/Cart/Exception/TaxProviderExceptions.php
 src/Core/Checkout/Cart/Exception/CustomerNotLoggedInException.php
 src/Core/Checkout/Cart/Exception/InvalidCartException.php
 src/Core/Checkout/Cart/Exception/CartTokenNotFoundException.php
+src/Core/Checkout/Cart/Exception/LineItemNotFoundException.php
 src/Core/Checkout/Cart/Rule/LineItemReleaseDateRule.php
 src/Core/Checkout/Cart/Rule/LineItemRule.php
 src/Core/Checkout/Cart/Rule/LineItemPromotedRule.php
@@ -9821,6 +9823,7 @@ src/Core/Checkout/Promotion/Exception/SetGroupNotFoundException.php
 src/Core/Checkout/Promotion/Exception/InvalidPriceDefinitionException.php
 src/Core/Checkout/Promotion/Exception/PriceDefinitionNotValidForDiscountTypeException.php
 src/Core/Checkout/Promotion/Exception/CodeAlreadyRedeemedException.php
+src/Core/Checkout/Promotion/Exception/InvalidCodePatternException.php
 src/Core/Checkout/Promotion/Exception/InvalidScopeDefinitionException.php
 src/Core/Checkout/Promotion/Exception/PatternNotComplexEnoughException.php
 src/Core/Checkout/Promotion/Exception/PromotionCodeNotFoundException.php
