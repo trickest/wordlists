@@ -1328,6 +1328,7 @@ tests/unit/php/Core/Framework/FeatureTest.php
 tests/unit/php/Core/Content/ProductExport/ScheduledTask/ProductExportGenerateTaskHandlerTest.php
 tests/unit/php/Core/Content/ProductExport/Event/ProductExportLoggingEventTest.php
 tests/unit/php/Core/Content/ProductExport/ProductExportExceptionTest.php
+tests/unit/php/Core/Content/Newsletter/NewsletterExceptionTest.php
 tests/unit/php/Core/Content/Newsletter/DataAbstractionLayer/Indexing/CustomerNewsletterSalesChannelsUpdaterTest.php
 tests/unit/php/Core/Content/Newsletter/Subscriber/NewsletterRecipientSalutationSubscriberTest.php
 tests/unit/php/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
@@ -1598,6 +1599,7 @@ tests/integration/php/Core/System/Snippet/SnippetServiceTest.php
 tests/integration/php/Core/System/User/Api/UserRecoveryControllerTest.php
 tests/integration/php/Core/System/User/UserCrudTest.php
 tests/integration/php/Core/System/SalesChannel/Context/CartRestorerTest.php
+tests/integration/php/Core/System/SalesChannel/SalesChannel/ContextSwitchRouteTest.php
 tests/integration/php/Core/System/CustomEntity/Xml/Config/_fixtures/other/flags.json
 tests/integration/php/Core/System/CustomEntity/Xml/Config/_fixtures/apps/cmsAwareAndAdminUiApp/Resources/config/admin-ui.xml
 tests/integration/php/Core/System/CustomEntity/Xml/Config/_fixtures/apps/cmsAwareAndAdminUiApp/Resources/entities.xml
@@ -4343,6 +4345,7 @@ changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-07-06-fix-data-handling-types.md
 changelog/_unreleased/2023-06-22-run-state-transitions-in-system-scope.md
+changelog/_unreleased/2023-07-25-order-creation-without-customer-breaks-admin-order-panel.md
 changelog/_unreleased/2023-07-12-add-storefront-controller-endpoints-to-change-or-delete-multiple-line-items-at-once.md
 changelog/_unreleased/2023-06-19-product-payload-for-storefront-controller.md
 changelog/_unreleased/2023-07-18-fix-redirectparameters-in-payment-form-template.md
@@ -4352,6 +4355,7 @@ changelog/_unreleased/2023-06-05-added-handler-for-route-changes-inside-apps.md
 changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
 changelog/_unreleased/2023-07-11-deprecate-constraint-annotations.md
 changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-admin.md
+changelog/_unreleased/2023-08-01-handling-incident-rate-limit.md
 changelog/_unreleased/2023-07-18-deleting-a-customer-causes-errors-when-changing-the-order-state-of-his-order.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-06-fix-order-loaded-event-missing-billing-address-association.md
@@ -4384,6 +4388,7 @@ changelog/_unreleased/2023-06-28-catch-order-not-found-errors-in-storefront.md
 changelog/_unreleased/2023-07-05-missing-product-cover-images-when-no-version-id-is-filled.md
 changelog/_unreleased/2023-07-03-add-generic-template-to-entityrepository.md
 changelog/_unreleased/2023-07-07-fix-address-validation-definition-in-register-route.md
+changelog/_unreleased/2023-07-25-there-are-console-errors-while-creating-a-new-customer.md
 changelog/_unreleased/2023-06-14-add-custom-field-set-renderer-to-units.md
 changelog/_unreleased/2023-06-23-update-sdk-version.md
 changelog/_unreleased/2023-07-11-fix-sync-api-json.md
@@ -10144,7 +10149,6 @@ src/Core/System/Test/SalesChannel/Context/SalesChannelContextRestorerTest.php
 src/Core/System/Test/SalesChannel/Entity/SalesChannelDefinitionTest.php
 src/Core/System/Test/SalesChannel/Entity/SalesChannelDefinitionInstanceRegistryTest.php
 src/Core/System/Test/SalesChannel/SalesChannel/ContextLoadRouteTest.php
-src/Core/System/Test/SalesChannel/SalesChannel/ContextSwitchRouteTest.php
 src/Core/System/Test/SalesChannel/SalesChannel/StructEncoderTest.php
 src/Core/System/Test/Country/CachedCountryRouteTest.php
 src/Core/System/Test/Country/Repository/CountryRepositoryTest.php

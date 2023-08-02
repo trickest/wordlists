@@ -2793,6 +2793,7 @@ tests/UI/campaigns/functional/BO/05_customerService/01_customerService/03_respon
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/04_contactOptions.ts
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/02_changeStatus.ts
 tests/UI/campaigns/functional/BO/05_customerService/01_customerService/01_viewMessage.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/03_administration/01_general.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/05_import/02_importFile.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/05_import/01_downloadSampleFiles.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/06_team/roles/05_paginationAndBulkActions.ts
@@ -3244,6 +3245,7 @@ tests/UI/pages/BO/advancedParameters/multistore/url/addURL.ts
 tests/UI/pages/BO/advancedParameters/multistore/url/index.ts
 tests/UI/pages/BO/advancedParameters/multistore/index.ts
 tests/UI/pages/BO/advancedParameters/performance/index.ts
+tests/UI/pages/BO/advancedParameters/administration/index.ts
 tests/UI/pages/BO/advancedParameters/authorizationServer/view.ts
 tests/UI/pages/BO/advancedParameters/authorizationServer/add.ts
 tests/UI/pages/BO/advancedParameters/authorizationServer/index.ts
@@ -5622,11 +5624,9 @@ install-dev/langs/en/data/cms_category.xml
 install-dev/langs/en/data/cms.xml
 install-dev/langs/en/data/meta.xml
 install-dev/langs/en/data/order_state.xml
-install-dev/langs/en/data/supplier_order_state.xml
 install-dev/langs/en/data/carrier.xml
 install-dev/langs/en/data/group.xml
 install-dev/langs/en/data/contact.xml
-install-dev/langs/en/data/supply_order_state.xml
 install-dev/langs/en/data/risk.xml
 install-dev/langs/en/data/profile.xml
 install-dev/langs/en/data/gender.xml
@@ -5925,7 +5925,6 @@ install-dev/data/xml/zone.xml
 install-dev/data/xml/country.xml
 install-dev/data/xml/state.xml
 install-dev/data/xml/feature_flag.xml
-install-dev/data/xml/supply_order_state.xml
 install-dev/data/xml/risk.xml
 install-dev/data/xml/profile.xml
 install-dev/data/xml/gender.xml
@@ -7281,7 +7280,6 @@ src/Core/Domain/Employee/Exception/EmailAlreadyUsedException.php
 src/Core/Domain/Employee/Exception/InvalidEmployeeIdException.php
 src/Core/Domain/Employee/Exception/MissingShopAssociationException.php
 src/Core/Domain/Employee/Exception/InvalidPasswordException.php
-src/Core/Domain/Employee/Exception/CannotDeleteWarehouseManagerException.php
 src/Core/Domain/Employee/Exception/EmployeeConstraintException.php
 src/Core/Domain/Employee/Exception/EmployeeException.php
 src/Core/Domain/Employee/Exception/CannotDeleteEmployeeException.php
@@ -8936,7 +8934,6 @@ src/Core/Session/SessionHandlerInterface.php
 src/Core/Session/SessionInterface.php
 src/Adapter/Routes/RouteValidator.php
 src/Adapter/Routes/DefaultRouteProvider.php
-src/Adapter/Warehouse/WarehouseDataProvider.php
 src/Adapter/Support/ContactDeleter.php
 src/Adapter/Support/ContactRepository.php
 src/Adapter/Upload/UploadQuotaConfiguration.php
@@ -9988,7 +9985,6 @@ src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/products/combin
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/products/product.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/products/products.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/products/features.yml
-src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/products/warehouses.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/attribute.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/features.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/catalog/monitoring.yml
@@ -10381,7 +10377,6 @@ src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/disabled_form_ale
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Blocks/header.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Blocks/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Blocks/tabs.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Forms/form_warehouse_combination.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Forms/form_edit_specific_price_modal.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Forms/form_feature.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Product/ProductPage/Forms/form_specific_price.html.twig
@@ -10477,6 +10472,7 @@ src/PrestaShopBundle/Resources/views/Admin/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/tool_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/shop_list.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/header.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/employee_dropdown.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/search_form.html.twig
@@ -10608,6 +10604,7 @@ src/PrestaShopBundle/Resources/views/Admin/Component/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/tool_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/shop_list.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/header.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/employee_dropdown.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/search_form.html.twig
@@ -10965,7 +10962,6 @@ src/PrestaShopBundle/Controller/Admin/Improve/Shipping/CarriersController.php
 src/PrestaShopBundle/Controller/Admin/Improve/Shipping/PreferencesController.php
 src/PrestaShopBundle/Controller/Admin/CommonController.php
 src/PrestaShopBundle/Controller/Admin/MultistoreController.php
-src/PrestaShopBundle/Controller/Admin/WarehouseController.php
 src/PrestaShopBundle/Controller/Admin/CategoryController.php
 src/PrestaShopBundle/Controller/Admin/SpecificPriceController.php
 src/PrestaShopBundle/Controller/Admin/Sell/Customer/OutstandingController.php
@@ -11215,7 +11211,6 @@ src/PrestaShopBundle/Form/Admin/Product/ProductCategories.php
 src/PrestaShopBundle/Form/Admin/Product/ProductPrice.php
 src/PrestaShopBundle/Form/Admin/Product/ProductSeo.php
 src/PrestaShopBundle/Form/Admin/Product/ProductCombinationBulk.php
-src/PrestaShopBundle/Form/Admin/Product/ProductWarehouseCombination.php
 src/PrestaShopBundle/Form/Admin/Category/SimpleCategory.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Translations/CopyLanguageType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Translations/ExportCataloguesType.php
@@ -11451,6 +11446,7 @@ src/PrestaShopBundle/Twig/Component/NavBar.php
 src/PrestaShopBundle/Twig/Component/ShopList.php
 src/PrestaShopBundle/Twig/Component/ToolBar.php
 src/PrestaShopBundle/Twig/Component/NonResponsive.php
+src/PrestaShopBundle/Twig/Component/Header.php
 src/PrestaShopBundle/Twig/Component/NotificationsCenter.php
 src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php
 src/PrestaShopBundle/Twig/LayoutExtension.php

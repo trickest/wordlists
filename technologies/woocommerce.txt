@@ -33,6 +33,7 @@ tools/monorepo-utils/src/core/github/repo.ts
 tools/monorepo-utils/src/md-docs/commands/manifest/create/index.ts
 tools/monorepo-utils/src/md-docs/commands/index.ts
 tools/monorepo-utils/src/md-docs/README.md
+tools/monorepo-utils/src/md-docs/lib/markdown-links.ts
 tools/monorepo-utils/src/md-docs/lib/generate-manifest.ts
 tools/monorepo-utils/src/md-docs/lib/generate-urls.ts
 tools/monorepo-utils/src/md-docs/lib/generate-frontmatter.ts
@@ -2262,11 +2263,13 @@ plugins/woocommerce/tsconfig.json
 plugins/woocommerce/changelog/e2e-fix-flaky-analytics-overview
 plugins/woocommerce/changelog/add-post_password_block2
 plugins/woocommerce/changelog/fix-39272
+plugins/woocommerce/changelog/update-wp-6.3-prep
 plugins/woocommerce/changelog/dev-optimize-system-status-tests
 plugins/woocommerce/changelog/fix-39045-remaining-tasks-bubble
 plugins/woocommerce/changelog/e2e-analytics-overview-simplify-userid-retrieval
 plugins/woocommerce/changelog/pr-39155
 plugins/woocommerce/changelog/fix-39164
+plugins/woocommerce/changelog/fix-39399-guest-verify-email-hook
 plugins/woocommerce/changelog/add-customize-store-feature-flag
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
 plugins/woocommerce/changelog/fix-35612
@@ -2279,6 +2282,7 @@ plugins/woocommerce/changelog/fix-39354
 plugins/woocommerce/changelog/docs-remove-has_task
 plugins/woocommerce/changelog/fix-39051
 plugins/woocommerce/changelog/add-variation-options-block
+plugins/woocommerce/changelog/update-38997-chekbox-ui-is-still-using-old-look
 plugins/woocommerce/changelog/enhancement-38823
 plugins/woocommerce/changelog/fix-admin-colors-select2
 plugins/woocommerce/changelog/dev-sync-pnpm
@@ -2872,6 +2876,7 @@ plugins/woocommerce-docs/.wp-env.json
 plugins/woocommerce-docs/composer.json
 plugins/woocommerce-docs/tests/bootstrap.php
 plugins/woocommerce-docs/tests/src/Data/ManifestStoreTest.php
+plugins/woocommerce-docs/tests/src/Manifest/RelativeLinkParserTest.php
 plugins/woocommerce-docs/tests/src/Manifest/CategoryCreatorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/PostCreatorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/PostArgsTest.php
@@ -2893,6 +2898,7 @@ plugins/woocommerce-docs/src/App/Bootstrap.php
 plugins/woocommerce-docs/src/Data/ManifestStore.php
 plugins/woocommerce-docs/src/Data/DocsStore.php
 plugins/woocommerce-docs/src/Manifest/ManifestProcessor.php
+plugins/woocommerce-docs/src/Manifest/RelativeLinkParser.php
 plugins/woocommerce-docs/src/Manifest/PostCreator.php
 plugins/woocommerce-docs/src/Manifest/PostArgs.php
 plugins/woocommerce-docs/src/Manifest/CategoryCreator.php
@@ -4311,6 +4317,7 @@ packages/js/product-editor/changelog/add-37096-accessibility
 packages/js/product-editor/changelog/update-parent-categ
 packages/js/product-editor/changelog/add-post_password_block2
 packages/js/product-editor/changelog/add-38489
+packages/js/product-editor/changelog/add-38884_add_variation_modal
 packages/js/product-editor/changelog/update-38117
 packages/js/product-editor/changelog/update-36395-move-product-fields
 packages/js/product-editor/changelog/add-38097
@@ -4763,6 +4770,7 @@ packages/js/product-editor/src/style.scss
 packages/js/product-editor/src/hooks/use-product-edits.ts
 packages/js/product-editor/src/hooks/use-confirm-unsaved-product-changes.ts
 packages/js/product-editor/src/hooks/use-product-attributes.ts
+packages/js/product-editor/src/hooks/test/use-product-attributes.test.ts
 packages/js/product-editor/src/hooks/use-variations-order.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/use-feedback-bar.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/index.ts

@@ -543,6 +543,7 @@ packages/core/admin/admin/src/pages/MarketplacePage/tests/__snapshots__/index.te
 packages/core/admin/admin/src/pages/MarketplacePage/tests/index.test.js
 packages/core/admin/admin/src/pages/MarketplacePage/tests/mocks/plugins.js
 packages/core/admin/admin/src/pages/MarketplacePage/tests/mocks/providers.js
+packages/core/admin/admin/src/pages/MarketplacePage/constants.js
 packages/core/admin/admin/src/pages/MarketplacePage/components/PageHeader/index.js
 packages/core/admin/admin/src/pages/MarketplacePage/components/MissingPluginBanner/index.js
 packages/core/admin/admin/src/pages/MarketplacePage/components/OfflineLayout/index.js
@@ -559,6 +560,8 @@ packages/core/admin/admin/src/pages/MarketplacePage/components/NpmPackageCard/Pa
 packages/core/admin/admin/src/pages/MarketplacePage/components/EmptyNpmPackageSearch/index.js
 packages/core/admin/admin/src/pages/MarketplacePage/components/EmptyNpmPackageSearch/EmptyNpmPackageGrid.js
 packages/core/admin/admin/src/pages/MarketplacePage/utils/useMarketplaceData.js
+packages/core/admin/admin/src/pages/MarketplacePage/hooks/useFetchMarketplaceProviders/index.js
+packages/core/admin/admin/src/pages/MarketplacePage/hooks/useFetchMarketplacePlugins/index.js
 packages/core/admin/admin/src/pages/HomePage/CloudBox.js
 packages/core/admin/admin/src/pages/HomePage/index.js
 packages/core/admin/admin/src/pages/HomePage/HomeHeader.js
@@ -579,6 +582,7 @@ packages/core/admin/admin/src/pages/ProfilePage/utils/schema.js
 packages/core/admin/admin/src/pages/NotFoundPage/index.js
 packages/core/admin/admin/src/pages/NotFoundPage/tests/index.test.js
 packages/core/admin/admin/src/pages/InstalledPluginsPage/index.js
+packages/core/admin/admin/src/pages/InstalledPluginsPage/hooks/usePlugins/index.js
 packages/core/admin/admin/src/pages/InstalledPluginsPage/Plugins.js
 packages/core/admin/admin/src/pages/SettingsPage/index.js
 packages/core/admin/admin/src/pages/SettingsPage/tests/index.test.js
@@ -923,8 +927,6 @@ packages/core/admin/admin/src/utils/getExistingActions.js
 packages/core/admin/admin/src/utils/getFullName.js
 packages/core/admin/admin/src/utils/makeUniqueRoutes.js
 packages/core/admin/admin/src/utils/checkFormValidity.js
-packages/core/admin/admin/src/hooks/useFetchEnabledPlugins/index.js
-packages/core/admin/admin/src/hooks/useFetchEnabledPlugins/utils/api.js
 packages/core/admin/admin/src/hooks/index.js
 packages/core/admin/admin/src/hooks/useSettingsForm/index.js
 packages/core/admin/admin/src/hooks/useSettingsForm/init.js
@@ -967,9 +969,6 @@ packages/core/admin/admin/src/hooks/useMenu/utils/getGeneralLinks.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/index.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useFetchPermissionsLayout/reducer.js
-packages/core/admin/admin/src/hooks/marketplace/useFetchMarketplaceProviders/index.js
-packages/core/admin/admin/src/hooks/marketplace/constants.js
-packages/core/admin/admin/src/hooks/marketplace/useFetchMarketplacePlugins/index.js
 packages/core/admin/admin/src/hooks/useNavigatorOnLine/index.js
 packages/core/admin/admin/src/hooks/useNavigatorOnLine/tests/index.test.js
 packages/core/admin/admin/src/hooks/useLicenseLimitNotification/index.js
