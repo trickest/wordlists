@@ -122,6 +122,7 @@ $
 &signmein*
 &sitrackingid=
 &solrsort
+&solved=
 &sort
 &sort*&page=
 &sort=
@@ -227,6 +228,7 @@ $
 .htm$
 .html
 .html$
+.html$
 .html?cachemode=refresh$
 .html_
 .i
@@ -288,6 +290,7 @@ $
 .well-known/
 .well-known/amphtml/
 .well-known/amphtml/apikey.pub
+.well-known/assetlinks.json
 .well-known/assetlinks.json
 .well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200
 .woff*************
@@ -445,7 +448,6 @@ $
 /*/cover
 /*/data$
 /*/discussions
-/*/edit$
 /*/figures
 /*/group
 /*/guided
@@ -1066,7 +1068,6 @@ $
 /*skank
 /*slutty
 /*somente-adult
-/*source=
 /*spread-legs
 /*spreading-her-legs
 /*spreading-legs
@@ -1306,6 +1307,7 @@ $
 /RedesignBucket
 /Results.aspx
 /Results?
+/Search/
 /SelectLocale?fromPage=
 /StatisticheProxy/proxy.jsp?action=mostVisited&domain=RaiTv
 /StatisticheProxy/tagCloudVisualizza.jsp?tagName=
@@ -1365,6 +1367,7 @@ $
 /affiliates_content_iframe.cms*
 /affiliates_library*
 /ajax
+/ajax/*
 /ajax/jsLogging.html
 /album/*/*?i=
 /alert
@@ -1433,6 +1436,7 @@ $
 /b?ie=UTF8&node=1619732031
 /badge
 /badges
+/base-en/
 /base/logout
 /bbw
 /beaconBase$
@@ -1544,6 +1548,7 @@ $
 /configspace/*
 /confirmation/
 /connected-living/content-library
+/connections/*
 /contact/menu*
 /contact/partner*
 /contactus/mwaas*
@@ -1622,6 +1627,14 @@ $
 /document/view_more
 /document/views
 /download
+/download/Browse.aspx?
+/download/browse.aspx?
+/download/confirmation.aspx?
+/download/info.aspx?
+/download/registration-suggested.aspx?
+/download/results.aspx?
+/download/thankyou.aspx
+/download/thankyou.aspx?
 /download?
 /downloadassets
 /downloadstats
@@ -1637,7 +1650,6 @@ $
 /ecommerce/checkout
 /ecommerce/product-credit
 /edit
-/edit$
 /edit/change-email
 /edit/change-password
 /edited
@@ -1667,6 +1679,7 @@ $
 /error/
 /etag$
 /evalcenter/
+/events
 /events/atom
 /events/rss
 /events/xml
@@ -1821,6 +1834,7 @@ $
 /landing
 /lang
 /launch2005/
+/layout/
 /layoutvorlagen
 /lazy.js
 /leads/*/jsplayer_show_lead_form.html
@@ -1905,6 +1919,7 @@ $
 /manage
 /marketing
 /media/oembed
+/mediaapi/
 /mediaviewer/*/tr
 /meetup_api
 /meetup_api$
@@ -1934,6 +1949,8 @@ $
 /mtlibraryrss/
 /multistore
 /munich/index_html
+/music/*/Search/
+/music/*/search/
 /music/cart
 /music/orders
 /music/track-
@@ -1958,6 +1975,7 @@ $
 /newest/*atom
 /newest/*rss
 /newest/*xml
+/newsearch/
 /newssearch
 /no-internet-heading-assigned
 /no-internet-heading-assisted
@@ -2146,6 +2164,7 @@ $
 /searchsuggest
 /searchsuggest
 /secure/
+/security/search-results.aspx?
 /selectlocale-dmc?fromPage=
 /sell-now
 /seller--
@@ -2236,12 +2255,19 @@ $
 /stopartnertest/
 /store
 /store/
+/store/*/layout/
+/store/*/search/
 /store/account
 /store/admin
+/store/buynow?
+/store/cart
 /store/cart
 /store/carts
 /store/checkout
 /store/checkouts
+/store/d/groove-music-pass/cfq7ttc0k5dq/0001
+/store/locations/store-locations-sitemap.xml
+/store/music/groove-music-pass/*
 /store/orders
 /story_pins
 /structures
@@ -2285,6 +2311,7 @@ $
 /tickets/new
 /tlp
 /top_questions
+/topfans
 /topic-bio
 /topic_bio
 /topics
@@ -2302,13 +2329,14 @@ $
 /unanswered
 /undefined
 /undefinedc_fill,w_360,ar_16:9,f_auto,q_auto,g_auto/undefined
+/unsubscribe/
 /update$
 /updatecart
 /upload/analyse
 /upload/cloud
 /upload/forgot_password
 /uploads
-/url
+/url*
 /urlpointers
 /us
 /user
@@ -2357,6 +2385,7 @@ $
 /vsarticleshow/*
 /w--
 /w/*
+/wal/
 /watch
 /watch-fragments
 /watchers
@@ -2404,6 +2433,7 @@ $
 ;preview=
 =$
 =/*x*/
+=imgmanager
 ?
 ?
 ?$
@@ -2820,6 +2850,7 @@ $
 ?industry=agency
 ?inline=
 ?inpageEditorUI=
+?intc=
 ?isPreview=
 ?it
 ?item=*:
@@ -3074,8 +3105,6 @@ $
 @@castle.cms.querylisting*?
 @@search?
 @async
-@me
-@me$
 API
 AWSEC2/2006-06-26
 AWSEC2/2006-10-01
@@ -3126,6 +3155,7 @@ AccountAccess
 AccountDisavow?
 AccountStatus
 Activate
+ActivityUID=
 AddThis.com
 AddToList
 AddToRegistry
@@ -4039,6 +4069,7 @@ Bugs
 CHANGELOG.txt
 CNCDialer
 COAIM/cams
+COG
 CP
 CR-Dokumentation.pdf$
 CafeHistoryView.nhn
@@ -4077,6 +4108,7 @@ Cliqzbot
 Cloud_Start_01-Landing-Page-EDO.html
 Cloud_Start_01.LandingPage.html
 Cloud_Start_02.ConfirmationPage.html
+Coffeebreak
 CombinationSearch.nhn
 Comentario/
 CommentView.nhn
@@ -4131,6 +4163,7 @@ EmailPreferences
 Emailer
 EmbedSlideshow
 EnlargedImageView
+Entrez
 ErrorLog
 EssentialMetrics
 Exabot
@@ -4168,6 +4201,8 @@ GLOBPICS
 Generic/Generic/SendPrint/
 GenericRegistryPortalView
 Genieo
+Germany/kleinunternehmen/euga/detail.mspx?
+Germany/kleinunternehmen/euga/results.mspx?
 GiftRegistrySearchViewCmd
 Gigabot
 GoogleInternetAuthority
@@ -4183,6 +4218,7 @@ HeadJS/static-2.92
 Help
 HelpContent
 Heritrix
+HpOptOut=true$
 HubStyle/static-2.309
 HubStyle/static-2.313
 HubStyle/static-2.315
@@ -4242,6 +4278,7 @@ I18n/static-7.314
 I18n/static-7.315
 I18n/static-7.329
 ICCD
+IEB/ToolBox/SB
 ILC-refresh
 IM
 INSTALL.mysql.txt
@@ -4260,6 +4297,7 @@ InternalError.html
 IstellaBot
 JP/support/public/mt/tac/100/1002347/techtip_conventions.shtml
 Jai-Mrug*
+Japan/DirectX/default.asp?
 JikeSpider
 Jyxobot
 Kimengi
@@ -4536,12 +4574,14 @@ Ribbon
 Route53/2010-10-01
 Route53/2013-04-01
 S
+SAGE
 SD
 SEARCH
 SEOkicks-Robot
 SI
 SID=
 SITE=es.antevenio.
+SNP
 SOImapPriceDisplayView
 SametimeWebApp
 Scripts
@@ -4608,6 +4648,12 @@ Stats
 StockAvailSearchForm
 StockAvailSearchForm=
 Store
+Structure
+Structure/VA
+Structure/cblast/cblast.cgi
+Structure/dgs
+Structure/flink/flink.cgi
+Structure/vast/vastsrv.cgi
 Style/CSS/members.be
 StyleGuideUI/static-3.100
 StyleGuideUI/static-3.109
@@ -4618,8 +4664,11 @@ Sublayouts
 Support
 Systems
 TC/spfs/asia
+TOCLinksForCrawlers*
 TargetListPortalView
 TargetStoreLocatorCmd
+Taxonomy/CommonTree
+Taxonomy/Selector
 TealeafTarget.jsp
 Team
 TeamPresent
@@ -4738,11 +4787,6 @@ _/_/pixel
 _/aihub_pod
 _/ain/_/js
 _/alkali-learn
-_/api/posts/*/related
-_/api/posts/*/responses
-_/api/posts/*/responsesStream
-_/api/users/*/meta
-_/api/users/*/profile/stream
 _/apps-static
 _/apps-viewer
 _/atari
@@ -4961,6 +5005,7 @@ about/jobs/Kooperations-Manager.html
 about/jobs/Social-Media-Online-Kommunikation.html
 about/jobs/UX-UI-Designer.html
 about/jobs/ba-medieninformatik.html
+about/jobs/backend-entwicklerin.html
 about/jobs/buchhaltung-payment.html
 about/jobs/compliance.html
 about/jobs/crowd-agentin.html
@@ -4972,7 +5017,6 @@ about/jobs/product-owner.html
 about/jobs/scrum-master.html
 about/jobs/showmaster.html
 about/jobs/social-media.html
-about/jobs/support.html
 about/jobs/texterin-uxwriterin.html
 about/nachhaltigkeitsziele.html
 about/startnext/corporate-identity.html
@@ -5095,8 +5139,40 @@ action/showTopic
 action/showXml
 action/showfeed
 action/sso
+action=accessorysearch&
+action=accessorysearch&page=2$
+action=accessorysearch&page=3$
+action=accessorysearch&page=4$
+action=accessorysearch&page=5$
+action=accessorysearch&page=6$
+action=accessorysearch&page=7$
+action=accessorysearch&page=8$
+action=accessorysearch&product=*$
+action=accessorysearch&product=*&*
+action=catalogsearch&
+action=catalogsearch&catalog_mode=grid&page=2$
+action=catalogsearch&catalog_mode=grid&page=3$
+action=catalogsearch&catalog_mode=grid&page=4$
+action=catalogsearch&catalog_mode=grid&page=5$
+action=catalogsearch&catalog_mode=grid&page=6$
+action=catalogsearch&catalog_mode=grid&page=7$
+action=catalogsearch&catalog_mode=grid&page=8$
+action=catalogsearch&catalog_mode=list&page=2$
+action=catalogsearch&catalog_mode=list&page=3$
+action=catalogsearch&catalog_mode=list&page=4$
+action=catalogsearch&catalog_mode=list&page=5$
+action=catalogsearch&catalog_mode=list&page=6$
+action=catalogsearch&catalog_mode=list&page=7$
+action=catalogsearch&catalog_mode=list&page=8$
 action=delete
 action=history
+action=overlay&
+action=productLinkAction&
+action=productSupportSearch
+action=productcompareaction&
+action=quickSearch&
+action=siteSearch
+action=writeReview
 action?
 actions
 actions/news/rss
@@ -5278,10 +5354,12 @@ ahu-kadin
 ai
 ai_log
 aihub/tfhub
+aim
 airtel
 ajah
 ajax
 ajax/
+ajax/*
 ajax/comment/add
 ajax/comment/edit
 ajax/comment/reply
@@ -5394,7 +5472,6 @@ analytics/traffic/overview
 analytics/uploads
 anan
 android
-android-preview-steps
 android/downloads
 android/market
 android/market_images
@@ -5860,6 +5937,7 @@ aura/promo
 auth
 auth
 auth$
+auth/*
 auth/createchallenge
 auth/do_login
 auth/verifychallenge
@@ -5961,7 +6039,6 @@ backgrounds
 backstage/help/search-results.html
 badges/profile/create
 bagon
-baidu
 ban-me-i-am-a-robot
 banmyipforever.cgi
 banner.pl
@@ -6181,6 +6258,7 @@ bePatron
 bePatronDone
 be_en
 be_fr
+beacon
 bearing
 bebek-anne
 become-an-author?
@@ -6200,7 +6278,6 @@ beta_hotlydbt/
 betaboards
 betacc
 betaem
-betaprogramthanks
 bfe/apps/website
 bfl
 bfmp
@@ -6286,7 +6363,10 @@ bkshp?*q=
 bl.uk_lddc_bot
 black-friday/0/best-amazon-black-friday-deals-2017-us
 black-friday/0/best-amazon-black-friday-weekend-deals-2017-us
+blacklisted*
 blank.html
+blast/BlastAlign.cgi
+blast/bl2seq/wblast2.cgi
 blocked-crypto
 blocks
 blocks?
@@ -6453,6 +6533,7 @@ bookmarks
 bookmarks/widget
 bookmarkshttp://ed.ted.com/robots.txt
 books
+books/NBK
 books/about
 books/accountant/thank-you.html
 books/content?*zoom=1
@@ -6634,6 +6715,7 @@ buckets/*/edit
 buddy/
 bug-navigator
 bugtracker/help/search-results.html
+build
 builders
 bulk/confirmation
 bulk/vieworder
@@ -6736,7 +6818,6 @@ c/*attr_*=
 c/*price_bucket=
 c/*search_type=
 c/*ship_to=
-c/assets/marketing/partners/sandler/fourth_industrial_revolution_102618.pdf
 c/business.atom
 c/contentReuse/
 c/contentreuse/
@@ -7187,6 +7268,7 @@ campaigns/logout.html
 campaigns/thankyou.html
 campaignshowcase/
 campaigntrailnotused
+canada/Library/mnp/2/aspx/
 cancel
 cancel-membership
 candidates
@@ -7693,6 +7775,7 @@ clocks/freecountdown.html?n=
 clocks/onlyforusebyconfiguration.php
 clockss-manifest
 clone
+clone/library/genomic/organisms
 close-account
 cloud-launcher/sitemap
 cloud/
@@ -7882,6 +7965,10 @@ common/survey.aspx
 common_assets/static-2.197
 common_assets/static-2.198
 communities
+communities/bin.aspx?
+communities/blogs/PortalResults.mspx?
+communities/eventdetails.mspx?
+communities/rss.aspx*
 communities/sitemap
 community
 community
@@ -8003,6 +8090,7 @@ connect/help/search-results.html
 connect/http://blog.twitter.com/robots.txt
 connect/social-intranet.html
 connections
+connections/recent
 connector
 consociate
 console?*getstarted=
@@ -8031,7 +8119,6 @@ contact/alert.html
 contact/employees/servlets
 contact/menu*
 contact/partner*
-contact/thank-you
 contact?t=donation_page_report
 contact_host
 contact_me
@@ -8256,7 +8343,6 @@ cp/api/logger
 cp/api/wpa
 cpds2
 cpresources
-cpro
 cpropub/univercd
 cpspa
 cr
@@ -8514,6 +8600,7 @@ de-*/
 de-at/
 de-ch/
 de-de/
+de-de/corporate/rechtliche-hinweise/impressum_de.aspx
 de-de/feedback
 de-de/lp
 de-de/search
@@ -8768,7 +8855,6 @@ desk/help/search-results.html
 desk/images/desk-pricing-inr.pdf
 desk/images/desk-pricing-usd.pdf
 desktop
-desktoponly
 despiration/testseo
 detail
 dev
@@ -8861,7 +8947,7 @@ disaster/lookup
 discobot
 discount_type=
 discover
-discover?feed_filter_source=
+discover?feed_filter_source=*
 discoverybot
 discoverypark/bdmce/events
 discoverypark/bdmce/news
@@ -9208,7 +9294,6 @@ e-dition
 e-print
 e-services/
 e/*?
-earlyaccess
 earnings
 earth
 earth/social
@@ -9469,6 +9554,7 @@ en-us/favourites.html
 en-us/home.html?location=home
 en-us/quick-help/*
 en-us/tracking.html?action=track
+en-us/windows/si/matrix.html
 en-usbrary
 en-xa
 en-xa/*http://upload.wikimedia.org/robots.txt
@@ -9541,6 +9627,11 @@ entertain
 entertainment/article/Minerva-s-horoscope
 entertainment/bravo
 entp
+entrez
+entrez/eutils
+entrez/sutils
+entrez/utils
+entrez/viewer.fcgi
 entrytrap
 enus/
 enviro/static-3.70
@@ -9946,6 +10037,7 @@ events/rss
 events/the-telegraph-dining-experience/order-confirmation
 evernote/like.php
 evite/*http://dw.com/robots.txt
+examples/*
 exec/obidos/account-access-login
 exec/obidos/change-style
 exec/obidos/di
@@ -10057,6 +10149,7 @@ fbx
 fcgi-
 fckeditor
 fdbk
+fe=true
 feature/sf-test
 feature_nine_browse-bin=
 feature_seven_browse-bin=
@@ -10099,6 +10192,7 @@ feeds.thetimes.co.uk/puzzles
 feeds.thetimes.co.uk/timescrossword
 feeds/
 feeds/*
+feeds/TechNet/fr-fr/screenshot/screenshot%20surface.jpg
 feeds/rss
 feeds/user_rss
 feeds/videos.xml
@@ -10558,6 +10652,9 @@ fragment.*.html
 fragment.*.json
 fragment.html
 fragment.json
+france/formation/centres/planning.asp?
+france/ie/default.asp?
+france/mnp_utility.mspx?
 franchise/
 frating=
 free
@@ -10784,9 +10881,14 @@ general
 general.
 general/dbapps/404
 genre
+genuine/
+geo/download
+geo/tools
 geocoder
 geoip.php
 geooverride
+germany/library/images/mnp/
+germany/video/de/de/related*
 get
 get$
 get-author-review
@@ -10904,6 +11006,7 @@ google_search.html
 googlebooks/images
 googlegroups
 gopherdata
+gorf
 gorsel
 gorsel/$
 gorsel/?
@@ -11232,7 +11335,6 @@ help/verify_email
 help/vodafone
 helpdocs
 helper
-helpsales-sell-successfully-thankyou
 hemeroteca/*
 heritrix/3.3.0
 hermes
@@ -11253,6 +11355,7 @@ highereducation/higheddocs
 highlights
 highwire
 hinweis/datenleck
+history
 history
 history-acm-org/
 history.naver
@@ -11411,7 +11514,6 @@ homeandgarden/home/hearstmagazines
 homefeed
 homepage
 homepage-flash-testing.jsp
-homepage/
 homepage/2013
 honing.html
 hooks
@@ -11440,6 +11542,7 @@ hp/focus-retrocompatibile$
 hp/video/api
 hp/video/mystuff
 hp/video/profiles
+hpc/*/supported-applications.aspx?
 hr
 hr-*/
 hr-hr/
@@ -11746,6 +11849,7 @@ ie/guest-pass
 ie/help/sitemap
 ie/help/sitemap.php
 ie/herramientas/generador-de-logos/onboarding
+ie/ie40/
 ie/invites/buy
 ie/landing
 ie/learn/identity/*login
@@ -11919,6 +12023,7 @@ images/v$
 images/viewconfig$
 imagesrv/pdf/DIR_TSO_2531
 imagine/
+imaginecup/*
 imesync
 img
 img/placeholder.gif
@@ -12110,7 +12215,6 @@ index.php/ko/node/
 index.php/magazine/get_comment
 index.php/media/oembed
 index.php/members/profile
-index.php/node
 index.php/node/add
 index.php/node/add/
 index.php/ru/node/
@@ -12150,6 +12254,8 @@ infinite-scroll-article
 infinite-scroll-recipe
 infinite-scroll-review
 info
+info/customerror.htm*
+info/smart404.asp*
 info/tech-feedback
 info2/*
 infoods/biodiversity
@@ -12171,6 +12277,7 @@ ins
 insetsrv/v1
 insider$
 insiders
+insights/*
 insights/rss.aspx
 insights/us/en/redirection-pages/
 install-shuffles
@@ -12186,6 +12293,7 @@ integrate/
 integromedb
 intelligencer/amp
 interactive*http://fcc.gov/robots.txt
+interactive/reading-preference
 interface/pda
 intern/service/suche
 internal
@@ -12196,47 +12304,19 @@ interstitial-ad
 intl
 intl/*/about
 intl/*/about/views
-intl/*/android-preview-steps
-intl/*/betaprogramthanks
-intl/*/client
-intl/*/contact/thank-you
 intl/*/customers
-intl/*/d
-intl/*/desktoponly
-intl/*/earlyaccess
 intl/*/getstarted
 intl/*/growthformula
-intl/*/helpsales-sell-successfully-thankyou
 intl/*/home
 intl/*/hotels
 intl/*/learn
-intl/*/legal/tasks-early-access-terms
 intl/*/local-services-ads
-intl/*/logged-out
-intl/*/login
-intl/*/m
-intl/*/macbeta
-intl/*/macpreview
-intl/*/media/email/*.html
-intl/*/mobileonly
-intl/*/partner/sandler-training/sandler-templates
-intl/*/premium-cj
-intl/*/preview
-intl/*/privacy/policy-5-25-2018
-intl/*/redirect
-intl/*/redirect-to
-intl/*/signin
 intl/*/start
-intl/*/teams/contact/thank-you
 intl/*/tool
-intl/*/webclient
-intl/*/windowsbeta
-intl/*/windowspreview
 intl/admin
 intl/admin$
 intl/comment
 intl/de
-intl/en
 intl/en_*/lp/coupons$
 intl/en_*/lp/coupons/$
 intl/filter/tips
@@ -12244,6 +12324,7 @@ intl/node/add
 intl/search
 intl/user
 intl/user$
+intlkb/
 intro
 intro.naver
 intro.nhn
@@ -12569,6 +12650,11 @@ ja/user/*/shoutbox?
 ja/users
 ja_jp/templates/M
 jajp/
+japan/directx/default.asp?
+japan/enable/textview.asp?
+japan/products/library/search.asp?
+japan/showcase/print/default.aspx?
+japan/terminology/query.asp?
 jasmine-runner/static-1.14
 jasmine-runner/static-1.15
 jasmine-runner/static-1.17
@@ -12966,6 +13052,7 @@ kwanzaa-spotlight
 l
 lab
 label
+labs/pmc
 labs/popgadget/search
 lad
 lad/corporate/careers
@@ -13118,7 +13205,6 @@ legal-content/SL/TXT/SIG
 legal-content/SV/TXT/DOC
 legal-content/SV/TXT/SIG
 legal/3874403/
-legal/tasks-early-access-terms
 lemonde-beta
 lenovo/
 lessons/*/flip
@@ -13148,6 +13234,7 @@ libraries
 library
 library$
 library/
+library/*
 library/azure/
 library/devices
 library/vs/alm/
@@ -13182,7 +13269,6 @@ limit=
 limit_hits
 limited-release
 link
-link?
 link_to
 linked
 linkedin
@@ -13278,7 +13364,6 @@ log-in$
 log-in?
 log?
 log_rt_blocks_order
-logged-out
 logger
 logging
 login
@@ -13443,9 +13528,9 @@ ma-en/us-en/
 ma/corporate/contact
 ma/index.html
 ma/news
-macbeta
-macpreview
+mac/help.mspx?
 macros
+mactopia/help.mspx?
 maestro
 maestro/api
 magazine
@@ -13495,6 +13580,7 @@ mailapplications
 mailemergency
 mailinglist
 mailinglist/email
+mailman
 main
 main/
 main/global_search
@@ -13507,6 +13593,7 @@ make/request
 makeorder
 manage
 manage-listing
+manage/*
 manage/global
 manage_friend.pl
 manage_playlist
@@ -13573,6 +13660,7 @@ maps?*output=classic
 mapslt?
 mapspro
 mapstt?
+mapview
 marchand/miseajour
 marijuana-fragment
 markers_on_map
@@ -13620,7 +13708,7 @@ media
 media-center
 media-manager
 media/
-media/*/money
+media/*/money*
 media/Player6_0.swf
 media/cn/analog-dialogue/
 media/cn/company/sustainability-reports/
@@ -13628,7 +13716,6 @@ media/cn/technical-documentation/app-notes/
 media/cn/technical-documentation/customer-case-studies/
 media/cn/technical-documentation/design-notes/
 media/cn/technical-documentation/tech-articles/
-media/email/*.html
 media/en/analog-dialogue/
 media/en/company/sustainability-reports/
 media/en/non-searchable/
@@ -13653,6 +13740,7 @@ media/tv/channel/credits
 media/tyfo*
 media/tyfo*http://statcounter.com/robots.txt
 mediabase
+mediaembed
 medialibrary/de/brief
 medialibrary/de/brief/executive-brief-5-szenarien-in-denen-ihre-firewall-sandbox-losungen-versagen-konnen.pdf
 medialibrary/de/brief/executive-brief-securing-access-when-migrating-to-cloud.pdf
@@ -13945,8 +14033,10 @@ message/compose
 messageID
 message_the_business
 messages
+messages
 messages$
 messages/
+messages/*
 messages/join/*
 messaging
 messaging/ajax_already_messaged
@@ -14035,6 +14125,7 @@ mn/kb/*/discuss
 mn/search
 mn/user
 mn/users
+mnp_utility.mspx?
 mnt/
 mob/tracking
 mobile
@@ -14047,7 +14138,6 @@ mobile/search
 mobile=no*
 mobile_login
 mobileformat=
-mobileonly
 mobilepagenotfounderror.aspx
 mobileservererror.aspx
 mockup-editor
@@ -14073,6 +14163,7 @@ modules/*.js$
 modules/*.js?
 modules/*.png
 modules/musicnav/language
+modules/postto/pages
 modules=SEARCH_REFINEMENTS_MODEL_V2
 modulos/comments/list/noticias
 money/archive/
@@ -14198,9 +14289,11 @@ music/*/+shoutbox
 music/*/+shoutbox?
 music/*/+wiki/shoutbox
 music/*/+wiki/shoutbox?
+music/*/wal/
 music/+noredirect
 music/album
 music/artist
+music/song-embed
 musica
 musicad
 musicas
@@ -14405,6 +14498,7 @@ mylist_search
 mylistcomment
 myloc
 mymovies
+myncbi
 myportfolio
 myprofile
 mys
@@ -14576,6 +14670,7 @@ news/politics/0,48940-0.html
 news/politics/1,49013-0.html
 news/redirect/*
 news/report
+news/search
 news/tags
 news/uknews/1533141/Life-for-father-who-killed-girl-to-pay-back-wifes-infidelity.html
 news/uknews/law-and-order/11282672/Fetish-industry-metalworker-faces-penalty-for-breaching-design-right.html
@@ -14932,7 +15027,9 @@ notices-index-search?*?*
 noticias/20080416/destituyen-director-jefe-proteccion-asco-tras-fuga-radiactiva/28170.shtml
 notificarelacionadas
 notifications
+notifications
 notifications$
+notifications/*
 nova
 now/mt3
 now50
@@ -15202,7 +15299,6 @@ p/*/people/detail
 p/*/search
 p/*/search_feed
 p/*/search_help
-p/*/share
 p/*/source/diff
 p/*/svn
 p/*/tree
@@ -15293,9 +15389,12 @@ pages/home
 pages/it$
 pages/landing$
 pages/landing/number-one-connections-platform
+pages/legal*
 pages/news-connect
+pages/privacy
 pages/pt$
 pages/search
+pages/terms
 pages/terms
 pages/thank-you
 pages/website-developer-match
@@ -15327,7 +15426,6 @@ participate/conferences.xml
 partner
 partner-content/*
 partner-locator/partner-details
-partner/sandler-training/sandler-templates
 partnerfeeds
 partnerportal1/
 partnerportal2/
@@ -15732,7 +15830,26 @@ plugins/search
 plus/r
 plusinstall
 pm/
-pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22fct\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyiwEKGwoZV2FzIG1hY2h0IGRpZSBSb2JvdHMgdHh0PwomCiRXYXMgc29sbHRlIGluIGRlciBSb2JvdHMgdHh0IHN0ZWhlbj8KQQo_V2FzIGJlZGV1dGV0IGluZGV4aWVydCBPYndvaGwgZHVyY2ggUm9ib3RzIHR4dC1EYXRlaSBibG9ja2llcnQ_EOQC\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22s8wjHaoCMBHNz_ol-CGmyLxTyVk\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
+pmc/*.cgi
+pmc/*/bin
+pmc/*/equ
+pmc/*/pdf
+pmc/*page=
+pmc/*report=
+pmc/articlerender.fcgi
+pmc/articles
+pmc/articles/*/citedby
+pmc/issues
+pmc/ivip
+pmc/pagerender.fcgi
+pmc/picrender.fcgi
+pmc/publisherportal/api
+pmc/publisherportal/application
+pmc/publisherportal/download
+pmc/publisherportal/journalmanager
+pmc/tocrender.fcgi
+pmc/utilities
+pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyiwEKGwoZV2FzIG1hY2h0IGRpZSBSb2JvdHMgdHh0PwomCiRXYXMgc29sbHRlIGluIGRlciBSb2JvdHMgdHh0IHN0ZWhlbj8KQQo_V2FzIGJlZGV1dGV0IGluZGV4aWVydCBPYndvaGwgZHVyY2ggUm9ib3RzIHR4dC1EYXRlaSBibG9ja2llcnQ_EOQC\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22WbK2dE61gw-fEPUNQ2uElB6vtf0\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
 pmcomment/
 pmm-templates
 pmo/contact/en/staff
@@ -15984,8 +16101,11 @@ popupdetails
 popupprivacypolicy
 popups/mediaplayer
 popups/popup_gallery
+portal
 portal/
 portal/home
+portal/portal3rc.fcgi/*/*.css
+portal/portal3rc.fcgi/*/*.js
 portfolio
 posRating
 possible_biz_owner
@@ -16029,7 +16149,6 @@ prefetch
 prefs
 preisvergleich
 prelex
-premium-cj
 premium-reports
 premium-videos
 premium_enquete
@@ -16058,6 +16177,7 @@ preview=true
 previewtemplate
 previousThread.html
 prevnext
+prh-internal-news
 price-guide
 priceFilter=
 price_max=
@@ -16088,7 +16208,6 @@ privacy.php
 privacy/archived-versions.html
 privacy/consent
 privacy/cookie-policy.html
-privacy/policy-5-25-2018
 privacy/request-data
 privacy/zoho-group.html
 privacy_policy
@@ -16164,6 +16283,7 @@ profile/downloads_limit
 profile/license
 profile/payment/getstarted
 profile/view
+profilerole
 profiles
 profiles/
 profiles/*.css$
@@ -16190,6 +16310,7 @@ profiles/content.json
 profiles/me
 profiles/more_reviews
 profiles/timeline?
+profilesetup
 profinder
 profinder/pro
 programas/vocesalacarta
@@ -16227,6 +16348,9 @@ projects/*/report_inappropriate
 projects/*/reviews/new
 projects/*/rss
 projects/?
+projects/geo/download
+projects/geo/tools
+projects/gtr/gt
 projects/help/search-results.html
 projects2
 promo
@@ -16362,7 +16486,6 @@ pt_BR/seller
 pt_BR/wantlist?user=
 pt_br/modelos/M
 pt_pt/modelos/M
-pub
 pubads.g.doubleclick.net
 public
 public-data-sets/applicants/
@@ -16488,6 +16611,7 @@ questions/ask/
 questions/ask?
 questions/tagged/*%20*
 questions/tagged/*+*
+queue
 qui-sommes-nous
 quickadd.aspx
 quickcast
@@ -16612,12 +16736,12 @@ redir?
 redirect
 redirect
 redirect%3Dmobile
-redirect-to
 redirect=
 redirect=mobile
 redirect?
 redirect?url=
 redirectSearch?
+redirector
 redirector
 rediscover
 redux-thunk/static-2.1
@@ -16656,6 +16780,7 @@ registry/wishlist
 regression-test-home
 reinvent/video-case-studies
 reject-ip
+reject-mfa
 related
 related-books
 related_community.pl
@@ -16680,6 +16805,7 @@ remove-favorite
 remove_email/t2_
 renders
 renewal
+rep=hc
 replace
 reply?
 repo/create
@@ -16689,6 +16815,7 @@ report-abuse?report=
 report-abuse?url=
 report=
 report_abuse.gne
+reportabuse
 reports
 reports-and-violations
 representation
@@ -16895,6 +17022,7 @@ ru
 ru$
 ru-*/
 ru-ru/
+ru-ru/events/platforma/materials/default.aspx?speaker*
 ru/
 ru/*search
 ru/advanced-search/x
@@ -16949,6 +17077,7 @@ ru_ru/shablony/M
 rubric2sport
 run
 rundowns/segment.php?
+rus/licensing/Unilateral.aspx/*
 rvh
 rw-reg/http://realmenrealstyle.com/robots.txt
 rw/forums
@@ -16975,7 +17104,6 @@ s2/search/social
 s2/sitemaps
 s2/static
 s3
-s?
 s?
 s?*rh=n%3A1380045031
 sa
@@ -17028,6 +17156,7 @@ sap/saphana/pilot/offer/confirmation
 sard
 sard/en/sard/754/1458
 sard/en/sardm
+sars-cov-2
 savannah-checkouts
 save
 save-document
@@ -17329,6 +17458,7 @@ search.pl
 search.ref
 search/
 search/$
+search/*
 search/*-ad
 search/*-bn
 search/*-dist
@@ -17453,7 +17583,6 @@ search?keywords=*&node=
 search?keywords=*=*=
 search?narrator=
 search?node*keywords*feature_
-search?q$
 search?q=
 search?q=%23
 search?searchAuthor=*&sort=
@@ -17670,6 +17799,7 @@ set_cookie.pl
 setbucket
 setprefs
 settings
+settings/*
 settings/deactivated
 settings/linkaccount
 settings/loid-email-unsubscribe
@@ -17809,7 +17939,6 @@ sharing/folders
 sheet/help/search-results.html
 shelf/user_shelves
 shenghuo/search?
-shifen/
 shihui
 shihui?
 ship
@@ -17937,6 +18066,7 @@ signin?
 signin?expId=confirmEmail
 signin?redirect
 signout
+signout
 signup
 signup$
 signup-intlredirect
@@ -17944,6 +18074,7 @@ signup-light/
 signup.
 signup.SignUp.html
 signup/$
+signup/*
 signup/cold-join
 signup/collablink
 signup?
@@ -18455,6 +18586,7 @@ sn-wohnen/sn-wohnen-sonstiges.html
 snap
 sndmsg?
 snoop
+snp
 sns-ap
 sns-ap
 snuugl.html
@@ -18556,6 +18688,8 @@ sp/2for1
 sp/3for2
 sp=
 sp_url=
+spain/empresas/
+spain/medianaempresa/
 spanish-index-date-search?*
 spanish-index-search?*
 spanish/thewto_s/minist_s/mc10_s/coordinator_guide_s.pdf
@@ -18969,6 +19103,7 @@ surveys
 surveys-360
 surveys/
 suspension-appeal
+sutils
 sv-*/
 sv-SE/android/collections
 sv-SE/android/search
@@ -19089,6 +19224,7 @@ szl/users
 t
 t.cfm
 t/
+t/*
 t/*/15709
 t/E
 t/privacy
@@ -19262,7 +19398,6 @@ tealeaf
 team
 teamplain/
 teams
-teams/contact/thank-you
 techbiz/media/news/2001/09/46556
 techdocs/html
 technology.atom
@@ -19358,6 +19493,7 @@ testcases
 testfl
 testhttp://moz.com/robots.txt
 testing
+tests/*
 text
 textedition
 tfemail
@@ -19428,6 +19564,7 @@ things/search
 things/search$
 things/search?
 thinktank/*/pdf/search.html
+thirdpartyimport/*
 thirdpartyservice
 thirdpartyservice
 this-is-a-test
@@ -19518,6 +19655,7 @@ tools/quotes/secarticle.asp
 tools/quotes/secfilings.asp
 tools/sensitiveHeading.html
 tooltips
+top
 top
 top-50-wealth-managers
 top-stories
@@ -19671,7 +19809,6 @@ treasury/treasdocuments
 tree
 tree/xtree.css
 trendictionbot
-trending
 trending-searches
 trendingbar
 trends
@@ -19985,7 +20122,6 @@ uk/users
 uk/ventureone
 uk/wdc
 uk/your
-ulink?
 ulk/i
 ulk/sch
 ulk/usr
@@ -20002,7 +20138,6 @@ undefined
 undefined$
 unfiltered?
 unfinished.php
-unicef-component-mosaichttp://unpkg.com/robots.txt
 unicorn/check
 unijobs/*/emailjob
 unijobs/*/jbequicksignup
@@ -20322,6 +20457,7 @@ user-panel
 user-registration
 user.php
 user/
+user/*
 user/*/
 user/*/channel
 user/*/checkin
@@ -20529,6 +20665,7 @@ verified-modal
 verify
 verify_age
 verifyidentity
+version
 versions
 vet/addl/covid19partners
 vet/application
@@ -20687,6 +20824,7 @@ viewingactivity
 viewlocale=zh_CN
 vieworder
 viewrecentepisode
+viewvc
 viitem
 villagers
 vilos
@@ -20853,7 +20991,6 @@ webapp
 webapp/wcs/stores/servlet
 webapps
 webcasts
-webclient
 webcreation
 webfolder/branddesigntests
 webfolder/technetwork/jet-1000
@@ -21611,12 +21748,17 @@ wildfox-ceo-denies-pressuring-teen-into-sex-claims-it-1258825023
 win9x/
 wincontacts/
 windows/
+windows/404.aspx?*
+windows/campaign/features-built-in-apps.aspx
+windows/campaign/meet-apps.aspx
+windows/campaign/meet-start.aspx
+windows/compatibility/windows-7/
+windows/compatibility/windows-7/*
+windows/compatibility/windows-vista/
 windows/resources/whitepapers/
 windows/server2003/access/
 windows2000/
-windowsbeta
 windowsforms/
-windowspreview
 windowsvista/
 winforms/
 winfx/
@@ -21821,6 +21963,7 @@ wp-content/themes/wired/assets/images/wired_video_1000x190.jpg
 wp-content/uploads
 wp-includes
 wp-includes/css
+wp-includes/css/dist/block-library/style.min.css
 wp-includes/js
 wp-includes/js/mediaelement/mediaelementplayer.min.css
 wp-includes/js/mediaelement/wp-mediaelement.min.css
