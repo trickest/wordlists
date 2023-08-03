@@ -1076,6 +1076,7 @@ tests/unit/php/Core/Framework/App/Manifest/_fixtures/manifestWithoutMainModule.x
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/invalid-translations-manifest.xml
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/test-manifest.xml
 tests/unit/php/Core/Framework/App/Manifest/_fixtures/invalid-webhook-event-names-manifest.xml
+tests/unit/php/Core/Framework/App/Api/AppJWTGenerateRouteTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/AppRegistrationServiceTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/Persister/FlowEventPersisterTest.php
 tests/unit/php/Core/Framework/App/Lifecycle/Persister/TaxProviderPersisterTest.php
@@ -1156,6 +1157,7 @@ tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/Buc
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/FilterAggregationTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Grouping/FieldGroupingTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/CriteriaTest.php
+tests/unit/php/Core/Framework/DataAbstractionLayer/Search/RequestCriteriaBuilderTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Filter/ContainsFilterTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Filter/RangeFilterTest.php
 tests/unit/php/Core/Framework/DataAbstractionLayer/Search/Filter/PrefixFilterTest.php
@@ -1502,6 +1504,7 @@ tests/unit/php/Storefront/Checkout/Shipping/BlockedShippingMethodSwitcherTest.ph
 tests/unit/php/Storefront/Controller/StorefrontControllerTest.php
 tests/unit/php/Storefront/Controller/CartLineItemControllerTest.php
 tests/unit/php/Storefront/Controller/StorefrontControllerMockTrait.php
+tests/unit/php/Storefront/Controller/AppControllerTest.php
 tests/unit/php/Storefront/Controller/AuthControllerTest.php
 tests/unit/php/Storefront/Controller/DownloadControllerTest.php
 tests/unit/php/Storefront/Controller/RegisterControllerTest.php
@@ -1611,6 +1614,16 @@ tests/integration/php/Core/System/CustomEntity/Xml/Config/_fixtures/plugins/Swag
 tests/integration/php/Core/System/CustomEntity/Xml/Config/CmsAwareAndAdminUiTest.php
 tests/integration/php/Core/DevOps/Docs/Command/App/DocsAppEventCommandTest.php
 tests/integration/php/Core/DevOps/Docs/Command/Script/ScriptReferenceGeneratorTest.php
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/php/business-ops/cobertura.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/php/administration/cobertura.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/php/checkout/cobertura.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/js/Administration/admin/cobertura-coverage.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/js/Administration/business-ops/cobertura-coverage.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/js/Storefront/content/cobertura-coverage.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/_fixtures/coverage/js/Storefront/checkout/cobertura-coverage.xml
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/GetJSFilesPerAreaCommandTest.php
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/GetClassesPerAreaCommandTest.php
+tests/integration/php/Core/DevOps/DevOps/StaticAnalyse/Coverage/Command/SummarizeCoverageReportsTest.php
 tests/integration/php/Core/BasicOrderProductTest.php
 tests/integration/php/Core/Checkout/Payment/SalesChannel/PaymentMethodRouteTest.php
 tests/integration/php/Core/Checkout/Cart/CartPersisterTest.php
@@ -4328,6 +4341,7 @@ changelog/_unreleased/2023-05-23-store-asset-manifest-in-the-private-filesystem.
 changelog/_unreleased/2023-07-19-add-saleschannelcontextassembledevent.md
 changelog/_unreleased/2023-07-24-change-administration-uuidv4-to-uuidv7.md
 changelog/_unreleased/2023-06-02-add-open-api-validation-command.md
+changelog/_unreleased/2023-07-24-communication-from-storefront-to-app-server.md
 changelog/_unreleased/2023-07-20-fix-slow-recompile-time-in-webpack-dev-server.md
 changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-for-productexport-and-mailservice.md
 changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
@@ -4344,6 +4358,7 @@ changelog/_unreleased/2023-07-03-allow-only-printable-ascii-characters-in-file-n
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-06-21-add-domain-exception-for-customer.md
 changelog/_unreleased/2023-07-06-fix-data-handling-types.md
+changelog/_unreleased/2023-07-25-change-line-item-delete-to-post.md
 changelog/_unreleased/2023-06-22-run-state-transitions-in-system-scope.md
 changelog/_unreleased/2023-07-25-order-creation-without-customer-breaks-admin-order-panel.md
 changelog/_unreleased/2023-07-12-add-storefront-controller-endpoints-to-change-or-delete-multiple-line-items-at-once.md
@@ -4361,6 +4376,7 @@ changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-pa
 changelog/_unreleased/2023-07-06-fix-order-loaded-event-missing-billing-address-association.md
 changelog/_unreleased/2023-06-28-ensure-profiler-is-not-loaded-in-production-mode.md
 changelog/_unreleased/2023-07-04-fix-missing-product-link-at-new-order.md
+changelog/_unreleased/2023-07-27-improve-dal-criteria-id-validation.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2023-06-19-categories-with-external-link-shouldnt-have-seo-urls.md
 changelog/_unreleased/2023-07-11-allow-installation-of-apps-in-the-frw.md
@@ -4368,6 +4384,7 @@ changelog/_unreleased/2023-07-18-improve-openapi-schema-for-token-endpoint.md
 changelog/_unreleased/2023-07-12-improve-validation-in-customer-detail-address.md
 changelog/_unreleased/2023-07-05-update-sizing-of-icons-on-settings-searchable-content-general-component.md
 changelog/_unreleased/2022-10-01-cms-element-image-horizontal-align.md
+changelog/_unreleased/2023-07-24-reintroduce-support-for-custom-icons-in-admin.md
 changelog/_unreleased/2022-12-30-dont-open-offcanvas-fullwidth-in-xs-viewport.md
 changelog/_unreleased/2022-10-13-implement-configurable-plugin-log-handling.md
 changelog/_unreleased/2023-06-09-fix-duplicate-styling-in-storefront-hot-mode.md
@@ -10014,13 +10031,21 @@ src/Core/Test/Integration/Traits/TestShortHands.php
 src/Core/Test/Integration/Traits/SnapshotTesting.php
 src/Core/Test/TestBuilderTrait.php
 src/Core/Test/StaticTranslator.php
+src/Core/Test/Stub/SystemConfigService/StaticSystemConfigService.php
+src/Core/Test/Stub/MessageBus/CollectingMessageBus.php
+src/Core/Test/Stub/DataAbstractionLayer/StaticEntityWriterGateway.php
+src/Core/Test/Stub/DataAbstractionLayer/StaticEntityRepository.php
+src/Core/Test/Stub/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
+src/Core/Test/Stub/Translator/StaticTranslator.php
+src/Core/Test/Stub/Flow/DummyEvent.php
+src/Core/Test/Stub/EventDispatcher/CollectingEventDispatcher.php
 src/Core/Test/Annotation/DisabledFeatures.php
 src/Core/Test/CollectingEventDispatcher.php
 src/Core/Test/TestDefaults.php
+src/Core/Test/PHPUnit/Extension/FeatureFlagExtension.php
+src/Core/Test/PHPUnit/Extension/DatadogListener.php
 src/Core/Test/FixtureLoader.php
 src/Core/Test/CollectingMessageBus.php
-src/Core/Test/FeatureFlagExtension.php
-src/Core/Test/HttpKernelTest.php
 src/Core/.gitattributes
 src/Core/LICENSE
 src/Core/Profiling/Profiler.php
@@ -10691,6 +10716,7 @@ src/Core/DevOps/Docs/Script/ScriptReferenceGenerator.php
 src/Core/DevOps/Docs/Script/HooksReferenceGenerator.php
 src/Core/DevOps/Docs/Script/ScriptReferenceGeneratorCommand.php
 src/Core/DevOps/Resources/templates/hook-reference.md.twig
+src/Core/DevOps/Resources/templates/coverage-by-area-report.html.twig
 src/Core/DevOps/Resources/templates/service-reference.md.twig
 src/Core/DevOps/Resources/templates/hookable-events-list.md.twig
 src/Core/DevOps/Resources/templates/app-system-event-description-permissions.php
@@ -10702,6 +10728,9 @@ src/Core/DevOps/Resources/generated/miscellaneous-script-services-reference.md
 src/Core/DevOps/Resources/generated/webhook-events-reference.md
 src/Core/DevOps/Resources/generated/script-hooks-reference.md
 src/Core/DevOps/StaticAnalyze/phpstan-bootstrap.php
+src/Core/DevOps/StaticAnalyze/Coverage/Command/GetClassesPerAreaCommand.php
+src/Core/DevOps/StaticAnalyze/Coverage/Command/SummarizeCoverageReports.php
+src/Core/DevOps/StaticAnalyze/Coverage/Command/GetJSFilesPerAreaCommand.php
 src/Core/DevOps/StaticAnalyze/console-application.php
 src/Core/DevOps/StaticAnalyze/Rector/ClassPackageRector.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Type/CollectionHasSpecifyingExtension.php
@@ -12833,6 +12862,7 @@ src/Core/Framework/App/Cms/BlockTemplateLoader.php
 src/Core/Framework/App/Cms/CmsExtensions.php
 src/Core/Framework/App/AppStateService.php
 src/Core/Framework/App/Api/AppActionController.php
+src/Core/Framework/App/Api/AppJWTGenerateRoute.php
 src/Core/Framework/App/Api/AppCmsController.php
 src/Core/Framework/App/Api/AppUrlChangeController.php
 src/Core/Framework/App/Lifecycle/AbstractAppLifecycle.php
@@ -13179,7 +13209,6 @@ src/Core/Framework/Test/TestCaseBase/AdminApiTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/DatabaseTransactionBehaviourTest.php
 src/Core/Framework/Test/TestCaseBase/RequestStackTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/FilesystemBehaviourTest.php
-src/Core/Framework/Test/TestCaseBase/DatadogListener.php
 src/Core/Framework/Test/TestCaseBase/KernelLifecycleManager.php
 src/Core/Framework/Test/TestCaseBase/KernelLifecycleManagerTest.php
 src/Core/Framework/Test/TestCaseBase/TaxAddToSalesChannelTestBehaviour.php
@@ -13202,7 +13231,6 @@ src/Core/Framework/Test/DataAbstractionLayer/Search/Parser/AggregationParserTest
 src/Core/Framework/Test/DataAbstractionLayer/Search/EntitySearcherTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/EntitySearchResultTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/GroupByTest.php
-src/Core/Framework/Test/DataAbstractionLayer/Search/RequestCriteriaBuilderTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/JoinFilterTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/AntiJoinSearchTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/EntityAggregatorTest.php
@@ -13968,6 +13996,7 @@ src/Core/Framework/DataAbstractionLayer/SchemaGenerator.php
 src/Core/Framework/DataAbstractionLayer/FieldType/DateInterval.php
 src/Core/Framework/DataAbstractionLayer/FieldType/CronInterval.php
 src/Core/Framework/DataAbstractionLayer/EntityIdTrait.php
+src/Core/Framework/DataAbstractionLayer/InvalidCriteriaIdsException.php
 src/Core/Framework/DataAbstractionLayer/Cache/EntityCacheKeyGenerator.php
 src/Core/Framework/DataAbstractionLayer/Pricing/Price.php
 src/Core/Framework/DataAbstractionLayer/Pricing/PriceRuleCollection.php
@@ -14518,6 +14547,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/CachedEntitySchemaGenerator.php
 src/Core/Framework/Api/ApiDefinition/Generator/OpenApiFileLoader.php
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/newsletter.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/handle-payment.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/app.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/category.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/script.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/landing-page.json
@@ -16564,6 +16594,7 @@ src/Storefront/Resources/app/storefront/package.json
 src/Storefront/Resources/app/storefront/copy-to-vendor.js
 src/Storefront/Resources/app/storefront/.eslintignore
 src/Storefront/Resources/app/storefront/package-lock.json
+src/Storefront/Resources/app/storefront/test/service/app-client.service.test.js
 src/Storefront/Resources/app/storefront/test/utility/modal-extension/pseudo-modal.template.html
 src/Storefront/Resources/app/storefront/test/utility/modal-extension/pseudo-modal.util.test.js
 src/Storefront/Resources/app/storefront/test/utility/modal-extension/modal-content.template.html
@@ -17057,6 +17088,7 @@ src/Storefront/Resources/app/storefront/vendor/Inter-3.5/LICENSE.txt
 src/Storefront/Resources/app/storefront/stylelint.config.js
 src/Storefront/Resources/app/storefront/src/main.js
 src/Storefront/Resources/app/storefront/src/service/http-client.service.js
+src/Storefront/Resources/app/storefront/src/service/app-client.service.ts
 src/Storefront/Resources/app/storefront/src/utility/modal-extension/pseudo-modal.util.js
 src/Storefront/Resources/app/storefront/src/utility/timezone/timezone.util.js
 src/Storefront/Resources/app/storefront/src/utility/backdrop/backdrop.util.js
@@ -17645,6 +17677,7 @@ src/Storefront/Controller/CookieController.php
 src/Storefront/Controller/CountryStateController.php
 src/Storefront/Controller/SearchController.php
 src/Storefront/Controller/Api/CaptchaController.php
+src/Storefront/Controller/AppController.php
 src/Storefront/Controller/AccountOrderController.php
 src/Storefront/Controller/Exception/StorefrontException.php
 src/Storefront/Controller/CaptchaController.php

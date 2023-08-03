@@ -229,6 +229,7 @@ db/migrate/20201112000000_role_signup_column_fix.rb
 db/migrate/20220517065751_issue4086_fix_historical_options.rb
 db/migrate/20220524130435_drop_setting_ui_send_client_stats.rb
 db/migrate/20170123000002_fixed_translation.rb
+db/migrate/20230801092655_issue_4543_organization_vip.rb
 db/migrate/20180716060129_issue_2019_fix_double_domain_links_in_trigger_emails.rb
 db/migrate/20180518100316_email_forward_prefix_setting_issue_1730.rb
 db/migrate/20150979000001_update_timestamps.rb
@@ -659,6 +660,7 @@ public/assets/images/icons/received-calls.svg
 public/assets/images/icons/help.svg
 public/assets/images/icons/eye.svg
 public/assets/images/icons/long-arrow-down.svg
+public/assets/images/icons/crown-silver.svg
 public/assets/images/icons/facebook.svg
 public/assets/images/icons/one-ticket.svg
 public/assets/images/icons/two-factor.svg
@@ -802,6 +804,7 @@ spec/system/ticket/zoom/link_spec.rb
 spec/system/ticket/zoom/autosave_spec.rb
 spec/system/ticket/zoom/readonly_spec.rb
 spec/system/ticket/zoom/history_spec.rb
+spec/system/ticket/zoom/customer_organization_avatars_spec.rb
 spec/system/ticket/zoom/sidebar_spec.rb
 spec/system/ticket/zoom/auto_assignment_spec.rb
 spec/system/ticket/zoom/email_reply_body_spec.rb
@@ -4423,6 +4426,7 @@ app/frontend/shared/components/CommonIcon/assets/mobile/reply.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/add-square.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/more.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/home.svg
+app/frontend/shared/components/CommonIcon/assets/mobile/crown-silver.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/facebook.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/phone-out.svg
 app/frontend/shared/components/CommonIcon/assets/mobile/security-key.svg
@@ -4736,6 +4740,7 @@ app/assets/javascripts/app/controllers/widget/import_result.coffee
 app/assets/javascripts/app/controllers/widget/tag.coffee
 app/assets/javascripts/app/controllers/widget/button_with_dropdown.coffee
 app/assets/javascripts/app/controllers/widget/avatar.coffee
+app/assets/javascripts/app/controllers/widget/organization_avatar.coffee
 app/assets/javascripts/app/controllers/signup.coffee
 app/assets/javascripts/app/controllers/email_verify.coffee
 app/assets/javascripts/app/controllers/cti.coffee
@@ -4785,6 +4790,7 @@ app/assets/javascripts/app/controllers/organization_profile/action_row.coffee
 app/assets/javascripts/app/controllers/organization_profile/organization.coffee
 app/assets/javascripts/app/controllers/organization_profile/object.coffee
 app/assets/javascripts/app/controllers/organization_profile/member.coffee
+app/assets/javascripts/app/controllers/organization_profile/organization_avatar.coffee
 app/assets/javascripts/app/controllers/time_accounting_settings.coffee
 app/assets/javascripts/app/controllers/login.coffee
 app/assets/javascripts/app/controllers/.gitkeep
@@ -5040,6 +5046,7 @@ app/assets/javascripts/app/controllers/ticket_zoom/overview_navigator.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/sidebar_git_issue.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/sidebar_ticket.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/sidebar_idoit.coffee
+app/assets/javascripts/app/controllers/ticket_zoom/organization_avatar.coffee
 app/assets/javascripts/app/controllers/ticket_zoom/form_handler_text_module.coffee
 app/assets/javascripts/app/controllers/translation.coffee
 app/assets/javascripts/app/controllers/idoit_object_selector.coffee
@@ -5387,6 +5394,7 @@ app/assets/javascripts/app/views/report/download_content.jst.eco
 app/assets/javascripts/app/views/report/main.jst.eco
 app/assets/javascripts/app/views/report/sidebar.jst.eco
 app/assets/javascripts/app/views/sla/index.jst.eco
+app/assets/javascripts/app/views/avatar_organization.jst.eco
 app/assets/javascripts/app/views/widget/online_notification.jst.eco
 app/assets/javascripts/app/views/widget/task_item.jst.eco
 app/assets/javascripts/app/views/widget/organization.jst.eco
@@ -5534,6 +5542,8 @@ app/assets/javascripts/app/views/navigation.jst.eco
 app/assets/javascripts/app/views/after_auth/two_factor_configuration.jst.eco
 app/assets/javascripts/app/views/after_auth/two_factor_configuration/method_buttons.jst.eco
 app/assets/javascripts/app/views/popover/organization.jst.eco
+app/assets/javascripts/app/views/popover/title_generic.jst.eco
+app/assets/javascripts/app/views/popover/user_organization_headline.jst.eco
 app/assets/javascripts/app/views/popover/escalation.jst.eco
 app/assets/javascripts/app/views/popover/user.jst.eco
 app/assets/javascripts/app/views/popover/kb_generic.jst.eco

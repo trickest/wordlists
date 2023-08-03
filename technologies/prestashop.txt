@@ -1971,10 +1971,6 @@ admin-dev/themes/default/template/controllers/search/helpers/index.php
 admin-dev/themes/default/template/controllers/search/helpers/view/index.php
 admin-dev/themes/default/template/controllers/search/helpers/view/view.tpl
 admin-dev/themes/default/template/controllers/index.php
-admin-dev/themes/default/template/controllers/carts/index.php
-admin-dev/themes/default/template/controllers/carts/helpers/index.php
-admin-dev/themes/default/template/controllers/carts/helpers/view/index.php
-admin-dev/themes/default/template/controllers/carts/helpers/view/view.tpl
 admin-dev/themes/default/template/controllers/shop_url/index.php
 admin-dev/themes/default/template/controllers/shop_url/helpers/index.php
 admin-dev/themes/default/template/controllers/shop_url/helpers/list/index.php
@@ -8388,6 +8384,7 @@ src/Core/Localization/Currency/Repository.php
 src/Core/Localization/Locale.php
 src/Core/Localization/Exception/LocalizationFileNotFoundException.php
 src/Core/Localization/Exception/LocalizationException.php
+src/Core/QuickAccess/QuickAccessRepositoryInterface.php
 src/Core/Language/Copier/LanguageCopierConfigInterface.php
 src/Core/Language/Copier/LanguageCopierInterface.php
 src/Core/Language/Copier/LanguageCopierConfig.php
@@ -9358,6 +9355,7 @@ src/Adapter/Localization/LocalUnitsConfiguration.php
 src/Adapter/Localization/LocalizationConfiguration.php
 src/Adapter/Localization/LegacyTranslator.php
 src/Adapter/Localization/AdvancedConfiguration.php
+src/Adapter/QuickAccess/Repository/QuickAccessRepository.php
 src/Adapter/System/SystemInformation.php
 src/Adapter/Language/RTL/InstalledLanguageChecker.php
 src/Adapter/Language/LanguageValidator.php
@@ -10163,6 +10161,7 @@ src/PrestaShopBundle/Resources/config/services/adapter/form.yml
 src/PrestaShopBundle/Resources/config/services/adapter/prestatrust.yml
 src/PrestaShopBundle/Resources/config/services/adapter/language.yml
 src/PrestaShopBundle/Resources/config/services/adapter/notification.yml
+src/PrestaShopBundle/Resources/config/services/adapter/quick_access.yml
 src/PrestaShopBundle/Resources/config/services/adapter/supplier.yml
 src/PrestaShopBundle/Resources/config/services/adapter/attribute_group.yml
 src/PrestaShopBundle/Resources/config/services/adapter/pdf/template_type_provider.yml

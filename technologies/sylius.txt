@@ -279,6 +279,7 @@ features/promotion/managing_promotions/deleting_promotion.feature
 features/promotion/managing_promotions/adding_promotion_in_different_languages.feature
 features/promotion/managing_promotions/adding_promotion.feature
 features/promotion/managing_promotions/editing_promotion.feature
+features/promotion/managing_promotions/seeing_correct_percantage_discounts_while_editing_promotion_with_action_and_decimal_places.feature
 features/promotion/managing_promotions/browsing_promotions.feature
 features/promotion/managing_promotions/adding_promotion_with_action_in_different_channels.feature
 features/promotion/removing_catalog_promotions/removing_catalog_promotions.feature
@@ -312,6 +313,7 @@ features/promotion/applying_catalog_promotions/applying_catalog_promotions_price
 features/promotion/applying_catalog_promotions/applying_only_exclusive_catalog_promotion.feature
 features/promotion/complex_promotions.feature
 features/promotion/managing_catalog_promotions/validating_catalog_promotion_creation.feature
+features/promotion/managing_catalog_promotions/seeing_correct_percantage_discounts_while_editing_catalog_promotion.feature
 features/promotion/managing_catalog_promotions/prioritizing_catalog_promotions.feature
 features/promotion/managing_catalog_promotions/browsing_catalog_promotions.feature
 features/promotion/managing_catalog_promotions/catalog_promotion_filtration/filtering_catalog_promotions_by_status.feature
@@ -1140,6 +1142,7 @@ tests/Responses/ajax/product/index_response.json
 tests/Responses/ajax/taxon/specific_taxon_response.json
 tests/Responses/ajax/taxon/index_response.json
 tests/Twig/RedirectPathExtensionTest.php
+tests/Model/OrderAdjustmentsRecalculationTest.php
 SECURITY.md
 psalm.xml
 adr/2022_03_24_remove_flush_from_handlers.md
@@ -5962,6 +5965,7 @@ src/Sylius/Bundle/OrderBundle/test/src/Tests/SyliusOrderBundleTest.php
 src/Sylius/Bundle/OrderBundle/LICENSE
 src/Sylius/Bundle/OrderBundle/phpspec.yml.dist
 src/Sylius/Bundle/OrderBundle/DependencyInjection/Compiler/RegisterProcessorsPass.php
+src/Sylius/Bundle/OrderBundle/DependencyInjection/Compiler/TagResettableCartContextsPass.php
 src/Sylius/Bundle/OrderBundle/DependencyInjection/Compiler/RegisterCartContextsPass.php
 src/Sylius/Bundle/OrderBundle/DependencyInjection/Configuration.php
 src/Sylius/Bundle/OrderBundle/DependencyInjection/SyliusOrderExtension.php
@@ -6070,6 +6074,7 @@ src/Sylius/Bundle/OrderBundle/phpunit.xml.dist
 src/Sylius/Bundle/OrderBundle/Tests/Stub/OrderProcessorWithAttributeStub.php
 src/Sylius/Bundle/OrderBundle/Tests/Stub/CartContextWithAttributeStub.php
 src/Sylius/Bundle/OrderBundle/Tests/DependencyInjection/SyliusOrderExtensionTest.php
+src/Sylius/Bundle/OrderBundle/Tests/DependencyInjection/Compiler/TagResettableCartContextsPassTest.php
 src/Sylius/Bundle/OrderBundle/Tests/DependencyInjection/Compiler/RegisterOrderProcessorPassTest.php
 src/Sylius/Bundle/OrderBundle/NumberAssigner/OrderNumberAssigner.php
 src/Sylius/Bundle/OrderBundle/NumberAssigner/OrderNumberAssignerInterface.php
@@ -7795,6 +7800,8 @@ src/Sylius/Component/Core/Grid/Filter/ResourceAutocompleteFilter.php
 src/Sylius/Component/Core/Grid/Filter/EntitiesFilter.php
 src/Sylius/Component/Core/Payment/IdBasedInvoiceNumberGenerator.php
 src/Sylius/Component/Core/Payment/InvoiceNumberGeneratorInterface.php
+src/Sylius/Component/Core/Payment/Remover/OrderPaymentsRemoverInterface.php
+src/Sylius/Component/Core/Payment/Remover/OrderPaymentsRemover.php
 src/Sylius/Component/Core/Payment/RandomInvoiceNumberGenerator.php
 src/Sylius/Component/Core/Payment/Provider/OrderPaymentProviderInterface.php
 src/Sylius/Component/Core/Payment/Provider/OrderPaymentProvider.php
@@ -7819,6 +7826,7 @@ src/Sylius/Component/Core/spec/Checker/Eligibility/PromotionCouponChannelEligibi
 src/Sylius/Component/Core/spec/Checker/OrderShippingMethodSelectionRequirementCheckerSpec.php
 src/Sylius/Component/Core/spec/Checker/ProductVariantLowestPriceDisplayCheckerSpec.php
 src/Sylius/Component/Core/spec/Checker/OrderPaymentMethodSelectionRequirementCheckerSpec.php
+src/Sylius/Component/Core/spec/Payment/Remover/OrderPaymentsRemoverSpec.php
 src/Sylius/Component/Core/spec/Payment/IdBasedInvoiceNumberGeneratorSpec.php
 src/Sylius/Component/Core/spec/Payment/Provider/OrderPaymentProviderSpec.php
 src/Sylius/Component/Core/spec/Payment/RandomInvoiceNumberGeneratorSpec.php

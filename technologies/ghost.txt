@@ -1320,6 +1320,7 @@ ghost/admin/app/components/settings/form-fields/publication-icon.hbs
 ghost/admin/app/components/settings/members-email/default-recipients-select.js
 ghost/admin/app/components/settings/members-email/default-recipients-select.hbs
 ghost/admin/app/components/settings/members-subscription-access.js
+ghost/admin/app/components/settings/tips-and-donations.js
 ghost/admin/app/components/settings/signup-form-embed.js
 ghost/admin/app/components/settings/design/general-settings-form.hbs
 ghost/admin/app/components/settings/design/theme-settings-form.hbs
@@ -1327,6 +1328,7 @@ ghost/admin/app/components/settings/newsletters.hbs
 ghost/admin/app/components/settings/newsletters.js
 ghost/admin/app/components/settings/members-default-post-access.hbs
 ghost/admin/app/components/settings/analytics.js
+ghost/admin/app/components/settings/tips-and-donations.hbs
 ghost/admin/app/components/settings/newsletters/newsletter-management.js
 ghost/admin/app/components/settings/newsletters/newsletter-management.hbs
 ghost/admin/app/components/settings/members-comment-access.js
@@ -3036,6 +3038,7 @@ ghost/core/core/server/data/migrations/versions/5.15/2022-09-14-12-46-add-email-
 ghost/core/core/server/data/migrations/versions/4.7/02-add-yearly-price-column-to-products.js
 ghost/core/core/server/data/migrations/versions/4.7/03-add-labs-setting.js
 ghost/core/core/server/data/migrations/versions/4.7/01-add-monthly-price-column-to-products.js
+ghost/core/core/server/data/migrations/versions/5.58/2023-08-02-09-42-add-donation-settings.js
 ghost/core/core/server/data/migrations/versions/4.35/2022-02-02-13-10-transform-specific-tiers-default-content-visibility.js
 ghost/core/core/server/data/migrations/versions/4.35/2022-02-01-11-48-update-email-recipient-filter-column-type.js
 ghost/core/core/server/data/migrations/versions/4.35/2022-01-30-15-17-set-welcome-page-url-from-settings.js
@@ -4922,9 +4925,9 @@ apps/admin-x-settings/src/admin-x-ds/docs/About.mdx
 apps/admin-x-settings/src/admin-x-ds/docs/ErrorHandling.mdx
 apps/admin-x-settings/src/App.tsx
 apps/admin-x-settings/src/components/Settings.tsx
-apps/admin-x-settings/src/components/providers/DataProvider.tsx
 apps/admin-x-settings/src/components/providers/RoutingProvider.tsx
 apps/admin-x-settings/src/components/providers/ServiceProvider.tsx
+apps/admin-x-settings/src/components/providers/GlobalDataProvider.tsx
 apps/admin-x-settings/src/components/Sidebar.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalFrame.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/AccountPage.tsx
@@ -4949,6 +4952,7 @@ apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterDetail
 apps/admin-x-settings/src/components/settings/email/newsletters/NewslettersList.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreview.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/AddNewsletterModal.tsx
+apps/admin-x-settings/src/components/settings/email/EnableNewsletters.tsx
 apps/admin-x-settings/src/components/settings/email/Newsletters.tsx
 apps/admin-x-settings/src/components/settings/general/SocialAccounts.tsx
 apps/admin-x-settings/src/components/settings/general/PublicationLanguage.tsx
@@ -5004,7 +5008,6 @@ apps/admin-x-settings/src/hooks/useSortableIndexedList.tsx
 apps/admin-x-settings/src/hooks/useForm.ts
 apps/admin-x-settings/src/hooks/useRouting.tsx
 apps/admin-x-settings/src/hooks/useGlobalDirtyState.tsx
-apps/admin-x-settings/src/hooks/useSettings.tsx
 apps/admin-x-settings/src/hooks/useSettingGroup.tsx
 apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/assets/icons/portal-icon-5.svg

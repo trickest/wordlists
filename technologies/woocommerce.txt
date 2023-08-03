@@ -223,6 +223,7 @@ pnpm-lock.yaml
 .npmrc
 changelog/e2e-fix-allure-upload-input
 changelog/pr-36705
+changelog/e2e-update-locator-in-allows-customer-to-place-order-test
 phpcs.xml
 renovate.json
 README.md
@@ -2265,12 +2266,14 @@ plugins/woocommerce/changelog/add-post_password_block2
 plugins/woocommerce/changelog/fix-39272
 plugins/woocommerce/changelog/update-wp-6.3-prep
 plugins/woocommerce/changelog/dev-optimize-system-status-tests
+plugins/woocommerce/changelog/e2e-update-locator-to-reduce-flakiness-when-running-tests-against-an-external-site
 plugins/woocommerce/changelog/fix-39045-remaining-tasks-bubble
 plugins/woocommerce/changelog/e2e-analytics-overview-simplify-userid-retrieval
 plugins/woocommerce/changelog/pr-39155
 plugins/woocommerce/changelog/fix-39164
 plugins/woocommerce/changelog/fix-39399-guest-verify-email-hook
 plugins/woocommerce/changelog/add-customize-store-feature-flag
+plugins/woocommerce/changelog/fix-38717
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
 plugins/woocommerce/changelog/fix-35612
 plugins/woocommerce/changelog/update-36510-spinner-in-task-list
@@ -2292,6 +2295,7 @@ plugins/woocommerce/changelog/dev-shard-unit-tests-take-two
 plugins/woocommerce/changelog/update-39138-core-profiler-ui-updates
 plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/fix-38720-wc-tracker-unit-test
+plugins/woocommerce/changelog/update-79113-incorrect-subheading-style-and-copy-on-wc-core-profiler
 plugins/woocommerce/changelog/add-post_password_block
 plugins/woocommerce/changelog/fix-39353
 plugins/woocommerce/assets/fonts/WooCommerce.eot
@@ -4389,6 +4393,7 @@ packages/js/product-editor/changelog/fix-37897
 packages/js/product-editor/changelog/add-37406
 packages/js/product-editor/changelog/update-move-product-hooks
 packages/js/product-editor/changelog/add-38243
+packages/js/product-editor/changelog/fix-39228
 packages/js/product-editor/changelog/add-37984
 packages/js/product-editor/changelog/add-37096
 packages/js/product-editor/changelog/fix-37348
@@ -6523,4 +6528,6 @@ docs/snippets/number-of-products-per-row.md
 docs/snippets/before-login--register-form.md
 docs/snippets/unhook--remove-woocommerce-emails.md
 docs/snippets/README.md
+docs/themes/marketplace-guidelines.md
+docs/themes/README.md
 docs/README.md
