@@ -289,6 +289,7 @@ erpnext/controllers/accounts_controller.py
 erpnext/controllers/taxes_and_totals.py
 erpnext/controllers/subcontracting_controller.py
 erpnext/controllers/tests/test_subcontracting_controller.py
+erpnext/controllers/tests/test_accounts_controller.py
 erpnext/controllers/tests/test_item_variant.py
 erpnext/controllers/tests/test_mapper.py
 erpnext/controllers/tests/test_transaction_base.py
@@ -663,6 +664,10 @@ erpnext/accounts/report/cash_flow/cash_flow.py
 erpnext/accounts/report/cash_flow/cash_flow.json
 erpnext/accounts/report/cash_flow/cash_flow.html
 erpnext/accounts/report/cash_flow/__init__.py
+erpnext/accounts/report/financial_ratios/financial_ratios.js
+erpnext/accounts/report/financial_ratios/financial_ratios.py
+erpnext/accounts/report/financial_ratios/financial_ratios.json
+erpnext/accounts/report/financial_ratios/__init__.py
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.json
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.py
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.html
@@ -693,6 +698,7 @@ erpnext/accounts/report/balance_sheet/balance_sheet.json
 erpnext/accounts/report/balance_sheet/balance_sheet.js
 erpnext/accounts/report/balance_sheet/balance_sheet.html
 erpnext/accounts/report/balance_sheet/balance_sheet.py
+erpnext/accounts/report/balance_sheet/test_balance_sheet.py
 erpnext/accounts/report/balance_sheet/__init__.py
 erpnext/accounts/report/sales_partners_commission/sales_partners_commission.json
 erpnext/accounts/report/sales_partners_commission/__init__.py
@@ -2778,6 +2784,7 @@ erpnext/patches/v14_0/delete_shopify_doctypes.py
 erpnext/patches/v14_0/remove_india_localisation.py
 erpnext/patches/v14_0/create_accounting_dimensions_for_closing_balance.py
 erpnext/patches/v14_0/delete_hospitality_doctypes.py
+erpnext/patches/v14_0/update_reference_type_in_journal_entry_accounts.py
 erpnext/patches/v14_0/set_packed_qty_in_draft_delivery_notes.py
 erpnext/patches/v14_0/create_accounting_dimensions_in_subcontracting_doctypes.py
 erpnext/patches/v14_0/delete_datev_doctypes.py

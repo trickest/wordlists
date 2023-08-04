@@ -37,6 +37,7 @@ tools/monorepo-utils/src/md-docs/lib/markdown-links.ts
 tools/monorepo-utils/src/md-docs/lib/generate-manifest.ts
 tools/monorepo-utils/src/md-docs/lib/generate-urls.ts
 tools/monorepo-utils/src/md-docs/lib/generate-frontmatter.ts
+tools/monorepo-utils/src/md-docs/lib/__tests__/markdown-links.ts
 tools/monorepo-utils/src/md-docs/lib/__tests__/generate-manifest.ts
 tools/monorepo-utils/src/md-docs/lib/__tests__/generate-frontmatter.ts
 tools/monorepo-utils/src/md-docs/lib/__tests__/generate-file-url.ts
@@ -295,6 +296,7 @@ plugins/woocommerce-beta-tester/changelog/fix-rest-api-filter
 plugins/woocommerce-beta-tester/changelog/dev-sync-pnpm
 plugins/woocommerce-beta-tester/changelog/dev-live-branches-ui
 plugins/woocommerce-beta-tester/changelog/dev-live-branches-userscript
+plugins/woocommerce-beta-tester/changelog/dev-fix-beta-tester-error
 plugins/woocommerce-beta-tester/changelog/dev-integrate-combo-box-live-branch
 plugins/woocommerce-beta-tester/changelog/dev-enable-live-branches
 plugins/woocommerce-beta-tester/changelog/add-36991
@@ -2271,7 +2273,9 @@ plugins/woocommerce/changelog/fix-39045-remaining-tasks-bubble
 plugins/woocommerce/changelog/e2e-analytics-overview-simplify-userid-retrieval
 plugins/woocommerce/changelog/pr-39155
 plugins/woocommerce/changelog/fix-39164
+plugins/woocommerce/changelog/update-fix-invalid-css-properties
 plugins/woocommerce/changelog/fix-39399-guest-verify-email-hook
+plugins/woocommerce/changelog/fix-39583
 plugins/woocommerce/changelog/add-customize-store-feature-flag
 plugins/woocommerce/changelog/fix-38717
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
@@ -2280,6 +2284,7 @@ plugins/woocommerce/changelog/update-36510-spinner-in-task-list
 plugins/woocommerce/changelog/payment-methods-for-your-state
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/dev-core-profiler-storybook
+plugins/woocommerce/changelog/enhance-faster_backfill
 plugins/woocommerce/changelog/fix-39039-jetpack-redirect-issue
 plugins/woocommerce/changelog/fix-39354
 plugins/woocommerce/changelog/docs-remove-has_task
@@ -2296,6 +2301,7 @@ plugins/woocommerce/changelog/update-39138-core-profiler-ui-updates
 plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/fix-38720-wc-tracker-unit-test
 plugins/woocommerce/changelog/update-79113-incorrect-subheading-style-and-copy-on-wc-core-profiler
+plugins/woocommerce/changelog/fix-reduce_read_on_sync
 plugins/woocommerce/changelog/add-post_password_block
 plugins/woocommerce/changelog/fix-39353
 plugins/woocommerce/assets/fonts/WooCommerce.eot
@@ -2884,6 +2890,7 @@ plugins/woocommerce-docs/tests/src/Manifest/RelativeLinkParserTest.php
 plugins/woocommerce-docs/tests/src/Manifest/CategoryCreatorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/PostCreatorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/PostArgsTest.php
+plugins/woocommerce-docs/tests/src/Manifest/PostRemoverTest.php
 plugins/woocommerce-docs/tests/src/Manifest/ManifestProcessorTest.php
 plugins/woocommerce-docs/tests/src/Manifest/fixtures/test.md
 plugins/woocommerce-docs/tests/src/Manifest/fixtures/manifest.json
@@ -2904,6 +2911,7 @@ plugins/woocommerce-docs/src/Data/DocsStore.php
 plugins/woocommerce-docs/src/Manifest/ManifestProcessor.php
 plugins/woocommerce-docs/src/Manifest/RelativeLinkParser.php
 plugins/woocommerce-docs/src/Manifest/PostCreator.php
+plugins/woocommerce-docs/src/Manifest/PostRemover.php
 plugins/woocommerce-docs/src/Manifest/PostArgs.php
 plugins/woocommerce-docs/src/Manifest/CategoryCreator.php
 plugins/woocommerce-docs/src/Job/ManifestJob.php
@@ -4383,6 +4391,7 @@ packages/js/product-editor/changelog/update-36355_product_editor_package
 packages/js/product-editor/changelog/fix-modal-editor-scrolling
 packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
 packages/js/product-editor/changelog/update-37686
+packages/js/product-editor/changelog/fix-39543
 packages/js/product-editor/changelog/fix-37249
 packages/js/product-editor/changelog/add-shipping-class-creation-37886
 packages/js/product-editor/changelog/add-37098_add_product_list_price_block
@@ -5182,6 +5191,7 @@ packages/js/components/tsconfig.json
 packages/js/components/changelog/fix-admin-colors-use-theme
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/dev-sync-pnpm
+packages/js/components/changelog/fix-39456_select_attribute_values_name
 packages/js/components/README.md
 packages/js/components/babel.config.js
 packages/js/components/PREVIOUS_CHANGELOG.md

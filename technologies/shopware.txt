@@ -1135,6 +1135,7 @@ tests/unit/php/Core/Framework/Plugin/PluginManagementServiceTest.php
 tests/unit/php/Core/Framework/Plugin/Composer/FactoryTest.php
 tests/unit/php/Core/Framework/Plugin/Event/PluginPostDeactivationFailedEventTest.php
 tests/unit/php/Core/Framework/Plugin/KernelPluginLoader/KernelPluginLoaderTest.php
+tests/unit/php/Core/Framework/Plugin/PluginServiceTest.php
 tests/unit/php/Core/Framework/Webhook/WebhookDispatcherTest.php
 tests/unit/php/Core/Framework/Webhook/Service/WebhookCleanupTest.php
 tests/unit/php/Core/Framework/Webhook/ScheduledTask/CleanupWebhookEventLogTaskHandlerTest.php
@@ -1628,6 +1629,8 @@ tests/integration/php/Core/BasicOrderProductTest.php
 tests/integration/php/Core/Checkout/Payment/SalesChannel/PaymentMethodRouteTest.php
 tests/integration/php/Core/Checkout/Cart/CartPersisterTest.php
 tests/integration/php/Core/Checkout/Cart/PriceActionControllerTest.php
+tests/integration/php/Core/Checkout/Cart/Delivery/DeliveryProcessorTest.php
+tests/integration/php/Core/Checkout/Cart/Delivery/DeliveryCalculatorTest.php
 tests/integration/php/Core/Checkout/Cart/TaxProvider/TaxAdjustmentTest.php
 tests/integration/php/Core/Checkout/Cart/TaxProvider/TaxProviderRegistryTest.php
 tests/integration/php/Core/Checkout/Cart/SalesChannel/CartOrderRouteTest.php
@@ -4347,6 +4350,7 @@ changelog/_unreleased/2023-06-28-change-log_level-of-template-rendering-errors-f
 changelog/_unreleased/2023-06-13-fix-webpack-clean-plugin-glob-pattern.md
 changelog/_unreleased/2023-07-18-enhance-sorting-on-sw-entity-listing.md
 changelog/_unreleased/2023-07-07-clear-cache-after-search-config-is-updated.md
+changelog/_unreleased/2023-07-24-fix-shipping-cost-editing-by-admin-in-not-default-currency.md
 changelog/_unreleased/2022-10-21-add-order-tax-state-footnote-in-customer-order-history.md
 changelog/_unreleased/2023-06-22-shipping-method-price-unique-quantity-start-exception-handler.md
 changelog/_unreleased/2023-07-10-fix-the-render-error-message.md
@@ -4368,6 +4372,7 @@ changelog/_unreleased/2023-07-07-fix-user-cannot-be-deleted-when-associating-wit
 changelog/_unreleased/2023-07-13-product-cover-inherited-does-not-work-anymore.md
 changelog/_unreleased/2023-06-05-added-handler-for-route-changes-inside-apps.md
 changelog/_unreleased/2023-06-22-deprecated-external-tax-state.md
+changelog/_unreleased/2023-08-01-add-criteria-schema.md
 changelog/_unreleased/2023-07-11-deprecate-constraint-annotations.md
 changelog/_unreleased/2023-03-31-fix-salutation-auto-when-create-customer-in-admin.md
 changelog/_unreleased/2023-08-01-handling-incident-rate-limit.md
@@ -10961,8 +10966,6 @@ src/Core/Checkout/Test/Cart/Rule/LineItemIsNewRuleTest.php
 src/Core/Checkout/Test/Cart/Rule/CartHasFreeDeliveryItemRuleTest.php
 src/Core/Checkout/Test/Cart/Rule/PromotionValueRuleTest.php
 src/Core/Checkout/Test/Cart/Rule/LineItemTaxationRuleTest.php
-src/Core/Checkout/Test/Cart/Delivery/DeliveryProcessorTest.php
-src/Core/Checkout/Test/Cart/Delivery/DeliveryCalculatorTest.php
 src/Core/Checkout/Test/Cart/Delivery/DeliveryBuilderTest.php
 src/Core/Checkout/Test/Cart/AddressValidatorTest.php
 src/Core/Checkout/Test/Cart/Order/OrderPersisterTest.php
@@ -14628,6 +14631,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/document.js
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/index-products.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/flowBulderActionsResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/OAuthScopes.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/Criteria.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/infoConfigResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/businessEventsResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
