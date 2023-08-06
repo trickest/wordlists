@@ -704,6 +704,8 @@ app/bundles/CoreBundle/Test/Session/FixedMockFileSessionStorage.php
 app/bundles/CoreBundle/MauticCoreBundle.php
 app/bundles/CoreBundle/Monolog/Handler/FileLogHandler.php
 app/bundles/CoreBundle/Monolog/LogProcessor.php
+app/bundles/CoreBundle/Shortener/ShortenerServiceInterface.php
+app/bundles/CoreBundle/Shortener/Shortener.php
 app/bundles/CoreBundle/Cache/MiddlewareCacheWarmer.php
 app/bundles/CoreBundle/Console/Output/ConsoleDatetimeOutput.php
 app/bundles/CoreBundle/Helper/CsvHelper.php
@@ -819,6 +821,7 @@ app/bundles/CoreBundle/DependencyInjection/Compiler/DbalPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/UpdateStepPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/TranslationLoaderPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ConfiguratorPass.php
+app/bundles/CoreBundle/DependencyInjection/Compiler/ShortenerServicePass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/TestPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ORMPurgerPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/TwigPass.php
@@ -1202,6 +1205,7 @@ app/bundles/CoreBundle/Tests/Unit/Service/BulkNotificationTest.php
 app/bundles/CoreBundle/Tests/Unit/RememberMeTest.php
 app/bundles/CoreBundle/Tests/Unit/Monolog/LogProcessorTest.php
 app/bundles/CoreBundle/Tests/Unit/Monolog/Handler/FileLogHandlerTest.php
+app/bundles/CoreBundle/Tests/Unit/Shortener/ShortenerTest.php
 app/bundles/CoreBundle/Tests/Unit/Helper/PathsHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/Helper/UrlHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/Helper/LanguageHelperTest.php
