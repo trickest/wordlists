@@ -1931,6 +1931,7 @@ ghost/staff-service/lib/email-templates/new-milestone-received.txt.js
 ghost/staff-service/lib/email-templates/partials/preview.hbs
 ghost/staff-service/lib/email-templates/partials/styles.hbs
 ghost/staff-service/lib/email-templates/mention-report.hbs
+ghost/staff-service/lib/email-templates/donation.txt.js
 ghost/staff-service/lib/email-templates/new-paid-started.hbs
 ghost/staff-service/lib/email-templates/new-free-signup.hbs
 ghost/staff-service/lib/email-templates/new-paid-cancellation.txt.js
@@ -1939,6 +1940,7 @@ ghost/staff-service/lib/email-templates/new-free-signup.txt.js
 ghost/staff-service/lib/email-templates/new-paid-cancellation.hbs
 ghost/staff-service/lib/email-templates/new-milestone-received.hbs
 ghost/staff-service/lib/email-templates/mention-report.txt.js
+ghost/staff-service/lib/email-templates/donation.hbs
 ghost/staff-service/lib/milestone-email-config.js
 ghost/staff-service/.eslintrc.js
 ghost/dynamic-routing-events/index.js
@@ -2706,6 +2708,7 @@ ghost/core/core/server/models/member-subscribe-event.js
 ghost/core/core/server/models/comment.js
 ghost/core/core/server/models/action.js
 ghost/core/core/server/models/role.js
+ghost/core/core/server/models/collection-post.js
 ghost/core/core/server/models/author.js
 ghost/core/core/server/models/member-stripe-customer.js
 ghost/core/core/server/models/base/index.js
@@ -2892,6 +2895,7 @@ ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-31-drop-report
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-32-drop-nullable-member-id-from-likes.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-18-14-29-add-comment-reporting-permissions.js
 ghost/core/core/server/data/migrations/versions/5.5/2022-07-21-08-56-add-jobs-table.js
+ghost/core/core/server/data/migrations/versions/5.59/2023-08-07-10-42-add-donation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.24/2022-11-21-15-57-add-error-columns-for-email-batches.js
 ghost/core/core/server/data/migrations/versions/5.24/2022-11-21-15-03-populate-source-column-with-html-for-emails.js
 ghost/core/core/server/data/migrations/versions/5.24/2022-11-21-09-32-add-source-columns-to-emails-table.js
@@ -4697,9 +4701,11 @@ apps/admin-x-settings/tailwind.config.cjs
 apps/admin-x-settings/index.html
 apps/admin-x-settings/test/e2e/membership/analytics.test.ts
 apps/admin-x-settings/test/e2e/membership/access.test.ts
+apps/admin-x-settings/test/e2e/membership/stripe.test.ts
 apps/admin-x-settings/test/e2e/membership/tiers.test.ts
 apps/admin-x-settings/test/e2e/email/mailgun.test.ts
 apps/admin-x-settings/test/e2e/email/defaultRecipients.test.ts
+apps/admin-x-settings/test/e2e/email/newsletters.test.ts
 apps/admin-x-settings/test/e2e/general/publicationLanguage.test.ts
 apps/admin-x-settings/test/e2e/general/lockSite.test.ts
 apps/admin-x-settings/test/e2e/general/timeZone.test.ts
@@ -4718,6 +4724,7 @@ apps/admin-x-settings/test/e2e/site/theme.test.ts
 apps/admin-x-settings/test/e2e/search.test.ts
 apps/admin-x-settings/test/utils/e2e.ts
 apps/admin-x-settings/test/utils/responses/offers.json
+apps/admin-x-settings/test/utils/responses/newsletters.json
 apps/admin-x-settings/test/utils/responses/roles.json
 apps/admin-x-settings/test/utils/responses/custom_theme_settings.json
 apps/admin-x-settings/test/utils/responses/me.json

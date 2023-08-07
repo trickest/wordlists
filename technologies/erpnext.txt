@@ -109,7 +109,6 @@ erpnext/templates/print_formats/includes/serial_and_batch_bundle.html
 erpnext/templates/print_formats/includes/item_table_description.html
 erpnext/templates/print_formats/includes/items.html
 erpnext/templates/emails/confirm_appointment.html
-erpnext/templates/emails/request_for_quotation.html
 erpnext/templates/emails/reorder_item.html
 erpnext/templates/emails/daily_project_summary.html
 erpnext/templates/__init__.py
@@ -783,6 +782,11 @@ erpnext/accounts/report/inactive_sales_items/inactive_sales_items.js
 erpnext/accounts/report/inactive_sales_items/inactive_sales_items.json
 erpnext/accounts/report/inactive_sales_items/__init__.py
 erpnext/accounts/report/utils.py
+erpnext/accounts/report/general_and_payment_ledger_comparison/general_and_payment_ledger_comparison.json
+erpnext/accounts/report/general_and_payment_ledger_comparison/general_and_payment_ledger_comparison.js
+erpnext/accounts/report/general_and_payment_ledger_comparison/test_general_and_payment_ledger_comparison.py
+erpnext/accounts/report/general_and_payment_ledger_comparison/general_and_payment_ledger_comparison.py
+erpnext/accounts/report/general_and_payment_ledger_comparison/__init__.py
 erpnext/accounts/report/budget_variance_report/budget_variance_report.py
 erpnext/accounts/report/budget_variance_report/budget_variance_report.js
 erpnext/accounts/report/budget_variance_report/budget_variance_report.json
@@ -2778,6 +2782,7 @@ erpnext/patches/v14_0/delete_healthcare_doctypes.py
 erpnext/patches/v14_0/delete_amazon_mws_doctype.py
 erpnext/patches/v14_0/delete_hub_doctypes.py
 erpnext/patches/v14_0/single_to_multi_dunning.py
+erpnext/patches/v14_0/update_subscription_details.py
 erpnext/patches/v14_0/delete_agriculture_doctypes.py
 erpnext/patches/v14_0/copy_is_subcontracted_value_to_is_old_subcontracting_flow.py
 erpnext/patches/v14_0/delete_shopify_doctypes.py
