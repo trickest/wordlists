@@ -370,6 +370,7 @@ db/migrate/20220707000001_template_migration.rb
 db/migrate/20180418000001_setting_third_party_link_account_at_login.rb
 db/migrate/20201027152258_add_missing_permissions.rb
 db/migrate/20200205000001_chat_add_allow_website.rb
+db/migrate/20230807171019_postmaster_filter_regex_operator.rb
 db/migrate/20170420000001_chat_increase_message_size.rb
 db/migrate/20210830150400_issue_3503_fix_current_user.rb
 db/migrate/20201201000001_setting_add_sender_format_agent_name.rb
@@ -1042,6 +1043,7 @@ spec/db/migrate/issue_2943_add_setting_enforce_special_character_spec.rb
 spec/db/migrate/rename_locale_on_users_spec.rb
 spec/db/migrate/html_sanitizer_processing_timeout_spec.rb
 spec/db/migrate/issue_4089_fix_draft_attribute_spec.rb
+spec/db/migrate/postmaster_filter_regex_operator_spec.rb
 spec/db/migrate/smime_meta_information_table_spec.rb
 spec/db/migrate/issue_1573_multi_orga_spec.rb
 spec/graphql/gql/types/email/address_type_spec.rb
@@ -1271,6 +1273,7 @@ spec/models/channel/driver/sms/twilio_spec.rb
 spec/models/channel/driver/sms/message_bird_spec.rb
 spec/models/channel/driver/sms/massenversand_spec.rb
 spec/models/channel/filter/match/email_regex_spec.rb
+spec/models/channel/filter/match/contains_spec.rb
 spec/models/channel/filter/database_spec.rb
 spec/models/channel/filter/out_of_office_check_spec.rb
 spec/models/channel/filter/monit_spec.rb
@@ -5871,6 +5874,7 @@ app/models/channel/driver/sms/base.rb
 app/models/channel/driver/sms/message_bird.rb
 app/models/channel/driver/sms/twilio.rb
 app/models/channel/driver/sms/massenversand.rb
+app/models/channel/filter/match/contains.rb
 app/models/channel/filter/match/email_regex.rb
 app/models/channel/filter/follow_up_assignment.rb
 app/models/channel/filter/reply_to_based_sender.rb

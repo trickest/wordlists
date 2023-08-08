@@ -1106,6 +1106,9 @@ migrate/20201027152258_add_missing_permissions.rb
 db/migrate/20200205000001_chat_add_allow_website.rb
 migrate/20200205000001_chat_add_allow_website.rb
 20200205000001_chat_add_allow_website.rb
+db/migrate/20230807171019_postmaster_filter_regex_operator.rb
+migrate/20230807171019_postmaster_filter_regex_operator.rb
+20230807171019_postmaster_filter_regex_operator.rb
 db/migrate/20170420000001_chat_increase_message_size.rb
 migrate/20170420000001_chat_increase_message_size.rb
 20170420000001_chat_increase_message_size.rb
@@ -4031,6 +4034,10 @@ spec/db/migrate/issue_4089_fix_draft_attribute_spec.rb
 db/migrate/issue_4089_fix_draft_attribute_spec.rb
 migrate/issue_4089_fix_draft_attribute_spec.rb
 issue_4089_fix_draft_attribute_spec.rb
+spec/db/migrate/postmaster_filter_regex_operator_spec.rb
+db/migrate/postmaster_filter_regex_operator_spec.rb
+migrate/postmaster_filter_regex_operator_spec.rb
+postmaster_filter_regex_operator_spec.rb
 spec/db/migrate/smime_meta_information_table_spec.rb
 db/migrate/smime_meta_information_table_spec.rb
 migrate/smime_meta_information_table_spec.rb
@@ -5051,6 +5058,12 @@ channel/filter/match/email_regex_spec.rb
 filter/match/email_regex_spec.rb
 match/email_regex_spec.rb
 email_regex_spec.rb
+spec/models/channel/filter/match/contains_spec.rb
+models/channel/filter/match/contains_spec.rb
+channel/filter/match/contains_spec.rb
+filter/match/contains_spec.rb
+match/contains_spec.rb
+contains_spec.rb
 spec/models/channel/filter/database_spec.rb
 models/channel/filter/database_spec.rb
 channel/filter/database_spec.rb
@@ -32133,6 +32146,12 @@ channel/driver/sms/massenversand.rb
 driver/sms/massenversand.rb
 sms/massenversand.rb
 massenversand.rb
+app/models/channel/filter/match/contains.rb
+models/channel/filter/match/contains.rb
+channel/filter/match/contains.rb
+filter/match/contains.rb
+match/contains.rb
+contains.rb
 app/models/channel/filter/match/email_regex.rb
 models/channel/filter/match/email_regex.rb
 channel/filter/match/email_regex.rb

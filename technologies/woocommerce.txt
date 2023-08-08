@@ -289,6 +289,7 @@ plugins/woocommerce-beta-tester/changelog/dev-update-pnpm-8.6.5
 plugins/woocommerce-beta-tester/changelog/add-trunk-to-beta-tester
 plugins/woocommerce-beta-tester/changelog/update-beta-tester-woorelease
 plugins/woocommerce-beta-tester/changelog/.gitkeep
+plugins/woocommerce-beta-tester/changelog/dev-upgrade-ts-5
 plugins/woocommerce-beta-tester/changelog/dev-check-logger-exists
 plugins/woocommerce-beta-tester/changelog/update-changelogger
 plugins/woocommerce-beta-tester/changelog/fix-typescript-incremental-builds
@@ -1323,7 +1324,6 @@ plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/basic.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics-overview.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics.spec.js
-plugins/woocommerce/tests/e2e-pw/tests/new-product-editor/new-product-editor.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-refund.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-edit.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-post.spec.js
@@ -1336,6 +1336,9 @@ plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/cr
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-variations.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-variable-product.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/update-variations.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/block-editor/enable-block-product-editor.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/block-editor/disable-block-product-editor.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/products/block-editor/create-simple-product-block-editor.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-order.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-page.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-emails.spec.js
@@ -1356,6 +1359,7 @@ plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/overview.spec.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/utils/features.js
 plugins/woocommerce/tests/e2e-pw/utils/site.js
+plugins/woocommerce/tests/e2e-pw/utils/simple-products.js
 plugins/woocommerce/tests/e2e-pw/utils/wordpress.js
 plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/filters.js
@@ -2275,23 +2279,29 @@ plugins/woocommerce/changelog/pr-39155
 plugins/woocommerce/changelog/fix-39164
 plugins/woocommerce/changelog/update-fix-invalid-css-properties
 plugins/woocommerce/changelog/fix-39399-guest-verify-email-hook
+plugins/woocommerce/changelog/fix-39585
 plugins/woocommerce/changelog/fix-39583
 plugins/woocommerce/changelog/add-customize-store-feature-flag
 plugins/woocommerce/changelog/fix-38717
+plugins/woocommerce/changelog/add-update-wcpay-banners-for-woopay
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
 plugins/woocommerce/changelog/fix-35612
 plugins/woocommerce/changelog/update-36510-spinner-in-task-list
 plugins/woocommerce/changelog/payment-methods-for-your-state
+plugins/woocommerce/changelog/add-39125
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/dev-core-profiler-storybook
 plugins/woocommerce/changelog/enhance-faster_backfill
+plugins/woocommerce/changelog/dev-upgrade-ts-5
 plugins/woocommerce/changelog/fix-39039-jetpack-redirect-issue
+plugins/woocommerce/changelog/add-39417_disable_block_product_editor
 plugins/woocommerce/changelog/fix-39354
 plugins/woocommerce/changelog/docs-remove-has_task
 plugins/woocommerce/changelog/fix-39051
 plugins/woocommerce/changelog/add-variation-options-block
 plugins/woocommerce/changelog/update-38997-chekbox-ui-is-still-using-old-look
 plugins/woocommerce/changelog/enhancement-38823
+plugins/woocommerce/changelog/add-39411_tests_to_general_tab
 plugins/woocommerce/changelog/fix-admin-colors-select2
 plugins/woocommerce/changelog/dev-sync-pnpm
 plugins/woocommerce/changelog/pr-39372
@@ -2300,6 +2310,7 @@ plugins/woocommerce/changelog/dev-shard-unit-tests-take-two
 plugins/woocommerce/changelog/update-39138-core-profiler-ui-updates
 plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/fix-38720-wc-tracker-unit-test
+plugins/woocommerce/changelog/add-39442_enable_block_product_editor
 plugins/woocommerce/changelog/update-79113-incorrect-subheading-style-and-copy-on-wc-core-profiler
 plugins/woocommerce/changelog/fix-reduce_read_on_sync
 plugins/woocommerce/changelog/add-post_password_block
@@ -3997,6 +4008,7 @@ plugins/woo-ai/changelog/feature-ai-description-product-data-38338
 plugins/woo-ai/changelog/update-completion-hooks-39009
 plugins/woo-ai/changelog/dev-update-pnpm-8.6.5
 plugins/woo-ai/changelog/.gitkeep
+plugins/woo-ai/changelog/dev-upgrade-ts-5
 plugins/woo-ai/changelog/update-woo-ai-endpoints-38895
 plugins/woo-ai/changelog/add-update-short-description-39151
 plugins/woo-ai/changelog/dev-sync-pnpm
@@ -4121,6 +4133,7 @@ packages/js/currency/changelog/dev-pin-wp-deps-6
 packages/js/currency/changelog/dev-update-pnpm-8.6.5
 packages/js/currency/changelog/fix-plugin-installer-ts
 packages/js/currency/changelog/.gitkeep
+packages/js/currency/changelog/dev-upgrade-ts-5
 packages/js/currency/changelog/update-changelogger
 packages/js/currency/changelog/fix-typescript-incremental-builds
 packages/js/currency/changelog/dev-fix-admin-tests-pnpm7
@@ -4153,6 +4166,7 @@ packages/js/number/changelog/upgrade-pnpm-7
 packages/js/number/changelog/dev-update-pnpm-8.6.5
 packages/js/number/changelog/fix-plugin-installer-ts
 packages/js/number/changelog/.gitkeep
+packages/js/number/changelog/dev-upgrade-ts-5
 packages/js/number/changelog/update-changelogger
 packages/js/number/changelog/add-parse-number
 packages/js/number/changelog/fix-typescript-incremental-builds
@@ -4184,6 +4198,7 @@ packages/js/tracks/changelog/upgrade-pnpm-7
 packages/js/tracks/changelog/dev-update-pnpm-8.6.5
 packages/js/tracks/changelog/fix-plugin-installer-ts
 packages/js/tracks/changelog/.gitkeep
+packages/js/tracks/changelog/dev-upgrade-ts-5
 packages/js/tracks/changelog/update-changelogger
 packages/js/tracks/changelog/fix-typescript-incremental-builds
 packages/js/tracks/changelog/dev-sync-pnpm
@@ -4223,6 +4238,7 @@ packages/js/admin-e2e-tests/changelog/fix-plugin-installer-ts
 packages/js/admin-e2e-tests/changelog/update-32585-store-location-profiler
 packages/js/admin-e2e-tests/changelog/.gitkeep
 packages/js/admin-e2e-tests/changelog/fix-standardize-lint-monorepo
+packages/js/admin-e2e-tests/changelog/dev-upgrade-ts-5
 packages/js/admin-e2e-tests/changelog/update-remove-obw-theme-step
 packages/js/admin-e2e-tests/changelog/update-changelogger
 packages/js/admin-e2e-tests/changelog/update-tax-task-title
@@ -4351,6 +4367,7 @@ packages/js/product-editor/changelog/dev-consolidate-eslint-versions
 packages/js/product-editor/changelog/add-37663
 packages/js/product-editor/changelog/fix-disable-autocomplete-product-name
 packages/js/product-editor/changelog/fix-38608
+packages/js/product-editor/changelog/add-39409
 packages/js/product-editor/changelog/fix-image-section-spacing
 packages/js/product-editor/changelog/add-38248
 packages/js/product-editor/changelog/add-38202
@@ -4390,6 +4407,8 @@ packages/js/product-editor/changelog/fix-38020-2
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
 packages/js/product-editor/changelog/update-36355_product_editor_package
 packages/js/product-editor/changelog/fix-modal-editor-scrolling
+packages/js/product-editor/changelog/add-38884_create_global_attributes_by_default
+packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
 packages/js/product-editor/changelog/update-37686
 packages/js/product-editor/changelog/fix-39543
@@ -4399,6 +4418,7 @@ packages/js/product-editor/changelog/add-37098_add_product_list_price_block
 packages/js/product-editor/changelog/update-name-validation
 packages/js/product-editor/changelog/add-migrate-more-menu-37097
 packages/js/product-editor/changelog/add-product-link-edit-37610
+packages/js/product-editor/changelog/dev-upgrade-ts-5
 packages/js/product-editor/changelog/fix-37897
 packages/js/product-editor/changelog/add-37406
 packages/js/product-editor/changelog/update-move-product-hooks
@@ -4447,6 +4467,7 @@ packages/js/product-editor/changelog/add-37986
 packages/js/product-editor/changelog/add-inventory-advanced-37401
 packages/js/product-editor/changelog/fix-37956
 packages/js/product-editor/changelog/fix-product-editor-theme-bleed
+packages/js/product-editor/changelog/add-39440
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/add-37395
 packages/js/product-editor/changelog/add-37408
@@ -4528,6 +4549,10 @@ packages/js/product-editor/src/blocks/inventory-quantity/block.json
 packages/js/product-editor/src/blocks/inventory-quantity/types.ts
 packages/js/product-editor/src/blocks/inventory-quantity/edit.tsx
 packages/js/product-editor/src/blocks/inventory-quantity/index.ts
+packages/js/product-editor/src/blocks/catalog-visibility/block.json
+packages/js/product-editor/src/blocks/catalog-visibility/types.ts
+packages/js/product-editor/src/blocks/catalog-visibility/edit.tsx
+packages/js/product-editor/src/blocks/catalog-visibility/index.ts
 packages/js/product-editor/src/blocks/shipping-class/block.json
 packages/js/product-editor/src/blocks/shipping-class/types.ts
 packages/js/product-editor/src/blocks/shipping-class/edit.tsx
@@ -4853,6 +4878,7 @@ packages/js/experimental/changelog/dev-update-pnpm-8.6.5
 packages/js/experimental/changelog/fix-plugin-installer-ts
 packages/js/experimental/changelog/.gitkeep
 packages/js/experimental/changelog/update-36805-support-direction-prop
+packages/js/experimental/changelog/dev-upgrade-ts-5
 packages/js/experimental/changelog/fix-slot-fills-for-wp-6_2
 packages/js/experimental/changelog/update-changelogger
 packages/js/experimental/changelog/fix-typescript-incremental-builds
@@ -4921,6 +4947,7 @@ packages/js/ai/webpack.config.js
 packages/js/ai/.npmrc
 packages/js/ai/tsconfig.json
 packages/js/ai/changelog/update-completion-hooks-39009
+packages/js/ai/changelog/dev-upgrade-ts-5
 packages/js/ai/changelog/add-update-short-description-39151
 packages/js/ai/README.md
 packages/js/ai/babel.config.js
@@ -4959,6 +4986,7 @@ packages/js/csv-export/changelog/upgrade-pnpm-7
 packages/js/csv-export/changelog/dev-update-pnpm-8.6.5
 packages/js/csv-export/changelog/fix-plugin-installer-ts
 packages/js/csv-export/changelog/.gitkeep
+packages/js/csv-export/changelog/dev-upgrade-ts-5
 packages/js/csv-export/changelog/update-changelogger
 packages/js/csv-export/changelog/fix-typescript-incremental-builds
 packages/js/csv-export/changelog/dev-fix-admin-tests-pnpm7
@@ -4986,6 +5014,7 @@ packages/js/admin-layout/tsconfig.json
 packages/js/admin-layout/changelog/fix-typescript-package-isolation
 packages/js/admin-layout/changelog/update-layout-context-for-blocks
 packages/js/admin-layout/changelog/add-migrate-more-menu-37097
+packages/js/admin-layout/changelog/dev-upgrade-ts-5
 packages/js/admin-layout/changelog/fix-typescript-incremental-builds
 packages/js/admin-layout/changelog/add-admin-layout-package
 packages/js/admin-layout/changelog/update-webpack-invalid-export-error
@@ -5036,9 +5065,11 @@ packages/js/onboarding/.npmrc
 packages/js/onboarding/CHANGELOG.md
 packages/js/onboarding/tsconfig.json
 packages/js/onboarding/changelog/fix-38947-geolocation-compare-issue
+packages/js/onboarding/changelog/add-update-wcpay-banners-for-woopay
 packages/js/onboarding/changelog/fix-woocommerce-payments-to-woopayments
 packages/js/onboarding/changelog/dev-update-pnpm-8.6.5
 packages/js/onboarding/changelog/.gitkeep
+packages/js/onboarding/changelog/dev-upgrade-ts-5
 packages/js/onboarding/changelog/dev-sync-pnpm
 packages/js/onboarding/README.md
 packages/js/onboarding/PREVIOUS_CHANGELOG.md
@@ -5067,8 +5098,8 @@ packages/js/onboarding/src/components/WCPayBanner/Icons/jcb.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/unionpay.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/sofort.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/amex.js
+packages/js/onboarding/src/components/WCPayBanner/Icons/woopay.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/maestro.js
-packages/js/onboarding/src/components/WCPayBanner/Icons/diners.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/mastercard.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/applepay.js
 packages/js/onboarding/src/components/WCPayBanner/WCPayBanner.scss
@@ -5086,6 +5117,7 @@ packages/js/onboarding/src/components/WCPayBenefits/WCPayBenefits.scss
 packages/js/onboarding/src/components/WCPayBenefits/WCPayBenefits.tsx
 packages/js/onboarding/src/components/WCPayBenefits/icons/International-market.js
 packages/js/onboarding/src/components/WCPayBenefits/icons/payment-card.js
+packages/js/onboarding/src/components/WCPayBenefits/icons/woopay.js
 packages/js/onboarding/src/components/WCPayBenefits/icons/earn-manage.js
 packages/js/onboarding/src/components/WCPayBenefits/icons/index.ts
 packages/js/onboarding/src/components/WCPayBenefits/index.ts
@@ -5192,6 +5224,7 @@ packages/js/components/CHANGELOG.md
 packages/js/components/tsconfig.json
 packages/js/components/changelog/fix-admin-colors-use-theme
 packages/js/components/changelog/.gitkeep
+packages/js/components/changelog/dev-upgrade-ts-5
 packages/js/components/changelog/dev-sync-pnpm
 packages/js/components/changelog/fix-39456_select_attribute_values_name
 packages/js/components/README.md
@@ -5742,6 +5775,7 @@ packages/js/explat/changelog/dev-pin-wp-deps-6
 packages/js/explat/changelog/dev-update-pnpm-8.6.5
 packages/js/explat/changelog/fix-plugin-installer-ts
 packages/js/explat/changelog/.gitkeep
+packages/js/explat/changelog/dev-upgrade-ts-5
 packages/js/explat/changelog/update-changelogger
 packages/js/explat/changelog/fix-typescript-incremental-builds
 packages/js/explat/changelog/dev-fix-admin-tests-pnpm7
@@ -5777,6 +5811,7 @@ packages/js/date/changelog/dev-pin-wp-deps-6
 packages/js/date/changelog/dev-update-pnpm-8.6.5
 packages/js/date/changelog/fix-plugin-installer-ts
 packages/js/date/changelog/.gitkeep
+packages/js/date/changelog/dev-upgrade-ts-5
 packages/js/date/changelog/update-changelogger
 packages/js/date/changelog/fix-typescript-incremental-builds
 packages/js/date/changelog/dev-fix-admin-tests-pnpm7
@@ -5810,6 +5845,7 @@ packages/js/api/changelog/fix-plugin-installer-ts
 packages/js/api/changelog/.gitkeep
 packages/js/api/changelog/fix-standardize-lint-monorepo
 packages/js/api/changelog/refactor-standardize-postinstall
+packages/js/api/changelog/dev-upgrade-ts-5
 packages/js/api/changelog/update-changelogger
 packages/js/api/changelog/fix-typescript-incremental-builds
 packages/js/api/changelog/dev-sync-pnpm
@@ -5938,6 +5974,7 @@ packages/js/navigation/changelog/dev-pin-wp-deps-6
 packages/js/navigation/changelog/dev-update-pnpm-8.6.5
 packages/js/navigation/changelog/fix-plugin-installer-ts
 packages/js/navigation/changelog/.gitkeep
+packages/js/navigation/changelog/dev-upgrade-ts-5
 packages/js/navigation/changelog/update-changelogger
 packages/js/navigation/changelog/fix-typescript-incremental-builds
 packages/js/navigation/changelog/dev-fix-admin-tests-pnpm7
@@ -5989,6 +6026,7 @@ packages/js/customer-effort-score/changelog/dev-update-pnpm-8.6.5
 packages/js/customer-effort-score/changelog/fix-plugin-installer-ts
 packages/js/customer-effort-score/changelog/add-35124-ces-add-question
 packages/js/customer-effort-score/changelog/.gitkeep
+packages/js/customer-effort-score/changelog/dev-upgrade-ts-5
 packages/js/customer-effort-score/changelog/update-changelogger
 packages/js/customer-effort-score/changelog/update-36327
 packages/js/customer-effort-score/changelog/fix-typescript-incremental-builds
@@ -6154,6 +6192,7 @@ packages/js/eslint-plugin/changelog/dev-pin-wp-deps-6
 packages/js/eslint-plugin/changelog/dev-update-pnpm-8.6.5
 packages/js/eslint-plugin/changelog/fix-plugin-installer-ts
 packages/js/eslint-plugin/changelog/.gitkeep
+packages/js/eslint-plugin/changelog/dev-upgrade-ts-5
 packages/js/eslint-plugin/changelog/update-changelogger
 packages/js/eslint-plugin/changelog/dev-sync-pnpm
 packages/js/eslint-plugin/changelog/dev-update-eslint-plugin
@@ -6224,6 +6263,7 @@ packages/js/data/changelog/update-onboarding-types
 packages/js/data/changelog/update-payfast
 packages/js/data/changelog/fix-jetpack-connection-data-type
 packages/js/data/changelog/add-34_category_field
+packages/js/data/changelog/add-39125
 packages/js/data/changelog/fix-34929
 packages/js/data/changelog/update-data-products-exclude-non-gmt-scheduled-sale
 packages/js/data/changelog/dev-update-pnpm-8.6.5
@@ -6232,6 +6272,7 @@ packages/js/data/changelog/fix-34460-country-field-is-empty-when-navigating-back
 packages/js/data/changelog/add-35786
 packages/js/data/changelog/add-36164
 packages/js/data/changelog/update-get-permalinks-parts-selector
+packages/js/data/changelog/dev-upgrade-ts-5
 packages/js/data/changelog/fix-with-navigation-hydration
 packages/js/data/changelog/update-remove-obw-theme-step
 packages/js/data/changelog/dev-migrate-reports-to-ts
@@ -6262,6 +6303,7 @@ packages/js/data/changelog/fix-34048-historical-import-unusable
 packages/js/data/changelog/fix-display-stats-na
 packages/js/data/changelog/fix-38758-jetpack-redirection-fix
 packages/js/data/changelog/dev-add-resolve-select-types
+packages/js/data/changelog/add-39440
 packages/js/data/changelog/dev-33839-migrate-data-navigation-store-to-ts
 packages/js/data/changelog/add-36075_render_fields_sections_from_php_config
 packages/js/data/changelog/fix-37502
@@ -6524,6 +6566,7 @@ packages/js/dependency-extraction-webpack-plugin/changelog/dev-pin-wp-deps-6
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-update-pnpm-8.6.5
 packages/js/dependency-extraction-webpack-plugin/changelog/fix-plugin-installer-ts
 packages/js/dependency-extraction-webpack-plugin/changelog/.gitkeep
+packages/js/dependency-extraction-webpack-plugin/changelog/dev-upgrade-ts-5
 packages/js/dependency-extraction-webpack-plugin/changelog/update-changelogger
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-sync-pnpm
 packages/js/dependency-extraction-webpack-plugin/changelog/add-admin-layout-package

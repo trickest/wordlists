@@ -675,6 +675,8 @@ htdocs/public/cron/index.php
 htdocs/public/cron/cron_run_jobs_by_url.php
 htdocs/public/stripe/index.php
 htdocs/public/stripe/ipn.php
+htdocs/public/bookcal/index.php
+htdocs/public/bookcal/booking.php
 htdocs/public/clicktodial/cidlookup.php
 htdocs/public/recruitment/index.php
 htdocs/public/recruitment/view.php
@@ -899,6 +901,9 @@ htdocs/core/modules/modEmailCollector.class.php
 htdocs/core/modules/modEventOrganization.class.php
 htdocs/core/modules/modCollab.class.php
 htdocs/core/modules/modDav.class.php
+htdocs/core/modules/bookcal/mod_booking_standard.php
+htdocs/core/modules/bookcal/mod_booking_advanced.php
+htdocs/core/modules/bookcal/modules_booking.php
 htdocs/core/modules/modIntracommreport.class.php
 htdocs/core/modules/modReception.class.php
 htdocs/core/modules/workstation/mod_workstation_advanced.php
@@ -1056,6 +1061,7 @@ htdocs/core/ajax/fileupload.php
 htdocs/core/ajax/fetchKnowledgeRecord.php
 htdocs/core/ajax/check_notifications.php
 htdocs/core/ajax/selectsearchbox.php
+htdocs/core/ajax/bookcalAjax.php
 htdocs/core/ajax/price.php
 htdocs/core/ajax/flowjs-server.php
 htdocs/core/ajax/objectonoff.php
