@@ -1511,6 +1511,7 @@ tests/unit/Storefront/Checkout/Shipping/BlockedShippingMethodSwitcherTest.php
 tests/unit/Storefront/Controller/StorefrontControllerTest.php
 tests/unit/Storefront/Controller/CartLineItemControllerTest.php
 tests/unit/Storefront/Controller/StorefrontControllerMockTrait.php
+tests/unit/Storefront/Controller/VerificationHashControllerTest.php
 tests/unit/Storefront/Controller/AppControllerTest.php
 tests/unit/Storefront/Controller/AuthControllerTest.php
 tests/unit/Storefront/Controller/DownloadControllerTest.php
@@ -4409,16 +4410,20 @@ changelog/release-6-4-1-1/2021-05-10-validate-order-create-discount-privilege-an
 changelog/release-6-4-1-1/2021-05-11-added-test-for-validation-of-non-entity-privileges-in-core.md
 changelog/release-6-4-1-1/2021-06-10-fix-app-signature-generation.md
 changelog/release-6-4-1-1/2021-05-25-prevent-after-order-address-manipulation.md
+changelog/_unreleased/2023-08-04-fixed-bug-with-0-price-product-discount.md
 changelog/_unreleased/2023-08-03-make-the-error-summary-component-optional-in-the-card-view-component.md
+changelog/_unreleased/2023-08-08-fix-missed-error-code-in-shopware-yaml.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-07-24-communication-from-storefront-to-app-server.md
 changelog/_unreleased/2023-07-24-fix-shipping-cost-editing-by-admin-in-not-default-currency.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
+changelog/_unreleased/2023-08-08-fix-register-router-with-empty-billing-address.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-07-25-change-line-item-delete-to-post.md
 changelog/_unreleased/2023-07-25-order-creation-without-customer-breaks-admin-order-panel.md
 changelog/_unreleased/2023-08-05-disallow-accentue-in-fonts.md
 changelog/_unreleased/2023-08-01-add-criteria-schema.md
+changelog/_unreleased/2023-08-09-fix-asset-manifest-creation-locally.md
 changelog/_unreleased/2023-08-01-handling-incident-rate-limit.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-07-27-improve-dal-criteria-id-validation.md
@@ -4432,6 +4437,7 @@ changelog/_unreleased/2023-07-25-there-are-console-errors-while-creating-a-new-c
 changelog/_unreleased/2023-08-07-add-missing-modal-close-to-pseudomodalutil.md
 changelog/_unreleased/2023-07-13-add-active-from-to-tax-rule.md
 changelog/_unreleased/2023-07-25-fix-translation-message-formatter-locale.md
+changelog/_unreleased/2023-08-07-do-not-throw-exception-on-no-verify-hash.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
 changelog/release-6-4-8-1/2022-02-11-fixed-theme-field-custom-renderer.md
 changelog/release-6-4-8-1/2022-02-03-add-filtering-to-product-and-promotion-codes.md

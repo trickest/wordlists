@@ -74,6 +74,7 @@ db/migrate/20230510102126_two_factor_authentication_setup.rb
 db/migrate/20211026000001_object_manager_ticket_object_update.rb
 db/migrate/20170727000001_setting_proxy.rb
 db/migrate/20180830000001_setting_delivery_temporary_failed.rb
+db/migrate/20230807051414_input_fields_operator_renaming.rb
 db/migrate/20230330122449_relocate_unprocessable_mails.rb
 db/migrate/20181030000001_setting_add_placetel1.rb
 db/migrate/20210909093800_issue_3168_token_setting.rb
@@ -320,6 +321,7 @@ db/migrate/20171024000001_monit_integration.rb
 db/migrate/20190715141227_saml_auth.rb
 db/migrate/20190718140450_forget_insecure_sessions.rb
 db/migrate/20170214000001_reload_online_browser_after_cors_csrf_changes.rb
+db/migrate/20230808070608_issue_4530_notes_sans_images.rb
 db/migrate/20210426184355_issue_3446_microsoft_365_tenants.rb
 db/migrate/20190531180304_initialize_knowledge_base.rb
 db/migrate/20221206141429_issue_4412_setting_saml_idp_cert_switch_textarea.rb
@@ -531,6 +533,7 @@ public/assets/tests/qunit/form_ticket_selector_expert_conditions.js
 public/assets/tests/qunit/form_ticket_perform_action.js
 public/assets/tests/qunit/pretty_date.js
 public/assets/tests/qunit/form_datetime.js
+public/assets/tests/qunit/form_tokenfield.js
 public/assets/tests/qunit/browser.js
 public/assets/tests/qunit/session.js
 public/assets/tests/qunit-2.17.2.js
@@ -969,6 +972,7 @@ spec/db/migrate/issue_4266_fix_field_spec.rb
 spec/db/migrate/issue_1219_zhtw_locale_typo_spec.rb
 spec/db/migrate/issue_3763_default_date_datetime_diff_clear_spec.rb
 spec/db/migrate/issue4505_inconsistent_screen_view_active_attribute_spec.rb
+spec/db/migrate/input_fields_operator_renaming_spec.rb
 spec/db/migrate/issue_3810_custom_date_attribute_no_default_spec.rb
 spec/db/migrate/drop_api_suffix_from_third_party_login_gitlab_site_parameter_spec.rb
 spec/db/migrate/issue_4018_remove_old_translations_spec.rb
@@ -1666,6 +1670,7 @@ spec/lib/html_sanitizer/scrubber/base_spec.rb
 spec/lib/mixin/has_backends_examples.rb
 spec/lib/escalation_spec.rb
 spec/lib/auth/after_auth_spec.rb
+spec/lib/auth/request_cache_spec.rb
 spec/lib/auth/user_spec.rb
 spec/lib/auth/backend/internal_spec.rb
 spec/lib/auth/backend/backend_examples.rb
@@ -4864,7 +4869,6 @@ app/assets/javascripts/app/controllers/_ui_element/code_editor.coffee
 app/assets/javascripts/app/controllers/_ui_element/multiselect.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext.coffee
 app/assets/javascripts/app/controllers/_ui_element/postmaster_set.coffee
-app/assets/javascripts/app/controllers/_ui_element/time_accouting_condition.coffee
 app/assets/javascripts/app/controllers/_ui_element/core_workflow_perform.coffee
 app/assets/javascripts/app/controllers/_ui_element/timer.coffee
 app/assets/javascripts/app/controllers/_ui_element/ticket_perform_action.coffee
@@ -4894,12 +4898,14 @@ app/assets/javascripts/app/controllers/_ui_element/permission.coffee
 app/assets/javascripts/app/controllers/_ui_element/_application/_ui_element.coffee
 app/assets/javascripts/app/controllers/_ui_element/checkboxTicketAttributes.coffee
 app/assets/javascripts/app/controllers/_ui_element/user_permission.coffee
+app/assets/javascripts/app/controllers/_ui_element/time_accounting_condition.coffee
 app/assets/javascripts/app/controllers/_ui_element/datetime_search.coffee
 app/assets/javascripts/app/controllers/_ui_element/core_workflow_condition.coffee
 app/assets/javascripts/app/controllers/_ui_element/integer.coffee
 app/assets/javascripts/app/controllers/_ui_element/boolean.coffee
 app/assets/javascripts/app/controllers/_ui_element/switch.coffee
 app/assets/javascripts/app/controllers/_ui_element/basedate.coffee
+app/assets/javascripts/app/controllers/_ui_element/tokenfield.coffee
 app/assets/javascripts/app/controllers/_ui_element/ical_feed.coffee
 app/assets/javascripts/app/controllers/_ui_element/business_hours.coffee
 app/assets/javascripts/app/controllers/_ui_element/notification_matrix.coffee
@@ -5995,9 +6001,11 @@ app/models/core_workflow/custom/secondary_organization.rb
 app/models/core_workflow/custom/pending_time.rb
 app/models/core_workflow/condition.rb
 app/models/core_workflow/condition/is.rb
+app/models/core_workflow/condition/is_none_of.rb
 app/models/core_workflow/condition/matches_regex.rb
 app/models/core_workflow/condition/does_not_match_regex.rb
 app/models/core_workflow/condition/today.rb
+app/models/core_workflow/condition/starts_with_one_of.rb
 app/models/core_workflow/condition/contains_not.rb
 app/models/core_workflow/condition/match_no_modules.rb
 app/models/core_workflow/condition/is_set.rb
@@ -6015,7 +6023,9 @@ app/models/core_workflow/condition/starts_with.rb
 app/models/core_workflow/condition/is_not.rb
 app/models/core_workflow/condition/has_changed.rb
 app/models/core_workflow/condition/match_all_modules.rb
+app/models/core_workflow/condition/ends_with_one_of.rb
 app/models/core_workflow/condition/match_one_module.rb
+app/models/core_workflow/condition/is_any_of.rb
 app/models/core_workflow/condition/changed_to.rb
 app/models/core_workflow/condition/not_set.rb
 app/models/core_workflow/condition/contains_one.rb
