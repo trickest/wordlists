@@ -3520,6 +3520,7 @@ tests/TestCase/SymfonyIntegrationTestCase.php
 tests/TestCase/ContextStateTestCase.php
 tests/index.php
 tests/Integration/ApiPlatform/GetHookTest.php
+tests/Integration/ApiPlatform/ApiTestCase.php
 tests/Integration/ApiPlatform/GetHookStatusTest.php
 tests/Integration/bootstrap.php
 tests/Integration/Core/Foundation/Database/EntityManagerTest.php
@@ -9841,7 +9842,10 @@ src/PrestaShopBundle/Service/Form/MultistoreCheckboxEnabler.php
 src/PrestaShopBundle/Service/ProductService.php
 src/PrestaShopBundle/ApiPlatform/Provider/QueryProvider.php
 src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
+src/PrestaShopBundle/ApiPlatform/Resources/FoundProduct.php
 src/PrestaShopBundle/ApiPlatform/Exception/NoExtraPropertiesFoundException.php
+src/PrestaShopBundle/ApiPlatform/Converters/ConverterInterface.php
+src/PrestaShopBundle/ApiPlatform/Converters/StringToIntConverter.php
 src/PrestaShopBundle/ApiPlatform/Processor/CommandProcessor.php
 src/PrestaShopBundle/Routing/YamlModuleLoader.php
 src/PrestaShopBundle/Routing/Converter/AbstractLegacyRouteProvider.php

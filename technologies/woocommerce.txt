@@ -1896,6 +1896,13 @@ plugins/woocommerce/tests/php/src/Internal/Utilities/HtmlSanitizerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/EditLockTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/PageControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Orders/COTRedirectionControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockInterface.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlock.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/BlockTemplateTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/BlockTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockTemplateTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockTemplate.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsCommentsOverridesTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ProductReviews/ReviewsListTableTest.php
@@ -2297,6 +2304,7 @@ plugins/woocommerce/changelog/fix-relocate-tests-helper
 plugins/woocommerce/changelog/fix-38717
 plugins/woocommerce/changelog/add-update-wcpay-banners-for-woopay
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
+plugins/woocommerce/changelog/fix-core-profiler-intro-opt-in-tracks-ordering
 plugins/woocommerce/changelog/fix-35612
 plugins/woocommerce/changelog/fix-39559
 plugins/woocommerce/changelog/update-36510-spinner-in-task-list
@@ -2315,6 +2323,7 @@ plugins/woocommerce/changelog/fix-39051
 plugins/woocommerce/changelog/add-variation-options-block
 plugins/woocommerce/changelog/update-38997-chekbox-ui-is-still-using-old-look
 plugins/woocommerce/changelog/enhancement-38823
+plugins/woocommerce/changelog/add-add-block-to-block-template
 plugins/woocommerce/changelog/add-39411_tests_to_general_tab
 plugins/woocommerce/changelog/fix-admin-colors-select2
 plugins/woocommerce/changelog/dev-sync-pnpm
@@ -2497,6 +2506,11 @@ plugins/woocommerce/src/Internal/Admin/Orders/EditLock.php
 plugins/woocommerce/src/Internal/Admin/SettingsNavigationFeature.php
 plugins/woocommerce/src/Internal/Admin/ActivityPanels.php
 plugins/woocommerce/src/Internal/Admin/ShippingLabelBanner.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/AbstractBlockTemplate.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/BlockTemplate.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/AbstractBlock.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/Block.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/BlockContainerTrait.php
 plugins/woocommerce/src/Internal/Admin/WcPayWelcomePage.php
 plugins/woocommerce/src/Internal/Admin/ProductForm/ComponentTrait.php
 plugins/woocommerce/src/Internal/Admin/ProductForm/Section.php
@@ -2643,6 +2657,10 @@ plugins/woocommerce/src/Admin/PluginsProvider/PluginsProvider.php
 plugins/woocommerce/src/Admin/DateTimeProvider/DateTimeProviderInterface.php
 plugins/woocommerce/src/Admin/DateTimeProvider/CurrentDateTimeProvider.php
 plugins/woocommerce/src/Admin/ReportCSVExporter.php
+plugins/woocommerce/src/Admin/BlockTemplates/ContainerInterface.php
+plugins/woocommerce/src/Admin/BlockTemplates/BlockTemplateInterface.php
+plugins/woocommerce/src/Admin/BlockTemplates/BlockContainerInterface.php
+plugins/woocommerce/src/Admin/BlockTemplates/BlockInterface.php
 plugins/woocommerce/src/Admin/DataSourcePoller.php
 plugins/woocommerce/src/Admin/Notes/NotesUnavailableException.php
 plugins/woocommerce/src/Admin/Notes/DeprecatedNotes.php
@@ -4402,6 +4420,7 @@ packages/js/product-editor/changelog/enhancement-38960
 packages/js/product-editor/changelog/add-38044
 packages/js/product-editor/changelog/add-37985
 packages/js/product-editor/changelog/fix-38502_ces_modal_styling_fixes
+packages/js/product-editor/changelog/dev-39223_remove_create_term_modal
 packages/js/product-editor/changelog/add-38881
 packages/js/product-editor/changelog/add-product-editor-feedback-footer
 packages/js/product-editor/changelog/add-37266
