@@ -305,6 +305,7 @@ plugins/woocommerce-beta-tester/changelog/dev-sync-pnpm
 plugins/woocommerce-beta-tester/changelog/dev-live-branches-ui
 plugins/woocommerce-beta-tester/changelog/dev-live-branches-userscript
 plugins/woocommerce-beta-tester/changelog/dev-fix-beta-tester-error
+plugins/woocommerce-beta-tester/changelog/add-beta-tester-dot-com
 plugins/woocommerce-beta-tester/changelog/dev-integrate-combo-box-live-branch
 plugins/woocommerce-beta-tester/changelog/dev-enable-live-branches
 plugins/woocommerce-beta-tester/changelog/add-36991
@@ -1877,6 +1878,7 @@ plugins/woocommerce/tests/php/src/Caching/ObjectCacheTest.php
 plugins/woocommerce/tests/php/src/Internal/BatchProcessing/BatchProcessingControllerTests.php
 plugins/woocommerce/tests/php/src/Internal/Orders/IppFunctionsTest.php
 plugins/woocommerce/tests/php/src/Internal/Orders/MobileMessagingHandlerTest.php
+plugins/woocommerce/tests/php/src/Internal/Telemetry/TelemetryControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/AssignDefaultCategoryTest.php
 plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableDataStoreTests.php
 plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableDataStoreRestOrdersControllerTests.php
@@ -2303,6 +2305,8 @@ plugins/woocommerce/changelog/add-customize-store-feature-flag
 plugins/woocommerce/changelog/fix-relocate-tests-helper
 plugins/woocommerce/changelog/fix-38717
 plugins/woocommerce/changelog/add-update-wcpay-banners-for-woopay
+plugins/woocommerce/changelog/fix-35612-2
+plugins/woocommerce/changelog/update-action-scheduler-3.6.2
 plugins/woocommerce/changelog/fix-admin-colors-use-theme
 plugins/woocommerce/changelog/fix-core-profiler-intro-opt-in-tracks-ordering
 plugins/woocommerce/changelog/fix-35612
@@ -2315,6 +2319,7 @@ plugins/woocommerce/changelog/dev-core-profiler-storybook
 plugins/woocommerce/changelog/enhance-faster_backfill
 plugins/woocommerce/changelog/add-39455
 plugins/woocommerce/changelog/dev-upgrade-ts-5
+plugins/woocommerce/changelog/fix-35465
 plugins/woocommerce/changelog/fix-39039-jetpack-redirect-issue
 plugins/woocommerce/changelog/add-39417_disable_block_product_editor
 plugins/woocommerce/changelog/fix-39354
@@ -2328,15 +2333,19 @@ plugins/woocommerce/changelog/add-39411_tests_to_general_tab
 plugins/woocommerce/changelog/fix-admin-colors-select2
 plugins/woocommerce/changelog/dev-sync-pnpm
 plugins/woocommerce/changelog/pr-39372
+plugins/woocommerce/changelog/update-39453_simple_to_variable_product
 plugins/woocommerce/changelog/api-run-all-tests-on-daily
 plugins/woocommerce/changelog/dev-shard-unit-tests-take-two
 plugins/woocommerce/changelog/update-39138-core-profiler-ui-updates
+plugins/woocommerce/changelog/wcios-10406-telemetry-add-metrics
+plugins/woocommerce/changelog/fix-35465-2
 plugins/woocommerce/changelog/fix-39292-storefront-recommendation-addons
 plugins/woocommerce/changelog/fix-38720-wc-tracker-unit-test
 plugins/woocommerce/changelog/add-39442_enable_block_product_editor
 plugins/woocommerce/changelog/update-79113-incorrect-subheading-style-and-copy-on-wc-core-profiler
 plugins/woocommerce/changelog/fix-reduce_read_on_sync
 plugins/woocommerce/changelog/add-post_password_block
+plugins/woocommerce/changelog/fix-35130-bulk-action-order-id-keys
 plugins/woocommerce/changelog/fix-39353
 plugins/woocommerce/phpcs.xml
 plugins/woocommerce/assets/fonts/WooCommerce.eot
@@ -3425,8 +3434,6 @@ plugins/woocommerce-admin/client/products/fields/variations/index.ts
 plugins/woocommerce-admin/client/products/fields/single-image-field/single-image-field.scss
 plugins/woocommerce-admin/client/products/fields/single-image-field/single-image-field.tsx
 plugins/woocommerce-admin/client/products/fields/single-image-field/index.ts
-plugins/woocommerce-admin/client/products/fields/options/options.tsx
-plugins/woocommerce-admin/client/products/fields/options/index.ts
 plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-field-list.tsx
 plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-section.scss
 plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-field-taxes-charge.tsx
@@ -3522,13 +3529,10 @@ plugins/woocommerce-admin/client/products/product-status-badge.scss
 plugins/woocommerce-admin/client/products/product-validation.ts
 plugins/woocommerce-admin/client/products/hooks/use-product-variation-navigation.ts
 plugins/woocommerce-admin/client/products/hooks/use-product-entity-record.ts
-plugins/woocommerce-admin/client/products/hooks/use-product-variations-helper.ts
 plugins/woocommerce-admin/client/products/product-more-menu.tsx
-plugins/woocommerce-admin/client/products/sections/options-section.scss
 plugins/woocommerce-admin/client/products/sections/test/product-shipping-section.spec.tsx
 plugins/woocommerce-admin/client/products/sections/test/product-inventory-section.spec.tsx
 plugins/woocommerce-admin/client/products/sections/product-variation-details-section.tsx
-plugins/woocommerce-admin/client/products/sections/options-section.tsx
 plugins/woocommerce-admin/client/products/sections/product-variations-section.tsx
 plugins/woocommerce-admin/client/products/product-form.tsx
 plugins/woocommerce-admin/client/products/product-variation-form.scss
@@ -4390,6 +4394,7 @@ packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-38215
 packages/js/product-editor/changelog/fix-more-menu-width-38001
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
+packages/js/product-editor/changelog/update-39453_simple_to_variable_product_2
 packages/js/product-editor/changelog/fix-typescript-package-isolation
 packages/js/product-editor/changelog/add-38853
 packages/js/product-editor/changelog/dev-linter-fixes
@@ -4498,6 +4503,7 @@ packages/js/product-editor/changelog/add-37241-blocks-build
 packages/js/product-editor/changelog/fix-38244
 packages/js/product-editor/changelog/add-name-block-37007
 packages/js/product-editor/changelog/add-admin-layout-package
+packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/fix-38319
 packages/js/product-editor/changelog/update-select_tree_dropdown
 packages/js/product-editor/changelog/update-remove-editor-styles-wrapper
@@ -4603,6 +4609,7 @@ packages/js/product-editor/src/blocks/regular-price/types.ts
 packages/js/product-editor/src/blocks/regular-price/edit.tsx
 packages/js/product-editor/src/blocks/regular-price/index.ts
 packages/js/product-editor/src/blocks/style.scss
+packages/js/product-editor/src/blocks/variation-items/variable-product-tour.tsx
 packages/js/product-editor/src/blocks/variation-items/editor.scss
 packages/js/product-editor/src/blocks/variation-items/block.json
 packages/js/product-editor/src/blocks/variation-items/types.ts
@@ -4829,7 +4836,6 @@ packages/js/product-editor/src/components/shipping-dimensions-image/types.ts
 packages/js/product-editor/src/components/shipping-dimensions-image/index.ts
 packages/js/product-editor/src/utils/get-checkbox-tracks.ts
 packages/js/product-editor/src/utils/get-derived-product-type.ts
-packages/js/product-editor/src/utils/init-blocks.ts
 packages/js/product-editor/src/utils/get-header-title.ts
 packages/js/product-editor/src/utils/prevent-leaving-product-form.ts
 packages/js/product-editor/src/utils/test/prevent-leaving-product-form.test.ts
@@ -4864,6 +4870,7 @@ packages/js/product-editor/src/hooks/test/use-product-attributes.test.ts
 packages/js/product-editor/src/hooks/use-variations-order.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/use-feedback-bar.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/index.ts
+packages/js/product-editor/src/hooks/use-product-variations-helper.ts
 packages/js/product-editor/src/hooks/use-currency-input-props.ts
 packages/js/product-editor/src/hooks/index.ts
 packages/js/product-editor/src/hooks/use-product-helper.ts
@@ -6349,6 +6356,7 @@ packages/js/data/changelog/fix-dispatch-in-useselect-with-options-hydration
 packages/js/data/changelog/add-35771
 packages/js/data/changelog/add-jetpack-connection-data
 packages/js/data/changelog/add-38674-add-jetpack-auth-endpoint
+packages/js/data/changelog/update-39453_simple_to_variable_product
 packages/js/data/changelog/dev-simplify-turbo
 packages/js/data/changelog/fix-34048-historical-import-unusable
 packages/js/data/changelog/fix-display-stats-na
