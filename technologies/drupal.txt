@@ -776,6 +776,7 @@ core/modules/system/tests/modules/position_shim_test/position_shim_test.routing.
 core/modules/system/tests/modules/position_shim_test/src/Controller/PositionShimTestPortedJqueryTestsController.php
 core/modules/system/tests/modules/position_shim_test/src/Controller/PositionShimTestController.php
 core/modules/system/tests/modules/position_shim_test/position_shim_test.info.yml
+core/modules/system/tests/modules/name_collision_test/name_collision_test.info.yml
 core/modules/system/tests/modules/mail_cancel_test/mail_cancel_test.module
 core/modules/system/tests/modules/mail_cancel_test/mail_cancel_test.info.yml
 core/modules/system/tests/modules/js_once_test/js_once_test.info.yml
@@ -1396,6 +1397,7 @@ core/modules/system/tests/themes/test_ckeditor_stylesheets_protocol_relative/tes
 core/modules/system/tests/themes/test_theme_twig_registry_loader/templates/twig-registry-loader-test-include.html.twig
 core/modules/system/tests/themes/test_theme_twig_registry_loader/templates/twig-registry-loader-test-extend.html.twig
 core/modules/system/tests/themes/test_theme_twig_registry_loader/test_theme_twig_registry_loader.info.yml
+core/modules/system/tests/themes/name_collision_test/name_collision_test.info.yml
 core/modules/system/tests/themes/test_theme_settings_features/test_theme_settings_features.info.yml
 core/modules/system/tests/themes/test_theme_settings_features/config/schema/test_theme_settings_features.schema.yml
 core/modules/system/tests/themes/test_basetheme/test_basetheme.libraries.yml
@@ -3282,6 +3284,7 @@ core/modules/update/tests/fixtures/release-history/aaa_update_test.8.x-1.2.xml
 core/modules/update/tests/fixtures/release-history/drupal.0.1-beta1.xml
 core/modules/update/tests/fixtures/release-history/semver_test.1.0.xml
 core/modules/update/tests/fixtures/release-history/drupal.sec.0.1_0.2.xml
+core/modules/update/tests/fixtures/release-history/ccc_update_test.1_1.xml
 core/modules/update/tests/fixtures/release-history/semver_test.1.0-beta1.xml
 core/modules/update/tests/fixtures/release-history/aaa_update_test.2_0-alpha1.xml
 core/modules/update/tests/fixtures/release-history/aaa_update_test.1_0-unsupported.xml
@@ -3324,6 +3327,7 @@ core/modules/mysql/tests/src/Kernel/mysql/MysqlDriverLegacyTest.php
 core/modules/mysql/tests/src/Kernel/mysql/SyntaxTest.php
 core/modules/mysql/tests/src/Kernel/mysql/TemporaryQueryTest.php
 core/modules/mysql/tests/src/Kernel/mysql/TransactionTest.php
+core/modules/mysql/tests/src/Kernel/mysql/Plugin/views/MySqlCastedIntFieldJoinTest.php
 core/modules/mysql/tests/src/Kernel/mysql/MysqlDriverTest.php
 core/modules/mysql/tests/src/Kernel/mysql/SqlModeTest.php
 core/modules/mysql/tests/src/Kernel/mysql/NextIdTest.php
@@ -3341,6 +3345,7 @@ core/modules/mysql/tests/src/Functional/InstallerIsolationLevelNoDatabaseSetting
 core/modules/mysql/tests/src/Functional/RequirementsTest.php
 core/modules/mysql/tests/src/Unit/InstallTasksTest.php
 core/modules/mysql/tests/src/Unit/ConnectionTest.php
+core/modules/mysql/mysql.services.yml
 core/modules/mysql/mysql.module
 core/modules/mysql/src/Driver/Database/mysql/Insert.php
 core/modules/mysql/src/Driver/Database/mysql/Truncate.php
@@ -3353,6 +3358,7 @@ core/modules/mysql/src/Driver/Database/mysql/Delete.php
 core/modules/mysql/src/Driver/Database/mysql/ExceptionHandler.php
 core/modules/mysql/src/Driver/Database/mysql/Upsert.php
 core/modules/mysql/src/Driver/Database/mysql/Update.php
+core/modules/mysql/src/Plugin/views/query/MysqlCastSql.php
 core/modules/mysql/mysql.install
 core/modules/path/path.install
 core/modules/path/path.info.yml
@@ -4610,9 +4616,11 @@ core/modules/sqlite/tests/src/Kernel/sqlite/SchemaUniquePrefixedKeysIndexTest.ph
 core/modules/sqlite/tests/src/Kernel/sqlite/SyntaxTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/TemporaryQueryTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/TransactionTest.php
+core/modules/sqlite/tests/src/Kernel/sqlite/Plugin/views/SqliteCastedIntFieldJoinTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/SqliteDriverLegacyTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/SchemaTest.php
 core/modules/sqlite/tests/src/Kernel/sqlite/DatabaseExceptionWrapperTest.php
+core/modules/sqlite/tests/src/Kernel/sqlite/ConnectionTest.php
 core/modules/sqlite/tests/src/Unit/ConnectionTest.php
 core/modules/sqlite/sqlite.module
 core/modules/sqlite/src/Driver/Database/sqlite/Statement.php
@@ -4691,6 +4699,7 @@ core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/TermLocalizedTra
 core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/TermTest.php
 core/modules/taxonomy/tests/src/Kernel/TermHierarchyValidationTest.php
 core/modules/taxonomy/tests/src/Kernel/PendingRevisionTest.php
+core/modules/taxonomy/tests/src/Kernel/TokenReplaceTest.php
 core/modules/taxonomy/tests/src/Kernel/VocabularyValidationTest.php
 core/modules/taxonomy/tests/src/Kernel/TermEntityQueryTest.php
 core/modules/taxonomy/tests/src/Kernel/TermKernelTest.php
@@ -4741,7 +4750,6 @@ core/modules/taxonomy/tests/src/Functional/TermTranslationTest.php
 core/modules/taxonomy/tests/src/Functional/EarlyDateTest.php
 core/modules/taxonomy/tests/src/Functional/VocabularyUiTest.php
 core/modules/taxonomy/tests/src/Functional/VocabularyTranslationTest.php
-core/modules/taxonomy/tests/src/Functional/TokenReplaceTest.php
 core/modules/taxonomy/tests/src/Functional/TermParentsTest.php
 core/modules/taxonomy/tests/src/Functional/TaxonomyTestBase.php
 core/modules/taxonomy/tests/src/Functional/TaxonomyTermIndentationTest.php
@@ -5786,12 +5794,16 @@ core/modules/book/tests/src/Kernel/BookMultilingualTest.php
 core/modules/book/tests/src/Functional/BookContentModerationTest.php
 core/modules/book/tests/src/Functional/BookTest.php
 core/modules/book/tests/src/Functional/BookBreadcrumbTest.php
+core/modules/book/tests/src/Functional/Migrate/d6/ReviewPageTest.php
+core/modules/book/tests/src/Functional/Migrate/d7/ReviewPageTest.php
 core/modules/book/tests/src/Functional/Views/BookRelationshipTest.php
 core/modules/book/tests/src/Functional/BookTestTrait.php
 core/modules/book/tests/src/FunctionalJavascript/BookJavascriptTest.php
 core/modules/book/tests/src/Unit/BookUninstallValidatorTest.php
 core/modules/book/tests/src/Unit/BookManagerTest.php
 core/modules/book/tests/src/Unit/Menu/BookLocalTasksTest.php
+core/modules/book/tests/fixtures/drupal7.php
+core/modules/book/tests/fixtures/drupal6.php
 core/modules/book/book.js
 core/modules/book/book.services.yml
 core/modules/book/config/schema/book.views.schema.yml
@@ -6910,12 +6922,12 @@ core/modules/user/tests/src/Kernel/Views/HandlerFilterCurrentUserTest.php
 core/modules/user/tests/src/Kernel/Views/UserRoleTest.php
 core/modules/user/tests/src/Kernel/UserAccountFormPasswordResetTest.php
 core/modules/user/tests/src/Kernel/UserInstallTest.php
+core/modules/user/tests/src/Kernel/WhoIsOnlineBlockTest.php
 core/modules/user/tests/src/Kernel/UserActionConfigSchemaTest.php
 core/modules/user/tests/src/Kernel/Controller/UserControllerTest.php
 core/modules/user/tests/src/Kernel/UserMailDefaultsTest.php
 core/modules/user/tests/src/Kernel/ModulePermissionsLinkHelperTest.php
 core/modules/user/tests/src/Kernel/UserEntityTest.php
-core/modules/user/tests/src/Kernel/WhosOnlineBlockTest.php
 core/modules/user/tests/src/Kernel/UserRoleDeleteTest.php
 core/modules/user/tests/src/Kernel/UserSaveTest.php
 core/modules/user/tests/src/Kernel/ContextProvider/CurrentUserContextTest.php
@@ -6982,6 +6994,7 @@ core/modules/user/tests/src/Functional/UserRolesAssignmentTest.php
 core/modules/user/tests/src/Functional/UserCreateTest.php
 core/modules/user/tests/src/Functional/UserEditTest.php
 core/modules/user/tests/src/FunctionalJavascript/UserPermissionsTest.php
+core/modules/user/tests/src/FunctionalJavascript/PermissionFilterTest.php
 core/modules/user/tests/src/FunctionalJavascript/RegistrationWithUserFieldsTest.php
 core/modules/user/tests/src/FunctionalJavascript/PasswordConfirmWidgetTest.php
 core/modules/user/tests/src/FunctionalJavascript/UserPasswordResetTest.php
@@ -7994,6 +8007,7 @@ core/modules/pgsql/tests/src/Kernel/pgsql/SchemaUniquePrefixedKeysIndexTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/SyntaxTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TemporaryQueryTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/TransactionTest.php
+core/modules/pgsql/tests/src/Kernel/pgsql/Plugin/views/PgsqlCastedIntFieldJoinTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/NonPublicSchemaTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/ConnectionUnitTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/PgsqlDriverLegacyTest.php
@@ -8320,6 +8334,7 @@ core/modules/views/tests/src/Kernel/Plugin/DisplayKernelTest.php
 core/modules/views/tests/src/Kernel/Plugin/SqlEntityLoadingTest.php
 core/modules/views/tests/src/Kernel/Plugin/ViewsSqlExceptionTest.php
 core/modules/views/tests/src/Kernel/Plugin/RelationshipTest.php
+core/modules/views/tests/src/Kernel/Plugin/CastedIntFieldJoinTestBase.php
 core/modules/views/tests/src/Kernel/Plugin/StyleUnformattedTest.php
 core/modules/views/tests/src/Kernel/Plugin/CacheTest.php
 core/modules/views/tests/src/Kernel/Plugin/PagerKernelTest.php
@@ -8481,6 +8496,7 @@ core/modules/views/tests/src/Functional/Entity/FieldEntityTest.php
 core/modules/views/tests/src/Functional/Entity/ViewNonTranslatableEntityTest.php
 core/modules/views/tests/src/Functional/Entity/EntityQueryAccessTest.php
 core/modules/views/tests/src/Functional/Update/ViewsFixRevisionIdUpdateTest.php
+core/modules/views/tests/src/Functional/Update/ViewsRemoveDefaultArgumentSkipUrlTest.php
 core/modules/views/tests/src/Functional/UserPathTest.php
 core/modules/views/tests/src/Functional/ViewsFormMultipleTest.php
 core/modules/views/tests/src/Functional/UserBatchActionTest.php
@@ -8548,6 +8564,8 @@ core/modules/views/tests/src/Unit/ViewsTest.php
 core/modules/views/tests/src/Unit/ViewExecutableFactoryTest.php
 core/modules/views/tests/fixtures/update/views.view.test_fix_revision_id_update.yml
 core/modules/views/tests/fixtures/update/views.view.test_responsive_images.yml
+core/modules/views/tests/fixtures/update/remove_default_argument_skip_url.php
+core/modules/views/tests/fixtures/update/views.view.remove_default_argument_skip_url.yml
 core/modules/views/tests/fixtures/update/fix-revision-id-update.php
 core/modules/views/views.libraries.yml
 core/modules/views/views.services.yml
@@ -8626,6 +8644,8 @@ core/modules/views/src/Plugin/views/display_extender/DisplayExtenderPluginBase.p
 core/modules/views/src/Plugin/views/query/PostgresqlDateSql.php
 core/modules/views/src/Plugin/views/query/Sql.php
 core/modules/views/src/Plugin/views/query/QueryPluginBase.php
+core/modules/views/src/Plugin/views/query/CastSqlInterface.php
+core/modules/views/src/Plugin/views/query/CastSql.php
 core/modules/views/src/Plugin/views/query/SqliteDateSql.php
 core/modules/views/src/Plugin/views/query/MysqlDateSql.php
 core/modules/views/src/Plugin/views/query/DateSqlInterface.php
@@ -8750,6 +8770,7 @@ core/modules/views/src/Plugin/views/argument_validator/NumericArgumentValidator.
 core/modules/views/src/Plugin/views/argument_validator/Entity.php
 core/modules/views/src/Plugin/views/join/Subquery.php
 core/modules/views/src/Plugin/views/join/JoinPluginBase.php
+core/modules/views/src/Plugin/views/join/CastedIntFieldJoin.php
 core/modules/views/src/Plugin/views/join/JoinPluginInterface.php
 core/modules/views/src/Plugin/views/join/Standard.php
 core/modules/views/src/Plugin/views/join/FieldOrLanguageJoin.php
@@ -10277,6 +10298,7 @@ core/misc/cspell/dictionary.txt
 core/misc/tabbingmanager.js
 core/misc/checkbox.js
 core/misc/dropbutton/dropbutton.js
+core/misc/field-list-keyboard-navigation.js
 core/misc/dialog/dialog.jquery-ui.js
 core/misc/dialog/dialog.position.js
 core/misc/dialog/dialog.ajax.js
@@ -10914,6 +10936,7 @@ core/tests/Drupal/Tests/Core/Field/FieldDefinitionListenerTest.php
 core/tests/Drupal/Tests/Core/Field/FieldItemListTest.php
 core/tests/Drupal/Tests/Core/Field/BaseFieldDefinitionTestBase.php
 core/tests/Drupal/Tests/Core/Field/StringItemTest.php
+core/tests/Drupal/Tests/Core/Field/FieldTypePluginManagerTest.php
 core/tests/Drupal/Tests/Core/Display/DisplayVariantTest.php
 core/tests/Drupal/Tests/Core/Common/TagsTest.php
 core/tests/Drupal/Tests/Core/Common/AttributesTest.php
@@ -11381,6 +11404,7 @@ core/tests/Drupal/Tests/Component/Utility/UserAgentTest.php
 core/tests/Drupal/Tests/Component/Utility/EmailValidatorTest.php
 core/tests/Drupal/Tests/Component/Utility/ReflectionTest.php
 core/tests/Drupal/Tests/Component/Utility/NestedArrayTest.php
+core/tests/Drupal/Tests/Component/Utility/DeprecationHelperTest.php
 core/tests/Drupal/Tests/Component/Utility/BytesTest.php
 core/tests/Drupal/Tests/Component/Utility/EnvironmentTest.php
 core/tests/Drupal/Tests/Component/Utility/fixtures/RectangleTest.json
@@ -11975,6 +11999,7 @@ core/assets/vendor/ckeditor5/remove-format/translations/da.js
 core/assets/vendor/ckeditor5/remove-format/translations/lt.js
 core/assets/vendor/ckeditor5/remove-format/translations/ko.js
 core/assets/vendor/ckeditor5/remove-format/translations/el.js
+core/assets/vendor/ckeditor5/remove-format/translations/ug.js
 core/assets/vendor/ckeditor5/remove-format/translations/bg.js
 core/assets/vendor/ckeditor5/remove-format/translations/ne.js
 core/assets/vendor/ckeditor5/remove-format/translations/ru.js
@@ -12001,6 +12026,7 @@ core/assets/vendor/ckeditor5/remove-format/translations/he.js
 core/assets/vendor/ckeditor5/remove-format/translations/zh.js
 core/assets/vendor/ckeditor5/remove-format/translations/af.js
 core/assets/vendor/ckeditor5/remove-format/translations/cs.js
+core/assets/vendor/ckeditor5/remove-format/translations/sq.js
 core/assets/vendor/ckeditor5/remove-format/translations/hi.js
 core/assets/vendor/ckeditor5/remove-format/translations/fr.js
 core/assets/vendor/ckeditor5/remove-format/translations/it.js
@@ -12026,6 +12052,7 @@ core/assets/vendor/ckeditor5/style/translations/da.js
 core/assets/vendor/ckeditor5/style/translations/lt.js
 core/assets/vendor/ckeditor5/style/translations/ko.js
 core/assets/vendor/ckeditor5/style/translations/el.js
+core/assets/vendor/ckeditor5/style/translations/ug.js
 core/assets/vendor/ckeditor5/style/translations/bg.js
 core/assets/vendor/ckeditor5/style/translations/ru.js
 core/assets/vendor/ckeditor5/style/translations/sr-latn.js
@@ -12070,6 +12097,7 @@ core/assets/vendor/ckeditor5/source-editing/translations/da.js
 core/assets/vendor/ckeditor5/source-editing/translations/lt.js
 core/assets/vendor/ckeditor5/source-editing/translations/ko.js
 core/assets/vendor/ckeditor5/source-editing/translations/el.js
+core/assets/vendor/ckeditor5/source-editing/translations/ug.js
 core/assets/vendor/ckeditor5/source-editing/translations/bg.js
 core/assets/vendor/ckeditor5/source-editing/translations/ru.js
 core/assets/vendor/ckeditor5/source-editing/translations/sr-latn.js
@@ -12461,6 +12489,7 @@ core/assets/vendor/ckeditor5/code-block/translations/he.js
 core/assets/vendor/ckeditor5/code-block/translations/zh.js
 core/assets/vendor/ckeditor5/code-block/translations/af.js
 core/assets/vendor/ckeditor5/code-block/translations/cs.js
+core/assets/vendor/ckeditor5/code-block/translations/sq.js
 core/assets/vendor/ckeditor5/code-block/translations/es-co.js
 core/assets/vendor/ckeditor5/code-block/translations/hi.js
 core/assets/vendor/ckeditor5/code-block/translations/fr.js
@@ -12616,6 +12645,7 @@ core/assets/vendor/ckeditor5/language/translations/da.js
 core/assets/vendor/ckeditor5/language/translations/lt.js
 core/assets/vendor/ckeditor5/language/translations/ko.js
 core/assets/vendor/ckeditor5/language/translations/el.js
+core/assets/vendor/ckeditor5/language/translations/ug.js
 core/assets/vendor/ckeditor5/language/translations/bg.js
 core/assets/vendor/ckeditor5/language/translations/ru.js
 core/assets/vendor/ckeditor5/language/translations/sr-latn.js
@@ -12664,6 +12694,7 @@ core/assets/vendor/ckeditor5/html-support/translations/da.js
 core/assets/vendor/ckeditor5/html-support/translations/lt.js
 core/assets/vendor/ckeditor5/html-support/translations/ko.js
 core/assets/vendor/ckeditor5/html-support/translations/el.js
+core/assets/vendor/ckeditor5/html-support/translations/ug.js
 core/assets/vendor/ckeditor5/html-support/translations/bg.js
 core/assets/vendor/ckeditor5/html-support/translations/ru.js
 core/assets/vendor/ckeditor5/html-support/translations/sr-latn.js
@@ -12711,6 +12742,7 @@ core/assets/vendor/ckeditor5/horizontal-line/translations/da.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/lt.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/ko.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/el.js
+core/assets/vendor/ckeditor5/horizontal-line/translations/ug.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/bg.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/ru.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/sr-latn.js
@@ -12737,6 +12769,7 @@ core/assets/vendor/ckeditor5/horizontal-line/translations/fi.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/he.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/zh.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/cs.js
+core/assets/vendor/ckeditor5/horizontal-line/translations/sq.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/hi.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/fr.js
 core/assets/vendor/ckeditor5/horizontal-line/translations/it.js
@@ -12787,6 +12820,7 @@ core/assets/vendor/ckeditor5/special-characters/translations/fi.js
 core/assets/vendor/ckeditor5/special-characters/translations/he.js
 core/assets/vendor/ckeditor5/special-characters/translations/zh.js
 core/assets/vendor/ckeditor5/special-characters/translations/cs.js
+core/assets/vendor/ckeditor5/special-characters/translations/sq.js
 core/assets/vendor/ckeditor5/special-characters/translations/hi.js
 core/assets/vendor/ckeditor5/special-characters/translations/fr.js
 core/assets/vendor/ckeditor5/special-characters/translations/it.js
@@ -12871,6 +12905,7 @@ core/assets/vendor/ckeditor5/indent/translations/da.js
 core/assets/vendor/ckeditor5/indent/translations/lt.js
 core/assets/vendor/ckeditor5/indent/translations/ko.js
 core/assets/vendor/ckeditor5/indent/translations/el.js
+core/assets/vendor/ckeditor5/indent/translations/ug.js
 core/assets/vendor/ckeditor5/indent/translations/bg.js
 core/assets/vendor/ckeditor5/indent/translations/ne.js
 core/assets/vendor/ckeditor5/indent/translations/ru.js
@@ -13432,7 +13467,6 @@ core/profiles/demo_umami/config/install/block.block.umami_views_block__recipe_co
 core/profiles/demo_umami/config/install/views.view.recipes.yml
 core/profiles/demo_umami/config/install/core.entity_view_mode.media.responsive_3x2.yml
 core/profiles/demo_umami/config/install/image.style.scale_crop_7_3_wide.yml
-core/profiles/demo_umami/config/install/tour.tour.umami-front.yml
 core/profiles/demo_umami/config/install/block.block.umami_languageswitcher.yml
 core/profiles/demo_umami/config/install/filter.format.restricted_html.yml
 core/profiles/demo_umami/config/install/core.entity_view_mode.node.card.yml
@@ -13652,8 +13686,10 @@ core/lib/Drupal/Core/Extension/Exception/UninstalledExtensionException.php
 core/lib/Drupal/Core/Extension/Exception/UnknownExtensionException.php
 core/lib/Drupal/Core/Extension/Exception/UnknownExtensionTypeException.php
 core/lib/Drupal/Core/Extension/ThemeInstaller.php
+core/lib/Drupal/Core/Extension/ExtensionNameReservedException.php
 core/lib/Drupal/Core/Extension/ExtensionPathResolver.php
 core/lib/Drupal/Core/Extension/ExtensionLifecycle.php
+core/lib/Drupal/Core/Extension/Discovery/RecursiveExtensionFilterCallback.php
 core/lib/Drupal/Core/Extension/Discovery/RecursiveExtensionFilterIterator.php
 core/lib/Drupal/Core/Extension/module.api.php
 core/lib/Drupal/Core/Extension/InfoParserInterface.php
@@ -15499,6 +15535,7 @@ core/lib/Drupal/Component/Version/composer.json
 core/lib/Drupal/Component/Version/LICENSE.txt
 core/lib/Drupal/Component/Version/TESTING.txt
 core/lib/Drupal/Component/Version/Constraint.php
+core/lib/Drupal/Component/Utility/DeprecationHelper.php
 core/lib/Drupal/Component/Utility/README.txt
 core/lib/Drupal/Component/Utility/UserAgent.php
 core/lib/Drupal/Component/Utility/Number.php

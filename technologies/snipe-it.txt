@@ -56,6 +56,7 @@ database/migrations/2013_11_25_013244_recreate_licenses_table.php
 database/migrations/2013_11_25_033008_delete_bad_licenses_table.php
 database/migrations/2013_11_15_015858_add_user_id_to_categories.php
 database/migrations/2016_09_04_182149_migrate_asset_log_to_action_log.php
+database/migrations/2022_10_25_215520_add_label2_settings.php
 database/migrations/2017_10_10_123504_allow_nullable_depreciation_id_in_models.php
 database/migrations/2022_05_16_235350_remove_stored_eula_field.php
 database/migrations/2016_07_14_153609_add_ad_domain_to_settings.php
@@ -78,6 +79,7 @@ database/migrations/2015_09_09_195301_add_custom_css_to_settings.php
 database/migrations/2023_03_21_215218_update_slack_setting.php
 database/migrations/2016_03_02_220517_update_ldap_filter_to_longer_field.php
 database/migrations/2023_05_08_132921_increase_state_to_more_than_3.php
+database/migrations/2023_08_13_172600_add_email_to_companies.php
 database/migrations/2016_03_02_193043_add_ldap_flag_to_users.php
 database/migrations/2018_04_02_150700_labels_display_model_name.php
 database/migrations/2021_08_11_005206_add_depreciation_minimum_value.php
@@ -509,6 +511,7 @@ public/js/bootstrap/js/bootstrap.js
 public/js/bootstrap/js/npm.js
 public/js/bootstrap-table-locale-all.js
 public/js/jquery.typeahead.min.js
+public/js/dist/all-defer.js
 public/js/dist/bootstrap-table.js
 public/js/dist/all.js
 public/js/vue.js
@@ -1019,6 +1022,7 @@ app/Http/Transformers/ActionlogsTransformer.php
 app/Http/Transformers/DatatablesTransformer.php
 app/Http/Transformers/SelectlistTransformer.php
 app/Http/Transformers/AccessoriesTransformer.php
+app/Http/Transformers/LabelsTransformer.php
 app/Http/Transformers/LocationsTransformer.php
 app/Http/Transformers/CompaniesTransformer.php
 app/Http/Transformers/CategoriesTransformer.php
@@ -1086,6 +1090,7 @@ app/Http/Controllers/Api/ConsumablesController.php
 app/Http/Controllers/Api/AssetsController.php
 app/Http/Controllers/Api/ComponentsController.php
 app/Http/Controllers/Api/ReportsController.php
+app/Http/Controllers/Api/LabelsController.php
 app/Http/Controllers/Api/LocationsController.php
 app/Http/Controllers/Api/ProfileController.php
 app/Http/Controllers/Api/StatuslabelsController.php
@@ -1099,6 +1104,7 @@ app/Http/Controllers/Users/UserFilesController.php
 app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/Users/LDAPImportController.php
 app/Http/Controllers/Users/BulkUsersController.php
+app/Http/Controllers/LabelsController.php
 app/Http/Controllers/LocationsController.php
 app/Http/Controllers/ProfileController.php
 app/Http/Controllers/Accessories/AccessoryCheckoutController.php
@@ -1159,6 +1165,7 @@ app/Console/Commands/MoveUploadsToNewDisk.php
 app/Console/Kernel.php
 app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/Handler.php
+app/View/Label.php
 app/Events/CheckoutAccepted.php
 app/Events/CheckoutableCheckedIn.php
 app/Events/Event.php
@@ -1238,6 +1245,27 @@ app/Models/Traits/Acceptable.php
 app/Models/CustomField.php
 app/Models/Group.php
 app/Models/SCIMUser.php
+app/Models/Labels/Tapes/Brother/TZe_12mm_A.php
+app/Models/Labels/Tapes/Brother/TZe_12mm.php
+app/Models/Labels/Tapes/Brother/TZe_24mm_A.php
+app/Models/Labels/Tapes/Brother/TZe_24mm.php
+app/Models/Labels/Tapes/Dymo/LabelWriter.php
+app/Models/Labels/Tapes/Dymo/LabelWriter_30252.php
+app/Models/Labels/Sheet.php
+app/Models/Labels/DefaultLabel.php
+app/Models/Labels/Label.php
+app/Models/Labels/RectangleSheet.php
+app/Models/Labels/Sheets/Avery/_5520.php
+app/Models/Labels/Sheets/Avery/_5267.php
+app/Models/Labels/Sheets/Avery/L7162_B.php
+app/Models/Labels/Sheets/Avery/L7163.php
+app/Models/Labels/Sheets/Avery/L7162_A.php
+app/Models/Labels/Sheets/Avery/_5520_A.php
+app/Models/Labels/Sheets/Avery/L7162.php
+app/Models/Labels/Sheets/Avery/L7163_A.php
+app/Models/Labels/Sheets/Avery/_5267_A.php
+app/Models/Labels/Field.php
+app/Models/Labels/FieldOption.php
 app/Models/Actionlog.php
 app/Models/Supplier.php
 app/Models/AssetMaintenance.php
@@ -1255,6 +1283,7 @@ app/Listeners/LogSuccessfulLogin.php
 app/Listeners/LogFailedLogin.php
 app/Listeners/.gitkeep
 app/Listeners/LogListener.php
+app/Presenters/LabelPresenter.php
 app/Presenters/DepreciationReportPresenter.php
 app/Presenters/Presentable.php
 app/Presenters/ActionlogPresenter.php
@@ -3964,6 +3993,8 @@ resources/lang/en/admin/components/message.php
 resources/lang/en/admin/categories/table.php
 resources/lang/en/admin/categories/general.php
 resources/lang/en/admin/categories/message.php
+resources/lang/en/admin/labels/table.php
+resources/lang/en/admin/labels/message.php
 resources/lang/en/admin/manufacturers/table.php
 resources/lang/en/admin/manufacturers/message.php
 resources/lang/en/admin/departments/table.php
@@ -6094,6 +6125,7 @@ resources/views/groups/edit.blade.php
 resources/views/groups/index.blade.php
 resources/views/partials/asset-bulk-actions.blade.php
 resources/views/partials/assets-assigned.blade.php
+resources/views/partials/label2-field-definitions.blade.php
 resources/views/partials/users-bulk-actions.blade.php
 resources/views/partials/models-bulk-actions.blade.php
 resources/views/partials/forms/demo-mode.blade.php
@@ -6145,6 +6177,7 @@ resources/views/partials/forms/edit/requestable.blade.php
 resources/views/partials/forms/edit/license-select.blade.php
 resources/views/partials/forms/checkout-selector.blade.php
 resources/views/partials/bootstrap-table.blade.php
+resources/views/partials/label2-preview.blade.php
 resources/views/partials/more-info.blade.php
 resources/views/partials/bpay.blade.php
 resources/views/layouts/edit-form.blade.php

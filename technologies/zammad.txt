@@ -274,6 +274,7 @@ db/migrate/20210528000000_update_session_timeout_dropdown.rb
 db/migrate/20220607113229_drop_notifications_table.rb
 db/migrate/20221108124934_issue4266_fix_field.rb
 db/migrate/20200716124141_issue_3123_external_sync_ticket_merge.rb
+db/migrate/20230817130057_update_api_password_access_frontend.rb
 db/migrate/20230209083829_html_sanitizer_processing_timeout.rb
 db/migrate/20180502015927_issue_1219_zhtw_locale_typo.rb
 db/migrate/20210428125300_issue_3523_new_operator.rb
@@ -913,6 +914,7 @@ spec/system/profile/overviews_spec.rb
 spec/system/profile/preferences_language_spec.rb
 spec/system/profile/password_spec.rb
 spec/system/profile/out_of_office_spec.rb
+spec/system/profile/calendar_spec.rb
 spec/system/profile/appearance_spec.rb
 spec/system/profile/devices_spec.rb
 spec/system/profile/preferences_token_access_spec.rb
@@ -980,6 +982,7 @@ spec/db/migrate/issue_4322_session_timeout_stringify_spec.rb
 spec/db/migrate/issue_2429_user_identifier_validation_spec.rb
 spec/db/migrate/normalize_setting_ticket_number_ignore_system_id_spec.rb
 spec/db/migrate/issue_2019_fix_double_domain_links_in_trigger_emails_spec.rb
+spec/db/migrate/update_api_password_access_frontend_spec.rb
 spec/db/migrate/template_migration_spec.rb
 spec/db/migrate/issue_3647_custom_object_attribute_integer_spec.rb
 spec/db/migrate/issue_3503_fix_current_user_spec.rb
@@ -3220,6 +3223,7 @@ app/controllers/concerns/creates_ticket_articles.rb
 app/controllers/concerns/checks_user_attributes_by_current_user_permission.rb
 app/controllers/concerns/integration/import_job_base.rb
 app/controllers/concerns/can_paginate.rb
+app/graphql/graphql_introspection.json
 app/graphql/gql/types/tags_interface.rb
 app/graphql/gql/types/organization_type.rb
 app/graphql/gql/types/ticket_type.rb
@@ -3262,6 +3266,7 @@ app/graphql/gql/types/ticket/priority_type.rb
 app/graphql/gql/types/ticket/article/sender_type.rb
 app/graphql/gql/types/ticket/article/security_state_type.rb
 app/graphql/gql/types/ticket/article/type_type.rb
+app/graphql/gql/types/ticket/time_accounting_type_sum_type.rb
 app/graphql/gql/types/ticket/live_user/app_type.rb
 app/graphql/gql/types/ticket/live_user_type.rb
 app/graphql/gql/types/ticket/state_type_type.rb
@@ -3437,6 +3442,28 @@ app/frontend/build/transforms/transformTestId.js
 app/frontend/build/manualChunks.js
 app/frontend/package.json
 app/frontend/public-build/.keep
+app/frontend/tests/graphql/factories/Avatar.ts
+app/frontend/tests/graphql/factories/utils.ts
+app/frontend/tests/graphql/factories/Ticket.ts
+app/frontend/tests/graphql/factories/Group.ts
+app/frontend/tests/graphql/factories/ObjectManagerFrontendAttributesPayload.ts
+app/frontend/tests/graphql/factories/PageInfo.ts
+app/frontend/tests/graphql/factories/mocks.ts
+app/frontend/tests/graphql/factories/User.ts
+app/frontend/tests/graphql/factories/__tests__/utils.ts
+app/frontend/tests/graphql/factories/__tests__/mutation-calls.spec.ts
+app/frontend/tests/graphql/factories/__tests__/queries.ts
+app/frontend/tests/graphql/factories/__tests__/query-calls.spec.ts
+app/frontend/tests/graphql/factories/__tests__/factory-generator.spec.ts
+app/frontend/tests/graphql/factories/__tests__/subscription-calls.spec.ts
+app/frontend/tests/graphql/factories/TicketPriority.ts
+app/frontend/tests/graphql/factories/Organization.ts
+app/frontend/tests/graphql/factories/index.ts
+app/frontend/tests/graphql/factories/fixtures/organization-object-attributes.ts
+app/frontend/tests/graphql/factories/fixtures/user-object-attributes.ts
+app/frontend/tests/graphql/factories/fixtures/ticket-article-object-attributes.ts
+app/frontend/tests/graphql/factories/fixtures/ticket-object-attributes.ts
+app/frontend/tests/graphql/factories/TicketState.ts
 app/frontend/tests/vitest.setup.ts
 app/frontend/tests/fixtures/graphqlSampleTypes.ts
 app/frontend/tests/support/mock-applicationConfig.ts
@@ -5105,6 +5132,7 @@ app/assets/javascripts/app/controllers/core_workflow.coffee
 app/assets/javascripts/app/index.coffee
 app/assets/javascripts/app/models/chat.coffee
 app/assets/javascripts/app/models/object_manager_attribute.coffee
+app/assets/javascripts/app/models/ticket_time_accounting.coffee
 app/assets/javascripts/app/models/knowledge_base_category_permission.coffee
 app/assets/javascripts/app/models/role.coffee
 app/assets/javascripts/app/models/ticket_state_type.coffee
@@ -5955,6 +5983,7 @@ app/models/ticket/selector/sql.rb
 app/models/ticket/selector/search_index.rb
 app/models/ticket/screen_options.rb
 app/models/ticket/time_accounting/type.rb
+app/models/ticket/time_accounting/assets.rb
 app/models/ticket/state_type.rb
 app/models/ticket/enqueues_user_ticket_counter_job.rb
 app/models/ticket/search.rb
@@ -6291,6 +6320,7 @@ app/views/messaging/ticket_create/es.md.erb
 app/views/messaging/ticket_create/nl.md.erb
 app/views/messaging/ticket_create/da.md.erb
 app/views/messaging/ticket_create/it.md.erb
+app/views/messaging/ticket_create/el.md.erb
 app/views/messaging/ticket_create/sr.md.erb
 app/views/messaging/ticket_create/sv.md.erb
 app/views/messaging/ticket_create/cs.md.erb
@@ -6314,6 +6344,7 @@ app/views/messaging/ticket_escalation/es.md.erb
 app/views/messaging/ticket_escalation/nl.md.erb
 app/views/messaging/ticket_escalation/da.md.erb
 app/views/messaging/ticket_escalation/it.md.erb
+app/views/messaging/ticket_escalation/el.md.erb
 app/views/messaging/ticket_escalation/sr.md.erb
 app/views/messaging/ticket_escalation/sv.md.erb
 app/views/messaging/ticket_escalation/cs.md.erb
@@ -6354,6 +6385,7 @@ app/views/messaging/ticket_info/es.md.erb
 app/views/messaging/ticket_info/nl.md.erb
 app/views/messaging/ticket_info/da.md.erb
 app/views/messaging/ticket_info/it.md.erb
+app/views/messaging/ticket_info/el.md.erb
 app/views/messaging/ticket_info/sr.md.erb
 app/views/messaging/ticket_info/cs.md.erb
 app/views/messaging/ticket_info/en.md.erb
@@ -6441,6 +6473,7 @@ app/views/mailer/user_auth_provider/ru.html.erb
 app/views/mailer/user_auth_provider/th.html.erb
 app/views/mailer/user_auth_provider/sr.html.erb
 app/views/mailer/user_auth_provider/fr.html.erb
+app/views/mailer/user_auth_provider/zh-cn.html.erb
 app/views/mailer/user_auth_provider/sr-latn-rs.html.erb
 app/views/mailer/user_auth_provider/cs.html.erb
 app/views/mailer/user_auth_provider/pt.html.erb
@@ -6469,6 +6502,7 @@ app/views/mailer/signup/it.html.erb
 app/views/mailer/signup/es.html.erb
 app/views/mailer/signup/en.html.erb
 app/views/mailer/signup/pt-br.html.erb
+app/views/mailer/signup/tr.html.erb
 app/views/mailer/signup/nl.html.erb
 app/views/mailer/password_change/ru.html.erb
 app/views/mailer/password_change/sr.html.erb
@@ -6616,6 +6650,7 @@ app/views/mailer/admin_password_auth/es.html.erb
 app/views/mailer/admin_password_auth/nb.html.erb
 app/views/mailer/admin_password_auth/en.html.erb
 app/views/mailer/admin_password_auth/pt-br.html.erb
+app/views/mailer/admin_password_auth/tr.html.erb
 app/views/mailer/admin_password_auth/nl.html.erb
 app/views/mailer/user_device_new/el.html.erb
 app/views/mailer/user_device_new/ru.html.erb
@@ -6668,6 +6703,7 @@ app/views/mailer/ticket_update_received_merge/es.html.erb
 app/views/mailer/ticket_update_received_merge/nb.html.erb
 app/views/mailer/ticket_update_received_merge/en.html.erb
 app/views/mailer/ticket_update_received_merge/pt-br.html.erb
+app/views/mailer/ticket_update_received_merge/tr.html.erb
 app/views/mailer/ticket_update_received_merge/nl.html.erb
 app/views/mailer/test_ticket/ru.html.erb
 app/views/mailer/test_ticket/sr.html.erb

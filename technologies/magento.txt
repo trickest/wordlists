@@ -648,6 +648,7 @@ dev/tests/unit/framework/autoload.php
 dev/tests/unit/allure/allure.config.php
 dev/tests/unit/phpunit.xml.dist
 dev/tests/utils/phpunitGroupConfig.php
+dev/tests/utils/update-test-paths.php
 dev/tests/setup-integration/testsuite/Magento/Setup/SchemaReaderTest.php
 dev/tests/setup-integration/testsuite/Magento/Setup/DryRunTest.php
 dev/tests/setup-integration/testsuite/Magento/Setup/BCMultiModuleTest.php
@@ -18654,6 +18655,7 @@ app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminMediaGalleryApplyUsed
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AssertAdminEnhancedMediaGallerySortByActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryAssertImageDeletedActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryEnableMassActionModeActionGroup.xml
+app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/CliMediaGalleryEnhancedEnableActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryAssertImagesDeletedInBulkActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminMediaGalleryFolderDeleteActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryImageDetailsEditActionGroup.xml
@@ -18661,8 +18663,8 @@ app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryI
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGallerySelectUsedInFilterActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryAssertMassActionModeNotActiveActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminEnhancedMediaGalleryVerifyImageKeywordsActionGroup.xml
+app/code/Magento/MediaGalleryUi/Test/Mftf/Data/MediaGalleryConfigData.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Data/AdminMediaGalleryFolderData.xml
-app/code/Magento/MediaGalleryUi/Test/Mftf/Data/AdobeStockConfigData.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Data/AdminEnhancedMediaGalleryImageData.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Test/AdminMediaGallerySortByNewestFirstTest.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/Test/AdminMediaGallerySortByDirectoryAscendingTest.xml
@@ -21434,6 +21436,7 @@ app/code/Magento/Cms/Test/Mftf/Section/CmsNewBlockBlockBasicFieldsSection/CmsNew
 app/code/Magento/Cms/Test/Mftf/Section/AdminRecentlyViewedWidgetSection.xml
 app/code/Magento/Cms/Test/Mftf/Section/BlockPageActionsSection.xml
 app/code/Magento/Cms/Test/Mftf/Section/CmsNewPageHierarchySection.xml
+app/code/Magento/Cms/Test/Mftf/Section/CmsNewPageSection.xml
 app/code/Magento/Cms/Test/Mftf/Section/CmsNewPagePageContentSection/CmsNewPagePageContentSection.xml
 app/code/Magento/Cms/Test/Mftf/Section/CmsNewPagePageContentSection/CmsDesignSection.xml
 app/code/Magento/Cms/Test/Mftf/Section/CmsNewPagePageBasicFieldsSection.xml
@@ -25169,6 +25172,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminChangeWebSiteAssignedToProdu
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontSwitchCategoryViewToGridModeActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertWebsiteIsNotAvailableInProductWebsitesActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertAdminCategoryIsNotIncludeInMenuActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductAttributeByCodeActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/SetCategoryByNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/FilterProductGridByNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCreateCatalogProductWidgetActionGroup.xml
@@ -25808,6 +25812,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateCustomProductAttributeWithDro
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateCategoriesWithTheSameCategoryNamesTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminDisableProductOnChangingAttributeSetTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontVerifyThatRecentlyOrderedWidgetShowOnlyFiveProductTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/VerifyTheVisibilityOfTheProductImageWithAndWithoutTheOptionHideFromProductPageTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminRenameCategoryOnStoreViewLevelTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminApplyChangePriceForConfigurableProductWithAssignedSimpleProductsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCheckOutOfStockProductIsNotVisibleInCategoryTest.xml
@@ -29255,6 +29260,7 @@ app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateProductsListWidgetActio
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminFillSpecificPageWidgetMainFieldsActionGroup.xml
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminDeleteWidgetActionGroup.xml
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminWidgetActionGroup.xml
+app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminDeleteAllWidgetsMassActionActionGroup.xml
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateCatalogProductsListWidgetActionGroup.xml
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateDynamicBlocksRotatorWidgetActionGroup.xml
 app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateAndSaveWidgetActionGroup.xml
@@ -34937,6 +34943,7 @@ lib/internal/Magento/Framework/Test/Unit/_files/source.txt
 lib/internal/Magento/Framework/Test/Unit/_files/name_1.txt
 lib/internal/Magento/Framework/Test/Unit/_files/name.txt
 lib/internal/Magento/Framework/Test/Unit/ValidatorTest.php
+lib/internal/Magento/Framework/Test/Unit/Currency/Data/CurrencyTest.php
 lib/internal/Magento/Framework/Test/Unit/Interception/InterceptorTest.php
 lib/internal/Magento/Framework/Test/Unit/Interception/Sample/Plugin3.php
 lib/internal/Magento/Framework/Test/Unit/Interception/Sample/Plugin1.php

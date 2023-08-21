@@ -1322,7 +1322,6 @@ admin-dev/themes/new-theme/template/components/layout/employee_dropdown.tpl
 admin-dev/themes/new-theme/template/components/layout/search_form.tpl
 admin-dev/themes/new-theme/template/components/layout/warning_messages.tpl
 admin-dev/themes/new-theme/template/components/layout/error_messages.tpl
-admin-dev/themes/new-theme/template/components/layout/non-responsive.tpl
 admin-dev/themes/new-theme/template/components/layout/mobile_quickaccess.tpl
 admin-dev/themes/new-theme/template/content.tpl
 admin-dev/themes/new-theme/template/modal.tpl
@@ -1877,7 +1876,6 @@ admin-dev/themes/new-theme/scss/components/_button_groups.scss
 admin-dev/themes/new-theme/scss/components/_timeline.scss
 admin-dev/themes/new-theme/scss/components/_password.scss
 admin-dev/themes/new-theme/scss/components/_help_box.scss
-admin-dev/themes/new-theme/scss/components/layout/_non_responsive.scss
 admin-dev/themes/new-theme/scss/components/layout/_light_display.scss
 admin-dev/themes/new-theme/scss/components/layout/_header_toolbar.scss
 admin-dev/themes/new-theme/scss/components/layout/_right-sidebar.scss
@@ -2594,6 +2592,8 @@ tests/UI/webservices/country/countryWs.ts
 tests/UI/webservices/country/countryXml.ts
 tests/UI/webservices/baseWs.ts
 tests/UI/webservices/baseXml.ts
+tests/UI/webservices/product/productWs.ts
+tests/UI/webservices/product/productXml.ts
 tests/UI/package-lock.json
 tests/UI/tools/linkchecker.ts
 tests/UI/tools/stepIdentifiersChecker.ts
@@ -2695,7 +2695,8 @@ tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/03_navigationAndDi
 tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/02_sortAndFilter/01_sortProducts.ts
 tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/01_navigateInCategories/01_consultCategoriesInHeader.ts
 tests/UI/campaigns/functional/WS/01_countriesCRUD.ts
-tests/UI/campaigns/functional/WS/01_storesCRUD.ts
+tests/UI/campaigns/functional/WS/02_productsCRUD.ts
+tests/UI/campaigns/functional/WS/03_storesCRUD.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/02_resourceEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/01_authorizationEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/02_resourceEndpoint.ts
@@ -3171,7 +3172,10 @@ tests/UI/pages/BO/catalog/productsV2/add/pricingTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/packTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/combinationsTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/detailsTab.ts
+tests/UI/pages/BO/catalog/productsV2/add/seoTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/descriptionTab.ts
+tests/UI/pages/BO/catalog/productsV2/add/optionsTab.ts
+tests/UI/pages/BO/catalog/productsV2/add/shippingTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/virtualProductTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/stocksTab.ts
 tests/UI/pages/BO/catalog/productsV2/add/index.ts
@@ -3422,6 +3426,7 @@ tests/UI/data/demo/sqlTables.ts
 tests/UI/data/demo/paymentMethods.ts
 tests/UI/data/demo/taxOptions.ts
 tests/UI/data/demo/imageTypes.ts
+tests/UI/data/xml/product.ts
 tests/UI/data/xml/country.ts
 tests/UI/data/xml/store.ts
 tests/UI/data/faker/search.ts
@@ -10470,7 +10475,6 @@ src/PrestaShopBundle/Resources/views/Admin/Common/javascript_pagination.html.twi
 src/PrestaShopBundle/Resources/views/Admin/Common/Kpi/kpi_row.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Common/pagination_quicknav.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/toolbar.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Layout/non_responsive.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/mobile_quick_access.html.twig
@@ -10602,7 +10606,6 @@ src/PrestaShopBundle/Resources/views/Admin/Exception/error.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Exception/not_found.html.twig
 src/PrestaShopBundle/Resources/views/Admin/layout.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/toolbar.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Component/Layout/non_responsive.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/nav_bar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/mobile_quick_access.html.twig
@@ -11439,6 +11442,8 @@ src/PrestaShopBundle/Twig/Extension/DocumentationLinkExtension.php
 src/PrestaShopBundle/Twig/HookExtension.php
 src/PrestaShopBundle/Twig/ContextIsoCodeProviderExtension.php
 src/PrestaShopBundle/Twig/TranslationsExtension.php
+src/PrestaShopBundle/Twig/Layout/MenuLink.php
+src/PrestaShopBundle/Twig/Layout/MenuBuilder.php
 src/PrestaShopBundle/Twig/LocaleExtension.php
 src/PrestaShopBundle/Twig/Locator/ModuleTemplateLoader.php
 src/PrestaShopBundle/Twig/DataFormatterExtension.php
@@ -11450,7 +11455,6 @@ src/PrestaShopBundle/Twig/Component/QuickAccess.php
 src/PrestaShopBundle/Twig/Component/SearchForm.php
 src/PrestaShopBundle/Twig/Component/NavBar.php
 src/PrestaShopBundle/Twig/Component/ShopList.php
-src/PrestaShopBundle/Twig/Component/NonResponsive.php
 src/PrestaShopBundle/Twig/Component/Header.php
 src/PrestaShopBundle/Twig/Component/NotificationsCenter.php
 src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php

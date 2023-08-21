@@ -368,6 +368,7 @@ features/product/managing_product_attributes/adding_non_translatable_attribute.f
 features/product/managing_product_attributes/adding_text_product_attribute.feature
 features/product/managing_product_attributes/select_product_attribute_validation.feature
 features/product/managing_product_attributes/adding_checkbox_product_attribute.feature
+features/product/managing_product_attributes/seeing_correct_select_attribute_values_in_different_locale_than_default_one.feature
 features/product/managing_product_attributes/adding_textarea_product_attribute.feature
 features/product/managing_product_attributes/browsing_all_product_attributes.feature
 features/product/managing_product_attributes/adding_percent_product_attribute.feature
@@ -4517,6 +4518,7 @@ src/Sylius/Bundle/AdminBundle/Resources/config/routing.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/product_attribute.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/product_option.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/product_taxon.yml
+src/Sylius/Bundle/AdminBundle/Resources/config/routing/ajax/product_attribute.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/ajax/product_taxon.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/ajax/customer_group.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/ajax/taxon.yml
@@ -4547,6 +4549,7 @@ src/Sylius/Bundle/AdminBundle/Resources/config/routing/exchange_rate.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/promotion.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/payment.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/locale.yml
+src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/product_attribute.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/customer.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/shipment.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/taxon.yml
@@ -4556,6 +4559,7 @@ src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/address.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/order.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/promotion.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/channel.yml
+src/Sylius/Bundle/AdminBundle/Resources/config/routing/partial/payment_method.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/channel.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/tax_rate.yml
 src/Sylius/Bundle/AdminBundle/Resources/config/routing/payment_method.yml
