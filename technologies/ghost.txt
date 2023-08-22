@@ -3665,6 +3665,7 @@ ghost/core/test/e2e-api/admin/custom-theme-settings.test.js
 ghost/core/test/e2e-api/admin/themes.test.js
 ghost/core/test/e2e-api/admin/site.test.js
 ghost/core/test/e2e-api/admin/settings.test.js
+ghost/core/test/e2e-api/admin/__snapshots__/members-edit-subscriptions.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/stats.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/posts-bulk.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/pages-bulk.test.js.snap
@@ -3716,6 +3717,7 @@ ghost/core/test/e2e-api/admin/offers.test.js
 ghost/core/test/e2e-api/admin/utils.js
 ghost/core/test/e2e-api/admin/media.test.js
 ghost/core/test/e2e-api/admin/slugs.test.js
+ghost/core/test/e2e-api/admin/members-edit-subscriptions.test.js
 ghost/core/test/e2e-api/admin/files.test.js
 ghost/core/test/e2e-api/admin/email-preview-rate-limiter.test.js
 ghost/core/test/e2e-api/admin/snippets.test.js
@@ -4718,10 +4720,12 @@ apps/admin-x-settings/test/e2e/membership/analytics.test.ts
 apps/admin-x-settings/test/e2e/membership/access.test.ts
 apps/admin-x-settings/test/e2e/membership/stripe.test.ts
 apps/admin-x-settings/test/e2e/membership/tiers.test.ts
+apps/admin-x-settings/test/e2e/advanced/integrations/slack.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/unsplash.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/firstPromoter.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/pintura.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/amp.test.ts
+apps/admin-x-settings/test/e2e/advanced/integrations/custom.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/zapier.test.ts
 apps/admin-x-settings/test/e2e/advanced/codeInjection.test.ts
 apps/admin-x-settings/test/e2e/advanced/history.test.ts
@@ -5060,6 +5064,7 @@ apps/admin-x-settings/src/api/settings.ts
 apps/admin-x-settings/src/api/webhooks.ts
 apps/admin-x-settings/src/api/customThemeSettings.ts
 apps/admin-x-settings/src/api/site.ts
+apps/admin-x-settings/src/api/slack.ts
 apps/admin-x-settings/src/api/offers.ts
 apps/admin-x-settings/src/api/posts.ts
 apps/admin-x-settings/src/api/images.ts

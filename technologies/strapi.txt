@@ -480,7 +480,6 @@ packages/core/database/.eslintrc.js
 packages/core/admin/index.js
 packages/core/admin/scripts/build.js
 packages/core/admin/scripts/create-dev-plugins-file.js
-packages/core/admin/scripts/create-plugins-file.js
 packages/core/admin/package.json
 packages/core/admin/.browserslistrc
 packages/core/admin/doc/change-the-login-page-logo.md
@@ -832,6 +831,9 @@ packages/core/admin/admin/src/components/LocalesProvider/__mocks__/useLocalesPro
 packages/core/admin/admin/src/components/LocalesProvider/useLocalesProvider.js
 packages/core/admin/admin/src/components/LocalesProvider/context.js
 packages/core/admin/admin/src/components/LocalesProvider/tests/index.test.js
+packages/core/admin/admin/src/components/NpsSurvey/index.js
+packages/core/admin/admin/src/components/NpsSurvey/tests/index.test.js
+packages/core/admin/admin/src/components/NpsSurvey/hooks/useNpsSurveySettings.js
 packages/core/admin/admin/src/components/AuthenticatedApp.js
 packages/core/admin/admin/src/components/LanguageProvider/index.js
 packages/core/admin/admin/src/components/LanguageProvider/init.js
@@ -1197,6 +1199,7 @@ packages/core/admin/admin/src/content-manager/components/FieldComponent/utils/co
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/index.js
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/hooks/useAllowedAttributes.js
 packages/core/admin/admin/src/content-manager/components/AttributeFilter/Filters.js
+packages/core/admin/admin/src/content-manager/components/DynamicTable/CellContent/ReviewWorkflowsStage/getTableColumns.js
 packages/core/admin/admin/src/content-manager/components/DynamicZone/index.js
 packages/core/admin/admin/src/content-manager/components/DynamicZone/tests/fixtures.js
 packages/core/admin/admin/src/content-manager/components/DynamicZone/tests/index.test.js
@@ -1239,7 +1242,6 @@ packages/core/admin/admin/src/content-manager/components/Wysiwyg/EditorLayout.js
 packages/core/admin/admin/src/content-manager/components/Wysiwyg/WysiwygFooter.js
 packages/core/admin/admin/src/content-manager/components/Wysiwyg/Editor.js
 packages/core/admin/admin/src/content-manager/components/Wysiwyg/WysiwygStyles.js
-packages/core/admin/admin/src/content-manager/components/Wysiwyg/EditorStylesContainer.js
 packages/core/admin/admin/src/content-manager/components/Hint/index.js
 packages/core/admin/admin/src/content-manager/components/RelationInput/index.js
 packages/core/admin/admin/src/content-manager/components/RelationInput/tests/RelationInput.test.js
@@ -1412,11 +1414,20 @@ packages/core/admin/ee/admin/hooks/tests/useLicenseLimitNotification.js
 packages/core/admin/ee/admin/hooks/useLicenseLimitNotification.js
 packages/core/admin/ee/admin/hooks/useSettingsMenu/constants.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/index.js
+packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/ReviewWorkflowsAssigneeEE.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/tests/ReviewWorkflowsStage.test.js
+packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/tests/ReviewWorkflowsAssignee.test.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/ReviewWorkflowsStageEE.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/constants.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/index.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/tests/InformationBoxEE.test.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/constants.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/StageSelect/index.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/StageSelect/StageSelect.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/StageSelect/tests/StageSelect.test.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/AssigneeSelect/index.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/AssigneeSelect/tests/AssigneeSelect.test.js
+packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/AssigneeSelect/AssigneeSelect.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/InformationBoxEE.js
 packages/core/admin/ee/LICENSE
 packages/core/admin/ee/server/bootstrap.js
@@ -1439,6 +1450,7 @@ packages/core/admin/ee/server/controllers/authentication/constants.js
 packages/core/admin/ee/server/controllers/authentication/utils.js
 packages/core/admin/ee/server/controllers/workflows/index.js
 packages/core/admin/ee/server/controllers/workflows/stages/index.js
+packages/core/admin/ee/server/controllers/workflows/assignees/index.js
 packages/core/admin/ee/server/destroy.js
 packages/core/admin/ee/server/validation/review-workflows.js
 packages/core/admin/ee/server/validation/user.js
@@ -1466,6 +1478,7 @@ packages/core/admin/ee/server/services/auth.js
 packages/core/admin/ee/server/services/role.js
 packages/core/admin/ee/server/services/__tests__/review-workflows-validation.test.js
 packages/core/admin/ee/server/services/__tests__/passport.test.js
+packages/core/admin/ee/server/services/__tests__/assignees.test.js
 packages/core/admin/ee/server/services/__tests__/review-workflows.test.js
 packages/core/admin/ee/server/services/__tests__/sso.test.js
 packages/core/admin/ee/server/services/__tests__/stages.test.js
@@ -1482,6 +1495,7 @@ packages/core/admin/ee/server/services/review-workflows/entity-service-decorator
 packages/core/admin/ee/server/services/review-workflows/workflows/index.js
 packages/core/admin/ee/server/services/review-workflows/workflows/__tests__/content-types.test.js
 packages/core/admin/ee/server/services/review-workflows/workflows/content-types.js
+packages/core/admin/ee/server/services/review-workflows/assignees.js
 packages/core/admin/ee/server/services/seat-enforcement.js
 packages/core/admin/ee/server/routes/index.js
 packages/core/admin/ee/server/routes/review-workflows.js
@@ -1499,10 +1513,9 @@ packages/core/admin/ee/strapi-server.js
 packages/core/admin/.npmignore
 packages/core/admin/utils/index.js
 packages/core/admin/utils/create-plugins-exclude-path.js
-packages/core/admin/utils/get-plugins-path.js
+packages/core/admin/utils/get-plugins.js
 packages/core/admin/utils/get-custom-app-config-file.js
 packages/core/admin/utils/get-custom-webpack-config.js
-packages/core/admin/utils/__tests__/get-plugins-path.test.js
 packages/core/admin/utils/__tests__/get-custom-app-config-file.test.js
 packages/core/admin/utils/__tests__/create-plugins-exclude-path.test.js
 packages/core/admin/utils/watch-admin-files.js
@@ -2676,7 +2689,9 @@ packages/core/helper-plugin/src/hooks/useAPIErrorHandler.js
 packages/core/helper-plugin/src/hooks/__mocks__/useAPIErrorHandler.js
 packages/core/helper-plugin/src/hooks/useFilter.js
 packages/core/helper-plugin/src/hooks/useCollator.ts
+packages/core/helper-plugin/src/hooks/useQuery.ts
 packages/core/helper-plugin/src/hooks/usePersistentState.js
+packages/core/helper-plugin/src/hooks/useFocusInputField.ts
 packages/core/helper-plugin/src/hooks/useSelectionState.js
 packages/core/helper-plugin/src/hooks/tests/useRBAC.test.js
 packages/core/helper-plugin/src/hooks/tests/useFieldHint.test.js
@@ -2686,7 +2701,6 @@ packages/core/helper-plugin/src/hooks/tests/useClipboard.test.js
 packages/core/helper-plugin/src/hooks/tests/useFilter.test.js
 packages/core/helper-plugin/src/hooks/tests/useCollator.test.js
 packages/core/helper-plugin/src/hooks/tests/useFetchClient.test.js
-packages/core/helper-plugin/src/hooks/useQuery.js
 packages/core/helper-plugin/src/hooks/useRBAC.js
 packages/core/helper-plugin/src/hooks/useFormattedMessage.js
 packages/core/helper-plugin/src/hooks/useLockScroll.stories.mdx
@@ -4077,6 +4091,7 @@ packages/plugins/color-picker/admin/src/components/tests/color-picker-input.test
 packages/plugins/color-picker/admin/src/components/ColorPicker/ColorPickerInput/index.js
 packages/plugins/color-picker/admin/src/components/ColorPicker/ColorPickerIcon/index.js
 packages/plugins/color-picker/admin/src/utils/getTrad.js
+packages/plugins/color-picker/admin/src/hooks/useComposeRefs.js
 packages/plugins/color-picker/admin/src/translations/cs.json
 packages/plugins/color-picker/admin/src/translations/ru.json
 packages/plugins/color-picker/admin/src/translations/en.json
@@ -4136,6 +4151,7 @@ docs/docs/docs/01-core/database/01-relations/_category_.json
 docs/docs/docs/01-core/database/01-relations/reordering.mdx
 docs/docs/docs/01-core/database/02-transactions.md
 docs/docs/docs/01-core/database/00-intro.md
+docs/docs/docs/01-core/admin/05-nps.md
 docs/docs/docs/01-core/admin/_category_.json
 docs/docs/docs/01-core/admin/01-ee/02-audit-logs.md
 docs/docs/docs/01-core/admin/01-ee/_category_.json
@@ -4193,12 +4209,14 @@ docs/docs/docs/01-core/content-manager/hooks/use-content-types.mdx
 docs/docs/docs/01-core/content-manager/hooks/use-drag-and-drop.mdx
 docs/docs/docs/01-core/content-manager/00-intro.md
 docs/docs/docs/01-core/helper-plugin/_category_.json
+docs/docs/docs/01-core/helper-plugin/hooks/use-persistent-state.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/_category_.json
 docs/docs/docs/01-core/helper-plugin/hooks/use-clipboard.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-fetch-client.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-filter.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-api-error-handler.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-callback-ref.mdx
+docs/docs/docs/01-core/helper-plugin/hooks/use-focus-input-field.mdx
 docs/docs/docs/01-core/helper-plugin/hooks/use-collator.mdx
 docs/docs/docs/01-core/upload/_category_.json
 docs/docs/docs/01-core/upload/00-intro.md

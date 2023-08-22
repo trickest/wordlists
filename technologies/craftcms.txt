@@ -38,6 +38,7 @@ tests/_craft/config/db.php.example
 tests/_craft/config/locales/a-locale-id.php
 tests/_craft/config/locales/sub/another-locale-id.php
 tests/_craft/config/locales/nl.php
+tests/_craft/config/secrets.php
 tests/_craft/config/factories/factories.php
 tests/_craft/config/license.key
 tests/_craft/config/test.php
@@ -53,6 +54,7 @@ tests/unit/validators/UriValidatorTest.php
 tests/unit/validators/ColorValidatorTest.php
 tests/unit/validators/UsernameValidatorTest.php
 tests/unit/validators/UriFormatValidatorTest.php
+tests/unit/validators/UniqueValidatorTest.php
 tests/unit/fields/MoneyTest.php
 tests/unit/fields/data/ColorDataTest.php
 tests/unit/search/SearchQueryTest.php
@@ -83,6 +85,7 @@ tests/unit/helpers/DateRangeHelperTest.php
 tests/unit/helpers/ComponentHelperTest.php
 tests/unit/helpers/ImageTransformsTest.php
 tests/unit/helpers/AssetsHelperTest.php
+tests/unit/helpers/TypecastHelperTest.php
 tests/unit/helpers/NumberHelperTest.php
 tests/unit/helpers/SearchHelperTest.php
 tests/unit/helpers/HtmlPurifierTest.php
@@ -99,6 +102,8 @@ tests/unit/helpers/MoneyHelperTest.php
 tests/unit/helpers/PathHelperTest.php
 tests/unit/helpers/GqlHelperTest.php
 tests/unit/helpers/JsonHelperTest.php
+tests/unit/helpers/typecast/EnumModel.php
+tests/unit/helpers/typecast/Suit.php
 tests/unit/helpers/DateTimeHelperTest.php
 tests/unit/helpers/ProjectConfigHelperTest.php
 tests/unit/helpers/AppHelperTest.php
@@ -157,7 +162,6 @@ tests/unit/services/images/ImagesTest.php
 tests/unit/services/ConfigTest.php
 tests/unit/services/SearchTest.php
 tests/unit/services/RoutesTest.php
-tests/unit/composer/FactoryTest.php
 tests/gql.suite.yml
 tests/_bootstrap.php
 tests/_data/.gitkeep
@@ -250,6 +254,8 @@ webpack.config.js
 CHANGELOG.md
 tsconfig.json
 README.md
+lib/composer-LICENSE.txt
+lib/composer.phar
 lib/ar-softdelete/LICENSE.md
 lib/ar-softdelete/composer.json
 lib/ar-softdelete/CHANGELOG.md
@@ -645,6 +651,7 @@ src/controllers/ElementIndexSettingsController.php
 src/controllers/DashboardController.php
 src/controllers/ConfigSyncController.php
 src/controllers/InstallController.php
+src/controllers/AssetsControllerTrait.php
 src/controllers/EntriesController.php
 src/controllers/ChartsController.php
 src/controllers/LivePreviewController.php
@@ -908,6 +915,7 @@ src/events/ElementIndexTableAttributeEvent.php
 src/events/WidgetEvent.php
 src/events/ImageTransformEvent.php
 src/events/RevisionEvent.php
+src/events/DefineAddressSubdivisionsEvent.php
 src/events/DefineSourceSortOptionsEvent.php
 src/events/InvalidateElementCachesEvent.php
 src/events/SearchEvent.php
@@ -950,6 +958,7 @@ src/events/DefineInputOptionsEvent.php
 src/events/SectionEvent.php
 src/events/SiteEvent.php
 src/events/DefineAssetThumbUrlEvent.php
+src/events/AssetBundleEvent.php
 src/events/RegisterGqlArgumentHandlersEvent.php
 src/events/ElementActionEvent.php
 src/events/ResolveResourcePathEvent.php
@@ -1091,6 +1100,7 @@ src/base/ConfigurableComponentInterface.php
 src/base/ApplicationTrait.php
 src/base/RequestTrait.php
 src/base/AssetPreviewHandler.php
+src/base/FieldLayoutProviderInterface.php
 src/base/BaseFsInterface.php
 src/base/GqlInlineFragmentInterface.php
 src/base/ElementAction.php
@@ -1178,6 +1188,7 @@ src/icons/craft-stack-exchange.svg
 src/icons/tip.svg
 src/icons/tools.svg
 src/icons/craftid.svg
+src/icons/folder.svg
 src/icons/feed.svg
 src/icons/tree.svg
 src/icons/clock.svg
@@ -1202,6 +1213,7 @@ src/translations/ko/app.php
 src/translations/hu/app.php
 src/translations/de/app.php
 src/translations/ja/app.php
+src/translations/el/app.php
 src/translations/sk/app.php
 src/translations/pt/app.php
 src/translations/fa/app.php
@@ -1253,7 +1265,6 @@ src/web/assets/cp/dist/images/dev-mode.svg
 src/web/assets/cp/dist/images/user.svg
 src/web/assets/cp/dist/images/icons/safari-pinned-tab.svg
 src/web/assets/cp/dist/images/icons/icon.svg
-src/web/assets/cp/dist/images/folder.svg
 src/web/assets/cp/dist/images/image-editor/filters.svg
 src/web/assets/cp/dist/images/image-editor/rotate-left.svg
 src/web/assets/cp/dist/images/image-editor/orientation-portrait-checked.svg
@@ -1297,7 +1308,6 @@ src/web/assets/cp/src/images/dev-mode.svg
 src/web/assets/cp/src/images/user.svg
 src/web/assets/cp/src/images/icons/safari-pinned-tab.svg
 src/web/assets/cp/src/images/icons/icon.svg
-src/web/assets/cp/src/images/folder.svg
 src/web/assets/cp/src/images/image-editor/filters.svg
 src/web/assets/cp/src/images/image-editor/rotate-left.svg
 src/web/assets/cp/src/images/image-editor/orientation-portrait-checked.svg
@@ -1343,9 +1353,11 @@ src/web/assets/cp/src/js/AdminTable.js
 src/web/assets/cp/src/js/Accordion.js
 src/web/assets/cp/src/js/StructureTableSorter.js
 src/web/assets/cp/src/js/CP.js
+src/web/assets/cp/src/js/BaseUploader.js
 src/web/assets/cp/src/js/VolumeFolderSelectorModal.js
 src/web/assets/cp/src/js/Structure.js
 src/web/assets/cp/src/js/StructureDrag.js
+src/web/assets/cp/src/js/Tooltip.js
 src/web/assets/cp/src/js/Chart.js
 src/web/assets/cp/src/js/CategoryIndex.js
 src/web/assets/cp/src/js/AssetIndex.js
@@ -2117,6 +2129,7 @@ src/web/twig/tokenparsers/PaginateTokenParser.php
 src/web/twig/tokenparsers/RedirectTokenParser.php
 src/web/twig/tokenparsers/CacheTokenParser.php
 src/web/twig/tokenparsers/RequireLoginTokenParser.php
+src/web/twig/FeExtension.php
 src/web/twig/nodevisitors/Profiler.php
 src/web/twig/nodevisitors/GetAttrAdjuster.php
 src/web/twig/nodevisitors/SinglePreloader.php
@@ -2139,6 +2152,7 @@ src/debug/RequestPanel.php
 src/debug/LogTarget.php
 src/behaviors/RevisionBehavior.php
 src/behaviors/EnvAttributeParserBehavior.php
+src/behaviors/EventBehavior.php
 src/behaviors/DraftBehavior.php
 src/behaviors/FieldLayoutBehavior.php
 src/behaviors/CustomFieldBehavior.php.template
@@ -2152,6 +2166,8 @@ src/mail/transportadapters/Sendmail.php
 src/mail/transportadapters/BaseTransportAdapter.php
 src/mail/transportadapters/TransportAdapterInterface.php
 src/mail/Mailer.php
+src/addresses/SubdivisionRepository.php
+src/addresses/data/GB.json
 src/gql/types/Money.php
 src/gql/types/DateTime.php
 src/gql/types/input/criteria/Category.php
@@ -2277,7 +2293,6 @@ src/gql/arguments/elements/MatrixBlock.php
 src/gql/arguments/elements/GlobalSet.php
 src/gql/arguments/elements/Tag.php
 src/gql/arguments/Transform.php
-src/config/composer-classes.php
 src/config/app.web.php
 src/config/DbConfig.php
 src/config/BaseConfig.php
@@ -2452,6 +2467,7 @@ src/models/ImageTransform.php
 src/models/CategoryGroup_SiteSettings.php
 src/models/Updates.php
 src/models/Section.php
+src/models/ElementActivity.php
 src/models/GqlSchema.php
 src/models/MatrixBlockType.php
 src/models/AssetIndexData.php
@@ -2473,7 +2489,6 @@ src/models/Url.php
 src/models/FieldLayoutFormTab.php
 src/models/FolderCriteria.php
 src/models/Update.php
-src/composer/Factory.php
 src/assetpreviews/Text.php
 src/assetpreviews/Video.php
 src/assetpreviews/Pdf.php
@@ -2484,6 +2499,7 @@ src/views/debug/dump/summary.php
 src/views/debug/deprecated/traces.php
 src/views/debug/deprecated/detail.php
 src/views/debug/deprecated/summary.php
+src/migrations/m230710_162700_element_activity.php
 src/migrations/m210624_222934_drop_deprecated_tables.php
 src/migrations/m230131_120713_asset_indexing_session_new_options.php
 src/migrations/m220222_122159_full_names.php
@@ -2498,6 +2514,7 @@ src/migrations/m220309_152006_rename_field_layout_elements.php
 src/migrations/m210904_132612_store_element_source_settings_in_project_config.php
 src/migrations/CreateDbCacheTable.php
 src/migrations/m210817_014201_universal_users.php
+src/migrations/m230531_123004_add_entry_type_show_status_field.php
 src/migrations/m221028_130548_add_canonical_id_index.php
 src/migrations/m210121_145800_asset_indexing_changes.php
 src/migrations/m220103_043103_tab_conditions.php
@@ -2511,10 +2528,12 @@ src/migrations/m220123_213619_update_permissions.php
 src/migrations/m211115_135500_image_transformers.php
 src/migrations/m220314_211928_field_layout_element_uids.php
 src/migrations/m230226_013114_drop_plugin_license_columns.php
+src/migrations/m230820_162023_fix_cache_id_type.php
 src/migrations/m221027_160703_add_image_transform_fill.php
 src/migrations/m220126_003432_addresses.php
 src/migrations/m220413_024536_site_enabled_string.php
 src/migrations/Install.php
+src/migrations/m230607_102049_add_entrytype_slug_translation_columns.php
 src/migrations/m211201_131000_filesystems.php
 src/migrations/m220317_174250_release_all_jobs.php
 src/mutex/NullMutex.php

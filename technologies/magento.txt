@@ -29975,6 +29975,7 @@ app/code/Magento/ImportExport/Test/Mftf/Page/AdminExportIndexPage.xml
 app/code/Magento/ImportExport/Test/Mftf/Page/AdminImportIndexPage.xml
 app/code/Magento/ImportExport/Test/Mftf/Page/AdminImportHistoryPage.xml
 app/code/Magento/ImportExport/Test/Fixture/CsvFile.php
+app/code/Magento/ImportExport/Test/Unit/Plugin/DeferCacheCleaningUntilImportIsCompleteTest.php
 app/code/Magento/ImportExport/Test/Unit/Helper/ReportTest.php
 app/code/Magento/ImportExport/Test/Unit/Helper/DataTest.php
 app/code/Magento/ImportExport/Test/Unit/Controller/Adminhtml/Export/File/DownloadTest.php
@@ -30034,6 +30035,7 @@ app/code/Magento/ImportExport/Test/Unit/Model/Import/ConfigTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/ResourceModel/CollectionByPagesIteratorTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/ResourceModel/HistoryTest.php
 app/code/Magento/ImportExport/LICENSE.txt
+app/code/Magento/ImportExport/Plugin/DeferCacheCleaningUntilImportIsComplete.php
 app/code/Magento/ImportExport/i18n/en_US.csv
 app/code/Magento/ImportExport/Helper/Report.php
 app/code/Magento/ImportExport/Helper/Data.php
@@ -38020,6 +38022,7 @@ lib/internal/Magento/Framework/Indexer/Config/Reader.php
 lib/internal/Magento/Framework/Indexer/Config/DependencyInfoProvider.php
 lib/internal/Magento/Framework/Indexer/Config/SchemaLocator.php
 lib/internal/Magento/Framework/Indexer/AbstractProcessor.php
+lib/internal/Magento/Framework/Indexer/DeferredCacheCleanerInterface.php
 lib/internal/Magento/Framework/Indexer/SaveHandlerFactory.php
 lib/internal/Magento/Framework/Indexer/Handler/AttributeHandler.php
 lib/internal/Magento/Framework/Indexer/Handler/ConcatHandler.php
@@ -38031,6 +38034,7 @@ lib/internal/Magento/Framework/Indexer/DimensionProviderInterface.php
 lib/internal/Magento/Framework/Indexer/CacheContext.php
 lib/internal/Magento/Framework/Indexer/SaveHandler/Batch.php
 lib/internal/Magento/Framework/Indexer/SaveHandler/IndexerInterface.php
+lib/internal/Magento/Framework/Indexer/SaveHandler/StackedActionsIndexerInterface.php
 lib/internal/Magento/Framework/Indexer/SaveHandler/Grid.php
 lib/internal/Magento/Framework/Indexer/SaveHandler/IndexerHandler.php
 lib/internal/Magento/Framework/Indexer/HandlerPool.php

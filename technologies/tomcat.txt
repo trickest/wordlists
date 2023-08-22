@@ -483,6 +483,8 @@ test/tld/tags20.tld
 test/tld/tags11.tld
 test/tld/listener.tld
 test/tld/implicit-bad.tld
+test/jakarta/servlet/TestServletRequestParametersFormUrlEncoded.java
+test/jakarta/servlet/ServletRequestParametersBaseTest.java
 test/jakarta/servlet/jsp/TestPageContext.java
 test/jakarta/servlet/jsp/TesterPageContext.java
 test/jakarta/servlet/jsp/el/TestScopedAttributeELResolver.java
@@ -504,7 +506,10 @@ test/jakarta/servlet/http/TestHttpServletDoHeadValidWrite512.java
 test/jakarta/servlet/http/TestHttpServletResponseSendError.java
 test/jakarta/servlet/annotation/TestServletSecurityMappings.java
 test/jakarta/servlet/annotation/TestServletSecurity.java
+test/jakarta/servlet/TestServletRequestParametersQueryString.java
+test/jakarta/servlet/TestServletRequestParametersMultipartEncoded.java
 test/jakarta/servlet/TestSessionCookieConfig.java
+test/jakarta/servlet/TestServletRequestParameters.java
 test/jakarta/servlet/resources/TestSchemaValidation.java
 test/jakarta/el/TestEvaluationListener.java
 test/jakarta/el/TesterBeanNameResolver.java
@@ -2219,7 +2224,6 @@ java/org/apache/catalina/filters/RemoteHostFilter.java
 java/org/apache/catalina/filters/LocalStrings_ko.properties
 java/org/apache/catalina/filters/SessionInitializerFilter.java
 java/org/apache/catalina/filters/LocalStrings_es.properties
-java/org/apache/catalina/filters/FailedRequestFilter.java
 java/org/apache/catalina/ant/VminfoTask.java
 java/org/apache/catalina/ant/JMXSetTask.java
 java/org/apache/catalina/ant/AbstractCatalinaTask.java
@@ -3640,6 +3644,7 @@ java/org/apache/tomcat/util/threads/LocalStrings_ko.properties
 java/org/apache/tomcat/util/threads/LocalStrings_es.properties
 java/org/apache/tomcat/util/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/LocalStrings_de.properties
+java/org/apache/tomcat/util/http/InvalidParameterException.java
 java/org/apache/tomcat/util/http/ResponseUtil.java
 java/org/apache/tomcat/util/http/LocalStrings_cs.properties
 java/org/apache/tomcat/util/http/LocalStrings.properties
@@ -3676,7 +3681,6 @@ java/org/apache/tomcat/util/http/parser/LocalStrings_es.properties
 java/org/apache/tomcat/util/http/CookieProcessor.java
 java/org/apache/tomcat/util/http/LocalStrings_zh_CN.properties
 java/org/apache/tomcat/util/http/LocalStrings_de.properties
-java/org/apache/tomcat/util/http/LocalStrings_pt_BR.properties
 java/org/apache/tomcat/util/http/ConcurrentDateFormat.java
 java/org/apache/tomcat/util/http/ServerCookies.java
 java/org/apache/tomcat/util/http/HeaderUtil.java
