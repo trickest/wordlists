@@ -470,6 +470,7 @@ tests/migration/Core/V6_5/Migration1690874168FixPaymentStatusUnconfirmedMailTest
 tests/migration/Core/V6_5/Migration1672934282ReviewFormSendFlowTest.php
 tests/migration/Core/V6_5/Migration1674200008UpdateOrderViewerRolePrivilegesTest.php
 tests/migration/Core/V6_5/Migration1659425718AddFlagsToCustomEntitiesTest.php
+tests/migration/Core/V6_5/Migration1691057865UpdateSalutationDefaultForCustomerTest.php
 tests/migration/Core/V6_5/Migration1674704527UpdateVATPatternForCyprusCountryTest.php
 tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1689257577AddMissingTransactionMailFlowTest.php
@@ -877,11 +878,14 @@ tests/unit/Core/Checkout/Payment/Cart/PaymentTransactionStructFactoryTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentHandler/PaymentHandlerRegistryTest.php
 tests/unit/Core/Checkout/Payment/Cart/Recurring/RecurringDataStructTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentRecurringProcessorTest.php
+tests/unit/Core/Checkout/Payment/Cart/PaymentTransactionChainProcessorTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentMethodValidatorTest.php
 tests/unit/Core/Checkout/Payment/DataAbstractionLayer/PaymentHandlerIdentifierSubscriberTest.php
 tests/unit/Core/Checkout/Payment/SalesChannel/CachedPaymentMethodRouteTest.php
 tests/unit/Core/Checkout/Payment/SalesChannel/SortedPaymentMethodRouteTest.php
+tests/unit/Core/Checkout/Payment/Event/PayPaymentOrderCriteriaEventTest.php
 tests/unit/Core/Checkout/Payment/Event/FinalizePaymentOrderTransactionCriteriaEventTest.php
+tests/unit/Core/Checkout/Payment/Event/RecurringPaymentOrderCriteriaEventTest.php
 tests/unit/Core/Checkout/Cart/LineItem/LineItemTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/LineItemGroupServiceRegistryTest.php
 tests/unit/Core/Checkout/Cart/LineItem/LineItemValidatorTest.php
@@ -1697,6 +1701,7 @@ tests/integration/Core/Checkout/Document/Service/DocumentGeneratorTest.php
 tests/integration/Core/Checkout/Document/Renderer/InvoiceRendererTest.php
 tests/integration/Core/Checkout/Customer/Service/ProductReviewCountServiceTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/ProductReviewSubscriberTest.php
+tests/integration/Core/Checkout/Customer/Subscriber/CustomerSalutationSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Rule/CustomerTagRuleTest.php
 tests/integration/Core/Checkout/Customer/Rule/ShippingCityRuleTest.php
 tests/integration/Core/Checkout/Customer/Rule/BillingStateRuleTest.php
@@ -1709,6 +1714,7 @@ tests/integration/Core/Checkout/Customer/Rule/DaysSinceLastLoginRuleTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/RegisterRouteTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/ChangeEmailRouteTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/ChangeProfileRouteTest.php
+tests/integration/Core/Checkout/Customer/SalesChannel/UpsertAddressTest.php
 tests/integration/Core/Checkout/Shipping/SalesChannel/ShippingMethodRouteTest.php
 tests/integration/Core/Installer/Configuration/ShopConfigurationServiceTest.php
 tests/integration/Core/Framework/App/StorefrontPluginRegistryTestBehaviour.php
@@ -4480,6 +4486,7 @@ changelog/_unreleased/2023-08-10-bad-performance-when-editing-text-with-many-cms
 changelog/_unreleased/2023-08-08-remove-objects-from-storefront-exceptions.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
+changelog/_unreleased/2023-08-23-add-criteria-events-to-payments.md
 changelog/_unreleased/2023-08-08-fix-register-router-with-empty-billing-address.md
 changelog/_unreleased/2023-08-10-change-sw-order-select-document-type-modal-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
@@ -4527,6 +4534,7 @@ changelog/_unreleased/2023-07-20-add-versioning-to-capture-capturerefund-and-cap
 changelog/_unreleased/2023-07-31-fix-symfony-bundle-container-access.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
 changelog/_unreleased/2023-08-18-allow-running-scheduled-task-handler-as-crontab.md
+changelog/_unreleased/2023-08-03-update-salutation-default-for-customer.md
 changelog/_unreleased/2023-07-25-there-are-console-errors-while-creating-a-new-customer.md
 changelog/_unreleased/2023-08-09-change-sw-entity-many-to-many-select-default-event.md
 changelog/_unreleased/2023-08-09-add-option-to-disable-dev-server-inline-mode.md
@@ -10967,7 +10975,9 @@ src/Core/Checkout/Payment/SalesChannel/HandlePaymentMethodRoute.php
 src/Core/Checkout/Payment/SalesChannel/AbstractHandlePaymentMethodRoute.php
 src/Core/Checkout/Payment/Event/PaymentMethodIndexerEvent.php
 src/Core/Checkout/Payment/Event/PaymentMethodRouteCacheKeyEvent.php
+src/Core/Checkout/Payment/Event/RecurringPaymentOrderCriteriaEvent.php
 src/Core/Checkout/Payment/Event/FinalizePaymentOrderTransactionCriteriaEvent.php
+src/Core/Checkout/Payment/Event/PayPaymentOrderCriteriaEvent.php
 src/Core/Checkout/Payment/Event/PaymentMethodRouteCacheTagsEvent.php
 src/Core/Checkout/Payment/PaymentMethodDefinition.php
 src/Core/Checkout/Payment/PaymentException.php
@@ -10976,7 +10986,6 @@ src/Core/Checkout/Test/Validation/CustomerVatIdentificationValidatorTest.php
 src/Core/Checkout/Test/Validation/CustomerEmailUniqueValidatorTest.php
 src/Core/Checkout/Test/Payment/PaymentServiceTest.php
 src/Core/Checkout/Test/Payment/Cart/PaymentRefundProcessorTest.php
-src/Core/Checkout/Test/Payment/Cart/PaymentTransactionChainProcessorTest.php
 src/Core/Checkout/Test/Payment/PreparedPaymentServiceTest.php
 src/Core/Checkout/Test/Payment/PaymentMethodRepositoryTest.php
 src/Core/Checkout/Test/Payment/DataAbstractionLayer/PaymentDistinguishableNameSubscriberTest.php
@@ -12566,6 +12575,7 @@ src/Core/Migration/V6_5/Migration1679584289AddCustomerReviewCount.php
 src/Core/Migration/V6_5/Migration1668435503ChangeStornoDocumentTranslationName.php
 src/Core/Migration/V6_5/Migration1666689977AddPluginIdToCustomEntity.php
 src/Core/Migration/V6_5/Migration1670090989AddIndexOrderOrderNumber.php
+src/Core/Migration/V6_5/Migration1691057865UpdateSalutationDefaultForCustomer.php
 src/Core/Migration/V6_5/Migration1692254551FixMailTranslation.php
 src/Core/Migration/V6_5/Migration1671723392AddWebhookLifetimeConfig.php
 src/Core/Migration/V6_5/Migration1689776940AddCartSourceField.php

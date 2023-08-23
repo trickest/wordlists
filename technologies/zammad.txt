@@ -130,6 +130,7 @@ db/migrate/20211004111501_reload_after_core_workflow_again.rb
 db/migrate/20210106100013_issue_3346_xoauth2_token_not_fetched.rb
 db/migrate/20230310122944_core_workflow_secondary_organization.rb
 db/migrate/20210823112140_issue_2455_follow_up_assignment.rb
+db/migrate/20230823082823_update_format_settings.rb
 db/migrate/20170421000001_pretty_date_options_added.rb
 db/migrate/20201005084847_agent_customer_permission.rb
 db/migrate/20170426135500_add_reply_to.rb
@@ -3443,7 +3444,9 @@ app/frontend/build/transforms/transformTestId.js
 app/frontend/build/manualChunks.js
 app/frontend/package.json
 app/frontend/public-build/.keep
+app/frontend/tests/graphql/factories/StoredFile.ts
 app/frontend/tests/graphql/factories/Avatar.ts
+app/frontend/tests/graphql/factories/TicketArticle.ts
 app/frontend/tests/graphql/factories/utils.ts
 app/frontend/tests/graphql/factories/Ticket.ts
 app/frontend/tests/graphql/factories/Group.ts
@@ -3457,6 +3460,7 @@ app/frontend/tests/graphql/factories/__tests__/queries.ts
 app/frontend/tests/graphql/factories/__tests__/query-calls.spec.ts
 app/frontend/tests/graphql/factories/__tests__/factory-generator.spec.ts
 app/frontend/tests/graphql/factories/__tests__/subscription-calls.spec.ts
+app/frontend/tests/graphql/factories/AddressesField.ts
 app/frontend/tests/graphql/factories/TicketPriority.ts
 app/frontend/tests/graphql/factories/Organization.ts
 app/frontend/tests/graphql/factories/index.ts
@@ -3465,6 +3469,7 @@ app/frontend/tests/graphql/factories/fixtures/user-object-attributes.ts
 app/frontend/tests/graphql/factories/fixtures/ticket-article-object-attributes.ts
 app/frontend/tests/graphql/factories/fixtures/ticket-object-attributes.ts
 app/frontend/tests/graphql/factories/TicketState.ts
+app/frontend/tests/graphql/index.ts
 app/frontend/tests/vitest.setup.ts
 app/frontend/tests/fixtures/graphqlSampleTypes.ts
 app/frontend/tests/support/mock-applicationConfig.ts
@@ -3768,8 +3773,6 @@ app/frontend/apps/mobile/components/CommonDialogObjectForm/useDialogObjectForm.t
 app/frontend/apps/mobile/components/CommonOrganizationsList/CommonOrganizationsList.vue
 app/frontend/apps/mobile/components/CommonShowMoreButton/__tests__/CommonShowMoreButton.spec.ts
 app/frontend/apps/mobile/components/CommonShowMoreButton/CommonShowMoreButton.vue
-app/frontend/apps/mobile/components/CommonConfirmation/useConfirmationDialog.ts
-app/frontend/apps/mobile/components/CommonConfirmation/types.ts
 app/frontend/apps/mobile/components/CommonConfirmation/CommonConfirmation.vue
 app/frontend/apps/mobile/components/CommonConfirmation/__tests__/CommonConfirmation.spec.ts
 app/frontend/apps/mobile/components/CommonDialog/CommonDialog.story.vue
@@ -3788,11 +3791,9 @@ app/frontend/apps/mobile/components/layout/LayoutBottomNavigation.vue
 app/frontend/apps/mobile/components/layout/__tests__/LayoutBottomNavigation.spec.ts
 app/frontend/apps/mobile/components/layout/__tests__/LayoutHeader.spec.ts
 app/frontend/apps/mobile/components/CommonStepper/CommonStepper.vue
-app/frontend/apps/mobile/components/CommonStepper/types.ts
 app/frontend/apps/mobile/components/CommonStepper/CommonStepper.story.vue
 app/frontend/apps/mobile/components/CommonStepper/CommonStepperStep.vue
 app/frontend/apps/mobile/components/CommonStepper/__tests__/CommonStepper.spec.ts
-app/frontend/apps/mobile/components/CommonStepper/index.ts
 app/frontend/apps/mobile/components/CommonSelectPill/CommonSelectPill.vue
 app/frontend/apps/mobile/components/CommonSelectPill/__tests__/CommonSelectPill.spec.ts
 app/frontend/apps/mobile/components/CommonButtonGroup/CommonButtonGroup.story.vue
@@ -3858,7 +3859,6 @@ app/frontend/apps/mobile/server/apollo/cache/initializer/articles.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/publicLinks.ts
 app/frontend/apps/mobile/server/apollo/cache/initializer/ticketsByOverviewQuery.ts
 app/frontend/apps/mobile/server/apollo/index.ts
-app/frontend/apps/mobile/router/error.ts
 app/frontend/apps/mobile/router/guards/before/__test__/viewTransition.spec.ts
 app/frontend/apps/mobile/router/guards/before/viewTransition.ts
 app/frontend/apps/mobile/router/index.ts
@@ -4546,6 +4546,7 @@ app/frontend/shared/utils/formatter.ts
 app/frontend/shared/utils/getUuid.ts
 app/frontend/shared/utils/browser.ts
 app/frontend/shared/utils/helpers.ts
+app/frontend/shared/utils/confirmation.ts
 app/frontend/shared/utils/selection.ts
 app/frontend/shared/utils/wordFilter.ts
 app/frontend/shared/utils/__tests__/testFlags.spec.ts
@@ -4595,6 +4596,7 @@ app/frontend/shared/server/apollo/link/testFlags.ts
 app/frontend/shared/server/apollo/link.ts
 app/frontend/shared/server/apollo/index.ts
 app/frontend/shared/server/action_cable/consumer.ts
+app/frontend/shared/router/error.ts
 app/frontend/shared/router/__tests__/walker.spec.ts
 app/frontend/shared/router/walker.ts
 app/frontend/shared/router/guards/after/__tests__/headerTitle.spec.ts
@@ -6291,7 +6293,6 @@ app/views/layouts/tests.html.erb
 app/views/layouts/mobile.html.erb
 app/views/layouts/knowledge_base.html.erb
 app/views/layouts/application.html.erb
-app/views/tickets_shared_draft_modal.jst.eco
 app/views/messaging/ticket_escalation_warning/zh-cn.md.erb
 app/views/messaging/ticket_escalation_warning/pt-br.md.erb
 app/views/messaging/ticket_escalation_warning/fr.md.erb

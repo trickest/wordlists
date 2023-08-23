@@ -95,6 +95,7 @@ api-tests/core/content-manager/fields/decimal.test.api.js
 api-tests/core/content-manager/fields/datetime.test.api.js
 api-tests/core/content-manager/fields/json.test.api.js
 api-tests/core/content-manager/fields/integer.test.api.js
+api-tests/core/content-manager/fields/non-visible.test.api.js
 api-tests/core/content-manager/fields/biginteger.test.api.js
 api-tests/core/content-manager/fields/password.test.api.js
 api-tests/core/content-manager/fields/uid.test.api.js
@@ -889,11 +890,9 @@ packages/core/admin/admin/src/components/ConfigurationsProvider/tests/reducer.te
 packages/core/admin/admin/src/components/ConfigurationsProvider/reducer.js
 packages/core/admin/admin/src/components/ThemeToggleProvider/index.js
 packages/core/admin/admin/src/components/Providers/index.js
-packages/core/admin/admin/src/utils/createRoute.js
 packages/core/admin/admin/src/utils/sortLinks.js
 packages/core/admin/admin/src/utils/tests/formatAPIErrors.test.js
 packages/core/admin/admin/src/utils/tests/sortLinks.test.js
-packages/core/admin/admin/src/utils/tests/createRoute.test.js
 packages/core/admin/admin/src/utils/tests/getFullName.test.js
 packages/core/admin/admin/src/utils/tests/uniqueAdminHash.test.js
 packages/core/admin/admin/src/utils/formatAPIErrors.js
@@ -1196,9 +1195,6 @@ packages/core/admin/admin/src/content-manager/components/FieldComponent/index.js
 packages/core/admin/admin/src/content-manager/components/FieldComponent/Label.js
 packages/core/admin/admin/src/content-manager/components/FieldComponent/utils/select.js
 packages/core/admin/admin/src/content-manager/components/FieldComponent/utils/connect.js
-packages/core/admin/admin/src/content-manager/components/AttributeFilter/index.js
-packages/core/admin/admin/src/content-manager/components/AttributeFilter/hooks/useAllowedAttributes.js
-packages/core/admin/admin/src/content-manager/components/AttributeFilter/Filters.js
 packages/core/admin/admin/src/content-manager/components/DynamicTable/CellContent/ReviewWorkflowsStage/getTableColumns.js
 packages/core/admin/admin/src/content-manager/components/DynamicZone/index.js
 packages/core/admin/admin/src/content-manager/components/DynamicZone/tests/fixtures.js
@@ -1226,6 +1222,10 @@ packages/core/admin/admin/src/content-manager/components/ListViewTable/CellConte
 packages/core/admin/admin/src/content-manager/components/ListViewTable/CellContent/PublicationState/tests/PublicationState.test.js
 packages/core/admin/admin/src/content-manager/components/ListViewTable/CellContent/PublicationState/PublicationState.js
 packages/core/admin/admin/src/content-manager/components/SingleTypeFormWrapper/index.js
+packages/core/admin/admin/src/content-manager/components/Filter/index.js
+packages/core/admin/admin/src/content-manager/components/Filter/Filter.js
+packages/core/admin/admin/src/content-manager/components/Filter/CustomInputs/AdminUsersFilter.js
+packages/core/admin/admin/src/content-manager/components/Filter/CustomInputs/tests/AdminUsersFilter.test.js
 packages/core/admin/admin/src/content-manager/components/Inputs/index.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/index.js
 packages/core/admin/admin/src/content-manager/components/Inputs/utils/generateOptions.js
@@ -1260,6 +1260,7 @@ packages/core/admin/admin/src/content-manager/utils/paths.js
 packages/core/admin/admin/src/content-manager/utils/index.js
 packages/core/admin/admin/src/content-manager/utils/ItemTypes.js
 packages/core/admin/admin/src/content-manager/utils/mergeMetasWithSchema.js
+packages/core/admin/admin/src/content-manager/utils/getDisplayName.js
 packages/core/admin/admin/src/content-manager/utils/getFieldName.js
 packages/core/admin/admin/src/content-manager/utils/removePasswordFieldsFromData.js
 packages/core/admin/admin/src/content-manager/utils/getMaxTempKey.js
@@ -1317,6 +1318,7 @@ packages/core/admin/admin/src/content-manager/hooks/useFetchContentTypeLayout/te
 packages/core/admin/admin/src/content-manager/hooks/useFetchContentTypeLayout/reducer.js
 packages/core/admin/admin/src/content-manager/hooks/useFetchContentTypeLayout/utils/formatLayouts.js
 packages/core/admin/admin/src/content-manager/hooks/useFetchContentTypeLayout/utils/tests/formatLayouts.test.js
+packages/core/admin/admin/src/content-manager/hooks/useAllowedAttributes.js
 packages/core/admin/admin/src/content-manager/assets/images/background_input.svg
 packages/core/admin/admin/src/content-manager/assets/images/icon_remove.svg
 packages/core/admin/admin/src/content-manager/assets/images/logo.svg
@@ -1413,6 +1415,7 @@ packages/core/admin/ee/admin/hooks/tests/useLicenseLimits.test.js
 packages/core/admin/ee/admin/hooks/tests/useLicenseLimitNotification.js
 packages/core/admin/ee/admin/hooks/useLicenseLimitNotification.js
 packages/core/admin/ee/admin/hooks/useSettingsMenu/constants.js
+packages/core/admin/ee/admin/content-manager/pages/ListSettingsView/constants.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/index.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/ReviewWorkflowsAssigneeEE.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/tests/ReviewWorkflowsStage.test.js
@@ -1429,6 +1432,11 @@ packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/compo
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/AssigneeSelect/tests/AssigneeSelect.test.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/components/AssigneeSelect/AssigneeSelect.js
 packages/core/admin/ee/admin/content-manager/pages/EditView/InformationBox/InformationBoxEE.js
+packages/core/admin/ee/admin/content-manager/components/Filter/CustomInputs/ReviewWorkflows/AssigneeFilter.js
+packages/core/admin/ee/admin/content-manager/components/Filter/CustomInputs/ReviewWorkflows/tests/StageFilter.test.js
+packages/core/admin/ee/admin/content-manager/components/Filter/CustomInputs/ReviewWorkflows/tests/AssigneeFilter.test.js
+packages/core/admin/ee/admin/content-manager/components/Filter/CustomInputs/ReviewWorkflows/constants.js
+packages/core/admin/ee/admin/content-manager/components/Filter/CustomInputs/ReviewWorkflows/StageFilter.js
 packages/core/admin/ee/LICENSE
 packages/core/admin/ee/server/bootstrap.js
 packages/core/admin/ee/server/index.js

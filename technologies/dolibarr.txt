@@ -200,7 +200,6 @@ doc/images/README.md
 doc/images/dolibarr_256x256_black.svg
 doc/images/dolibarr_256x256_color.svg
 ChangeLog
-htdocs/custom/README.md
 htdocs/robots.txt
 htdocs/holiday/month_report.php
 htdocs/holiday/view_log.php
@@ -11214,14 +11213,12 @@ htdocs/bookcal/calendar_card.php
 htdocs/bookcal/class/availabilities.class.php
 htdocs/bookcal/class/booking.class.php
 htdocs/bookcal/class/calendar.class.php
-htdocs/bookcal/ChangeLog.md
 htdocs/bookcal/README.md
 htdocs/bookcal/lib/bookcal_booking.lib.php
 htdocs/bookcal/lib/bookcal_availabilities.lib.php
 htdocs/bookcal/lib/bookcal.lib.php
 htdocs/bookcal/lib/bookcal_calendar.lib.php
 htdocs/bookcal/calendar_agenda.php
-htdocs/bookcal/COPYING
 htdocs/bookcal/booking_card.php
 htdocs/bookcal/booking_note.php
 htdocs/knowledgemanagement/knowledgerecord_document.php
@@ -11837,6 +11834,7 @@ htdocs/install/mysql/tables/llx_c_regions.key.sql
 htdocs/install/mysql/tables/llx_inventory-stock.key.sql
 htdocs/install/mysql/tables/llx_events.key.sql
 htdocs/install/mysql/tables/llx_object_lang.sql
+htdocs/install/mysql/tables/llx_c_type_container-website.sql
 htdocs/install/mysql/tables/llx_inventory-stock.sql
 htdocs/install/mysql/tables/llx_commande_fournisseurdet.key.sql
 htdocs/install/mysql/tables/llx_rights_def.key.sql
@@ -11983,6 +11981,7 @@ htdocs/install/mysql/tables/llx_c_socialnetworks.key.sql
 htdocs/install/mysql/tables/llx_c_forme_juridique.sql
 htdocs/install/mysql/tables/llx_societe_extrafields.sql
 htdocs/install/mysql/tables/llx_stocktransfer_stocktransfer_extrafields-stocktransfer.sql
+htdocs/install/mysql/tables/llx_c_type_container-website.key.sql
 htdocs/install/mysql/tables/llx_societe_contacts.key.sql
 htdocs/install/mysql/tables/llx_hrm_skill-hrm.key.sql
 htdocs/install/mysql/tables/llx_c_ticket_category.key.sql
@@ -12126,7 +12125,6 @@ htdocs/install/mysql/tables/llx_opensurvey_sondage-opensurvey.sql
 htdocs/install/mysql/tables/llx_supplier_proposal_extrafields.key.sql
 htdocs/install/mysql/tables/llx_c_ticket_type.sql
 htdocs/install/mysql/tables/llx_c_effectif.key.sql
-htdocs/install/mysql/tables/llx_c_type_container.sql
 htdocs/install/mysql/tables/llx_hrm_evaluation_extrafields-hrm.key.sql
 htdocs/install/mysql/tables/llx_c_units.sql
 htdocs/install/mysql/tables/llx_delivery.key.sql
@@ -12191,7 +12189,6 @@ htdocs/install/mysql/tables/llx_fichinterdet.sql
 htdocs/install/mysql/tables/llx_payment_various.sql
 htdocs/install/mysql/tables/llx_usergroup_extrafields.key.sql
 htdocs/install/mysql/tables/llx_oauth_state.sql
-htdocs/install/mysql/tables/llx_c_type_container.key.sql
 htdocs/install/mysql/tables/llx_ecm_directories.key.sql
 htdocs/install/mysql/tables/llx_facture_rec.sql
 htdocs/install/mysql/tables/llx_product_attribute_combination.key.sql
@@ -13378,7 +13375,6 @@ test/selenium/testsuite_thirdparty.xml
 test/selenium/README
 test/README
 README-FR.md
-.idea/php.xml
 .travis.yml
 SECURITY.md
 .scrutinizer.yml
@@ -13447,6 +13443,7 @@ dev/tools/fixduplicatelanglines.sh
 dev/tools/github_commits_perversion.sh
 dev/tools/spider.php
 dev/tools/fixdosfiles.sh
+dev/tools/apstats.php
 dev/tools/test/testperf.php
 dev/tools/test/testutf.php
 dev/tools/test/namespacemig/main.inc.php
