@@ -1953,6 +1953,7 @@ tests/integration/Core/Framework/Webhook/WebhookApiTest.php
 tests/integration/Core/Framework/RateLimiter/RateLimiterTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/RateLimiterFactoryTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/TimeBackoffLimiterTest.php
+tests/integration/Core/Framework/DataAbstractionLayer/Search/Parser/SqlQueryParserTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/RangeAggregationTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
@@ -4464,6 +4465,7 @@ changelog/_unreleased/2023-08-16-prevent-cache-warmup-for-headless.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/.keep
+changelog/_unreleased/2023-06-19-allow-query-on-null-for-listfields.md
 changelog/_unreleased/2023-08-08-throw-exception-when-app-uses-features-requiring-missing-secret.md
 changelog/_unreleased/2023-08-15-introduce-global-default-for-storefront.md
 changelog/_unreleased/2023-08-21-fix-loading-state-for-the-sales-channel-detail-product-tab.md
@@ -13371,7 +13373,6 @@ src/Core/Framework/Test/DataAbstractionLayer/Search/NaturalSortingTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/FkFieldPrimarySearcherTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/TestAggregation.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/Util/DateHistogramCase.php
-src/Core/Framework/Test/DataAbstractionLayer/Search/Parser/SqlQueryParserTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/Parser/QueryStringParserTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/Parser/AggregationParserTest.php
 src/Core/Framework/Test/DataAbstractionLayer/Search/EntitySearcherTest.php

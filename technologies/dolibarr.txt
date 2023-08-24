@@ -200,6 +200,7 @@ doc/images/README.md
 doc/images/dolibarr_256x256_black.svg
 doc/images/dolibarr_256x256_color.svg
 ChangeLog
+htdocs/custom/README.md
 htdocs/robots.txt
 htdocs/holiday/month_report.php
 htdocs/holiday/view_log.php
@@ -11600,6 +11601,7 @@ htdocs/install/mysql/tables/llx_asset_accountancy_codes_economic-asset.key.sql
 htdocs/install/mysql/tables/llx_document_model.key.sql
 htdocs/install/mysql/tables/llx_categorie_website_page-website.sql
 htdocs/install/mysql/tables/llx_asset_accountancy_codes_economic-asset.sql
+htdocs/install/mysql/tables/llx_c_exp_tax_cat-expensereport.sql
 htdocs/install/mysql/tables/llx_product_attribute_value.key.sql
 htdocs/install/mysql/tables/llx_opensurvey_sondage-opensurvey.key.sql
 htdocs/install/mysql/tables/llx_cronjob.key.sql
@@ -11617,7 +11619,6 @@ htdocs/install/mysql/tables/llx_adherent_type_lang.sql
 htdocs/install/mysql/tables/llx_c_barcode_type.sql
 htdocs/install/mysql/tables/llx_c_email_senderprofile.key.sql
 htdocs/install/mysql/tables/llx_facture_fourn_det_extrafields.key.sql
-htdocs/install/mysql/tables/llx_c_price_expression.sql
 htdocs/install/mysql/tables/llx_c_typent.key.sql
 htdocs/install/mysql/tables/llx_inventorydet-stock.sql
 htdocs/install/mysql/tables/llx_emailcollector_emailcollectorfilter.sql
@@ -11642,15 +11643,16 @@ htdocs/install/mysql/tables/llx_categorie_actioncomm.sql
 htdocs/install/mysql/tables/llx_export_model.key.sql
 htdocs/install/mysql/tables/llx_prelevement_demande.key.sql
 htdocs/install/mysql/tables/llx_bank_account_extrafields.sql
+htdocs/install/mysql/tables/llx_budget_lines-budget.sql
 htdocs/install/mysql/tables/llx_user_employment.sql
 htdocs/install/mysql/tables/llx_prelevement.key.sql
+htdocs/install/mysql/tables/llx_c_price_expression-dynamicprices.sql
 htdocs/install/mysql/tables/llx_facturedet_rec_extrafields.sql
 htdocs/install/mysql/tables/llx_asset_depreciation-asset.sql
 htdocs/install/mysql/tables/llx_holiday_config.sql
 htdocs/install/mysql/tables/llx_c_product_nature.key.sql
 htdocs/install/mysql/tables/llx_expeditiondet_extrafields.key.sql
 htdocs/install/mysql/tables/llx_mailing_cibles-mailing.sql
-htdocs/install/mysql/tables/llx_c_exp_tax_cat.sql
 htdocs/install/mysql/tables/llx_socpeople.sql
 htdocs/install/mysql/tables/llx_product_extrafields.key.sql
 htdocs/install/mysql/tables/llx_facture_fourn_det.key.sql
@@ -11675,10 +11677,10 @@ htdocs/install/mysql/tables/llx_ecm_files.sql
 htdocs/install/mysql/tables/llx_contratdet.sql
 htdocs/install/mysql/tables/llx_ticket-ticket.sql
 htdocs/install/mysql/tables/llx_c_productbatch_qcstatus.sql
-htdocs/install/mysql/tables/llx_c_price_global_variable.sql
 htdocs/install/mysql/tables/llx_element_contact.key.sql
 htdocs/install/mysql/tables/llx_comment.sql
 htdocs/install/mysql/tables/llx_product_attribute_combination.sql
+htdocs/install/mysql/tables/llx_budget-budget.sql
 htdocs/install/mysql/tables/llx_c_type_fees.key.sql
 htdocs/install/mysql/tables/llx_projet_task.sql
 htdocs/install/mysql/tables/llx_hrm_skill_extrafields-hrm.key.sql
@@ -11704,6 +11706,7 @@ htdocs/install/mysql/tables/llx_opensurvey_user_studs-opensurvey.sql
 htdocs/install/mysql/tables/llx_societe_remise_supplier.sql
 htdocs/install/mysql/tables/llx_partnership-partnership.sql
 htdocs/install/mysql/tables/llx_rights_def.sql
+htdocs/install/mysql/tables/llx_expensereport_rules-expensereport.sql
 htdocs/install/mysql/tables/llx_recruitment_recruitmentjobposition-recruitment.sql
 htdocs/install/mysql/tables/llx_paiement_facture.sql
 htdocs/install/mysql/tables/llx_hrm_job-hrm.key.sql
@@ -11721,7 +11724,6 @@ htdocs/install/mysql/tables/llx_bank_class.sql
 htdocs/install/mysql/tables/llx_propaldet.sql
 htdocs/install/mysql/tables/llx_c_invoice_subtype.key.sql
 htdocs/install/mysql/tables/llx_element_time.sql
-htdocs/install/mysql/tables/llx_c_recruitment_origin.sql
 htdocs/install/mysql/tables/llx_mrp_mo_extrafields.sql
 htdocs/install/mysql/tables/llx_expensereport_extrafields.key.sql
 htdocs/install/mysql/tables/llx_c_units.key.sql
@@ -11787,7 +11789,6 @@ htdocs/install/mysql/tables/llx_contratdet_log.key.sql
 htdocs/install/mysql/tables/llx_contrat.sql
 htdocs/install/mysql/tables/llx_accounting_groups_account.sql
 htdocs/install/mysql/tables/llx_intracommreport-intracommreport.sql
-htdocs/install/mysql/tables/llx_budget.sql
 htdocs/install/mysql/tables/llx_fichinter_extrafields.sql
 htdocs/install/mysql/tables/llx_workstation_workstation_resource-workstation.sql
 htdocs/install/mysql/tables/llx_expeditiondet_batch.key.sql
@@ -11800,6 +11801,7 @@ htdocs/install/mysql/tables/llx_product_batch.sql
 htdocs/install/mysql/tables/llx_stock_mouvement_extrafields.sql
 htdocs/install/mysql/tables/llx_reception.key.sql
 htdocs/install/mysql/tables/llx_recruitment_recruitmentjobposition_extrafields-recruitment.key.sql
+htdocs/install/mysql/tables/llx_c_price_global_variable_updater-dynamicprices.sql
 htdocs/install/mysql/tables/llx_asset_model_extrafield-asset.sql
 htdocs/install/mysql/tables/llx_contratdet_extrafields.key.sql
 htdocs/install/mysql/tables/llx_salary_extrafields.key.sql
@@ -11857,7 +11859,6 @@ htdocs/install/mysql/tables/llx_facture_rec_extrafields.key.sql
 htdocs/install/mysql/tables/llx_societe_perentity-multicompany.sql
 htdocs/install/mysql/tables/llx_hrm_evaluationdet-hrm.key.sql
 htdocs/install/mysql/tables/llx_societe_extrafields.key.sql
-htdocs/install/mysql/tables/llx_expensereport_rules.sql
 htdocs/install/mysql/tables/llx_categorie_knowledgemanagement-knowledgemanagement.sql
 htdocs/install/mysql/tables/llx_mailing_cibles-mailing.key.sql
 htdocs/install/mysql/tables/llx_holiday.key.sql
@@ -11882,7 +11883,6 @@ htdocs/install/mysql/tables/llx_paiementfourn_facturefourn.sql
 htdocs/install/mysql/tables/llx_user_alert.sql
 htdocs/install/mysql/tables/llx_default_values.sql
 htdocs/install/mysql/tables/llx_overwrite_trans.key.sql
-htdocs/install/mysql/tables/llx_budget_lines.sql
 htdocs/install/mysql/tables/llx_asset-asset.sql
 htdocs/install/mysql/tables/llx_propaldet_extrafields.sql
 htdocs/install/mysql/tables/llx_fichinterdet_rec.sql
@@ -11893,7 +11893,6 @@ htdocs/install/mysql/tables/llx_contratdet_log.sql
 htdocs/install/mysql/tables/llx_user_rib.sql
 htdocs/install/mysql/tables/llx_categorie_account.key.sql
 htdocs/install/mysql/tables/llx_asset_depreciation_options_economic-asset.sql
-htdocs/install/mysql/tables/llx_export_compta.sql
 htdocs/install/mysql/tables/llx_mrp_mo.sql
 htdocs/install/mysql/tables/llx_product.sql
 htdocs/install/mysql/tables/llx_paiement.sql
@@ -11901,7 +11900,9 @@ htdocs/install/mysql/tables/llx_societe_remise_except.key.sql
 htdocs/install/mysql/tables/llx_fichinter_rec.sql
 htdocs/install/mysql/tables/llx_opensurvey_comments-opensurvey.sql
 htdocs/install/mysql/tables/llx_c_input_reason.key.sql
+htdocs/install/mysql/tables/llx_session-disabled.sql
 htdocs/install/mysql/tables/llx_product_lang.key.sql
+htdocs/install/mysql/tables/llx_expensereport_ik-expensereport.sql
 htdocs/install/mysql/tables/llx_commande_fournisseur_dispatch.sql
 htdocs/install/mysql/tables/llx_emailcollector_emailcollectoraction.sql
 htdocs/install/mysql/tables/llx_hrm_evaluationdet_extrafields-hrm.key.sql
@@ -11969,6 +11970,7 @@ htdocs/install/mysql/tables/llx_asset_extrafields-asset.sql
 htdocs/install/mysql/tables/llx_stocktransfer_stocktransfer-stocktransfer.sql
 htdocs/install/mysql/tables/llx_hrm_skill_extrafields-hrm.sql
 htdocs/install/mysql/tables/llx_product_lot_extrafields.sql
+htdocs/install/mysql/tables/llx_c_exp_tax_range-expensereport.sql
 htdocs/install/mysql/tables/llx_opensurvey_user_formanswers-opensurvey.sql
 htdocs/install/mysql/tables/llx_payment_salary.key.sql
 htdocs/install/mysql/tables/llx_holiday_users.key.sql
@@ -12033,11 +12035,11 @@ htdocs/install/mysql/tables/llx_accounting_account.key.sql
 htdocs/install/mysql/tables/llx_commande_fournisseurdet_extrafields.sql
 htdocs/install/mysql/tables/llx_c_field_list.sql
 htdocs/install/mysql/tables/llx_actioncomm_resources.key.sql
+htdocs/install/mysql/tables/llx_c_recruitment_origin-recruitment.sql
 htdocs/install/mysql/tables/llx_entrepot.sql
 htdocs/install/mysql/tables/llx_facturedet_rec.key.sql
 htdocs/install/mysql/tables/llx_supplier_proposaldet.key.sql
 htdocs/install/mysql/tables/llx_deplacement-deplacement.sql
-htdocs/install/mysql/tables/llx_budget_lines.key.sql
 htdocs/install/mysql/tables/llx_webhook_target-webhook.key.sql
 htdocs/install/mysql/tables/llx_takepos_floor_tables-takepos.key.sql
 htdocs/install/mysql/tables/llx_c_type_fees.sql
@@ -12049,6 +12051,7 @@ htdocs/install/mysql/tables/llx_c_partnership_type-partnership.sql
 htdocs/install/mysql/tables/llx_bank.sql
 htdocs/install/mysql/tables/llx_product.key.sql
 htdocs/install/mysql/tables/llx_deliverydet.key.sql
+htdocs/install/mysql/tables/llx_c_price_global_variable-dynamicprices.sql
 htdocs/install/mysql/tables/llx_holiday.sql
 htdocs/install/mysql/tables/llx_extrafields.sql
 htdocs/install/mysql/tables/llx_event_element.sql
@@ -12067,6 +12070,7 @@ htdocs/install/mysql/tables/llx_bookcal_calendar-bookcal.key.sql
 htdocs/install/mysql/tables/llx_product_stock_entrepot.sql
 htdocs/install/mysql/tables/llx_societe_perentity-multicompany.key.sql
 htdocs/install/mysql/tables/llx_hrm_job_user-hrm.key.sql
+htdocs/install/mysql/tables/llx_budget_lines-budget.key.sql
 htdocs/install/mysql/tables/llx_product_lot_extrafields.key.sql
 htdocs/install/mysql/tables/llx_usergroup_extrafields.sql
 htdocs/install/mysql/tables/llx_societe_rib.key.sql
@@ -12081,7 +12085,6 @@ htdocs/install/mysql/tables/llx_bom_bom.sql
 htdocs/install/mysql/tables/llx_actioncomm_reminder.sql
 htdocs/install/mysql/tables/llx_mrp_mo_extrafields.key.sql
 htdocs/install/mysql/tables/llx_boxes_def.sql
-htdocs/install/mysql/tables/llx_session.sql
 htdocs/install/mysql/tables/llx_c_ticket_category.sql
 htdocs/install/mysql/tables/llx_c_type_resource.key.sql
 htdocs/install/mysql/tables/llx_facturedet.key.sql
@@ -12171,7 +12174,6 @@ htdocs/install/mysql/tables/llx_expeditiondet_batch.sql
 htdocs/install/mysql/tables/llx_loan_schedule-loan.sql
 htdocs/install/mysql/tables/llx_facture_fourn_det_rec_extrafields.sql
 htdocs/install/mysql/tables/llx_asset_depreciation_options_economic-asset.key.sql
-htdocs/install/mysql/tables/llx_expensereport_ik.sql
 htdocs/install/mysql/tables/llx_asset_model-asset.key.sql
 htdocs/install/mysql/tables/llx_partnership_extrafields-partnership.sql
 htdocs/install/mysql/tables/llx_accounting_bookkeeping.sql
@@ -12210,7 +12212,6 @@ htdocs/install/mysql/tables/llx_societe_remise_except.sql
 htdocs/install/mysql/tables/llx_workstation_workstation-workstation.key.sql
 htdocs/install/mysql/tables/llx_hrm_skill-hrm.sql
 htdocs/install/mysql/tables/llx_bom_bom_extrafields.sql
-htdocs/install/mysql/tables/llx_c_price_global_variable_updater.sql
 htdocs/install/mysql/tables/llx_bookcal_availabilities-bookcal.key.sql
 htdocs/install/mysql/tables/llx_propal_merge_pdf_product.sql
 htdocs/install/mysql/tables/llx_c_input_method.key.sql
@@ -12233,7 +12234,6 @@ htdocs/install/mysql/tables/llx_c_paiement.key.sql
 htdocs/install/mysql/tables/llx_fichinterdet.key.sql
 htdocs/install/mysql/tables/llx_c_stcomm.sql
 htdocs/install/mysql/tables/llx_document_model.sql
-htdocs/install/mysql/tables/llx_c_exp_tax_range.sql
 htdocs/install/mysql/tables/llx_website_extrafields-website.sql
 htdocs/install/mysql/tables/llx_product_pricerules.sql
 htdocs/install/mysql/tables/llx_product_attribute_value.sql
@@ -12259,6 +12259,7 @@ htdocs/install/mysql/tables/llx_c_hrm_function.sql
 htdocs/install/mysql/tables/llx_hrm_evaluation-hrm.key.sql
 htdocs/install/mysql/tables/llx_events.sql
 htdocs/install/mysql/functions/functions.sql
+htdocs/install/mysql/data/llx_c_exp_tax_cat-expensereport.sql
 htdocs/install/mysql/data/llx_accounting_account_jp.sql
 htdocs/install/mysql/data/llx_accounting_account_gb.sql
 htdocs/install/mysql/data/llx_c_revenuestamp.sql
@@ -12267,7 +12268,6 @@ htdocs/install/mysql/data/llx_c_propalst.sql
 htdocs/install/mysql/data/llx_accounting_account_ec.sql
 htdocs/install/mysql/data/llx_10_c_regions.sql
 htdocs/install/mysql/data/llx_holiday_config.sql
-htdocs/install/mysql/data/llx_c_exp_tax_cat.sql
 htdocs/install/mysql/data/llx_c_socialnetworks.sql
 htdocs/install/mysql/data/llx_c_productbatch_qcstatus.sql
 htdocs/install/mysql/data/llx_accounting_account_km.sql
@@ -12292,6 +12292,7 @@ htdocs/install/mysql/data/llx_accounting_account_ro.sql
 htdocs/install/mysql/data/llx_accounting_account_dk.sql
 htdocs/install/mysql/data/llx_accounting_account_ga.sql
 htdocs/install/mysql/data/llx_accounting_account_ch.sql
+htdocs/install/mysql/data/llx_expensereport_ik-expensereport.sql
 htdocs/install/mysql/data/llx_accounting_account_nl.sql
 htdocs/install/mysql/data/llx_20_c_departements.sql
 htdocs/install/mysql/data/llx_c_hrm_public_holiday.sql
@@ -12306,6 +12307,7 @@ htdocs/install/mysql/data/llx_accounting_abc.sql
 htdocs/install/mysql/data/llx_c_incoterms.sql
 htdocs/install/mysql/data/llx_c_tva.sql
 htdocs/install/mysql/data/llx_c_paiement.sql
+htdocs/install/mysql/data/llx_c_exp_tax_range-expensereport.sql
 htdocs/install/mysql/data/llx_c_forme_juridique.sql
 htdocs/install/mysql/data/llx_accounting_account_ne.sql
 htdocs/install/mysql/data/llx_c_civilite.sql
@@ -12340,7 +12342,6 @@ htdocs/install/mysql/data/llx_accounting_account_lu.sql
 htdocs/install/mysql/data/llx_accounting_account_co.sql
 htdocs/install/mysql/data/llx_const.sql
 htdocs/install/mysql/data/llx_accounting_account_tn.sql
-htdocs/install/mysql/data/llx_expensereport_ik.sql
 htdocs/install/mysql/data/llx_accounting_account_cl.sql
 htdocs/install/mysql/data/llx_accounting_account_bj.sql
 htdocs/install/mysql/data/llx_accounting_account_at.sql
@@ -12350,7 +12351,6 @@ htdocs/install/mysql/data/llx_c_input_reason.sql
 htdocs/install/mysql/data/llx_c_paper_format.sql
 htdocs/install/mysql/data/llx_c_prospectcontactlevel.sql
 htdocs/install/mysql/data/llx_c_stcomm.sql
-htdocs/install/mysql/data/llx_c_exp_tax_range.sql
 htdocs/install/mysql/data/llx_c_payment_term.sql
 htdocs/install/mysql/data/llx_c_hrm_function.sql
 htdocs/install/mysql/data/llx_accounting_account_td.sql
@@ -13279,6 +13279,7 @@ test/phpunit/GetUrlLibTest.php
 test/phpunit/DiscountTest.php
 test/phpunit/MarginsLibTest.php
 test/phpunit/Functions2LibTest.php
+test/phpunit/RestAPIContactTest.php
 test/phpunit/PgsqlTest.php
 test/phpunit/CategorieTest.php
 test/phpunit/JsonLibTest.php
@@ -13377,7 +13378,6 @@ test/README
 README-FR.md
 .travis.yml
 SECURITY.md
-.scrutinizer.yml
 nightwatch.conf.js
 dev/initdata/import-products.php
 dev/initdata/import-thirdparties.php
@@ -13591,11 +13591,9 @@ dev/resources/iso-normes/banking/iban_registry_0.pdf
 dev/resources/iso-normes/banking/iban_iso-13616_fr.txt
 dev/resources/licence/Links on GPL.txt
 composer.json.disabled
-.stickler.yml
 DCO
 .gitmessage
 README.md
-qodana.yaml
 .tx/config
 .editorconfig
 COPYING
