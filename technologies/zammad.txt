@@ -277,6 +277,7 @@ db/migrate/20221108124934_issue4266_fix_field.rb
 db/migrate/20200716124141_issue_3123_external_sync_ticket_merge.rb
 db/migrate/20230817130057_update_api_password_access_frontend.rb
 db/migrate/20230209083829_html_sanitizer_processing_timeout.rb
+db/migrate/20230825101042_show_package_url.rb
 db/migrate/20180502015927_issue_1219_zhtw_locale_typo.rb
 db/migrate/20210428125300_issue_3523_new_operator.rb
 db/migrate/20210712101116_inclusive_wording.rb
@@ -4122,11 +4123,9 @@ app/frontend/shared/form/features/addSubmitEvent.ts
 app/frontend/shared/form/features/formUpdaterTrigger.ts
 app/frontend/shared/form/features/formLocaleDir.ts
 app/frontend/shared/form/features/addLink.ts
-app/frontend/shared/form/features/__tests__/addIcon.spec.ts
 app/frontend/shared/form/features/__tests__/formUpdaterTrigger.spec.ts
 app/frontend/shared/form/features/__tests__/hideField.spec.ts
 app/frontend/shared/form/features/__tests__/translateWrapperProps.spec.ts
-app/frontend/shared/form/features/addIcon.ts
 app/frontend/shared/form/core/createValidationPlugin.ts
 app/frontend/shared/form/core/initializeFieldDefinition.ts
 app/frontend/shared/form/core/createInput.ts

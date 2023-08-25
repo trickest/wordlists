@@ -2264,6 +2264,8 @@ plugins/woocommerce/changelog/update-yoast-phpunit-polyfill
 plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf
 plugins/woocommerce/changelog/fix-pw_e2e_product_tests_serialization
 plugins/woocommerce/changelog/e2e-update-playwright-to-1_37_1
+plugins/woocommerce/changelog/fix-29873-geolocate-redirect
+plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf-correction
 plugins/woocommerce/changelog/add-wx-nightly-perf
 plugins/woocommerce/changelog/feature-marketplace
 plugins/woocommerce/changelog/api-start-unskipping-daily-tests
@@ -4419,6 +4421,7 @@ packages/js/product-editor/changelog/add-39452
 packages/js/product-editor/changelog/update-38043
 packages/js/product-editor/changelog/update-layout-context-for-blocks
 packages/js/product-editor/changelog/fix-38748_modal_style_obw
+packages/js/product-editor/changelog/fix-39868_description_toolbar
 packages/js/product-editor/changelog/dev-consolidate-eslint-versions
 packages/js/product-editor/changelog/add-39443_attribute_filters
 packages/js/product-editor/changelog/add-37663
@@ -4430,6 +4433,7 @@ packages/js/product-editor/changelog/fix-image-section-spacing
 packages/js/product-editor/changelog/add-38248
 packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/add-37911
+packages/js/product-editor/changelog/add-39788
 packages/js/product-editor/changelog/add-37930
 packages/js/product-editor/changelog/add-stock-status-37884
 packages/js/product-editor/changelog/update-block-editor-global-styling-37687
@@ -4724,6 +4728,9 @@ packages/js/product-editor/src/components/variations-table/variations-table.tsx
 packages/js/product-editor/src/components/variations-table/styles.scss
 packages/js/product-editor/src/components/variations-table/hidden-icon.tsx
 packages/js/product-editor/src/components/variations-table/visible-icon.tsx
+packages/js/product-editor/src/components/variations-table/variation-actions-menu/variation-actions-menu.tsx
+packages/js/product-editor/src/components/variations-table/variation-actions-menu/types.ts
+packages/js/product-editor/src/components/variations-table/variation-actions-menu/index.ts
 packages/js/product-editor/src/components/variations-table/index.ts
 packages/js/product-editor/src/components/product-mvp-feedback-modal/test/index.tsx
 packages/js/product-editor/src/components/product-mvp-feedback-modal/style.scss
