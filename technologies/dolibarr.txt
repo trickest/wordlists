@@ -673,6 +673,7 @@ htdocs/public/donations/index.php
 htdocs/public/donations/donateurs_code.php
 htdocs/public/cron/index.php
 htdocs/public/cron/cron_run_jobs_by_url.php
+htdocs/public/company/new.php
 htdocs/public/stripe/index.php
 htdocs/public/stripe/ipn.php
 htdocs/public/bookcal/index.php
@@ -1660,6 +1661,7 @@ htdocs/langs/de_CH/categories.lang
 htdocs/langs/de_CH/workflow.lang
 htdocs/langs/de_CH/salaries.lang
 htdocs/langs/de_CH/compta.lang
+htdocs/langs/de_CH/bookmarks.lang
 htdocs/langs/de_CH/interventions.lang
 htdocs/langs/de_CH/intracommreport.lang
 htdocs/langs/de_CH/opensurvey.lang
@@ -1709,6 +1711,7 @@ htdocs/langs/en_CA/hrm.lang
 htdocs/langs/en_CA/accountancy.lang
 htdocs/langs/en_CA/banks.lang
 htdocs/langs/en_CA/admin.lang
+htdocs/langs/en_CA/supplier_proposal.lang
 htdocs/langs/en_CA/users.lang
 htdocs/langs/en_CA/modulebuilder.lang
 htdocs/langs/en_CA/main.lang
@@ -2422,6 +2425,8 @@ htdocs/langs/fr_FR/agenda.lang
 htdocs/langs/fr_CM/companies.lang
 htdocs/langs/fr_CM/exports.lang
 htdocs/langs/fr_CM/cron.lang
+htdocs/langs/fr_CM/ticket.lang
+htdocs/langs/fr_CM/stocks.lang
 htdocs/langs/fr_CM/bills.lang
 htdocs/langs/fr_CM/errors.lang
 htdocs/langs/fr_CM/recruitment.lang
@@ -2663,6 +2668,7 @@ htdocs/langs/es_HN/hrm.lang
 htdocs/langs/es_HN/accountancy.lang
 htdocs/langs/es_HN/banks.lang
 htdocs/langs/es_HN/admin.lang
+htdocs/langs/es_HN/supplier_proposal.lang
 htdocs/langs/es_HN/users.lang
 htdocs/langs/es_HN/modulebuilder.lang
 htdocs/langs/es_HN/main.lang
@@ -2765,6 +2771,7 @@ htdocs/langs/es_PE/accountancy.lang
 htdocs/langs/es_PE/banks.lang
 htdocs/langs/es_PE/assets.lang
 htdocs/langs/es_PE/admin.lang
+htdocs/langs/es_PE/supplier_proposal.lang
 htdocs/langs/es_PE/trips.lang
 htdocs/langs/es_PE/users.lang
 htdocs/langs/es_PE/mails.lang
@@ -3083,6 +3090,7 @@ htdocs/langs/es_PA/hrm.lang
 htdocs/langs/es_PA/accountancy.lang
 htdocs/langs/es_PA/banks.lang
 htdocs/langs/es_PA/admin.lang
+htdocs/langs/es_PA/supplier_proposal.lang
 htdocs/langs/es_PA/users.lang
 htdocs/langs/es_PA/modulebuilder.lang
 htdocs/langs/es_PA/main.lang
@@ -3252,6 +3260,7 @@ htdocs/langs/de_AT/partnership.lang
 htdocs/langs/de_AT/donations.lang
 htdocs/langs/de_AT/categories.lang
 htdocs/langs/de_AT/compta.lang
+htdocs/langs/de_AT/bookmarks.lang
 htdocs/langs/de_AT/interventions.lang
 htdocs/langs/de_AT/hrm.lang
 htdocs/langs/de_AT/ldap.lang
@@ -3296,6 +3305,7 @@ htdocs/langs/en_IN/projects.lang
 htdocs/langs/en_IN/accountancy.lang
 htdocs/langs/en_IN/banks.lang
 htdocs/langs/en_IN/admin.lang
+htdocs/langs/en_IN/supplier_proposal.lang
 htdocs/langs/en_IN/users.lang
 htdocs/langs/en_IN/boxes.lang
 htdocs/langs/en_IN/commercial.lang
@@ -3379,6 +3389,8 @@ htdocs/langs/kk_KZ/agenda.lang
 htdocs/langs/fr_BE/products.lang
 htdocs/langs/fr_BE/companies.lang
 htdocs/langs/fr_BE/exports.lang
+htdocs/langs/fr_BE/ticket.lang
+htdocs/langs/fr_BE/stocks.lang
 htdocs/langs/fr_BE/bills.lang
 htdocs/langs/fr_BE/errors.lang
 htdocs/langs/fr_BE/sms.lang
@@ -3487,12 +3499,15 @@ htdocs/langs/es_GT/hrm.lang
 htdocs/langs/es_GT/accountancy.lang
 htdocs/langs/es_GT/banks.lang
 htdocs/langs/es_GT/admin.lang
+htdocs/langs/es_GT/supplier_proposal.lang
 htdocs/langs/es_GT/users.lang
 htdocs/langs/es_GT/modulebuilder.lang
 htdocs/langs/es_GT/main.lang
 htdocs/langs/fr_CI/products.lang
 htdocs/langs/fr_CI/companies.lang
 htdocs/langs/fr_CI/exports.lang
+htdocs/langs/fr_CI/ticket.lang
+htdocs/langs/fr_CI/stocks.lang
 htdocs/langs/fr_CI/bills.lang
 htdocs/langs/fr_CI/errors.lang
 htdocs/langs/fr_CI/stripe.lang
@@ -3820,6 +3835,7 @@ htdocs/langs/es_UY/hrm.lang
 htdocs/langs/es_UY/accountancy.lang
 htdocs/langs/es_UY/banks.lang
 htdocs/langs/es_UY/admin.lang
+htdocs/langs/es_UY/supplier_proposal.lang
 htdocs/langs/es_UY/users.lang
 htdocs/langs/es_UY/modulebuilder.lang
 htdocs/langs/es_UY/main.lang
@@ -3899,6 +3915,7 @@ htdocs/langs/nl_NL/agenda.lang
 htdocs/langs/el_CY/products.lang
 htdocs/langs/el_CY/companies.lang
 htdocs/langs/el_CY/exports.lang
+htdocs/langs/el_CY/ticket.lang
 htdocs/langs/el_CY/bills.lang
 htdocs/langs/el_CY/errors.lang
 htdocs/langs/el_CY/stripe.lang
@@ -4936,6 +4953,7 @@ htdocs/langs/es_PY/zapier.lang
 htdocs/langs/es_PY/accountancy.lang
 htdocs/langs/es_PY/banks.lang
 htdocs/langs/es_PY/admin.lang
+htdocs/langs/es_PY/supplier_proposal.lang
 htdocs/langs/es_PY/users.lang
 htdocs/langs/es_PY/modulebuilder.lang
 htdocs/langs/es_PY/main.lang
@@ -5456,6 +5474,7 @@ htdocs/langs/es_CR/eventorganization.lang
 htdocs/langs/es_CR/sendings.lang
 htdocs/langs/es_CR/install.lang
 htdocs/langs/es_CR/ecm.lang
+htdocs/langs/es_CR/paypal.lang
 htdocs/langs/es_CR/companies.lang
 htdocs/langs/es_CR/exports.lang
 htdocs/langs/es_CR/knowledgemanagement.lang
@@ -5468,12 +5487,12 @@ htdocs/langs/es_CR/errors.lang
 htdocs/langs/es_CR/members.lang
 htdocs/langs/es_CR/receptions.lang
 htdocs/langs/es_CR/sms.lang
-htdocs/langs/es_CR/stripe.lang
 htdocs/langs/es_CR/other.lang
 htdocs/langs/es_CR/partnership.lang
 htdocs/langs/es_CR/datapolicy.lang
 htdocs/langs/es_CR/multicurrency.lang
 htdocs/langs/es_CR/margins.lang
+htdocs/langs/es_CR/printing.lang
 htdocs/langs/es_CR/blockedlog.lang
 htdocs/langs/es_CR/donations.lang
 htdocs/langs/es_CR/suppliers.lang
@@ -5515,6 +5534,7 @@ htdocs/langs/es_CR/cashdesk.lang
 htdocs/langs/es_CR/website.lang
 htdocs/langs/es_CR/main.lang
 htdocs/langs/es_CR/dict.lang
+htdocs/langs/es_CR/paybox.lang
 htdocs/langs/es_CR/agenda.lang
 htdocs/langs/fr_NC/companies.lang
 htdocs/langs/fr_NC/compta.lang
@@ -5535,6 +5555,7 @@ htdocs/langs/en_SG/hrm.lang
 htdocs/langs/en_SG/accountancy.lang
 htdocs/langs/en_SG/banks.lang
 htdocs/langs/en_SG/admin.lang
+htdocs/langs/en_SG/supplier_proposal.lang
 htdocs/langs/en_SG/users.lang
 htdocs/langs/en_SG/modulebuilder.lang
 htdocs/langs/en_SG/main.lang
@@ -5551,6 +5572,7 @@ htdocs/langs/es_DO/hrm.lang
 htdocs/langs/es_DO/accountancy.lang
 htdocs/langs/es_DO/banks.lang
 htdocs/langs/es_DO/admin.lang
+htdocs/langs/es_DO/supplier_proposal.lang
 htdocs/langs/es_DO/users.lang
 htdocs/langs/es_DO/modulebuilder.lang
 htdocs/langs/es_DO/main.lang
@@ -5808,6 +5830,8 @@ htdocs/langs/fr_CH/products.lang
 htdocs/langs/fr_CH/sendings.lang
 htdocs/langs/fr_CH/companies.lang
 htdocs/langs/fr_CH/exports.lang
+htdocs/langs/fr_CH/ticket.lang
+htdocs/langs/fr_CH/stocks.lang
 htdocs/langs/fr_CH/bills.lang
 htdocs/langs/fr_CH/errors.lang
 htdocs/langs/fr_CH/members.lang
@@ -5835,6 +5859,7 @@ htdocs/langs/en_ZA/hrm.lang
 htdocs/langs/en_ZA/accountancy.lang
 htdocs/langs/en_ZA/banks.lang
 htdocs/langs/en_ZA/admin.lang
+htdocs/langs/en_ZA/supplier_proposal.lang
 htdocs/langs/en_ZA/users.lang
 htdocs/langs/en_ZA/modulebuilder.lang
 htdocs/langs/en_ZA/main.lang
@@ -5980,6 +6005,7 @@ htdocs/langs/en_AU/hrm.lang
 htdocs/langs/en_AU/accountancy.lang
 htdocs/langs/en_AU/banks.lang
 htdocs/langs/en_AU/admin.lang
+htdocs/langs/en_AU/supplier_proposal.lang
 htdocs/langs/en_AU/users.lang
 htdocs/langs/en_AU/modulebuilder.lang
 htdocs/langs/en_AU/cashdesk.lang
@@ -6296,6 +6322,7 @@ htdocs/langs/en_AE/hrm.lang
 htdocs/langs/en_AE/accountancy.lang
 htdocs/langs/en_AE/banks.lang
 htdocs/langs/en_AE/admin.lang
+htdocs/langs/en_AE/supplier_proposal.lang
 htdocs/langs/en_AE/users.lang
 htdocs/langs/en_AE/modulebuilder.lang
 htdocs/langs/en_AE/main.lang
@@ -6898,6 +6925,7 @@ htdocs/langs/es_US/hrm.lang
 htdocs/langs/es_US/accountancy.lang
 htdocs/langs/es_US/banks.lang
 htdocs/langs/es_US/admin.lang
+htdocs/langs/es_US/supplier_proposal.lang
 htdocs/langs/es_US/users.lang
 htdocs/langs/es_US/modulebuilder.lang
 htdocs/langs/es_US/main.lang
@@ -7196,6 +7224,8 @@ htdocs/langs/cy_GB/agenda.lang
 htdocs/langs/fr_GA/products.lang
 htdocs/langs/fr_GA/companies.lang
 htdocs/langs/fr_GA/exports.lang
+htdocs/langs/fr_GA/ticket.lang
+htdocs/langs/fr_GA/stocks.lang
 htdocs/langs/fr_GA/bills.lang
 htdocs/langs/fr_GA/errors.lang
 htdocs/langs/fr_GA/stripe.lang
@@ -7846,6 +7876,7 @@ htdocs/langs/es_BO/hrm.lang
 htdocs/langs/es_BO/accountancy.lang
 htdocs/langs/es_BO/banks.lang
 htdocs/langs/es_BO/admin.lang
+htdocs/langs/es_BO/supplier_proposal.lang
 htdocs/langs/es_BO/users.lang
 htdocs/langs/es_BO/modulebuilder.lang
 htdocs/langs/es_BO/main.lang
