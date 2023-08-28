@@ -5048,6 +5048,11 @@ apps/admin-x-settings/src/components/settings/advanced/code/CodeModal.tsx
 apps/admin-x-settings/src/components/settings/advanced/Labs.tsx
 apps/admin-x-settings/src/components/settings/advanced/History.tsx
 apps/admin-x-settings/src/components/settings/advanced/HistoryModal.tsx
+apps/admin-x-settings/src/components/settings/advanced/labs/LabItem.tsx
+apps/admin-x-settings/src/components/settings/advanced/labs/MigrationOptions.tsx
+apps/admin-x-settings/src/components/settings/advanced/labs/FeatureToggle.tsx
+apps/admin-x-settings/src/components/settings/advanced/labs/BetaFeatures.tsx
+apps/admin-x-settings/src/components/settings/advanced/labs/AlphaFeatures.tsx
 apps/admin-x-settings/src/components/settings/advanced/Integrations.tsx
 apps/admin-x-settings/src/components/settings/advanced/AdvancedSettings.tsx
 apps/admin-x-settings/src/components/settings/email/DefaultRecipients.tsx
@@ -5097,12 +5102,15 @@ apps/admin-x-settings/src/utils/apiRequests.ts
 apps/admin-x-settings/src/api/members.ts
 apps/admin-x-settings/src/api/config.ts
 apps/admin-x-settings/src/api/integrations.ts
+apps/admin-x-settings/src/api/redirects.ts
+apps/admin-x-settings/src/api/routes.ts
 apps/admin-x-settings/src/api/labels.ts
 apps/admin-x-settings/src/api/invites.ts
 apps/admin-x-settings/src/api/themes.ts
 apps/admin-x-settings/src/api/roles.ts
 apps/admin-x-settings/src/api/settings.ts
 apps/admin-x-settings/src/api/webhooks.ts
+apps/admin-x-settings/src/api/db.ts
 apps/admin-x-settings/src/api/customThemeSettings.ts
 apps/admin-x-settings/src/api/site.ts
 apps/admin-x-settings/src/api/slack.ts
@@ -5116,6 +5124,7 @@ apps/admin-x-settings/src/api/newsletters.ts
 apps/admin-x-settings/src/api/apiKeys.ts
 apps/admin-x-settings/src/api/actions.ts
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
+apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
 apps/admin-x-settings/src/hooks/useLimiter.tsx
 apps/admin-x-settings/src/hooks/useSortableIndexedList.tsx
 apps/admin-x-settings/src/hooks/useForm.ts

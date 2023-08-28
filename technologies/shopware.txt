@@ -1285,6 +1285,7 @@ tests/unit/Core/Content/Mail/Service/MailTest.php
 tests/unit/Core/Content/Mail/MailerConfigurationCompilerPassTest.php
 tests/unit/Core/Content/Category/Service/CategoryBreadcrumbBuilderTest.php
 tests/unit/Core/Content/Category/CategoryExceptionTest.php
+tests/unit/Core/Content/Category/DataAbstractionLayer/CategoryNonExistentExceptionHandlerTest.php
 tests/unit/Core/Content/Category/Subscriber/CategorySubscriberTest.php
 tests/unit/Core/Content/Category/SalesChannel/CachedCategoryRouteTest.php
 tests/unit/Core/Content/Category/SalesChannel/CachedNavigationRouteTest.php
@@ -2168,6 +2169,7 @@ changelog/release-6-3-5-1/2021-01-25-added-api-aware-flag.md
 changelog/release-6-3-5-1/2021-01-19-deprecated-get-preview-link.md
 changelog/release-6-3-5-1/2021-02-02-lower-min-version-of-composer-package-versions-deprecated-to-1.8.0.md
 changelog/release-6-3-5-1/2021-01-25-expire-sales-channel-contexts.md
+changelog/release-6-5-4-1/2023-08-18-fix-mariadb-compatibility.md
 changelog/release-6-4-11-1/2022-05-05-filter-inactive-root-categories.md
 changelog/release-6-3-2-0/2020-09-07-optimize-foreign-key-resolver.md
 changelog/release-6-3-2-0/2020-09-03-align-head-cells-of-right-aligned-columns-to-the-right.md
@@ -4300,6 +4302,7 @@ changelog/_unreleased/2023-08-04-fixed-bug-with-0-price-product-discount.md
 changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
 changelog/_unreleased/2023-08-03-make-the-error-summary-component-optional-in-the-card-view-component.md
 changelog/_unreleased/2023-08-24-add-max-limit-to-admin-api-calls.md
+changelog/_unreleased/2023-08-18-throw-a-domain-exception-when-inserting-a-category-after-a-category-which-does-not-exist.md
 changelog/_unreleased/2023-08-10-change-sw-order-customer-address-select-default-event.md
 changelog/_unreleased/2023-08-08-fix-missed-error-code-in-shopware-yaml.md
 changelog/_unreleased/2023-08-16-prevent-cache-warmup-for-headless.md
@@ -4335,6 +4338,7 @@ changelog/_unreleased/2023-08-08-fix-register-router-with-empty-billing-address.
 changelog/_unreleased/2023-08-10-change-sw-order-select-document-type-modal-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
+changelog/_unreleased/2023-08-25-add-a-force-option-to-the-assets-install-command.md
 changelog/_unreleased/2023-08-21-show-secure-access-key.md
 changelog/_unreleased/2023-08-10-change-sw-promotion-v2-rule-select-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-extension-select-rating-default-event.md
@@ -13077,19 +13081,15 @@ src/Core/Framework/Test/Plugin/_fixture/archives/SwagFashionTheme.zip
 src/Core/Framework/Test/Plugin/_fixture/archives/NoZip.zip
 src/Core/Framework/Test/Plugin/_fixture/archives/NoPlugin.zip
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestWithBundle/composer.json
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestWithBundle/CHANGELOG.md
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestWithBundle/src/SwagTestWithBundle.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestSkipRebuild/composer.json
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestSkipRebuild/src/Resources/config/services.xml
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestSkipRebuild/src/SwagTestSkipRebuild.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestSkipRebuild/src/SwagTestSkipRebuildSubscriber.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestErrors/composer.json
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestErrors/CHANGELOG.md
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestErrors/src/SwagTestErrors.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestInvalidComposerJson/composer.json
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/composer.json
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/CHANGELOG_de-DE.md
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/CHANGELOG.md
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/src/SwagManualMigrationTest.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/src/Resources/config/services.xml
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagManualMigrationTest/src/Migration/Migration3.php
@@ -13113,16 +13113,11 @@ src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestPluginAcl/src/SwagTestPl
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestPluginAcl/src/SwagTestPluginAclProductViewer.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestPluginAcl/src/SwagTestPluginAclAdditionalProductViewer.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestNoDefaultLang/composer.json
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestNoDefaultLang/CHANGELOG_de-DE.md
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestNoDefaultLang/CHANGELOG_nl-NL.md
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestNoDefaultLang/src/Resources/config/services.xml
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestNoDefaultLang/src/SwagTestNoDefaultLang.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestExtension/composer.json
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTestExtension/src/SwagTestExtension.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/composer.json
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/CHANGELOG_de-DE.md
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/CHANGELOG_nl-NL.md
-src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/CHANGELOG.md
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/src/SwagTestFake.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/src/SwagTestSubscriber.php
 src/Core/Framework/Test/Plugin/_fixture/plugins/SwagTest/src/SwagTest.php
@@ -15799,6 +15794,7 @@ src/Core/Content/Category/CategoryCollection.php
 src/Core/Content/Category/CategoryException.php
 src/Core/Content/Category/DataAbstractionLayer/CategoryBreadcrumbUpdater.php
 src/Core/Content/Category/DataAbstractionLayer/CategoryIndexingMessage.php
+src/Core/Content/Category/DataAbstractionLayer/CategoryNonExistentExceptionHandler.php
 src/Core/Content/Category/DataAbstractionLayer/CategoryIndexer.php
 src/Core/Content/Category/Subscriber/CategorySubscriber.php
 src/Core/Content/Category/Aggregate/CategoryTag/CategoryTagDefinition.php
