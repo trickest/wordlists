@@ -15418,6 +15418,7 @@ themes/debug.tpl
 debug.tpl
 themes/.eslintrc.js
 .eslintrc.js
+.env.dist
 CONTRIBUTING.md
 webservice/index.php
 index.php
@@ -15670,6 +15671,12 @@ campaigns/productV2/functional/08_header.ts
 productV2/functional/08_header.ts
 functional/08_header.ts
 08_header.ts
+tests/UI/campaigns/productV2/functional/09_footer.ts
+UI/campaigns/productV2/functional/09_footer.ts
+campaigns/productV2/functional/09_footer.ts
+productV2/functional/09_footer.ts
+functional/09_footer.ts
+09_footer.ts
 tests/UI/campaigns/productV2/functional/01_filterProducts.ts
 UI/campaigns/productV2/functional/01_filterProducts.ts
 campaigns/productV2/functional/01_filterProducts.ts
@@ -35457,6 +35464,8 @@ autoload.php
 README.md
 app/AppCache.php
 AppCache.php
+app/FrontKernel.php
+FrontKernel.php
 app/.htaccess
 .htaccess
 app/test/cache/.gitkeep
@@ -35539,6 +35548,8 @@ config/messenger.yml
 messenger.yml
 app/phpunit.xml.dist
 phpunit.xml.dist
+app/AdminKernel.php
+AdminKernel.php
 .editorconfig
 rector.php
 upload/.htaccess
@@ -58822,6 +58833,12 @@ Resources/config/services/alias.yml
 config/services/alias.yml
 services/alias.yml
 alias.yml
+src/PrestaShopBundle/Resources/config/services/front_legacy.yml
+PrestaShopBundle/Resources/config/services/front_legacy.yml
+Resources/config/services/front_legacy.yml
+config/services/front_legacy.yml
+services/front_legacy.yml
+front_legacy.yml
 src/PrestaShopBundle/Resources/config/services/bundle/form.yml
 PrestaShopBundle/Resources/config/services/bundle/form.yml
 Resources/config/services/bundle/form.yml
@@ -66402,6 +66419,12 @@ Form/Admin/Type/TranslatableChoiceType.php
 Admin/Type/TranslatableChoiceType.php
 Type/TranslatableChoiceType.php
 TranslatableChoiceType.php
+src/PrestaShopBundle/Form/Admin/Type/ReorderPositionsButtonType.php
+PrestaShopBundle/Form/Admin/Type/ReorderPositionsButtonType.php
+Form/Admin/Type/ReorderPositionsButtonType.php
+Admin/Type/ReorderPositionsButtonType.php
+Type/ReorderPositionsButtonType.php
+ReorderPositionsButtonType.php
 src/PrestaShopBundle/Form/Admin/Type/RadioWithChoiceChildrenType.php
 PrestaShopBundle/Form/Admin/Type/RadioWithChoiceChildrenType.php
 Form/Admin/Type/RadioWithChoiceChildrenType.php

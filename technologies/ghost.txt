@@ -2252,6 +2252,7 @@ ghost/core/core/server/api/endpoints/members.js
 ghost/core/core/server/api/endpoints/slugs.js
 ghost/core/core/server/api/endpoints/emails.js
 ghost/core/core/server/api/endpoints/invites.js
+ghost/core/core/server/api/endpoints/recommendations.js
 ghost/core/core/server/api/endpoints/config.js
 ghost/core/core/server/api/endpoints/schedules.js
 ghost/core/core/server/api/endpoints/utils/index.js
@@ -2469,7 +2470,6 @@ ghost/core/core/server/services/route-settings/SettingsLoader.js
 ghost/core/core/server/services/route-settings/validate.js
 ghost/core/core/server/services/collections/index.js
 ghost/core/core/server/services/collections/service.js
-ghost/core/core/server/services/collections/intercept-events.js
 ghost/core/core/server/services/collections/PostsRepository.js
 ghost/core/core/server/services/collections/BookshelfCollectionsRepository.js
 ghost/core/core/server/services/themes/index.js
@@ -2608,10 +2608,13 @@ ghost/core/core/server/services/mail/GhostMailer.js
 ghost/core/core/server/services/limits.js
 ghost/core/core/server/services/mail-events/index.js
 ghost/core/core/server/services/mail-events/BookshelfMailEventRepository.js
+ghost/core/core/server/services/model-to-domain-event-interceptor/index.js
 ghost/core/core/server/services/email-service/index.js
 ghost/core/core/server/services/email-service/EmailServiceWrapper.js
 ghost/core/core/server/services/link-redirection/index.js
 ghost/core/core/server/services/link-redirection/LinkRedirectRepository.js
+ghost/core/core/server/services/recommendations/index.js
+ghost/core/core/server/services/recommendations/RecommendationServiceWrapper.js
 ghost/core/core/server/services/frontend-data-service/index.js
 ghost/core/core/server/services/frontend-data-service/FrontendDataService.js
 ghost/core/core/server/services/webhooks/index.js
@@ -2801,6 +2804,7 @@ ghost/core/core/server/data/exporter/export-filename.js
 ghost/core/core/server/data/exporter/table-lists.js
 ghost/core/core/server/data/migrations/init/1-create-tables.js
 ghost/core/core/server/data/migrations/init/2-create-fixtures.js
+ghost/core/core/server/data/migrations/versions/5.61/2023-08-29-10-17-add-recommendations-crud-permissions.js
 ghost/core/core/server/data/migrations/versions/2.37/01-final-v2.js
 ghost/core/core/server/data/migrations/versions/5.55/2023-07-10-05-15-55-add-built-in-collections.js
 ghost/core/core/server/data/migrations/versions/5.55/2023-07-10-05-16-55-add-built-in-collection-posts.js
@@ -3686,6 +3690,7 @@ ghost/core/test/e2e-api/admin/__snapshots__/site.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/pages.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/links.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/emails.test.js.snap
+ghost/core/test/e2e-api/admin/__snapshots__/recommendations.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/tiers.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/email-previews.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/explore.test.js.snap
@@ -3716,6 +3721,7 @@ ghost/core/test/e2e-api/admin/email-previews.test.js
 ghost/core/test/e2e-api/admin/offers.test.js
 ghost/core/test/e2e-api/admin/utils.js
 ghost/core/test/e2e-api/admin/media.test.js
+ghost/core/test/e2e-api/admin/recommendations.test.js
 ghost/core/test/e2e-api/admin/slugs.test.js
 ghost/core/test/e2e-api/admin/members-edit-subscriptions.test.js
 ghost/core/test/e2e-api/admin/files.test.js
@@ -3792,6 +3798,7 @@ ghost/core/test/integration/settings/settings.test.js
 ghost/core/test/integration/migrations/migration.test.js
 ghost/core/test/.eslintrc.js
 ghost/core/ghost.js
+ghost/core/newrelic.js
 ghost/core/loggingrc.js
 ghost/core/.npmignore
 ghost/core/config.development.json
@@ -4132,6 +4139,7 @@ ghost/i18n/locales/cs/comments.json
 ghost/i18n/locales/cs/portal.json
 ghost/i18n/locales/cs/ghost.json
 ghost/i18n/locales/cs/signup-form.json
+ghost/i18n/locales/is/comments.json
 ghost/i18n/locales/is/portal.json
 ghost/i18n/locales/is/ghost.json
 ghost/i18n/locales/is/signup-form.json
@@ -4147,8 +4155,6 @@ ghost/i18n/locales/eo/comments.json
 ghost/i18n/locales/eo/portal.json
 ghost/i18n/locales/eo/ghost.json
 ghost/i18n/locales/eo/signup-form.json
-ghost/i18n/locales/cz/portal.json
-ghost/i18n/locales/cz/ghost.json
 ghost/i18n/locales/hr/comments.json
 ghost/i18n/locales/hr/portal.json
 ghost/i18n/locales/hr/ghost.json
@@ -4603,6 +4609,19 @@ ghost/data-generator/lib/utils/event-generator.js
 ghost/data-generator/lib/utils/blog-info.js
 ghost/data-generator/lib/utils/random.js
 ghost/data-generator/.eslintrc.js
+ghost/recommendations/package.json
+ghost/recommendations/test/hello.test.ts
+ghost/recommendations/test/.eslintrc.js
+ghost/recommendations/tsconfig.json
+ghost/recommendations/README.md
+ghost/recommendations/src/RecommendationRepository.ts
+ghost/recommendations/src/RecommendationController.ts
+ghost/recommendations/src/InMemoryRecommendationRepository.ts
+ghost/recommendations/src/RecommendationService.ts
+ghost/recommendations/src/Recommendation.ts
+ghost/recommendations/src/libraries.d.ts
+ghost/recommendations/src/index.ts
+ghost/recommendations/.eslintrc.js
 ghost/oembed-service/index.js
 ghost/oembed-service/package.json
 ghost/oembed-service/test/hello.test.js
@@ -5079,6 +5098,7 @@ apps/admin-x-settings/src/components/settings/general/Facebook.tsx
 apps/admin-x-settings/src/components/settings/site/DesignModal.tsx
 apps/admin-x-settings/src/components/settings/site/Theme.tsx
 apps/admin-x-settings/src/components/settings/site/NavigationModal.tsx
+apps/admin-x-settings/src/components/settings/site/Recommendations.tsx
 apps/admin-x-settings/src/components/settings/site/navigation/NavigationEditForm.tsx
 apps/admin-x-settings/src/components/settings/site/navigation/NavigationItemEditor.tsx
 apps/admin-x-settings/src/components/settings/site/Navigation.tsx

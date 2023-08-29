@@ -2578,6 +2578,7 @@ themes/_core/js/email-idn.js
 themes/_core/js/address.js
 themes/debug.tpl
 themes/.eslintrc.js
+.env.dist
 CONTRIBUTING.md
 webservice/index.php
 webservice/dispatcher.php
@@ -2628,6 +2629,7 @@ tests/UI/campaigns/cldr/09_enableDisableCurrency.ts
 tests/UI/campaigns/productV2/functional/05_CRUDVirtualProduct.ts
 tests/UI/campaigns/productV2/functional/06_duplicateProduct.ts
 tests/UI/campaigns/productV2/functional/08_header.ts
+tests/UI/campaigns/productV2/functional/09_footer.ts
 tests/UI/campaigns/productV2/functional/01_filterProducts.ts
 tests/UI/campaigns/productV2/functional/02_CRUDStandardProduct.ts
 tests/UI/campaigns/productV2/functional/03_CRUDProductWithCombinations.ts
@@ -5978,6 +5980,7 @@ config/smartyadmin.config.inc.php
 config/autoload.php
 README.md
 app/AppCache.php
+app/FrontKernel.php
 app/.htaccess
 app/test/cache/.gitkeep
 app/AppKernel.php
@@ -6005,6 +6008,7 @@ app/config/config_legacy_prod.yml
 app/config/config_legacy_dev.yml
 app/config/messenger.yml
 app/phpunit.xml.dist
+app/AdminKernel.php
 .editorconfig
 rector.php
 upload/.htaccess
@@ -10126,6 +10130,7 @@ src/PrestaShopBundle/Resources/config/services/core/b2b.yml
 src/PrestaShopBundle/Resources/config/services/core/cache.yml
 src/PrestaShopBundle/Resources/config/services/core/command_bus.yml
 src/PrestaShopBundle/Resources/config/services/alias.yml
+src/PrestaShopBundle/Resources/config/services/front_legacy.yml
 src/PrestaShopBundle/Resources/config/services/bundle/form.yml
 src/PrestaShopBundle/Resources/config/services/bundle/event_listener.yml
 src/PrestaShopBundle/Resources/config/services/bundle/translation.yml
@@ -11061,6 +11066,7 @@ src/PrestaShopBundle/Form/Exception/InvalidConfigurationDataErrorCollection.php
 src/PrestaShopBundle/Form/Exception/DataProviderException.php
 src/PrestaShopBundle/Form/Admin/Type/CurrencyChoiceType.php
 src/PrestaShopBundle/Form/Admin/Type/TranslatableChoiceType.php
+src/PrestaShopBundle/Form/Admin/Type/ReorderPositionsButtonType.php
 src/PrestaShopBundle/Form/Admin/Type/RadioWithChoiceChildrenType.php
 src/PrestaShopBundle/Form/Admin/Type/DisablingSwitchType.php
 src/PrestaShopBundle/Form/Admin/Type/ButtonCollectionType.php

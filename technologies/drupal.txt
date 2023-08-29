@@ -864,6 +864,7 @@ core/modules/system/tests/modules/theme_suggestions_test/theme_suggestions_test.
 core/modules/system/tests/modules/theme_suggestions_test/theme_suggestions_test.info.yml
 core/modules/system/tests/modules/menu_test/menu_test.services.yml
 core/modules/system/tests/modules/menu_test/menu_test.links.contextual.yml
+core/modules/system/tests/modules/menu_test/menu_test.permissions.yml
 core/modules/system/tests/modules/menu_test/menu_test.links.action.yml
 core/modules/system/tests/modules/menu_test/menu_test.info.yml
 core/modules/system/tests/modules/menu_test/menu_test.routing.yml
@@ -1914,9 +1915,11 @@ core/modules/system/src/Element/StatusReportPage.php
 core/modules/system/src/SystemManager.php
 core/modules/system/src/EventSubscriber/SecurityFileUploadEventSubscriber.php
 core/modules/system/src/EventSubscriber/ConfigCacheTag.php
+core/modules/system/src/EventSubscriber/AccessRouteAlterSubscriber.php
 core/modules/system/src/EventSubscriber/AdvisoriesConfigSubscriber.php
 core/modules/system/src/EventSubscriber/AdminRouteSubscriber.php
 core/modules/system/src/FileDownloadController.php
+core/modules/system/src/Access/SystemAdminMenuBlockAccessCheck.php
 core/modules/system/src/Access/CronAccessCheck.php
 core/modules/system/src/Access/DbUpdateAccessCheck.php
 core/modules/system/src/PathProcessor/PathProcessorFiles.php
@@ -3806,7 +3809,6 @@ core/modules/field_ui/tests/src/Unit/FieldConfigEditFormTest.php
 core/modules/field_ui/tests/src/Unit/FieldUiTableTest.php
 core/modules/field_ui/field_ui.module
 core/modules/field_ui/field_ui.links.menu.yml
-core/modules/field_ui/field_ui.js
 core/modules/field_ui/field_ui.libraries.yml
 core/modules/field_ui/config/schema/field_ui.schema.yml
 core/modules/field_ui/config/install/field_ui.settings.yml
@@ -3842,6 +3844,7 @@ core/modules/field_ui/src/Form/FieldStorageAddForm.php
 core/modules/field_ui/src/Form/FieldStorageCreationTrait.php
 core/modules/field_ui/src/Form/FieldStorageReuseForm.php
 core/modules/field_ui/src/Form/EntityFormModeAddForm.php
+core/modules/field_ui/js/field_ui.js
 core/modules/contact/contact.links.menu.yml
 core/modules/contact/help_topics/contact.configuring_personal.html.twig
 core/modules/contact/help_topics/contact.adding_fields.html.twig
@@ -11138,6 +11141,7 @@ core/tests/Drupal/Tests/Core/Asset/library_test_files/css_weights.libraries.yml
 core/tests/Drupal/Tests/Core/Asset/library_test_files/css_bad_category.libraries.yml
 core/tests/Drupal/Tests/Core/Asset/library_test_files/example_module_only_dependencies.libraries.yml
 core/tests/Drupal/Tests/Core/Asset/CssCollectionOptimizerLazyUnitTest.php
+core/tests/Drupal/Tests/Core/Asset/js_test_files/syntax_error.js
 core/tests/Drupal/Tests/Core/Asset/js_test_files/source_mapping_url.min.js.optimized.js
 core/tests/Drupal/Tests/Core/Asset/js_test_files/source_url.min.js
 core/tests/Drupal/Tests/Core/Asset/js_test_files/source_url_old.min.js.optimized.js
