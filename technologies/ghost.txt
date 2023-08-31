@@ -3914,6 +3914,7 @@ ghost/core/core/server/api/endpoints/mentions.js
 ghost/core/core/server/api/endpoints/announcements.js
 ghost/core/core/server/api/endpoints/newsletters.js
 ghost/core/core/server/api/endpoints/authors-public.js
+ghost/core/core/server/api/endpoints/recommendations-public.js
 ghost/core/core/server/api/endpoints/notifications.js
 ghost/core/core/server/api/endpoints/posts-public.js
 ghost/core/core/server/api/endpoints/users.js
@@ -4713,6 +4714,7 @@ ghost/recommendations/src/RecommendationService.ts
 ghost/recommendations/src/Recommendation.ts
 ghost/recommendations/src/InMemoryRecommendationRepository.ts
 ghost/recommendations/src/libraries.d.ts
+ghost/recommendations/src/WellknownService.ts
 ghost/recommendations/README.md
 ghost/magic-link/.eslintrc.js
 ghost/magic-link/package.json
@@ -4921,7 +4923,9 @@ apps/admin-x-settings/src/components/settings/site/NavigationModal.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemePreview.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/BrandSettings.tsx
+apps/admin-x-settings/src/components/settings/site/recommendations/EditRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModalConfirm.tsx
+apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationReasonForm.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationList.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
@@ -5114,6 +5118,7 @@ apps/admin-x-settings/src/admin-x-ds/global/form/TextField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextArea.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ImageUpload.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/URLSelect.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/CurrencyField.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CurrencyField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Checkbox.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ToggleGroup.stories.tsx
@@ -5218,6 +5223,7 @@ apps/admin-x-settings/src/index.tsx
 apps/admin-x-settings/src/typings.d.ts
 apps/admin-x-settings/src/api/redirects.ts
 apps/admin-x-settings/src/api/integrations.ts
+apps/admin-x-settings/src/api/oembed.ts
 apps/admin-x-settings/src/api/slack.ts
 apps/admin-x-settings/src/api/routes.ts
 apps/admin-x-settings/src/api/invites.ts

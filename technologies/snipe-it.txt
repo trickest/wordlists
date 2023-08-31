@@ -5455,7 +5455,6 @@ bootstrap/autoload.php
 .nvmrc
 tests/CreatesApplication.php
 tests/TestCase.php
-tests/DuskTestCase.php
 tests/Support/InteractsWithAuthentication.php
 tests/Support/Settings.php
 tests/Support/InteractsWithSettings.php
@@ -5468,6 +5467,7 @@ tests/Feature/Notifications/ComponentWebhookTest.php
 tests/Feature/Notifications/ConsumableWebhookTest.php
 tests/Feature/Notifications/AccessoryWebhookTest.php
 tests/Feature/Reports/CustomReportTest.php
+tests/Feature/Api/Users/UpdateUserApiTest.php
 tests/Feature/Api/Users/UsersForSelectListTest.php
 tests/Feature/Api/Users/UsersSearchTest.php
 tests/Feature/Api/Assets/AssetIndexTest.php
@@ -5496,9 +5496,6 @@ tests/Unit/UserTest.php
 tests/Unit/ImporterTest.php
 tests/Unit/AccessoryTest.php
 tests/Unit/CategoryTest.php
-tests/Browser/LoginTest.php
-tests/Browser/Pages/HomePage.php
-tests/Browser/Pages/Page.php
 snipeit.sh
 upgrade.php
 public/css/overrides.css.map

@@ -6573,6 +6573,7 @@ src/Sylius/Component/Core/Model/ProductVariantInterface.php
 src/Sylius/Component/Core/Model/ChannelPricing.php
 src/Sylius/Component/Core/Model/Adjustment.php
 src/Sylius/Component/Core/Model/ReviewableProductInterface.php
+src/Sylius/Component/Core/Model/PositionAwareInterface.php
 src/Sylius/Component/Core/Model/ProductTaxonsAwareInterface.php
 src/Sylius/Component/Core/Model/PaymentMethod.php
 src/Sylius/Component/Core/Model/ProductReviewerInterface.php
@@ -6629,6 +6630,8 @@ src/Sylius/Component/Core/Factory/PromotionActionFactory.php
 src/Sylius/Component/Core/Factory/AddressFactoryInterface.php
 src/Sylius/Component/Core/Factory/PaymentMethodFactoryInterface.php
 src/Sylius/Component/Core/Factory/PromotionRuleFactory.php
+src/Sylius/Component/Core/Positioner/PositionerInterface.php
+src/Sylius/Component/Core/Positioner/Positioner.php
 src/Sylius/Component/Core/Promotion/Modifier/OrderPromotionsUsageModifierInterface.php
 src/Sylius/Component/Core/Promotion/Modifier/OrderPromotionsUsageModifier.php
 src/Sylius/Component/Core/Promotion/Checker/Rule/NthOrderRuleChecker.php
@@ -6800,6 +6803,7 @@ src/Sylius/Component/Core/spec/Factory/PaymentMethodFactorySpec.php
 src/Sylius/Component/Core/spec/Factory/PromotionActionFactorySpec.php
 src/Sylius/Component/Core/spec/Factory/PromotionRuleFactorySpec.php
 src/Sylius/Component/Core/spec/Factory/ChannelFactorySpec.php
+src/Sylius/Component/Core/spec/Positioner/PositionerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Modifier/OrderPromotionsUsageModifierSpec.php
 src/Sylius/Component/Core/spec/Promotion/Checker/Rule/HasTaxonRuleCheckerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Checker/Rule/ItemTotalRuleCheckerSpec.php

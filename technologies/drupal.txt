@@ -4528,6 +4528,10 @@ core/lib/Drupal/Core/Database/Event/StatementExecutionEndEvent.php
 core/lib/Drupal/Core/Database/SchemaObjectDoesNotExistException.php
 core/lib/Drupal/Core/Database/Schema.php
 core/lib/Drupal/Core/Database/DatabaseConnectionRefusedException.php
+core/lib/Drupal/Core/Database/Transaction/TransactionManagerBase.php
+core/lib/Drupal/Core/Database/Transaction/StackItemType.php
+core/lib/Drupal/Core/Database/Transaction/TransactionManagerInterface.php
+core/lib/Drupal/Core/Database/Transaction/ClientConnectionTransactionState.php
 core/lib/Drupal/Core/Database/Exception/EventException.php
 core/lib/Drupal/Core/Database/StatementInterface.php
 core/lib/Drupal/Core/Database/StatementPrefetchIterator.php
@@ -9706,6 +9710,7 @@ core/modules/mysql/src/Driver/Database/mysql/Select.php
 core/modules/mysql/src/Driver/Database/mysql/Schema.php
 core/modules/mysql/src/Driver/Database/mysql/Merge.php
 core/modules/mysql/src/Driver/Database/mysql/Connection.php
+core/modules/mysql/src/Driver/Database/mysql/TransactionManager.php
 core/modules/mysql/src/Driver/Database/mysql/Truncate.php
 core/modules/mysql/src/Driver/Database/mysql/Install/Tasks.php
 core/modules/mysql/src/Driver/Database/mysql/Update.php
@@ -10246,6 +10251,7 @@ core/modules/sqlite/src/Driver/Database/sqlite/Select.php
 core/modules/sqlite/src/Driver/Database/sqlite/Schema.php
 core/modules/sqlite/src/Driver/Database/sqlite/Merge.php
 core/modules/sqlite/src/Driver/Database/sqlite/Connection.php
+core/modules/sqlite/src/Driver/Database/sqlite/TransactionManager.php
 core/modules/sqlite/src/Driver/Database/sqlite/Truncate.php
 core/modules/sqlite/src/Driver/Database/sqlite/Install/Tasks.php
 core/modules/sqlite/src/Driver/Database/sqlite/Update.php
@@ -14231,6 +14237,8 @@ core/modules/field_ui/src/FieldUiPermissions.php
 core/modules/field_ui/src/FieldConfigListBuilder.php
 core/modules/field_ui/src/Controller/EntityDisplayModeController.php
 core/modules/field_ui/src/Controller/FieldConfigListController.php
+core/modules/field_ui/src/Controller/FieldConfigAddController.php
+core/modules/field_ui/src/Controller/FieldStorageAddController.php
 core/modules/field_ui/src/Form/EntityDisplayFormBase.php
 core/modules/field_ui/src/Form/FieldStorageAddForm.php
 core/modules/field_ui/src/Form/EntityDisplayModeAddForm.php
@@ -15237,6 +15245,7 @@ core/modules/pgsql/src/Driver/Database/pgsql/Select.php
 core/modules/pgsql/src/Driver/Database/pgsql/Schema.php
 core/modules/pgsql/src/Driver/Database/pgsql/Merge.php
 core/modules/pgsql/src/Driver/Database/pgsql/Connection.php
+core/modules/pgsql/src/Driver/Database/pgsql/TransactionManager.php
 core/modules/pgsql/src/Driver/Database/pgsql/Truncate.php
 core/modules/pgsql/src/Driver/Database/pgsql/Install/Tasks.php
 core/modules/pgsql/src/Driver/Database/pgsql/Update.php
