@@ -3823,6 +3823,7 @@ ghost/core/core/server/update-check.js
 ghost/core/core/server/notify.js
 ghost/core/core/server/models/mobiledoc-revision.js
 ghost/core/core/server/models/member-paid-subscription-event.js
+ghost/core/core/server/models/recommendation.js
 ghost/core/core/server/models/post.js
 ghost/core/core/server/models/email-batch.js
 ghost/core/core/server/models/mail-event.js
@@ -4379,6 +4380,14 @@ ghost/member-attribution/lib/UrlHistory.js
 ghost/member-attribution/lib/UrlTranslator.js
 ghost/member-attribution/index.js
 ghost/member-attribution/README.md
+ghost/bookshelf-repository/tsconfig.json
+ghost/bookshelf-repository/.eslintrc.js
+ghost/bookshelf-repository/package.json
+ghost/bookshelf-repository/test/.eslintrc.js
+ghost/bookshelf-repository/test/BookshelfRepository.test.ts
+ghost/bookshelf-repository/src/index.ts
+ghost/bookshelf-repository/src/BookshelfRepository.ts
+ghost/bookshelf-repository/README.md
 ghost/nql-filter-expansions/tsconfig.json
 ghost/nql-filter-expansions/.eslintrc.js
 ghost/nql-filter-expansions/package.json
@@ -4432,7 +4441,6 @@ ghost/offers/.eslintrc.js
 ghost/offers/package.json
 ghost/offers/test/hello.test.js
 ghost/offers/test/.eslintrc.js
-ghost/offers/test/lib/application/OfferRepository.test.js
 ghost/offers/test/lib/application/UniqueChecker.test.js
 ghost/offers/test/lib/domain/models/OfferType.test.js
 ghost/offers/test/lib/domain/models/OfferCode.test.js
@@ -4709,6 +4717,7 @@ ghost/recommendations/test/.eslintrc.js
 ghost/recommendations/test/hello.test.ts
 ghost/recommendations/src/RecommendationController.ts
 ghost/recommendations/src/index.ts
+ghost/recommendations/src/BookshelfRecommendationRepository.ts
 ghost/recommendations/src/RecommendationRepository.ts
 ghost/recommendations/src/RecommendationService.ts
 ghost/recommendations/src/Recommendation.ts

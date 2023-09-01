@@ -1756,9 +1756,12 @@ app/bundles/IntegrationsBundle/Event/InternalObjectRouteEvent.php
 app/bundles/IntegrationsBundle/Event/MappedIntegrationObjectTokenEvent.php
 app/bundles/IntegrationsBundle/Event/KeysEncryptionEvent.php
 app/bundles/IntegrationsBundle/Event/InternalObjectOwnerEvent.php
+app/bundles/IntegrationsBundle/Event/InternalContactEvent.php
 app/bundles/IntegrationsBundle/Event/FormLoadEvent.php
 app/bundles/IntegrationsBundle/Event/MauticSyncFieldsLoadEvent.php
+app/bundles/IntegrationsBundle/Event/InternalCompanyEvent.php
 app/bundles/IntegrationsBundle/Event/ConfigSaveEvent.php
+app/bundles/IntegrationsBundle/Event/InternalObjectFindByIdEvent.php
 app/bundles/IntegrationsBundle/Event/KeysDecryptionEvent.php
 app/bundles/IntegrationsBundle/Event/InternalObjectEvent.php
 app/bundles/IntegrationsBundle/Helper/FieldMergerHelper.php
@@ -1837,6 +1840,7 @@ app/bundles/IntegrationsBundle/Tests/Unit/Entity/FieldChangeRepositoryTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Sync/Notification/Helper/UserNotificationBuilderTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Sync/Notification/NotifierTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Sync/Notification/BulkNotificationTest.php
+app/bundles/IntegrationsBundle/Tests/Functional/EventListener/LeadSubscriberTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Services/SyncDataExchange/Internal/ObjectHelper/CompanyObjectHelperTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Services/SyncService/SyncServiceTest.php
 app/bundles/IntegrationsBundle/Tests/Functional/Services/SyncService/TestExamples/Sync/SyncDataExchange/ExampleSyncDataExchange.php
