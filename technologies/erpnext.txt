@@ -942,6 +942,7 @@ erpnext/patches/v12_0/unset_customer_supplier_based_on_type_of_item_price.py
 erpnext/patches/__init__.py
 erpnext/patches/v15_0/remove_exotel_integration.py
 erpnext/patches/v15_0/delete_taxjar_doctypes.py
+erpnext/patches/v15_0/correct_asset_value_if_je_with_workflow.py
 erpnext/patches/v15_0/remove_loan_management_module.py
 erpnext/patches/v15_0/update_asset_value_for_manual_depr_entries.py
 erpnext/patches/v15_0/update_gpa_and_ndb_for_assdeprsch.py
@@ -1451,6 +1452,7 @@ erpnext/accounts/report/bank_clearance_summary/bank_clearance_summary.js
 erpnext/accounts/report/bank_clearance_summary/bank_clearance_summary.py
 erpnext/accounts/report/accounts_payable/accounts_payable.js
 erpnext/accounts/report/accounts_payable/accounts_payable.json
+erpnext/accounts/report/accounts_payable/test_accounts_payable.py
 erpnext/accounts/report/accounts_payable/accounts_payable.py
 erpnext/accounts/report/accounts_payable/__init__.py
 erpnext/accounts/report/accounts_payable/accounts_payable.html
@@ -2630,6 +2632,11 @@ erpnext/stock/report/stock_ledger/stock_ledger.py
 erpnext/stock/report/stock_ledger/stock_ledger.json
 erpnext/stock/report/stock_ledger/test_stock_ledger_report.py
 erpnext/stock/report/stock_ledger/__init__.py
+erpnext/stock/report/reserved_stock/reserved_stock.json
+erpnext/stock/report/reserved_stock/test_reserved_stock.py
+erpnext/stock/report/reserved_stock/reserved_stock.js
+erpnext/stock/report/reserved_stock/__init__.py
+erpnext/stock/report/reserved_stock/reserved_stock.py
 erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_comparison.js
 erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_comparison.json
 erpnext/stock/report/stock_and_account_value_comparison/__init__.py
