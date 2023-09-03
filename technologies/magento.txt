@@ -19015,10 +19015,8 @@ app/code/Magento/QuoteGraphQl/Model/Cart/AddSimpleProductToCart.php
 app/code/Magento/QuoteGraphQl/Model/Cart/GetCartForCheckout.php
 app/code/Magento/QuoteGraphQl/Model/Cart/QuoteAddressFactory.php
 app/code/Magento/QuoteGraphQl/Model/Cart/AssignShippingMethodToCart.php
-app/code/Magento/QuoteGraphQl/Model/Cart/PlaceOrderMutexInterface.php
 app/code/Magento/QuoteGraphQl/Model/Cart/TotalsCollector.php
 app/code/Magento/QuoteGraphQl/Model/Cart/ValidateAddressFromSchema.php
-app/code/Magento/QuoteGraphQl/Model/Cart/PlaceOrderMutex.php
 app/code/Magento/QuoteGraphQl/Model/Cart/SetPaymentMethodOnCart.php
 app/code/Magento/QuoteGraphQl/Model/Cart/IsActive.php
 app/code/Magento/QuoteGraphQl/Model/Cart/MergeCarts/CartQuantityValidatorInterface.php
@@ -21049,6 +21047,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckVirtualProductCountDispl
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckoutWithDifferentShippingAndBillingAddressAndProductWithTierPricesTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/DeleteVirtualProductFromShoppingCartTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/CustomerOrderSimpleProductTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/StorefrontApplyCouponWithShippingMethodConditionAppliedTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckoutWithDifferentShippingAndBillingAddressAndRegisterCustomerAfterCheckoutTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerLoginDuringCheckoutTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/EditShippingAddressOnePageCheckoutTest.xml
@@ -38008,7 +38007,6 @@ dev/tests/api-functional/testsuite/Magento/ConfigurableProduct/Api/ConfigurableP
 dev/tests/api-functional/testsuite/Magento/ConfigurableProduct/Api/ProductRepositoryTest.php
 dev/tests/api-functional/testsuite/Magento/ConfigurableProduct/Api/LinkManagementTest.php
 dev/tests/api-functional/testsuite/Magento/WebApiTest.php
-dev/tests/api-functional/testsuite/Magento/QuoteGraphQl/Model/Cart/PlaceOrderMutexTest.php
 dev/tests/api-functional/testsuite/Magento/AsynchronousOperations/Api/BulkStatusInterfaceTest.php
 dev/tests/api-functional/testsuite/Magento/AsynchronousOperations/Api/OperationRepositoryInterfaceTest.php
 dev/tests/api-functional/testsuite/Magento/CheckoutAgreements/Api/CheckoutAgreementsRepositoryTest.php
