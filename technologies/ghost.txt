@@ -4949,6 +4949,7 @@ apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterDetail
 apps/admin-x-settings/src/components/settings/email/newsletters/NewslettersList.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/AddNewsletterModal.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreview.tsx
+apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreviewContent.tsx
 apps/admin-x-settings/src/components/settings/email/Newsletters.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TierDetailModal.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TiersList.tsx
@@ -5052,6 +5053,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-right.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/mobile.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-unlocked.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/lock-locked.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/eyedropper.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/hamburger.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-left.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/mail-block.svg
@@ -5114,20 +5116,25 @@ apps/admin-x-settings/src/admin-x-ds/global/form/FileUpload.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/URLTextField.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/HtmlEditor.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CodeEditor.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorIndicator.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorPickerField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Radio.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CheckboxGroup.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ImageUpload.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CheckboxGroup.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorIndicator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/FileUpload.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Toggle.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextField.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ToggleGroup.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Form.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorPicker.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextArea.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ImageUpload.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/URLSelect.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CurrencyField.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorPickerField.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CurrencyField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Checkbox.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/ToggleGroup.stories.tsx
@@ -5137,6 +5144,7 @@ apps/admin-x-settings/src/admin-x-ds/global/form/Radio.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/HtmlField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/CodeEditor.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/TextArea.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/form/ColorPicker.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/URLTextField.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Select.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Toggle.tsx
@@ -5223,7 +5231,6 @@ apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
 apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
 apps/admin-x-settings/src/hooks/useLimiter.tsx
-apps/admin-x-settings/src/hooks/useDetailModalRoute.tsx
 apps/admin-x-settings/src/hooks/useRouting.tsx
 apps/admin-x-settings/src/hooks/useSettingGroup.tsx
 apps/admin-x-settings/src/hooks/useSortableIndexedList.tsx
