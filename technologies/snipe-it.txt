@@ -5472,11 +5472,13 @@ tests/Feature/Api/Users/UsersForSelectListTest.php
 tests/Feature/Api/Users/UsersSearchTest.php
 tests/Feature/Api/Assets/AssetIndexTest.php
 tests/Feature/Api/Assets/AssetsForSelectListTest.php
+tests/Feature/Api/Assets/AssetCheckinTest.php
 tests/Feature/Api/Assets/RequestableAssetsTest.php
 tests/Feature/Api/Licenses/LicensesIndexTest.php
 tests/Feature/Api/Components/ComponentIndexTest.php
 tests/Feature/Api/Locations/LocationsForSelectListTest.php
 tests/Feature/Api/Consumables/ConsumablesIndexTest.php
+tests/Feature/Assets/AssetCheckinTest.php
 tests/Feature/CheckoutAcceptances/AccessoryAcceptanceTest.php
 tests/Feature/DashboardTest.php
 tests/Unit/PermissionsTest.php
@@ -6250,6 +6252,7 @@ database/migrations/2022_11_07_134348_add_display_to_user_in_custom_fields.php
 database/migrations/2018_01_17_184354_add_archived_in_list_setting.php
 database/migrations/2014_02_13_183016_add_qr_text_to_settings_table.php
 database/migrations/2014_11_07_021042_add_image_to_supplier.php
+database/migrations/2023_08_17_202638_add_last_checkin_to_assets.php
 database/migrations/2016_01_28_041048_add_notes_to_models.php
 database/migrations/2016_05_20_143758_remove_option_value_from_settings_table.php
 database/migrations/2012_12_06_225929_migration_cartalyst_sentry_install_groups.php

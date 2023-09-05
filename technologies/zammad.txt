@@ -130,6 +130,7 @@ db/migrate/20161117000001_job_unable_to_create_issue_432.rb
 db/migrate/20221103181852_add_object_attribute_relation_fields_belongs_to_value.rb
 db/migrate/20191001090809_create_active_job_locks.rb
 db/migrate/20171123000001_email_process_customer_selection_based_on_sender_recipient.rb
+db/migrate/20230830100819_create_ssl_certificates.rb
 db/migrate/20201005084847_agent_customer_permission.rb
 db/migrate/20191107181428_issue_2715_fix_broken_twitter_urls.rb
 db/migrate/20180426134922_issue_1977_remove_invalid_user_foreign_keys.rb
@@ -434,6 +435,7 @@ db/migrate/20200205000001_chat_add_allow_website.rb
 db/migrate/20210929161701_reload_after_core_workflow.rb
 db/migrate/20220707000001_template_migration.rb
 db/migrate/20211004111501_reload_after_core_workflow_again.rb
+db/migrate/20230905073448_set_gitlab_ssl_default.rb
 db/migrate/20180202000001_sidebar_customer_open_ticket_colored.rb
 db/migrate/20170123000001_ui_ticket_zoom_article_new_internal.rb
 db/migrate/20220624173829_setting_password_login.rb
@@ -443,6 +445,7 @@ db/migrate/20180108000001_change_exchange_external_sync_identifier.rb
 db/migrate/20210823112140_issue_2455_follow_up_assignment.rb
 db/migrate/20210215000001_setting_es_total_max_size_in_mb.rb
 db/migrate/20201002094932_datetime_precision.rb
+db/migrate/20230905074116_set_elastic_search_ssl.rb
 db/migrate/20220829140334_issue4229_overview_user_sortings.rb
 db/migrate/20230728090212_pgp_key_email_addresses.rb
 db/migrate/20170516000001_trigger_recipient_update.rb
@@ -453,6 +456,7 @@ db/migrate/20230426143104_add_ticket_duplicate_detection.rb
 db/migrate/20180919000000_setting_update_pretty_date_format.rb
 db/migrate/20170626000001_locale_add_direction.rb
 db/migrate/20170215000001_telegram_support.rb
+db/migrate/20230904123822_set_idoit_ssl_default.rb
 db/migrate/20230807171019_postmaster_filter_regex_operator.rb
 db/migrate/20200617153806_issue_3087_search_taskbar_deadlock.rb
 db/migrate/20200121000001_smime_support.rb
@@ -889,6 +893,7 @@ app/assets/javascripts/app/controllers/clues.coffee
 app/assets/javascripts/app/controllers/after_auth/two_factor_configuration.coffee
 app/assets/javascripts/app/controllers/customer_ticket_create.coffee
 app/assets/javascripts/app/controllers/agent_ticket_merge.coffee
+app/assets/javascripts/app/controllers/ssl_certificate.coffee
 app/assets/javascripts/app/controllers/maintenance.coffee
 app/assets/javascripts/app/controllers/trigger.coffee
 app/assets/javascripts/app/controllers/_default_navbar.coffee
@@ -1181,6 +1186,7 @@ app/assets/javascripts/app/models/knowledge_base_answer_translation_state.coffee
 app/assets/javascripts/app/models/chat_sessions.coffee
 app/assets/javascripts/app/models/postmaster_filter.coffee
 app/assets/javascripts/app/models/ticket_article.coffee
+app/assets/javascripts/app/models/ssl_certificate.coffee
 app/assets/javascripts/app/models/knowledge_base_translation.coffee
 app/assets/javascripts/app/models/user_overview_sorting_overview.coffee
 app/assets/javascripts/app/models/trigger.coffee
@@ -1225,6 +1231,7 @@ app/assets/javascripts/app/views/report/time_range_picker.jst.eco
 app/assets/javascripts/app/views/report/time_picker.jst.eco
 app/assets/javascripts/app/views/report/download_button.jst.eco
 app/assets/javascripts/app/views/report/download_content.jst.eco
+app/assets/javascripts/app/views/ssl_certificate_binary_or_text.jst.eco
 app/assets/javascripts/app/views/user_profile/index.jst.eco
 app/assets/javascripts/app/views/user_profile/object.jst.eco
 app/assets/javascripts/app/views/user_profile/name.jst.eco
@@ -1513,6 +1520,7 @@ app/assets/javascripts/app/views/knowledge_base/reader.jst.eco
 app/assets/javascripts/app/views/knowledge_base/navigation.jst.eco
 app/assets/javascripts/app/views/knowledge_base/search_item.jst.eco
 app/assets/javascripts/app/views/knowledge_base/_reader_pagination.jst.eco
+app/assets/javascripts/app/views/ssl_certificates_list.jst.eco
 app/assets/javascripts/app/views/twitter/index.jst.eco
 app/assets/javascripts/app/views/twitter/account_edit.jst.eco
 app/assets/javascripts/app/views/twitter/app_config.jst.eco
@@ -1584,6 +1592,7 @@ app/assets/javascripts/app/views/getting_started/admin.jst.eco
 app/assets/javascripts/app/views/getting_started/channel.jst.eco
 app/assets/javascripts/app/views/getting_started/auto_wizard_enabled.jst.eco
 app/assets/javascripts/app/views/getting_started/finish.jst.eco
+app/assets/javascripts/app/views/ssl_certificates.jst.eco
 app/assets/javascripts/app/views/ticket_zoom.jst.eco
 app/assets/javascripts/app/views/avatar_group.jst.eco
 app/assets/javascripts/app/views/monitoring.jst.eco
@@ -1642,6 +1651,7 @@ app/assets/javascripts/app/views/settings/ticket_number_increment.jst.eco
 app/assets/javascripts/app/views/settings/logo.jst.eco
 app/assets/javascripts/app/views/after_auth/two_factor_configuration/method_buttons.jst.eco
 app/assets/javascripts/app/views/after_auth/two_factor_configuration.jst.eco
+app/assets/javascripts/app/views/ssl_certificates_create.jst.eco
 app/assets/javascripts/app/views/signup.jst.eco
 app/assets/javascripts/app/views/avatar_unique.jst.eco
 app/assets/javascripts/app/views/agent_user_create.jst.eco
@@ -1734,9 +1744,9 @@ app/policies/controllers/webhooks_controller_policy.rb
 app/policies/controllers/http_logs_controller_policy.rb
 app/policies/controllers/time_accountings_controller_policy.rb
 app/policies/controllers/templates_controller_policy.rb
+app/policies/controllers/ssl_certificates_controller_policy.rb
 app/policies/controllers/core_workflows_controller_policy.rb
 app/policies/controllers/channels_facebook_controller_policy.rb
-app/policies/controllers/ticket/time_accountings_controller_policy.rb
 app/policies/controllers/channels_twitter_controller_policy.rb
 app/policies/controllers/triggers_controller_policy.rb
 app/policies/controllers/data_privacy_tasks_controller_policy.rb
@@ -2053,6 +2063,7 @@ app/controllers/tests_controller.rb
 app/controllers/slas_controller.rb
 app/controllers/cti_controller.rb
 app/controllers/http_logs_controller.rb
+app/controllers/ssl_certificates_controller.rb
 app/controllers/macros_controller.rb
 app/controllers/knowledge_bases_controller.rb
 app/controllers/ticket_shared_draft_zoom_controller.rb
@@ -2073,7 +2084,6 @@ app/controllers/translations_controller.rb
 app/controllers/search_controller.rb
 app/controllers/applications_controller.rb
 app/controllers/settings_controller.rb
-app/controllers/ticket/time_accountings_controller.rb
 app/controllers/channels_sms_controller.rb
 app/controllers/init_controller.rb
 app/controllers/import_zendesk_controller.rb
@@ -3572,6 +3582,7 @@ app/models/form_updater/core_workflow.rb
 app/models/form_updater/relation.rb
 app/models/token.rb
 app/models/webhook.rb
+app/models/ssl_certificate.rb
 app/models/overview/triggers_subscriptions.rb
 app/models/overview/assets.rb
 app/models/user_group.rb
@@ -5001,8 +5012,6 @@ lib/secure_mailing/smime/incoming.rb
 lib/secure_mailing/smime/outgoing.rb
 lib/secure_mailing/smime/private_key.rb
 lib/secure_mailing/smime/retry.rb
-lib/secure_mailing/smime/certificate.rb
-lib/secure_mailing/smime/certificate/attributes.rb
 lib/secure_mailing/pgp.rb
 lib/secure_mailing/smime.rb
 lib/secure_mailing/backend/handler_notification_options.rb
@@ -5629,6 +5638,11 @@ lib/monitoring_helper/health_checker/unprocessable_mail.rb
 lib/monitoring_helper/health_checker/import_job.rb
 lib/monitoring_helper/health_checker/channels.rb
 lib/monitoring_helper/health_checker/delayed_job.rb
+lib/certificate/apply_ssl_certificates.rb
+lib/certificate/x509/ssl.rb
+lib/certificate/x509/smime/attributes.rb
+lib/certificate/x509/smime.rb
+lib/certificate/x509.rb
 lib/password_policy.rb
 lib/service/geo_ip/zammad.rb
 lib/service/geo_ip.rb
@@ -6057,6 +6071,7 @@ config/routes/integration_ldap.rb
 config/routes/microsoft365.rb
 config/routes/integration_placetel.rb
 config/routes/webhook.rb
+config/routes/ssl_certificate.rb
 config/routes/graphql.rb
 config/routes/calendar_subscriptions.rb
 config/routes/chat.rb
@@ -6191,6 +6206,7 @@ spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
 spec/system/admin_password_auth_spec.rb
 spec/system/system/translations_spec.rb
+spec/system/system/ssl_certificates_spec.rb
 spec/system/system/maintenance_spec.rb
 spec/system/system/monitoring_spec.rb
 spec/system/system/core_workflow_spec.rb
@@ -6372,6 +6388,7 @@ spec/system/cti_spec.rb
 spec/system/organization/profile_spec.rb
 spec/system/saml_spec.rb
 spec/system/password_reset_spec.rb
+spec/system/ssl_spec.rb
 spec/policies/template_policy_spec.rb
 spec/policies/data_privacy_task_policy_spec.rb
 spec/policies/group_policy_spec.rb
@@ -6394,10 +6411,10 @@ spec/policies/controllers/links_controller_policy_spec.rb
 spec/policies/controllers/user/two_factors_controller_policy_spec.rb
 spec/policies/controllers/tags_controller_policy_spec.rb
 spec/policies/controllers/tickets_shared_draft_starts_controller_policy_spec.rb
-spec/policies/controllers/ticket/time_accountings_controller_policy_spec.rb
 spec/policies/controllers/monitoring_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/categories_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
+spec/policies/controllers/time_accountings_controller_policy_spec.rb
 spec/policies/controllers/mentions_controller_policy_spec.rb
 spec/policies/controllers/attachments_controller_policy_spec.rb
 spec/policies/controllers/integration/pgp_controller_policy_spec.rb
@@ -6505,6 +6522,7 @@ spec/factories/tag.rb
 spec/factories/tag/object.rb
 spec/factories/tag/item.rb
 spec/factories/core_workflow.rb
+spec/factories/ssl_certificates.rb
 spec/factories/smime_certificate.rb
 spec/factories/activity_stream.rb
 spec/factories/history.rb
@@ -6894,7 +6912,6 @@ spec/lib/generators/zammad/translation_catalog/writer/pot_spec.rb
 spec/lib/twitter_sync_spec.rb
 spec/lib/secure_mailing/smime/security_options_spec.rb
 spec/lib/secure_mailing/smime/private_key_spec.rb
-spec/lib/secure_mailing/smime/certificate_spec.rb
 spec/lib/secure_mailing/smime_spec.rb
 spec/lib/secure_mailing/pgp_spec.rb
 spec/lib/secure_mailing/pgp/security_options_spec.rb
@@ -7066,6 +7083,8 @@ spec/lib/monitoring_helper/health_checker/import_job_spec.rb
 spec/lib/monitoring_helper/health_checker/scheduler_spec.rb
 spec/lib/monitoring_helper/health_checker/delayed_job_spec.rb
 spec/lib/image_helper_spec.rb
+spec/lib/certificate/apply_ssl_certificates_spec.rb
+spec/lib/certificate/x509/smime_spec.rb
 spec/lib/service/geo_location_spec.rb
 spec/lib/service/system_assets/product_logo_spec.rb
 spec/lib/service/geo_calendar_spec.rb
@@ -7269,6 +7288,7 @@ spec/models/knowledge_base_spec.rb
 spec/models/trigger_spec.rb
 spec/models/store_spec.rb
 spec/models/http_log_spec.rb
+spec/models/ssl_certificate_spec.rb
 spec/models/contexts/factory_context.rb
 spec/models/avatar_spec.rb
 spec/requests/calendar_spec.rb
@@ -7355,6 +7375,7 @@ spec/requests/api_auth_from_spec.rb
 spec/requests/macro_spec.rb
 spec/requests/import_freshdesk_spec.rb
 spec/requests/api_auth_spec.rb
+spec/requests/ssl_certificate_spec.rb
 spec/requests/robots_txt_spec.rb
 spec/requests/external_credential/twitter_spec.rb
 spec/integration/ldap_spec.rb

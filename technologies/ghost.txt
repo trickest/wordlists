@@ -3382,6 +3382,7 @@ ghost/core/core/server/services/public-config/site.js
 ghost/core/core/server/services/public-config/config.js
 ghost/core/core/server/services/recommendations/RecommendationServiceWrapper.js
 ghost/core/core/server/services/recommendations/index.js
+ghost/core/core/server/services/recommendations/RecommendationEnablerService.js
 ghost/core/core/server/services/jobs/job-service.js
 ghost/core/core/server/services/jobs/index.js
 ghost/core/core/server/services/email-analytics/EmailAnalyticsServiceWrapper.js
@@ -4922,7 +4923,9 @@ apps/admin-x-settings/src/components/Sidebar.tsx
 apps/admin-x-settings/src/components/settings/site/Recommendations.tsx
 apps/admin-x-settings/src/components/settings/site/ThemeModal.tsx
 apps/admin-x-settings/src/components/settings/site/DesignModal.tsx
+apps/admin-x-settings/src/components/settings/site/AnnouncementBar.tsx
 apps/admin-x-settings/src/components/settings/site/DesignSetting.tsx
+apps/admin-x-settings/src/components/settings/site/announcementBar/AnnouncementBarPreview.tsx
 apps/admin-x-settings/src/components/settings/site/Navigation.tsx
 apps/admin-x-settings/src/components/settings/site/SiteSettings.tsx
 apps/admin-x-settings/src/components/settings/site/Theme.tsx
@@ -4932,11 +4935,14 @@ apps/admin-x-settings/src/components/settings/site/NavigationModal.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemePreview.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/BrandSettings.tsx
+apps/admin-x-settings/src/components/settings/site/AnnouncementBarModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/EditRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModalConfirm.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationReasonForm.tsx
+apps/admin-x-settings/src/components/settings/site/recommendations/IncomingRecommendations.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationList.tsx
+apps/admin-x-settings/src/components/settings/site/recommendations/IncomingRecommendationList.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
 apps/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
@@ -5244,6 +5250,7 @@ apps/admin-x-settings/src/api/slack.ts
 apps/admin-x-settings/src/api/routes.ts
 apps/admin-x-settings/src/api/invites.ts
 apps/admin-x-settings/src/api/newsletters.ts
+apps/admin-x-settings/src/api/mentions.ts
 apps/admin-x-settings/src/api/apiKeys.ts
 apps/admin-x-settings/src/api/tiers.ts
 apps/admin-x-settings/src/api/site.ts
