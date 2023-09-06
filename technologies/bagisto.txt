@@ -400,7 +400,6 @@ packages/Webkul/Shop/src/Resources/views/customers/account/orders/pdf.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/profile/index.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/profile/edit.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/addresses/index.blade.php
-packages/Webkul/Shop/src/Resources/views/customers/account/addresses/country-state.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/addresses/create.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/addresses/edit.blade.php
 packages/Webkul/Shop/src/Resources/views/customers/account/wishlist/index.blade.php
@@ -455,7 +454,6 @@ packages/Webkul/Shop/src/Listeners/Base.php
 packages/Webkul/Shop/src/Listeners/Invoice.php
 packages/Webkul/Shop/src/Listeners/Shipment.php
 packages/Webkul/Shop/src/Listeners/Refund.php
-packages/Webkul/Shop/src/Config/system.php
 packages/Webkul/Shop/src/Config/menu.php
 packages/Webkul/Shop/src/Repositories/ThemeCustomizationRepository.php
 packages/Webkul/Shop/src/Routes/api.php
@@ -1394,7 +1392,6 @@ packages/Webkul/Core/src/Console/Commands/Install.php
 packages/Webkul/Core/src/Console/Commands/BagistoPublish.php
 packages/Webkul/Core/src/Console/Commands/UpChannelCommand.php
 packages/Webkul/Core/src/Console/Commands/UpCommand.php
-packages/Webkul/Core/src/Console/Commands/BookingCron.php
 packages/Webkul/Core/src/Console/Commands/DownCommand.php
 packages/Webkul/Core/src/Console/Commands/DownChannelCommand.php
 packages/Webkul/Core/src/Database/Factories/ChannelInventorySourceFactory.php
@@ -1544,9 +1541,6 @@ tests/CreatesApplication.php
 tests/TestCase.php
 tests/Pest.php
 public/robots.txt
-public/build/assets/app-0d91dc04.js
-public/build/assets/app-4ed993c7.js
-public/build/manifest.json
 public/index.php
 public/themes/admin/default/build/assets/error-4179d5c7.svg
 public/themes/admin/default/build/assets/store-information-8d27c0df.svg
@@ -1581,8 +1575,8 @@ public/themes/admin/default/build/assets/notification-2b25c326.svg
 public/themes/admin/default/build/assets/icon-add-product-e3232d62.svg
 public/themes/admin/default/build/assets/total-orders-3185b633.svg
 public/themes/admin/default/build/manifest.json
-public/themes/shop/default/build/assets/app-458db3b4.js
 public/themes/shop/default/build/assets/logo-942157c2.svg
+public/themes/shop/default/build/assets/app-c15271ae.js
 public/themes/shop/default/build/assets/hero-image-3170dce6.webp
 public/themes/shop/default/build/assets/velicon-2b79b97c.woff
 public/themes/shop/default/build/manifest.json

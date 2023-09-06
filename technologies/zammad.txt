@@ -3199,15 +3199,16 @@ app/frontend/apps/mobile/pages/ticket/components/TicketList/TicketList.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSeparatorDate.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketViewersDialog.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketObjectAttributes.spec.ts
+app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketDetailViewTitle.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleSecurityBadge.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketActionsDialog.spec.ts
+app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketDetailViewHeader.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleList.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleMetadataAddress.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketTags.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleMetadata.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketViewersDialog.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleBubble.spec.ts
-app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketDetailedViewHeader.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketViewerItem.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleMetadataDialog.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSecurityBadge.vue
@@ -3980,6 +3981,7 @@ app/views/mailer/password_change/pt-br.html.erb
 app/views/mailer/password_change/en.html.erb
 app/views/mailer/password_change/hr.html.erb
 app/views/mailer/password_change/de.html.erb
+app/views/mailer/password_change/tr.html.erb
 app/views/mailer/password_change/ru.html.erb
 app/views/mailer/password_change/zh-tw.html.erb
 app/views/mailer/password_change/sr.html.erb
@@ -7450,6 +7452,7 @@ spec/fixtures/files/import/otrs/history/article/default.json
 spec/fixtures/files/import/otrs/history/new_ticket/default.json
 spec/fixtures/files/import/otrs/history/state_update/default.json
 spec/fixtures/files/import/otrs/customer/default.json
+spec/fixtures/files/ldap/ca.crt
 spec/fixtures/files/external_credentials/twitter/zammad_testing.json
 spec/fixtures/files/smime/smime-sender-ca@example.com.crt
 spec/fixtures/files/smime/issue_3727.key

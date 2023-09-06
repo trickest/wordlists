@@ -1309,6 +1309,7 @@ app/code/Magento/Sales/Model/Order/TotalFactory.php
 app/code/Magento/Sales/Model/Order/CustomerManagement.php
 app/code/Magento/Sales/Model/Order/StateResolver.php
 app/code/Magento/Sales/Model/Order/OrderValidator.php
+app/code/Magento/Sales/Model/Order/CreditmemoValidator.php
 app/code/Magento/Sales/Model/Order/Reorder/UnavailableProductsProvider.php
 app/code/Magento/Sales/Model/Order/Reorder/OrderedProductAvailabilityChecker.php
 app/code/Magento/Sales/Model/Order/Reorder/OrderedProductAvailabilityCheckerInterface.php
@@ -2011,8 +2012,8 @@ app/code/Magento/Sales/Test/Unit/Model/Order/ConfigTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Reorder/UnavailableProductsProviderTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Reorder/OrderProductAvailabilityCheckerTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Admin/ItemTest.php
-app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoFactoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/InvoiceNotifierTest.php
+app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoValidatorTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoNotifierTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/ShipmentFactoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Grid/Massaction/ItemsUpdaterTest.php
@@ -4074,6 +4075,7 @@ app/code/Magento/CatalogImportExport/etc/di.xml
 app/code/Magento/CatalogImportExport/etc/config.xml
 app/code/Magento/CatalogImportExport/etc/module.xml
 app/code/Magento/CatalogImportExport/etc/import.xml
+app/code/Magento/CatalogImportExport/Model/ResourceModel/ProductDataLoader.php
 app/code/Magento/CatalogImportExport/Model/Import/Product.php
 app/code/Magento/CatalogImportExport/Model/Import/Uploader.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/ImageTypeProcessor.php
@@ -4099,6 +4101,7 @@ app/code/Magento/CatalogImportExport/Model/Import/Product/Type/Simple.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/Type/Factory.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/Type/Virtual.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/StatusProcessor.php
+app/code/Magento/CatalogImportExport/Model/Import/Product/SkuStorage.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/Skip.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/CategoryProcessor.php
 app/code/Magento/CatalogImportExport/Model/Import/Product/StockProcessor.php
@@ -8086,6 +8089,7 @@ app/code/Magento/Catalog/Test/Fixture/SelectAttribute.php
 app/code/Magento/Catalog/Test/Fixture/Category.php
 app/code/Magento/Catalog/Test/Fixture/Attribute.php
 app/code/Magento/Catalog/Test/Fixture/Virtual.php
+app/code/Magento/Catalog/Test/Fixture/AttributeSet.php
 app/code/Magento/Catalog/Test/Fixture/MultiselectAttribute.php
 app/code/Magento/Catalog/Test/Fixture/AssignProducts.php
 app/code/Magento/Catalog/Test/Fixture/CategoryAttribute.php
@@ -17708,8 +17712,10 @@ app/code/Magento/Config/view/adminhtml/templates/system/config/edit.phtml
 app/code/Magento/Config/view/adminhtml/templates/page/system/config/robots/reset.phtml
 app/code/Magento/Config/Console/Command/ConfigShow/ValueProcessor.php
 app/code/Magento/Config/Console/Command/ConfigSetCommand.php
+app/code/Magento/Config/Console/Command/LocaleEmulator.php
 app/code/Magento/Config/Console/Command/ConfigShowCommand.php
 app/code/Magento/Config/Console/Command/EmulatedAdminhtmlAreaProcessor.php
+app/code/Magento/Config/Console/Command/LocaleEmulatorInterface.php
 app/code/Magento/Config/Console/Command/ConfigSet/DefaultProcessor.php
 app/code/Magento/Config/Console/Command/ConfigSet/ConfigSetProcessorInterface.php
 app/code/Magento/Config/Console/Command/ConfigSet/ProcessorFacade.php
@@ -21447,6 +21453,7 @@ app/code/Magento/Eav/Setup/Patch/Data/InitializeAttributeModels.php
 app/code/Magento/Eav/Plugin/Model/ResourceModel/Entity/Attribute.php
 app/code/Magento/Eav/Test/Fixture/AttributeOption.php
 app/code/Magento/Eav/Test/Fixture/Attribute.php
+app/code/Magento/Eav/Test/Fixture/AttributeSet.php
 app/code/Magento/Eav/Test/Unit/Model/AttributeFactoryTest.php
 app/code/Magento/Eav/Test/Unit/Model/TypeLocatorTest.php
 app/code/Magento/Eav/Test/Unit/Model/ResourceModel/AttributeLoaderTest.php
@@ -22343,6 +22350,7 @@ app/code/Magento/Theme/Setup/Patch/Data/ConvertSerializedData.php
 app/code/Magento/Theme/Observer/CleanThemeRelatedContentObserver.php
 app/code/Magento/Theme/Observer/ApplyThemeCustomizationObserver.php
 app/code/Magento/Theme/Observer/CheckThemeIsAssignedObserver.php
+app/code/Magento/Theme/Plugin/LocaleEmulator.php
 app/code/Magento/Theme/Plugin/Data/Collection.php
 app/code/Magento/Theme/Plugin/LoadDesignPlugin.php
 app/code/Magento/Theme/Test/Unit/CustomerData/MessagesTest.php
@@ -26738,6 +26746,7 @@ app/design/adminhtml/Magento/backend/Magento_Ui/web/css/source/module/_data-grid
 app/design/adminhtml/Magento/backend/Magento_Customer/web/css/source/_module.less
 app/design/adminhtml/Magento/backend/Magento_Vault/web/css/source/_module.less
 app/design/adminhtml/Magento/backend/Magento_GiftWrapping/web/css/source/_module.less
+app/design/adminhtml/Magento/backend/i18n/en_US.csv
 app/design/adminhtml/Magento/backend/Magento_AdminAnalytics/web/css/source/_module.less
 app/design/adminhtml/Magento/backend/registration.php
 app/design/adminhtml/Magento/backend/Magento_Downloadable/web/css/source/_module.less
@@ -31753,6 +31762,7 @@ lib/internal/Magento/Framework/GraphQl/Config/Element/FieldInterface.php
 lib/internal/Magento/Framework/GraphQl/Config/Element/InterfaceType.php
 lib/internal/Magento/Framework/GraphQl/Config/Element/ArgumentFactory.php
 lib/internal/Magento/Framework/GraphQl/ConfigInterface.php
+lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/FieldsTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/PromiseFactoryTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/Argument/Validator/SearchCriteriaValidatorTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/Argument/Validator/CompositeValidatorTest.php
@@ -32264,6 +32274,7 @@ dev/tests/integration/testsuite/Magento/Sales/Model/Order/Email/Sender/ShipmentS
 dev/tests/integration/testsuite/Magento/Sales/Model/Order/Email/Sender/InvoiceSenderTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/InvoiceEmailSenderHandlerTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/CronJob/CleanExpiredOrdersTest.php
+dev/tests/integration/testsuite/Magento/Sales/Model/OrderTest.php
 dev/tests/integration/testsuite/Magento/Sales/Helper/AdminTest.php
 dev/tests/integration/testsuite/Magento/Sales/Helper/ReorderTest.php
 dev/tests/integration/testsuite/Magento/Sales/Api/OrderStatusHistoryRepositoryInterfaceTest.php
@@ -32755,6 +32766,7 @@ dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/Product
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductOptionsTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductImportImagesTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ProductTest/ProductOtherTest.php
+dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/Product/SkuStorageTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/Product/Type/AbstractTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/ImportWithSharedImagesTest.php
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Export/ProductTest.php
@@ -38192,6 +38204,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Cms/CmsBlockTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Cms/CmsPageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/GetQuoteItemIdByReservedQuoteIdAndSku.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddSimpleProductWithCustomOptionsToCartTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddProductsToCartWithVariablesTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddSimpleProductToCartSingleMutationTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/GetCustomOptionsValuesForQueryBySku.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetSelectedPaymentMethodTest.php
