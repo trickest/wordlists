@@ -1566,6 +1566,7 @@ packages/js/data/changelog/dev-sync-pnpm
 packages/js/data/changelog/add-33443_shipping_zones_data_store
 packages/js/data/changelog/dev-fix-admin-tests-pnpm7
 packages/js/data/changelog/fix-attribute_terms_dissapearing
+packages/js/data/changelog/update-task-list-item-and-woopayments-task
 packages/js/data/changelog/add-product-management-description
 packages/js/data/changelog/dev-ts-migrate-reviews
 packages/js/data/changelog/add-34330_attributes_section
@@ -2184,6 +2185,7 @@ packages/js/experimental/changelog/dev-upgrade-ts-5
 packages/js/experimental/changelog/dev-sync-pnpm
 packages/js/experimental/changelog/dev-fix-admin-tests-pnpm7
 packages/js/experimental/changelog/update-webpack-invalid-export-error
+packages/js/experimental/changelog/update-task-list-item-and-woopayments-task
 packages/js/experimental/changelog/dev-update-pnpm-8.6.5
 packages/js/experimental/changelog/dev-pin-wp-deps-6
 packages/js/experimental/changelog/fix-37502
@@ -3043,7 +3045,8 @@ plugins/woocommerce-admin/client/marketplace/assets/images/no-results.svg
 plugins/woocommerce-admin/client/marketplace/stylesheets/_variables.scss
 plugins/woocommerce-admin/client/marketplace/index.tsx
 plugins/woocommerce-admin/client/marketplace/marketplace.scss
-plugins/woocommerce-admin/client/marketplace/contexts/product-list-context.tsx
+plugins/woocommerce-admin/client/marketplace/contexts/marketplace-context.tsx
+plugins/woocommerce-admin/client/marketplace/contexts/types.ts
 plugins/woocommerce-admin/client/marketplace/utils/functions.tsx
 plugins/woocommerce-admin/client/payments-welcome/exit-survey-modal.tsx
 plugins/woocommerce-admin/client/payments-welcome/apms.tsx
@@ -3421,6 +3424,7 @@ plugins/woocommerce-admin/client/customize-store/design-with-ai/stories/Business
 plugins/woocommerce-admin/client/customize-store/design-with-ai/stories/ToneOfVoice.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/stories/LookAndFeel.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/stories/ApiCallLoader.tsx
+plugins/woocommerce-admin/client/customize-store/design-with-ai/tests/services.test.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/pages/BusinessInfoDescription.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/pages/ToneOfVoice.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/pages/LookAndFeel.tsx
@@ -4287,8 +4291,11 @@ plugins/woocommerce/license.txt
 plugins/woocommerce/changelog/remove-legacy-php-version-checks
 plugins/woocommerce/changelog/trunk
 plugins/woocommerce/changelog/issue-37839
+plugins/woocommerce/changelog/update-tt2-view-products-button-padding
 plugins/woocommerce/changelog/add-cys-ai-wizard-xstate
+plugins/woocommerce/changelog/update-wccom-17898-snackbar
 plugins/woocommerce/changelog/fix-29873-geolocate-redirect
+plugins/woocommerce/changelog/fix-delete-meta-by-id
 plugins/woocommerce/changelog/e2e-update-playwright-to-1_37_1
 plugins/woocommerce/changelog/tweak-category-taxonomy
 plugins/woocommerce/changelog/fix-tasklist-fix-description-color
@@ -4303,12 +4310,14 @@ plugins/woocommerce/changelog/e2e-fix-flaky-turn-off-new-product-form
 plugins/woocommerce/changelog/dev-remove-unused-feature-visible
 plugins/woocommerce/changelog/add-customize-store-assembler-hub
 plugins/woocommerce/changelog/api-fix-tax-api-test
+plugins/woocommerce/changelog/fix-verify-email-checks
 plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf-correction
 plugins/woocommerce/changelog/add-woocommerce-pay-order-before-payment-action
 plugins/woocommerce/changelog/e2e-release-remove-wp-latest-2
 plugins/woocommerce/changelog/fix-sql-query-filters-doc
 plugins/woocommerce/changelog/fix-doc-how-to-design-a-simple-extension-typo
 plugins/woocommerce/changelog/add-filter-sync-on-read
+plugins/woocommerce/changelog/update-task-list-item-and-woopayments-task
 plugins/woocommerce/changelog/add-39831
 plugins/woocommerce/changelog/fix-missed-lints
 plugins/woocommerce/changelog/fix-wc-connect-tax-truthiness
@@ -4331,6 +4340,7 @@ plugins/woocommerce/changelog/fix-38762-core-profiler-layout-shifts
 plugins/woocommerce/changelog/fix-cli-improvs
 plugins/woocommerce/changelog/update-venezuelan-currency
 plugins/woocommerce/changelog/dev-refactor-onboarding-profiler
+plugins/woocommerce/changelog/add-look-and-tone-api
 plugins/woocommerce/changelog/fix-undismissable-notices
 plugins/woocommerce/changelog/update-api-core-tests-readme
 plugins/woocommerce/changelog/issue-37835

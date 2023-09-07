@@ -8966,6 +8966,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertAttributeDeletionErrorMessa
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AddProductCustomOptionFieldActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/MoveCategoryActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductDetailPageTierPriceWithCurrencyActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminNavigateToProductAttributeAdvancedSectionActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminOpenAndApplyCustomOptionRecordsPerPageActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCheckProductIsMissingInCategoryProductsGridActionGroup.xml
@@ -9001,6 +9002,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertCategoryNameIsSho
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductImageNotInStorefrontProductPage2ActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminChangeWebSiteAssignedToProductActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductAdvancedPricingNewCustomerGroupPriceActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/ProductSetAdvancedPricingWithIndexActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminSaveCategoryFormActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/SetCategoryByNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertDiscountsPercentageOfProductsActionGroup.xml
@@ -9402,6 +9404,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/AdminTierPriceNotAvailableForProductOpti
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductAttributeRequiredTextFieldTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateCategoryWithProductsGridFilterTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateDatetimeProductAttributeTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/TierPricingWhenPriceScopeIsWebsiteWorkingProperlyWithMultipleCurrenciesConfiguredTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateVirtualProductOutOfStockWithTierPriceTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminMassUpdateProductQtyIncrementsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateDropdownProductAttributeVisibleInStorefrontAdvancedSearchFormTest.xml
@@ -12872,6 +12875,7 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/FillNewCustomerAddressFieldsActi
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminNavigateToCustomerGroupPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerEditFormPasswordFieldActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFillAndSaveCustomerlAddressInformationActionGroup.xml
+app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontFillCustomerAddressWithAttributeActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerChangeEmailActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontSignOutActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomStoreLoginActionGroup.xml
@@ -14040,6 +14044,7 @@ app/code/Magento/Search/Test/Mftf/Data/SearchTermData.xml
 app/code/Magento/Search/Test/Mftf/Data/SearchSynonymsData.xml
 app/code/Magento/Search/Test/Mftf/Data/SearchEngineConfigData.xml
 app/code/Magento/Search/Test/Mftf/Test/AdminGlobalSearchOnProductPageTest.xml
+app/code/Magento/Search/Test/Mftf/Test/AdminVerifySearchLongPhraseWithSomeWordsInQuotesWorksWithoutErrorsTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchFieldVisibilityWhenSuggestionDisabledTest.xml
 app/code/Magento/Search/Test/Mftf/Test/AdminMassDeleteSearchTermEntityTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontUsingElasticSearchWithWeightAttributeTest.xml
@@ -17291,6 +17296,7 @@ app/code/Magento/BundleGraphQl/Model/Resolver/Products/DataProvider/Product/Disa
 app/code/Magento/BundleGraphQl/Model/Resolver/Links/Collection.php
 app/code/Magento/BundleGraphQl/Model/Resolver/BundleOption.php
 app/code/Magento/BundleGraphQl/Model/Resolver/BundleItems.php
+app/code/Magento/BundleGraphQl/Model/Resolver/BundlePriceDetails.php
 app/code/Magento/BundleGraphQl/Model/Resolver/Product/Fields/DynamicSku.php
 app/code/Magento/BundleGraphQl/Model/Resolver/Product/Fields/DynamicWeight.php
 app/code/Magento/BundleGraphQl/Model/Resolver/Product/Fields/DynamicPrice.php
@@ -22772,6 +22778,7 @@ app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminCreateCreditMemoWit
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminProductMaxQtyAllowedInShoppingCartValidationActionGroup.xml
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/NoDisplayOutOfStockProductActionGroup.xml
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminCatalogInventoryConfigurationActionGroup.xml
+app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminFillGoogleDistanceProviderAPIKeyActionGroup.xml
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminProductSetMaxQtyAllowedInShoppingCartActionGroup.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Data/CatalogInventoryConfigData.xml
 app/code/Magento/CatalogInventory/Test/Mftf/Data/CatalogInventoryItemOptionsData.xml
@@ -26514,6 +26521,7 @@ app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AdminNavigateToCurrencyRat
 app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AdminOpenCurrencyRatesPageActionGroup.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AdminSaveCurrencyRatesActionGroup.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AssertAdminCurrencySymbolIsDisabledActionGroup.xml
+app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AdminSetDefaultCurrencyActionGroup.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/ActionGroup/AdminNavigateToCurrencySymbolsPageActionGroup.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Data/AdminMenuData.xml
 app/code/Magento/CurrencySymbol/Test/Mftf/Data/AdminCurrencyRatesMessageData.xml
@@ -38095,6 +38103,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/CategoryListTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/AddBundleProductToCartSingleMutationTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductWithDisabledProductTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/AddBundleProductToCartTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Bundle/BundleProductMainPriceTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Usps/SetUspsShippingMethodsOnCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/ContactUs/ContactUsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductSearchTest.php
