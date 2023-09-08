@@ -198,6 +198,9 @@ tests/Api/Responses/Expected/admin/exchange_rate/post_exchange_rate_response.jso
 tests/Api/Responses/Expected/admin/exchange_rate/get_exchange_rate_response.json
 tests/Api/Responses/Expected/admin/exchange_rate/get_exchange_rates_response.json
 tests/Api/Responses/Expected/admin/exchange_rate/put_exchange_rate_response.json
+tests/Api/Responses/Expected/admin/taxon/put_taxon_response.json
+tests/Api/Responses/Expected/admin/taxon/post_taxon_with_taken_code_response.json
+tests/Api/Responses/Expected/admin/taxon/post_taxon_without_required_data_response.json
 tests/Api/Responses/Expected/admin/taxon/get_taxons_response.json
 tests/Api/Responses/Expected/admin/taxon/get_taxon_response.json
 tests/Api/Responses/Expected/admin/taxon/post_taxon_response.json
@@ -3366,6 +3369,7 @@ src/Sylius/Bundle/ApiBundle/Validator/ResourceInputDataPropertiesValidatorInterf
 src/Sylius/Bundle/ApiBundle/Validator/ResourceApiInputDataPropertiesValidator.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductSlugEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/CatalogPromotionEventSubscriber.php
+src/Sylius/Bundle/ApiBundle/EventSubscriber/TaxonSlugEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductVariantEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/TaxonDeletionEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/KernelRequestEventSubscriber.php
@@ -3818,6 +3822,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/KernelRequestEventSubscriberSpe
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/ProductSlugEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/CatalogPromotionEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/TaxonDeletionEventSubscriberSpec.php
+src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/TaxonSlugEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Mapper/AddressMapperSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Modifier/OrderAddressModifierSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Checker/AppliedCouponEligibilityCheckerSpec.php
@@ -4409,6 +4414,7 @@ src/Sylius/Bundle/CoreBundle/Resources/translations/messages.ko.yml
 src/Sylius/Bundle/CoreBundle/Resources/translations/messages.be.yml
 src/Sylius/Bundle/CoreBundle/Resources/translations/validators.uk.yml
 src/Sylius/Bundle/CoreBundle/Resources/translations/validators.et.yml
+src/Sylius/Bundle/CoreBundle/Resources/translations/flashes.en.yaml
 src/Sylius/Bundle/CoreBundle/Resources/translations/validators.de_CH.yml
 src/Sylius/Bundle/CoreBundle/Resources/translations/validators.no.yml
 src/Sylius/Bundle/CoreBundle/Resources/translations/messages.lv.yml
@@ -4629,6 +4635,7 @@ src/Sylius/Bundle/CoreBundle/EventListener/ReviewCreateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/DefaultUsernameORMListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/SimpleProductLockingListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/ImagesRemoveListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/PaymentPreCompleteListener.php
 src/Sylius/Bundle/CoreBundle/Command/InstallAssetsCommand.php
 src/Sylius/Bundle/CoreBundle/Command/SetupCommand.php
 src/Sylius/Bundle/CoreBundle/Command/InformAboutGUSCommand.php
@@ -4855,6 +4862,7 @@ src/Sylius/Bundle/CoreBundle/spec/Order/Checker/OrderPromotionsIntegrityCheckerS
 src/Sylius/Bundle/CoreBundle/spec/Order/NumberGenerator/SequentialOrderNumberGeneratorSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Resolver/CustomerResolverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Storage/CartSessionStorageSpec.php
+src/Sylius/Bundle/CoreBundle/spec/Checkout/CheckoutResolverSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Checkout/CheckoutStateUrlGeneratorSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Checkout/CheckoutRedirectListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Theme/ChannelBasedThemeContextSpec.php
@@ -8328,11 +8336,11 @@ features/contact/requesting_contact.feature
 features/taxonomy/managing_taxons/changing_images_of_taxon.feature
 features/taxonomy/managing_taxons/taxon_validation.feature
 features/taxonomy/managing_taxons/choosing_taxon_from_tree.feature
-features/taxonomy/managing_taxons/adding_taxon_for_with_parent.feature
 features/taxonomy/managing_taxons/editing_taxon.feature
 features/taxonomy/managing_taxons/adding_taxon_with_images.feature
 features/taxonomy/managing_taxons/toggling_taxon.feature
 features/taxonomy/managing_taxons/adding_images_to_existing_taxon.feature
+features/taxonomy/managing_taxons/adding_taxon_with_parent.feature
 features/taxonomy/managing_taxons/editing_taxon_slug.feature
 features/taxonomy/managing_taxons/removing_images_of_taxon.feature
 features/taxonomy/managing_taxons/taxon_unique_code_validation.feature

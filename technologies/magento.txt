@@ -17542,6 +17542,8 @@ app/code/Magento/OrderCancellationGraphQl/etc/graphql/di.xml
 app/code/Magento/OrderCancellationGraphQl/etc/module.xml
 app/code/Magento/OrderCancellationGraphQl/Model/Resolver/CancellationReason.php
 app/code/Magento/OrderCancellationGraphQl/Model/Resolver/CancellationReasons.php
+app/code/Magento/OrderCancellationGraphQl/Model/Resolver/CancelOrder.php
+app/code/Magento/OrderCancellationGraphQl/Model/ValidateRequest.php
 app/code/Magento/OrderCancellationGraphQl/registration.php
 app/code/Magento/OrderCancellationGraphQl/composer.json
 app/code/Magento/OrderCancellationGraphQl/README.md
@@ -23513,7 +23515,9 @@ app/code/Magento/Backend/Block/Dashboard/Tab/Customers/Newest.php
 app/code/Magento/OrderCancellation/etc/config.xml
 app/code/Magento/OrderCancellation/etc/adminhtml/system.xml
 app/code/Magento/OrderCancellation/etc/module.xml
+app/code/Magento/OrderCancellation/Model/Config/Config.php
 app/code/Magento/OrderCancellation/Model/Config/Backend/Reasons.php
+app/code/Magento/OrderCancellation/Model/CancelOrder.php
 app/code/Magento/OrderCancellation/registration.php
 app/code/Magento/OrderCancellation/composer.json
 app/code/Magento/OrderCancellation/Test/Mftf/Test/AdminOrderCancellationReasonsConfigCreateEditTest.xml
@@ -27828,7 +27832,6 @@ lib/internal/Magento/Framework/Session/Validator.php
 lib/internal/Magento/Framework/Session/Generic.php
 lib/internal/Magento/Framework/Session/SidResolverInterface.php
 lib/internal/Magento/Framework/Session/SidResolver.php
-lib/internal/Magento/Framework/Session/RequestAwareSessionManager.php
 lib/internal/Magento/Framework/Session/Config/Validator/CookieLifetimeValidator.php
 lib/internal/Magento/Framework/Session/Config/Validator/CookiePathValidator.php
 lib/internal/Magento/Framework/Session/Config/Validator/CookieDomainValidator.php
@@ -30039,7 +30042,6 @@ lib/internal/Magento/Framework/ObjectManager/RelationsInterface.php
 lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php
 lib/internal/Magento/Framework/ObjectManager/ConfigLoaderInterface.php
 lib/internal/Magento/Framework/ObjectManager/DefinitionInterface.php
-lib/internal/Magento/Framework/ObjectManager/RegisterShutdownInterface.php
 lib/internal/Magento/Framework/ObjectManager/TMapFactory.php
 lib/internal/Magento/Framework/ObjectManager/TMap.php
 lib/internal/Magento/Framework/ObjectManager/InterceptableValidator.php
@@ -34413,6 +34415,7 @@ dev/tests/integration/testsuite/Magento/Framework/ObjectManager/TestAsset/Basic.
 dev/tests/integration/testsuite/Magento/Framework/ObjectManager/TestAsset/DependsOnAlias.php
 dev/tests/integration/testsuite/Magento/Framework/ObjectManager/TestAsset/ConstructorEightArguments.php
 dev/tests/integration/testsuite/Magento/Framework/ObjectManager/ObjectManagerTest.php
+dev/tests/integration/testsuite/Magento/Framework/ObjectManager/ResetAfterRequestTest.php
 dev/tests/integration/testsuite/Magento/Framework/Translate/InlineTest.php
 dev/tests/integration/testsuite/Magento/Framework/Translate/_files/_inline_page_original.html
 dev/tests/integration/testsuite/Magento/Framework/Translate/_files/_inline_page_expected.html
@@ -36813,7 +36816,14 @@ dev/tests/integration/testsuite/Magento/GraphQl/Tax/_files/tax_rule_for_region_a
 dev/tests/integration/testsuite/Magento/GraphQl/Tax/_files/tax_calculation_price_and_cart_display_settings.php
 dev/tests/integration/testsuite/Magento/GraphQl/Service/GraphQlRequest.php
 dev/tests/integration/testsuite/Magento/GraphQl/App/State/Comparator.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/SkipListAndFilterList.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/ObjectManager.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/CollectedObject.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/DynamicFactoryDecorator.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/CollectedObjectConstructedAndCurrent.php
 dev/tests/integration/testsuite/Magento/GraphQl/App/State/Collector.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/ShouldResetState.php
+dev/tests/integration/testsuite/Magento/GraphQl/App/State/CompareType.php
 dev/tests/integration/testsuite/Magento/GraphQl/App/GraphQlStateTest.php
 dev/tests/integration/testsuite/Magento/GraphQl/_files/state-skip-list.php
 dev/tests/integration/testsuite/Magento/GraphQl/_files/state-filter-list.php
@@ -38365,6 +38375,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogInventory/ProductOnlyX
 dev/tests/api-functional/testsuite/Magento/GraphQl/CatalogInventory/ProductStockStatusTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/OrderCancellation/OrderCancellationReasonsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/OrderCancellation/OrderCancellationEnabledTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/OrderCancellation/CancelOrderTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/Customer/SubscribeEmailToNewsletterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/Guest/SubscribeEmailToNewsletterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/NewsletterIsEnabledTest.php

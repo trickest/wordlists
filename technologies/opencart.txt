@@ -393,6 +393,7 @@ upload/admin/language/en-gb/mail/returns.php
 upload/admin/language/en-gb/mail/authorize_reset.php
 upload/admin/language/en-gb/setting/setting.php
 upload/admin/language/en-gb/setting/store.php
+upload/admin/language/en-gb/cms/antispam.php
 upload/admin/language/en-gb/cms/comment.php
 upload/admin/language/en-gb/cms/article.php
 upload/admin/language/en-gb/cms/topic.php
@@ -463,6 +464,7 @@ upload/admin/model/setting/module.php
 upload/admin/model/setting/store.php
 upload/admin/model/setting/cron.php
 upload/admin/model/setting/startup.php
+upload/admin/model/cms/antispam.php
 upload/admin/model/cms/comment.php
 upload/admin/model/cms/article.php
 upload/admin/model/cms/topic.php
@@ -730,12 +732,15 @@ upload/admin/view/template/setting/store_form.twig
 upload/admin/view/template/setting/store.twig
 upload/admin/view/template/setting/store_list.twig
 upload/admin/view/template/setting/setting.twig
+upload/admin/view/template/cms/antispam_list.twig
 upload/admin/view/template/cms/article_list.twig
+upload/admin/view/template/cms/antispam.twig
 upload/admin/view/template/cms/article.twig
 upload/admin/view/template/cms/comment_list.twig
 upload/admin/view/template/cms/topic_form.twig
 upload/admin/view/template/cms/topic_list.twig
 upload/admin/view/template/cms/article_form.twig
+upload/admin/view/template/cms/antispam_form.twig
 upload/admin/view/template/cms/topic.twig
 upload/admin/view/template/cms/comment.twig
 upload/admin/view/template/error/not_found.twig
@@ -1455,6 +1460,7 @@ upload/admin/controller/mail/reward.php
 upload/admin/controller/mail/returns.php
 upload/admin/controller/setting/setting.php
 upload/admin/controller/setting/store.php
+upload/admin/controller/cms/antispam.php
 upload/admin/controller/cms/comment.php
 upload/admin/controller/cms/article.php
 upload/admin/controller/cms/topic.php

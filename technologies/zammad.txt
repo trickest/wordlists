@@ -197,6 +197,7 @@ db/migrate/20220124141828_overview_updates.rb
 db/migrate/20191017122807_add_foreign_key_constraint_to_active_storage_attachments_for_blob_id.active_storage.rb
 db/migrate/20210717101728_issue_3647_custom_object_attribute_integer.rb
 db/migrate/20170116000002_fixed_typos_622.rb
+db/migrate/20230906162437_set_mail_ssl_default.rb
 db/migrate/20230807051414_input_fields_operator_renaming.rb
 db/migrate/20210830150400_issue_3503_fix_current_user.rb
 db/migrate/20200716124141_issue_3123_external_sync_ticket_merge.rb
@@ -5209,6 +5210,7 @@ lib/sequencer/unit/import/freshdesk/field_map.rb
 lib/sequencer/unit/import/freshdesk/sub_sequence/field.rb
 lib/sequencer/unit/import/freshdesk/sub_sequence/object.rb
 lib/sequencer/unit/import/freshdesk/sub_sequence/generic.rb
+lib/sequencer/unit/import/freshdesk/payload.rb
 lib/sequencer/unit/import/freshdesk/request.rb
 lib/sequencer/unit/import/freshdesk/companies.rb
 lib/sequencer/unit/import/freshdesk/object_count.rb
@@ -6710,6 +6712,7 @@ spec/graphql/gql/mutations/online_notification/mark_all_as_seen_spec.rb
 spec/graphql/gql/zammad_schema_global_id_spec.rb
 spec/db/migrate/issue_1977_remove_invalid_user_foreign_keys_spec.rb
 spec/db/migrate/issue_2185_and_or_conditions_spec.rb
+spec/db/migrate/set_mail_ssl_default_spec.rb
 spec/db/migrate/issue_2455_follow_up_assignment_spec.rb
 spec/db/migrate/add_history_source_spec.rb
 spec/db/migrate/smime_meta_information_table_spec.rb
@@ -7714,6 +7717,7 @@ spec/fixtures/files/pgp/expiredpgp1@example.com.asc
 spec/fixtures/files/pgp/ocbpgp1@example.com.passphrase
 spec/fixtures/files/pgp/pgp2@example.com-other.pgp
 spec/fixtures/files/pgp/ocbpgp1@example.com.fingerprint
+spec/fixtures/files/imap/ca.crt
 spec/jobs/ticket_escalation_rebuild_job_spec.rb
 spec/jobs/update_cti_logs_by_caller_job_spec.rb
 spec/jobs/avatar_create_job_spec.rb

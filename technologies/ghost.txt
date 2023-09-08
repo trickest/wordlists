@@ -2948,11 +2948,13 @@ ghost/core/test/e2e-api/content/offers.test.js
 ghost/core/test/e2e-api/content/collections.test.js
 ghost/core/test/e2e-api/content/utils.js
 ghost/core/test/e2e-api/content/posts.test.js
+ghost/core/test/e2e-api/content/recommendations.test.js
 ghost/core/test/e2e-api/content/key_authentication.test.js
 ghost/core/test/e2e-api/content/newsletters.test.js
 ghost/core/test/e2e-api/content/__snapshots__/posts.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/collections.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/tiers.test.js.snap
+ghost/core/test/e2e-api/content/__snapshots__/recommendations.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/offers.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/settings.test.js.snap
 ghost/core/test/e2e-api/content/__snapshots__/pages.test.js.snap
@@ -4878,6 +4880,7 @@ apps/admin-x-settings/test/e2e/membership/tiers.test.ts
 apps/admin-x-settings/test/e2e/membership/analytics.test.ts
 apps/admin-x-settings/test/e2e/membership/stripe.test.ts
 apps/admin-x-settings/test/e2e/membership/access.test.ts
+apps/admin-x-settings/test/e2e/membership/signupEmbed.test.ts
 apps/admin-x-settings/test/e2e/advanced/history.test.ts
 apps/admin-x-settings/test/e2e/advanced/codeInjection.test.ts
 apps/admin-x-settings/test/e2e/advanced/integrations/unsplash.test.ts
@@ -4960,14 +4963,16 @@ apps/admin-x-settings/src/components/settings/email/newsletters/AddNewsletterMod
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreview.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreviewContent.tsx
 apps/admin-x-settings/src/components/settings/email/Newsletters.tsx
-apps/admin-x-settings/src/components/settings/membership/EmbedSignupFormModal.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TierDetailModal.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TiersList.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TierDetailPreview.tsx
 apps/admin-x-settings/src/components/settings/membership/Analytics.tsx
+apps/admin-x-settings/src/components/settings/membership/embedSignup/EmbedSignupFormModal.tsx
+apps/admin-x-settings/src/components/settings/membership/embedSignup/EmbedSignupPreview.tsx
+apps/admin-x-settings/src/components/settings/membership/embedSignup/EmbedSignupSidebar.tsx
+apps/admin-x-settings/src/components/settings/membership/embedSignup/EmbedSignupForm.tsx
 apps/admin-x-settings/src/components/settings/membership/Access.tsx
 apps/admin-x-settings/src/components/settings/membership/Tiers.tsx
-apps/admin-x-settings/src/components/settings/membership/EmbedSignupForm.tsx
 apps/admin-x-settings/src/components/settings/membership/TipsOrDonations.tsx
 apps/admin-x-settings/src/components/settings/membership/Portal.tsx
 apps/admin-x-settings/src/components/settings/membership/MembershipSettings.tsx
@@ -5109,6 +5114,7 @@ apps/admin-x-settings/src/admin-x-ds/global/Link.tsx
 apps/admin-x-settings/src/admin-x-ds/global/TabView.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Heading.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Button.tsx
+apps/admin-x-settings/src/admin-x-ds/global/LoadingIndicator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Separator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Icon.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/InfiniteScrollListener.stories.tsx
@@ -5169,6 +5175,7 @@ apps/admin-x-settings/src/admin-x-ds/global/ListItem.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Icon.tsx
 apps/admin-x-settings/src/admin-x-ds/global/IconLabel.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Pagination.tsx
+apps/admin-x-settings/src/admin-x-ds/global/LoadingIndicator.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Toast.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Pagination.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Menu.stories.tsx
@@ -5245,6 +5252,7 @@ apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
 apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
 apps/admin-x-settings/src/hooks/useLimiter.tsx
+apps/admin-x-settings/src/hooks/usePagination.tsx
 apps/admin-x-settings/src/hooks/useRouting.tsx
 apps/admin-x-settings/src/hooks/useSettingGroup.tsx
 apps/admin-x-settings/src/hooks/useSortableIndexedList.tsx
@@ -5280,8 +5288,10 @@ apps/admin-x-settings/src/api/themes.ts
 apps/admin-x-settings/src/api/files.ts
 apps/admin-x-settings/src/api/db.ts
 apps/admin-x-settings/src/utils/helpers.ts
+apps/admin-x-settings/src/utils/escapeHtml.ts
 apps/admin-x-settings/src/utils/modals.tsx
 apps/admin-x-settings/src/utils/currency.ts
+apps/admin-x-settings/src/utils/generateEmbedCode.ts
 apps/admin-x-settings/src/utils/debounce.ts
 apps/admin-x-settings/src/utils/search.ts
 apps/admin-x-settings/src/utils/apiRequests.ts

@@ -3490,7 +3490,6 @@ controllers/admin/AdminStoresController.php
 controllers/admin/AdminAccessController.php
 controllers/admin/index.php
 controllers/admin/AdminDashboardController.php
-controllers/admin/AdminStatusesController.php
 controllers/admin/AdminTaxRulesGroupController.php
 controllers/admin/AdminCustomerThreadsController.php
 controllers/admin/AdminShopGroupController.php
@@ -5539,7 +5538,7 @@ src/PrestaShopBundle/Resources/views/Admin/Layout/shop_list.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/toolbar.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Layout/header.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Layout/head.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Layout/search_form.html.twig
@@ -5550,7 +5549,7 @@ src/PrestaShopBundle/Resources/views/Admin/Component/Layout/footer.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/mobile_quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/multistore_header.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/toolbar.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Component/Layout/header.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Component/Layout/head.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/notifications_center.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/quick_access.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Component/Layout/search_form.html.twig
@@ -6099,12 +6098,12 @@ src/PrestaShopBundle/Twig/Layout/MenuBuilder.php
 src/PrestaShopBundle/Twig/Layout/MenuLink.php
 src/PrestaShopBundle/Twig/Component/NavBar.php
 src/PrestaShopBundle/Twig/Component/ShopList.php
+src/PrestaShopBundle/Twig/Component/Head.php
 src/PrestaShopBundle/Twig/Component/SearchForm.php
 src/PrestaShopBundle/Twig/Component/EmployeeDropdown.php
 src/PrestaShopBundle/Twig/Component/QuickAccess.php
 src/PrestaShopBundle/Twig/Component/Toolbar.php
 src/PrestaShopBundle/Twig/Component/NotificationsCenter.php
-src/PrestaShopBundle/Twig/Component/Header.php
 src/PrestaShopBundle/Twig/Component/Footer.php
 src/PrestaShopBundle/Twig/Component/MultistoreHeader.php
 src/PrestaShopBundle/Twig/Component/MobileQuickAccess.php
@@ -7706,6 +7705,7 @@ src/Core/Domain/Notification/QueryResult/NotificationResult.php
 src/Core/Domain/Notification/ValueObject/Type.php
 src/Core/Domain/Notification/CommandHandler/UpdateEmployeeNotificationLastElementCommandHandlerInterface.php
 src/Core/Domain/OrderReturnState/Query/GetOrderReturnStateForEditing.php
+src/Core/Domain/OrderReturnState/OrderReturnStateSettings.php
 src/Core/Domain/OrderReturnState/Exception/OrderReturnStateNotFoundException.php
 src/Core/Domain/OrderReturnState/Exception/OrderReturnStateException.php
 src/Core/Domain/OrderReturnState/Exception/MissingOrderReturnStateRequiredFieldsException.php
@@ -8403,6 +8403,7 @@ src/Core/Domain/Webservice/CommandHandler/EditWebserviceKeyHandlerInterface.php
 src/Core/Domain/Webservice/CommandHandler/AddWebserviceKeyHandlerInterface.php
 src/Core/Domain/OrderState/Query/GetOrderStateForEditing.php
 src/Core/Domain/OrderState/OrderStateFileUploaderInterface.php
+src/Core/Domain/OrderState/OrderStateSettings.php
 src/Core/Domain/OrderState/Exception/MissingOrderStateRequiredFieldsException.php
 src/Core/Domain/OrderState/Exception/InvalidOrderStateRequiredFieldsException.php
 src/Core/Domain/OrderState/Exception/OrderStateException.php
@@ -11109,10 +11110,6 @@ admin-dev/themes/default/template/controllers/carrier_wizard/helpers/index.php
 admin-dev/themes/default/template/controllers/carrier_wizard/logo.tpl
 admin-dev/themes/default/template/controllers/carrier_wizard/summary.tpl
 admin-dev/themes/default/template/controllers/carrier_wizard/index.php
-admin-dev/themes/default/template/controllers/statuses/helpers/form/form.tpl
-admin-dev/themes/default/template/controllers/statuses/helpers/form/index.php
-admin-dev/themes/default/template/controllers/statuses/helpers/index.php
-admin-dev/themes/default/template/controllers/statuses/index.php
 admin-dev/themes/default/template/controllers/stores/helpers/form/form.tpl
 admin-dev/themes/default/template/controllers/stores/helpers/form/index.php
 admin-dev/themes/default/template/controllers/stores/helpers/options/options.tpl
