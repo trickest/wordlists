@@ -2725,6 +2725,7 @@ tests/Unit/Core/Tax/TaxOptionsConfigurationTest.php
 tests/Unit/Core/Cart/AmountImmutableTest.php
 tests/Unit/Core/Configuration/AbstractMultistoreConfigurationTest.php
 tests/Unit/Core/Routing/EntityLinkBuilderFactoryTest.php
+tests/Unit/Core/Context/EmployeeContextTest.php
 tests/Unit/Core/Search/ControllerActionTest.php
 tests/Unit/Core/Search/Filters/ProductCombinationFiltersTest.php
 tests/Unit/Core/Search/FiltersTest.php
@@ -2895,8 +2896,6 @@ tests/Unit/Core/Payment/PaymentOptionFormDecoratorTest.php
 tests/Unit/Core/Hook/HookDispatcherTest.php
 tests/Unit/Core/Hook/Generator/HookDescriptionGeneratorTest.php
 tests/Unit/Core/Hook/RenderedHookTest.php
-tests/Unit/Core/Category/Provider/CategoryImageFinderTest.php
-tests/Unit/Core/Category/Provider/MenuThumbnailAvailableKeyProviderTest.php
 tests/Unit/Core/Category/NameBuilder/CategoryDisplayNameBuilderTest.php
 tests/Unit/Core/Email/CyrillicCharactersInEmailValidationTest.php
 tests/Unit/Core/Language/LanguageDefaultFontsCatalogTest.php
@@ -5069,6 +5068,8 @@ src/PrestaShopBundle/ApiPlatform/Exception/NoExtraPropertiesFoundException.php
 src/PrestaShopBundle/ApiPlatform/Resources/CustomerGroup.php
 src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
 src/PrestaShopBundle/ApiPlatform/Resources/FoundProduct.php
+src/PrestaShopBundle/ApiPlatform/Resources/CartRule.php
+src/PrestaShopBundle/ApiPlatform/Normalizer/DateTimeImmutableDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/ObjectDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DecimalNumberDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Processor/CommandProcessor.php
@@ -5172,6 +5173,7 @@ src/PrestaShopBundle/Resources/config/services/adapter/order_message.yml
 src/PrestaShopBundle/Resources/config/services/adapter/data_provider_common.yml
 src/PrestaShopBundle/Resources/config/services/adapter/address.yml
 src/PrestaShopBundle/Resources/config/services/bundle/utils.yml
+src/PrestaShopBundle/Resources/config/services/bundle/context.yml
 src/PrestaShopBundle/Resources/config/services/bundle/cache.yml
 src/PrestaShopBundle/Resources/config/services/bundle/controller.yml
 src/PrestaShopBundle/Resources/config/services/bundle/grid.yml
@@ -5208,6 +5210,7 @@ src/PrestaShopBundle/Resources/config/services/core/module.yml
 src/PrestaShopBundle/Resources/config/services/core/hook.yml
 src/PrestaShopBundle/Resources/config/services/core/help.yml
 src/PrestaShopBundle/Resources/config/services/core/addon.yml
+src/PrestaShopBundle/Resources/config/services/core/context.yml
 src/PrestaShopBundle/Resources/config/services/core/cache.yml
 src/PrestaShopBundle/Resources/config/services/core/grid/grid_factory.yml
 src/PrestaShopBundle/Resources/config/services/core/grid/grid_data_factory.yml
@@ -6056,6 +6059,8 @@ src/PrestaShopBundle/EventListener/AccessDeniedListener.php
 src/PrestaShopBundle/EventListener/ShopConstraintListener.php
 src/PrestaShopBundle/EventListener/TokenizedUrlsListener.php
 src/PrestaShopBundle/EventListener/FilterCategorySearchCriteriaListener.php
+src/PrestaShopBundle/EventListener/Context/Admin/ShopContextListener.php
+src/PrestaShopBundle/EventListener/Context/Admin/EmployeeContextListener.php
 src/PrestaShopBundle/EventListener/BackUrlRedirectResponseListener.php
 src/PrestaShopBundle/EventListener/DemoModeEnabledListener.php
 src/PrestaShopBundle/EventListener/ActionDispatcherLegacyHooksSubscriber.php
@@ -6545,7 +6550,6 @@ src/Adapter/Image/Uploader/SupplierImageUploader.php
 src/Adapter/Image/Uploader/AbstractImageUploader.php
 src/Adapter/Image/Uploader/ManufacturerImageUploader.php
 src/Adapter/Image/Uploader/CategoryCoverImageUploader.php
-src/Adapter/Image/Uploader/CategoryMenuThumbnailUploader.php
 src/Adapter/Image/Uploader/ProfileImageUploader.php
 src/Adapter/Image/Uploader/CategoryThumbnailImageUploader.php
 src/Adapter/Image/Uploader/CategoryImageUploader.php
@@ -7001,7 +7005,6 @@ src/Adapter/Category/CommandHandler/BulkUpdateCategoriesStatusHandler.php
 src/Adapter/Category/CommandHandler/AddCategoryHandler.php
 src/Adapter/Category/CommandHandler/BulkDeleteCategoriesHandler.php
 src/Adapter/Category/CommandHandler/AbstractDeleteCategoryHandler.php
-src/Adapter/Category/CommandHandler/DeleteCategoryMenuThumbnailImageHandler.php
 src/Adapter/Category/CommandHandler/EditRootCategoryHandler.php
 src/Adapter/Category/CommandHandler/AddRootCategoryHandler.php
 src/Adapter/QuickAccess/Repository/QuickAccessRepository.php
@@ -7294,6 +7297,10 @@ src/Core/Currency/Exception/CurrencyFeedException.php
 src/Core/Currency/ExchangeRateProvider.php
 src/Core/Currency/CurrencyGridDataFactory.php
 src/Core/Stock/StockManager.php
+src/Core/Model/Employee.php
+src/Core/Model/EmployeeInterface.php
+src/Core/Model/Shop.php
+src/Core/Model/ShopInterface.php
 src/Core/CMS/CmsPageViewDataProviderInterface.php
 src/Core/CMS/CMSRoleRepository.php
 src/Core/CMS/CmsPageViewDataProvider.php
@@ -7576,6 +7583,10 @@ src/Core/Configuration/PhpExtensionChecker.php
 src/Core/Routing/Exception/BuilderNotFoundException.php
 src/Core/Routing/EntityLinkBuilderInterface.php
 src/Core/Routing/EntityLinkBuilderFactory.php
+src/Core/Context/EmployeeContextBuilder.php
+src/Core/Context/EmployeeContext.php
+src/Core/Context/ShopContextBuilder.php
+src/Core/Context/ShopContext.php
 src/Core/Search/SearchPanelInterface.php
 src/Core/Search/Filters.php
 src/Core/Search/Filters/CustomerOrderFilters.php
@@ -9325,7 +9336,6 @@ src/Core/Domain/Category/Exception/CannotDeleteRootCategoryForShopException.php
 src/Core/Domain/Category/Exception/CannotUpdateCategoryStatusException.php
 src/Core/Domain/Category/Exception/CategoryConstraintException.php
 src/Core/Domain/Category/Exception/CannotDeleteImageException.php
-src/Core/Domain/Category/Exception/MenuThumbnailsLimitException.php
 src/Core/Domain/Category/QueryHandler/GetCategoriesTreeHandlerInterface.php
 src/Core/Domain/Category/QueryHandler/GetCategoryIsEnabledHandlerInterface.php
 src/Core/Domain/Category/QueryHandler/GetCategoryForEditingHandlerInterface.php
@@ -9333,7 +9343,6 @@ src/Core/Domain/Category/Command/DeleteCategoryCommand.php
 src/Core/Domain/Category/Command/BulkEnableCategoriesCommand.php
 src/Core/Domain/Category/Command/SetCategoryIsEnabledCommand.php
 src/Core/Domain/Category/Command/EditRootCategoryCommand.php
-src/Core/Domain/Category/Command/DeleteCategoryMenuThumbnailImageCommand.php
 src/Core/Domain/Category/Command/DeleteCategoryCoverImageCommand.php
 src/Core/Domain/Category/Command/AddCategoryCommand.php
 src/Core/Domain/Category/Command/UpdateCategoryPositionCommand.php
@@ -9346,11 +9355,9 @@ src/Core/Domain/Category/QueryResult/EditableCategory.php
 src/Core/Domain/Category/QueryResult/CategoryForTree.php
 src/Core/Domain/Category/QueryResult/CategoryPreview.php
 src/Core/Domain/Category/SeoSettings.php
-src/Core/Domain/Category/ValueObject/MenuThumbnailId.php
 src/Core/Domain/Category/ValueObject/CategoryId.php
 src/Core/Domain/Category/ValueObject/CategoryDeleteMode.php
 src/Core/Domain/Category/CommandHandler/DeleteCategoryHandlerInterface.php
-src/Core/Domain/Category/CommandHandler/DeleteCategoryMenuThumbnailImageHandlerInterface.php
 src/Core/Domain/Category/CommandHandler/DeleteCategoryCoverImageHandlerInterface.php
 src/Core/Domain/Category/CommandHandler/AddRootCategoryHandlerInterface.php
 src/Core/Domain/Category/CommandHandler/SetCategoryIsEnabledHandlerInterface.php
@@ -9925,8 +9932,6 @@ src/Core/Hook/HookDescription.php
 src/Core/Hook/HookDispatcherInterface.php
 src/Core/Hook/RenderedHookInterface.php
 src/Core/Hook/RenderedHook.php
-src/Core/Category/Provider/CategoryImageFinder.php
-src/Core/Category/Provider/MenuThumbnailAvailableKeyProvider.php
 src/Core/Category/NameBuilder/CategoryDisplayNameBuilder.php
 src/Core/QuickAccess/QuickAccessRepositoryInterface.php
 src/Core/Http/CookieOptions.php

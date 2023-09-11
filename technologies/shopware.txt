@@ -1084,6 +1084,7 @@ changelog/_unreleased/2023-09-07-add-indeterminate-checkbox-state.md
 changelog/_unreleased/2023-08-29-remove-cached-seo-resolver.md
 changelog/_unreleased/2023-09-01-add-non-stackable-line-item-exception-to-log-level-notice.md
 changelog/_unreleased/2023-08-21-add-error-handling-on-document-preview.md
+changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
@@ -1109,6 +1110,7 @@ changelog/_unreleased/2023-08-25-add-a-force-option-to-the-assets-install-comman
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
 changelog/_unreleased/2023-08-25-ignore-extensionthemestillinuseexception-for-incidents.md
 changelog/_unreleased/2023-08-09-change-sw-radio-panel-default-event.md
+changelog/_unreleased/2023-09-07-fix-predis-support.md
 changelog/_unreleased/2023-08-09-change-sw-meteor-single-select-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-bulk-edit-change-type-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-extension-rating-stars-default-event.md
@@ -1124,6 +1126,7 @@ changelog/_unreleased/2023-09-04-fix-user-recovery-request-on-different-default-
 changelog/_unreleased/2023-09-07-fix-query-string-parser-throw-syntax-errors.md
 changelog/_unreleased/2023-07-07-fix-open-api-core-spec.md
 changelog/_unreleased/2023-08-10-change-sw-multi-snippet-drag-and-drop-default-event.md
+changelog/_unreleased/2023-09-07-category-text-can-not-be-saved.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-28-add-invalid-document-exception-to-error-log-level-notice.md
@@ -5326,6 +5329,7 @@ tests/integration/Core/System/SystemConfig/Facade/_fixtures/apps/withoutSystemCo
 tests/integration/Core/System/SystemConfig/Facade/SystemConfigFacadeTest.php
 tests/integration/Core/System/SystemConfig/SystemConfigServiceTest.php
 tests/integration/Core/System/SalesChannel/SalesChannel/ContextSwitchRouteTest.php
+tests/integration/Core/System/SalesChannel/SalesChannel/ContextRouteTest.php
 tests/integration/Core/System/SalesChannel/Context/SalesChannelContextTest.php
 tests/integration/Core/System/SalesChannel/Context/CartRestorerTest.php
 tests/integration/Core/System/User/Recovery/UserRecoveryServiceTest.php
@@ -12823,7 +12827,6 @@ src/Core/System/CustomEntity/CustomEntityCollection.php
 src/Core/System/CustomEntity/CustomEntityLifecycleService.php
 src/Core/System/Test/EntityFixturesBase.php
 src/Core/System/Test/SalesChannel/StoreApiCustomFieldMapperTest.php
-src/Core/System/Test/SalesChannel/SalesChannel/ContextLoadRouteTest.php
 src/Core/System/Test/SalesChannel/SalesChannel/StructEncoderTest.php
 src/Core/System/Test/SalesChannel/Repository/SalesChannelRepositoryTest.php
 src/Core/System/Test/SalesChannel/Context/SalesChannelContextRestorerTest.php
