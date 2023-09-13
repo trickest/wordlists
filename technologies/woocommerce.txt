@@ -3022,7 +3022,6 @@ plugins/woocommerce-admin/client/marketplace/components/extensions/extensions.sc
 plugins/woocommerce-admin/client/marketplace/components/extensions/extensions.tsx
 plugins/woocommerce-admin/client/marketplace/components/icon-with-text/icon-with-text.scss
 plugins/woocommerce-admin/client/marketplace/components/icon-with-text/icon-with-text.tsx
-plugins/woocommerce-admin/client/marketplace/components/header-search-button/header-search-button.tsx
 plugins/woocommerce-admin/client/marketplace/components/product-loader/product-loader.tsx
 plugins/woocommerce-admin/client/marketplace/components/product-loader/product-loader.scss
 plugins/woocommerce-admin/client/marketplace/components/likert-scale/likert-scale.scss
@@ -3041,7 +3040,6 @@ plugins/woocommerce-admin/client/marketplace/components/tabs/tabs.scss
 plugins/woocommerce-admin/client/marketplace/components/tabs/tabs.tsx
 plugins/woocommerce-admin/client/marketplace/components/feedback-modal/feedback-modal.scss
 plugins/woocommerce-admin/client/marketplace/components/feedback-modal/feedback-modal.tsx
-plugins/woocommerce-admin/client/marketplace/components/header-search/header-search.tsx
 plugins/woocommerce-admin/client/marketplace/assets/images/woo-icon.svg
 plugins/woocommerce-admin/client/marketplace/assets/images/no-results.svg
 plugins/woocommerce-admin/client/marketplace/stylesheets/_variables.scss
@@ -3411,6 +3409,10 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-st
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/global-styles-variation-iframe/style.scss
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/global-styles-variation-iframe/index.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/variation-container.jsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/font-pairing-variations/constants.ts
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/font-pairing-variations/font-families-loader.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/font-pairing-variations/preview.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/font-pairing-variations/index.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/index.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-color-palette.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-logo.tsx
@@ -4354,6 +4356,7 @@ plugins/woocommerce/changelog/add-instructions-for-testing-contribution
 plugins/woocommerce/changelog/fix-verify-email-checks
 plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf-correction
 plugins/woocommerce/changelog/api-full-site-reset-on-daily
+plugins/woocommerce/changelog/update-distignore-allow-changelog
 plugins/woocommerce/changelog/add-woocommerce-pay-order-before-payment-action
 plugins/woocommerce/changelog/e2e-release-remove-wp-latest-2
 plugins/woocommerce/changelog/fix-sql-query-filters-doc
@@ -4383,6 +4386,8 @@ plugins/woocommerce/changelog/add-customize-store-assembler-hub-logo
 plugins/woocommerce/changelog/fix-wccom-18030-discover-card-count
 plugins/woocommerce/changelog/fix-38762-core-profiler-layout-shifts
 plugins/woocommerce/changelog/fix-cli-improvs
+plugins/woocommerce/changelog/add-cys-fonts
+plugins/woocommerce/changelog/fix-wccom-18031-marketplace-search-locale
 plugins/woocommerce/changelog/update-venezuelan-currency
 plugins/woocommerce/changelog/dev-refactor-onboarding-profiler
 plugins/woocommerce/changelog/add-look-and-tone-api
@@ -4393,10 +4398,12 @@ plugins/woocommerce/changelog/update-39699-track-plugin-failure-separately-for-c
 plugins/woocommerce/changelog/issue-37835
 plugins/woocommerce/changelog/add-simple-product-template-order
 plugins/woocommerce/changelog/fix-cys-reapply-block-type-filters-error
+plugins/woocommerce/changelog/update-woocommerce-blocks-11.1.0
 plugins/woocommerce/changelog/update-hpos-ui-tweaks
 plugins/woocommerce/changelog/feature-marketplace
 plugins/woocommerce/changelog/pr-36402
 plugins/woocommerce/changelog/update-optimize-cys-frame-resizing
+plugins/woocommerce/changelog/fix-duplicate-meta-handling
 plugins/woocommerce/changelog/fix-admin-page-empty-wp-6-2
 plugins/woocommerce/changelog/add-39709-ai-wizard-business-info-step
 plugins/woocommerce/changelog/api-start-unskipping-daily-tests

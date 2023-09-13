@@ -3584,6 +3584,10 @@ ghost/core/core/server/data/migrations/versions/5.36/2023-02-20-12-22-add-milest
 ghost/core/core/server/data/migrations/versions/5.41/2023-03-27-15-00-add-newsletter-colors.js
 ghost/core/core/server/data/migrations/versions/5.41/2023-03-27-17-51-fix-self-serve-integration-api-key-type.js
 ghost/core/core/server/data/migrations/versions/4.16/01-add-custom-theme-settings-table.js
+ghost/core/core/server/data/migrations/versions/5.63/2023-09-12-11-22-10-add-recommendation-click-events-table.js
+ghost/core/core/server/data/migrations/versions/5.63/2023-09-12-11-22-11-add-recommendation-subscribe-events-table.js
+ghost/core/core/server/data/migrations/versions/5.63/2023-09-13-13-03-10-add-ghost-core-content-integration.js
+ghost/core/core/server/data/migrations/versions/5.63/2023-09-13-13-34-11-add-ghost-core-content-integration-key.js
 ghost/core/core/server/data/migrations/versions/5.61/2023-08-29-10-17-add-recommendations-crud-permissions.js
 ghost/core/core/server/data/migrations/versions/5.61/2023-08-30-07-37-04-add-recommendations-enabled-settings.js
 ghost/core/core/server/data/migrations/versions/5.61/2023-08-29-11-39-10-add-recommendations-table.js
@@ -3839,6 +3843,7 @@ ghost/core/core/server/models/custom-theme-setting.js
 ghost/core/core/server/models/single-use-token.js
 ghost/core/core/server/models/offer.js
 ghost/core/core/server/models/product.js
+ghost/core/core/server/models/recommendation-click-event.js
 ghost/core/core/server/models/base/bookshelf.js
 ghost/core/core/server/models/base/plugins/overrides.js
 ghost/core/core/server/models/base/plugins/filtered-collection.js
@@ -3896,6 +3901,7 @@ ghost/core/core/server/models/stripe-price.js
 ghost/core/core/server/models/member-login-event.js
 ghost/core/core/server/models/comment-like.js
 ghost/core/core/server/models/email-recipient-failure.js
+ghost/core/core/server/models/recommendation-subscribe-event.js
 ghost/core/core/server/models/integration.js
 ghost/core/core/server/models/tag.js
 ghost/core/core/server/models/member-created-event.js
@@ -5252,10 +5258,12 @@ apps/admin-x-settings/src/admin-x-ds/settings/SettingGroupHeader.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingGroupContent.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/SettingGroupHeader.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/settings/StripeButton.tsx
+apps/admin-x-settings/src/hooks/usePinturaEditor.ts
 apps/admin-x-settings/src/hooks/useGlobalDirtyState.tsx
 apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
 apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
+apps/admin-x-settings/src/hooks/useScrollSection.tsx
 apps/admin-x-settings/src/hooks/useLimiter.tsx
 apps/admin-x-settings/src/hooks/usePagination.tsx
 apps/admin-x-settings/src/hooks/useRouting.tsx

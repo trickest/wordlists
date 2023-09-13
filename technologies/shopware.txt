@@ -1072,13 +1072,16 @@ changelog/release-6-3-4-1/2020-12-08-add-guest-auth-for-order-deeplinks.md
 changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
+changelog/_unreleased/2023-09-12-handle-exception-for-version-manager.md
 changelog/_unreleased/2023-08-10-change-sw-order-customer-address-select-default-event.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-09-06-fix-translator-picks-snippet-set-randomly.md
 changelog/_unreleased/2023-08-25-add-scheduled-task-helpers-commands.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
+changelog/_unreleased/2023-09-11-remove-old-consent-modal.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2022-08-22-newsletter-recipient-module.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-09-07-add-indeterminate-checkbox-state.md
 changelog/_unreleased/2023-08-29-remove-cached-seo-resolver.md
@@ -1134,6 +1137,7 @@ changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-28-add-invalid-document-exception-to-error-log-level-notice.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
+changelog/_unreleased/2023-08-14-fix-sw-datepicker-to-load-refs-correctly-on-first-page-load.md
 changelog/_unreleased/2023-08-09-make-eslint-compatible-with-typescript.md
 changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-file-input-default-event.md
@@ -3765,7 +3769,6 @@ adr/2021-10-21-app-scripting.md
 .gitlab/stages/20-unit.yml
 .gitlab/stages/60-deploy.yml
 .gitlab/stages/22-performance.yml
-.gitlab/stages/70-visual.yml
 .gitlab/stages/12-license.yml
 .gitlab/stages/11-build.yml
 .gitlab/stages/41-saas-deployment-prep.yml
@@ -4033,6 +4036,7 @@ tests/unit/Core/Framework/Log/LoggerFactoryTest.php
 tests/unit/Core/Framework/Log/PackageTest.php
 tests/unit/Core/Framework/DependencyInjection/ConfigurationTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/EntityCompilerPassTest.php
+tests/unit/Core/Framework/DependencyInjection/CompilerPass/AssetBundleRegistrationCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/DemodataCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/RemoveOldFlowStorerCompilerPassTest.php
@@ -4161,6 +4165,8 @@ tests/unit/Core/Framework/Adapter/Cache/InvalidateCacheTaskHandlerTest.php
 tests/unit/Core/Framework/Adapter/Cache/Message/CleanupOldCacheFoldersHandlerTest.php
 tests/unit/Core/Framework/Adapter/Cache/CacheInvalidationSubscriberTest.php
 tests/unit/Core/Framework/Adapter/Cache/CacheInvalidatorTest.php
+tests/unit/Core/Framework/Adapter/Cache/InvalidatorStorage/CacheInvalidatorStorageTest.php
+tests/unit/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStorageTest.php
 tests/unit/Core/Framework/Adapter/Database/MySQLFactoryTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorCacheInvalidateTest.php
@@ -8106,10 +8112,12 @@ src/Core/Framework/DependencyInjection/services_test.xml
 src/Core/Framework/DependencyInjection/demodata.xml
 src/Core/Framework/DependencyInjection/FrameworkExtension.php
 src/Core/Framework/DependencyInjection/plugin.xml
+src/Core/Framework/DependencyInjection/TaggedServiceLocator.php
 src/Core/Framework/DependencyInjection/increment.xml
 src/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RemoveEventListener.php
+src/Core/Framework/DependencyInjection/CompilerPass/AssetBundleRegistrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FilesystemConfigMigrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/EntityCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPass.php
@@ -8876,6 +8884,9 @@ src/Core/Framework/Adapter/Cache/InvalidateCacheTaskHandler.php
 src/Core/Framework/Adapter/Cache/ShopwareRedisTagAwareAdapter.php
 src/Core/Framework/Adapter/Cache/InvalidateCacheTask.php
 src/Core/Framework/Adapter/Cache/CacheCompressor.php
+src/Core/Framework/Adapter/Cache/InvalidatorStorage/AbstractInvalidatorStorage.php
+src/Core/Framework/Adapter/Cache/InvalidatorStorage/CacheInvalidatorStorage.php
+src/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStorage.php
 src/Core/Framework/Adapter/Cache/CacheClearer.php
 src/Core/Framework/Adapter/Console/ShopwareStyle.php
 src/Core/Framework/Adapter/Database/MySQLFactory.php
@@ -11367,6 +11378,7 @@ src/Core/Test/Stub/DataAbstractionLayer/StaticEntityWriterGateway.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticEntityRepository.php
 src/Core/Test/Stub/SystemConfigService/StaticSystemConfigService.php
+src/Core/Test/Stub/Redis/RedisMultiWrapper.php
 src/Core/Test/Stub/Redis/RedisStub.php
 src/Core/Test/Stub/Flow/DummyEvent.php
 src/Core/Test/Stub/MessageBus/CollectingMessageBus.php
@@ -14861,10 +14873,6 @@ src/Administration/Resources/app/administration/src/app/component/usage-data/sw-
 src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.scss
 src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.spec.js
 src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-intro/sw-settings-usage-data-intro.html.twig
-src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/index.ts
-src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.html.twig
-src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.scss
-src/Administration/Resources/app/administration/src/app/component/usage-data/sw-settings-usage-data-modal/sw-settings-usage-data-modal.spec.js
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.html.twig
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/index.js
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.scss
