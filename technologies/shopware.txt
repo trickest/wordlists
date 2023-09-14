@@ -1072,6 +1072,7 @@ changelog/release-6-3-4-1/2020-12-08-add-guest-auth-for-order-deeplinks.md
 changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
+changelog/_unreleased/2023-08-16-allow-to-restrict-theme-compile-to-themes-and-sales-channels.md
 changelog/_unreleased/2023-09-12-handle-exception-for-version-manager.md
 changelog/_unreleased/2023-08-10-change-sw-order-customer-address-select-default-event.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
@@ -1088,9 +1089,11 @@ changelog/_unreleased/2023-08-29-remove-cached-seo-resolver.md
 changelog/_unreleased/2023-09-05-add-twig-block-to-tab-component-on-customer-detail-page.md
 changelog/_unreleased/2023-09-01-add-non-stackable-line-item-exception-to-log-level-notice.md
 changelog/_unreleased/2023-08-21-add-error-handling-on-document-preview.md
+changelog/_unreleased/2023-09-11-propagate-request-data-to-payment-payloads-during-checkout.md
 changelog/_unreleased/2023-08-30-apply-domain-exception-for-access-key-helper.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
 changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.md
+changelog/_unreleased/2023-08-14-replace-vue2-filters.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
@@ -4150,6 +4153,13 @@ tests/unit/Core/Framework/App/Flow/Action/AppFlowActionLoadedSubscriberTest.php
 tests/unit/Core/Framework/App/Flow/Action/AppFlowActionProviderTest.php
 tests/unit/Core/Framework/App/AppPayloadServiceHelperTest.php
 tests/unit/Core/Framework/App/Validation/AppNameValidatorTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/SourceTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/SyncPayPayloadTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/CapturePayloadTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/RecurringPayPayloadTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/AsyncFinalizePayloadTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/ValidatePayloadTest.php
+tests/unit/Core/Framework/App/Payment/Payload/Struct/AsyncPayPayloadTest.php
 tests/unit/Core/Framework/App/ActionButton/ExecutorTest.php
 tests/unit/Core/Framework/App/AppExceptionTest.php
 tests/unit/Core/Framework/Demodata/Event/DemodataRequestCreatedEventTest.php
@@ -4661,6 +4671,8 @@ tests/unit/Core/System/SystemConfig/Command/ConfigSetCommandTest.php
 tests/unit/Core/System/SystemConfig/Command/ConfigGetCommandTest.php
 tests/unit/Core/System/SystemConfig/DecoratedMemoizedResetTestSystemConfigLoader.php
 tests/unit/Core/System/SystemConfig/Validation/SystemConfigValidatorTest.php
+tests/unit/Core/System/UsageData/Approval/ApprovalDetectorTest.php
+tests/unit/Core/System/UsageData/Api/UsageDataControllerTest.php
 tests/unit/Core/System/SalesChannel/Rule/SalesChannelRuleTest.php
 tests/unit/Core/System/SalesChannel/Event/SalesChannelContextCreatedEventTest.php
 tests/unit/Core/System/SalesChannel/SalesChannelContextTest.php
@@ -4756,8 +4768,6 @@ tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.en-GB.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.de-DE.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/swagtheme.en-GB.json
 tests/unit/Core/System/Snippet/Mock/MockSnippetFile.php
-tests/unit/Core/System/Metrics/Approval/ApprovalDetectorTest.php
-tests/unit/Core/System/Metrics/Api/MetricControllerTest.php
 tests/unit/Core/System/Language/SalesChannel/CachedLanguageRouteTest.php
 tests/unit/Core/Maintenance/SalesChannel/Command/SalesChannelCreateCommandTest.php
 tests/unit/Core/Maintenance/User/Service/UserProvisionerTest.php
@@ -8331,7 +8341,6 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/mail-templa
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/config.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_delivery.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/index.json
-src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/metrics.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/indexing.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/number-range.json
@@ -8340,6 +8349,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/cleanup.jso
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/cache.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/token.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/flow-actions.json.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/usage-data.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_transaction.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_transaction_capture_refund.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/sync.json
@@ -12486,6 +12496,8 @@ src/Core/System/SystemConfig/SystemConfigLoader.php
 src/Core/System/SystemConfig/Store/MemoizedSystemConfigStore.php
 src/Core/System/SystemConfig/Validation/SystemConfigValidator.php
 src/Core/System/SystemConfig/CachedSystemConfigLoader.php
+src/Core/System/UsageData/Approval/ApprovalDetector.php
+src/Core/System/UsageData/Api/UsageDataController.php
 src/Core/System/SalesChannel/DataAbstractionLayer/SalesChannelIndexer.php
 src/Core/System/SalesChannel/DataAbstractionLayer/SalesChannelIndexingMessage.php
 src/Core/System/SalesChannel/NoContentResponse.php
@@ -12584,10 +12596,10 @@ src/Core/System/DependencyInjection/tax_provider.xml
 src/Core/System/DependencyInjection/integration.xml
 src/Core/System/DependencyInjection/CompilerPass/RedisNumberRangeIncrementerCompilerPass.php
 src/Core/System/DependencyInjection/CompilerPass/SalesChannelEntityCompilerPass.php
-src/Core/System/DependencyInjection/metrics.xml
 src/Core/System/DependencyInjection/tag.xml
 src/Core/System/DependencyInjection/snippet.xml
 src/Core/System/DependencyInjection/number_range.xml
+src/Core/System/DependencyInjection/usage_data.xml
 src/Core/System/DependencyInjection/state_machine.xml
 src/Core/System/DependencyInjection/configuration.xml
 src/Core/System/DependencyInjection/country.xml
@@ -12998,8 +13010,6 @@ src/Core/System/NumberRange/ValueGenerator/Pattern/IncrementStorage/AbstractIncr
 src/Core/System/NumberRange/ValueGenerator/Pattern/ValueGeneratorPatternDate.php
 src/Core/System/NumberRange/ValueGenerator/NumberRangeValueGeneratorInterface.php
 src/Core/System/NumberRange/ValueGenerator/NumberRangeValueGenerator.php
-src/Core/System/Metrics/Approval/ApprovalDetector.php
-src/Core/System/Metrics/Api/MetricController.php
 src/Core/System/Integration/Aggregate/IntegrationRole/IntegrationRoleDefinition.php
 src/Core/System/Integration/IntegrationEntity.php
 src/Core/System/Integration/IntegrationCollection.php
@@ -15287,7 +15297,6 @@ src/Administration/Resources/app/administration/src/core/service/api/app-url-cha
 src/Administration/Resources/app/administration/src/core/service/api/calculate-price.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/tag.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/acl.api.service.js
-src/Administration/Resources/app/administration/src/core/service/api/metrics.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/cart-store-api.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/first-run-wizard.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/user.api.service.js
@@ -15300,6 +15309,8 @@ src/Administration/Resources/app/administration/src/core/service/api/custom-snip
 src/Administration/Resources/app/administration/src/core/service/api/config.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/customer-validation.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/user-recovery.api.service.js
+src/Administration/Resources/app/administration/src/core/service/api/usage-data.api.service.ts
+src/Administration/Resources/app/administration/src/core/service/api/usage-data.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/notifications.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/order-document.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/excludedSearchTerm.api.service.js
@@ -15340,7 +15351,6 @@ src/Administration/Resources/app/administration/src/core/service/api/product-exp
 src/Administration/Resources/app/administration/src/core/service/api/rule-conditions-config.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/update.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/cart-store-api.api.service.ts
-src/Administration/Resources/app/administration/src/core/service/api/metrics.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/order-document.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/known-ips.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/number-range.api.service.js

@@ -2924,11 +2924,13 @@ ghost/core/test/e2e-api/members/well-known.test.js
 ghost/core/test/e2e-api/members/send-magic-link.test.js
 ghost/core/test/e2e-api/members/signin.test.js
 ghost/core/test/e2e-api/members/announcement.test.js
+ghost/core/test/e2e-api/members/recommendations.test.js
 ghost/core/test/e2e-api/members/donation-checkout-session.test.js
 ghost/core/test/e2e-api/members/webhooks.test.js
 ghost/core/test/e2e-api/members/__snapshots__/feedback.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/announcement.test.js.snap
+ghost/core/test/e2e-api/members/__snapshots__/recommendations.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/create-stripe-checkout-session.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/webhooks.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/middleware.test.js.snap
@@ -4396,6 +4398,7 @@ ghost/bookshelf-repository/package.json
 ghost/bookshelf-repository/test/.eslintrc.js
 ghost/bookshelf-repository/test/BookshelfRepository.test.ts
 ghost/bookshelf-repository/src/index.ts
+ghost/bookshelf-repository/src/libraries.d.ts
 ghost/bookshelf-repository/src/BookshelfRepository.ts
 ghost/bookshelf-repository/README.md
 ghost/nql-filter-expansions/tsconfig.json
@@ -4727,13 +4730,17 @@ ghost/recommendations/package.json
 ghost/recommendations/test/.eslintrc.js
 ghost/recommendations/test/hello.test.ts
 ghost/recommendations/src/RecommendationController.ts
+ghost/recommendations/src/ClickEvent.ts
 ghost/recommendations/src/index.ts
 ghost/recommendations/src/BookshelfRecommendationRepository.ts
 ghost/recommendations/src/RecommendationRepository.ts
 ghost/recommendations/src/RecommendationService.ts
+ghost/recommendations/src/BookshelfClickEventRepository.ts
+ghost/recommendations/src/BookshelfSubscribeEventRepository.ts
 ghost/recommendations/src/Recommendation.ts
 ghost/recommendations/src/InMemoryRecommendationRepository.ts
 ghost/recommendations/src/libraries.d.ts
+ghost/recommendations/src/SubscribeEvent.ts
 ghost/recommendations/src/WellknownService.ts
 ghost/recommendations/README.md
 ghost/magic-link/.eslintrc.js
@@ -4754,6 +4761,7 @@ ghost/html-to-plaintext/README.md
 ghost/members-api/.eslintrc.js
 ghost/members-api/package.json
 ghost/members-api/test/unit/lib/services/token.test.js
+ghost/members-api/test/unit/lib/services/member-bread.test.js
 ghost/members-api/test/unit/lib/geolocation.test.js
 ghost/members-api/test/unit/lib/controllers/member/index.test.js
 ghost/members-api/test/unit/lib/controllers/router.test.js
@@ -5019,6 +5027,7 @@ apps/admin-x-settings/src/components/settings/general/PublicationLanguage.tsx
 apps/admin-x-settings/src/components/settings/general/GeneralSettings.tsx
 apps/admin-x-settings/src/components/settings/general/Facebook.tsx
 apps/admin-x-settings/src/components/settings/general/UserDetailModal.tsx
+apps/admin-x-settings/src/components/settings/general/DetailsInputs.tsx
 apps/admin-x-settings/src/components/settings/general/Metadata.tsx
 apps/admin-x-settings/src/components/settings/general/Users.tsx
 apps/admin-x-settings/src/components/settings/general/LockSite.tsx
@@ -5047,6 +5056,7 @@ apps/admin-x-settings/src/assets/images/labs-bg.svg
 apps/admin-x-settings/src/assets/images/stripe-verified.svg
 apps/admin-x-settings/src/assets/images/stripe-emblem.svg
 apps/admin-x-settings/src/main.tsx
+apps/admin-x-settings/src/MainContent.tsx
 apps/admin-x-settings/src/vite-env.d.ts
 apps/admin-x-settings/src/admin-x-ds/assets/fonts/Inter.ttf
 apps/admin-x-settings/src/admin-x-ds/assets/icons/link-broken.svg
@@ -5295,6 +5305,7 @@ apps/admin-x-settings/src/api/actions.ts
 apps/admin-x-settings/src/api/config.ts
 apps/admin-x-settings/src/api/labels.ts
 apps/admin-x-settings/src/api/roles.ts
+apps/admin-x-settings/src/api/staffToken.ts
 apps/admin-x-settings/src/api/images.ts
 apps/admin-x-settings/src/api/posts.ts
 apps/admin-x-settings/src/api/themes.ts
