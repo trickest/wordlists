@@ -1884,7 +1884,6 @@ ghost/collections/src/CollectionPost.ts
 ghost/collections/src/events/PostAddedEvent.ts
 ghost/collections/src/events/TagDeletedEvent.ts
 ghost/collections/src/events/PostEditedEvent.ts
-ghost/collections/src/events/PostDeletedEvent.ts
 ghost/collections/src/RepositoryUniqueChecker.ts
 ghost/collections/src/libraries.d.ts
 ghost/collections/README.md
@@ -1911,6 +1910,7 @@ ghost/post-events/src/PostsBulkFeaturedEvent.ts
 ghost/post-events/src/index.ts
 ghost/post-events/src/PostsBulkDestroyedEvent.ts
 ghost/post-events/src/PostsBulkUnpublishedEvent.ts
+ghost/post-events/src/PostDeletedEvent.ts
 ghost/post-events/README.md
 ghost/staff-service/.eslintrc.js
 ghost/staff-service/package.json
@@ -4742,6 +4742,7 @@ ghost/recommendations/src/InMemoryRecommendationRepository.ts
 ghost/recommendations/src/libraries.d.ts
 ghost/recommendations/src/SubscribeEvent.ts
 ghost/recommendations/src/WellknownService.ts
+ghost/recommendations/src/EntityWithIncludes.ts
 ghost/recommendations/README.md
 ghost/magic-link/.eslintrc.js
 ghost/magic-link/package.json
@@ -4882,6 +4883,7 @@ apps/admin-x-settings/.storybook/main.tsx
 apps/admin-x-settings/.storybook/preview.tsx
 apps/admin-x-settings/tailwind.config.cjs
 apps/admin-x-settings/package.json
+apps/admin-x-settings/test/unit/utils/url.test.ts
 apps/admin-x-settings/test/e2e/site/announcementbar.test.ts
 apps/admin-x-settings/test/e2e/site/design.test.ts
 apps/admin-x-settings/test/e2e/site/navigation.test.ts
@@ -5023,6 +5025,7 @@ apps/admin-x-settings/src/components/settings/advanced/labs/AlphaFeatures.tsx
 apps/admin-x-settings/src/components/settings/advanced/labs/LabItem.tsx
 apps/admin-x-settings/src/components/settings/advanced/History.tsx
 apps/admin-x-settings/src/components/settings/advanced/AdvancedSettings.tsx
+apps/admin-x-settings/src/components/settings/general/users/ChangePasswordForm.tsx
 apps/admin-x-settings/src/components/settings/general/PublicationLanguage.tsx
 apps/admin-x-settings/src/components/settings/general/GeneralSettings.tsx
 apps/admin-x-settings/src/components/settings/general/Facebook.tsx
@@ -5059,6 +5062,7 @@ apps/admin-x-settings/src/main.tsx
 apps/admin-x-settings/src/MainContent.tsx
 apps/admin-x-settings/src/vite-env.d.ts
 apps/admin-x-settings/src/admin-x-ds/assets/fonts/Inter.ttf
+apps/admin-x-settings/src/admin-x-ds/assets/icons/picture.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/link-broken.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/arrow-down.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/single-user-fill.svg
@@ -5145,6 +5149,7 @@ apps/admin-x-settings/src/admin-x-ds/global/chrome/MobileChrome.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/chrome/DesktopChrome.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/chrome/MobileChrome.tsx
 apps/admin-x-settings/src/admin-x-ds/global/chrome/DesktopChromeHeader.tsx
+apps/admin-x-settings/src/admin-x-ds/global/TableRow.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/TableCell.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Table.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/form/Select.tsx
@@ -5272,6 +5277,7 @@ apps/admin-x-settings/src/hooks/usePinturaEditor.ts
 apps/admin-x-settings/src/hooks/useGlobalDirtyState.tsx
 apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
+apps/admin-x-settings/src/hooks/useQueryParams.ts
 apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
 apps/admin-x-settings/src/hooks/useScrollSection.tsx
 apps/admin-x-settings/src/hooks/useLimiter.tsx
@@ -5288,6 +5294,7 @@ apps/admin-x-settings/src/api/oembed.ts
 apps/admin-x-settings/src/api/slack.ts
 apps/admin-x-settings/src/api/routes.ts
 apps/admin-x-settings/src/api/invites.ts
+apps/admin-x-settings/src/api/emailVerification.ts
 apps/admin-x-settings/src/api/newsletters.ts
 apps/admin-x-settings/src/api/mentions.ts
 apps/admin-x-settings/src/api/apiKeys.ts
@@ -5318,7 +5325,10 @@ apps/admin-x-settings/src/utils/IframeBuffering.tsx
 apps/admin-x-settings/src/utils/currency.ts
 apps/admin-x-settings/src/utils/generateEmbedCode.ts
 apps/admin-x-settings/src/utils/debounce.ts
+apps/admin-x-settings/src/utils/handleResponse.ts
+apps/admin-x-settings/src/utils/url.ts
 apps/admin-x-settings/src/utils/search.ts
+apps/admin-x-settings/src/utils/errors.ts
 apps/admin-x-settings/src/utils/apiRequests.ts
 apps/admin-x-settings/tsconfig.node.json
 apps/admin-x-settings/postcss.config.cjs

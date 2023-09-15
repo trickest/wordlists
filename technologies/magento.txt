@@ -8155,6 +8155,7 @@ app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Collection/Produc
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/ActionTest.php
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/LinkedProductSelectBuilderByIndexPriceTest.php
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/TemporaryTableStrategyTest.php
+app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/Eav/SourceTest.php
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/Eav/BatchSizeCalculatorTest.php
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/Eav/DecimalRowSizeEstimatorTest.php
 app/code/Magento/Catalog/Test/Unit/Model/ResourceModel/Product/Indexer/Price/CompositeProductRowSizeEstimatorTest.php
@@ -11234,6 +11235,7 @@ app/code/Magento/Ui/view/base/web/templates/form/components/single/switcher.html
 app/code/Magento/Ui/view/base/web/templates/form/components/single/checkbox.html
 app/code/Magento/Ui/view/base/web/templates/form/components/single/field.html
 app/code/Magento/Ui/view/base/web/templates/form/fieldset.html
+app/code/Magento/Ui/view/base/web/templates/form/wysiwyg.html
 app/code/Magento/Ui/view/base/web/templates/form/collection.html
 app/code/Magento/Ui/view/base/web/templates/form/element/preview.html
 app/code/Magento/Ui/view/base/web/templates/form/element/email.html
@@ -33273,7 +33275,6 @@ dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/Att
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/MassDeleteTest.php
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/Action/AttributeTest.php
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/ReviewTest.php
-dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/Initialization/HelperTest.php
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/AbstractAlertTest.php
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/SearchTest.php
 dev/tests/integration/testsuite/Magento/Catalog/Controller/Adminhtml/Product/ValidateTest.php
@@ -36952,6 +36953,7 @@ dev/tests/integration/testsuite/Magento/Downloadable/Model/ResourceModel/Indexer
 dev/tests/integration/testsuite/Magento/Downloadable/Model/Url/DomainValidatorTest.php
 dev/tests/integration/testsuite/Magento/Downloadable/Model/File/ContentUploaderTest.php
 dev/tests/integration/testsuite/Magento/Downloadable/Model/Product/TypeTest.php
+dev/tests/integration/testsuite/Magento/Downloadable/Model/Observer/SaveDownloadableOrderItemObserverTest.php
 dev/tests/integration/testsuite/Magento/Downloadable/Model/Observer/SetLinkStatusObserverTest.php
 dev/tests/integration/testsuite/Magento/Downloadable/Model/SampleRepositoryTest.php
 dev/tests/integration/testsuite/Magento/Downloadable/_files/order_with_customer_and_downloadable_product_with_multiple_links_rollback.php
@@ -38268,6 +38270,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetShippingMethod
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetShippingAddressOnCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/GetSpecifiedShippingAddressTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/UpdateCartItemsTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetShippingAddressForEstimateWithVariablesTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/RemoveCouponFromCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/SetPurchaseOrderPaymentMethodOnCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/CreateEmptyCartTest.php

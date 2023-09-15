@@ -1997,8 +1997,8 @@ core/tests/Drupal/KernelTests/Core/Cache/ApcuBackendTest.php
 core/tests/Drupal/KernelTests/Core/Cache/GenericCacheBackendUnitTestBase.php
 core/tests/Drupal/KernelTests/Core/Installer/InstallerLanguageTest.php
 core/tests/Drupal/KernelTests/Core/Installer/InstallerRedirectTraitTest.php
-core/tests/Drupal/KernelTests/Core/Common/SizeTest.php
 core/tests/Drupal/KernelTests/Core/Common/DrupalFlushAllCachesTest.php
+core/tests/Drupal/KernelTests/Core/Common/LegacyCommonTest.php
 core/tests/Drupal/KernelTests/Core/Common/XssUnitTest.php
 core/tests/Drupal/KernelTests/Core/Url/LinkGenerationTest.php
 core/tests/Drupal/KernelTests/Core/Site/SettingsRewriteTest.php
@@ -2806,6 +2806,7 @@ core/tests/Drupal/Tests/Core/StringTranslation/StringTranslationTraitTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/TranslatableMarkupTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/PluralTranslatableMarkupTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/TranslationWrapperTest.php
+core/tests/Drupal/Tests/Core/StringTranslation/ByteSizeMarkupTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/TranslationManagerTest.php
 core/tests/Drupal/Tests/Core/Ajax/OpenOffCanvasDialogCommandTest.php
 core/tests/Drupal/Tests/Core/Ajax/AjaxResponseTest.php
@@ -4534,6 +4535,7 @@ core/lib/Drupal/Core/Database/DatabaseConnectionRefusedException.php
 core/lib/Drupal/Core/Database/Transaction/TransactionManagerBase.php
 core/lib/Drupal/Core/Database/Transaction/StackItemType.php
 core/lib/Drupal/Core/Database/Transaction/TransactionManagerInterface.php
+core/lib/Drupal/Core/Database/Transaction/StackItem.php
 core/lib/Drupal/Core/Database/Transaction/ClientConnectionTransactionState.php
 core/lib/Drupal/Core/Database/Exception/EventException.php
 core/lib/Drupal/Core/Database/StatementInterface.php
@@ -4603,6 +4605,7 @@ core/lib/Drupal/Core/StringTranslation/TranslatableMarkup.php
 core/lib/Drupal/Core/StringTranslation/PluralTranslatableMarkup.php
 core/lib/Drupal/Core/StringTranslation/TranslationWrapper.php
 core/lib/Drupal/Core/StringTranslation/StringTranslationTrait.php
+core/lib/Drupal/Core/StringTranslation/ByteSizeMarkup.php
 core/lib/Drupal/Core/Ajax/SettingsCommand.php
 core/lib/Drupal/Core/Ajax/FocusFirstCommand.php
 core/lib/Drupal/Core/Ajax/SetDialogTitleCommand.php

@@ -3403,6 +3403,7 @@ src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductSlugEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/CatalogPromotionEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/TaxonSlugEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductVariantEventSubscriber.php
+src/Sylius/Bundle/ApiBundle/EventSubscriber/ProductDeletionEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/TaxonDeletionEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/EventSubscriber/KernelRequestEventSubscriber.php
 src/Sylius/Bundle/ApiBundle/LICENSE
@@ -3536,6 +3537,7 @@ src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/LegacyResourceMetadataMe
 src/Sylius/Bundle/ApiBundle/ApiPlatform/Metadata/Merger/MetadataMergerInterface.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ApiResourceConfigurationMergerInterface.php
 src/Sylius/Bundle/ApiBundle/ApiPlatform/ResourceMetadataPropertyValueResolverInteface.php
+src/Sylius/Bundle/ApiBundle/Exception/ProductCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ProductNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/NoRouteMatchesException.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
@@ -3860,6 +3862,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/KernelRequestEventSubscriberSpe
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/ProductSlugEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/CatalogPromotionEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/TaxonDeletionEventSubscriberSpec.php
+src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/ProductDeletionEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventSubscriber/TaxonSlugEventSubscriberSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Mapper/AddressMapperSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Modifier/OrderAddressModifierSpec.php
@@ -6711,6 +6714,10 @@ src/Sylius/Component/Core/Promotion/Checker/Rule/CustomerGroupRuleChecker.php
 src/Sylius/Component/Core/Promotion/Checker/Rule/HasTaxonRuleChecker.php
 src/Sylius/Component/Core/Promotion/Checker/Rule/ContainsProductRuleChecker.php
 src/Sylius/Component/Core/Promotion/Checker/Eligibility/PromotionCouponPerCustomerUsageLimitEligibilityChecker.php
+src/Sylius/Component/Core/Promotion/Checker/ProductInPromotionRuleCheckerInterface.php
+src/Sylius/Component/Core/Promotion/Checker/ProductInPromotionRuleChecker.php
+src/Sylius/Component/Core/Promotion/Checker/TaxonInPromotionRuleChecker.php
+src/Sylius/Component/Core/Promotion/Checker/TaxonInPromotionRuleCheckerInterface.php
 src/Sylius/Component/Core/Promotion/Action/PercentageDiscountPromotionActionCommand.php
 src/Sylius/Component/Core/Promotion/Action/UnitDiscountPromotionActionCommand.php
 src/Sylius/Component/Core/Promotion/Action/ShippingPercentageDiscountPromotionActionCommand.php
@@ -6880,7 +6887,9 @@ src/Sylius/Component/Core/spec/Promotion/Checker/Rule/ShippingCountryRuleChecker
 src/Sylius/Component/Core/spec/Promotion/Checker/Rule/NthOrderRuleCheckerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Checker/Rule/TotalOfItemsFromTaxonRuleCheckerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Checker/Rule/ContainsProductRuleCheckerSpec.php
+src/Sylius/Component/Core/spec/Promotion/Checker/TaxonInPromotionRuleCheckerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Checker/Eligibility/PromotionCouponPerCustomerUsageLimitEligibilityCheckerSpec.php
+src/Sylius/Component/Core/spec/Promotion/Checker/ProductInPromotionRuleCheckerSpec.php
 src/Sylius/Component/Core/spec/Promotion/Action/UnitPercentageDiscountPromotionActionCommandSpec.php
 src/Sylius/Component/Core/spec/Promotion/Action/UnitFixedDiscountPromotionActionCommandSpec.php
 src/Sylius/Component/Core/spec/Promotion/Action/ShippingPercentageDiscountPromotionActionCommandSpec.php
@@ -7435,6 +7444,7 @@ src/Sylius/Behat/Context/Api/Admin/ManagingChannelPriceHistoryConfigsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingAdministratorsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingPromotionsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCustomerGroupsContext.php
+src/Sylius/Behat/Context/Api/Admin/RemovingProductContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingChannelsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingTaxRatesContext.php
 src/Sylius/Behat/Context/Api/Admin/BrowsingCatalogPromotionProductVariantsContext.php
@@ -8495,7 +8505,6 @@ features/addressing/managing_countries/adding_country_with_provinces.feature
 features/addressing/managing_countries/editing_country.feature
 features/addressing/managing_countries/country_unique_code_validation.feature
 features/addressing/managing_countries/adding_country.feature
-features/addressing/managing_countries/province_unique_code_validation.feature
 features/addressing/managing_countries/province_validation.feature
 features/addressing/managing_countries/managing_provinces_of_country.feature
 features/addressing/managing_countries/province_unique_fields_validation.feature
@@ -8606,7 +8615,6 @@ features/promotion/managing_promotions/promotion_validation.feature
 features/promotion/managing_promotions/adding_promotion_with_action.feature
 features/promotion/managing_promotions/preventing_deletion_of_promotions_in_use.feature
 features/promotion/managing_promotions/browsing_promotions.feature
-features/promotion/managing_promotions/accessing_promotion_with_rule_that_contains_removed_taxon.feature
 features/promotion/managing_promotions/filtering_promotions_by_coupon_code.feature
 features/promotion/managing_promotions/deleting_multiple_promotions.feature
 features/promotion/managing_promotions/sorting_promotions_by_priority.feature
@@ -8616,12 +8624,13 @@ features/promotion/managing_promotions/adding_promotion.feature
 features/promotion/managing_promotions/editing_promotion.feature
 features/promotion/managing_promotions/adding_promotion_with_rule_in_different_channels.feature
 features/promotion/managing_promotions/seeing_errors_in_promotion_channel_based_configuration.feature
-features/promotion/managing_promotions/accessing_promotion_with_rule_that_contains_removed_product.feature
 features/promotion/managing_promotions/adding_promotion_with_action_in_different_channels.feature
 features/promotion/managing_promotions/adding_promotion_in_different_languages.feature
 features/promotion/managing_promotions/adding_promotion_with_rule.feature
+features/promotion/managing_promotions/prevent_from_removing_products_that_are_used_in_promotion_rules.feature
 features/promotion/managing_promotions/deleting_promotion.feature
 features/promotion/managing_promotions/seeing_correct_percantage_discounts_while_editing_promotion_with_action_and_decimal_places.feature
+features/promotion/managing_promotions/prevent_from_removing_taxons_that_are_used_in_promotion_rules.feature
 features/promotion/applying_promotion_rules/receiving_discount_based_on_cart_quantity.feature
 features/promotion/applying_promotion_rules/receiving_discount_based_on_customer_group.feature
 features/promotion/applying_promotion_rules/receiving_discount_based_on_items_from_specific_taxons.feature

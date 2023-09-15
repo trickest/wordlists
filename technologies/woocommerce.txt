@@ -24,6 +24,7 @@ packages/js/product-editor/changelog/add-38044
 packages/js/product-editor/changelog/fix-modal-editor-scrolling
 packages/js/product-editor/changelog/add-37408
 packages/js/product-editor/changelog/add-stock-status-37884
+packages/js/product-editor/changelog/fix-40168_delete_variation
 packages/js/product-editor/changelog/fix-typescript-package-isolation
 packages/js/product-editor/changelog/add-taxonomy
 packages/js/product-editor/changelog/add-37264
@@ -45,9 +46,11 @@ packages/js/product-editor/changelog/add-37656
 packages/js/product-editor/changelog/update-move-ces-to-product-editor
 packages/js/product-editor/changelog/add-37931
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
+packages/js/product-editor/changelog/fix-39544_description_styling
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
 packages/js/product-editor/changelog/add-block-attributes-37728
 packages/js/product-editor/changelog/add-38202
+packages/js/product-editor/changelog/update-40072_variation_visibility_icon
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/fix-product-summary-field-margin
@@ -294,7 +297,6 @@ packages/js/product-editor/src/components/tags-field/create-tag-modal.scss
 packages/js/product-editor/src/components/variations-table/index.ts
 packages/js/product-editor/src/components/variations-table/inventory-menu-item/index.ts
 packages/js/product-editor/src/components/variations-table/inventory-menu-item/inventory-menu-item.tsx
-packages/js/product-editor/src/components/variations-table/hidden-icon.tsx
 packages/js/product-editor/src/components/variations-table/shipping-menu-item/index.ts
 packages/js/product-editor/src/components/variations-table/shipping-menu-item/shipping-menu-item.tsx
 packages/js/product-editor/src/components/variations-table/shipping-menu-item/types.ts
@@ -361,7 +363,6 @@ packages/js/product-editor/src/components/attribute-list-item/index.ts
 packages/js/product-editor/src/components/attribute-list-item/add-attribute-list-item.tsx
 packages/js/product-editor/src/components/attribute-list-item/not-filterable-icon.tsx
 packages/js/product-editor/src/components/attribute-list-item/attribute-list-item.tsx
-packages/js/product-editor/src/components/attribute-list-item/help-icon.tsx
 packages/js/product-editor/src/components/details-name-field/index.ts
 packages/js/product-editor/src/components/details-name-field/details-name-field.tsx
 packages/js/product-editor/src/components/details-feature-field/index.ts
@@ -398,6 +399,10 @@ packages/js/product-editor/src/hooks/use-confirm-unsaved-product-changes.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/index.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/use-feedback-bar.ts
 packages/js/product-editor/src/hooks/use-product-variations-helper.ts
+packages/js/product-editor/src/icons/hidden-icon.tsx
+packages/js/product-editor/src/icons/hidden-with-help-icon.tsx
+packages/js/product-editor/src/icons/hidden-with-help-icon.scss
+packages/js/product-editor/src/icons/help-icon.tsx
 packages/js/product-editor/src/blocks/inventory-sku/edit.tsx
 packages/js/product-editor/src/blocks/inventory-sku/block.json
 packages/js/product-editor/src/blocks/inventory-sku/index.ts
@@ -630,6 +635,7 @@ packages/js/components/tsconfig.json
 packages/js/components/changelog/dev-upgrade-storybook-6-5-17
 packages/js/components/changelog/fix-category-escape-characters
 packages/js/components/changelog/.gitkeep
+packages/js/components/changelog/fix-39544_description_styling
 packages/js/components/changelog/dev-upgrade-ts-5
 packages/js/components/changelog/dev-sync-pnpm
 packages/js/components/changelog/add-39875
@@ -3431,6 +3437,11 @@ plugins/woocommerce-admin/client/customize-store/assets/images/loader-analyzing-
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-designing-the-best-look.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-comparing-top-performing-stores.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-applying-the-finishing-touches.svg
+plugins/woocommerce-admin/client/customize-store/transitional/style.scss
+plugins/woocommerce-admin/client/customize-store/transitional/test/index.test.tsx
+plugins/woocommerce-admin/client/customize-store/transitional/index.tsx
+plugins/woocommerce-admin/client/customize-store/transitional/mshots-image.tsx
+plugins/woocommerce-admin/client/customize-store/transitional/services.tsx
 plugins/woocommerce-admin/client/customize-store/style.scss
 plugins/woocommerce-admin/client/customize-store/intro/theme-cards.tsx
 plugins/woocommerce-admin/client/customize-store/intro/index.tsx
@@ -4317,6 +4328,7 @@ plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
 plugins/woocommerce/changelog/remove-legacy-php-version-checks
 plugins/woocommerce/changelog/dev-choose-header-pattern
+plugins/woocommerce/changelog/improve-page-loads-test
 plugins/woocommerce/changelog/trunk
 plugins/woocommerce/changelog/issue-37839
 plugins/woocommerce/changelog/update-tt2-view-products-button-padding
@@ -4333,13 +4345,16 @@ plugins/woocommerce/changelog/fix-cust_bought_product_query_cache
 plugins/woocommerce/changelog/fix-40135-store-currency-is-not-being-updated
 plugins/woocommerce/changelog/dev-core-profiler-docs
 plugins/woocommerce/changelog/bump-required-php-to-7.4
+plugins/woocommerce/changelog/fix-bad-uncaching-of-order-refunds
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/update-wccom-17108-help-link-themes
 plugins/woocommerce/changelog/fix-hpos-order-edit-trash-link
 plugins/woocommerce/changelog/fix-bacs-ui
 plugins/woocommerce/changelog/add-RIN-in-not-in-comparison
 plugins/woocommerce/changelog/update-yoast-phpunit-polyfill
+plugins/woocommerce/changelog/fix-39544_description_styling
 plugins/woocommerce/changelog/update-39664-track-plugin-installation-in-php
+plugins/woocommerce/changelog/add-block-template-after-add-remove-hooks
 plugins/woocommerce/changelog/e2e-fix-flaky-turn-off-new-product-form
 plugins/woocommerce/changelog/dev-remove-unused-feature-visible
 plugins/woocommerce/changelog/add-customize-store-assembler-hub
@@ -4353,6 +4368,7 @@ plugins/woocommerce/changelog/add-woocommerce-pay-order-before-payment-action
 plugins/woocommerce/changelog/e2e-release-remove-wp-latest-2
 plugins/woocommerce/changelog/fix-sql-query-filters-doc
 plugins/woocommerce/changelog/fix-doc-how-to-design-a-simple-extension-typo
+plugins/woocommerce/changelog/add-cys-ai-wizard-tracks
 plugins/woocommerce/changelog/add-filter-sync-on-read
 plugins/woocommerce/changelog/update-task-list-item-and-woopayments-task
 plugins/woocommerce/changelog/add-39831
@@ -4367,6 +4383,7 @@ plugins/woocommerce/changelog/update-woocommerce-blocks-11.0.0
 plugins/woocommerce/changelog/update-hpos-not-experimental
 plugins/woocommerce/changelog/fix-missed-lint-assembler-hub-usestate
 plugins/woocommerce/changelog/add-block-template-registry-hook
+plugins/woocommerce/changelog/add-40069_test_new_product_type
 plugins/woocommerce/changelog/BL-prevent-non-orders-on-order-received-page
 plugins/woocommerce/changelog/fix-37362
 plugins/woocommerce/changelog/update-38752-task-list-progress-bar
@@ -4378,6 +4395,7 @@ plugins/woocommerce/changelog/add-39126_add_tags_to_product_editor
 plugins/woocommerce/changelog/add-customize-store-assembler-hub-logo
 plugins/woocommerce/changelog/fix-wccom-18030-discover-card-count
 plugins/woocommerce/changelog/fix-38762-core-profiler-layout-shifts
+plugins/woocommerce/changelog/add-new-e2e-test-myaccount-downloads
 plugins/woocommerce/changelog/fix-cli-improvs
 plugins/woocommerce/changelog/add-cys-fonts
 plugins/woocommerce/changelog/fix-wccom-18031-marketplace-search-locale
@@ -4390,6 +4408,7 @@ plugins/woocommerce/changelog/fix-undismissable-notices
 plugins/woocommerce/changelog/update-api-core-tests-readme
 plugins/woocommerce/changelog/update-39699-track-plugin-failure-separately-for-core-profiler
 plugins/woocommerce/changelog/tweak-category-field
+plugins/woocommerce/changelog/add-cys-transitional-screen
 plugins/woocommerce/changelog/issue-37835
 plugins/woocommerce/changelog/add-simple-product-template-order
 plugins/woocommerce/changelog/fix-cys-reapply-block-type-filters-error
@@ -5269,6 +5288,7 @@ plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/calculate-shipping.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-redirection.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-downloads.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-login.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-browse-search-sort.spec.js
@@ -6208,6 +6228,7 @@ plugins/woocommerce/src/Internal/Admin/Onboarding/Onboarding.php
 plugins/woocommerce/src/Internal/Admin/Onboarding/OnboardingProducts.php
 plugins/woocommerce/src/Internal/Admin/SettingsNavigationFeature.php
 plugins/woocommerce/src/Internal/Admin/CustomerEffortScoreTracks.php
+plugins/woocommerce/src/Internal/Admin/BlockTemplates/BlockTemplateLogger.php
 plugins/woocommerce/src/Internal/Admin/BlockTemplates/AbstractBlockTemplate.php
 plugins/woocommerce/src/Internal/Admin/BlockTemplates/BlockContainerTrait.php
 plugins/woocommerce/src/Internal/Admin/BlockTemplates/AbstractBlock.php
