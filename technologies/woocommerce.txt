@@ -642,6 +642,7 @@ packages/js/components/changelog/add-39875
 packages/js/components/changelog/add-39499
 packages/js/components/changelog/fix-missed-lints
 packages/js/components/changelog/add-customize-store-assembler-hub-onboarding
+packages/js/components/changelog/update-component-readme
 packages/js/components/changelog/update-39885_variation_pagination_table
 packages/js/components/changelog/fix-39810_categories_dropdown_visibility
 packages/js/components/changelog/add-39126_add_tags_to_product_editor
@@ -3398,6 +3399,7 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/layout.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/context/highlighted-block-context.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/style.scss
 plugins/woocommerce-admin/client/customize-store/assembler-hub/site-hub.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-editor-scroll.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-editor-blocks.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-scroll-opacity.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-patterns.ts
@@ -4342,7 +4344,9 @@ plugins/woocommerce/changelog/e2e-update-playwright-to-1_37_1
 plugins/woocommerce/changelog/tweak-category-taxonomy
 plugins/woocommerce/changelog/fix-tasklist-fix-description-color
 plugins/woocommerce/changelog/fix-cust_bought_product_query_cache
+plugins/woocommerce/changelog/add-new-e2e-test-myaccount-addreses
 plugins/woocommerce/changelog/fix-40135-store-currency-is-not-being-updated
+plugins/woocommerce/changelog/update-action-scheduler-3.6.3
 plugins/woocommerce/changelog/dev-core-profiler-docs
 plugins/woocommerce/changelog/bump-required-php-to-7.4
 plugins/woocommerce/changelog/fix-bad-uncaching-of-order-refunds
@@ -4358,10 +4362,12 @@ plugins/woocommerce/changelog/add-block-template-after-add-remove-hooks
 plugins/woocommerce/changelog/e2e-fix-flaky-turn-off-new-product-form
 plugins/woocommerce/changelog/dev-remove-unused-feature-visible
 plugins/woocommerce/changelog/add-customize-store-assembler-hub
+plugins/woocommerce/changelog/wccom-17911-marketplace-query-args-header
 plugins/woocommerce/changelog/api-fix-tax-api-test
 plugins/woocommerce/changelog/add-instructions-for-testing-contribution
 plugins/woocommerce/changelog/fix-verify-email-checks
 plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf-correction
+plugins/woocommerce/changelog/add-cys-transitional-tracks
 plugins/woocommerce/changelog/api-full-site-reset-on-daily
 plugins/woocommerce/changelog/update-distignore-allow-changelog
 plugins/woocommerce/changelog/add-woocommerce-pay-order-before-payment-action
@@ -4400,6 +4406,7 @@ plugins/woocommerce/changelog/fix-cli-improvs
 plugins/woocommerce/changelog/add-cys-fonts
 plugins/woocommerce/changelog/fix-wccom-18031-marketplace-search-locale
 plugins/woocommerce/changelog/update-venezuelan-currency
+plugins/woocommerce/changelog/remove-onboarding-purchase-task
 plugins/woocommerce/changelog/dev-refactor-onboarding-profiler
 plugins/woocommerce/changelog/add-look-and-tone-api
 plugins/woocommerce/changelog/add-cys-color-palette
@@ -4407,6 +4414,7 @@ plugins/woocommerce/changelog/fix-use-crud-api
 plugins/woocommerce/changelog/fix-undismissable-notices
 plugins/woocommerce/changelog/update-api-core-tests-readme
 plugins/woocommerce/changelog/update-39699-track-plugin-failure-separately-for-core-profiler
+plugins/woocommerce/changelog/add-39719-cys-footer
 plugins/woocommerce/changelog/tweak-category-field
 plugins/woocommerce/changelog/add-cys-transitional-screen
 plugins/woocommerce/changelog/issue-37835
@@ -4419,12 +4427,15 @@ plugins/woocommerce/changelog/pr-36402
 plugins/woocommerce/changelog/update-optimize-cys-frame-resizing
 plugins/woocommerce/changelog/fix-duplicate-meta-handling
 plugins/woocommerce/changelog/fix-admin-page-empty-wp-6-2
+plugins/woocommerce/changelog/e2e-add-plugin-tests-slack-summary
 plugins/woocommerce/changelog/add-39709-ai-wizard-business-info-step
 plugins/woocommerce/changelog/api-start-unskipping-daily-tests
 plugins/woocommerce/changelog/add-cys-url-navigation
+plugins/woocommerce/changelog/add-appearance-theme-tracks
 plugins/woocommerce/changelog/add-39452
 plugins/woocommerce/changelog/add-39421_make_use_of_new_block_template
 plugins/woocommerce/changelog/add-customize-store-design-with-ai-loader
+plugins/woocommerce/changelog/e2e-add-new-test-shopper-product
 plugins/woocommerce/changelog/update-woocommerce-blocks-10.9.3
 plugins/woocommerce/changelog/fix-revert-add-wx-nightly-perf
 plugins/woocommerce/changelog/fix-cys-wp-6-3-router-bug
@@ -5286,6 +5297,7 @@ plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/upload-plugin.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/update-woocommerce.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/calculate-shipping.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/product-variable.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-redirection.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-downloads.spec.js
@@ -5294,13 +5306,14 @@ plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-browse-search-sort.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/order-email-receiving.spec.js
-plugins/woocommerce/tests/e2e-pw/tests/shopper/single-product.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/dashboard-access.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-pay-order.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/product-grouped.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-addresses.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart.spec.js
-plugins/woocommerce/tests/e2e-pw/tests/shopper/variable-product-updates.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/product-simple.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/basic.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics-overview.spec.js
