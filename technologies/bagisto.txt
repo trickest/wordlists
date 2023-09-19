@@ -137,7 +137,6 @@ packages/Webkul/CartRule/src/Repositories/CartRuleCouponUsageRepository.php
 packages/Webkul/CartRule/src/Repositories/CartRuleCustomerRepository.php
 packages/Webkul/CartRule/src/Repositories/CartRuleRepository.php
 packages/Webkul/CartRule/src/Repositories/CartRuleCouponRepository.php
-packages/Webkul/CartRule/src/Http/Requests/CartRuleRequest.php
 packages/Webkul/CartRule/composer.json
 packages/Webkul/DataGrid/tests/Feature/ExampleTest.php
 packages/Webkul/DataGrid/tests/Unit/ExampleTest.php
@@ -191,7 +190,6 @@ packages/Webkul/CatalogRule/src/Listeners/Product.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleProductPriceRepository.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleProductRepository.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleRepository.php
-packages/Webkul/CatalogRule/src/Http/Requests/CatalogRuleRequest.php
 packages/Webkul/CatalogRule/composer.json
 packages/Webkul/Inventory/src/Models/InventorySourceProxy.php
 packages/Webkul/Inventory/src/Models/InventorySource.php
@@ -204,7 +202,6 @@ packages/Webkul/Inventory/src/Database/Migrations/2018_07_23_110040_create_inven
 packages/Webkul/Inventory/src/Providers/ModuleServiceProvider.php
 packages/Webkul/Inventory/src/Providers/InventoryServiceProvider.php
 packages/Webkul/Inventory/src/Repositories/InventorySourceRepository.php
-packages/Webkul/Inventory/src/Http/Requests/InventorySourceRequest.php
 packages/Webkul/Inventory/composer.json
 packages/Webkul/DebugBar/src/DataCollector/ModuleCollector.php
 packages/Webkul/DebugBar/src/Resources/widgets/modules/widget.js
@@ -237,7 +234,6 @@ packages/Webkul/User/src/Repositories/AdminRepository.php
 packages/Webkul/User/src/Repositories/RoleRepository.php
 packages/Webkul/User/src/Facades/Bouncer.php
 packages/Webkul/User/src/Http/helpers.php
-packages/Webkul/User/src/Http/Requests/UserForm.php
 packages/Webkul/User/src/Http/Middleware/Bouncer.php
 packages/Webkul/User/composer.json
 packages/Webkul/CMS/src/Models/CmsPageProxy.php
@@ -274,8 +270,11 @@ packages/Webkul/Shop/src/Mail/Order/RefundedNotification.php
 packages/Webkul/Shop/src/Mail/Order/CommentedNotification.php
 packages/Webkul/Shop/src/Mail/Order/ShippedNotification.php
 packages/Webkul/Shop/src/Mail/Order/CreatedNotification.php
+packages/Webkul/Shop/src/Models/ThemeCustomizationTranslation.php
 packages/Webkul/Shop/src/Models/ThemeCustomizationProxy.php
+packages/Webkul/Shop/src/Models/ThemeCustomizationTranslationProxy.php
 packages/Webkul/Shop/src/Models/ThemeCustomization.php
+packages/Webkul/Shop/src/Contracts/ThemeCustomizationTranslation.php
 packages/Webkul/Shop/src/Contracts/ThemeCustomization.php
 packages/Webkul/Shop/src/Resources/manifest.php
 packages/Webkul/Shop/src/Resources/assets/fonts/velicon.woff
@@ -452,6 +451,7 @@ packages/Webkul/Shop/src/Resources/views/emails/orders/created.blade.php
 packages/Webkul/Shop/src/Resources/views/emails/layout.blade.php
 packages/Webkul/Shop/src/Database/Migrations/2023_07_12_181722_remove_home_page_and_footer_content_column_from_channel_translations_table.php
 packages/Webkul/Shop/src/Database/Migrations/2023_07_10_184256_create_theme_customizations_table.php
+packages/Webkul/Shop/src/Database/Migrations/2023_09_15_170053_create_theme_customization_translations_table.php
 packages/Webkul/Shop/src/Providers/ShopServiceProvider.php
 packages/Webkul/Shop/src/Providers/ModuleServiceProvider.php
 packages/Webkul/Shop/src/Providers/EventServiceProvider.php
@@ -478,6 +478,7 @@ packages/Webkul/Shop/src/DataGrids/DownloadableProductDataGrid.php
 packages/Webkul/Shop/src/Http/Requests/Customer/ForgotPasswordRequest.php
 packages/Webkul/Shop/src/Http/Requests/Customer/RegistrationRequest.php
 packages/Webkul/Shop/src/Http/Requests/Customer/AddressRequest.php
+packages/Webkul/Shop/src/Http/Requests/Customer/CustomerAddressForm.php
 packages/Webkul/Shop/src/Http/Requests/Customer/ProfileRequest.php
 packages/Webkul/Shop/src/Http/Requests/Customer/LoginRequest.php
 packages/Webkul/Shop/src/Http/Controllers/ProductsCategoriesProxyController.php
@@ -886,8 +887,6 @@ packages/Webkul/Product/src/Facades/ProductVideo.php
 packages/Webkul/Product/src/Observers/ProductObserver.php
 packages/Webkul/Product/src/DataTypes/CartItemValidationResult.php
 packages/Webkul/Product/src/Http/helpers.php
-packages/Webkul/Product/src/Http/Requests/ProductForm.php
-packages/Webkul/Product/src/Http/Requests/InventoryRequest.php
 packages/Webkul/Product/composer.json
 packages/Webkul/Admin/package.json
 packages/Webkul/Admin/postcss.config.js
@@ -1206,7 +1205,16 @@ packages/Webkul/Admin/src/DataGrids/Customers/ReviewDataGrid.php
 packages/Webkul/Admin/src/DataGrids/Customers/CustomerDataGrid.php
 packages/Webkul/Admin/src/DataGrids/Customers/GroupDataGrid.php
 packages/Webkul/Admin/src/DataGrids/Theme/ThemeDatagrid.php
+packages/Webkul/Admin/src/Http/Requests/ProductForm.php
 packages/Webkul/Admin/src/Http/Requests/ConfigurationForm.php
+packages/Webkul/Admin/src/Http/Requests/MassDestroyRequest.php
+packages/Webkul/Admin/src/Http/Requests/InventoryRequest.php
+packages/Webkul/Admin/src/Http/Requests/CategoryRequest.php
+packages/Webkul/Admin/src/Http/Requests/CatalogRuleRequest.php
+packages/Webkul/Admin/src/Http/Requests/CartRuleRequest.php
+packages/Webkul/Admin/src/Http/Requests/MassUpdateRequest.php
+packages/Webkul/Admin/src/Http/Requests/InventorySourceRequest.php
+packages/Webkul/Admin/src/Http/Requests/UserForm.php
 packages/Webkul/Admin/src/Http/Controllers/Sales/InvoiceController.php
 packages/Webkul/Admin/src/Http/Controllers/Sales/TransactionController.php
 packages/Webkul/Admin/src/Http/Controllers/Sales/ShipmentController.php
@@ -1316,7 +1324,6 @@ packages/Webkul/Checkout/src/Repositories/CartItemRepository.php
 packages/Webkul/Checkout/src/Facades/Cart.php
 packages/Webkul/Checkout/src/Cart.php
 packages/Webkul/Checkout/src/Http/helpers.php
-packages/Webkul/Checkout/src/Http/Requests/CustomerAddressForm.php
 packages/Webkul/Checkout/composer.json
 packages/Webkul/Core/src/Helpers/Locales.php
 packages/Webkul/Core/src/Helpers/Exchange/FixerExchange.php
@@ -1464,8 +1471,6 @@ packages/Webkul/Core/src/Templates/on-boarding.php
 packages/Webkul/Core/src/Exceptions/Handler.php
 packages/Webkul/Core/src/Observers/SliderObserver.php
 packages/Webkul/Core/src/Http/helpers.php
-packages/Webkul/Core/src/Http/Requests/MassDestroyRequest.php
-packages/Webkul/Core/src/Http/Requests/MassUpdateRequest.php
 packages/Webkul/Core/src/Http/Middleware/CheckForMaintenanceMode.php
 packages/Webkul/Core/src/Http/Middleware/SecureHeaders.php
 packages/Webkul/Core/composer.json
@@ -1516,7 +1521,6 @@ packages/Webkul/Category/src/Providers/EventServiceProvider.php
 packages/Webkul/Category/src/Listeners/Category.php
 packages/Webkul/Category/src/Repositories/CategoryRepository.php
 packages/Webkul/Category/src/Observers/CategoryObserver.php
-packages/Webkul/Category/src/Http/Requests/CategoryRequest.php
 packages/Webkul/Category/composer.json
 resources/js/app.js
 resources/js/bootstrap.js
@@ -1618,6 +1622,7 @@ public/installer/Classes/Requirement.php
 public/.htaccess
 config/responsecache.php
 config/cache.php
+config/translatable.php
 config/imagecache.php
 config/bagisto-vite.php
 config/themes.php

@@ -2918,6 +2918,7 @@ ghost/core/test/e2e-api/admin/images.test.js
 ghost/core/test/e2e-api/admin/posts-legacy.test.js
 ghost/core/test/e2e-api/admin/session.test.js
 ghost/core/test/e2e-api/admin/pages-bulk.test.js
+ghost/core/test/e2e-api/members/site.test.js
 ghost/core/test/e2e-api/members/create-stripe-checkout-session.test.js
 ghost/core/test/e2e-api/members/middleware.test.js
 ghost/core/test/e2e-api/members/well-known.test.js
@@ -2931,6 +2932,7 @@ ghost/core/test/e2e-api/members/__snapshots__/feedback.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/well-known.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/announcement.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/recommendations.test.js.snap
+ghost/core/test/e2e-api/members/__snapshots__/site.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/create-stripe-checkout-session.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/webhooks.test.js.snap
 ghost/core/test/e2e-api/members/__snapshots__/middleware.test.js.snap
@@ -5043,6 +5045,7 @@ apps/admin-x-settings/src/components/settings/general/InviteUserModal.tsx
 apps/admin-x-settings/src/components/providers/RoutingProvider.tsx
 apps/admin-x-settings/src/components/providers/ServiceProvider.tsx
 apps/admin-x-settings/src/components/providers/GlobalDataProvider.tsx
+apps/admin-x-settings/src/components/providers/routing/modals.tsx
 apps/admin-x-settings/src/assets/videos/logo-loader.mp4
 apps/admin-x-settings/src/assets/icons/portal-icon-5.svg
 apps/admin-x-settings/src/assets/icons/slack.svg
@@ -5143,6 +5146,7 @@ apps/admin-x-settings/src/admin-x-ds/global/Button.tsx
 apps/admin-x-settings/src/admin-x-ds/global/LoadingIndicator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Separator.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Icon.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Banner.tsx
 apps/admin-x-settings/src/admin-x-ds/global/InfiniteScrollListener.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/chrome/DesktopChrome.tsx
 apps/admin-x-settings/src/admin-x-ds/global/chrome/DesktopChromeHeader.stories.tsx
@@ -5208,6 +5212,7 @@ apps/admin-x-settings/src/admin-x-ds/global/Toast.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Button.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/ListItem.tsx
 apps/admin-x-settings/src/admin-x-ds/global/SortableList.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Banner.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/SortableList.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Avatar.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/List.stories.tsx

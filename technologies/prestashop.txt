@@ -3395,6 +3395,7 @@ tests/Integration/Behaviour/Features/Scenario/Order/order_add_payment.feature
 tests/Integration/Behaviour/Features/Scenario/Order/order_ecotax_cartrule.feature
 tests/Integration/Behaviour/Features/Scenario/Order/order_stock.feature
 tests/Integration/Behaviour/Features/Scenario/Manufacturer/manufacturer_management.feature
+tests/Integration/Behaviour/Features/Scenario/AttributeGroup/attribute_group_management.feature
 tests/Integration/Behaviour/Features/Scenario/Store/store.feature
 tests/Integration/Behaviour/Features/Scenario/CustomerGroup/customer_group_management.feature
 tests/Integration/Behaviour/Features/Scenario/Category/category_management.feature
@@ -4756,6 +4757,7 @@ src/PrestaShopBundle/Form/Admin/Sell/Address/RequiredFieldsAddressType.php
 src/PrestaShopBundle/Form/Admin/Sell/Address/CustomerAddressType.php
 src/PrestaShopBundle/Form/Admin/Sell/Catalog/FeatureValueType.php
 src/PrestaShopBundle/Form/Admin/Sell/Catalog/FeatureType.php
+src/PrestaShopBundle/Form/Admin/Sell/Catalog/AttributeGroupType.php
 src/PrestaShopBundle/Form/Admin/Sell/Customer/GroupType.php
 src/PrestaShopBundle/Form/Admin/Sell/Customer/SearchedCustomerType.php
 src/PrestaShopBundle/Form/Admin/Sell/Customer/RequiredFieldsType.php
@@ -5073,6 +5075,7 @@ src/PrestaShopBundle/ApiPlatform/Resources/CustomerGroup.php
 src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
 src/PrestaShopBundle/ApiPlatform/Resources/FoundProduct.php
 src/PrestaShopBundle/ApiPlatform/Resources/CartRule.php
+src/PrestaShopBundle/ApiPlatform/Decorator/AttributesResourceMetadataCollectionFactoryDecorator.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DateTimeImmutableDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/ObjectDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DecimalNumberDenormalizer.php
@@ -5839,7 +5842,11 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Manufacturer/edit.html.t
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Manufacturer/logo_image.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Manufacturer/add.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/Blocks/form_javascripts.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/Blocks/showcase_card.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/edit.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/AttributeGroup/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Suppliers/view.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Suppliers/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Suppliers/Blocks/View/products.html.twig
@@ -6972,8 +6979,12 @@ src/Adapter/AttributeGroup/Repository/AttributeGroupRepository.php
 src/Adapter/AttributeGroup/AbstractAttributeGroupHandler.php
 src/Adapter/AttributeGroup/AttributeGroupViewDataProvider.php
 src/Adapter/AttributeGroup/QueryHandler/GetAttributeGroupListHandler.php
+src/Adapter/AttributeGroup/QueryHandler/GetAttributeGroupForEditingHandler.php
 src/Adapter/AttributeGroup/QueryHandler/AbstractAttributeGroupQueryHandler.php
+src/Adapter/AttributeGroup/Validate/AttributeGroupValidator.php
 src/Adapter/AttributeGroup/CommandHandler/DeleteAttributeGroupHandler.php
+src/Adapter/AttributeGroup/CommandHandler/EditAttributeGroupHandler.php
+src/Adapter/AttributeGroup/CommandHandler/AddAttributeGroupHandler.php
 src/Adapter/AttributeGroup/CommandHandler/BulkDeleteAttributeGroupHandler.php
 src/Adapter/Store/QueryHandler/GetStoreForEditingHandler.php
 src/Adapter/Store/CommandHandler/ToggleStoreStatusHandler.php
@@ -7378,6 +7389,7 @@ src/Core/Form/IdentifiableObject/DataHandler/WebserviceKeyFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/BulkCombinationFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CombinationListFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/EmployeeFormDataHandler.php
+src/Core/Form/IdentifiableObject/DataHandler/AttributeGroupFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/ManufacturerFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/TaxFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CategoryFormDataHandler.php
@@ -7440,6 +7452,7 @@ src/Core/Form/IdentifiableObject/DataProvider/ProductShopsFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/BulkCombinationFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CustomerFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ManufacturerFormDataProvider.php
+src/Core/Form/IdentifiableObject/DataProvider/AttributeGroupFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/OrderReturnFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/SqlRequestFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CountryFormDataProvider.php
@@ -9244,6 +9257,7 @@ src/Core/Domain/Carrier/CommandHandler/BulkToggleCarrierStatusHandlerInterface.p
 src/Core/Domain/Carrier/CommandHandler/DeleteCarrierHandlerInterface.php
 src/Core/Domain/Carrier/CommandHandler/ToggleCarrierIsFreeHandlerInterface.php
 src/Core/Domain/Carrier/CommandHandler/ToggleCarrierStatusHandlerInterface.php
+src/Core/Domain/AttributeGroup/Query/GetAttributeGroupForEditing.php
 src/Core/Domain/AttributeGroup/Query/GetAttributeGroupList.php
 src/Core/Domain/AttributeGroup/Attribute/Exception/AttributeNotFoundException.php
 src/Core/Domain/AttributeGroup/Attribute/Exception/DeleteAttributeException.php
@@ -9257,15 +9271,24 @@ src/Core/Domain/AttributeGroup/Attribute/CommandHandler/DeleteAttributeHandlerIn
 src/Core/Domain/AttributeGroup/Attribute/CommandHandler/BulkDeleteAttributeHandlerInterface.php
 src/Core/Domain/AttributeGroup/Exception/AttributeGroupNotFoundException.php
 src/Core/Domain/AttributeGroup/Exception/AttributeGroupConstraintException.php
+src/Core/Domain/AttributeGroup/Exception/InvalidAttributeGroupTypeException.php
 src/Core/Domain/AttributeGroup/Exception/DeleteAttributeGroupException.php
 src/Core/Domain/AttributeGroup/Exception/AttributeGroupException.php
+src/Core/Domain/AttributeGroup/Exception/CannotAddAttributeGroupException.php
 src/Core/Domain/AttributeGroup/QueryHandler/GetAttributeGroupListHandlerInterface.php
+src/Core/Domain/AttributeGroup/QueryHandler/GetAttributeGroupForEditingHandlerInterface.php
+src/Core/Domain/AttributeGroup/Command/AddAttributeGroupCommand.php
+src/Core/Domain/AttributeGroup/Command/EditAttributeGroupCommand.php
 src/Core/Domain/AttributeGroup/Command/DeleteAttributeGroupCommand.php
 src/Core/Domain/AttributeGroup/Command/BulkDeleteAttributeGroupCommand.php
 src/Core/Domain/AttributeGroup/QueryResult/AttributeGroup.php
+src/Core/Domain/AttributeGroup/QueryResult/EditableAttributeGroup.php
+src/Core/Domain/AttributeGroup/ValueObject/AttributeGroupType.php
 src/Core/Domain/AttributeGroup/ValueObject/AttributeGroupId.php
 src/Core/Domain/AttributeGroup/CommandHandler/BulkDeleteAttributeGroupHandlerInterface.php
+src/Core/Domain/AttributeGroup/CommandHandler/EditAttributeGroupHandlerInterface.php
 src/Core/Domain/AttributeGroup/CommandHandler/DeleteAttributeGroupHandlerInterface.php
+src/Core/Domain/AttributeGroup/CommandHandler/AddAttributeGroupHandlerInterface.php
 src/Core/Domain/Store/Query/GetStoreForEditing.php
 src/Core/Domain/Store/Repository/StoreRepository.php
 src/Core/Domain/Store/Exception/CannotUpdateStoreException.php
@@ -10784,6 +10807,8 @@ admin-dev/themes/new-theme/js/pages/tax/tax-map.ts
 admin-dev/themes/new-theme/js/pages/tax/index.ts
 admin-dev/themes/new-theme/js/pages/tax/display-in-cart-option-handler.ts
 admin-dev/themes/new-theme/js/pages/attribute-group/index.ts
+admin-dev/themes/new-theme/js/pages/attribute-group/form/index.ts
+admin-dev/themes/new-theme/js/pages/attribute-group/form/attribute-group-form-map.ts
 admin-dev/themes/new-theme/js/pages/shipping-preferences/index.ts
 admin-dev/themes/new-theme/js/pages/performance-preferences/index.ts
 admin-dev/themes/new-theme/js/pages/performance-preferences/PerformancePreferencesPageMap.ts

@@ -7270,6 +7270,8 @@ app/code/Magento/Catalog/Model/Product/Configuration/Item/ItemResolverComposite.
 app/code/Magento/Catalog/Model/Product/Configuration/Item/Option.php
 app/code/Magento/Catalog/Model/Product/Type.php
 app/code/Magento/Catalog/Model/Product/PriceModifier/Composite.php
+app/code/Magento/Catalog/Model/Product/Image/ConvertImageMiscParamsToReadableFormat.php
+app/code/Magento/Catalog/Model/Product/Image/RemoveDeletedImagesFromCache.php
 app/code/Magento/Catalog/Model/Product/Image/UrlBuilder.php
 app/code/Magento/Catalog/Model/Product/Image/NotLoadInfoImageException.php
 app/code/Magento/Catalog/Model/Product/Image/ParamsBuilder.php
@@ -8284,6 +8286,8 @@ app/code/Magento/Catalog/Test/Unit/Model/Product/Gallery/GalleryManagementTest.p
 app/code/Magento/Catalog/Test/Unit/Model/Product/Gallery/MimeTypeExtensionMapTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Product/Gallery/ProcessorTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Product/PriceModifier/CompositeTest.php
+app/code/Magento/Catalog/Test/Unit/Model/Product/Image/ConvertImageMiscParamsToReadableFormatTest.php
+app/code/Magento/Catalog/Test/Unit/Model/Product/Image/RemoveDeletedImagesFromCacheTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Product/Image/ParamsBuilderTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Product/Image/CacheTest.php
 app/code/Magento/Catalog/Test/Unit/Model/Product/ReservedAttributeListTest.php
@@ -10664,6 +10668,7 @@ app/code/Magento/Tax/Test/Mftf/Test/AdminCreateTaxRateAllPostCodesTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/UpdateAnyRegionTaxRateEntityTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/AdminVerifyTaxIsCalculatedCorrectlyIfShippingMethodsAreDisabledTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/AdminCreateTaxRateLargeRateTest.xml
+app/code/Magento/Tax/Test/Mftf/Test/AdminCheckTaxForDetailsTagExpandCollapseTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/Update01TaxRateEntityTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/AdminUpdateTaxRuleWithCustomClassesTest.xml
 app/code/Magento/Tax/Test/Mftf/Test/UpdateLargeTaxRateEntityTest.xml
@@ -18377,6 +18382,7 @@ app/code/Magento/CatalogGraphQl/Test/Unit/Model/Config/FilterAttributeReaderTest
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Products/Query/SearchTest.php
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Products/SearchCriteria/CollectionProcessor/FilterProcessor/CategoryFilterTest.php
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Product/ProductCategoriesTest.php
+app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Product/MediaGalleryTest.php
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Product/Price/DiscountTest.php
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Category/ImageTest.php
 app/code/Magento/CatalogGraphQl/Test/Unit/Model/Resolver/Category/DepthCalculatorTest.php
@@ -32728,6 +32734,7 @@ dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/products_to_import_without_url_keys_and_name.csv
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/import_media_with_no_selection.csv
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/products_to_import_without_url_keys.csv
+dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/multi_store_products_with_custom_options.csv
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/products_to_import_with_use_config_settings.csv
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/products_to_import_with_qty_zero_backorders_enabled.csv
 dev/tests/integration/testsuite/Magento/CatalogImportExport/Model/Import/_files/products_to_import_zero_qty.csv

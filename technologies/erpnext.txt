@@ -964,6 +964,7 @@ erpnext/patches/v14_0/migrate_gl_to_payment_ledger.py
 erpnext/patches/v14_0/update_reference_due_date_in_journal_entry.py
 erpnext/patches/v14_0/delete_hub_doctypes.py
 erpnext/patches/v14_0/migrate_crm_settings.py
+erpnext/patches/v14_0/update_invoicing_period_in_subscription.py
 erpnext/patches/v14_0/update_subscription_details.py
 erpnext/patches/v14_0/delete_non_profit_doctypes.py
 erpnext/patches/v14_0/migrate_existing_lead_notes_as_per_the_new_format.py
@@ -1833,6 +1834,11 @@ erpnext/accounts/doctype/subscription_settings/subscription_settings.js
 erpnext/accounts/doctype/subscription_settings/test_subscription_settings.py
 erpnext/accounts/doctype/subscription_settings/subscription_settings.json
 erpnext/accounts/doctype/subscription_settings/__init__.py
+erpnext/accounts/doctype/process_subscription/process_subscription.py
+erpnext/accounts/doctype/process_subscription/test_process_subscription.py
+erpnext/accounts/doctype/process_subscription/__init__.py
+erpnext/accounts/doctype/process_subscription/process_subscription.json
+erpnext/accounts/doctype/process_subscription/process_subscription.js
 erpnext/accounts/doctype/tax_category/tax_category.js
 erpnext/accounts/doctype/tax_category/tax_category_dashboard.py
 erpnext/accounts/doctype/tax_category/tax_category.py

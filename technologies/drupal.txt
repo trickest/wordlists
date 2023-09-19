@@ -6568,7 +6568,6 @@ core/modules/jsonapi/tests/src/Functional/BlockContentTypeTest.php
 core/modules/jsonapi/tests/src/Functional/ContactFormTest.php
 core/modules/jsonapi/tests/src/Functional/PathAliasTest.php
 core/modules/jsonapi/tests/src/Functional/CommentTest.php
-core/modules/jsonapi/tests/src/Functional/TourTest.php
 core/modules/jsonapi/tests/src/Functional/EntityViewModeTest.php
 core/modules/jsonapi/tests/src/Functional/ResourceTestBase.php
 core/modules/jsonapi/tests/src/Functional/MediaTest.php
@@ -7064,7 +7063,6 @@ core/modules/language/tests/src/Functional/LanguageConfigOverrideImportTest.php
 core/modules/language/tests/src/Functional/LanguageConfigurationTest.php
 core/modules/language/tests/src/Functional/LanguageUrlRewritingTest.php
 core/modules/language/tests/src/Functional/LanguageCustomLanguageConfigurationTest.php
-core/modules/language/tests/src/Functional/LanguageTourTest.php
 core/modules/language/tests/src/Functional/LanguageSwitchingTest.php
 core/modules/language/tests/src/Functional/LanguageBreadcrumbTest.php
 core/modules/language/tests/src/Functional/LanguageEntityFieldAccessHookTest.php
@@ -9130,7 +9128,6 @@ core/modules/locale/tests/src/Functional/LocaleUpdateBase.php
 core/modules/locale/tests/src/Functional/LocaleNonInteractiveDevInstallTest.php
 core/modules/locale/tests/src/Functional/LocaleTranslatedSchemaDefinitionTest.php
 core/modules/locale/tests/src/Functional/LocaleLocaleLookupTest.php
-core/modules/locale/tests/src/Functional/LocaleTranslateStringTourTest.php
 core/modules/locale/tests/src/Functional/LocalePathTest.php
 core/modules/locale/tests/src/Functional/LocaleImportFunctionalTest.php
 core/modules/locale/tests/src/Functional/LocaleNonInteractiveInstallTest.php
@@ -9660,7 +9657,10 @@ core/modules/tour/tests/src/Unit/TipPluginBaseTest.php
 core/modules/tour/tests/src/Unit/Entity/TourTest.php
 core/modules/tour/tests/src/Functional/TourTest.php
 core/modules/tour/tests/src/Functional/TourTestBase.php
+core/modules/tour/tests/src/Functional/ViewsUi/ViewsUITourTest.php
+core/modules/tour/tests/src/Functional/Locale/LocaleTranslateStringTourTest.php
 core/modules/tour/tests/src/Functional/TourCacheTagsTest.php
+core/modules/tour/tests/src/Functional/Jsonapi/TourTest.php
 core/modules/tour/tests/src/Functional/TourTestBasic.php
 core/modules/tour/tests/src/Functional/Rest/TourJsonBasicAuthTest.php
 core/modules/tour/tests/src/Functional/Rest/TourJsonCookieTest.php
@@ -9669,7 +9669,9 @@ core/modules/tour/tests/src/Functional/Rest/TourJsonAnonTest.php
 core/modules/tour/tests/src/Functional/Rest/TourXmlCookieTest.php
 core/modules/tour/tests/src/Functional/Rest/TourXmlBasicAuthTest.php
 core/modules/tour/tests/src/Functional/Rest/TourResourceTestBase.php
+core/modules/tour/tests/src/Functional/Block/BlockLayoutTourTest.php
 core/modules/tour/tests/src/Functional/TourHelpPageTest.php
+core/modules/tour/tests/src/Functional/Language/LanguageTourTest.php
 core/modules/tour/src/TipPluginBase.php
 core/modules/tour/src/TourViewBuilder.php
 core/modules/tour/src/TipsPluginCollection.php
@@ -9787,7 +9789,6 @@ core/modules/views_ui/tests/src/Functional/WizardTest.php
 core/modules/views_ui/tests/src/Functional/XssTest.php
 core/modules/views_ui/tests/src/Functional/DisplayTest.php
 core/modules/views_ui/tests/src/Functional/RowUITest.php
-core/modules/views_ui/tests/src/Functional/ViewsUITourTest.php
 core/modules/views_ui/tests/themes/views_ui_test_theme/views_ui_test_theme.info.yml
 core/modules/views_ui/tests/themes/views_ui_test_theme/views_ui_test_theme.theme
 core/modules/views_ui/tests/modules/views_ui_test/views_ui_test.module
@@ -13949,7 +13950,6 @@ core/modules/block/tests/src/Functional/BlockSystemBrandingTest.php
 core/modules/block/tests/src/Functional/BlockXssTest.php
 core/modules/block/tests/src/Functional/NonDefaultBlockAdminTest.php
 core/modules/block/tests/src/Functional/BlockUiTest.php
-core/modules/block/tests/src/Functional/BlockLayoutTourTest.php
 core/modules/block/tests/src/Functional/BlockTest.php
 core/modules/block/tests/src/Functional/Views/DisplayBlockTest.php
 core/modules/block/tests/src/Functional/BlockHtmlTest.php
