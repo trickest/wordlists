@@ -3475,6 +3475,8 @@ ghost/core/core/server/data/migrations/versions/5.40/2023-03-21-18-52-add-self-s
 ghost/core/core/server/data/migrations/versions/5.40/2023-03-13-14-05-add-newsletter-show-latest-posts.js
 ghost/core/core/server/data/migrations/versions/5.40/2023-03-21-18-42-add-self-serve-integration-role.js
 ghost/core/core/server/data/migrations/versions/5.40/2023-03-21-19-02-add-self-serve-integration-api-key.js
+ghost/core/core/server/data/migrations/versions/5.64/2023-09-19-04-25-40-truncate-stale-built-in-collections-posts.js
+ghost/core/core/server/data/migrations/versions/5.64/2023-09-19-04-34-10-repopulate-built-in-collection-posts.js
 ghost/core/core/server/data/migrations/versions/4.22/01-add-is-launch-complete-setting.js
 ghost/core/core/server/data/migrations/versions/4.22/02-update-launch-complete-setting-from-user-data.js
 ghost/core/core/server/data/migrations/versions/5.28/2023-01-05-15-13-add-active-theme-permissions.js
@@ -4939,7 +4941,6 @@ apps/admin-x-settings/test/utils/responses/me.json
 apps/admin-x-settings/test/utils/responses/labels.json
 apps/admin-x-settings/playwright.config.ts
 apps/admin-x-settings/index.html
-apps/admin-x-settings/public/vite.svg
 apps/admin-x-settings/src/App.tsx
 apps/admin-x-settings/src/components/Settings.tsx
 apps/admin-x-settings/src/components/ExitSettingsButton.tsx

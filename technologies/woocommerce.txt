@@ -33,6 +33,7 @@ packages/js/product-editor/changelog/fix-tabbed-navigation-37932
 packages/js/product-editor/changelog/add-name-block-37007
 packages/js/product-editor/changelog/tweak-category-taxonomy
 packages/js/product-editor/changelog/fix-image-section-spacing
+packages/js/product-editor/changelog/fix-new_product_editor_variation_actions_style
 packages/js/product-editor/changelog/add-37103
 packages/js/product-editor/changelog/fix-more-menu-width-38001
 packages/js/product-editor/changelog/add-39790
@@ -55,6 +56,7 @@ packages/js/product-editor/changelog/update-40072_variation_visibility_icon
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/fix-product-summary-field-margin
+packages/js/product-editor/changelog/dev-40246_update_copy_in_variation_options_modal
 packages/js/product-editor/changelog/update-37312_product_editor_interpolate_components
 packages/js/product-editor/changelog/fix-38608
 packages/js/product-editor/changelog/add-37888
@@ -3447,6 +3449,7 @@ plugins/woocommerce-admin/client/customize-store/assets/images/loader-analyzing-
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-designing-the-best-look.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-comparing-top-performing-stores.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-applying-the-finishing-touches.svg
+plugins/woocommerce-admin/client/customize-store/assets/images/banner-design-with-ai.svg
 plugins/woocommerce-admin/client/customize-store/transitional/style.scss
 plugins/woocommerce-admin/client/customize-store/transitional/test/index.test.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/index.tsx
@@ -3457,6 +3460,7 @@ plugins/woocommerce-admin/client/customize-store/intro/theme-cards.tsx
 plugins/woocommerce-admin/client/customize-store/intro/index.tsx
 plugins/woocommerce-admin/client/customize-store/intro/actions.ts
 plugins/woocommerce-admin/client/customize-store/intro/services.ts
+plugins/woocommerce-admin/client/customize-store/intro/intro.scss
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/close-button/close-button.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/close-button/close-button.scss
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/choice/choice.tsx
@@ -3481,8 +3485,10 @@ plugins/woocommerce-admin/client/customize-store/design-with-ai/services.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/lookAndTone.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/colorChoices.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/index.ts
-plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/lookAndTone.test.ts
-plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/colorChoices.test.ts
+plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/fontPairings.test.ts
+plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/lookAndTone.test.ts
+plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/colorChoices.test.ts
+plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/fontPairings.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/types.ts
 plugins/woocommerce-admin/client/customize-store/global.d.ts
 plugins/woocommerce-admin/client/customize-store/index.tsx
@@ -3799,6 +3805,7 @@ plugins/woocommerce-admin/client/profile-wizard/steps/store-details/test/__snaps
 plugins/woocommerce-admin/client/profile-wizard/steps/store-details/index.js
 plugins/woocommerce-admin/client/profile-wizard/header.js
 plugins/woocommerce-admin/client/profile-wizard/unsaved-changes-modal.js
+plugins/woocommerce-admin/client/utils/derive-wp-admin-background-colours.ts
 plugins/woocommerce-admin/client/utils/slot-fill-ordering.tsx
 plugins/woocommerce-admin/client/utils/enqueue-script.js
 plugins/woocommerce-admin/client/utils/admin-settings.js
@@ -4355,6 +4362,7 @@ plugins/woocommerce/changelog/fix-29873-geolocate-redirect
 plugins/woocommerce/changelog/add-cys-assembler-hub-tracks
 plugins/woocommerce/changelog/fix-cys-task-header-button
 plugins/woocommerce/changelog/bug-php-7.4-lib
+plugins/woocommerce/changelog/update-woocommerce-blocks-11.1.1
 plugins/woocommerce/changelog/fix-delete-meta-by-id
 plugins/woocommerce/changelog/e2e-update-playwright-to-1_37_1
 plugins/woocommerce/changelog/tweak-category-taxonomy
@@ -4394,6 +4402,7 @@ plugins/woocommerce/changelog/update-cys-completion-logic
 plugins/woocommerce/changelog/update-remove-core-profiler-related-test-code
 plugins/woocommerce/changelog/e2e-release-remove-wp-latest-2
 plugins/woocommerce/changelog/fix-sql-query-filters-doc
+plugins/woocommerce/changelog/dev-add-assembler-e2e-tests
 plugins/woocommerce/changelog/fix-doc-how-to-design-a-simple-extension-typo
 plugins/woocommerce/changelog/add-cys-ai-wizard-tracks
 plugins/woocommerce/changelog/add-filter-sync-on-read
@@ -4406,6 +4415,7 @@ plugins/woocommerce/changelog/add-customize-store-assembler-hub-onboarding
 plugins/woocommerce/changelog/fix-marketplace-footer-wording
 plugins/woocommerce/changelog/fix-cli-hpos-activate
 plugins/woocommerce/changelog/fix-pw_e2e_product_tests_serialization
+plugins/woocommerce/changelog/fix-hpos-pending-sync-count-order-types
 plugins/woocommerce/changelog/update-react-marketplace
 plugins/woocommerce/changelog/fix-39927
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.0.0
@@ -4419,6 +4429,7 @@ plugins/woocommerce/changelog/fix-37362
 plugins/woocommerce/changelog/update-38752-task-list-progress-bar
 plugins/woocommerce/changelog/dev-39152_add_notice_to_track_inventory_toggle
 plugins/woocommerce/changelog/add-filter-hpos-query-override
+plugins/woocommerce/changelog/add-customize-store-font-pairing
 plugins/woocommerce/changelog/add-40003_plugin_to_enable_experimental_features
 plugins/woocommerce/changelog/add-template-api-remove-block
 plugins/woocommerce/changelog/add-39126_add_tags_to_product_editor
@@ -4428,12 +4439,15 @@ plugins/woocommerce/changelog/fix-38762-core-profiler-layout-shifts
 plugins/woocommerce/changelog/add-new-e2e-test-myaccount-downloads
 plugins/woocommerce/changelog/fix-cli-improvs
 plugins/woocommerce/changelog/add-cys-fonts
+plugins/woocommerce/changelog/add-customize-store-best-colours
 plugins/woocommerce/changelog/fix-wccom-18031-marketplace-search-locale
+plugins/woocommerce/changelog/dev-update-address-type-comments
 plugins/woocommerce/changelog/update-venezuelan-currency
 plugins/woocommerce/changelog/remove-onboarding-purchase-task
 plugins/woocommerce/changelog/dev-refactor-onboarding-profiler
 plugins/woocommerce/changelog/add-regression-test-user-meta
 plugins/woocommerce/changelog/add-40042_prices_not_set_notice
+plugins/woocommerce/changelog/add-hpos_by_default
 plugins/woocommerce/changelog/add-look-and-tone-api
 plugins/woocommerce/changelog/add-cys-color-palette
 plugins/woocommerce/changelog/fix-use-crud-api
@@ -4445,13 +4459,16 @@ plugins/woocommerce/changelog/tweak-category-field
 plugins/woocommerce/changelog/fix-wccom-marketplace-products-with-no-vendorurl
 plugins/woocommerce/changelog/add-cys-transitional-screen
 plugins/woocommerce/changelog/fix-wccom-18029-suppress-double-scrollbar
+plugins/woocommerce/changelog/fix-metadata-not-updated-on-order-update
 plugins/woocommerce/changelog/issue-37835
 plugins/woocommerce/changelog/add-simple-product-template-order
+plugins/woocommerce/changelog/update-appearance-task
 plugins/woocommerce/changelog/fix-cys-reapply-block-type-filters-error
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.1.0
 plugins/woocommerce/changelog/fix-40166_redirect_to_edit_page_when_variation_added
 plugins/woocommerce/changelog/update-hpos-ui-tweaks
 plugins/woocommerce/changelog/feature-marketplace
+plugins/woocommerce/changelog/fix-cys-visual-tweaks-12-sep
 plugins/woocommerce/changelog/pr-36402
 plugins/woocommerce/changelog/update-optimize-cys-frame-resizing
 plugins/woocommerce/changelog/fix-duplicate-meta-handling
@@ -4459,10 +4476,12 @@ plugins/woocommerce/changelog/fix-admin-page-empty-wp-6-2
 plugins/woocommerce/changelog/e2e-add-plugin-tests-slack-summary
 plugins/woocommerce/changelog/add-39709-ai-wizard-business-info-step
 plugins/woocommerce/changelog/fix-34989
+plugins/woocommerce/changelog/add-39528-intro-components
 plugins/woocommerce/changelog/api-start-unskipping-daily-tests
 plugins/woocommerce/changelog/fix-redirect-to-jetpack-connect-when-boost-is-selcted
 plugins/woocommerce/changelog/add-cys-url-navigation
 plugins/woocommerce/changelog/add-appearance-theme-tracks
+plugins/woocommerce/changelog/update-address-cys-ui-feedback
 plugins/woocommerce/changelog/add-39452
 plugins/woocommerce/changelog/add-39421_make_use_of_new_block_template
 plugins/woocommerce/changelog/add-customize-store-design-with-ai-loader
@@ -5326,6 +5345,7 @@ plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/overview.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/upload-plugin.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/update-woocommerce.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/customize-store/assembler-hub.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/calculate-shipping.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-variable.spec.js
@@ -5382,7 +5402,7 @@ plugins/woocommerce/tests/e2e-pw/test-data/sample_products.csv
 plugins/woocommerce/tests/e2e-pw/global-teardown.js
 plugins/woocommerce/tests/e2e-pw/bin/filter-setter.php
 plugins/woocommerce/tests/e2e-pw/bin/test-env-setup.sh
-plugins/woocommerce/tests/e2e-pw/bin/enable-experimental-features.php
+plugins/woocommerce/tests/e2e-pw/bin/test-helper-apis.php
 plugins/woocommerce/tests/e2e-pw/global-setup.js
 plugins/woocommerce/tests/e2e-pw/ignore-plugin-tests.playwright.config.js
 plugins/woocommerce/tests/e2e-pw/playwright.config.js
@@ -5390,6 +5410,7 @@ plugins/woocommerce/tests/e2e-pw/README.md
 plugins/woocommerce/tests/e2e-pw/WSL_SETUP_INSTRUCTIONS.md
 plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/plugin-utils.js
+plugins/woocommerce/tests/e2e-pw/utils/options.js
 plugins/woocommerce/tests/e2e-pw/utils/onboarding.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/utils/tours.js
@@ -5399,6 +5420,7 @@ plugins/woocommerce/tests/e2e-pw/utils/wordpress.js
 plugins/woocommerce/tests/e2e-pw/utils/api.js
 plugins/woocommerce/tests/e2e-pw/utils/filters.js
 plugins/woocommerce/tests/e2e-pw/utils/features.js
+plugins/woocommerce/tests/e2e-pw/utils/themes.js
 plugins/woocommerce/tests/bin/phpunit.sh
 plugins/woocommerce/tests/bin/install.sh
 plugins/woocommerce/tests/wp-cli.yml
