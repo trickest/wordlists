@@ -4307,8 +4307,16 @@ src/Sylius/Bundle/CoreBundle/Tests/Stub/CatalogPromotionPriceCalculatorStub.php
 src/Sylius/Bundle/CoreBundle/Tests/Stub/UriBasedSectionResolverStub.php
 src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Mailer/OrderEmailManagerTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineCompositeTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Twig/ChannelUrlExtensionTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
+src/Sylius/Bundle/CoreBundle/StateMachine/Transition.php
+src/Sylius/Bundle/CoreBundle/StateMachine/SymfonyWorkflowAdapter.php
+src/Sylius/Bundle/CoreBundle/StateMachine/Exception/StateMachineExecutionException.php
+src/Sylius/Bundle/CoreBundle/StateMachine/TransitionInterface.php
+src/Sylius/Bundle/CoreBundle/StateMachine/StateMachineInterface.php
+src/Sylius/Bundle/CoreBundle/StateMachine/WinzouStateMachineAdapter.php
+src/Sylius/Bundle/CoreBundle/StateMachine/CompositeStateMachine.php
 src/Sylius/Bundle/CoreBundle/Attribute/AsCatalogPromotionApplicatorCriteria.php
 src/Sylius/Bundle/CoreBundle/Attribute/AsUriBasedSectionResolver.php
 src/Sylius/Bundle/CoreBundle/Attribute/AsOrderItemsTaxesApplicator.php
@@ -4379,8 +4387,11 @@ src/Sylius/Bundle/CoreBundle/Fixture/TaxRateFixture.php
 src/Sylius/Bundle/CoreBundle/Fixture/LocaleFixture.php
 src/Sylius/Bundle/CoreBundle/test/.env
 src/Sylius/Bundle/CoreBundle/test/public/index.php
+src/Sylius/Bundle/CoreBundle/test/src/Model/BlogPost.php
+src/Sylius/Bundle/CoreBundle/test/src/Model/Comment.php
 src/Sylius/Bundle/CoreBundle/test/src/Kernel.php
 src/Sylius/Bundle/CoreBundle/test/.env.test
+src/Sylius/Bundle/CoreBundle/test/config/packages/state_machine.yaml
 src/Sylius/Bundle/CoreBundle/test/config/packages/config.yaml
 src/Sylius/Bundle/CoreBundle/test/config/packages/test_with_swiftmailer/sylius_mailer.yaml
 src/Sylius/Bundle/CoreBundle/test/config/packages/test_with_swiftmailer/filesystem.yaml
@@ -4521,6 +4532,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/emails.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/form.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/installer_requirements.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/commands.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/state_machines.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/installer.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/fixtures_factories.xml
@@ -4885,6 +4897,9 @@ src/Sylius/Bundle/CoreBundle/spec/SectionResolver/UriBasedSectionProviderSpec.ph
 src/Sylius/Bundle/CoreBundle/spec/Installer/Executor/CommandExecutorSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Installer/Requirement/RequirementSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Factory/OrderFactorySpec.php
+src/Sylius/Bundle/CoreBundle/spec/StateMachine/SymfonyWorkflowAdapterSpec.php
+src/Sylius/Bundle/CoreBundle/spec/StateMachine/WinzouStateMachineAdapterSpec.php
+src/Sylius/Bundle/CoreBundle/spec/StateMachine/CompositeStateMachineSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Fixture/Listener/ImagesPurgerListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Fixture/Listener/CatalogPromotionExecutorListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/Fixture/Factory/TaxonExampleFactorySpec.php
@@ -4947,6 +4962,7 @@ src/Sylius/Bundle/CoreBundle/Theme/ChannelBasedThemeContext.php
 src/Sylius/Bundle/CoreBundle/Twig/ChannelUrlExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/CheckoutStepsExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ProductVariantsMapExtension.php
+src/Sylius/Bundle/CoreBundle/Twig/StateMachineExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/VariantResolverExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ProductVariantsPricesExtension.php
 src/Sylius/Bundle/CoreBundle/Twig/ProductTranslationExtension.php
@@ -7916,6 +7932,7 @@ config/packages/dev/routing.yaml
 config/packages/dev/web_profiler.yaml
 config/packages/dev/nelmio_alice.yaml
 config/packages/translation.yaml
+config/packages/workflow.yaml
 config/packages/security.yaml
 config/packages/doctrine.yaml
 config/services_test_cached.yaml
