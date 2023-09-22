@@ -177,6 +177,8 @@ packages/Webkul/CatalogRule/src/Models/CatalogRule.php
 packages/Webkul/CatalogRule/src/Contracts/CatalogRuleProduct.php
 packages/Webkul/CatalogRule/src/Contracts/CatalogRuleProductPrice.php
 packages/Webkul/CatalogRule/src/Contracts/CatalogRule.php
+packages/Webkul/CatalogRule/src/Jobs/UpdateCreateCatalogRuleIndex.php
+packages/Webkul/CatalogRule/src/Jobs/UpdateCreateProductIndex.php
 packages/Webkul/CatalogRule/src/Resources/manifest.php
 packages/Webkul/CatalogRule/src/Console/Commands/PriceRuleIndex.php
 packages/Webkul/CatalogRule/src/Database/Migrations/2019_12_06_110507_create_catalog_rule_product_prices_table.php
@@ -186,7 +188,9 @@ packages/Webkul/CatalogRule/src/Database/Migrations/2019_12_03_184732_create_cat
 packages/Webkul/CatalogRule/src/Database/Migrations/2019_12_06_101110_create_catalog_rule_products_table.php
 packages/Webkul/CatalogRule/src/Providers/ModuleServiceProvider.php
 packages/Webkul/CatalogRule/src/Providers/CatalogRuleServiceProvider.php
+packages/Webkul/CatalogRule/src/Providers/EventServiceProvider.php
 packages/Webkul/CatalogRule/src/Listeners/Product.php
+packages/Webkul/CatalogRule/src/Listeners/CatalogRule.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleProductPriceRepository.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleProductRepository.php
 packages/Webkul/CatalogRule/src/Repositories/CatalogRuleRepository.php
@@ -348,7 +352,6 @@ packages/Webkul/Shop/src/Resources/views/components/shimmer/datagrid/table/body.
 packages/Webkul/Shop/src/Resources/views/components/shimmer/datagrid/table/head.blade.php
 packages/Webkul/Shop/src/Resources/views/components/shimmer/datagrid/index.blade.php
 packages/Webkul/Shop/src/Resources/views/components/shimmer/datagrid/toolbar.blade.php
-packages/Webkul/Shop/src/Resources/views/components/shimmer/image/index.blade.php
 packages/Webkul/Shop/src/Resources/views/components/shimmer/categories/view.blade.php
 packages/Webkul/Shop/src/Resources/views/components/shimmer/categories/carousel.blade.php
 packages/Webkul/Shop/src/Resources/views/components/shimmer/categories/filters.blade.php
@@ -387,6 +390,7 @@ packages/Webkul/Shop/src/Resources/views/components/dropdown/menu/item.blade.php
 packages/Webkul/Shop/src/Resources/views/components/tabs/index.blade.php
 packages/Webkul/Shop/src/Resources/views/components/tabs/item.blade.php
 packages/Webkul/Shop/src/Resources/views/components/media/index.blade.php
+packages/Webkul/Shop/src/Resources/views/components/media/images/lazy.blade.php
 packages/Webkul/Shop/src/Resources/views/products/view.blade.php
 packages/Webkul/Shop/src/Resources/views/products/prices/index.blade.php
 packages/Webkul/Shop/src/Resources/views/products/prices/configurable.blade.php
@@ -1564,7 +1568,6 @@ public/themes/admin/default/build/assets/invoice-bbc6d6a8.svg
 public/themes/admin/default/build/assets/bagisto-admin-765030d0.woff
 public/themes/admin/default/build/assets/payment-method-10ea91e1.svg
 public/themes/admin/default/build/assets/theme-f4d870b8.svg
-public/themes/admin/default/build/assets/app-605c5ed1.js
 public/themes/admin/default/build/assets/default-empty-2c56169a.svg
 public/themes/admin/default/build/assets/order-c8714dda.svg
 public/themes/admin/default/build/assets/orders-empty-5dd62d9d.svg
@@ -1580,6 +1583,7 @@ public/themes/admin/default/build/assets/address-c3d46b29.svg
 public/themes/admin/default/build/assets/chart-c63d8872.js
 public/themes/admin/default/build/assets/use-cases-4a33de1a.svg
 public/themes/admin/default/build/assets/captcha-061d77ab.svg
+public/themes/admin/default/build/assets/app-56e1e519.js
 public/themes/admin/default/build/assets/reviews-empty-17309002.svg
 public/themes/admin/default/build/assets/next-2-6aace5ca.svg
 public/themes/admin/default/build/assets/front-93490c30.svg

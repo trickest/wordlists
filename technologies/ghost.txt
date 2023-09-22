@@ -1883,7 +1883,9 @@ ghost/collections/src/UniqueChecker.ts
 ghost/collections/src/CollectionPost.ts
 ghost/collections/src/events/PostAddedEvent.ts
 ghost/collections/src/events/TagDeletedEvent.ts
+ghost/collections/src/events/CollectionPostAdded.ts
 ghost/collections/src/events/PostEditedEvent.ts
+ghost/collections/src/events/CollectionPostRemoved.ts
 ghost/collections/src/RepositoryUniqueChecker.ts
 ghost/collections/src/libraries.d.ts
 ghost/collections/README.md
@@ -3615,6 +3617,7 @@ ghost/core/core/server/data/migrations/versions/4.12/01-add-email-only-column-to
 ghost/core/core/server/data/migrations/versions/4.12/02-fix-member-statuses.js
 ghost/core/core/server/data/migrations/versions/2.37/01-final-v2.js
 ghost/core/core/server/data/migrations/versions/5.30/2023-01-13-04-25-unsubscribe-suppressed-emails.js
+ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/4.42/2022-03-30-15-44-add-newsletter-permissions.js
 ghost/core/core/server/data/migrations/versions/4.42/2022-03-21-17-17-add.js
 ghost/core/core/server/data/migrations/versions/5.35/2023-02-13-06-24-add-mentions-verified-column.js
@@ -3626,6 +3629,8 @@ ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-13-11-add-newsle
 ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-14-30-add-newsletter-show-subscription-details.js
 ghost/core/core/server/data/migrations/versions/5.39/2023-03-14-12-26-add-last-mentions-email-report-timestamp-setting.js
 ghost/core/core/server/data/migrations/versions/5.39/2023-03-13-09-29-add-newsletter-show-post-title-section.js
+ghost/core/core/server/data/migrations/versions/5.65/2023-09-22-06-42-15-truncate-stale-built-in-collections-posts.js
+ghost/core/core/server/data/migrations/versions/5.65/2023-09-22-06-42-55-repopulate-built-in-featured-collection-posts.js
 ghost/core/core/server/data/migrations/versions/4.8/04-migrate-show-newsletter-header-setting.js
 ghost/core/core/server/data/migrations/versions/4.8/02-add-feature-image-caption-column-to-posts-meta.js
 ghost/core/core/server/data/migrations/versions/4.8/01-add-feature-image-alt-column-to-posts-meta.js
@@ -4966,7 +4971,6 @@ apps/admin-x-settings/src/components/settings/site/AnnouncementBarModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/EditRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModalConfirm.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationReasonForm.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/IncomingRecommendations.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationList.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationIcon.tsx
@@ -5319,6 +5323,7 @@ apps/admin-x-settings/src/api/newsletters.ts
 apps/admin-x-settings/src/api/mentions.ts
 apps/admin-x-settings/src/api/apiKeys.ts
 apps/admin-x-settings/src/api/tiers.ts
+apps/admin-x-settings/src/api/referrers.ts
 apps/admin-x-settings/src/api/site.ts
 apps/admin-x-settings/src/api/users.ts
 apps/admin-x-settings/src/api/customThemeSettings.ts

@@ -2280,6 +2280,7 @@ core/tests/Drupal/KernelTests/Core/Entity/EntityReferenceFieldTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityViewBuilderTest.php
 core/tests/Drupal/KernelTests/Core/Entity/DefaultTableMappingIntegrationTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityKernelTestBaseTest.php
+core/tests/Drupal/KernelTests/Core/Entity/ImmutablePropertiesConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Entity/BundleConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityBundleFieldTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityDecoupledTranslationRevisionsTest.php
@@ -5384,11 +5385,13 @@ core/lib/Drupal/Core/Entity/Plugin/EntityReferenceSelection/Broken.php
 core/lib/Drupal/Core/Entity/Plugin/EntityReferenceSelection/PhpSelection.php
 core/lib/Drupal/Core/Entity/Plugin/EntityReferenceSelection/DefaultSelection.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/ReferenceAccessConstraintValidator.php
+core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/ImmutablePropertiesConstraint.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/BundleConstraintValidator.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityUntranslatableFieldsConstraint.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/BundleConstraint.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityChangedConstraintValidator.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityHasFieldConstraint.php
+core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/ImmutablePropertiesConstraintValidator.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/EntityHasFieldConstraintValidator.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/ReferenceAccessConstraint.php
 core/lib/Drupal/Core/Entity/Plugin/Validation/Constraint/ValidReferenceConstraintValidator.php
@@ -13189,6 +13192,7 @@ core/modules/views/tests/src/Functional/Entity/FieldEntityTest.php
 core/modules/views/tests/src/Functional/Entity/EntityQueryAccessTest.php
 core/modules/views/tests/src/Functional/Update/ViewsFixRevisionIdUpdateTest.php
 core/modules/views/tests/src/Functional/Update/ViewsRemoveDefaultArgumentSkipUrlTest.php
+core/modules/views/tests/src/Functional/Update/ViewsAddMissingLabelsUpdateTest.php
 core/modules/views/tests/src/Functional/ViewsEscapingTest.php
 core/modules/views/tests/themes/views_test_theme/views_test_theme.info.yml
 core/modules/views/tests/themes/views_test_theme/templates/views-view-fields.html.twig

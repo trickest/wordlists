@@ -352,6 +352,7 @@ db/migrate/20170619000001_tree_select.rb
 db/migrate/20211028072158_maintenance_remove_active_ldap_sessions.rb
 db/migrate/20221010142630_issue_2401_convert_user_login_email_to_unicode.rb
 db/migrate/20210910112200_issue_3732_add_core_workflow_permission.rb
+db/migrate/20230912080534_group_hierarchy.rb
 db/migrate/20180128000001_chat_add_ip_country.rb
 db/migrate/20210407000001_setting_add_internal_article_check.rb
 db/migrate/20161112000001_organization_domain_based_assignment.rb
@@ -731,6 +732,7 @@ app/assets/javascripts/app/controllers/getting_started/auto_wizard.coffee
 app/assets/javascripts/app/controllers/getting_started/channel_email_pre_configured.coffee
 app/assets/javascripts/app/controllers/ticket_shared_draft_overwrite_modal.coffee
 app/assets/javascripts/app/controllers/default_route.coffee
+app/assets/javascripts/app/controllers/_ui_element/group_permissions.coffee
 app/assets/javascripts/app/controllers/_ui_element/object_manager_attribute.coffee
 app/assets/javascripts/app/controllers/_ui_element/_application/_ui_element.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext.coffee
@@ -2803,6 +2805,7 @@ app/frontend/shared/entities/object-attributes/form/resolver/fields/active.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/integer.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/multiselect.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/textarea.ts
+app/frontend/shared/entities/object-attributes/form/resolver/fields/group-permissions.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/input.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/autocompletion-customer-organization.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/select.ts
@@ -3720,6 +3723,8 @@ app/models/core_workflow/assets.rb
 app/models/core_workflow/custom/secondary_organization.rb
 app/models/core_workflow/custom/backend.rb
 app/models/core_workflow/custom/ticket_duplicate_detection.rb
+app/models/core_workflow/custom/admin_show_group_list_for_agents.rb
+app/models/core_workflow/custom/admin_group_parent_id.rb
 app/models/core_workflow/custom/pending_time.rb
 app/models/core_workflow/custom/ticket_time_accounting_check.rb
 app/models/core_workflow/custom/admin_sla.rb
@@ -5084,6 +5089,7 @@ lib/tasks/zammad/package/list.rb
 lib/tasks/zammad/search_index_es.rake
 lib/enrichment/clearbit/organization.rb
 lib/enrichment/clearbit/user.rb
+lib/migration_helper.rb
 lib/stats.rb
 lib/email_helper/idn.rb
 lib/email_helper/verify.rb
@@ -6143,7 +6149,6 @@ script/rails
 script/background-worker.rb
 script/vite-server.rb
 script/init.d/README.md
-script/fix-node-modules.mjs
 script/build/deploy_archives.sh
 script/build/sync_repo.sh
 script/build/test_slice_tests.sh
@@ -6716,6 +6721,7 @@ spec/graphql/gql/zammad_schema_global_id_spec.rb
 spec/db/migrate/issue_1977_remove_invalid_user_foreign_keys_spec.rb
 spec/db/migrate/issue_2185_and_or_conditions_spec.rb
 spec/db/migrate/set_mail_ssl_default_spec.rb
+spec/db/migrate/group_hierarchy_spec.rb
 spec/db/migrate/issue_2455_follow_up_assignment_spec.rb
 spec/db/migrate/add_history_source_spec.rb
 spec/db/migrate/smime_meta_information_table_spec.rb
@@ -7277,6 +7283,8 @@ spec/models/core_workflow/conditions_spec.rb
 spec/models/core_workflow/base.rb
 spec/models/core_workflow/custom/ticket_duplicate_detection_spec.rb
 spec/models/core_workflow/custom/pending_time_spec.rb
+spec/models/core_workflow/custom/admin_show_group_list_for_agents_spec.rb
+spec/models/core_workflow/custom/admin_group_parent_id_spec.rb
 spec/models/core_workflow/custom/admin_sla_spec.rb
 spec/models/core_workflow/custom/ticket_time_accounting_check_spec.rb
 spec/models/core_workflow/custom/admin_core_workflow_spec.rb
