@@ -2049,7 +2049,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /photo-center/*
 /photoshop-elements-editor
 /pingback$
-/pinned_flashes
 /plans
 /playlistmanager
 /playlistmanager-helpx
@@ -2531,6 +2530,9 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*onwardjourney
 ?*origin
 ?*oseid=
+?*outputType=accessibility
+?*outputType=comment
+?*outputType=tracking
 ?*page
 ?*page=
 ?*partner=
@@ -2551,7 +2553,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*smprod=
 ?*sort=
 ?*source
-?*source=user_page
 ?*sr_source
 ?*stars=
 ?*subcategories=
@@ -4198,6 +4199,7 @@ FormsCommonComponents/static-1.886
 FormsCommonComponents/static-1.956
 Forum/User/*
 ForumPost/
+Fragment/SysConfig
 FreeGiftDisplayView
 Friends
 Friends/inviteFriends
@@ -4826,6 +4828,8 @@ _adc_*/shop
 _ah
 _aid_656913.html
 _ajax
+_allComments.html
+_allCommentsClassicBlog.html
 _aoc_*/shop
 _api
 _api$
@@ -4837,6 +4841,7 @@ _blog_rss
 _borders
 _comments
 _derived
+_email.html
 _enterprise*/shop
 _escaped_fragment_
 _escaped_fragment_=aboutgroup
@@ -4863,17 +4868,28 @@ _hsenc=
 _id_86231824.html
 _internal-epp-discounted*/shop
 _jcr_content
+_jsn.json
+_jsnp.js
+_jsnpStatic.js
 _json
+_json.json
 _json/getAdsForMediaViewer
 _json/video/mon
+_jsonp.js
+_jsonpStatic.js
 _k12nonbts*/shop
 _kiosk*/shop
 _kw
 _meet$
 _meet/$
+_meta.xml
 _mm/
+_mobile.mobile
+_mobile.xml
+_modal.html
 _modules
 _multiremote
+_newsml.html
 _next/data
 _next/gtm
 _next/jwt
@@ -4881,6 +4897,10 @@ _next/title
 _next/viewer
 _ngjs/resource
 _ngjs/resource/*/get
+_nimbusJson.json
+_nimbusJsonp.js
+_nimbusJsonpStatic.js
+_nitf.xml
 _nonbts*/shop
 _notes/
 _ok
@@ -4891,19 +4911,25 @@ _partners
 _preview
 _preview
 _print
+_print.html
 _private
 _private/admin-tools
 _ptid=
 _qa
+_qa.html
 _qpromo*/shop
 _query=
 _refurb-discounted*/shop
 _remote
 _rprt
+_rss.xml
 _rv/gtm
 _rv/jwt
 _rv/title
 _rv/viewer
+_search.html
+_seo.html
+_singlePage.html
 _smt=
 _static
 _styleguide
@@ -5010,6 +5036,7 @@ abuse_reports/new
 ac
 ac/
 ac/globalnav/2.0/*/images/ac-globalnav/globalnav/search
+ac2
 academic-subscriptions
 academy
 academy-free-account
@@ -5413,7 +5440,12 @@ amp$
 amp-proxy
 amp-tealium
 amp/authorize
+amphtml
+amphtml/blogs/test
+amphtml/classic-apps
+amphtml/news/test
 amphtml/stamp/ucp/post-testing
+amphtml/utils
 amptest
 amturing-acm-org/
 amurl
@@ -5499,7 +5531,6 @@ api/v*/discovery
 api/v*/invite
 api/v*/store
 api/v1
-api/v1/activities
 api/v1/trebuchet
 api/v2/doc
 api/v3/ajax/bespoke/member/neu/specs
@@ -5615,6 +5646,7 @@ archive
 archive$
 archive/article
 archive/graphs.php
+archive/lifestyle/wellness/1999/01/19/an-illness-no-one-understands-tourettes-syndrome/852df0cc-2164-4c83-be8d-0c770d028547
 archive/page
 archive/project/sovsport$
 archived
@@ -5694,7 +5726,6 @@ assets/oracle-fact-sheet-079219.pdf
 assets/pdf/company/private
 assets/pdf/misc/WP_5Reasons_022409.pdf
 assets/pdf/misc/state-of-sales-report-salesforce.pdf
-assets/shared
 assets/siteindex
 assets/static/ads
 assets/swf
@@ -6079,6 +6110,7 @@ badges/profile/create
 bagon
 baidu
 ban-me-i-am-a-robot
+bandito
 banmyipforever.cgi
 banner.pl
 bardiameter2=
@@ -6509,9 +6541,12 @@ blogs/*+
 blogs/7faebe5debfdd358a46f2452a54eec94fce49269/
 blogs/blog.atom
 blogs/blogpost/preview
+blogs/nationals-journal-beta
 blogs/pad$
 blogs/pad/$
+blogs/slow-ride
 blogs/technology.atom
+blogs/test
 blogsearch
 blogsearch_feeds
 blogtechnology/
@@ -7498,10 +7533,6 @@ catalog/productAlternative
 catalogId=
 catchup
 categories
-categories/Halloween
-categories/Postcards
-categories/fifa
-categories/silly
 category
 category/*
 category/*.xml$
@@ -7568,8 +7599,6 @@ cdn-cgi/http://mediapost.com/robots.txt
 cdn-cgi/rum
 cdn-cgi/zaraz/s.js
 cdn-cgi/zaraz/t
-cdn-proxy/pim
-cdn-proxy/px
 cdn.jwplayer.com/previews
 cdn/wpm/*.js
 ce/item.cms
@@ -7747,7 +7776,6 @@ checkout
 checkout-external
 checkout/
 checkout/cart
-checkout/package
 checkout/test.html
 checkout/test/test.html
 checkoutnow
@@ -7813,6 +7841,7 @@ cl2/feeds
 cl2/ical
 class
 class="MjjYud"><div
+classic-apps
 classic/contact/concerts.htm
 classic/contact/default.htm
 classic/contact/eventsdiary.htm
@@ -7960,7 +7989,6 @@ code/http://w3techs.com/robots.txt
 codesamples/
 coin*mid=
 colehaan/daring-to-step-forward
-collaborate
 collaborating-with-slack
 collaboration
 collaboration/boards
@@ -8206,7 +8234,6 @@ contact/menu*
 contact/partner*
 contact?t=donation_page_report
 contact_host
-contact_me
 contact_page
 contactmanager/help/search-results.html
 contacto
@@ -8296,8 +8323,6 @@ content_title=
 contest
 contest.php?pg=
 contests
-context_referrer=gig_page
-context_referrer=user_page
 contribute
 contributors/
 control
@@ -8401,7 +8426,6 @@ countdown/create?
 countdown/eclipse?
 countdown/generic?
 countdown/to?
-counter/*?
 counters/client-screenview
 counters/customcounter.html?day
 counters/fullscreen.html?
@@ -8585,7 +8609,6 @@ currentcartcount
 custom-reviews
 custom/created.html
 custom/search/
-custom_orders
 custom_report
 customer/secure/checkout/tesco
 customer/secure/reset-password
@@ -10972,6 +10995,7 @@ gd/search
 gd/user
 gd/users
 gdpr
+gdpr-consent
 ge
 gemini/guide/YAP_analytics.html
 gemini/guide/YAP_best_practices.html
@@ -11047,11 +11071,6 @@ giftregistry
 gifts
 gifts/link/*
 gifts?gp=*
-gigs/*/share
-gigs/*/share?
-gigs/*page=
-gigs/*page=2$
-gigs/search
 gist
 giveaway/host/setup
 givingsociety/guardians
@@ -11634,6 +11653,7 @@ homeandgarden/home/hearstmagazines
 homefeed
 homepage
 homepage-flash-testing.jsp
+homepage-video-test
 homepage/
 homepage/2013
 honing.html
@@ -12290,7 +12310,6 @@ in/web/emi
 inapp
 inbox
 inbox$
-inbox$
 include
 include/
 includes
@@ -12841,6 +12860,10 @@ jobs
 jobs-guest
 jobs/*/apply_now
 jobs/*/more-jobs-count
+jobs/EU_UpdateJobEmployerCounter
+jobs/JS_JobSearchResult
+jobs/JS_Login
+jobs/UpdateJobEmployerCounterServlet
 jobs/a/*
 jobs/apply/*
 jobs/botrace_bot
@@ -13137,6 +13160,7 @@ kn/search
 kn/user
 kn/users
 knee-osteoarthritis-clinical-trial
+knowmore
 known-issues
 ko
 ko-*/
@@ -13416,6 +13440,7 @@ libs/
 libwww
 license
 license/
+licensing-syndication
 life
 lifestyle/cartoons/andy-capp/andy-capp
 lifestyle/cartoons/garth/garth
@@ -13505,6 +13530,10 @@ loc=
 local
 local-services-ads
 local/ajax
+local/blogsandcolumns/slow-ride-front
+local/blogsandcolumns/slow-ride-story-achenblog
+local/blogsandcolumns/slow-ride-story-tanked
+local/blogsandcolumns/slow-ride-stream-tanked
 local/cars
 local/dealership
 local/details
@@ -13566,9 +13595,6 @@ loginhelp/lookup
 loginhelpsucess
 loginidentification/
 logo
-logo-maker/brief
-logo-maker/choose-variation
-logo-maker/wordpress
 logos
 logotypes
 logout
@@ -13858,8 +13884,6 @@ marketplace/search*
 marvelshop/iframe/
 mashupmaker
 masthead
-match
-match/website
 mats/?diagid=100001&eulaaccept=yes
 mats/default.aspx?diagid=100001&eulaaccept=yes
 max=
@@ -14709,6 +14733,7 @@ napi
 narrative-
 nas
 nationalfilmregistry
+native
 native$
 native-android-mobile
 native-android-tablet
@@ -14853,7 +14878,10 @@ news/redirect/*
 news/report
 news/search*
 news/smi*
+news/tablet
 news/tags
+news/test
+news/test-liveblog
 news/top*
 news/uknews/1533141/Life-for-father-who-killed-girl-to-pay-back-wifes-infidelity.html
 news/uknews/law-and-order/11282672/Fetish-industry-metalworker-faces-penalty-for-breaching-design-right.html
@@ -15435,7 +15463,6 @@ order/thank-you
 orderdetails
 orderhistory
 orders
-orders/timeline
 organicag/display
 organization-guest
 organizationInviteDeclined
@@ -15526,7 +15553,6 @@ pa-IN/search
 pa-IN/user
 pa-IN/users
 package_files_uploaded_via_chrome
-packages
 padsearch
 page
 page-
@@ -15589,7 +15615,6 @@ pages/search
 pages/terms
 pages/terms
 pages/thank-you
-pages/website-developer-match
 pages?oid=-
 pagesense/help/search-results.html
 paid-posts
@@ -15664,6 +15689,9 @@ payment_requests.php
 payments
 payments/book
 pb
+pb/gr
+pb/resource
+pb/resources
 pb/widgets
 pb=
 pbs/kids/mt3
@@ -16043,7 +16071,7 @@ pmc/publisherportal/download
 pmc/publisherportal/journalmanager
 pmc/tocrender.fcgi
 pmc/utilities
-pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsanr\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyXQobChlXYXMgbWFjaHQgZGllIFJvYm90cyB0eHQ_Ch4KHFdhcyBzaW5kIFJvYm90cyB0eHQgRGF0ZWllbj8KGwoZV28gZmluZGV0IG1hbiBSb2JvdHMgdHh0PxDkAg\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22u5tdObqAZiWgrUyChDqJE4T4n4A\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
+pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEyZgobChlXYXMgbWFjaHQgZGllIFJvYm90cyB0eHQ_Ch4KHFdhcyBzaW5kIFJvYm90cyB0eHQgRGF0ZWllbj8KJAoiV2FzIG11c3MgaW4gZGVyIFJvYm90cyB0eHQgc3RlaGVuPxDkAg\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22qk1KzDagBF_hMsaAOwkiJ857nnM\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
 pmcomment/
 pmm-templates
 pmo/contact/en/staff
@@ -16318,6 +16346,12 @@ posts
 posts/
 posts/get_post
 posts?
+posttv-beta
+posttv/c/embed
+posttv/c/trendex
+posttv/c/video_search
+posttv/posttv/trendex
+posttv/sponsored-video
 pov_mt/mt4
 powershell/
 ppc
@@ -16417,7 +16451,6 @@ pro
 pro-learn
 pro-learn/blog/*error
 pro-site
-pro/about
 pro2
 proMatch
 proProjects
@@ -16737,6 +16770,8 @@ pv2/
 pv_obj_cache
 pw
 pwamp/fbi
+pwapi-proxy/pwproxy
+pwapiv2
 pwb/2000
 pwb/2002
 pwb/2004
@@ -16918,6 +16953,7 @@ recfb?
 recharge/dashboard/car
 recharge/dashboard/static
 recherche
+recipes/search
 recipes/search
 recommendations
 recommendnews
@@ -17280,11 +17316,13 @@ rundowns/segment.php?
 rus/licensing/Unilateral.aspx/*
 rvh
 rw-reg/http://realmenrealstyle.com/robots.txt
+rw/WashingtonPost/Content/Epaper
 rw/forums
 rw/kb/*/discuss
 rw/search
 rw/user
 rw/users
+rweb
 ryan
 rye
 s
@@ -17807,8 +17845,6 @@ search_album.pl
 search_diary.pl
 search_history
 search_ms
-search_results
-search_results/gigs
 search_rss
 search_rss$
 search_suggest
@@ -17921,7 +17957,6 @@ sell/cart
 sell/mywants$
 sell/post
 sell/unlist
-seller_onboarding
 semantic-homepage
 seminar/
 semp
@@ -18012,6 +18047,7 @@ settings/loid-email-unsubscribe-router
 settings/mirror_choices
 setup
 setup_organization=
+sf/test
 sf11500465=
 sg
 sg$
@@ -18850,7 +18886,6 @@ specialhandling-payments/
 specialities/*/all-bmj/feed
 specializations-noperf
 specializations-perf
-specials
 specific
 speed-test-parent
 spf=
@@ -18976,6 +19011,7 @@ ssafe/
 ssi
 ssi/alert/banner.htm
 ssi/geoip_cc
+sslsingle
 sso
 sso-redirect
 sso/action/logout
@@ -19162,7 +19198,6 @@ studies-and-reports/*&q=
 studies-and-reports/*?q=
 studioapi
 studioapi/wasabi
-studios
 study/manual/handbook-1-stake-presidents-and-bishops
 style/beauty/hearstmagazines
 style/fashion/hearstmagazines
@@ -19188,8 +19223,19 @@ submitstory
 submitted/review
 submitted?
 subreddits
+subscribe/braintree
 subscribe/confirm.pl
+subscribe/enterpriseportal
+subscribe/foryouapi
 subscribe/getstarted
+subscribe/lagoon
+subscribe/offers/service
+subscribe/onsiteapi
+subscribe/paywall
+subscribe/person
+subscribe/preferenceapi
+subscribe/subscriptionapi
+subscribe/user
 subscribe/v3
 subscribe/view.pl
 subscribe_success
@@ -19395,6 +19441,7 @@ ta/user
 ta/users
 tab=
 tabdisplay
+tablet
 tacpage
 tag
 tag-manager
@@ -19644,7 +19691,9 @@ testcases
 testfl
 testhttp://moz.com/robots.txt
 testing
+testpage-forhomepage
 tests/*
+tetro
 text
 textedition
 tfemail
@@ -19790,6 +19839,7 @@ todays-paper/travel
 todays-paper/wednesday-food
 todays-paper/weekend
 todays-paper/world
+todays_paper
 todo.txt
 toggle-experiment
 toggle-favorites-collection
@@ -20688,7 +20738,6 @@ user_modify.php
 user_photos
 user_profile$
 user_registration
-user_sessions
 userdata/images
 userdata/modules/wproducts/wprod_products_photo
 userguide
@@ -20788,9 +20837,6 @@ v/badge
 v/checkin
 v/s/vmdn
 v1
-v1/browser-performance
-v1/links
-v1/stats
 v1/urls/count.json
 v2
 v2/login_or_join
@@ -22112,6 +22158,7 @@ wp-admin/admin-ajax.phphttp://fool.com/robots.txt
 wp-admin/admin-ajax.phphttp://openstreetmap.org/robots.txt
 wp-admin/load-scripts.php
 wp-admin/load-styles.php
+wp-adv
 wp-comments-post.php
 wp-content
 wp-content/cache
@@ -22154,6 +22201,7 @@ wp-content/themes/wired/assets/images/wired_insider_1118_1000x190.jpg
 wp-content/themes/wired/assets/images/wired_video_1000x190.jpg
 wp-content/uploads
 wp-content/uploads/wp-import-export-lite/http://rebrand.ly/robots.txt
+wp-dyn
 wp-includes
 wp-includes/css
 wp-includes/js
@@ -22167,11 +22215,14 @@ wp-login
 wp-login.php
 wp-login.php
 wp-signup.php
+wp-stat/ad
+wp-stat/vrroom
 wp-trackback.php
 wp/wp-admin
 wp/wp-content
 wp/wp-includes
 wpm/*.js
+wpost/proxy
 wrd.walmart.com
 write-
 write-review
