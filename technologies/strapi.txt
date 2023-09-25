@@ -2040,7 +2040,11 @@ packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/Stages/Stage/tests/Stage.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/Stages/Stage/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/components/Stages/Stages.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/selectors.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/hooks/tests/useReviewWorkflows.test.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/hooks/tests/useReviewWorkflowsStages.test.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/hooks/useReviewWorkflows.js
+packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/hooks/useReviewWorkflowsStages.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/pages/CreateView/index.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/pages/CreateView/CreateView.js
 packages/core/admin/ee/admin/pages/SettingsPage/pages/ReviewWorkflows/pages/EditView/index.js
@@ -2104,6 +2108,7 @@ packages/core/admin/ee/server/constants/webhookEvents.js
 packages/core/admin/ee/server/constants/workflows.js
 packages/core/admin/ee/server/middlewares/__tests__/review-workflows.test.js
 packages/core/admin/ee/server/middlewares/review-workflows.js
+packages/core/admin/ee/server/migrations/review-workflows-stages-roles.js
 packages/core/admin/ee/server/migrations/review-workflows-deleted-ct-in-workflows.js
 packages/core/admin/ee/server/migrations/audit-logs-table.js
 packages/core/admin/ee/server/migrations/review-workflows-content-types.js
@@ -2138,10 +2143,12 @@ packages/core/admin/ee/server/services/review-workflows/validation.js
 packages/core/admin/ee/server/services/review-workflows/metrics/__tests__/weekly-metrics.test.js
 packages/core/admin/ee/server/services/review-workflows/metrics/index.js
 packages/core/admin/ee/server/services/review-workflows/metrics/weekly-metrics.js
+packages/core/admin/ee/server/services/review-workflows/stage-permissions.js
 packages/core/admin/ee/server/services/user.js
 packages/core/admin/ee/server/register.js
 packages/core/admin/ee/server/destroy.js
 packages/core/admin/ee/server/bootstrap.js
+packages/core/admin/ee/server/controllers/__tests__/stages.test.js
 packages/core/admin/ee/server/controllers/authentication/index.js
 packages/core/admin/ee/server/controllers/authentication/utils.js
 packages/core/admin/ee/server/controllers/authentication/middlewares.js
@@ -2810,6 +2817,14 @@ packages/core/types/src/types/core/commands/index.ts
 packages/core/types/src/types/core/index.ts
 packages/core/types/src/types/core/registry.ts
 packages/core/types/src/types/core/plugins/index.ts
+packages/core/types/src/types/core/plugins/config/strapi-admin/index.ts
+packages/core/types/src/types/core/plugins/config/index.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/routes.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/controllers.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/lifecycle.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/index.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/config.ts
+packages/core/types/src/types/core/plugins/config/strapi-server/content-types.ts
 packages/core/types/src/types/core/schemas/index.ts
 packages/core/types/src/types/core/uid.ts
 packages/core/types/src/types/core/namespace.ts
@@ -4090,6 +4105,7 @@ api-tests/core/admin/admin-api-token-crud.test.api.js
 api-tests/core/admin/admin-role.test.api.js
 api-tests/core/admin/ee/provider-login.test.api.js
 api-tests/core/admin/ee/review-workflows-content-types.test.api.js
+api-tests/core/admin/ee/review-workflows-stage-permissions.test.api.js
 api-tests/core/admin/ee/review-workflows.test.api.js
 api-tests/core/admin/ee/provider-options.test.api.js
 api-tests/core/admin/admin-auth.test.api.js

@@ -864,6 +864,7 @@ tests/api-tests/queries/orderBy.test.ts
 tests/api-tests/queries/limits.test.ts
 tests/api-tests/queries/validation.ts
 tests/api-tests/queries/cursor-pagination.test.ts
+tests/api-tests/queries/__snapshots__/limits.test.ts.snap
 tests/api-tests/body-parser.test.ts
 tests/api-tests/default-value/defaults.test.ts
 tests/api-tests/s3-public-read-policy.json
@@ -876,6 +877,8 @@ tests/api-tests/package.json
 tests/api-tests/hooks/list-hooks.test.ts
 tests/api-tests/hooks/hook-errors.test.ts
 tests/api-tests/hooks/validation.test.ts
+tests/api-tests/hooks/__snapshots__/list-hooks.test.ts.snap
+tests/api-tests/hooks/__snapshots__/hook-errors.test.ts.snap
 tests/api-tests/db-enable-logging.test.ts
 tests/api-tests/fields/required.test.ts
 tests/api-tests/fields/crud.test.ts
@@ -938,6 +941,7 @@ tests/api-tests/access-control/authed-user.test.ts
 tests/api-tests/access-control/mutations-list-operation.test.ts
 tests/api-tests/access-control/utils.ts
 tests/api-tests/access-control/__snapshots__/schema.test.ts.snap
+tests/api-tests/access-control/__snapshots__/filter-coercion-and-validation.test.ts.snap
 tests/api-tests/auth.test.ts
 tests/api-tests/new-interfaces.test.ts
 tests/api-tests/test-runner.ts
@@ -1990,6 +1994,8 @@ design-system/website/pages/_app.tsx
 design-system/website/utils.ts
 README.md
 .changeset/fix-id-filters.md
+.changeset/refine-hook-types.md
+.changeset/strong-swans-destroy.md
 .changeset/config.json
 .changeset/contributors.json
 .changeset/README.md
