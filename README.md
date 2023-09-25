@@ -53,4 +53,4 @@ All contributions/suggestions/questions are welcome! Feel free to create a new t
 ## Build your own workflows!
 We believe in the value of tinkering. Sign up for a demo on [trickest.com](https://trickest.com) to customize this workflow to your use case, get access to many more workflows, or build your own from scratch!
 
-[<img src="./banner.png" />](https://trickest-access.paperform.co/)
+[<img src="./banner.png" />](https://trickest.io/auth/register)
