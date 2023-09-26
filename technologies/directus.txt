@@ -7,14 +7,12 @@ directus/cli.js
 license
 packages/storage-driver-gcs/tsconfig.json
 packages/storage-driver-gcs/license
-packages/storage-driver-gcs/tsconfig.prod.json
 packages/storage-driver-gcs/package.json
 packages/storage-driver-gcs/src/index.ts
 packages/storage-driver-gcs/src/index.test.ts
 packages/storage-driver-gcs/readme.md
 packages/storage/tsconfig.json
 packages/storage/license
-packages/storage/tsconfig.prod.json
 packages/storage/package.json
 packages/storage/src/index.ts
 packages/storage/src/index.test.ts
@@ -41,7 +39,6 @@ packages/components/src/index.test.ts
 packages/components/readme.md
 packages/constants/tsconfig.json
 packages/constants/license
-packages/constants/tsconfig.prod.json
 packages/constants/package.json
 packages/constants/src/index.ts
 packages/constants/src/regex.ts
@@ -53,7 +50,6 @@ packages/constants/src/files.ts
 packages/constants/readme.md
 packages/update-check/tsconfig.json
 packages/update-check/license
-packages/update-check/tsconfig.prod.json
 packages/update-check/package.json
 packages/update-check/src/cache.ts
 packages/update-check/src/index.ts
@@ -61,7 +57,6 @@ packages/update-check/src/index.test.ts
 packages/update-check/readme.md
 packages/storage-driver-s3/tsconfig.json
 packages/storage-driver-s3/license
-packages/storage-driver-s3/tsconfig.prod.json
 packages/storage-driver-s3/package.json
 packages/storage-driver-s3/src/index.ts
 packages/storage-driver-s3/src/index.test.ts
@@ -74,7 +69,6 @@ packages/stores/src/app.ts
 packages/stores/readme.md
 packages/storage-driver-cloudinary/tsconfig.json
 packages/storage-driver-cloudinary/license
-packages/storage-driver-cloudinary/tsconfig.prod.json
 packages/storage-driver-cloudinary/package.json
 packages/storage-driver-cloudinary/src/constants.ts
 packages/storage-driver-cloudinary/src/index.ts
@@ -195,7 +189,6 @@ packages/data/src/index.test.ts
 packages/data/readme.md
 packages/composables/tsconfig.json
 packages/composables/license
-packages/composables/tsconfig.prod.json
 packages/composables/package.json
 packages/composables/src/use-items.ts
 packages/composables/src/use-custom-selection.ts
@@ -245,7 +238,6 @@ packages/random/src/array.ts
 packages/random/readme.md
 packages/storage-driver-local/tsconfig.json
 packages/storage-driver-local/license
-packages/storage-driver-local/tsconfig.prod.json
 packages/storage-driver-local/package.json
 packages/storage-driver-local/src/index.ts
 packages/storage-driver-local/src/index.test.ts
@@ -261,7 +253,6 @@ packages/errors/src/create-error.test.ts
 packages/errors/readme.md
 packages/storage-driver-azure/tsconfig.json
 packages/storage-driver-azure/license
-packages/storage-driver-azure/tsconfig.prod.json
 packages/storage-driver-azure/package.json
 packages/storage-driver-azure/src/index.ts
 packages/storage-driver-azure/src/index.test.ts
@@ -298,11 +289,11 @@ packages/types/src/geometry.ts
 packages/types/src/vue.ts
 packages/types/src/filter.ts
 packages/types/src/interfaces.ts
+packages/types/src/files.ts
 packages/types/src/panels.ts
 packages/types/readme.md
 packages/pressure/tsconfig.json
 packages/pressure/license
-packages/pressure/tsconfig.prod.json
 packages/pressure/package.json
 packages/pressure/src/monitor.test.ts
 packages/pressure/src/index.ts
@@ -444,14 +435,12 @@ packages/release-notes-generator/src/utils/generate-markdown.ts
 packages/release-notes-generator/readme.md
 packages/storage-driver-supabase/tsconfig.json
 packages/storage-driver-supabase/license
-packages/storage-driver-supabase/tsconfig.prod.json
 packages/storage-driver-supabase/package.json
 packages/storage-driver-supabase/src/index.ts
 packages/storage-driver-supabase/src/index.test.ts
 packages/storage-driver-supabase/readme.md
 packages/schema/tsconfig.json
 packages/schema/license
-packages/schema/tsconfig.prod.json
 packages/schema/package.json
 packages/schema/src/index.ts
 packages/schema/src/types/table.ts
@@ -962,6 +951,7 @@ app/src/composables/use-system.ts
 app/src/composables/use-relation-m2m.ts
 app/src/composables/use-relation-m2o.ts
 app/src/composables/use-template-data.ts
+app/src/composables/use-folders.test.ts
 app/src/composables/use-tfa-setup.ts
 app/src/composables/use-clipboard.test.ts
 app/src/composables/use-clipboard.ts
@@ -1938,7 +1928,6 @@ api/src/types/graphql.ts
 api/src/types/express.d.ts
 api/src/types/ast.ts
 api/src/types/services.ts
-api/src/types/files.ts
 api/src/webhooks.ts
 api/src/auth/drivers/local.ts
 api/src/auth/drivers/saml.ts
@@ -2517,6 +2506,7 @@ docs/guides/headless-cms/schedule-content/dynamic-sites.md
 docs/guides/headless-cms/schedule-content/index.md
 docs/guides/index.md
 docs/guides/sdk/getting-started.md
+docs/guides/sdk/authentication.md
 docs/guides/template_shell.md
 docs/guides/flows/flows-for-loop.md
 docs/guides/flows/slugify-text-with-run-script.md
@@ -2738,6 +2728,11 @@ sdk/src/utils/request.ts
 sdk/readme.md
 contributors.yml
 .vscode/extensions.json
+.changeset/kind-pumas-lay.md
+.changeset/brown-hornets-hang.md
+.changeset/silent-radios-talk.md
 .changeset/config.json
+.changeset/chatty-cheetahs-begin.md
+.changeset/nasty-mirrors-kiss.md
 .eslintignore
 .npmrc

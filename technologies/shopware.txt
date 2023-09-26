@@ -1081,7 +1081,6 @@ changelog/_unreleased/2023-08-10-change-sw-order-customer-address-select-default
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-09-15-change-source-map-variant.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
-changelog/_unreleased/2023-09-06-fix-translator-picks-snippet-set-randomly.md
 changelog/_unreleased/2023-08-25-add-scheduled-task-helpers-commands.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
 changelog/_unreleased/2023-09-11-remove-old-consent-modal.md
@@ -1115,6 +1114,7 @@ changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-defa
 changelog/_unreleased/2023-08-21-vue3-fix-properties-module.md
 changelog/_unreleased/2023-08-09-change-sw-single-select-default-event.md
 changelog/_unreleased/2023-09-25-disable-database-profiler-on-cli.md
+changelog/_unreleased/2023-09-25-improved-sorting-error-message.md
 changelog/_unreleased/2023-08-30-fix-download-file-name-and-fallback-cannot-contains-slashes.md
 changelog/_unreleased/2023-08-09-change-sw-entity-multi-id-select-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-url-field-default-event.md
@@ -1126,6 +1126,7 @@ changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
 changelog/_unreleased/2023-08-25-add-a-force-option-to-the-assets-install-command.md
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
 changelog/_unreleased/2023-09-08-add-fixed-uuid.md
+changelog/_unreleased/2023-09-25-change-display-product-properties-case.md
 changelog/_unreleased/2023-08-25-ignore-extensionthemestillinuseexception-for-incidents.md
 changelog/_unreleased/2023-08-09-change-sw-radio-panel-default-event.md
 changelog/_unreleased/2023-09-07-fix-predis-support.md
@@ -1150,7 +1151,7 @@ changelog/_unreleased/2023-09-04-fix-user-recovery-request-on-different-default-
 changelog/_unreleased/2023-09-07-fix-query-string-parser-throw-syntax-errors.md
 changelog/_unreleased/2023-07-07-fix-open-api-core-spec.md
 changelog/_unreleased/2023-08-10-change-sw-multi-snippet-drag-and-drop-default-event.md
-changelog/_unreleased/2023-09-07-category-text-can-not-be-saved.md
+changelog/_unreleased/2023-09-25-change-drop-event-of-sw-sortable-list.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-28-add-invalid-document-exception-to-error-log-level-notice.md
@@ -1341,6 +1342,7 @@ changelog/release-6-3-1-1/2020-09-04-symfony-update-4.4.11.md
 changelog/release-6-3-1-1/2020-09-09-prices-serializer-checks-type.md
 changelog/release-6-3-1-1/2020-09-07-escaping-search.md
 changelog/release-6-3-1-1/2020-09-09-fix-listing-price-view.md
+changelog/release-6-5-5-1/2023-08-28-fix-remaining-php-8-2-deprecations.md
 changelog/release-6-4-3-1/2021-07-29-improve-file-download.md
 changelog/release-6-4-3-1/2021-07-30-add-plugin-upload-privilege.md
 changelog/release-6-4-11-0/2022-03-22-add-info-text-for-meta-title-description-in-admin.md
@@ -1592,6 +1594,8 @@ changelog/release-6-4-2-0/2021-06-10-frw-now-show-all-languages.md
 changelog/release-6-4-2-0/2021-06-10-get-recipients-from-slot-config-of-respective-entity-for-contact-form.md
 changelog/release-6-4-2-0/2021-04-13-fixed-the-display-of-max-purchase-quantity-with-purchase-steps-greater-than-one.md
 changelog/release-6-5-4-1/2023-08-18-fix-mariadb-compatibility.md
+changelog/release-6-5-5-2/2023-09-06-fix-translator-picks-snippet-set-randomly.md
+changelog/release-6-5-5-2/2023-09-07-category-text-can-not-be-saved.md
 changelog/_example.md
 changelog/release-6-3-5-0/2021-01-15-filter-close-in-a-category-at-mobile-view-also-triggers-the-area-behind.md
 changelog/release-6-3-5-0/2021-01-05-fix-disabled-filter-multi-select.md
@@ -4613,9 +4617,6 @@ tests/unit/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
 tests/unit/Core/Checkout/Cart/Address/AddressValidator2Test.php
 tests/unit/Core/Checkout/Cart/Address/AddressValidatorTest.php
-tests/unit/Core/Checkout/Cart/Common/Generator.php
-tests/unit/Core/Checkout/Cart/Common/FalseRule.php
-tests/unit/Core/Checkout/Cart/Common/TrueRule.php
 tests/unit/Core/Checkout/Cart/Promotion/Validator/PromotionValidatorTest.php
 tests/unit/Core/Checkout/Cart/Promotion/Gateway/Template/ActiveDateRangeTest.php
 tests/unit/Core/Checkout/Cart/Promotion/Gateway/Template/PermittedIndividualCodePromotionsTest.php
@@ -11651,11 +11652,14 @@ src/Core/Test/CollectingEventDispatcher.php
 src/Core/Test/TestBuilderTrait.php
 src/Core/Test/PHPUnit/Extension/FeatureFlagExtension.php
 src/Core/Test/PHPUnit/Extension/DatadogListener.php
+src/Core/Test/Generator.php
 src/Core/Test/TestDefaults.php
 src/Core/Test/Stub/Translator/StaticTranslator.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticEntityWriterGateway.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticEntityRepository.php
+src/Core/Test/Stub/Rule/FalseRule.php
+src/Core/Test/Stub/Rule/TrueRule.php
 src/Core/Test/Stub/SystemConfigService/StaticSystemConfigService.php
 src/Core/Test/Stub/Redis/RedisMultiWrapper.php
 src/Core/Test/Stub/Redis/RedisStub.php

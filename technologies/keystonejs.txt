@@ -37,6 +37,13 @@ examples/usecase-blog/schema.ts
 examples/usecase-blog/schema.prisma
 examples/usecase-blog/README.md
 examples/usecase-blog/schema.graphql
+examples/reuse/sandbox.config.json
+examples/reuse/package.json
+examples/reuse/keystone.ts
+examples/reuse/schema.ts
+examples/reuse/schema.prisma
+examples/reuse/README.md
+examples/reuse/schema.graphql
 examples/custom-session-redis/package.json
 examples/custom-session-redis/keystone.ts
 examples/custom-session-redis/schema.ts
@@ -304,6 +311,13 @@ examples/framework-nextjs-app-directory/next.config.mjs
 examples/framework-nextjs-app-directory/schema.prisma
 examples/framework-nextjs-app-directory/README.md
 examples/framework-nextjs-app-directory/schema.graphql
+examples/usecase-relationship-union/sandbox.config.json
+examples/usecase-relationship-union/package.json
+examples/usecase-relationship-union/keystone.ts
+examples/usecase-relationship-union/schema.ts
+examples/usecase-relationship-union/schema.prisma
+examples/usecase-relationship-union/README.md
+examples/usecase-relationship-union/schema.graphql
 examples/assets-s3/package.json
 examples/assets-s3/.env.example
 examples/assets-s3/keystone.ts
@@ -343,10 +357,9 @@ examples/framework-remix/README.md
 examples/framework-remix/schema.graphql
 examples/testing/sandbox.config.json
 examples/testing/package.json
-examples/testing/example.test.ts
+examples/testing/example-test.ts
 examples/testing/keystone.ts
 examples/testing/schema.ts
-examples/testing/babel.config.js
 examples/testing/schema.prisma
 examples/testing/README.md
 examples/testing/schema.graphql
@@ -801,7 +814,6 @@ packages/cloudinary/CHANGELOG.md
 packages/cloudinary/LICENSE
 packages/cloudinary/package.json
 packages/cloudinary/src/index.ts
-packages/cloudinary/src/cloudinary.ts
 packages/cloudinary/src/views/Field.tsx
 packages/cloudinary/src/views/index.tsx
 packages/cloudinary/src/test-fixtures.skip.ts
@@ -1998,6 +2010,8 @@ README.md
 .changeset/strong-swans-destroy.md
 .changeset/config.json
 .changeset/contributors.json
+.changeset/add-field-hooks.md
+.changeset/fix-cloudinary-init.md
 .changeset/README.md
 .changeset/odd-lemons-hide.md
 .changeset/add-error-message.md

@@ -1925,8 +1925,10 @@ ghost/staff-service/lib/StaffServiceEmails.js
 ghost/staff-service/lib/StaffService.js
 ghost/staff-service/lib/email-templates/new-free-signup.txt.js
 ghost/staff-service/lib/email-templates/mention-report.hbs
+ghost/staff-service/lib/email-templates/recommendation-received.txt.js
 ghost/staff-service/lib/email-templates/mention-report.txt.js
 ghost/staff-service/lib/email-templates/new-paid-started.hbs
+ghost/staff-service/lib/email-templates/recommendation-received.hbs
 ghost/staff-service/lib/email-templates/partials/preview.hbs
 ghost/staff-service/lib/email-templates/partials/styles.hbs
 ghost/staff-service/lib/email-templates/donation.hbs
@@ -2726,6 +2728,7 @@ ghost/core/test/unit/frontend/helpers/title.test.js
 ghost/core/test/unit/frontend/helpers/foreach.test.js
 ghost/core/test/unit/frontend/helpers/content.test.js
 ghost/core/test/unit/frontend/helpers/price.test.js
+ghost/core/test/unit/frontend/helpers/recommendations.test.js
 ghost/core/test/unit/frontend/helpers/facebook_url.test.js
 ghost/core/test/unit/frontend/helpers/get.test.js
 ghost/core/test/unit/frontend/helpers/match.test.js
@@ -2973,6 +2976,8 @@ ghost/core/test/e2e-server/services/milestones.test.js
 ghost/core/test/e2e-server/services/mentions.test.js
 ghost/core/test/e2e-server/services/member-attribution.test.js
 ghost/core/test/e2e-server/services/stats/mrr-stats-service.test.js
+ghost/core/test/e2e-server/services/recommendation-emails.test.js
+ghost/core/test/e2e-server/services/__snapshots__/recommendation-emails.test.js.snap
 ghost/core/test/e2e-server/1-options-requests.test.js
 ghost/core/test/e2e-server/click-tracking.test.js
 ghost/core/test/e2e-server/well-known.test.js
@@ -4153,6 +4158,7 @@ ghost/core/core/frontend/helpers/foreach.js
 ghost/core/core/frontend/helpers/meta_description.js
 ghost/core/core/frontend/helpers/tpl/content-cta.hbs
 ghost/core/core/frontend/helpers/tpl/navigation.hbs
+ghost/core/core/frontend/helpers/tpl/recommendations.hbs
 ghost/core/core/frontend/helpers/tpl/cancel_link.hbs
 ghost/core/core/frontend/helpers/tpl/styles.js
 ghost/core/core/frontend/helpers/tpl/pagination.hbs
@@ -4160,6 +4166,7 @@ ghost/core/core/frontend/helpers/img_url.js
 ghost/core/core/frontend/helpers/price.js
 ghost/core/core/frontend/helpers/tiers.js
 ghost/core/core/frontend/helpers/excerpt.js
+ghost/core/core/frontend/helpers/recommendations.js
 ghost/core/core/frontend/helpers/meta_title.js
 ghost/core/core/frontend/helpers/comments.js
 ghost/core/core/frontend/helpers/page_url.js
@@ -4740,6 +4747,7 @@ ghost/recommendations/test/.eslintrc.js
 ghost/recommendations/test/hello.test.ts
 ghost/recommendations/src/RecommendationController.ts
 ghost/recommendations/src/ClickEvent.ts
+ghost/recommendations/src/IncomingRecommendationEmailRenderer.ts
 ghost/recommendations/src/index.ts
 ghost/recommendations/src/BookshelfRecommendationRepository.ts
 ghost/recommendations/src/RecommendationRepository.ts
@@ -4747,6 +4755,7 @@ ghost/recommendations/src/RecommendationService.ts
 ghost/recommendations/src/BookshelfClickEventRepository.ts
 ghost/recommendations/src/BookshelfSubscribeEventRepository.ts
 ghost/recommendations/src/UnsafeData.ts
+ghost/recommendations/src/IncomingRecommendationService.ts
 ghost/recommendations/src/Recommendation.ts
 ghost/recommendations/src/InMemoryRecommendationRepository.ts
 ghost/recommendations/src/libraries.d.ts
