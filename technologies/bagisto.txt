@@ -959,6 +959,7 @@ packages/Webkul/Admin/src/Resources/assets/images/average-orders.svg
 packages/Webkul/Admin/src/Resources/assets/images/empty-placeholders/orders-empty.svg
 packages/Webkul/Admin/src/Resources/assets/images/empty-placeholders/default-empty.svg
 packages/Webkul/Admin/src/Resources/assets/images/empty-placeholders/reviews-empty.svg
+packages/Webkul/Admin/src/Resources/assets/images/dark-logo.svg
 packages/Webkul/Admin/src/Resources/assets/images/error.svg
 packages/Webkul/Admin/src/Resources/lang/hi_IN/app.php
 packages/Webkul/Admin/src/Resources/lang/ar/app.php
@@ -1452,8 +1453,11 @@ packages/Webkul/Core/src/Providers/CoreServiceProvider.php
 packages/Webkul/Core/src/Providers/CoreModuleServiceProvider.php
 packages/Webkul/Core/src/Providers/ModuleServiceProvider.php
 packages/Webkul/Core/src/Providers/EnvValidatorServiceProvider.php
+packages/Webkul/Core/src/Providers/EventServiceProvider.php
 packages/Webkul/Core/src/Events/ComposerEvents.php
+packages/Webkul/Core/src/Listeners/CleanCacheRepository.php
 packages/Webkul/Core/src/Config/scout.php
+packages/Webkul/Core/src/Config/repository.php
 packages/Webkul/Core/src/Config/concord.php
 packages/Webkul/Core/src/Repositories/CountryRepository.php
 packages/Webkul/Core/src/Repositories/ChannelRepository.php
@@ -1565,7 +1569,6 @@ public/index.php
 public/themes/admin/default/build/assets/total-orders-f1b2017e.svg
 public/themes/admin/default/build/assets/error-4179d5c7.svg
 public/themes/admin/default/build/assets/invoice-bbc6d6a8.svg
-public/themes/admin/default/build/assets/bagisto-admin-765030d0.woff
 public/themes/admin/default/build/assets/payment-method-10ea91e1.svg
 public/themes/admin/default/build/assets/theme-f4d870b8.svg
 public/themes/admin/default/build/assets/default-empty-2c56169a.svg
@@ -1576,6 +1579,7 @@ public/themes/admin/default/build/assets/icon-discount-e37d1aed.svg
 public/themes/admin/default/build/assets/zoom-0c75bed3.svg
 public/themes/admin/default/build/assets/icon-options-ebfcd268.svg
 public/themes/admin/default/build/assets/logo-f02a1643.svg
+public/themes/admin/default/build/assets/dark-logo-ea7984e7.svg
 public/themes/admin/default/build/assets/store-information-a7d64429.svg
 public/themes/admin/default/build/assets/tax-20f847de.svg
 public/themes/admin/default/build/assets/email-5653e8d5.svg
@@ -1596,6 +1600,7 @@ public/themes/admin/default/build/assets/next-1-91bb148a.svg
 public/themes/admin/default/build/assets/total-sales-5b2c7b58.svg
 public/themes/admin/default/build/assets/icon-add-product-e3232d62.svg
 public/themes/admin/default/build/assets/unpaid-invoices-6c51662d.svg
+public/themes/admin/default/build/assets/bagisto-admin-0137177d.woff
 public/themes/admin/default/build/manifest.json
 public/themes/shop/default/build/assets/logo-942157c2.svg
 public/themes/shop/default/build/assets/small-product-placeholder-64b7f208.webp
@@ -1633,6 +1638,7 @@ config/responsecache.php
 config/cache.php
 config/translatable.php
 config/imagecache.php
+config/repository.php
 config/bagisto-vite.php
 config/themes.php
 config/app.php

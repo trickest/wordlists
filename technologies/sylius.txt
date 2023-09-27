@@ -3185,6 +3185,12 @@ src/Sylius/Bundle/AddressingBundle/Form/Type/CountryType.php
 src/Sylius/Bundle/AddressingBundle/Form/Type/ZoneTypeChoiceType.php
 src/Sylius/Bundle/AddressingBundle/Tests/Form/Type/CountryChoiceTypeTest.php
 src/Sylius/Bundle/AddressingBundle/Tests/Form/Type/ZoneChoiceTypeTest.php
+src/Sylius/Bundle/AddressingBundle/Tests/Repository/ZoneRepositoryTest.php
+src/Sylius/Bundle/AddressingBundle/Tests/Repository/ZoneRepositoryTest/fixtures.yaml
+src/Sylius/Bundle/AddressingBundle/Tests/Matcher/ZoneMatcherTest.php
+src/Sylius/Bundle/AddressingBundle/Tests/Matcher/ZoneMatcherTest/fixtures.yaml
+src/Sylius/Bundle/AddressingBundle/Repository/ZoneRepository.php
+src/Sylius/Bundle/AddressingBundle/test/var/db.sql
 src/Sylius/Bundle/AddressingBundle/test/app/AppKernel.php
 src/Sylius/Bundle/AddressingBundle/test/app/console
 src/Sylius/Bundle/AddressingBundle/test/app/config/parameters.yml
@@ -3441,6 +3447,7 @@ src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/AcceptLanguageHeaderDocumentat
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/DocumentationModifierInterface.php
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ShippingMethodDocumentationModifier.php
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductImageDocumentationModifier.php
+src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/AttributeTypeDocumentationModifier.php
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ProductVariantDocumentationModifier.php
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/ShopAuthenticationTokenDocumentationModifier.php
 src/Sylius/Bundle/ApiBundle/OpenApi/Documentation/AdminAuthenticationTokenDocumentationModifier.php
@@ -4335,6 +4342,7 @@ src/Sylius/Bundle/CoreBundle/Tests/Stub/UriBasedSectionResolverStub.php
 src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Mailer/OrderEmailManagerTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineCompositeTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ProductReviewWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Twig/ChannelUrlExtensionTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
 src/Sylius/Bundle/CoreBundle/StateMachine/Transition.php
@@ -4596,6 +4604,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/state_machine.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/nyholm_psr7.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/parameters.yml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_product_review.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/doctrine_migrations.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures/custom_fixtures.yaml
@@ -4607,6 +4616,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures/shop_configuration.ya
 src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures/tshirt.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/messenger.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/config.yml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius/sylius_resource.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius/sylius_product.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius/sylius_customer.yml
@@ -6437,6 +6447,7 @@ src/Sylius/Component/Addressing/Model/CountryInterface.php
 src/Sylius/Component/Addressing/Model/AddressLogEntry.php
 src/Sylius/Component/Addressing/Factory/ZoneFactoryInterface.php
 src/Sylius/Component/Addressing/Factory/ZoneFactory.php
+src/Sylius/Component/Addressing/Repository/ZoneRepositoryInterface.php
 src/Sylius/Component/Addressing/Converter/CountryNameConverter.php
 src/Sylius/Component/Addressing/Converter/CountryNameConverterInterface.php
 src/Sylius/Component/Addressing/composer.json
@@ -6665,6 +6676,7 @@ src/Sylius/Component/Core/Model/ShopUser.php
 src/Sylius/Component/Core/Model/AdminUserInterface.php
 src/Sylius/Component/Core/Model/ProductImage.php
 src/Sylius/Component/Core/Model/TaxRate.php
+src/Sylius/Component/Core/Model/ProductReviewInterface.php
 src/Sylius/Component/Core/Model/ProductTaxonInterface.php
 src/Sylius/Component/Core/Model/Order.php
 src/Sylius/Component/Core/Model/Payment.php
