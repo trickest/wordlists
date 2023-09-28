@@ -4342,6 +4342,7 @@ src/Sylius/Bundle/CoreBundle/Tests/Stub/UriBasedSectionResolverStub.php
 src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Mailer/OrderEmailManagerTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineCompositeTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/WorkflowAdapter/OrderShippingWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ProductReviewWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Twig/ChannelUrlExtensionTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
@@ -4567,10 +4568,12 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/emails.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/form.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/installer_requirements.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/commands.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/workflow.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/state_machines.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/installer.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/fixtures_factories.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/workflow/listeners.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/checkers.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/fixtures.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/price_history.xml
@@ -4605,6 +4608,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/nyholm_psr7.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/parameters.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_product_review.yaml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_shipping.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/doctrine_migrations.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/fixtures/custom_fixtures.yaml
@@ -4732,6 +4736,7 @@ src/Sylius/Bundle/CoreBundle/EventListener/LocaleAwareListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/MailerListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/CanonicalizerListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/TaxonDeletionListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderShipping/AfterOrderShippedListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/CircularDependencyBreakingErrorListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/CustomerDefaultAddressListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/XFrameOptionsSubscriber.php
@@ -4956,6 +4961,7 @@ src/Sylius/Bundle/CoreBundle/spec/EventListener/ImagesRemoveListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/OrderRecalculationListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/ProductDeletionListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/ImageUploadListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderShipping/AfterOrderShippedListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/CanonicalizerListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/TaxonDeletionListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/ImagesUploadListenerSpec.php

@@ -434,7 +434,6 @@ ghost/admin/app/components/gh-tier-card.hbs
 ghost/admin/app/components/inputs/select.hbs
 ghost/admin/app/components/inputs/select/option.hbs
 ghost/admin/app/components/gh-progress-bar.hbs
-ghost/admin/app/components/koenig-lexical-sandbox.hbs
 ghost/admin/app/components/gh-members-segment-select.js
 ghost/admin/app/components/gh-uploader.hbs
 ghost/admin/app/components/modal-import-members.js
@@ -456,7 +455,6 @@ ghost/admin/app/components/custom-theme-settings/boolean.hbs
 ghost/admin/app/components/custom-theme-settings/text.js
 ghost/admin/app/components/custom-theme-settings/text.hbs
 ghost/admin/app/components/custom-theme-settings/color.hbs
-ghost/admin/app/components/koenig-lexical-sandbox.js
 ghost/admin/app/components/gh-unsplash-photo.js
 ghost/admin/app/components/gh-date-picker.js
 ghost/admin/app/components/gh-nav-menu.hbs
@@ -1105,7 +1103,6 @@ ghost/admin/app/templates/mentions.hbs
 ghost/admin/app/templates/explore/connect.hbs
 ghost/admin/app/templates/pages.hbs
 ghost/admin/app/templates/posts.hbs
-ghost/admin/app/templates/lexicalsandbox.hbs
 ghost/admin/app/templates/editor.hbs
 ghost/admin/app/templates/setup/done.hbs
 ghost/admin/app/templates/application.hbs
@@ -1213,6 +1210,7 @@ ghost/admin/app/utils/ctrl-or-cmd.js
 ghost/admin/app/utils/currency.js
 ghost/admin/app/utils/password-generator.js
 ghost/admin/app/utils/link-component.js
+ghost/admin/app/utils/fetch-koenig-lexical.js
 ghost/admin/app/utils/get-scroll-parent.js
 ghost/admin/app/utils/caja-sanitizers.js
 ghost/admin/app/utils/route.js
@@ -4985,6 +4983,7 @@ apps/admin-x-settings/src/components/settings/site/recommendations/Recommendatio
 apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationIcon.tsx
 apps/admin-x-settings/src/components/settings/site/recommendations/IncomingRecommendationList.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
+apps/admin-x-settings/src/components/settings/site/theme/InvalidThemeModal.tsx
 apps/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/theme/OfficialThemes.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemeInstalledModal.tsx

@@ -5,6 +5,7 @@ changelog/pr-36705
 changelog/e2e-update-locator-in-allows-customer-to-place-order-test
 packages/php/.gitkeep
 packages/js/product-editor/tsconfig.json
+packages/js/product-editor/changelog/fix-40202
 packages/js/product-editor/changelog/fix-39228
 packages/js/product-editor/changelog/add-expose-block-id-and-order
 packages/js/product-editor/changelog/add-product-editor-feedback-footer
@@ -21,6 +22,7 @@ packages/js/product-editor/changelog/add-37406
 packages/js/product-editor/changelog/fix-40165_error_displaying_block_when_removing_variation
 packages/js/product-editor/changelog/fix-38748_modal_style_obw
 packages/js/product-editor/changelog/add-37911
+packages/js/product-editor/changelog/dev-40245_improve_copy_for_variation_management_notifications
 packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-38044
 packages/js/product-editor/changelog/doc-checkbox-field
@@ -128,6 +130,7 @@ packages/js/product-editor/changelog/fix-tabs-reordering-38002
 packages/js/product-editor/changelog/fix-38502_ces_modal_styling_fixes
 packages/js/product-editor/changelog/fix-38244
 packages/js/product-editor/changelog/add-40042_default_price
+packages/js/product-editor/changelog/fix-40208
 packages/js/product-editor/changelog/dev-include-eslint-annotations
 packages/js/product-editor/changelog/add-38486
 packages/js/product-editor/changelog/fix-initial-package-release
@@ -143,6 +146,7 @@ packages/js/product-editor/changelog/add-37096-tests
 packages/js/product-editor/changelog/add-38488
 packages/js/product-editor/changelog/fix-taxonomy-special-characters
 packages/js/product-editor/changelog/update-36395-move-product-fields
+packages/js/product-editor/changelog/add-40194
 packages/js/product-editor/changelog/update-migrate-category-field
 packages/js/product-editor/changelog/fix-38623
 packages/js/product-editor/changelog/add-37395
@@ -185,6 +189,7 @@ packages/js/product-editor/changelog/add-37082
 packages/js/product-editor/changelog/add-product-description-modal-copy-content
 packages/js/product-editor/changelog/add-37004
 packages/js/product-editor/changelog/fix-39295_block_editor_blocks_scroll
+packages/js/product-editor/changelog/dev-40203_edit_attribute_modal_styles
 packages/js/product-editor/changelog/add-39409
 packages/js/product-editor/changelog/update-37899
 packages/js/product-editor/changelog/add-40044
@@ -666,6 +671,7 @@ packages/js/components/changelog/dev-38345_allow_select_multiple_items
 packages/js/components/changelog/fix-taxonomy-special-characters
 packages/js/components/changelog/add-progress-bar-component
 packages/js/components/changelog/fix-admin-colors-use-theme
+packages/js/components/changelog/fix-dropdown-css-conflict
 packages/js/components/changelog/fix-39825_new_category_name_persists
 packages/js/components/changelog/fix-39456_select_attribute_values_name
 packages/js/components/changelog/fix-38954_set_as_cover
@@ -3790,7 +3796,6 @@ plugins/woocommerce-admin/client/homescreen/welcome-modal/illustrations/pie-char
 plugins/woocommerce-admin/client/homescreen/welcome-modal/illustrations/inbox.js
 plugins/woocommerce-admin/client/homescreen/welcome-modal/illustrations/line-chart.js
 plugins/woocommerce-admin/client/guided-tours/report-date-tour.tsx
-plugins/woocommerce-admin/client/guided-tours/add-product-feedback-tour.tsx
 plugins/woocommerce-admin/client/guided-tours/variable-product-tour/index.tsx
 plugins/woocommerce-admin/client/guided-tours/add-product-tour/use-track-publish-button.ts
 plugins/woocommerce-admin/client/guided-tours/add-product-tour/use-tmce-iframe-focus-style.ts
@@ -4400,11 +4405,17 @@ plugins/woocommerce/changelog/add-call-wc-store-patterns-api
 plugins/woocommerce/changelog/e2e-add-test-shopper-mini-cart
 plugins/woocommerce/changelog/fix-ai-generate-images-not-display
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/add-template-api-readmes
 plugins/woocommerce/changelog/update-k6-failing-tests-in-CI
+plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
 plugins/woocommerce/changelog/e2e-update-playwright-1_38
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
+plugins/woocommerce/changelog/fix-coupon-error-notice-text
+plugins/woocommerce/changelog/fix-created-via-admin-hpos
+plugins/woocommerce/changelog/pr-40424
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
+plugins/woocommerce/changelog/fix-how-to-prepare-links-link-target
 plugins/woocommerce/changelog/add-cys-ai-save-options
 plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/update-k6-home-wc-admin-correlation
@@ -4422,8 +4433,10 @@ plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
 plugins/woocommerce/changelog/add-assemble-site
 plugins/woocommerce/changelog/add-40070_global_attribute_terms_filtering
 plugins/woocommerce/changelog/fix-wccom-18033-reset-search-when-tab-changes
+plugins/woocommerce/changelog/update-handle-cys-ai-loader-errors
 plugins/woocommerce/changelog/add-cys-ai-header-footer
 plugins/woocommerce/changelog/add-cys-homepage-template-completion
+plugins/woocommerce/changelog/pr-40466
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
 plugins/woocommerce/changelog/add-40200
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
@@ -6315,6 +6328,7 @@ plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/Produ
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/GroupInterface.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/SectionInterface.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php
+plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/README.md
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/AbstractProductFormTemplate.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/Group.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/ProductBlock.php
@@ -6514,6 +6528,7 @@ plugins/woocommerce/src/Admin/BlockTemplates/ContainerInterface.php
 plugins/woocommerce/src/Admin/BlockTemplates/BlockTemplateInterface.php
 plugins/woocommerce/src/Admin/BlockTemplates/BlockContainerInterface.php
 plugins/woocommerce/src/Admin/BlockTemplates/BlockInterface.php
+plugins/woocommerce/src/Admin/BlockTemplates/README.md
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/PublishAfterTimeRuleProcessor.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/EvaluateAndGetStatus.php
 plugins/woocommerce/src/Admin/RemoteInboxNotifications/TransformerService.php
@@ -7012,6 +7027,8 @@ docs/README.md
 docs/security/readme.md
 docs/security/reporting-security-issues.md
 docs/security/security-best-practices.md
+docs/product-editor-development/README.md
+docs/product-editor-development/common-tasks.md
 renovate.json
 .husky/post-merge
 .husky/pre-push

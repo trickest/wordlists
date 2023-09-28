@@ -2114,6 +2114,7 @@ tests/Resources/Resetter/ConfigurationResetter.php
 tests/Resources/Resetter/ShopResetter.php
 tests/Resources/Resetter/LocalizationPackResetter.php
 tests/Resources/Resetter/TaxesResetter.php
+tests/Resources/Resetter/ApiAccessResetter.php
 tests/Resources/Resetter/StoreResetter.php
 tests/Resources/legacy-to-standard-locales.json
 tests/Resources/sql/install_testable_object.sql
@@ -2771,6 +2772,7 @@ tests/Unit/Core/Webservice/ServerRequirementsCheckerTest.php
 tests/Unit/Core/Domain/CartRule/ValueObject/DiscountApplicationTypeTest.php
 tests/Unit/Core/Domain/Security/ValueObject/CustomerSessionIdTest.php
 tests/Unit/Core/Domain/Security/ValueObject/EmployeeSessionIdTest.php
+tests/Unit/Core/Domain/ApiAccess/ApiAccessConstraintExceptionTest.php
 tests/Unit/Core/Domain/AbstractBulkCommandHandlerTest.php
 tests/Unit/Core/Domain/Alias/ValueObject/AliasIdTest.php
 tests/Unit/Core/Domain/Currency/ValueObject/CurrencyNumericIsoCodeTest.php
@@ -3111,6 +3113,7 @@ tests/Integration/Behaviour/Features/Context/Domain/AuthorizationServerFeatureCo
 tests/Integration/Behaviour/Features/Context/Domain/DebugModeFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderStateFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/StateFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/ApiAccessManagementFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/EmployeeFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/UpdatePositionFeatureContext.php
@@ -3206,6 +3209,7 @@ tests/Integration/Behaviour/Features/Scenario/CartRule/edit_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/CartRule/delete_cart_rule.feature
 tests/Integration/Behaviour/Features/Scenario/Security/security_configuration.feature
 tests/Integration/Behaviour/Features/Scenario/Module/module.feature
+tests/Integration/Behaviour/Features/Scenario/ApiAccess/api_access_management.feature
 tests/Integration/Behaviour/Features/Scenario/CLDR/cldr.feature
 tests/Integration/Behaviour/Features/Scenario/Zone/zone_management.feature
 tests/Integration/Behaviour/Features/Scenario/Supplier/supplier_management.feature
@@ -5202,6 +5206,7 @@ src/PrestaShopBundle/Resources/config/services/adapter/group.yml
 src/PrestaShopBundle/Resources/config/services/adapter/cart.yml
 src/PrestaShopBundle/Resources/config/services/adapter/order_message.yml
 src/PrestaShopBundle/Resources/config/services/adapter/data_provider_common.yml
+src/PrestaShopBundle/Resources/config/services/adapter/api_access.yml
 src/PrestaShopBundle/Resources/config/services/adapter/address.yml
 src/PrestaShopBundle/Resources/config/services/bundle/utils.yml
 src/PrestaShopBundle/Resources/config/services/bundle/context.yml
@@ -6272,6 +6277,9 @@ src/Adapter/Import/Handler/AbstractImportHandler.php
 src/Adapter/Import/Handler/ProductImportHandler.php
 src/Adapter/Import/ImageCopier.php
 src/Adapter/Import/CsvFileOpener.php
+src/Adapter/ApiAccess/QueryHandler/GetApiAccessForEditingHandler.php
+src/Adapter/ApiAccess/CommandHandler/EditApiAccessHandler.php
+src/Adapter/ApiAccess/CommandHandler/AddApiAccessHandler.php
 src/Adapter/Invoice/InvoiceTemplateTypeProvider.php
 src/Adapter/Invoice/OrderInvoiceDataProvider.php
 src/Adapter/Invoice/InvoiceOptionsConfiguration.php
@@ -7883,6 +7891,19 @@ src/Core/Domain/Module/Exception/ModuleNotFoundException.php
 src/Core/Domain/Module/Command/BulkToggleModuleStatusCommand.php
 src/Core/Domain/Module/ValueObject/ModuleId.php
 src/Core/Domain/Module/CommandHandler/BulkToggleModuleStatusHandlerInterface.php
+src/Core/Domain/ApiAccess/Query/GetApiAccessForEditing.php
+src/Core/Domain/ApiAccess/Exception/ApiAccessConstraintException.php
+src/Core/Domain/ApiAccess/Exception/ApiAccessNotFoundException.php
+src/Core/Domain/ApiAccess/Exception/CannotAddApiAccessException.php
+src/Core/Domain/ApiAccess/Exception/ApiAccessException.php
+src/Core/Domain/ApiAccess/Exception/CannotUpdateApiAccessException.php
+src/Core/Domain/ApiAccess/QueryHandler/GetApiAccessForEditingHandlerInterface.php
+src/Core/Domain/ApiAccess/Command/AddApiAccessCommand.php
+src/Core/Domain/ApiAccess/Command/EditApiAccessCommand.php
+src/Core/Domain/ApiAccess/QueryResult/EditableApiAccess.php
+src/Core/Domain/ApiAccess/ValueObject/ApiAccessId.php
+src/Core/Domain/ApiAccess/CommandHandler/AddApiAccessCommandHandlerInterface.php
+src/Core/Domain/ApiAccess/CommandHandler/EditApiAccessCommandHandlerInterface.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandler.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandlerInterface.php
@@ -8375,7 +8396,6 @@ src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationFactoryInterface.
 src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationInterface.php
 src/Core/Domain/AuthorizationServer/Model/ApiAccessRepositoryInterface.php
 src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationRepositoryInterface.php
-src/Core/Domain/AuthorizationServer/Model/ApiAccessInterface.php
 src/Core/Domain/AuthorizationServer/Exception/ApplicationConstraintException.php
 src/Core/Domain/AuthorizationServer/Exception/DuplicateApplicationNameException.php
 src/Core/Domain/AuthorizationServer/Exception/ApplicationException.php

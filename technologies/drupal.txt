@@ -1664,6 +1664,7 @@ core/profiles/demo_umami/config/install/field.storage.node.field_recipe_category
 core/profiles/demo_umami/config/install/core.base_field_override.node.page.promote.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.user.user.default.yml
 core/profiles/demo_umami/config/install/core.entity_view_display.node.article.rss.yml
+core/profiles/demo_umami/config/install/views.view.related_recipes.yml
 core/profiles/demo_umami/config/install/field.field.media.remote_video.field_media_oembed_video.yml
 core/profiles/demo_umami/config/install/language.content_settings.node.recipe.yml
 core/profiles/demo_umami/config/install/core.entity_form_display.block_content.footer_promo_block.default.yml
@@ -3299,6 +3300,7 @@ core/tests/Drupal/FunctionalTests/Entity/ContentEntityFormFieldValidationFilteri
 core/tests/Drupal/FunctionalTests/Entity/RevisionRevertFormTest.php
 core/tests/Drupal/FunctionalTests/Entity/RevisionRouteProviderTest.php
 core/tests/Drupal/FunctionalTests/Entity/ContentEntityFormCorrectUserInputMappingOnFieldDeltaElementsTest.php
+core/tests/Drupal/FunctionalTests/Entity/RevisionVersionHistoryTranslatableTest.php
 core/tests/Drupal/FunctionalTests/Entity/RevisionVersionHistoryTest.php
 core/tests/Drupal/FunctionalTests/Entity/RevisionViewTest.php
 core/tests/Drupal/FunctionalTests/Entity/RevisionDeleteFormTest.php
@@ -15423,6 +15425,9 @@ core/modules/layout_builder/tests/src/Functional/LayoutSectionTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderDefaultValuesTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderAccessTest.php
 core/modules/layout_builder/tests/src/Functional/Jsonapi/LayoutBuilderEntityViewDisplayTest.php
+core/modules/layout_builder/tests/src/Functional/LayoutBuilderViewModeTest.php
+core/modules/layout_builder/tests/src/Functional/LayoutBuilderTestBase.php
+core/modules/layout_builder/tests/src/Functional/LayoutBuilderBlocksTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderSectionStorageTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderPrepareLayoutTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderTest.php
@@ -15603,14 +15608,16 @@ core/modules/media/tests/src/Kernel/MediaTranslationTest.php
 core/modules/media/tests/src/Kernel/MediaThumbnailFormatterTest.php
 core/modules/media/tests/src/Kernel/EditorMediaDialogTest.php
 core/modules/media/tests/src/Kernel/MediaTypeValidationTest.php
-core/modules/media/tests/src/FunctionalJavascript/MediaEmbedFilterConfigurationUiTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaViewsWizardTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaSourceOEmbedVideoTest.php
+core/modules/media/tests/src/FunctionalJavascript/MediaEmbedFilterConfigurationUiEditTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaSourceTestBase.php
+core/modules/media/tests/src/FunctionalJavascript/MediaEmbedFilterConfigurationUiAddTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaStandardProfileTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaReferenceFieldHelpTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaSourceFileTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaUiJavascriptTest.php
+core/modules/media/tests/src/FunctionalJavascript/MediaEmbedFilterTestBase.php
 core/modules/media/tests/src/FunctionalJavascript/MediaSourceImageTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaDisplayTest.php
 core/modules/media/tests/src/FunctionalJavascript/MediaTypeCreationTest.php
