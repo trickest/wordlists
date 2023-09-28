@@ -196,7 +196,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 .asp$
 .aspx$
 .asx
-.atom
 .atom$
 .au
 .axd
@@ -1980,6 +1979,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /newest/*rss
 /newest/*xml
 /newssearch
+/no-internet-heading-assigned
+/no-internet-heading-assisted
 /node/add
 /nu$
 /nu-
@@ -2267,6 +2268,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /story_pins
 /structures
 /submissions
+/submit
 /submitted
 /subscribedto
 /subscribers$
@@ -5434,6 +5436,7 @@ api/legendary-data/relay
 api/nicorepo/timeline
 api/programas/69730/audios.rss
 api/reactions
+api/recaptcha/enabled
 api/rest_v1/?doc
 api/user?
 api/utilities/v1/imageproxy
@@ -5747,6 +5750,7 @@ au*/people/*/favorites
 au*/shop/*/favoriters
 au*/shop/*/sold
 au*/step
+au*/submit
 au*/submitted
 au-en/gb-en/
 au/*?*shpxid=
@@ -5849,6 +5853,7 @@ audiblehug
 audio-edition-podcast/*/index.xml
 audio.html
 audio?performer=1&q=
+audio_ad?
 audio_file
 audio_news
 audio_player
@@ -6226,10 +6231,12 @@ be*/people/*/favorites
 be*/shop/*/favoriters
 be*/shop/*/sold
 be*/step
+be*/submit
 be*/submitted
 be-de*/blog-article-remove-faq-utms-*.js
 be-de*/cdn-cgi/challenge-platform
 be-de*/step
+be-de*/submit
 be-de*/submitted
 be-de/*?*shpxid=
 be-de/*digital_wallets/dialog
@@ -6261,6 +6268,7 @@ be-de/ventureone
 be-en*/blog-article-remove-faq-utms-*.js
 be-en*/cdn-cgi/challenge-platform
 be-en*/step
+be-en*/submit
 be-en*/submitted
 be-en/*?*shpxid=
 be-en/*?services
@@ -6310,6 +6318,7 @@ be-en/ventureone
 be-fr*/blog-article-remove-faq-utms-*.js
 be-fr*/cdn-cgi/challenge-platform
 be-fr*/step
+be-fr*/submit
 be-fr*/submitted
 be-fr/*?*shpxid=
 be-fr/*digital_wallets/dialog
@@ -6737,6 +6746,7 @@ br
 br*/blog-article-remove-faq-utms-*.js
 br*/cdn-cgi/challenge-platform
 br*/step
+br*/submit
 br*/submitted
 br/*?*shpxid=
 br/*digital_wallets/dialog
@@ -6997,7 +7007,6 @@ c/*attr_*=
 c/*price_bucket=
 c/*search_type=
 c/*ship_to=
-c/business.atom
 c/contentReuse/
 c/contentreuse/
 c/dam/assets/global/RU/
@@ -7093,8 +7102,6 @@ c/dam/m/zh_cn/offers/assets/pdfs
 c/dam/m/zh_tw/offers/assets/images
 c/dam/m/zh_tw/offers/assets/pdfs
 c/dam/marketing/ru_ru/
-c/design.atom
-c/education.atom
 c/en/us/applicat/
 c/en/us/applicat/camp
 c/en/us/applicat/non-camp
@@ -7106,16 +7113,11 @@ c/facebook
 c/facebook_artist
 c/fan_reach
 c/fr
-c/how-to-diy.atom
 c/kp/*/page
 c/m/digital/
 c/m/ru_ru/
-c/programming.atom
-c/research.atom
 c/ru_ru/
-c/science.atom
 c/subscription
-c/technology.atom
 c360/v1/track
 c360_v1_track
 cDN_contENt
@@ -7129,6 +7131,7 @@ ca*/people/*/favorites
 ca*/shop/*/favoriters
 ca*/shop/*/sold
 ca*/step
+ca*/submit
 ca*/submitted
 ca-en/ae-en/
 ca-en/be-en/
@@ -7149,6 +7152,7 @@ ca-fr*/people/*/favorites
 ca-fr*/shop/*/favoriters
 ca-fr*/shop/*/sold
 ca-fr*/step
+ca-fr*/submit
 ca-fr*/submitted
 ca-fr/*?*shpxid=
 ca-fr/*?order=
@@ -7427,7 +7431,6 @@ calendar/repeating.html?year=25
 calendar/repeating.html?year=3
 calendar/seasons.html?
 call
-call-0821
 call/document-page/stream
 call/join
 call/notifier/friendly/get
@@ -8038,6 +8041,7 @@ co
 co*/blog-article-remove-faq-utms-*.js
 co*/cdn-cgi/challenge-platform
 co*/step
+co*/submit
 co*/submitted
 co-
 co/
@@ -8805,6 +8809,7 @@ de*/people/*/favorites
 de*/shop/*/favoriters
 de*/shop/*/sold
 de*/step
+de*/submit
 de*/submitted
 de-*/
 de-at/
@@ -9222,6 +9227,7 @@ dk$
 dk*/blog-article-remove-faq-utms-*.js
 dk*/cdn-cgi/challenge-platform
 dk*/step
+dk*/submit
 dk*/submitted
 dk-en*/blog-article-remove-faq-utms-*.js
 dk-en*/cdn-cgi/challenge-platform
@@ -9231,6 +9237,7 @@ dk-en*/people/*/favorites
 dk-en*/shop/*/favoriters
 dk-en*/shop/*/sold
 dk-en*/step
+dk-en*/submit
 dk-en*/submitted
 dk-en/*?*shpxid=
 dk-en/*?order=
@@ -9904,6 +9911,7 @@ es*/people/*/favorites
 es*/shop/*/favoriters
 es*/shop/*/sold
 es*/step
+es*/submit
 es*/submitted
 es-*/
 es-ar/
@@ -9916,6 +9924,7 @@ es-ec/
 es-es*/blog-article-remove-faq-utms-*.js
 es-es*/cdn-cgi/challenge-platform
 es-es*/step
+es-es*/submit
 es-es*/submitted
 es-es/
 es-es/*?*shpxid=
@@ -10416,6 +10425,7 @@ feed?section=stayhome
 feed?section=stayhome$
 feedback
 feedback
+feedback/new
 feedback/user_study
 feeds
 feeds.thetimes.co.uk/puzzles
@@ -10698,11 +10708,6 @@ forum/tags
 forum/whats-new
 forums
 forums/*
-forums/*?view
-forums/create/question
-forums/login
-forums/preferences
-forums/profile
 forward
 foryou
 fotogalerias/*/*/pagina
@@ -10726,6 +10731,7 @@ fr*/people/*/favorites
 fr*/shop/*/favoriters
 fr*/shop/*/sold
 fr*/step
+fr*/submit
 fr*/submitted
 fr-*/
 fr-be/
@@ -11054,6 +11060,8 @@ galleries/boards
 galleries/keywords
 galleries/top-
 gallery
+gallery/*/copyright
+gallery/*/flag
 gallery/rg*/mediaviewer/rm*/tr
 gam-
 game
@@ -11603,6 +11611,7 @@ hk
 hk*/blog-article-remove-faq-utms-*.js
 hk*/cdn-cgi/challenge-platform
 hk*/step
+hk*/submit
 hk*/submitted
 hk-en*/blog-article-remove-faq-utms-*.js
 hk-en*/cdn-cgi/challenge-platform
@@ -11612,6 +11621,7 @@ hk-en*/people/*/favorites
 hk-en*/shop/*/favoriters
 hk-en*/shop/*/sold
 hk-en*/step
+hk-en*/submit
 hk-en*/submitted
 hk-en/*?*shpxid=
 hk-en/*?order=
@@ -11954,6 +11964,7 @@ id
 id*/blog-article-remove-faq-utms-*.js
 id*/cdn-cgi/challenge-platform
 id*/step
+id*/submit
 id*/submitted
 id-*/
 id-en/ae-en/
@@ -12045,6 +12056,7 @@ ie*/people/*/favorites
 ie*/shop/*/favoriters
 ie*/shop/*/sold
 ie*/step
+ie*/submit
 ie*/submitted
 ie-en/ae-en/
 ie-en/be-en/
@@ -12255,6 +12267,8 @@ images/chart_pdfs
 images/chart_png300
 images/chart_png460
 images/interview_pdfs
+images/li.gif
+images/logging_requests.gif
 images/mockups
 images/ndtvvideo/*
 images/pad/search?rpt=imageview
@@ -12289,11 +12303,13 @@ import_all
 important/dataleak
 important/fuite-donnees
 importante/fuga-de-datos
+improve_listing
 in
 in$
 in*/blog-article-remove-faq-utms-*.js
 in*/cdn-cgi/challenge-platform
 in*/step
+in*/submit
 in*/submitted
 in-action/inpho/library/detail/en/c/2504
 in-action/voices-of-the-hungry/data-download
@@ -12570,7 +12586,6 @@ integrate/
 integromedb
 intelligencer/amp
 interactive*http://fcc.gov/robots.txt
-interactive/reading-preference
 interface/pda
 intern/service/suche
 internal
@@ -12680,6 +12695,7 @@ it*/people/*/favorites
 it*/shop/*/favoriters
 it*/shop/*/sold
 it*/step
+it*/submit
 it*/submitted
 it-*/
 it-it/
@@ -13072,6 +13088,7 @@ jp*/people/*/favorites
 jp*/shop/*/favoriters
 jp*/shop/*/sold
 jp*/step
+jp*/submit
 jp*/submitted
 jp/*?*shpxid=
 jp/*?order=
@@ -13300,12 +13317,12 @@ ko/user
 ko/users
 ko/wantlist?user=
 ko_kr/templates/M
-kolkata
 korean
 kpn
 kr*/blog-article-remove-faq-utms-*.js
 kr*/cdn-cgi/challenge-platform
 kr*/step
+kr*/submit
 kr*/submitted
 kr/*?*shpxid=
 kr/*digital_wallets/dialog
@@ -13582,6 +13599,8 @@ listen
 listener
 listing
 listing/*/stubs
+listing_feedback
+listings
 listings*?q=
 listings-management/superpower-landing2
 lists
@@ -13792,6 +13811,7 @@ lv/search
 lv/user
 lv/users
 lvx
+lwes
 m
 m-formredirect.cfm
 m-pr.cfm
@@ -14613,6 +14633,7 @@ mx*/people/*/favorites
 mx*/shop/*/favoriters
 mx*/shop/*/sold
 mx*/step
+mx*/submit
 mx*/submitted
 mx/*?*shpxid=
 mx/*?order=
@@ -14702,6 +14723,7 @@ my$
 my*/blog-article-remove-faq-utms-*.js
 my*/cdn-cgi/challenge-platform
 my*/step
+my*/submit
 my*/submitted
 my-account
 my-articles
@@ -15015,6 +15037,7 @@ nexus
 ng*/blog-article-remove-faq-utms-*.js
 ng*/cdn-cgi/challenge-platform
 ng*/step
+ng*/submit
 ng*/submitted
 ng/*?*shpxid=
 ng/*?services
@@ -15072,6 +15095,7 @@ nl*/people/*/favorites
 nl*/shop/*/favoriters
 nl*/shop/*/sold
 nl*/step
+nl*/submit
 nl*/submitted
 nl-*/
 nl-be/
@@ -15206,6 +15230,7 @@ no-en*/people/*/favorites
 no-en*/shop/*/favoriters
 no-en*/shop/*/sold
 no-en*/step
+no-en*/submit
 no-en*/submitted
 no-en/*?*shpxid=
 no-en/*?order=
@@ -15378,6 +15403,7 @@ nz*/people/*/favorites
 nz*/shop/*/favoriters
 nz*/shop/*/sold
 nz*/step
+nz*/submit
 nz*/submitted
 nz-en/au-en/
 nz-en/gb-en/
@@ -15623,19 +15649,7 @@ p/*/wiki/browse_tags
 p/*surveyopen
 p/*thm=
 p/60
-p/all.atom
-p/all.atom?page=1
-p/all.atom?page=10
-p/all.atom?page=2
-p/all.atom?page=3
-p/all.atom?page=4
-p/all.atom?page=5
-p/all.atom?page=6
-p/all.atom?page=7
-p/all.atom?page=8
-p/all.atom?page=9
 p/blackout-m7
-p/featured.atom
 p/moduleprovider
 p/premium-registry
 p/surveyopen
@@ -15876,6 +15890,7 @@ ph
 ph*/blog-article-remove-faq-utms-*.js
 ph*/cdn-cgi/challenge-platform
 ph*/step
+ph*/submit
 ph*/submitted
 ph-en/ae-en/
 ph-en/be-en/
@@ -16151,7 +16166,6 @@ plugins
 plugins-libraries
 plugins.
 plugins/
-plugins/search
 plus/r
 plusinstall
 pm/
@@ -16512,7 +16526,6 @@ preview_theme_id
 previewtemplate
 previousThread.html
 prevnext
-prh-internal-news
 price-guide
 priceFilter=
 price_max=
@@ -16530,6 +16543,7 @@ print-pdf
 print.do
 print=
 printView=
+print_ad?
 printer
 printer_friendly_story
 printer_friendly_wires
@@ -17090,7 +17104,6 @@ ref_loc=
 ref_page=
 refer
 refer/pal
-reference
 referenced-ctalist/
 referencework
 referral
@@ -17109,6 +17122,7 @@ regions.html?
 regions_list.xml
 regist.pl
 register
+register?
 register?redirect
 registerb
 registration
@@ -17128,6 +17142,7 @@ release/copy
 release/edit
 release/recs
 releasenotes/item/
+relevance_feedback
 relnotes
 rememberme
 remote-login.php
@@ -17174,6 +17189,7 @@ researchtools/ose/pages$
 reselect/static-2.5
 resellers
 reservation
+reservations
 reservations/*/notifyme
 reset
 reset-password
@@ -17239,8 +17255,12 @@ review_feed_auto_fetch
 reviewlist.*.html
 reviewlist.html
 reviews
+reviews/*/down
+reviews/*/follow
 reviews/*/form
 reviews/*/pageInfo
+reviews/*/unfollow
+reviews/*/up
 reviews/hall-of-fame
 reviews/iframe
 reviews/market/*/compare/*-vs-*-vs-
@@ -17318,6 +17338,7 @@ rooms/*/reviews
 rooms/*/safety
 root
 roundabout
+route?
 router
 row
 royalty-free-subscriptions.php
@@ -17406,6 +17427,7 @@ ru/users
 ru_ru/shablony/M
 rubric2sport
 run
+rundown
 rundowns/segment.php?
 rvh
 rw-reg/http://realmenrealstyle.com/robots.txt
@@ -17624,6 +17646,7 @@ se$
 se*/blog-article-remove-faq-utms-*.js
 se*/cdn-cgi/challenge-platform
 se*/step
+se*/submit
 se*/submitted
 se-en*/listing/*/favoriters
 se-en*/people/*/circle
@@ -18056,6 +18079,7 @@ sell/unlist
 seller_onboarding
 semantic-homepage
 seminar/
+semp
 send-email
 send-receive
 send/global
@@ -18150,6 +18174,7 @@ sg$
 sg*/blog-article-remove-faq-utms-*.js
 sg*/cdn-cgi/challenge-platform
 sg*/step
+sg*/submit
 sg*/submitted
 sg-en*/listing/*/favoriters
 sg-en*/people/*/circle
@@ -18261,7 +18286,6 @@ share-image-generator
 share-post.g
 share-study
 share-success/
-share.php?
 shareArticle
 shareables
 shared
@@ -20230,6 +20254,7 @@ tw
 tw*/blog-article-remove-faq-utms-*.js
 tw*/cdn-cgi/challenge-platform
 tw*/step
+tw*/submit
 tw*/submitted
 tw/*?*shpxid=
 tw/*digital_wallets/dialog
@@ -20336,6 +20361,7 @@ uk*/people/*/favorites
 uk*/shop/*/favoriters
 uk*/shop/*/sold
 uk*/step
+uk*/submit
 uk*/submitted
 uk-*/
 uk-ua/
@@ -21164,6 +21190,7 @@ vn
 vn*/blog-article-remove-faq-utms-*.js
 vn*/cdn-cgi/challenge-platform
 vn*/step
+vn*/submit
 vn*/submitted
 vn/*?*shpxid=
 vn/*digital_wallets/dialog
@@ -22147,7 +22174,6 @@ word/document_stats
 word/document_url
 word/download
 word/embed
-wordpress
 wordpress/wp-admin
 wordpress/wp-admin/admin-ajax.php
 work/_
@@ -22254,8 +22280,6 @@ wp-admin/admin-ajax.php
 wp-admin/admin-ajax.phphttp://aljazeera.com/robots.txt
 wp-admin/admin-ajax.phphttp://fool.com/robots.txt
 wp-admin/admin-ajax.phphttp://openstreetmap.org/robots.txt
-wp-admin/load-scripts.php
-wp-admin/load-styles.php
 wp-adv
 wp-comments-post.php
 wp-content
@@ -22302,7 +22326,6 @@ wp-content/uploads/wp-import-export-lite/http://rebrand.ly/robots.txt
 wp-dyn
 wp-includes
 wp-includes/css
-wp-includes/css/dist/block-library/style.min.css
 wp-includes/js
 wp-includes/js/mediaelement/mediaelementplayer.min.css
 wp-includes/js/mediaelement/wp-mediaelement.min.css
@@ -22469,6 +22492,7 @@ za
 za*/blog-article-remove-faq-utms-*.js
 za*/cdn-cgi/challenge-platform
 za*/step
+za*/submit
 za*/submitted
 za-en/ae-en/
 za-en/be-en/
@@ -22532,6 +22556,7 @@ zh
 zh*/blog-article-remove-faq-utms-*.js
 zh*/cdn-cgi/challenge-platform
 zh*/step
+zh*/submit
 zh*/submitted
 zh-CN/android/collections
 zh-CN/android/search
