@@ -57,6 +57,7 @@ packages/js/product-editor/changelog/add-product-description-modal-more-menu
 packages/js/product-editor/changelog/add-block-attributes-37728
 packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/update-40072_variation_visibility_icon
+packages/js/product-editor/changelog/dev-40216_remove_confirmation_modal_for_dismissing_attributes_variations
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/fix-product-summary-field-margin
@@ -152,6 +153,7 @@ packages/js/product-editor/changelog/fix-38623
 packages/js/product-editor/changelog/add-37395
 packages/js/product-editor/changelog/fix-37897
 packages/js/product-editor/changelog/add-admin-layout-package
+packages/js/product-editor/changelog/fix-40171
 packages/js/product-editor/changelog/add-39440
 packages/js/product-editor/changelog/fix-39224_styles_attribute_list
 packages/js/product-editor/changelog/update-38043
@@ -180,6 +182,7 @@ packages/js/product-editor/changelog/add-38248
 packages/js/product-editor/changelog/add-38853
 packages/js/product-editor/changelog/update-move-product-hooks
 packages/js/product-editor/changelog/update-36355_product_editor_package
+packages/js/product-editor/changelog/fix-40199
 packages/js/product-editor/changelog/add-37263_category_field_block
 packages/js/product-editor/changelog/fix-37956
 packages/js/product-editor/changelog/enhancement-38823
@@ -207,6 +210,7 @@ packages/js/product-editor/changelog/add-39687_auto_delete_variations
 packages/js/product-editor/changelog/add-38253
 packages/js/product-editor/changelog/add-37098_add_product_list_price_block
 packages/js/product-editor/changelog/fix-39840_product_editor_variations_auto_save_bug
+packages/js/product-editor/changelog/add-39688
 packages/js/product-editor/.eslintrc.js
 packages/js/product-editor/webpack.config.js
 packages/js/product-editor/package.json
@@ -328,6 +332,10 @@ packages/js/product-editor/src/components/variations-table/variations-actions-me
 packages/js/product-editor/src/components/variations-table/variations-actions-menu/styles.scss
 packages/js/product-editor/src/components/variations-table/variations-actions-menu/types.ts
 packages/js/product-editor/src/components/variations-table/variations-table.tsx
+packages/js/product-editor/src/components/variations-table/pagination/index.ts
+packages/js/product-editor/src/components/variations-table/pagination/styles.scss
+packages/js/product-editor/src/components/variations-table/pagination/pagination.tsx
+packages/js/product-editor/src/components/variations-table/pagination/types.ts
 packages/js/product-editor/src/components/variations-table/pricing-menu-item/index.ts
 packages/js/product-editor/src/components/variations-table/pricing-menu-item/pricing-menu-item.tsx
 packages/js/product-editor/src/components/variations-table/variation-actions-menu/index.ts
@@ -669,6 +677,7 @@ packages/js/components/changelog/add-39126_add_tags_to_product_editor
 packages/js/components/changelog/dev-include-eslint-annotations
 packages/js/components/changelog/dev-38345_allow_select_multiple_items
 packages/js/components/changelog/fix-taxonomy-special-characters
+packages/js/components/changelog/fix-40171
 packages/js/components/changelog/add-progress-bar-component
 packages/js/components/changelog/fix-admin-colors-use-theme
 packages/js/components/changelog/fix-dropdown-css-conflict
@@ -3482,6 +3491,7 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-n
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-logo.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/index.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/preload-fonts.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/block-preview.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/editor.tsx
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-assembling-ai-optimized-store.svg
@@ -3499,6 +3509,7 @@ plugins/woocommerce-admin/client/customize-store/transitional/services.tsx
 plugins/woocommerce-admin/client/customize-store/style.scss
 plugins/woocommerce-admin/client/customize-store/data/homepageTemplates.ts
 plugins/woocommerce-admin/client/customize-store/intro/theme-cards.tsx
+plugins/woocommerce-admin/client/customize-store/intro/design-change-warning-modal.tsx
 plugins/woocommerce-admin/client/customize-store/intro/index.tsx
 plugins/woocommerce-admin/client/customize-store/intro/actions.ts
 plugins/woocommerce-admin/client/customize-store/intro/services.ts
@@ -4398,8 +4409,11 @@ plugins/woocommerce/tsconfig.json
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
 plugins/woocommerce/changelog/add-expose-block-id-and-order
+plugins/woocommerce/changelog/issues-30778-wc_get_products_by_category_ID
+plugins/woocommerce/changelog/add-40328-intro-page-when-task-not-completed-but-content-changed
 plugins/woocommerce/changelog/trunk
 plugins/woocommerce/changelog/fix-color-panel-and-nav-links
+plugins/woocommerce/changelog/fix-remove_extra_quotes_in_block_editor_template
 plugins/woocommerce/changelog/update-40298-implement-back-to-home-button
 plugins/woocommerce/changelog/add-call-wc-store-patterns-api
 plugins/woocommerce/changelog/e2e-add-test-shopper-mini-cart
@@ -4419,6 +4433,7 @@ plugins/woocommerce/changelog/fix-how-to-prepare-links-link-target
 plugins/woocommerce/changelog/add-cys-ai-save-options
 plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/update-k6-home-wc-admin-correlation
+plugins/woocommerce/changelog/fix-40370
 plugins/woocommerce/changelog/fix-39626-pending-order-syncs
 plugins/woocommerce/changelog/e2e-add-shopper-tags-attributes
 plugins/woocommerce/changelog/fix-always-set-address-indexes
@@ -4431,6 +4446,8 @@ plugins/woocommerce/changelog/e2e-enable-dotfiles-e2e-runs
 plugins/woocommerce/changelog/fix-cys-assembler-color-palette-persistence
 plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
 plugins/woocommerce/changelog/add-assemble-site
+plugins/woocommerce/changelog/add-cys-intro-tracks
+plugins/woocommerce/changelog/fix-cys-assembler-hub-font-jankiness
 plugins/woocommerce/changelog/add-40070_global_attribute_terms_filtering
 plugins/woocommerce/changelog/fix-wccom-18033-reset-search-when-tab-changes
 plugins/woocommerce/changelog/update-handle-cys-ai-loader-errors
@@ -4438,6 +4455,7 @@ plugins/woocommerce/changelog/add-cys-ai-header-footer
 plugins/woocommerce/changelog/add-cys-homepage-template-completion
 plugins/woocommerce/changelog/pr-40466
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
+plugins/woocommerce/changelog/update-disable-cys-frame-navigation
 plugins/woocommerce/changelog/add-40200
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md

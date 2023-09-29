@@ -215,9 +215,12 @@ extensions/mentions/src/Formatter/FormatPostMentions.php
 extensions/mentions/src/ConfigureMentions.php
 extensions/mentions/composer.json
 extensions/mentions/.gitattributes
-extensions/mentions/views/emails/userMentioned.blade.php
-extensions/mentions/views/emails/postMentioned.blade.php
-extensions/mentions/views/emails/groupMentioned.blade.php
+extensions/mentions/views/emails/html/userMentioned.blade.php
+extensions/mentions/views/emails/html/postMentioned.blade.php
+extensions/mentions/views/emails/html/groupMentioned.blade.php
+extensions/mentions/views/emails/plain/userMentioned.blade.php
+extensions/mentions/views/emails/plain/postMentioned.blade.php
+extensions/mentions/views/emails/plain/groupMentioned.blade.php
 extensions/mentions/less/forum.less
 extensions/mentions/less/admin.less
 extensions/mentions/js/tsconfig.json
@@ -295,8 +298,10 @@ extensions/suspend/src/SuspendValidator.php
 extensions/suspend/src/Access/UserPolicy.php
 extensions/suspend/composer.json
 extensions/suspend/.gitattributes
-extensions/suspend/views/emails/suspended.blade.php
-extensions/suspend/views/emails/unsuspended.blade.php
+extensions/suspend/views/emails/html/suspended.blade.php
+extensions/suspend/views/emails/html/unsuspended.blade.php
+extensions/suspend/views/emails/plain/suspended.blade.php
+extensions/suspend/views/emails/plain/unsuspended.blade.php
 extensions/suspend/less/forum.less
 extensions/suspend/less/admin.less
 extensions/suspend/js/tsconfig.json
@@ -703,7 +708,8 @@ extensions/subscriptions/src/Job/SendReplyNotification.php
 extensions/subscriptions/src/HideIgnoredFromAllDiscussionsPage.php
 extensions/subscriptions/composer.json
 extensions/subscriptions/.gitattributes
-extensions/subscriptions/views/emails/newPost.blade.php
+extensions/subscriptions/views/emails/html/newPost.blade.php
+extensions/subscriptions/views/emails/plain/newPost.blade.php
 extensions/subscriptions/less/forum.less
 extensions/subscriptions/js/tsconfig.json
 extensions/subscriptions/js/webpack.config.js
@@ -1109,6 +1115,7 @@ framework/core/migrations/2015_02_24_000000_create_email_tokens_table.php
 framework/core/migrations/2021_04_18_145100_change_posts_content_column_to_mediumtext.php
 framework/core/migrations/2018_09_15_043621_add_posts_indices.php
 framework/core/migrations/2015_02_24_000000_create_password_tokens_table.php
+framework/core/migrations/2023_08_19_000000_create_unsubscribe_tokens_table.php
 framework/core/migrations/2018_10_08_144700_add_shim_prefix_to_group_icons.php
 framework/core/migrations/2018_07_21_000000_seed_default_groups.php
 framework/core/migrations/2022_08_06_000000_change_access_tokens_last_activity_at_to_nullable.php
@@ -1234,6 +1241,7 @@ framework/core/tests/fixtures/less/custom_variable.less
 framework/core/tests/fixtures/less/forum.less
 framework/core/tests/fixtures/less/custom_function.less
 framework/core/src/Notification/MailableInterface.php
+framework/core/src/Notification/UnsubscribeToken.php
 framework/core/src/Notification/Driver/NotificationDriverInterface.php
 framework/core/src/Notification/Driver/EmailNotificationDriver.php
 framework/core/src/Notification/Driver/AlertNotificationDriver.php
@@ -1292,7 +1300,7 @@ framework/core/src/Query/QueryCriteria.php
 framework/core/src/Query/AbstractQueryState.php
 framework/core/src/Query/QueryResults.php
 framework/core/src/Query/ApplyQueryParametersTrait.php
-framework/core/src/Mail/Job/SendRawEmailJob.php
+framework/core/src/Mail/Job/SendInformationalEmailJob.php
 framework/core/src/Mail/DriverInterface.php
 framework/core/src/Mail/FlarumLogTransport.php
 framework/core/src/Mail/SmtpDriver.php
@@ -1301,6 +1309,7 @@ framework/core/src/Mail/MailgunDriver.php
 framework/core/src/Mail/MailServiceProvider.php
 framework/core/src/Mail/LogDriver.php
 framework/core/src/Mail/SendmailDriver.php
+framework/core/src/Mail/Mailer.php
 framework/core/src/Bus/Dispatcher.php
 framework/core/src/Bus/BusServiceProvider.php
 framework/core/src/User/User.php
@@ -1558,8 +1567,10 @@ framework/core/src/Console/ConsoleServiceProvider.php
 framework/core/src/Console/Server.php
 framework/core/src/Forum/routes.php
 framework/core/src/Forum/Controller/ResetPasswordController.php
+framework/core/src/Forum/Controller/UnsubscribeViewController.php
 framework/core/src/Forum/Controller/RegisterController.php
 framework/core/src/Forum/Controller/LogInController.php
+framework/core/src/Forum/Controller/UnsubscribeActionController.php
 framework/core/src/Forum/Controller/GlobalLogOutController.php
 framework/core/src/Forum/Controller/LogOutController.php
 framework/core/src/Forum/Controller/ConfirmEmailController.php
@@ -1778,6 +1789,14 @@ framework/core/src/Update/Controller/UpdateController.php
 framework/core/src/Update/UpdateServiceProvider.php
 framework/core/composer.json
 framework/core/.gitattributes
+framework/core/views/unsubscribe-confirmation.blade.php
+framework/core/views/unsubscribe-error.blade.php
+framework/core/views/email/html/information/base.blade.php
+framework/core/views/email/html/base.blade.php
+framework/core/views/email/html/notification/base.blade.php
+framework/core/views/email/plain/information/base.blade.php
+framework/core/views/email/plain/base.blade.php
+framework/core/views/email/plain/notification/base.blade.php
 framework/core/views/error/default.blade.php
 framework/core/views/error/not_found.blade.php
 framework/core/views/error/csrf_token_mismatch.blade.php
