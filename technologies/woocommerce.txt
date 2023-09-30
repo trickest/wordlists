@@ -3495,12 +3495,13 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/preload-fonts.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/block-preview.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/editor.tsx
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-assembling-ai-optimized-store.svg
+plugins/woocommerce-admin/client/customize-store/assets/images/intro-banner-background.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/welcome-tour.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-analyzing-your-responses.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-designing-the-best-look.svg
+plugins/woocommerce-admin/client/customize-store/assets/images/intro-banner-offline.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-comparing-top-performing-stores.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-applying-the-finishing-touches.svg
-plugins/woocommerce-admin/client/customize-store/assets/images/banner-design-with-ai.svg
 plugins/woocommerce-admin/client/customize-store/transitional/style.scss
 plugins/woocommerce-admin/client/customize-store/transitional/test/index.test.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/index.tsx
@@ -3508,12 +3509,14 @@ plugins/woocommerce-admin/client/customize-store/transitional/mshots-image.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/services.tsx
 plugins/woocommerce-admin/client/customize-store/style.scss
 plugins/woocommerce-admin/client/customize-store/data/homepageTemplates.ts
-plugins/woocommerce-admin/client/customize-store/intro/theme-cards.tsx
 plugins/woocommerce-admin/client/customize-store/intro/design-change-warning-modal.tsx
+plugins/woocommerce-admin/client/customize-store/intro/color-palettes.tsx
+plugins/woocommerce-admin/client/customize-store/intro/theme-card.tsx
 plugins/woocommerce-admin/client/customize-store/intro/index.tsx
 plugins/woocommerce-admin/client/customize-store/intro/actions.ts
 plugins/woocommerce-admin/client/customize-store/intro/services.ts
 plugins/woocommerce-admin/client/customize-store/intro/intro.scss
+plugins/woocommerce-admin/client/customize-store/intro/types.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/close-button/close-button.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/close-button/close-button.scss
 plugins/woocommerce-admin/client/customize-store/design-with-ai/components/choice/choice.tsx
@@ -4426,6 +4429,7 @@ plugins/woocommerce/changelog/e2e-update-playwright-1_38
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
 plugins/woocommerce/changelog/fix-coupon-error-notice-text
+plugins/woocommerce/changelog/update-cys-intro-page
 plugins/woocommerce/changelog/fix-created-via-admin-hpos
 plugins/woocommerce/changelog/pr-40424
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
@@ -4435,6 +4439,7 @@ plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/update-k6-home-wc-admin-correlation
 plugins/woocommerce/changelog/fix-40370
 plugins/woocommerce/changelog/fix-39626-pending-order-syncs
+plugins/woocommerce/changelog/update-40426-remove-SMB-and-large-logic-cys
 plugins/woocommerce/changelog/e2e-add-shopper-tags-attributes
 plugins/woocommerce/changelog/fix-always-set-address-indexes
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.2.0
