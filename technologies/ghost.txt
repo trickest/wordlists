@@ -388,8 +388,14 @@ ghost/admin/app/components/gh-input-with-select/index.hbs
 ghost/admin/app/components/gh-input-with-select/trigger.js
 ghost/admin/app/components/gh-input-with-select/index.js
 ghost/admin/app/components/gh-input-with-select/suggested-option.hbs
+ghost/admin/app/components/gh-post-settings-menu/ctrl-or-cmd.hbs
+ghost/admin/app/components/gh-post-settings-menu/option-or-alt.hbs
 ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.hbs
+ghost/admin/app/components/gh-post-settings-menu/ctrl-or-symbol.hbs
+ghost/admin/app/components/gh-post-settings-menu/ctrl-or-cmd.js
 ghost/admin/app/components/gh-post-settings-menu/visibility-segment-select.js
+ghost/admin/app/components/gh-post-settings-menu/option-or-alt.js
+ghost/admin/app/components/gh-post-settings-menu/ctrl-or-symbol.js
 ghost/admin/app/components/posts/analytics.js
 ghost/admin/app/components/posts/post-activity-feed.js
 ghost/admin/app/components/posts/debug/email-error-message.js
@@ -1594,6 +1600,7 @@ ghost/admin/public/assets/img/patreon.svg
 ghost/admin/public/assets/fonts/Inter-roman.var.woff2
 ghost/admin/public/assets/fonts/Inter-italic.var.woff2
 ghost/admin/public/assets/videos/logo-loader.mp4
+ghost/admin/public/assets/icons/social-x.svg
 ghost/admin/public/assets/icons/activity-placeholder.svg
 ghost/admin/public/assets/icons/twitter-share.svg
 ghost/admin/public/assets/icons/house.svg
@@ -1753,8 +1760,10 @@ ghost/admin/public/assets/icons/default-favicon.svg
 ghost/admin/public/assets/icons/analytics-tab-opened.svg
 ghost/admin/public/assets/icons/arrow-right-tail.svg
 ghost/admin/public/assets/icons/arrow2-down.svg
+ghost/admin/public/assets/icons/facebook-logo.svg
 ghost/admin/public/assets/icons/event-sent-email.svg
 ghost/admin/public/assets/icons/shield-lock.svg
+ghost/admin/public/assets/icons/x-logo.svg
 ghost/admin/public/assets/icons/email-footer.svg
 ghost/admin/public/assets/icons/members.svg
 ghost/admin/public/assets/icons/published-post.svg
@@ -1819,6 +1828,7 @@ ghost/admin/public/assets/icons/empty-opened.svg
 ghost/admin/public/assets/icons/check.svg
 ghost/admin/public/assets/icons/email-stroke.svg
 ghost/admin/public/assets/icons/eye.svg
+ghost/admin/public/assets/icons/keyboard.svg
 ghost/admin/public/assets/icons/dotdotdot.svg
 ghost/admin/public/assets/icons/audio-upload.svg
 ghost/admin/public/assets/icons/gift.svg
@@ -4899,6 +4909,7 @@ apps/admin-x-settings/.storybook/main.tsx
 apps/admin-x-settings/.storybook/preview.tsx
 apps/admin-x-settings/tailwind.config.cjs
 apps/admin-x-settings/package.json
+apps/admin-x-settings/test/unit/api/customThemeSettings.ts
 apps/admin-x-settings/test/unit/unsplash/Masonry.test.ts
 apps/admin-x-settings/test/unit/unsplash/UnsplashService.test.ts
 apps/admin-x-settings/test/unit/utils/url.test.ts
@@ -5118,6 +5129,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/icons/eyedropper.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/hamburger.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/chevron-left.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/mail-block.svg
+apps/admin-x-settings/src/admin-x-ds/assets/icons/duplicate.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/crown.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/money-bags.svg
 apps/admin-x-settings/src/admin-x-ds/assets/icons/heart.svg
@@ -5130,6 +5142,7 @@ apps/admin-x-settings/src/admin-x-ds/assets/images/google-logo.svg
 apps/admin-x-settings/src/admin-x-ds/assets/images/ghost-orb.svg
 apps/admin-x-settings/src/admin-x-ds/assets/images/twitter-logo.svg
 apps/admin-x-settings/src/admin-x-ds/assets/images/facebook-logo.svg
+apps/admin-x-settings/src/admin-x-ds/assets/images/x-logo.svg
 apps/admin-x-settings/src/admin-x-ds/Boilerplate.tsx
 apps/admin-x-settings/src/admin-x-ds/Boilerplate.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/experimental/assets/comments.svg
@@ -5354,6 +5367,7 @@ apps/admin-x-settings/src/api/posts.ts
 apps/admin-x-settings/src/api/themes.ts
 apps/admin-x-settings/src/api/files.ts
 apps/admin-x-settings/src/api/db.ts
+apps/admin-x-settings/src/utils/search.tsx
 apps/admin-x-settings/src/utils/helpers.ts
 apps/admin-x-settings/src/utils/escapeHtml.ts
 apps/admin-x-settings/src/utils/portal.tsx
@@ -5375,10 +5389,10 @@ apps/admin-x-settings/src/utils/unsplash/api/InMemoryUnsplashRepository.ts
 apps/admin-x-settings/src/utils/unsplash/UnsplashTypes.ts
 apps/admin-x-settings/src/utils/unsplash/photo/PhotoUseCase.ts
 apps/admin-x-settings/src/utils/url.ts
-apps/admin-x-settings/src/utils/search.ts
 apps/admin-x-settings/src/utils/errors.ts
 apps/admin-x-settings/tsconfig.node.json
 apps/admin-x-settings/postcss.config.cjs
+apps/admin-x-settings/node-shim.cjs
 apps/admin-x-settings/README.md
 apps/admin-x-settings/.eslintrc.cjs
 apps/portal/.yarnrc

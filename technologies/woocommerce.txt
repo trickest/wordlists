@@ -32,6 +32,7 @@ packages/js/product-editor/changelog/add-stock-status-37884
 packages/js/product-editor/changelog/fix-40168_delete_variation
 packages/js/product-editor/changelog/fix-typescript-package-isolation
 packages/js/product-editor/changelog/add-taxonomy
+packages/js/product-editor/changelog/add-edited-product-in-context
 packages/js/product-editor/changelog/add-37264
 packages/js/product-editor/changelog/fix-tabbed-navigation-37932
 packages/js/product-editor/changelog/add-name-block-37007
@@ -115,6 +116,7 @@ packages/js/product-editor/changelog/update-39885_variation_pagination_table
 packages/js/product-editor/changelog/update-37727
 packages/js/product-editor/changelog/add-dialogNameHelpText-attribute
 packages/js/product-editor/changelog/add-migrate-more-menu-37097
+packages/js/product-editor/changelog/doc-handbook-1.1
 packages/js/product-editor/changelog/update-name-validation
 packages/js/product-editor/changelog/add-37241-blocks-build
 packages/js/product-editor/changelog/add-37390
@@ -179,6 +181,7 @@ packages/js/product-editor/changelog/add-39443_attribute_filters
 packages/js/product-editor/changelog/tweak-generaltab
 packages/js/product-editor/changelog/update-38260
 packages/js/product-editor/changelog/add-38248
+packages/js/product-editor/changelog/fix-40210_dropdown_and_list_behavior_in_attributes_variation_modals
 packages/js/product-editor/changelog/add-38853
 packages/js/product-editor/changelog/update-move-product-hooks
 packages/js/product-editor/changelog/update-36355_product_editor_package
@@ -543,6 +546,7 @@ packages/js/product-editor/src/blocks/images/edit.tsx
 packages/js/product-editor/src/blocks/images/block.json
 packages/js/product-editor/src/blocks/images/index.ts
 packages/js/product-editor/src/blocks/images/editor.scss
+packages/js/product-editor/src/blocks/README.md
 packages/js/product-editor/src/blocks/tab/edit.tsx
 packages/js/product-editor/src/blocks/tab/tab-button.tsx
 packages/js/product-editor/src/blocks/tab/block.json
@@ -576,6 +580,7 @@ packages/js/product-editor/src/contexts/validation-context/use-validation.ts
 packages/js/product-editor/src/contexts/validation-context/validation-provider.tsx
 packages/js/product-editor/src/contexts/validation-context/types.ts
 packages/js/product-editor/src/contexts/validation-context/validation-context.ts
+packages/js/product-editor/src/types.ts
 packages/js/product-editor/src/utils/get-currency-symbol-props.ts
 packages/js/product-editor/src/utils/get-product-variation-title.ts
 packages/js/product-editor/src/utils/get-product-title.ts
@@ -662,6 +667,7 @@ packages/js/components/changelog/dev-upgrade-storybook-6-5-17
 packages/js/components/changelog/fix-category-escape-characters
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/fix-39544_description_styling
+packages/js/components/changelog/fix-cys-ui-issues
 packages/js/components/changelog/dev-upgrade-ts-5
 packages/js/components/changelog/dev-sync-pnpm
 packages/js/components/changelog/add-39875
@@ -3461,6 +3467,7 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-editor-
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-home-templates.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-editor-blocks.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/test/use-home-templates.js
+plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-selected-pattern.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-scroll-opacity.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/hooks/use-patterns.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/auto-block-preview.tsx
@@ -3472,6 +3479,7 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/save-hub.
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-footer.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-typography.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-homepage.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/test/utils.test.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-header.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-main.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/color-palette-variations/constants.ts
@@ -3488,6 +3496,7 @@ plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-st
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/global-styles/font-pairing-variations/index.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/index.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-color-palette.tsx
+plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/utils.ts
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen-logo.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/sidebar/sidebar-navigation-screen.tsx
 plugins/woocommerce-admin/client/customize-store/assembler-hub/index.tsx
@@ -4428,6 +4437,7 @@ plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
 plugins/woocommerce/changelog/e2e-update-playwright-1_38
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
+plugins/woocommerce/changelog/fix-cys-ui-issues
 plugins/woocommerce/changelog/fix-coupon-error-notice-text
 plugins/woocommerce/changelog/update-cys-intro-page
 plugins/woocommerce/changelog/fix-created-via-admin-hpos
@@ -4441,24 +4451,29 @@ plugins/woocommerce/changelog/update-k6-home-wc-admin-correlation
 plugins/woocommerce/changelog/fix-40370
 plugins/woocommerce/changelog/fix-39626-pending-order-syncs
 plugins/woocommerce/changelog/update-40426-remove-SMB-and-large-logic-cys
+plugins/woocommerce/changelog/doc-handbook-1.1
 plugins/woocommerce/changelog/e2e-add-shopper-tags-attributes
 plugins/woocommerce/changelog/fix-always-set-address-indexes
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.2.0
 plugins/woocommerce/changelog/add-40042_default_price
 plugins/woocommerce/changelog/update-cys-display-all-6-homeapge-blocks
 plugins/woocommerce/changelog/update-marketing-kb-endpoints
+plugins/woocommerce/changelog/fix-cart-duplicate-notices
 plugins/woocommerce/changelog/fix-setup-tasklist-is-considered-as-hidden
 plugins/woocommerce/changelog/e2e-enable-dotfiles-e2e-runs
 plugins/woocommerce/changelog/fix-cys-assembler-color-palette-persistence
 plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
+plugins/woocommerce/changelog/add-onboarding-theme-rest-api-endpoint-stub
 plugins/woocommerce/changelog/add-assemble-site
 plugins/woocommerce/changelog/add-cys-intro-tracks
+plugins/woocommerce/changelog/fix-40511
 plugins/woocommerce/changelog/fix-cys-assembler-hub-font-jankiness
 plugins/woocommerce/changelog/add-40070_global_attribute_terms_filtering
 plugins/woocommerce/changelog/fix-wccom-18033-reset-search-when-tab-changes
 plugins/woocommerce/changelog/update-handle-cys-ai-loader-errors
 plugins/woocommerce/changelog/add-cys-ai-header-footer
 plugins/woocommerce/changelog/add-cys-homepage-template-completion
+plugins/woocommerce/changelog/fix-docblock-type-annotation-process-refund
 plugins/woocommerce/changelog/pr-40466
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
 plugins/woocommerce/changelog/update-disable-cys-frame-navigation
@@ -7052,7 +7067,6 @@ docs/security/readme.md
 docs/security/reporting-security-issues.md
 docs/security/security-best-practices.md
 docs/product-editor-development/README.md
-docs/product-editor-development/common-tasks.md
 renovate.json
 .husky/post-merge
 .husky/pre-push
