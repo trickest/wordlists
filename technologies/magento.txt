@@ -13186,6 +13186,7 @@ app/code/Magento/Customer/Block/Widget/Company.php
 app/code/Magento/Customer/Block/Widget/Telephone.php
 app/code/Magento/Customer/Block/Widget/Dob.php
 app/code/Magento/Customer/Block/Widget/Taxvat.php
+app/code/Magento/Customer/Block/Adminhtml/Group/AddCustomerGroupButton.php
 app/code/Magento/Customer/Block/Adminhtml/Group/Edit.php
 app/code/Magento/Customer/Block/Adminhtml/Group/Edit/Form.php
 app/code/Magento/Customer/Block/Adminhtml/Sales/Order/Address/Form/Renderer/Vat.php
@@ -16961,6 +16962,7 @@ app/code/Magento/ConfigurableProduct/Plugin/Model/Attribute/Backend/AttributeVal
 app/code/Magento/ConfigurableProduct/Plugin/Model/Order/Invoice/UpdateConfigurableProductTotalQty.php
 app/code/Magento/ConfigurableProduct/Plugin/Catalog/Model/Product/Pricing/Renderer/SalableResolver.php
 app/code/Magento/ConfigurableProduct/Plugin/Tax/Model/Sales/Total/Quote/CommonTaxCollector.php
+app/code/Magento/ConfigurableProduct/Plugin/CatalogWidget/Block/Product/ProductsListPlugin.php
 app/code/Magento/ConfigurableProduct/Plugin/Product/Initialization/CleanConfigurationTmpImages.php
 app/code/Magento/ConfigurableProduct/Test/Fixture/Product.php
 app/code/Magento/ConfigurableProduct/Test/Fixture/AddProductToCart.php
@@ -17037,6 +17039,7 @@ app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/Model/ResourceModel/Produc
 app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/Model/Order/Invoice/UpdateConfigurableProductTotalQtyTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/Catalog/Model/Product/Pricing/Renderer/SalableResolverTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/Tax/Model/Sales/Total/Quote/CommonTaxCollectorTest.php
+app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/CatalogWidget/Block/Product/ProductListPluginTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Plugin/Product/Initialization/CleanConfigurationTmpImagesTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Block/Adminhtml/Product/Edit/Button/SaveTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Block/Adminhtml/Product/Edit/Tab/Variations/Config/MatrixTest.php
@@ -20077,6 +20080,7 @@ app/code/Magento/OfflineShipping/etc/di.xml
 app/code/Magento/OfflineShipping/etc/fieldset.xml
 app/code/Magento/OfflineShipping/etc/db_schema.xml
 app/code/Magento/OfflineShipping/etc/config.xml
+app/code/Magento/OfflineShipping/etc/adminhtml/di.xml
 app/code/Magento/OfflineShipping/etc/adminhtml/routes.xml
 app/code/Magento/OfflineShipping/etc/adminhtml/system.xml
 app/code/Magento/OfflineShipping/etc/module.xml
@@ -20098,6 +20102,7 @@ app/code/Magento/OfflineShipping/Model/Quote/Address/FreeShipping.php
 app/code/Magento/OfflineShipping/Model/Config/Source/Tablerate.php
 app/code/Magento/OfflineShipping/Model/Config/Source/Flatrate.php
 app/code/Magento/OfflineShipping/Model/Config/Backend/Tablerate.php
+app/code/Magento/OfflineShipping/Model/Plugin/AsyncConfig/Model/AsyncConfigPublisherPlugin.php
 app/code/Magento/OfflineShipping/Model/Carrier/Tablerate.php
 app/code/Magento/OfflineShipping/Model/Carrier/Flatrate/ItemPriceCalculator.php
 app/code/Magento/OfflineShipping/Model/Carrier/Freeshipping.php
@@ -20132,6 +20137,7 @@ app/code/Magento/OfflineShipping/Test/Unit/Model/Quote/Address/FreeShippingTest.
 app/code/Magento/OfflineShipping/Test/Unit/Model/Config/Source/FlatrateTest.php
 app/code/Magento/OfflineShipping/Test/Unit/Model/Config/Source/TablerateTest.php
 app/code/Magento/OfflineShipping/Test/Unit/Model/Config/Backend/TablerateTest.php
+app/code/Magento/OfflineShipping/Test/Unit/Model/Plugin/AsyncConfig/Model/AsyncConfigPublisherPluginTest.php
 app/code/Magento/OfflineShipping/Test/Unit/Model/Carrier/FreeshippingTest.php
 app/code/Magento/OfflineShipping/Test/Unit/Model/Carrier/FlatrateTest.php
 app/code/Magento/OfflineShipping/Test/Unit/Model/Carrier/TablerateTest.php
@@ -24776,6 +24782,7 @@ app/code/Magento/ImportExport/Test/Unit/Model/Source/Export/FormatTest.php
 app/code/Magento/ImportExport/Test/Unit/Model/Source/UploadTest.php
 app/code/Magento/ImportExport/Test/Unit/Helper/ReportTest.php
 app/code/Magento/ImportExport/Test/Unit/Helper/DataTest.php
+app/code/Magento/ImportExport/Test/Unit/Ui/DataProvider/ExportFileDataProviderTest.php
 app/code/Magento/ImportExport/Test/Unit/Plugin/DeferCacheCleaningUntilImportIsCompleteTest.php
 app/code/Magento/ImportExport/Test/Unit/Block/Adminhtml/Import/Frame/ResultTest.php
 app/code/Magento/ImportExport/Test/Unit/Block/Adminhtml/Import/Edit/FormTest.php

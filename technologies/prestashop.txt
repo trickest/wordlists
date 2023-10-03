@@ -1763,7 +1763,6 @@ tests/UI/campaigns/functional/BO/14_advancedParameters/06_team/roles/01_filterRo
 tests/UI/campaigns/functional/BO/14_advancedParameters/06_team/roles/02_CRUDRoles.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/06_team/roles/04_sortRoles.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/12_authorizationServer/01_CRUD.ts
-tests/UI/campaigns/functional/BO/14_advancedParameters/12_authorizationServer/02_viewDetail.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/11_newAndExperimentalFeatures/01_enableDisableExperimentalProductV2.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/04_email/01_filterDeleteAndBulkActionsEmails.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/04_email/02_enableDisableLogEmails.ts
@@ -3110,7 +3109,6 @@ tests/Integration/Behaviour/Features/Context/Domain/CountryFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/SecurityFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/MetaFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/ProductFeatureContext.php
-tests/Integration/Behaviour/Features/Context/Domain/AuthorizationServerFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/DebugModeFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/OrderStateFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/StateFeatureContext.php
@@ -3287,7 +3285,6 @@ tests/Integration/Behaviour/Features/Scenario/Customer/customer_required_fields_
 tests/Integration/Behaviour/Features/Scenario/Customer/customer_management.feature
 tests/Integration/Behaviour/Features/Scenario/Customer/customer_private_note.feature
 tests/Integration/Behaviour/Features/Scenario/Customer/search_customers.feature
-tests/Integration/Behaviour/Features/Scenario/AuthorizationServer/authorization_server_management.feature
 tests/Integration/Behaviour/Features/Scenario/Search/add_alias.feature
 tests/Integration/Behaviour/Features/Scenario/Search/search_alias_for_association.feature
 tests/Integration/Behaviour/Features/Scenario/Search/toggle_alias.feature
@@ -4553,7 +4550,6 @@ src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/Administratio
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/PerformanceController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/EmployeeController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/LogsController.php
-src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/AuthorizationServer/ApplicationController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/AuthorizationServer/ApiAccessController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/SqlManagerController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/PermissionController.php
@@ -4634,7 +4630,6 @@ src/PrestaShopBundle/Controller/Admin/PrestaShopAdminController.php
 src/PrestaShopBundle/Controller/ArgumentResolver/FiltersBuilderResolver.php
 src/PrestaShopBundle/Controller/BulkActionsTrait.php
 src/PrestaShopBundle/Model/AdminModelAdapter.php
-src/PrestaShopBundle/Model/AuthorizationServer/AuthorizedApplicationFactory.php
 src/PrestaShopBundle/Model/Product/AdminModelAdapter.php
 src/PrestaShopBundle/Component/CsvResponse.php
 src/PrestaShopBundle/Form/Validator/Constraints/TinyMceMaxLengthValidator.php
@@ -4917,7 +4912,6 @@ src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/PerformanceFormDa
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/OptionalFeaturesType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/MemcacheServerType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/DebugModeType.php
-src/PrestaShopBundle/Form/Admin/AdvancedParameters/AuthorizationServer/ApplicationType.php
 src/PrestaShopBundle/Form/Admin/Product/ProductPrice.php
 src/PrestaShopBundle/Form/Admin/Product/ProductShipping.php
 src/PrestaShopBundle/Form/Admin/Product/ProductCombination.php
@@ -5296,7 +5290,6 @@ src/PrestaShopBundle/Resources/config/services/core/foundation.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/theme.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/country.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/configuration.yml
-src/PrestaShopBundle/Resources/config/services/core/domain/authorization_server.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/showcase_card.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/sql_management.yml
 src/PrestaShopBundle/Resources/config/services/core/domain/customer_service.yml
@@ -5536,10 +5529,6 @@ src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/index.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/view.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/Blocks/form.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/edit.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/Application/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/edit.html.twig
@@ -6196,7 +6185,6 @@ src/PrestaShopBundle/Entity/Repository/FeatureAttributeRepository.php
 src/PrestaShopBundle/Entity/Repository/ApiAccessRepository.php
 src/PrestaShopBundle/Entity/Repository/AttributeGroupLangRepository.php
 src/PrestaShopBundle/Entity/Repository/TabLangRepository.php
-src/PrestaShopBundle/Entity/Repository/AuthorizedApplicationRepository.php
 src/PrestaShopBundle/Entity/Repository/ShopRepository.php
 src/PrestaShopBundle/Entity/Repository/AttributeGroupRepository.php
 src/PrestaShopBundle/Entity/Repository/ModuleRepository.php
@@ -6207,7 +6195,6 @@ src/PrestaShopBundle/Entity/Repository/StockRepository.php
 src/PrestaShopBundle/Entity/Repository/TabRepository.php
 src/PrestaShopBundle/Entity/ShopUrl.php
 src/PrestaShopBundle/Entity/ModuleHistory.php
-src/PrestaShopBundle/Entity/AuthorizedApplication.php
 src/PrestaShopBundle/Entity/ProductIdentity.php
 src/PrestaShopBundle/Entity/Attribute.php
 src/PrestaShopBundle/Entity/Lang.php
@@ -7431,7 +7418,6 @@ src/Core/Form/IdentifiableObject/DataHandler/OrderAddressFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CountryFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/SpecificPriceFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CustomerFormDataHandler.php
-src/Core/Form/IdentifiableObject/DataHandler/ApplicationFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CancellationFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/SqlRequestFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/FeatureFormDataHandler.php
@@ -7463,7 +7449,6 @@ src/Core/Form/IdentifiableObject/DataProvider/EmployeeFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ProductImageFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ProductFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ProfileFormDataProvider.php
-src/Core/Form/IdentifiableObject/DataProvider/ApplicationFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CmsPageCategoryFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/SpecificPriceFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/AttachmentFormDataProvider.php
@@ -7663,7 +7648,6 @@ src/Core/Search/Filters/LogsFilters.php
 src/Core/Search/Filters/WebserviceKeyFilters.php
 src/Core/Search/Filters/CreditSlipFilters.php
 src/Core/Search/Filters/OrderReturnStatesFilters.php
-src/Core/Search/Filters/AuthorizedApplicationsFilters.php
 src/Core/Search/Filters/Monitoring/ProductWithoutImageFilters.php
 src/Core/Search/Filters/Monitoring/ProductWithoutPriceFilters.php
 src/Core/Search/Filters/Monitoring/ProductWithoutDescriptionFilters.php
@@ -7713,7 +7697,6 @@ src/Core/Search/Builder/FiltersBuilderCollection.php
 src/Core/Search/Builder/RequestFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/FeatureValueFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/TypedFiltersBuilderInterface.php
-src/Core/Search/Builder/TypedBuilder/ApiAccessFiltersBuilder.php
 src/Core/Search/Builder/TypedBuilder/ProductCombinationFiltersBuilder.php
 src/Core/Search/Builder/FiltersBuilderInterface.php
 src/Core/Search/Builder/ChainedFiltersBuilder.php
@@ -8391,33 +8374,6 @@ src/Core/Domain/Customer/CommandHandler/BulkDisableCustomerHandlerInterface.php
 src/Core/Domain/Configuration/ShopConfigurationInterface.php
 src/Core/Domain/Configuration/Command/SwitchDebugModeCommand.php
 src/Core/Domain/Configuration/CommandHandler/SwitchDebugModeHandlerInterface.php
-src/Core/Domain/AuthorizationServer/Query/GetApplicationForViewing.php
-src/Core/Domain/AuthorizationServer/Query/GetApplicationForEditing.php
-src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationFactoryInterface.php
-src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationInterface.php
-src/Core/Domain/AuthorizationServer/Model/ApiAccessRepositoryInterface.php
-src/Core/Domain/AuthorizationServer/Model/AuthorizedApplicationRepositoryInterface.php
-src/Core/Domain/AuthorizationServer/Exception/ApplicationConstraintException.php
-src/Core/Domain/AuthorizationServer/Exception/DuplicateApplicationNameException.php
-src/Core/Domain/AuthorizationServer/Exception/ApplicationException.php
-src/Core/Domain/AuthorizationServer/Exception/ApplicationNotFoundException.php
-src/Core/Domain/AuthorizationServer/Exception/DeleteApplicationException.php
-src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandlerInterface.php
-src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForViewingHandler.php
-src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForEditingHandler.php
-src/Core/Domain/AuthorizationServer/QueryHandler/GetApplicationForViewingHandlerInterface.php
-src/Core/Domain/AuthorizationServer/Command/DeleteApplicationCommand.php
-src/Core/Domain/AuthorizationServer/Command/EditApplicationCommand.php
-src/Core/Domain/AuthorizationServer/Command/AddApplicationCommand.php
-src/Core/Domain/AuthorizationServer/QueryResult/ViewableApplication.php
-src/Core/Domain/AuthorizationServer/QueryResult/EditableApplication.php
-src/Core/Domain/AuthorizationServer/ValueObject/ApplicationId.php
-src/Core/Domain/AuthorizationServer/CommandHandler/AddApplicationHandler.php
-src/Core/Domain/AuthorizationServer/CommandHandler/EditApplicationHandlerInterface.php
-src/Core/Domain/AuthorizationServer/CommandHandler/EditApplicationHandler.php
-src/Core/Domain/AuthorizationServer/CommandHandler/DeleteApplicationHandler.php
-src/Core/Domain/AuthorizationServer/CommandHandler/DeleteApplicationHandlerInterface.php
-src/Core/Domain/AuthorizationServer/CommandHandler/AddApplicationHandlerInterface.php
 src/Core/Domain/Contact/Query/GetContactForEditing.php
 src/Core/Domain/Contact/Exception/ContactException.php
 src/Core/Domain/Contact/Exception/CannotUpdateContactException.php
@@ -9736,7 +9692,6 @@ src/Core/Grid/Query/TaxRuleQueryBuilder.php
 src/Core/Grid/Query/AttributeGroupQueryBuilder.php
 src/Core/Grid/Query/CountryQueryBuilder.php
 src/Core/Grid/Query/CategoryQueryBuilder.php
-src/Core/Grid/Query/AuthorizedApplicationQueryBuilder.php
 src/Core/Grid/Query/CurrencyQueryBuilder.php
 src/Core/Grid/Query/DoctrineSearchCriteriaApplicatorInterface.php
 src/Core/Grid/Query/AbstractDoctrineQueryBuilder.php
@@ -9928,7 +9883,6 @@ src/Core/Grid/Definition/Factory/CartRuleGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/AbstractFilterableGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/LogGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/BulkDeleteActionTrait.php
-src/Core/Grid/Definition/Factory/AuthorizedApplicationGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CustomerThreadGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CreditSlipGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/TaxRulesGroupGridDefinitionFactory.php
