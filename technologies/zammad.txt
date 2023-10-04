@@ -244,6 +244,7 @@ db/migrate/20160217000001_object_manager_update_user.rb
 db/migrate/20220822075554_issue4219_ldap_wizard.rb
 db/migrate/20220405093706_timeplan_nightly.rb
 db/migrate/20200413160113_issue_2990_delete_timeframe.rb
+db/migrate/20220920084800_setting_add_store_provider_s3.rb
 db/migrate/20220803153227_issue_4050_image_in_note.rb
 db/migrate/20221221082844_and_or_conditions_setting_default.rb
 db/migrate/20170713000002_ticket_zoom_setting2.rb
@@ -3562,6 +3563,9 @@ app/models/group/assets.rb
 app/models/mention.rb
 app/models/store/object.rb
 app/models/store/file.rb
+app/models/store/provider/s3.rb
+app/models/store/provider/s3/upload.rb
+app/models/store/provider/s3/config.rb
 app/models/store/provider/db.rb
 app/models/store/provider/file.rb
 app/models/translation.rb
@@ -3704,6 +3708,7 @@ app/models/core_workflow/condition/is.rb
 app/models/core_workflow/condition/is_not.rb
 app/models/core_workflow/condition/match_one_module.rb
 app/models/core_workflow/condition/till_relative.rb
+app/models/core_workflow/condition/contains_one_not.rb
 app/models/core_workflow/condition/before_relative.rb
 app/models/core_workflow/condition/not_set.rb
 app/models/core_workflow/condition/is_any_of.rb
@@ -5237,6 +5242,7 @@ lib/sequencer/unit/import/freshdesk/time_entry/skip.rb
 lib/sequencer/unit/import/freshdesk/time_entry/mapping.rb
 lib/sequencer/unit/import/freshdesk/time_entry/available.rb
 lib/sequencer/unit/import/freshdesk/ticket/fetch.rb
+lib/sequencer/unit/import/freshdesk/ticket/requester_contact.rb
 lib/sequencer/unit/import/freshdesk/ticket/conversations.rb
 lib/sequencer/unit/import/freshdesk/ticket/mapping.rb
 lib/sequencer/unit/import/freshdesk/ticket/time_entries.rb
@@ -5247,6 +5253,7 @@ lib/sequencer/unit/import/freshdesk/company_fields.rb
 lib/sequencer/unit/import/freshdesk/resources.rb
 lib/sequencer/unit/import/freshdesk/ticket_fields.rb
 lib/sequencer/unit/import/freshdesk/contact/mapping.rb
+lib/sequencer/unit/import/freshdesk/contact/maybe_fetch.rb
 lib/sequencer/unit/import/freshdesk/group/mapping.rb
 lib/sequencer/unit/import/freshdesk/contacts/deleted.rb
 lib/sequencer/unit/import/freshdesk/contacts/blocked.rb
@@ -5254,6 +5261,7 @@ lib/sequencer/unit/import/freshdesk/contacts/default.rb
 lib/sequencer/unit/import/freshdesk/contact_fields.rb
 lib/sequencer/unit/import/freshdesk/requester.rb
 lib/sequencer/unit/import/freshdesk/tickets.rb
+lib/sequencer/unit/import/freshdesk/conversation/user.rb
 lib/sequencer/unit/import/freshdesk/conversation/mapping.rb
 lib/sequencer/unit/import/freshdesk/conversation/attachments.rb
 lib/sequencer/unit/import/freshdesk/conversation/inline_images.rb
@@ -5586,6 +5594,7 @@ lib/zammad/application/initializer/session_store.rb
 lib/zammad/restart.rb
 lib/zammad/safe_mode.rb
 lib/zammad/logging.rb
+lib/zammad/service/configuration.rb
 lib/telegram_helper.rb
 lib/ldap.rb
 lib/argv_helper.rb
@@ -6015,6 +6024,7 @@ config/initializers/log_cache_store.rb
 config/initializers/delayed_jobs_timeout_per_job.rb
 config/initializers/mariadb_json_columns.rb
 config/initializers/content_security_policy.rb
+config/initializers/store_provider_check.rb
 config/initializers/delayed_jobs_settings_reset.rb
 config/initializers/wrap_parameters.rb
 config/initializers/inflections.rb
@@ -6135,6 +6145,7 @@ config/routes/public_link.rb
 config/routes/taskbar.rb
 config/routes/integration_sipgate.rb
 config/routes/channel_facebook.rb
+config/zammad/storage.yml.dist
 config/database/database.yml
 config/routes.rb
 config/locales.yml
@@ -7222,6 +7233,7 @@ spec/models/setting/processed/timezone_spec.rb
 spec/models/channel_spec.rb
 spec/models/token_spec.rb
 spec/models/store/file_spec.rb
+spec/models/store/provider/s3_spec.rb
 spec/models/store/provider/file_spec.rb
 spec/models/application_model_examples.rb
 spec/models/form_updater/updater_spec.rb

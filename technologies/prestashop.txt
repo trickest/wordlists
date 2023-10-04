@@ -1151,6 +1151,7 @@ tests/UI/data/types/orderShipping.d.ts
 tests/UI/data/types/contactUs.d.ts
 tests/UI/data/types/shop.d.ts
 tests/UI/data/types/maildevEmail.d.ts
+tests/UI/data/types/APIAccess.ts
 tests/UI/data/types/catalogPriceRule.d.ts
 tests/UI/data/types/zone.d.ts
 tests/UI/data/types/file.d.ts
@@ -1200,7 +1201,6 @@ tests/UI/data/types/message.d.ts
 tests/UI/data/types/imageType.d.ts
 tests/UI/data/types/sqlTable.d.ts
 tests/UI/data/types/employee.d.ts
-tests/UI/data/types/authorizedApplication.d.ts
 tests/UI/data/types/title.d.ts
 tests/UI/data/types/country.d.ts
 tests/UI/data/types/paymentMethod.d.ts
@@ -1212,6 +1212,7 @@ tests/UI/data/faker/contact.ts
 tests/UI/data/faker/linkWidget.ts
 tests/UI/data/faker/tax.ts
 tests/UI/data/faker/CMSpage.ts
+tests/UI/data/faker/APIAccess.ts
 tests/UI/data/faker/supplier.ts
 tests/UI/data/faker/featureValue.ts
 tests/UI/data/faker/webservice.ts
@@ -1251,7 +1252,6 @@ tests/UI/data/faker/taxOption.ts
 tests/UI/data/faker/paymentMethod.ts
 tests/UI/data/faker/employee.ts
 tests/UI/data/faker/taxRule.ts
-tests/UI/data/faker/authorizedApplication.ts
 tests/UI/data/faker/tag.ts
 tests/UI/data/faker/orderReturnStatus.ts
 tests/UI/data/faker/shopGroup.ts
@@ -1893,6 +1893,8 @@ tests/UI/pages/BO/advancedParameters/import/index.ts
 tests/UI/pages/BO/advancedParameters/webservice/add.ts
 tests/UI/pages/BO/advancedParameters/webservice/index.ts
 tests/UI/pages/BO/advancedParameters/logs/index.ts
+tests/UI/pages/BO/advancedParameters/APIAccess/add.ts
+tests/UI/pages/BO/advancedParameters/APIAccess/index.ts
 tests/UI/pages/BO/advancedParameters/performance/index.ts
 tests/UI/pages/BO/advancedParameters/multistore/add.ts
 tests/UI/pages/BO/advancedParameters/multistore/index.ts
@@ -1901,9 +1903,6 @@ tests/UI/pages/BO/advancedParameters/multistore/url/index.ts
 tests/UI/pages/BO/advancedParameters/multistore/shop/add.ts
 tests/UI/pages/BO/advancedParameters/multistore/shop/index.ts
 tests/UI/pages/BO/advancedParameters/email/index.ts
-tests/UI/pages/BO/advancedParameters/authorizationServer/view.ts
-tests/UI/pages/BO/advancedParameters/authorizationServer/add.ts
-tests/UI/pages/BO/advancedParameters/authorizationServer/index.ts
 tests/UI/pages/BO/advancedParameters/menuTab/index.ts
 tests/UI/pages/BO/advancedParameters/database/sqlManager/view.ts
 tests/UI/pages/BO/advancedParameters/database/sqlManager/add.ts
@@ -2722,6 +2721,7 @@ tests/Unit/Core/Form/IdentifiableObject/DataProvider/OrderReturnFormDataProvider
 tests/Unit/Core/Form/IdentifiableObject/DataProvider/ProductFormDataProviderTest.php
 tests/Unit/Core/Form/IdentifiableObject/DataProvider/TaxRulesGroupFormDataProviderTest.php
 tests/Unit/Core/Form/IdentifiableObject/DataProvider/LanguageFormDataProviderTest.php
+tests/Unit/Core/Form/IdentifiableObject/DataProvider/ApiAccessFormDataProviderTest.php
 tests/Unit/Core/Form/IdentifiableObject/DataProvider/SpecificPriceFormDataProviderTest.php
 tests/Unit/Core/Form/IdentifiableObject/DataProvider/CustomerFormDataProviderTest.php
 tests/Unit/Core/Form/IdentifiableObject/Builder/CartRule/CartRuleActionBuilderTest.php
@@ -4912,6 +4912,7 @@ src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/PerformanceFormDa
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/OptionalFeaturesType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/MemcacheServerType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/DebugModeType.php
+src/PrestaShopBundle/Form/Admin/AdvancedParameters/AuthorizationServer/ApiAccessType.php
 src/PrestaShopBundle/Form/Admin/Product/ProductPrice.php
 src/PrestaShopBundle/Form/Admin/Product/ProductShipping.php
 src/PrestaShopBundle/Form/Admin/Product/ProductCombination.php
@@ -5528,7 +5529,10 @@ src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Profiles/create.html.twig
-src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/ApiAccess/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/ApiAccess/form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/ApiAccess/edit.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/AuthorizationServer/ApiAccess/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/Blocks/form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/Webservice/edit.html.twig
@@ -6268,6 +6272,7 @@ src/Adapter/Import/CsvFileOpener.php
 src/Adapter/ApiAccess/QueryHandler/GetApiAccessForEditingHandler.php
 src/Adapter/ApiAccess/CommandHandler/EditApiAccessHandler.php
 src/Adapter/ApiAccess/CommandHandler/AddApiAccessHandler.php
+src/Adapter/ApiAccess/CommandHandler/DeleteApiAccessHandler.php
 src/Adapter/Invoice/InvoiceTemplateTypeProvider.php
 src/Adapter/Invoice/OrderInvoiceDataProvider.php
 src/Adapter/Invoice/InvoiceOptionsConfiguration.php
@@ -7394,6 +7399,7 @@ src/Core/Form/IdentifiableObject/DataHandler/ZoneFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CmsPageCategoryFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/ManufacturerAddressFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/FormDataHandlerInterface.php
+src/Core/Form/IdentifiableObject/DataHandler/ApiAccessFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/LanguageFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/StandardRefundFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/OrderMessageFormDataHandler.php
@@ -7464,6 +7470,7 @@ src/Core/Form/IdentifiableObject/DataProvider/SupplierFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/AddressFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CombinationFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/OrderStateFormDataProvider.php
+src/Core/Form/IdentifiableObject/DataProvider/ApiAccessFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CategoryFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/TitleFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ProductShopsFormDataProvider.php
@@ -7626,6 +7633,7 @@ src/Core/Search/SearchPanelInterface.php
 src/Core/Search/Filters.php
 src/Core/Search/Filters/CustomerOrderFilters.php
 src/Core/Search/Filters/StateFilters.php
+src/Core/Search/Filters/ApiAccessFilters.php
 src/Core/Search/Filters/Security/Session/CustomerFilters.php
 src/Core/Search/Filters/Security/Session/EmployeeFilters.php
 src/Core/Search/Filters/MetaFilters.php
@@ -7664,7 +7672,6 @@ src/Core/Search/Filters/CarrierFilters.php
 src/Core/Search/Filters/OrderFilters.php
 src/Core/Search/Filters/AttributeGroupFilters.php
 src/Core/Search/Filters/FeatureFilters.php
-src/Core/Search/Filters/ApiAccessesFilters.php
 src/Core/Search/Filters/CustomerThreadFilter.php
 src/Core/Search/Filters/RequestSqlFilters.php
 src/Core/Search/Filters/CustomerGroupsFilters.php
@@ -7880,13 +7887,17 @@ src/Core/Domain/ApiAccess/Exception/ApiAccessConstraintException.php
 src/Core/Domain/ApiAccess/Exception/ApiAccessNotFoundException.php
 src/Core/Domain/ApiAccess/Exception/CannotAddApiAccessException.php
 src/Core/Domain/ApiAccess/Exception/ApiAccessException.php
+src/Core/Domain/ApiAccess/Exception/CannotDeleteApiAccessException.php
 src/Core/Domain/ApiAccess/Exception/CannotUpdateApiAccessException.php
+src/Core/Domain/ApiAccess/ApiAccessSettings.php
 src/Core/Domain/ApiAccess/QueryHandler/GetApiAccessForEditingHandlerInterface.php
 src/Core/Domain/ApiAccess/Command/AddApiAccessCommand.php
+src/Core/Domain/ApiAccess/Command/DeleteApiAccessCommand.php
 src/Core/Domain/ApiAccess/Command/EditApiAccessCommand.php
 src/Core/Domain/ApiAccess/QueryResult/EditableApiAccess.php
 src/Core/Domain/ApiAccess/ValueObject/ApiAccessId.php
 src/Core/Domain/ApiAccess/CommandHandler/AddApiAccessCommandHandlerInterface.php
+src/Core/Domain/ApiAccess/CommandHandler/DeleteApiAccessHandlerInterface.php
 src/Core/Domain/ApiAccess/CommandHandler/EditApiAccessCommandHandlerInterface.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandler.php
@@ -10753,6 +10764,7 @@ admin-dev/themes/new-theme/js/pages/feature/feature-value/index.ts
 admin-dev/themes/new-theme/js/pages/feature/feature-value/form.ts
 admin-dev/themes/new-theme/js/pages/feature/index.ts
 admin-dev/themes/new-theme/js/pages/feature/form.ts
+admin-dev/themes/new-theme/js/pages/api-access/index.ts
 admin-dev/themes/new-theme/js/pages/credit-slip/index.ts
 admin-dev/themes/new-theme/js/pages/maintenance/index.ts
 admin-dev/themes/new-theme/js/pages/currency/index.ts

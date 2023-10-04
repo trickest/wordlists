@@ -1077,16 +1077,21 @@ changelog/_unreleased/2023-08-16-allow-to-restrict-theme-compile-to-themes-and-s
 changelog/_unreleased/2023-09-12-handle-exception-for-version-manager.md
 changelog/_unreleased/2023-08-30-add-option-to-schema-command.md
 changelog/_unreleased/2023-08-21-make-order-module-vue-3-compatible.md
+changelog/_unreleased/2023-10-04-remove-after-statement-from-order_line_item-migration.md
 changelog/_unreleased/2023-08-10-change-sw-order-customer-address-select-default-event.md
 changelog/_unreleased/2023-09-26-fix-listings-and-tabs.md
 changelog/_unreleased/2023-01-17-hide-configurable-custom-product-default-layout.md
 changelog/_unreleased/2023-09-15-change-source-map-variant.md
+changelog/_unreleased/2023-10-02-fix-export-advanced-price-with-rule-name.md
 changelog/_unreleased/2023-09-14-add-async-theme-compilation.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
+changelog/_unreleased/2023-10-02-fix-document-type-display-blank-if-language-is-child.md
 changelog/_unreleased/2023-08-25-add-scheduled-task-helpers-commands.md
+changelog/_unreleased/2022-09-29-cms-navigation-http-cache.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
 changelog/_unreleased/2023-09-11-remove-old-consent-modal.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2023-09-28-sugar-syntax-for-es-definition.md
 changelog/_unreleased/2022-08-22-newsletter-recipient-module.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-09-07-add-indeterminate-checkbox-state.md
@@ -1095,6 +1100,7 @@ changelog/_unreleased/2023-09-05-add-twig-block-to-tab-component-on-customer-det
 changelog/_unreleased/2023-09-01-add-non-stackable-line-item-exception-to-log-level-notice.md
 changelog/_unreleased/2023-08-21-add-error-handling-on-document-preview.md
 changelog/_unreleased/2023-09-11-propagate-request-data-to-payment-payloads-during-checkout.md
+changelog/_unreleased/2023-09-27-fix-null-value-issue-for-zipcode-column-in-database.md
 changelog/_unreleased/2023-08-30-apply-domain-exception-for-access-key-helper.md
 changelog/_unreleased/2023-09-14-fix-vue-meta-for-vue-3.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
@@ -1132,6 +1138,7 @@ changelog/_unreleased/2023-09-25-change-display-product-properties-case.md
 changelog/_unreleased/2023-08-25-ignore-extensionthemestillinuseexception-for-incidents.md
 changelog/_unreleased/2023-08-09-change-sw-radio-panel-default-event.md
 changelog/_unreleased/2023-09-26-limit-maximum-length-for-search-term.md
+changelog/_unreleased/2023-10-02-fix-snippets-only-consider-domain-snippet-set-id-when-set.md
 changelog/_unreleased/2023-09-07-fix-predis-support.md
 changelog/_unreleased/2023-08-31-vue3-fix-promotions-module.md
 changelog/_unreleased/2023-08-09-change-sw-meteor-single-select-default-event.md
@@ -1142,6 +1149,7 @@ changelog/_unreleased/2023-08-09-change-sw-textarea-field-default-event.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-08-09-fix-overridden-super-calls-in-promise-chains-in-admin-components.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
+changelog/_unreleased/2023-10-03-change-type-of-urlgenerator.md
 changelog/_unreleased/2023-08-14-media-path-storage.md
 changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
 changelog/_unreleased/2023-09-14-support-active-flag-and-maintenace-mode-in-store-api-routes..md
@@ -1171,10 +1179,13 @@ changelog/_unreleased/2023-08-31-enable-rule-builder-time-unit-conversion.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-08-30-vue3-compatibility-for-privileges-service.md
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
+changelog/_unreleased/2023-09-26-fix-accept-all-cookies-button-styling.md
 changelog/_unreleased/2023-09-21-fix-media-delete-unused-command-when-used-with-an-offset-of-0.md
 changelog/_unreleased/2023-09-20-avoid-creating-seo-urls-for-headless-sales-channels.md
+changelog/_unreleased/2023-10-02-prevent-inserting-double-dot-into-an-url-in-mail.md
 changelog/_unreleased/2023-08-09-change-default-event-of-sw-text-field.md
 changelog/_unreleased/2023-08-10-change-sw-promotion-v2-rule-select-default-event.md
+changelog/_unreleased/2023-09-22-vue3-fix-category-module.md
 changelog/_unreleased/2023-09-01-use-correct-languages-to-update-product-search-keywords.md
 changelog/release-6-4-16-1/2022-09-26-fix-invisible-context-menu-issue.md
 changelog/release-6-4-15-1/2022-09-20-fix-cli-updater.md
@@ -3912,14 +3923,17 @@ tests/unit/Elasticsearch/DependencyInjection/ConfigurationTest.php
 tests/unit/Elasticsearch/Profiler/ClientProfilerTest.php
 tests/unit/Elasticsearch/Profiler/DataCollectorTest.php
 tests/unit/Elasticsearch/Profiler/ElasticsearchProfileCompilerPassTest.php
+tests/unit/Elasticsearch/Event/ElasticsearchCustomFieldsMappingEventTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/CriteriaParserTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearcherTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregatorTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ScriptIdQueryTest.php
+tests/unit/Elasticsearch/Framework/ElasticsearchIndexingUtilsTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchHelperTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchLanguageProviderTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchOutdatedIndexDetectorTest.php
 tests/unit/Elasticsearch/Framework/SystemUpdateListenerTest.php
+tests/unit/Elasticsearch/Framework/ElasticsearchFieldBuilderTest.php
 tests/unit/Elasticsearch/Framework/Indexing/Event/ElasticsearchIndexCreatedEventTest.php
 tests/unit/Elasticsearch/Framework/Indexing/Event/ElasticsearchIndexConfigEventTest.php
 tests/unit/Elasticsearch/Framework/Indexing/Event/ElasticsearchIndexAliasSwitchedEventTest.php
@@ -3940,6 +3954,7 @@ tests/unit/Elasticsearch/Framework/Command/ElasticsearchAdminUpdateMappingComman
 tests/unit/Elasticsearch/Framework/Command/ElasticsearchUpdateMappingCommandTest.php
 tests/unit/Elasticsearch/Framework/Command/ElasticsearchIndexingCommandTest.php
 tests/unit/Elasticsearch/Framework/ClientFactoryTest.php
+tests/unit/Elasticsearch/Framework/ElasticsearchFieldMapperTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchRegistryTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchRangeAggregationTest.php
 tests/unit/Elasticsearch/Exception/ServerNotAvailableExceptionTest.php
@@ -4052,6 +4067,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/DataAbstractionLayerExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolverTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SqlHelperTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
@@ -4376,6 +4392,7 @@ tests/unit/Core/Content/Mail/Service/MailAttachmentsBuilderTest.php
 tests/unit/Core/Content/Mail/Service/MailFactoryTest.php
 tests/unit/Core/Content/Mail/Service/MailAttachmentsConfigTest.php
 tests/unit/Core/Content/Mail/MailerConfigurationCompilerPassTest.php
+tests/unit/Core/Content/Mail/MailExceptionTest.php
 tests/unit/Core/Content/Rule/DataAbstractionLayer/RuleAreaUpdaterTest.php
 tests/unit/Core/Content/Rule/RuleCollectionTest.php
 tests/unit/Core/Content/Cms/Exception/PageNotFoundExceptionTest.php
@@ -4513,6 +4530,7 @@ tests/unit/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
 tests/unit/Core/Content/Newsletter/Event/NewsletterRegisterEventTest.php
 tests/unit/Core/Content/Newsletter/NewsletterExceptionTest.php
 tests/unit/Core/Content/Newsletter/Subscriber/NewsletterRecipientSalutationSubscriberTest.php
+tests/unit/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Field/FieldSerializerTest.php
 tests/unit/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializerTest.php
 tests/unit/Core/Content/ImportExport/ImportExportTest.php
 tests/unit/Core/Content/ImportExport/ImportExportExceptionTest.php
@@ -4898,6 +4916,7 @@ tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.de-DE.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/swagtheme.en-GB.json
 tests/unit/Core/System/Snippet/Mock/MockSnippetFile.php
 tests/unit/Core/System/Language/SalesChannel/CachedLanguageRouteTest.php
+tests/unit/Core/System/Language/Stubs/StaticLanguageLoader.php
 tests/unit/Core/Maintenance/SalesChannel/Command/SalesChannelCreateCommandTest.php
 tests/unit/Core/Maintenance/User/Service/UserProvisionerTest.php
 tests/unit/Core/Maintenance/System/Struct/DatabaseConnectionInformationTest.php
@@ -4956,6 +4975,7 @@ tests/migration/Core/V6_5/Migration1690874168FixPaymentStatusUnconfirmedMailTest
 tests/migration/Core/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocaleTest.php
 tests/migration/Core/V6_5/Migration1691057865UpdateSalutationDefaultForCustomerTest.php
 tests/migration/Core/V6_5/Migration1686817968AddRecurringAppPaymentMethodUrlTest.php
+tests/migration/Core/V6_5/Migration1695778183UpdateZipCodeOfTableOrderAddressToNullableTest.php
 tests/migration/Core/V6_5/Migration1666689977AddPluginIdToCustomEntityTest.php
 tests/migration/Core/V6_5/Migration1672934282ReviewFormSendFlowTest.php
 tests/migration/Core/V6_5/Migration1690456899AddCustomFieldPrivilegeForSaleUnitViewerTest.php
@@ -4976,6 +4996,7 @@ tests/migration/Core/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalC
 tests/migration/Core/V6_5/Migration1678197291ConvertVariantListingConfigTest.php
 tests/migration/Core/V6_5/Migration1668435503ChangeStornoDocumentTranslationNameTest.php
 tests/migration/Core/V6_5/Migration1661505878ChangeDefaultValueOfShippingMethodActiveFieldTest.php
+tests/migration/Core/V6_5/Migration1695778183UpdateStreetOfTableOrderAddressToNotNullTest.php
 tests/migration/Core/V6_5/Migration1692254551FixMailTranslationTest.php
 tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1655697288AppFlowEventTest.php
@@ -4992,6 +5013,7 @@ tests/migration/Core/V6_6/Migration1673249981MigrateIsNewCustomerRuleTest.php
 tests/migration/Core/V6_6/Migration1673964565MigrateToReferencedColumnsTest.php
 tests/migration/Core/V6_6/Migration1691662140MigrateAvailableStockTest.php
 tests/migration/Core/V6_6/Migration1671723392AddWebhookLifetimeConfigTest.php
+tests/migration/Core/V6_6/Migration1696262484AddDefaultSendMailOptionsTest.php
 tests/migration/Core/V6_6/Migration1679581138RemoveAssociationFieldsTest.php
 tests/migration/Core/V6_6/Migration1663402950SetDoubleOptinCustomerActiveTest.php
 tests/migration/Core/BasicDataUntouchedTest.php
@@ -5409,6 +5431,7 @@ tests/integration/Core/Content/Flow/Dispatching/Action/FlowMailVariablesTest.php
 tests/integration/Core/Content/Flow/Dispatching/Action/GrantDownloadAccessActionTest.php
 tests/integration/Core/Content/Flow/SendMailActionTest.php
 tests/integration/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
+tests/integration/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Field/FieldSerializerTest.php
 tests/integration/Core/Content/ImportExport/DataAbstractionLayer/Serializer/Entity/OrderSerializerTest.php
 tests/integration/Core/Content/ImportExport/ImportExportTest.php
 tests/integration/Core/Content/ImportExport/Service/DownloadServiceTest.php
@@ -7787,6 +7810,7 @@ src/Elasticsearch/DependencyInjection/ElasticsearchMigrationCompilerPass.php
 src/Elasticsearch/Profiler/ElasticsearchProfileCompilerPass.php
 src/Elasticsearch/Profiler/ClientProfiler.php
 src/Elasticsearch/Profiler/DataCollector.php
+src/Elasticsearch/Event/ElasticsearchCustomFieldsMappingEvent.php
 src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregator.php
 src/Elasticsearch/Framework/DataAbstractionLayer/AbstractElasticsearchSearchHydrator.php
 src/Elasticsearch/Framework/DataAbstractionLayer/ScriptIdQuery.php
@@ -7824,6 +7848,8 @@ src/Elasticsearch/Framework/Indexing/Scripts/cheapest_price_filter.groovy
 src/Elasticsearch/Framework/Indexing/Scripts/cheapest_price.groovy
 src/Elasticsearch/Framework/Indexing/MultilingualEsIndexer.php
 src/Elasticsearch/Framework/AbstractElasticsearchDefinition.php
+src/Elasticsearch/Framework/ElasticsearchFieldBuilder.php
+src/Elasticsearch/Framework/ElasticsearchIndexingUtils.php
 src/Elasticsearch/Framework/ElasticsearchRangeAggregation.php
 src/Elasticsearch/Framework/Command/ElasticsearchAdminIndexingCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchAdminResetCommand.php
@@ -7838,6 +7864,7 @@ src/Elasticsearch/Framework/Command/ElasticsearchUpdateMappingCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchAdminTestCommand.php
 src/Elasticsearch/Framework/ClientFactory.php
 src/Elasticsearch/Framework/ElasticsearchHelper.php
+src/Elasticsearch/Framework/ElasticsearchFieldMapper.php
 src/Elasticsearch/Framework/ElasticsearchLanguageProvider.php
 src/Elasticsearch/Exception/NoIndexedDocumentsException.php
 src/Elasticsearch/Exception/ElasticsearchIndexingException.php
@@ -8292,6 +8319,7 @@ src/Core/Framework/DataAbstractionLayer/Dbal/Exception/FieldNotStorageAwareExcep
 src/Core/Framework/DataAbstractionLayer/Dbal/Exception/FieldAccessorBuilderNotFoundException.php
 src/Core/Framework/DataAbstractionLayer/Dbal/ExceptionHandlerRegistry.php
 src/Core/Framework/DataAbstractionLayer/Dbal/CriteriaQueryBuilder.php
+src/Core/Framework/DataAbstractionLayer/Dbal/SqlHelper.php
 src/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilder.php
 src/Core/Framework/DataAbstractionLayer/Dbal/EntityReader.php
 src/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/PriceFieldAccessorBuilder.php
@@ -10591,6 +10619,7 @@ src/Core/Content/Mail/Service/Mail.php
 src/Core/Content/Mail/Service/MailAttachmentsConfig.php
 src/Core/Content/Mail/Service/MailSender.php
 src/Core/Content/Mail/Service/MailAttachmentsBuilder.php
+src/Core/Content/Mail/MailException.php
 src/Core/Content/DependencyInjection/contact_form.xml
 src/Core/Content/DependencyInjection/mail_template.xml
 src/Core/Content/DependencyInjection/delivery_time.xml
@@ -11211,7 +11240,6 @@ src/Core/Content/Test/Newsletter/Service/NewsletterRecipientServiceTest.php
 src/Core/Content/Test/Newsletter/ScheduledTask/NewsletterRecipientTaskHandlerTest.php
 src/Core/Content/Test/Newsletter/fixtures/salutation.sql
 src/Core/Content/Test/Newsletter/fixtures/recipient.sql
-src/Core/Content/Test/ImportExport/DataAbstractionLayer/Serializer/Field/FieldSerializerTest.php
 src/Core/Content/Test/ImportExport/DataAbstractionLayer/Serializer/Field/PriceSerializerTest.php
 src/Core/Content/Test/ImportExport/DataAbstractionLayer/Serializer/Entity/EntitySerializerTest.php
 src/Core/Content/Test/ImportExport/DataAbstractionLayer/Serializer/Entity/CountrySerializerTest.php
@@ -13165,6 +13193,7 @@ src/Core/Migration/V6_5/Migration1661505878ChangeDefaultValueOfShippingMethodAct
 src/Core/Migration/V6_5/Migration1655697288AppFlowEvent.php
 src/Core/Migration/V6_5/Migration1687463180ProductMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1675247112ChangeCountryNamingConvention.php
+src/Core/Migration/V6_5/Migration1695778183UpdateStreetOfTableCustomerAddressToNotNull.php
 src/Core/Migration/V6_5/Migration1676272000AddAccountTypeToCustomer.php
 src/Core/Migration/V6_5/Migration1692277552FixCustomerReviewCount.php
 src/Core/Migration/V6_5/Migration1668435503ChangeStornoDocumentTranslationName.php
@@ -13184,6 +13213,7 @@ src/Core/Migration/V6_5/Migration1675082889DropUnusedTables.php
 src/Core/Migration/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalColumn.php
 src/Core/Migration/V6_5/Migration1672931011ReviewFormMailTemplate.php
 src/Core/Migration/V6_5/Migration1679584289AddCustomerReviewCount.php
+src/Core/Migration/V6_5/Migration1695776504UpdateZipCodeOfTableOrderAddressToNullable.php
 src/Core/Migration/V6_5/Migration1671003201RemoveDeprecatedColumns.php
 src/Core/Migration/V6_5/Migration1671723392AddWebhookLifetimeConfig.php
 src/Core/Migration/V6_5/Migration1669291632MigrateLineItemsInCartRule.php
@@ -13195,6 +13225,7 @@ src/Core/Migration/V6_6/Migration1673249981MigrateIsNewCustomerRule.php
 src/Core/Migration/V6_6/Migration1676367607RemoveIntegrationWriteAccessColumn.php
 src/Core/Migration/V6_6/Migration1679581138RemoveAssociationFields.php
 src/Core/Migration/V6_6/Migration1673964565MigrateToReferencedColumns.php
+src/Core/Migration/V6_6/Migration1696262484AddDefaultSendMailOptions.php
 src/Core/Migration/V6_6/Migration1691662140MigrateAvailableStock.php
 src/Core/Migration/V6_4/Migration1655730949AddIsRunningColumnToProductExport.php
 src/Core/Migration/V6_4/Migration1620147234CreateWebhookEventLogTable.php
@@ -16208,6 +16239,7 @@ src/Administration/Resources/app/administration/src/module/sw-category/view/sw-c
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-base/sw-category-detail-base.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-base/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-base/sw-category-detail-base.scss
+src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-base/sw-category-detail-base.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-base/sw-category-detail-base.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-seo/sw-category-detail-seo.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-seo/sw-category-detail-seo.scss
@@ -16219,6 +16251,7 @@ src/Administration/Resources/app/administration/src/module/sw-category/view/sw-c
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/index.ts
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/sw-category-detail-custom-entity.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/sw-category-detail-custom-entity.html.twig
+src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/sw-category-detail-custom-entity.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/sw-landing-page-detail-cms.scss
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/sw-landing-page-detail-cms.html.twig
@@ -16226,6 +16259,7 @@ src/Administration/Resources/app/administration/src/module/sw-category/view/sw-c
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.scss
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.html.twig
+src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/default-search-configuration.js
 src/Administration/Resources/app/administration/src/module/sw-category/snippet/de-DE.json
 src/Administration/Resources/app/administration/src/module/sw-category/snippet/en-GB.json
@@ -16233,12 +16267,14 @@ src/Administration/Resources/app/administration/src/module/sw-category/component
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-view/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-tree/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-tree/sw-category-tree.scss
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-tree/sw-category-tree.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-tree/sw-category-tree.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-tree/sw-category-tree.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-tree/sw-landing-page-tree.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-tree/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-tree/sw-landing-page-tree.scss
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-tree/sw-landing-page-tree.spec.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-landing-page-tree/sw-landing-page-tree.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-sales-channel-multi-select/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-sales-channel-multi-select/sw-category-sales-channel-multi-select.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-overwrite-modal/sw-category-entry-point-overwrite-modal.html.twig
@@ -16248,9 +16284,12 @@ src/Administration/Resources/app/administration/src/module/sw-category/component
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-modal/sw-category-entry-point-modal.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-modal/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-modal/sw-category-entry-point-modal.spec.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-modal/sw-category-entry-point-modal.spec.vue3.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-detail-menu/sw-category-detail-menu.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-detail-menu/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-detail-menu/sw-category-detail-menu.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-detail-menu/sw-category-detail-menu.html.twig
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-layout-card/sw-category-layout-card.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-layout-card/sw-category-layout-card.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-layout-card/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-layout-card/sw-category-layout-card.html.twig
@@ -16259,17 +16298,22 @@ src/Administration/Resources/app/administration/src/module/sw-category/component
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-card/sw-category-entry-point-card.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-card/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-card/sw-category-entry-point-card.scss
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-entry-point-card/sw-category-entry-point-card.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-view/sw-category-view.scss
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-view/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-view/sw-category-view.spec.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-view/sw-category-view.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-view/sw-category-view.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-link-settings/sw-category-link-settings.spec.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-link-settings/sw-category-link-settings.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-link-settings/sw-category-link-settings.scss
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-link-settings/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-link-settings/sw-category-link-settings.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-seo-form/sw-category-seo-form.spec.js
+src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-seo-form/sw-category-seo-form.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-seo-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/component/sw-category-seo-form/sw-category-seo-form.html.twig
+src/Administration/Resources/app/administration/src/module/sw-category/page/sw-category-detail/sw-category-detail.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-category/page/sw-category-detail/sw-category-detail.spec.js
 src/Administration/Resources/app/administration/src/module/sw-category/page/sw-category-detail/state.js
 src/Administration/Resources/app/administration/src/module/sw-category/page/sw-category-detail/sw-category-detail.html.twig

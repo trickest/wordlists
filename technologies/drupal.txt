@@ -1514,6 +1514,8 @@ core/profiles/testing_requirements/testing_requirements.install
 core/profiles/testing_requirements/testing_requirements.info.yml
 core/profiles/demo_umami/demo_umami.profile
 core/profiles/demo_umami/demo_umami.install
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryNodePagePerformanceTest.php
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryFrontPagePerformanceTest.php
 core/profiles/demo_umami/tests/src/FunctionalJavascript/PerformanceTest.php
 core/profiles/demo_umami/tests/src/Functional/UmamiMultilingualInstallTest.php
 core/profiles/demo_umami/tests/src/Functional/DemoUmamiProfileTest.php
@@ -2609,6 +2611,7 @@ core/tests/Drupal/Tests/Component/HttpFoundation/SecuredRedirectResponseTest.php
 core/tests/Drupal/Tests/BrowserHtmlDebugTrait.php
 core/tests/Drupal/Tests/RandomGeneratorTrait.php
 core/tests/Drupal/Tests/SchemaCheckTestTrait.php
+core/tests/Drupal/Tests/PerformanceData.php
 core/tests/Drupal/Tests/UnitTestCase.php
 core/tests/Drupal/Tests/UpdatePathTestTrait.php
 core/tests/Drupal/Tests/SessionTestTrait.php
@@ -2628,6 +2631,7 @@ core/tests/Drupal/Tests/Listeners/DrupalComponentTestListenerTrait.php
 core/tests/Drupal/Tests/Listeners/DrupalListener.php
 core/tests/Drupal/Tests/UiHelperTrait.php
 core/tests/Drupal/Tests/CSpell/SortTest.php
+core/tests/Drupal/Tests/PerformanceTestTrait.php
 core/tests/Drupal/Tests/ComposerIntegrationTest.php
 core/tests/Drupal/Tests/TestFileCreationTrait.php
 core/tests/Drupal/Tests/DrupalTestBrowser.php
@@ -3846,6 +3850,7 @@ core/lib/Drupal/Component/Utility/Html.php
 core/lib/Drupal/Component/Utility/Reflection.php
 core/lib/Drupal/Component/Utility/SortArray.php
 core/lib/Drupal/Component/Utility/UserAgent.php
+core/lib/Drupal/Component/Utility/HtmlSerializerRules.php
 core/lib/Drupal/Component/Utility/Unicode.php
 core/lib/Drupal/Component/Utility/Xss.php
 core/lib/Drupal/Component/Utility/DiffArray.php
@@ -13974,6 +13979,7 @@ core/modules/big_pipe/src/Render/BigPipeResponseAttachmentsProcessor.php
 core/modules/big_pipe/src/Render/Placeholder/BigPipeStrategy.php
 core/modules/big_pipe/src/Render/BigPipeResponse.php
 core/modules/big_pipe/big_pipe.module
+core/modules/big_pipe/big_pipe.post_update.php
 core/modules/big_pipe/js/big_pipe.js
 core/modules/big_pipe/templates/big-pipe-interface-preview.html.twig
 core/modules/big_pipe/big_pipe.info.yml

@@ -923,7 +923,6 @@ packages/plugins/color-picker/admin/src/translations/zh.json
 packages/plugins/color-picker/admin/src/translations/cs.json
 packages/plugins/color-picker/admin/src/index.ts
 packages/plugins/color-picker/admin/src/hooks/useComposeRefs.ts
-packages/plugins/color-picker/admin/src/global.d.ts
 packages/plugins/color-picker/admin/src/pluginId.ts
 packages/plugins/color-picker/admin/src/utils/getTrad.ts
 packages/plugins/color-picker/jest.config.front.js
@@ -2913,6 +2912,9 @@ packages/core/types/src/modules/custom-fields.ts
 packages/core/types/jest.config.js
 packages/core/types/README.md
 packages/core/types/.eslintignore
+packages/core/upload/admin/tests/setup.js
+packages/core/upload/admin/tests/utils.jsx
+packages/core/upload/admin/tests/server.js
 packages/core/upload/admin/src/components/TableList/CellContent.js
 packages/core/upload/admin/src/components/TableList/tests/TableRows.test.js
 packages/core/upload/admin/src/components/TableList/tests/CellContent.test.js
@@ -2984,8 +2986,6 @@ packages/core/upload/admin/src/components/UploadAssetDialog/AddAssetStep/tests/_
 packages/core/upload/admin/src/components/UploadAssetDialog/AddAssetStep/FromComputerForm.js
 packages/core/upload/admin/src/components/UploadAssetDialog/AddAssetStep/FromUrlForm.js
 packages/core/upload/admin/src/components/UploadAssetDialog/tests/UploadAssetDialog.test.js
-packages/core/upload/admin/src/components/UploadAssetDialog/tests/server.js
-packages/core/upload/admin/src/components/UploadAssetDialog/tests/__snapshots__/UploadAssetDialog.test.js.snap
 packages/core/upload/admin/src/components/UploadAssetDialog/PendingAssetStep/tests/PendingAssetStep.test.js
 packages/core/upload/admin/src/components/UploadAssetDialog/PendingAssetStep/tests/__snapshots__/PendingAssetStep.test.js.snap
 packages/core/upload/admin/src/components/UploadAssetDialog/PendingAssetStep/PendingAssetStep.js
@@ -3118,7 +3118,6 @@ packages/core/upload/admin/src/index.js
 packages/core/upload/admin/src/pages/SettingsPage/reducer.js
 packages/core/upload/admin/src/pages/SettingsPage/tests/index.test.js
 packages/core/upload/admin/src/pages/SettingsPage/tests/reducer.test.js
-packages/core/upload/admin/src/pages/SettingsPage/tests/utils/server.js
 packages/core/upload/admin/src/pages/SettingsPage/index.js
 packages/core/upload/admin/src/pages/SettingsPage/init.js
 packages/core/upload/admin/src/pages/App/ConfigureTheView/components/Settings.js
@@ -3266,6 +3265,7 @@ packages/core/upload/.eslintrc.js
 packages/core/upload/strapi-admin.js
 packages/core/upload/documentation/content-api.json
 packages/core/upload/package.json
+packages/core/upload/jsconfig.json
 packages/core/upload/jest.config.js
 packages/core/upload/.gitattributes
 packages/core/upload/strapi-server.js
@@ -3548,6 +3548,7 @@ packages/core/content-manager/strapi-server.js
 packages/core/content-manager/README.md
 packages/core/content-manager/.eslintignore
 packages/core/helper-plugin/Introduction.stories.mdx
+packages/core/helper-plugin/tsconfig.build.json
 packages/core/helper-plugin/jest.config.front.js
 packages/core/helper-plugin/tsconfig.json
 packages/core/helper-plugin/LICENSE

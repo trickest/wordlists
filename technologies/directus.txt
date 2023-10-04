@@ -549,6 +549,7 @@ packages/utils/node/generate-extensions-entrypoint.test.ts
 packages/utils/node/array-helpers.ts
 packages/utils/node/path-to-relative-url.ts
 packages/utils/node/list-folders.ts
+packages/utils/node/tmp.ts
 packages/utils/node/readable-stream-to-string.test.ts
 packages/utils/node/list-folders.test.ts
 packages/utils/node/readable-stream-to-string.ts
@@ -1612,7 +1613,6 @@ tests/blackbox/assets/directus.avif
 tests/blackbox/common/seed-functions.ts
 tests/blackbox/common/common.test.ts
 tests/blackbox/common/seed-database.test.ts
-tests/blackbox/common/index.ts
 tests/blackbox/common/common.seed.ts
 tests/blackbox/common/functions.ts
 tests/blackbox/common/variables.ts
@@ -1624,15 +1624,12 @@ tests/blackbox/common/types.ts
 tests/blackbox/tsconfig.json
 tests/blackbox/todo.md
 tests/blackbox/setup/setup-utils.js
+tests/blackbox/setup/sequential-tests.ts
 tests/blackbox/setup/migrations/20221107_add_extensions_testing.js
 tests/blackbox/setup/migrations/20220112001234_create_tests_flow.js
-tests/blackbox/setup/sequentialTests.d.ts
+tests/blackbox/setup/sequencer.ts
 tests/blackbox/setup/setup.ts
-tests/blackbox/setup/sequentialTests.js
-tests/blackbox/setup/customEnvironment.ts
-tests/blackbox/setup/customSequencer.js
 tests/blackbox/setup/global.ts
-tests/blackbox/setup/teardown.ts
 tests/blackbox/setup/seeds/02_tests_flow.js
 tests/blackbox/setup/seeds/03_tests_extensions.js
 tests/blackbox/setup/seeds/01_delete_existing_data.js
@@ -1641,7 +1638,6 @@ tests/blackbox/app/cache.test.ts
 tests/blackbox/package.json
 tests/blackbox/extensions/hooks/action-verify-schema/index.js
 tests/blackbox/extensions/hooks/action-verify-create/index.js
-tests/blackbox/jest.config.js
 tests/blackbox/routes/assets/concurrency.test.ts
 tests/blackbox/routes/assets/format.test.ts
 tests/blackbox/routes/assets/limit.test.ts
@@ -1685,6 +1681,9 @@ tests/blackbox/routes/schema/schema.seed.ts
 tests/blackbox/readme.md
 tests/blackbox/docker-compose.yml
 tests/blackbox/logger/redact.test.ts
+tests/blackbox/vitest.config.ts
+tests/blackbox/vitest-environment-blackbox/index.ts
+tests/blackbox/vitest-environment-blackbox/package.json
 tests/blackbox/flows/schedule-hook.seed.ts
 tests/blackbox/flows/schedule-hook.test.ts
 tests/blackbox/websocket/general.seed.ts
@@ -1716,7 +1715,6 @@ tests/blackbox/schema/json/index.ts
 tests/blackbox/utils/sleep.ts
 tests/blackbox/utils/validate-date-difference.ts
 tests/blackbox/utils/await-connection.ts
-tests/blackbox/utils/get-filter-operators-for-type.ts
 tests/blackbox/utils/prepare-request.ts
 pnpm-workspace.yaml
 security.md
@@ -1765,7 +1763,6 @@ api/src/operations/condition/index.ts
 api/src/operations/condition/index.test.ts
 api/src/operations/notification/index.ts
 api/src/operations/notification/index.test.ts
-api/src/services/import-export.ts
 api/src/services/dashboards.ts
 api/src/services/flows.ts
 api/src/services/permissions.ts
@@ -1812,6 +1809,8 @@ api/src/services/webhooks.test.ts
 api/src/services/assets.ts
 api/src/services/roles.test.ts
 api/src/services/schema.ts
+api/src/services/import-export/index.ts
+api/src/services/import-export/import-worker.ts
 api/src/services/payload.test.ts
 api/src/services/activity.ts
 api/src/services/websocket.ts
@@ -2173,6 +2172,7 @@ api/src/websocket/utils/message.ts
 api/src/websocket/utils/items.ts
 api/src/websocket/utils/wait-for-message.ts
 api/src/websocket/utils/message.test.ts
+api/src/worker-pool.ts
 api/src/utils/redact-object.ts
 api/src/utils/get-cache-headers.test.ts
 api/src/utils/get-auth-providers.test.ts
@@ -2739,14 +2739,17 @@ contributors.yml
 .changeset/brown-hornets-hang.md
 .changeset/smooth-wasps-smash.md
 .changeset/silent-radios-talk.md
+.changeset/clever-bobcats-collect.md
 .changeset/cuddly-keys-wait.md
 .changeset/lucky-gorillas-cross.md
 .changeset/config.json
 .changeset/funny-hornets-compete.md
 .changeset/tasty-foxes-peel.md
 .changeset/big-peas-jump.md
+.changeset/nice-flies-fry.md
 .changeset/shaggy-vans-fry.md
 .changeset/chatty-cheetahs-begin.md
+.changeset/happy-horses-bow.md
 .changeset/nasty-mirrors-kiss.md
 .eslintignore
 .npmrc

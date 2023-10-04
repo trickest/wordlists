@@ -819,6 +819,7 @@ ghost/admin/app/services/theme-management.js
 ghost/admin/app/services/members-stats.js
 ghost/admin/app/services/frontend.js
 ghost/admin/app/services/members-utils.js
+ghost/admin/app/services/koenig.js
 ghost/admin/app/services/custom-views.js
 ghost/admin/app/services/whats-new.js
 ghost/admin/app/services/settings.js
@@ -4019,6 +4020,7 @@ ghost/core/core/server/api/endpoints/emails.js
 ghost/core/core/server/api/endpoints/authentication.js
 ghost/core/core/server/api/endpoints/member-signin-urls.js
 ghost/core/core/server/api/endpoints/snippets.js
+ghost/core/core/server/api/endpoints/incoming-recommendations.js
 ghost/core/core/server/api/endpoints/offers.js
 ghost/core/core/server/api/endpoints/files.js
 ghost/core/core/server/api/endpoints/config.js
@@ -4793,10 +4795,16 @@ ghost/recommendations/tsconfig.json
 ghost/recommendations/.eslintrc.js
 ghost/recommendations/package.json
 ghost/recommendations/test/WellknownService.test.ts
+ghost/recommendations/test/BookshelfSubscribeEventRepository.test.ts
 ghost/recommendations/test/.eslintrc.js
 ghost/recommendations/test/RecommendationController.test.ts
 ghost/recommendations/test/UnsafeData.test.ts
-ghost/recommendations/test/hello.test.ts
+ghost/recommendations/test/IncomingRecommendationController.test.ts
+ghost/recommendations/test/BookshelfClickEventRepository.test.ts
+ghost/recommendations/test/BookshelfRecommendationRepository.test.ts
+ghost/recommendations/test/IncomingRecommendationService.test.ts
+ghost/recommendations/test/IncomingRecommendationEmailRenderer.test.ts
+ghost/recommendations/test/Recommendation.test.ts
 ghost/recommendations/test/RecommendationService.test.ts
 ghost/recommendations/src/RecommendationController.ts
 ghost/recommendations/src/ClickEvent.ts
@@ -4807,6 +4815,7 @@ ghost/recommendations/src/RecommendationRepository.ts
 ghost/recommendations/src/RecommendationService.ts
 ghost/recommendations/src/BookshelfClickEventRepository.ts
 ghost/recommendations/src/BookshelfSubscribeEventRepository.ts
+ghost/recommendations/src/IncomingRecommendationController.ts
 ghost/recommendations/src/UnsafeData.ts
 ghost/recommendations/src/IncomingRecommendationService.ts
 ghost/recommendations/src/Recommendation.ts
@@ -4957,6 +4966,7 @@ apps/admin-x-settings/package.json
 apps/admin-x-settings/test/unit/api/customThemeSettings.ts
 apps/admin-x-settings/test/unit/unsplash/Masonry.test.ts
 apps/admin-x-settings/test/unit/unsplash/UnsplashService.test.ts
+apps/admin-x-settings/test/unit/utils/generateEmbedCode.test.ts
 apps/admin-x-settings/test/unit/utils/url.test.ts
 apps/admin-x-settings/test/acceptance/site/announcementbar.test.ts
 apps/admin-x-settings/test/acceptance/site/design.test.ts
@@ -4968,6 +4978,7 @@ apps/admin-x-settings/test/acceptance/email/newsletters.test.ts
 apps/admin-x-settings/test/acceptance/search.test.ts
 apps/admin-x-settings/test/acceptance/membership/tiers.test.ts
 apps/admin-x-settings/test/acceptance/membership/analytics.test.ts
+apps/admin-x-settings/test/acceptance/membership/portal.test.ts
 apps/admin-x-settings/test/acceptance/membership/stripe.test.ts
 apps/admin-x-settings/test/acceptance/membership/access.test.ts
 apps/admin-x-settings/test/acceptance/membership/signupEmbed.test.ts
@@ -5313,7 +5324,9 @@ apps/admin-x-settings/src/admin-x-ds/global/Breadcrumbs.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Avatar.tsx
 apps/admin-x-settings/src/admin-x-ds/global/IconLabel.tsx
 apps/admin-x-settings/src/admin-x-ds/global/ButtonGroup.stories.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Tooltip.tsx
 apps/admin-x-settings/src/admin-x-ds/global/NoValueLabel.tsx
+apps/admin-x-settings/src/admin-x-ds/global/Tooltip.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Table.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Link.stories.tsx
 apps/admin-x-settings/src/admin-x-ds/global/Popover.tsx
@@ -5389,7 +5402,6 @@ apps/admin-x-settings/src/api/routes.ts
 apps/admin-x-settings/src/api/invites.ts
 apps/admin-x-settings/src/api/emailVerification.ts
 apps/admin-x-settings/src/api/newsletters.ts
-apps/admin-x-settings/src/api/mentions.ts
 apps/admin-x-settings/src/api/apiKeys.ts
 apps/admin-x-settings/src/api/tiers.ts
 apps/admin-x-settings/src/api/referrers.ts
