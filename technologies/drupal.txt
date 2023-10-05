@@ -7843,6 +7843,8 @@ core/modules/system/tests/modules/update_test_0/update_test_0.info.yml
 core/modules/system/tests/modules/default_format_test/src/DefaultFormatTestController.php
 core/modules/system/tests/modules/default_format_test/default_format_test.routing.yml
 core/modules/system/tests/modules/default_format_test/default_format_test.info.yml
+core/modules/system/tests/modules/module_cache_bin/module_cache_bin.info.yml
+core/modules/system/tests/modules/module_cache_bin/module_cache_bin.services.yml
 core/modules/system/tests/modules/paramconverter_test/paramconverter_test.routing.yml
 core/modules/system/tests/modules/paramconverter_test/src/TestControllers.php
 core/modules/system/tests/modules/paramconverter_test/paramconverter_test.info.yml
@@ -7993,6 +7995,9 @@ core/modules/system/tests/modules/accept_header_routing_test/src/AcceptHeaderRou
 core/modules/system/tests/modules/accept_header_routing_test/src/AcceptHeaderMiddleware.php
 core/modules/system/tests/modules/accept_header_routing_test/accept_header_routing_test.services.yml
 core/modules/system/tests/modules/accept_header_routing_test/accept_header_routing_test.info.yml
+core/modules/system/tests/modules/content_negotiation_test/content_negotiation_test.routing.yml
+core/modules/system/tests/modules/content_negotiation_test/src/Controller/TestController.php
+core/modules/system/tests/modules/content_negotiation_test/content_negotiation_test.info.yml
 core/modules/system/tests/modules/mail_html_test/mail_html_test.info.yml
 core/modules/system/tests/modules/mail_html_test/src/Plugin/Mail/TestHtmlMailCollector.php
 core/modules/system/tests/modules/mail_html_test/mail_html_test.module
@@ -8406,8 +8411,6 @@ core/modules/system/tests/modules/condition_test/config/install/condition_test.s
 core/modules/system/tests/modules/condition_test/config/schema/condition_test.schema.yml
 core/modules/system/tests/modules/condition_test/condition_test.routing.yml
 core/modules/system/tests/modules/condition_test/condition_test.info.yml
-core/modules/system/tests/modules/module_cachebin/module_cachebin.info.yml
-core/modules/system/tests/modules/module_cachebin/module_cachebin.services.yml
 core/modules/system/tests/modules/css_disable_transitions_test/css_disable_transitions_test.libraries.yml
 core/modules/system/tests/modules/css_disable_transitions_test/css_disable_transitions_test.info.yml
 core/modules/system/tests/modules/css_disable_transitions_test/js/disable_transitions.theme.js
@@ -8776,9 +8779,6 @@ core/modules/system/tests/modules/session_test/session_test.info.yml
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.routing.yml
 core/modules/system/tests/modules/tabbingmanager_test/src/Controller/TabbingManagerTestController.php
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.info.yml
-core/modules/system/tests/modules/conneg_test/conneg_test.info.yml
-core/modules/system/tests/modules/conneg_test/src/Controller/TestController.php
-core/modules/system/tests/modules/conneg_test/conneg_test.routing.yml
 core/modules/system/tests/modules/keyvalue_test/keyvalue_test.info.yml
 core/modules/system/tests/modules/keyvalue_test/keyvalue_test.module
 core/modules/system/tests/modules/cache_test/src/Controller/CacheTestController.php
@@ -11845,7 +11845,7 @@ core/modules/block_content/tests/modules/block_content_test_views/test_views/vie
 core/modules/block_content/tests/modules/block_content_test/block_content_test.info.yml
 core/modules/block_content/tests/modules/block_content_test/block_content_test.module
 core/modules/block_content/tests/modules/block_content_test/src/Plugin/EntityReferenceSelection/TestSelection.php
-core/modules/block_content/tests/modules/block_content_test/config/install/block.block.foobargorilla.yml
+core/modules/block_content/tests/modules/block_content_test/config/install/block.block.foobar_gorilla.yml
 core/modules/block_content/tests/modules/block_content_test/block_content_test.routing.yml
 core/modules/block_content/src/BlockTypeAccessControlHandler.php
 core/modules/block_content/src/BlockContentListBuilder.php
@@ -14350,6 +14350,7 @@ core/modules/field_ui/tests/src/Functional/FieldTypeCategoriesIntegrationTest.ph
 core/modules/field_ui/tests/src/Functional/EntityDisplayModeTest.php
 core/modules/field_ui/tests/src/Functional/FieldUIRouteTest.php
 core/modules/field_ui/tests/src/Functional/ManageFieldsFunctionalTest.php
+core/modules/field_ui/tests/src/Functional/ManageFieldsLifecycleTest.php
 core/modules/field_ui/tests/src/Functional/FieldUIDeleteTest.php
 core/modules/field_ui/tests/src/Functional/EntityDisplayTest.php
 core/modules/field_ui/tests/src/Functional/GenericTest.php
@@ -15443,6 +15444,7 @@ core/modules/layout_builder/tests/src/Unit/BlockComponentRenderArrayTest.php
 core/modules/layout_builder/tests/src/Unit/LayoutTempstoreRouteEnhancerTest.php
 core/modules/layout_builder/tests/src/Unit/InlineBlockUsageTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderFormModeTest.php
+core/modules/layout_builder/tests/src/Functional/LayoutBuilderOverridesTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderFieldBlockEntityReferenceCacheTagsTest.php
 core/modules/layout_builder/tests/src/Functional/LayoutBuilderThemeSuggestionsTest.php
 core/modules/layout_builder/tests/src/Functional/GenericTest.php
