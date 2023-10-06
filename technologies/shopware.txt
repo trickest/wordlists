@@ -1074,6 +1074,7 @@ changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
 changelog/_unreleased/2023-09-11-fixing-add-product-by-number.md
 changelog/_unreleased/2023-08-16-allow-to-restrict-theme-compile-to-themes-and-sales-channels.md
+changelog/_unreleased/2023-10-01-return-error-on-preview-with-invalid-seo-url-template.md
 changelog/_unreleased/2023-09-12-handle-exception-for-version-manager.md
 changelog/_unreleased/2023-08-30-add-option-to-schema-command.md
 changelog/_unreleased/2023-08-21-make-order-module-vue-3-compatible.md
@@ -1109,6 +1110,7 @@ changelog/_unreleased/2023-08-14-replace-vue2-filters.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
+changelog/_unreleased/2023-10-01-use-displayed-seo-url-template-value-for-validation-hints.md
 changelog/_unreleased/2023-09-06-fix-cache-clear-in-cluster-setups.md
 changelog/_unreleased/2023-09-05-2023-09-05-fixed-bug-custom-fields-not-shown-on-new-shipping-method.md
 changelog/_unreleased/2023-08-09-change-sw-extension-select-rating-default-event.md
@@ -10521,6 +10523,7 @@ src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteInterface.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteRegistry.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteConfig.php
 src/Core/Content/Seo/SeoUrlRoute/SeoUrlMapping.php
+src/Core/Content/Seo/ConfiguredSeoUrlRoute.php
 src/Core/Content/Seo/SeoUrlPlaceholderHandlerInterface.php
 src/Core/Content/Seo/Hreflang/HreflangCollection.php
 src/Core/Content/Seo/Hreflang/HreflangStruct.php

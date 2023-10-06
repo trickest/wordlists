@@ -1005,6 +1005,7 @@ packages/Webkul/Admin/src/Resources/views/components/shimmer/dashboard/right/ind
 packages/Webkul/Admin/src/Resources/views/components/shimmer/dashboard/right/total-sales.blade.php
 packages/Webkul/Admin/src/Resources/views/components/shimmer/dashboard/right/top-selling.blade.php
 packages/Webkul/Admin/src/Resources/views/components/shimmer/dashboard/right/most-customer-sales.blade.php
+packages/Webkul/Admin/src/Resources/views/components/shimmer/dashboard/right/date-filters.blade.php
 packages/Webkul/Admin/src/Resources/views/components/shimmer/datagrid/table/body.blade.php
 packages/Webkul/Admin/src/Resources/views/components/shimmer/datagrid/table/head.blade.php
 packages/Webkul/Admin/src/Resources/views/components/shimmer/datagrid/index.blade.php
@@ -1344,6 +1345,7 @@ packages/Webkul/Core/src/Helpers/Exchange/FixerExchange.php
 packages/Webkul/Core/src/Helpers/Exchange/ExchangeRates.php
 packages/Webkul/Core/src/Helpers/Exchange/ExchangeRate.php
 packages/Webkul/Core/src/Core.php
+packages/Webkul/Core/src/Visitor.php
 packages/Webkul/Core/src/View/Compilers/BladeCompiler.php
 packages/Webkul/Core/src/Rules/AlphaNumericSpace.php
 packages/Webkul/Core/src/Rules/Decimal.php
@@ -1359,6 +1361,7 @@ packages/Webkul/Core/src/Models/ChannelProxy.php
 packages/Webkul/Core/src/Models/CountryProxy.php
 packages/Webkul/Core/src/Models/SubscribersList.php
 packages/Webkul/Core/src/Models/CountryTranslation.php
+packages/Webkul/Core/src/Models/VisitProxy.php
 packages/Webkul/Core/src/Models/SubscribersListProxy.php
 packages/Webkul/Core/src/Models/Address.php
 packages/Webkul/Core/src/Models/Currency.php
@@ -1376,6 +1379,7 @@ packages/Webkul/Core/src/Models/CountryStateTranslationProxy.php
 packages/Webkul/Core/src/Models/AddressProxy.php
 packages/Webkul/Core/src/Models/Channel.php
 packages/Webkul/Core/src/Models/CountryStateTranslation.php
+packages/Webkul/Core/src/Models/Visit.php
 packages/Webkul/Core/src/Models/Locale.php
 packages/Webkul/Core/src/Models/ChannelTranslation.php
 packages/Webkul/Core/src/Models/CurrencyExchangeRate.php
@@ -1388,9 +1392,12 @@ packages/Webkul/Core/src/Contracts/CoreConfig.php
 packages/Webkul/Core/src/Contracts/CountryState.php
 packages/Webkul/Core/src/Contracts/Channel.php
 packages/Webkul/Core/src/Contracts/CountryStateTranslation.php
+packages/Webkul/Core/src/Contracts/Visit.php
 packages/Webkul/Core/src/Contracts/Locale.php
 packages/Webkul/Core/src/Contracts/ChannelTranslation.php
 packages/Webkul/Core/src/Contracts/CurrencyExchangeRate.php
+packages/Webkul/Core/src/Jobs/UpdateCreateVisitIndex.php
+packages/Webkul/Core/src/Jobs/UpdateCreateVisitableIndex.php
 packages/Webkul/Core/src/Resources/manifest.php
 packages/Webkul/Core/src/Resources/lang/hi_IN/validation.php
 packages/Webkul/Core/src/Resources/lang/hi_IN/app.php
@@ -1460,14 +1467,17 @@ packages/Webkul/Core/src/Providers/EnvValidatorServiceProvider.php
 packages/Webkul/Core/src/Providers/EventServiceProvider.php
 packages/Webkul/Core/src/Events/ComposerEvents.php
 packages/Webkul/Core/src/Listeners/CleanCacheRepository.php
+packages/Webkul/Core/src/Listeners/ResponseCacheHit.php
 packages/Webkul/Core/src/Config/scout.php
 packages/Webkul/Core/src/Config/repository.php
 packages/Webkul/Core/src/Config/concord.php
+packages/Webkul/Core/src/Config/visitor.php
 packages/Webkul/Core/src/Repositories/CountryRepository.php
 packages/Webkul/Core/src/Repositories/ChannelRepository.php
 packages/Webkul/Core/src/Repositories/CurrencyRepository.php
 packages/Webkul/Core/src/Repositories/CountryStateRepository.php
 packages/Webkul/Core/src/Repositories/CoreConfigRepository.php
+packages/Webkul/Core/src/Repositories/VisitRepository.php
 packages/Webkul/Core/src/Repositories/LocaleRepository.php
 packages/Webkul/Core/src/Repositories/SubscribersListRepository.php
 packages/Webkul/Core/src/Repositories/ExchangeRateRepository.php
@@ -1662,6 +1672,7 @@ config/mail.php
 config/products.php
 config/hashing.php
 config/services.php
+config/visitor.php
 config/sitemap.php
 config/auth.php
 SECURITY.md
@@ -1680,6 +1691,7 @@ database/migrations/2014_10_12_000000_create_users_table.php
 database/migrations/2020_12_27_121950_create_jobs_table.php
 database/migrations/2022_10_04_144444_create_job_batches_table.php
 database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php
+database/migrations/2023_10_05_163612_create_visits_table.php
 database/factories/UserFactory.php
 lang/hi_IN/passwords.php
 lang/hi_IN/validation.php

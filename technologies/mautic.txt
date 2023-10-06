@@ -1,4 +1,5 @@
 UPGRADE-4.0.md
+tsconfig.json
 .php-cs-fixer.php
 var/logs/.gitkeep
 var/tmp/.gitkeep
@@ -12,14 +13,17 @@ package-lock.json
 translations/.htaccess
 patches/at.js+1.5.4.patch
 patches/chosen-js+1.8.7.patch
+webpack.config.js
 .env
 app/release_metadata.json
 app/phpunit.xml.dist
 app/AppTestKernel.php
+app/assets/scaffold/files/tsconfig.json
 app/assets/scaffold/files/modernizr-config.json
 app/assets/scaffold/files/package-lock.json
 app/assets/scaffold/files/patches/at.js+1.5.4.patch
 app/assets/scaffold/files/patches/chosen-js+1.8.7.patch
+app/assets/scaffold/files/webpack.config.js
 app/assets/scaffold/files/.env
 app/assets/scaffold/files/htaccess
 app/assets/scaffold/files/deny.htaccess
@@ -33,6 +37,8 @@ app/assets/dashboards/alternative-default.json
 app/assets/dashboards/default.json
 app/assets/dashboards/stats-overview.json
 app/assets/dashboards/email-overview.json
+app/assets/libraries/ckeditor/src/TokenPlugin.js
+app/assets/libraries/ckeditor/src/ckeditor.ts
 app/assets/js/mautic-form-src.js
 app/assets/.htaccess
 app/assets/images/flags/LICENSE.txt
@@ -2311,6 +2317,7 @@ app/bundles/CoreBundle/Tests/Command/UnusedIpDeleteCommandFunctionalTest.php
 app/bundles/CoreBundle/Tests/Command/PushTransifexCommandFunctionalTest.php
 app/bundles/CoreBundle/Tests/Command/CleanupMaintenanceCommandTest.php
 app/bundles/CoreBundle/Tests/Command/PullTransifexCommandFunctionalTest.php
+app/bundles/CoreBundle/Tests/Command/GenerateProductionAssetsCommandTest.php
 app/bundles/CoreBundle/Tests/Unit/Doctrine/Provider/VersionProviderTest.php
 app/bundles/CoreBundle/Tests/Unit/Doctrine/Provider/GeneratedColumnsProviderTest.php
 app/bundles/CoreBundle/Tests/Unit/Doctrine/Helper/FulltextKeywordTest.php
@@ -2854,7 +2861,6 @@ app/bundles/CoreBundle/Assets/js/libraries/froala/languages/en_ca.js
 app/bundles/CoreBundle/Assets/js/libraries/froala/languages/nl.js
 app/bundles/CoreBundle/Assets/js/libraries/froala/languages/he.js
 app/bundles/CoreBundle/Assets/js/libraries/froala/languages/pt_pt.js
-app/bundles/CoreBundle/Assets/js/libraries/ckeditor/mautic-token.js
 app/bundles/CoreBundle/Assets/js/libraries/2d.jquery.custom.js
 app/bundles/CoreBundle/Assets/js/libraries/filemanager/index.html.twig
 app/bundles/CoreBundle/Assets/js/libraries/3c.bootstrap-overflow-tabs.js
@@ -3801,6 +3807,7 @@ app/bundles/LeadBundle/Tests/Deduplicate/ContactMergerTest.php
 app/bundles/LeadBundle/Tests/Deduplicate/CompanyDeduperTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/LeadControllerTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/ImportControllerFunctionalTest.php
+app/bundles/LeadBundle/Tests/Functional/EventListener/CompanySubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/Command/CreateCustomFieldCommandTest.php
 app/bundles/LeadBundle/Tests/Functional/Entity/LeadRepositoryTest.php
 app/bundles/LeadBundle/Tests/Functional/Entity/CompanyRepositoryTest.php
