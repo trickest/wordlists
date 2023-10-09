@@ -1092,16 +1092,15 @@ packages/core/admin/admin/src/hooks/useAdminUsers/useAdminUsers.js
 packages/core/admin/admin/src/hooks/useAdminUsers/__mocks__/index.js
 packages/core/admin/admin/src/hooks/useAdminUsers/tests/useAdminUsers.test.js
 packages/core/admin/admin/src/hooks/useAdminUsers/index.js
-packages/core/admin/admin/src/hooks/useAdminRoles/__mocks__/index.js
-packages/core/admin/admin/src/hooks/useAdminRoles/tests/index.test.js
-packages/core/admin/admin/src/hooks/useAdminRoles/index.js
 packages/core/admin/admin/src/hooks/useDebounce.ts
 packages/core/admin/admin/src/hooks/__mocks__/useConfigurations.ts
 packages/core/admin/admin/src/hooks/useConfigurations.ts
 packages/core/admin/admin/src/hooks/useInjectReducer/tests/useInjectReducer.test.js
 packages/core/admin/admin/src/hooks/useInjectReducer/index.js
 packages/core/admin/admin/src/hooks/useInjectReducer/useInjectReducer.js
+packages/core/admin/admin/src/hooks/tests/useAdminRoles.test.tsx
 packages/core/admin/admin/src/hooks/index.js
+packages/core/admin/admin/src/hooks/useAdminRoles.ts
 packages/core/admin/admin/src/hooks/useSettingsForm/reducer.js
 packages/core/admin/admin/src/hooks/useSettingsForm/tests/index.test.js
 packages/core/admin/admin/src/hooks/useSettingsForm/tests/reducer.test.js
@@ -1142,6 +1141,7 @@ packages/core/admin/admin/src/shared/hooks/useAdminProvider/index.js
 packages/core/admin/admin/src/shared/hooks/index.js
 packages/core/admin/admin/src/shared/hooks/useInjectionZone/index.js
 packages/core/admin/admin/src/index.js
+packages/core/admin/admin/src/types/adminAPI.ts
 packages/core/admin/admin/src/core/store/tests/configureStore.test.js
 packages/core/admin/admin/src/core/store/configureStore.js
 packages/core/admin/admin/src/core/apis/Middlewares.js
@@ -2198,6 +2198,7 @@ packages/core/admin/package.json
 packages/core/admin/webpack.alias.js
 packages/core/admin/index.html
 packages/core/admin/.browserslistrc
+packages/core/admin/shared/entities.ts
 packages/core/admin/index.js
 packages/core/admin/jest.config.js
 packages/core/admin/env.js
@@ -3833,11 +3834,11 @@ packages/core/utils/src/content-types.ts
 packages/core/utils/jest.config.js
 packages/core/utils/README.md
 packages/core/utils/.eslintignore
+packages/admin-test-utils/tsconfig.build.json
 packages/admin-test-utils/tsconfig.json
 packages/admin-test-utils/LICENSE
 packages/admin-test-utils/custom.d.ts
 packages/admin-test-utils/.eslintrc.js
-packages/admin-test-utils/tsconfig.eslint.json
 packages/admin-test-utils/package.json
 packages/admin-test-utils/src/index.ts
 packages/admin-test-utils/src/global-setup.ts
