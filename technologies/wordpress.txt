@@ -178,6 +178,7 @@ wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php
 wp-includes/rest-api/fields/class-wp-rest-meta-fields.php
 wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php
 wp-includes/rest-api/class-wp-rest-server.php
+wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-menu-locations-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php
@@ -192,6 +193,7 @@ wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php
+wp-includes/rest-api/endpoints/class-wp-rest-template-autosaves-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-site-health-controller.php
@@ -2273,8 +2275,8 @@ wp-content/themes/twentytwentyfour/assets/images/building-exterior.webp
 wp-content/themes/twentytwentyfour/assets/images/angular-roof.webp
 wp-content/themes/twentytwentyfour/assets/images/tourist-and-building.webp
 wp-content/themes/twentytwentyfour/readme.txt
+wp-content/themes/twentytwentyfour/styles/fossil.json
 wp-content/themes/twentytwentyfour/styles/mint.json
-wp-content/themes/twentytwentyfour/styles/milky.json
 wp-content/themes/twentytwentyfour/styles/ice.json
 wp-content/themes/twentytwentyfour/styles/onyx.json
 wp-content/themes/twentytwentyfour/styles/sandstorm.json
@@ -2303,6 +2305,7 @@ wp-content/themes/twentytwentyfour/patterns/team.php
 wp-content/themes/twentytwentyfour/patterns/hidden-full-screen-image.php
 wp-content/themes/twentytwentyfour/patterns/project-layout.php
 wp-content/themes/twentytwentyfour/patterns/template-archive-writer.php
+wp-content/themes/twentytwentyfour/patterns/hidden-post-navigation.php
 wp-content/themes/twentytwentyfour/patterns/template-search-writer.php
 wp-content/themes/twentytwentyfour/patterns/services-cta.php
 wp-content/themes/twentytwentyfour/patterns/hidden-post-meta.php
@@ -2323,7 +2326,6 @@ wp-content/themes/twentytwentyfour/patterns/page-07-rsvp-landing.php
 wp-content/themes/twentytwentyfour/patterns/hidden-no-results-content.php
 wp-content/themes/twentytwentyfour/patterns/posts-featured.php
 wp-content/themes/twentytwentyfour/patterns/clients.php
-wp-content/themes/twentytwentyfour/patterns/cta.php
 wp-content/themes/twentytwentyfour/patterns/template-archive-portfolio.php
 wp-content/themes/twentytwentyfour/patterns/page-06-writer-home.php
 wp-content/themes/twentytwentyfour/patterns/page-04-newsletter-landing.php
@@ -2336,6 +2338,7 @@ wp-content/themes/twentytwentyfour/patterns/posts-one-column.php
 wp-content/themes/twentytwentyfour/patterns/project-details.php
 wp-content/themes/twentytwentyfour/patterns/offset-grid-image-posts.php
 wp-content/themes/twentytwentyfour/patterns/hero.php
+wp-content/themes/twentytwentyfour/patterns/text-centered-cta-subscribe.php
 wp-content/themes/twentytwentyfour/patterns/text-centered-title.php
 wp-content/themes/twentytwentyfour/patterns/project-description.php
 wp-content/themes/twentytwentyfour/templates/archive.html

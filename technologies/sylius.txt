@@ -4344,7 +4344,8 @@ src/Sylius/Bundle/CoreBundle/Tests/Cli/Command/ClearPriceHistoryCommandTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Mailer/OrderEmailManagerTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineCompositeTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ShipmentWorkflowTest.php
-src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/WorkflowAdapter/OrderShippingWorkflowTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderCheckoutWorkflowTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderShippingWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ProductReviewWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Twig/ChannelUrlExtensionTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Application/SyliusPluginTraitTest.php
@@ -4561,6 +4562,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/catalog_promotion/validat
 src/Sylius/Bundle/CoreBundle/Resources/config/services/catalog_promotion/applicators.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/promotion.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/taxation.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_checkout.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/shipment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_shipping.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/calculators.xml
@@ -4611,6 +4613,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/nyholm_psr7.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/parameters.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_product_review.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_shipping.yaml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_checkout.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_shipment.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/doctrine_migrations.yaml
@@ -4739,7 +4742,13 @@ src/Sylius/Bundle/CoreBundle/EventListener/LocaleAwareListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/MailerListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/CanonicalizerListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/TaxonDeletionListener.php
-src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderShipping/AfterOrderShippedListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/SaveCheckoutCompletionDateListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderShippingStateListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderCheckoutStateListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ProcessCartListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderShipping/ResolveOrderStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Shipment/AssignShippingDateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Shipment/ResolveOrderShipmentStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/CircularDependencyBreakingErrorListener.php
@@ -4966,7 +4975,13 @@ src/Sylius/Bundle/CoreBundle/spec/EventListener/ImagesRemoveListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/OrderRecalculationListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/ProductDeletionListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/ImageUploadListenerSpec.php
-src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderShipping/AfterOrderShippedListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderShippingStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ProcessCartListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/SaveCheckoutCompletionDateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderCheckoutStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderShipping/ResolveOrderStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Shipment/AssignShippingDateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Shipment/ResolveOrderShipmentStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/CanonicalizerListenerSpec.php
