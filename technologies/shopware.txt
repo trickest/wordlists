@@ -1090,6 +1090,7 @@ changelog/_unreleased/2023-09-14-add-async-theme-compilation.md
 changelog/_unreleased/2023-10-09-update-admin-sdk.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-10-02-fix-document-type-display-blank-if-language-is-child.md
+changelog/_unreleased/2023-10-10-add-local-apps-folder.md
 changelog/_unreleased/2023-08-25-add-scheduled-task-helpers-commands.md
 changelog/_unreleased/2022-09-29-cms-navigation-http-cache.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
@@ -1107,6 +1108,7 @@ changelog/_unreleased/2023-09-11-propagate-request-data-to-payment-payloads-duri
 changelog/_unreleased/2023-09-27-fix-null-value-issue-for-zipcode-column-in-database.md
 changelog/_unreleased/2023-08-30-apply-domain-exception-for-access-key-helper.md
 changelog/_unreleased/2023-09-14-fix-vue-meta-for-vue-3.md
+changelog/_unreleased/2023-09-27-add-schemas-and-tags.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
 changelog/_unreleased/2023-09-29-tag-api-aware.md
 changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.md
@@ -1174,6 +1176,7 @@ changelog/_unreleased/2023-09-04-fix-user-recovery-request-on-different-default-
 changelog/_unreleased/2023-09-07-fix-query-string-parser-throw-syntax-errors.md
 changelog/_unreleased/2023-07-07-fix-open-api-core-spec.md
 changelog/_unreleased/2023-08-10-change-sw-multi-snippet-drag-and-drop-default-event.md
+changelog/_unreleased/2023-10-10-fix-app-rule-condition-validation.md
 changelog/_unreleased/2023-09-25-change-drop-event-of-sw-sortable-list.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
@@ -4143,9 +4146,11 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/DefinitionServiceTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithOverride/Resources/Schema/StoreApi/paths/order_delivery.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/infoConfigResponse.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_delivery.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse2.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/paths/order_delivery.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithoutApiSchema/Resources/.gitkeep
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithApiSchema/Resources/Schema/AdminApi/components/schemas/infoConfigResponse.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithApiSchema/Resources/Schema/AdminApi/paths/order_delivery.json
@@ -5177,6 +5182,7 @@ tests/integration/Core/Framework/App/Manifest/_fixtures/invalidTaxProvider/manif
 tests/integration/Core/Framework/App/Manifest/_fixtures/invalidTaxProvider/manifest-missing-process-url.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/invalidTaxProvider/manifest-missing-priority.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/invalidTaxProvider/manifest-missing-identifier.xml
+tests/integration/Core/Framework/App/Manifest/_fixtures/test/manifest_arbitraryRule_firstName.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/cms.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/cms/blocks/my-first-block/preview.html
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/cms/blocks/my-second-block/preview.html
@@ -5189,12 +5195,15 @@ tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/p
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/app-deactivated/deactivate-script.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/app-installed/install-script.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/app-updated/update-script.twig
+tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/rule-conditions/customer-first-name-rule-script-constraints.twig
+tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/rule-conditions/customer-first-name-rule-script.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/scripts/rule-conditions/customer-group-rule-script.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/views/storefront/layout/header/logo.html.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/views/storefront/layout/header/header.html.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/views/storefront/page/sitemap/sitemap.xml.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/views/administration/index.html.twig
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/Resources/flow-action.xml
+tests/integration/Core/Framework/App/Manifest/_fixtures/test/manifest_arbitraryRule_constraints.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/manifest1_1_0.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/test/manifest.xml
 tests/integration/Core/Framework/App/Manifest/_fixtures/invalidWebhookEventNames/manifest.xml
@@ -18640,3 +18649,4 @@ custom/scripts/examples/template.php
 custom/scripts/examples/cart-usage.php
 custom/scripts/boot/boot.php
 custom/scripts/boot/ScriptKernel.php
+custom/apps/.gitkeep
