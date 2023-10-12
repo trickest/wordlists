@@ -12535,6 +12535,7 @@ core/modules/sdc/tests/src/Kernel/ComponentRenderTest.php
 core/modules/sdc/tests/src/Kernel/ComponentKernelTestBase.php
 core/modules/sdc/tests/src/Kernel/ComponentRenderInvalidTest.php
 core/modules/sdc/tests/src/Kernel/ComponentPluginManagerTest.php
+core/modules/sdc/tests/src/Kernel/ComponentNodeVisitorTest.php
 core/modules/sdc/tests/src/FunctionalJavascript/ComponentRenderTest.php
 core/modules/sdc/tests/src/Unit/ComponentMetadataTest.php
 core/modules/sdc/tests/src/Unit/SchemaCompatibilityCheckerTest.php
@@ -12568,6 +12569,12 @@ core/modules/sdc/tests/modules/sdc_test_replacements/sdc_test_replacements.info.
 core/modules/sdc/tests/modules/sdc_test_invalid/sdc_test_invalid.info.yml
 core/modules/sdc/tests/modules/sdc_test_invalid/components/my-card-no-schema/my-card-no-schema.component.yml
 core/modules/sdc/tests/modules/sdc_test_invalid/components/my-card-no-schema/my-card-no-schema.twig
+core/modules/sdc/tests/modules/sdc_other_node_visitor/sdc_other_node_visitor.info.yml
+core/modules/sdc/tests/modules/sdc_other_node_visitor/sdc_other_node_visitor.services.yml
+core/modules/sdc/tests/modules/sdc_other_node_visitor/src/Twig/NodeVisitor/TestNodeVisitor.php
+core/modules/sdc/tests/modules/sdc_other_node_visitor/src/Twig/Profiler/LeaveProfileNode.php
+core/modules/sdc/tests/modules/sdc_other_node_visitor/src/Twig/Profiler/EnterProfileNode.php
+core/modules/sdc/tests/modules/sdc_other_node_visitor/src/Twig/Extension/TestProfilerExtension.php
 core/modules/sdc/tests/modules/sdc_test/components/my-cta/my-cta.twig
 core/modules/sdc/tests/modules/sdc_test/components/my-cta/my-cta.component.yml
 core/modules/sdc/tests/modules/sdc_test/components/my-cta/my-cta.js

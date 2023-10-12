@@ -897,6 +897,7 @@ src/Sylius/Bundle/PaymentBundle/Resources/config/validation/PaymentMethod.xml
 src/Sylius/Bundle/PaymentBundle/Resources/config/services/form.xml
 src/Sylius/Bundle/PaymentBundle/Resources/config/app/state_machine.yml
 src/Sylius/Bundle/PaymentBundle/Resources/config/app/config.yml
+src/Sylius/Bundle/PaymentBundle/Resources/config/workflow/state_machine.yaml
 src/Sylius/Bundle/PaymentBundle/Resources/config/serializer/Model.PaymentMethod.yml
 src/Sylius/Bundle/PaymentBundle/Resources/config/serializer/Model.Payment.yml
 src/Sylius/Bundle/PaymentBundle/Resources/config/services.xml
@@ -3390,6 +3391,7 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserNotVerifiedValidator.p
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AccountVerificationTokenEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectOrderAddressValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AddingEligibleProductVariantToCart.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserResetPasswordTokenExists.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShipmentAlreadyShippedValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectChangeShopUserConfirmPassword.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderItemAvailability.php
@@ -3397,6 +3399,7 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderNotEmpty.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectChangeShopUserConfirmPasswordValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShipmentAlreadyShipped.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AdminResetPasswordTokenNonExpiredValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserResetPasswordTokenNotExpiredValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueShopUserEmailValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CanPaymentMethodBeChanged.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderPaymentMethodEligibility.php
@@ -3414,9 +3417,11 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/AddingEligibleProductVariantTo
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderShippingMethodEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AccountVerificationTokenEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenShippingMethodEligibility.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserResetPasswordTokenNotExpired.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AdminResetPasswordTokenNonExpired.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectOrderAddress.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenShippingMethodEligibilityValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserResetPasswordTokenExistsValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderNotEmptyValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueReviewerEmail.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ConfirmResetPasswordValidator.php
@@ -3873,6 +3878,7 @@ src/Sylius/Bundle/ApiBundle/spec/Validator/CatalogPromotion/PercentageDiscountAc
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/UniqueReviewerEmailValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/PromotionCouponEligibilityValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ConfirmResetPasswordValidatorSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ShopUserResetPasswordTokenNotExpiredValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CorrectChangeShopUserConfirmPasswordValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ChangedItemQuantityInCartValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderItemAvailabilityValidatorSpec.php
@@ -3887,6 +3893,7 @@ src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CheckoutCompletionValidat
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ChosenPaymentMethodEligibilityValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/AdminResetPasswordTokenNonExpiredValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/AccountVerificationTokenEligibilityValidatorSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ShopUserResetPasswordTokenExistsValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderPaymentMethodEligibilityValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderShippingMethodEligibilityValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/AddingEligibleProductVariantToCartValidatorSpec.php
@@ -4345,6 +4352,7 @@ src/Sylius/Bundle/CoreBundle/Tests/Mailer/OrderEmailManagerTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineCompositeTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ShipmentWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderCheckoutWorkflowTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/PaymentWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderShippingWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ProductReviewWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderPaymentWorkflowTest.php
@@ -4566,6 +4574,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/taxation.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_checkout.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/shipment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_payment.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/payment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_shipping.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/calculators.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/fixtures_listeners.xml
@@ -4617,6 +4626,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_product_review
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_shipping.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_checkout.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_shipment.yaml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_payment.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_payment.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/doctrine_migrations.yaml
@@ -4753,6 +4763,8 @@ src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderCh
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ProcessCartListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Payment/ProcessOrderListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Payment/ResolveOrderPaymentStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderShipping/ResolveOrderStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Shipment/AssignShippingDateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Shipment/ResolveOrderShipmentStateListener.php
@@ -4988,6 +5000,8 @@ src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/SaveCheck
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderCheckoutStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Payment/ResolveOrderPaymentStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Payment/ProcessOrderListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderShipping/ResolveOrderStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Shipment/AssignShippingDateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Shipment/ResolveOrderShipmentStateListenerSpec.php

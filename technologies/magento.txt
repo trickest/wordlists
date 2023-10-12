@@ -2150,6 +2150,7 @@ app/code/Magento/Sales/Test/Unit/Block/Order/Email/Items/DefaultItemsTest.php
 app/code/Magento/Sales/Test/Unit/Block/Order/Email/Items/Order/DefaultOrderTest.php
 app/code/Magento/Sales/Test/Unit/Block/Status/Grid/Column/StateTest.php
 app/code/Magento/Sales/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Sales/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Sales/Test/Mftf/Helper/AdminProductPage.php
 app/code/Magento/Sales/Test/Mftf/Helper/SalesHelper.php
 app/code/Magento/Sales/Test/Mftf/Metadata/SalesConfigMeta.xml
@@ -2158,6 +2159,7 @@ app/code/Magento/Sales/Test/Mftf/Metadata/CreditMemoMeta.xml
 app/code/Magento/Sales/Test/Mftf/Metadata/InvoiceMeta.xml
 app/code/Magento/Sales/Test/Mftf/Metadata/CancelOrderMeta.xml
 app/code/Magento/Sales/Test/Mftf/Metadata/ShipmentMeta.xml
+app/code/Magento/Sales/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Sales/Test/Mftf/LICENSE.txt
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AssertAdminCreditMemoGrandTotalActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderGridClickFirstRowActionGroup.xml
@@ -2907,6 +2909,8 @@ app/code/Magento/LoginAsCustomer/composer.json
 app/code/Magento/LoginAsCustomer/LICENSE.txt
 app/code/Magento/LoginAsCustomer/Plugin/AdminLogoutPlugin.php
 app/code/Magento/LoginAsCustomer/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/LoginAsCustomer/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/LoginAsCustomer/Test/Mftf/test-dependency-allowlist
 app/code/Magento/LoginAsCustomer/Test/Mftf/LICENSE.txt
 app/code/Magento/LoginAsCustomer/Test/Mftf/ActionGroup/AdminLoginAsCustomerAbsentOnCustomerPageActionGroup.xml
 app/code/Magento/LoginAsCustomer/Test/Mftf/ActionGroup/AdminLoginAsCustomerLoginFromOrderPageActionGroup.xml
@@ -3567,6 +3571,8 @@ app/code/Magento/Multishipping/Test/Unit/Block/Checkout/SuccessTest.php
 app/code/Magento/Multishipping/Test/Unit/Block/Checkout/Payment/InfoTest.php
 app/code/Magento/Multishipping/Test/Unit/Block/Checkout/StateTest.php
 app/code/Magento/Multishipping/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Multishipping/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Multishipping/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Multishipping/Test/Mftf/LICENSE.txt
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/SelectMultiShippingInfoActionGroup.xml
 app/code/Magento/Multishipping/Test/Mftf/ActionGroup/ReviewOrderForMultiShipmentActionGroup.xml
@@ -3934,8 +3940,10 @@ app/code/Magento/CatalogRule/Test/Unit/Plugin/Indexer/CategoryTest.php
 app/code/Magento/CatalogRule/Test/Unit/Block/Adminhtml/Edit/DeleteButtonTest.php
 app/code/Magento/CatalogRule/Test/Unit/Block/Adminhtml/Edit/GenericButtonTest.php
 app/code/Magento/CatalogRule/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CatalogRule/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/CatalogRule/Test/Mftf/Helper/CatalogPriceRuleHelper.php
 app/code/Magento/CatalogRule/Test/Mftf/Metadata/CatalogRuleMeta.xml
+app/code/Magento/CatalogRule/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CatalogRule/Test/Mftf/LICENSE.txt
 app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminOpenCatalogPriceRulePageActionGroup.xml
 app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AssertCatalogRuleInGridActionGroup.xml
@@ -4171,6 +4179,8 @@ app/code/Magento/CatalogImportExport/Test/Unit/Model/Export/StubProduct.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Export/ProductTest.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Indexer/Product/Flat/Plugin/ImportTest.php
 app/code/Magento/CatalogImportExport/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CatalogImportExport/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/CatalogImportExport/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CatalogImportExport/Test/Mftf/LICENSE.txt
 app/code/Magento/CatalogImportExport/Test/Mftf/ActionGroup/DeleteExportedFileActionGroup.xml
 app/code/Magento/CatalogImportExport/Test/Mftf/ActionGroup/ExportProductsFilterByAttributeActionGroup.xml
@@ -4213,6 +4223,8 @@ app/code/Magento/MediaGalleryRenditions/LICENSE.txt
 app/code/Magento/MediaGalleryRenditions/Plugin/RemoveRenditions.php
 app/code/Magento/MediaGalleryRenditions/Plugin/UpdateRenditionsOnConfigChange.php
 app/code/Magento/MediaGalleryRenditions/Plugin/SetRenditionPath.php
+app/code/Magento/MediaGalleryRenditions/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/MediaGalleryRenditions/Test/Mftf/test-dependency-allowlist
 app/code/Magento/MediaGalleryRenditions/Test/Mftf/ActionGroup/AdminRenditionsSetImageSizeActionGroup.xml
 app/code/Magento/MediaGalleryRenditions/Test/Mftf/Test/AdminMediaGalleryInsertImageLargeFileSizeTest.xml
 app/code/Magento/MediaGalleryRenditions/Test/Mftf/Test/AdminMediaGalleryInsertLargeImageFileSizeTest.xml
@@ -4607,10 +4619,12 @@ app/code/Magento/SalesRule/Test/Unit/Block/Adminhtml/Promo/Quote/Edit/SaveButton
 app/code/Magento/SalesRule/Test/Unit/Block/Adminhtml/Promo/Quote/Edit/GenericButtonTest.php
 app/code/Magento/SalesRule/Test/Unit/Block/Rss/DiscountsTest.php
 app/code/Magento/SalesRule/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/SalesRule/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/SalesRule/Test/Mftf/Metadata/SalesRuleLabelMeta.xml
 app/code/Magento/SalesRule/Test/Mftf/Metadata/SalesRuleConditionMeta.xml
 app/code/Magento/SalesRule/Test/Mftf/Metadata/SalesRuleMeta.xml
 app/code/Magento/SalesRule/Test/Mftf/Metadata/SalesRuleCouponMeta.xml
+app/code/Magento/SalesRule/Test/Mftf/test-dependency-allowlist
 app/code/Magento/SalesRule/Test/Mftf/LICENSE.txt
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/StorefrontShoppingCartClickApplyDiscountButtonActionGroup.xml
 app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleWithConditionsActionGroup.xml
@@ -4766,6 +4780,8 @@ app/code/Magento/MediaGalleryCatalogIntegration/registration.php
 app/code/Magento/MediaGalleryCatalogIntegration/composer.json
 app/code/Magento/MediaGalleryCatalogIntegration/LICENSE.txt
 app/code/Magento/MediaGalleryCatalogIntegration/Plugin/SaveBaseCategoryImageInformation.php
+app/code/Magento/MediaGalleryCatalogIntegration/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/MediaGalleryCatalogIntegration/Test/Mftf/test-dependency-allowlist
 app/code/Magento/MediaGalleryCatalogIntegration/Test/Mftf/Test/AdminUploadSameImageDeleteFromTemporaryFolderTest.xml
 app/code/Magento/MediaGalleryCatalogIntegration/README.md
 app/code/Magento/SalesAnalytics/LICENSE_AFL.txt
@@ -5330,9 +5346,11 @@ app/code/Magento/Bundle/Test/Unit/Block/Catalog/Product/View/Type/Bundle/OptionT
 app/code/Magento/Bundle/Test/Unit/Block/Catalog/Product/View/Type/BundleTest.php
 app/code/Magento/Bundle/Test/Unit/Block/DataProviders/OptionPriceRendererTest.php
 app/code/Magento/Bundle/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Bundle/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Bundle/Test/Mftf/Metadata/BundleOptionsMeta.xml
 app/code/Magento/Bundle/Test/Mftf/Metadata/BundleOptionMeta.xml
 app/code/Magento/Bundle/Test/Mftf/Metadata/BundleLinkMeta.xml
+app/code/Magento/Bundle/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Bundle/Test/Mftf/LICENSE.txt
 app/code/Magento/Bundle/Test/Mftf/ActionGroup/AdminClickAddProductToOptionActionGroup.xml
 app/code/Magento/Bundle/Test/Mftf/ActionGroup/AdminCustomizableOptionWithOneOptionActionGroup.xml
@@ -5802,8 +5820,10 @@ app/code/Magento/User/Test/Unit/Block/Role/Tab/EditTest.php
 app/code/Magento/User/Test/Unit/Block/Role/Tab/UsersTest.php
 app/code/Magento/User/Test/Unit/Block/Role/Tab/InfoTest.php
 app/code/Magento/User/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/User/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/User/Test/Mftf/Metadata/UserRoleMeta.xml
 app/code/Magento/User/Test/Mftf/Metadata/UserMeta.xml
+app/code/Magento/User/Test/Mftf/test-dependency-allowlist
 app/code/Magento/User/Test/Mftf/LICENSE.txt
 app/code/Magento/User/Test/Mftf/ActionGroup/AssertAdminRoleInGridActionGroup.xml
 app/code/Magento/User/Test/Mftf/ActionGroup/AdminUnlockAdminUserEntityOnGridActionGroup.xml
@@ -6048,6 +6068,8 @@ app/code/Magento/Variable/Test/Unit/Model/Variable/ConfigTest.php
 app/code/Magento/Variable/Test/Unit/Model/Config/Structure/AvailableVariablesTest.php
 app/code/Magento/Variable/Test/Unit/Model/Source/VariablesTest.php
 app/code/Magento/Variable/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Variable/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Variable/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Variable/Test/Mftf/LICENSE.txt
 app/code/Magento/Variable/Test/Mftf/ActionGroup/AssertAdminCustomVariableInGridActionGroup.xml
 app/code/Magento/Variable/Test/Mftf/ActionGroup/DeleteCustomVariableActionGroup.xml
@@ -6121,6 +6143,8 @@ app/code/Magento/LoginAsCustomerAdminUi/view/adminhtml/templates/confirmation-po
 app/code/Magento/LoginAsCustomerAdminUi/composer.json
 app/code/Magento/LoginAsCustomerAdminUi/LICENSE.txt
 app/code/Magento/LoginAsCustomerAdminUi/Plugin/Button/ToolbarPlugin.php
+app/code/Magento/LoginAsCustomerAdminUi/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/LoginAsCustomerAdminUi/Test/Mftf/test-dependency-allowlist
 app/code/Magento/LoginAsCustomerAdminUi/Test/Mftf/Test/AdminLoginAsCustomerManualSelectionTest.xml
 app/code/Magento/LoginAsCustomerAdminUi/README.md
 app/code/Magento/LoginAsCustomerAdminUi/Block/Adminhtml/ConfirmationPopup.php
@@ -6610,7 +6634,9 @@ app/code/Magento/Paypal/Test/Unit/Block/Billing/AgreementsTest.php
 app/code/Magento/Paypal/Test/Unit/Block/Billing/Agreement/ViewTest.php
 app/code/Magento/Paypal/Test/Unit/Block/Payflow/Link/IframeTest.php
 app/code/Magento/Paypal/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Paypal/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Paypal/Test/Mftf/Metadata/PaypalConfigMeta.xml
+app/code/Magento/Paypal/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Paypal/Test/Mftf/LICENSE.txt
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/AdminPayPalExpressCheckoutEnableBillingAgreementActionGroup.xml
 app/code/Magento/Paypal/Test/Mftf/ActionGroup/StorefrontPlaceOrderOnOrderReviewPageActionGroup.xml
@@ -8542,6 +8568,7 @@ app/code/Magento/Catalog/Test/Unit/Block/Rss/Product/SpecialTest.php
 app/code/Magento/Catalog/Test/Unit/Block/Rss/Product/NewProductsTest.php
 app/code/Magento/Catalog/Test/Unit/Block/Rss/CategoryTest.php
 app/code/Magento/Catalog/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Catalog/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Catalog/Test/Mftf/Helper/LocalFileAssertions.php
 app/code/Magento/Catalog/Test/Mftf/Helper/CatalogHelper.php
 app/code/Magento/Catalog/Test/Mftf/Metadata/EmptyExtensionAttributeMeta.xml
@@ -8569,6 +8596,7 @@ app/code/Magento/Catalog/Test/Mftf/Metadata/ProductExtensionAttributeMeta.xml
 app/code/Magento/Catalog/Test/Mftf/Metadata/CatalogAttributeSetMeta.xml
 app/code/Magento/Catalog/Test/Mftf/Metadata/ProductMeta.xml
 app/code/Magento/Catalog/Test/Mftf/Metadata/ProductOptionMeta.xml
+app/code/Magento/Catalog/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Catalog/Test/Mftf/LICENSE.txt
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductDescriptionInProductEditFormActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontOpenProductPageActionGroup.xml
@@ -10136,6 +10164,8 @@ app/code/Magento/Reports/Test/Unit/Block/Adminhtml/Grid/Column/Renderer/Currency
 app/code/Magento/Reports/Test/Unit/Block/Product/ViewedTest.php
 app/code/Magento/Reports/Test/Unit/Block/Product/ComparedTest.php
 app/code/Magento/Reports/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Reports/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Reports/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Reports/Test/Mftf/LICENSE.txt
 app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminVerifyOrdersTotalDatePickerActionGroup.xml
 app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminGenerateProductsOrderedReportActionGroup.xml
@@ -10600,11 +10630,13 @@ app/code/Magento/Tax/Test/Unit/Block/Grid/Renderer/CodesTest.php
 app/code/Magento/Tax/Test/Unit/Block/Item/Price/RendererTest.php
 app/code/Magento/Tax/Test/Unit/GetterSetterTest.php
 app/code/Magento/Tax/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Tax/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Tax/Test/Mftf/Helper/TaxHelpers.php
 app/code/Magento/Tax/Test/Mftf/Metadata/TaxRuleMeta.xml
 app/code/Magento/Tax/Test/Mftf/Metadata/TaxRateMeta.xml
 app/code/Magento/Tax/Test/Mftf/Metadata/TaxClassMeta.xml
 app/code/Magento/Tax/Test/Mftf/Metadata/TaxConfigMeta.xml
+app/code/Magento/Tax/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Tax/Test/Mftf/LICENSE.txt
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminReopenTaxRulePageActionGroup.xml
 app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminSaveTaxRuleActionGroup.xml
@@ -10797,6 +10829,8 @@ app/code/Magento/InstantPurchase/Test/Unit/CustomerData/InstantPurchaseTest.php
 app/code/Magento/InstantPurchase/Test/Unit/Model/Ui/ShippingMethodFormatterTest.php
 app/code/Magento/InstantPurchase/Test/Unit/Model/Ui/CustomerAddressesFormatterTest.php
 app/code/Magento/InstantPurchase/Test/Unit/Block/ButtonTest.php
+app/code/Magento/InstantPurchase/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/InstantPurchase/Test/Mftf/test-dependency-allowlist
 app/code/Magento/InstantPurchase/Test/Mftf/ActionGroup/AdminOpenInstantPurchaseConfigPageActionGroup.xml
 app/code/Magento/InstantPurchase/Test/Mftf/ActionGroup/AssertStorefrontInstantPurchaseConfirmationDataActionGroup.xml
 app/code/Magento/InstantPurchase/Test/Mftf/ActionGroup/AdminChangeInstantPurchaseStatusActionGroup.xml
@@ -11640,6 +11674,8 @@ app/code/Magento/GroupedProduct/Test/Unit/Block/Product/View/Type/GroupedTest.ph
 app/code/Magento/GroupedProduct/Test/Unit/Block/Product/Grouped/AssociatedProductsTest.php
 app/code/Magento/GroupedProduct/Test/Unit/Block/Product/Grouped/AssociatedProducts/ListAssociatedProductsTest.php
 app/code/Magento/GroupedProduct/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/GroupedProduct/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/GroupedProduct/Test/Mftf/test-dependency-allowlist
 app/code/Magento/GroupedProduct/Test/Mftf/LICENSE.txt
 app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/AdminVerifyAssociatedProductForGroupedProductActionGroup.xml
 app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
@@ -11858,6 +11894,8 @@ app/code/Magento/Directory/Test/Unit/Block/Adminhtml/Frontend/Currency/BaseTest.
 app/code/Magento/Directory/Test/Unit/Block/DataTest.php
 app/code/Magento/Directory/Test/Unit/Block/CurrencyTest.php
 app/code/Magento/Directory/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Directory/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Directory/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Directory/Test/Mftf/LICENSE.txt
 app/code/Magento/Directory/Test/Mftf/ActionGroup/AdminNavigateToCurrencySetupPageActionGroup.xml
 app/code/Magento/Directory/Test/Mftf/Data/GeneralStateOptionsConfigData.xml
@@ -12727,6 +12765,7 @@ app/code/Magento/Customer/Test/Unit/Block/Account/AuthenticationPopupTest.php
 app/code/Magento/Customer/Test/Unit/Block/Account/Dashboard/InfoTest.php
 app/code/Magento/Customer/Test/Unit/Block/Account/ResetpasswordTest.php
 app/code/Magento/Customer/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Customer/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Customer/Test/Mftf/Metadata/RegionMeta.xml
 app/code/Magento/Customer/Test/Mftf/Metadata/CustomerCreateNewAccountMeta.xml
 app/code/Magento/Customer/Test/Mftf/Metadata/CustomerMeta.xml
@@ -12735,6 +12774,7 @@ app/code/Magento/Customer/Test/Mftf/Metadata/CustomerGroupMeta.xml
 app/code/Magento/Customer/Test/Mftf/Metadata/CustomerExtensionAttributeMeta.xml
 app/code/Magento/Customer/Test/Mftf/Metadata/CustomerConfigAccountSharingMeta.xml
 app/code/Magento/Customer/Test/Mftf/Metadata/CustomerNestedExtensionAttributeMeta.xml
+app/code/Magento/Customer/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Customer/Test/Mftf/LICENSE.txt
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertNumberOfRecordsInCustomersAddressGridActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerWishlistConfigureItemActionGroup.xml
@@ -13335,6 +13375,8 @@ app/code/Magento/MediaGalleryCatalogUi/view/adminhtml/layout/media_gallery_catal
 app/code/Magento/MediaGalleryCatalogUi/view/adminhtml/templates/url_filter_applier.phtml
 app/code/Magento/MediaGalleryCatalogUi/composer.json
 app/code/Magento/MediaGalleryCatalogUi/LICENSE.txt
+app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/test-dependency-allowlist
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminCategoryGridPageDetailsActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminCategoryGridPageImageColumnActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminCategoryGridPageProductsInMenuEnabledColumnsActionGroup.xml
@@ -13461,8 +13503,10 @@ app/code/Magento/Swatches/Test/Unit/Block/Adminhtml/Product/Attribute/Edit/FormT
 app/code/Magento/Swatches/Test/Unit/Block/Product/Renderer/Listing/ConfigurableTest.php
 app/code/Magento/Swatches/Test/Unit/Block/LayeredNavigation/RenderLayeredTest.php
 app/code/Magento/Swatches/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Swatches/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Swatches/Test/Mftf/Metadata/SwatchProductAttributeOptionMeta.xml
 app/code/Magento/Swatches/Test/Mftf/Metadata/SwatchProductAttributeMeta.xml
+app/code/Magento/Swatches/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Swatches/Test/Mftf/LICENSE.txt
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/StorefrontSelectVisualSwatchOptionOnCategoryPageActionGroup.xml
 app/code/Magento/Swatches/Test/Mftf/ActionGroup/AddTextSwatchToProductWithTwoOptionsActionGroup.xml
@@ -13775,7 +13819,9 @@ app/code/Magento/CatalogSearch/Test/Unit/Ui/DataProvider/Product/AddFulltextFilt
 app/code/Magento/CatalogSearch/Test/Unit/Block/ResultTest.php
 app/code/Magento/CatalogSearch/Test/Unit/Block/Plugin/FrontTabPluginTest.php
 app/code/Magento/CatalogSearch/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CatalogSearch/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/CatalogSearch/Test/Mftf/Metadata/CatalogSearchMeta.xml
+app/code/Magento/CatalogSearch/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CatalogSearch/Test/Mftf/LICENSE.txt
 app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/AssertSearchTermNotOnFrontendActionGroup.xml
 app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/StorefrontAdvancedCatalogSearchByProductNameActionGroup.xml
@@ -14030,7 +14076,9 @@ app/code/Magento/Search/Test/Unit/Adapter/Query/Preprocessor/SynonymsTest.php
 app/code/Magento/Search/Test/Unit/Setup/CompositeInstallConfigTest.php
 app/code/Magento/Search/Test/Unit/Block/TermsTest.php
 app/code/Magento/Search/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Search/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Search/Test/Mftf/Metadata/SearchTermMeta.xml
+app/code/Magento/Search/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Search/Test/Mftf/LICENSE.txt
 app/code/Magento/Search/Test/Mftf/ActionGroup/AdminCreateNewSearchTermEntityActionGroup.xml
 app/code/Magento/Search/Test/Mftf/ActionGroup/AdminSetGlobalSearchValueActionGroup.xml
@@ -14241,7 +14289,9 @@ app/code/Magento/MediaGalleryUi/Plugin/CreateThumbnails.php
 app/code/Magento/MediaGalleryUi/Test/Unit/Model/Model/Directories/GetDirectoryTreeTest.php
 app/code/Magento/MediaGalleryUi/Test/Unit/Model/UploadImageTest.php
 app/code/Magento/MediaGalleryUi/Test/Unit/Model/ConfigTest.php
+app/code/Magento/MediaGalleryUi/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/MediaGalleryUi/Test/Mftf/Helper/MediaGalleryUiHelper.php
+app/code/Magento/MediaGalleryUi/Test/Mftf/test-dependency-allowlist
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminMediaGalleryAssertImageNotExistsInTheGridActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AdminMediaGalleryClickAddSelectedActionGroup.xml
 app/code/Magento/MediaGalleryUi/Test/Mftf/ActionGroup/AssertAdminEnhancedMediaGalleryUploadedImageDateTimeEqualsActionGroup.xml
@@ -14703,8 +14753,10 @@ app/code/Magento/Cms/Test/Unit/Block/BlockByIdentifierTest.php
 app/code/Magento/Cms/Test/Unit/Block/BlockTest.php
 app/code/Magento/Cms/Test/Unit/Block/PageTest.php
 app/code/Magento/Cms/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Cms/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Cms/Test/Mftf/Metadata/BlockMeta.xml
 app/code/Magento/Cms/Test/Mftf/Metadata/CmsMeta.xml
+app/code/Magento/Cms/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Cms/Test/Mftf/LICENSE.txt
 app/code/Magento/Cms/Test/Mftf/ActionGroup/VerifyTinyMCEActionGroup.xml
 app/code/Magento/Cms/Test/Mftf/ActionGroup/NavigateToMediaFolderActionGroup.xml
@@ -15781,7 +15833,9 @@ app/code/Magento/GiftMessage/Test/Unit/Block/Cart/GiftOptionsTest.php
 app/code/Magento/GiftMessage/Test/Unit/Block/Cart/Item/Renderer/Actions/ItemIdProcessorTest.php
 app/code/Magento/GiftMessage/Test/Unit/Block/Cart/Item/Renderer/Actions/GiftOptionsTest.php
 app/code/Magento/GiftMessage/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/GiftMessage/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/GiftMessage/Test/Mftf/Metadata/GiftOptionsMeta.xml
+app/code/Magento/GiftMessage/Test/Mftf/test-dependency-allowlist
 app/code/Magento/GiftMessage/Test/Mftf/LICENSE.txt
 app/code/Magento/GiftMessage/Test/Mftf/ActionGroup/GuestGiftCheckoutFillingShippingSectionActionGroup.xml
 app/code/Magento/GiftMessage/Test/Mftf/ActionGroup/AssertStorefrontGiftMessageOnCheckoutCartPageActionGroup.xml
@@ -16310,6 +16364,8 @@ app/code/Magento/CatalogUrlRewrite/Test/Unit/Observer/CategoryProcessUrlRewriteM
 app/code/Magento/CatalogUrlRewrite/Test/Unit/Plugin/Webapi/Controller/Rest/InputParamsResolverTest.php
 app/code/Magento/CatalogUrlRewrite/Test/Unit/Plugin/Catalog/Block/Adminhtml/Category/Tab/AttributesTest.php
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CatalogUrlRewrite/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/CatalogUrlRewrite/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/LICENSE.txt
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/ActionGroup/AssertStorefrontProductRewriteUrlSubCategoryActionGroup.xml
 app/code/Magento/CatalogUrlRewrite/Test/Mftf/Data/AdminCategoryRestrictedUrlMessageData.xml
@@ -16372,6 +16428,8 @@ app/code/Magento/MediaGalleryCmsUi/view/adminhtml/ui_component/media_gallery_lis
 app/code/Magento/MediaGalleryCmsUi/view/adminhtml/ui_component/standalone_media_gallery_listing.xml
 app/code/Magento/MediaGalleryCmsUi/composer.json
 app/code/Magento/MediaGalleryCmsUi/LICENSE.txt
+app/code/Magento/MediaGalleryCmsUi/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/MediaGalleryCmsUi/Test/Mftf/test-dependency-allowlist
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/ActionGroup/FillOutCustomCMSPageContentActionGroup.xml
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryCmsUiUsedInBlocksFilterTest.xml
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryAssertUsedInLinkPagesGridTest.xml
@@ -17049,10 +17107,12 @@ app/code/Magento/ConfigurableProduct/Test/Unit/Block/Product/View/Type/Configura
 app/code/Magento/ConfigurableProduct/Test/Unit/Block/Product/Configurable/AttributeSelectorTest.php
 app/code/Magento/ConfigurableProduct/Test/Unit/Block/Plugin/Product/Media/GalleryTest.php
 app/code/Magento/ConfigurableProduct/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/ConfigurableProduct/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/ConfigurableProduct/Test/Mftf/Metadata/ConfigurableProductOptionsMeta.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Metadata/ValueIndexMeta.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Metadata/ConfigurableProductAddChildMeta.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/Metadata/ExtensionAttributeConfigurableProductOptionsMeta.xml
+app/code/Magento/ConfigurableProduct/Test/Mftf/test-dependency-allowlist
 app/code/Magento/ConfigurableProduct/Test/Mftf/LICENSE.txt
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/AdminConfigurableProductCreateConfigurationsAndSkipBulkByAttributeCodeActionGroup.xml
 app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/SaveConfigurableProductActionGroup.xml
@@ -17341,6 +17401,8 @@ app/code/Magento/DownloadableImportExport/Test/Unit/Model/Import/Product/Type/Do
 app/code/Magento/DownloadableImportExport/Test/Unit/Model/Export/RowCustomizerTest.php
 app/code/Magento/DownloadableImportExport/Test/Unit/Helper/DataTest.php
 app/code/Magento/DownloadableImportExport/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/DownloadableImportExport/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/DownloadableImportExport/Test/Mftf/test-dependency-allowlist
 app/code/Magento/DownloadableImportExport/Test/Mftf/LICENSE.txt
 app/code/Magento/DownloadableImportExport/Test/Mftf/Data/ImportData.xml
 app/code/Magento/DownloadableImportExport/Test/Mftf/Test/AdminImportDownloadableProductsWithUrlLinksTest.xml
@@ -18621,7 +18683,9 @@ app/code/Magento/Wishlist/Test/Unit/Block/Rss/LinkTest.php
 app/code/Magento/Wishlist/Test/Unit/Block/Rss/EmailLinkTest.php
 app/code/Magento/Wishlist/Test/Unit/DataProvider/Product/Collector/ButtonTest.php
 app/code/Magento/Wishlist/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Wishlist/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Wishlist/Test/Mftf/Metadata/WishlistMeta.xml
+app/code/Magento/Wishlist/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Wishlist/Test/Mftf/LICENSE.txt
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontShareCustomerWishlistActionGroup.xml
 app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontAssertCustomerWishlistIsEmptyActionGroup.xml
@@ -18760,6 +18824,8 @@ app/code/Magento/PaypalCaptcha/composer.json
 app/code/Magento/PaypalCaptcha/LICENSE.txt
 app/code/Magento/PaypalCaptcha/Observer/CaptchaRequestToken.php
 app/code/Magento/PaypalCaptcha/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/PaypalCaptcha/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/PaypalCaptcha/Test/Mftf/test-dependency-allowlist
 app/code/Magento/PaypalCaptcha/Test/Mftf/LICENSE.txt
 app/code/Magento/PaypalCaptcha/Test/Mftf/ActionGroup/AddProductToCheckoutPageWithPayPalPayflowProActionGroup.xml
 app/code/Magento/PaypalCaptcha/Test/Mftf/Test/StorefrontPaymentsCaptchaWithPayflowProTest.xml
@@ -18941,6 +19007,8 @@ app/code/Magento/Review/Test/Unit/Block/Customer/RecentTest.php
 app/code/Magento/Review/Test/Unit/Block/Product/ReviewTest.php
 app/code/Magento/Review/Test/Unit/Block/Product/ListViewTest.php
 app/code/Magento/Review/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Review/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Review/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Review/Test/Mftf/LICENSE.txt
 app/code/Magento/Review/Test/Mftf/ActionGroup/AdminDeleteReviewsByUserNicknameActionGroup.xml
 app/code/Magento/Review/Test/Mftf/ActionGroup/AdminChangeReviewStatusActionGroup.xml
@@ -19382,7 +19450,9 @@ app/code/Magento/CheckoutAgreements/Test/Unit/Model/Checkout/Plugin/ValidationTe
 app/code/Magento/CheckoutAgreements/Test/Unit/Model/AgreementsConfigProviderTest.php
 app/code/Magento/CheckoutAgreements/Test/Unit/Block/AgreementsTest.php
 app/code/Magento/CheckoutAgreements/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CheckoutAgreements/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/CheckoutAgreements/Test/Mftf/Helper/CheckoutAgreementsHelpers.php
+app/code/Magento/CheckoutAgreements/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CheckoutAgreements/Test/Mftf/LICENSE.txt
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/AdminTermsConditionsDeleteTermByNameActionGroup.xml
 app/code/Magento/CheckoutAgreements/Test/Mftf/ActionGroup/StorefrontProcessCheckoutToPaymentActionGroup.xml
@@ -19728,8 +19798,10 @@ app/code/Magento/Shipping/Test/Unit/Helper/CarrierTest.php
 app/code/Magento/Shipping/Test/Unit/Helper/DataTest.php
 app/code/Magento/Shipping/Test/Unit/Block/Adminhtml/Order/TrackingTest.php
 app/code/Magento/Shipping/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Shipping/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Shipping/Test/Mftf/Metadata/ShippingOriginMeta.xml
 app/code/Magento/Shipping/Test/Mftf/Metadata/ShippingMethodsMeta.xml
+app/code/Magento/Shipping/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Shipping/Test/Mftf/LICENSE.txt
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminSetShippingOriginConfigurationActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminGoToShipmentViewActionGroup.xml
@@ -20371,6 +20443,8 @@ app/code/Magento/Elasticsearch/Test/Unit/ElasticAdapter/Model/Adapter/FieldMappe
 app/code/Magento/Elasticsearch/Test/Unit/ElasticAdapter/SearchAdapter/Query/BuilderTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Observer/CategoryProductIndexerTest.php
 app/code/Magento/Elasticsearch/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Elasticsearch/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Elasticsearch/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Elasticsearch/Test/Mftf/LICENSE.txt
 app/code/Magento/Elasticsearch/Test/Mftf/ActionGroup/AssertSearchResultActionGroup.xml
 app/code/Magento/Elasticsearch/Test/Mftf/ActionGroup/ModifyCustomAttributeValueActionGroup.xml
@@ -20424,11 +20498,13 @@ app/code/Magento/AwsS3/LICENSE.txt
 app/code/Magento/AwsS3/Test/Unit/Driver/AwsS3FactoryTest.php
 app/code/Magento/AwsS3/Test/Unit/Driver/CredentialsCacheTest.php
 app/code/Magento/AwsS3/Test/Unit/Driver/AwsS3Test.php
+app/code/Magento/AwsS3/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/AwsS3/Test/Mftf/Helper/S3FileAssertions.php
 app/code/Magento/AwsS3/Test/Mftf/Helper/DummyMetadataCache.php
 app/code/Magento/AwsS3/Test/Mftf/Helper/FileAssertionsInterface.php
 app/code/Magento/AwsS3/Test/Mftf/Helper/MockTestLogger.php
 app/code/Magento/AwsS3/Test/Mftf/Helper/FileAssertions.php
+app/code/Magento/AwsS3/Test/Mftf/test-dependency-allowlist
 app/code/Magento/AwsS3/Test/Mftf/Suite/RemoteStorageAwsS3EnabledMediaGalleryUiSuite.xml
 app/code/Magento/AwsS3/Test/Mftf/Suite/RemoteStorageDisabledSuite.xml
 app/code/Magento/AwsS3/Test/Mftf/Suite/RemoteStorageAwsS3EnabledSuite.xml
@@ -20877,6 +20953,8 @@ app/code/Magento/Checkout/Test/Unit/Block/Checkout/DirectoryDataProcessorTest.ph
 app/code/Magento/Checkout/Test/Unit/Block/Checkout/TotalsProcessorTest.php
 app/code/Magento/Checkout/Test/Unit/Block/Item/Price/RendererTest.php
 app/code/Magento/Checkout/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Checkout/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Checkout/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Checkout/Test/Mftf/LICENSE.txt
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionTimeActionGroup.xml
 app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontCheckoutPaymentSummaryTotalActionGroup.xml
@@ -21990,6 +22068,7 @@ app/code/Magento/Store/Test/Unit/Console/Command/StoreListCommandTest.php
 app/code/Magento/Store/Test/Unit/Block/SwitcherTest.php
 app/code/Magento/Store/Test/Unit/Block/Store/SwitcherTest.php
 app/code/Magento/Store/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Store/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Store/Test/Mftf/Helper/StoreHelpers.php
 app/code/Magento/Store/Test/Mftf/Metadata/StoreShippingMethodsMeta.xml
 app/code/Magento/Store/Test/Mftf/Metadata/WebsiteMeta.xml
@@ -21997,6 +22076,7 @@ app/code/Magento/Store/Test/Mftf/Metadata/ProductWebsiteLinkMeta.xml
 app/code/Magento/Store/Test/Mftf/Metadata/StoreMeta.xml
 app/code/Magento/Store/Test/Mftf/Metadata/StorePaymentMethodsMeta.xml
 app/code/Magento/Store/Test/Mftf/Metadata/StoreGroupMeta.xml
+app/code/Magento/Store/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Store/Test/Mftf/LICENSE.txt
 app/code/Magento/Store/Test/Mftf/ActionGroup/AdminFilterStoreViewActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/AdminStoreGroupCreateActionGroup.xml
@@ -22492,6 +22572,8 @@ app/code/Magento/Theme/Test/Unit/Block/Html/Header/LogoTest.php
 app/code/Magento/Theme/Test/Unit/Block/Html/TitleTest.php
 app/code/Magento/Theme/Test/Unit/Block/Html/FooterTest.php
 app/code/Magento/Theme/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Theme/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Theme/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Theme/Test/Mftf/LICENSE.txt
 app/code/Magento/Theme/Test/Mftf/ActionGroup/NavigateToFaviconMediaFolderActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/ActionGroup/AdminClickViewThemeByThemeActionGroup.xml
@@ -22781,7 +22863,9 @@ app/code/Magento/CatalogInventory/Test/Unit/Block/Stockqty/DefaultStockqtyTest.p
 app/code/Magento/CatalogInventory/Test/Unit/Block/QtyincrementsTest.php
 app/code/Magento/CatalogInventory/Test/Unit/Block/Plugin/ProductViewTest.php
 app/code/Magento/CatalogInventory/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/CatalogInventory/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/CatalogInventory/Test/Mftf/Metadata/CataloginventoryItemOptionsMeta.xml
+app/code/Magento/CatalogInventory/Test/Mftf/test-dependency-allowlist
 app/code/Magento/CatalogInventory/Test/Mftf/LICENSE.txt
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/AdminCatalogInventoryChangeManageStockActionGroup.xml
 app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/DisplayOutOfStockProductActionGroup.xml
@@ -23244,7 +23328,9 @@ app/code/Magento/Backend/Test/Unit/Block/MenuItemCheckerTest.php
 app/code/Magento/Backend/Test/Unit/Block/Store/SwitcherTest.php
 app/code/Magento/Backend/Test/Unit/Block/Page/System/Config/Robots/ResetTest.php
 app/code/Magento/Backend/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Backend/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Backend/Test/Mftf/Helper/CurlHelpers.php
+app/code/Magento/Backend/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Backend/Test/Mftf/LICENSE.txt
 app/code/Magento/Backend/Test/Mftf/ActionGroup/WebSetup/WebSetupShowLandingSectionActionGroup.xml
 app/code/Magento/Backend/Test/Mftf/ActionGroup/WebSetup/GoToWebSetupPageActionGroup.xml
@@ -23688,6 +23774,8 @@ app/code/Magento/Newsletter/Test/Unit/Block/Adminhtml/Template/PreviewTest.php
 app/code/Magento/Newsletter/Test/Unit/Block/Adminhtml/Template/Grid/Renderer/SenderTest.php
 app/code/Magento/Newsletter/Test/Unit/Block/Adminhtml/Queue/PreviewTest.php
 app/code/Magento/Newsletter/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Newsletter/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Newsletter/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Newsletter/Test/Mftf/LICENSE.txt
 app/code/Magento/Newsletter/Test/Mftf/ActionGroup/AdminMarketingDeleteNewsletterTemplateActionGroup.xml
 app/code/Magento/Newsletter/Test/Mftf/ActionGroup/AssertAdminCreatedNewsletterTemplateInGridActionGroup.xml
@@ -24106,7 +24194,9 @@ app/code/Magento/Persistent/Test/Unit/Observer/PreventClearCheckoutSessionObserv
 app/code/Magento/Persistent/Test/Unit/Observer/SynchronizePersistentInfoObserverTest.php
 app/code/Magento/Persistent/Test/Unit/Block/Header/AdditionalTest.php
 app/code/Magento/Persistent/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Persistent/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Persistent/Test/Mftf/Metadata/PersistentConfigMeta.xml
+app/code/Magento/Persistent/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Persistent/Test/Mftf/LICENSE.txt
 app/code/Magento/Persistent/Test/Mftf/ActionGroup/CustomerLoginOnStorefrontWithRememberMeCheckedActionGroup.xml
 app/code/Magento/Persistent/Test/Mftf/ActionGroup/CustomerLoginOnStorefrontWithRememberMeUnCheckedActionGroup.xml
@@ -24418,7 +24508,9 @@ app/code/Magento/Payment/Test/Unit/Block/Transparent/FormTest.php
 app/code/Magento/Payment/Test/Unit/Block/Transparent/FormTesting.php
 app/code/Magento/Payment/Test/Unit/Block/InfoTest.php
 app/code/Magento/Payment/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Payment/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Payment/Test/Mftf/Metadata/PaymentMethodMeta.xml
+app/code/Magento/Payment/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Payment/Test/Mftf/LICENSE.txt
 app/code/Magento/Payment/Test/Mftf/ActionGroup/ApplyCouponOnPaymentPageActionGroup.xml
 app/code/Magento/Payment/Test/Mftf/Data/PaymentMethodData.xml
@@ -24568,6 +24660,8 @@ app/code/Magento/Indexer/Test/Unit/Block/Backend/Grid/Column/Renderer/ScheduledT
 app/code/Magento/Indexer/Test/Unit/Block/Backend/Grid/Column/Renderer/UpdatedTest.php
 app/code/Magento/Indexer/Test/Unit/Block/Backend/Grid/ItemsUpdaterTest.php
 app/code/Magento/Indexer/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Indexer/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Indexer/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Indexer/Test/Mftf/LICENSE.txt
 app/code/Magento/Indexer/Test/Mftf/ActionGroup/AdminOpenIndexManagementPageActionGroup.xml
 app/code/Magento/Indexer/Test/Mftf/ActionGroup/AdminReindexAndFlushCacheActionGroup.xml
@@ -24789,6 +24883,8 @@ app/code/Magento/ImportExport/Test/Unit/Block/Adminhtml/Import/Edit/FormTest.php
 app/code/Magento/ImportExport/Test/Unit/Block/Adminhtml/Export/FilterTest.php
 app/code/Magento/ImportExport/Test/Unit/Block/Adminhtml/Grid/Column/Renderer/DownloadTest.php
 app/code/Magento/ImportExport/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/ImportExport/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/ImportExport/Test/Mftf/test-dependency-allowlist
 app/code/Magento/ImportExport/Test/Mftf/LICENSE.txt
 app/code/Magento/ImportExport/Test/Mftf/ActionGroup/AdminExportAttributeGridFillColumnFilterFieldsAndApplyActionGroup.xml
 app/code/Magento/ImportExport/Test/Mftf/ActionGroup/AdminImportProductsWithCustomImagesDirectoryActionGroup.xml
@@ -25300,6 +25396,8 @@ app/code/Magento/Integration/Test/Unit/Block/Adminhtml/Widget/Grid/Column/Render
 app/code/Magento/Integration/Test/Unit/Block/Adminhtml/Integration/Edit/Tab/WebapiTest.php
 app/code/Magento/Integration/Test/Unit/Block/Adminhtml/Integration/Edit/Tab/InfoTest.php
 app/code/Magento/Integration/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Integration/Test/Mftf/test-dependency-errors-detailed
+app/code/Magento/Integration/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Integration/Test/Mftf/LICENSE.txt
 app/code/Magento/Integration/Test/Mftf/ActionGroup/AdminSubmitIntegrationFormActionGroup.xml
 app/code/Magento/Integration/Test/Mftf/ActionGroup/AdminCreatesNewIntegrationActionGroup.xml
@@ -25915,10 +26013,12 @@ app/code/Magento/Downloadable/Test/Unit/Block/Adminhtml/Catalog/Product/Edit/Tab
 app/code/Magento/Downloadable/Test/Unit/Block/Adminhtml/Catalog/Product/Edit/Tab/Downloadable/SamplesTest.php
 app/code/Magento/Downloadable/Test/Unit/Block/Catalog/Product/LinksTest.php
 app/code/Magento/Downloadable/Test/Mftf/LICENSE_AFL.txt
+app/code/Magento/Downloadable/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/Downloadable/Test/Mftf/Metadata/SampleFileContentMeta.xml
 app/code/Magento/Downloadable/Test/Mftf/Metadata/DownloadableLinkSampleMeta.xml
 app/code/Magento/Downloadable/Test/Mftf/Metadata/LinkFileContentMeta.xml
 app/code/Magento/Downloadable/Test/Mftf/Metadata/DownloadableLinkMeta.xml
+app/code/Magento/Downloadable/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Downloadable/Test/Mftf/LICENSE.txt
 app/code/Magento/Downloadable/Test/Mftf/ActionGroup/AddDownloadableSampleUrlActionGroup.xml
 app/code/Magento/Downloadable/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml

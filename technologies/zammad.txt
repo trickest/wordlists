@@ -63,7 +63,6 @@ Gemfile
 .gitlab/ci/browser.yml
 .gitlab/ci/review-app.yml
 .gitlab/ci/browser/minitest_chrome.yml
-.gitlab/ci/browser/capybara_mariadb.yml
 .gitlab/ci/browser/capybara_chrome.yml
 .gitlab/ci/browser/minitest_firefox.yml
 .gitlab/ci/browser/capybara_integration.yml
@@ -2963,6 +2962,7 @@ app/frontend/shared/utils/formatter.ts
 app/frontend/shared/utils/getFocusableElements.ts
 app/frontend/shared/utils/wordFilter.ts
 app/frontend/shared/utils/events.ts
+app/frontend/shared/utils/constants.ts
 app/frontend/shared/utils/htmlCleanup.ts
 app/frontend/shared/utils/browser.ts
 app/frontend/shared/utils/markup.ts
@@ -3789,6 +3789,7 @@ app/models/taskbar.rb
 app/views/mobile/index.html.erb
 app/views/init/index.html.erb
 app/views/messaging/README.i18n.md
+app/views/messaging/ticket_update/el.md.erb
 app/views/messaging/ticket_update/tr.md.erb
 app/views/messaging/ticket_update/en.md.erb
 app/views/messaging/ticket_update/pt.md.erb
@@ -3831,6 +3832,7 @@ app/views/messaging/ticket_info/cs.md.erb
 app/views/messaging/ticket_info/nl.md.erb
 app/views/messaging/ticket_info/pl.md.erb
 app/views/messaging/application.md.erb
+app/views/messaging/ticket_reminder_reached/el.md.erb
 app/views/messaging/ticket_reminder_reached/tr.md.erb
 app/views/messaging/ticket_reminder_reached/en.md.erb
 app/views/messaging/ticket_reminder_reached/pt.md.erb
@@ -3853,6 +3855,7 @@ app/views/messaging/ticket_reminder_reached/cs.md.erb
 app/views/messaging/ticket_reminder_reached/nl.md.erb
 app/views/messaging/ticket_reminder_reached/pl.md.erb
 app/views/messaging/ticket_reminder_reached/hr.md.erb
+app/views/messaging/ticket_escalation_warning/el.md.erb
 app/views/messaging/ticket_escalation_warning/tr.md.erb
 app/views/messaging/ticket_escalation_warning/en.md.erb
 app/views/messaging/ticket_escalation_warning/pt.md.erb
@@ -3957,6 +3960,7 @@ app/views/mailer/user_device_new_location/pl.html.erb
 app/views/mailer/user_device_new_location/fr.html.erb
 app/views/mailer/user_device_new_location/pt.html.erb
 app/views/mailer/user_device_new_location/es.html.erb
+app/views/mailer/user_device_new_location/el.html.erb
 app/views/mailer/user_device_new_location/pt-br.html.erb
 app/views/mailer/user_device_new_location/en.html.erb
 app/views/mailer/user_device_new_location/hr.html.erb
@@ -4103,6 +4107,7 @@ app/views/mailer/user_auth_provider/pl.html.erb
 app/views/mailer/user_auth_provider/fr.html.erb
 app/views/mailer/user_auth_provider/pt.html.erb
 app/views/mailer/user_auth_provider/es.html.erb
+app/views/mailer/user_auth_provider/el.html.erb
 app/views/mailer/user_auth_provider/pt-br.html.erb
 app/views/mailer/user_auth_provider/en.html.erb
 app/views/mailer/user_auth_provider/de.html.erb
