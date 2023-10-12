@@ -123,6 +123,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 &signmein*
 &sitrackingid=
 &solrsort
+&solved=
 &sort
 &sort*&page=
 &sort=
@@ -1318,6 +1319,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /RedesignBucket
 /Results.aspx
 /Results?
+/Search/
 /SelectLocale?fromPage=
 /StatisticheProxy/proxy.jsp?action=mostVisited&domain=RaiTv
 /StatisticheProxy/tagCloudVisualizza.jsp?tagName=
@@ -1448,6 +1450,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /b?ie=UTF8&node=1619732031
 /badge
 /badges
+/base-en/
 /base/logout
 /bbw
 /beaconBase$
@@ -1647,6 +1650,14 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /document/view_more
 /document/views
 /download
+/download/Browse.aspx?
+/download/browse.aspx?
+/download/confirmation.aspx?
+/download/info.aspx?
+/download/registration-suggested.aspx?
+/download/results.aspx?
+/download/thankyou.aspx
+/download/thankyou.aspx?
 /download?
 /downloadassets
 /downloadstats
@@ -1852,6 +1863,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /landing
 /lang
 /launch2005/
+/layout/
 /layoutvorlagen
 /lazy.js
 /leads/*/jsplayer_show_lead_form.html
@@ -1936,6 +1948,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /manage
 /marketing
 /media/oembed
+/mediaapi/
 /mediaviewer/*/tr
 /meetup_api
 /meetup_api$
@@ -1965,6 +1978,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /mtlibraryrss/
 /multistore
 /munich/index_html
+/music/*/Search/
+/music/*/search/
 /music/cart
 /music/orders
 /music/track-
@@ -1989,6 +2004,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /newest/*atom
 /newest/*rss
 /newest/*xml
+/newsearch/
 /newssearch
 /no-internet-heading-assigned
 /no-internet-heading-assisted
@@ -2184,6 +2200,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /searchsuggest
 /searchsuggest
 /secure/
+/security/search-results.aspx?
 /select*?
 /select-cadeau-sparen/?
 /selectlocale-dmc?fromPage=
@@ -2276,12 +2293,19 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /stopartnertest/
 /store
 /store/
+/store/*/layout/
+/store/*/search/
 /store/account
 /store/admin
+/store/buynow?
+/store/cart
 /store/cart
 /store/carts
 /store/checkout
 /store/checkouts
+/store/d/groove-music-pass/cfq7ttc0k5dq/0001
+/store/locations/store-locations-sitemap.xml
+/store/music/groove-music-pass/*
 /store/orders
 /story_pins
 /structures
@@ -2345,6 +2369,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /unanswered
 /undefined
 /undefinedc_fill,w_360,ar_16:9,f_auto,q_auto,g_auto/undefined
+/unsubscribe/
 /update$
 /updatecart
 /upload/analyse
@@ -2402,6 +2427,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /vsarticleshow/*
 /w
 /w--
+/wal/
 /watch
 /watch-fragments
 /watchers
@@ -2448,6 +2474,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 0
 ;preview=
 =$
+=imgmanager
 ?
 ?
 ?$
@@ -2843,6 +2870,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?image=
 ?industry=agency
 ?inpageEditorUI=
+?intc=
 ?invite=
 ?isPreview=
 ?it
@@ -3155,6 +3183,7 @@ AccountAccess
 AccountDisavow?
 AccountStatus
 Activate
+ActivityUID=
 AddThis.com
 AddToList
 AddToRegistry
@@ -4187,6 +4216,8 @@ GLOBPICS
 Generic/Generic/SendPrint/
 GenericRegistryPortalView
 Genieo
+Germany/kleinunternehmen/euga/detail.mspx?
+Germany/kleinunternehmen/euga/results.mspx?
 GiftRegistrySearchViewCmd
 Gigabot
 GoogleInternetAuthority
@@ -4202,6 +4233,7 @@ Help
 HelpContent
 Heritrix
 HpImageArchive.aspx
+HpOptOut=true$
 HubStyle/static-2.309
 HubStyle/static-2.313
 HubStyle/static-2.315
@@ -4280,6 +4312,7 @@ InternalError.html
 IstellaBot
 JP/support/public/mt/tac/100/1002347/techtip_conventions.shtml
 Jai-Mrug*
+Japan/DirectX/default.asp?
 JikeSpider
 Jyxobot
 Kimengi
@@ -4637,6 +4670,7 @@ Sublayouts
 Support
 Systems
 TC/spfs/asia
+TOCLinksForCrawlers*
 TargetListPortalView
 TargetStoreLocatorCmd
 Taxonomy/CommonTree
@@ -5124,8 +5158,40 @@ action/showTopic
 action/showXml
 action/showfeed
 action/sso
+action=accessorysearch&
+action=accessorysearch&page=2$
+action=accessorysearch&page=3$
+action=accessorysearch&page=4$
+action=accessorysearch&page=5$
+action=accessorysearch&page=6$
+action=accessorysearch&page=7$
+action=accessorysearch&page=8$
+action=accessorysearch&product=*$
+action=accessorysearch&product=*&*
+action=catalogsearch&
+action=catalogsearch&catalog_mode=grid&page=2$
+action=catalogsearch&catalog_mode=grid&page=3$
+action=catalogsearch&catalog_mode=grid&page=4$
+action=catalogsearch&catalog_mode=grid&page=5$
+action=catalogsearch&catalog_mode=grid&page=6$
+action=catalogsearch&catalog_mode=grid&page=7$
+action=catalogsearch&catalog_mode=grid&page=8$
+action=catalogsearch&catalog_mode=list&page=2$
+action=catalogsearch&catalog_mode=list&page=3$
+action=catalogsearch&catalog_mode=list&page=4$
+action=catalogsearch&catalog_mode=list&page=5$
+action=catalogsearch&catalog_mode=list&page=6$
+action=catalogsearch&catalog_mode=list&page=7$
+action=catalogsearch&catalog_mode=list&page=8$
 action=delete
 action=history
+action=overlay&
+action=productLinkAction&
+action=productSupportSearch
+action=productcompareaction&
+action=quickSearch&
+action=siteSearch
+action=writeReview
 action?
 actions
 actions/news/rss
@@ -5205,7 +5271,6 @@ adresa-segmentator
 ads
 ads$
 ads-beacon.js
-ads.txt
 ads.txt
 ads/gpa/vidgen
 ads/hotels/partners
@@ -6243,7 +6308,6 @@ backgrounds
 backstage/help/search-results.html
 badges/profile/create
 bagon
-baidu
 ban-me-i-am-a-robot
 bandito
 banmyipforever.cgi
@@ -6576,6 +6640,7 @@ bkshp?*q=
 bl.uk_lddc_bot
 black-friday/0/best-amazon-black-friday-deals-2017-us
 black-friday/0/best-amazon-black-friday-weekend-deals-2017-us
+blacklisted*
 blank.html
 blast/BlastAlign.cgi
 blast/bl2seq/wblast2.cgi
@@ -7504,6 +7569,7 @@ campaigns/logout.html
 campaigns/thankyou.html
 campaignshowcase/
 campaigntrailnotused
+canada/Library/mnp/2/aspx/
 cancel
 cancel-membership
 candidates
@@ -7610,6 +7676,7 @@ capacity4dev/xmlrpc.php
 captcha
 captchas
 car-search-sitemap
+card
 card_management.php
 careers
 careers/Phoenix-Hiring-Event/
@@ -7866,6 +7933,7 @@ chapter/10.1007/978-94-6209-446-8_8
 chapters.html
 chapters/local-activities
 chapters/students/excellence-awards/
+charities
 charities/beta/account/login
 charity/search
 chart/*/async
@@ -8229,6 +8297,10 @@ common/survey.aspx
 common_assets/static-2.197
 common_assets/static-2.198
 communities
+communities/bin.aspx?
+communities/blogs/PortalResults.mspx?
+communities/eventdetails.mspx?
+communities/rss.aspx*
 communities/sitemap
 community
 community
@@ -8588,7 +8660,6 @@ cp/api/logger
 cp/api/wpa
 cpds2
 cpresources
-cpro
 cpropub/univercd
 cpspa
 cr
@@ -8853,6 +8924,7 @@ de-at/
 de-ch/
 de-de.www.cloudflare.com
 de-de/
+de-de/corporate/rechtliche-hinweise/impressum_de.aspx
 de-de/feedback
 de-de/lp
 de-de/search
@@ -9054,6 +9126,7 @@ deals/merchant
 deals/popular
 debate
 debats/
+debitcard
 debug
 deck
 deck-maker
@@ -9832,6 +9905,7 @@ en-us/favourites.html
 en-us/home.html?location=home
 en-us/quick-help/*
 en-us/tracking.html?action=track
+en-us/windows/si/matrix.html
 en-usbrary
 en-xa
 en-xa/*http://upload.wikimedia.org/robots.txt
@@ -10436,6 +10510,7 @@ fcgi-
 fckeditor
 fd/
 fdbk
+fe=true
 feature/sf-test
 feature_nine_browse-bin=
 feature_seven_browse-bin=
@@ -10478,6 +10553,7 @@ feeds.thetimes.co.uk/puzzles
 feeds.thetimes.co.uk/timescrossword
 feeds/
 feeds/*
+feeds/TechNet/fr-fr/screenshot/screenshot%20surface.jpg
 feeds/rss
 feeds/user_rss
 feeds/videos.xml
@@ -10936,6 +11012,9 @@ fragment.*.html
 fragment.*.json
 fragment.html
 fragment.json
+france/formation/centres/planning.asp?
+france/ie/default.asp?
+france/mnp_utility.mspx?
 franchise/
 frating=
 free
@@ -11167,11 +11246,14 @@ general
 general.
 general/dbapps/404
 genre
+genuine/
 geo/download
 geo/tools
 geocoder
 geoip.php
 geooverride
+germany/library/images/mnp/
+germany/video/de/de/related*
 get
 get$
 get-author-review
@@ -11196,6 +11278,8 @@ getthebetas/
 getting-started
 getting-started/functional-groups/
 getting-started/functional-groups/*
+gettingstarted
+getvenmo
 gfe
 gfe_rd=
 gfx/stock
@@ -11638,6 +11722,7 @@ hilfe/fundingdetail.html
 hilfe/handbuch/abschluss.html
 hilfe/handbuch/marktplatz.html
 hilfe/live/academy/pitch.html
+hilfe/live/newcomer.html
 hilfe/live/officehour/officehour-link.html
 hilfe/presse/pressemitteilungen.html
 hilfe/presse/pressespiegel.html
@@ -11808,7 +11893,6 @@ homefeed
 homepage
 homepage-flash-testing.jsp
 homepage-video-test
-homepage/
 homepage/2013
 honing.html
 hooks
@@ -11847,6 +11931,7 @@ hp/focus-retrocompatibile$
 hp/video/api
 hp/video/mystuff
 hp/video/profiles
+hpc/*/supported-applications.aspx?
 hpm
 hpmob
 hr
@@ -12171,6 +12256,7 @@ ie/guest-pass
 ie/help/sitemap
 ie/help/sitemap.php
 ie/herramientas/generador-de-logos/onboarding
+ie/ie40/
 ie/invites/buy
 ie/landing
 ie/learn/identity/*login
@@ -12353,6 +12439,7 @@ images/viewconfig$
 images?
 imagesrv/pdf/DIR_TSO_2531
 imagine/
+imaginecup/*
 imesync
 img
 img/placeholder.gif
@@ -12547,7 +12634,6 @@ index.php/ko/node/
 index.php/magazine/get_comment
 index.php/media/oembed
 index.php/members/profile
-index.php/node
 index.php/node/add
 index.php/node/add/
 index.php/ru/node/
@@ -12589,6 +12675,7 @@ info
 info/agb/anb-2018.html
 info/agb/crowdinvesting.html
 info/agb/starter-2018.html
+info/customerror.htm*
 info/jobs/Development-Operations-Engineer.html
 info/jobs/Kooperations-Manager.html
 info/jobs/Social-Media-Online-Kommunikation.html
@@ -12612,6 +12699,7 @@ info/jobs/support.html
 info/jobs/texterin-uxwriterin.html
 info/kontaktalt.html
 info/nachhaltigkeitsziele.html
+info/smart404.asp*
 info/startnext/corporate-identity.html
 info/startnextupdate.html
 info/tech-feedback
@@ -12682,6 +12770,7 @@ intl/node/add
 intl/search
 intl/user
 intl/user$
+intlkb/
 intro
 intro.naver
 intro.nhn
@@ -13013,6 +13102,11 @@ ja/user/*/shoutbox?
 ja/users
 ja_jp/templates/M
 jajp/
+japan/directx/default.asp?
+japan/enable/textview.asp?
+japan/products/library/search.asp?
+japan/showcase/print/default.aspx?
+japan/terminology/query.asp?
 jasmine-runner/static-1.14
 jasmine-runner/static-1.15
 jasmine-runner/static-1.17
@@ -13645,7 +13739,6 @@ limit=
 limit_hits
 limited-release
 link
-link?
 link_to
 linked
 linkedin
@@ -13914,7 +14007,9 @@ ma-en/us-en/
 ma/corporate/contact
 ma/index.html
 ma/news
+mac/help.mspx?
 macros
+mactopia/help.mspx?
 maestro
 maestro/api
 magazine
@@ -14511,6 +14606,7 @@ mn/kb/*/discuss
 mn/search
 mn/user
 mn/users
+mnp_utility.mspx?
 mnt/
 mob/tracking
 mobile
@@ -14680,6 +14776,7 @@ music/*/+shoutbox
 music/*/+shoutbox?
 music/*/+wiki/shoutbox
 music/*/+wiki/shoutbox?
+music/*/wal/
 music/+noredirect
 music/album
 music/artist
@@ -15888,6 +15985,7 @@ patents/related
 patents?
 path,
 patronNext
+pay
 pay/images/merchant_logos
 pay/images/program_logos
 payapp
@@ -16282,7 +16380,7 @@ pmc/publisherportal/download
 pmc/publisherportal/journalmanager
 pmc/tocrender.fcgi
 pmc/utilities
-pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEygwEKHgocV2FzIHNpbmQgUm9ib3RzIHR4dCBEYXRlaWVuPwobChlXbyBmaW5kZXQgbWFuIFJvYm90cyB0eHQ_CkEKP1dhcyBiZWRldXRldCBpbmRleGllcnQgT2J3b2hsIGR1cmNoIFJvYm90cyB0eHQtRGF0ZWkgYmxvY2tpZXJ0PxDkAg\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22kowa1aWvHaAV7RjGi3zJvdeOvtg\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
+pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22cdobsel\x22:false},\x22csi\x22:{},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mb4ZUb\x22:{},\x22pHXghd\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAEygwEKHgocV2FzIHNpbmQgUm9ib3RzIHR4dCBEYXRlaWVuPwobChlXbyBmaW5kZXQgbWFuIFJvYm90cyB0eHQ_CkEKP1dhcyBiZWRldXRldCBpbmRleGllcnQgT2J3b2hsIGR1cmNoIFJvYm90cyB0eHQtRGF0ZWkgYmxvY2tpZXJ0PxDkAg\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x221X7ly-H8qFZ-2rPsTM7zYk8OMiE\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22\\u00dcberpr\\u00fcfe
 pmcomment/
 pmm-templates
 pmo/contact/en/staff
@@ -17304,6 +17402,7 @@ remove-favorite
 remove_email/t2_
 renders
 renewal
+rep=hc
 replace
 reply?
 repo/create
@@ -17526,6 +17625,7 @@ ru$
 ru-*/
 ru-ru.www.cloudflare.com
 ru-ru/
+ru-ru/events/platforma/materials/default.aspx?speaker*
 ru/
 ru/*search
 ru/advanced-search/x
@@ -17580,6 +17680,7 @@ ru_ru/shablony/M
 rubric2sport
 run
 rundowns/segment.php?
+rus/licensing/Unilateral.aspx/*
 rvh
 rw-reg/http://realmenrealstyle.com/robots.txt
 rw/WashingtonPost/Content/Epaper
@@ -17608,7 +17709,6 @@ s2/search/social
 s2/sitemaps
 s2/static
 s3
-s?
 s?
 s?*rh=n%3A1380045031
 sa
@@ -18233,6 +18333,7 @@ semantic-homepage
 seminar/
 semp
 send-email
+send-receive
 send/global
 sendHeaderEarly
 send_to_friend
@@ -18455,7 +18556,6 @@ sheet/help/search-results.html
 shelf/user_shelves
 shenghuo
 shenghuo/search?
-shifen/
 shihui
 shihui?
 ship
@@ -19148,6 +19248,8 @@ sp/2for1
 sp/3for2
 sp=
 sp_url=
+spain/empresas/
+spain/medianaempresa/
 spanish-index-date-search?*
 spanish-index-search?*
 spanish/thewto_s/minist_s/mc10_s/coordinator_guide_s.pdf
@@ -19665,6 +19767,7 @@ svc_rma
 svc_route/route?
 svc_route/sitemap
 svc_route/sitemap.xml
+svc_route/sitemap_v2
 svc_rss
 svc_session
 svc_session_migration
@@ -19881,6 +19984,7 @@ teachers/edcar
 teachers/innovators/toolkit
 teachers/search/resources/?q=
 tealeaf
+team
 teamplain/
 teams
 techbiz/media/news/2001/09/46556
@@ -20646,7 +20750,6 @@ uk/users
 uk/ventureone
 uk/wdc
 uk/your
-ulink?
 ulk/i
 ulk/sch
 ulk/usr
@@ -20664,7 +20767,6 @@ undefined$
 understanding-melanoma
 unfiltered?
 unfinished.php
-unicef-component-mosaichttp://unpkg.com/robots.txt
 unicorn/check
 unijobs/*/emailjob
 unijobs/*/jbequicksignup
@@ -21439,6 +21541,7 @@ w
 w.cfm
 w/api.php?action=mobileview&
 w/load.php?
+w/signup
 w/users/user_hints
 waicent/consultation
 waicent/faoinfo/agricult/agl/agll/prosoil
@@ -22312,6 +22415,13 @@ wildfox-ceo-denies-pressuring-teen-into-sex-claims-it-1258825023
 win9x/
 wincontacts/
 windows/
+windows/404.aspx?*
+windows/campaign/features-built-in-apps.aspx
+windows/campaign/meet-apps.aspx
+windows/campaign/meet-start.aspx
+windows/compatibility/windows-7/
+windows/compatibility/windows-7/*
+windows/compatibility/windows-vista/
 windows/resources/whitepapers/
 windows/server2003/access/
 windows2000/
