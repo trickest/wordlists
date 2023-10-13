@@ -66,6 +66,7 @@ app/migrations/Version20220722074516.php
 app/migrations/Version20230621074925.php
 app/migrations/Version20230321133733.php
 app/migrations/Version20230522141144.php
+app/migrations/Version20230929183000.php
 app/migrations/Version20221014061125.php
 app/migrations/Version020230615115326.php
 app/migrations/Version20221010121758.php
@@ -2388,9 +2389,9 @@ app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/tmp/.gitkeep
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/translations/.gitkeep
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/app/bundles/.gitkeep
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/app/config/paths.php
-app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/app/config/local.php
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/app/config/paths_helper.php
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/plugins/.gitkeep
+app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/config/local.php
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/cache/.gitkeep
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/themes/.gitkeep
 app/bundles/CoreBundle/Tests/Unit/Helper/resource/paths/media/images/.gitkeep
@@ -2436,7 +2437,7 @@ app/bundles/CoreBundle/Tests/Unit/Factory/ModelFactoryTest.php
 app/bundles/CoreBundle/Tests/Unit/Factory/TransifexFactoryTest.php
 app/bundles/CoreBundle/Tests/Unit/Service/BulkNotificationTest.php
 app/bundles/CoreBundle/Tests/Unit/RememberMeTest.php
-app/bundles/CoreBundle/Tests/Unit/Loader/TestRoot/config/paths.php
+app/bundles/CoreBundle/Tests/Unit/Loader/TestRoot/app/config/paths.php
 app/bundles/CoreBundle/Tests/Unit/Loader/TestRoot/config/local.php
 app/bundles/CoreBundle/Tests/Unit/Loader/EnvVars/SiteUrlEnvVarsTest.php
 app/bundles/CoreBundle/Tests/Unit/Loader/EnvVars/MigrationEnvVarsTest.php
@@ -4570,6 +4571,7 @@ upgrade.php
 phpstan.neon
 robots.txt
 .env.test
+config/.gitkeep
 SECURITY.md
 composer.json
 LICENSE.txt

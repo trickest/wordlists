@@ -1105,9 +1105,6 @@ packages/core/admin/admin/src/hooks/useSettingsForm/tests/index.test.js
 packages/core/admin/admin/src/hooks/useSettingsForm/tests/reducer.test.js
 packages/core/admin/admin/src/hooks/useSettingsForm/index.js
 packages/core/admin/admin/src/hooks/useSettingsForm/init.js
-packages/core/admin/admin/src/hooks/useAdminRolePermissions/__mocks__/index.js
-packages/core/admin/admin/src/hooks/useAdminRolePermissions/tests/index.test.js
-packages/core/admin/admin/src/hooks/useAdminRolePermissions/index.js
 packages/core/admin/admin/src/hooks/useThemeToggle.ts
 packages/core/admin/admin/src/hooks/useConfiguration.ts
 packages/core/admin/admin/src/hooks/useContentTypes/__mocks__/index.js
@@ -1320,8 +1317,11 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ListPage/reducer.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ListPage/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ListPage/tests/reducer.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ListPage/index.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/hooks/useAdminRolePermissions.ts
+packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/hooks/__mocks__/useAdminRolePermissions.ts
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/hooks/useAdminRolePermissionLayout/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/hooks/useAdminRolePermissionLayout/index.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/hooks/tests/useAdminRolePermissions.test.ts
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ProtectedEditPage/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/ProtectedListPage/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApiTokens/ProtectedEditView/index.js
@@ -2190,6 +2190,7 @@ packages/core/admin/package.json
 packages/core/admin/webpack.alias.js
 packages/core/admin/index.html
 packages/core/admin/.browserslistrc
+packages/core/admin/shared/permissions.ts
 packages/core/admin/shared/entities.ts
 packages/core/admin/index.js
 packages/core/admin/jest.config.js
@@ -3373,6 +3374,7 @@ packages/core/database/README.md
 packages/core/database/.eslintignore
 packages/core/data-transfer/tsconfig.build.json
 packages/core/data-transfer/tsconfig.json
+packages/core/data-transfer/packup.config.ts
 packages/core/data-transfer/LICENSE
 packages/core/data-transfer/.npmignore
 packages/core/data-transfer/.eslintrc.js
@@ -3866,7 +3868,9 @@ packages/admin-test-utils/src/fixtures/permissions/documentation-permissions.ts
 packages/admin-test-utils/src/fixtures/permissions/content-manager-permissions.ts
 packages/admin-test-utils/README.md
 packages/admin-test-utils/.eslintignore
+packages/cli/create-strapi-app/tsconfig.build.json
 packages/cli/create-strapi-app/tsconfig.json
+packages/cli/create-strapi-app/packup.config.ts
 packages/cli/create-strapi-app/LICENSE
 packages/cli/create-strapi-app/.eslintrc.js
 packages/cli/create-strapi-app/tsconfig.eslint.json
@@ -3878,7 +3882,9 @@ packages/cli/create-strapi-app/src/utils/prompt-user.ts
 packages/cli/create-strapi-app/bin/index.js
 packages/cli/create-strapi-app/README.md
 packages/cli/create-strapi-app/.eslintignore
+packages/cli/create-strapi-starter/tsconfig.build.json
 packages/cli/create-strapi-starter/tsconfig.json
+packages/cli/create-strapi-starter/packup.config.ts
 packages/cli/create-strapi-starter/LICENSE
 packages/cli/create-strapi-starter/.eslintrc.js
 packages/cli/create-strapi-starter/tsconfig.eslint.json
