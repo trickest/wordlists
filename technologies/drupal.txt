@@ -7714,6 +7714,7 @@ core/modules/system/tests/src/Functional/Update/UpdateDescriptionConfigurationPo
 core/modules/system/tests/src/Functional/Update/README.txt
 core/modules/system/tests/src/Functional/Update/PasswordCompatibilityUpdateTest.php
 core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
+core/modules/system/tests/src/Functional/Update/SqlContentEntityStorageRevisionDataCleanupTest.php
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
 core/modules/system/tests/src/Functional/Update/BatchBidSerialUpdateTest.php
 core/modules/system/tests/src/Functional/ParamConverter/UpcastingTest.php
@@ -8895,7 +8896,6 @@ core/modules/system/src/Form/ClearCacheForm.php
 core/modules/system/src/DateFormatListBuilder.php
 core/modules/system/src/Tests/Routing/MockRouteProvider.php
 core/modules/system/src/Tests/Routing/MockAliasManager.php
-core/modules/system/src/Tests/Entity/Update/SqlContentEntityStorageRevisionDataCleanupTest.php
 core/modules/system/src/Routing/MenuLinksetRoutes.php
 core/modules/system/src/Routing/AssetRoutes.php
 core/modules/system/src/PathBasedBreadcrumbBuilder.php
@@ -9720,8 +9720,8 @@ core/modules/field/field.module
 core/modules/phpass/phpass.module
 core/modules/phpass/phpass.info.yml
 core/modules/phpass/phpass.services.yml
-core/modules/phpass/tests/src/Tests/PasswordVerifyTest.php
-core/modules/phpass/tests/src/Tests/LegacyPasswordHashingTest.php
+core/modules/phpass/tests/src/Unit/PasswordVerifyTest.php
+core/modules/phpass/tests/src/Unit/LegacyPasswordHashingTest.php
 core/modules/phpass/tests/src/Functional/GenericTest.php
 core/modules/phpass/src/Password/PhpassHashedPassword.php
 core/modules/tour/tour.libraries.yml

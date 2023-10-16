@@ -99,7 +99,10 @@ tests/Umbraco.Tests.Common/Testing/TestOptionAttributeBase.cs
 tests/Umbraco.Tests.Common/Testing/UmbracoTestOptions.cs
 tests/Umbraco.Tests.Common/Testing/TestHostingEnvironment.cs
 tests/Umbraco.Tests.Common/TestVariationContextAccessor.cs
+tests/Umbraco.Tests.Common/TestConstants.cs
 tests/Umbraco.Tests.Common/TestUmbracoContextAccessor.cs
+tests/Umbraco.Tests.Common/Attributes/LongRunning.cs
+tests/Umbraco.Tests.Common/Attributes/NonCritical.cs
 tests/Umbraco.Tests.Common/TestLastChanceFinder.cs
 tests/Umbraco.Tests.Common/TestHelperBase.cs
 tests/Umbraco.Tests.Common/Published/PublishedContentXmlAdapter.cs
@@ -289,6 +292,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/MediaPickerValueConverter
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/PropertyRendererTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/MarkdownEditorValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/MultiUrlPickerValueConverterTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/JsonValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/NestedContentValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/ImageCropperValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/DeliveryApiTests.cs
@@ -433,6 +437,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ColorListValidatorTes
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Published/PropertyCacheLevelTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Published/ConvertersTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Published/NestedContentTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Published/PropertyCacheVarianceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Published/ModelTypeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Web/Routing/PublishedRequestBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/XmlExtensionsTests.cs
@@ -583,6 +588,7 @@ tests/Umbraco.Tests.Integration/Implementations/TestLifetime.cs
 tests/Umbraco.Tests.Integration/Umbraco.Tests.Integration.csproj
 tests/Umbraco.Tests.Integration/TestData/Packages/Hello_1.0.0.package.xml
 tests/Umbraco.Tests.Integration/TestData/Packages/Document_Type_Picker_1.1.package.xml
+tests/Umbraco.Tests.Integration/CompatibilitySuppressions.xml
 tests/Umbraco.Tests.Integration/DependencyInjection/UmbracoBuilderExtensions.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageInstallationTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageDataInstallationTests.cs
@@ -678,7 +684,6 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/Dictio
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/TemplateOnly-Updated-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MemberServiceTests.cs
-tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServicePublishBranchTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/AdvancedMigrationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/Expressions/Create/Expressions/CreateTableExpressionTests.cs
@@ -725,6 +730,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/Events/EventAggregatorTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MetricsConsentServiceTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/SectionServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/TelemetryProviderTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Services/ContentServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Variants/ContentVariantAllowedActionTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/IO/FileSystemsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/IO/ShadowFileSystemTests.cs
@@ -828,12 +834,14 @@ src/Umbraco.Infrastructure/Extensions/ScopeExtensions.cs
 src/Umbraco.Infrastructure/Extensions/InstanceIdentifiableExtensions.cs
 src/Umbraco.Infrastructure/Extensions/InfrastuctureTypeLoaderExtensions.cs
 src/Umbraco.Infrastructure/Security/UmbracoIdentityUser.cs
+src/Umbraco.Infrastructure/Security/OpenIdDictApplicationManagerBase.cs
 src/Umbraco.Infrastructure/Security/IUserSessionStore.cs
 src/Umbraco.Infrastructure/Security/MemberRoleStore.cs
 src/Umbraco.Infrastructure/Security/IdentityMapDefinition.cs
 src/Umbraco.Infrastructure/Security/SignOutSuccessResult.cs
 src/Umbraco.Infrastructure/Security/UmbracoIdentityRole.cs
 src/Umbraco.Infrastructure/Security/DeleteTwoFactorLoginsOnMemberDeletedHandler.cs
+src/Umbraco.Infrastructure/Security/IMemberApplicationManager.cs
 src/Umbraco.Infrastructure/Security/MemberIdentityBuilder.cs
 src/Umbraco.Infrastructure/Security/UmbracoUserStore.cs
 src/Umbraco.Infrastructure/Security/DeleteExternalLoginsOnMemberDeletedHandler.cs
@@ -996,6 +1004,7 @@ src/Umbraco.Infrastructure/HostedServices/BackgroundTaskQueue.cs
 src/Umbraco.Infrastructure/HostedServices/KeepAlive.cs
 src/Umbraco.Infrastructure/HostedServices/LogScrubber.cs
 src/Umbraco.Infrastructure/HostedServices/RecurringHostedServiceBase.cs
+src/Umbraco.Infrastructure/HostedServices/OpenIddictCleanup.cs
 src/Umbraco.Infrastructure/Persistence/Factories/TemplateFactory.cs
 src/Umbraco.Infrastructure/Persistence/Factories/ExternalLoginFactory.cs
 src/Umbraco.Infrastructure/Persistence/Factories/UserFactory.cs
@@ -1740,6 +1749,7 @@ src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230622183638_InitialCreat
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230622183638_InitialCreate.Designer.cs
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230807123456_AddOpenIddict.Designer.cs
 src/Umbraco.Cms.Api.Common/Extensions/MethodInfoApiCommonExtensions.cs
+src/Umbraco.Cms.Api.Common/Security/Paths.cs
 src/Umbraco.Cms.Api.Common/Json/NamedSystemTextJsonOutputFormatter.cs
 src/Umbraco.Cms.Api.Common/Json/HttpContextJsonExtensions.cs
 src/Umbraco.Cms.Api.Common/Json/NamedSystemTextJsonInputFormatter.cs
@@ -1754,6 +1764,7 @@ src/Umbraco.Cms.Api.Common/OpenApi/OperationIdSelector.cs
 src/Umbraco.Cms.Api.Common/OpenApi/SchemaIdSelector.cs
 src/Umbraco.Cms.Api.Common/OpenApi/ISchemaIdSelector.cs
 src/Umbraco.Cms.Api.Common/DependencyInjection/MvcBuilderExtensions.cs
+src/Umbraco.Cms.Api.Common/DependencyInjection/UmbracoBuilderAuthExtensions.cs
 src/Umbraco.Cms.Api.Common/DependencyInjection/UmbracoBuilderApiExtensions.cs
 src/Umbraco.Cms.Api.Common/Builders/ProblemDetailsBuilder.cs
 src/Umbraco.Cms.Api.Common/Filters/JsonOptionsNameAttribute.cs
@@ -2086,6 +2097,7 @@ src/Umbraco.Core/DeliveryApi/IApiContentQueryService.cs
 src/Umbraco.Core/DeliveryApi/IApiMediaQueryService.cs
 src/Umbraco.Core/DeliveryApi/NoopRequestPreviewService.cs
 src/Umbraco.Core/DeliveryApi/ContentIndexHandlerCollectionBuilder.cs
+src/Umbraco.Core/DeliveryApi/IRequestMemberAccessService.cs
 src/Umbraco.Core/DeliveryApi/IApiRichTextElementParser.cs
 src/Umbraco.Core/DeliveryApi/IApiContentQueryProvider.cs
 src/Umbraco.Core/DeliveryApi/IApiContentBuilder.cs
@@ -2115,6 +2127,7 @@ src/Umbraco.Core/DeliveryApi/IContentIndexHandler.cs
 src/Umbraco.Core/DeliveryApi/IRequestCultureService.cs
 src/Umbraco.Core/DeliveryApi/IApiMediaUrlProvider.cs
 src/Umbraco.Core/DeliveryApi/IApiContentResponseBuilder.cs
+src/Umbraco.Core/DeliveryApi/NoopRequestMemberAccessService.cs
 src/Umbraco.Core/DeliveryApi/NoopOutputExpansionStrategy.cs
 src/Umbraco.Core/DeliveryApi/ApiContentBuilder.cs
 src/Umbraco.Core/DeliveryApi/IApiContentNameProvider.cs
@@ -2934,6 +2947,7 @@ src/Umbraco.Core/Models/Stylesheet.cs
 src/Umbraco.Core/Models/DeliveryApi/IApiMedia.cs
 src/Umbraco.Core/Models/DeliveryApi/ApiBlockGridArea.cs
 src/Umbraco.Core/Models/DeliveryApi/RichTextModel.cs
+src/Umbraco.Core/Models/DeliveryApi/ProtectedAccess.cs
 src/Umbraco.Core/Models/DeliveryApi/ApiContentResponse.cs
 src/Umbraco.Core/Models/DeliveryApi/ApiMedia.cs
 src/Umbraco.Core/Models/DeliveryApi/ApiElement.cs
@@ -3362,6 +3376,7 @@ src/Umbraco.Core/Persistence/Querying/StringPropertyMatchType.cs
 src/Umbraco.Core/Persistence/IQueryRepository.cs
 src/Umbraco.Core/Persistence/SqlExtensionsStatics.cs
 src/Umbraco.Core/Persistence/IRepository.cs
+src/Umbraco.Core/Constants-OAuthClaims.cs
 src/Umbraco.Core/IFireAndForgetRunner.cs
 src/Umbraco.Core/Semver/Semver.cs
 src/Umbraco.Core/CustomBooleanTypeConverter.cs
@@ -4032,6 +4047,7 @@ src/Umbraco.Core/Net/NullSessionIdResolver.cs
 src/Umbraco.Core/Net/ISessionIdResolver.cs
 src/Umbraco.Core/Net/IUserAgentProvider.cs
 src/Umbraco.Core/Net/IIpResolver.cs
+src/Umbraco.Core/Constants-OAuthClientIds.cs
 src/Umbraco.Core/Constants-ModelStateErrorKeys.cs
 src/Umbraco.Core/Constants-PropertyEditors.cs
 src/Umbraco.Core/Templates/HtmlLocalLinkParser.cs
@@ -4167,10 +4183,14 @@ src/Umbraco.Core/Deploy/ArtifactDependency.cs
 src/Umbraco.Core/Deploy/IServiceConnector2.cs
 src/Umbraco.Core/Constants-Audit.cs
 src/Umbraco.Core/HybridEventMessagesAccessor.cs
+src/Umbraco.Cms.Api.Delivery/Handlers/RevokeMemberAuthenticationTokensNotificationHandler.cs
+src/Umbraco.Cms.Api.Delivery/Handlers/InitializeMemberApplicationNotificationHandler.cs
+src/Umbraco.Cms.Api.Delivery/Security/MemberApplicationManager.cs
 src/Umbraco.Cms.Api.Delivery/Umbraco.Cms.Api.Delivery.csproj
 src/Umbraco.Cms.Api.Delivery/Json/DeliveryApiJsonTypeResolver.cs
 src/Umbraco.Cms.Api.Delivery/DependencyInjection/UmbracoBuilderExtensions.cs
 src/Umbraco.Cms.Api.Delivery/Controllers/MediaApiControllerBase.cs
+src/Umbraco.Cms.Api.Delivery/Controllers/Security/MemberController.cs
 src/Umbraco.Cms.Api.Delivery/Controllers/QueryMediaApiController.cs
 src/Umbraco.Cms.Api.Delivery/Controllers/ContentApiItemControllerBase.cs
 src/Umbraco.Cms.Api.Delivery/Controllers/ByIdsContentApiController.cs
@@ -4189,11 +4209,13 @@ src/Umbraco.Cms.Api.Delivery/Filters/DeliveryApiMediaAccessAttribute.cs
 src/Umbraco.Cms.Api.Delivery/Filters/DeliveryApiAccessAttribute.cs
 src/Umbraco.Cms.Api.Delivery/Filters/ValidateStartItemAttribute.cs
 src/Umbraco.Cms.Api.Delivery/Filters/SwaggerMediaDocumentationFilter.cs
+src/Umbraco.Cms.Api.Delivery/Filters/SwaggerFilterBase.cs
 src/Umbraco.Cms.Api.Delivery/Filters/SwaggerDocumentationFilter.cs
 src/Umbraco.Cms.Api.Delivery/Filters/SwaggerContentDocumentationFilter.cs
 src/Umbraco.Cms.Api.Delivery/Filters/SwaggerDocumentationFilterBase.cs
 src/Umbraco.Cms.Api.Delivery/Filters/LocalizeFromAcceptLanguageHeaderAttribute.cs
 src/Umbraco.Cms.Api.Delivery/Rendering/RequestContextOutputExpansionStrategy.cs
+src/Umbraco.Cms.Api.Delivery/Configuration/ConfigureUmbracoMemberAuthenticationDeliveryApiSwaggerGenOptions.cs
 src/Umbraco.Cms.Api.Delivery/Configuration/ConfigureUmbracoDeliveryApiSwaggerGenOptions.cs
 src/Umbraco.Cms.Api.Delivery/Configuration/DeliveryApiConfiguration.cs
 src/Umbraco.Cms.Api.Delivery/Routing/VersionedDeliveryApiRouteAttribute.cs
@@ -4207,6 +4229,7 @@ src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/SortOrderSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/LevelSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/UpdateDateSortIndexer.cs
 src/Umbraco.Cms.Api.Delivery/Indexing/Sorts/CreateDateSortIndexer.cs
+src/Umbraco.Cms.Api.Delivery/Services/RequestMemberAccessService.cs
 src/Umbraco.Cms.Api.Delivery/Services/ApiContentQueryService.cs
 src/Umbraco.Cms.Api.Delivery/Services/ApiAccessService.cs
 src/Umbraco.Cms.Api.Delivery/Services/RequestHeaderHandler.cs
@@ -6584,6 +6607,7 @@ src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230622184303_InitialCr
 src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230807654321_AddOpenIddict.cs
 src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230807654321_AddOpenIddict.Designer.cs
 src/Umbraco.Cms.Persistence.EFCore.SqlServer/Migrations/20230622184303_InitialCreate.cs
+src/Umbraco.Cms.Persistence.EFCore/Factories/UmbracoPooledDbContextFactory.cs
 src/Umbraco.Cms.Persistence.EFCore/Composition/UmbracoEFCoreComposer.cs
 src/Umbraco.Cms.Persistence.EFCore/Extensions/UmbracoEFCoreServiceCollectionExtensions.cs
 src/Umbraco.Cms.Persistence.EFCore/Extensions/BackOfficeAuthBuilderOpenIddictExtensions.cs
@@ -6868,6 +6892,7 @@ build/csharp-docs/umbracotemplate/partials/namespace.tmpl.partial
 build/csharp-docs/umbracotemplate/partials/footer.tmpl.partial
 build/csharp-docs/index.md
 build/azure-pipelines.yml
+build/nightly-build-trigger.yml
 .gitattributes
 Directory.Build.props
 tools/Umbraco.JsonSchema/Program.cs

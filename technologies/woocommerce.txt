@@ -59,6 +59,7 @@ packages/js/product-editor/changelog/add-37931
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
 packages/js/product-editor/changelog/fix-39544_description_styling
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
+packages/js/product-editor/changelog/dev-40597_display_notice_at_top_single_variation
 packages/js/product-editor/changelog/add-block-attributes-37728
 packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/update-40072_variation_visibility_icon
@@ -196,6 +197,7 @@ packages/js/product-editor/changelog/update-product_rest_config
 packages/js/product-editor/changelog/fix-notices-overlapping-footer-2
 packages/js/product-editor/changelog/update-37244-37245
 packages/js/product-editor/changelog/update-36719
+packages/js/product-editor/changelog/add-min-max-number-block
 packages/js/product-editor/changelog/add-39455
 packages/js/product-editor/changelog/rename-taxonomy-block
 packages/js/product-editor/changelog/add-use-prod-entity-prop
@@ -460,6 +462,8 @@ packages/js/product-editor/src/hooks/test/use-product-attributes.test.ts
 packages/js/product-editor/src/hooks/test/use-product-entity-prop.test.ts
 packages/js/product-editor/src/hooks/use-product-edits.ts
 packages/js/product-editor/src/hooks/use-confirm-unsaved-product-changes.ts
+packages/js/product-editor/src/hooks/use-notice/use-notice.ts
+packages/js/product-editor/src/hooks/use-notice/index.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/index.ts
 packages/js/product-editor/src/hooks/use-feedback-bar/use-feedback-bar.ts
 packages/js/product-editor/src/hooks/use-product-variations-helper.ts
@@ -556,10 +560,6 @@ packages/js/product-editor/src/blocks/product-fields/variation-items/index.ts
 packages/js/product-editor/src/blocks/product-fields/variation-items/variable-product-tour.tsx
 packages/js/product-editor/src/blocks/product-fields/variation-items/editor.scss
 packages/js/product-editor/src/blocks/product-fields/variation-items/types.ts
-packages/js/product-editor/src/blocks/product-fields/notice/edit.tsx
-packages/js/product-editor/src/blocks/product-fields/notice/block.json
-packages/js/product-editor/src/blocks/product-fields/notice/index.ts
-packages/js/product-editor/src/blocks/product-fields/notice/editor.scss
 packages/js/product-editor/src/blocks/product-fields/shipping-dimensions/edit.tsx
 packages/js/product-editor/src/blocks/product-fields/shipping-dimensions/block.json
 packages/js/product-editor/src/blocks/product-fields/shipping-dimensions/index.ts
@@ -609,6 +609,11 @@ packages/js/product-editor/src/blocks/product-fields/inventory-quantity/edit.tsx
 packages/js/product-editor/src/blocks/product-fields/inventory-quantity/block.json
 packages/js/product-editor/src/blocks/product-fields/inventory-quantity/index.ts
 packages/js/product-editor/src/blocks/product-fields/inventory-quantity/types.ts
+packages/js/product-editor/src/blocks/product-fields/notice-edit-single-variation/edit.tsx
+packages/js/product-editor/src/blocks/product-fields/notice-edit-single-variation/block.json
+packages/js/product-editor/src/blocks/product-fields/notice-edit-single-variation/index.ts
+packages/js/product-editor/src/blocks/product-fields/notice-edit-single-variation/editor.scss
+packages/js/product-editor/src/blocks/product-fields/notice-edit-single-variation/types.ts
 packages/js/product-editor/src/blocks/product-fields/tag/edit.tsx
 packages/js/product-editor/src/blocks/product-fields/tag/block.json
 packages/js/product-editor/src/blocks/product-fields/tag/index.ts
@@ -618,6 +623,10 @@ packages/js/product-editor/src/blocks/product-fields/regular-price/block.json
 packages/js/product-editor/src/blocks/product-fields/regular-price/index.ts
 packages/js/product-editor/src/blocks/product-fields/regular-price/editor.scss
 packages/js/product-editor/src/blocks/product-fields/regular-price/types.ts
+packages/js/product-editor/src/blocks/product-fields/notice-has-variations/edit.tsx
+packages/js/product-editor/src/blocks/product-fields/notice-has-variations/block.json
+packages/js/product-editor/src/blocks/product-fields/notice-has-variations/index.ts
+packages/js/product-editor/src/blocks/product-fields/notice-has-variations/editor.scss
 packages/js/product-editor/src/blocks/product-fields/catalog-visibility/edit.tsx
 packages/js/product-editor/src/blocks/product-fields/catalog-visibility/block.json
 packages/js/product-editor/src/blocks/product-fields/catalog-visibility/index.ts
@@ -737,6 +746,7 @@ packages/js/components/CHANGELOG.md
 packages/js/components/tsconfig.json
 packages/js/components/changelog/dev-upgrade-storybook-6-5-17
 packages/js/components/changelog/add-35142
+packages/js/components/changelog/add-phone-number-input-component
 packages/js/components/changelog/fix-category-escape-characters
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/fix-39544_description_styling
@@ -1032,6 +1042,19 @@ packages/js/components/src/abbreviated-card/test/index.js
 packages/js/components/src/abbreviated-card/test/__snapshots__/index.js.snap
 packages/js/components/src/abbreviated-card/index.js
 packages/js/components/src/abbreviated-card/README.md
+packages/js/components/src/phone-number-input/defaults.tsx
+packages/js/components/src/phone-number-input/style.scss
+packages/js/components/src/phone-number-input/stories/index.tsx
+packages/js/components/src/phone-number-input/tests/utils.test.ts
+packages/js/components/src/phone-number-input/tests/validation.test.ts
+packages/js/components/src/phone-number-input/tests/__snapshots__/index.test.tsx.snap
+packages/js/components/src/phone-number-input/tests/index.test.tsx
+packages/js/components/src/phone-number-input/index.tsx
+packages/js/components/src/phone-number-input/validation.ts
+packages/js/components/src/phone-number-input/utils.ts
+packages/js/components/src/phone-number-input/README.md
+packages/js/components/src/phone-number-input/data.ts
+packages/js/components/src/phone-number-input/types.ts
 packages/js/components/src/conditional-wrapper/index.ts
 packages/js/components/src/conditional-wrapper/conditional-wrapper.tsx
 packages/js/components/src/search-list-control/style.scss
@@ -3216,7 +3239,6 @@ plugins/woocommerce-admin/client/marketplace/components/header-account/header-ac
 plugins/woocommerce-admin/client/marketplace/components/icon-with-text/icon-with-text.scss
 plugins/woocommerce-admin/client/marketplace/components/icon-with-text/icon-with-text.tsx
 plugins/woocommerce-admin/client/marketplace/components/product-loader/product-loader.tsx
-plugins/woocommerce-admin/client/marketplace/components/product-loader/product-loader.scss
 plugins/woocommerce-admin/client/marketplace/components/likert-scale/likert-scale.scss
 plugins/woocommerce-admin/client/marketplace/components/likert-scale/likert-scale.tsx
 plugins/woocommerce-admin/client/marketplace/components/search/search.tsx
@@ -4573,15 +4595,16 @@ plugins/woocommerce/changelog/fix-40510
 plugins/woocommerce/changelog/add-35142
 plugins/woocommerce/changelog/add-call-wc-store-patterns-api
 plugins/woocommerce/changelog/update-40591_variation_switching_when_deleting
-plugins/woocommerce/changelog/issue-40712
 plugins/woocommerce/changelog/e2e-add-test-shopper-mini-cart
 plugins/woocommerce/changelog/fix-ai-generate-images-not-display
 plugins/woocommerce/changelog/feature-marketplace-themes
+plugins/woocommerce/changelog/fix-order-confirmation-page-styles
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/add-template-api-readmes
 plugins/woocommerce/changelog/fix-preload-ai-loader-image
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page_template
 plugins/woocommerce/changelog/update-k6-failing-tests-in-CI
+plugins/woocommerce/changelog/dev-40597_display_notice_at_top_single_variation
 plugins/woocommerce/changelog/fix-active-theme-has-mods-logic
 plugins/woocommerce/changelog/fix-core-editor-store-in-classic
 plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
@@ -4592,7 +4615,9 @@ plugins/woocommerce/changelog/fix-cys-ui-issues
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page
 plugins/woocommerce/changelog/fix-coupon-error-notice-text
 plugins/woocommerce/changelog/update-cys-intro-page
+plugins/woocommerce/changelog/fix-wccom-18034-modern-skeleton-loaders
 plugins/woocommerce/changelog/pr-40424
+plugins/woocommerce/changelog/e2e-temp-fix-for-daily-e2e
 plugins/woocommerce/changelog/add-40708
 plugins/woocommerce/changelog/fix-cys-design-with-ai-duplicate-color-palette-validation
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
@@ -4625,6 +4650,7 @@ plugins/woocommerce/changelog/fix-cys-ai-state-machine
 plugins/woocommerce/changelog/update-40426-remove-SMB-and-large-logic-cys
 plugins/woocommerce/changelog/e2e-fix-for-flaky-page-load
 plugins/woocommerce/changelog/doc-handbook-1.1
+plugins/woocommerce/changelog/follow-up-remove-obw-e2e
 plugins/woocommerce/changelog/e2e-add-shopper-tags-attributes
 plugins/woocommerce/changelog/fix-always-set-address-indexes
 plugins/woocommerce/changelog/update-action-scheduler-3.6.4
@@ -5601,7 +5627,6 @@ plugins/woocommerce/tests/e2e-pw/WSL_SETUP_INSTRUCTIONS.md
 plugins/woocommerce/tests/e2e-pw/utils/variable-products.js
 plugins/woocommerce/tests/e2e-pw/utils/plugin-utils.js
 plugins/woocommerce/tests/e2e-pw/utils/options.js
-plugins/woocommerce/tests/e2e-pw/utils/onboarding.js
 plugins/woocommerce/tests/e2e-pw/utils/index.js
 plugins/woocommerce/tests/e2e-pw/utils/tours.js
 plugins/woocommerce/tests/e2e-pw/utils/simple-products.js
@@ -7004,6 +7029,7 @@ pnpm-workspace.yaml
 SECURITY.md
 CODEOWNERS
 CODE_OF_CONDUCT.md
+bin/packages/js/components/phone-number-input/build-data.js
 bin/packages/js/extend-cart-checkout-block/.prettierrc.js.mustache
 bin/pre-push.sh
 .gitattributes
