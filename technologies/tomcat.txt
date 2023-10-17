@@ -474,13 +474,13 @@ test/webapp-4.0/WEB-INF/web.xml
 test/webapp-4.0/WEB-INF/tags20.tld
 test/webapp-4.0/el-as-literal.jsp
 test/webapp-4.0/tld-versions.jsp
-test/webapp-role-mapping/admin
+test/webapp-role-mapping/user.txt
 test/webapp-role-mapping/WEB-INF/classes/com/example/role-mapping.properties
 test/webapp-role-mapping/WEB-INF/classes/com/example/prefixed-role-mapping.properties
 test/webapp-role-mapping/WEB-INF/role-mapping.properties
 test/webapp-role-mapping/WEB-INF/prefixed-role-mapping.properties
-test/webapp-role-mapping/user
-test/webapp-role-mapping/unmapped
+test/webapp-role-mapping/admin.txt
+test/webapp-role-mapping/unmapped.txt
 test/webapp-servletsecurity-b/WEB-INF/web.xml
 test/webapp-servletsecurity-b/protected.jsp
 test/webapp-servletsecurity-b/unprotected.jsp
@@ -872,6 +872,7 @@ test/org/apache/catalina/filters/TestRemoteCIDRFilter.java
 test/org/apache/catalina/filters/TesterFilterConfigs.java
 test/org/apache/catalina/filters/TestRateLimitFilter.java
 test/org/apache/catalina/filters/TestRemoteIpFilter.java
+test/org/apache/catalina/manager/TestStatusTransformer.java
 test/org/apache/catalina/ant/TestDeployTask.java
 test/org/apache/catalina/users/MemoryUserDatabaseTests.java
 test/org/apache/catalina/users/DataSourceUserDatabaseTests.java

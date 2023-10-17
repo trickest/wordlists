@@ -249,6 +249,7 @@ db/migrate/20221221082844_and_or_conditions_setting_default.rb
 db/migrate/20170713000002_ticket_zoom_setting2.rb
 db/migrate/20171024000002_check_mk_integration2.rb
 db/migrate/20181108123847_add_country_attribute_to_users.rb
+db/migrate/20231016120344_search_index_settings.rb
 db/migrate/20171102000001_last_owner_update2.rb
 db/migrate/20120101000001_create_base.rb
 db/migrate/20170714000003_cleanup_cti_log.rb
@@ -2884,6 +2885,7 @@ app/frontend/shared/composables/__tests__/useFingerprint.spec.ts
 app/frontend/shared/composables/__tests__/useAppMaintenanceCheck.spec.ts
 app/frontend/shared/composables/__tests__/useDialog.spec.ts
 app/frontend/shared/composables/__tests__/mocks/online-notification.ts
+app/frontend/shared/composables/__tests__/useEscalationState.spec.ts
 app/frontend/shared/composables/__tests__/useOnlineNotificationSeen.spec.ts
 app/frontend/shared/composables/useFocusWhenTyping.ts
 app/frontend/shared/composables/useDialog.ts
@@ -2898,6 +2900,7 @@ app/frontend/shared/composables/useForceDesktop.ts
 app/frontend/shared/composables/useStickyHeader.ts
 app/frontend/shared/composables/useTicketSignature.ts
 app/frontend/shared/composables/useAuthenticationUpdates.ts
+app/frontend/shared/composables/useEscalationState.ts
 app/frontend/shared/composables/useFingerprint.ts
 app/frontend/shared/composables/useTrapTab.ts
 app/frontend/shared/composables/useThirdPartyAuthentication.ts
@@ -3217,6 +3220,7 @@ app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/Tick
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/ArticleBubble.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/__tests__/TicketViewerItem.spec.ts
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleMetadataDialog.vue
+app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketEscalationTimeMenuItem.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSecurityBadge.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/ArticleSeparatorMore.vue
 app/frontend/apps/mobile/pages/ticket/components/TicketDetailView/TicketObjectAttributes.vue
