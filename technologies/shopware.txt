@@ -1118,6 +1118,7 @@ changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.
 changelog/_unreleased/2023-10-09-fix-last-customer-payment-method-unavailable.md
 changelog/_unreleased/2023-08-14-replace-vue2-filters.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
+changelog/_unreleased/2023-10-09-deprecate-loggerfactory.md
 changelog/_unreleased/2022-07-04-mail-attach.md
 changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
 changelog/_unreleased/2023-10-01-use-displayed-seo-url-template-value-for-validation-hints.md
@@ -1136,6 +1137,7 @@ changelog/_unreleased/2023-08-21-vue3-fix-properties-module.md
 changelog/_unreleased/2023-08-09-change-sw-single-select-default-event.md
 changelog/_unreleased/2023-09-25-disable-database-profiler-on-cli.md
 changelog/_unreleased/2023-09-25-improved-sorting-error-message.md
+changelog/_unreleased/2023-10-18-batch-cart-price-calculation.md
 changelog/_unreleased/2023-08-30-fix-download-file-name-and-fallback-cannot-contains-slashes.md
 changelog/_unreleased/2023-08-09-change-sw-entity-multi-id-select-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-url-field-default-event.md
@@ -1168,6 +1170,7 @@ changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-pa
 changelog/_unreleased/2023-08-09-fix-overridden-super-calls-in-promise-chains-in-admin-components.md
 changelog/_unreleased/changelog2023-10-05-fix-sw-cms-layout-modal-search-field.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
+changelog/_unreleased/2023-08-03-fix-transition-state-machine-exception.md
 changelog/_unreleased/2023-10-03-change-type-of-urlgenerator.md
 changelog/_unreleased/2023-08-14-media-path-storage.md
 changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
@@ -1189,6 +1192,7 @@ changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-28-add-invalid-document-exception-to-error-log-level-notice.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
+changelog/_unreleased/2023-10-16-domain-exceptions-in-elasticsearch-bundle.md
 changelog/_unreleased/2023-09-21-add-cart-and-promotion-exception-to-log-level-notice.md
 changelog/_unreleased/2023-09-16-add-missing-semicolon-to-js-variables.md
 changelog/_unreleased/2023-08-14-fix-sw-datepicker-to-load-refs-correctly-on-first-page-load.md
@@ -1199,9 +1203,11 @@ changelog/_unreleased/2023-08-31-enable-rule-builder-time-unit-conversion.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-08-30-vue3-compatibility-for-privileges-service.md
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
+changelog/_unreleased/2023-10-04-deprecated-shopware-core-checkout-cart-cartevents.md
 changelog/_unreleased/2023-10-12-phpstan-rule-to-prevent-after-statement-in-migration.md
 changelog/_unreleased/2023-09-26-fix-accept-all-cookies-button-styling.md
 changelog/_unreleased/2023-09-21-fix-media-delete-unused-command-when-used-with-an-offset-of-0.md
+changelog/_unreleased/2023-10-17-handle-exception-for-product-export-generator.md
 changelog/_unreleased/2023-09-20-avoid-creating-seo-urls-for-headless-sales-channels.md
 changelog/_unreleased/2023-09-28-fix-cms-back.md
 changelog/_unreleased/2023-10-09-administration-add-main-modulets-fixed-typo-from-langugage-to-language.md
@@ -1210,6 +1216,7 @@ changelog/_unreleased/2023-08-09-change-default-event-of-sw-text-field.md
 changelog/_unreleased/2023-08-10-change-sw-promotion-v2-rule-select-default-event.md
 changelog/_unreleased/2023-09-22-vue3-fix-category-module.md
 changelog/_unreleased/2023-09-01-use-correct-languages-to-update-product-search-keywords.md
+changelog/_unreleased/2023-10-17-fix-symfony-flex-template-admin-build-and-watch.md
 changelog/release-6-4-16-1/2022-09-26-fix-invisible-context-menu-issue.md
 changelog/release-6-4-15-1/2022-09-20-fix-cli-updater.md
 changelog/release-6-4-6-1/2021-11-23-add-fix-for-webcache.md
@@ -4017,6 +4024,7 @@ tests/unit/Elasticsearch/Admin/Indexer/ProductStreamAdminSearchIndexerTest.php
 tests/unit/Elasticsearch/Admin/Indexer/ProductAdminSearchIndexerTest.php
 tests/unit/Elasticsearch/Admin/Indexer/PaymentMethodAdminSearchIndexerTest.php
 tests/unit/Elasticsearch/Admin/Indexer/LandingPageAdminSearchIndexerTest.php
+tests/unit/Elasticsearch/ElasticsearchExceptionTest.php
 tests/unit/Core/Installer/InstallerKernelTest.php
 tests/unit/Core/Installer/Controller/ShopConfigurationControllerTest.php
 tests/unit/Core/Installer/Controller/InstallerControllerTestTrait.php
@@ -4493,6 +4501,7 @@ tests/unit/Core/Content/Product/Cleanup/CleanupUnusedDownloadMediaTaskTest.php
 tests/unit/Core/Content/Product/Hook/Pricing/CheapestPriceFacadeTest.php
 tests/unit/Core/Content/Product/Hook/ProductProxyTest.php
 tests/unit/Core/Content/ProductExport/Event/ProductExportLoggingEventTest.php
+tests/unit/Core/Content/ProductExport/Service/ProductExportGeneratorTest.php
 tests/unit/Core/Content/ProductExport/ScheduledTask/ProductExportGenerateTaskHandlerTest.php
 tests/unit/Core/Content/ProductExport/ProductExportExceptionTest.php
 tests/unit/Core/Content/ContactForm/SalesChannel/ContactFormRouteTest.php
@@ -4695,6 +4704,7 @@ tests/unit/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
 tests/unit/Core/Checkout/Cart/Address/AddressValidator2Test.php
 tests/unit/Core/Checkout/Cart/Address/AddressValidatorTest.php
+tests/unit/Core/Checkout/Cart/ProductCartProcessorTest.php
 tests/unit/Core/Checkout/Cart/Promotion/Validator/PromotionValidatorTest.php
 tests/unit/Core/Checkout/Cart/Promotion/Gateway/Template/ActiveDateRangeTest.php
 tests/unit/Core/Checkout/Cart/Promotion/Gateway/Template/PermittedIndividualCodePromotionsTest.php
@@ -4992,6 +5002,7 @@ tests/migration/phpunit.xml
 tests/migration/Elasticsearch/V6_5/Migration1689084023AdminElasticsearchIndexTaskTest.php
 tests/migration/Core/ImportTranslationTraitTest.php
 tests/migration/Core/V6_5/Migration1692277552FixCustomerReviewCountTest.php
+tests/migration/Core/V6_5/Migration1697532722FixADInMediaPathTest.php
 tests/migration/Core/V6_5/Migration1689776940AddCartSourceFieldTest.php
 tests/migration/Core/V6_5/Migration1670090989AddIndexOrderOrderNumberTest.php
 tests/migration/Core/V6_5/Migration1676272000AddAccountTypeToCustomerTest.php
@@ -5834,6 +5845,7 @@ tests/integration/Administration/Snippet/fixtures/caseDifferentLanguages/plugin/
 tests/integration/Administration/Snippet/fixtures/caseDifferentLanguages/core/de-DE.json
 tests/integration/Administration/Snippet/fixtures/caseBundleLoadingWithPlugin/bundle/Resources/app/administration/en-GB.json
 tests/integration/Administration/Snippet/SnippetFinderTest.php
+tests/integration/Administration/Dashboard/OrderAmountServiceTest.php
 tests/e2e/package-lock.json
 tests/e2e/package.json
 tests/e2e/.babelrc
@@ -7978,10 +7990,12 @@ src/Elasticsearch/Exception/UnsupportedElasticsearchDefinitionException.php
 src/Elasticsearch/Exception/ServerNotAvailableException.php
 src/Elasticsearch/Resources/config/packages/framework.yaml
 src/Elasticsearch/Resources/config/packages/elasticsearch.yaml
+src/Elasticsearch/Resources/config/packages/monolog.yaml
 src/Elasticsearch/Resources/config/routes.xml
 src/Elasticsearch/Resources/config/services.xml
 src/Elasticsearch/Resources/views/Collector/icon.svg
 src/Elasticsearch/Resources/views/Collector/elasticsearch.html.twig
+src/Elasticsearch/ElasticsearchException.php
 src/Elasticsearch/Product/ElasticsearchProductException.php
 src/Elasticsearch/Product/LanguageSubscriber.php
 src/Elasticsearch/Product/AbstractProductSearchQueryBuilder.php
@@ -11837,6 +11851,7 @@ src/Core/Test/Stub/Redis/RedisStub.php
 src/Core/Test/Stub/Redis/RedisMultiCompatibility.php
 src/Core/Test/Stub/Redis/RedisCompatibility.php
 src/Core/Test/Stub/Flow/DummyEvent.php
+src/Core/Test/Stub/Checkout/EmptyPrice.php
 src/Core/Test/Stub/MessageBus/CollectingMessageBus.php
 src/Core/Test/Stub/EventDispatcher/CollectingEventDispatcher.php
 src/Core/Test/Stub/EventDispatcher/AssertingEventDispatcher.php
@@ -13239,6 +13254,7 @@ src/Core/System/Language/LanguageLoaderInterface.php
 src/Core/System/Language/LanguageDefinition.php
 src/Core/System/Language/LanguageEvents.php
 src/Core/Migration/V6_5/Migration1673946817FixMediaFolderAssociationFields.php
+src/Core/Migration/V6_5/Migration1697532722FixADInMediaPath.php
 src/Core/Migration/V6_5/Migration1691057865UpdateSalutationDefaultForCustomer.php
 src/Core/Migration/V6_5/Migration1687462843ProductManufacturerMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1670090989AddIndexOrderOrderNumber.php
@@ -14177,6 +14193,7 @@ src/Administration/Controller/Exception/MissingShopUrlException.php
 src/Administration/Controller/AdminTagController.php
 src/Administration/Controller/UserConfigController.php
 src/Administration/Controller/AdminProductStreamController.php
+src/Administration/Controller/DashboardController.php
 src/Administration/Controller/NotificationController.php
 src/Administration/Framework/Routing/AdministrationRouteScope.php
 src/Administration/Framework/Routing/KnownIps/KnownIpsCollectorInterface.php
@@ -18622,6 +18639,7 @@ src/Administration/Migration/V6_4/Migration1660813696AddAppAdministrationSnippet
 src/Administration/Migration/V6_4/Migration1632281097Notification.php
 src/Administration/Migration/V6_4/Migration1636121186CopySalesChannelIdsIntoUserConfig.php
 src/Administration/README.md
+src/Administration/Dashboard/OrderAmountService.php
 .gitlab-ci.yml
 vendor-bin/cs-fixer/composer.json
 vendor-bin/rector/composer.json

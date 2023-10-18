@@ -2897,6 +2897,7 @@ ghost/core/test/utils/fixtures/themes/casper/assets/built/screen.css.map
 ghost/core/test/utils/fixtures/themes/casper/assets/built/casper.js.map
 ghost/core/test/utils/fixtures/themes/casper/assets/built/global.css.map
 ghost/core/test/utils/fixtures/themes/casper/assets/built/casper.js
+ghost/core/test/utils/fixtures/themes/casper/assets/images/default-skin.svg
 ghost/core/test/utils/fixtures/themes/casper/LICENSE
 ghost/core/test/utils/fixtures/themes/casper/tag.hbs
 ghost/core/test/utils/fixtures/themes/casper/index.hbs
@@ -2907,8 +2908,12 @@ ghost/core/test/utils/fixtures/themes/casper/page.hbs
 ghost/core/test/utils/fixtures/themes/casper/post.hbs
 ghost/core/test/utils/fixtures/themes/casper/error-404.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/post-card.hbs
+ghost/core/test/utils/fixtures/themes/casper/partials/lightbox.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/icons/loader.hbs
+ghost/core/test/utils/fixtures/themes/casper/partials/icons/search.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/icons/facebook.hbs
+ghost/core/test/utils/fixtures/themes/casper/partials/icons/fire.hbs
+ghost/core/test/utils/fixtures/themes/casper/partials/icons/lock.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/icons/avatar.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/icons/rss.hbs
 ghost/core/test/utils/fixtures/themes/casper/partials/icons/twitter.hbs
@@ -2916,11 +2921,13 @@ ghost/core/test/utils/fixtures/themes/casper/author.hbs
 ghost/core/test/utils/fixtures/themes/source/assets/built/screen.css.map
 ghost/core/test/utils/fixtures/themes/source/assets/built/source.js.map
 ghost/core/test/utils/fixtures/themes/source/assets/built/source.js
-ghost/core/test/utils/fixtures/themes/source/assets/fonts/roboto-slab-roman.woff2
+ghost/core/test/utils/fixtures/themes/source/assets/fonts/jetbrains-mono-roman.woff2
 ghost/core/test/utils/fixtures/themes/source/assets/fonts/eb-garamond-roman.woff2
 ghost/core/test/utils/fixtures/themes/source/assets/fonts/eb-garamond-italic.woff2
 ghost/core/test/utils/fixtures/themes/source/assets/fonts/inter-roman.woff2
+ghost/core/test/utils/fixtures/themes/source/assets/fonts/jetbrains-mono-italic.woff2
 ghost/core/test/utils/fixtures/themes/source/assets/images/default-skin.svg
+ghost/core/test/utils/fixtures/themes/source/LICENSE
 ghost/core/test/utils/fixtures/themes/source/tag.hbs
 ghost/core/test/utils/fixtures/themes/source/index.hbs
 ghost/core/test/utils/fixtures/themes/source/package.json
@@ -2953,6 +2960,7 @@ ghost/core/test/utils/fixtures/themes/source/partials/icons/close.hbs
 ghost/core/test/utils/fixtures/themes/source/partials/email-subscription.hbs
 ghost/core/test/utils/fixtures/themes/source/partials/feature-image.hbs
 ghost/core/test/utils/fixtures/themes/source/author.hbs
+ghost/core/test/utils/fixtures/themes/source.zip
 ghost/core/test/utils/fixtures/themes/members-test-theme/index.hbs
 ghost/core/test/utils/fixtures/themes/members-test-theme/package.json
 ghost/core/test/utils/fixtures/themes/members-test-theme/default.hbs
@@ -4725,7 +4733,6 @@ apps/admin-x-settings/test/unit/utils/url.test.ts
 apps/admin-x-settings/test/unit/utils/showDatabaseWarning.test.ts
 apps/admin-x-settings/test/acceptance/layout.test.ts
 apps/admin-x-settings/test/acceptance/site/announcementbar.test.ts
-apps/admin-x-settings/test/acceptance/site/recommendations.test.ts
 apps/admin-x-settings/test/acceptance/site/design.test.ts
 apps/admin-x-settings/test/acceptance/site/navigation.test.ts
 apps/admin-x-settings/test/acceptance/site/theme.test.ts
@@ -4738,6 +4745,7 @@ apps/admin-x-settings/test/acceptance/membership/tiers.test.ts
 apps/admin-x-settings/test/acceptance/membership/analytics.test.ts
 apps/admin-x-settings/test/acceptance/membership/portal.test.ts
 apps/admin-x-settings/test/acceptance/membership/stripe.test.ts
+apps/admin-x-settings/test/acceptance/membership/recommendations.test.ts
 apps/admin-x-settings/test/acceptance/membership/access.test.ts
 apps/admin-x-settings/test/acceptance/membership/signupEmbed.test.ts
 apps/admin-x-settings/test/acceptance/advanced/history.test.ts
@@ -4767,6 +4775,7 @@ apps/admin-x-settings/test/utils/files/routes.yml
 apps/admin-x-settings/test/utils/files/redirects.yml
 apps/admin-x-settings/test/utils/files/pintura-umd.js
 apps/admin-x-settings/test/utils/responses/offers.json
+apps/admin-x-settings/test/utils/responses/incoming_recommendations.json
 apps/admin-x-settings/test/utils/responses/newsletters.json
 apps/admin-x-settings/test/utils/responses/invites.json
 apps/admin-x-settings/test/utils/responses/users.json
@@ -4789,7 +4798,6 @@ apps/admin-x-settings/src/App.tsx
 apps/admin-x-settings/src/components/Settings.tsx
 apps/admin-x-settings/src/components/ExitSettingsButton.tsx
 apps/admin-x-settings/src/components/Sidebar.tsx
-apps/admin-x-settings/src/components/settings/site/Recommendations.tsx
 apps/admin-x-settings/src/components/settings/site/ThemeModal.tsx
 apps/admin-x-settings/src/components/settings/site/DesignModal.tsx
 apps/admin-x-settings/src/components/settings/site/AnnouncementBar.tsx
@@ -4805,13 +4813,6 @@ apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemePrevie
 apps/admin-x-settings/src/components/settings/site/designAndBranding/ThemeSettings.tsx
 apps/admin-x-settings/src/components/settings/site/designAndBranding/BrandSettings.tsx
 apps/admin-x-settings/src/components/settings/site/AnnouncementBarModal.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/EditRecommendationModal.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModalConfirm.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationDescriptionForm.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/AddRecommendationModal.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationList.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/RecommendationIcon.tsx
-apps/admin-x-settings/src/components/settings/site/recommendations/IncomingRecommendationList.tsx
 apps/admin-x-settings/src/components/settings/site/theme/ThemePreview.tsx
 apps/admin-x-settings/src/components/settings/site/theme/InvalidThemeModal.tsx
 apps/admin-x-settings/src/components/settings/site/theme/AdvancedThemeSettings.tsx
@@ -4828,6 +4829,7 @@ apps/admin-x-settings/src/components/settings/email/newsletters/AddNewsletterMod
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreview.tsx
 apps/admin-x-settings/src/components/settings/email/newsletters/NewsletterPreviewContent.tsx
 apps/admin-x-settings/src/components/settings/email/Newsletters.tsx
+apps/admin-x-settings/src/components/settings/membership/Recommendations.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TierDetailModal.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TiersList.tsx
 apps/admin-x-settings/src/components/settings/membership/tiers/TierDetailPreview.tsx
@@ -4849,6 +4851,13 @@ apps/admin-x-settings/src/components/settings/membership/portal/LookAndFeel.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalFrame.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/SignupOptions.tsx
 apps/admin-x-settings/src/components/settings/membership/stripe/StripeConnectModal.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/EditRecommendationModal.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/AddRecommendationModalConfirm.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/RecommendationDescriptionForm.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/AddRecommendationModal.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/RecommendationList.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/RecommendationIcon.tsx
+apps/admin-x-settings/src/components/settings/membership/recommendations/IncomingRecommendationList.tsx
 apps/admin-x-settings/src/components/settings/advanced/Integrations.tsx
 apps/admin-x-settings/src/components/settings/advanced/code/CodeModal.tsx
 apps/admin-x-settings/src/components/settings/advanced/integrations/IntegrationHeader.tsx
@@ -5149,6 +5158,7 @@ apps/admin-x-settings/src/admin-x-ds/providers/DesignSystemProvider.tsx
 apps/admin-x-settings/src/hooks/usePinturaEditor.ts
 apps/admin-x-settings/src/hooks/useGlobalDirtyState.tsx
 apps/admin-x-settings/src/hooks/site/useNavigationEditor.tsx
+apps/admin-x-settings/src/hooks/usePermissions.ts
 apps/admin-x-settings/src/hooks/useStaffUsers.tsx
 apps/admin-x-settings/src/hooks/useQueryParams.ts
 apps/admin-x-settings/src/hooks/useFeatureFlag.tsx
@@ -5212,6 +5222,7 @@ apps/admin-x-settings/src/unsplash/api/InMemoryUnsplashProvider.ts
 apps/admin-x-settings/src/unsplash/UnsplashTypes.ts
 apps/admin-x-settings/src/unsplash/photo/PhotoUseCase.ts
 apps/admin-x-settings/src/utils/search.tsx
+apps/admin-x-settings/src/utils/isCustomThemeSettingsVisible.ts
 apps/admin-x-settings/src/utils/helpers.ts
 apps/admin-x-settings/src/utils/linkToGithubReleases.ts
 apps/admin-x-settings/src/utils/escapeHtml.ts

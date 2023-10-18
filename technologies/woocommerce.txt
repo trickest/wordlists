@@ -1,5 +1,6 @@
 .syncpackrc
 .editorconfig
+changelog/39948-patch-4
 changelog/e2e-fix-allure-upload-input
 changelog/pr-36705
 changelog/e2e-update-locator-in-allows-customer-to-place-order-test
@@ -26,6 +27,7 @@ packages/js/product-editor/changelog/dev-40245_improve_copy_for_variation_manage
 packages/js/product-editor/changelog/add-input-field
 packages/js/product-editor/changelog/add-38097
 packages/js/product-editor/changelog/add-38044
+packages/js/product-editor/changelog/add-40805
 packages/js/product-editor/changelog/doc-checkbox-field
 packages/js/product-editor/changelog/fix-modal-editor-scrolling
 packages/js/product-editor/changelog/add-37408
@@ -63,6 +65,7 @@ packages/js/product-editor/changelog/dev-40597_display_notice_at_top_single_vari
 packages/js/product-editor/changelog/add-block-attributes-37728
 packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/update-40072_variation_visibility_icon
+packages/js/product-editor/changelog/fix-40844
 packages/js/product-editor/changelog/dev-40216_remove_confirmation_modal_for_dismissing_attributes_variations
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
@@ -179,6 +182,7 @@ packages/js/product-editor/changelog/add-39440
 packages/js/product-editor/changelog/add-40804
 packages/js/product-editor/changelog/fix-39224_styles_attribute_list
 packages/js/product-editor/changelog/update-38043
+packages/js/product-editor/changelog/fix-40842_hide_header
 packages/js/product-editor/changelog/dev-update-eslint-plugin
 packages/js/product-editor/changelog/add-40595
 packages/js/product-editor/changelog/fix-38221
@@ -200,6 +204,7 @@ packages/js/product-editor/changelog/update-37244-37245
 packages/js/product-editor/changelog/update-36719
 packages/js/product-editor/changelog/add-min-max-number-block
 packages/js/product-editor/changelog/add-39455
+packages/js/product-editor/changelog/add-35144
 packages/js/product-editor/changelog/rename-taxonomy-block
 packages/js/product-editor/changelog/add-use-prod-entity-prop
 packages/js/product-editor/changelog/add-39443_attribute_filters
@@ -245,6 +250,10 @@ packages/js/product-editor/package.json
 packages/js/product-editor/src/components/content-preview/index.ts
 packages/js/product-editor/src/components/content-preview/style.scss
 packages/js/product-editor/src/components/content-preview/content-preview.tsx
+packages/js/product-editor/src/components/manage-download-limits-modal/index.ts
+packages/js/product-editor/src/components/manage-download-limits-modal/style.scss
+packages/js/product-editor/src/components/manage-download-limits-modal/types.ts
+packages/js/product-editor/src/components/manage-download-limits-modal/manage-download-limits-modal.tsx
 packages/js/product-editor/src/components/edit-product-link-modal/index.ts
 packages/js/product-editor/src/components/edit-product-link-modal/style.scss
 packages/js/product-editor/src/components/edit-product-link-modal/edit-product-link-modal.tsx
@@ -1570,6 +1579,7 @@ packages/js/number/jest.config.json
 packages/js/number/.npmrc
 packages/js/block-templates/tsconfig.json
 packages/js/block-templates/changelog/add-expose-block-id-and-order
+packages/js/block-templates/changelog/add-block-templates-dependencies
 packages/js/block-templates/changelog/update-separate-php-and-js-tests
 packages/js/block-templates/.eslintrc.js
 packages/js/block-templates/webpack.config.js
@@ -1600,6 +1610,7 @@ packages/js/onboarding/changelog/dev-sync-pnpm
 packages/js/onboarding/changelog/fix-38947-geolocation-compare-issue
 packages/js/onboarding/changelog/dev-update-pnpm-8.6.5
 packages/js/onboarding/changelog/update-separate-php-and-js-tests
+packages/js/onboarding/changelog/add-loader-component-shouldloop-prop
 packages/js/onboarding/changelog/remove-onboarding-purchase-task
 packages/js/onboarding/changelog/dev-refactor-onboarding-profiler
 packages/js/onboarding/changelog/dev-include-eslint-annotations
@@ -3919,15 +3930,18 @@ plugins/woocommerce-admin/client/homescreen/hooks/use-headercard-experiment-hook
 plugins/woocommerce-admin/client/homescreen/test/index.js
 plugins/woocommerce-admin/client/homescreen/index.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/MobileAppInstallationInfo.tsx
+plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/MobileAppLoginStepper.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/SendMagicLinkButton.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/useJetpackPluginState.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/JetpackInstallationStepper.tsx
+plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/MobileAppLoginInfo.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/index.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/components/useSendMagicLink.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/style.scss
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/WrongUserConnectedPage.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/JetpackInstallStepperPage.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/MobileAppInstallPage.tsx
+plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/MobileAppLoginStepperPage.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/index.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/EmailSentPage.tsx
 plugins/woocommerce-admin/client/homescreen/mobile-app-modal/pages/JetpackAlreadyInstalledPage.tsx
@@ -4570,9 +4584,12 @@ plugins/woocommerce/changelog/add-40328-intro-page-when-task-not-completed-but-c
 plugins/woocommerce/changelog/trunk
 plugins/woocommerce/changelog/fix-color-panel-and-nav-links
 plugins/woocommerce/changelog/fix-remove_extra_quotes_in_block_editor_template
+plugins/woocommerce/changelog/e2e-update-order-to-cancelled
 plugins/woocommerce/changelog/add-input-field
 plugins/woocommerce/changelog/update-cys-intro-themes
 plugins/woocommerce/changelog/update-40298-implement-back-to-home-button
+plugins/woocommerce/changelog/add-40805
+plugins/woocommerce/changelog/breadcrumb-accessibility
 plugins/woocommerce/changelog/api-minor-fixes-for-api-daily-flakiness
 plugins/woocommerce/changelog/fix-cys-remove-retry-button-offline
 plugins/woocommerce/changelog/add-number-block
@@ -4592,12 +4609,14 @@ plugins/woocommerce/changelog/add-40573_product_variation_edit_page_template
 plugins/woocommerce/changelog/update-k6-failing-tests-in-CI
 plugins/woocommerce/changelog/dev-40597_display_notice_at_top_single_variation
 plugins/woocommerce/changelog/fix-active-theme-has-mods-logic
+plugins/woocommerce/changelog/39948-patch-4
 plugins/woocommerce/changelog/fix-core-editor-store-in-classic
 plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
 plugins/woocommerce/changelog/e2e-update-playwright-1_38
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
 plugins/woocommerce/changelog/fix-cys-ui-issues
+plugins/woocommerce/changelog/fix-cys-intro-parallelise-network-calls
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page
 plugins/woocommerce/changelog/fix-coupon-error-notice-text
 plugins/woocommerce/changelog/update-cys-intro-page
@@ -4609,6 +4628,7 @@ plugins/woocommerce/changelog/fix-cys-design-with-ai-duplicate-color-palette-val
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
 plugins/woocommerce/changelog/update-set-default-font-pairing
 plugins/woocommerce/changelog/fix-admin-select2-fallback-colors
+plugins/woocommerce/changelog/e2e-add-order-notes
 plugins/woocommerce/changelog/add-40593_pricing_tab_for_variations
 plugins/woocommerce/changelog/add-cys-swtich-theme-tt3
 plugins/woocommerce/changelog/fix-cys-opacity-issue
@@ -4618,12 +4638,14 @@ plugins/woocommerce/changelog/add-cys-ai-save-options
 plugins/woocommerce/changelog/tweak-refactor-blocks-org
 plugins/woocommerce/changelog/fix-cys-transitional-page
 plugins/woocommerce/changelog/dev-40590_change_header_to_support_variation
+plugins/woocommerce/changelog/fix-40319
 plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/pr-35743
 plugins/woocommerce/changelog/update-project-labeler-labels
 plugins/woocommerce/changelog/add-40598
 plugins/woocommerce/changelog/fix-refactored-cys-banner
 plugins/woocommerce/changelog/add-doc-naming-conventions
+plugins/woocommerce/changelog/wcios-mobile-onboarding-task-iteration-2
 plugins/woocommerce/changelog/update-k6-home-wc-admin-correlation
 plugins/woocommerce/changelog/add-cys-update-the-templates-list
 plugins/woocommerce/changelog/update-make-cys-intro-responsive
@@ -4649,6 +4671,7 @@ plugins/woocommerce/changelog/update-38191-fix-german-translation-error-on-react
 plugins/woocommerce/changelog/add-wccom-18292-cache-marketplace-results
 plugins/woocommerce/changelog/FIX_DEPRECATION_STRTOTIME_NULL_PHP_8
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.2.0
+plugins/woocommerce/changelog/fix-cys-design-with-ai-loader-loop
 plugins/woocommerce/changelog/add-40042_default_price
 plugins/woocommerce/changelog/update-cys-display-all-6-homeapge-blocks
 plugins/woocommerce/changelog/dev-ci-release-fix-api-wp-latest
@@ -4662,11 +4685,13 @@ plugins/woocommerce/changelog/fix-cys-assembler-color-palette-persistence
 plugins/woocommerce/changelog/add-40594
 plugins/woocommerce/changelog/update-cys-color-ai
 plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
+plugins/woocommerce/changelog/fix-40852
 plugins/woocommerce/changelog/add-wccom-18213-marketplace-view-more-button
 plugins/woocommerce/changelog/add-onboarding-theme-rest-api-endpoint-stub
 plugins/woocommerce/changelog/add-assemble-site
 plugins/woocommerce/changelog/add-40592
 plugins/woocommerce/changelog/add-40804
+plugins/woocommerce/changelog/fix-40842_hide_header
 plugins/woocommerce/changelog/add-40595
 plugins/woocommerce/changelog/add-cys-intro-tracks
 plugins/woocommerce/changelog/fix-40511
@@ -4675,6 +4700,7 @@ plugins/woocommerce/changelog/update-retain-cys-unsave-changes
 plugins/woocommerce/changelog/e2e-remove-obw-tests
 plugins/woocommerce/changelog/fix-cys-assembler-hub-font-jankiness
 plugins/woocommerce/changelog/fix-my-dashboard-theme-fixes
+plugins/woocommerce/changelog/add-40794-active-theme-label
 plugins/woocommerce/changelog/add-40070_global_attribute_terms_filtering
 plugins/woocommerce/changelog/add-cys-existing-ai-theme
 plugins/woocommerce/changelog/docs-migrate-testing-instructions-from-wiki
@@ -7241,6 +7267,7 @@ docs/reporting/readme.md
 docs/rest-api/_media/permalinks.webp
 docs/rest-api/readme.md
 docs/rest-api/getting-started.md
+docs/localization-translation/README.md
 docs/high-performance-order-storage/enable-hpos.md
 docs/high-performance-order-storage/README.md
 docs/data-management/crud-objects.md
