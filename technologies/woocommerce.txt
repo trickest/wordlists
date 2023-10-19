@@ -53,6 +53,7 @@ packages/js/product-editor/changelog/add-37930
 packages/js/product-editor/changelog/fix-38319
 packages/js/product-editor/changelog/fix-38020
 packages/js/product-editor/changelog/add-37266
+packages/js/product-editor/changelog/fix-40875
 packages/js/product-editor/changelog/update-38117
 packages/js/product-editor/changelog/fix-39543
 packages/js/product-editor/changelog/add-37656
@@ -82,6 +83,7 @@ packages/js/product-editor/changelog/fix-attribute_terms_dissapearing
 packages/js/product-editor/changelog/add-40708
 packages/js/product-editor/changelog/add-36355_new_product_editor_package
 packages/js/product-editor/changelog/add-38881
+packages/js/product-editor/changelog/dev-35143_downloads_edit_file_modal
 packages/js/product-editor/changelog/add-37704
 packages/js/product-editor/changelog/add-40250
 packages/js/product-editor/changelog/fix-40174
@@ -118,6 +120,7 @@ packages/js/product-editor/changelog/fix-rest-namespace-blocks-37619
 packages/js/product-editor/changelog/update-product-page-add-hook-37281
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/fix-38149
+packages/js/product-editor/changelog/add-template-api-conditional-visibility
 packages/js/product-editor/changelog/add-37096
 packages/js/product-editor/changelog/dev-pin-wp-deps-6
 packages/js/product-editor/changelog/add-37898
@@ -587,6 +590,11 @@ packages/js/product-editor/src/blocks/product-fields/downloads/upload-files-menu
 packages/js/product-editor/src/blocks/product-fields/downloads/upload-files-menu-item/upload-files-menu-item.tsx
 packages/js/product-editor/src/blocks/product-fields/downloads/upload-files-menu-item/types.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/index.ts
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/edit-downloads-modal.tsx
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/index.ts
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/style.scss
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/union-icon.tsx
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/types.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/editor.scss
 packages/js/product-editor/src/blocks/product-fields/downloads/downloads-menu/index.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/downloads-menu/style.scss
@@ -690,6 +698,7 @@ packages/js/product-editor/src/utils/test/get-product-stock-status.test.ts
 packages/js/product-editor/src/utils/test/get-product-title.test.ts
 packages/js/product-editor/src/utils/handle-prompt.ts
 packages/js/product-editor/src/utils/sort-fills-by-order.tsx
+packages/js/product-editor/src/utils/register-product-editor-block-type.ts
 packages/js/product-editor/src/utils/get-product-stock-status.ts
 packages/js/product-editor/src/utils/sanitize-html.ts
 packages/js/product-editor/src/utils/create-ordered-children.tsx
@@ -1580,6 +1589,7 @@ packages/js/number/.npmrc
 packages/js/block-templates/tsconfig.json
 packages/js/block-templates/changelog/add-expose-block-id-and-order
 packages/js/block-templates/changelog/add-block-templates-dependencies
+packages/js/block-templates/changelog/add-template-api-conditional-visibility
 packages/js/block-templates/changelog/update-separate-php-and-js-tests
 packages/js/block-templates/.eslintrc.js
 packages/js/block-templates/webpack.config.js
@@ -1609,6 +1619,7 @@ packages/js/onboarding/changelog/dev-upgrade-ts-5
 packages/js/onboarding/changelog/dev-sync-pnpm
 packages/js/onboarding/changelog/fix-38947-geolocation-compare-issue
 packages/js/onboarding/changelog/dev-update-pnpm-8.6.5
+packages/js/onboarding/changelog/fix-deprecate-sofort
 packages/js/onboarding/changelog/update-separate-php-and-js-tests
 packages/js/onboarding/changelog/add-loader-component-shouldloop-prop
 packages/js/onboarding/changelog/remove-onboarding-purchase-task
@@ -1658,7 +1669,6 @@ packages/js/onboarding/src/components/WCPayBanner/Icons/visa.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/woopay.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/applepay.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/cb.js
-packages/js/onboarding/src/components/WCPayBanner/Icons/sofort.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/jcb.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/index.js
 packages/js/onboarding/src/components/WCPayBanner/Icons/gpay.js
@@ -4298,11 +4308,7 @@ plugins/woo-ai/CHANGELOG.md
 plugins/woo-ai/tsconfig.json
 plugins/woo-ai/.editorconfig
 plugins/woo-ai/woo-ai.php
-plugins/woo-ai/changelog/add-background-removal-feedback-39730
 plugins/woo-ai/changelog/.gitkeep
-plugins/woo-ai/changelog/add-background-removal-add-image-count-40743
-plugins/woo-ai/changelog/add-remove-background-ui-40440
-plugins/woo-ai/changelog/add-background-removal-spotlight-40495
 plugins/woo-ai/includes/class-woo-ai-product-text-generation.php
 plugins/woo-ai/includes/class-woo-ai-admin-notices.php
 plugins/woo-ai/includes/views/html-admin-missing-jetpack.php
@@ -4578,6 +4584,7 @@ plugins/woocommerce/changelog/fix-wcpay-7119-payments-task-completed-after-onboa
 plugins/woocommerce/changelog/fix-refactor-use-network-status
 plugins/woocommerce/changelog/add-expose-block-id-and-order
 plugins/woocommerce/changelog/issues-30778-wc_get_products_by_category_ID
+plugins/woocommerce/changelog/pr-40275
 plugins/woocommerce/changelog/update-cys-font-paring
 plugins/woocommerce/changelog/tweak-flaky-meta-data-save-test
 plugins/woocommerce/changelog/add-40328-intro-page-when-task-not-completed-but-content-changed
@@ -4587,10 +4594,12 @@ plugins/woocommerce/changelog/fix-remove_extra_quotes_in_block_editor_template
 plugins/woocommerce/changelog/e2e-update-order-to-cancelled
 plugins/woocommerce/changelog/add-input-field
 plugins/woocommerce/changelog/update-cys-intro-themes
+plugins/woocommerce/changelog/add-script-strategy
 plugins/woocommerce/changelog/update-40298-implement-back-to-home-button
 plugins/woocommerce/changelog/add-40805
 plugins/woocommerce/changelog/breadcrumb-accessibility
 plugins/woocommerce/changelog/api-minor-fixes-for-api-daily-flakiness
+plugins/woocommerce/changelog/fix-ci-branch-matrix
 plugins/woocommerce/changelog/fix-cys-remove-retry-button-offline
 plugins/woocommerce/changelog/add-number-block
 plugins/woocommerce/changelog/fix-40510
@@ -4603,6 +4612,7 @@ plugins/woocommerce/changelog/fix-ai-generate-images-not-display
 plugins/woocommerce/changelog/feature-marketplace-themes
 plugins/woocommerce/changelog/fix-order-confirmation-page-styles
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-40875
 plugins/woocommerce/changelog/add-template-api-readmes
 plugins/woocommerce/changelog/fix-preload-ai-loader-image
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page_template
@@ -4626,6 +4636,7 @@ plugins/woocommerce/changelog/e2e-temp-fix-for-daily-e2e
 plugins/woocommerce/changelog/add-40708
 plugins/woocommerce/changelog/fix-cys-design-with-ai-duplicate-color-palette-validation
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
+plugins/woocommerce/changelog/tweak-40821-cys-save-button-spinner
 plugins/woocommerce/changelog/update-set-default-font-pairing
 plugins/woocommerce/changelog/fix-admin-select2-fallback-colors
 plugins/woocommerce/changelog/e2e-add-order-notes
@@ -4638,6 +4649,7 @@ plugins/woocommerce/changelog/add-cys-ai-save-options
 plugins/woocommerce/changelog/tweak-refactor-blocks-org
 plugins/woocommerce/changelog/fix-cys-transitional-page
 plugins/woocommerce/changelog/dev-40590_change_header_to_support_variation
+plugins/woocommerce/changelog/fix-deprecate-sofort
 plugins/woocommerce/changelog/fix-40319
 plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/pr-35743
@@ -4651,6 +4663,7 @@ plugins/woocommerce/changelog/add-cys-update-the-templates-list
 plugins/woocommerce/changelog/update-make-cys-intro-responsive
 plugins/woocommerce/changelog/try-feature-sub-settings
 plugins/woocommerce/changelog/fix-marketplace-search-feedback
+plugins/woocommerce/changelog/add-template-api-conditional-visibility
 plugins/woocommerce/changelog/add-35145
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.3.0
 plugins/woocommerce/changelog/fix-40370
@@ -4686,6 +4699,8 @@ plugins/woocommerce/changelog/add-40594
 plugins/woocommerce/changelog/update-cys-color-ai
 plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
 plugins/woocommerce/changelog/fix-40852
+plugins/woocommerce/changelog/e2e-bulk-update-order-status
+plugins/woocommerce/changelog/refactor-unit-test-workflow
 plugins/woocommerce/changelog/add-wccom-18213-marketplace-view-more-button
 plugins/woocommerce/changelog/add-onboarding-theme-rest-api-endpoint-stub
 plugins/woocommerce/changelog/add-assemble-site
@@ -5604,6 +5619,7 @@ plugins/woocommerce/tests/e2e-pw/tests/merchant/order-coupon.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-order.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/create-shipping-classes.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/order-search.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/merchant/order-bulk-edit.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-product-attributes.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/update-variations.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/merchant/products/add-variable-product/create-variable-product.spec.js

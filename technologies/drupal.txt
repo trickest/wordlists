@@ -2721,6 +2721,7 @@ core/tests/Drupal/Tests/Core/Authentication/AuthenticationCollectorTest.php
 core/tests/Drupal/Tests/Core/Mail/MailFormatHelperTest.php
 core/tests/Drupal/Tests/Core/Mail/MailManagerTest.php
 core/tests/Drupal/Tests/Core/Mail/Plugin/Mail/PhpMailTest.php
+core/tests/Drupal/Tests/Core/Mail/Plugin/Mail/SymfonyMailerTest.php
 core/tests/Drupal/Tests/Core/DependencyInjection/ContainerBuilderTest.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/BarClass.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/BazClass.php
@@ -4105,6 +4106,7 @@ core/lib/Drupal/Core/Authentication/AuthenticationProviderInterface.php
 core/lib/Drupal/Core/Mail/MailManager.php
 core/lib/Drupal/Core/Mail/MailFormatHelper.php
 core/lib/Drupal/Core/Mail/Plugin/Mail/PhpMail.php
+core/lib/Drupal/Core/Mail/Plugin/Mail/SymfonyMailer.php
 core/lib/Drupal/Core/Mail/Plugin/Mail/TestMailCollector.php
 core/lib/Drupal/Core/Mail/MailManagerInterface.php
 core/lib/Drupal/Core/Mail/MailInterface.php
@@ -7715,6 +7717,7 @@ core/modules/system/tests/src/Functional/Update/GlobalThemeSettingsDefaultLogoUr
 core/modules/system/tests/src/Functional/Update/UpdateDescriptionConfigurationPostUpdate.php
 core/modules/system/tests/src/Functional/Update/README.txt
 core/modules/system/tests/src/Functional/Update/PasswordCompatibilityUpdateTest.php
+core/modules/system/tests/src/Functional/Update/MailDsnSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/TimestampFormatterSettingsUpdateTest.php
 core/modules/system/tests/src/Functional/Update/SqlContentEntityStorageRevisionDataCleanupTest.php
 core/modules/system/tests/src/Functional/Update/DatabaseVersionCheckUpdateTest.php
