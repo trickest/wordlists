@@ -1071,6 +1071,7 @@ changelog/release-6-5-4-0/2023-07-17-adding-association-for-order-storer.md
 changelog/release-6-3-4-1/2020-12-08-add-guest-auth-for-order-deeplinks.md
 changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
+changelog/_unreleased/2023-10-12-deprecate-unused-components-for-v6-0-0.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
 changelog/_unreleased/2023-08-01-fix-promotion-datepicker-prop-usage.md
 changelog/_unreleased/2023-09-11-fixing-add-product-by-number.md
@@ -1117,6 +1118,7 @@ changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
 changelog/_unreleased/2023-09-29-tag-api-aware.md
 changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.md
 changelog/_unreleased/2023-10-09-fix-last-customer-payment-method-unavailable.md
+changelog/_unreleased/2023-10-16-fix-sorting-of-product-cross-sellings-with-dynamic-product-group-by-price.md
 changelog/_unreleased/2023-08-14-replace-vue2-filters.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2023-10-09-deprecate-loggerfactory.md
@@ -1182,6 +1184,7 @@ changelog/_unreleased/2023-09-14-collect-cache-invalidations-in-redis.md
 changelog/_unreleased/2023-09-04-dont-trigger-flow-when-importing-csv.md
 changelog/_unreleased/2023-08-10-change-sw-order-select-document-type-modal-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-tagged-field-default-event.md
+changelog/_unreleased/2023-10-18-rulebuilder-date-range-condit.md
 changelog/_unreleased/2023-09-18-add-interval-to-sitemap-documentation.md
 changelog/_unreleased/2023-08-28-refactor-internals-of-seourlupdater.md
 changelog/_unreleased/2023-09-04-fix-user-recovery-request-on-different-default-language.md
@@ -4623,6 +4626,8 @@ tests/unit/Core/Checkout/Rule/Rule/Cart/GoodsPriceRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Cart/GoodsCountRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Cart/CartAmountRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Cart/CartPositionPriceRuleTest.php
+tests/unit/Core/Checkout/Rule/Rule/Cart/CartVolumeRuleTest.php
+tests/unit/Core/Checkout/Rule/Rule/Cart/CartWeightRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Context/IsNewCustomerRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Context/ShippingZipCodeRuleTest.php
 tests/unit/Core/Checkout/Rule/Rule/Context/ShippingCountryRuleTest.php
@@ -4698,6 +4703,7 @@ tests/unit/Core/Checkout/Cart/Rule/LineItemPropertyValueRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemCustomFieldRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemVariantValueRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/CartTotalPurchasePriceRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionHeightRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemPromotedRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemActualStockRuleTest.php
 tests/unit/Core/Checkout/Cart/CartRuleLoaderTest.php
@@ -14683,6 +14689,8 @@ src/Administration/Resources/app/administration/src/app/component/rule/condition
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-script/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-script/sw-condition-script.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-date-range/index.js
+src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-date-range/sw-condition-date-range.spec.js
+src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-date-range/sw-condition-date-range.spec.vue3.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-date-range/sw-condition-date-range.scss
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-date-range/sw-condition-date-range.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-purchase-price/sw-condition-line-item-purchase-price.html.twig
@@ -16258,6 +16266,8 @@ src/Administration/Resources/app/administration/src/module/sw-product/component/
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-cross-selling-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-cross-selling-form/sw-product-cross-selling-form.html.twig
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-cross-selling-form/sw-product-cross-selling-form.scss
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-cross-selling-form/sw-product-cross-selling-form.spec.vue3.js
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-cross-selling-form/sw-product-cross-selling-form.spec.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-visibility-select/sw-product-visibility-select.html.twig
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-visibility-select/index.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-media-form/sw-product-media-form.spec.js

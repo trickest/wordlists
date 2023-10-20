@@ -54,7 +54,9 @@ packages/js/product-editor/changelog/fix-38319
 packages/js/product-editor/changelog/fix-38020
 packages/js/product-editor/changelog/add-37266
 packages/js/product-editor/changelog/fix-40875
+packages/js/product-editor/changelog/tweak-block-wrappers
 packages/js/product-editor/changelog/update-38117
+packages/js/product-editor/changelog/fix-40897
 packages/js/product-editor/changelog/fix-39543
 packages/js/product-editor/changelog/add-37656
 packages/js/product-editor/changelog/update-move-ces-to-product-editor
@@ -94,6 +96,7 @@ packages/js/product-editor/changelog/add-39875
 packages/js/product-editor/changelog/update-38576
 packages/js/product-editor/changelog/tweak-refactor-blocks-org
 packages/js/product-editor/changelog/fix-38637
+packages/js/product-editor/changelog/fix-40845_header_buttons
 packages/js/product-editor/changelog/update-webpack-invalid-export-error
 packages/js/product-editor/changelog/add-product-link-edit-37610
 packages/js/product-editor/changelog/add-39831
@@ -230,6 +233,7 @@ packages/js/product-editor/changelog/add-37004
 packages/js/product-editor/changelog/fix-39295_block_editor_blocks_scroll
 packages/js/product-editor/changelog/dev-40203_edit_attribute_modal_styles
 packages/js/product-editor/changelog/add-39409
+packages/js/product-editor/changelog/update-40896_variation_switcher
 packages/js/product-editor/changelog/update-37899
 packages/js/product-editor/changelog/add-40044
 packages/js/product-editor/changelog/add-39797
@@ -240,6 +244,7 @@ packages/js/product-editor/changelog/fix-37348
 packages/js/product-editor/changelog/add-39421_make_use_of_new_block_template
 packages/js/product-editor/changelog/add-37985
 packages/js/product-editor/changelog/add-38243
+packages/js/product-editor/changelog/update-template-api-deprecate-conditional-block
 packages/js/product-editor/changelog/dev-consolidate-eslint-versions
 packages/js/product-editor/changelog/add-39788
 packages/js/product-editor/changelog/add-39687_auto_delete_variations
@@ -295,6 +300,8 @@ packages/js/product-editor/src/components/variation-switcher-footer/variation-sw
 packages/js/product-editor/src/components/variation-switcher-footer/index.ts
 packages/js/product-editor/src/components/variation-switcher-footer/variation-switcher-footer.tsx
 packages/js/product-editor/src/components/variation-switcher-footer/variation-image-placeholder.tsx
+packages/js/product-editor/src/components/number-control/index.tsx
+packages/js/product-editor/src/components/number-control/number-control.tsx
 packages/js/product-editor/src/components/shipping-dimensions-image/index.ts
 packages/js/product-editor/src/components/shipping-dimensions-image/shipping-dimensions-image.tsx
 packages/js/product-editor/src/components/shipping-dimensions-image/types.ts
@@ -443,6 +450,9 @@ packages/js/product-editor/src/components/details-name-field/index.ts
 packages/js/product-editor/src/components/details-name-field/details-name-field.tsx
 packages/js/product-editor/src/components/details-feature-field/index.ts
 packages/js/product-editor/src/components/details-feature-field/details-feature-field.tsx
+packages/js/product-editor/src/components/checkbox-control/style.scss
+packages/js/product-editor/src/components/checkbox-control/checkbox-control.tsx
+packages/js/product-editor/src/components/checkbox-control/index.tsx
 packages/js/product-editor/src/components/tabs/constants.ts
 packages/js/product-editor/src/components/tabs/index.ts
 packages/js/product-editor/src/components/tabs/style.scss
@@ -496,7 +506,6 @@ packages/js/product-editor/src/blocks/generic/conditional/README.md
 packages/js/product-editor/src/blocks/generic/checkbox/edit.tsx
 packages/js/product-editor/src/blocks/generic/checkbox/block.json
 packages/js/product-editor/src/blocks/generic/checkbox/index.ts
-packages/js/product-editor/src/blocks/generic/checkbox/editor.scss
 packages/js/product-editor/src/blocks/generic/checkbox/README.md
 packages/js/product-editor/src/blocks/generic/checkbox/types.ts
 packages/js/product-editor/src/blocks/generic/section/edit.tsx
@@ -4732,7 +4741,9 @@ plugins/woocommerce/changelog/fix-cys-font-family-issues
 plugins/woocommerce/changelog/fix-docblock-type-annotation-process-refund
 plugins/woocommerce/changelog/fix-cys-theme-id-option
 plugins/woocommerce/changelog/e2e-ensure-HPOS-is-disabled-when-required
+plugins/woocommerce/changelog/update-40896_variation_switcher
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
+plugins/woocommerce/changelog/update-template-api-deprecate-conditional-block
 plugins/woocommerce/changelog/update-40536-connect-themes-API-cys-intro
 plugins/woocommerce/changelog/update-disable-cys-frame-navigation
 plugins/woocommerce/changelog/add-40200
