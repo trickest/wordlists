@@ -1135,11 +1135,13 @@ changelog/_unreleased/2023-09-07-add-force-install-to-bootstrapper.md
 changelog/_unreleased/2023-08-09-change-sw-gtc-checkbox-default-event.md
 changelog/_unreleased/2023-08-18-throw-a-domain-exception-when-inserting-a-category-after-a-category-which-does-not-exist.md
 changelog/_unreleased/2023-09-22-exclude-cache-folder-from-backup.md
+changelog/_unreleased/2023-10-18-fix-that-multiple-instances-of-same-cms-element-from-app-sdk-are-not-working.md
 changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-default-event.md
 changelog/_unreleased/2023-08-21-vue3-fix-properties-module.md
 changelog/_unreleased/2023-08-09-change-sw-single-select-default-event.md
 changelog/_unreleased/2023-09-25-disable-database-profiler-on-cli.md
 changelog/_unreleased/2023-09-25-improved-sorting-error-message.md
+changelog/_unreleased/2023-10-11-make-settings-module-compatible-with-vue3.md
 changelog/_unreleased/2023-10-18-batch-cart-price-calculation.md
 changelog/_unreleased/2023-08-30-fix-download-file-name-and-fallback-cannot-contains-slashes.md
 changelog/_unreleased/2023-08-09-change-sw-entity-multi-id-select-default-event.md
@@ -1174,6 +1176,7 @@ changelog/_unreleased/2023-08-09-fix-overridden-super-calls-in-promise-chains-in
 changelog/_unreleased/changelog2023-10-05-fix-sw-cms-layout-modal-search-field.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
 changelog/_unreleased/2023-08-03-fix-transition-state-machine-exception.md
+changelog/_unreleased/2023-10-20-fix-country-in-shipping-address-is-not-translated.md
 changelog/_unreleased/2023-10-03-change-type-of-urlgenerator.md
 changelog/_unreleased/2023-08-14-media-path-storage.md
 changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
@@ -17741,10 +17744,12 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/form/
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/form/preview/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/form/preview/sw-cms-el-preview-form.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/index.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/config/sw-cms-el-config-location-renderer.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/config/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/config/sw-cms-el-config-location-renderer.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/component/sw-cms-el-location-renderer.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/component/index.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/component/sw-cms-el-location-renderer.spec.vue3.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/component/sw-cms-el-location-renderer.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/preview/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/preview/sw-cms-el-preview-location-renderer.html.twig

@@ -985,7 +985,7 @@ packages/core/admin/admin/src/components/PluginsInitializer.tsx
 packages/core/admin/admin/src/components/AuthenticatedApp.tsx
 packages/core/admin/admin/src/components/LeftMenu.tsx
 packages/core/admin/admin/src/components/RBACProvider.tsx
-packages/core/admin/admin/src/components/__mocks__/LanguageProvider.js
+packages/core/admin/admin/src/components/__mocks__/LanguageProvider.ts
 packages/core/admin/admin/src/components/UnauthenticatedLogo.tsx
 packages/core/admin/admin/src/components/GuidedTour/Homepage.tsx
 packages/core/admin/admin/src/components/GuidedTour/constants.ts
@@ -1050,7 +1050,9 @@ packages/core/admin/admin/src/translations/pt.json
 packages/core/admin/admin/src/translations/ko.json
 packages/core/admin/admin/src/translations/dk.json
 packages/core/admin/admin/src/hooks/useEnterprise.ts
+packages/core/admin/admin/src/hooks/useContentTypes.ts
 packages/core/admin/admin/src/hooks/useDebounce.ts
+packages/core/admin/admin/src/hooks/__mocks__/useContentTypes.ts
 packages/core/admin/admin/src/hooks/__mocks__/useConfigurations.ts
 packages/core/admin/admin/src/hooks/__mocks__/useAdminUsers.ts
 packages/core/admin/admin/src/hooks/useInjectReducer/tests/useInjectReducer.test.js
@@ -1058,6 +1060,7 @@ packages/core/admin/admin/src/hooks/useInjectReducer/index.js
 packages/core/admin/admin/src/hooks/useInjectReducer/useInjectReducer.js
 packages/core/admin/admin/src/hooks/tests/useEnterprise.test.ts
 packages/core/admin/admin/src/hooks/tests/useAdminRoles.test.ts
+packages/core/admin/admin/src/hooks/tests/useContentTypes.test.ts
 packages/core/admin/admin/src/hooks/index.js
 packages/core/admin/admin/src/hooks/useAdminRoles.ts
 packages/core/admin/admin/src/hooks/useSettingsForm/reducer.js
@@ -1067,10 +1070,6 @@ packages/core/admin/admin/src/hooks/useSettingsForm/index.js
 packages/core/admin/admin/src/hooks/useSettingsForm/init.js
 packages/core/admin/admin/src/hooks/useThemeToggle.ts
 packages/core/admin/admin/src/hooks/useConfiguration.ts
-packages/core/admin/admin/src/hooks/useContentTypes/__mocks__/index.js
-packages/core/admin/admin/src/hooks/useContentTypes/useContentTypes.js
-packages/core/admin/admin/src/hooks/useContentTypes/tests/index.test.js
-packages/core/admin/admin/src/hooks/useContentTypes/index.js
 packages/core/admin/admin/src/hooks/useMenu.ts
 packages/core/admin/admin/src/hooks/useAdminUsers.ts
 packages/core/admin/admin/src/hooks/useLicenseLimitNotification.ts
@@ -1146,6 +1145,7 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/Users/utils/validations/u
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/utils/validations/users/profile.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/utils/validations/users/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Users/utils/validations/users/roles.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/AuditLogs/SalesPage.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/LogoInput/reducer.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/LogoInput/tests/index.test.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/components/LogoInput/tests/reducer.test.js
@@ -1177,6 +1177,7 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/util
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/utils/parseFileMetadatas.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/utils/urlToFile.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/ApplicationInfosPage/utils/constants.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/ReviewWorkflows/SalesPage.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/CreatePage/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/CreatePage/utils/schema.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/Roles/EditPage/components/Curve/index.js
@@ -1333,6 +1334,7 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ListView/t
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ListView/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ListView/utils/tableHeaders.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ProtectedCreateView/index.js
+packages/core/admin/admin/src/pages/SettingsPage/pages/SingleSignOn/SalesPage.js
 packages/core/admin/admin/src/pages/SettingsPage/constants.js
 packages/core/admin/admin/src/pages/UseCasePage.tsx
 packages/core/admin/admin/src/pages/tests/UseCasePage.test.tsx
@@ -2128,6 +2130,7 @@ packages/core/admin/index.html
 packages/core/admin/.browserslistrc
 packages/core/admin/shared/permissions.ts
 packages/core/admin/shared/entities.ts
+packages/core/admin/shared/schema.ts
 packages/core/admin/index.js
 packages/core/admin/jest.config.js
 packages/core/admin/env.js

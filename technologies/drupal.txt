@@ -5236,6 +5236,7 @@ core/lib/Drupal/Core/Validation/Plugin/Validation/Constraint/AllowedValuesConstr
 core/lib/Drupal/Core/Validation/Plugin/Validation/Constraint/EmailConstraint.php
 core/lib/Drupal/Core/Validation/Plugin/Validation/Constraint/RangeConstraint.php
 core/lib/Drupal/Core/Validation/TranslatorInterface.php
+core/lib/Drupal/Core/Validation/BasicRecursiveValidatorFactory.php
 core/lib/Drupal/Core/Validation/Annotation/Constraint.php
 core/lib/Drupal/Core/KeyValueStore/NullStorageExpirable.php
 core/lib/Drupal/Core/KeyValueStore/KeyValueMemoryFactory.php
@@ -10477,7 +10478,6 @@ core/modules/file/tests/src/Kernel/AccessTest.php
 core/modules/file/tests/src/Kernel/LegacyValidatorTest.php
 core/modules/file/tests/src/Kernel/SpaceUsedTest.php
 core/modules/file/tests/src/Kernel/FileUriItemTest.php
-core/modules/file/tests/src/Kernel/FileUploadHandlerTest.php
 core/modules/file/tests/src/Kernel/DeleteTest.php
 core/modules/file/tests/src/Kernel/CopyTest.php
 core/modules/file/tests/src/Kernel/FileManagedUnitTestBase.php
@@ -10490,6 +10490,7 @@ core/modules/file/tests/src/Kernel/LoadTest.php
 core/modules/file/tests/src/Kernel/Formatter/FileEntityFormatterTest.php
 core/modules/file/tests/src/Kernel/FileRepositoryTest.php
 core/modules/file/tests/src/Kernel/LegacyValidateTest.php
+core/modules/file/tests/src/Kernel/Upload/LegacyFileUploadHandlerTest.php
 core/modules/file/tests/src/Kernel/Views/RelationshipNodeFileDataTest.php
 core/modules/file/tests/src/Kernel/Views/RelationshipUserFileDataTest.php
 core/modules/file/tests/src/Kernel/Views/FileViewsFieldAccessTest.php
@@ -10509,6 +10510,7 @@ core/modules/file/tests/src/Kernel/Plugin/migrate/source/d6/UploadTest.php
 core/modules/file/tests/src/Kernel/FileItemTest.php
 core/modules/file/tests/src/Kernel/Validation/FileValidatorTestBase.php
 core/modules/file/tests/src/Kernel/Validation/FileValidatorTest.php
+core/modules/file/tests/src/Kernel/Validation/UploadedFileValidatorTest.php
 core/modules/file/tests/src/Kernel/Migrate/d7/MigratePrivateFileTest.php
 core/modules/file/tests/src/Kernel/Migrate/d7/MigrateFileGetIdsTest.php
 core/modules/file/tests/src/Kernel/Migrate/d7/MigrateFileTest.php
@@ -10652,8 +10654,12 @@ core/modules/file/src/Plugin/migrate/process/d6/FieldFile.php
 core/modules/file/src/Plugin/migrate/process/d6/FileUri.php
 core/modules/file/src/FileStorageSchema.php
 core/modules/file/src/FileAccessFormatterControlHandlerInterface.php
+core/modules/file/src/Validation/Constraint/UploadedFileConstraintValidator.php
+core/modules/file/src/Validation/Constraint/UploadedFileConstraint.php
 core/modules/file/src/Validation/FileValidatorInterface.php
 core/modules/file/src/Validation/FileValidator.php
+core/modules/file/src/Validation/UploadedFileValidator.php
+core/modules/file/src/Validation/UploadedFileValidatorInterface.php
 core/modules/file/src/Validation/FileValidationEvent.php
 core/modules/file/src/Validation/RecursiveValidatorFactory.php
 core/modules/file/src/FileServiceProvider.php
@@ -14088,6 +14094,7 @@ core/modules/block/tests/src/Kernel/Plugin/migrate/source/BlockTest.php
 core/modules/block/tests/src/Kernel/BlockRebuildTest.php
 core/modules/block/tests/src/Kernel/Migrate/d7/MigrateBlockTest.php
 core/modules/block/tests/src/Kernel/Migrate/d7/MigrateBlockContentTranslationTest.php
+core/modules/block/tests/src/Kernel/Migrate/d7/MigrateBlockNoBlockContentTest.php
 core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockTest.php
 core/modules/block/tests/src/Kernel/Migrate/d6/MigrateBlockContentTranslationTest.php
 core/modules/block/tests/src/FunctionalJavascript/BlockFilterTest.php
