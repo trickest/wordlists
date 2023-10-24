@@ -980,6 +980,7 @@ packages/core/admin/admin/tests/server.ts
 packages/core/admin/admin/tests/mockData.ts
 packages/core/admin/admin/tests/store.ts
 packages/core/admin/admin/tests/utils.tsx
+packages/core/admin/admin/src/App.tsx
 packages/core/admin/admin/src/components/ThemeToggleProvider.tsx
 packages/core/admin/admin/src/components/PluginsInitializer.tsx
 packages/core/admin/admin/src/components/AuthenticatedApp.tsx
@@ -1010,8 +1011,9 @@ packages/core/admin/admin/src/components/PrivateRoute.tsx
 packages/core/admin/admin/src/components/ConfigurationProvider.tsx
 packages/core/admin/admin/src/assets/images/icon_offline-cloud.svg
 packages/core/admin/admin/src/assets/images/logo-strapi-2022.svg
+packages/core/admin/admin/src/selectors.js
+packages/core/admin/admin/src/reducer.js
 packages/core/admin/admin/src/constants.ts
-packages/core/admin/admin/src/app.js
 packages/core/admin/admin/src/translations/ja.json
 packages/core/admin/admin/src/translations/tr.json
 packages/core/admin/admin/src/translations/fr.json
@@ -1081,10 +1083,9 @@ packages/core/admin/admin/src/hooks/useSettingsMenu/utils/formatLinks.js
 packages/core/admin/admin/src/tests/StrapiApp.test.js
 packages/core/admin/admin/src/tests/__snapshots__/StrapiApp.test.js.snap
 packages/core/admin/admin/src/index.html
-packages/core/admin/admin/src/shared/components/InjectionZone/index.js
-packages/core/admin/admin/src/shared/components/index.js
-packages/core/admin/admin/src/shared/hooks/index.js
-packages/core/admin/admin/src/shared/hooks/useInjectionZone/index.js
+packages/core/admin/admin/src/shared/components/InjectionZone.tsx
+packages/core/admin/admin/src/shared/hooks/__mocks__/useInjectionZone.ts
+packages/core/admin/admin/src/shared/hooks/useInjectionZone.ts
 packages/core/admin/admin/src/index.js
 packages/core/admin/admin/src/types/adminAPI.ts
 packages/core/admin/admin/src/core/store/hooks.ts
@@ -1096,10 +1097,9 @@ packages/core/admin/admin/src/core/apis/Components.js
 packages/core/admin/admin/src/core/apis/CustomFields.js
 packages/core/admin/admin/src/core/apis/Fields.js
 packages/core/admin/admin/src/core/apis/Plugin.js
-packages/core/admin/admin/src/core/utils/basename.js
-packages/core/admin/admin/src/core/utils/tests/createHook.test.js
-packages/core/admin/admin/src/core/utils/index.js
-packages/core/admin/admin/src/core/utils/createHook.js
+packages/core/admin/admin/src/core/utils/tests/createHook.test.ts
+packages/core/admin/admin/src/core/utils/basename.ts
+packages/core/admin/admin/src/core/utils/createHook.ts
 packages/core/admin/admin/src/pages/SettingsPage/components/Filters/index.js
 packages/core/admin/admin/src/pages/SettingsPage/components/Tokens/TokenTypeSelect/index.js
 packages/core/admin/admin/src/pages/SettingsPage/components/Tokens/Regenerate/index.js
@@ -1336,6 +1336,7 @@ packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ListView/u
 packages/core/admin/admin/src/pages/SettingsPage/pages/TransferTokens/ProtectedCreateView/index.js
 packages/core/admin/admin/src/pages/SettingsPage/pages/SingleSignOn/SalesPage.js
 packages/core/admin/admin/src/pages/SettingsPage/constants.js
+packages/core/admin/admin/src/pages/SettingsPage/utils/makeUniqueRoutes.ts
 packages/core/admin/admin/src/pages/UseCasePage.tsx
 packages/core/admin/admin/src/pages/tests/UseCasePage.test.tsx
 packages/core/admin/admin/src/pages/HomePage/assets/strapi-cloud-icon.svg
@@ -1347,10 +1348,6 @@ packages/core/admin/admin/src/pages/HomePage/tests/index.test.js
 packages/core/admin/admin/src/pages/HomePage/index.js
 packages/core/admin/admin/src/pages/HomePage/CloudBox.js
 packages/core/admin/admin/src/pages/HomePage/HomeHeader.js
-packages/core/admin/admin/src/pages/App/selectors.js
-packages/core/admin/admin/src/pages/App/reducer.js
-packages/core/admin/admin/src/pages/App/index.js
-packages/core/admin/admin/src/pages/App/constants.js
 packages/core/admin/admin/src/pages/InternalErrorPage.tsx
 packages/core/admin/admin/src/pages/InstalledPluginsPage/hooks/usePlugins/index.js
 packages/core/admin/admin/src/pages/InstalledPluginsPage/index.js
@@ -1777,7 +1774,6 @@ packages/core/admin/admin/src/utils/tests/formatAPIErrors.test.ts
 packages/core/admin/admin/src/utils/tests/getFullName.test.ts
 packages/core/admin/admin/src/utils/tests/hashAdminUserEmail.test.ts
 packages/core/admin/admin/src/utils/tests/createRoute.test.tsx
-packages/core/admin/admin/src/utils/makeUniqueRoutes.ts
 packages/core/admin/admin/src/utils/getFullName.ts
 packages/core/admin/admin/src/utils/createRoute.tsx
 packages/core/admin/admin/src/utils/hashAdminUserEmail.ts
@@ -1932,6 +1928,7 @@ packages/core/admin/LICENSE
 packages/core/admin/.npmignore
 packages/core/admin/.eslintrc.js
 packages/core/admin/webpack.config.js
+packages/core/admin/ee/admin/constants.ts
 packages/core/admin/ee/admin/hooks/__mocks__/useLicenseLimits.js
 packages/core/admin/ee/admin/hooks/useAuthProviders.js
 packages/core/admin/ee/admin/hooks/tests/useLicenseLimits.test.js
@@ -2012,7 +2009,6 @@ packages/core/admin/ee/admin/pages/SettingsPage/pages/SingleSignOn/utils/schema.
 packages/core/admin/ee/admin/pages/SettingsPage/constants.js
 packages/core/admin/ee/admin/pages/AuthResponse/index.js
 packages/core/admin/ee/admin/pages/HomePage/index.js
-packages/core/admin/ee/admin/pages/App/constants.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Login/index.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Providers/index.js
 packages/core/admin/ee/admin/pages/AuthPage/components/Providers/SSOProviders.js
@@ -2039,7 +2035,6 @@ packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColum
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/ReviewWorkflowsStageEE.js
 packages/core/admin/ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/constants.js
 packages/core/admin/ee/admin/content-manager/pages/ListSettingsView/constants.js
-packages/core/admin/ee/admin/constants.js
 packages/core/admin/ee/server/validation/audit-logs.js
 packages/core/admin/ee/server/validation/review-workflows.js
 packages/core/admin/ee/server/validation/authentication.js
@@ -2482,7 +2477,6 @@ packages/core/content-type-builder/admin/src/components/AttributeOptions/OptionB
 packages/core/content-type-builder/admin/src/components/AttributeOptions/CustomFieldsList/index.js
 packages/core/content-type-builder/admin/src/components/AttributeOptions/AttributeList/index.js
 packages/core/content-type-builder/admin/src/components/AttributeOptions/AttributeOption/index.js
-packages/core/content-type-builder/admin/src/components/AttributeOptions/utils/getPadding.js
 packages/core/content-type-builder/admin/src/components/SelectComponents/index.js
 packages/core/content-type-builder/admin/src/components/ComponentCard/index.js
 packages/core/content-type-builder/admin/src/components/ComponentCard/ComponentIcon/index.js
@@ -4105,8 +4099,7 @@ packages/utils/tsconfig/package.json
 packages/utils/tsconfig/client.json
 .prettierignore
 package.json
-.yarn/plugins/@yarnpkg/plugin-interactive-tools.cjs
-.yarn/releases/yarn-3.6.4.cjs
+.yarn/releases/yarn-4.0.0.cjs
 jsconfig.json
 test/helpers/test-app.js
 test/helpers/create-context.js

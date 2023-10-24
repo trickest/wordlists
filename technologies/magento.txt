@@ -12245,6 +12245,7 @@ app/code/Magento/Customer/Model/Renderer/Region.php
 app/code/Magento/Customer/Model/ForgotPasswordToken/GetCustomerByToken.php
 app/code/Magento/Customer/Model/ForgotPasswordToken/ConfirmCustomerByToken.php
 app/code/Magento/Customer/Model/Options.php
+app/code/Magento/Customer/Model/AccountManagement/Authenticate.php
 app/code/Magento/Customer/Model/Context.php
 app/code/Magento/Customer/Model/Config/Source/Group/Multiselect.php
 app/code/Magento/Customer/Model/Config/Source/Address/Type.php
@@ -17589,7 +17590,6 @@ app/code/Magento/CustomerGraphQl/Plugin/ClearCustomerSessionAfterRequest.php
 app/code/Magento/CustomerGraphQl/CacheIdFactorProviders/CustomerGroupProvider.php
 app/code/Magento/CustomerGraphQl/CacheIdFactorProviders/IsLoggedInProvider.php
 app/code/Magento/CustomerGraphQl/CacheIdFactorProviders/CustomerTaxRateProvider.php
-app/code/Magento/CustomerGraphQl/Test/Unit/Model/Context/AddUserInfoToContextTest.php
 app/code/Magento/CustomerGraphQl/Test/Unit/Model/Resolver/RevokeCustomerTokenTest.php
 app/code/Magento/CustomerGraphQl/Test/Unit/Model/Resolver/IsSubscribedTest.php
 app/code/Magento/CustomerGraphQl/Test/Unit/Plugin/ClearCustomerSessionAfterRequestTest.php
@@ -25749,7 +25749,6 @@ app/code/Magento/GraphQlCache/Model/CacheId/CacheIdCalculator.php
 app/code/Magento/GraphQlCache/registration.php
 app/code/Magento/GraphQlCache/composer.json
 app/code/Magento/GraphQlCache/Setup/ConfigOptionsList.php
-app/code/Magento/GraphQlCache/Test/Unit/Controller/Plugin/GraphQlTest.php
 app/code/Magento/GraphQlCache/Test/Unit/Model/CacheableQueryHandlerTest.php
 app/code/Magento/GraphQlCache/Test/Unit/Model/CacheId/CacheIdCalculatorTest.php
 app/code/Magento/GraphQlCache/README.md
@@ -35953,6 +35952,7 @@ dev/tests/integration/testsuite/Magento/MediaGallery/_files/media_asset_rollback
 dev/tests/integration/testsuite/Magento/MediaGallery/_files/media_asset_loaded_year_ago_rollback.php
 dev/tests/integration/testsuite/Magento/MediaGallery/_files/media_asset_loaded_year_ago.php
 dev/tests/integration/testsuite/Magento/MediaGallery/_files/media_asset.php
+dev/tests/integration/testsuite/Magento/CustomerGraphQl/Model/Context/AddUserInfoToContextTest.php
 dev/tests/integration/testsuite/Magento/CustomerGraphQl/Model/Resolver/Cache/CustomerModelHydratorDehydratorTest.php
 dev/tests/integration/testsuite/Magento/CustomerGraphQl/Model/Resolver/ChangePasswordTest.php
 dev/tests/integration/testsuite/Magento/CustomerGraphQl/Model/Resolver/CreateCustomerTest.php
@@ -38543,6 +38543,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/LoginAsCustomerGraphQl/Create
 dev/tests/api-functional/testsuite/Magento/GraphQl/LoginAsCustomerGraphQl/GenerateLoginCustomerTokenTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/LoginAsCustomerGraphQl/UpdateCustomerV2Test.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/SwatchesGraphQl/AttributesMetadataTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/GraphQlTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/CacheIdFactorProviders/Customer/CustomerTaxRateProviderTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/CacheIdFactorProviders/Customer/CustomerGroupProviderTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/CacheIdFactorProviders/Customer/IsLoggedInProviderTest.php

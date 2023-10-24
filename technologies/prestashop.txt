@@ -2518,6 +2518,7 @@ tests/Unit/PrestaShopBundle/Service/Grid/ResponseBuilderTest.php
 tests/Unit/PrestaShopBundle/Service/Hook/HookFinderTest.php
 tests/Unit/PrestaShopBundle/Service/DataProvider/Admin/CategoriesProviderTest.php
 tests/Unit/PrestaShopBundle/Service/DataProvider/Admin/fixtures/categories.yml
+tests/Unit/PrestaShopBundle/ApiPlatform/Scopes/ApiResourceScopesExtractorTest.php
 tests/Unit/PrestaShopBundle/ApiPlatform/DomainSerializerTest.php
 tests/Unit/PrestaShopBundle/ApiPlatform/StateProvider/QueryProviderTest.php
 tests/Unit/PrestaShopBundle/Api/QueryParamsCollectionTest.php
@@ -2585,6 +2586,9 @@ tests/Unit/Resources/currencies-feed/currencies-usd.xml
 tests/Unit/Resources/modules/module-awesome/config.xml
 tests/Unit/Resources/modules/module-awesome/config_it.xml
 tests/Unit/Resources/modules/module-awesome/config_fr.xml
+tests/Unit/Resources/api_platform/fake_module_resources/fake_module/src/ApiPlatform/Resources/ApiAccess.php
+tests/Unit/Resources/api_platform/fake_module_resources/disabled_fake_module/src/ApiPlatform/Resources/CustomerGroup.php
+tests/Unit/Resources/api_platform/fake_core_resources/src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
 tests/Unit/Resources/security/htaccess
 tests/Unit/Adapter/CartRule/CartRuleActionFillerTest.php
 tests/Unit/Adapter/Security/CommandHandler/DeleteCustomerSessionHandlerTest.php
@@ -2895,6 +2899,7 @@ tests/Unit/Core/ConstraintValidator/CustomerNameValidatorTest.php
 tests/Unit/Core/ConstraintValidator/PositiveOrZeroValidatorTest.php
 tests/Unit/Core/ConstraintValidator/CartRuleValidatorTest.php
 tests/Unit/Core/ConstraintValidator/CleanHtmlWithIframeValidatorTest.php
+tests/Unit/Core/ConstraintValidator/InstalledApiResourceScopeValidatorTest.php
 tests/Unit/Core/ConstraintValidator/CleanHtmlValidatorTest.php
 tests/Unit/Core/ConstraintValidator/TypedRegexValidatorTest.php
 tests/Unit/Core/ConstraintValidator/DefaultLanguageValidatorTest.php
@@ -4928,6 +4933,8 @@ src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/PerformanceFormDa
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/OptionalFeaturesType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/MemcacheServerType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/DebugModeType.php
+src/PrestaShopBundle/Form/Admin/AdvancedParameters/AuthorizationServer/ResourceScopesType.php
+src/PrestaShopBundle/Form/Admin/AdvancedParameters/AuthorizationServer/SwitchScopeType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/AuthorizationServer/ApiAccessType.php
 src/PrestaShopBundle/Form/Admin/Product/ProductPrice.php
 src/PrestaShopBundle/Form/Admin/Product/ProductShipping.php
@@ -5110,12 +5117,16 @@ src/PrestaShopBundle/Service/TransitionalBehavior/AdminPagePreferenceInterface.p
 src/PrestaShopBundle/Service/TransitionalBehavior/AdminUrlGeneratorFactory.php
 src/PrestaShopBundle/ApiPlatform/Provider/QueryProvider.php
 src/PrestaShopBundle/ApiPlatform/DomainSerializer.php
+src/PrestaShopBundle/ApiPlatform/Metadata/ScopesToSecurityMetadataCollectionFactoryDecorator.php
 src/PrestaShopBundle/ApiPlatform/Exception/NoExtraPropertiesFoundException.php
 src/PrestaShopBundle/ApiPlatform/Resources/CustomerGroup.php
 src/PrestaShopBundle/ApiPlatform/Resources/Hook.php
 src/PrestaShopBundle/ApiPlatform/Resources/FoundProduct.php
 src/PrestaShopBundle/ApiPlatform/Resources/CartRule.php
-src/PrestaShopBundle/ApiPlatform/Decorator/AttributesResourceMetadataCollectionFactoryDecorator.php
+src/PrestaShopBundle/ApiPlatform/Scopes/ApiResourceScopesExtractor.php
+src/PrestaShopBundle/ApiPlatform/Scopes/CachedApiResourceScopesExtractor.php
+src/PrestaShopBundle/ApiPlatform/Scopes/ApiResourceScopes.php
+src/PrestaShopBundle/ApiPlatform/Scopes/ApiResourceScopesExtractorInterface.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DateTimeImmutableDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/ObjectDenormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DecimalNumberDenormalizer.php
@@ -9557,8 +9568,10 @@ src/Core/Employee/NavigationMenuTogglerInterface.php
 src/Core/Employee/FormLanguageChangerInterface.php
 src/Core/Employee/AvatarProviderInterface.php
 src/Core/ConstraintValidator/UniqueStateIsoCodeValidator.php
+src/Core/ConstraintValidator/InstalledApiResourceScopeValidator.php
 src/Core/ConstraintValidator/TypedRegexValidator.php
 src/Core/ConstraintValidator/PositiveOrZeroValidator.php
+src/Core/ConstraintValidator/Constraints/InstalledApiResourceScope.php
 src/Core/ConstraintValidator/Constraints/UniqueStateIsoCode.php
 src/Core/ConstraintValidator/Constraints/DateRange.php
 src/Core/ConstraintValidator/Constraints/NotBlankWhenRequired.php

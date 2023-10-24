@@ -1759,6 +1759,7 @@ packages/js/data/changelog/update-remove-notes-exceeding-characters-warning
 packages/js/data/changelog/fix-jetpack-connection-data-type
 packages/js/data/changelog/add-36189
 packages/js/data/changelog/add-form-factory-tab
+packages/js/data/changelog/add-export-wcuser-type
 packages/js/data/changelog/update-jest-merge
 packages/js/data/changelog/update-get-permalink-parts-create-selector
 packages/js/data/changelog/add-40042_default_values_for_variations
@@ -4647,6 +4648,7 @@ plugins/woocommerce/changelog/fix-active-theme-has-mods-logic
 plugins/woocommerce/changelog/39948-patch-4
 plugins/woocommerce/changelog/fix-core-editor-store-in-classic
 plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
+plugins/woocommerce/changelog/add-core-profiler-email-marketing-opt-in
 plugins/woocommerce/changelog/e2e-update-playwright-1_38
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
@@ -4664,6 +4666,7 @@ plugins/woocommerce/changelog/fix-cys-design-with-ai-duplicate-color-palette-val
 plugins/woocommerce/changelog/add-product-editor-block-render-e2e-test
 plugins/woocommerce/changelog/tweak-40821-cys-save-button-spinner
 plugins/woocommerce/changelog/update-set-default-font-pairing
+plugins/woocommerce/changelog/fix-change_product_creation_experiment_name
 plugins/woocommerce/changelog/fix-admin-select2-fallback-colors
 plugins/woocommerce/changelog/e2e-add-order-notes
 plugins/woocommerce/changelog/add-40593_pricing_tab_for_variations
@@ -4679,6 +4682,7 @@ plugins/woocommerce/changelog/fix-deprecate-sofort
 plugins/woocommerce/changelog/fix-40319
 plugins/woocommerce/changelog/add-unit-tests
 plugins/woocommerce/changelog/pr-35743
+plugins/woocommerce/changelog/pr-40866
 plugins/woocommerce/changelog/update-project-labeler-labels
 plugins/woocommerce/changelog/add-40598
 plugins/woocommerce/changelog/fix-refactored-cys-banner
@@ -4693,6 +4697,7 @@ plugins/woocommerce/changelog/add-template-api-conditional-visibility
 plugins/woocommerce/changelog/add-35145
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.3.0
 plugins/woocommerce/changelog/fix-40370
+plugins/woocommerce/changelog/docs-woocommerce-endpoints
 plugins/woocommerce/changelog/fix-39626-pending-order-syncs
 plugins/woocommerce/changelog/fix-cys-ai-state-machine
 plugins/woocommerce/changelog/update-40426-remove-SMB-and-large-logic-cys
@@ -4764,6 +4769,7 @@ plugins/woocommerce/changelog/update-40896_variation_switcher
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
 plugins/woocommerce/changelog/update-template-api-deprecate-conditional-block
 plugins/woocommerce/changelog/update-40536-connect-themes-API-cys-intro
+plugins/woocommerce/changelog/pr-40964
 plugins/woocommerce/changelog/update-disable-cys-frame-navigation
 plugins/woocommerce/changelog/add-40200
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
@@ -7374,6 +7380,7 @@ docs/getting-started/debugging.md
 docs/getting-started/developer-tools.md
 docs/getting-started/readme.md
 docs/getting-started/developer-resources.md
+docs/getting-started/woocommerce-endpoints.md
 docs/wc-cli/overview.md
 docs/wc-cli/commands.md
 docs/code-snippets/change-a-currency-symbol.md

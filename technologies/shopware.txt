@@ -1073,6 +1073,7 @@ changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
 changelog/_unreleased/2023-10-12-deprecate-unused-components-for-v6-0-0.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
+changelog/_unreleased/2023-10-24-update-event-emitting-of-sw-sales-channel-config.md
 changelog/_unreleased/2023-08-01-fix-promotion-datepicker-prop-usage.md
 changelog/_unreleased/2023-09-11-fixing-add-product-by-number.md
 changelog/_unreleased/2023-08-16-allow-to-restrict-theme-compile-to-themes-and-sales-channels.md
@@ -1104,6 +1105,7 @@ changelog/_unreleased/2023-09-28-sugar-syntax-for-es-definition.md
 changelog/_unreleased/2022-08-22-newsletter-recipient-module.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-09-07-add-indeterminate-checkbox-state.md
+changelog/_unreleased/2023-10-23-fix-disappearing-orders-when-cancelling-admin-order-edit.md
 changelog/_unreleased/2023-08-29-remove-cached-seo-resolver.md
 changelog/_unreleased/2023-09-05-add-twig-block-to-tab-component-on-customer-detail-page.md
 changelog/_unreleased/2023-09-01-add-non-stackable-line-item-exception-to-log-level-notice.md
@@ -4479,10 +4481,12 @@ tests/unit/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRoute
 tests/unit/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/Event/ReviewFormEventTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewSaveRouteTest.php
+tests/unit/Core/Content/Product/SalesChannel/Review/CachedProductReviewRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Detail/AvailableCombinationLoaderTest.php
 tests/unit/Core/Content/Product/SalesChannel/Detail/ProductDetailRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Detail/CachedProductDetailRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Price/ProductPriceCalculatorTest.php
+tests/unit/Core/Content/Product/SalesChannel/Price/ReferencePriceDtoTest.php
 tests/unit/Core/Content/Product/SalesChannel/Price/AppScriptProductPriceCalculatorTest.php
 tests/unit/Core/Content/Product/SalesChannel/Suggest/CachedProductSuggestRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Suggest/ProductSuggestRouteTest.php
@@ -4506,6 +4510,7 @@ tests/unit/Core/Content/Product/Events/ProductStatesChangedEventTest.php
 tests/unit/Core/Content/Product/Subscriber/ProductSubscriberTest.php
 tests/unit/Core/Content/Product/Cleanup/CleanupUnusedDownloadMediaTaskHandlerTest.php
 tests/unit/Core/Content/Product/Cleanup/CleanupUnusedDownloadMediaTaskTest.php
+tests/unit/Core/Content/Product/Hook/Pricing/ProductPricingHookTest.php
 tests/unit/Core/Content/Product/Hook/Pricing/CheapestPriceFacadeTest.php
 tests/unit/Core/Content/Product/Hook/ProductProxyTest.php
 tests/unit/Core/Content/ProductExport/Event/ProductExportLoggingEventTest.php

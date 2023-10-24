@@ -89,6 +89,7 @@ packages/specs/src/components/role.yaml
 packages/specs/src/components/permissions.yaml
 packages/specs/src/components/activity.yaml
 packages/specs/src/components/file.yaml
+packages/specs/src/components/version.yaml
 packages/specs/src/components/setting.yaml
 packages/specs/src/components/diff.yaml
 packages/specs/src/components/user.yaml
@@ -103,6 +104,11 @@ packages/specs/src/paths/folders/folders.yaml
 packages/specs/src/paths/folders/folder.yaml
 packages/specs/src/paths/server/info.yaml
 packages/specs/src/paths/server/ping.yaml
+packages/specs/src/paths/versions/promote.yaml
+packages/specs/src/paths/versions/versions.yaml
+packages/specs/src/paths/versions/compare.yaml
+packages/specs/src/paths/versions/version.yaml
+packages/specs/src/paths/versions/save.yaml
 packages/specs/src/paths/users/me-tfa-enable.yaml
 packages/specs/src/paths/users/me.yaml
 packages/specs/src/paths/users/invite-accept.yaml
@@ -173,6 +179,7 @@ packages/specs/src/parameters/id.yaml
 packages/specs/src/parameters/uuid.yaml
 packages/specs/src/parameters/meta.yaml
 packages/specs/src/parameters/offset.yaml
+packages/specs/src/parameters/version.yaml
 packages/specs/src/parameters/filter.yaml
 packages/specs/src/parameters/page.yaml
 packages/specs/src/parameters/sort.yaml
@@ -612,6 +619,11 @@ packages/storage-driver-supabase/package.json
 packages/storage-driver-supabase/src/index.ts
 packages/storage-driver-supabase/src/index.test.ts
 packages/storage-driver-supabase/readme.md
+packages/create-directus-project/license
+packages/create-directus-project/package.json
+packages/create-directus-project/lib/index.js
+packages/create-directus-project/lib/check-requirements.js
+packages/create-directus-project/readme.md
 packages/schema/tsconfig.json
 packages/schema/license
 packages/schema/package.json
@@ -2332,6 +2344,7 @@ api/src/cli/commands/schema/apply.ts
 api/src/cli/commands/schema/snapshot.ts
 api/src/cli/index.ts
 api/src/cli/run.ts
+api/src/cli/load-extensions.ts
 api/src/cli/utils/create-db-connection.ts
 api/src/cli/utils/defaults.ts
 api/src/cli/utils/drivers.ts
@@ -2950,7 +2963,14 @@ sdk/src/utils/request.ts
 sdk/readme.md
 contributors.yml
 .vscode/extensions.json
+.changeset/chilly-radios-develop.md
+.changeset/orange-bobcats-repeat.md
+.changeset/metal-shrimps-enjoy.md
+.changeset/smart-schools-run.md
+.changeset/pink-points-run.md
 .changeset/config.json
+.changeset/old-eggs-bathe.md
 .changeset/many-beds-beam.md
+.changeset/pretty-mangos-build.md
 .eslintignore
 .npmrc

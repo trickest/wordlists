@@ -2235,6 +2235,7 @@ app/frontend/tests/support/assertions/toHaveImagePreview.ts
 app/frontend/tests/support/mock-permissions.ts
 app/frontend/tests/support/utils.ts
 app/frontend/tests/support/mock-user.ts
+app/frontend/tests/graphql/factories/SearchResult.ts
 app/frontend/tests/graphql/factories/Organization.ts
 app/frontend/tests/graphql/factories/AddressesField.ts
 app/frontend/tests/graphql/factories/TicketArticle.ts
@@ -2261,6 +2262,7 @@ app/frontend/tests/graphql/builders/__tests__/mutation-calls.spec.ts
 app/frontend/tests/graphql/builders/index.ts
 app/frontend/tests/graphql/builders/utils.ts
 app/frontend/tests/graphql/builders/mocks.ts
+app/frontend/tests/graphql/builders/logger.ts
 app/frontend/tests/fixtures/graphqlSampleTypes.ts
 app/frontend/shared/components/CommonTicketEscalationIndicator/__tests__/CommonTicketEscalationIndicator.spec.ts
 app/frontend/shared/components/CommonTicketEscalationIndicator/CommonTicketEscalationIndicator.vue
@@ -7480,6 +7482,7 @@ spec/fixtures/files/import/otrs/user/default.json
 spec/fixtures/files/import/otrs/user/capital_email.json
 spec/fixtures/files/import/otrs/user/camel_case_login.json
 spec/fixtures/files/import/otrs/state/closed_successful.json
+spec/fixtures/files/import/otrs/state/closed_other.json
 spec/fixtures/files/import/otrs/state/new.json
 spec/fixtures/files/import/otrs/state/removed.json
 spec/fixtures/files/import/otrs/state/closed_unsuccessful.json
