@@ -1788,6 +1788,8 @@ core/profiles/demo_umami/demo_umami.info.yml
 core/profiles/demo_umami/demo_umami.libraries.yml
 core/profiles/demo_umami/themes/umami/logo.svg
 core/profiles/demo_umami/themes/umami/css/classy/README.txt
+core/profiles/demo_umami/themes/umami/components/footer-block/footer-block.twig
+core/profiles/demo_umami/themes/umami/components/footer-block/footer-block.component.yml
 core/profiles/demo_umami/themes/umami/components/card/card.twig
 core/profiles/demo_umami/themes/umami/components/card/card.component.yml
 core/profiles/demo_umami/themes/umami/components/read-more/read-more.component.yml
@@ -10479,6 +10481,7 @@ core/modules/file/tests/src/Kernel/AccessTest.php
 core/modules/file/tests/src/Kernel/LegacyValidatorTest.php
 core/modules/file/tests/src/Kernel/SpaceUsedTest.php
 core/modules/file/tests/src/Kernel/FileUriItemTest.php
+core/modules/file/tests/src/Kernel/FileUploadHandlerTest.php
 core/modules/file/tests/src/Kernel/DeleteTest.php
 core/modules/file/tests/src/Kernel/CopyTest.php
 core/modules/file/tests/src/Kernel/FileManagedUnitTestBase.php
@@ -10587,6 +10590,7 @@ core/modules/file/tests/modules/file_test_views/test_views/views.view.file_exten
 core/modules/file/tests/modules/file_validator_test/file_validator_test.info.yml
 core/modules/file/tests/modules/file_validator_test/file_validator_test.services.yml
 core/modules/file/tests/modules/file_validator_test/src/EventSubscriber/FileValidationTestSubscriber.php
+core/modules/file/tests/modules/file_validator_test/src/EventSubscriber/FileSanitizationEventSubscriber.php
 core/modules/file/src/EventSubscriber/FileEventSubscriber.php
 core/modules/file/src/ComputedFileUrl.php
 core/modules/file/src/FileRepositoryInterface.php

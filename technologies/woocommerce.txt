@@ -43,6 +43,7 @@ packages/js/product-editor/changelog/add-37264
 packages/js/product-editor/changelog/fix-tabbed-navigation-37932
 packages/js/product-editor/changelog/add-name-block-37007
 packages/js/product-editor/changelog/tweak-category-taxonomy
+packages/js/product-editor/changelog/fix-checkbox-with-value
 packages/js/product-editor/changelog/fix-image-section-spacing
 packages/js/product-editor/changelog/fix-new_product_editor_variation_actions_style
 packages/js/product-editor/changelog/add-37103
@@ -73,6 +74,7 @@ packages/js/product-editor/changelog/update-40072_variation_visibility_icon
 packages/js/product-editor/changelog/add-40198
 packages/js/product-editor/changelog/fix-40844
 packages/js/product-editor/changelog/dev-40216_remove_confirmation_modal_for_dismissing_attributes_variations
+packages/js/product-editor/changelog/fix-variation_name
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/fix-product-summary-field-margin
@@ -196,6 +198,7 @@ packages/js/product-editor/changelog/dev-update-eslint-plugin
 packages/js/product-editor/changelog/add-40595
 packages/js/product-editor/changelog/fix-38221
 packages/js/product-editor/changelog/add-40493
+packages/js/product-editor/changelog/fix-publish-btn-variations
 packages/js/product-editor/changelog/update-remove-editor-styles-wrapper
 packages/js/product-editor/changelog/fix-typescript-incremental-builds
 packages/js/product-editor/changelog/add-39892
@@ -785,6 +788,7 @@ packages/js/explat/.npmrc
 packages/js/components/CHANGELOG.md
 packages/js/components/tsconfig.json
 packages/js/components/changelog/.gitkeep
+packages/js/components/changelog/update-replace-dependency-on-jetpack-in-woo-services-task-list
 packages/js/components/changelog/fix-34015-badge-design-fix
 packages/js/components/.eslintrc.js
 packages/js/components/webpack.config.js
@@ -3285,6 +3289,7 @@ plugins/woocommerce-admin/client/marketplace/marketplace.scss
 plugins/woocommerce-admin/client/marketplace/contexts/marketplace-context.tsx
 plugins/woocommerce-admin/client/marketplace/contexts/types.ts
 plugins/woocommerce-admin/client/marketplace/utils/functions.tsx
+plugins/woocommerce-admin/client/marketplace/utils/tracking.ts
 plugins/woocommerce-admin/client/payments-welcome/exit-survey-modal.tsx
 plugins/woocommerce-admin/client/payments-welcome/apms.tsx
 plugins/woocommerce-admin/client/payments-welcome/style.scss
@@ -3326,6 +3331,7 @@ plugins/woocommerce-admin/client/task-lists/components/back-button.tsx
 plugins/woocommerce-admin/client/task-lists/components/test/task-list.test.tsx
 plugins/woocommerce-admin/client/task-lists/components/test/task-list-item.test.tsx
 plugins/woocommerce-admin/client/task-lists/components/test/task.test.tsx
+plugins/woocommerce-admin/client/task-lists/components/terms-of-service.js
 plugins/woocommerce-admin/client/task-lists/components/task-list.scss
 plugins/woocommerce-admin/client/task-lists/components/placeholder.scss
 plugins/woocommerce-admin/client/task-lists/components/back-button.scss
@@ -4077,6 +4083,7 @@ plugins/woocommerce-admin/package.json
 plugins/woocommerce-admin/.stylelintignore
 plugins/woocommerce-admin/.browserslistrc
 plugins/woocommerce-admin/.distignore
+plugins/woocommerce-admin/bin/modified-editsite-lock-unlock.js
 plugins/woocommerce-admin/bin/package-update-textdomain.js
 plugins/woocommerce-admin/bin/hook-reference/data.js
 plugins/woocommerce-admin/bin/hook-reference/index.js
@@ -4610,10 +4617,12 @@ plugins/woocommerce/changelog/add-expose-block-id-and-order
 plugins/woocommerce/changelog/issues-30778-wc_get_products_by_category_ID
 plugins/woocommerce/changelog/pr-40275
 plugins/woocommerce/changelog/update-cys-font-paring
+plugins/woocommerce/changelog/fix-left-menu-invalid-top-space
 plugins/woocommerce/changelog/tweak-flaky-meta-data-save-test
 plugins/woocommerce/changelog/add-40328-intro-page-when-task-not-completed-but-content-changed
 plugins/woocommerce/changelog/trunk
 plugins/woocommerce/changelog/fix-color-panel-and-nav-links
+plugins/woocommerce/changelog/update-40909-coreprofiler-include-tiktok-plugin
 plugins/woocommerce/changelog/fix-remove_extra_quotes_in_block_editor_template
 plugins/woocommerce/changelog/e2e-update-order-to-cancelled
 plugins/woocommerce/changelog/add-input-field
@@ -4629,8 +4638,10 @@ plugins/woocommerce/changelog/fix-cys-remove-retry-button-offline
 plugins/woocommerce/changelog/add-number-block
 plugins/woocommerce/changelog/fix-40510
 plugins/woocommerce/changelog/add-35142
+plugins/woocommerce/changelog/update-woocommerce-blocks-11.4.1
 plugins/woocommerce/changelog/docs-migrate-core-critical-flows-from-wiki
 plugins/woocommerce/changelog/add-call-wc-store-patterns-api
+plugins/woocommerce/changelog/update-40880-remove-green-yellow-pair-from-cys
 plugins/woocommerce/changelog/update-40591_variation_switching_when_deleting
 plugins/woocommerce/changelog/e2e-add-test-shopper-mini-cart
 plugins/woocommerce/changelog/fix-ai-generate-images-not-display
@@ -4643,6 +4654,7 @@ plugins/woocommerce/changelog/fix-preload-ai-loader-image
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page_template
 plugins/woocommerce/changelog/docs-implementing-wc-integration
 plugins/woocommerce/changelog/update-k6-failing-tests-in-CI
+plugins/woocommerce/changelog/update-wccom-18377-marketplace-styling-tweaks
 plugins/woocommerce/changelog/dev-40597_display_notice_at_top_single_variation
 plugins/woocommerce/changelog/fix-active-theme-has-mods-logic
 plugins/woocommerce/changelog/39948-patch-4
@@ -4650,9 +4662,14 @@ plugins/woocommerce/changelog/fix-core-editor-store-in-classic
 plugins/woocommerce/changelog/dev-40130_remove_feeling_stuck_tooltip
 plugins/woocommerce/changelog/add-core-profiler-email-marketing-opt-in
 plugins/woocommerce/changelog/e2e-update-playwright-1_38
+plugins/woocommerce/changelog/remove-test-checkout-note
 plugins/woocommerce/changelog/tweak-ignore-some-metadata-in-hpos-verify-tool
+plugins/woocommerce/changelog/update-replace-dependency-on-jetpack-in-woo-services-task-list
+plugins/woocommerce/changelog/fix-variation_name
 plugins/woocommerce/changelog/fix-wccom-18179-search-box-border
 plugins/woocommerce/changelog/fix-cys-ui-issues
+plugins/woocommerce/changelog/e2e-update-order-locator-to-allow-for-hpos-and-non-hpos
+plugins/woocommerce/changelog/add-wccom-18294-marketplace-tracking
 plugins/woocommerce/changelog/fix-cys-intro-parallelise-network-calls
 plugins/woocommerce/changelog/add-40573_product_variation_edit_page
 plugins/woocommerce/changelog/fix-coupon-error-notice-text
@@ -4706,10 +4723,12 @@ plugins/woocommerce/changelog/doc-handbook-1.1
 plugins/woocommerce/changelog/follow-up-remove-obw-e2e
 plugins/woocommerce/changelog/update-woocommerce-blocks-to-11.3.1
 plugins/woocommerce/changelog/e2e-add-shopper-tags-attributes
+plugins/woocommerce/changelog/fix-back-button-misclick
 plugins/woocommerce/changelog/fix-always-set-address-indexes
 plugins/woocommerce/changelog/update-action-scheduler-3.6.4
 plugins/woocommerce/changelog/update-separate-php-and-js-tests
 plugins/woocommerce/changelog/dev-release-test-wooaf-drafts
+plugins/woocommerce/changelog/update-40840-customize-blank-issue-with-wp-6.4
 plugins/woocommerce/changelog/update-remove-primary-secondary-border-from-cys-themes-rest-api
 plugins/woocommerce/changelog/update-38191-fix-german-translation-error-on-reactivation
 plugins/woocommerce/changelog/add-wccom-18292-cache-marketplace-results
@@ -4730,6 +4749,7 @@ plugins/woocommerce/changelog/add-40594
 plugins/woocommerce/changelog/update-cys-color-ai
 plugins/woocommerce/changelog/add-cys-ai-select-color-palettes
 plugins/woocommerce/changelog/fix-40852
+plugins/woocommerce/changelog/update-marketplace-wp-notice
 plugins/woocommerce/changelog/e2e-bulk-update-order-status
 plugins/woocommerce/changelog/refactor-unit-test-workflow
 plugins/woocommerce/changelog/add-wccom-18213-marketplace-view-more-button
@@ -4743,6 +4763,7 @@ plugins/woocommerce/changelog/add-cys-intro-tracks
 plugins/woocommerce/changelog/fix-40511
 plugins/woocommerce/changelog/add-40493
 plugins/woocommerce/changelog/update-retain-cys-unsave-changes
+plugins/woocommerce/changelog/update-40879-transitional-page-site-icon-link
 plugins/woocommerce/changelog/e2e-remove-obw-tests
 plugins/woocommerce/changelog/fix-cys-assembler-hub-font-jankiness
 plugins/woocommerce/changelog/fix-my-dashboard-theme-fixes
@@ -4758,6 +4779,7 @@ plugins/woocommerce/changelog/pr-40771
 plugins/woocommerce/changelog/update-handle-cys-ai-loader-errors
 plugins/woocommerce/changelog/update-mobile-onboarding-task
 plugins/woocommerce/changelog/add-40248
+plugins/woocommerce/changelog/fix-cys-footer-logo-size
 plugins/woocommerce/changelog/add-cys-ai-header-footer
 plugins/woocommerce/changelog/add-cys-homepage-template-completion
 plugins/woocommerce/changelog/update-improve-font-color-performance
@@ -4769,9 +4791,11 @@ plugins/woocommerce/changelog/update-40896_variation_switcher
 plugins/woocommerce/changelog/fix-stalebot-excl-enhancement
 plugins/woocommerce/changelog/update-template-api-deprecate-conditional-block
 plugins/woocommerce/changelog/update-40536-connect-themes-API-cys-intro
+plugins/woocommerce/changelog/tweak-tos-above-connect
 plugins/woocommerce/changelog/pr-40964
 plugins/woocommerce/changelog/update-disable-cys-frame-navigation
 plugins/woocommerce/changelog/add-40200
+plugins/woocommerce/changelog/tweak-thumbnail-border-radius
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md
 plugins/woocommerce/readme.txt
@@ -6501,7 +6525,6 @@ plugins/woocommerce/src/Internal/Traits/AccessiblePrivateMethods.php
 plugins/woocommerce/src/Internal/RestockRefundedItemsAdjuster.php
 plugins/woocommerce/src/Internal/WCCom/ConnectionHelper.php
 plugins/woocommerce/src/Internal/AssignDefaultCategory.php
-plugins/woocommerce/src/Internal/Admin/Notes/TestCheckout.php
 plugins/woocommerce/src/Internal/Admin/Notes/InstallJPAndWCSPlugins.php
 plugins/woocommerce/src/Internal/Admin/Notes/EmailNotification.php
 plugins/woocommerce/src/Internal/Admin/Notes/ManageOrdersOnTheGo.php

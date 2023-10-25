@@ -768,6 +768,7 @@ app/assets/javascripts/app/controllers/_ui_element/autocompletion_ajax_customer_
 app/assets/javascripts/app/controllers/_ui_element/boolean.coffee
 app/assets/javascripts/app/controllers/_ui_element/iconset_picker.coffee
 app/assets/javascripts/app/controllers/_ui_element/timezone.coffee
+app/assets/javascripts/app/controllers/_ui_element/autocompletion_ajax_external_data_source.coffee
 app/assets/javascripts/app/controllers/_ui_element/ticket_selector.coffee
 app/assets/javascripts/app/controllers/_ui_element/select.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext_additions/popup_link.coffee
@@ -1099,6 +1100,7 @@ app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select_customer_organi
 app/assets/javascripts/app/lib/app_post/delay.coffee
 app/assets/javascripts/app/lib/app_post/color_object.coffee
 app/assets/javascripts/app/lib/app_post/user_organization_autocompletion.coffee
+app/assets/javascripts/app/lib/app_post/z_searchable_ajax_select_external_data_source.coffee
 app/assets/javascripts/app/lib/app_post/iconset_picker.coffee
 app/assets/javascripts/app/lib/app_post/global_search.coffee
 app/assets/javascripts/app/lib/app_post/router.coffee
@@ -1261,6 +1263,7 @@ app/assets/javascripts/app/views/object_manager/attribute/date.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/input.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/multi_tree_select.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/tree_select.jst.eco
+app/assets/javascripts/app/views/object_manager/attribute/autocompletion_ajax_external_data_source.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/boolean.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/textarea.jst.eco
 app/assets/javascripts/app/views/object_manager/attribute/integer.jst.eco
@@ -1736,6 +1739,7 @@ app/policies/controllers/translations_controller_policy.rb
 app/policies/controllers/object_manager_attributes_controller_policy.rb
 app/policies/controllers/version_controller_policy.rb
 app/policies/controllers/time_accounting/types_controller_policy.rb
+app/policies/controllers/external_data_source_controller_policy.rb
 app/policies/controllers/text_modules_controller_policy.rb
 app/policies/controllers/tickets_controller_policy.rb
 app/policies/controllers/reports_controller_policy.rb
@@ -1827,6 +1831,7 @@ app/policies/application_policy/field_scope.rb
 app/policies/activity_stream_policy.rb
 app/policies/overview_policy.rb
 app/policies/text_module_policy.rb
+app/policies/external_data_source_policy.rb
 app/policies/organization_policy.rb
 app/policies/ticket_policy.rb
 app/policies/template_policy/scope.rb
@@ -1848,6 +1853,8 @@ app/services/service/avatar/image_validate.rb
 app/services/service/concerns/handles_core_workflow.rb
 app/services/service/search.rb
 app/services/service/base.rb
+app/services/service/external_data_source/preview.rb
+app/services/service/external_data_source/search.rb
 app/graphql/graphql_introspection.json
 app/graphql/gql/queries/ticket.rb
 app/graphql/gql/queries/session.rb
@@ -1876,6 +1883,7 @@ app/graphql/gql/queries/autocomplete_search/organization.rb
 app/graphql/gql/queries/autocomplete_search/user.rb
 app/graphql/gql/queries/autocomplete_search/tag.rb
 app/graphql/gql/queries/autocomplete_search/recipient.rb
+app/graphql/gql/queries/autocomplete_search/object_attribute_external_data_source.rb
 app/graphql/gql/queries/tickets_by_overview.rb
 app/graphql/gql/queries/application_build_checksum.rb
 app/graphql/gql/queries/form_updater.rb
@@ -1931,6 +1939,7 @@ app/graphql/gql/types/input/avatar_input_type.rb
 app/graphql/gql/types/input/concerns/provides_object_attribute_values.rb
 app/graphql/gql/types/input/organization_input_type.rb
 app/graphql/gql/types/input/user_input_type.rb
+app/graphql/gql/types/input/autocomplete_search/object_attribute_external_data_source_input_type.rb
 app/graphql/gql/types/input/autocomplete_search/merge_ticket_input_type.rb
 app/graphql/gql/types/input/autocomplete_search/organization_input_type.rb
 app/graphql/gql/types/input/autocomplete_search/input_type.rb
@@ -1986,6 +1995,7 @@ app/graphql/gql/types/base_input_object.rb
 app/graphql/gql/types/autocomplete_search/entry_type.rb
 app/graphql/gql/types/autocomplete_search/user_entry_type.rb
 app/graphql/gql/types/autocomplete_search/numeric_entry_type.rb
+app/graphql/gql/types/autocomplete_search/external_data_source_entry_type.rb
 app/graphql/gql/types/autocomplete_search/organization_entry_type.rb
 app/graphql/gql/types/autocomplete_search/merge_ticket_entry_type.rb
 app/graphql/gql/types/autocomplete_search/recipient_entry_type.rb
@@ -2119,6 +2129,7 @@ app/controllers/knowledge_base/categories_controller.rb
 app/controllers/knowledge_base/permissions_controller.rb
 app/controllers/version_controller.rb
 app/controllers/channels_microsoft365_controller.rb
+app/controllers/user_agent_test_bearer_auth_controller.rb
 app/controllers/object_manager_attributes_controller.rb
 app/controllers/signatures_controller.rb
 app/controllers/taskbar_controller.rb
@@ -2193,6 +2204,7 @@ app/controllers/application_controller/sets_headers.rb
 app/controllers/application_controller/checks_maintenance.rb
 app/controllers/import_otrs_controller.rb
 app/controllers/channels_google_controller.rb
+app/controllers/external_data_source_controller.rb
 app/controllers/errors_controller.rb
 app/controllers/text_modules_controller.rb
 app/controllers/user_agent_test_basic_auth_controller.rb
@@ -2502,6 +2514,9 @@ app/frontend/shared/components/Form/fields/FieldRecipient/graphql/queries/autoco
 app/frontend/shared/components/Form/fields/FieldRecipient/graphql/queries/autocompleteSearch/recipient.graphql
 app/frontend/shared/components/Form/fields/FieldAutocomplete/types.ts
 app/frontend/shared/components/Form/fields/FieldFile/types.ts
+app/frontend/shared/components/Form/fields/FieldExternalDataSource/graphql/queries/autocompleteSearchObjectAttributeExternalDataSource.api.ts
+app/frontend/shared/components/Form/fields/FieldExternalDataSource/graphql/queries/autocompleteSearchObjectAttributeExternalDataSource.graphql
+app/frontend/shared/components/Form/fields/FieldExternalDataSource/types.ts
 app/frontend/shared/components/Form/fields/FieldDate/__tests__/FieldDateTime.spec.ts
 app/frontend/shared/components/Form/fields/FieldDate/index.ts
 app/frontend/shared/components/Form/fields/FieldDate/FieldDateTimeInput.vue
@@ -2816,6 +2831,7 @@ app/frontend/shared/entities/object-attributes/form/resolver/fields/autocompleti
 app/frontend/shared/entities/object-attributes/form/resolver/fields/select.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/treeselect.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/date.ts
+app/frontend/shared/entities/object-attributes/form/resolver/fields/autocompletion-external-data-source.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/richtext.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/tag.ts
 app/frontend/shared/entities/object-attributes/form/resolver/fields/boolean.ts
@@ -3092,6 +3108,9 @@ app/frontend/apps/mobile/components/Form/fields/FieldFile/graphql/mutations/uplo
 app/frontend/apps/mobile/components/Form/fields/FieldFile/graphql/mutations/uploadCache/add.graphql
 app/frontend/apps/mobile/components/Form/fields/FieldFile/index.ts
 app/frontend/apps/mobile/components/Form/fields/FieldFile/types.ts
+app/frontend/apps/mobile/components/Form/fields/FieldExternalDataSource/__tests__/FieldExternalDataSource.spec.ts
+app/frontend/apps/mobile/components/Form/fields/FieldExternalDataSource/index.ts
+app/frontend/apps/mobile/components/Form/fields/FieldExternalDataSource/FieldExternalDataSourceWrapper.vue
 app/frontend/apps/mobile/components/Form/fields/.keep
 app/frontend/apps/mobile/components/CommonLoader/CommonLoader.vue
 app/frontend/apps/mobile/components/layout/__tests__/LayoutBottomNavigation.spec.ts
@@ -5651,6 +5670,7 @@ lib/upload_cache.rb
 lib/secure_mailing.rb
 lib/application_handle_info.rb
 lib/auth.rb
+lib/external_data_source.rb
 lib/user_info/assets.rb
 lib/facebook.rb
 lib/escalation/ticket_preferences.rb
@@ -5677,6 +5697,8 @@ lib/core_ext/email_address/lib/email_address/local.rb
 lib/core_ext/rszr.rb
 lib/core_ext/action_dispatch/middleware/cookies.rb
 lib/core_ext/string.rb
+lib/external_data_source/http_options.rb
+lib/external_data_source/errors.rb
 lib/mysql_strategy.rb
 lib/search_knowledge_base_backend.rb
 lib/signature_detection.rb
@@ -5777,6 +5799,7 @@ public/assets/tests/qunit/form_color.js
 public/assets/tests/qunit/core.js
 public/assets/tests/qunit/form_tree_select.js
 public/assets/tests/qunit/text_module.js
+public/assets/tests/qunit/form_autocompletion_ajax_external_data_source.js
 public/assets/tests/qunit/image_service.js
 public/assets/tests/qunit/view_helpers.js
 public/assets/tests/qunit/form_code_editor.js
@@ -6164,6 +6187,7 @@ config/routes/mobile.rb
 config/routes/auth.rb
 config/routes/text_module.rb
 config/routes/ldap_source.rb
+config/routes/external_data_source.rb
 config/routes/macro.rb
 config/routes/import_zendesk.rb
 config/routes/calendar.rb
@@ -6322,6 +6346,7 @@ spec/system/ticket/create/ticket_duplicate_detection_spec.rb
 spec/system/ticket/create/secure_mailing_spec.rb
 spec/system/ticket/update/simultaneously_with_two_user_spec.rb
 spec/system/ticket/update/email_reply_spec.rb
+spec/system/ticket/update/external_data_source_attribute_spec.rb
 spec/system/ticket/update/full_quote_header_spec.rb
 spec/system/ticket/zoom/article_image_view_spec.rb
 spec/system/ticket/zoom/sidebar_spec.rb
@@ -6417,6 +6442,7 @@ spec/system/apps/mobile/organization/edit_spec.rb
 spec/system/apps/mobile/tickets/ticket_information_customer_edit_spec.rb
 spec/system/apps/mobile/tickets/create/ticket_duplicate_detection_spec.rb
 spec/system/apps/mobile/tickets/update/customer_spec.rb
+spec/system/apps/mobile/tickets/update/external_data_source_attribute_spec.rb
 spec/system/apps/mobile/tickets/update/tags_spec.rb
 spec/system/apps/mobile/tickets/ticket_list_spec.rb
 spec/system/apps/mobile/tickets/ticket_list_permissions_spec.rb
@@ -6447,6 +6473,7 @@ spec/system/organization/profile_spec.rb
 spec/system/saml_spec.rb
 spec/system/password_reset_spec.rb
 spec/system/ssl_spec.rb
+spec/policies/external_data_source_policy_spec.rb
 spec/policies/template_policy_spec.rb
 spec/policies/data_privacy_task_policy_spec.rb
 spec/policies/group_policy_spec.rb
@@ -6504,6 +6531,8 @@ spec/services/service/ticket/update_spec.rb
 spec/services/service/ticket/create_spec.rb
 spec/services/service/ticket/article/change_visibility_spec.rb
 spec/services/service/ticket/article/create_spec.rb
+spec/services/service/external_data_source/search_spec.rb
+spec/services/service/external_data_source/preview_spec.rb
 spec/factories/ticket.rb
 spec/factories/recent_view.rb
 spec/factories/active_job_lock.rb
@@ -6709,6 +6738,7 @@ spec/graphql/gql/queries/autocomplete_search/recipient_spec.rb
 spec/graphql/gql/queries/autocomplete_search/merge_ticket_spec.rb
 spec/graphql/gql/queries/autocomplete_search/tag_spec.rb
 spec/graphql/gql/queries/autocomplete_search/user_spec.rb
+spec/graphql/gql/queries/autocomplete_search/object_attribute_external_data_source_spec.rb
 spec/graphql/gql/queries/autocomplete_search/organization_spec.rb
 spec/graphql/gql/queries/locales_spec.rb
 spec/graphql/gql/queries/ticket_spec.rb
@@ -6932,6 +6962,7 @@ spec/lib/password_policy/special_character_spec.rb
 spec/lib/password_policy/error_examples.rb
 spec/lib/password_policy/digit_spec.rb
 spec/lib/ldap_spec.rb
+spec/lib/external_data_source_spec.rb
 spec/lib/notification_factory/messaging_spec.rb
 spec/lib/notification_factory/renderer/article_tags_spec.rb
 spec/lib/notification_factory/template_spec.rb
@@ -7435,6 +7466,7 @@ spec/requests/overview_spec.rb
 spec/requests/o_auth_spec.rb
 spec/requests/package_spec.rb
 spec/requests/form_spec.rb
+spec/requests/external_data_source_controller_spec.rb
 spec/requests/mention_spec.rb
 spec/requests/ticket_spec.rb
 spec/requests/channels_google_spec.rb
