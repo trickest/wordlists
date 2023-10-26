@@ -1116,6 +1116,7 @@ changelog/_unreleased/2023-08-30-apply-domain-exception-for-access-key-helper.md
 changelog/_unreleased/2023-10-10-bugfix-find-best-variant-set-available-sorting-to-desc.md
 changelog/_unreleased/2023-09-14-fix-vue-meta-for-vue-3.md
 changelog/_unreleased/2023-09-27-add-schemas-and-tags.md
+changelog/_unreleased/2023-10-25-fixed-bug-grand-total-without-asterisk.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
 changelog/_unreleased/2023-09-29-tag-api-aware.md
 changelog/_unreleased/2023-09-07-expose-active-billing-address-over-context-api.md
@@ -1151,6 +1152,7 @@ changelog/_unreleased/2023-08-09-change-sw-entity-multi-id-select-default-event.
 changelog/_unreleased/2023-08-09-change-sw-url-field-default-event.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2023-08-10-change-sw-button-process-default-event.md
+changelog/_unreleased/2023-10-26-adjust-selector-from-button-for-remove-from-cart-event.md
 changelog/_unreleased/2023-09-07-fix-entity-multi-select-not-clearable.md
 changelog/_unreleased/2023-08-10-change-sw-radio-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
@@ -1170,12 +1172,14 @@ changelog/_unreleased/2023-10-16-update-bulk-edit-product.md
 changelog/_unreleased/2023-09-07-fix-predis-support.md
 changelog/_unreleased/2023-08-31-vue3-fix-promotions-module.md
 changelog/_unreleased/2023-08-09-change-sw-meteor-single-select-default-event.md
+changelog/_unreleased/2023-10-23-preparation-that-shipping-methods-no-longer-require-an-availability-rule-to-be-valid-as-of-version-6-6-0-0.md
 changelog/_unreleased/2023-09-19-fix-media-module-for-vue-3.md
 changelog/_unreleased/2023-08-09-change-sw-bulk-edit-change-type-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-extension-rating-stars-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-textarea-field-default-event.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2023-08-09-fix-overridden-super-calls-in-promise-chains-in-admin-components.md
+changelog/_unreleased/2023-10-25-fixed-wrong-twig-naming.md
 changelog/_unreleased/changelog2023-10-05-fix-sw-cms-layout-modal-search-field.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
 changelog/_unreleased/2023-08-03-fix-transition-state-machine-exception.md
@@ -1188,6 +1192,7 @@ changelog/_unreleased/2023-08-31-add-missing-vue-3-jest-tests.md
 changelog/_unreleased/2023-10-19-add-sparkles-icons-and-new-twig-block.md
 changelog/_unreleased/2023-09-14-collect-cache-invalidations-in-redis.md
 changelog/_unreleased/2023-09-04-dont-trigger-flow-when-importing-csv.md
+changelog/_unreleased/2023-10-26-change-import-export-factory-exceptions.md
 changelog/_unreleased/2023-08-10-change-sw-order-select-document-type-modal-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-tagged-field-default-event.md
 changelog/_unreleased/2023-10-18-rulebuilder-date-range-condit.md
@@ -4832,6 +4837,7 @@ tests/unit/Core/Checkout/Cart/Hook/CartHookTest.php
 tests/unit/Core/Checkout/Cart/Delivery/DeliveryBuilderTest.php
 tests/unit/Core/Checkout/Cart/Delivery/DeliveryCalculatorTest.php
 tests/unit/Core/Checkout/Cart/Delivery/DeliveryPositionCollectionTest.php
+tests/unit/Core/Checkout/Cart/Delivery/DeliveryValidatorTest.php
 tests/unit/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexerTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/RegisterConfirmRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/DownloadRouteTest.php
@@ -5121,6 +5127,7 @@ tests/migration/Core/V6_6/Migration1673249981MigrateIsNewCustomerRuleTest.php
 tests/migration/Core/V6_6/Migration1673964565MigrateToReferencedColumnsTest.php
 tests/migration/Core/V6_6/Migration1691662140MigrateAvailableStockTest.php
 tests/migration/Core/V6_6/Migration1671723392AddWebhookLifetimeConfigTest.php
+tests/migration/Core/V6_6/Migration1697788982ChangeColumnAvailabilityRuleIdFromShippingMethodToNullableTest.php
 tests/migration/Core/V6_6/Migration1696262484AddDefaultSendMailOptionsTest.php
 tests/migration/Core/V6_6/Migration1679581138RemoveAssociationFieldsTest.php
 tests/migration/Core/V6_6/Migration1663402950SetDoubleOptinCustomerActiveTest.php
@@ -13345,6 +13352,7 @@ src/Core/Migration/V6_5/Migration1669124190AddDoctrineMessengerTable.php
 src/Core/Migration/V6_5/Migration1678969082DropVariantListingFields.php
 src/Core/Migration/V6_5/Migration1670854818RemoveEventActionTable.php
 src/Core/Migration/V6_6/Migration1663402950SetDoubleOptinCustomerActive.php
+src/Core/Migration/V6_6/Migration1697788982ChangeColumnAvailabilityRuleIdFromShippingMethodToNullable.php
 src/Core/Migration/V6_6/Migration1673249981MigrateIsNewCustomerRule.php
 src/Core/Migration/V6_6/Migration1676367607RemoveIntegrationWriteAccessColumn.php
 src/Core/Migration/V6_6/Migration1679581138RemoveAssociationFields.php

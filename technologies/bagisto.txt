@@ -260,7 +260,8 @@ packages/Webkul/CMS/composer.json
 packages/Webkul/Shop/package.json
 packages/Webkul/Shop/postcss.config.js
 packages/Webkul/Shop/vite.config.js
-packages/Webkul/Shop/tests/Feature/ExampleTest.php
+packages/Webkul/Shop/tests/Feature/HomePageTest.php
+packages/Webkul/Shop/tests/Feature/API/ProductTest.php
 packages/Webkul/Shop/tests/Unit/ExampleTest.php
 packages/Webkul/Shop/tests/ShopTestCase.php
 packages/Webkul/Shop/src/Mail/Customer/UpdatePasswordNotification.php
@@ -551,7 +552,6 @@ packages/Webkul/FPC/src/Listeners/Refund.php
 packages/Webkul/Installer/package.json
 packages/Webkul/Installer/postcss.config.js
 packages/Webkul/Installer/vite.config.js
-packages/Webkul/Installer/src/Jobs/UpdateNotification.php
 packages/Webkul/Installer/src/Resources/manifest.php
 packages/Webkul/Installer/src/Resources/assets/fonts/bagisto-installer.woff
 packages/Webkul/Installer/src/Resources/assets/js/app.js
@@ -1525,6 +1525,8 @@ packages/Webkul/Core/src/Resources/lang/bn/app.php
 packages/Webkul/Core/src/Resources/lang/fa/validation.php
 packages/Webkul/Core/src/Resources/lang/fa/app.php
 packages/Webkul/Core/src/Resources/views/blade/tracer/style.blade.php
+packages/Webkul/Core/src/ImageCache/Controller.php
+packages/Webkul/Core/src/ImageCache/ImageManager.php
 packages/Webkul/Core/src/Console/Commands/BagistoVersion.php
 packages/Webkul/Core/src/Console/Commands/ExchangeRateUpdate.php
 packages/Webkul/Core/src/Console/Commands/InvoiceOverdueCron.php
@@ -1544,7 +1546,6 @@ packages/Webkul/Core/src/Database/Seeders/ConfigTableSeeder.php
 packages/Webkul/Core/src/Database/Seeders/CountriesTableSeeder.php
 packages/Webkul/Core/src/Database/Seeders/.gitkeep
 packages/Webkul/Core/src/Database/Seeders/CurrencyTableSeeder.php
-packages/Webkul/Core/src/Database/Seeders/CountryStateTranslationSeeder.php
 packages/Webkul/Core/src/Database/Seeders/LocalesTableSeeder.php
 packages/Webkul/Core/src/Database/Seeders/DatabaseSeeder.php
 packages/Webkul/Core/src/Database/Seeders/ChannelTableSeeder.php
@@ -1569,11 +1570,11 @@ packages/Webkul/Core/src/Traits/CoreConfigField.php
 packages/Webkul/Core/src/Providers/CoreServiceProvider.php
 packages/Webkul/Core/src/Providers/CoreModuleServiceProvider.php
 packages/Webkul/Core/src/Providers/ModuleServiceProvider.php
+packages/Webkul/Core/src/Providers/VisitorServiceProvider.php
 packages/Webkul/Core/src/Providers/EnvValidatorServiceProvider.php
 packages/Webkul/Core/src/Providers/EventServiceProvider.php
 packages/Webkul/Core/src/Listeners/CleanCacheRepository.php
 packages/Webkul/Core/src/Listeners/ResponseCacheHit.php
-packages/Webkul/Core/src/Config/scout.php
 packages/Webkul/Core/src/Config/repository.php
 packages/Webkul/Core/src/Config/concord.php
 packages/Webkul/Core/src/Config/visitor.php
