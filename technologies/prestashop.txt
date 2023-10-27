@@ -6293,6 +6293,7 @@ src/Adapter/Import/ImageCopier.php
 src/Adapter/Import/CsvFileOpener.php
 src/Adapter/ApiAccess/QueryHandler/GetApiAccessForEditingHandler.php
 src/Adapter/ApiAccess/CommandHandler/EditApiAccessHandler.php
+src/Adapter/ApiAccess/CommandHandler/GenerateApiAccessSecretHandler.php
 src/Adapter/ApiAccess/CommandHandler/AddApiAccessHandler.php
 src/Adapter/ApiAccess/CommandHandler/DeleteApiAccessHandler.php
 src/Adapter/Invoice/InvoiceTemplateTypeProvider.php
@@ -7594,6 +7595,7 @@ src/Core/Util/String/StringModifierInterface.php
 src/Core/Util/String/StringModifier.php
 src/Core/Util/String/StringValidator.php
 src/Core/Util/String/StringValidatorInterface.php
+src/Core/Util/String/RandomString.php
 src/Core/Util/File/FileSizeConverter.php
 src/Core/Util/File/YamlParser.php
 src/Core/Util/Inflector.php
@@ -7909,18 +7911,22 @@ src/Core/Domain/ApiAccess/Exception/ApiAccessConstraintException.php
 src/Core/Domain/ApiAccess/Exception/ApiAccessNotFoundException.php
 src/Core/Domain/ApiAccess/Exception/CannotAddApiAccessException.php
 src/Core/Domain/ApiAccess/Exception/ApiAccessException.php
+src/Core/Domain/ApiAccess/Exception/CannotGenerateSecretApiAccessException.php
 src/Core/Domain/ApiAccess/Exception/CannotDeleteApiAccessException.php
 src/Core/Domain/ApiAccess/Exception/CannotUpdateApiAccessException.php
 src/Core/Domain/ApiAccess/ApiAccessSettings.php
 src/Core/Domain/ApiAccess/QueryHandler/GetApiAccessForEditingHandlerInterface.php
 src/Core/Domain/ApiAccess/Command/AddApiAccessCommand.php
+src/Core/Domain/ApiAccess/Command/GenerateApiAccessSecretCommand.php
 src/Core/Domain/ApiAccess/Command/DeleteApiAccessCommand.php
 src/Core/Domain/ApiAccess/Command/EditApiAccessCommand.php
 src/Core/Domain/ApiAccess/QueryResult/EditableApiAccess.php
+src/Core/Domain/ApiAccess/ValueObject/CreatedApiAccess.php
 src/Core/Domain/ApiAccess/ValueObject/ApiAccessId.php
 src/Core/Domain/ApiAccess/CommandHandler/AddApiAccessCommandHandlerInterface.php
 src/Core/Domain/ApiAccess/CommandHandler/DeleteApiAccessHandlerInterface.php
 src/Core/Domain/ApiAccess/CommandHandler/EditApiAccessCommandHandlerInterface.php
+src/Core/Domain/ApiAccess/CommandHandler/GenerateApiAccessSecretHandlerInterface.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandler.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandlerInterface.php
@@ -10771,6 +10777,8 @@ admin-dev/themes/new-theme/js/pages/feature/feature-value/form.ts
 admin-dev/themes/new-theme/js/pages/feature/index.ts
 admin-dev/themes/new-theme/js/pages/feature/form.ts
 admin-dev/themes/new-theme/js/pages/api-access/index.ts
+admin-dev/themes/new-theme/js/pages/api-access/form/index.ts
+admin-dev/themes/new-theme/js/pages/api-access/api-access-map.ts
 admin-dev/themes/new-theme/js/pages/credit-slip/index.ts
 admin-dev/themes/new-theme/js/pages/maintenance/index.ts
 admin-dev/themes/new-theme/js/pages/currency/index.ts

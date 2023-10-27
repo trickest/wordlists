@@ -2124,6 +2124,7 @@ packages/js/dependency-extraction-webpack-plugin/changelog/dev-upgrade-ts-5
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-sync-pnpm
 packages/js/dependency-extraction-webpack-plugin/changelog/add-36355_new_product_editor_package
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-update-pnpm-8.6.5
+packages/js/dependency-extraction-webpack-plugin/changelog/41042-update-dependency-extraction-webpack-plugin
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-pin-wp-deps-6
 packages/js/dependency-extraction-webpack-plugin/changelog/dev-include-eslint-annotations
 packages/js/dependency-extraction-webpack-plugin/changelog/add-admin-layout-package
@@ -3696,6 +3697,7 @@ plugins/woocommerce-admin/client/customize-store/transitional/test/index.test.ts
 plugins/woocommerce-admin/client/customize-store/transitional/index.tsx
 plugins/woocommerce-admin/client/customize-store/style.scss
 plugins/woocommerce-admin/client/customize-store/data/homepageTemplates.ts
+plugins/woocommerce-admin/client/customize-store/hooks/use-body-class.ts
 plugins/woocommerce-admin/client/customize-store/intro/warning-modals.tsx
 plugins/woocommerce-admin/client/customize-store/intro/intro-banners.tsx
 plugins/woocommerce-admin/client/customize-store/intro/color-palettes.tsx
@@ -4619,9 +4621,12 @@ plugins/woocommerce/client/legacy/.eslintignore
 plugins/woocommerce/tsconfig.json
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
+plugins/woocommerce/changelog/41052-update-40840-customize-blank-issue-with-wp-6.4-followup
 plugins/woocommerce/changelog/update-reduce-intro-loading-time
+plugins/woocommerce/changelog/fix-38169-block-editor-compat
 plugins/woocommerce/changelog/2023-10-26-16-21-28-027095
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
 plugins/woocommerce/changelog/40948-fix-cart-checkout-detection
 plugins/woocommerce/changelog/update-40916-get-recommended-themes
 plugins/woocommerce/changelog/update-cys-font-color-choices
@@ -4629,6 +4634,7 @@ plugins/woocommerce/changelog/try-cys-temporary-iframe-solution
 plugins/woocommerce/changelog/fix-linting-exceptions
 plugins/woocommerce/changelog/fix-34490
 plugins/woocommerce/changelog/fix-cys-ui
+plugins/woocommerce/changelog/40662-try-log-file-browser
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md
 plugins/woocommerce/readme.txt
@@ -5427,6 +5433,8 @@ plugins/woocommerce/tests/php/src/Internal/WCCom/ConnectionHelperTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplateRegistry/BlockTemplateRegistryTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplateRegistry/TemplateTransformerTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplateRegistry/BlockTemplatesControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Logging/FileV2/FileControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Logging/FileV2/FileTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/CustomBlockTemplateTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/BlockTemplates/BlockTemplateTest.php
@@ -6401,6 +6409,11 @@ plugins/woocommerce/src/Internal/Admin/SystemStatusReport.php
 plugins/woocommerce/src/Internal/Admin/ShippingLabelBannerDisplayRules.php
 plugins/woocommerce/src/Internal/Admin/FeaturePlugin.php
 plugins/woocommerce/src/Internal/Admin/WcPayWelcomePage.php
+plugins/woocommerce/src/Internal/Admin/Logging/FileV2/ListTable.php
+plugins/woocommerce/src/Internal/Admin/Logging/FileV2/File.php
+plugins/woocommerce/src/Internal/Admin/Logging/FileV2/FileController.php
+plugins/woocommerce/src/Internal/Admin/Logging/LogHandlerFileV2.php
+plugins/woocommerce/src/Internal/Admin/Logging/PageController.php
 plugins/woocommerce/src/Internal/Admin/Survey.php
 plugins/woocommerce/src/Internal/Admin/RemoteFreeExtensions/Init.php
 plugins/woocommerce/src/Internal/Admin/RemoteFreeExtensions/RemoteFreeExtensionsDataSourcePoller.php
@@ -6481,6 +6494,7 @@ plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/DownloadP
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/COTMigrationServiceProvider.php
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/ProductReviewsServiceProvider.php
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/BlockTemplatesServiceProvider.php
+plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/LoggingServiceProvider.php
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/OrderAdminServiceProvider.php
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/OptionSanitizerServiceProvider.php
 plugins/woocommerce/src/Internal/DependencyManagement/ServiceProviders/ProductDownloadsServiceProvider.php

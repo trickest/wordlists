@@ -1849,7 +1849,9 @@ src/Presentation/Nop.Web.Framework/Factories/StoreMappingSupportedModelFactory.c
 src/Presentation/Nop.Web.Framework/Factories/IAclSupportedModelFactory.cs
 src/Presentation/Nop.Web.Framework/Factories/IDiscountSupportedModelFactory.cs
 src/Presentation/Nop.Web.Framework/Factories/IStoreMappingSupportedModelFactory.cs
+src/Presentation/Nop.Web.Framework/Factories/WidgetModelFactory.cs
 src/Presentation/Nop.Web.Framework/Factories/DiscountSupportedModelFactory.cs
+src/Presentation/Nop.Web.Framework/Factories/IWidgetModelFactory.cs
 src/Presentation/Nop.Web.Framework/Factories/ILocalizedModelFactory.cs
 src/Presentation/Nop.Web.Framework/UI/INopHtmlHelper.cs
 src/Presentation/Nop.Web.Framework/UI/NopHtmlHelper.cs
@@ -1954,6 +1956,9 @@ src/Presentation/Nop.Web.Framework/Models/IAclSupportedModel.cs
 src/Presentation/Nop.Web.Framework/Models/ISettingsModel.cs
 src/Presentation/Nop.Web.Framework/Models/IPluginModel.cs
 src/Presentation/Nop.Web.Framework/Models/BaseSearchModel.cs
+src/Presentation/Nop.Web.Framework/Models/Cms/RenderWidgetModel.cs
+src/Presentation/Nop.Web.Framework/Models/Cms/WidgetNopCardModel.cs
+src/Presentation/Nop.Web.Framework/Models/Cms/NopModelCacheDefaults.cs
 src/Presentation/Nop.Web.Framework/Models/AdminAreaTour/TourStep.cs
 src/Presentation/Nop.Web.Framework/Models/IStoreMappingSupportedModel.cs
 src/Presentation/Nop.Web.Framework/Models/IConfigModel.cs
@@ -2071,7 +2076,6 @@ src/Presentation/Nop.Web/Factories/IProductModelFactory.cs
 src/Presentation/Nop.Web/Factories/NewsModelFactory.cs
 src/Presentation/Nop.Web/Factories/ReturnRequestModelFactory.cs
 src/Presentation/Nop.Web/Factories/PollModelFactory.cs
-src/Presentation/Nop.Web/Factories/WidgetModelFactory.cs
 src/Presentation/Nop.Web/Factories/ForumModelFactory.cs
 src/Presentation/Nop.Web/Factories/AddressModelFactory.cs
 src/Presentation/Nop.Web/Factories/SitemapModelFactory.cs
@@ -2091,7 +2095,6 @@ src/Presentation/Nop.Web/Factories/OrderModelFactory.cs
 src/Presentation/Nop.Web/Factories/IAddressModelFactory.cs
 src/Presentation/Nop.Web/Factories/ICustomerModelFactory.cs
 src/Presentation/Nop.Web/Factories/CommonModelFactory.cs
-src/Presentation/Nop.Web/Factories/IWidgetModelFactory.cs
 src/Presentation/Nop.Web/Factories/ITopicModelFactory.cs
 src/Presentation/Nop.Web/Factories/IForumModelFactory.cs
 src/Presentation/Nop.Web/wwwroot/ErrorPage.htm
@@ -3125,7 +3128,6 @@ src/Presentation/Nop.Web/Areas/Admin/Models/Messages/EmailAccountListModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Messages/QueuedEmailListModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Messages/EmailAccountSearchModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Messages/CampaignListModel.cs
-src/Presentation/Nop.Web/Areas/Admin/Models/Cms/RenderWidgetModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Cms/WidgetSearchModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Cms/WidgetModel.cs
 src/Presentation/Nop.Web/Areas/Admin/Models/Cms/WidgetListModel.cs
@@ -4069,7 +4071,6 @@ src/Presentation/Nop.Web/Models/Customer/AccountActivationModel.cs
 src/Presentation/Nop.Web/Models/Customer/PasswordRecoveryConfirmModel.cs
 src/Presentation/Nop.Web/Models/Customer/GdprConsentModel.cs
 src/Presentation/Nop.Web/Models/Customer/CustomerInfoModel.cs
-src/Presentation/Nop.Web/Models/Cms/RenderWidgetModel.cs
 src/Presentation/Nop.Web/Models/Boards/ForumPostModel.cs
 src/Presentation/Nop.Web/Models/Boards/ActiveDiscussionsModel.cs
 src/Presentation/Nop.Web/Models/Boards/EditForumPostModel.cs
