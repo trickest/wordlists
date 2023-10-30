@@ -294,6 +294,7 @@ packages/Webkul/Shop/src/Resources/assets/js/plugins/shop.js
 packages/Webkul/Shop/src/Resources/assets/js/lazysizes.min.js
 packages/Webkul/Shop/src/Resources/assets/images/logo.svg
 packages/Webkul/Shop/src/Resources/assets/images/default-language.svg
+packages/Webkul/Shop/src/Resources/assets/images/spinner.svg
 packages/Webkul/Shop/src/Resources/assets/images/large-product-placeholder.webp
 packages/Webkul/Shop/src/Resources/assets/images/hero-image.webp
 packages/Webkul/Shop/src/Resources/assets/images/small-product-placeholder.webp
@@ -1448,6 +1449,8 @@ packages/Webkul/Checkout/src/Facades/Cart.php
 packages/Webkul/Checkout/src/Cart.php
 packages/Webkul/Checkout/src/Http/helpers.php
 packages/Webkul/Checkout/composer.json
+packages/Webkul/Core/tests/CoreTestCase.php
+packages/Webkul/Core/tests/Unit/CoreTest.php
 packages/Webkul/Core/src/Helpers/Locales.php
 packages/Webkul/Core/src/Helpers/Exchange/FixerExchange.php
 packages/Webkul/Core/src/Helpers/Exchange/ExchangeRates.php
@@ -1536,7 +1539,7 @@ packages/Webkul/Core/src/Console/Commands/UpChannelCommand.php
 packages/Webkul/Core/src/Console/Commands/UpCommand.php
 packages/Webkul/Core/src/Console/Commands/DownCommand.php
 packages/Webkul/Core/src/Console/Commands/DownChannelCommand.php
-packages/Webkul/Core/src/Database/Factories/ChannelInventorySourceFactory.php
+packages/Webkul/Core/src/Database/Factories/ChannelTranslationFactory.php
 packages/Webkul/Core/src/Database/Factories/CartRuleFactory.php
 packages/Webkul/Core/src/Database/Factories/CartRuleCouponFactory.php
 packages/Webkul/Core/src/Database/Factories/CurrencyFactory.php
@@ -1728,12 +1731,13 @@ public/themes/admin/default/build/assets/orders-5dd62d9d.svg
 public/themes/admin/default/build/assets/unpaid-invoices-6c51662d.svg
 public/themes/admin/default/build/manifest.json
 public/themes/shop/default/build/assets/logo-942157c2.svg
+public/themes/shop/default/build/assets/spinner-51c5cf50.svg
 public/themes/shop/default/build/assets/small-product-placeholder-64b7f208.webp
+public/themes/shop/default/build/assets/app-aa4b60e6.js
 public/themes/shop/default/build/assets/hero-image-3170dce6.webp
 public/themes/shop/default/build/assets/large-product-placeholder-13b8a96b.webp
 public/themes/shop/default/build/assets/medium-product-placeholder-3b1a7b7d.webp
 public/themes/shop/default/build/assets/velicon-2b79b97c.woff
-public/themes/shop/default/build/assets/app-c6e74274.js
 public/themes/shop/default/build/assets/default-language-6ef0ef70.svg
 public/themes/shop/default/build/manifest.json
 public/themes/installer/default/build/assets/bagisto-logo-f02a1643.svg

@@ -2007,6 +2007,7 @@ app/code/Magento/Sales/Test/Unit/Model/Order/InvoiceDocumentFactoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/AddressTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoRepositoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/ShipmentTest.php
+app/code/Magento/Sales/Test/Unit/Model/Order/ShippingAssignmentBuilderTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/ShipmentRepositoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoDocumentFactoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/ConfigTest.php
@@ -2040,6 +2041,7 @@ app/code/Magento/Sales/Test/Unit/Model/Order/Payment/RepositoryTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Payment/InfoTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/PaymentAdapterTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/CreditmemoTest.php
+app/code/Magento/Sales/Test/Unit/Model/Order/ShippingBuilderTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Shipment/Sender/EmailSenderTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Shipment/OrderRegistrarTest.php
 app/code/Magento/Sales/Test/Unit/Model/Order/Shipment/CommentRepositoryTest.php
@@ -13744,7 +13746,6 @@ app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Category.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Attribute.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/AbstractPlugin.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Product/Action.php
-app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Product/Category/Action/Rows.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Store/View.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Plugin/Store/Group.php
 app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Store.php
@@ -13905,6 +13906,7 @@ app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchNegativePr
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchAndAddToCartVirtualTest.xml
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchAndAddToCartBundleFixedTest.xml
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchAndAddToCartTest.xml
+app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchProductByAttributeNotSearchableLayeredNavigationTest.xml
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchAndAddToCartBundleDynamicTest.xml
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchProductBy128CharQueryTest.xml
 app/code/Magento/CatalogSearch/Test/Mftf/Test/SearchEntityResultsTest/QuickSearchProductByNameWithSpecialCharsTest.xml
@@ -15323,6 +15325,7 @@ app/code/Magento/Quote/Test/Unit/Model/Quote/Address/RelationTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/Address/ToOrderTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/AddressTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/ConfigTest.php
+app/code/Magento/Quote/Test/Unit/Model/Quote/CouponManagementTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/RelationTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/Payment/ToOrderPaymentTest.php
 app/code/Magento/Quote/Test/Unit/Model/Quote/Item/Option/ComparatorTest.php
@@ -16184,6 +16187,7 @@ app/code/Magento/LayeredNavigation/LICENSE_AFL.txt
 app/code/Magento/LayeredNavigation/etc/di.xml
 app/code/Magento/LayeredNavigation/etc/config.xml
 app/code/Magento/LayeredNavigation/etc/adminhtml/events.xml
+app/code/Magento/LayeredNavigation/etc/adminhtml/di.xml
 app/code/Magento/LayeredNavigation/etc/adminhtml/system.xml
 app/code/Magento/LayeredNavigation/etc/module.xml
 app/code/Magento/LayeredNavigation/etc/frontend/di.xml
@@ -16209,10 +16213,14 @@ app/code/Magento/LayeredNavigation/view/frontend/templates/layer/view.phtml
 app/code/Magento/LayeredNavigation/composer.json
 app/code/Magento/LayeredNavigation/LICENSE.txt
 app/code/Magento/LayeredNavigation/Observer/Grid/ProductAttributeGridBuildObserver.php
+app/code/Magento/LayeredNavigation/Observer/Edit/Tab/Front/ProductAttributeFormBuildFormFieldDependenciesObserver.php
 app/code/Magento/LayeredNavigation/Observer/Edit/Tab/Front/ProductAttributeFormBuildFrontTabObserver.php
+app/code/Magento/LayeredNavigation/Plugin/Save/AdjustAttributeSearchable.php
 app/code/Magento/LayeredNavigation/Test/Unit/Model/Aggregation/StatusTest.php
 app/code/Magento/LayeredNavigation/Test/Unit/Observer/Grid/ProductAttributeGridBuildObserverTest.php
+app/code/Magento/LayeredNavigation/Test/Unit/Observer/Edit/Tab/Front/ProductAttributeFormBuildFormFieldDependenciesObserverTest.php
 app/code/Magento/LayeredNavigation/Test/Unit/Observer/Edit/Tab/Front/ProductAttributeFormBuildFrontTabObserverTest.php
+app/code/Magento/LayeredNavigation/Test/Unit/Plugin/Save/AdjustAttributeSearchableTest.php
 app/code/Magento/LayeredNavigation/Test/Unit/Block/NavigationTest.php
 app/code/Magento/LayeredNavigation/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/LayeredNavigation/Test/Mftf/LICENSE.txt
@@ -20416,6 +20424,7 @@ app/code/Magento/Elasticsearch/Test/Unit/Model/Adapter/FieldMapper/Product/Field
 app/code/Magento/Elasticsearch/Test/Unit/Model/ConfigTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Model/Config/Backend/MinimumShouldMatchTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Model/Indexer/Fulltext/Plugin/Category/Product/AttributeTest.php
+app/code/Magento/Elasticsearch/Test/Unit/Model/Indexer/Fulltext/Plugin/Category/Product/Action/RowsTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Model/Indexer/IndexerHandlerTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Model/Indexer/IndexStructureTest.php
 app/code/Magento/Elasticsearch/Test/Unit/Model/Indexer/Plugin/DependencyUpdaterPluginTest.php

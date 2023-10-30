@@ -1829,6 +1829,7 @@ core/profiles/demo_umami/themes/umami/images/svg/pointer--white.svg
 core/profiles/demo_umami/themes/umami/images/svg/search.svg
 core/profiles/demo_umami/themes/umami/images/svg/chefs-hat.svg
 core/profiles/demo_umami/themes/umami/images/svg/health.svg
+core/profiles/demo_umami/themes/umami/images/svg/e40000/required.svg
 core/profiles/demo_umami/themes/umami/images/svg/learn-to-cook.svg
 core/profiles/demo_umami/themes/umami/images/svg/spoon.svg
 core/profiles/demo_umami/themes/umami/images/svg/menu-icon.svg
@@ -2037,6 +2038,7 @@ core/tests/Drupal/KernelTests/Core/DependencyInjection/AutowireTest.php
 core/tests/Drupal/KernelTests/Core/DependencyInjection/ServicesDefaultsTest.php
 core/tests/Drupal/KernelTests/Core/DependencyInjection/AutoconfigurationTest.php
 core/tests/Drupal/KernelTests/Core/Layout/IconBuilderTest.php
+core/tests/Drupal/KernelTests/Core/Controller/ControllerBaseTest.php
 core/tests/Drupal/KernelTests/Core/Archiver/TarTest.php
 core/tests/Drupal/KernelTests/Core/Archiver/ArchiverTestBase.php
 core/tests/Drupal/KernelTests/Core/Archiver/ZipTest.php
@@ -4156,6 +4158,7 @@ core/lib/Drupal/Core/DependencyInjection/Compiler/StackedSessionHandlerPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/StackedKernelPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/DeprecatedServicePass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/RegisterStreamWrappersPass.php
+core/lib/Drupal/Core/DependencyInjection/Compiler/LoggerAwarePass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/DevelopmentSettingsPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/RegisterAccessChecksPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/CorsCompilerPass.php
@@ -4167,6 +4170,7 @@ core/lib/Drupal/Core/DependencyInjection/Compiler/AuthenticationProviderPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/ContextProvidersPass.php
 core/lib/Drupal/Core/DependencyInjection/Compiler/BackendCompilerPass.php
 core/lib/Drupal/Core/DependencyInjection/DependencySerializationTrait.php
+core/lib/Drupal/Core/DependencyInjection/AutowireTrait.php
 core/lib/Drupal/Core/DependencyInjection/ServiceProviderInterface.php
 core/lib/Drupal/Core/DependencyInjection/ContainerNotInitializedException.php
 core/lib/Drupal/Core/DependencyInjection/DeprecatedServicePropertyTrait.php
@@ -7466,6 +7470,7 @@ core/modules/system/tests/src/Kernel/SecurityAdvisories/SecurityAdvisoriesFetche
 core/modules/system/tests/src/Kernel/Module/InstallTest.php
 core/modules/system/tests/src/Kernel/Module/RequirementsTest.php
 core/modules/system/tests/src/Kernel/Mail/MailTest.php
+core/modules/system/tests/src/Kernel/DependencyInjection/CompilerPass/LoggerAwarePassTest.php
 core/modules/system/tests/src/Kernel/Form/FileElementTest.php
 core/modules/system/tests/src/Kernel/Form/FormObjectTest.php
 core/modules/system/tests/src/Kernel/Form/ProgrammaticTest.php
@@ -8357,6 +8362,7 @@ core/modules/system/tests/modules/system_test/system_test.module
 core/modules/system/tests/modules/system_test/system_test.info.yml
 core/modules/system/tests/modules/system_test/src/MockFileTransfer.php
 core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
+core/modules/system/tests/modules/system_test/src/Controller/BrokenSystemTestController.php
 core/modules/system/tests/modules/system_test/src/Controller/SystemTestController.php
 core/modules/system/tests/modules/system_test/src/Form/CopyFieldValueTestForm.php
 core/modules/system/tests/modules/system_test/system_test.routing.yml
@@ -8526,6 +8532,10 @@ core/modules/system/tests/modules/decoupled_menus_test/decoupled_menus_test.info
 core/modules/system/tests/modules/decoupled_menus_test/decoupled_menus_test.module
 core/modules/system/tests/modules/update_test_1/update_test_1.info.yml
 core/modules/system/tests/modules/update_test_1/update_test_1.install
+core/modules/system/tests/modules/logger_aware_test/src/LoggerAwareStub.php
+core/modules/system/tests/modules/logger_aware_test/src/LoggerStub.php
+core/modules/system/tests/modules/logger_aware_test/logger_aware_test.services.yml
+core/modules/system/tests/modules/logger_aware_test/logger_aware_test.info.yml
 core/modules/system/tests/modules/ajax_forms_test/ajax_forms_test.module
 core/modules/system/tests/modules/ajax_forms_test/ajax_forms_test.info.yml
 core/modules/system/tests/modules/ajax_forms_test/src/Form/AjaxFormsTestCommandsForm.php
