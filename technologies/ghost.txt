@@ -1916,6 +1916,10 @@ ghost/i18n/locales/ca/portal.json
 ghost/i18n/locales/ca/comments.json
 ghost/i18n/locales/ca/ghost.json
 ghost/i18n/locales/ca/signup-form.json
+ghost/i18n/locales/sk/portal.json
+ghost/i18n/locales/sk/comments.json
+ghost/i18n/locales/sk/ghost.json
+ghost/i18n/locales/sk/signup-form.json
 ghost/i18n/locales/ro/portal.json
 ghost/i18n/locales/ro/comments.json
 ghost/i18n/locales/ro/ghost.json
@@ -3434,6 +3438,8 @@ ghost/core/core/server/data/migrations/versions/5.30/2023-01-13-04-25-unsubscrib
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/4.42/2022-03-30-15-44-add-newsletter-permissions.js
 ghost/core/core/server/data/migrations/versions/4.42/2022-03-21-17-17-add.js
+ghost/core/core/server/data/migrations/versions/5.72/2023-10-31-11-06-01-members-subscription-created-attribution-id-index.js
+ghost/core/core/server/data/migrations/versions/5.72/2023-10-31-11-06-00-members-created-attribution-id-index.js
 ghost/core/core/server/data/migrations/versions/5.35/2023-02-13-06-24-add-mentions-verified-column.js
 ghost/core/core/server/data/migrations/versions/5.31/2023-01-19-07-46-add-mentions-table.js
 ghost/core/core/server/data/migrations/versions/5.31/2022-12-05-09-56-update-newsletter-subscriptions.js
@@ -4843,6 +4849,9 @@ apps/admin-x-settings/src/components/settings/membership/Access.tsx
 apps/admin-x-settings/src/components/settings/membership/Tiers.tsx
 apps/admin-x-settings/src/components/settings/membership/TipsOrDonations.tsx
 apps/admin-x-settings/src/components/settings/membership/Portal.tsx
+apps/admin-x-settings/src/components/settings/membership/offers/AddOfferModal.tsx
+apps/admin-x-settings/src/components/settings/membership/offers/EditOfferModal.tsx
+apps/admin-x-settings/src/components/settings/membership/offers/OffersModal.tsx
 apps/admin-x-settings/src/components/settings/membership/MembershipSettings.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalLinks.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalPreview.tsx
@@ -4852,6 +4861,7 @@ apps/admin-x-settings/src/components/settings/membership/portal/LookAndFeel.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/PortalFrame.tsx
 apps/admin-x-settings/src/components/settings/membership/portal/SignupOptions.tsx
 apps/admin-x-settings/src/components/settings/membership/stripe/StripeConnectModal.tsx
+apps/admin-x-settings/src/components/settings/membership/Offers.tsx
 apps/admin-x-settings/src/components/settings/membership/recommendations/EditRecommendationModal.tsx
 apps/admin-x-settings/src/components/settings/membership/recommendations/AddRecommendationModalConfirm.tsx
 apps/admin-x-settings/src/components/settings/membership/recommendations/RecommendationDescriptionForm.tsx

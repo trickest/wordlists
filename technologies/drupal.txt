@@ -7564,6 +7564,7 @@ core/modules/system/tests/src/Functional/SecurityAdvisories/SecurityAdvisoryTest
 core/modules/system/tests/src/Functional/Module/NonStableModulesTest.php
 core/modules/system/tests/src/Functional/Module/ModuleTestBase.php
 core/modules/system/tests/src/Functional/Module/UninstallTest.php
+core/modules/system/tests/src/Functional/Module/DeprecatedTemplateTest.php
 core/modules/system/tests/src/Functional/Module/HookRequirementsTest.php
 core/modules/system/tests/src/Functional/Module/GenericTest.php
 core/modules/system/tests/src/Functional/Module/DependencyTest.php
@@ -8347,6 +8348,11 @@ core/modules/system/tests/modules/session_exists_cache_context_test/session_exis
 core/modules/system/tests/modules/system_module_test/system_module_test.install
 core/modules/system/tests/modules/system_module_test/system_module_test.module
 core/modules/system/tests/modules/system_module_test/system_module_test.info.yml
+core/modules/system/tests/modules/deprecated_twig_template/deprecated_twig_template.module
+core/modules/system/tests/modules/deprecated_twig_template/src/Controller/DeprecatedTwigTemplateController.php
+core/modules/system/tests/modules/deprecated_twig_template/deprecated_twig_template.routing.yml
+core/modules/system/tests/modules/deprecated_twig_template/deprecated_twig_template.info.yml
+core/modules/system/tests/modules/deprecated_twig_template/templates/deprecated-template.html.twig
 core/modules/system/tests/modules/update_test_no_preexisting/update_test_no_preexisting.install
 core/modules/system/tests/modules/update_test_no_preexisting/update_test_no_preexisting.info.yml
 core/modules/system/tests/modules/js_webassert_test/js_webassert_test.routing.yml

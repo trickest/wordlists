@@ -214,8 +214,9 @@ tests/Api/Responses/Expected/admin/promotion/get_promotion_response.json
 tests/Api/Responses/Expected/admin/promotion/post_promotion_response.json
 tests/Api/Responses/Expected/admin/product_variant/put_product_variant_response.json
 tests/Api/Responses/Expected/admin/product_variant/get_product_variant_response.json
-tests/Api/Responses/Expected/admin/product_variant/post_product_variant_disabled_response.json
 tests/Api/Responses/Expected/admin/product_variant/get_product_variants_response.json
+tests/Api/Responses/Expected/admin/product_variant/post_product_variant_enabled_by_default_response.json
+tests/Api/Responses/Expected/admin/product_variant/delete_product_variant_in_use_response.json
 tests/Api/Responses/Expected/admin/product_variant/post_product_variant_response.json
 tests/Api/Responses/Expected/admin/get_product_images_response.json
 tests/Api/Responses/Expected/admin/post_locale_with_invalid_code_response.json
@@ -3388,6 +3389,7 @@ src/Sylius/Bundle/ApiBundle/Validator/CatalogPromotion/ForTaxonsScopeValidator.p
 src/Sylius/Bundle/ApiBundle/Validator/CatalogPromotion/FixedDiscountActionValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/CatalogPromotion/PercentageDiscountActionValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/CatalogPromotion/ForProductsScopeValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/SingleValueForProductVariantOptionValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UpdateCartEmailNotAllowed.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenPaymentMethodEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueReviewerEmailValidator.php
@@ -3399,6 +3401,7 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/AccountVerificationTokenEligib
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectOrderAddressValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AddingEligibleProductVariantToCart.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShopUserResetPasswordTokenExists.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/SingleValueForProductVariantOption.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ShipmentAlreadyShippedValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/CorrectChangeShopUserConfirmPassword.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderItemAvailability.php
@@ -3585,6 +3588,7 @@ src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderItemNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ZoneCannotBeRemoved.php
+src/Sylius/Bundle/ApiBundle/Exception/ProductVariantCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ProductAttributeCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentMethodCannotBeChangedException.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentNotFoundException.php
@@ -3599,6 +3603,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddProductReview.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/RegisterShopUser.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChooseShippingMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ShipShipment.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/validation/ProductVariant.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AccountResetPassword.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangePaymentMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/UpdateCart.xml
@@ -3821,6 +3826,7 @@ src/Sylius/Bundle/ApiBundle/Filter/Doctrine/ProductVariantCatalogPromotionFilter
 src/Sylius/Bundle/ApiBundle/Filter/ShippingMethodFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/PaymentMethodFilter.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductTaxonDataPersister.php
+src/Sylius/Bundle/ApiBundle/DataPersister/ProductVariantDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/AddressDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/LocaleDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/MessengerDataPersister.php
@@ -3893,6 +3899,7 @@ src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ShopUserResetPasswordToke
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CorrectChangeShopUserConfirmPasswordValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ChangedItemQuantityInCartValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/OrderItemAvailabilityValidatorSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/SingleValueForProductVariantOptionValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/UpdateCartEmailNotAllowedValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/ShopUserNotVerifiedValidatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Validator/Constraints/CanPaymentMethodBeChangedValidatorSpec.php
@@ -3935,6 +3942,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListene
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Filter/Doctrine/TaxonFilterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
+src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductVariantDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/MessengerDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductAttributeDataPersisterSpec.php
@@ -7547,6 +7555,7 @@ src/Sylius/Behat/Context/Api/Admin/ManagingProductAttributesContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingProductTaxonsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingOrdersContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCurrenciesContext.php
+src/Sylius/Behat/Context/Api/Admin/ManagingProductVariantsPricesContext.php
 src/Sylius/Behat/Context/Api/Admin/ResettingPasswordContext.php
 src/Sylius/Behat/Context/Api/Admin/ChannelPricingLogEntryContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingProductVariantsContext.php
@@ -7565,6 +7574,7 @@ src/Sylius/Behat/Context/Api/Admin/ManagingLocalesContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingProductAssociationTypesContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingProductOptionsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingZonesContext.php
+src/Sylius/Behat/Context/Api/Admin/CreatingProductVariantContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingChannelPriceHistoryConfigsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingAdministratorsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingPromotionsContext.php
@@ -8164,20 +8174,20 @@ features/product/viewing_products/viewing_products_from_specific_taxon.feature
 features/product/viewing_products/sorting_products_by_their_discounted_price.feature
 features/product/viewing_products/viewing_product_variants_names.feature
 features/product/managing_product_variants/autocomplete_product_variant_descriptor.feature
-features/product/managing_product_variants/disable_or_enable_inventory_on_product_variant.feature
+features/product/managing_product_variants/toggling_inventory_tracking_on_product_variant.feature
 features/product/managing_product_variants/browsing_product_variants_in_different_locales.feature
+features/product/managing_product_variants/preventing_generation_of_products_variants_from_options_without_any_values.feature
 features/product/managing_product_variants/adding_product_variant_with_only_original_price.feature
-features/product/managing_product_variants/prevent_deletion_of_purchased_product_variant.feature
 features/product/managing_product_variants/checking_products_in_the_shop_while_editing_their_product_variants.feature
+features/product/managing_product_variants/preventing_deletion_of_purchased_product_variant.feature
 features/product/managing_product_variants/generating_product_variant_validation.feature
 features/product/managing_product_variants/deleting_product_variant.feature
 features/product/managing_product_variants/generating_product_variant.feature
 features/product/managing_product_variants/adding_product_variant.feature
 features/product/managing_product_variants/browsing_product_variants.feature
-features/product/managing_product_variants/disable_or_enable_product_variant.feature
 features/product/managing_product_variants/editing_product_variant.feature
 features/product/managing_product_variants/sorting_product_variants_within_product_by_position.feature
-features/product/managing_product_variants/preventing_the_generation_of_products_variants_from_options_without_any_values.feature
+features/product/managing_product_variants/toggling_product_variant.feature
 features/product/managing_product_variants/removing_product_variant_price_from_obsolete_channel.feature
 features/product/managing_product_variants/seeing_correct_option_values_while_editing_product_variant.feature
 features/product/managing_product_variants/deleting_multiple_product_variants.feature
