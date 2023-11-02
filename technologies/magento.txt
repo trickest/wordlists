@@ -15279,6 +15279,7 @@ app/code/Magento/Quote/Plugin/UpdateQuoteStore.php
 app/code/Magento/Quote/Plugin/RecollectOnGroupChange.php
 app/code/Magento/Quote/Test/Fixture/GuestCart.php
 app/code/Magento/Quote/Test/Fixture/AddProductToCart.php
+app/code/Magento/Quote/Test/Fixture/MakeCartInactive.php
 app/code/Magento/Quote/Test/Fixture/CustomerCart.php
 app/code/Magento/Quote/Test/Fixture/QuoteIdMask.php
 app/code/Magento/Quote/Test/Unit/Model/QuoteIdMaskTest.php
@@ -19134,6 +19135,7 @@ app/code/Magento/QuoteGraphQl/Model/Cart/MergeCarts/CartQuantityValidator.php
 app/code/Magento/QuoteGraphQl/Model/Cart/CreateBuyRequest.php
 app/code/Magento/QuoteGraphQl/Model/Cart/SetShippingAddressesOnCart.php
 app/code/Magento/QuoteGraphQl/Model/Cart/SetShippingMethodsOnCartInterface.php
+app/code/Magento/QuoteGraphQl/Model/Cart/ValidateMaskedQuoteId.php
 app/code/Magento/QuoteGraphQl/Model/Cart/BuyRequest/CustomizableOptionsDataProvider.php
 app/code/Magento/QuoteGraphQl/Model/Cart/BuyRequest/BuyRequestDataProviderInterface.php
 app/code/Magento/QuoteGraphQl/Model/Cart/BuyRequest/BuyRequestBuilder.php
@@ -19185,6 +19187,7 @@ app/code/Magento/QuoteGraphQl/Model/Resolver/CartItemErrors.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/Discounts.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/ShippingAddresses.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/CreateEmptyCart.php
+app/code/Magento/QuoteGraphQl/Model/Resolver/CreateGuestCart.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/MaskedCartId.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/AssignCustomerToGuestCart.php
 app/code/Magento/QuoteGraphQl/Model/Resolver/SetBillingAddressOnCart.php
@@ -32059,6 +32062,7 @@ dev/tests/static/allure/allure.config.php
 dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml
 dev/tests/static/testsuite/Magento/Test/Php/_files/blacklist/strict_type.txt
 dev/tests/static/testsuite/Magento/Test/Php/_files/whitelist/common.txt
+dev/tests/static/testsuite/Magento/Test/Php/_files/whitelist/graphql.txt
 dev/tests/static/testsuite/Magento/Test/Php/_files/phpcpd/blacklist/inventory.txt
 dev/tests/static/testsuite/Magento/Test/Php/_files/phpcpd/blacklist/common.txt
 dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/blacklist/common.txt
@@ -38383,6 +38387,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddProductsToCartWithVa
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddSimpleProductToCartSingleMutationTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/GetCustomOptionsValuesForQueryBySku.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetSelectedPaymentMethodTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/CreateGuestCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetSpecifiedBillingAddressTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/GetCartIsVirtualTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/AddSimpleProductToCartTest.php
@@ -38417,6 +38422,7 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Customer/SetBillingAddr
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddProductWithCustomizableOptionToCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/AddDownloadableProductWithCustomOptionsToCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/GetSelectedPaymentMethodTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/CreateGuestCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/GetSpecifiedBillingAddressTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/GetCartIsVirtualTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Quote/Guest/ApplyCouponsToCartTest.php

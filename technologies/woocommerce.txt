@@ -169,6 +169,7 @@ packages/js/product-editor/changelog/fix-38244
 packages/js/product-editor/changelog/add-40042_default_price
 packages/js/product-editor/changelog/fix-40208
 packages/js/product-editor/changelog/dev-include-eslint-annotations
+packages/js/product-editor/changelog/fix-currency-number-select-in-focus
 packages/js/product-editor/changelog/add-38486
 packages/js/product-editor/changelog/fix-initial-package-release
 packages/js/product-editor/changelog/add-40215
@@ -718,6 +719,7 @@ packages/js/product-editor/src/contexts/validation-context/validation-provider.t
 packages/js/product-editor/src/contexts/validation-context/types.ts
 packages/js/product-editor/src/contexts/validation-context/validation-context.ts
 packages/js/product-editor/src/types.ts
+packages/js/product-editor/src/utils/defer-select-in-focus.ts
 packages/js/product-editor/src/utils/get-currency-symbol-props.ts
 packages/js/product-editor/src/utils/get-product-variation-title.ts
 packages/js/product-editor/src/utils/get-product-title.ts
@@ -4647,7 +4649,6 @@ plugins/woocommerce/changelog/update-cys-font-color-choices
 plugins/woocommerce/changelog/41014-update-unexpected-api-calls-on-cys
 plugins/woocommerce/changelog/try-cys-temporary-iframe-solution
 plugins/woocommerce/changelog/add-template-lifecycle-doc
-plugins/woocommerce/changelog/fix-core-profiler-email-opt-in-validation
 plugins/woocommerce/changelog/fix-cys-iframe-pushstate
 plugins/woocommerce/changelog/fix-linting-exceptions
 plugins/woocommerce/changelog/fix-cys-transition-screen-iframe-positioning
@@ -4668,7 +4669,6 @@ plugins/woocommerce/changelog/fix-intro-copy-ui
 plugins/woocommerce/changelog/hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/update-block-def-order
 plugins/woocommerce/changelog/41167-kevinbates-patch-1
-plugins/woocommerce/changelog/41092-fix-preload-jetpack-data-without-jetpack-plugin
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md
 plugins/woocommerce/readme.txt
