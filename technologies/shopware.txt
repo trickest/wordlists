@@ -1074,6 +1074,7 @@ changelog/release-6-3-4-1/2020-11-27-improve-saving-own-user-profile.md
 changelog/_unreleased/2023-08-10-change-sw-password-field-default-event.md
 changelog/_unreleased/2023-10-12-deprecate-unused-components-for-v6-0-0.md
 changelog/_unreleased/2023-05-18-new-language-inheritance-mechanism-for-elasticsearch.md
+changelog/_unreleased/2023-11-03-fix-timezone.md
 changelog/_unreleased/2023-10-24-update-event-emitting-of-sw-sales-channel-config.md
 changelog/_unreleased/2023-08-01-fix-promotion-datepicker-prop-usage.md
 changelog/_unreleased/2023-10-01-return-error-on-preview-with-invalid-seo-url-template.md
@@ -1094,11 +1095,13 @@ changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-10-02-fix-document-type-display-blank-if-language-is-child.md
 changelog/_unreleased/2023-10-10-add-local-apps-folder.md
 changelog/_unreleased/2023-10-17-fix-custom-price-fields-in-admin.md
+changelog/_unreleased/2023-11-02-fix-installation-with-invalid-admin-user-password.md
 changelog/_unreleased/2022-09-29-cms-navigation-http-cache.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
 changelog/_unreleased/2023-09-28-sugar-syntax-for-es-definition.md
 changelog/_unreleased/2022-08-22-newsletter-recipient-module.md
+changelog/_unreleased/2023-10-25-allow-idfield-to-be-nullable.md
 changelog/_unreleased/2023-10-30-deprecate-invalidthemeexception.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-10-23-fix-disappearing-orders-when-cancelling-admin-order-edit.md
@@ -1114,6 +1117,7 @@ changelog/_unreleased/2023-09-29-tag-api-aware.md
 changelog/_unreleased/2023-10-13-fix-seo-url-criteria-for-category.md
 changelog/_unreleased/2023-10-09-fix-last-customer-payment-method-unavailable.md
 changelog/_unreleased/2023-10-16-fix-sorting-of-product-cross-sellings-with-dynamic-product-group-by-price.md
+changelog/_unreleased/2023-10-17-add-payment-and-shipping-method-technical_name.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2023-10-09-deprecate-loggerfactory.md
 changelog/_unreleased/2022-07-04-mail-attach.md
@@ -1174,7 +1178,10 @@ changelog/_unreleased/2023-10-03-change-type-of-urlgenerator.md
 changelog/_unreleased/2023-08-14-media-path-storage.md
 changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
 changelog/_unreleased/2023-09-14-support-active-flag-and-maintenace-mode-in-store-api-routes..md
+changelog/_unreleased/2023-10-31-ensure-translatable-fields-are-nullable.md
+changelog/_unreleased/2023-11-02-add-soft-deletes-to-custom-entities.md
 changelog/_unreleased/2023-10-19-add-sparkles-icons-and-new-twig-block.md
+changelog/_unreleased/2023-10-20-trigger-command-events-when-run-by-code.md
 changelog/_unreleased/2023-10-26-change-import-export-factory-exceptions.md
 changelog/_unreleased/2023-10-25-fixed-bug-getzipcode-return-value-must-be-string.md
 changelog/_unreleased/2023-08-10-change-sw-order-select-document-type-modal-default-event.md
@@ -1192,12 +1199,14 @@ changelog/_unreleased/2023-11-01-fix-issues-with-new-languages-inherited-from-an
 changelog/_unreleased/2023-10-20-allow-tokenizer-overrides-when-using-elasticsearch.md
 changelog/_unreleased/2023-10-26-es-definition-buildtermquery-should-return-builderinterface.md
 changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
+changelog/_unreleased/2023-11-02-fix-rule-caching-in-after-order.md
 changelog/_unreleased/2023-10-25-fix-no-order-confirm-is-sent-in-combination-with-an-invoice-document.md
 changelog/_unreleased/2023-08-09-change-sw-file-input-default-event.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
 changelog/_unreleased/2023-10-04-deprecated-shopware-core-checkout-cart-cartevents.md
 changelog/_unreleased/2023-11-02-customer-profile-cannot-cancelled-properly.md
+changelog/_unreleased/2023-10-24-fix-cross-selling-use-criteria-ids-after-event-dispatch.md
 changelog/_unreleased/2023-10-12-phpstan-rule-to-prevent-after-statement-in-migration.md
 changelog/_unreleased/2023-09-26-fix-accept-all-cookies-button-styling.md
 changelog/_unreleased/2023-10-17-handle-exception-for-product-export-generator.md
@@ -3835,6 +3844,7 @@ adr/2020-08-10-feature-flag-system.md
 adr/2022-01-06-custom-app-api-endpoints.md
 adr/2021-09-22-refactor-theme-inheritance.md
 adr/2021-03-24-nested-line-items.md
+adr/2023-10-17-add-unique-identifiers-for-checkout-methods.md
 adr/2023-04-01-mocking-repositories.md
 adr/2022-10-20-deprecation-handling-during-phpunit-test-execution.md
 adr/2021-05-28-introduce-eslint-on-vue-admin.md
@@ -3917,8 +3927,8 @@ coding-guidelines/core/extendability.md
 coding-guidelines/core/6.5-new-php-language-features.md
 coding-guidelines/core/adr.md
 coding-guidelines/core/benchmarks.md
+UPGRADE-6.7.md
 .nvmrc
-tests/unit/Shopware/Core/Framework/Api/Controller/HealthCheckControllerTest.php
 tests/unit/Storefront/DependencyInjection/ReverseProxyCompilerPassTest.php
 tests/unit/Storefront/Controller/AuthControllerTest.php
 tests/unit/Storefront/Controller/VerificationHashControllerTest.php
@@ -4024,7 +4034,6 @@ tests/unit/Common/Stubs/DataAbstractionLayer/StaticDefinitionInstanceRegistry.ph
 tests/unit/Common/Stubs/DataAbstractionLayer/StaticEntityRepository.php
 tests/unit/Common/Stubs/SystemConfigService/StaticSystemConfigService.php
 tests/unit/Common/Stubs/Flow/DummyEvent.php
-tests/unit/Framework/Struct/StateAwareTraitTest.php
 tests/unit/Elasticsearch/Sort/CountSortTest.php
 tests/unit/Elasticsearch/DependencyInjection/ElasticsearchMigrationCompilerPassTest.php
 tests/unit/Elasticsearch/DependencyInjection/ElasticsearchExtensionTest.php
@@ -4141,6 +4150,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Event/EntityWriteEventTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/PasswordFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/VariantListingConfigFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/PriceDefinitionFieldSerializerTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/IdFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/DateIntervalFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/CronIntervalFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
@@ -4173,6 +4183,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/RangeAg
 tests/unit/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/EntityAggregationTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/RequestCriteriaBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCustomFieldsTraitTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/TechnicalNameExceptionHandlerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/DataAbstractionLayerExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilderTest.php
@@ -4220,6 +4231,7 @@ tests/unit/Core/Framework/Rule/Fixture/DaysSinceRuleFixture.php
 tests/unit/Core/Framework/Rule/RuleComparisonTest.php
 tests/unit/Core/Framework/Rule/CustomFieldRuleTest.php
 tests/unit/Core/Framework/Struct/ArrayStructTest.php
+tests/unit/Core/Framework/Struct/StateAwareTraitTest.php
 tests/unit/Core/Framework/Util/FloatComparatorTest.php
 tests/unit/Core/Framework/Util/JsonTest.php
 tests/unit/Core/Framework/Util/AfterSortTest.php
@@ -4237,6 +4249,7 @@ tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Bundle
 tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/custom-snippet/custom-snippet.html.twig
 tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/address/first_name.html.twig
 tests/unit/Core/Framework/Api/Controller/SyncControllerTest.php
+tests/unit/Core/Framework/Api/Controller/HealthCheckControllerTest.php
 tests/unit/Core/Framework/Api/Util/AccessKeyHelperTest.php
 tests/unit/Core/Framework/Api/EventListener/ErrorResponseFactoryTest.php
 tests/unit/Core/Framework/Api/Command/DumpSchemaCommandTest.php
@@ -5125,6 +5138,7 @@ tests/unit/Core/Maintenance/System/Command/SystemInstallCommandTest.php
 tests/unit/Core/Maintenance/System/Command/SystemIsInstalledCommandTest.php
 tests/unit/Administration/Notification/Subscriber/UpdateSubscriberTest.php
 tests/unit/Administration/Controller/AdministrationControllerTest.php
+tests/unit/Administration/Controller/DashboardControllerTest.php
 tests/unit/Administration/AdministrationTest.php
 tests/unit/Administration/Command/DeleteExtensionLocalPublicFilesCommandTest.php
 tests/unit/Administration/Snippet/SnippetExceptionTest.php
@@ -5174,15 +5188,18 @@ tests/migration/Core/V6_5/Migration1688927492AddTaxActiveFromFieldTest.php
 tests/migration/Core/V6_5/Migration1662533751AddCustomEntityTypeIdToCategoryTest.php
 tests/migration/Core/V6_5/Migration1690874168FixPaymentStatusUnconfirmedMailTest.php
 tests/migration/Core/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocaleTest.php
+tests/migration/Core/V6_5/Migration1698919811AddDeletedAtToCustomEntityTest.php
 tests/migration/Core/V6_5/Migration1691057865UpdateSalutationDefaultForCustomerTest.php
 tests/migration/Core/V6_5/Migration1686817968AddRecurringAppPaymentMethodUrlTest.php
 tests/migration/Core/V6_5/Migration1695778183UpdateZipCodeOfTableOrderAddressToNullableTest.php
 tests/migration/Core/V6_5/Migration1666689977AddPluginIdToCustomEntityTest.php
 tests/migration/Core/V6_5/Migration1672934282ReviewFormSendFlowTest.php
+tests/migration/Core/V6_5/Migration1697112043AddPaymentAndShippingTechnicalNameTest.php
 tests/migration/Core/V6_5/Migration1690456899AddCustomFieldPrivilegeForSaleUnitViewerTest.php
 tests/migration/Core/V6_5/Migration1669124190AddDoctrineMessengerTableTest.php
 tests/migration/Core/V6_5/Migration1688717599UpdateCreatedByIdAndUpdatedByIdInOrderAndCustomerTest.php
 tests/migration/Core/V6_5/Migration1687463180ProductMediaThumbnailsTest.php
+tests/migration/Core/V6_5/Migration1698682149MakeTranslatableFieldsNullableTest.php
 tests/migration/Core/V6_5/Migration1669298267AddIconCacheDefaultValueTest.php
 tests/migration/Core/V6_5/Migration1676272001AddAccountTypeToCustomerProfileImportExportTest.php
 tests/migration/Core/V6_5/Migration1680789830AddCustomFieldsAwareToCustomEntitiesTest.php
@@ -5221,6 +5238,7 @@ tests/migration/Core/V6_6/Migration1696262484AddDefaultSendMailOptionsTest.php
 tests/migration/Core/V6_6/Migration1679581138RemoveAssociationFieldsTest.php
 tests/migration/Core/V6_6/Migration1663402950SetDoubleOptinCustomerActiveTest.php
 tests/migration/Core/BasicDataUntouchedTest.php
+tests/migration/Core/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequiredTest.php
 tests/migration/Administration/.gitkeep
 tests/integration/Storefront/.gitkeep
 tests/integration/Storefront/Controller/AuthControllerTest.php
@@ -5340,6 +5358,7 @@ tests/integration/Core/Framework/Api/Controller/Fixtures/InfoController/Resource
 tests/integration/Core/Framework/Api/Controller/Fixtures/AdminExtensionApiPluginWithLocalEntryPoint/Resources/public/administration/index.html
 tests/integration/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/custom-snippet/custom-snippet.html.twig
 tests/integration/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/address/first_name.html.twig
+tests/integration/Core/Framework/Api/Controller/ApiControllerTest.php
 tests/integration/Core/Framework/Api/EventListener/FixturesPhp/SalesChannelAuthenticationListenerTestRoute.php
 tests/integration/Core/Framework/Api/EventListener/SalesChannelAuthenticationListenerTest.php
 tests/integration/Core/Framework/Api/ApiAwareTest.php
@@ -5494,6 +5513,8 @@ tests/integration/Core/Framework/App/Lifecycle/_fixtures/shippingMethodUpdateIde
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/store_zips/swagApp2.zip
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/store_zips/swagApp2_new_permission.zip
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/shippingMethodBase/test/manifest.xml
+tests/integration/Core/Framework/App/Lifecycle/_fixtures/withCustomEntities/Resources/entities.xml
+tests/integration/Core/Framework/App/Lifecycle/_fixtures/withCustomEntities/manifest.xml
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/ShippingMethodActiveFlag/test/manifest.xml
 tests/integration/Core/Framework/App/Lifecycle/AppLifecycleTest.php
 tests/integration/Core/Framework/App/Lifecycle/Update/DefaultAppUpdaterTest.php
@@ -8424,6 +8445,7 @@ src/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/RegisteredIndexerSub
 src/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/EntityIndexingSubscriber.php
 src/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexingMessage.php
 src/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexer.php
+src/Core/Framework/DataAbstractionLayer/TechnicalNameExceptionHandler.php
 src/Core/Framework/DataAbstractionLayer/Search/Term/EntityScoreQueryBuilder.php
 src/Core/Framework/DataAbstractionLayer/Search/Term/SearchPattern.php
 src/Core/Framework/DataAbstractionLayer/Search/Term/Tokenizer.php
@@ -13421,6 +13443,7 @@ src/Core/Migration/V6_5/Migration1697532722FixADInMediaPath.php
 src/Core/Migration/V6_5/Migration1691057865UpdateSalutationDefaultForCustomer.php
 src/Core/Migration/V6_5/Migration1687462843ProductManufacturerMediaThumbnails.php
 src/Core/Migration/V6_5/Migration1670090989AddIndexOrderOrderNumber.php
+src/Core/Migration/V6_5/Migration1697112043AddPaymentAndShippingTechnicalName.php
 src/Core/Migration/V6_5/Migration1690456899AddCustomFieldPrivilegeForSaleUnitViewer.php
 src/Core/Migration/V6_5/Migration1689257577AddMissingTransactionMailFlow.php
 src/Core/Migration/V6_5/Migration1674200008UpdateOrderViewerRolePrivileges.php
@@ -13454,6 +13477,7 @@ src/Core/Migration/V6_5/Migration1668435503ChangeStornoDocumentTranslationName.p
 src/Core/Migration/V6_5/Migration1686817968AddRecurringAppPaymentMethodUrl.php
 src/Core/Migration/V6_5/Migration1677470540AddProvincesForCanada.php
 src/Core/Migration/V6_5/Migration1673860323ChangeDefaultProductComparisonIcon.php
+src/Core/Migration/V6_5/Migration1698682149MakeTranslatableFieldsNullable.php
 src/Core/Migration/V6_5/Migration1696321447AddOnlyLiveVersionToWebhookAndWebhookEventLogTables.php
 src/Core/Migration/V6_5/Migration1680789830AddCustomFieldsAwareToCustomEntities.php
 src/Core/Migration/V6_5/Migration1696300511AddDocumentNumberToDocumentEntity.php
@@ -13475,6 +13499,7 @@ src/Core/Migration/V6_5/Migration1695776504UpdateZipCodeOfTableOrderAddressToNul
 src/Core/Migration/V6_5/Migration1671003201RemoveDeprecatedColumns.php
 src/Core/Migration/V6_5/Migration1671723392AddWebhookLifetimeConfig.php
 src/Core/Migration/V6_5/Migration1669291632MigrateLineItemsInCartRule.php
+src/Core/Migration/V6_5/Migration1698919811AddDeletedAtToCustomEntity.php
 src/Core/Migration/V6_5/Migration1669124190AddDoctrineMessengerTable.php
 src/Core/Migration/V6_5/Migration1678969082DropVariantListingFields.php
 src/Core/Migration/V6_5/Migration1670854818RemoveEventActionTable.php
@@ -13871,7 +13896,6 @@ src/Core/Migration/V6_3/Migration1584002637NewImportExport.php
 src/Core/Migration/V6_3/Migration1580827023ProductCrossSellingAssignedProductsDefinition.php
 src/Core/Migration/V6_3/Migration1588144801TriggerIndexer.php
 src/Core/Migration/V6_3/Migration1605530777PrivacyPolicyExtensionsToAppTranslation.php
-src/Core/Migration/V6_3/Migration1601388975RequireFeatureSetName.php
 src/Core/Migration/V6_3/Migration1569403146ProductVisibilityUnique.php
 src/Core/Migration/V6_3/Migration1536232750Snippet.php
 src/Core/Migration/V6_3/Migration1587109484AddAfterOrderPaymentFlag.php
@@ -14220,6 +14244,7 @@ src/Core/Migration/Test/Migration1643878976AddCaptureRefundStateMachinesTest.php
 src/Core/Migration/Test/Migration1627541488AddForeignKeyForSalesChannelIdIntoSystemConfigTableTest.php
 src/Core/Migration/Test/Migration1625505190AddOrderTotalAmountToCustomerTableTest.php
 src/Core/Migration/Test/Migration1618900427FixTotalRoundingTest.php
+src/Core/Migration/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequired.php
 src/Core/README.md
 src/Core/SalesChannelRequest.php
 src/Core/Maintenance/SalesChannel/Service/SalesChannelCreator.php

@@ -387,6 +387,7 @@ db/migrate/20220124101834_setting_updates2.rb
 db/migrate/20180711080554_issue_2100_utf8_encode_http_logs.rb
 db/migrate/20220517000001_create_ticket_reopen_time.rb
 db/migrate/20190718140450_forget_insecure_sessions.rb
+db/migrate/20231024103209_issue_4838_data_retention.rb
 db/migrate/20180220000001_setting_attachment_preview.rb
 db/migrate/20230802112821_regex_operator_renaming.rb
 db/migrate/20210528000000_update_session_timeout_dropdown.rb
@@ -598,6 +599,7 @@ app/assets/javascripts/app/controllers/_manage/ticket_auto_assignment.coffee
 app/assets/javascripts/app/controllers/_manage/ticket_duplicate_detection.coffee
 app/assets/javascripts/app/controllers/_manage/system.coffee
 app/assets/javascripts/app/controllers/_manage/security.coffee
+app/assets/javascripts/app/controllers/job/form_handler_admin_job_object_name.coffee
 app/assets/javascripts/app/controllers/public_link.coffee
 app/assets/javascripts/app/controllers/chat.coffee
 app/assets/javascripts/app/controllers/user/manage_two_factor.coffee
@@ -782,6 +784,7 @@ app/assets/javascripts/app/controllers/_ui_element/richtext_additions/_rich_text
 app/assets/javascripts/app/controllers/_ui_element/richtext_additions/insert_image_button.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext_additions/embed_video_button.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext_additions/popup_answer.coffee
+app/assets/javascripts/app/controllers/_ui_element/_application_selector_expert.coffee
 app/assets/javascripts/app/controllers/_ui_element/auth_provider.coffee
 app/assets/javascripts/app/controllers/_ui_element/core_workflow_perform.coffee
 app/assets/javascripts/app/controllers/_ui_element/checkboxTicketAttributes.coffee
@@ -795,9 +798,11 @@ app/assets/javascripts/app/controllers/_ui_element/_application_selector.coffee
 app/assets/javascripts/app/controllers/_ui_element/textarea.coffee
 app/assets/javascripts/app/controllers/_ui_element/searchable_select.coffee
 app/assets/javascripts/app/controllers/_ui_element/selectTicketAttributes.coffee
+app/assets/javascripts/app/controllers/_ui_element/object_perform_action.coffee
 app/assets/javascripts/app/controllers/_ui_element/user_autocompletion.coffee
 app/assets/javascripts/app/controllers/_ui_element/permission.coffee
 app/assets/javascripts/app/controllers/_ui_element/_application_action.coffee
+app/assets/javascripts/app/controllers/_ui_element/object_selector.coffee
 app/assets/javascripts/app/controllers/_ui_element/column_select.coffee
 app/assets/javascripts/app/controllers/_ui_element/holiday_selector.coffee
 app/assets/javascripts/app/controllers/_ui_element/ticket_duplicate_detection.coffee
@@ -863,6 +868,7 @@ app/assets/javascripts/app/controllers/widget/online_notification.coffee
 app/assets/javascripts/app/controllers/widget/answer_list.coffee
 app/assets/javascripts/app/controllers/widget/button_with_dropdown.coffee
 app/assets/javascripts/app/controllers/widget/session_message.coffee
+app/assets/javascripts/app/controllers/widget/preview_list.coffee
 app/assets/javascripts/app/controllers/widget/avatar.coffee
 app/assets/javascripts/app/controllers/widget/import_try_result.coffee
 app/assets/javascripts/app/controllers/widget/ticket_list.coffee
@@ -1737,6 +1743,7 @@ app/policies/controllers/settings_controller_policy.rb
 app/policies/controllers/signatures_controller_policy.rb
 app/policies/controllers/translations_controller_policy.rb
 app/policies/controllers/object_manager_attributes_controller_policy.rb
+app/policies/controllers/selectors_controller_policy.rb
 app/policies/controllers/version_controller_policy.rb
 app/policies/controllers/time_accounting/types_controller_policy.rb
 app/policies/controllers/external_data_source_controller_policy.rb
@@ -2089,6 +2096,7 @@ app/controllers/time_accounting/types_controller.rb
 app/controllers/import_kayako_controller.rb
 app/controllers/calendars_controller.rb
 app/controllers/jobs_controller.rb
+app/controllers/selectors_controller.rb
 app/controllers/first_steps_controller.rb
 app/controllers/user/overview_sortings_controller.rb
 app/controllers/user/after_auth_controller.rb
@@ -3487,6 +3495,7 @@ app/models/public_link/triggers_subscriptions.rb
 app/models/role.rb
 app/models/ticket/calls_stats_ticket_reopen_log.rb
 app/models/ticket/sets_close_time.rb
+app/models/ticket/perform_changes.rb
 app/models/ticket/touches_associations.rb
 app/models/ticket/checks_reopen_after_certain_time.rb
 app/models/ticket/escalation.rb
@@ -3525,11 +3534,14 @@ app/models/ticket/article/adds_metadata_email.rb
 app/models/ticket/article/triggers_subscriptions.rb
 app/models/ticket/article/assets.rb
 app/models/ticket/article/sender.rb
-app/models/ticket/selector/sql.rb
-app/models/ticket/selector/base.rb
-app/models/ticket/selector/search_index.rb
 app/models/ticket/search.rb
 app/models/ticket/enqueues_user_ticket_counter_job.rb
+app/models/ticket/can_selector.rb
+app/models/ticket/perform_changes/action.rb
+app/models/ticket/perform_changes/action/notification_email.rb
+app/models/ticket/perform_changes/action/notification_sms.rb
+app/models/ticket/perform_changes/action/article_note.rb
+app/models/ticket/perform_changes/action/notification_webhook.rb
 app/models/ticket/triggers_subscriptions.rb
 app/models/ticket/search_index.rb
 app/models/ticket/assets.rb
@@ -3668,14 +3680,20 @@ app/models/concerns/has_rich_text.rb
 app/models/concerns/can_priorization.rb
 app/models/concerns/has_roles.rb
 app/models/concerns/can_be_imported.rb
+app/models/concerns/can_perform_changes.rb
 app/models/concerns/can_uniq_name.rb
 app/models/concerns/has_activity_stream_log.rb
 app/models/concerns/checks_condition_validation.rb
 app/models/concerns/checks_kb_client_notification.rb
 app/models/concerns/checks_kb_client_visibility.rb
 app/models/concerns/checks_human_changes.rb
+app/models/concerns/can_selector.rb
 app/models/concerns/has_online_notifications.rb
 app/models/concerns/checks_html_sanitized.rb
+app/models/concerns/perform_changes/action.rb
+app/models/concerns/perform_changes/action/attribute_updates.rb
+app/models/concerns/perform_changes/action/delete.rb
+app/models/concerns/perform_changes/action/data_privacy_deletion_task.rb
 app/models/concerns/has_agent_allowed_params.rb
 app/models/concerns/has_default_model_user_relations.rb
 app/models/concerns/has_object_manager_attributes.rb
@@ -5629,6 +5647,9 @@ lib/stats/ticket_escalation.rb
 lib/stats/ticket_load_measure.rb
 lib/stats/ticket_in_process.rb
 lib/stats/ticket_waiting_time.rb
+lib/selector/sql.rb
+lib/selector/base.rb
+lib/selector/search_index.rb
 lib/version.rb
 lib/zammad/application/initializer/db_preflight_check/nulldb.rb
 lib/zammad/application/initializer/db_preflight_check/mysql2.rb
@@ -5789,6 +5810,7 @@ public/assets/tests/sinon-9.2.4.js
 public/assets/tests/ajax-test.json
 public/assets/tests/qunit/ui.js
 public/assets/tests/qunit/model_ui.js
+public/assets/tests/qunit/form_object_perform_action.js
 public/assets/tests/qunit/form_searchable_select.js
 public/assets/tests/qunit/form_find.js
 public/assets/tests/qunit/form_extended.js
@@ -5813,6 +5835,7 @@ public/assets/tests/qunit/kb_video_embeding.js
 public/assets/tests/qunit/table.js
 public/assets/tests/qunit/taskbar.js
 public/assets/tests/qunit/form_ticket_duplicate_detection.js
+public/assets/tests/qunit/form_object_selector.js
 public/assets/tests/qunit/session.js
 public/assets/tests/qunit/form_email.js
 public/assets/tests/qunit/form_autocompletion_ajax.js
@@ -6122,6 +6145,7 @@ config/routes/monitoring.rb
 config/routes/form.rb
 config/routes/integration_cti.rb
 config/routes/channel_telegram.rb
+config/routes/selector.rb
 config/routes/group.rb
 config/routes/sla.rb
 config/routes/http_log.rb
@@ -6326,6 +6350,7 @@ spec/system/manage/jobs_spec.rb
 spec/system/manage/tags_spec.rb
 spec/system/manage/trigger_spec.rb
 spec/system/manage/organizations_spec.rb
+spec/system/manage/jobs/data_retention_spec.rb
 spec/system/login_spec.rb
 spec/system/report_spec.rb
 spec/system/password_reset_verify_spec.rb
@@ -6985,6 +7010,7 @@ spec/lib/sessions/backend/base_spec.rb
 spec/lib/sessions/backend/activity_stream_spec.rb
 spec/lib/sessions/backend/ticket_overview_list_spec.rb
 spec/lib/email_address_validation_spec.rb
+spec/lib/validations/data_privacy_task_validator_spec.rb
 spec/lib/validations/object_manager/attribute_validator_spec.rb
 spec/lib/validations/object_manager/attribute_validator/backend_spec.rb
 spec/lib/validations/object_manager/attribute_validator/data_types_spec.rb
@@ -7129,6 +7155,13 @@ spec/lib/auth/backend/internal_spec.rb
 spec/lib/auth/backend/developer_spec.rb
 spec/lib/auth/backend/backend_examples.rb
 spec/lib/stats/ticket_waiting_time_spec.rb
+spec/lib/selector/base_spec.rb
+spec/lib/selector/base/user_spec.rb
+spec/lib/selector/base/organization_spec.rb
+spec/lib/selector/sql/user_spec.rb
+spec/lib/selector/sql/organization_spec.rb
+spec/lib/selector/attribute_spec.rb
+spec/lib/selector/sql_spec.rb
 spec/lib/notification_factory_spec.rb
 spec/lib/user_context_spec.rb
 spec/lib/upload_cache_spec.rb
@@ -7206,6 +7239,7 @@ spec/models/object_manager/attribute/object/ticket_spec.rb
 spec/models/object_manager/object_spec.rb
 spec/models/object_manager/attribute_spec.rb
 spec/models/role_spec.rb
+spec/models/user/perform_changes_spec.rb
 spec/models/user/performs_geo_lookup_examples.rb
 spec/models/user/updates_ticket_organization_spec.rb
 spec/models/user/can_lookup_search_index_attributes_examples.rb
@@ -7216,6 +7250,7 @@ spec/models/online_notification_spec.rb
 spec/models/sla_spec.rb
 spec/models/role_group_spec.rb
 spec/models/ticket/overviews_spec.rb
+spec/models/ticket/perform_changes_spec.rb
 spec/models/ticket/time_accounting/type_spec.rb
 spec/models/ticket/current_color_spec.rb
 spec/models/ticket/shared_draft_start_spec.rb
@@ -7237,9 +7272,6 @@ spec/models/ticket/article/enqueue_communicate_twitter_job_spec.rb
 spec/models/ticket/article/enqueue_communicate_telegram_job_spec.rb
 spec/models/ticket/article/type_spec.rb
 spec/models/ticket/article/has_ticket_contact_attributes_impact_examples.rb
-spec/models/ticket/selector/base_spec.rb
-spec/models/ticket/selector/attribute_spec.rb
-spec/models/ticket/selector/sql_spec.rb
 spec/models/ticket/time_accounting_spec.rb
 spec/models/ticket/resets_pending_time_seconds_examples.rb
 spec/models/ticket/has_transaction_dispatcher_spec.rb
@@ -7337,6 +7369,7 @@ spec/models/concerns/can_be_imported_examples.rb
 spec/models/concerns/has_history_examples.rb
 spec/models/concerns/has_xss_sanitized_note_examples.rb
 spec/models/concerns/has_search_index_backend_examples.rb
+spec/models/concerns/can_perform_changes_examples.rb
 spec/models/concerns/has_image_sanitized_note_examples.rb
 spec/models/concerns/has_tags_examples.rb
 spec/models/concerns/has_group_relation_definition_examples.rb
@@ -7384,6 +7417,7 @@ spec/models/chat_spec.rb
 spec/models/public_link_spec.rb
 spec/models/user_device_spec.rb
 spec/models/macro_spec.rb
+spec/models/organization/perform_changes_spec.rb
 spec/models/knowledge_base_spec.rb
 spec/models/trigger_spec.rb
 spec/models/store_spec.rb
@@ -7396,6 +7430,7 @@ spec/requests/admin/knowledge_base/public_menu_spec.rb
 spec/requests/links_spec.rb
 spec/requests/taskbar_spec.rb
 spec/requests/settings_spec.rb
+spec/requests/selector_spec.rb
 spec/requests/cors_preflight_check_spec.rb
 spec/requests/online_notifications_controller_spec.rb
 spec/requests/proxy_spec.rb

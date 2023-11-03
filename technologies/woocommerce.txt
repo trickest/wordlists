@@ -76,6 +76,7 @@ packages/js/product-editor/changelog/add-38202
 packages/js/product-editor/changelog/update-40072_variation_visibility_icon
 packages/js/product-editor/changelog/add-40198
 packages/js/product-editor/changelog/fix-40844
+packages/js/product-editor/changelog/dev-35143_add_preview_to_downloads_edit
 packages/js/product-editor/changelog/dev-40216_remove_confirmation_modal_for_dismissing_attributes_variations
 packages/js/product-editor/changelog/fix-variation_name
 packages/js/product-editor/changelog/add-39125
@@ -179,6 +180,7 @@ packages/js/product-editor/changelog/add-38831_header_buttons_to_description_mod
 packages/js/product-editor/changelog/dev-38345_allow_select_multiple_items
 packages/js/product-editor/changelog/fix-product-editor-theme-bleed
 packages/js/product-editor/changelog/add-37984
+packages/js/product-editor/changelog/update-add-post-type-context-product-editor
 packages/js/product-editor/changelog/add-40594
 packages/js/product-editor/changelog/add-37986
 packages/js/product-editor/changelog/add-37096-tests
@@ -711,6 +713,7 @@ packages/js/product-editor/src/blocks/product-fields/summary/paragraph-rtl-contr
 packages/js/product-editor/src/blocks/product-fields/summary/paragraph-rtl-control/types.ts
 packages/js/product-editor/src/blocks/product-fields/summary/types.ts
 packages/js/product-editor/src/images/empty-variations-image.tsx
+packages/js/product-editor/src/contexts/post-type-context/index.ts
 packages/js/product-editor/src/contexts/validation-context/helpers.ts
 packages/js/product-editor/src/contexts/validation-context/use-validations.ts
 packages/js/product-editor/src/contexts/validation-context/index.ts
@@ -4623,11 +4626,14 @@ plugins/woocommerce/client/legacy/.eslintignore
 plugins/woocommerce/tsconfig.json
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
+plugins/woocommerce/changelog/41182-fix-marketing-campaign-link
 plugins/woocommerce/changelog/fix-41149-cys-remove-scrollbar-iframe
 plugins/woocommerce/changelog/40839-hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/41052-update-40840-customize-blank-issue-with-wp-6.4-followup
 plugins/woocommerce/changelog/update-reduce-intro-loading-time
 plugins/woocommerce/changelog/fix-38169-block-editor-compat
+plugins/woocommerce/changelog/pr-32288
+plugins/woocommerce/changelog/fix-daily-and-pr-tests
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/41068-update-country-chile-locale
 plugins/woocommerce/changelog/update-cys-loading-frame
@@ -4648,6 +4654,8 @@ plugins/woocommerce/changelog/fix-intro-modal-button
 plugins/woocommerce/changelog/update-cys-font-color-choices
 plugins/woocommerce/changelog/41014-update-unexpected-api-calls-on-cys
 plugins/woocommerce/changelog/try-cys-temporary-iframe-solution
+plugins/woocommerce/changelog/e2e-display-correct-tax-checkout
+plugins/woocommerce/changelog/fix-null-allowed-in-multichannel-campaign
 plugins/woocommerce/changelog/add-template-lifecycle-doc
 plugins/woocommerce/changelog/fix-cys-iframe-pushstate
 plugins/woocommerce/changelog/fix-linting-exceptions
@@ -4662,12 +4670,16 @@ plugins/woocommerce/changelog/fix-logo-wdith
 plugins/woocommerce/changelog/add-39890
 plugins/woocommerce/changelog/fix-cys-ui
 plugins/woocommerce/changelog/2023-11-01-12-33-49-694057
+plugins/woocommerce/changelog/add-stalebot-schedules
 plugins/woocommerce/changelog/40662-try-log-file-browser
+plugins/woocommerce/changelog/fix-cys-ui-nov-3
 plugins/woocommerce/changelog/add-store-id-to-wc-tracker-and-tracks
+plugins/woocommerce/changelog/41181-rename-footer-pattern
 plugins/woocommerce/changelog/fix-39489
 plugins/woocommerce/changelog/fix-intro-copy-ui
 plugins/woocommerce/changelog/hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/update-block-def-order
+plugins/woocommerce/changelog/2023-11-03-05-13-10-305725
 plugins/woocommerce/changelog/41167-kevinbates-patch-1
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md
@@ -5528,6 +5540,7 @@ plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/upload-plugin.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/update-woocommerce.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/customize-store/assembler-hub.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-coupons.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-calculate-tax.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/calculate-shipping.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-variable.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/mini-cart.spec.js

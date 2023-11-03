@@ -4319,6 +4319,7 @@ application/Espo/Core/Mail/Exceptions/SendingError.php
 application/Espo/Core/Mail/Exceptions/NoSmtp.php
 application/Espo/Core/Mail/Importer/DuplicateFinder.php
 application/Espo/Core/Mail/Importer/DefaultParentFinder.php
+application/Espo/Core/Mail/Importer/DefaultImporter.php
 application/Espo/Core/Mail/Importer/DefaultDuplicateFinder.php
 application/Espo/Core/Mail/Importer/ParentFinder.php
 application/Espo/Core/Mail/Importer/Data.php
@@ -4986,6 +4987,7 @@ application/Espo/Core/Record/UpdateParamsFetcher.php
 application/Espo/Core/Record/DeleteParams.php
 application/Espo/Core/Record/SearchParamsFetcher.php
 application/Espo/Core/Record/ServiceFactory.php
+application/Espo/Core/Record/EntityProvider.php
 application/Espo/Core/Record/Select/ApplierClassNameListProvider.php
 application/Espo/Core/Record/Duplicator/FieldDuplicatorFactory.php
 application/Espo/Core/Record/Duplicator/FieldDuplicator.php
@@ -6041,6 +6043,7 @@ client/src/helpers/misc/field-language.js
 client/src/helpers/misc/foreign-field.js
 client/src/helpers/misc/authentication-provider.js
 client/src/helpers/misc/list-select-attributes.js
+client/src/helpers/misc/summernote-custom.js
 client/src/helpers/reg-exp-pattern.js
 client/src/helpers/action-item-setup.js
 client/src/helpers/model/defaults-populator.js
@@ -7622,6 +7625,7 @@ tests/integration/Espo/Note/AclTest.php
 tests/integration/Espo/LeadCapture/LeadCaptureTest.php
 tests/integration/Espo/Webhook/ProcessingTest.php
 tests/integration/Espo/Webhook/AclTest.php
+tests/integration/Espo/Record/EntityProviderTest.php
 tests/integration/Espo/Record/RestoreDeletedTest.php
 tests/integration/Espo/Record/LinkTest.php
 tests/integration/Espo/Record/DuplicateFindTest.php
@@ -7634,6 +7638,7 @@ tests/integration/Espo/ORM/FunctionConverterTest.php
 tests/integration/Espo/ORM/MapperTest.php
 tests/integration/Espo/ORM/SthCollectionTest.php
 tests/integration/Espo/ORM/QueryTest.php
+tests/integration/Espo/ORM/RepositoryTest.php
 tests/integration/Espo/Extension/GeneralTest.php
 tests/integration/Espo/Actions/ActionTest.php
 tests/integration/Espo/Actions/MassActionTest.php
