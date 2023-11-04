@@ -400,6 +400,7 @@ upload/admin/language/en-gb/sale/returns.php
 upload/admin/language/en-gb/marketplace/extension.php
 upload/admin/language/en-gb/marketplace/event.php
 upload/admin/language/en-gb/marketplace/api.php
+upload/admin/language/en-gb/marketplace/modification.php
 upload/admin/language/en-gb/marketplace/marketplace.php
 upload/admin/language/en-gb/marketplace/cron.php
 upload/admin/language/en-gb/marketplace/promotion.php
@@ -495,6 +496,7 @@ upload/admin/model/setting/extension.php
 upload/admin/model/setting/setting.php
 upload/admin/model/setting/event.php
 upload/admin/model/setting/module.php
+upload/admin/model/setting/modification.php
 upload/admin/model/setting/store.php
 upload/admin/model/setting/cron.php
 upload/admin/model/setting/startup.php
@@ -718,6 +720,8 @@ upload/admin/view/template/sale/voucher_list.twig
 upload/admin/view/template/sale/subscription_list.twig
 upload/admin/view/template/marketplace/event_list.twig
 upload/admin/view/template/marketplace/marketplace_reply.twig
+upload/admin/view/template/marketplace/modification.twig
+upload/admin/view/template/marketplace/modification_list.twig
 upload/admin/view/template/marketplace/marketplace_extension.twig
 upload/admin/view/template/marketplace/promotion.twig
 upload/admin/view/template/marketplace/event.twig
@@ -1477,6 +1481,7 @@ upload/admin/controller/sale/returns.php
 upload/admin/controller/marketplace/extension.php
 upload/admin/controller/marketplace/event.php
 upload/admin/controller/marketplace/api.php
+upload/admin/controller/marketplace/modification.php
 upload/admin/controller/marketplace/marketplace.php
 upload/admin/controller/marketplace/cron.php
 upload/admin/controller/marketplace/promotion.php
@@ -4764,7 +4769,6 @@ upload/catalog/view/template/mail/order_history.twig
 upload/catalog/view/template/mail/gdpr_delete.twig
 upload/catalog/view/template/mail/voucher.twig
 upload/catalog/view/template/mail/order_alert.twig
-upload/catalog/view/template/mail/order_edit.twig
 upload/catalog/view/template/mail/register.twig
 upload/catalog/view/template/mail/subscription.twig
 upload/catalog/view/template/mail/affiliate_alert.twig
