@@ -14,6 +14,7 @@ packages/js/product-editor/changelog/update-37686
 packages/js/product-editor/changelog/enhancement-38960
 packages/js/product-editor/changelog/fix-infinite_categories_loading_state
 packages/js/product-editor/changelog/fix-37928_block_editor_highlighting
+packages/js/product-editor/changelog/fix-select-product-name-block-initially
 packages/js/product-editor/changelog/add-37120_hydrate_product_editor_settings
 packages/js/product-editor/changelog/add-toggle-content-block-37253
 packages/js/product-editor/changelog/add-38487
@@ -63,6 +64,7 @@ packages/js/product-editor/changelog/tweak-block-wrappers
 packages/js/product-editor/changelog/update-38117
 packages/js/product-editor/changelog/fix-40897
 packages/js/product-editor/changelog/fix-39543
+packages/js/product-editor/changelog/add-attributes-empty-state
 packages/js/product-editor/changelog/add-37656
 packages/js/product-editor/changelog/update-move-ces-to-product-editor
 packages/js/product-editor/changelog/add-37931
@@ -70,6 +72,7 @@ packages/js/product-editor/changelog/fix-40845_single_variation_price_notice
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
 packages/js/product-editor/changelog/fix-39544_description_styling
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
+packages/js/product-editor/changelog/add-welcome-guide
 packages/js/product-editor/changelog/dev-40597_display_notice_at_top_single_variation
 packages/js/product-editor/changelog/add-block-attributes-37728
 packages/js/product-editor/changelog/add-38202
@@ -294,7 +297,9 @@ packages/js/product-editor/src/components/attribute-control/test/new-attribute-m
 packages/js/product-editor/src/components/attribute-control/edit-attribute-modal.scss
 packages/js/product-editor/src/components/attribute-control/edit-attribute-modal.tsx
 packages/js/product-editor/src/components/attribute-control/new-attribute-modal.scss
+packages/js/product-editor/src/components/attribute-control/attribute-skeleton.scss
 packages/js/product-editor/src/components/attribute-control/new-attribute-modal.tsx
+packages/js/product-editor/src/components/attribute-control/attribute-empty-state-skeleton.tsx
 packages/js/product-editor/src/components/attribute-control/utils.ts
 packages/js/product-editor/src/components/product-section-layout/product-field-section.tsx
 packages/js/product-editor/src/components/product-section-layout/index.ts
@@ -379,6 +384,10 @@ packages/js/product-editor/src/components/editor/init-blocks.ts
 packages/js/product-editor/src/components/editor/index.ts
 packages/js/product-editor/src/components/editor/style.scss
 packages/js/product-editor/src/components/editor/editor.tsx
+packages/js/product-editor/src/components/modal-editor-welcome-guide/style.scss
+packages/js/product-editor/src/components/modal-editor-welcome-guide/index.js
+packages/js/product-editor/src/components/modal-editor-welcome-guide/image.js
+packages/js/product-editor/src/components/modal-editor-welcome-guide/default.js
 packages/js/product-editor/src/components/tags-field/index.ts
 packages/js/product-editor/src/components/tags-field/use-tag-search.ts
 packages/js/product-editor/src/components/tags-field/style.scss
@@ -3038,7 +3047,6 @@ plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-field-ta
 plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-section.scss
 plugins/woocommerce-admin/client/products/fills/pricing-section/pricing-field-taxes-charge.tsx
 plugins/woocommerce-admin/client/products/tour/components/guide/icons.tsx
-plugins/woocommerce-admin/client/products/tour/components/guide/style.scss
 plugins/woocommerce-admin/client/products/tour/components/guide/index.tsx
 plugins/woocommerce-admin/client/products/tour/components/guide/types.ts
 plugins/woocommerce-admin/client/products/tour/components/guide/page-control.tsx
@@ -4634,15 +4642,19 @@ plugins/woocommerce/changelog/update-reduce-intro-loading-time
 plugins/woocommerce/changelog/fix-38169-block-editor-compat
 plugins/woocommerce/changelog/pr-32288
 plugins/woocommerce/changelog/fix-daily-and-pr-tests
+plugins/woocommerce/changelog/fix-cys-initial-pattern-population
+plugins/woocommerce/changelog/remove-guide-style
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/41068-update-country-chile-locale
 plugins/woocommerce/changelog/update-cys-loading-frame
 plugins/woocommerce/changelog/add-cys-slotfill-transitional-button
 plugins/woocommerce/changelog/fix-e2e-api-execution-on-daily
+plugins/woocommerce/changelog/fix-31146-extensions-page-undefined-property
 plugins/woocommerce/changelog/update-stalebot-version
 plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
 plugins/woocommerce/changelog/update-spacing-around-logo
 plugins/woocommerce/changelog/add-40902-render-site-thumbnail
+plugins/woocommerce/changelog/41201-fix-41197-log-file-bulk-fatal
 plugins/woocommerce/changelog/41109-enhance-update-patterns-list-for-the-assembler
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.4.3
 plugins/woocommerce/changelog/fix-undefined-queryId-warning
@@ -4654,6 +4666,7 @@ plugins/woocommerce/changelog/fix-intro-modal-button
 plugins/woocommerce/changelog/update-cys-font-color-choices
 plugins/woocommerce/changelog/41014-update-unexpected-api-calls-on-cys
 plugins/woocommerce/changelog/try-cys-temporary-iframe-solution
+plugins/woocommerce/changelog/update-woo-email-addresses
 plugins/woocommerce/changelog/e2e-display-correct-tax-checkout
 plugins/woocommerce/changelog/fix-null-allowed-in-multichannel-campaign
 plugins/woocommerce/changelog/add-template-lifecycle-doc
@@ -4662,8 +4675,10 @@ plugins/woocommerce/changelog/fix-linting-exceptions
 plugins/woocommerce/changelog/fix-cys-transition-screen-iframe-positioning
 plugins/woocommerce/changelog/update-logo-preview-size
 plugins/woocommerce/changelog/fix-34490
+plugins/woocommerce/changelog/update-shrink_banner_image
 plugins/woocommerce/changelog/41103-fix-40822-cys-palette-not-restricted
 plugins/woocommerce/changelog/tweak-cys-drag-to-resize-label-style
+plugins/woocommerce/changelog/api-fix-to-allow-execution-against-daily-site
 plugins/woocommerce/changelog/fix-spotlight-caret
 plugins/woocommerce/changelog/remove-creative-mail
 plugins/woocommerce/changelog/fix-logo-wdith
@@ -4675,7 +4690,10 @@ plugins/woocommerce/changelog/40662-try-log-file-browser
 plugins/woocommerce/changelog/fix-cys-ui-nov-3
 plugins/woocommerce/changelog/add-store-id-to-wc-tracker-and-tracks
 plugins/woocommerce/changelog/41181-rename-footer-pattern
+plugins/woocommerce/changelog/add-wc_allow_changing_orders_storage_while_sync_is_pending-filter
 plugins/woocommerce/changelog/fix-39489
+plugins/woocommerce/changelog/fix-pattern-route-performance
+plugins/woocommerce/changelog/dev-fix-k6-perf-tests-hpos-env-var
 plugins/woocommerce/changelog/fix-intro-copy-ui
 plugins/woocommerce/changelog/hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/update-block-def-order

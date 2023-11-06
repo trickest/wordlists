@@ -1131,10 +1131,12 @@ changelog/_unreleased/2023-08-09-change-sw-entity-many-to-many-select-default-ev
 changelog/_unreleased/2023-10-27-updated-the-create-plugin-command.md
 changelog/_unreleased/2023-08-09-change-sw-gtc-checkbox-default-event.md
 changelog/_unreleased/2023-10-12-deprecated-typo-in-image-gallery-config.md
+changelog/_unreleased/2023-10-27-add-option-to-define-socks-port-and-host.md
 changelog/_unreleased/2023-10-18-fix-that-multiple-instances-of-same-cms-element-from-app-sdk-are-not-working.md
 changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-default-event.md
 changelog/_unreleased/2023-10-20-system-update-finish-message-on-cli.md
 changelog/_unreleased/2023-10-09-improve-elasticsearch-debugging.md
+changelog/_unreleased/2023-09-25-use-normal-kernel-system-update.md
 changelog/_unreleased/2023-10-23-do-not-create-prefix-infix-placeholders-for-numbers.md
 changelog/_unreleased/2023-08-09-change-sw-single-select-default-event.md
 changelog/_unreleased/2023-09-25-disable-database-profiler-on-cli.md
@@ -1149,6 +1151,7 @@ changelog/_unreleased/2023-08-10-change-sw-button-process-default-event.md
 changelog/_unreleased/2023-10-26-adjust-selector-from-button-for-remove-from-cart-event.md
 changelog/_unreleased/2023-08-10-change-sw-radio-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
+changelog/_unreleased/2023-10-31-add-twig-block-to-order-history-and-reformat-code.md
 changelog/_unreleased/2023-10-09-add-onlyliveversion-parameter-to-app-webhooks.md
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
 changelog/_unreleased/2023-09-29-make-all-settings-module-vue3-compatible.md
@@ -1212,6 +1215,7 @@ changelog/_unreleased/2023-09-26-fix-accept-all-cookies-button-styling.md
 changelog/_unreleased/2023-10-17-handle-exception-for-product-export-generator.md
 changelog/_unreleased/2023-09-20-avoid-creating-seo-urls-for-headless-sales-channels.md
 changelog/_unreleased/2023-09-28-fix-cms-back.md
+changelog/_unreleased/2023-11-03-fix-dynamic-product-listing-filter.md
 changelog/_unreleased/2023-10-09-administration-add-main-modulets-fixed-typo-from-langugage-to-language.md
 changelog/_unreleased/2023-10-02-prevent-inserting-double-dot-into-an-url-in-mail.md
 changelog/_unreleased/2023-10-03-fix-generating-documents-very-slow-once-a-reasonable-number-of-documents-exists.md
@@ -4834,6 +4838,7 @@ tests/unit/Core/Checkout/Cart/Rule/LineItemReleaseDateRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemTaxationRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemOfTypeRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionLengthRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemGoodsTotalRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemProductStatesRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemInProductStreamRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionWeightRuleTest.php
@@ -5003,8 +5008,6 @@ tests/unit/Core/Checkout/Payment/Cart/PaymentTransactionStructFactoryTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentHandler/PaymentHandlerRegistryTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentRecurringProcessorTest.php
 tests/unit/Core/Checkout/Payment/Cart/Token/JWTFactoryV2Test.php
-tests/unit/Core/Checkout/Payment/Cart/Token/JWTMock/TestSigner.php
-tests/unit/Core/Checkout/Payment/Cart/Token/JWTMock/TestKey.php
 tests/unit/Core/Checkout/Payment/Cart/SyncPaymentTransactionStructTest.php
 tests/unit/Core/Checkout/Payment/Cart/PaymentTransactionChainProcessorTest.php
 tests/unit/Core/Checkout/Payment/Cart/Recurring/RecurringDataStructTest.php
@@ -5136,6 +5139,8 @@ tests/unit/Core/Maintenance/System/Command/SystemGenerateJwtSecretCommandTest.ph
 tests/unit/Core/Maintenance/System/Command/SystemSetupCommandTest.php
 tests/unit/Core/Maintenance/System/Command/SystemInstallCommandTest.php
 tests/unit/Core/Maintenance/System/Command/SystemIsInstalledCommandTest.php
+tests/unit/Maintenance/System/Command/SystemUpdateFinishCommandTest.php
+tests/unit/Maintenance/System/Command/SystemUpdatePrepareCommandTest.php
 tests/unit/Administration/Notification/Subscriber/UpdateSubscriberTest.php
 tests/unit/Administration/Controller/AdministrationControllerTest.php
 tests/unit/Administration/Controller/DashboardControllerTest.php
@@ -12030,6 +12035,8 @@ src/Core/Test/Stub/Redis/RedisMultiCompatibility.php
 src/Core/Test/Stub/Redis/RedisCompatibility.php
 src/Core/Test/Stub/Flow/DummyEvent.php
 src/Core/Test/Stub/Checkout/EmptyPrice.php
+src/Core/Test/Stub/Checkout/Payment/Cart/Token/TestSigner.php
+src/Core/Test/Stub/Checkout/Payment/Cart/Token/TestKey.php
 src/Core/Test/Stub/MessageBus/CollectingMessageBus.php
 src/Core/Test/Stub/EventDispatcher/CollectingEventDispatcher.php
 src/Core/Test/Stub/EventDispatcher/AssertingEventDispatcher.php

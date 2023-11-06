@@ -404,6 +404,8 @@ tests/migrator/get_callable_from_step_test.php
 tests/migrator/schema_generator_test.php
 tests/migrator/reverse_update_data_test.php
 tests/migrator/fixtures/convert_timezones.xml
+tests/ban/fixtures/sessions_banlist.xml
+tests/ban/ban_manager_test.php
 tests/functional/forum_style_test.php
 tests/functional/acp_main_test.php
 tests/functional/acp_smilies_test.php
@@ -1370,6 +1372,7 @@ phpBB/phpbb/db/migration/data/v32x/fix_user_styles.php
 phpBB/phpbb/db/migration/data/v32x/v327rc1.php
 phpBB/phpbb/db/migration/data/v400/storage_adapter_local_subfolders_remove.php
 phpBB/phpbb/db/migration/data/v400/search_backend_update.php
+phpBB/phpbb/db/migration/data/v400/ban_table_p2.php
 phpBB/phpbb/db/migration/data/v400/storage_attachment.php
 phpBB/phpbb/db/migration/data/v400/remove_flash_v2.php
 phpBB/phpbb/db/migration/data/v400/storage_avatar.php
@@ -1385,6 +1388,7 @@ phpBB/phpbb/db/migration/data/v400/increase_avatar_size.php
 phpBB/phpbb/db/migration/data/v400/remove_attachment_download_mode.php
 phpBB/phpbb/db/migration/data/v400/storage_adapter_local_subfolders.php
 phpBB/phpbb/db/migration/data/v400/remove_remote_avatar.php
+phpBB/phpbb/db/migration/data/v400/ban_table_p1.php
 phpBB/phpbb/db/migration/data/v400/remove_template_php.php
 phpBB/phpbb/db/migration/data/v400/add_audio_files_attachment_group.php
 phpBB/phpbb/db/migration/data/v400/add_video_files_attachment_group.php
@@ -1798,6 +1802,17 @@ phpBB/phpbb/composer/io/html_output_formatter.php
 phpBB/phpbb/composer/manager.php
 phpBB/phpbb/composer/installer.php
 phpBB/phpbb/composer/extension_manager.php
+phpBB/phpbb/ban/exception/invalid_length_exception.php
+phpBB/phpbb/ban/exception/type_not_found_exception.php
+phpBB/phpbb/ban/exception/no_valid_users_exception.php
+phpBB/phpbb/ban/exception/no_valid_ips_exception.php
+phpBB/phpbb/ban/exception/no_valid_emails_exception.php
+phpBB/phpbb/ban/manager.php
+phpBB/phpbb/ban/type/user.php
+phpBB/phpbb/ban/type/ip.php
+phpBB/phpbb/ban/type/base.php
+phpBB/phpbb/ban/type/type_interface.php
+phpBB/phpbb/ban/type/email.php
 phpBB/phpbb/install/event/kernel_exception_subscriber.php
 phpBB/phpbb/install/exception/invalid_dbms_exception.php
 phpBB/phpbb/install/exception/file_updater_failure_exception.php
@@ -2415,6 +2430,7 @@ phpBB/config/.htaccess
 phpBB/config/default/container/services_http.yml
 phpBB/config/default/container/services_password.yml
 phpBB/config/default/container/services_report.yml
+phpBB/config/default/container/services_ban.yml
 phpBB/config/default/container/services_text_reparser.yml
 phpBB/config/default/container/services_mimetype_guesser.yml
 phpBB/config/default/container/services_filesystem.yml
