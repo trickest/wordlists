@@ -982,6 +982,7 @@ erpnext/patches/v14_0/fix_subcontracting_receipt_gl_entries.py
 erpnext/patches/v14_0/discount_accounting_separation.py
 erpnext/patches/v14_0/remove_hr_and_payroll_modules.py
 erpnext/patches/v14_0/delete_datev_doctypes.py
+erpnext/patches/v14_0/add_default_for_repost_settings.py
 erpnext/patches/v14_0/create_accounting_dimensions_for_closing_balance.py
 erpnext/patches/v14_0/set_pick_list_status.py
 erpnext/patches/v14_0/update_opportunity_currency_fields.py
@@ -1849,6 +1850,11 @@ erpnext/accounts/doctype/currency_exchange_settings/test_currency_exchange_setti
 erpnext/accounts/doctype/currency_exchange_settings/currency_exchange_settings.py
 erpnext/accounts/doctype/currency_exchange_settings/currency_exchange_settings.js
 erpnext/accounts/doctype/currency_exchange_settings/__init__.py
+erpnext/accounts/doctype/repost_accounting_ledger_settings/repost_accounting_ledger_settings.py
+erpnext/accounts/doctype/repost_accounting_ledger_settings/repost_accounting_ledger_settings.json
+erpnext/accounts/doctype/repost_accounting_ledger_settings/test_repost_accounting_ledger_settings.py
+erpnext/accounts/doctype/repost_accounting_ledger_settings/__init__.py
+erpnext/accounts/doctype/repost_accounting_ledger_settings/repost_accounting_ledger_settings.js
 erpnext/accounts/doctype/pos_customer_group/__init__.py
 erpnext/accounts/doctype/pos_customer_group/pos_customer_group.py
 erpnext/accounts/doctype/pos_customer_group/pos_customer_group.json
@@ -2018,6 +2024,9 @@ erpnext/accounts/doctype/advance_tax/advance_tax.json
 erpnext/accounts/doctype/tax_withholding_rate/tax_withholding_rate.py
 erpnext/accounts/doctype/tax_withholding_rate/tax_withholding_rate.json
 erpnext/accounts/doctype/tax_withholding_rate/__init__.py
+erpnext/accounts/doctype/repost_allowed_types/repost_allowed_types.py
+erpnext/accounts/doctype/repost_allowed_types/repost_allowed_types.json
+erpnext/accounts/doctype/repost_allowed_types/__init__.py
 erpnext/accounts/doctype/shipping_rule_country/shipping_rule_country.py
 erpnext/accounts/doctype/shipping_rule_country/shipping_rule_country.json
 erpnext/accounts/doctype/shipping_rule_country/__init__.py

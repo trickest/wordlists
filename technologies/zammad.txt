@@ -5130,7 +5130,6 @@ lib/tasks/zammad/db/init.rake
 lib/tasks/zammad/db/reset.rake
 lib/tasks/zammad/db/pgloader.rb
 lib/tasks/zammad/ci/settings.rake
-lib/tasks/zammad/ci/refresh_envs.rake
 lib/tasks/zammad/ci/bundle/orphaned.rake
 lib/tasks/zammad/ci/bundle/orphaned.rb
 lib/tasks/zammad/ci/app/start.rake
@@ -5140,6 +5139,7 @@ lib/tasks/zammad/ci/test/prepare.rake
 lib/tasks/zammad/ci/test/start.rake
 lib/tasks/zammad/ci/test/fail.rake
 lib/tasks/zammad/ci/test/stop.rake
+lib/tasks/zammad/ci/update_ci_variables.rake
 lib/tasks/zammad/ci/service/background_worker/start.rake
 lib/tasks/zammad/ci/service/background_worker/stop.rake
 lib/tasks/zammad/ci/service/puma/start.rake

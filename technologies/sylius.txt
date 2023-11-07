@@ -177,6 +177,7 @@ tests/Api/Responses/Expected/admin/country/get_country_response.json
 tests/Api/Responses/Expected/admin/country/put_country_response.json
 tests/Api/Responses/Expected/admin/get_channel_price_history_config_response.json
 tests/Api/Responses/Expected/admin/get_payment_response.json
+tests/Api/Responses/Expected/admin/channel/delete_channel_that_cannot_be_deleted.json
 tests/Api/Responses/Expected/admin/channel/put_channel_response.json
 tests/Api/Responses/Expected/admin/channel/get_channels_response.json
 tests/Api/Responses/Expected/admin/channel/post_channel_response.json
@@ -195,6 +196,7 @@ tests/Api/Responses/Expected/admin/currency/get_currencies_response.json
 tests/Api/Responses/Expected/admin/currency/post_currency_response.json
 tests/Api/Responses/Expected/admin/post_product_association_type_response.json
 tests/Api/Responses/Expected/admin/put_channel_price_history_config_response.json
+tests/Api/Responses/Expected/admin/put_shop_billing_data_response.json
 tests/Api/Responses/Expected/admin/shipping_method/get_shipping_method_response.json
 tests/Api/Responses/Expected/admin/shipping_method/restore_shipping_method_response.json
 tests/Api/Responses/Expected/admin/shipping_method/get_shipping_methods_response.json
@@ -256,6 +258,7 @@ tests/Api/Responses/Expected/admin/administrator/get_administrators_response.jso
 tests/Api/Responses/Expected/admin/administrator/get_administrator_response.json
 tests/Api/Responses/Expected/admin/administrator/put_administrator_response.json
 tests/Api/Responses/Expected/admin/log_in_admin_response.json
+tests/Api/Responses/Expected/admin/get_shop_billing_data_response.json
 tests/Api/Responses/Expected/malformed_json_response.json
 tests/Api/Responses/Expected/shop/create_cart_response.json
 tests/Api/Responses/Expected/shop/assign_shipping_method_to_non_existing_shipment_response.json
@@ -401,6 +404,7 @@ tests/Api/Admin/ProductAttributesTest.php
 tests/Api/Admin/ChannelPriceHistoryConfigTest.php
 tests/Api/Admin/TaxonsTest.php
 tests/Api/Admin/CustomerGroupsTest.php
+tests/Api/Admin/ShopBillingDataTest.php
 tests/Api/Admin/ChannelsTest.php
 tests/Api/Admin/ProductVariantsTest.php
 tests/Api/Admin/TaxCategoriesTest.php
@@ -3609,10 +3613,12 @@ src/Sylius/Bundle/ApiBundle/Exception/PaymentMethodCannotBeChangedException.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ProvinceCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveMenuTaxonException.php
+src/Sylius/Bundle/ApiBundle/Exception/ChannelCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
 src/Sylius/Bundle/ApiBundle/Exception/InvalidProductAttributeValueTypeException.php
 src/Sylius/Bundle/ApiBundle/Exception/TaxonCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Resources/translations/validators.en.yaml
+src/Sylius/Bundle/ApiBundle/Resources/config/validation/Channel.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddItemToCart.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddProductReview.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/RegisterShopUser.xml
@@ -3625,6 +3631,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/validation/Customer.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/UpdateCart.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangePasswordShopUser.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AdminResetPassword.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/validation/ShopBillingData.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/CompleteOrder.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/OrderItem.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangeItemQuantityInCart.xml
@@ -3851,6 +3858,7 @@ src/Sylius/Bundle/ApiBundle/DataPersister/AdminUserDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/CountryDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductAttributeDataPersister.php
+src/Sylius/Bundle/ApiBundle/DataPersister/ChannelDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ShippingMethodDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ZoneDataPersister.php
 src/Sylius/Bundle/ApiBundle/.gitattributes
@@ -3960,6 +3968,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListene
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Filter/Doctrine/TaxonFilterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
+src/Sylius/Bundle/ApiBundle/spec/DataPersister/ChannelDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductVariantDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/MessengerDataPersisterSpec.php
@@ -4391,6 +4400,7 @@ src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/StateMachineComposite
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ShipmentWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderCheckoutWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/PaymentWorkflowTest.php
+src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderShippingWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/ProductReviewWorkflowTest.php
 src/Sylius/Bundle/CoreBundle/Tests/Functional/StateMachine/OrderPaymentWorkflowTest.php
@@ -4610,6 +4620,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/services/catalog_promotion/applica
 src/Sylius/Bundle/CoreBundle/Resources/config/services/promotion.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/taxation.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_checkout.xml
+src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/shipment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/order_payment.xml
 src/Sylius/Bundle/CoreBundle/Resources/config/services/listeners/workflow/payment.xml
@@ -4665,6 +4676,7 @@ src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_shipping
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_checkout.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_shipment.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_payment.yaml
+src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/workflow/sylius_order_payment.yaml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/sylius.yml
 src/Sylius/Bundle/CoreBundle/Resources/config/app/doctrine_migrations.yaml
@@ -4801,6 +4813,22 @@ src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderCh
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ProcessCartListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/RequestOrderPaymentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CancelOrderShippingListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/IncrementPromotionUsagesListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/AssignOrderTokenListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CancelShipmentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CreateShipmentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/RequestOrderShippingListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/GiveBackInventoryListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/SaveCustomerAddressesListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/DecrementPromotionUsagesListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/SetImmutableNamesListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CancelPaymentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CancelOrderPaymentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/CreatePaymentListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/AssignOrderNumberListener.php
+src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Order/HoldInventoryListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Payment/ProcessOrderListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/Payment/ResolveOrderPaymentStateListener.php
 src/Sylius/Bundle/CoreBundle/EventListener/Workflow/OrderShipping/ResolveOrderStateListener.php
@@ -5038,6 +5066,20 @@ src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/SaveCheck
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ApplyCreateTransitionOnOrderListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderPaymentStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderCheckout/ResolveOrderCheckoutStateListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/AssignOrderTokenListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/RequestOrderPaymentListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/CancelShipmentListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/RequestOrderShippingListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/CancelOrderShippingListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/SetImmutableNamesListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/CancelPaymentListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/IncrementPromotionUsagesListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/AssignOrderNumberListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/SaveCustomerAddressesListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/HoldInventoryListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/DecrementPromotionUsagesListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/GiveBackInventoryListenerSpec.php
+src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Order/CancelOrderPaymentListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Payment/ResolveOrderPaymentStateListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/Payment/ProcessOrderListenerSpec.php
 src/Sylius/Bundle/CoreBundle/spec/EventListener/Workflow/OrderShipping/ResolveOrderStateListenerSpec.php
@@ -5232,6 +5274,7 @@ src/Sylius/Bundle/OrderBundle/Resources/config/services/integrations/doctrine/or
 src/Sylius/Bundle/OrderBundle/Resources/config/services/templating.xml
 src/Sylius/Bundle/OrderBundle/Resources/config/app/state_machine.yml
 src/Sylius/Bundle/OrderBundle/Resources/config/app/config.yml
+src/Sylius/Bundle/OrderBundle/Resources/config/workflow/state_machine.yaml
 src/Sylius/Bundle/OrderBundle/Resources/config/serializer/Model.OrderItemUnit.yml
 src/Sylius/Bundle/OrderBundle/Resources/config/serializer/Model.OrderItem.yml
 src/Sylius/Bundle/OrderBundle/Resources/config/serializer/Model.Order.yml
@@ -6686,6 +6729,8 @@ src/Sylius/Component/Shipping/README.md
 src/Sylius/Component/Shipping/ShipmentTransitions.php
 src/Sylius/Component/Channel/LICENSE
 src/Sylius/Component/Channel/phpspec.yml.dist
+src/Sylius/Component/Channel/Checker/ChannelDeletionCheckerInterface.php
+src/Sylius/Component/Channel/Checker/ChannelDeletionChecker.php
 src/Sylius/Component/Channel/Model/ChannelsAwareInterface.php
 src/Sylius/Component/Channel/Model/Channel.php
 src/Sylius/Component/Channel/Model/ChannelInterface.php
@@ -6703,6 +6748,7 @@ src/Sylius/Component/Channel/Context/RequestBased/HostnameBasedRequestResolver.p
 src/Sylius/Component/Channel/Context/RequestBased/ChannelContext.php
 src/Sylius/Component/Channel/Context/RequestBased/CompositeRequestResolver.php
 src/Sylius/Component/Channel/composer.json
+src/Sylius/Component/Channel/spec/Checker/ChannelDeletionCheckerSpec.php
 src/Sylius/Component/Channel/spec/Model/ChannelSpec.php
 src/Sylius/Component/Channel/spec/Factory/ChannelFactorySpec.php
 src/Sylius/Component/Channel/spec/Context/SingleChannelContextSpec.php
@@ -7578,6 +7624,7 @@ src/Sylius/Behat/Context/Api/Admin/ManagingProductVariantsPricesContext.php
 src/Sylius/Behat/Context/Api/Admin/ResettingPasswordContext.php
 src/Sylius/Behat/Context/Api/Admin/ChannelPricingLogEntryContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingProductVariantsContext.php
+src/Sylius/Behat/Context/Api/Admin/ManagingChannelsBillingDataContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingShipmentsContext.php
 src/Sylius/Behat/Context/Api/Admin/RemovingTaxonContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingShippingMethodsContext.php
