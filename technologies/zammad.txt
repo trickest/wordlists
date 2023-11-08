@@ -171,6 +171,7 @@ db/migrate/20220329075919_remove_duplicate_translations.rb
 db/migrate/20201111133905_maintenance_associations_cleanup.rb
 db/migrate/20220622110749_issue4012_missing_rows_for_textarea_fields.rb
 db/migrate/20201027152258_add_missing_permissions.rb
+db/migrate/20231107090334_simple_storage_configuration_check.rb
 db/migrate/20211028094326_issue_3245_office_365_microsoft_rename.rb
 db/migrate/20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
 db/migrate/20220314080801_issue4009_fix_title.rb
@@ -3604,6 +3605,7 @@ app/models/user.rb
 app/models/setting/validation/saml/security.rb
 app/models/setting/validation/saml/tls.rb
 app/models/setting/validation/saml/required_attributes.rb
+app/models/setting/validation/storage_provider.rb
 app/models/setting/processed/backend.rb
 app/models/setting/processed/timezone.rb
 app/models/setting/validation.rb
@@ -5734,6 +5736,7 @@ lib/monitoring_helper/health_checker/backend.rb
 lib/monitoring_helper/health_checker/response.rb
 lib/monitoring_helper/health_checker/scheduler.rb
 lib/monitoring_helper/health_checker/unprocessable_mail.rb
+lib/monitoring_helper/health_checker/s3_storage_availability.rb
 lib/monitoring_helper/health_checker/import_job.rb
 lib/monitoring_helper/health_checker/channels.rb
 lib/monitoring_helper/health_checker/delayed_job.rb
@@ -7208,6 +7211,7 @@ spec/lib/monitoring_helper/health_checker/channels_spec.rb
 spec/lib/monitoring_helper/health_checker/import_job_spec.rb
 spec/lib/monitoring_helper/health_checker/scheduler_spec.rb
 spec/lib/monitoring_helper/health_checker/delayed_job_spec.rb
+spec/lib/monitoring_helper/health_checker/s3_storage_availability_spec.rb
 spec/lib/image_helper_spec.rb
 spec/lib/certificate/apply_ssl_certificates_spec.rb
 spec/lib/certificate/x509/smime_spec.rb
@@ -7319,6 +7323,7 @@ spec/models/chat/session_spec.rb
 spec/models/chat/agent_spec.rb
 spec/models/email_address_spec.rb
 spec/models/object_lookup_spec.rb
+spec/models/setting/validation/storage_provider_spec.rb
 spec/models/setting/validation/saml/tls_spec.rb
 spec/models/setting/validation/saml/security_spec.rb
 spec/models/setting/validation/saml/required_attributes_spec.rb

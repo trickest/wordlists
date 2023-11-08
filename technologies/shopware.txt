@@ -1091,6 +1091,7 @@ changelog/_unreleased/2023-09-14-add-async-theme-compilation.md
 changelog/_unreleased/2023-10-12-disallow-direct-access-to-guest-account-login-page.md
 changelog/_unreleased/2023-10-09-update-admin-sdk.md
 changelog/_unreleased/2023-10-22-retry-product-keyword-dictionary-cleanup.md
+changelog/_unreleased/2023-11-07-fix-category-id-update-in-line-item.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
 changelog/_unreleased/2023-10-02-fix-document-type-display-blank-if-language-is-child.md
 changelog/_unreleased/2023-10-10-add-local-apps-folder.md
@@ -1100,6 +1101,7 @@ changelog/_unreleased/2023-11-02-fix-installation-with-invalid-admin-user-passwo
 changelog/_unreleased/2022-09-29-cms-navigation-http-cache.md
 changelog/_unreleased/2023-08-09-change-sw-custom-entity-input-field-default-event.md
 changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.md
+changelog/_unreleased/2023-10-03-change-title-for-wishlist-toggle.md
 changelog/_unreleased/2023-09-28-sugar-syntax-for-es-definition.md
 changelog/_unreleased/2022-08-22-newsletter-recipient-module.md
 changelog/_unreleased/2023-10-25-allow-idfield-to-be-nullable.md
@@ -1135,12 +1137,14 @@ changelog/_unreleased/2023-10-12-deprecated-typo-in-image-gallery-config.md
 changelog/_unreleased/2023-10-27-add-option-to-define-socks-port-and-host.md
 changelog/_unreleased/2023-10-18-fix-that-multiple-instances-of-same-cms-element-from-app-sdk-are-not-working.md
 changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-default-event.md
+changelog/_unreleased/2023-10-30-fix-silencing-flow-errors-inside-transactions.md
 changelog/_unreleased/2023-10-20-system-update-finish-message-on-cli.md
 changelog/_unreleased/2023-10-09-improve-elasticsearch-debugging.md
 changelog/_unreleased/2023-09-25-use-normal-kernel-system-update.md
 changelog/_unreleased/2023-10-23-do-not-create-prefix-infix-placeholders-for-numbers.md
 changelog/_unreleased/2023-08-09-change-sw-single-select-default-event.md
 changelog/_unreleased/2023-09-25-disable-database-profiler-on-cli.md
+changelog/_unreleased/2023-11-06-use-abstracttokenfilter-in-stopwordtokenfilterr.md
 changelog/_unreleased/2023-09-25-improved-sorting-error-message.md
 changelog/_unreleased/2023-10-11-make-settings-module-compatible-with-vue3.md
 changelog/_unreleased/2023-10-18-batch-cart-price-calculation.md
@@ -1150,8 +1154,10 @@ changelog/_unreleased/2023-08-09-change-sw-url-field-default-event.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2023-08-10-change-sw-button-process-default-event.md
 changelog/_unreleased/2023-10-26-adjust-selector-from-button-for-remove-from-cart-event.md
+changelog/_unreleased/2023-11-03-add-redirectparameters-to-confirmurl.md
 changelog/_unreleased/2023-08-10-change-sw-radio-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
+changelog/_unreleased/2023-11-07-set-default-when-route-target-does-not-exist.md
 changelog/_unreleased/2023-10-31-add-twig-block-to-order-history-and-reformat-code.md
 changelog/_unreleased/2023-10-09-add-onlyliveversion-parameter-to-app-webhooks.md
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
@@ -1178,6 +1184,7 @@ changelog/_unreleased/changelog2023-10-05-fix-sw-cms-layout-modal-search-field.m
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
 changelog/_unreleased/2023-08-03-fix-transition-state-machine-exception.md
 changelog/_unreleased/2023-10-20-fix-country-in-shipping-address-is-not-translated.md
+changelog/_unreleased/2023-10-10-change-array-parameter-type-to-binary.md
 changelog/_unreleased/2023-10-03-change-type-of-urlgenerator.md
 changelog/_unreleased/2023-08-14-media-path-storage.md
 changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
@@ -3838,6 +3845,7 @@ adr/2020-08-12-implement-app-system-inside-platform.md
 adr/2022-03-25-initial-state-id-loader.md
 adr/YYYY-MM-DD-template.md
 adr/2022-11-16-deprecate-csrf.md
+adr/2023-08-03-collecting-entity-data.md
 adr/2022-03-25-prevent-mail-updates.md
 adr/2021-09-06-make-core-mail-templates-independent-from-storefront-urls.md
 adr/2023-04-14-jest-test-files-should-be-javascript-only.md
@@ -4862,6 +4870,7 @@ tests/unit/Core/Checkout/Cart/Rule/LineItemVariantValueRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/CartTotalPurchasePriceRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionHeightRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemPromotedRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemGroupRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemActualStockRuleTest.php
 tests/unit/Core/Checkout/Cart/CartRuleLoaderTest.php
 tests/unit/Core/Checkout/Cart/Event/SalesChannelContextAssembledEventTest.php
@@ -5724,6 +5733,7 @@ tests/integration/Core/Content/Sitemap/Service/SitemapExporterTest.php
 tests/integration/Core/Content/Flow/DataAbstractionLayer/FlowPayloadUpdaterTest.php
 tests/integration/Core/Content/Flow/Dispatching/FlowExecutorTest.php
 tests/integration/Core/Content/Flow/Dispatching/Action/FlowMailVariablesTest.php
+tests/integration/Core/Content/Flow/Dispatching/Action/SetOrderStateActionTest.php
 tests/integration/Core/Content/Flow/Dispatching/Action/GrantDownloadAccessActionTest.php
 tests/integration/Core/Content/Flow/SendMailActionTest.php
 tests/integration/Core/Content/Newsletter/SalesChannel/NewsletterSubscribeRouteTest.php
@@ -11523,7 +11533,6 @@ src/Core/Content/Test/Flow/OrderActionTrait.php
 src/Core/Content/Test/Flow/AddOrderTagActionTest.php
 src/Core/Content/Test/Flow/AddCustomerAffiliateAndCampaignCodeActionTest.php
 src/Core/Content/Test/Flow/ChangeCustomerStatusActionTest.php
-src/Core/Content/Test/Flow/SetOrderStateActionTest.php
 src/Core/Content/Test/Flow/SetOrderCustomFieldActionTest.php
 src/Core/Content/Test/Flow/Indexing/FlowIndexerTest.php
 src/Core/Content/Test/Flow/AddOrderAffiliateAndCampaignCodeActionTest.php
@@ -15385,6 +15394,7 @@ src/Administration/Resources/app/administration/src/app/component/usage-data/sw-
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.html.twig
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/index.js
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.scss
+src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.spec.vue3.js
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-single-select/sw-meteor-single-select.spec.js
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-navigation/index.ts
 src/Administration/Resources/app/administration/src/app/component/meteor/sw-meteor-navigation/sw-meteor-navigation.html.twig

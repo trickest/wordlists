@@ -538,6 +538,9 @@ migrate/20220622110749_issue4012_missing_rows_for_textarea_fields.rb
 db/migrate/20201027152258_add_missing_permissions.rb
 migrate/20201027152258_add_missing_permissions.rb
 20201027152258_add_missing_permissions.rb
+db/migrate/20231107090334_simple_storage_configuration_check.rb
+migrate/20231107090334_simple_storage_configuration_check.rb
+20231107090334_simple_storage_configuration_check.rb
 db/migrate/20211028094326_issue_3245_office_365_microsoft_rename.rb
 migrate/20211028094326_issue_3245_office_365_microsoft_rename.rb
 20211028094326_issue_3245_office_365_microsoft_rename.rb
@@ -22184,6 +22187,11 @@ setting/validation/saml/required_attributes.rb
 validation/saml/required_attributes.rb
 saml/required_attributes.rb
 required_attributes.rb
+app/models/setting/validation/storage_provider.rb
+models/setting/validation/storage_provider.rb
+setting/validation/storage_provider.rb
+validation/storage_provider.rb
+storage_provider.rb
 app/models/setting/processed/backend.rb
 models/setting/processed/backend.rb
 setting/processed/backend.rb
@@ -32510,6 +32518,10 @@ lib/monitoring_helper/health_checker/unprocessable_mail.rb
 monitoring_helper/health_checker/unprocessable_mail.rb
 health_checker/unprocessable_mail.rb
 unprocessable_mail.rb
+lib/monitoring_helper/health_checker/s3_storage_availability.rb
+monitoring_helper/health_checker/s3_storage_availability.rb
+health_checker/s3_storage_availability.rb
+s3_storage_availability.rb
 lib/monitoring_helper/health_checker/import_job.rb
 monitoring_helper/health_checker/import_job.rb
 health_checker/import_job.rb
@@ -38913,6 +38925,11 @@ lib/monitoring_helper/health_checker/delayed_job_spec.rb
 monitoring_helper/health_checker/delayed_job_spec.rb
 health_checker/delayed_job_spec.rb
 delayed_job_spec.rb
+spec/lib/monitoring_helper/health_checker/s3_storage_availability_spec.rb
+lib/monitoring_helper/health_checker/s3_storage_availability_spec.rb
+monitoring_helper/health_checker/s3_storage_availability_spec.rb
+health_checker/s3_storage_availability_spec.rb
+s3_storage_availability_spec.rb
 spec/lib/image_helper_spec.rb
 lib/image_helper_spec.rb
 image_helper_spec.rb
@@ -39390,6 +39407,11 @@ email_address_spec.rb
 spec/models/object_lookup_spec.rb
 models/object_lookup_spec.rb
 object_lookup_spec.rb
+spec/models/setting/validation/storage_provider_spec.rb
+models/setting/validation/storage_provider_spec.rb
+setting/validation/storage_provider_spec.rb
+validation/storage_provider_spec.rb
+storage_provider_spec.rb
 spec/models/setting/validation/saml/tls_spec.rb
 models/setting/validation/saml/tls_spec.rb
 setting/validation/saml/tls_spec.rb

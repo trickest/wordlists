@@ -170,7 +170,7 @@ tests/Api/Responses/Expected/admin/product/get_product_response.json
 tests/Api/Responses/Expected/admin/product/post_product_response.json
 tests/Api/Responses/Expected/admin/product/get_products_response.json
 tests/Api/Responses/Expected/admin/product/delete_product_in_use_response.json
-tests/Api/Responses/Expected/admin/put_product_association_type_response.json
+tests/Api/Responses/Expected/admin/product/post_product_without_required_data_response.json
 tests/Api/Responses/Expected/admin/country/get_countries_response.json
 tests/Api/Responses/Expected/admin/country/post_country_response.json
 tests/Api/Responses/Expected/admin/country/get_country_response.json
@@ -189,12 +189,10 @@ tests/Api/Responses/Expected/admin/shipping_category/get_shipping_categories_res
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_category_response.json
 tests/Api/Responses/Expected/admin/order/get_order_response.json
 tests/Api/Responses/Expected/admin/order/gets_orders_for_customer_response.json
-tests/Api/Responses/Expected/admin/get_product_association_type_response.json
 tests/Api/Responses/Expected/admin/post_locale_response.json
 tests/Api/Responses/Expected/admin/currency/get_currency_response.json
 tests/Api/Responses/Expected/admin/currency/get_currencies_response.json
 tests/Api/Responses/Expected/admin/currency/post_currency_response.json
-tests/Api/Responses/Expected/admin/post_product_association_type_response.json
 tests/Api/Responses/Expected/admin/put_channel_price_history_config_response.json
 tests/Api/Responses/Expected/admin/put_shop_billing_data_response.json
 tests/Api/Responses/Expected/admin/shipping_method/get_shipping_method_response.json
@@ -211,6 +209,11 @@ tests/Api/Responses/Expected/admin/taxon/post_taxon_without_required_data_respon
 tests/Api/Responses/Expected/admin/taxon/get_taxons_response.json
 tests/Api/Responses/Expected/admin/taxon/get_taxon_response.json
 tests/Api/Responses/Expected/admin/taxon/post_taxon_response.json
+tests/Api/Responses/Expected/admin/product_association_type/put_product_association_type_response.json
+tests/Api/Responses/Expected/admin/product_association_type/post_product_association_type_without_required_data_response.json
+tests/Api/Responses/Expected/admin/product_association_type/get_product_association_type_response.json
+tests/Api/Responses/Expected/admin/product_association_type/post_product_association_type_response.json
+tests/Api/Responses/Expected/admin/product_association_type/get_product_association_type_collection_response.json
 tests/Api/Responses/Expected/admin/get_product_image_response.json
 tests/Api/Responses/Expected/admin/promotion/get_promotions_response.json
 tests/Api/Responses/Expected/admin/promotion/get_promotion_response.json
@@ -223,7 +226,6 @@ tests/Api/Responses/Expected/admin/product_variant/delete_product_variant_in_use
 tests/Api/Responses/Expected/admin/product_variant/post_product_variant_response.json
 tests/Api/Responses/Expected/admin/get_product_images_response.json
 tests/Api/Responses/Expected/admin/post_locale_with_invalid_code_response.json
-tests/Api/Responses/Expected/admin/get_product_association_type_collection_response.json
 tests/Api/Responses/Expected/admin/customer/post_customer_with_invalid_gender_response.json
 tests/Api/Responses/Expected/admin/customer/get_customer_response.json
 tests/Api/Responses/Expected/admin/customer/post_customer_response.json
@@ -3379,6 +3381,7 @@ src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/OrderShopUserItemExtensi
 src/Sylius/Bundle/ApiBundle/Doctrine/QueryItemExtension/AddressItemExtension.php
 src/Sylius/Bundle/ApiBundle/Serializer/ProductDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ProductVariantNormalizer.php
+src/Sylius/Bundle/ApiBundle/Serializer/TranslatableDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ProductAttributeValueNormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/HydraErrorNormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/CustomerDenormalizer.php
@@ -3907,6 +3910,7 @@ src/Sylius/Bundle/ApiBundle/spec/Serializer/ZoneDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ChannelDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/CustomerDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ChannelPriceHistoryConfigDenormalizerSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Serializer/TranslatableDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ProductDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/HydraErrorNormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ProductNormalizerSpec.php
