@@ -169,6 +169,7 @@ tests/Api/Responses/Expected/admin/product/put_product_response.json
 tests/Api/Responses/Expected/admin/product/get_product_response.json
 tests/Api/Responses/Expected/admin/product/post_product_response.json
 tests/Api/Responses/Expected/admin/product/get_products_response.json
+tests/Api/Responses/Expected/admin/product/post_product_without_translation_locale.json
 tests/Api/Responses/Expected/admin/product/delete_product_in_use_response.json
 tests/Api/Responses/Expected/admin/product/post_product_without_required_data_response.json
 tests/Api/Responses/Expected/admin/country/get_countries_response.json
@@ -505,6 +506,7 @@ src/Sylius/Bundle/PayumBundle/DependencyInjection/Compiler/UnregisterStripeGatew
 src/Sylius/Bundle/PayumBundle/DependencyInjection/Compiler/RegisterGatewayConfigTypePass.php
 src/Sylius/Bundle/PayumBundle/DependencyInjection/Compiler/InjectContainerIntoControllersPass.php
 src/Sylius/Bundle/PayumBundle/DependencyInjection/Compiler/UseTweakedDoctrineStoragePass.php
+src/Sylius/Bundle/PayumBundle/DependencyInjection/Compiler/UnregisterPaypalGatewayTypePass.php
 src/Sylius/Bundle/PayumBundle/DependencyInjection/SyliusPayumExtension.php
 src/Sylius/Bundle/PayumBundle/Controller/PayumController.php
 src/Sylius/Bundle/PayumBundle/Model/PaymentSecurityToken.php
@@ -965,6 +967,7 @@ src/Sylius/Bundle/UserBundle/Form/UserVerifiedAtToBooleanTransformer.php
 src/Sylius/Bundle/UserBundle/Event/UserEvent.php
 src/Sylius/Bundle/UserBundle/Factory/UserWithEncoderFactory.php
 src/Sylius/Bundle/UserBundle/Tests/DependencyInjection/SyliusUserExtensionTest.php
+src/Sylius/Bundle/UserBundle/Tests/DependencyInjection/ConfigurationTest.php
 src/Sylius/Bundle/UserBundle/Tests/DependencyInjection/Compiler/RemoveUserPasswordEncoderPassTest.php
 src/Sylius/Bundle/UserBundle/Tests/Functional/app/AppKernel.php
 src/Sylius/Bundle/UserBundle/Tests/Functional/app/config/routing.yml
@@ -1878,6 +1881,7 @@ src/Sylius/Bundle/PromotionBundle/Resources/translations/flashes.is.yml
 src/Sylius/Bundle/PromotionBundle/Resources/translations/messages.ar.yml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/PromotionCoupon.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/CatalogPromotion.xml
+src/Sylius/Bundle/PromotionBundle/Resources/config/validation/CatalogPromotionTranslation.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/PromotionTranslation.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/Promotion.xml
 src/Sylius/Bundle/PromotionBundle/Resources/config/validation/PromotionRule.xml
@@ -3396,6 +3400,7 @@ src/Sylius/Bundle/ApiBundle/Serializer/AddressDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ProductImageNormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ChannelPriceHistoryConfigDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/CommandArgumentsDenormalizer.php
+src/Sylius/Bundle/ApiBundle/Serializer/TranslatableLocaleKeyDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ChannelDenormalizer.php
 src/Sylius/Bundle/ApiBundle/Serializer/ShippingMethodNormalizer.php
 src/Sylius/Bundle/ApiBundle/Provider/PathPrefixProviderInterface.php
@@ -3913,6 +3918,7 @@ src/Sylius/Bundle/ApiBundle/spec/Serializer/ChannelPriceHistoryConfigDenormalize
 src/Sylius/Bundle/ApiBundle/spec/Serializer/TranslatableDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ProductDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/HydraErrorNormalizerSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Serializer/TranslatableLocaleKeyDenormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Serializer/ProductNormalizerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Provider/PathPrefixProviderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Provider/LiipProductImageFilterProviderSpec.php
@@ -4897,6 +4903,7 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20201130071338.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20220412144156.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20170110120125.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20170116215417.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20231103004216.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20190416073011.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20161215103325.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20161220092422.php
@@ -6215,6 +6222,7 @@ src/Sylius/Bundle/ProductBundle/Resources/config/validation/Product.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductVariant.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductOptionValue.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductTranslation.xml
+src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductVariantTranslation.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductAssociationType.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductOptionTranslation.xml
 src/Sylius/Bundle/ProductBundle/Resources/config/validation/ProductAssociationTypeTranslation.xml

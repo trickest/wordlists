@@ -7246,6 +7246,7 @@ app/code/Magento/Catalog/Model/Product/PriceModifierInterface.php
 app/code/Magento/Catalog/Model/Product/Attribute/LayoutUpdateManager.php
 app/code/Magento/Catalog/Model/Product/Attribute/Repository.php
 app/code/Magento/Catalog/Model/Product/Attribute/SetManagement.php
+app/code/Magento/Catalog/Model/Product/Attribute/IsFilterableManagement.php
 app/code/Magento/Catalog/Model/Product/Attribute/TypesList.php
 app/code/Magento/Catalog/Model/Product/Attribute/OptionManagement.php
 app/code/Magento/Catalog/Model/Product/Attribute/Frontend/Image.php
@@ -7665,6 +7666,7 @@ app/code/Magento/Catalog/Api/AttributeSetRepositoryInterface.php
 app/code/Magento/Catalog/Api/ProductCustomOptionRepositoryInterface.php
 app/code/Magento/Catalog/Api/ProductAttributeOptionUpdateInterface.php
 app/code/Magento/Catalog/Api/SpecialPriceStorageInterface.php
+app/code/Magento/Catalog/Api/ProductAttributeIsFilterableManagementInterface.php
 app/code/Magento/Catalog/Api/ProductAttributeManagementInterface.php
 app/code/Magento/Catalog/Api/SpecialPriceInterface.php
 app/code/Magento/Catalog/Api/BasePriceStorageInterface.php
@@ -12371,6 +12373,7 @@ app/code/Magento/Customer/Api/AccountDelegationInterface.php
 app/code/Magento/Customer/Api/CustomerMetadataManagementInterface.php
 app/code/Magento/Customer/Api/MetadataManagementInterface.php
 app/code/Magento/Customer/Api/GroupExcludedWebsiteRepositoryInterface.php
+app/code/Magento/Customer/ViewModel/CookieSettings.php
 app/code/Magento/Customer/ViewModel/Address.php
 app/code/Magento/Customer/ViewModel/Address/RegionProvider.php
 app/code/Magento/Customer/ViewModel/Customer/JsonSerializer.php
@@ -12722,6 +12725,7 @@ app/code/Magento/Customer/Test/Unit/Ui/Component/Listing/ColumnsTest.php
 app/code/Magento/Customer/Test/Unit/Ui/Component/ColumnFactoryTest.php
 app/code/Magento/Customer/Test/Unit/Ui/Component/FilterFactoryTest.php
 app/code/Magento/Customer/Test/Unit/Ui/Component/DataProvider/DocumentTest.php
+app/code/Magento/Customer/Test/Unit/ViewModel/CookieSettings.php
 app/code/Magento/Customer/Test/Unit/ViewModel/Customer/JsonSerializerTest.php
 app/code/Magento/Customer/Test/Unit/ViewModel/Customer/StoreTest.php
 app/code/Magento/Customer/Test/Unit/ViewModel/Customer/WebsiteTest.php
@@ -13631,6 +13635,7 @@ app/code/Magento/ConfigurableProductGraphQl/Plugin/AddStockStatusToCollection.ph
 app/code/Magento/ConfigurableProductGraphQl/Plugin/Quote/UpdateCustomizedOptions.php
 app/code/Magento/ConfigurableProductGraphQl/Plugin/Product/Configuration/Item/ItemResolver.php
 app/code/Magento/ConfigurableProductGraphQl/Test/Unit/Model/Cart/BuyRequest/SuperAttributeDataProviderTest.php
+app/code/Magento/ConfigurableProductGraphQl/Test/Unit/Model/Resolver/AddConfigurableProductsToCartTest.php
 app/code/Magento/ConfigurableProductGraphQl/Test/Unit/Plugin/Quote/UpdateCustomizedOptionsTest.php
 app/code/Magento/ConfigurableProductGraphQl/Test/Mftf/README.md
 app/code/Magento/ConfigurableProductGraphQl/README.md
@@ -19397,6 +19402,7 @@ app/code/Magento/CatalogCustomerGraphQl/Model/Resolver/Product/Price/Tiers.php
 app/code/Magento/CatalogCustomerGraphQl/Model/Resolver/TierPrices.php
 app/code/Magento/CatalogCustomerGraphQl/registration.php
 app/code/Magento/CatalogCustomerGraphQl/composer.json
+app/code/Magento/CatalogCustomerGraphQl/Test/Unit/Model/Resolver/PriceTiersTest.php
 app/code/Magento/CatalogCustomerGraphQl/README.md
 app/code/Magento/CheckoutAgreements/LICENSE_AFL.txt
 app/code/Magento/CheckoutAgreements/etc/di.xml
@@ -38126,6 +38132,7 @@ dev/tests/api-functional/testsuite/Magento/Catalog/Api/CategoryAttributeOptionMa
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/ProductAttributeOptionManagementInterfaceTest.php
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/AttributeSetManagementTest.php
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/AttributeSetRepositoryTest.php
+dev/tests/api-functional/testsuite/Magento/Catalog/Api/ProductAttributeIsFilterableManagementTest.php
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/ProductRepositoryMultiWebsiteTest.php
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/ProductCustomOptionRepositoryTest.php
 dev/tests/api-functional/testsuite/Magento/Catalog/Api/ProductRepositoryPriceModeWebsiteChangePriceTest.php

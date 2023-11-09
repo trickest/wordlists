@@ -4726,6 +4726,7 @@ application/Espo/Core/Utils/Metadata.php
 application/Espo/Core/Utils/Acl/UserAclManagerProvider.php
 application/Espo/Core/Utils/ApiKey.php
 application/Espo/Core/Utils/Util.php
+application/Espo/Core/Utils/Language/LanguageProxy.php
 application/Espo/Core/Utils/NumberUtil.php
 application/Espo/Core/Utils/ObjectUtil.php
 application/Espo/Core/Binding/BindingContainerBuilder.php
@@ -5571,8 +5572,10 @@ application/Espo/Classes/Select/Email/Where/ItemConverters/IsNotRepliedIsFalse.p
 application/Espo/Classes/Select/Email/Where/ItemConverters/IsImportantIsTrue.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/IsNotRepliedIsTrue.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/ToEquals.php
+application/Espo/Classes/Select/Email/Where/ItemConverters/InTrashIsFalse.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/InFolder.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/FromEquals.php
+application/Espo/Classes/Select/Email/Where/ItemConverters/InTrashIsTrue.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/IsImportantIsFalse.php
 application/Espo/Classes/Select/Email/Where/ItemConverters/IsNotReadIsFalse.php
 application/Espo/Classes/Select/Email/Helpers/EmailAddressHelper.php
@@ -6268,6 +6271,7 @@ client/src/views/admin/layouts/base.js
 client/src/views/admin/layouts/bottom-panels-edit-small.js
 client/src/views/admin/layouts/detail-small.js
 client/src/views/admin/layouts/mass-update.js
+client/src/views/admin/layouts/fields/width-complex.js
 client/src/views/admin/layouts/bottom-panels-edit.js
 client/src/views/admin/layouts/side-panels-detail.js
 client/src/views/admin/layouts/index.js

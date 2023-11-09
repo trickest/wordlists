@@ -1822,6 +1822,7 @@ app/policies/macro_policy/scope.rb
 app/policies/sessions_policy.rb
 app/policies/data_privacy_task_policy.rb
 app/policies/knowledge_base/answer_policy/scope.rb
+app/policies/knowledge_base/answer/translation_policy.rb
 app/policies/knowledge_base/answer/translation/content_policy.rb
 app/policies/knowledge_base/category_policy.rb
 app/policies/knowledge_base/answer_policy.rb
@@ -6534,6 +6535,7 @@ spec/policies/controllers/integration/pgp_controller_policy_spec.rb
 spec/policies/controllers/ticket_shared_draft_zoom_controller_policy_spec.rb
 spec/policies/macro_policy/scope_spec.rb
 spec/policies/knowledge_base/answer_policy/scope_spec.rb
+spec/policies/knowledge_base/answer/translation_policy_spec.rb
 spec/policies/knowledge_base/answer/translation/content_policy_spec.rb
 spec/policies/knowledge_base/category_policy_spec.rb
 spec/policies/knowledge_base/answer_policy_spec.rb
@@ -7444,6 +7446,7 @@ spec/requests/user/admin_password_auth_spec.rb
 spec/requests/user/two_factor_spec.rb
 spec/requests/user/after_auth_spec.rb
 spec/requests/user/permission_spec.rb
+spec/requests/user/email_verify_send_spec.rb
 spec/requests/user/organization_spec.rb
 spec/requests/user/password_reset_spec.rb
 spec/requests/report_spec.rb

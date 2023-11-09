@@ -136,6 +136,7 @@ packages/js/product-editor/changelog/fix-set-attributes-to-visible-by-default
 packages/js/product-editor/changelog/add-38200
 packages/js/product-editor/changelog/fix-rest-namespace-blocks-37619
 packages/js/product-editor/changelog/update-product-page-add-hook-37281
+packages/js/product-editor/changelog/add-40214
 packages/js/product-editor/changelog/fix-37209
 packages/js/product-editor/changelog/fix-38149
 packages/js/product-editor/changelog/add-template-api-conditional-visibility
@@ -440,6 +441,9 @@ packages/js/product-editor/src/components/variations-table/variation-actions-men
 packages/js/product-editor/src/components/variations-table/variation-actions-menu/test/variation-actions-menu.test.tsx
 packages/js/product-editor/src/components/variations-table/variation-actions-menu/variation-actions-menu.tsx
 packages/js/product-editor/src/components/variations-table/variation-actions-menu/types.ts
+packages/js/product-editor/src/components/variations-table/use-variations/index.ts
+packages/js/product-editor/src/components/variations-table/use-variations/use-variations.ts
+packages/js/product-editor/src/components/variations-table/use-variations/types.ts
 packages/js/product-editor/src/components/variations-table/set-list-price-menu-item/index.ts
 packages/js/product-editor/src/components/variations-table/set-list-price-menu-item/set-list-price-menu-item.tsx
 packages/js/product-editor/src/components/variations-table/types.ts
@@ -522,9 +526,6 @@ packages/js/product-editor/src/hooks/use-currency-input-props.ts
 packages/js/product-editor/src/hooks/use-product-attributes.ts
 packages/js/product-editor/src/hooks/use-variation-switcher.ts
 packages/js/product-editor/src/hooks/index.ts
-packages/js/product-editor/src/hooks/use-selection/index.ts
-packages/js/product-editor/src/hooks/use-selection/use-selection.tsx
-packages/js/product-editor/src/hooks/use-selection/types.ts
 packages/js/product-editor/src/hooks/use-number-input-props.ts
 packages/js/product-editor/src/hooks/test/use-product-attributes.test.ts
 packages/js/product-editor/src/hooks/test/use-product-entity-prop.test.ts
@@ -829,6 +830,7 @@ packages/js/components/CHANGELOG.md
 packages/js/components/tsconfig.json
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/update-replace-dependency-on-jetpack-in-woo-services-task-list
+packages/js/components/changelog/add-40214
 packages/js/components/changelog/fix-34015-badge-design-fix
 packages/js/components/changelog/fix-41049
 packages/js/components/changelog/dev-40213_update_section_header_design
@@ -3717,7 +3719,6 @@ plugins/woocommerce-admin/client/customize-store/assets/images/intro-banner-offl
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-comparing-top-performing-stores.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-generating-content.svg
 plugins/woocommerce-admin/client/customize-store/assets/images/loader-applying-the-finishing-touches.svg
-plugins/woocommerce-admin/client/customize-store/assets/images/intro-banner-existing-ai.svg
 plugins/woocommerce-admin/client/customize-store/transitional/secondary-button-slot/index.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/secondary-button-slot/utils.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/style.scss
@@ -4671,8 +4672,10 @@ plugins/woocommerce/changelog/41187-fix-41186
 plugins/woocommerce/changelog/fix-38169-block-editor-compat
 plugins/woocommerce/changelog/pr-32288
 plugins/woocommerce/changelog/fix-daily-and-pr-tests
+plugins/woocommerce/changelog/41114-try-log-file-view
 plugins/woocommerce/changelog/fix-cys-initial-pattern-population
 plugins/woocommerce/changelog/fix-improve-e2e-stability
+plugins/woocommerce/changelog/fix-38932-fix-slow-low-in-stock-query
 plugins/woocommerce/changelog/remove-guide-style
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/41068-update-country-chile-locale
@@ -4687,6 +4690,7 @@ plugins/woocommerce/changelog/add-40902-render-site-thumbnail
 plugins/woocommerce/changelog/fix-cys-navigation-disappear
 plugins/woocommerce/changelog/41201-fix-41197-log-file-bulk-fatal
 plugins/woocommerce/changelog/41109-enhance-update-patterns-list-for-the-assembler
+plugins/woocommerce/changelog/tweak-template-internal
 plugins/woocommerce/changelog/fix-failing-test-php8-wp64
 plugins/woocommerce/changelog/fix-39824
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.4.3
@@ -4694,6 +4698,7 @@ plugins/woocommerce/changelog/fix-undefined-queryId-warning
 plugins/woocommerce/changelog/40705-add-store-id-to-wc-tracker-and-tracks
 plugins/woocommerce/changelog/fix-thumbnail-size
 plugins/woocommerce/changelog/add-ai-survey
+plugins/woocommerce/changelog/add-40214
 plugins/woocommerce/changelog/update-40916-get-recommended-themes
 plugins/woocommerce/changelog/update-cys-loading-screen
 plugins/woocommerce/changelog/fix-intro-modal-button
@@ -4713,6 +4718,8 @@ plugins/woocommerce/changelog/fix-linting-exceptions
 plugins/woocommerce/changelog/update-cys-copy
 plugins/woocommerce/changelog/add-cys-go-back-warning-modal
 plugins/woocommerce/changelog/fix-cys-transition-screen-iframe-positioning
+plugins/woocommerce/changelog/add-cys-tracks
+plugins/woocommerce/changelog/40289-fix-38932-fix-slow-low-in-stock-query
 plugins/woocommerce/changelog/update-logo-preview-size
 plugins/woocommerce/changelog/fix-34490
 plugins/woocommerce/changelog/41103-fix-40822-cys-palette-not-restricted
@@ -4732,12 +4739,14 @@ plugins/woocommerce/changelog/fix-cys-ui-nov-3
 plugins/woocommerce/changelog/add-wooexpress-rin-rule
 plugins/woocommerce/changelog/add-store-id-to-wc-tracker-and-tracks
 plugins/woocommerce/changelog/41181-rename-footer-pattern
+plugins/woocommerce/changelog/update-delete_unused_large_image
 plugins/woocommerce/changelog/add-wc_allow_changing_orders_storage_while_sync_is_pending-filter
 plugins/woocommerce/changelog/fix-39489
 plugins/woocommerce/changelog/fix-pattern-route-performance
 plugins/woocommerce/changelog/fix-intro-copy-ui
 plugins/woocommerce/changelog/hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/update-block-def-order
+plugins/woocommerce/changelog/fix-39271
 plugins/woocommerce/changelog/2023-11-03-05-13-10-305725
 plugins/woocommerce/changelog/41167-kevinbates-patch-1
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
@@ -6449,6 +6458,12 @@ plugins/woocommerce/src/Internal/DataStores/Orders/OrdersTableDataStoreMeta.php
 plugins/woocommerce/src/Internal/Settings/OptionSanitizer.php
 plugins/woocommerce/src/Internal/BatchProcessing/BatchProcessingController.php
 plugins/woocommerce/src/Internal/BatchProcessing/BatchProcessorInterface.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/Section.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/AbstractProductFormTemplate.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/Group.php
+plugins/woocommerce/src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductBlock.php
 plugins/woocommerce/src/Internal/Features/FeaturesController.php
 plugins/woocommerce/src/Internal/ProductAttributesLookup/Filterer.php
 plugins/woocommerce/src/Internal/ProductAttributesLookup/DataRegenerator.php
@@ -6634,16 +6649,10 @@ plugins/woocommerce/src/Admin/Notes/NotesUnavailableException.php
 plugins/woocommerce/src/Admin/DataSourcePoller.php
 plugins/woocommerce/src/Admin/WCAdminHelper.php
 plugins/woocommerce/src/Admin/Features/NewProductManagementExperience.php
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/Section.php
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/ProductFormTemplateInterface.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/GroupInterface.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/SectionInterface.php
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/README.md
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/AbstractProductFormTemplate.php
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/Group.php
-plugins/woocommerce/src/Admin/Features/ProductBlockEditor/ProductTemplates/ProductBlock.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/Init.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/BlockRegistry.php
 plugins/woocommerce/src/Admin/Features/ProductBlockEditor/RedirectionController.php
