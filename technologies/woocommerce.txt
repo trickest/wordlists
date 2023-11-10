@@ -63,6 +63,7 @@ packages/js/product-editor/changelog/add-37266
 packages/js/product-editor/changelog/fix-40875
 packages/js/product-editor/changelog/tweak-block-wrappers
 packages/js/product-editor/changelog/update-38117
+packages/js/product-editor/changelog/fix-41312_block_header_in_description_modal
 packages/js/product-editor/changelog/fix-40897
 packages/js/product-editor/changelog/fix-39543
 packages/js/product-editor/changelog/add-attributes-empty-state
@@ -241,6 +242,7 @@ packages/js/product-editor/changelog/add-40248
 packages/js/product-editor/changelog/tweak-generaltab
 packages/js/product-editor/changelog/update-38260
 packages/js/product-editor/changelog/add-38248
+packages/js/product-editor/changelog/dev-41254_use_custom_image_in_downloads_editor
 packages/js/product-editor/changelog/fix-40210_dropdown_and_list_behavior_in_attributes_variation_modals
 packages/js/product-editor/changelog/add-38853
 packages/js/product-editor/changelog/update-move-product-hooks
@@ -273,6 +275,7 @@ packages/js/product-editor/changelog/dev-consolidate-eslint-versions
 packages/js/product-editor/changelog/update-remove-slot-fill-provider-product-editor
 packages/js/product-editor/changelog/add-39788
 packages/js/product-editor/changelog/add-39687_auto_delete_variations
+packages/js/product-editor/changelog/update-woocommerce-com-to-woo-com
 packages/js/product-editor/changelog/add-38253
 packages/js/product-editor/changelog/add-37098_add_product_list_price_block
 packages/js/product-editor/changelog/fix-39840_product_editor_variations_auto_save_bug
@@ -649,7 +652,8 @@ packages/js/product-editor/src/blocks/product-fields/downloads/index.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/edit-downloads-modal.tsx
 packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/index.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/style.scss
-packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/union-icon.tsx
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/images/downloads-custom-image.tsx
+packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/images/union-icon.tsx
 packages/js/product-editor/src/blocks/product-fields/downloads/edit-downloads-modal/types.ts
 packages/js/product-editor/src/blocks/product-fields/downloads/editor.scss
 packages/js/product-editor/src/blocks/product-fields/downloads/downloads-menu/index.ts
@@ -831,9 +835,12 @@ packages/js/components/tsconfig.json
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/update-replace-dependency-on-jetpack-in-woo-services-task-list
 packages/js/components/changelog/add-40214
+packages/js/components/changelog/fix-41301_chart_views_within_analytics
 packages/js/components/changelog/fix-34015-badge-design-fix
 packages/js/components/changelog/fix-41049
 packages/js/components/changelog/dev-40213_update_section_header_design
+packages/js/components/changelog/update-woocommerce-com-to-woo-com
+packages/js/components/changelog/fix-41297_date_range_picker_and_ui
 packages/js/components/.eslintrc.js
 packages/js/components/webpack.config.js
 packages/js/components/package.json
@@ -1417,6 +1424,7 @@ packages/js/create-woo-extension/changelog/dev-update-pnpm8
 packages/js/create-woo-extension/changelog/.gitkeep
 packages/js/create-woo-extension/changelog/dev-sync-pnpm
 packages/js/create-woo-extension/changelog/dev-update-pnpm-8.6.5
+packages/js/create-woo-extension/changelog/update-woocommerce-com-to-woo-com
 packages/js/create-woo-extension/.editorconfig.mustache
 packages/js/create-woo-extension/includes/admin/setup.php.mustache
 packages/js/create-woo-extension/.prettierrc.json.mustache
@@ -1696,6 +1704,7 @@ packages/js/onboarding/changelog/dev-refactor-onboarding-profiler
 packages/js/onboarding/changelog/dev-include-eslint-annotations
 packages/js/onboarding/changelog/41279-41231-cys-make-the-progress-bar-move-forward-in-small-segments
 packages/js/onboarding/changelog/add-update-wcpay-banners-for-woopay
+packages/js/onboarding/changelog/update-woocommerce-com-to-woo-com
 packages/js/onboarding/.eslintrc.js
 packages/js/onboarding/webpack.config.js
 packages/js/onboarding/package.json
@@ -2471,6 +2480,7 @@ packages/js/experimental/changelog/fix-typescript-incremental-builds
 packages/js/experimental/changelog/fix-34112
 packages/js/experimental/changelog/dev-bump-pnpm-version-restraint
 packages/js/experimental/changelog/dev-consolidate-eslint-versions
+packages/js/experimental/changelog/update-woocommerce-com-to-woo-com
 packages/js/experimental/.eslintrc.js
 packages/js/experimental/webpack.config.js
 packages/js/experimental/package.json
@@ -3724,7 +3734,9 @@ plugins/woocommerce-admin/client/customize-store/transitional/secondary-button-s
 plugins/woocommerce-admin/client/customize-store/transitional/style.scss
 plugins/woocommerce-admin/client/customize-store/transitional/test/index.test.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/index.tsx
+plugins/woocommerce-admin/client/customize-store/transitional/actions.tsx
 plugins/woocommerce-admin/client/customize-store/transitional/survey-form/index.tsx
+plugins/woocommerce-admin/client/customize-store/transitional/services.tsx
 plugins/woocommerce-admin/client/customize-store/style.scss
 plugins/woocommerce-admin/client/customize-store/data/homepageTemplates.ts
 plugins/woocommerce-admin/client/customize-store/hooks/use-body-class.ts
@@ -4262,6 +4274,7 @@ plugins/woocommerce-beta-tester/.editorconfig
 plugins/woocommerce-beta-tester/changelog/add-block-template-inspector
 plugins/woocommerce-beta-tester/changelog/.gitkeep
 plugins/woocommerce-beta-tester/changelog/fix-remove_patterns_ai_data_post_reset_cys
+plugins/woocommerce-beta-tester/changelog/update-woocommerce-com-to-woo-com
 plugins/woocommerce-beta-tester/userscripts/wc-live-branches.user.js
 plugins/woocommerce-beta-tester/userscripts/README.md
 plugins/woocommerce-beta-tester/includes/class-wc-beta-tester-plugin-upgrader.php
@@ -4391,6 +4404,7 @@ plugins/woo-ai/woo-ai.php
 plugins/woo-ai/changelog/update-background-removal-elligibility-40917
 plugins/woo-ai/changelog/.gitkeep
 plugins/woo-ai/changelog/fix-webpack-build
+plugins/woo-ai/changelog/update-woocommerce-com-to-woo-com
 plugins/woo-ai/includes/class-woo-ai-product-text-generation.php
 plugins/woo-ai/includes/class-woo-ai-admin-notices.php
 plugins/woo-ai/includes/views/html-admin-missing-jetpack.php
@@ -4665,12 +4679,14 @@ plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
 plugins/woocommerce/changelog/41182-fix-marketing-campaign-link
 plugins/woocommerce/changelog/fix-41149-cys-remove-scrollbar-iframe
+plugins/woocommerce/changelog/fix-feedback-button-appear-after-survey-completed
 plugins/woocommerce/changelog/40839-hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/41052-update-40840-customize-blank-issue-with-wp-6.4-followup
 plugins/woocommerce/changelog/update-reduce-intro-loading-time
 plugins/woocommerce/changelog/41187-fix-41186
 plugins/woocommerce/changelog/fix-38169-block-editor-compat
 plugins/woocommerce/changelog/pr-32288
+plugins/woocommerce/changelog/pr-41320
 plugins/woocommerce/changelog/fix-daily-and-pr-tests
 plugins/woocommerce/changelog/41114-try-log-file-view
 plugins/woocommerce/changelog/fix-cys-initial-pattern-population
@@ -4683,10 +4699,13 @@ plugins/woocommerce/changelog/update-cys-loading-frame
 plugins/woocommerce/changelog/add-cys-slotfill-transitional-button
 plugins/woocommerce/changelog/fix-e2e-api-execution-on-daily
 plugins/woocommerce/changelog/fix-31146-extensions-page-undefined-property
+plugins/woocommerce/changelog/2023-11-03-18-30-05-950219
 plugins/woocommerce/changelog/update-stalebot-version
 plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
+plugins/woocommerce/changelog/e2e-update-mini-cart-test
 plugins/woocommerce/changelog/update-spacing-around-logo
 plugins/woocommerce/changelog/add-40902-render-site-thumbnail
+plugins/woocommerce/changelog/41323-fix-41268-mark-tag-on-order-page
 plugins/woocommerce/changelog/fix-cys-navigation-disappear
 plugins/woocommerce/changelog/41201-fix-41197-log-file-bulk-fatal
 plugins/woocommerce/changelog/41109-enhance-update-patterns-list-for-the-assembler
@@ -4701,6 +4720,7 @@ plugins/woocommerce/changelog/add-ai-survey
 plugins/woocommerce/changelog/add-40214
 plugins/woocommerce/changelog/update-40916-get-recommended-themes
 plugins/woocommerce/changelog/update-cys-loading-screen
+plugins/woocommerce/changelog/e2e-add-tests-shopper-cart-block
 plugins/woocommerce/changelog/fix-intro-modal-button
 plugins/woocommerce/changelog/update-cys-font-color-choices
 plugins/woocommerce/changelog/fix-cys-frame-overlay-sidebar
@@ -4743,12 +4763,14 @@ plugins/woocommerce/changelog/update-delete_unused_large_image
 plugins/woocommerce/changelog/add-wc_allow_changing_orders_storage_while_sync_is_pending-filter
 plugins/woocommerce/changelog/fix-39489
 plugins/woocommerce/changelog/fix-pattern-route-performance
+plugins/woocommerce/changelog/update-woocommerce-com-to-woo-com
 plugins/woocommerce/changelog/fix-intro-copy-ui
 plugins/woocommerce/changelog/hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/update-block-def-order
 plugins/woocommerce/changelog/fix-39271
 plugins/woocommerce/changelog/2023-11-03-05-13-10-305725
 plugins/woocommerce/changelog/41167-kevinbates-patch-1
+plugins/woocommerce/changelog/add-more-cys-tracks
 plugins/woocommerce/packages/woocommerce-admin/woocommerce-admin.php
 plugins/woocommerce/packages/README.md
 plugins/woocommerce/readme.txt
@@ -5608,18 +5630,21 @@ plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/upload-plugin.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/smoke-tests/update-woocommerce.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/customize-store/assembler-hub.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-coupons.spec.js
-plugins/woocommerce/tests/e2e-pw/tests/shopper/calculate-shipping.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-calculate-shipping.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-variable.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/mini-cart.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-redirection.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/shop-search-browse-sort.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-downloads.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-block-calculate-shipping.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-login.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/order-email-receiving.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/dashboard-access.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-block-coupons.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-block-calculate-tax.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/checkout-create-account.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-pay-order.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-grouped.spec.js
@@ -5629,6 +5654,7 @@ plugins/woocommerce/tests/e2e-pw/tests/shopper/tax/checkout-calculate-tax.spec.j
 plugins/woocommerce/tests/e2e-pw/tests/shopper/my-account-addresses.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/cart.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/shopper/product-simple.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/shopper/cart-block.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/basic.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-analytics/analytics-overview.spec.js
@@ -7392,6 +7418,7 @@ renovate.json
 .husky/post-merge
 .husky/pre-push
 turbo.json
+.markdownlintignore
 DEVELOPMENT.md
 changelog.txt
 README.md

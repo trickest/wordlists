@@ -256,7 +256,6 @@ extensions/mentions/js/src/forum/addComposerAutocomplete.js
 extensions/mentions/js/src/forum/addPostMentionPreviews.js
 extensions/mentions/js/src/forum/fragments/AutocompleteDropdown.js
 extensions/mentions/js/src/forum/fragments/PostQuoteButton.js
-extensions/mentions/js/src/forum/utils/getMentionText.js
 extensions/mentions/js/src/forum/utils/textFormatter.js
 extensions/mentions/js/src/forum/utils/getCleanDisplayName.js
 extensions/mentions/js/src/forum/utils/selectedText.js
@@ -622,7 +621,6 @@ extensions/flags/src/Listener/DeleteFlags.php
 extensions/flags/src/AddCanFlagAttribute.php
 extensions/flags/src/Event/Deleting.php
 extensions/flags/src/Event/Created.php
-extensions/flags/src/Event/FlagsWillBeDeleted.php
 extensions/flags/src/AddNewFlagCountAttribute.php
 extensions/flags/src/Api/Serializer/FlagSerializer.php
 extensions/flags/src/Api/Controller/ListFlagsController.php
@@ -1100,6 +1098,7 @@ framework/core/migrations/2015_02_24_000000_create_notifications_table.php
 framework/core/migrations/2018_01_11_102000_change_registration_tokens_rename_id_to_token.php
 framework/core/migrations/2018_09_15_041340_add_users_indicies.php
 framework/core/migrations/2018_01_11_093900_change_access_tokens_columns.php
+framework/core/migrations/2023_10_23_000000_drop_post_number_index_column_from_discussions_table.php
 framework/core/migrations/2018_01_11_101800_rename_auth_tokens_to_registration_tokens.php
 framework/core/migrations/2015_09_22_030432_rename_notification_read_time.php
 framework/core/migrations/2015_02_24_000000_create_groups_table.php
@@ -1148,6 +1147,7 @@ framework/core/tests/unit/Install/BaseUrlTest.php
 framework/core/tests/unit/Http/RouteCollectionTest.php
 framework/core/tests/unit/Http/CookieFactoryTest.php
 framework/core/tests/phpunit.unit.xml
+framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
 framework/core/tests/integration/extenders/ConsoleTest.php
 framework/core/tests/integration/extenders/MailTest.php
@@ -1482,6 +1482,7 @@ framework/core/src/Api/Controller/AbstractDeleteController.php
 framework/core/src/Api/Controller/ShowPostController.php
 framework/core/src/Api/ForgotPasswordValidator.php
 framework/core/src/Api/Exception/InvalidAccessTokenException.php
+framework/core/src/Api/ClientMiddlewarePipe.php
 framework/core/src/Api/Middleware/ThrottleApi.php
 framework/core/src/Api/Middleware/FakeHttpMethods.php
 framework/core/src/Api/JsonApiResponse.php
@@ -1978,6 +1979,7 @@ framework/core/js/src/common/components/ModalManager.tsx
 framework/core/js/src/common/components/Avatar.tsx
 framework/core/js/src/common/components/Alert.tsx
 framework/core/js/src/common/components/Tooltip.tsx
+framework/core/js/src/common/components/FormModal.tsx
 framework/core/js/src/common/components/Modal.tsx
 framework/core/js/src/common/extend.ts
 framework/core/js/src/common/Component.ts
@@ -2024,7 +2026,6 @@ framework/core/js/src/common/Fragment.ts
 framework/core/js/src/common/utils/formatNumber.ts
 framework/core/js/src/common/utils/Stream.ts
 framework/core/js/src/common/utils/mapRoutes.ts
-framework/core/js/src/common/utils/evented.js
 framework/core/js/src/common/utils/throttleDebounce.ts
 framework/core/js/src/common/utils/SubtreeRetainer.ts
 framework/core/js/src/common/utils/computed.ts
@@ -2255,6 +2256,7 @@ framework/core/js/dist-typings/common/components/SplitDropdown.d.ts
 framework/core/js/dist-typings/common/components/Badge.d.ts
 framework/core/js/dist-typings/common/components/Form.d.ts
 framework/core/js/dist-typings/common/components/Checkbox.d.ts
+framework/core/js/dist-typings/common/components/FormModal.d.ts
 framework/core/js/dist-typings/common/components/Page.d.ts
 framework/core/js/dist-typings/common/components/TextEditor.d.ts
 framework/core/js/dist-typings/common/components/TextEditorButton.d.ts
@@ -2329,7 +2331,6 @@ framework/core/js/dist-typings/common/utils/anchorScroll.d.ts
 framework/core/js/dist-typings/common/utils/BasicEditorDriver.d.ts
 framework/core/js/dist-typings/common/utils/ItemList.d.ts
 framework/core/js/dist-typings/common/utils/EventEmitter.d.ts
-framework/core/js/dist-typings/common/utils/evented.d.ts
 framework/core/js/dist-typings/common/utils/mapRoutes.d.ts
 framework/core/js/dist-typings/common/utils/liveHumanTimes.d.ts
 framework/core/js/dist-typings/common/utils/computed.d.ts

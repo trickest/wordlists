@@ -166,10 +166,10 @@ tests/Api/Responses/Expected/admin/tax_rate/get_tax_rate_response.json
 tests/Api/Responses/Expected/admin/tax_rate/post_tax_rate_response.json
 tests/Api/Responses/Expected/admin/tax_rate/patch_tax_rate_response.json
 tests/Api/Responses/Expected/admin/product/put_product_response.json
+tests/Api/Responses/Expected/admin/product/post_product_with_invalid_translation_locale.json
 tests/Api/Responses/Expected/admin/product/get_product_response.json
 tests/Api/Responses/Expected/admin/product/post_product_response.json
 tests/Api/Responses/Expected/admin/product/get_products_response.json
-tests/Api/Responses/Expected/admin/product/post_product_without_translation_locale.json
 tests/Api/Responses/Expected/admin/product/delete_product_in_use_response.json
 tests/Api/Responses/Expected/admin/product/post_product_without_required_data_response.json
 tests/Api/Responses/Expected/admin/country/get_countries_response.json
@@ -222,7 +222,8 @@ tests/Api/Responses/Expected/admin/promotion/post_promotion_response.json
 tests/Api/Responses/Expected/admin/product_variant/put_product_variant_response.json
 tests/Api/Responses/Expected/admin/product_variant/get_product_variant_response.json
 tests/Api/Responses/Expected/admin/product_variant/get_product_variants_response.json
-tests/Api/Responses/Expected/admin/product_variant/post_product_variant_enabled_by_default_response.json
+tests/Api/Responses/Expected/admin/product_variant/put_product_variant_without_translation_in_default_locale_response.json
+tests/Api/Responses/Expected/admin/product_variant/post_product_variant_enabled_by_default_with_translation_in_default_locale_response.json
 tests/Api/Responses/Expected/admin/product_variant/delete_product_variant_in_use_response.json
 tests/Api/Responses/Expected/admin/product_variant/post_product_variant_response.json
 tests/Api/Responses/Expected/admin/get_product_images_response.json
@@ -3622,6 +3623,7 @@ src/Sylius/Bundle/ApiBundle/Exception/PaymentNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ProvinceCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveMenuTaxonException.php
 src/Sylius/Bundle/ApiBundle/Exception/ChannelCannotBeRemoved.php
+src/Sylius/Bundle/ApiBundle/Exception/TranslationInDefaultLocaleCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
 src/Sylius/Bundle/ApiBundle/Exception/InvalidProductAttributeValueTypeException.php
 src/Sylius/Bundle/ApiBundle/Exception/TaxonCannotBeRemoved.php
@@ -3859,6 +3861,7 @@ src/Sylius/Bundle/ApiBundle/Filter/ShippingMethodFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/PaymentMethodFilter.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductTaxonDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductVariantDataPersister.php
+src/Sylius/Bundle/ApiBundle/DataPersister/TranslatableDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/AddressDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/LocaleDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/MessengerDataPersister.php
@@ -3979,6 +3982,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec
 src/Sylius/Bundle/ApiBundle/spec/Filter/Doctrine/TaxonFilterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ChannelDataPersisterSpec.php
+src/Sylius/Bundle/ApiBundle/spec/DataPersister/TranslatableDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductVariantDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ProductDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/MessengerDataPersisterSpec.php

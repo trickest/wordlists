@@ -92,6 +92,7 @@ packages/specs/src/components/file.yaml
 packages/specs/src/components/version.yaml
 packages/specs/src/components/setting.yaml
 packages/specs/src/components/diff.yaml
+packages/specs/src/components/extension.yaml
 packages/specs/src/components/user.yaml
 packages/specs/src/components/operation.yaml
 packages/specs/src/components/folder.yaml
@@ -129,10 +130,9 @@ packages/specs/src/paths/activity/activity-comments.yaml
 packages/specs/src/paths/activity/activity-comment.yaml
 packages/specs/src/paths/activity/activity.yaml
 packages/specs/src/paths/activity/activities.yaml
-packages/specs/src/paths/extensions/modules.yaml
-packages/specs/src/paths/extensions/displays.yaml
-packages/specs/src/paths/extensions/interfaces.yaml
-packages/specs/src/paths/extensions/layouts.yaml
+packages/specs/src/paths/extensions/list.yaml
+packages/specs/src/paths/extensions/update.yaml
+packages/specs/src/paths/extensions/update-bundle.yaml
 packages/specs/src/paths/fields/fields.yaml
 packages/specs/src/paths/fields/collection-field.yaml
 packages/specs/src/paths/fields/collection-fields.yaml
@@ -311,6 +311,7 @@ packages/data-sql/src/query-converter/modifiers/filter/conditions/field.test.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/set.test.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/string.test.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/number.test.ts
+packages/data-sql/src/query-converter/modifiers/filter/conditions/utils.test.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/conditions.test.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/utils.ts
 packages/data-sql/src/query-converter/modifiers/filter/conditions/string.ts
@@ -320,7 +321,9 @@ packages/data-sql/src/query-converter/modifiers/index.ts
 packages/data-sql/src/query-converter/modifiers/sort.ts
 packages/data-sql/src/query-converter/modifiers/modifiers.ts
 packages/data-sql/src/query-converter/modifiers/sort.test.ts
+packages/data-sql/src/query-converter/modifiers/modifiers.test.ts
 packages/data-sql/src/query-converter/param-index-generator.ts
+packages/data-sql/src/query-converter/converter-integration.test.ts
 packages/data-sql/src/query-converter/converter.ts
 packages/data-sql/src/index.ts
 packages/data-sql/src/types/parameterized-statement.ts
@@ -2057,7 +2060,6 @@ api/src/constants.ts
 api/src/env.ts
 api/src/app.test.ts
 api/src/start.ts
-api/src/__mocks__/cache.mts
 api/src/index.ts
 api/src/messenger.ts
 api/src/auth.ts
@@ -2122,6 +2124,7 @@ api/src/controllers/panels.ts
 api/src/server.ts
 api/src/__utils__/snapshots.ts
 api/src/__utils__/items-utils.ts
+api/src/__utils__/mock-env.ts
 api/src/__utils__/schemas.ts
 api/src/types/meta.ts
 api/src/types/events.ts
@@ -2972,6 +2975,8 @@ contributors.yml
 .vscode/extensions.json
 .changeset/twenty-maps-cough.md
 .changeset/new-pugs-speak.md
+.changeset/tender-owls-think.md
+.changeset/strange-days-drive.md
 .changeset/strong-spoons-mate.md
 .changeset/large-cows-scream.md
 .changeset/unlucky-grapes-love.md
