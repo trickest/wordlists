@@ -1242,6 +1242,7 @@ core/misc/dropbutton/dropbutton.js
 core/misc/details-summarized-content.js
 core/misc/feed.svg
 core/misc/cspell/dictionary.txt
+core/misc/cspell/drupal-dictionary.txt
 core/misc/time-diff.js
 core/misc/batch.js
 core/misc/progress.js
@@ -7326,6 +7327,7 @@ core/modules/language/templates/language-content-settings-table.html.twig
 core/modules/language/language.links.menu.yml
 core/modules/language/language.info.yml
 core/modules/filter/filter.js
+core/modules/filter/filter.post_update.php
 core/modules/filter/filter.links.action.yml
 core/modules/filter/migrations/d6_filter_format.yml
 core/modules/filter/migrations/d7_filter_format.yml
@@ -7358,6 +7360,7 @@ core/modules/filter/tests/src/Functional/FilterHooksTest.php
 core/modules/filter/tests/src/Functional/GenericTest.php
 core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
 core/modules/filter/tests/src/Functional/FilterFormatAccessTest.php
+core/modules/filter/tests/src/Functional/FilterFormatUpdateFilterSortingTest.php
 core/modules/filter/tests/src/Functional/FilterSecurityTest.php
 core/modules/filter/tests/src/Functional/Rest/FilterFormatJsonAnonTest.php
 core/modules/filter/tests/src/Functional/Rest/FilterFormatXmlAnonTest.php
@@ -7940,6 +7943,7 @@ core/modules/system/tests/modules/update_test_description/update_test_descriptio
 core/modules/system/tests/modules/name_collision_test/name_collision_test.info.yml
 core/modules/system/tests/modules/render_placeholder_message_test/render_placeholder_message_test.info.yml
 core/modules/system/tests/modules/render_placeholder_message_test/src/RenderPlaceholderMessageTestController.php
+core/modules/system/tests/modules/render_placeholder_message_test/render_placeholder_message_test.services.yml
 core/modules/system/tests/modules/render_placeholder_message_test/render_placeholder_message_test.routing.yml
 core/modules/system/tests/modules/unversioned_assets_test/unversioned_assets_test.info.yml
 core/modules/system/tests/modules/unversioned_assets_test/unversioned_assets_test.module
@@ -8058,6 +8062,11 @@ core/modules/system/tests/modules/module_test/config/schema/module_test.schema.y
 core/modules/system/tests/modules/module_test/module_test.routing.yml
 core/modules/system/tests/modules/module_test/module_test.services.yml
 core/modules/system/tests/modules/module_test/module_test.implementations.inc
+core/modules/system/tests/modules/http_kernel_test/src/Controller/TestController.php
+core/modules/system/tests/modules/http_kernel_test/src/HttpKernel/TestMiddleware.php
+core/modules/system/tests/modules/http_kernel_test/http_kernel_test.routing.yml
+core/modules/system/tests/modules/http_kernel_test/http_kernel_test.info.yml
+core/modules/system/tests/modules/http_kernel_test/http_kernel_test.services.yml
 core/modules/system/tests/modules/error_test/error_test.info.yml
 core/modules/system/tests/modules/error_test/src/Controller/ErrorTestController.php
 core/modules/system/tests/modules/error_test/error_test.routing.yml
@@ -8692,11 +8701,6 @@ core/modules/system/tests/modules/generic_module2_test/generic_module2_test.info
 core/modules/system/tests/modules/js_once_test/js_once_test.info.yml
 core/modules/system/tests/modules/js_once_test/js_once_test.routing.yml
 core/modules/system/tests/modules/js_once_test/src/Controller/JsOnceTestController.php
-core/modules/system/tests/modules/httpkernel_test/httpkernel_test.info.yml
-core/modules/system/tests/modules/httpkernel_test/src/Controller/TestController.php
-core/modules/system/tests/modules/httpkernel_test/src/HttpKernel/TestMiddleware.php
-core/modules/system/tests/modules/httpkernel_test/httpkernel_test.routing.yml
-core/modules/system/tests/modules/httpkernel_test/httpkernel_test.services.yml
 core/modules/system/tests/modules/system_mail_failure_test/src/Plugin/Mail/TestPhpMailFailure.php
 core/modules/system/tests/modules/system_mail_failure_test/system_mail_failure_test.info.yml
 core/modules/system/tests/modules/update_test_postupdate/update_test_postupdate.post_update.php

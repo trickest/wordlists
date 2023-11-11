@@ -4765,6 +4765,7 @@ application/Espo/Core/Console/Exceptions/ArgumentNotSpecified.php
 application/Espo/Core/Console/Exceptions/InvalidArgument.php
 application/Espo/Core/Console/CommandManager.php
 application/Espo/Core/Traits/Injectable.php
+application/Espo/Core/PhoneNumber/Sanitizer.php
 application/Espo/Core/Formula/FunctionFactory.php
 application/Espo/Core/Formula/Manager.php
 application/Espo/Core/Formula/Parser.php
@@ -5021,6 +5022,9 @@ application/Espo/Core/Record/ActionHistory/DefaultActionLogger.php
 application/Espo/Core/Record/ActionHistory/ActionLogger.php
 application/Espo/Core/Record/ActionHistory/Action.php
 application/Espo/Core/Record/ReadParams.php
+application/Espo/Core/FieldSanitize/SanitizeManager.php
+application/Espo/Core/FieldSanitize/Sanitizer.php
+application/Espo/Core/FieldSanitize/Sanitizer/Data.php
 application/Espo/Core/Di/WebhookManagerSetter.php
 application/Espo/Core/Di/ServiceFactorySetter.php
 application/Espo/Core/Di/InjectableFactorySetter.php
@@ -5666,6 +5670,7 @@ application/Espo/Classes/Cleanup/Reminders.php
 application/Espo/Classes/Cleanup/MassActions.php
 application/Espo/Classes/Cleanup/WebhookQueue.php
 application/Espo/Classes/Cleanup/PasswordChangeRequests.php
+application/Espo/Classes/FieldSanitizers/Phone.php
 application/Espo/Classes/AddressFormatters/Formatter2.php
 application/Espo/Classes/AddressFormatters/Formatter1.php
 application/Espo/Classes/AddressFormatters/Formatter3.php
@@ -6752,6 +6757,7 @@ client/src/views/lead-capture/opt-in-confirmation-success.js
 client/src/views/lead-capture/fields/api-key.js
 client/src/views/lead-capture/fields/smtp-account.js
 client/src/views/lead-capture/fields/field-list.js
+client/src/views/lead-capture/fields/phone-number-country.js
 client/src/views/email-template/list.js
 client/src/views/email-template/record/edit.js
 client/src/views/email-template/record/edit-quick.js
@@ -7648,6 +7654,7 @@ tests/integration/Espo/Note/AclTest.php
 tests/integration/Espo/LeadCapture/LeadCaptureTest.php
 tests/integration/Espo/Webhook/ProcessingTest.php
 tests/integration/Espo/Webhook/AclTest.php
+tests/integration/Espo/Record/SanitizeTest.php
 tests/integration/Espo/Record/EntityProviderTest.php
 tests/integration/Espo/Record/RestoreDeletedTest.php
 tests/integration/Espo/Record/LinkTest.php
