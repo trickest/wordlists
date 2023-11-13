@@ -10557,6 +10557,7 @@ core/modules/file/tests/src/Kernel/Formatter/FileEntityFormatterTest.php
 core/modules/file/tests/src/Kernel/FileRepositoryTest.php
 core/modules/file/tests/src/Kernel/LegacyValidateTest.php
 core/modules/file/tests/src/Kernel/Upload/LegacyFileUploadHandlerTest.php
+core/modules/file/tests/src/Kernel/Upload/StreamFileUploaderTest.php
 core/modules/file/tests/src/Kernel/Views/RelationshipNodeFileDataTest.php
 core/modules/file/tests/src/Kernel/Views/RelationshipUserFileDataTest.php
 core/modules/file/tests/src/Kernel/Views/FileViewsFieldAccessTest.php
@@ -10599,6 +10600,7 @@ core/modules/file/tests/src/FunctionalJavascript/FileFieldWidgetTest.php
 core/modules/file/tests/src/FunctionalJavascript/AjaxFileManagedMultipleTest.php
 core/modules/file/tests/src/FunctionalJavascript/MaximumFileSizeExceededUploadTest.php
 core/modules/file/tests/src/Unit/SanitizeNameTest.php
+core/modules/file/tests/src/Unit/Upload/ContentDispositionFilenameParserTest.php
 core/modules/file/tests/src/Unit/Plugin/migrate/field/d7/FileFieldTest.php
 core/modules/file/tests/src/Unit/Plugin/migrate/field/d6/FileFieldTest.php
 core/modules/file/tests/src/Unit/Plugin/migrate/process/d6/FileUriTest.php
@@ -10664,10 +10666,13 @@ core/modules/file/src/FileUsage/FileUsageBase.php
 core/modules/file/src/FileViewsData.php
 core/modules/file/src/FileRepository.php
 core/modules/file/src/FileInterface.php
+core/modules/file/src/Upload/InputStreamFileWriterInterface.php
 core/modules/file/src/Upload/FileUploadHandler.php
 core/modules/file/src/Upload/FileValidationException.php
 core/modules/file/src/Upload/FileUploadResult.php
 core/modules/file/src/Upload/FormUploadedFile.php
+core/modules/file/src/Upload/InputStreamFileWriter.php
+core/modules/file/src/Upload/ContentDispositionFilenameParser.php
 core/modules/file/src/Upload/UploadedFileInterface.php
 core/modules/file/src/Plugin/Field/FieldType/FileItem.php
 core/modules/file/src/Plugin/Field/FieldType/FileUriItem.php
@@ -10727,6 +10732,7 @@ core/modules/file/src/Validation/Constraint/UploadedFileConstraint.php
 core/modules/file/src/Validation/FileValidatorInterface.php
 core/modules/file/src/Validation/FileValidator.php
 core/modules/file/src/Validation/UploadedFileValidator.php
+core/modules/file/src/Validation/FileValidatorSettingsTrait.php
 core/modules/file/src/Validation/UploadedFileValidatorInterface.php
 core/modules/file/src/Validation/FileValidationEvent.php
 core/modules/file/src/Validation/RecursiveValidatorFactory.php
@@ -11451,11 +11457,13 @@ core/modules/datetime_range/datetime_range.libraries.yml
 core/modules/forum/migrations/d7_forum_settings.yml
 core/modules/forum/migrations/state/forum.migrate_drupal.yml
 core/modules/forum/migrations/d6_forum_settings.yml
+core/modules/forum/forum.post_update.php
 core/modules/forum/forum.info.yml
 core/modules/forum/forum.install
 core/modules/forum/forum.module
 core/modules/forum/forum.links.menu.yml
 core/modules/forum/tests/src/Kernel/ForumValidationTest.php
+core/modules/forum/tests/src/Kernel/ForumIndexTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d7/MigrateTaxonomyTermTranslationTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d7/MigrateTaxonomyTermTest.php
 core/modules/forum/tests/src/Kernel/Migrate/d7/MigrateLanguageContentTaxonomyVocabularySettingsTest.php
@@ -11490,7 +11498,9 @@ core/modules/forum/tests/src/Functional/Views/ForumIntegrationTest.php
 core/modules/forum/tests/src/Functional/ForumIndexTest.php
 core/modules/forum/tests/src/Functional/ForumUninstallTest.php
 core/modules/forum/tests/src/Functional/NodeAccessPagerTest.php
+core/modules/forum/tests/src/Functional/ForumIndexUpdateTest.php
 core/modules/forum/tests/src/Functional/ForumBlockTest.php
+core/modules/forum/tests/fixtures/update/drupal-10.1.0.empty.testing.forum.gz
 core/modules/forum/tests/fixtures/drupal7.php
 core/modules/forum/tests/fixtures/drupal6.php
 core/modules/forum/tests/modules/forum_url_alter_test/forum_url_alter_test.info.yml

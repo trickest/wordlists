@@ -1117,6 +1117,7 @@ changelog/_unreleased/2023-09-27-add-schemas-and-tags.md
 changelog/_unreleased/2023-10-25-fixed-bug-grand-total-without-asterisk.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
 changelog/_unreleased/2023-09-29-tag-api-aware.md
+changelog/_unreleased/2023-11-06-improved-error-handling-for-media-file-renamings-if-the-provided-name-is-too-long.md
 changelog/_unreleased/2023-10-13-fix-seo-url-criteria-for-category.md
 changelog/_unreleased/2023-10-09-fix-last-customer-payment-method-unavailable.md
 changelog/_unreleased/2023-10-16-fix-sorting-of-product-cross-sellings-with-dynamic-product-group-by-price.md
@@ -1183,6 +1184,7 @@ changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-pa
 changelog/_unreleased/2023-10-25-fixed-wrong-twig-naming.md
 changelog/_unreleased/changelog2023-10-05-fix-sw-cms-layout-modal-search-field.md
 changelog/_unreleased/2023-08-09-change-sw-many-to-many-assignment-card-default-event.md
+changelog/_unreleased/2023-11-03-use-property-name-in-price-serialization-errors.md
 changelog/_unreleased/2023-08-03-fix-transition-state-machine-exception.md
 changelog/_unreleased/2023-10-20-fix-country-in-shipping-address-is-not-translated.md
 changelog/_unreleased/2023-10-10-change-array-parameter-type-to-binary.md
@@ -1202,6 +1204,7 @@ changelog/_unreleased/2023-10-18-rulebuilder-date-range-condit.md
 changelog/_unreleased/2023-08-10-change-sw-multi-snippet-drag-and-drop-default-event.md
 changelog/_unreleased/2023-10-10-fix-app-rule-condition-validation.md
 changelog/_unreleased/2023-09-25-change-drop-event-of-sw-sortable-list.md
+changelog/_unreleased/2023-11-09-replace-sw-field-with-real-components.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
@@ -1215,6 +1218,7 @@ changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
 changelog/_unreleased/2023-11-02-fix-rule-caching-in-after-order.md
 changelog/_unreleased/2023-10-25-fix-no-order-confirm-is-sent-in-combination-with-an-invoice-document.md
 changelog/_unreleased/2023-08-09-change-sw-file-input-default-event.md
+changelog/_unreleased/2023-11-08-customer-variables-in-e-mail-templates-do-not-work.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
 changelog/_unreleased/2023-10-04-deprecated-shopware-core-checkout-cart-cartevents.md
@@ -4573,6 +4577,7 @@ tests/unit/Core/Content/Media/MediaExceptionTest.php
 tests/unit/Core/Content/Media/Event/UnusedMediaSearchEventTest.php
 tests/unit/Core/Content/Media/Event/MediaUploadedEventTest.php
 tests/unit/Core/Content/Media/Api/MediaUploadControllerTest.php
+tests/unit/Core/Content/Media/File/FileNameValidatorTest.php
 tests/unit/Core/Content/Media/File/DownloadResponseGeneratorTest.php
 tests/unit/Core/Content/Media/File/FileSaverTest.php
 tests/unit/Core/Content/Media/UnusedMediaPurgerTest.php
@@ -4621,6 +4626,7 @@ tests/unit/Core/Content/Product/DataAbstractionLayer/ProductStreamUpdaterTest.ph
 tests/unit/Core/Content/Product/DataAbstractionLayer/UpdatedStatesTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/CheapestPrice/CheapestPriceAccessorBuilderTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/StockUpdaterTest.php
+tests/unit/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingExceptionHandlerTest.php
 tests/unit/Core/Content/Product/SalesChannel/CrossSelling/CachedProductCrossSellingRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Search/CachedProductSearchRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingRouteTest.php
@@ -11101,6 +11107,7 @@ src/Core/Content/Product/Aggregate/ProductManufacturer/ProductManufacturerCollec
 src/Core/Content/Product/Aggregate/ProductManufacturer/ProductManufacturerDefinition.php
 src/Core/Content/Product/Aggregate/ProductManufacturer/ProductManufacturerHydrator.php
 src/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingEntity.php
+src/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingExceptionHandler.php
 src/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingDefinition.php
 src/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingCollection.php
 src/Core/Content/Product/Aggregate/ProductConfiguratorSetting/ProductConfiguratorSettingHydrator.php
@@ -11416,7 +11423,6 @@ src/Core/Content/Test/Media/Cms/Type/ImageTypeDataResolverTest.php
 src/Core/Content/Test/Media/Cms/Type/ImageSliderTypeDataResolverTest.php
 src/Core/Content/Test/Media/File/FileNameProviderTest.php
 src/Core/Content/Test/Media/File/MediaFileFetchRedirectTestController.php
-src/Core/Content/Test/Media/File/FileNameValidatorTest.php
 src/Core/Content/Test/Media/File/FileLoaderTest.php
 src/Core/Content/Test/Media/File/FileSaverTest.php
 src/Core/Content/Test/Media/File/FileUrlValidatorTest.php
@@ -14779,8 +14785,10 @@ src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-folder-item/sw-media-folder-item.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-folder-item/sw-media-folder-item.spec.vue3.js
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-folder-item/sw-media-folder-item.spec.js
+src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-media-item/sw-media-media-item.spec.vue3.js
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-media-item/sw-media-media-item.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-media-item/index.js
+src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-media-item/sw-media-media-item.spec.js
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-media-media-item/sw-media-media-item.html.twig
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-image-slider/sw-image-slider.scss
 src/Administration/Resources/app/administration/src/app/asyncComponent/media/sw-image-slider/sw-image-slider.html.twig

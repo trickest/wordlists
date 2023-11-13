@@ -2796,6 +2796,7 @@ tests/Unit/Core/Context/CountryContextBuilderTest.php
 tests/Unit/Core/Context/ShopContextBuilderTest.php
 tests/Unit/Core/Context/EmployeeContextBuilderTest.php
 tests/Unit/Core/Context/EmployeeContextTest.php
+tests/Unit/Core/Context/LegacyControllerContextBuilderTest.php
 tests/Unit/Core/Search/ControllerActionTest.php
 tests/Unit/Core/Search/Filters/ProductCombinationFiltersTest.php
 tests/Unit/Core/Search/FiltersTest.php
@@ -6138,12 +6139,14 @@ src/PrestaShopBundle/EventListener/TokenizedUrlsListener.php
 src/PrestaShopBundle/EventListener/FilterCategorySearchCriteriaListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/LegacyContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/ShopContextListener.php
+src/PrestaShopBundle/EventListener/Context/Admin/LegacyControllerContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/CountryContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/CurrencyContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/EmployeeContextListener.php
 src/PrestaShopBundle/EventListener/BackUrlRedirectResponseListener.php
 src/PrestaShopBundle/EventListener/DemoModeEnabledListener.php
 src/PrestaShopBundle/EventListener/ActionDispatcherLegacyHooksSubscriber.php
+src/PrestaShopBundle/EventListener/ExternalApiTrait.php
 src/PrestaShopBundle/EventListener/MultishopCommandListener.php
 src/PrestaShopBundle/EventListener/FilterCmsPageCategorySearchCriteriaListener.php
 src/PrestaShopBundle/EventListener/LegacyUrlListener.php
@@ -7675,7 +7678,9 @@ src/Core/Routing/EntityLinkBuilderFactory.php
 src/Core/Context/Employee.php
 src/Core/Context/CurrencyContext.php
 src/Core/Context/CountryContextBuilder.php
+src/Core/Context/LegacyControllerContext.php
 src/Core/Context/EmployeeContextBuilder.php
+src/Core/Context/LegacyControllerContextBuilder.php
 src/Core/Context/EmployeeContext.php
 src/Core/Context/ShopContextBuilder.php
 src/Core/Context/LegacyContextBuilderInterface.php
