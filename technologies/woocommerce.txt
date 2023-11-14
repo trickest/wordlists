@@ -176,6 +176,7 @@ packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
 packages/js/product-editor/changelog/fix-tabs-reordering-38002
 packages/js/product-editor/changelog/fix-38502_ces_modal_styling_fixes
 packages/js/product-editor/changelog/fix-38244
+packages/js/product-editor/changelog/update-template-api-limit-generation
 packages/js/product-editor/changelog/add-40042_default_price
 packages/js/product-editor/changelog/fix-40208
 packages/js/product-editor/changelog/dev-include-eslint-annotations
@@ -244,6 +245,7 @@ packages/js/product-editor/changelog/add-40248
 packages/js/product-editor/changelog/tweak-generaltab
 packages/js/product-editor/changelog/update-38260
 packages/js/product-editor/changelog/add-38248
+packages/js/product-editor/changelog/add-disable-conditions
 packages/js/product-editor/changelog/dev-41254_use_custom_image_in_downloads_editor
 packages/js/product-editor/changelog/fix-40210_dropdown_and_list_behavior_in_attributes_variation_modals
 packages/js/product-editor/changelog/add-38853
@@ -842,6 +844,7 @@ packages/js/components/changelog/fix-41301_chart_views_within_analytics
 packages/js/components/changelog/fix-34015-badge-design-fix
 packages/js/components/changelog/fix-41049
 packages/js/components/changelog/dev-40213_update_section_header_design
+packages/js/components/changelog/add-disable-conditions
 packages/js/components/changelog/update-woocommerce-com-to-woo-com
 packages/js/components/changelog/fix-41297_date_range_picker_and_ui
 packages/js/components/.eslintrc.js
@@ -1671,6 +1674,7 @@ packages/js/block-templates/changelog/add-expose-block-id-and-order
 packages/js/block-templates/changelog/add-block-templates-dependencies
 packages/js/block-templates/changelog/add-template-api-conditional-visibility
 packages/js/block-templates/changelog/update-separate-php-and-js-tests
+packages/js/block-templates/changelog/add-disable-conditions
 packages/js/block-templates/.eslintrc.js
 packages/js/block-templates/webpack.config.js
 packages/js/block-templates/package.json
@@ -4707,8 +4711,10 @@ plugins/woocommerce/changelog/update-stalebot-version
 plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
 plugins/woocommerce/changelog/e2e-update-mini-cart-test
 plugins/woocommerce/changelog/update-spacing-around-logo
+plugins/woocommerce/changelog/fix-41097
 plugins/woocommerce/changelog/add-40902-render-site-thumbnail
 plugins/woocommerce/changelog/41323-fix-41268-mark-tag-on-order-page
+plugins/woocommerce/changelog/fix-39602
 plugins/woocommerce/changelog/fix-cys-navigation-disappear
 plugins/woocommerce/changelog/41201-fix-41197-log-file-bulk-fatal
 plugins/woocommerce/changelog/41109-enhance-update-patterns-list-for-the-assembler
@@ -4738,6 +4744,7 @@ plugins/woocommerce/changelog/add-template-lifecycle-doc
 plugins/woocommerce/changelog/fix-cys-iframe-pushstate
 plugins/woocommerce/changelog/fix-appearance-task-header
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.5.0
+plugins/woocommerce/changelog/update-template-api-limit-generation
 plugins/woocommerce/changelog/fix-linting-exceptions
 plugins/woocommerce/changelog/update-cys-copy
 plugins/woocommerce/changelog/add-cys-go-back-warning-modal
@@ -4760,10 +4767,13 @@ plugins/woocommerce/changelog/update-woocommerce-blocks-11.5.4
 plugins/woocommerce/changelog/2023-11-01-12-33-49-694057
 plugins/woocommerce/changelog/add-shipping-calculator-filters
 plugins/woocommerce/changelog/add-stalebot-schedules
+plugins/woocommerce/changelog/update-add-cart-a11y-naming-improvement
 plugins/woocommerce/changelog/40662-try-log-file-browser
+plugins/woocommerce/changelog/add-disable-conditions
 plugins/woocommerce/changelog/41279-41231-cys-make-the-progress-bar-move-forward-in-small-segments
 plugins/woocommerce/changelog/fix-cys-ui-nov-3
 plugins/woocommerce/changelog/add-wooexpress-rin-rule
+plugins/woocommerce/changelog/fix-34602-marketing-coupon-page-slides-overlap
 plugins/woocommerce/changelog/add-store-id-to-wc-tracker-and-tracks
 plugins/woocommerce/changelog/41181-rename-footer-pattern
 plugins/woocommerce/changelog/update-delete_unused_large_image

@@ -4075,6 +4075,7 @@ core/lib/Drupal/Core/ProxyClass/Routing/MatcherDumper.php
 core/lib/Drupal/Core/ProxyClass/Routing/RouteBuilder.php
 core/lib/Drupal/Core/ProxyClass/File/MimeType/MimeTypeGuesser.php
 core/lib/Drupal/Core/ProxyClass/File/MimeType/ExtensionMimeTypeGuesser.php
+core/lib/Drupal/Core/ProxyClass/Menu/MenuActiveTrail.php
 core/lib/Drupal/Core/ProxyClass/Render/BareHtmlPageRenderer.php
 core/lib/Drupal/Core/ProxyClass/Config/ConfigInstaller.php
 core/lib/Drupal/Core/ProxyClass/Cron.php
@@ -4242,6 +4243,7 @@ core/lib/Drupal/Core/Form/FormBase.php
 core/lib/Drupal/Core/Form/FormAjaxResponseBuilder.php
 core/lib/Drupal/Core/Form/ConfigFormBase.php
 core/lib/Drupal/Core/Form/FormSubmitter.php
+core/lib/Drupal/Core/Form/ToConfig.php
 core/lib/Drupal/Core/Form/FormValidatorInterface.php
 core/lib/Drupal/Core/Form/ConfirmFormInterface.php
 core/lib/Drupal/Core/Form/FormStateInterface.php
@@ -8420,6 +8422,7 @@ core/modules/system/tests/modules/form_test/src/Form/FormTestEmailForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestValidateRequiredForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestFormStateValuesCleanForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestRangeInvalidForm.php
+core/modules/system/tests/modules/form_test/src/Form/NestedConfigTargetForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestTableSelectColspanForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestRangeForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestRedirectForm.php
@@ -11277,6 +11280,7 @@ core/modules/taxonomy/tests/src/Functional/TaxonomyTermPagerTest.php
 core/modules/taxonomy/tests/src/Functional/EarlyDateTest.php
 core/modules/taxonomy/tests/src/Functional/GenericTest.php
 core/modules/taxonomy/tests/src/Functional/ThemeTest.php
+core/modules/taxonomy/tests/src/Functional/TaxonomyImageTest.php
 core/modules/taxonomy/tests/src/Functional/TermContextualLinksTest.php
 core/modules/taxonomy/tests/src/Functional/TaxonomyTranslationTestTrait.php
 core/modules/taxonomy/tests/src/Functional/TermAutocompleteTest.php
@@ -15482,6 +15486,7 @@ core/modules/book/src/BookOutlineStorageInterface.php
 core/modules/book/src/BookExport.php
 core/modules/book/src/BookOutline.php
 core/modules/book/src/ProxyClass/BookUninstallValidator.php
+core/modules/book/src/ProxyClass/BookManager.php
 core/modules/book/src/Controller/BookController.php
 core/modules/book/src/Form/BookOutlineForm.php
 core/modules/book/src/Form/BookSettingsForm.php

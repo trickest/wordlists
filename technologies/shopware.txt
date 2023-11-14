@@ -1159,6 +1159,7 @@ changelog/_unreleased/2023-11-03-add-redirectparameters-to-confirmurl.md
 changelog/_unreleased/2023-08-10-change-sw-radio-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
 changelog/_unreleased/2023-11-07-set-default-when-route-target-does-not-exist.md
+changelog/_unreleased/2023-11-06-add-esi-tags.md
 changelog/_unreleased/2023-10-31-add-twig-block-to-order-history-and-reformat-code.md
 changelog/_unreleased/2023-10-09-add-onlyliveversion-parameter-to-app-webhooks.md
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
@@ -1218,6 +1219,7 @@ changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
 changelog/_unreleased/2023-11-02-fix-rule-caching-in-after-order.md
 changelog/_unreleased/2023-10-25-fix-no-order-confirm-is-sent-in-combination-with-an-invoice-document.md
 changelog/_unreleased/2023-08-09-change-sw-file-input-default-event.md
+changelog/_unreleased/2023-10-26-improved-installing-an-extension-will-activate-it.md
 changelog/_unreleased/2023-11-08-customer-variables-in-e-mail-templates-do-not-work.md
 changelog/_unreleased/.keep
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
@@ -1228,6 +1230,7 @@ changelog/_unreleased/2023-10-12-phpstan-rule-to-prevent-after-statement-in-migr
 changelog/_unreleased/2023-09-26-fix-accept-all-cookies-button-styling.md
 changelog/_unreleased/2023-10-17-handle-exception-for-product-export-generator.md
 changelog/_unreleased/2023-09-20-avoid-creating-seo-urls-for-headless-sales-channels.md
+changelog/_unreleased/2023-10-25-remove-es-scripts-from-cluster.md
 changelog/_unreleased/2023-09-28-fix-cms-back.md
 changelog/_unreleased/2023-11-03-fix-dynamic-product-listing-filter.md
 changelog/_unreleased/2023-10-09-administration-add-main-modulets-fixed-typo-from-langugage-to-language.md
@@ -7734,7 +7737,6 @@ src/Storefront/Test/Controller/DocumentControllerTest.php
 src/Storefront/Test/Controller/AccountProfileControllerTest.php
 src/Storefront/Test/Controller/CmsControllerTest.php
 src/Storefront/Test/Controller/LandingPageControllerTest.php
-src/Storefront/Test/Controller/ErrorControllerTest.php
 src/Storefront/Test/Controller/ContextControllerContextTest.php
 src/Storefront/Test/Event/Subscriber/CartMergedSubscriberTest.php
 src/Storefront/Test/Framework/Media/StorefrontMediaUploaderTest.php
@@ -8765,6 +8767,7 @@ src/Core/Framework/DependencyInjection/TaggedServiceLocator.php
 src/Core/Framework/DependencyInjection/increment.xml
 src/Core/Framework/DependencyInjection/CompilerPass/RateLimiterCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/HttpCacheConfigCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RemoveEventListener.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetBundleRegistrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FilesystemConfigMigrationCompilerPass.php
@@ -8779,6 +8782,7 @@ src/Core/Framework/DependencyInjection/CompilerPass/FeatureFlagCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/RouteScopeCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/BusinessEventRegisterCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/CompilerPassConfigTrait.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetRegistrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/DefaultTransportCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/DisableTwigCacheWarmerCompilerPass.php
@@ -9522,9 +9526,14 @@ src/Core/Framework/Adapter/Cache/CacheTagCollection.php
 src/Core/Framework/Adapter/Cache/CacheInvalidationSubscriber.php
 src/Core/Framework/Adapter/Cache/CacheIdLoader.php
 src/Core/Framework/Adapter/Cache/CacheInvalidator.php
+src/Core/Framework/Adapter/Cache/Event/HttpCacheStoreEvent.php
+src/Core/Framework/Adapter/Cache/Event/HttpCacheKeyEvent.php
+src/Core/Framework/Adapter/Cache/Event/HttpCacheHitEvent.php
 src/Core/Framework/Adapter/Cache/AbstractCacheTracer.php
 src/Core/Framework/Adapter/Cache/CacheDecorator.php
 src/Core/Framework/Adapter/Cache/CacheValueCompressor.php
+src/Core/Framework/Adapter/Cache/ReverseProxy/ReverseProxyException.php
+src/Core/Framework/Adapter/Cache/ReverseProxy/AbstractReverseProxyGateway.php
 src/Core/Framework/Adapter/Cache/CacheTracer.php
 src/Core/Framework/Adapter/Cache/CacheStateSubscriber.php
 src/Core/Framework/Adapter/Cache/Script/ScriptCacheInvalidationSubscriber.php
@@ -9545,11 +9554,17 @@ src/Core/Framework/Adapter/Cache/CacheCompressor.php
 src/Core/Framework/Adapter/Cache/InvalidatorStorage/AbstractInvalidatorStorage.php
 src/Core/Framework/Adapter/Cache/InvalidatorStorage/CacheInvalidatorStorage.php
 src/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStorage.php
+src/Core/Framework/Adapter/Cache/Http/HttpCacheKeyGenerator.php
+src/Core/Framework/Adapter/Cache/Http/CacheStateValidator.php
+src/Core/Framework/Adapter/Cache/Http/CacheStore.php
 src/Core/Framework/Adapter/Cache/CacheClearer.php
 src/Core/Framework/Adapter/Console/ShopwareStyle.php
 src/Core/Framework/Adapter/Database/MySQLFactory.php
 src/Core/Framework/Adapter/Database/ReplicaConnection.php
 src/Core/Framework/Adapter/Messenger/MessageBus.php
+src/Core/Framework/Adapter/Kernel/KernelFactory.php
+src/Core/Framework/Adapter/Kernel/HttpKernel.php
+src/Core/Framework/Adapter/Kernel/HttpCacheKernel.php
 src/Core/Framework/Adapter/Translation/AbstractTranslator.php
 src/Core/Framework/Adapter/Translation/Translator.php
 src/Core/Framework/Adapter/Translation/TranslatorCacheInvalidate.php
@@ -9637,6 +9652,7 @@ src/Core/Framework/Webhook/EventLog/WebhookEventLogEntity.php
 src/Core/Framework/Webhook/EventLog/WebhookEventLogCollection.php
 src/Core/Framework/Webhook/EventLog/WebhookEventLogDefinition.php
 src/Core/Framework/Context.php
+src/Core/Framework/FrameworkException.php
 src/Core/Framework/Feature/Exception/FeatureActiveException.php
 src/Core/Framework/Feature/Exception/FeatureNotActiveException.php
 src/Core/Framework/Feature/Command/FeatureDumpCommand.php
@@ -10194,6 +10210,7 @@ src/Core/Framework/Test/TestCaseBase/FilesystemBehaviour.php
 src/Core/Framework/Test/TestCaseBase/IntegrationTestBehaviour.php
 src/Core/Framework/Test/TestCaseBase/DatabaseTransactionBehaviour.php
 src/Core/Framework/Test/TestCaseBase/MailTemplateTestBehaviour.php
+src/Core/Framework/Test/TestCaseBase/EventDispatcherWrapper.php
 src/Core/Framework/Test/TestCaseBase/FilesystemBehaviourTest.php
 src/Core/Framework/Test/TestCaseBase/KernelLifecycleManagerTest.php
 src/Core/Framework/Test/TestCaseBase/AdminApiTestBehaviour.php

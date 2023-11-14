@@ -1500,6 +1500,7 @@ tests/UI/campaigns/functional/BO/13_shopParameters/05_contact/02_stores/01_filte
 tests/UI/campaigns/functional/BO/13_shopParameters/05_contact/02_stores/02_CRUDStores.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/maintenance/01_enableDisableShop.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/11_enableDisableMultistore.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/10_enableDisableBestSellers.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/09_enableDisableBrands.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/08_enableDisableSuppliers.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/01_productsGeneral/02_newDaysNumber.ts
@@ -1521,6 +1522,7 @@ tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/04_paginat
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/04_pagination/01_updateNumberOfProductsPerPage.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_productPage/03_separatorOfAttributeAnchor.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_productPage/04_displayDiscountedPrice.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_productPage/02_displayAddToCartButton.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_productPage/01_displayAvailableQuantities.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/02_tags/01_CRUDTag.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/02_tags/02_filterSortAndPagination.ts
@@ -2551,6 +2553,8 @@ tests/Unit/PrestaShopBundle/Translation/Loader/LegacyFileLoaderTest.php
 tests/Unit/PrestaShopBundle/Translation/Exporter/ThemeExporterTest.php
 tests/Unit/PrestaShopBundle/EventListener/Context/Admin/CurrencyContextListenerTest.php
 tests/Unit/PrestaShopBundle/EventListener/Context/Admin/CountryContextListenerTest.php
+tests/Unit/PrestaShopBundle/EventListener/Context/Admin/LanguageContextListenerTest.php
+tests/Unit/PrestaShopBundle/EventListener/Context/Admin/LegacyControllerContextListenerTest.php
 tests/Unit/PrestaShopBundle/EventListener/Context/Admin/EmployeeContextListenerTest.php
 tests/Unit/PrestaShopBundle/EventListener/Context/Admin/ShopContextListenerTest.php
 tests/Unit/PrestaShopBundle/EventListener/Context/ContextEventListenerTestCase.php
@@ -2793,7 +2797,9 @@ tests/Unit/Core/Configuration/MockConfigurationTrait.php
 tests/Unit/Core/Routing/EntityLinkBuilderFactoryTest.php
 tests/Unit/Core/Context/CurrencyContextBuilderTest.php
 tests/Unit/Core/Context/CountryContextBuilderTest.php
+tests/Unit/Core/Context/LanguageContextBuilderTest.php
 tests/Unit/Core/Context/ShopContextBuilderTest.php
+tests/Unit/Core/Context/ContextBuilderTestCase.php
 tests/Unit/Core/Context/EmployeeContextBuilderTest.php
 tests/Unit/Core/Context/EmployeeContextTest.php
 tests/Unit/Core/Context/LegacyControllerContextBuilderTest.php
@@ -6143,6 +6149,7 @@ src/PrestaShopBundle/EventListener/Context/Admin/LegacyControllerContextListener
 src/PrestaShopBundle/EventListener/Context/Admin/CountryContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/CurrencyContextListener.php
 src/PrestaShopBundle/EventListener/Context/Admin/EmployeeContextListener.php
+src/PrestaShopBundle/EventListener/Context/Admin/LanguageContextListener.php
 src/PrestaShopBundle/EventListener/BackUrlRedirectResponseListener.php
 src/PrestaShopBundle/EventListener/DemoModeEnabledListener.php
 src/PrestaShopBundle/EventListener/ActionDispatcherLegacyHooksSubscriber.php
@@ -7676,12 +7683,14 @@ src/Core/Routing/Exception/BuilderNotFoundException.php
 src/Core/Routing/EntityLinkBuilderInterface.php
 src/Core/Routing/EntityLinkBuilderFactory.php
 src/Core/Context/Employee.php
+src/Core/Context/LanguageContext.php
 src/Core/Context/CurrencyContext.php
 src/Core/Context/CountryContextBuilder.php
 src/Core/Context/LegacyControllerContext.php
 src/Core/Context/EmployeeContextBuilder.php
 src/Core/Context/LegacyControllerContextBuilder.php
 src/Core/Context/EmployeeContext.php
+src/Core/Context/LanguageContextBuilder.php
 src/Core/Context/ShopContextBuilder.php
 src/Core/Context/LegacyContextBuilderInterface.php
 src/Core/Context/CountryContext.php
