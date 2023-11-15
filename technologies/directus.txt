@@ -193,11 +193,17 @@ packages/data/src/engine.ts
 packages/data/src/types/abstract-query.ts
 packages/data/src/types/index.ts
 packages/data/src/types/driver.ts
+packages/data/src/types/abstract-query/common/index.ts
+packages/data/src/types/abstract-query/common/nested/index.ts
+packages/data/src/types/abstract-query/common/nested/relational.ts
+packages/data/src/types/abstract-query/common/function.ts
+packages/data/src/types/abstract-query/common/function/index.ts
+packages/data/src/types/abstract-query/common/function/extract.ts
+packages/data/src/types/abstract-query/common/function/array.ts
+packages/data/src/types/abstract-query/common/primitive.ts
 packages/data/src/types/abstract-query/index.ts
 packages/data/src/types/abstract-query/fields/index.ts
 packages/data/src/types/abstract-query/fields/nested.ts
-packages/data/src/types/abstract-query/fields/nested/index.ts
-packages/data/src/types/abstract-query/fields/nested/relational.ts
 packages/data/src/types/abstract-query/fields/function.ts
 packages/data/src/types/abstract-query/fields/primitive.ts
 packages/data/src/types/abstract-query/modifiers.ts
@@ -218,6 +224,9 @@ packages/data/src/types/abstract-query/modifiers/offset.ts
 packages/data/src/types/abstract-query/modifiers/filters.ts
 packages/data/src/types/abstract-query/modifiers/index.ts
 packages/data/src/types/abstract-query/modifiers/sort.ts
+packages/data/src/types/abstract-query/modifiers/target/index.ts
+packages/data/src/types/abstract-query/modifiers/target/nested.ts
+packages/data/src/types/abstract-query/modifiers/target.ts
 packages/data/src/types/abstract-query/fields.ts
 packages/data/src/types/misc.ts
 packages/data/readme.md
@@ -2544,6 +2553,7 @@ docs/.vitepress/components/SnippetToggler.vue
 docs/.vitepress/components/Badge.vue
 docs/.vitepress/components/Feedback.vue
 docs/.vitepress/components/Avatar.vue
+docs/.vitepress/components/Newsletter.vue
 docs/.vitepress/components/home/Footer.vue
 docs/.vitepress/components/home/icons/Github.vue
 docs/.vitepress/components/home/icons/Discord.vue
@@ -3016,5 +3026,6 @@ contributors.yml
 .changeset/two-bees-lay.md
 .changeset/nice-bottles-flow.md
 .changeset/eleven-dingos-clap.md
+.changeset/dull-camels-fix.md
 .eslintignore
 .npmrc

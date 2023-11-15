@@ -1618,6 +1618,7 @@ src/Libraries/Nop.Core/IWorkContext.cs
 src/Libraries/Nop.Core/IWebHelper.cs
 src/Libraries/Nop.Core/Caching/ISynchronizedMemoryCache.cs
 src/Libraries/Nop.Core/Caching/SynchronizedMemoryCacheManager.cs
+src/Libraries/Nop.Core/Caching/ICacheKeyService.cs
 src/Libraries/Nop.Core/Caching/CacheKeyService.cs
 src/Libraries/Nop.Core/Caching/IStaticCacheManager.cs
 src/Libraries/Nop.Core/Caching/DistributedCacheLocker.cs
@@ -1625,7 +1626,9 @@ src/Libraries/Nop.Core/Caching/CachingExtensions.cs
 src/Libraries/Nop.Core/Caching/CacheKeyManager.cs
 src/Libraries/Nop.Core/Caching/MemoryCacheManager.cs
 src/Libraries/Nop.Core/Caching/DistributedCacheManager.cs
+src/Libraries/Nop.Core/Caching/PerRequestCacheManager.cs
 src/Libraries/Nop.Core/Caching/ICacheKeyManager.cs
+src/Libraries/Nop.Core/Caching/IShortTermCacheManager.cs
 src/Libraries/Nop.Core/Caching/NopEntityCacheDefaults.cs
 src/Libraries/Nop.Core/Caching/CacheKey.cs
 src/Libraries/Nop.Core/Caching/MemoryCacheLocker.cs
@@ -1653,6 +1656,7 @@ src/Libraries/Nop.Core/Infrastructure/Singleton.cs
 src/Libraries/Nop.Core/Infrastructure/NopInfrastructureDefaults.cs
 src/Libraries/Nop.Core/Infrastructure/ITypeFinder.cs
 src/Libraries/Nop.Core/Http/Extensions/SessionExtensions.cs
+src/Libraries/Nop.Core/Http/Extensions/HttpRequestExtensions.cs
 src/Libraries/Nop.Core/Http/NopHttpDefaults.cs
 src/Libraries/Nop.Core/Http/NopCookieDefaults.cs
 src/Libraries/Nop.Core/Rss/RssItem.cs

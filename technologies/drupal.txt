@@ -9554,7 +9554,7 @@ core/modules/field/migrations/d6_field_instance_widget_settings.yml
 core/modules/field/field.api.php
 core/modules/field/field.post_update.php
 core/modules/field/field.info.yml
-core/modules/field/tests/src/Traits/EntityReferenceTestTrait.php
+core/modules/field/tests/src/Traits/EntityReferenceFieldCreationTrait.php
 core/modules/field/tests/src/Kernel/Timestamp/TimestampFormatterTest.php
 core/modules/field/tests/src/Kernel/Timestamp/TimestampItemTest.php
 core/modules/field/tests/src/Kernel/FieldImportChangeTest.php
@@ -12252,6 +12252,7 @@ core/modules/config_translation/tests/src/Unit/ConfigMapperManagerTest.php
 core/modules/config_translation/tests/src/Unit/ConfigEntityMapperTest.php
 core/modules/config_translation/tests/src/Unit/ConfigNamesMapperTest.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationViewListUiTest.php
+core/modules/config_translation/tests/src/Functional/ConfigTranslationUiSiteInformationTest.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationInstallTest.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationUiModulesTest.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationCacheTest.php
@@ -12687,6 +12688,8 @@ core/modules/sdc/tests/modules/sdc_test/components/my-banner/my-banner.twig
 core/modules/sdc/tests/modules/sdc_test/components/my-button/my-button.js
 core/modules/sdc/tests/modules/sdc_test/components/my-button/my-button.twig
 core/modules/sdc/tests/modules/sdc_test/components/my-button/my-button.component.yml
+core/modules/sdc/tests/modules/sdc_test/components/no-props/no-props.component.yml
+core/modules/sdc/tests/modules/sdc_test/components/no-props/no-props.twig
 core/modules/sdc/tests/modules/sdc_test/components/array-to-object/array-to-object.component.yml
 core/modules/sdc/tests/modules/sdc_test/components/array-to-object/array-to-object.twig
 core/modules/sdc/tests/modules/sdc_test/src/Controller/ServerEndpointController.php
@@ -13164,6 +13167,7 @@ core/modules/menu_ui/tests/src/FunctionalJavascript/MenuUiJavascriptTest.php
 core/modules/menu_ui/tests/src/Functional/MenuUiLanguageTest.php
 core/modules/menu_ui/tests/src/Functional/MenuUiNodeTest.php
 core/modules/menu_ui/tests/src/Functional/MenuUiContentModerationTest.php
+core/modules/menu_ui/tests/src/Functional/MenuUiContentTranslationTest.php
 core/modules/menu_ui/tests/src/Functional/GenericTest.php
 core/modules/menu_ui/tests/src/Functional/MenuUninstallTest.php
 core/modules/menu_ui/tests/src/Functional/MenuCacheTagsTest.php
