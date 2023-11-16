@@ -1414,6 +1414,7 @@ tests/UI/campaigns/functional/FO/hummingbird/03_userAccount/01_editInformation.t
 tests/UI/campaigns/functional/API/01_basicTest.ts
 tests/UI/campaigns/functional/API/02_endpoints/01_apiAccess/01_getAPIApiAccessId.ts
 tests/UI/campaigns/functional/API/02_endpoints/04_hook/01_getAPIHookStatusId.ts
+tests/UI/campaigns/functional/API/02_endpoints/04_hook/02_getAPIHooksId.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/01_authorizationEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/02_externalAuthServer/02_resourceEndpoint.ts
 tests/UI/campaigns/functional/API/01_clientCredentialGrantFlow/01_internalAuthServer/01_authorizationEndpoint.ts
@@ -1501,7 +1502,9 @@ tests/UI/campaigns/functional/BO/13_shopParameters/05_contact/02_stores/01_filte
 tests/UI/campaigns/functional/BO/13_shopParameters/05_contact/02_stores/02_CRUDStores.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/maintenance/01_enableDisableShop.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/11_enableDisableMultistore.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/05_roundMode.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/10_enableDisableBestSellers.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/03_allowIframes.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/09_enableDisableBrands.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/01_general/general/08_enableDisableSuppliers.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/01_productsGeneral/02_newDaysNumber.ts
@@ -1527,9 +1530,9 @@ tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_product
 tests/UI/campaigns/functional/BO/13_shopParameters/03_productSettings/02_productPage/01_displayAvailableQuantities.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/02_tags/01_CRUDTag.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/02_tags/02_filterSortAndPagination.ts
-tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/01_editSearchSettings/03_fuzzySearch.ts
-tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/02_bulkActions.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/editSearchSettings/03_fuzzySearch.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/03_quickEditStatus.ts
+tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/02_filterSortPaginationAndBulkActions.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/07_search/01_search/01_CRUDSearch.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/06_trafficAndSeo/01_seoAndUrls/05_seoOptions/01_displayAttributesInProductMetaTitle.ts
 tests/UI/campaigns/functional/BO/13_shopParameters/06_trafficAndSeo/01_seoAndUrls/02_setUpUrls/03_enableDisableFriendlyURL.ts
@@ -3514,7 +3517,6 @@ tests/Integration/Classes/HookTest.php
 tests/Integration/Classes/CartRuleTest.php
 tests/Integration/Classes/db/DbTest.php
 tests/Integration/Classes/SQLUtilsTest.php
-tests/Integration/Classes/MediaTest.php
 tests/Integration/Classes/TabTest.php
 tests/Integration/Classes/ProductTest.php
 tests/Integration/Classes/CartTest.php

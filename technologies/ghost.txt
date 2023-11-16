@@ -1977,6 +1977,7 @@ ghost/core/package.json
 ghost/core/jsconfig.json
 ghost/core/test/regression/site/frontend.test.js
 ghost/core/test/regression/site/dynamic_routing.test.js
+ghost/core/test/regression/site/default-theme.test.js
 ghost/core/test/regression/mock-express-style/api-vs-frontend.test.js
 ghost/core/test/regression/mock-express-style/parent-app-vhosts.test.js
 ghost/core/test/regression/mock-express-style/utils/mock-express.js
@@ -4028,6 +4029,7 @@ ghost/offers/lib/domain/models/OfferTitle.js
 ghost/offers/lib/domain/models/OfferCode.js
 ghost/offers/lib/domain/models/OfferCadence.js
 ghost/offers/lib/domain/models/OfferStatus.js
+ghost/offers/lib/domain/models/OfferCreatedAt.js
 ghost/offers/lib/domain/events/OfferCodeChangeEvent.js
 ghost/offers/lib/domain/events/OfferCreatedEvent.js
 ghost/offers/index.js
@@ -4623,9 +4625,10 @@ apps/admin-x-settings/src/components/settings/growth/embedSignup/EmbedSignupPrev
 apps/admin-x-settings/src/components/settings/growth/embedSignup/EmbedSignupSidebar.tsx
 apps/admin-x-settings/src/components/settings/growth/embedSignup/EmbedSignupForm.tsx
 apps/admin-x-settings/src/components/settings/growth/TipsOrDonations.tsx
+apps/admin-x-settings/src/components/settings/growth/offers/OffersIndex.tsx
 apps/admin-x-settings/src/components/settings/growth/offers/AddOfferModal.tsx
 apps/admin-x-settings/src/components/settings/growth/offers/EditOfferModal.tsx
-apps/admin-x-settings/src/components/settings/growth/offers/OffersModal.tsx
+apps/admin-x-settings/src/components/settings/growth/offers/OffersContainerModal.tsx
 apps/admin-x-settings/src/components/settings/growth/offers/OfferSuccess.tsx
 apps/admin-x-settings/src/components/settings/growth/Offers.tsx
 apps/admin-x-settings/src/components/settings/growth/recommendations/EditRecommendationModal.tsx
@@ -4795,6 +4798,7 @@ apps/admin-x-design-system/src/assets/icons/close.svg
 apps/admin-x-design-system/src/assets/icons/layout-headline.svg
 apps/admin-x-design-system/src/assets/icons/arrow-bottom-right.svg
 apps/admin-x-design-system/src/assets/icons/user-add.svg
+apps/admin-x-design-system/src/assets/icons/tags-check.svg
 apps/admin-x-design-system/src/assets/icons/single-user-block.svg
 apps/admin-x-design-system/src/assets/icons/time-back.svg
 apps/admin-x-design-system/src/assets/icons/book-open.svg

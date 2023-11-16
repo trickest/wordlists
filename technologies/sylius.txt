@@ -166,6 +166,7 @@ tests/Api/Responses/Expected/admin/tax_rate/get_tax_rate_response.json
 tests/Api/Responses/Expected/admin/tax_rate/post_tax_rate_response.json
 tests/Api/Responses/Expected/admin/tax_rate/patch_tax_rate_response.json
 tests/Api/Responses/Expected/admin/product/put_product_response.json
+tests/Api/Responses/Expected/admin/product/post_product_when_locale_differs_from_key.json
 tests/Api/Responses/Expected/admin/product/post_product_with_invalid_translation_locale.json
 tests/Api/Responses/Expected/admin/product/get_product_response.json
 tests/Api/Responses/Expected/admin/product/post_product_response.json
@@ -3613,6 +3614,7 @@ src/Sylius/Bundle/ApiBundle/Exception/ProductCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ProductNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/NoRouteMatchesException.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveCurrentlyLoggedInUser.php
+src/Sylius/Bundle/ApiBundle/Exception/TranslationLocaleMismatchException.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderItemNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ZoneCannotBeRemoved.php
