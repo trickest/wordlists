@@ -185,6 +185,12 @@ tests/Api/Responses/Expected/admin/channel/get_channels_response.json
 tests/Api/Responses/Expected/admin/channel/post_channel_response.json
 tests/Api/Responses/Expected/admin/channel/get_channel_response.json
 tests/Api/Responses/Expected/admin/get_channel_pricing_log_entry_response.json
+tests/Api/Responses/Expected/admin/taxon_image/get_taxon_images_for_given_taxon_response.json
+tests/Api/Responses/Expected/admin/taxon_image/get_taxon_images_response.json
+tests/Api/Responses/Expected/admin/taxon_image/put_taxon_image_response.json
+tests/Api/Responses/Expected/admin/taxon_image/post_taxon_image_response.json
+tests/Api/Responses/Expected/admin/taxon_image/post_taxon_image_with_type_response.json
+tests/Api/Responses/Expected/admin/taxon_image/get_taxon_image_response.json
 tests/Api/Responses/Expected/admin/shipping_category/post_shipping_category_response.json
 tests/Api/Responses/Expected/admin/shipping_category/put_shipping_category_response.json
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_categories_response.json
@@ -382,6 +388,7 @@ tests/Api/DataFixtures/ORM/taxonomy.yaml
 tests/Api/DataFixtures/ORM/promotion.yaml
 tests/Api/DataFixtures/ORM/tax_category.yaml
 tests/Api/DataFixtures/ORM/tax_rates.yaml
+tests/Api/DataFixtures/ORM/taxon_image.yaml
 tests/Api/DataFixtures/ORM/channel.yaml
 tests/Api/DataFixtures/ORM/payment_method.yaml
 tests/Api/DataFixtures/ORM/shipping_category.yaml
@@ -399,6 +406,7 @@ tests/Api/Admin/ProductsTest.php
 tests/Api/Admin/ProductImagesTest.php
 tests/Api/Admin/OrdersTest.php
 tests/Api/Admin/ChannelPricingLogEntryTest.php
+tests/Api/Admin/TaxonImagesTest.php
 tests/Api/Admin/CustomersTest.php
 tests/Api/Admin/ProvincesTest.php
 tests/Api/Admin/CatalogPromotionsTest.php
@@ -3511,6 +3519,7 @@ src/Sylius/Bundle/ApiBundle/SerializerContextBuilder/LocaleContextBuilder.php
 src/Sylius/Bundle/ApiBundle/Controller/GetProductBySlugAction.php
 src/Sylius/Bundle/ApiBundle/Controller/UploadAvatarImageAction.php
 src/Sylius/Bundle/ApiBundle/Controller/DeleteOrderItemAction.php
+src/Sylius/Bundle/ApiBundle/Controller/UploadTaxonImageAction.php
 src/Sylius/Bundle/ApiBundle/Controller/Payment/GetPaymentConfiguration.php
 src/Sylius/Bundle/ApiBundle/Controller/RemoveCatalogPromotionAction.php
 src/Sylius/Bundle/ApiBundle/SectionResolver/ShopApiSection.php
@@ -3618,15 +3627,18 @@ src/Sylius/Bundle/ApiBundle/Exception/TranslationLocaleMismatchException.php
 src/Sylius/Bundle/ApiBundle/Exception/ShippingMethodCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderItemNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ZoneCannotBeRemoved.php
+src/Sylius/Bundle/ApiBundle/Exception/NoFileUploadedException.php
 src/Sylius/Bundle/ApiBundle/Exception/ProductVariantCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/ProductAttributeCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentMethodCannotBeChangedException.php
+src/Sylius/Bundle/ApiBundle/Exception/TaxonNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/PaymentNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/ProvinceCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveMenuTaxonException.php
 src/Sylius/Bundle/ApiBundle/Exception/ChannelCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/TranslationInDefaultLocaleCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
+src/Sylius/Bundle/ApiBundle/Exception/TaxonImageNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/InvalidProductAttributeValueTypeException.php
 src/Sylius/Bundle/ApiBundle/Exception/TaxonCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Resources/translations/validators.en.yaml
@@ -3659,6 +3671,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/services/filters.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/command_handlers.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/contexts.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/api_payment_methods.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/services/uploaders.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/validator.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/event_subscribers.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/resolver.xml
@@ -3691,6 +3704,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/Taxon.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/Promotion.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/Adjustment.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ContactRequest.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/TaxonImage.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ExchangeRate.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/TaxRate.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/api_resources/ShippingMethodTranslation.xml
@@ -3765,6 +3779,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Customer.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Taxon.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Promotion.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/Adjustment.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/serialization/TaxonImage.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/ExchangeRate.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/TaxRate.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/serialization/ShippingMethodTranslation.xml
@@ -3861,6 +3876,8 @@ src/Sylius/Bundle/ApiBundle/Filter/Doctrine/TaxonFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/Doctrine/ProductVariantCatalogPromotionFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/ShippingMethodFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/PaymentMethodFilter.php
+src/Sylius/Bundle/ApiBundle/Uploader/ImageUploaderInterface.php
+src/Sylius/Bundle/ApiBundle/Uploader/TaxonImageUploader.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductTaxonDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductVariantDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/TranslatableDataPersister.php
@@ -3982,6 +3999,7 @@ src/Sylius/Bundle/ApiBundle/spec/EventListener/ApiCartBlamerListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Filter/Doctrine/TaxonFilterSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Uploader/TaxonImageUploaderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ChannelDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/TranslatableDataPersisterSpec.php
@@ -4130,6 +4148,7 @@ src/Sylius/Bundle/CoreBundle/Doctrine/ORM/PromotionRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/CustomerRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/SqlWalker/OrderByIdentifierSqlWalker.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/ProductTaxonRepository.php
+src/Sylius/Bundle/CoreBundle/Doctrine/ORM/TaxonImageRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Month.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Hour.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Week.php
@@ -6953,6 +6972,7 @@ src/Sylius/Component/Core/Repository/OrderItemRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ShipmentRepositoryInterface.php
 src/Sylius/Component/Core/Repository/OrderItemUnitRepositoryInterface.php
 src/Sylius/Component/Core/Repository/CustomerRepositoryInterface.php
+src/Sylius/Component/Core/Repository/TaxonImageRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductTaxonRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductReviewRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductRepositoryInterface.php
@@ -7670,6 +7690,7 @@ src/Sylius/Behat/Context/Api/Admin/ManagingTaxRatesContext.php
 src/Sylius/Behat/Context/Api/Admin/BrowsingCatalogPromotionProductVariantsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingTaxonsContext.php
 src/Sylius/Behat/Context/Api/Admin/AjaxContext.php
+src/Sylius/Behat/Context/Api/Admin/ManagingTaxonImagesContext.php
 src/Sylius/Behat/Context/Cli/InstallerContext.php
 src/Sylius/Behat/Context/Cli/CancelUnpaidOrdersContext.php
 src/Sylius/Behat/Context/Cli/ShowingAvailablePluginsContext.php

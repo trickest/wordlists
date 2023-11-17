@@ -74,6 +74,7 @@ packages/js/product-editor/changelog/update-move-ces-to-product-editor
 packages/js/product-editor/changelog/add-37931
 packages/js/product-editor/changelog/fix-40845_single_variation_price_notice
 packages/js/product-editor/changelog/add-inventory-sku-block-37399
+packages/js/product-editor/changelog/update-generic-blocks-readme
 packages/js/product-editor/changelog/fix-39544_description_styling
 packages/js/product-editor/changelog/add-product-description-modal-more-menu
 packages/js/product-editor/changelog/add-welcome-guide
@@ -172,12 +173,14 @@ packages/js/product-editor/changelog/add-36991
 packages/js/product-editor/changelog/add-37663
 packages/js/product-editor/changelog/add-35148
 packages/js/product-editor/changelog/add-shipping-class-creation-37886
+packages/js/product-editor/changelog/update-41463_update_botton_description
 packages/js/product-editor/changelog/update-separate-php-and-js-tests
 packages/js/product-editor/changelog/add-inventory-advanced-37401
 packages/js/product-editor/changelog/update-product-section-icon-37711
 packages/js/product-editor/changelog/add-37249
 packages/js/product-editor/changelog/update-select_tree_dropdown
 packages/js/product-editor/changelog/fix-38242_editor_hidden_in_firefox
+packages/js/product-editor/changelog/fix-41451
 packages/js/product-editor/changelog/fix-tabs-reordering-38002
 packages/js/product-editor/changelog/fix-38502_ces_modal_styling_fixes
 packages/js/product-editor/changelog/fix-38244
@@ -867,6 +870,7 @@ packages/js/components/changelog/add-disable-conditions
 packages/js/components/changelog/fix-40205_show_one_help_text_when_user_clicks_button
 packages/js/components/changelog/dev-i18n-lint-rule-fixes
 packages/js/components/changelog/update-woocommerce-com-to-woo-com
+packages/js/components/changelog/41495-update-tree-select-control-accents
 packages/js/components/changelog/fix-41297_date_range_picker_and_ui
 packages/js/components/.eslintrc.js
 packages/js/components/webpack.config.js
@@ -1695,6 +1699,7 @@ packages/js/number/.npmrc
 packages/js/block-templates/tsconfig.json
 packages/js/block-templates/changelog/add-expose-block-id-and-order
 packages/js/block-templates/changelog/add-block-templates-dependencies
+packages/js/block-templates/changelog/fix-typo-slightly
 packages/js/block-templates/changelog/add-template-api-conditional-visibility
 packages/js/block-templates/changelog/update-separate-php-and-js-tests
 packages/js/block-templates/changelog/fix-focus-block
@@ -2674,6 +2679,7 @@ packages/js/api/changelog/upgrade-pnpm-7
 packages/js/api/changelog/dev-simplify-turbo
 packages/js/api/changelog/fix-typescript-incremental-builds
 packages/js/api/changelog/dev-bump-pnpm-version-restraint
+packages/js/api/changelog/41452-dev-fix-no-use-before-define-lint-violations
 packages/js/api/changelog/dev-consolidate-eslint-versions
 packages/js/api/changelog/update-jest
 packages/js/api/.eslintrc.js
@@ -3806,12 +3812,10 @@ plugins/woocommerce-admin/client/customize-store/design-with-ai/index.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/state-machine.tsx
 plugins/woocommerce-admin/client/customize-store/design-with-ai/actions.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/services.ts
-plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/lookAndTone.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/colorChoices.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/index.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/fontPairings.test.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/footer.test.ts
-plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/lookAndTone.test.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/header.test.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/homepageTemplate.test.ts
 plugins/woocommerce-admin/client/customize-store/design-with-ai/prompts/test/colorChoices.test.ts
@@ -4734,7 +4738,9 @@ plugins/woocommerce/changelog/fix-31146-extensions-page-undefined-property
 plugins/woocommerce/changelog/2023-11-03-18-30-05-950219
 plugins/woocommerce/changelog/update-stalebot-version
 plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
+plugins/woocommerce/changelog/41412-update-41378-write-unit-test-for-payment-suggestion-cache
 plugins/woocommerce/changelog/e2e-update-mini-cart-test
+plugins/woocommerce/changelog/add-new-ab-test-product-editor
 plugins/woocommerce/changelog/update-spacing-around-logo
 plugins/woocommerce/changelog/fix-40889-remove-orders-query-on-all-admin-pages
 plugins/woocommerce/changelog/fix-41097
@@ -4751,6 +4757,7 @@ plugins/woocommerce/changelog/update-woocommerce-blocks-11.4.3
 plugins/woocommerce/changelog/admin-print-scripts-defensive-coding
 plugins/woocommerce/changelog/fix-undefined-queryId-warning
 plugins/woocommerce/changelog/40705-add-store-id-to-wc-tracker-and-tracks
+plugins/woocommerce/changelog/remove-get-look-and-tone
 plugins/woocommerce/changelog/fix-thumbnail-size
 plugins/woocommerce/changelog/add-ai-survey
 plugins/woocommerce/changelog/add-40214
@@ -4784,6 +4791,8 @@ plugins/woocommerce/changelog/39598-add-order-received-validation-filter
 plugins/woocommerce/changelog/40289-fix-38932-fix-slow-low-in-stock-query
 plugins/woocommerce/changelog/update-logo-preview-size
 plugins/woocommerce/changelog/fix-34490
+plugins/woocommerce/changelog/stalebot-use-v8
+plugins/woocommerce/changelog/fix-41506
 plugins/woocommerce/changelog/41414-add-41396-cys-add-ai-disclaimer
 plugins/woocommerce/changelog/41103-fix-40822-cys-palette-not-restricted
 plugins/woocommerce/changelog/41399-fix-woo-notice-icon-position
@@ -4811,11 +4820,14 @@ plugins/woocommerce/changelog/41279-41231-cys-make-the-progress-bar-move-forward
 plugins/woocommerce/changelog/fix-cys-ui-nov-3
 plugins/woocommerce/changelog/add-wooexpress-rin-rule
 plugins/woocommerce/changelog/fix-34602-marketing-coupon-page-slides-overlap
+plugins/woocommerce/changelog/add-cys-modified-business-info-placeholder
 plugins/woocommerce/changelog/update-csv-export-escape-chars
+plugins/woocommerce/changelog/41452-dev-fix-no-use-before-define-lint-violations
 plugins/woocommerce/changelog/add-store-id-to-wc-tracker-and-tracks
 plugins/woocommerce/changelog/41181-rename-footer-pattern
 plugins/woocommerce/changelog/update-delete_unused_large_image
 plugins/woocommerce/changelog/add-wc_allow_changing_orders_storage_while_sync_is_pending-filter
+plugins/woocommerce/changelog/fix-cys-transnational-screen-preview
 plugins/woocommerce/changelog/fix-39489
 plugins/woocommerce/changelog/fix-pattern-route-performance
 plugins/woocommerce/changelog/41395-fix-undefined-wc_admin_register_page-in-marketplce
@@ -5663,6 +5675,7 @@ plugins/woocommerce/tests/php/src/Caching/CacheExceptionTest.php
 plugins/woocommerce/tests/php/src/Caching/WPCacheEngineTest.php
 plugins/woocommerce/tests/php/src/Admin/ProductBlockEditor/ProductTemplates/CustomProductFormTemplate.php
 plugins/woocommerce/tests/php/src/Admin/ProductBlockEditor/ProductTemplates/CustomProductFormTemplateTest.php
+plugins/woocommerce/tests/php/src/Admin/API/PaymentGatewaySuggestionsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignTypesTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingChannelsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignsTest.php
@@ -5680,6 +5693,7 @@ plugins/woocommerce/tests/unit-tests/admin/class-wc-tests-admin-post-types.php
 plugins/woocommerce/tests/unit-tests/widgets/class-wc-tests-widget-layered-nav.php
 plugins/woocommerce/tests/e2e-pw/tests/activate-and-setup/basic-setup.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/activate-and-setup/setup-onboarding.spec.js
+plugins/woocommerce/tests/e2e-pw/tests/admin-tasks/webhooks.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-tasks/payment.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/coupons.spec.js
 plugins/woocommerce/tests/e2e-pw/tests/admin-marketing/overview.spec.js
@@ -7470,6 +7484,7 @@ docs/README.md
 docs/security/readme.md
 docs/security/reporting-security-issues.md
 docs/security/security-best-practices.md
+docs/product-editor-development/product-editor-extensibility-guidelines.md
 docs/product-editor-development/block-template-lifecycle.md
 docs/product-editor-development/README.md
 renovate.json
