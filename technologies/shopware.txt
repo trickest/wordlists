@@ -1090,6 +1090,7 @@ changelog/_unreleased/2023-10-02-fix-export-advanced-price-with-rule-name.md
 changelog/_unreleased/2023-09-14-add-async-theme-compilation.md
 changelog/_unreleased/2023-10-12-disallow-direct-access-to-guest-account-login-page.md
 changelog/_unreleased/2023-10-09-update-admin-sdk.md
+changelog/_unreleased/2023-10-26-show-error-in-manifest.md
 changelog/_unreleased/2023-10-22-retry-product-keyword-dictionary-cleanup.md
 changelog/_unreleased/2023-11-07-fix-category-id-update-in-line-item.md
 changelog/_unreleased/2023-06-28-vue-3-feature-flag.md
@@ -1108,6 +1109,7 @@ changelog/_unreleased/2023-10-25-allow-idfield-to-be-nullable.md
 changelog/_unreleased/2023-10-30-deprecate-invalidthemeexception.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-10-23-fix-disappearing-orders-when-cancelling-admin-order-edit.md
+changelog/_unreleased/2023-11-13-changed-display-minimum-of-sorting-select-in-storefront.md
 changelog/_unreleased/2023-09-27-fix-null-value-issue-for-zipcode-column-in-database.md
 changelog/_unreleased/2023-10-31-fix-promotion-item-picking-mode.md
 changelog/_unreleased/2023-10-23-add-new-async-low-priority-queue.md
@@ -1116,11 +1118,13 @@ changelog/_unreleased/2023-09-14-fix-vue-meta-for-vue-3.md
 changelog/_unreleased/2023-09-27-add-schemas-and-tags.md
 changelog/_unreleased/2023-10-25-fixed-bug-grand-total-without-asterisk.md
 changelog/_unreleased/2023-09-08-make-cms-module-compatible-with-vue3.md
+changelog/_unreleased/2023-09-11-add-entity-index-to-state-machine-history.md
 changelog/_unreleased/2023-09-29-tag-api-aware.md
 changelog/_unreleased/2023-11-06-improved-error-handling-for-media-file-renamings-if-the-provided-name-is-too-long.md
 changelog/_unreleased/2023-10-13-fix-seo-url-criteria-for-category.md
 changelog/_unreleased/2023-10-09-fix-last-customer-payment-method-unavailable.md
 changelog/_unreleased/2023-10-16-fix-sorting-of-product-cross-sellings-with-dynamic-product-group-by-price.md
+changelog/_unreleased/2023-06-13-ensure-databags-convert-parameters-consistently.md
 changelog/_unreleased/2023-10-17-add-payment-and-shipping-method-technical_name.md
 changelog/_unreleased/2023-08-09-change-sw-boolean-radio-group-default-event.md
 changelog/_unreleased/2023-10-09-deprecate-loggerfactory.md
@@ -1129,7 +1133,6 @@ changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
 changelog/_unreleased/2023-10-30-introduce-entity-not-found-message.md
 changelog/_unreleased/2023-10-01-use-displayed-seo-url-template-value-for-validation-hints.md
 changelog/_unreleased/2023-10-26-allowed-data-url-and-data-ajax-modal-in-snippet-sanitization.md
-changelog/_unreleased/2023-12-12-extending-the-app-system-with-shipping-methods.md
 changelog/_unreleased/2023-08-09-change-sw-extension-select-rating-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-entity-many-to-many-select-default-event.md
 changelog/_unreleased/2023-10-27-updated-the-create-plugin-command.md
@@ -1138,8 +1141,10 @@ changelog/_unreleased/2023-10-12-deprecated-typo-in-image-gallery-config.md
 changelog/_unreleased/2023-10-27-add-option-to-define-socks-port-and-host.md
 changelog/_unreleased/2023-10-23-reworked-behavior-of-default-sorting-selection-in-sw-settings-listing.md
 changelog/_unreleased/2023-10-18-fix-that-multiple-instances-of-same-cms-element-from-app-sdk-are-not-working.md
+changelog/_unreleased/2023-10-12-extending-the-app-system-with-shipping-methods.md
 changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-default-event.md
 changelog/_unreleased/2023-10-30-fix-silencing-flow-errors-inside-transactions.md
+changelog/_unreleased/2023-09-16-sort-child-line-items-by-position.md
 changelog/_unreleased/2023-10-20-system-update-finish-message-on-cli.md
 changelog/_unreleased/2023-10-09-improve-elasticsearch-debugging.md
 changelog/_unreleased/2023-09-25-use-normal-kernel-system-update.md
@@ -1162,10 +1167,12 @@ changelog/_unreleased/2023-11-03-add-redirectparameters-to-confirmurl.md
 changelog/_unreleased/2023-08-10-change-sw-radio-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-select-field-default-event.md
 changelog/_unreleased/2023-11-07-set-default-when-route-target-does-not-exist.md
+changelog/_unreleased/2023-11-16-add-admin-request-tracing.md
 changelog/_unreleased/2023-11-06-add-esi-tags.md
 changelog/_unreleased/2023-10-31-add-twig-block-to-order-history-and-reformat-code.md
 changelog/_unreleased/2023-10-09-add-onlyliveversion-parameter-to-app-webhooks.md
 changelog/_unreleased/2023-08-09-change-sw-multi-select-default-event.md
+changelog/_unreleased/2023-11-10-deprecated-association-auto-loading-in-saleschanneldefinition.md
 changelog/_unreleased/2023-09-29-make-all-settings-module-vue3-compatible.md
 changelog/_unreleased/2023-10-09-fix-focus-issue-input-of-sw-mutil-tag-select.md
 changelog/_unreleased/2023-10-31-recalculation-with-live-version.md
@@ -1198,6 +1205,7 @@ changelog/_unreleased/2023-09-21-fix-missed-error-code-in-shopware-yaml.md
 changelog/_unreleased/2023-09-14-support-active-flag-and-maintenace-mode-in-store-api-routes..md
 changelog/_unreleased/2023-10-31-ensure-translatable-fields-are-nullable.md
 changelog/_unreleased/2023-11-02-add-soft-deletes-to-custom-entities.md
+changelog/_unreleased/2023-11-14-fix-new-version-deletion.md
 changelog/_unreleased/2023-10-19-add-sparkles-icons-and-new-twig-block.md
 changelog/_unreleased/2023-10-20-trigger-command-events-when-run-by-code.md
 changelog/_unreleased/2023-10-26-change-import-export-factory-exceptions.md
@@ -1213,9 +1221,11 @@ changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
 changelog/_unreleased/2023-10-16-domain-exceptions-in-elasticsearch-bundle.md
+changelog/_unreleased/2023-11-20-remove-tests-classes-from-services-xml.md
 changelog/_unreleased/2023-10-23-make-partial-entity-and-fields-public-api.md
 changelog/_unreleased/2023-11-01-fix-issues-with-new-languages-inherited-from-another-language-in-the-invoice-document.md
 changelog/_unreleased/2023-11-07-fix-media-delete-pagination.md
+changelog/_unreleased/2023-11-18-6-6-preparations.md
 changelog/_unreleased/2023-10-20-allow-tokenizer-overrides-when-using-elasticsearch.md
 changelog/_unreleased/2023-10-26-es-definition-buildtermquery-should-return-builderinterface.md
 changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
@@ -1223,8 +1233,10 @@ changelog/_unreleased/2023-11-02-fix-rule-caching-in-after-order.md
 changelog/_unreleased/2023-10-25-fix-no-order-confirm-is-sent-in-combination-with-an-invoice-document.md
 changelog/_unreleased/2023-08-09-change-sw-file-input-default-event.md
 changelog/_unreleased/2023-10-26-improved-installing-an-extension-will-activate-it.md
+changelog/_unreleased/2023-11-08-async-javascript-and-all-js-removal.md
 changelog/_unreleased/2023-11-08-customer-variables-in-e-mail-templates-do-not-work.md
 changelog/_unreleased/.keep
+changelog/_unreleased/2023-11-13-fix-loading-of-default-currency-on-product-bulk-edit.md
 changelog/_unreleased/2023-09-28-fix-smalle-issued-in-flow-builder.md
 changelog/_unreleased/2023-10-04-deprecated-shopware-core-checkout-cart-cartevents.md
 changelog/_unreleased/2023-11-02-customer-profile-cannot-cancelled-properly.md
@@ -1242,6 +1254,7 @@ changelog/_unreleased/2023-10-02-prevent-inserting-double-dot-into-an-url-in-mai
 changelog/_unreleased/2023-10-03-fix-generating-documents-very-slow-once-a-reasonable-number-of-documents-exists.md
 changelog/_unreleased/2023-10-22-show-non-arbitrary-product-search-index-info.md
 changelog/_unreleased/2023-08-09-change-default-event-of-sw-text-field.md
+changelog/_unreleased/2023-11-20-fix-payment-method-indexing.md
 changelog/_unreleased/2023-08-10-change-sw-promotion-v2-rule-select-default-event.md
 changelog/_unreleased/2023-09-22-vue3-fix-category-module.md
 changelog/_unreleased/2023-10-17-fix-symfony-flex-template-admin-build-and-watch.md
@@ -4030,6 +4043,15 @@ tests/unit/Storefront/Theme/fixtures/MockStorefront/Resources/app/storefront/dis
 tests/unit/Storefront/Theme/fixtures/MockStorefront/Resources/theme.json
 tests/unit/Storefront/Theme/fixtures/ThemeNotIncludingPluginJsAndCss/Resources/theme.json
 tests/unit/Storefront/Theme/fixtures/ThemeNotIncludingPluginJsAndCss/ThemeNotIncludingPluginJsAndCss.php
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/AsyncTest/AsyncTest.php
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/AsyncTest/Resources/app/storefront/dist/storefront/js/async-test/custom_plugins_AsyncTest_src_Resources_app_storefront_src_plugins_off-canvas-extension_js.js
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/AsyncTest/Resources/app/storefront/dist/storefront/js/async-test/async-test.js
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/AsyncTest/Resources/app/storefront/dist/storefront/js/async-test/custom_plugins_AsyncTest_src_Resources_app_storefront_src_plugins_external-lib_plugin_js.js
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/AsyncTest/Resources/app/storefront/dist/storefront/js/async-test/custom_plugins_AsyncTest_src_Resources_app_storefront_src_plugins_lorem-ipsum_plugin_js.js
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/NotFoundPlugin/NotFoundPlugin.php
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/TestTheme/TestTheme.php
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/TestTheme/Resources/app/storefront/dist/storefront/js/test-theme/test-theme.js
+tests/unit/Storefront/Theme/fixtures/ThemeAndPlugin/TestTheme/Resources/theme.json
 tests/unit/Storefront/Theme/fixtures/ThemeWithStorefrontBootstrapScss/Resources/app/storefront/src/scss/base.scss
 tests/unit/Storefront/Theme/fixtures/ThemeWithStorefrontBootstrapScss/Resources/app/storefront/src/scss/overrides.scss
 tests/unit/Storefront/Theme/fixtures/ThemeWithStorefrontBootstrapScss/Resources/app/storefront/dist/storefront/js/bootstrap-only-theme.js
@@ -4391,6 +4413,9 @@ tests/unit/Core/Framework/App/Exception/AppAlreadyInstalledExceptionTest.php
 tests/unit/Core/Framework/App/Command/_fixtures/create-app-project/.gitkeep
 tests/unit/Core/Framework/App/Command/CreateAppCommandTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppLoaderTest.php
+tests/unit/Core/Framework/App/Lifecycle/_fixtures/appDirValidationTest/ValidManifestApp/manifest.xml
+tests/unit/Core/Framework/App/Lifecycle/_fixtures/appDirValidationTest/InvalidManifestApp/manifest.xml
+tests/unit/Core/Framework/App/Lifecycle/_fixtures/invalidManifestApp/manifest.xml
 tests/unit/Core/Framework/App/Lifecycle/AppRegistrationServiceTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppLifecycleTest.php
 tests/unit/Core/Framework/App/Lifecycle/Persister/FlowEventPersisterTest.php
@@ -5276,6 +5301,7 @@ tests/migration/Core/V6_5/Migration1678197291ConvertVariantListingConfigTest.php
 tests/migration/Core/V6_5/Migration1668435503ChangeStornoDocumentTranslationNameTest.php
 tests/migration/Core/V6_5/Migration1661505878ChangeDefaultValueOfShippingMethodActiveFieldTest.php
 tests/migration/Core/V6_5/Migration1695778183UpdateStreetOfTableOrderAddressToNotNullTest.php
+tests/migration/Core/V6_5/Migration1694426018AddEntityIndexToStateMachineHistoryTest.php
 tests/migration/Core/V6_5/Migration1692254551FixMailTranslationTest.php
 tests/migration/Core/V6_5/Migration1678969082DropVariantListingFieldsTest.php
 tests/migration/Core/V6_5/Migration1655697288AppFlowEventTest.php
@@ -5672,7 +5698,12 @@ tests/integration/Core/Framework/Translation/Fixtures/theme/manifest.xml
 tests/integration/Core/Framework/Webhook/WebhookDispatcherTest.php
 tests/integration/Core/Framework/Webhook/Hookable/HookableEventFactoryTest.php
 tests/integration/Core/Framework/Webhook/WebhookApiTest.php
+tests/integration/Core/Framework/Plugin/_fixtures/archives/InvalidManifestShippingApp.zip
+tests/integration/Core/Framework/Plugin/_fixtures/archives/SwagFashionTheme.zip
+tests/integration/Core/Framework/Plugin/_fixtures/plugins/.gitkeep
+tests/integration/Core/Framework/Plugin/_fixtures/apps/.gitkeep
 tests/integration/Core/Framework/Plugin/Util/ZipUtilsTest.php
+tests/integration/Core/Framework/Plugin/PluginExtractorTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/RateLimiterFactoryTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/TimeBackoffLimiterTest.php
 tests/integration/Core/Framework/RateLimiter/RateLimiterTest.php
@@ -6667,6 +6698,7 @@ src/Storefront/Resources/app/storefront/test/plugin/captcha/google-re-captcha/go
 src/Storefront/Resources/app/storefront/test/plugin/captcha/basic-captcha.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/address-editor/address-editor.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/add-to-cart/add-to-cart.plugin.test.js
+src/Storefront/Resources/app/storefront/test/main.test.js
 src/Storefront/Resources/app/storefront/test/globalTeardown.js
 src/Storefront/Resources/app/storefront/test/utility/loading-indicator/loading-indicator.util.test.js
 src/Storefront/Resources/app/storefront/test/utility/loading-indicator/loading-inidicator-position.template.html
@@ -6798,6 +6830,7 @@ src/Storefront/Resources/app/storefront/src/utility/bootstrap/bootstrap.util.js
 src/Storefront/Resources/app/storefront/src/utility/timezone/timezone.util.js
 src/Storefront/Resources/app/storefront/src/utility/history/history.util.js
 src/Storefront/Resources/app/storefront/src/utility/modal-extension/pseudo-modal.util.js
+src/Storefront/Resources/app/storefront/src/main-async.js
 src/Storefront/Resources/app/storefront/src/scss/base.scss
 src/Storefront/Resources/app/storefront/src/scss/variables.scss
 src/Storefront/Resources/app/storefront/src/scss/base/_reboot.scss
@@ -7334,6 +7367,7 @@ src/Storefront/Resources/app/storefront/dist/assets/icon/solid/questionmark.svg
 src/Storefront/Resources/app/storefront/dist/assets/icon/solid/plus-large.svg
 src/Storefront/Resources/app/storefront/dist/assets/icon/solid/eye.svg
 src/Storefront/Resources/app/storefront/dist/assets/captcha/font.ttf
+src/Storefront/Resources/app/storefront/webpack.multi-compiler.config.js
 src/Storefront/Resources/app/storefront/lighthouse-puppeteer.js
 src/Storefront/Resources/app/storefront/.babelrc.js
 src/Storefront/Resources/app/storefront/createlighthouserc.js
@@ -7919,6 +7953,7 @@ src/Storefront/Theme/Exception/ThemeException.php
 src/Storefront/Theme/Exception/ThemeCompileException.php
 src/Storefront/Theme/ThemeDefinition.php
 src/Storefront/Theme/ThemeService.php
+src/Storefront/Theme/ThemeScripts.php
 src/Storefront/Theme/ThemeAssetPackage.php
 src/Storefront/Theme/ThemeFileImporter.php
 src/Storefront/Theme/Command/ThemeRefreshCommand.php
@@ -8890,6 +8925,7 @@ src/Core/Framework/Struct/Collection.php
 src/Core/Framework/Util/ArrayNormalizer.php
 src/Core/Framework/Util/VersionParser.php
 src/Core/Framework/Util/HtmlSanitizer.php
+src/Core/Framework/Util/Exception/UtilXmlParsingException.php
 src/Core/Framework/Util/MemorySizeCalculator.php
 src/Core/Framework/Util/FloatComparator.php
 src/Core/Framework/Util/Random.php
@@ -9305,6 +9341,7 @@ src/Core/Framework/App/Exception/AppAlreadyInstalledException.php
 src/Core/Framework/App/Exception/InvalidAppFlowActionVariableException.php
 src/Core/Framework/App/Exception/ActionProcessException.php
 src/Core/Framework/App/Exception/UserAbortedCommandException.php
+src/Core/Framework/App/Exception/AppXmlParsingException.php
 src/Core/Framework/App/Exception/CustomFieldTypeNotFoundException.php
 src/Core/Framework/App/Exception/AppValidationException.php
 src/Core/Framework/App/Exception/InvalidAppConfigurationException.php
@@ -10403,7 +10440,6 @@ src/Core/Framework/Test/Plugin/BundleConfigGeneratorTest.php
 src/Core/Framework/Test/Plugin/PluginTestsHelper.php
 src/Core/Framework/Test/Plugin/PluginZipDetectorTest.php
 src/Core/Framework/Test/Plugin/PluginManagementServiceTest.php
-src/Core/Framework/Test/Plugin/PluginExtractorTest.php
 src/Core/Framework/Test/Plugin/KernelPluginLoader/DbalKernelPluginLoaderTest.php
 src/Core/Framework/Test/Plugin/KernelPluginLoader/ComposerPluginLoaderTest.php
 src/Core/Framework/Test/Plugin/KernelPluginLoader/StaticKernelPluginLoaderTest.php
@@ -11000,7 +11036,6 @@ src/Core/Content/DependencyInjection/flow.xml
 src/Core/Content/DependencyInjection/property.xml
 src/Core/Content/DependencyInjection/product_export.xml
 src/Core/Content/DependencyInjection/rule.xml
-src/Core/Content/DependencyInjection/services_test.xml
 src/Core/Content/DependencyInjection/newsletter_recipient.xml
 src/Core/Content/DependencyInjection/media.xml
 src/Core/Content/DependencyInjection/sitemap.xml
@@ -12141,7 +12176,6 @@ src/Core/Checkout/DependencyInjection/order.xml
 src/Core/Checkout/DependencyInjection/document.xml
 src/Core/Checkout/DependencyInjection/cart.xml
 src/Core/Checkout/DependencyInjection/rule.xml
-src/Core/Checkout/DependencyInjection/services_test.xml
 src/Core/Checkout/DependencyInjection/CompilerPass/CartRedisCompilerPass.php
 src/Core/Checkout/DependencyInjection/shipping.xml
 src/Core/Checkout/DependencyInjection/payment.xml
@@ -12991,6 +13025,7 @@ src/Core/System/UsageData/Api/ConsentController.php
 src/Core/System/UsageData/Exception/ConsentAlreadyRevokedException.php
 src/Core/System/UsageData/Exception/ConsentAlreadyAcceptedException.php
 src/Core/System/UsageData/Exception/ConsentAlreadyRequestedException.php
+src/Core/System/UsageData/Exception/ShopIdChangedException.php
 src/Core/System/UsageData/Consent/ConsentService.php
 src/Core/System/UsageData/Consent/ConsentReporter.php
 src/Core/System/UsageData/Consent/ConsentState.php
@@ -13362,6 +13397,7 @@ src/Core/System/CustomEntity/Xml/Entity.php
 src/Core/System/CustomEntity/Xml/CustomEntityXmlSchema.php
 src/Core/System/CustomEntity/Xml/CustomEntityXmlSchemaValidator.php
 src/Core/System/CustomEntity/Api/CustomEntityApiController.php
+src/Core/System/CustomEntity/Exception/CustomEntityXmlParsingException.php
 src/Core/System/CustomEntity/Exception/CustomEntityNotFoundException.php
 src/Core/System/CustomEntity/Schema/DynamicTranslationEntityDefinition.php
 src/Core/System/CustomEntity/Schema/DynamicFieldFactory.php
@@ -13600,6 +13636,7 @@ src/Core/Migration/V6_5/Migration1692608216IncreaseAppConfigKeyColumnSize.php
 src/Core/Migration/V6_5/Migration1675323588ChangeEnglishLocaleTranslationOfUsLocale.php
 src/Core/Migration/V6_5/Migration1697792159FixOrderDeliveryAddressConstraint.php
 src/Core/Migration/V6_5/Migration1675082889DropUnusedTables.php
+src/Core/Migration/V6_5/Migration1694426018AddEntityIndexToStateMachineHistory.php
 src/Core/Migration/V6_5/Migration1697462064FixMediaPath.php
 src/Core/Migration/V6_5/Migration1678801126AddScheduledTaskDefaultRunIntervalColumn.php
 src/Core/Migration/V6_5/Migration1672931011ReviewFormMailTemplate.php

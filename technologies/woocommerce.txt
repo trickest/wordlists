@@ -7,6 +7,7 @@ changelog/e2e-update-locator-in-allows-customer-to-place-order-test
 packages/php/.gitkeep
 packages/js/product-editor/tsconfig.json
 packages/js/product-editor/changelog/fix-40202
+packages/js/product-editor/changelog/dev-40345_broken_variations_empty_state
 packages/js/product-editor/changelog/fix-39228
 packages/js/product-editor/changelog/add-expose-block-id-and-order
 packages/js/product-editor/changelog/add-product-editor-feedback-footer
@@ -55,6 +56,7 @@ packages/js/product-editor/changelog/fix-more-menu-width-38001
 packages/js/product-editor/changelog/update-40591_variation_switching_when_deleting
 packages/js/product-editor/changelog/add-39790
 packages/js/product-editor/changelog/fix-38021
+packages/js/product-editor/changelog/update-do-not-allow-selecting-text-in-paginator
 packages/js/product-editor/changelog/add-40211
 packages/js/product-editor/changelog/add-37930
 packages/js/product-editor/changelog/fix-38319
@@ -90,7 +92,9 @@ packages/js/product-editor/changelog/fix-variation_name
 packages/js/product-editor/changelog/add-39125
 packages/js/product-editor/changelog/update-39453_simple_to_variable_product
 packages/js/product-editor/changelog/dev-40206_update_selected_item_styling_dropdown
+packages/js/product-editor/changelog/41498-dev-make-lint-output-console
 packages/js/product-editor/changelog/fix-product-summary-field-margin
+packages/js/product-editor/changelog/fix-currency-wrap
 packages/js/product-editor/changelog/dev-40246_update_copy_in_variation_options_modal
 packages/js/product-editor/changelog/update-37312_product_editor_interpolate_components
 packages/js/product-editor/changelog/fix-38608
@@ -217,6 +221,7 @@ packages/js/product-editor/changelog/add-40592
 packages/js/product-editor/changelog/fix-40171
 packages/js/product-editor/changelog/add-39440
 packages/js/product-editor/changelog/add-40804
+packages/js/product-editor/changelog/update-product-editor-add-variation-pickup-help
 packages/js/product-editor/changelog/fix-39224_styles_attribute_list
 packages/js/product-editor/changelog/update-38043
 packages/js/product-editor/changelog/fix-40842_hide_header
@@ -240,6 +245,7 @@ packages/js/product-editor/changelog/fix-40166_redirect_to_edit_page_when_variat
 packages/js/product-editor/changelog/fix-39868_description_toolbar
 packages/js/product-editor/changelog/add-40591_variation_switching
 packages/js/product-editor/changelog/add-39890
+packages/js/product-editor/changelog/update-product-editor-tweak-summary-field
 packages/js/product-editor/changelog/update-product_rest_config
 packages/js/product-editor/changelog/fix-notices-overlapping-footer-2
 packages/js/product-editor/changelog/update-37244-37245
@@ -452,10 +458,6 @@ packages/js/product-editor/src/components/variations-table/variations-actions-me
 packages/js/product-editor/src/components/variations-table/variations-actions-menu/styles.scss
 packages/js/product-editor/src/components/variations-table/variations-actions-menu/types.ts
 packages/js/product-editor/src/components/variations-table/variations-table.tsx
-packages/js/product-editor/src/components/variations-table/table-empty-state/index.ts
-packages/js/product-editor/src/components/variations-table/table-empty-state/styles.scss
-packages/js/product-editor/src/components/variations-table/table-empty-state/table-empty-state.tsx
-packages/js/product-editor/src/components/variations-table/table-empty-state/types.ts
 packages/js/product-editor/src/components/variations-table/pagination/index.ts
 packages/js/product-editor/src/components/variations-table/pagination/styles.scss
 packages/js/product-editor/src/components/variations-table/pagination/pagination.tsx
@@ -471,6 +473,10 @@ packages/js/product-editor/src/components/variations-table/use-variations/use-va
 packages/js/product-editor/src/components/variations-table/use-variations/types.ts
 packages/js/product-editor/src/components/variations-table/set-list-price-menu-item/index.ts
 packages/js/product-editor/src/components/variations-table/set-list-price-menu-item/set-list-price-menu-item.tsx
+packages/js/product-editor/src/components/variations-table/table-empty-or-error-state/table-empty-or-error-state.tsx
+packages/js/product-editor/src/components/variations-table/table-empty-or-error-state/index.ts
+packages/js/product-editor/src/components/variations-table/table-empty-or-error-state/styles.scss
+packages/js/product-editor/src/components/variations-table/table-empty-or-error-state/types.ts
 packages/js/product-editor/src/components/variations-table/types.ts
 packages/js/product-editor/src/components/variations-table/visible-icon.tsx
 packages/js/product-editor/src/components/details-description-field/details-description-field.tsx
@@ -761,6 +767,7 @@ packages/js/product-editor/src/blocks/product-fields/summary/paragraph-rtl-contr
 packages/js/product-editor/src/blocks/product-fields/summary/paragraph-rtl-control/types.ts
 packages/js/product-editor/src/blocks/product-fields/summary/types.ts
 packages/js/product-editor/src/images/empty-variations-image.tsx
+packages/js/product-editor/src/images/error-variations-image.tsx
 packages/js/product-editor/src/contexts/post-type-context/index.ts
 packages/js/product-editor/src/contexts/validation-context/helpers.ts
 packages/js/product-editor/src/contexts/validation-context/use-validations.ts
@@ -823,6 +830,7 @@ packages/js/explat/changelog/update-changelogger
 packages/js/explat/changelog/fix-typescript-package-isolation
 packages/js/explat/changelog/.gitkeep
 packages/js/explat/changelog/fix-plugin-installer-ts
+packages/js/explat/changelog/41498-dev-make-lint-output-console
 packages/js/explat/changelog/dev-upgrade-ts-5
 packages/js/explat/changelog/dev-sync-pnpm
 packages/js/explat/changelog/dev-fix-admin-tests-pnpm7
@@ -858,6 +866,9 @@ packages/js/components/CHANGELOG.md
 packages/js/components/tsconfig.json
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/update-replace-dependency-on-jetpack-in-woo-services-task-list
+packages/js/components/changelog/41498-dev-make-lint-output-console
+packages/js/components/changelog/update-tweak-remove-href-li
+packages/js/components/changelog/41559-try-tree-select-control-search-parents-trunk
 packages/js/components/changelog/add-40214
 packages/js/components/changelog/41480-update-tree-select-control-enter-btn-trunk
 packages/js/components/changelog/fix-date-picker-popover-props
@@ -1405,6 +1416,8 @@ packages/js/components/.npmrc
 packages/js/expression-evaluation/CHANGELOG.md
 packages/js/expression-evaluation/tsconfig.json
 packages/js/expression-evaluation/changelog/add-expression-evaluation-package
+packages/js/expression-evaluation/changelog/41498-dev-make-lint-output-console
+packages/js/expression-evaluation/changelog/update-expressions-key-value-support
 packages/js/expression-evaluation/.eslintrc.js
 packages/js/expression-evaluation/package.json
 packages/js/expression-evaluation/src/parser.ts
@@ -1481,6 +1494,7 @@ packages/js/ai/changelog/dev-jest-pass-without-tests
 packages/js/ai/changelog/add-update-short-description-39151
 packages/js/ai/changelog/add-background-removal-feedback-39730
 packages/js/ai/changelog/update-completion-hooks-39009
+packages/js/ai/changelog/41498-dev-make-lint-output-console
 packages/js/ai/changelog/dev-upgrade-ts-5
 packages/js/ai/changelog/update-separate-php-and-js-tests
 packages/js/ai/changelog/dev-include-eslint-annotations
@@ -1603,6 +1617,7 @@ packages/js/csv-export/changelog/fix-typescript-package-isolation
 packages/js/csv-export/changelog/.gitkeep
 packages/js/csv-export/changelog/fix-plugin-installer-ts
 packages/js/csv-export/changelog/update-jest-merge
+packages/js/csv-export/changelog/41498-dev-make-lint-output-console
 packages/js/csv-export/changelog/dev-upgrade-ts-5
 packages/js/csv-export/changelog/dev-sync-pnpm
 packages/js/csv-export/changelog/dev-fix-admin-tests-pnpm7
@@ -1671,6 +1686,7 @@ packages/js/number/changelog/fix-typescript-package-isolation
 packages/js/number/changelog/.gitkeep
 packages/js/number/changelog/fix-plugin-installer-ts
 packages/js/number/changelog/update-jest-merge
+packages/js/number/changelog/41498-dev-make-lint-output-console
 packages/js/number/changelog/dev-upgrade-ts-5
 packages/js/number/changelog/dev-sync-pnpm
 packages/js/number/changelog/dev-fix-admin-tests-pnpm7
@@ -1700,6 +1716,7 @@ packages/js/block-templates/tsconfig.json
 packages/js/block-templates/changelog/add-expose-block-id-and-order
 packages/js/block-templates/changelog/add-block-templates-dependencies
 packages/js/block-templates/changelog/fix-typo-slightly
+packages/js/block-templates/changelog/41498-dev-make-lint-output-console
 packages/js/block-templates/changelog/add-template-api-conditional-visibility
 packages/js/block-templates/changelog/update-separate-php-and-js-tests
 packages/js/block-templates/changelog/fix-focus-block
@@ -1728,6 +1745,7 @@ packages/js/onboarding/CHANGELOG.md
 packages/js/onboarding/tsconfig.json
 packages/js/onboarding/changelog/fix-woocommerce-payments-to-woopayments
 packages/js/onboarding/changelog/.gitkeep
+packages/js/onboarding/changelog/41498-dev-make-lint-output-console
 packages/js/onboarding/changelog/dev-upgrade-ts-5
 packages/js/onboarding/changelog/dev-sync-pnpm
 packages/js/onboarding/changelog/fix-38947-geolocation-compare-issue
@@ -1828,6 +1846,7 @@ packages/js/onboarding/.npmrc
 packages/js/data/CHANGELOG.md
 packages/js/data/tsconfig.json
 packages/js/data/changelog/dev-adjust-sync
+packages/js/data/changelog/dev-40345_broken_variations_empty_state
 packages/js/data/changelog/fix-plugin-response
 packages/js/data/changelog/add-geolocation-api-call
 packages/js/data/changelog/add-36073-product-form-data-store
@@ -1861,6 +1880,7 @@ packages/js/data/changelog/add-35771
 packages/js/data/changelog/add-39125
 packages/js/data/changelog/update-39453_simple_to_variable_product
 packages/js/data/changelog/update-migrate-purchase-task-to-ts
+packages/js/data/changelog/41498-dev-make-lint-output-console
 packages/js/data/changelog/add-34063-store-location-skip-button
 packages/js/data/changelog/dev-add-resolve-select-types
 packages/js/data/changelog/dev-upgrade-ts-5
@@ -2198,6 +2218,7 @@ packages/js/data/.npmrc
 packages/js/dependency-extraction-webpack-plugin/assets/packages.js
 packages/js/dependency-extraction-webpack-plugin/CHANGELOG.md
 packages/js/dependency-extraction-webpack-plugin/changelog/.gitkeep
+packages/js/dependency-extraction-webpack-plugin/changelog/41498-dev-make-lint-output-console
 packages/js/dependency-extraction-webpack-plugin/.eslintrc.js
 packages/js/dependency-extraction-webpack-plugin/package.json
 packages/js/dependency-extraction-webpack-plugin/src/index.js
@@ -2224,6 +2245,7 @@ packages/js/customer-effort-score/changelog/update-jest-merge
 packages/js/customer-effort-score/changelog/add-38202
 packages/js/customer-effort-score/changelog/update-36327
 packages/js/customer-effort-score/changelog/add-35126_ces_exit_prompt
+packages/js/customer-effort-score/changelog/41498-dev-make-lint-output-console
 packages/js/customer-effort-score/changelog/dev-upgrade-ts-5
 packages/js/customer-effort-score/changelog/dev-sync-pnpm
 packages/js/customer-effort-score/changelog/dev-fix-admin-tests-pnpm7
@@ -2311,6 +2333,7 @@ packages/js/currency/changelog/fix-typescript-package-isolation
 packages/js/currency/changelog/.gitkeep
 packages/js/currency/changelog/fix-plugin-installer-ts
 packages/js/currency/changelog/update-jest-merge
+packages/js/currency/changelog/41498-dev-make-lint-output-console
 packages/js/currency/changelog/dev-upgrade-ts-5
 packages/js/currency/changelog/dev-sync-pnpm
 packages/js/currency/changelog/dev-fix-admin-tests-pnpm7
@@ -2377,6 +2400,7 @@ packages/js/admin-e2e-tests/changelog/fix-woocommerce-payments-to-woopayments
 packages/js/admin-e2e-tests/changelog/.gitkeep
 packages/js/admin-e2e-tests/changelog/fix-plugin-installer-ts
 packages/js/admin-e2e-tests/changelog/dev-enable-cot-local-environment
+packages/js/admin-e2e-tests/changelog/41498-dev-make-lint-output-console
 packages/js/admin-e2e-tests/changelog/dev-upgrade-ts-5
 packages/js/admin-e2e-tests/changelog/dev-sync-pnpm
 packages/js/admin-e2e-tests/changelog/remove-wcpay-accordion
@@ -2464,6 +2488,7 @@ packages/js/admin-e2e-tests/.npmrc
 packages/js/integrate-plugin/tsconfig.json
 packages/js/integrate-plugin/changelog/add-expose-block-id-and-order
 packages/js/integrate-plugin/changelog/add-40311_initial_migration_script
+packages/js/integrate-plugin/changelog/41498-dev-make-lint-output-console
 packages/js/integrate-plugin/changelog/update-separate-php-and-js-tests
 packages/js/integrate-plugin/changelog/41053-dev-remove-superfluous-test-scripts
 packages/js/integrate-plugin/.eslintrc.js
@@ -2496,6 +2521,7 @@ packages/js/experimental/changelog/.gitkeep
 packages/js/experimental/changelog/update-36805-support-direction-prop
 packages/js/experimental/changelog/fix-plugin-installer-ts
 packages/js/experimental/changelog/update-jest-merge
+packages/js/experimental/changelog/41498-dev-make-lint-output-console
 packages/js/experimental/changelog/dev-upgrade-ts-5
 packages/js/experimental/changelog/dev-sync-pnpm
 packages/js/experimental/changelog/dev-fix-admin-tests-pnpm7
@@ -2567,6 +2593,7 @@ packages/js/date/changelog/update-changelogger
 packages/js/date/changelog/fix-typescript-package-isolation
 packages/js/date/changelog/.gitkeep
 packages/js/date/changelog/fix-plugin-installer-ts
+packages/js/date/changelog/41498-dev-make-lint-output-console
 packages/js/date/changelog/dev-upgrade-ts-5
 packages/js/date/changelog/dev-sync-pnpm
 packages/js/date/changelog/dev-fix-admin-tests-pnpm7
@@ -2623,6 +2650,7 @@ packages/js/navigation/changelog/update-36723
 packages/js/navigation/changelog/.gitkeep
 packages/js/navigation/changelog/fix-plugin-installer-ts
 packages/js/navigation/changelog/fix-36205
+packages/js/navigation/changelog/41498-dev-make-lint-output-console
 packages/js/navigation/changelog/dev-upgrade-ts-5
 packages/js/navigation/changelog/dev-sync-pnpm
 packages/js/navigation/changelog/dev-fix-admin-tests-pnpm7
@@ -2664,6 +2692,7 @@ packages/js/api/changelog/fix-typescript-package-isolation
 packages/js/api/changelog/add-require-turbo
 packages/js/api/changelog/.gitkeep
 packages/js/api/changelog/fix-plugin-installer-ts
+packages/js/api/changelog/41498-dev-make-lint-output-console
 packages/js/api/changelog/dev-upgrade-ts-5
 packages/js/api/changelog/dev-sync-pnpm
 packages/js/api/changelog/fix-json-formatting
@@ -2789,6 +2818,7 @@ packages/js/api/README.md
 packages/js/api/.eslintignore
 packages/js/admin-layout/tsconfig.json
 packages/js/admin-layout/changelog/fix-typescript-package-isolation
+packages/js/admin-layout/changelog/41498-dev-make-lint-output-console
 packages/js/admin-layout/changelog/dev-upgrade-ts-5
 packages/js/admin-layout/changelog/update-webpack-invalid-export-error
 packages/js/admin-layout/changelog/update-layout-context-for-blocks
@@ -2984,6 +3014,7 @@ packages/js/tracks/changelog/update-changelogger
 packages/js/tracks/changelog/fix-typescript-package-isolation
 packages/js/tracks/changelog/.gitkeep
 packages/js/tracks/changelog/fix-plugin-installer-ts
+packages/js/tracks/changelog/41498-dev-make-lint-output-console
 packages/js/tracks/changelog/dev-upgrade-ts-5
 packages/js/tracks/changelog/dev-sync-pnpm
 packages/js/tracks/changelog/dev-update-pnpm-8.6.5
@@ -3261,6 +3292,9 @@ plugins/woocommerce-admin/client/wp-admin-scripts/product-tracking/product-new.t
 plugins/woocommerce-admin/client/wp-admin-scripts/product-tracking/utils.ts
 plugins/woocommerce-admin/client/wp-admin-scripts/onboarding-product-notice/index.js
 plugins/woocommerce-admin/client/wp-admin-scripts/variable-product-tour/index.tsx
+plugins/woocommerce-admin/client/wp-admin-scripts/shipping-settings-region-picker/region-picker.js
+plugins/woocommerce-admin/client/wp-admin-scripts/shipping-settings-region-picker/index.js
+plugins/woocommerce-admin/client/wp-admin-scripts/shipping-settings-region-picker/currency-context.js
 plugins/woocommerce-admin/client/wp-admin-scripts/onboarding-tax-notice/index.js
 plugins/woocommerce-admin/client/wp-admin-scripts/add-term-tracking/index.js
 plugins/woocommerce-admin/client/wp-admin-scripts/product-import-tracking/index.ts
@@ -4307,6 +4341,8 @@ plugins/woocommerce-beta-tester/assets/js/version-picker.min.js
 plugins/woocommerce-beta-tester/tsconfig.json
 plugins/woocommerce-beta-tester/.editorconfig
 plugins/woocommerce-beta-tester/changelog/.gitkeep
+plugins/woocommerce-beta-tester/changelog/update-tweak-remove-href-li
+plugins/woocommerce-beta-tester/changelog/dev-fix-option-search
 plugins/woocommerce-beta-tester/changelog/41513-prepare-beta-tester-2.3.0
 plugins/woocommerce-beta-tester/userscripts/wc-live-branches.user.js
 plugins/woocommerce-beta-tester/userscripts/README.md
@@ -4438,6 +4474,7 @@ plugins/woo-ai/.editorconfig
 plugins/woo-ai/woo-ai.php
 plugins/woo-ai/changelog/update-background-removal-elligibility-40917
 plugins/woo-ai/changelog/.gitkeep
+plugins/woo-ai/changelog/update-tweak-remove-href-li
 plugins/woo-ai/changelog/fix-webpack-build
 plugins/woo-ai/changelog/update-woocommerce-com-to-woo-com
 plugins/woo-ai/includes/class-woo-ai-product-text-generation.php
@@ -4585,6 +4622,7 @@ plugins/woocommerce/assets/images/icons/credit-cards/maestro.svg
 plugins/woocommerce/assets/images/icons/credit-cards/mastercard.svg
 plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg
 plugins/woocommerce/assets/images/icons/star-golden.svg
+plugins/woocommerce/assets/images/icons/move-icon.svg
 plugins/woocommerce/assets/images/icons/external-link.svg
 plugins/woocommerce/assets/images/icons/info.svg
 plugins/woocommerce/assets/images/icons/global-attributes-icon.svg
@@ -4713,8 +4751,10 @@ plugins/woocommerce/tsconfig.json
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/license.txt
 plugins/woocommerce/changelog/41182-fix-marketing-campaign-link
+plugins/woocommerce/changelog/update-add_group_return_type_codedoc
 plugins/woocommerce/changelog/fix-41149-cys-remove-scrollbar-iframe
 plugins/woocommerce/changelog/fix-feedback-button-appear-after-survey-completed
+plugins/woocommerce/changelog/40983-update-shipping-settings-feature-branch
 plugins/woocommerce/changelog/40839-hotfix-info-trailing-semi-colon
 plugins/woocommerce/changelog/41052-update-40840-customize-blank-issue-with-wp-6.4-followup
 plugins/woocommerce/changelog/perf-cys-iframe-loading
@@ -4727,6 +4767,8 @@ plugins/woocommerce/changelog/fix-daily-and-pr-tests
 plugins/woocommerce/changelog/41114-try-log-file-view
 plugins/woocommerce/changelog/fix-cys-initial-pattern-population
 plugins/woocommerce/changelog/fix-improve-e2e-stability
+plugins/woocommerce/changelog/add-35149
+plugins/woocommerce/changelog/41499-remove-marketing-codisto
 plugins/woocommerce/changelog/fix-38932-fix-slow-low-in-stock-query
 plugins/woocommerce/changelog/remove-guide-style
 plugins/woocommerce/changelog/.gitkeep
@@ -4740,8 +4782,10 @@ plugins/woocommerce/changelog/update-stalebot-version
 plugins/woocommerce/changelog/fix-cys-add-fullscreen-body-class
 plugins/woocommerce/changelog/41412-update-41378-write-unit-test-for-payment-suggestion-cache
 plugins/woocommerce/changelog/e2e-update-mini-cart-test
+plugins/woocommerce/changelog/update-tweak-remove-href-li
 plugins/woocommerce/changelog/add-new-ab-test-product-editor
 plugins/woocommerce/changelog/update-spacing-around-logo
+plugins/woocommerce/changelog/fix-currency-wrap
 plugins/woocommerce/changelog/fix-40889-remove-orders-query-on-all-admin-pages
 plugins/woocommerce/changelog/fix-41097
 plugins/woocommerce/changelog/add-40902-render-site-thumbnail
@@ -4750,14 +4794,18 @@ plugins/woocommerce/changelog/fix-39602
 plugins/woocommerce/changelog/fix-cys-navigation-disappear
 plugins/woocommerce/changelog/41201-fix-41197-log-file-bulk-fatal
 plugins/woocommerce/changelog/41109-enhance-update-patterns-list-for-the-assembler
+plugins/woocommerce/changelog/fix-41359
 plugins/woocommerce/changelog/tweak-template-internal
 plugins/woocommerce/changelog/add-shipping-task-envia-slug
 plugins/woocommerce/changelog/fix-failing-test-php8-wp64
+plugins/woocommerce/changelog/dev-41521_update_variations_message
+plugins/woocommerce/changelog/update-action-scheduler-3.7.0
 plugins/woocommerce/changelog/fix-39824
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.4.3
 plugins/woocommerce/changelog/admin-print-scripts-defensive-coding
 plugins/woocommerce/changelog/fix-undefined-queryId-warning
 plugins/woocommerce/changelog/40705-add-store-id-to-wc-tracker-and-tracks
+plugins/woocommerce/changelog/41341-add-store-id-to-telemetry-endpoint
 plugins/woocommerce/changelog/remove-get-look-and-tone
 plugins/woocommerce/changelog/fix-thumbnail-size
 plugins/woocommerce/changelog/add-ai-survey
@@ -4791,12 +4839,14 @@ plugins/woocommerce/changelog/add-cys-tracks
 plugins/woocommerce/changelog/39598-add-order-received-validation-filter
 plugins/woocommerce/changelog/40289-fix-38932-fix-slow-low-in-stock-query
 plugins/woocommerce/changelog/update-logo-preview-size
+plugins/woocommerce/changelog/improve-e2e-stability
+plugins/woocommerce/changelog/fix-41358-hardcoded-colors
 plugins/woocommerce/changelog/fix-34490
 plugins/woocommerce/changelog/stalebot-use-v8
-plugins/woocommerce/changelog/fix-41506
 plugins/woocommerce/changelog/41414-add-41396-cys-add-ai-disclaimer
 plugins/woocommerce/changelog/41103-fix-40822-cys-palette-not-restricted
 plugins/woocommerce/changelog/41399-fix-woo-notice-icon-position
+plugins/woocommerce/changelog/update-product-editor-add-variation-pickup-help
 plugins/woocommerce/changelog/tweak-cys-drag-to-resize-label-style
 plugins/woocommerce/changelog/api-fix-to-allow-execution-against-daily-site
 plugins/woocommerce/changelog/add-remove-cys-logo
@@ -4804,9 +4854,11 @@ plugins/woocommerce/changelog/41450-dev-fix-translator-comment-lint-rule
 plugins/woocommerce/changelog/add-40806
 plugins/woocommerce/changelog/fix-spotlight-caret
 plugins/woocommerce/changelog/update-preload-fonts-in-frame
+plugins/woocommerce/changelog/fix-41264
 plugins/woocommerce/changelog/remove-creative-mail
 plugins/woocommerce/changelog/fix-cys-ai-api
 plugins/woocommerce/changelog/fix-logo-wdith
+plugins/woocommerce/changelog/add-remove-email-marketing-experiment
 plugins/woocommerce/changelog/add-39890
 plugins/woocommerce/changelog/fix-cys-ui
 plugins/woocommerce/changelog/update-woocommerce-blocks-11.5.4
@@ -7422,6 +7474,7 @@ docs/reference-code/readme.md
 docs/tutorials/adding-actions-and-filters.md
 docs/tutorials/adding-a-custom-field-to-variable-products.md
 docs/tutorials/readme.md
+docs/theme-development/fixing-outdated-woocommerce-templates.md
 docs/theme-development/README.md
 docs/theme-development/theme-design-ux-guidelines.md
 docs/theme-development/marketplace-guidelines.md

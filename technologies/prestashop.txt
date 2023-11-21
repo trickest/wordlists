@@ -258,6 +258,7 @@ classes/lang/ProfileLang.php
 classes/lang/TabLang.php
 classes/lang/KeysReference/RiskLang.php
 classes/lang/KeysReference/CarrierLang.php
+classes/lang/KeysReference/AdminModuleActionsLang.php
 classes/lang/KeysReference/SupplyOrderStateLang.php
 classes/lang/KeysReference/ProfileLang.php
 classes/lang/KeysReference/TabLang.php
@@ -1270,6 +1271,7 @@ tests/UI/data/faker/hook.ts
 tests/UI/data/xml/store.ts
 tests/UI/data/xml/product.ts
 tests/UI/data/xml/country.ts
+tests/UI/data/xml/order.ts
 tests/UI/data/demo/hooks.ts
 tests/UI/data/demo/shoppingCarts.ts
 tests/UI/data/demo/states.ts
@@ -1336,8 +1338,9 @@ tests/UI/campaigns/sanity/06_checkoutFO/01_orderProduct.ts
 tests/UI/campaigns/sanity/04_catalogFO/02_checkProduct.ts
 tests/UI/campaigns/sanity/04_catalogFO/01_filterProducts.ts
 tests/UI/campaigns/functional/WS/01_countriesCRUD.ts
-tests/UI/campaigns/functional/WS/02_productsCRUD.ts
-tests/UI/campaigns/functional/WS/03_storesCRUD.ts
+tests/UI/campaigns/functional/WS/03_productsCRUD.ts
+tests/UI/campaigns/functional/WS/02_ordersCRUD.ts
+tests/UI/campaigns/functional/WS/04_storesCRUD.ts
 tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/02_sortAndFilter/02_filterProducts.ts
 tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/02_sortAndFilter/03_clearOneFilter.ts
 tests/UI/campaigns/functional/FO/classic/08_menuAndNavigation/02_sortAndFilter/01_sortProducts.ts
@@ -1777,6 +1780,7 @@ tests/UI/campaigns/functional/BO/04_customers/03_outstanding/05_sortFilterOutsta
 tests/UI/campaigns/functional/BO/04_customers/03_outstanding/02_viewOrder.ts
 tests/UI/campaigns/functional/BO/04_customers/03_outstanding/04_pagination.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/05_filterSortAndPaginationShopUrls.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/08_multistoreOptions.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/07_editUrlOptions.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/03_CRUDShops.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/10_multistore/04_filterSortAndPaginationShops.ts
@@ -1818,6 +1822,7 @@ tests/UI/campaigns/functional/BO/14_advancedParameters/04_email/03_sendTestEmail
 tests/UI/campaigns/functional/BO/14_advancedParameters/04_email/03_sortAndPagination.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/02_performance/02_debugMode.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/03_administration/01_general.ts
+tests/UI/campaigns/functional/BO/14_advancedParameters/03_administration/03_notifications.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/08_logs/02_logsByEmail.ts
 tests/UI/campaigns/functional/BO/14_advancedParameters/08_logs/01_filterSortAndPagination.ts
 tests/UI/campaigns/functional/BO/10_payment/02_preferences/04_carrierRestrictions.ts
@@ -2083,6 +2088,8 @@ tests/UI/webservices/baseWs.ts
 tests/UI/webservices/baseXml.ts
 tests/UI/webservices/store/storeWS.ts
 tests/UI/webservices/store/storeXml.ts
+tests/UI/webservices/order/orderXml.ts
+tests/UI/webservices/order/orderWs.ts
 tests/UI/tools/linkchecker.ts
 tests/UI/tools/urls.ts
 tests/UI/tools/stepIdentifiersChecker.ts

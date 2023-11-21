@@ -3638,7 +3638,6 @@ src/Sylius/Bundle/ApiBundle/Exception/CannotRemoveMenuTaxonException.php
 src/Sylius/Bundle/ApiBundle/Exception/ChannelCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/TranslationInDefaultLocaleCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Exception/OrderNoLongerEligibleForPromotion.php
-src/Sylius/Bundle/ApiBundle/Exception/TaxonImageNotFoundException.php
 src/Sylius/Bundle/ApiBundle/Exception/InvalidProductAttributeValueTypeException.php
 src/Sylius/Bundle/ApiBundle/Exception/TaxonCannotBeRemoved.php
 src/Sylius/Bundle/ApiBundle/Resources/translations/validators.en.yaml
@@ -3671,11 +3670,11 @@ src/Sylius/Bundle/ApiBundle/Resources/config/services/filters.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/command_handlers.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/contexts.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/api_payment_methods.xml
-src/Sylius/Bundle/ApiBundle/Resources/config/services/uploaders.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/validator.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/event_subscribers.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/resolver.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/data_providers.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/services/creators.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/event_handlers.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/applicators.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/services/context_builders.xml
@@ -3823,6 +3822,8 @@ src/Sylius/Bundle/ApiBundle/Context/TokenBasedUserContext.php
 src/Sylius/Bundle/ApiBundle/Context/UserContextInterface.php
 src/Sylius/Bundle/ApiBundle/Changer/PaymentMethodChanger.php
 src/Sylius/Bundle/ApiBundle/Changer/PaymentMethodChangerInterface.php
+src/Sylius/Bundle/ApiBundle/Creator/TaxonImageCreatorInterface.php
+src/Sylius/Bundle/ApiBundle/Creator/TaxonImageCreator.php
 src/Sylius/Bundle/ApiBundle/SyliusApiBundle.php
 src/Sylius/Bundle/ApiBundle/EventHandler/OrderCompletedHandler.php
 src/Sylius/Bundle/ApiBundle/composer.json
@@ -3876,8 +3877,6 @@ src/Sylius/Bundle/ApiBundle/Filter/Doctrine/TaxonFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/Doctrine/ProductVariantCatalogPromotionFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/ShippingMethodFilter.php
 src/Sylius/Bundle/ApiBundle/Filter/PaymentMethodFilter.php
-src/Sylius/Bundle/ApiBundle/Uploader/ImageUploaderInterface.php
-src/Sylius/Bundle/ApiBundle/Uploader/TaxonImageUploader.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductTaxonDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/ProductVariantDataPersister.php
 src/Sylius/Bundle/ApiBundle/DataPersister/TranslatableDataPersister.php
@@ -3995,11 +3994,11 @@ src/Sylius/Bundle/ApiBundle/spec/ApiPlatform/ResourceMetadataPropertyValueResolv
 src/Sylius/Bundle/ApiBundle/spec/Context/TokenBasedUserContextSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Context/TokenValueBasedCartContextSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Changer/PaymentMethodChangerSpec.php
+src/Sylius/Bundle/ApiBundle/spec/Creator/TaxonImageCreatorSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/ApiCartBlamerListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AdminAuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/EventListener/AuthenticationSuccessListenerSpec.php
 src/Sylius/Bundle/ApiBundle/spec/Filter/Doctrine/TaxonFilterSpec.php
-src/Sylius/Bundle/ApiBundle/spec/Uploader/TaxonImageUploaderSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/CountryDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/ChannelDataPersisterSpec.php
 src/Sylius/Bundle/ApiBundle/spec/DataPersister/TranslatableDataPersisterSpec.php
@@ -4148,7 +4147,6 @@ src/Sylius/Bundle/CoreBundle/Doctrine/ORM/PromotionRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/CustomerRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/SqlWalker/OrderByIdentifierSqlWalker.php
 src/Sylius/Bundle/CoreBundle/Doctrine/ORM/ProductTaxonRepository.php
-src/Sylius/Bundle/CoreBundle/Doctrine/ORM/TaxonImageRepository.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Month.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Hour.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Week.php
@@ -6972,7 +6970,6 @@ src/Sylius/Component/Core/Repository/OrderItemRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ShipmentRepositoryInterface.php
 src/Sylius/Component/Core/Repository/OrderItemUnitRepositoryInterface.php
 src/Sylius/Component/Core/Repository/CustomerRepositoryInterface.php
-src/Sylius/Component/Core/Repository/TaxonImageRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductTaxonRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductReviewRepositoryInterface.php
 src/Sylius/Component/Core/Repository/ProductRepositoryInterface.php
