@@ -834,6 +834,7 @@ app/assets/javascripts/app/controllers/time_accounting.coffee
 app/assets/javascripts/app/controllers/organization.coffee
 app/assets/javascripts/app/controllers/agent_ticket_create.coffee
 app/assets/javascripts/app/controllers/package.coffee
+app/assets/javascripts/app/controllers/ticket_state.coffee
 app/assets/javascripts/app/controllers/_dashboard/stats/ticket_reopen.coffee
 app/assets/javascripts/app/controllers/_dashboard/stats/ticket_in_process.coffee
 app/assets/javascripts/app/controllers/_dashboard/stats/ticket_channel_distribution.coffee
@@ -845,6 +846,7 @@ app/assets/javascripts/app/controllers/_dashboard/stats.coffee
 app/assets/javascripts/app/controllers/_dashboard/first_steps_clues.coffee
 app/assets/javascripts/app/controllers/_dashboard/activity_stream.coffee
 app/assets/javascripts/app/controllers/_dashboard/first_steps.coffee
+app/assets/javascripts/app/controllers/ticket_priority.coffee
 app/assets/javascripts/app/controllers/widget/mention.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_login/method.coffee
 app/assets/javascripts/app/controllers/widget/two_factor_login/method/recovery_codes.coffee
@@ -6364,7 +6366,9 @@ spec/system/setup/auto_wizard_spec.rb
 spec/system/user/history_spec.rb
 spec/system/user/profile_spec.rb
 spec/system/manage/overviews_spec.rb
+spec/system/manage/ticket_state_spec.rb
 spec/system/manage/report_profiles_spec.rb
+spec/system/manage/ticket_priority_spec.rb
 spec/system/manage/groups_spec.rb
 spec/system/manage/sla_spec.rb
 spec/system/manage/public_links_spec.rb

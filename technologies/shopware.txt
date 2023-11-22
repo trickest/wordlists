@@ -1110,6 +1110,7 @@ changelog/_unreleased/2023-10-30-deprecate-invalidthemeexception.md
 changelog/_unreleased/2023-08-10-change-sw-media-breadcrumbs-default-event.md
 changelog/_unreleased/2023-10-23-fix-disappearing-orders-when-cancelling-admin-order-edit.md
 changelog/_unreleased/2023-11-13-changed-display-minimum-of-sorting-select-in-storefront.md
+changelog/_unreleased/2023-11-20-fix-bug-cross-selling-in-combination-with-elasticsearch.md
 changelog/_unreleased/2023-09-27-fix-null-value-issue-for-zipcode-column-in-database.md
 changelog/_unreleased/2023-10-31-fix-promotion-item-picking-mode.md
 changelog/_unreleased/2023-10-23-add-new-async-low-priority-queue.md
@@ -1179,12 +1180,15 @@ changelog/_unreleased/2023-10-31-recalculation-with-live-version.md
 changelog/_unreleased/2023-09-25-change-display-product-properties-case.md
 changelog/_unreleased/2023-08-09-change-sw-radio-panel-default-event.md
 changelog/_unreleased/2023-10-26-update-return-type-of-getItems.md
+changelog/_unreleased/2023-09-27-fix-one-to-many-bulk-edit.md
 changelog/_unreleased/2023-09-26-limit-maximum-length-for-search-term.md
 changelog/_unreleased/2023-10-06-correct-namespace-of-abstractmediaurlgenerator.md
 changelog/_unreleased/2023-10-02-fix-snippets-only-consider-domain-snippet-set-id-when-set.md
 changelog/_unreleased/2023-10-16-update-bulk-edit-product.md
 changelog/_unreleased/2023-08-09-change-sw-meteor-single-select-default-event.md
 changelog/_unreleased/2023-09-05-data-collection-banner.md
+changelog/_unreleased/2023-11-16-added-new-create-migration-command.md
+changelog/_unreleased/2023-11-17-improve-customfieldsubscriber-performance.md
 changelog/_unreleased/2023-10-23-preparation-that-shipping-methods-no-longer-require-an-availability-rule-to-be-valid-as-of-version-6-6-0-0.md
 changelog/_unreleased/2023-09-16-fix-custom-icon-in-templates-with-restricted-variables.md
 changelog/_unreleased/2023-09-19-fix-media-module-for-vue-3.md
@@ -1207,6 +1211,7 @@ changelog/_unreleased/2023-10-31-ensure-translatable-fields-are-nullable.md
 changelog/_unreleased/2023-11-02-add-soft-deletes-to-custom-entities.md
 changelog/_unreleased/2023-11-14-fix-new-version-deletion.md
 changelog/_unreleased/2023-10-19-add-sparkles-icons-and-new-twig-block.md
+changelog/_unreleased/2023-11-08-undundle-storage-adapters.md
 changelog/_unreleased/2023-10-20-trigger-command-events-when-run-by-code.md
 changelog/_unreleased/2023-10-26-change-import-export-factory-exceptions.md
 changelog/_unreleased/2023-10-25-fixed-bug-getzipcode-return-value-must-be-string.md
@@ -4202,6 +4207,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/PriceDefinitionFi
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/IdFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/DateIntervalFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldSerializer/CronIntervalFieldSerializerTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/MigrationFileRendererTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/RemoteAddressFieldTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/CronIntervalFieldTest.php
@@ -4235,12 +4241,15 @@ tests/unit/Core/Framework/DataAbstractionLayer/Search/Aggregation/Metric/EntityA
 tests/unit/Core/Framework/DataAbstractionLayer/Search/RequestCriteriaBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCustomFieldsTraitTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/TechnicalNameExceptionHandlerTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Command/CreateMigrationCommandTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/VersionManagerTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/MigrationQueryGeneratorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/DataAbstractionLayerExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolverTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SqlHelperTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SchemaBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/Command/WriteTypeIntendExceptionTest.php
@@ -4472,7 +4481,10 @@ tests/unit/Core/Framework/Adapter/Database/MySQLFactoryTest.php
 tests/unit/Core/Framework/Adapter/Messenger/MessageBusTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorCacheInvalidateTest.php
+tests/unit/Core/Framework/Adapter/Filesystem/Adapter/GoogleStorageFactoryTest.php
+tests/unit/Core/Framework/Adapter/Filesystem/Adapter/LocalFactoryTest.php
 tests/unit/Core/Framework/Adapter/Filesystem/Adapter/AwsS3v3FactoryTest.php
+tests/unit/Core/Framework/Adapter/Filesystem/Adapter/fixtures/keyfile.json
 tests/unit/Core/Framework/Adapter/Asset/AssetInstallCommandTest.php
 tests/unit/Core/Framework/Adapter/Storage/MySQLKeyValueStorageTest.php
 tests/unit/Core/Framework/Adapter/Twig/Node/FeatureCallSilentTokenTest.php
@@ -5410,6 +5422,7 @@ tests/integration/Elasticsearch/Migration/Traits/ElasticsearchTriggerTraitTest.p
 tests/integration/Core/_snapshots/routes_without_schema.json
 tests/integration/Core/ApiRoutesHaveASchemaTest.php
 tests/integration/Core/Installer/Configuration/ShopConfigurationServiceTest.php
+tests/integration/Core/Framework/DataAbstractionLayer/Doctrine/Doctrine/MultiInsertQueryQueueTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Field/CalculatedPriceFieldTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Field/CustomFieldTranslationTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Field/JsonFieldTest.php
@@ -5426,6 +5439,7 @@ tests/integration/Core/Framework/DataAbstractionLayer/Dbal/EntityWriteGatewayTes
 tests/integration/Core/Framework/DataAbstractionLayer/Dbal/FieldResolver/ManyToOneAssociationFieldResolverTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
 tests/integration/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
+tests/integration/Core/Framework/MessageQueue/Subscriber/PluginLifecycleSubscriberTest.php
 tests/integration/Core/Framework/DependencyInjection/CompilerPass/TwigEnvironmentCompilerPassTest.php
 tests/integration/Core/Framework/DependencyInjection/CompilerPass/AutoconfigureCompilerPassTest.php
 tests/integration/Core/Framework/FeatureFlag/_fixture/featuretest_unregistered.html.twig
@@ -5703,6 +5717,7 @@ tests/integration/Core/Framework/Plugin/_fixtures/archives/SwagFashionTheme.zip
 tests/integration/Core/Framework/Plugin/_fixtures/plugins/.gitkeep
 tests/integration/Core/Framework/Plugin/_fixtures/apps/.gitkeep
 tests/integration/Core/Framework/Plugin/Util/ZipUtilsTest.php
+tests/integration/Core/Framework/Plugin/KernelPluginIntegrationTest.php
 tests/integration/Core/Framework/Plugin/PluginExtractorTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/RateLimiterFactoryTest.php
 tests/integration/Core/Framework/RateLimiter/Policy/TimeBackoffLimiterTest.php
@@ -8345,6 +8360,7 @@ src/Core/Framework/DataAbstractionLayer/EntityProtection/EntityProtection.php
 src/Core/Framework/DataAbstractionLayer/EntityProtection/EntityProtectionCollection.php
 src/Core/Framework/DataAbstractionLayer/EntityProtection/EntityProtectionValidator.php
 src/Core/Framework/DataAbstractionLayer/EntityProtection/ReadProtection.php
+src/Core/Framework/DataAbstractionLayer/stubs/migration.stub
 src/Core/Framework/DataAbstractionLayer/DataAbstractionLayerException.php
 src/Core/Framework/DataAbstractionLayer/VersionManager.php
 src/Core/Framework/DataAbstractionLayer/FieldType/DateInterval.php
@@ -8358,6 +8374,7 @@ src/Core/Framework/DataAbstractionLayer/Pricing/PriceRuleEntity.php
 src/Core/Framework/DataAbstractionLayer/FieldCollection.php
 src/Core/Framework/DataAbstractionLayer/TranslationEntity.php
 src/Core/Framework/DataAbstractionLayer/EntityTranslationDefinition.php
+src/Core/Framework/DataAbstractionLayer/MigrationQueryGenerator.php
 src/Core/Framework/DataAbstractionLayer/Cache/EntityCacheKeyGenerator.php
 src/Core/Framework/DataAbstractionLayer/Event/EntityLoadedEventFactory.php
 src/Core/Framework/DataAbstractionLayer/Event/EntityAggregationResultLoadedEvent.php
@@ -8616,6 +8633,7 @@ src/Core/Framework/DataAbstractionLayer/Search/Aggregation/Aggregation.php
 src/Core/Framework/DataAbstractionLayer/Search/EntityAggregatorInterface.php
 src/Core/Framework/DataAbstractionLayer/EntityExtension.php
 src/Core/Framework/DataAbstractionLayer/EntityRepository.php
+src/Core/Framework/DataAbstractionLayer/MigrationFileRenderer.php
 src/Core/Framework/DataAbstractionLayer/EntityDefinition.php
 src/Core/Framework/DataAbstractionLayer/Facade/RepositoryWriterFacadeHookFactory.php
 src/Core/Framework/DataAbstractionLayer/Facade/RepositoryFacade.php
@@ -8642,6 +8660,7 @@ src/Core/Framework/DataAbstractionLayer/Command/CreateSchemaCommand.php
 src/Core/Framework/DataAbstractionLayer/Command/RefreshIndexCommand.php
 src/Core/Framework/DataAbstractionLayer/Command/CreateEntitiesCommand.php
 src/Core/Framework/DataAbstractionLayer/Command/ConsoleProgressTrait.php
+src/Core/Framework/DataAbstractionLayer/Command/CreateMigrationCommand.php
 src/Core/Framework/DataAbstractionLayer/Read/EntityReaderInterface.php
 src/Core/Framework/DataAbstractionLayer/Entity.php
 src/Core/Framework/DataAbstractionLayer/FieldVisibility.php
@@ -8680,6 +8699,7 @@ src/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/DefaultFieldAc
 src/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/FieldAccessorBuilderInterface.php
 src/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/ConfigJsonFieldAccessorBuilder.php
 src/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/CustomFieldsAccessorBuilder.php
+src/Core/Framework/DataAbstractionLayer/Dbal/SchemaBuilder.php
 src/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolver.php
 src/Core/Framework/DataAbstractionLayer/Dbal/JoinGroup.php
 src/Core/Framework/DataAbstractionLayer/Dbal/EntityHydrator.php
@@ -9618,7 +9638,6 @@ src/Core/Framework/Adapter/Command/S3FilesystemVisibilityCommand.php
 src/Core/Framework/Adapter/Filesystem/Exception/DuplicateFilesystemFactoryException.php
 src/Core/Framework/Adapter/Filesystem/Exception/AdapterFactoryNotFoundException.php
 src/Core/Framework/Adapter/Filesystem/PrefixFilesystem.php
-src/Core/Framework/Adapter/Filesystem/Adapter/DecoratedAsyncS3Adapter.php
 src/Core/Framework/Adapter/Filesystem/Adapter/LocalFactory.php
 src/Core/Framework/Adapter/Filesystem/Adapter/AwsS3v3Factory.php
 src/Core/Framework/Adapter/Filesystem/Adapter/GoogleStorageFactory.php
@@ -9874,7 +9893,6 @@ src/Core/Framework/Plugin/KernelPluginLoader/KernelPluginLoader.php
 src/Core/Framework/Plugin/KernelPluginLoader/DbalKernelPluginLoader.php
 src/Core/Framework/Test/DataAbstractionLayer/DataAbstractionLayerValidateCommandTest.php
 src/Core/Framework/Test/DataAbstractionLayer/EntityExtensionTest.php
-src/Core/Framework/Test/DataAbstractionLayer/Doctrine/MultiInsertQueryQueueTest.php
 src/Core/Framework/Test/DataAbstractionLayer/EntityProtection/_fixtures/SystemConfigExtension.php
 src/Core/Framework/Test/DataAbstractionLayer/EntityProtection/_fixtures/UserAccessKeyExtension.php
 src/Core/Framework/Test/DataAbstractionLayer/EntityProtection/_fixtures/PluginProtectionExtension.php
@@ -10040,7 +10058,6 @@ src/Core/Framework/Test/MessageQueue/Api/ConsumeMessagesControllerTest.php
 src/Core/Framework/Test/MessageQueue/ScheduledTask/TaskRegistryTest.php
 src/Core/Framework/Test/MessageQueue/ScheduledTask/ScheduledTaskHandlerTest.php
 src/Core/Framework/Test/MessageQueue/ScheduledTask/RegisterScheduledTaskTest.php
-src/Core/Framework/Test/MessageQueue/Subscriber/PluginLifecycleSubscriberTest.php
 src/Core/Framework/Test/MessageQueue/Subscriber/UpdatePostFinishSubscriberTest.php
 src/Core/Framework/Test/MessageQueue/Subscriber/MessageQueueStatsSubscriberTest.php
 src/Core/Framework/Test/MessageQueue/fixtures/TestTask.php
@@ -10169,10 +10186,6 @@ src/Core/Framework/Test/Adapter/Cache/RedisConnectionFactoryTest.php
 src/Core/Framework/Test/Adapter/Cache/CacheInvalidationSubscriberTest.php
 src/Core/Framework/Test/Adapter/Filesystem/PrefixFilesystemTest.php
 src/Core/Framework/Test/Adapter/Filesystem/InMemoryFilesystemAdapterTest.php
-src/Core/Framework/Test/Adapter/Filesystem/Adapter/GoogleStorageFactoryTest.php
-src/Core/Framework/Test/Adapter/Filesystem/Adapter/LocalFactoryTest.php
-src/Core/Framework/Test/Adapter/Filesystem/Adapter/AwsFactoryTest.php
-src/Core/Framework/Test/Adapter/Filesystem/Adapter/fixtures/keyfile.json
 src/Core/Framework/Test/Adapter/Filesystem/FilesystemFactoryTest.php
 src/Core/Framework/Test/Adapter/Filesystem/Plugin/CopyBatchTest.php
 src/Core/Framework/Test/Adapter/Asset/AssetInstallCommandTest.php
@@ -10430,7 +10443,6 @@ src/Core/Framework/Test/Plugin/Requirement/_fixture/SwagRequirementValidSubpacka
 src/Core/Framework/Test/Plugin/Requirement/_fixture/SwagTestValidateConflictsValid/composer.json
 src/Core/Framework/Test/Plugin/Requirement/_fixture/SwagTestValidateConflictsWildcardIncompatibility/composer.json
 src/Core/Framework/Test/Plugin/Requirement/RequirementsValidatorTest.php
-src/Core/Framework/Test/Plugin/KernelPluginIntegrationTest.php
 src/Core/Framework/Test/Plugin/PluginFromFileSystemStructTest.php
 src/Core/Framework/Test/Plugin/_assertion/PluginListCommandTest-testCommand.txt
 src/Core/Framework/Test/Plugin/PluginLifecycleServiceMigrationTest.php
