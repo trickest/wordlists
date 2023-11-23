@@ -912,6 +912,7 @@ ghost/admin/app/utils/ghost-paths.js
 ghost/admin/app/utils/bound-one-way.js
 ghost/admin/app/utils/selection-list.js
 ghost/admin/app/utils/copy-text-to-clipboard.js
+ghost/admin/app/utils/sentry.js
 ghost/admin/app/utils/slug-url.js
 ghost/admin/app/utils/window-proxy.js
 ghost/admin/app/utils/shortcuts.js
@@ -962,6 +963,7 @@ ghost/admin/tests/unit/serializers/notification-test.js
 ghost/admin/tests/unit/validators/tag-settings-test.js
 ghost/admin/tests/unit/validators/nav-item-test.js
 ghost/admin/tests/unit/validators/post-test.js
+ghost/admin/tests/unit/utils/sentry-test.js
 ghost/admin/tests/unit/utils/ghost-paths-test.js
 ghost/admin/tests/helpers/members.js
 ghost/admin/tests/helpers/visit.js
@@ -1530,6 +1532,16 @@ ghost/event-aware-cache-wrapper/test/EventAwareCacheWrapper.test.js
 ghost/event-aware-cache-wrapper/lib/EventAwareCacheWrapper.js
 ghost/event-aware-cache-wrapper/index.js
 ghost/event-aware-cache-wrapper/README.md
+ghost/email-addresses/tsconfig.json
+ghost/email-addresses/.eslintrc.js
+ghost/email-addresses/package.json
+ghost/email-addresses/test/.eslintrc.js
+ghost/email-addresses/test/hello.test.ts
+ghost/email-addresses/src/index.ts
+ghost/email-addresses/src/EmailAddressParser.ts
+ghost/email-addresses/src/EmailAddressService.ts
+ghost/email-addresses/src/libraries.d.ts
+ghost/email-addresses/README.md
 ghost/job-manager/.eslintrc.js
 ghost/job-manager/package.json
 ghost/job-manager/test/examples/scheduled-one-off.js
@@ -2476,6 +2488,7 @@ ghost/core/test/integration/services/email-service/email-event-storage.test.js
 ghost/core/test/integration/services/email-service/__snapshots__/cards.test.js.snap
 ghost/core/test/integration/services/email-service/__snapshots__/batch-sending.test.js.snap
 ghost/core/test/integration/services/email-service/batch-sending.test.js
+ghost/core/test/integration/services/q-email-addresses.test.js
 ghost/core/test/integration/exporter/exporter.test.js
 ghost/core/test/integration/url_service.test.js
 ghost/core/test/integration/importer/legacy.test.js
@@ -2719,6 +2732,8 @@ ghost/core/core/server/overrides.js
 ghost/core/core/server/run-update-check.js
 ghost/core/core/server/services/invites/index.js
 ghost/core/core/server/services/invites/Invites.js
+ghost/core/core/server/services/email-address/EmailAddressServiceWrapper.js
+ghost/core/core/server/services/email-address/index.js
 ghost/core/core/server/services/lexical-multiplayer/index.js
 ghost/core/core/server/services/lexical-multiplayer/y-websocket.js
 ghost/core/core/server/services/lexical-multiplayer/service.js
@@ -4408,6 +4423,7 @@ apps/admin-x-framework/src/hooks/usePermissions.ts
 apps/admin-x-framework/src/hooks/useFilterableApi.ts
 apps/admin-x-framework/src/hooks/useForm.ts
 apps/admin-x-framework/src/hooks/useHandleError.ts
+apps/admin-x-framework/src/test/render.tsx
 apps/admin-x-framework/src/test/responses/offers.json
 apps/admin-x-framework/src/test/responses/incoming_recommendations.json
 apps/admin-x-framework/src/test/responses/newsletters.json
@@ -4582,6 +4598,7 @@ apps/admin-x-settings/test/utils/files/routes.yml
 apps/admin-x-settings/test/utils/files/redirects.yml
 apps/admin-x-settings/test/utils/files/pintura-umd.js
 apps/admin-x-settings/test/utils/responses/theme.zip
+apps/admin-x-settings/test/utils/acceptance.ts
 apps/admin-x-settings/index.html
 apps/admin-x-settings/src/App.tsx
 apps/admin-x-settings/src/components/SearchableSection.tsx
@@ -5024,6 +5041,7 @@ apps/admin-x-design-system/src/docs/assets/colors.svg
 apps/admin-x-design-system/src/docs/Colors.mdx
 apps/admin-x-design-system/src/docs/Welcome.mdx
 apps/admin-x-design-system/src/docs/Icons.mdx
+apps/admin-x-design-system/src/docs/Layout.mdx
 apps/admin-x-design-system/src/settings/SettingNavSection.tsx
 apps/admin-x-design-system/src/settings/SettingValue.stories.tsx
 apps/admin-x-design-system/src/settings/SettingNavItem.stories.tsx
@@ -5053,6 +5071,10 @@ apps/admin-x-design-system/tailwind.cjs
 apps/admin-x-demo/tsconfig.json
 apps/admin-x-demo/tailwind.config.cjs
 apps/admin-x-demo/package.json
+apps/admin-x-demo/test/unit/example.test.tsx
+apps/admin-x-demo/test/acceptance/example.test.ts
+apps/admin-x-demo/test/.eslintrc.cjs
+apps/admin-x-demo/index.html
 apps/admin-x-demo/src/App.tsx
 apps/admin-x-demo/src/components/modals.tsx
 apps/admin-x-demo/src/components/DemoModal.tsx
@@ -5060,7 +5082,9 @@ apps/admin-x-demo/src/MainContent.tsx
 apps/admin-x-demo/src/index.tsx
 apps/admin-x-demo/src/ListPage.tsx
 apps/admin-x-demo/src/DetailPage.tsx
+apps/admin-x-demo/src/standalone.tsx
 apps/admin-x-demo/vite.config.mjs
+apps/admin-x-demo/playwright.config.mjs
 apps/admin-x-demo/postcss.config.cjs
 apps/admin-x-demo/.eslintrc.cjs
 apps/admin-x-demo/.eslintignore

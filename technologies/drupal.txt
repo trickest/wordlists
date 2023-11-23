@@ -1,5 +1,8 @@
 .editorconfig
+.gitlab-ci/pipeline-test-only.yml
 .gitlab-ci/pipeline.yml
+.gitlab-ci/scripts/test-only.sh
+.gitlab-ci/scripts/server-setup.sh
 web.config
 .ht.router.php
 profiles/README.txt
@@ -2026,6 +2029,7 @@ core/tests/Drupal/KernelTests/FileSystemModuleDiscoveryDataProviderTrait.php
 core/tests/Drupal/KernelTests/RequestProcessing/RedirectOnExceptionTest.php
 core/tests/Drupal/KernelTests/AssertConfigTrait.php
 core/tests/Drupal/KernelTests/Config/DefaultConfigTest.php
+core/tests/Drupal/KernelTests/Config/Schema/MappingTest.php
 core/tests/Drupal/KernelTests/Config/TypedConfigTest.php
 core/tests/Drupal/KernelTests/ConfigFormTestBase.php
 core/tests/Drupal/KernelTests/Core/StreamWrapper/StreamWrapperManagerTest.php
@@ -8604,6 +8608,7 @@ core/modules/system/tests/modules/logger_aware_test/logger_aware_test.services.y
 core/modules/system/tests/modules/logger_aware_test/logger_aware_test.info.yml
 core/modules/system/tests/modules/ajax_forms_test/ajax_forms_test.module
 core/modules/system/tests/modules/ajax_forms_test/ajax_forms_test.info.yml
+core/modules/system/tests/modules/ajax_forms_test/src/Controller/DialogFormLink.php
 core/modules/system/tests/modules/ajax_forms_test/src/Form/AjaxFormsTestCommandsForm.php
 core/modules/system/tests/modules/ajax_forms_test/src/Form/AjaxFormsTestValidationForm.php
 core/modules/system/tests/modules/ajax_forms_test/src/Form/AjaxFormsTestLazyLoadForm.php
@@ -9592,6 +9597,7 @@ core/modules/field/field.api.php
 core/modules/field/field.post_update.php
 core/modules/field/field.info.yml
 core/modules/field/tests/src/Traits/EntityReferenceFieldCreationTrait.php
+core/modules/field/tests/src/Traits/EntityReferenceTestTrait.php
 core/modules/field/tests/src/Kernel/Timestamp/TimestampFormatterTest.php
 core/modules/field/tests/src/Kernel/Timestamp/TimestampItemTest.php
 core/modules/field/tests/src/Kernel/FieldImportChangeTest.php
@@ -12428,6 +12434,8 @@ core/modules/config/tests/config_collection_install_test/config/install/collecti
 core/modules/config/tests/config_collection_install_test/config/install/collection/test2/config_collection_install_test.test.yml
 core/modules/config/tests/config_collection_install_test/config/install/entity/config_test.dynamic.dotted.default.yml
 core/modules/config/tests/config_collection_install_test/config/schema/config_collection_install_test.schema.yml
+core/modules/config/tests/config_schema_add_fallback_type_test/config/schema/config_schema_add_fallback_type_test.schema.yml
+core/modules/config/tests/config_schema_add_fallback_type_test/config_schema_add_fallback_type_test.info.yml
 core/modules/config/tests/src/Traits/AssertConfigEntityImportTrait.php
 core/modules/config/tests/src/Kernel/ConfigUninstallViaCliImportTest.php
 core/modules/config/tests/src/FunctionalJavascript/ConfigExportTest.php

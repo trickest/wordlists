@@ -200,7 +200,11 @@ tests/Api/Responses/Expected/admin/shipping_category/post_shipping_category_resp
 tests/Api/Responses/Expected/admin/shipping_category/put_shipping_category_response.json
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_categories_response.json
 tests/Api/Responses/Expected/admin/shipping_category/get_shipping_category_response.json
+tests/Api/Responses/Expected/admin/order/get_billing_address_of_placed_order_response.json
 tests/Api/Responses/Expected/admin/order/get_order_response.json
+tests/Api/Responses/Expected/admin/order/put_billing_address_of_placed_order_response.json
+tests/Api/Responses/Expected/admin/order/put_shipping_address_of_placed_order_response.json
+tests/Api/Responses/Expected/admin/order/get_shipping_address_of_placed_order_response.json
 tests/Api/Responses/Expected/admin/order/gets_orders_for_customer_response.json
 tests/Api/Responses/Expected/admin/post_locale_response.json
 tests/Api/Responses/Expected/admin/currency/get_currency_response.json
@@ -373,8 +377,8 @@ tests/Api/Shop/ShippingMethodsTest.php
 tests/Api/Utils/ShopUserLoginTrait.php
 tests/Api/Utils/OrderPlacerTrait.php
 tests/Api/Utils/AdminUserLoginTrait.php
+tests/Api/Utils/HeadersBuilder.php
 tests/Api/Utils/UserLoginTrait.php
-tests/Api/Utils/ContentType.php
 tests/Api/DataFixtures/ORM/administrator.yaml
 tests/Api/DataFixtures/ORM/authentication/customer.yaml
 tests/Api/DataFixtures/ORM/authentication/api_administrator.yaml
@@ -395,6 +399,8 @@ tests/Api/DataFixtures/ORM/exchange_rate.yaml
 tests/Api/DataFixtures/ORM/catalog_promotion.yaml
 tests/Api/DataFixtures/ORM/shipping_method.yaml
 tests/Api/DataFixtures/ORM/taxonomy.yaml
+tests/Api/DataFixtures/ORM/order/order.yaml
+tests/Api/DataFixtures/ORM/order/customer.yaml
 tests/Api/DataFixtures/ORM/tax_category.yaml
 tests/Api/DataFixtures/ORM/tax_rates.yaml
 tests/Api/DataFixtures/ORM/taxon_image.yaml
@@ -7473,9 +7479,9 @@ src/Sylius/Behat/Resources/config/suites/ui/inventory/checkout_inventory.yml
 src/Sylius/Behat/Resources/config/suites/ui/inventory/displaying_inventory_on_edit_product_page.yml
 src/Sylius/Behat/Resources/config/suites/ui/inventory/cart_inventory.yml
 src/Sylius/Behat/Resources/config/suites/ui/inventory/managing_inventory.yml
+src/Sylius/Behat/Resources/config/suites/ui/order/modifying_placed_order_address.yaml
 src/Sylius/Behat/Resources/config/suites/ui/order/managing_orders.yml
 src/Sylius/Behat/Resources/config/suites/ui/order/order_history.yml
-src/Sylius/Behat/Resources/config/suites/ui/order/modifying_address.yml
 src/Sylius/Behat/Resources/config/suites/ui/addressing/managing_countries.yml
 src/Sylius/Behat/Resources/config/suites/ui/addressing/managing_zones.yml
 src/Sylius/Behat/Resources/config/suites/ui/currency/managing_currencies.yml
@@ -7533,6 +7539,7 @@ src/Sylius/Behat/Resources/config/suites/api/checkout/paying_for_order.yml
 src/Sylius/Behat/Resources/config/suites/api/contact/requesting_contact.yml
 src/Sylius/Behat/Resources/config/suites/api/inventory/cart_inventory.yml
 src/Sylius/Behat/Resources/config/suites/api/inventory/checkout_inventory.yaml
+src/Sylius/Behat/Resources/config/suites/api/order/modifying_placed_order_address.yaml
 src/Sylius/Behat/Resources/config/suites/api/order/managing_orders.yml
 src/Sylius/Behat/Resources/config/suites/api/addressing/managing_countries.yml
 src/Sylius/Behat/Resources/config/suites/api/addressing/managing_zones.yml
@@ -7707,6 +7714,7 @@ src/Sylius/Behat/Context/Api/Admin/CreatingProductVariantContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingChannelPriceHistoryConfigsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingAdministratorsContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingPromotionsContext.php
+src/Sylius/Behat/Context/Api/Admin/ManagingPlacedOrderAddressesContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingCustomerGroupsContext.php
 src/Sylius/Behat/Context/Api/Admin/RemovingProductContext.php
 src/Sylius/Behat/Context/Api/Admin/ManagingChannelsContext.php

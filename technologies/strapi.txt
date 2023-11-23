@@ -1347,8 +1347,6 @@ packages/core/admin/admin/src/content-manager/components/FieldTypeIcon/index.jsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/BlocksInput.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/BlocksContent.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/BlocksEditor.tsx
-packages/core/admin/admin/src/content-manager/components/BlocksInput/hooks/useModifiersStore.tsx
-packages/core/admin/admin/src/content-manager/components/BlocksInput/hooks/tests/useModifiersStore.test.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/Blocks/Image.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/Blocks/Link.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/Blocks/Code.tsx
@@ -1367,6 +1365,7 @@ packages/core/admin/admin/src/content-manager/components/BlocksInput/Blocks/List
 packages/core/admin/admin/src/content-manager/components/BlocksInput/plugins/withImages.ts
 packages/core/admin/admin/src/content-manager/components/BlocksInput/plugins/withLinks.ts
 packages/core/admin/admin/src/content-manager/components/BlocksInput/plugins/withStrapiSchema.ts
+packages/core/admin/admin/src/content-manager/components/BlocksInput/Modifiers.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/tests/BlocksInput.test.tsx
 packages/core/admin/admin/src/content-manager/components/BlocksInput/tests/mock-schema.ts
 packages/core/admin/admin/src/content-manager/components/BlocksInput/tests/BlocksToolbar.test.tsx
@@ -1659,7 +1658,6 @@ packages/core/admin/server/src/validation/transfer/index.ts
 packages/core/admin/server/src/validation/transfer/token.ts
 packages/core/admin/server/src/validation/user.ts
 packages/core/admin/server/src/validation/permission.ts
-packages/core/admin/server/src/tsconfig.build.json
 packages/core/admin/server/src/middlewares/rateLimit.ts
 packages/core/admin/server/src/middlewares/index.ts
 packages/core/admin/server/src/middlewares/data-transfer.ts
@@ -1786,7 +1784,6 @@ packages/core/admin/server/src/utils/index.d.ts
 packages/core/admin/server/.eslintrc
 packages/core/admin/LICENSE
 packages/core/admin/.npmignore
-packages/core/admin/ee/admin/tsconfig.build.json
 packages/core/admin/ee/admin/tsconfig.json
 packages/core/admin/ee/admin/custom.d.ts
 packages/core/admin/ee/admin/src/constants.ts
