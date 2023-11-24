@@ -1097,6 +1097,7 @@ changelog/_unreleased/2023-08-09-change-sw-price-field-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-extension-select-rating-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-entity-many-to-many-select-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-gtc-checkbox-default-event.md
+changelog/_unreleased/2023-11-16-add-sw-settings-search-tabs-after.md
 changelog/_unreleased/2023-10-23-reworked-behavior-of-default-sorting-selection-in-sw-settings-listing.md
 changelog/_unreleased/2023-08-10-change-sw-import-export-entity-path-select-default-event.md
 changelog/_unreleased/2023-09-16-sort-child-line-items-by-position.md
@@ -1120,6 +1121,7 @@ changelog/_unreleased/2023-09-27-fix-one-to-many-bulk-edit.md
 changelog/_unreleased/2023-08-09-change-sw-meteor-single-select-default-event.md
 changelog/_unreleased/2023-11-16-added-new-create-migration-command.md
 changelog/_unreleased/2023-11-17-improve-customfieldsubscriber-performance.md
+changelog/_unreleased/2023-03-21-add-contentpadding-prop-for-card-component.md
 changelog/_unreleased/2023-09-19-fix-media-module-for-vue-3.md
 changelog/_unreleased/2023-08-09-change-sw-bulk-edit-change-type-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-extension-rating-stars-default-event.md
@@ -1137,6 +1139,7 @@ changelog/_unreleased/2023-11-09-replace-sw-field-with-real-components.md
 changelog/_unreleased/2023-08-10-change-sw-media-library-default-event.md
 changelog/_unreleased/2023-08-10-change-sw-inherit-wrapper-default-event.md
 changelog/_unreleased/2023-08-09-change-sw-multi-tag-select-default-event.md
+changelog/_unreleased/2023-10-21-fix-promotion-used-logic.md
 changelog/_unreleased/2023-11-20-remove-tests-classes-from-services-xml.md
 changelog/_unreleased/2023-11-18-6-6-preparations.md
 changelog/_unreleased/2023-08-09-change-sw-select-number-field-default-event.md
@@ -1153,6 +1156,7 @@ changelog/_unreleased/2023-10-25-remove-es-scripts-from-cluster.md
 changelog/_unreleased/2023-08-09-change-default-event-of-sw-text-field.md
 changelog/_unreleased/2023-11-20-fix-payment-method-indexing.md
 changelog/_unreleased/2023-08-10-change-sw-promotion-v2-rule-select-default-event.md
+changelog/_unreleased/2023-06-16-replace-to-any-media.md
 changelog/release-6-4-16-1/2022-09-26-fix-invisible-context-menu-issue.md
 changelog/release-6-4-15-1/2022-09-20-fix-cli-updater.md
 changelog/release-6-4-6-1/2021-11-23-add-fix-for-webcache.md
@@ -4868,6 +4872,7 @@ tests/unit/Core/Checkout/Promotion/Cart/Discount/Calculator/DiscountAbsoluteCalc
 tests/unit/Core/Checkout/Promotion/Cart/Discount/ScopePackager/CartScopeDiscountPackagerTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
 tests/unit/Core/Checkout/Promotion/Api/PromotionActionControllerTest.php
+tests/unit/Core/Checkout/Promotion/Subscriber/PromotionIndividualCodeRedeemerTest.php
 tests/unit/Core/Checkout/Cart/Validator/RuleCollectionTest.php
 tests/unit/Core/Checkout/Cart/Validator/Container/NotRuleTest.php
 tests/unit/Core/Checkout/Cart/Validator/Container/XorRuleTest.php
@@ -5101,9 +5106,7 @@ tests/unit/Core/System/UsageData/Api/ConsentControllerTest.php
 tests/unit/Core/System/UsageData/Consent/ConsentServiceTest.php
 tests/unit/Core/System/UsageData/Consent/ConsentReporterTest.php
 tests/unit/Core/System/UsageData/ScheduledTask/CollectEntityDataTaskHandlerTest.php
-tests/unit/Core/System/UsageData/ScheduledTask/CheckIntegrationAppUrlChangedTaskHandlerTest.php
 tests/unit/Core/System/UsageData/ScheduledTask/CollectEntityDataTaskTest.php
-tests/unit/Core/System/UsageData/ScheduledTask/CheckIntegrationAppUrlChangedTaskTest.php
 tests/unit/Core/System/UsageData/Client/GatewayClientTest.php
 tests/unit/Core/System/UsageData/EntitySync/CollectEntityDataMessageHandlerTest.php
 tests/unit/Core/System/UsageData/EntitySync/DispatchEntityMessageTest.php
@@ -5113,7 +5116,6 @@ tests/unit/Core/System/UsageData/EntitySync/DispatchEntityMessageHandlerTest.php
 tests/unit/Core/System/UsageData/EntitySync/IterateEntityMessageHandlerTest.php
 tests/unit/Core/System/UsageData/EntitySync/EntityDispatcherTest.php
 tests/unit/Core/System/UsageData/EntitySync/IterateEntityMessageTest.php
-tests/unit/Core/System/UsageData/Services/IntegrationChangedServiceTest.php
 tests/unit/Core/System/UsageData/Services/UsageDataAllowListServiceTest.php
 tests/unit/Core/System/UsageData/Services/EntityDeletedEventHelperTest.php
 tests/unit/Core/System/UsageData/Services/ShopIdProviderTest.php
@@ -5306,6 +5308,7 @@ tests/migration/Core/V6_5/Migration1674704527UpdateVATPatternForCyprusCountryTes
 tests/migration/Core/V6_5/Migration1670854818RemoveEventActionTableTest.php
 tests/migration/Core/V6_5/Migration1681382023AddCustomFieldAllowCartExposeTest.php
 tests/migration/Core/V6_5/Migration1675082889DropUnusedTablesTest.php
+tests/migration/Core/V6_5/Migration1700558603RemoveDataIntegrationTest.php
 tests/migration/Core/V6_5/Migration1697462064FixMediaPathTest.php
 tests/migration/Core/V6_5/Migration1687462843ProductManufacturerMediaThumbnailsTest.php
 tests/migration/Core/V6_5/Migration1689257577AddMissingTransactionMailFlowTest.php
@@ -6061,7 +6064,6 @@ tests/integration/Core/System/UsageData/Controller/ConsentControllerTest.php
 tests/integration/Core/System/UsageData/Consent/ConsentServiceTest.php
 tests/integration/Core/System/UsageData/EntitySync/DispatchEntityMessageHandlerTest.php
 tests/integration/Core/System/UsageData/EntitySync/IterateEntityMessageHandlerTest.php
-tests/integration/Core/System/UsageData/Services/IntegrationChangedServiceTest.php
 tests/integration/Core/System/UsageData/Services/EntityDefinitionServiceTest.php
 tests/integration/Core/System/UsageData/Subscriber/EntityDeleteSubscriberTest.php
 tests/integration/Core/System/SalesChannel/SalesChannel/ContextSwitchRouteTest.php
@@ -13046,9 +13048,7 @@ src/Core/System/UsageData/Consent/ConsentService.php
 src/Core/System/UsageData/Consent/ConsentReporter.php
 src/Core/System/UsageData/Consent/ConsentState.php
 src/Core/System/UsageData/ScheduledTask/CollectEntityDataTaskHandler.php
-src/Core/System/UsageData/ScheduledTask/CheckIntegrationChangedTaskHandler.php
 src/Core/System/UsageData/ScheduledTask/CollectEntityDataTask.php
-src/Core/System/UsageData/ScheduledTask/CheckIntegrationChangedTask.php
 src/Core/System/UsageData/Client/GatewayClient.php
 src/Core/System/UsageData/EntitySync/DispatchEntityMessage.php
 src/Core/System/UsageData/EntitySync/IterateEntityMessage.php
@@ -13064,7 +13064,6 @@ src/Core/System/UsageData/Services/ManyToManyAssociationService.php
 src/Core/System/UsageData/Services/UsageDataAllowListService.php
 src/Core/System/UsageData/Services/GatewayStatusService.php
 src/Core/System/UsageData/Services/EntityDeleteEventHelper.php
-src/Core/System/UsageData/Services/IntegrationChangedService.php
 src/Core/System/UsageData/Services/EntityDispatchService.php
 src/Core/System/UsageData/Services/ShopIdProvider.php
 src/Core/System/UsageData/Services/EntityDefinitionService.php
@@ -13614,6 +13613,7 @@ src/Core/Migration/V6_5/Migration1669125399DropEnqueueTable.php
 src/Core/Migration/V6_5/Migration1674204177TaxProvider.php
 src/Core/Migration/V6_5/Migration1689856589AddVersioningForOrderTransactionCaptures.php
 src/Core/Migration/V6_5/Migration1667208731AddDefaultDeliveryTimeConfigSetting.php
+src/Core/Migration/V6_5/Migration1700558603RemoveDataIntegration.php
 src/Core/Migration/V6_5/Migration1688927492AddTaxActiveFromField.php
 src/Core/Migration/V6_5/Migration1673420896RemoveUndefinedSalutation.php
 src/Core/Migration/V6_5/Migration1666689977AddPluginIdToCustomEntity.php

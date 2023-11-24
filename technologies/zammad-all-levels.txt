@@ -1339,6 +1339,9 @@ migrate/20230825150332_issue_4657_time_accounting_selector.rb
 db/migrate/20221012075517_rename_max_tabs_setting.rb
 migrate/20221012075517_rename_max_tabs_setting.rb
 20221012075517_rename_max_tabs_setting.rb
+db/migrate/20231122123502_issue_4848_fix_overview_bulk_screen.rb
+migrate/20231122123502_issue_4848_fix_overview_bulk_screen.rb
+20231122123502_issue_4848_fix_overview_bulk_screen.rb
 db/migrate/20200205000001_chat_add_allow_website.rb
 migrate/20200205000001_chat_add_allow_website.rb
 20200205000001_chat_add_allow_website.rb
@@ -7520,14 +7523,6 @@ views/generic/admin/empty.jst.eco
 generic/admin/empty.jst.eco
 admin/empty.jst.eco
 empty.jst.eco
-app/assets/javascripts/app/views/generic/admin_level2/index.jst.eco
-assets/javascripts/app/views/generic/admin_level2/index.jst.eco
-javascripts/app/views/generic/admin_level2/index.jst.eco
-app/views/generic/admin_level2/index.jst.eco
-views/generic/admin_level2/index.jst.eco
-generic/admin_level2/index.jst.eco
-admin_level2/index.jst.eco
-index.jst.eco
 app/assets/javascripts/app/views/generic/application_selector_row.jst.eco
 assets/javascripts/app/views/generic/application_selector_row.jst.eco
 javascripts/app/views/generic/application_selector_row.jst.eco
@@ -37406,6 +37401,10 @@ spec/db/migrate/object_manager_update_user_password_spec.rb
 db/migrate/object_manager_update_user_password_spec.rb
 migrate/object_manager_update_user_password_spec.rb
 object_manager_update_user_password_spec.rb
+spec/db/migrate/issue_4848_fix_overview_bulk_screen_spec.rb
+db/migrate/issue_4848_fix_overview_bulk_screen_spec.rb
+migrate/issue_4848_fix_overview_bulk_screen_spec.rb
+issue_4848_fix_overview_bulk_screen_spec.rb
 spec/db/migrate/issue_3372_webhooks_admin_view_spec.rb
 db/migrate/issue_3372_webhooks_admin_view_spec.rb
 migrate/issue_3372_webhooks_admin_view_spec.rb

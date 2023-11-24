@@ -438,6 +438,7 @@ db/migrate/20221206124535_issue_4412_setting_saml_logout_url.rb
 db/migrate/20221031105713_issue_4316_template_options_migration.rb
 db/migrate/20230825150332_issue_4657_time_accounting_selector.rb
 db/migrate/20221012075517_rename_max_tabs_setting.rb
+db/migrate/20231122123502_issue_4848_fix_overview_bulk_screen.rb
 db/migrate/20200205000001_chat_add_allow_website.rb
 db/migrate/20210929161701_reload_after_core_workflow.rb
 db/migrate/20220707000001_template_migration.rb
@@ -1355,7 +1356,6 @@ app/assets/javascripts/app/views/channel/email_account_overview.jst.eco
 app/assets/javascripts/app/views/ticket_shared_draft_modal.jst.eco
 app/assets/javascripts/app/views/generic/admin/index.jst.eco
 app/assets/javascripts/app/views/generic/admin/empty.jst.eco
-app/assets/javascripts/app/views/generic/admin_level2/index.jst.eco
 app/assets/javascripts/app/views/generic/application_selector_row.jst.eco
 app/assets/javascripts/app/views/generic/object_import/index.jst.eco
 app/assets/javascripts/app/views/generic/object_import/imported.jst.eco
@@ -6923,6 +6923,7 @@ spec/db/migrate/issue_3446_microsoft_365_tenants_spec.rb
 spec/db/migrate/issue_2671_pending_till_can_be_changed_by_customer_spec.rb
 spec/db/migrate/issue_3622_add_callback_url_spec.rb
 spec/db/migrate/object_manager_update_user_password_spec.rb
+spec/db/migrate/issue_4848_fix_overview_bulk_screen_spec.rb
 spec/db/migrate/issue_3372_webhooks_admin_view_spec.rb
 spec/db/migrate/issue_1219_zhtw_locale_typo_spec.rb
 spec/db/migrate/add_object_attribute_relation_fields_belongs_to_value_spec.rb
