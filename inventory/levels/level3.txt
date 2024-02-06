@@ -21,10 +21,10 @@ staging
 link
 access
 vl-2
+ingress
 stg
 us-west-dev
 prod
-ingress
 ecomp
 us-east-2
 co
@@ -57,6 +57,7 @@ tw
 sa-api
 1
 server
+int
 uncover
 vespa
 enterprise
@@ -64,7 +65,6 @@ bo
 mtvnj
 tellus
 com
-int
 am
 m
 a
@@ -74,8 +74,8 @@ ww01
 grafana
 svc
 prometheus
-cdn
 app
+cdn
 us
 payments-proxy
 payments-api-http
@@ -433,6 +433,7 @@ service
 pulsar-console
 mas
 clients
+ci
 browser
 br01
 t4iprdusw2
@@ -447,7 +448,6 @@ mdt18b
 loadtest
 help
 gamma
-ci
 cc
 abunews
 abucommon
@@ -1392,6 +1392,7 @@ c022
 bucket
 broker6
 bna001
+blue
 bbs
 bbc
 auto-wiring
@@ -1516,7 +1517,6 @@ broker7
 broker11
 broker10
 bogus
-blue
 belfrage
 atm1
 artifactory
@@ -2683,6 +2683,7 @@ hec
 heapdumpchd
 growthprdusw2
 graylog-server-5
+graphql
 gl
 gatekeeper
 ga
@@ -3060,7 +3061,6 @@ gsni
 gslb
 green
 gray
-graphql
 gov-prod
 glix0x7a8954
 gig001
@@ -8374,6 +8374,7 @@ snd-report-cloudstation-eu-central-1
 snd-clawback-cloudstation-us-west-2
 snd-clawback-cloudstation-eu-west-1
 snd-clawback-cloudstation-eu-central-1
+snc
 snake
 sna001
 sna
@@ -8443,6 +8444,7 @@ siphon-metrics-production
 siphon-metrics-poc
 siphon-metrics-dev
 siphon-metrics
+simple-server
 sihw
 signing
 siemreap
@@ -8814,6 +8816,8 @@ rev2-prod-app02
 rev2-prod-app01
 rev2-prod-admin
 returncap-fe
+retrieval-browsing
+retrieval
 reth1-801
 reth0-902
 reth0-901
@@ -9138,6 +9142,7 @@ prod-primary-aks-scentralus-api-b
 prod-gradleadmin
 prod-gradle-cache
 prod-gradle
+prod-first-party-aks-scentralus-api-b
 prod-ext
 prod-engine-aks-eastus-output
 prod-cas
@@ -9500,6 +9505,7 @@ opa
 oob
 onyx-descent-315609
 ons
+onramp
 onlinebanking
 oneapi-qa
 oneacd3
@@ -10907,6 +10913,7 @@ griffon-project-atlas-dev
 grid-aws-dev
 grc
 graveyard
+graphql-explorer
 graphite-ssms
 graphite-sscm
 grapherator1
@@ -12379,6 +12386,7 @@ clm
 clinicalkey
 client110
 client1
+client-events
 clicktrack
 clemence
 cleanroom
@@ -12418,6 +12426,7 @@ checkmarx
 check
 che
 chat2
+chat-internal
 chassis-smoke-ms-cloudstation-us-west-2
 chassis-smoke-ms-cloudstation-eu-central-1
 chassis-smoke-ms-cloudhub-eu-west-1
@@ -13278,6 +13287,7 @@ admin3
 admin-smoke-test
 admin-qa
 admin-panel-service
+admin-internal
 admin-c95
 admin-c94
 admin-c93
@@ -13358,6 +13368,7 @@ accountodactylcache
 accounting-ar
 account-cdn
 accmgr
+access-manager-terraform-provider
 access-manager
 access-2
 acceso
@@ -25962,7 +25973,6 @@ snd-scheduler-cloudstation-us-east-2
 snd-scanner-cloudstation-us-east-2
 snd-report-cloudstation-us-east-2
 snd-clawback-cloudstation-us-east-2
-snc
 snbca1
 snat-out-01
 snapstream
@@ -26369,7 +26379,6 @@ simrcv-ibsdev
 simplestorage
 simpleprofile
 simple-survey-com
-simple-server
 simple-nginx-test-app
 simonova
 simonemagnocbn
@@ -31022,8 +31031,6 @@ returncap-eu
 returncap-cn
 return-2
 retrovirtualmachine
-retrieval-browsing
-retrieval
 retool-workflows-backend
 retool-code-executor
 reth6
@@ -34459,34 +34466,49 @@ prod-eu-west-1
 prod-eu-central-1
 prod-essential-space-01
 prod-engine-aks-westus3-b-api-c11
+prod-engine-aks-westus3-api-c48
 prod-engine-aks-westus3-api-c11
 prod-engine-aks-westus2-output
+prod-engine-aks-westus2-api-c63
+prod-engine-aks-westus2-api-c60
 prod-engine-aks-westus-api-c29
+prod-engine-aks-ukwest-api-c43
 prod-engine-aks-ukwest-api-c42
 prod-engine-aks-ukwest-api-c27
 prod-engine-aks-uksouth-api-c38
 prod-engine-aks-uksouth-api-c35
 prod-engine-aks-uksouth-api-c26
 prod-engine-aks-uksouth-api-c25
+prod-engine-aks-switzerlandwest-api-c55
+prod-engine-aks-switzerlandwest-api-c54
 prod-engine-aks-switzerlandnorth-api-c41
+prod-engine-aks-swedencentral-api-c61
+prod-engine-aks-swedencentral-api-c34
 prod-engine-aks-swedencentral-api-c33
 prod-engine-aks-swedencentral-api-c31
 prod-engine-aks-swedencentral-api-c30
+prod-engine-aks-southcentralus-api-c13b
 prod-engine-aks-southafricanorth-api-c22
 prod-engine-aks-southafricanorth-api-c17
 prod-engine-aks-scentralus-output
 prod-engine-aks-scentralus-c19-api-c13
 prod-engine-aks-scentralus-c13
 prod-engine-aks-polandcentral-api-c39
+prod-engine-aks-norwaywest-api-c52
 prod-engine-aks-norwayeast-api-c16
+prod-engine-aks-northcentralus-api-c45
 prod-engine-aks-northcentralus-api-c14
 prod-engine-aks-francecentral-api-c18
 prod-engine-aks-eastus2-output
+prod-engine-aks-eastus2-api-c46
 prod-engine-aks-eastus2-api-c21
 prod-engine-aks-eastus-c23-output
+prod-engine-aks-eastus-api-c44b
 prod-engine-aks-eastus-api-c20
 prod-engine-aks-eastus-api-c12
 prod-engine-aks-centralus-api-loan
+prod-engine-aks-centralus-api-c50
+prod-engine-aks-centralus-api-c45
 prod-engine-aks-centralus-api-c15
 prod-engine-aks-australiaeast-api-c28
 prod-e-node-alb-3113
@@ -37100,6 +37122,7 @@ pageone
 pageauth-ns
 page1233nldev
 page-auctions
+pag
 padofvoaernoqnds-qeronqoasdncrn-qeronqoenqoan
 padmini
 padlock-stpg-personal-spa-06e4aaaa-42b6-4663-ade2-749993ae232d
@@ -38143,7 +38166,6 @@ onyx-mh-analytics
 onyx
 ontology-api
 ontario
-onramp
 onprem1
 onprem-wip3
 onprem-foreman-uncover
@@ -38529,6 +38551,7 @@ obbdownload
 obamaharumi
 ob30
 oauthi
+oauth2-proxy
 oauth2
 oauth-adobe
 oatlike-omentofixation-overapprehensive
@@ -58521,6 +58544,7 @@ infra08
 infra04
 infra-tsse
 infra-mgr
+infra-grafana
 infra-ci
 infp-feature-cache-sandbox
 infostrates3mailgwwww
@@ -62648,7 +62672,6 @@ graphql73
 graphql11
 graphql-prd
 graphql-ingress
-graphql-explorer
 graphql-9-9
 graphql-7-6
 graphql-5-4
@@ -66033,6 +66056,7 @@ evan1052hatserver
 evaluation-reports
 evaluation
 evaluate
+evalboard
 ev-relay-hw1111
 ev-master
 euwest-schain-isp-1-2234
@@ -77703,7 +77727,6 @@ client128
 client104
 client-www
 client-insight-service-practice
-client-events
 client-dl-packetstream-io
 client-copy
 client-alpha
@@ -78230,7 +78253,6 @@ chaterotice
 chatapi-ot
 chatapi-co
 chatapi-at
-chat-internal
 chat-gateway391-prod
 chat-gateway247-prod
 chat-gateway244-prod
@@ -88921,6 +88943,8 @@ ager-dentatocillitate-polyciliate
 agentwatson
 agentingshiyusaimingdan
 agenthelp
+agentchat-api
+agentchat
 agentbuddy-qbo
 agentbuddy-oldprod
 agentbuddy-dev
@@ -89338,7 +89362,6 @@ admin-plfmdev
 admin-medical
 admin-leaguetv
 admin-intpoc
-admin-internal
 admin-hv9
 admin-hv6
 admin-hv12
