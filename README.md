@@ -44,7 +44,7 @@ A [Trickest](https://trickest.com) workflow clones the repositories in [technolo
 ![Trickest Workflow](images/technologies.png "Trickest Workflow - wordlists/technolgies")
 
 ### Robots
-Another [Trickest](https://trickest.com) workflow gets the top 100, 1000, and 1000 websites from [Domcop's Open PageRank dataset](https://www.domcop.com/top-10-million-websites), uses [meg](https://github.com/tomnomnom/meg) to fetch their `robots.txt` files (Thanks, [@tomnomnom](https://github.com/tomnomnom)!), removes irrelevant entries, cleans up the paths, and pushes the wordlists to this repository.
+Another [Trickest](https://trickest.com) workflow gets the top 100, 1000, and 10000 websites from [Domcop's Open PageRank dataset](https://www.domcop.com/top-10-million-websites), uses [meg](https://github.com/tomnomnom/meg) to fetch their `robots.txt` files (Thanks, [@tomnomnom](https://github.com/tomnomnom)!), removes irrelevant entries, cleans up the paths, and pushes the wordlists to this repository.
 ![Trickest Workflow](images/robots.png "Trickest Workflow - wordlists/robots")
 
 ## Contribution
