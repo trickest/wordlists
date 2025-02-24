@@ -2465,6 +2465,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /admin-ajax.php
 /admin/
 /ads/
+/adult
 /aeglodetailweb/api/msite/item?productId*
 /affiliate_amazon.cms*
 /affiliates_content*
@@ -2472,8 +2473,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /affiliates_content_iframe*
 /affiliates_content_iframe.cms*
 /affiliates_library*
-/agent-directory/search?
-/agent-directory/standalone
+/agent-templates/search?
+/agent-templates/standalone
 /ai-search
 /aisearch
 /ajax
@@ -4344,6 +4345,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?location=
 ?ls=
 ?lx
+?maca=
 ?mark=google_shopping
 ?maspect
 ?mediaId=
@@ -4684,7 +4686,6 @@ AddListing
 AddToList
 AddToRegistry
 Admin
-Admin/
 Administration/
 AdsManager
 AdsTest
@@ -5084,7 +5085,6 @@ INSTALL.sqlite.txt
 INSTALL.txt
 IgnoreMe
 Image/DetailPrint
-Images/
 ImpressionRecord
 ImproveListing
 Inbox
@@ -5141,7 +5141,6 @@ MAPS
 MUST
 MaPS
 MachineTranslation
-Mail/
 MailEmergency
 Manage/
 ManageListing
@@ -5513,7 +5512,6 @@ ProductCart
 ProductComparisonCmd
 ProductDetailsTabView
 ProductError
-Production/
 Profile
 Project
 PromoTools
@@ -5645,7 +5643,6 @@ RestaurantSearch
 RestaurantSolutions
 RestaurantXSellAjax
 Resubscribe
-Review/
 Review/LeaveReview/
 Review/List/
 ReviewCollect
@@ -9341,8 +9338,13 @@ core/services/aop-file-manager/file
 corgi$
 corgi/i18n
 corp
+corp/*.pdf$
 corp/Privacy.htm
 corp/Terms.htm
+corp/get-data
+corp/lps
+corp/solution
+corp/unlock-growth
 corporate
 corporate/contracts
 corporate/languageselection.aspx
@@ -13409,7 +13411,6 @@ journal/wem
 journal/wem$
 journals
 journals/*/about-this-journal
-journals/testfieldhumanities/
 jp
 jp$
 jp*/listing/*/favoriters
@@ -16368,7 +16369,6 @@ productdetail/*
 producthunt
 productid=
 production-monitoring
-production/
 products
 products/*--*--*--
 products/*/accent-chests-and-cabinets/review--4-stars-and-up
@@ -17401,7 +17401,6 @@ review-by-author
 review-drafts
 review-order
 review-sample
-review/
 review/*/transparency
 review/common/du
 review/dynamic/sims-box
@@ -18326,12 +18325,14 @@ signature/voucher
 signed_out_modal.json
 signin
 signin$
+signin-oidc
 signin/$
 signin/inject
 signin?
 signin?expId=confirmEmail
 signout
 signout
+signout-oidc
 signup
 signup$
 signup-interstitial
@@ -18349,6 +18350,7 @@ signup/payment?
 signup?
 signup?fullscreen=
 signup_modal
+silent-login
 silva
 silver-linings-playbook
 since=
