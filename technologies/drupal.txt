@@ -5813,7 +5813,6 @@ core/modules/migrate/tests/src/Unit/MigrateSqlIdMapEnsureTablesTest.php
 core/modules/migrate/tests/src/Unit/MigrationTest.php
 core/modules/migrate/tests/src/Unit/MigrateLookupTest.php
 core/modules/migrate/tests/src/Unit/Exception/RequirementsExceptionTest.php
-core/modules/migrate/tests/src/Unit/Exception/MigrateSkipProcessExceptionTest.php
 core/modules/migrate/tests/src/Unit/TestSqlIdMap.php
 core/modules/migrate/tests/src/StubTestTrait.php
 core/modules/migrate/migrate.services.yml
@@ -5935,7 +5934,6 @@ core/modules/migrate/src/MigrateException.php
 core/modules/migrate/src/MigrateBuildDependencyInterface.php
 core/modules/migrate/src/Hook/MigrateHooks.php
 core/modules/migrate/src/MigrateStubInterface.php
-core/modules/migrate/src/MigrateSkipProcessException.php
 core/modules/migrate/src/MigrateExecutable.php
 core/modules/migrate/src/MigrateStub.php
 core/modules/migrate/src/MigrateSkipRowException.php
@@ -6159,18 +6157,23 @@ core/modules/search/tests/src/Functional/SearchKeywordsConditionsTest.php
 core/modules/search/tests/src/Functional/SearchLanguageTest.php
 core/modules/search/tests/src/Functional/SearchMultilingualEntityTest.php
 core/modules/search/tests/src/Functional/SearchQueryAlterTest.php
+core/modules/search/tests/src/Functional/SearchNodeTranslationUITest.php
 core/modules/search/tests/src/Functional/SearchEmbedFormTest.php
 core/modules/search/tests/src/Functional/SearchRankingTest.php
 core/modules/search/tests/src/Functional/SearchPageOverrideTest.php
 core/modules/search/tests/src/Functional/SearchNumberMatchingTest.php
 core/modules/search/tests/src/Functional/GenericTest.php
+core/modules/search/tests/src/Functional/SearchEntityOperationsCacheabilityTest.php
 core/modules/search/tests/src/Functional/SearchConfigSettingsFormTest.php
 core/modules/search/tests/src/Functional/SearchBlockTest.php
+core/modules/search/tests/src/Functional/views/ViewsIntegrationTest.php
+core/modules/search/tests/src/Functional/views/ViewsMultilingualTest.php
 core/modules/search/tests/src/Functional/SearchNodeUpdateAndDeletionTest.php
 core/modules/search/tests/src/Kernel/SearchTextProcessorTest.php
 core/modules/search/tests/src/Kernel/SearchExcerptTest.php
 core/modules/search/tests/src/Kernel/SearchTokenizerTest.php
 core/modules/search/tests/src/Kernel/SearchIndexTest.php
+core/modules/search/tests/src/Kernel/node/NodeSearchTest.php
 core/modules/search/tests/src/Kernel/SearchSetLocaleTest.php
 core/modules/search/tests/src/Kernel/SearchPageValidationTest.php
 core/modules/search/tests/src/Kernel/SearchMatchTest.php
@@ -6893,7 +6896,6 @@ core/modules/node/tests/src/Kernel/NodeOwnerTest.php
 core/modules/node/tests/src/Kernel/TextWithSummaryTokenReplaceTest.php
 core/modules/node/tests/src/Kernel/ConfigActionsTest.php
 core/modules/node/tests/src/Kernel/NodeFieldAccessTest.php
-core/modules/node/tests/src/Kernel/NodeSearchTest.php
 core/modules/node/tests/src/Kernel/NodeAliasedRouteTest.php
 core/modules/node/tests/src/Kernel/NodeViewBuilderTest.php
 core/modules/node/tests/src/Kernel/NodeRequirementsStatusFilterWarningTest.php
@@ -8744,7 +8746,6 @@ core/modules/views/tests/src/Functional/BulkFormTest.php
 core/modules/views/tests/src/Functional/ViewsConfigUpdaterTest.php
 core/modules/views/tests/src/Functional/ViewsFormAlterTest.php
 core/modules/views/tests/src/Functional/ViewTranslationTest.php
-core/modules/views/tests/src/Functional/SearchIntegrationTest.php
 core/modules/views/tests/src/Functional/Handler/AreaTest.php
 core/modules/views/tests/src/Functional/Handler/AreaHTTPStatusCodeTest.php
 core/modules/views/tests/src/Functional/Handler/FieldGroupRowsWebTest.php
@@ -8775,7 +8776,6 @@ core/modules/views/tests/src/Functional/TaxonomyGlossaryTest.php
 core/modules/views/tests/src/Functional/ViewElementTest.php
 core/modules/views/tests/src/Functional/DefaultViewsTest.php
 core/modules/views/tests/src/Functional/FilterGroupFormTest.php
-core/modules/views/tests/src/Functional/SearchMultilingualTest.php
 core/modules/views/tests/src/Functional/GenericTest.php
 core/modules/views/tests/src/Functional/Entity/BaseFieldAccessTest.php
 core/modules/views/tests/src/Functional/Entity/EntityQueryAccessTest.php
