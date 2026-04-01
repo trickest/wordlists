@@ -5471,6 +5471,8 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/SalesRule/CartRulesStoreConfi
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/NewsletterIsEnabledTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/Guest/SubscribeEmailToNewsletterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Newsletter/Customer/SubscribeEmailToNewsletterTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceGraphQl/Guest/ClearCartTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceGraphQl/Customer/ClearCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Cms/CmsPageErrorHandlingTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Cms/CmsPageTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Cms/CmsBlockTest.php
@@ -14641,6 +14643,14 @@ app/code/Magento/Newsletter/view/adminhtml/layout/newsletter_template_preview_po
 app/code/Magento/Newsletter/view/base/ui_component/customer_form.xml
 app/code/Magento/Newsletter/registration.php
 app/code/Magento/Newsletter/composer.json
+app/code/Magento/QuoteCommerceGraphQl/Model/Cart/ClearCartItems.php
+app/code/Magento/QuoteCommerceGraphQl/Model/Cart/ClearCartError.php
+app/code/Magento/QuoteCommerceGraphQl/Model/Resolver/ClearCart.php
+app/code/Magento/QuoteCommerceGraphQl/README.md
+app/code/Magento/QuoteCommerceGraphQl/etc/module.xml
+app/code/Magento/QuoteCommerceGraphQl/etc/schema.graphqls
+app/code/Magento/QuoteCommerceGraphQl/registration.php
+app/code/Magento/QuoteCommerceGraphQl/composer.json
 app/code/Magento/WishlistGraphQl/Mapper/WishlistDataMapper.php
 app/code/Magento/WishlistGraphQl/Model/WishlistItem/DataProvider/CustomizableOptionValueInterface.php
 app/code/Magento/WishlistGraphQl/Model/WishlistItem/DataProvider/CustomizableOption.php
