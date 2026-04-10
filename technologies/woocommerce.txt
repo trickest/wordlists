@@ -178,6 +178,7 @@ packages/php/email-editor/changelog/add-product-image-full-width-alignment
 packages/php/email-editor/changelog/fix-email-editor-preset-padding-resolution
 packages/php/email-editor/changelog/63974-fix-email-editor-styling-regressions
 packages/php/email-editor/changelog/.gitkeep
+packages/php/email-editor/changelog/fix-email-editor-button-border-radius
 packages/php/email-editor/tasks/mirror-readme.md
 packages/php/email-editor/tasks/build-package.sh
 packages/php/email-editor/tasks/phpstan/phpstan-7.neon
@@ -4085,6 +4086,7 @@ plugins/woocommerce/changelog/woo6-52-codex-review-scheduled-sale-actions-skip-l
 plugins/woocommerce/changelog/64068-fix-fulfillments-custom-provider-tracking-lookup
 plugins/woocommerce/changelog/wooprd-3258-coupon-created-in-ciab-not-found-in-coupon-block-search
 plugins/woocommerce/changelog/63692-fix-order-api-tax-docs
+plugins/woocommerce/changelog/63863-trunk
 plugins/woocommerce/changelog/fix-email-empty-quantity-output
 plugins/woocommerce/changelog/performance-reduce-sqls-number-cart-checkout-pages
 plugins/woocommerce/changelog/64008-fix-country-name
@@ -4094,13 +4096,16 @@ plugins/woocommerce/changelog/63773-add-cache-priming-misc
 plugins/woocommerce/changelog/fix-WOOPRD-1944-product-review-form-messages
 plugins/woocommerce/changelog/63930-fix-skip-incentive-check-offline-payment-methods
 plugins/woocommerce/changelog/63483-add-62921-shared-monorepo-ts-config
+plugins/woocommerce/changelog/build-blocks-terser-single-pass
 plugins/woocommerce/changelog/2026-04-01-13-16-19-880401
+plugins/woocommerce/changelog/64059-add-WOOPRD-3304-payment-partnership-updates
 plugins/woocommerce/changelog/fix-scheduled-import-migration-WOO6-53
 plugins/woocommerce/changelog/update-pnpm-10-upgrade
 plugins/woocommerce/changelog/myaccount-nav-update
 plugins/woocommerce/changelog/63832-wooplug-1935-the-wp_background_process-class-do-we-still-need-it
 plugins/woocommerce/changelog/63986-fix-wccom-ext-tested-up-to
 plugins/woocommerce/changelog/63788-add-export-skeleton-component-for-payment-methods
+plugins/woocommerce/changelog/64074-wooplug-6512-block-cart-express-payment-buttons-have-excessive-spacing-in
 plugins/woocommerce/changelog/63919-fix-woopmnt-5477-payments-onboarding-messaging
 plugins/woocommerce/changelog/fix-select-control-deprecated-size-warning
 plugins/woocommerce/changelog/fix-colour-picker-swatch-height-wp70
@@ -4150,6 +4155,7 @@ plugins/woocommerce/changelog/fix-playground-comment-refresh-on-blueprint-change
 plugins/woocommerce/changelog/63715-fix-customer-history-real-time-data
 plugins/woocommerce/changelog/wooplug-6370-wc_coupon-construct-and-_used_by-meta
 plugins/woocommerce/changelog/opr-checkout-cart-icon
+plugins/woocommerce/changelog/performance-wc-translate-user-roles-default-domain-hook
 plugins/woocommerce/changelog/performance-slow-sql-customer-bought-product
 plugins/woocommerce/changelog/pr-63900
 plugins/woocommerce/changelog/wooplug-5521-fix-locale-hidden-country-field
@@ -5547,6 +5553,7 @@ plugins/woocommerce/src/Enums/ProductTaxStatus.php
 plugins/woocommerce/src/Enums/ProductType.php
 plugins/woocommerce/src/Enums/OrderInternalStatus.php
 plugins/woocommerce/src/Enums/OrderStatus.php
+plugins/woocommerce/src/Enums/OrderItemType.php
 plugins/woocommerce/sample-data/experimental_sample_9_products.csv
 plugins/woocommerce/sample-data/sample_products.csv
 plugins/woocommerce/sample-data/sample_products.xml
@@ -5593,6 +5600,7 @@ plugins/woocommerce/assets/images/onboarding/icons/paypal-zettle.svg
 plugins/woocommerce/assets/images/onboarding/icons/affirm.svg
 plugins/woocommerce/assets/images/onboarding/icons/authorize.svg
 plugins/woocommerce/assets/images/onboarding/icons/afterpay-clearpay.svg
+plugins/woocommerce/assets/images/onboarding/icons/mypos.svg
 plugins/woocommerce/assets/images/onboarding/icons/rapyd.svg
 plugins/woocommerce/assets/images/onboarding/icons/fortispay.svg
 plugins/woocommerce/assets/images/onboarding/icons/ngenius.svg

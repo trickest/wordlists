@@ -13099,6 +13099,7 @@ src/Core/Migration/V6_7/Migration1764064756AddCustomFieldSearchable.php
 src/Core/Migration/V6_7/Migration1742568836CreateThemeRuntimeConfigTable.php
 src/Core/Migration/V6_7/Migration1773047964AddZugferdCancellationInvoice.php
 src/Core/Migration/V6_7/Migration1765205483AddTrackOffcanvasCartToAnalytics.php
+src/Core/Migration/V6_7/Migration1775208486AddUniqueIndexToProductCrossSellingAssignedProducts.php
 src/Core/Migration/V6_7/Migration1763125902AddOrderLineItemProductTypePayload.php
 src/Core/Migration/V6_7/Migration1752219159AddLanguageActive.php
 src/Core/Migration/V6_7/Migration1748326970UpdateMailTemplatesForAccessibility.php
@@ -13775,6 +13776,7 @@ src/Core/Content/Cms/SalesChannel/Struct/BuyBoxStruct.php
 src/Core/Content/Cms/SalesChannel/Struct/ImageSliderStruct.php
 src/Core/Content/Cms/CmsPageCollection.php
 src/Core/Content/Cms/CmsPageDefinition.php
+src/Core/Content/Cms/Service/EntityCmsSlotConfigInheritanceBuilder.php
 src/Core/Content/Cms/Command/CreatePageCommand.php
 src/Core/Content/Cms/DataResolver/FieldConfig.php
 src/Core/Content/Cms/DataResolver/ResolverContext/ResolverContext.php
@@ -19283,7 +19285,6 @@ tests/integration/Storefront/Framework/Routing/ResponseHeaderListenerTest.php
 tests/integration/Storefront/Framework/App/AppStateServiceThemeTest.php
 tests/integration/Storefront/Framework/App/TemplateStateServiceTest.php
 tests/integration/Storefront/Framework/Captcha/HoneypotCaptchaTest.php
-tests/integration/Storefront/Framework/Captcha/BasicCaptchaTest.php
 tests/integration/Storefront/Framework/Captcha/BasicCaptcha/BasicCaptchaGeneratorTest.php
 tests/integration/Storefront/Framework/Captcha/CaptchaRouteListenerTest.php
 tests/integration/Storefront/Framework/Seo/SeoUrlTemplateRepositoryTest.php
@@ -19441,6 +19442,7 @@ tests/integration/Core/Content/Product/Cleanup/CleanupProductKeywordDictionaryTa
 tests/integration/Core/Content/Product/Repository/ProductTagTest.php
 tests/integration/Core/Content/Product/Repository/ProductSearchKeywordTest.php
 tests/integration/Core/Content/Product/Repository/ProductRepositoryTest.php
+tests/integration/Core/Content/Product/Repository/ProductCrossSellingAssignedProductsRepositoryTest.php
 tests/integration/Core/Content/Product/Repository/ProductSearchScoringTest.php
 tests/integration/Core/Content/Product/Subscriber/ProductLoadedSubscriberTest.php
 tests/integration/Core/Content/Product/Subscriber/ProductSubscriberBeforeDeleteIntegrationTest.php
@@ -20756,6 +20758,7 @@ tests/migration/Core/V6_7/Migration1773815272SalesChannelNameTranslationTest.php
 tests/migration/Core/V6_7/Migration1717573310ImportExportTechnicalNameRequiredTest.php
 tests/migration/Core/V6_7/Migration1758612662UpdateDateRangeRuleDateTimeFormatTest.php
 tests/migration/Core/V6_7/Migration1768545322AssignRevocationPageToSystemConfigSettingTest.php
+tests/migration/Core/V6_7/Migration1775208486AddUniqueIndexToProductCrossSellingAssignedProductsTest.php
 tests/migration/Core/V6_7/Migration1770903396AddRequirementsToServiceSourceConfigTest.php
 tests/migration/Core/V6_7/Migration1773826242RenameAgenticCommerceSalesChannelTypeTest.php
 tests/migration/Core/V6_7/Migration1768545320RevocationRequestCmsFormTest.php
@@ -21425,6 +21428,7 @@ tests/unit/Storefront/Framework/Routing/MaintenanceModeResolverTest.php
 tests/unit/Storefront/Framework/App/Template/IconTemplateLoaderTest.php
 tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV3Test.php
 tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV2Test.php
+tests/unit/Storefront/Framework/Captcha/BasicCaptchaTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaCookieCollectListenerTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaRouteListenerTest.php
 tests/unit/Storefront/Framework/Seo/SeoUrlRouteNameEnumProviderTest.php
@@ -21574,6 +21578,7 @@ tests/unit/Core/Content/Cms/SalesChannel/CmsRouteTest.php
 tests/unit/Core/Content/Cms/SalesChannel/SalesChannelCmsPageLoaderTest.php
 tests/unit/Core/Content/Cms/SalesChannel/Struct/ImageStructTest.php
 tests/unit/Core/Content/Cms/SalesChannel/Struct/VideoStructTest.php
+tests/unit/Core/Content/Cms/Service/EntityCmsSlotConfigInheritanceBuilderTest.php
 tests/unit/Core/Content/Cms/Command/CreatePageCommandTest.php
 tests/unit/Core/Content/Cms/DataResolver/CmsSlotsMultiDataResolverTest.php
 tests/unit/Core/Content/Cms/DataResolver/FieldConfigTest.php
@@ -22098,6 +22103,7 @@ tests/unit/Core/System/SalesChannel/StoreApiCustomFieldMapperTest.php
 tests/unit/Core/System/SalesChannel/Rule/SalesChannelRuleTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryServiceTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryRequestEventTest.php
+tests/unit/Core/System/User/Api/UserRecoveryControllerTest.php
 tests/unit/Core/System/User/UserExceptionTest.php
 tests/unit/Core/System/SystemConfig/_fixtures/valid_config.xml
 tests/unit/Core/System/SystemConfig/_fixtures/invalid_config.xml
@@ -22186,10 +22192,12 @@ tests/unit/Core/Checkout/Customer/Event/CustomerBeforeLoginEventTest.php
 tests/unit/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexerTest.php
 tests/unit/Core/Checkout/Customer/DeleteUnusedGuestCustomerServiceTest.php
 tests/unit/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionControllerTest.php
+tests/unit/Core/Checkout/Customer/SalesChannel/LoginRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ChangeCustomerProfileRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/RegisterRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/AccountServiceTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ListAddressRouteTest.php
+tests/unit/Core/Checkout/Customer/SalesChannel/ResetPasswordRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/RegisterConfirmRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/UpsertAddressRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ImitateCustomerRouteTest.php
@@ -22584,6 +22592,7 @@ tests/unit/Core/Framework/RateLimiter/Policy/SystemConfigLimiterTest.php
 tests/unit/Core/Framework/RateLimiter/Policy/RateLimiterFactoryTest.php
 tests/unit/Core/Framework/Uuid/UuidTest.php
 tests/unit/Core/Framework/Routing/CoreSubscriberTest.php
+tests/unit/Core/Framework/Routing/ApiRouteScopeTest.php
 tests/unit/Core/Framework/Routing/Event/MaintenanceModeRequestEventTest.php
 tests/unit/Core/Framework/Routing/CanonicalRedirectServiceTest.php
 tests/unit/Core/Framework/Routing/Exception/CustomerNotLoggedInRoutingExceptionTest.php
@@ -23161,6 +23170,7 @@ tests/unit/Core/Framework/Api/Sync/SyncFkResolverTest.php
 tests/unit/Core/Framework/Api/Sync/SyncOperationTest.php
 tests/unit/Core/Framework/Api/Sync/SyncServiceTest.php
 tests/unit/Core/Framework/Api/Controller/ApiControllerTest.php
+tests/unit/Core/Framework/Api/Controller/AuthControllerTest.php
 tests/unit/Core/Framework/Api/Controller/InfoControllerTest.php
 tests/unit/Core/Framework/Api/Controller/UserControllerTest.php
 tests/unit/Core/Framework/Api/Controller/Fixtures/AdminExtensionApiPluginWithLocalEntryPoint/Resources/public/meteor-app/index.html

@@ -1202,6 +1202,7 @@ src/Umbraco.Core/Collections/TypeList.cs
 src/Umbraco.Core/Collections/CompositeIntStringKey.cs
 src/Umbraco.Core/Collections/DeepCloneableList.cs
 src/Umbraco.Core/Collections/OrderedHashSet.cs
+src/Umbraco.Core/Collections/CompositeStringArrayKey.cs
 src/Umbraco.Core/Collections/EventClearingObservableCollection.cs
 src/Umbraco.Core/Features/DisabledFeatures.cs
 src/Umbraco.Core/Features/EnabledFeatures.cs
@@ -1801,6 +1802,9 @@ src/Umbraco.Core/Models/PublishedContent/PublishedContentType.cs
 src/Umbraco.Core/Models/PublishedContent/IPublishedContentType.cs
 src/Umbraco.Core/Models/PublishedContent/IPublishedModelFactory.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedItemType.cs
+src/Umbraco.Core/Models/PublishedContent/PropertyRenderingContext.cs
+src/Umbraco.Core/Models/PublishedContent/IPropertyRenderingContextAccessor.cs
+src/Umbraco.Core/Models/PublishedContent/HybridPropertyRenderingContextAccessor.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedContentTypeConverter.cs
 src/Umbraco.Core/Models/PublishedContent/PublishedValueFallback.cs
 src/Umbraco.Core/Models/Blocks/BlockListValue.cs
@@ -3736,6 +3740,7 @@ src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/SingleBlockPropertyVa
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockGridPropertyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/ConstructorCacheClearNotificationHandler.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockListPropertyValueCreator.cs
+src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockExposeFallbackHelper.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/DateOnlyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/TimeOnlyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/EmailAddressPropertyEditor.cs
@@ -15162,6 +15167,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/IO/PhysicalFileSystemTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/DeepCloneableListTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/OrderedHashSetTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/StackQueueTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/CompositeStringArrayKeyTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/TopoGraphTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Deploy/ArtifactBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/TemplateTests.cs
@@ -15430,6 +15436,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/MarkdownToHtml
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/HealthCheckResultsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/RecycleBinMediaProtectionHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/SvgFileUploadMediaSavingNotificationHandlerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/BlockExposeFallbackHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateOnlyPropertyIndexValueFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateTimePropertyEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/BlockEditorVarianceHandlerTests.cs

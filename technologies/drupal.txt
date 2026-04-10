@@ -9714,7 +9714,6 @@ core/modules/node/tests/src/Functional/Views/BulkFormTest.php
 core/modules/node/tests/src/Functional/Views/RevisionLinkTest.php
 core/modules/node/tests/src/Functional/Views/NodeContextualLinksTest.php
 core/modules/node/tests/src/Functional/Views/BulkFormAccessTest.php
-core/modules/node/tests/src/Kernel/NodeSearchTest.php
 core/modules/node/tests/src/Kernel/NodeListBuilderTest.php
 core/modules/node/tests/src/Kernel/NodeAliasedRouteTest.php
 core/modules/node/tests/src/Kernel/NodeAccessRecordsTest.php
@@ -10787,6 +10786,8 @@ core/modules/system/tests/fixtures/update/uninstall-contact.php
 core/modules/system/tests/fixtures/update/uninstall-ban.php
 core/modules/system/tests/fixtures/update/drupal-10.3.0.bare.standard.php.gz
 core/modules/system/tests/fixtures/update/uninstall-history.php
+core/modules/system/tests/fixtures/update/drupal-11.3.0.bare.standard.php.gz
+core/modules/system/tests/fixtures/update/drupal-11.3.0.filled.standard.php.gz
 core/modules/system/tests/fixtures/update/remove-description-from-user-register-form-mode.php
 core/modules/system/tests/fixtures/update/drupal-10.3.0.filled.standard.php.gz
 core/modules/system/tests/fixtures/update/drupal-8.update-test-schema-enabled.php
@@ -12503,15 +12504,20 @@ core/modules/search/tests/src/Functional/SearchNodeDiacriticsTest.php
 core/modules/search/tests/src/Functional/Jsonapi/SearchPageTest.php
 core/modules/search/tests/src/Functional/Update/SearchBlockPageIdUpdatePathTest.php
 core/modules/search/tests/src/Functional/SearchAdvancedSearchFormTest.php
+core/modules/search/tests/src/Functional/SearchNodeTranslationUITest.php
 core/modules/search/tests/src/Functional/SearchPreprocessLangcodeTest.php
 core/modules/search/tests/src/Functional/SearchLanguageTest.php
 core/modules/search/tests/src/Functional/SearchBlockTest.php
+core/modules/search/tests/src/Functional/views/ViewsIntegrationTest.php
+core/modules/search/tests/src/Functional/views/ViewsMultilingualTest.php
 core/modules/search/tests/src/Functional/SearchEmbedFormTest.php
 core/modules/search/tests/src/Functional/SearchQueryAlterTest.php
 core/modules/search/tests/src/Kernel/SearchTokenizerTest.php
 core/modules/search/tests/src/Kernel/SearchExcerptTest.php
 core/modules/search/tests/src/Kernel/SearchMatchTest.php
+core/modules/search/tests/src/Kernel/SearchEntityOperationsCacheabilityTest.php
 core/modules/search/tests/src/Kernel/SearchTextProcessorTest.php
+core/modules/search/tests/src/Kernel/node/NodeSearchTest.php
 core/modules/search/tests/src/Kernel/SearchPageValidationTest.php
 core/modules/search/tests/src/Kernel/SearchSetLocaleTest.php
 core/modules/search/tests/src/Kernel/SearchIndexTest.php
@@ -15757,7 +15763,6 @@ core/modules/views/tests/fixtures/update/rss-default-view-mode.php
 core/modules/views/tests/fixtures/update/views.view.test_format_plural_update.yml
 core/modules/views/tests/fixtures/update/views.view.test_display_feed_no_update.yml
 core/modules/views/tests/src/Traits/ViewsLoggerTestTrait.php
-core/modules/views/tests/src/Functional/SearchIntegrationTest.php
 core/modules/views/tests/src/Functional/RenderCacheWebTest.php
 core/modules/views/tests/src/Functional/ViewTestBase.php
 core/modules/views/tests/src/Functional/ViewAjaxTest.php
@@ -15794,7 +15799,6 @@ core/modules/views/tests/src/Functional/Wizard/TaggedWithTest.php
 core/modules/views/tests/src/Functional/Wizard/ItemsPerPageTest.php
 core/modules/views/tests/src/Functional/Wizard/NodeWizardTest.php
 core/modules/views/tests/src/Functional/ViewStyleHtmlListTest.php
-core/modules/views/tests/src/Functional/SearchMultilingualTest.php
 core/modules/views/tests/src/Functional/ViewElementTest.php
 core/modules/views/tests/src/Functional/Plugin/FilterTest.php
 core/modules/views/tests/src/Functional/Plugin/DisplayFeedTest.php

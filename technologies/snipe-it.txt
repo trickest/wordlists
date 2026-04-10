@@ -937,6 +937,7 @@ resources/views/categories/edit.blade.php
 resources/views/categories/index.blade.php
 resources/views/categories/view.blade.php
 resources/views/livewire/oauth-clients.blade.php
+resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/personal-access-tokens.blade.php
 resources/views/livewire/importer.blade.php
 resources/views/livewire/category-edit-form.blade.php
@@ -7402,6 +7403,7 @@ tests/Feature/Importing/Api/ImportLicenseTest.php
 tests/Feature/Importing/Api/GeneralImportTest.php
 tests/Feature/Importing/Api/ImportAssetModelsTest.php
 tests/Feature/Importing/Ui/ImportTest.php
+tests/Feature/Settings/OauthSettingsTest.php
 tests/Feature/Settings/LdapSettingsTest.php
 tests/Feature/Settings/SecuritySettingTest.php
 tests/Feature/Settings/BrandingSettingsTest.php
@@ -7697,6 +7699,7 @@ app/Http/Middleware/CheckLocale.php
 app/Http/Middleware/CheckColorSettings.php
 app/Http/Middleware/CheckPermissions.php
 app/Http/Middleware/CheckForDebug.php
+app/Http/Middleware/LogAuthedUserHeader.php
 app/Http/Controllers/Kits/CheckoutKitController.php
 app/Http/Controllers/Kits/PredefinedKitsController.php
 app/Http/Controllers/BulkManufacturersController.php
@@ -7841,6 +7844,7 @@ app/Livewire/PersonalAccessTokens.php
 app/Livewire/CustomFieldSetDefaultValuesForModel.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/Importer.php
+app/Livewire/AdminPersonalAccessTokens.php
 app/Livewire/OauthClients.php
 app/Livewire/LocationScopeCheck.php
 app/Livewire/SlackSettingsForm.php
