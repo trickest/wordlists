@@ -802,6 +802,7 @@ packages/js/components/changelog/update-pnpm-10-upgrade
 packages/js/components/changelog/fix-select-control-deprecated-size-warning
 packages/js/components/changelog/fix-wooa7s-1161-interval-selector-shift
 packages/js/components/changelog/fix-ellipsis-menu-arrow-scroll
+packages/js/components/changelog/build-webpack-filesystem-cache
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/fix-analytics-tables-extra-padding-wp70
 packages/js/components/changelog/fix-ellipsis-menu-keydown-type
@@ -1413,6 +1414,7 @@ packages/js/customer-effort-score/changelog/58263-remove-wp-core-data
 packages/js/customer-effort-score/changelog/dev-build-profiling-tweaks-take-1
 packages/js/customer-effort-score/changelog/fix-ces-ts-errors
 packages/js/customer-effort-score/changelog/55626-email-improvements-feedback-prompt
+packages/js/customer-effort-score/changelog/build-webpack-filesystem-cache
 packages/js/customer-effort-score/changelog/53531-dev-react-18-ghidorah
 packages/js/customer-effort-score/changelog/dev-consolidate-syncpack-config
 packages/js/customer-effort-score/changelog/.gitkeep
@@ -1510,6 +1512,7 @@ packages/js/onboarding/changelog/54023-add-53437-rebrand-logos-payment-providers
 packages/js/onboarding/changelog/58263-remove-wp-core-data
 packages/js/onboarding/changelog/dev-build-profiling-tweaks-take-1
 packages/js/onboarding/changelog/upgrade-storybook_and_add_pages_workflow
+packages/js/onboarding/changelog/build-webpack-filesystem-cache
 packages/js/onboarding/changelog/53531-dev-react-18-ghidorah
 packages/js/onboarding/changelog/dev-consolidate-syncpack-config
 packages/js/onboarding/changelog/.gitkeep
@@ -1637,6 +1640,7 @@ packages/js/experimental/changelog/58861-dev-build-ram-usage-batch-2
 packages/js/experimental/changelog/dev-build-profiling-tweaks-take-1
 packages/js/experimental/changelog/upgrade-storybook_and_add_pages_workflow
 packages/js/experimental/changelog/54160-54158-fix-typescript-errors-from-packagesjsexperimental
+packages/js/experimental/changelog/build-webpack-filesystem-cache
 packages/js/experimental/changelog/53531-dev-react-18-ghidorah
 packages/js/experimental/changelog/dev-consolidate-syncpack-config
 packages/js/experimental/changelog/.gitkeep
@@ -1887,6 +1891,7 @@ packages/js/product-editor/changelog/dev-36283_add_clear_button_to_dropdown
 packages/js/product-editor/changelog/update-remove-media-library
 packages/js/product-editor/changelog/update-abrev-global-unique-id
 packages/js/product-editor/changelog/fix-product-editor-max-upload-size
+packages/js/product-editor/changelog/build-webpack-filesystem-cache
 packages/js/product-editor/changelog/update-product-editor-filter-linked-products-only-when-tab-selected
 packages/js/product-editor/changelog/53531-dev-react-18-ghidorah
 packages/js/product-editor/changelog/update-replace-with-combobox
@@ -3127,6 +3132,7 @@ packages/js/internal-style-build/.eslintrc.js
 packages/js/internal-style-build/index.js
 packages/js/email-editor/CHANGELOG.md
 packages/js/email-editor/changelog/add-product-image-full-width-alignment
+packages/js/email-editor/changelog/build-webpack-filesystem-cache
 packages/js/email-editor/changelog/.gitkeep
 packages/js/email-editor/.npmrc
 packages/js/email-editor/tsconfig-cjs.json
@@ -3367,6 +3373,7 @@ packages/js/settings-editor/changelog/54798-add-dataform-settings-textarea
 packages/js/settings-editor/changelog/fix-settings-hiden-inputs
 packages/js/settings-editor/changelog/53231-fix-settings-global-styles
 packages/js/settings-editor/changelog/56246-update-settings-router-calypso-package
+packages/js/settings-editor/changelog/build-webpack-filesystem-cache
 packages/js/settings-editor/changelog/53531-dev-react-18-ghidorah
 packages/js/settings-editor/changelog/.gitkeep
 packages/js/settings-editor/changelog/57299-fix-wireit-in-ci
@@ -3575,6 +3582,7 @@ packages/js/block-templates/changelog/fix-layout-template-request
 packages/js/block-templates/changelog/56746-dev-webpack-deps-review
 packages/js/block-templates/changelog/ci-add-workflow-call-event
 packages/js/block-templates/changelog/dev-build-profiling-tweaks-take-1
+packages/js/block-templates/changelog/build-webpack-filesystem-cache
 packages/js/block-templates/changelog/53531-dev-react-18-ghidorah
 packages/js/block-templates/changelog/dev-consolidate-syncpack-config
 packages/js/block-templates/changelog/.gitkeep
@@ -3663,6 +3671,7 @@ packages/js/admin-layout/changelog/fix-homescreen-layout-ts-errors
 packages/js/admin-layout/changelog/56746-dev-webpack-deps-review
 packages/js/admin-layout/changelog/task-update-eslint-config
 packages/js/admin-layout/changelog/dev-build-profiling-tweaks-take-1
+packages/js/admin-layout/changelog/build-webpack-filesystem-cache
 packages/js/admin-layout/changelog/53531-dev-react-18-ghidorah
 packages/js/admin-layout/changelog/fix-admin-layout-types
 packages/js/admin-layout/changelog/dev-consolidate-syncpack-config
@@ -4082,6 +4091,7 @@ plugins/woocommerce/lib/classes/symfony/polyfill-php80/Resources/stubs/Unhandled
 plugins/woocommerce/uninstall.php
 plugins/woocommerce/.distignore
 plugins/woocommerce/changelog/63816-fix-get-item-downloads-return-array
+plugins/woocommerce/changelog/64095-wooplug-6533-consolidate-get_shipping_providers-and
 plugins/woocommerce/changelog/woo6-52-codex-review-scheduled-sale-actions-skip-lookup-table
 plugins/woocommerce/changelog/64068-fix-fulfillments-custom-provider-tracking-lookup
 plugins/woocommerce/changelog/wooprd-3258-coupon-created-in-ciab-not-found-in-coupon-block-search
@@ -4094,10 +4104,12 @@ plugins/woocommerce/changelog/performance-57937-explore-needs-processing-enhance
 plugins/woocommerce/changelog/performance-order-count-action-enhancements
 plugins/woocommerce/changelog/63773-add-cache-priming-misc
 plugins/woocommerce/changelog/fix-WOOPRD-1944-product-review-form-messages
+plugins/woocommerce/changelog/64091-trunk
 plugins/woocommerce/changelog/63930-fix-skip-incentive-check-offline-payment-methods
 plugins/woocommerce/changelog/63483-add-62921-shared-monorepo-ts-config
 plugins/woocommerce/changelog/build-blocks-terser-single-pass
 plugins/woocommerce/changelog/2026-04-01-13-16-19-880401
+plugins/woocommerce/changelog/64072-wooplug-6492-woocommerce-cart-and-checkout-block-crashes-when-product
 plugins/woocommerce/changelog/64059-add-WOOPRD-3304-payment-partnership-updates
 plugins/woocommerce/changelog/fix-scheduled-import-migration-WOO6-53
 plugins/woocommerce/changelog/update-pnpm-10-upgrade
@@ -4142,6 +4154,7 @@ plugins/woocommerce/changelog/fix-62677-add-to-cart-with-options-stepper-in-3rd-
 plugins/woocommerce/changelog/64070-prime-caches-products-rest-images
 plugins/woocommerce/changelog/63929-fix-setup-wizard-site-title-error
 plugins/woocommerce/changelog/.gitkeep
+plugins/woocommerce/changelog/fix-shipping-provider-filter-meta-key-mismatch
 plugins/woocommerce/changelog/fix-rtl-email-order-details-alignment
 plugins/woocommerce/changelog/performance-extract-options-cache-priming-prs-into-skill
 plugins/woocommerce/changelog/pr-63897
@@ -4149,6 +4162,7 @@ plugins/woocommerce/changelog/fix-61447-product-collection-offset-per-page
 plugins/woocommerce/changelog/fix-63680
 plugins/woocommerce/changelog/63925-update-marketplace-host-plan-orders-label
 plugins/woocommerce/changelog/fix-product-filter-deleted-attribute-fatal
+plugins/woocommerce/changelog/myaccount-fixes
 plugins/woocommerce/changelog/copilot-fix-autocomplete-zip-code-update
 plugins/woocommerce/changelog/63208-wooplug-6204-refactor-product-in-context
 plugins/woocommerce/changelog/fix-playground-comment-refresh-on-blueprint-changes
@@ -5551,6 +5565,7 @@ plugins/woocommerce/src/Enums/CatalogVisibility.php
 plugins/woocommerce/src/Enums/README.md
 plugins/woocommerce/src/Enums/ProductTaxStatus.php
 plugins/woocommerce/src/Enums/ProductType.php
+plugins/woocommerce/src/Enums/DefaultCustomerAddress.php
 plugins/woocommerce/src/Enums/OrderInternalStatus.php
 plugins/woocommerce/src/Enums/OrderStatus.php
 plugins/woocommerce/src/Enums/OrderItemType.php
@@ -6502,6 +6517,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/render_with_h
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/template.html
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/render_with_hook_expected_result.html
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/template_wp69.html
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CartEmojiTest.php
 plugins/woocommerce/tests/php/src/Blocks/Bootstrap/MainFile.php
 plugins/woocommerce/tests/php/src/Blocks/Utils/BlocksSharedStateTest.php
 plugins/woocommerce/tests/php/src/Blocks/Utils/single-product.html

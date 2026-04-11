@@ -846,6 +846,7 @@ core/lib/Drupal/Core/Entity/EntityAccessControlHandler.php
 core/lib/Drupal/Core/Entity/Attribute/ContentEntityType.php
 core/lib/Drupal/Core/Entity/Attribute/EntityReferenceSelection.php
 core/lib/Drupal/Core/Entity/Attribute/EntityType.php
+core/lib/Drupal/Core/Entity/Attribute/Bundle.php
 core/lib/Drupal/Core/Entity/Attribute/ConfigEntityType.php
 core/lib/Drupal/Core/Entity/Controller/EntityRevisionViewController.php
 core/lib/Drupal/Core/Entity/Controller/EntityController.php
@@ -11286,6 +11287,14 @@ core/modules/system/tests/modules/sdc_other_node_visitor/src/Twig/Profiler/Leave
 core/modules/system/tests/modules/sdc_other_node_visitor/src/Twig/Profiler/EnterProfileNode.php
 core/modules/system/tests/modules/sdc_other_node_visitor/sdc_other_node_visitor.services.yml
 core/modules/system/tests/modules/sdc_other_node_visitor/sdc_other_node_visitor.info.yml
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/EntityTestBundleClassA.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/EntityTestBundleClassB.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/EntityTestBundleClassOverrideA.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/Subdir/EntityTestSubdirBundleClass.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/EntityTestWithBundleTypeNewBundle.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Entity/EntityTestBundleClassOverrideB.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/src/Hook/EntityTestAttributeBundleClassHooks.php
+core/modules/system/tests/modules/entity_test_attribute_bundle_class/entity_test_attribute_bundle_class.info.yml
 core/modules/system/tests/modules/generic_module2_test/generic_module2_test.info.yml
 core/modules/system/tests/modules/update_test_failing/update_test_failing.info.yml
 core/modules/system/tests/modules/update_test_failing/update_test_failing.post_update.php
@@ -14666,6 +14675,10 @@ core/modules/locale/src/LocaleProjectStorage.php
 core/modules/locale/src/LocaleFetch.php
 core/modules/locale/src/EventSubscriber/LocaleTranslationCacheTag.php
 core/modules/locale/src/EventSubscriber/ConfigSubscriber.php
+core/modules/locale/src/File/LocaleFile.php
+core/modules/locale/src/File/LocaleFileManager.php
+core/modules/locale/src/File/RemoteFileInfo.php
+core/modules/locale/src/File/RemoteFileStatus.php
 core/modules/locale/src/LocaleConfigManager.php
 core/modules/locale/src/PoDatabaseReader.php
 core/modules/locale/src/StreamWrapper/TranslationsStream.php

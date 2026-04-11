@@ -400,6 +400,7 @@ spec/jobs/update_cti_logs_by_caller_job_spec.rb
 spec/jobs/ticket_bulk_update_job_spec.rb
 spec/jobs/ticket_online_notification_seen_job_spec.rb
 spec/jobs/taskbar_cleanup_job_spec.rb
+spec/jobs/ticket_ai_assistance_generate_knowledge_base_answer_job_spec.rb
 spec/jobs/ticket_ai_assistance_summarize_job_spec.rb
 spec/jobs/session_timeout_job_spec.rb
 spec/jobs/user_device_log_job_spec.rb
@@ -1616,6 +1617,7 @@ spec/requests/ticket/article_attachments_spec.rb
 spec/requests/ticket/time_accounting_spec.rb
 spec/requests/ticket/shared_draft/zoom_controller_spec.rb
 spec/requests/ticket/shared_draft/starts_controller_spec.rb
+spec/requests/ticket/ai_assistance/knowledge_base_answers_spec.rb
 spec/requests/ticket/escalation_spec.rb
 spec/requests/ticket/tag_spec.rb
 spec/requests/ticket/group_restriction_spec.rb
@@ -1868,6 +1870,7 @@ spec/system/getting_started/agents_spec.rb
 spec/system/admin/ai/text_tool_spec.rb
 spec/system/admin/ai/provider_spec.rb
 spec/system/admin/ai/ticket_summary_spec.rb
+spec/system/admin/ai/kb_answer_from_ticket_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
 spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/admin/knowledge_base/delete_spec.rb
@@ -2140,6 +2143,7 @@ spec/graphql/gql/mutations/ticket/shared_draft/start/update_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/start/create_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/start/delete_spec.rb
 spec/graphql/gql/mutations/ticket/ai_assistance/summarize_spec.rb
+spec/graphql/gql/mutations/ticket/ai_assistance/enqueue_knowledge_base_answer_spec.rb
 spec/graphql/gql/mutations/ticket/live_user/upsert_spec.rb
 spec/graphql/gql/mutations/ticket/live_user/delete_spec.rb
 spec/graphql/gql/mutations/ticket/update/bulk_spec.rb
@@ -2310,6 +2314,8 @@ spec/services/service/ticket/shared_draft/zoom/update_spec.rb
 spec/services/service/ticket/shared_draft/zoom/create_spec.rb
 spec/services/service/ticket/shared_draft/start/update_spec.rb
 spec/services/service/ticket/shared_draft/start/create_spec.rb
+spec/services/service/ticket/ai_assistance/create_knowledge_base_answer_spec.rb
+spec/services/service/ticket/ai_assistance/generate_knowledge_base_answer_content_spec.rb
 spec/services/service/ticket/update/validator_spec.rb
 spec/services/service/ticket/update/validator/time_accounting_spec.rb
 spec/services/service/ticket/update/validator/checklist_completed_spec.rb
@@ -2334,6 +2340,7 @@ spec/services/service/channel/admin/enable_spec.rb
 spec/services/service/channel/admin/list_spec.rb
 spec/services/service/channel/admin/destroy_spec.rb
 spec/services/service/channel/admin/disable_spec.rb
+spec/services/service/knowledge_base/create_answer_from_ai_result_spec.rb
 spec/services/service/history/list_spec.rb
 spec/services/service/history/group_spec.rb
 spec/services/service/calendar/ics_file/parse_spec.rb
@@ -2607,11 +2614,14 @@ lib/ai/provider/open_ai.rb
 lib/ai/vectordb.rb
 lib/ai/provider.rb
 lib/ai/service.rb
+lib/ai/service/knowledge_base_answer_from_ticket.rb
 lib/ai/service/ocr.rb
+lib/ai/service/prompts/user/knowledge_base_answer_from_ticket.txt.erb
 lib/ai/service/prompts/user/ocr.txt.erb
 lib/ai/service/prompts/user/ai_agent.txt.erb
 lib/ai/service/prompts/user/ticket_summarize.txt.erb
 lib/ai/service/prompts/user/text_tool.txt.erb
+lib/ai/service/prompts/system/knowledge_base_answer_from_ticket.txt.erb
 lib/ai/service/prompts/system/ai_agent.txt.erb
 lib/ai/service/prompts/system/ticket_summarize.txt.erb
 lib/ai/service/prompts/system/text_tool.txt.erb
@@ -4565,6 +4575,7 @@ db/migrate/20240207144547_update_user_attributes.rb
 db/migrate/20221019062814_issue4299_calendar_weeks.rb
 db/migrate/20170713000001_omniauth_office365_setting.rb
 db/migrate/20250909150713_add_report_profiles_roles.rb
+db/migrate/20260225170815_add_ai_kb_answer_settings.rb
 db/migrate/20230912080534_group_hierarchy.rb
 db/migrate/20191107181428_issue_2715_fix_broken_twitter_urls.rb
 db/migrate/20170927000001_setting_send_no_auto_response_reg_exp.rb
@@ -5317,6 +5328,7 @@ app/jobs/cache_clear_job.rb
 app/jobs/avatar_create_job.rb
 app/jobs/trigger_webhook_job.rb
 app/jobs/taskbar_update_trigger_subscriptions_job.rb
+app/jobs/ticket_ai_assistance_generate_knowledge_base_answer_job.rb
 app/jobs/transaction_job.rb
 app/jobs/update_cti_logs_by_caller_job.rb
 app/jobs/ticket_online_notification_seen_job.rb
@@ -6043,6 +6055,7 @@ app/policies/controllers/ticket_articles_controller_policy.rb
 app/policies/controllers/knowledge_bases_controller_policy.rb
 app/policies/controllers/tickets_shared_draft_starts_controller_policy.rb
 app/policies/controllers/ticket/summarize_controller_policy.rb
+app/policies/controllers/ticket/knowledge_base_answers_controller_policy.rb
 app/policies/controllers/links_controller_policy.rb
 app/policies/controllers/triggers_controller_policy.rb
 app/policies/controllers/ldap_sources_controller_policy.rb
@@ -6451,6 +6464,7 @@ app/assets/javascripts/app/controllers/_ai/form_handler_ai_agent_unused_warning.
 app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee
 app/assets/javascripts/app/controllers/_ai/text_tool.coffee
 app/assets/javascripts/app/controllers/_ai/provider.coffee
+app/assets/javascripts/app/controllers/_ai/kb_answer_from_ticket.coffee
 app/assets/javascripts/app/controllers/_ai/ai_agent.coffee
 app/assets/javascripts/app/controllers/_ai/form_handler_ai_agent_type_help.coffee
 app/assets/javascripts/app/controllers/_ai/_feature_base.coffee
@@ -7046,6 +7060,7 @@ app/assets/javascripts/app/views/ai/missing_provider_alert.jst.eco
 app/assets/javascripts/app/views/ai/ai_feedback_widget.jst.eco
 app/assets/javascripts/app/views/ai/provider_logs.jst.eco
 app/assets/javascripts/app/views/ai/ticket_summary.jst.eco
+app/assets/javascripts/app/views/ai/kb_answer_from_ticket.jst.eco
 app/assets/javascripts/app/views/google/list.jst.eco
 app/assets/javascripts/app/views/google/app_config.jst.eco
 app/assets/javascripts/app/views/google/index.jst.eco
@@ -8075,6 +8090,7 @@ app/frontend/apps/desktop/initializer/assets/chevron-right.svg
 app/frontend/apps/desktop/initializer/assets/envelope.svg
 app/frontend/apps/desktop/initializer/assets/pencil-square.svg
 app/frontend/apps/desktop/initializer/assets/type-h2.svg
+app/frontend/apps/desktop/initializer/assets/ai-knowledge-base.svg
 app/frontend/apps/desktop/initializer/assets/calendar.svg
 app/frontend/apps/desktop/initializer/assets/moon-stars.svg
 app/frontend/apps/desktop/initializer/assets/list-ol.svg
@@ -8832,12 +8848,14 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/plugins/types.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarWrapper.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketLinks.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketAIKnowledgeBaseAnswers.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketTags.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketSidebarInformationContent.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketSubscribers.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketAccountedTime.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformation.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketTags.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketAIKnowledgeBaseAnswers.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketLinks.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketSubscribers.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketAccountedTime.vue
@@ -8928,6 +8946,8 @@ app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistItemDele
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistItemUpsert.api.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketExternalReferencesIssueTrackerItemAdd.graphql
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistItemsAdd.graphql
+app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketAIAssistanceEnqueueKnowledgeBaseAnswer.api.ts
+app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketAIAssistanceEnqueueKnowledgeBaseAnswer.mocks.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketAIAssistanceSummarize.api.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/linkRemove.api.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketExternalReferencesIdoitObjectAdd.mocks.ts
@@ -8958,6 +8978,7 @@ app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistTitleUpd
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketExternalReferencesIssueTrackerItemRemove.mocks.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistDelete.mocks.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistItemOrderUpdate.api.ts
+app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketAIAssistanceEnqueueKnowledgeBaseAnswer.graphql
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/linkAdd.graphql
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketExternalReferencesIdoitObjectRemove.mocks.ts
 app/frontend/apps/desktop/pages/ticket/graphql/mutations/ticketChecklistDelete.graphql
@@ -9630,6 +9651,7 @@ app/frontend/tests/graphql/factories/types/TicketState.ts
 app/frontend/tests/graphql/factories/types/HistoryRecordEvent.ts
 app/frontend/tests/graphql/factories/types/Ticket.ts
 app/frontend/tests/graphql/factories/types/ChecklistItem.ts
+app/frontend/tests/graphql/factories/types/KnowledgeBase.ts
 app/frontend/tests/graphql/factories/types/TicketArticle.ts
 app/frontend/tests/graphql/factories/types/Avatar.ts
 app/frontend/tests/graphql/factories/types/OnlineNotificationConnection.ts
@@ -10654,6 +10676,7 @@ app/frontend/shared/composables/activity-message/activityMessageBuilder/builders
 app/frontend/shared/composables/activity-message/activityMessageBuilder/builders/group.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/builders/role.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/builders/online-notification-standalone.ts
+app/frontend/shared/composables/activity-message/activityMessageBuilder/builders/knowledge-base-answer.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/index.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/__tests__/activityMessageBuilder.spec.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/types.ts
@@ -10802,6 +10825,7 @@ app/controllers/channels_sms_controller.rb
 app/controllers/online_notifications_controller.rb
 app/controllers/import_kayako_controller.rb
 app/controllers/ticket/summarize_controller.rb
+app/controllers/ticket/knowledge_base_answers_controller.rb
 app/controllers/long_polling_controller.rb
 app/controllers/user_agent_test_controller.rb
 app/controllers/http_logs_controller.rb
@@ -10983,7 +11007,9 @@ app/graphql/gql/types/group_type.rb
 app/graphql/gql/types/organization_type.rb
 app/graphql/gql/types/locale_type.rb
 app/graphql/gql/types/authorization_type.rb
-app/graphql/gql/types/online_notification_standalone/data_type.rb
+app/graphql/gql/types/online_notification_standalone/kb_answer_generation_failed_data_type.rb
+app/graphql/gql/types/online_notification_standalone/bulk_job_data_type.rb
+app/graphql/gql/types/online_notification_standalone/data_union_type.rb
 app/graphql/gql/types/email_address_parsed_type.rb
 app/graphql/gql/types/link_type.rb
 app/graphql/gql/types/base_interface.rb
@@ -11239,6 +11265,7 @@ app/graphql/gql/mutations/ticket/shared_draft/start/update.rb
 app/graphql/gql/mutations/ticket/shared_draft/start/delete.rb
 app/graphql/gql/mutations/ticket/customer_update.rb
 app/graphql/gql/mutations/ticket/ai_assistance/summarize.rb
+app/graphql/gql/mutations/ticket/ai_assistance/enqueue_knowledge_base_answer.rb
 app/graphql/gql/mutations/ticket/live_user/base.rb
 app/graphql/gql/mutations/ticket/live_user/upsert.rb
 app/graphql/gql/mutations/ticket/live_user/delete.rb
@@ -11477,7 +11504,9 @@ app/services/service/ticket/shared_draft/zoom/create.rb
 app/services/service/ticket/shared_draft/zoom/update.rb
 app/services/service/ticket/shared_draft/start/create.rb
 app/services/service/ticket/shared_draft/start/update.rb
+app/services/service/ticket/ai_assistance/create_knowledge_base_answer.rb
 app/services/service/ticket/ai_assistance/summarize.rb
+app/services/service/ticket/ai_assistance/generate_knowledge_base_answer_content.rb
 app/services/service/ticket/update/validator/base.rb
 app/services/service/ticket/update/validator/base_error.rb
 app/services/service/ticket/update/validator/checklist_completed.rb
@@ -11509,6 +11538,7 @@ app/services/service/channel/admin/disable.rb
 app/services/service/channel/admin/destroy.rb
 app/services/service/channel/admin/list.rb
 app/services/service/channel/admin/enable.rb
+app/services/service/knowledge_base/create_answer_from_ai_result.rb
 app/services/service/history/concerns/fix_event_object.rb
 app/services/service/history/group.rb
 app/services/service/history/list.rb

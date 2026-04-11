@@ -2,6 +2,7 @@ compose.dev.storage.yaml
 compose.dev.yaml
 .lintstagedrc.cjs
 SECURITY.md
+.npmrc
 compose.dev.mailgun.yaml
 package.json
 scripts/lib/resolve-base-tag.js
@@ -4557,8 +4558,9 @@ ghost/core/core/shared/max-limit-cap.js
 ghost/core/core/boot.js
 ghost/core/jsconfig.json
 ghost/core/nodemon.json
+pnpm-workspace.yaml
 skills-lock.json
-.cursor/rules/yarn.mdc
+pnpm-lock.yaml
 .cursor/worktrees.json
 apps/shade/tsconfig.node.json
 apps/shade/test/.eslintrc.cjs
@@ -4778,7 +4780,6 @@ apps/announcement-bar/src/index.js
 apps/announcement-bar/src/icons/clear.svg
 apps/announcement-bar/README.md
 apps/announcement-bar/LICENSE
-apps/announcement-bar/.yarnrc
 apps/signup-form/tsconfig.node.json
 apps/signup-form/vite.config.mts
 apps/signup-form/test/utils/e2e.ts
@@ -4823,7 +4824,6 @@ apps/signup-form/LICENSE
 apps/signup-form/.eslintrc.cjs
 apps/signup-form/tailwind.config.cjs
 apps/signup-form/index.html
-apps/signup-form/.yarnrc
 apps/portal/vite.config.mjs
 apps/portal/test/setup-tests.js
 apps/portal/test/feedback-flow.test.js
@@ -4999,7 +4999,6 @@ apps/portal/src/images/icons/close.svg
 apps/portal/src/images/icons/lock.svg
 apps/portal/README.md
 apps/portal/LICENSE
-apps/portal/.yarnrc
 apps/portal/jsconfig.json
 apps/stats/vite.config.mjs
 apps/stats/test/utils/hook-testing-utils.ts
@@ -6091,7 +6090,6 @@ apps/admin-x-settings/playwright.config.mjs
 apps/admin-x-settings/node-shim.cjs
 apps/admin-x-settings/.eslintrc.cjs
 apps/admin-x-settings/index.html
-apps/admin-x-settings/.yarnrc
 apps/sodo-search/vite.config.mjs
 apps/sodo-search/test/setup-tests.js
 apps/sodo-search/test/acceptance/app.test.js
@@ -6110,7 +6108,6 @@ apps/sodo-search/src/icons/circle-anim.svg
 apps/sodo-search/src/icons/clear.svg
 apps/sodo-search/README.md
 apps/sodo-search/LICENSE
-apps/sodo-search/.yarnrc
 apps/activitypub/vite.config.mjs
 apps/activitypub/test/utils/responses/ghost/users.json
 apps/activitypub/test/utils/responses/ghost/site.json
@@ -6442,7 +6439,6 @@ apps/comments-ui/.eslintrc.js
 apps/comments-ui/postcss.config.cjs
 apps/comments-ui/.cursor/rules/playwright-e2e.mdc
 apps/comments-ui/LICENSE
-apps/comments-ui/.yarnrc
 AGENTS.md
 adr/0002-page-objects-pattern.md
 adr/0001-aaa-test-structure.md
@@ -6462,5 +6458,4 @@ adr/README.md
 .agents/skills/format-number/SKILL.md
 nx.json
 LICENSE
-yarn.lock
 .gitattributes
