@@ -65,6 +65,7 @@ spec/support/uploaded_file.rb
 spec/support/assert_select.rb
 spec/support/active_storage.rb
 spec/support/devise_helpers.rb
+spec/requests/rack_attack_spec.rb
 spec/spec_helper.rb
 spec/features/opportunities_overview_spec.rb
 spec/features/contacts_spec.rb
@@ -278,6 +279,7 @@ Rakefile
 custom_plan.rb
 config/initializers/locale.rb
 config/initializers/simple_form_bootstrap.rb
+config/initializers/rack_attack.rb
 config/initializers/paginate_arrays.rb
 config/initializers/wrap_parameters.rb
 config/initializers/content_security_policy.rb
@@ -403,6 +405,7 @@ db/migrate/20100928030613_create_comments.rb
 db/migrate/20230526211831_create_active_storage_tables.active_storage.rb
 db/migrate/20141126031837_increase_email_to254_chars.rb
 db/migrate/20120224073107_remove_default_value_and_clear_settings.rb
+db/migrate/20260412040913_add_blog_to_users.rb
 db/migrate/20111201030535_add_field_groups_klass_name.rb
 db/migrate/20100928030622_add_background_info_to_models.rb
 db/migrate/20111101083437_create_fields.rb
@@ -411,14 +414,18 @@ db/migrate/20120413034923_add_index_on_versions_item_type.rb
 db/migrate/20100928030627_acts_as_taggable_on_migration.rb
 db/migrate/20100928030626_add_state_to_timeline_objects.rb
 db/migrate/20100928030619_add_suspended_to_users.rb
+db/migrate/20260326212615_add_title_to_fields.rb
 db/migrate/20120801032706_add_pair_id_to_fields.rb
+db/migrate/20260412062855_remove_yahoo_from_users.rb
 db/migrate/20141230205453_add_missing_unique_indices.acts_as_taggable_on_engine.rb
 db/migrate/20120216042541_is_paranoid_to_paper_trail.rb
+db/migrate/20260412040905_add_social_media_to_entities_and_users.rb
 db/migrate/20100928030604_create_preferences.rb
 db/migrate/20100928030601_create_accounts.rb
 db/migrate/20100928030618_add_admin_to_users.rb
 db/migrate/20100928030608_create_opportunities.rb
 db/migrate/20110719082054_add_skype_to_contacts_and_leads.rb
+db/migrate/20260412040909_add_twitter_and_linkedin_to_users.rb
 db/migrate/20100928030624_add_index_on_permissions.rb
 db/migrate/20100928030610_create_account_opportunities.rb
 db/migrate/20100928030607_create_contacts.rb
@@ -431,6 +438,7 @@ db/migrate/20200806004459_add_html5_to_fields.rb
 db/migrate/20150123060900_convert_radio_to_radio_buttons.rb
 db/migrate/20100928030606_create_leads.rb
 db/migrate/20230526212613_convert_to_active_storage.rb
+db/migrate/20260412045437_remove_aim_from_users.rb
 db/migrate/20101221345678_add_rating_and_category_to_accounts.rb
 db/migrate/20140916012922_add_indexes_to_model_associations.rb
 db/migrate/20250502095012_remove_skype_from_users_contacts_and_leads.rb
@@ -542,6 +550,7 @@ vendor/assets/javascripts/jquery_timeago/jquery.timeago.th.js
 vendor/assets/javascripts/jquery_timeago/jquery.timeago.fr.js
 crowdin.yml
 .ruby-version
+doc/THREAT_MODEL.md
 Procfile
 script/sample_hooks/pre-push
 script/sample_hooks/README.md
