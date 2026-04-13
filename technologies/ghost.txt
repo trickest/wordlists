@@ -2461,6 +2461,7 @@ ghost/core/test/unit/server/models/tag.test.js
 ghost/core/test/unit/server/models/outbox.test.js
 ghost/core/test/unit/server/models/welcome-email-automation.test.js
 ghost/core/test/unit/server/models/comment.test.js
+ghost/core/test/unit/server/models/welcome-email-automation-run.test.js
 ghost/core/test/unit/server/models/member-click-event.test.js
 ghost/core/test/unit/server/models/milestone.test.js
 ghost/core/test/unit/server/models/single-use-token.test.js
@@ -3442,6 +3443,8 @@ ghost/core/core/server/data/migrations/versions/5.97/2024-10-10-01-02-03-add-sig
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-08-14-36-58-added-heading-font-setting.js
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-08-14-25-27-added-body-font-settings.js
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-09-14-04-10-add-session-verification-field.js
+ghost/core/core/server/data/migrations/versions/6.29/2026-04-13-09-12-13-drop-gift-subscription-redemption-notification-column.js
+ghost/core/core/server/data/migrations/versions/6.29/2026-04-12-20-34-22-add-welcome-email-automation-runs-table.js
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-15-05-34-add-expiry-at-column-to-members-products.js
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-16-14-25-add-member-created-events-table.js
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-16-14-25-add-subscription-created-events-table.js
@@ -3752,6 +3755,7 @@ ghost/core/core/server/models/member-created-event.js
 ghost/core/core/server/models/offer.js
 ghost/core/core/server/models/member-feedback.js
 ghost/core/core/server/models/index.js
+ghost/core/core/server/models/welcome-email-automation-run.js
 ghost/core/core/server/models/tag-public.js
 ghost/core/core/server/models/gift.js
 ghost/core/core/server/models/stripe-customer-subscription.js

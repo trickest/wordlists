@@ -13037,6 +13037,7 @@ src/Core/Migration/V6_7/Migration1733136208AddH1ToCmsCategoryListing.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodRule.php
 src/Core/Migration/V6_7/Migration1773112488SetDefaultCmsPageIdForCategories.php
 src/Core/Migration/V6_7/Migration1765376847SetDefaultSystemConfigLoadPreviewsOnSearch.php
+src/Core/Migration/V6_7/Migration1775200001IncreaseProductDisplayGroupLength.php
 src/Core/Migration/V6_7/Migration1745319883AddDefaultConfigForMeasurementSystem.php
 src/Core/Migration/V6_7/Migration1740563553AddAppRequestedPrivileges.php
 src/Core/Migration/V6_7/Migration1742563555AddNotificationTable.php
@@ -13067,6 +13068,7 @@ src/Core/Migration/V6_7/Migration1773647849AlignFlowNameWithEventName.php
 src/Core/Migration/V6_7/Migration1763125891AddProductTypeColumn.php
 src/Core/Migration/V6_7/Migration1772178695ChangeProductExportProductStreamDeleteRule.php
 src/Core/Migration/V6_7/Migration1728040169AddPrimaryOrderDelivery.php
+src/Core/Migration/V6_7/Migration1775200002RecalculateProductDisplayGroupHash.php
 src/Core/Migration/V6_7/Migration1741163941AddOrderInternalComment.php
 src/Core/Migration/V6_7/Migration1773826242RenameAgenticCommerceSalesChannelType.php
 src/Core/Migration/V6_7/Migration1763377575SendEmailAfterPasswordChangeFlow.php
@@ -17750,7 +17752,6 @@ src/Core/Framework/Adapter/Kernel/HttpCacheKernel.php
 src/Core/Framework/Adapter/Kernel/HttpKernel.php
 src/Core/Framework/Adapter/Composer/ComposerPackage.php
 src/Core/Framework/Adapter/Composer/ComposerInfoProvider.php
-src/Core/Framework/Adapter/Database/Mysql.php
 src/Core/Framework/Adapter/Database/MySQLFactory.php
 src/Core/Framework/Adapter/Database/ReplicaConnection.php
 src/Core/Framework/Adapter/Command/CacheWatchDelayedCommand.php
@@ -18846,6 +18847,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RouteScopeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUpdatesInExecuteQueryRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoRuntimeExceptionInDomainExceptionsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/UseCLIContextRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoLegacySqlHashFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnserializeUsageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoSuperGlobalsInsideCompilerPassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/StorefrontRouteUsageRule.php
@@ -19414,6 +19416,7 @@ tests/integration/Core/Content/Product/DataAbstractionLayer/CheapestPrice/Cheape
 tests/integration/Core/Content/Product/DataAbstractionLayer/StatesUpdaterTest.php
 tests/integration/Core/Content/Product/DataAbstractionLayer/SearchKeywordUpdaterTest.php
 tests/integration/Core/Content/Product/DataAbstractionLayer/ProductCategoryDenormalizerTest.php
+tests/integration/Core/Content/Product/DataAbstractionLayer/VariantListingUpdaterTest.php
 tests/integration/Core/Content/Product/SearchKeyword/ProductSearchTermInterpreterTest.php
 tests/integration/Core/Content/Product/SearchKeyword/ProductSearchKeywordAnalyzerTest.php
 tests/integration/Core/Content/Product/Api/ProductApiTest.php
@@ -20789,6 +20792,7 @@ tests/migration/Core/V6_7/Migration1770740885AddRevisionToConsentStateTest.php
 tests/migration/Core/V6_7/Migration1743151679AddContextGatewayUrlTest.php
 tests/migration/Core/V6_7/Migration1756068709FixCustomerAddressFirstNameLengthTest.php
 tests/migration/Core/V6_7/Migration1743064966CartConfigSubtotalTaxColumnTest.php
+tests/migration/Core/V6_7/Migration1775200001IncreaseProductDisplayGroupLengthTest.php
 tests/migration/Core/V6_7/Migration1752750171AddIndexToOrderAddressCreateAndUpdateTest.php
 tests/migration/Core/V6_7/Migration1764580028AddAltAttributeToOrderConfirmationMailImagesTest.php
 tests/migration/Core/V6_7/Migration1745319883AddDefaultConfigForMeasurementSystemTest.php
@@ -21103,6 +21107,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-core-
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-test-namespace.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AttributeFinalRule/NonFinalAttributeClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AttributeFinalRule/FinalAttributeClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctionRule/LegacySqlHashUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/InTestNamespace.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/NotRegisteredField.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/MyTranslatedField.php
@@ -21124,6 +21129,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoRouteOverrideInDecorators
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/RouteScopeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoLegacySqlHashFunctionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInRouteAttributesRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoStaticRuntimeExceptionReturnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleTest.php
@@ -23602,7 +23608,6 @@ config-schema.json
 .danger.php
 UPGRADE-6.7.md
 .devcontainer/devcontainer.json
-vendor-bin/cs-fixer/composer.json
 vendor-bin/rector/composer.json
 vendor-bin/roave-backward-compatibility-check/phpunit.xml.dist
 vendor-bin/roave-backward-compatibility-check/bin/verify-version.php

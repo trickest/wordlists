@@ -4344,6 +4344,7 @@ app/bundles/CoreBundle/Tests/Functional/Service/LocalFileAdapterServiceTest.php
 app/bundles/CoreBundle/Tests/Functional/Command/AnonymizeIpCommandTest.php
 app/bundles/CoreBundle/Tests/Functional/Command/EntityExportCommandTest.php
 app/bundles/CoreBundle/Tests/Functional/Command/MaxMindDoNotSellPurgeCommandTest.php
+app/bundles/CoreBundle/Tests/Functional/Command/MessageOfTheDayCommandTest.php
 app/bundles/CoreBundle/Tests/Functional/ParametersTest.php
 app/bundles/CoreBundle/Tests/Functional/Field/Notification/CustomFieldNotificationFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Controller/AjaxControllerTest.php
@@ -4888,6 +4889,7 @@ app/bundles/CoreBundle/Exception/FlattenableException.php
 app/bundles/CoreBundle/Exception/DeleteEntityDependencyException.php
 app/bundles/CoreBundle/Exception/BadConfigurationException.php
 app/bundles/CoreBundle/Exception/SchemaException.php
+app/bundles/CoreBundle/Exception/MessageOfTheDayException.php
 app/bundles/CoreBundle/Exception/RecordNotUnpublishedException.php
 app/bundles/CoreBundle/Exception/InvalidDecodedStringException.php
 app/bundles/CoreBundle/Exception/FileExistsException.php
@@ -5115,6 +5117,7 @@ app/bundles/CoreBundle/Service/OptimisticLockService.php
 app/bundles/CoreBundle/Service/BulkNotification.php
 app/bundles/CoreBundle/Service/OptimisticLockServiceInterface.php
 app/bundles/CoreBundle/Command/UnusedIpDeleteCommand.php
+app/bundles/CoreBundle/Command/MessageOfTheDayCommand.php
 app/bundles/CoreBundle/Command/CleanupMaintenanceCommand.php
 app/bundles/CoreBundle/Command/PullTransifexCommand.php
 app/bundles/CoreBundle/Command/AnonymizeIpCommand.php

@@ -999,6 +999,7 @@ spec/db/migrate/mention_init_spec.rb
 spec/db/migrate/issue_2185_and_or_conditions_spec.rb
 spec/db/migrate/ldap_samaccountname_to_uid_spec.rb
 spec/db/migrate/setting_update_password_max_login_failed_spec.rb
+spec/db/migrate/issue_6072_rename_reserved_private_methods_spec.rb
 spec/db/migrate/add_checklist_item_ticket_association_spec.rb
 spec/db/migrate/update_user_attributes_spec.rb
 spec/db/migrate/group_hierarchy_spec.rb
@@ -4635,6 +4636,7 @@ db/migrate/20241113154014_issue5409_wrong_db_column_array_type.rb
 db/migrate/20170727000001_setting_proxy.rb
 db/migrate/20170123000002_fixed_translation.rb
 db/migrate/20181023163804_add_stats_backends.rb
+db/migrate/20260408124617_issue6072_rename_reserved_private_methods.rb
 db/migrate/20221208131506_issue3971_exchange_oauth2.rb
 db/migrate/20170419000002_overview_role_ids.rb
 db/migrate/20240618081710_migrate_template_options.rb
@@ -7753,6 +7755,21 @@ app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/TicketBulkEditF
 app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/__tests__/TicketBulkEditFlyout.spec.ts
 app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/useTicketBulkEdit.ts
 app/frontend/apps/desktop/components/Ticket/TicketBulkEditFlyout/types.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/components/ScrollButton.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/components/BulkAvatarSkeleton.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkBottomDrawer.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkEntityCard.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/__tests__/useDragAndDropBulk.spec.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/__tests__/DragAndDropBulkCursorPreview.spec.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/__tests__/DragAndDropBulkWrapper.spec.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/__tests__/DragAndDropBulkConfirmation.spec.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/__tests__/DragAndDropBulkEntityCard.spec.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkCursorPreview.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkWrapper.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/useDragAndDropBulk.ts
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkConfirmation.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/DragAndDropBulkTopDrawer.vue
+app/frontend/apps/desktop/components/Ticket/DragAndDropBulk/types.ts
 app/frontend/apps/desktop/components/Ticket/TicketListTable.vue
 app/frontend/apps/desktop/components/Ticket/TicketPopoverWithTrigger.vue
 app/frontend/apps/desktop/components/Ticket/TicketListPopoverWithTrigger.vue
@@ -8004,6 +8021,7 @@ app/frontend/apps/desktop/initializer/assets/pencil.svg
 app/frontend/apps/desktop/initializer/assets/arrow-down-short.svg
 app/frontend/apps/desktop/initializer/assets/check-circle-no-ai.svg
 app/frontend/apps/desktop/initializer/assets/chevron-down.svg
+app/frontend/apps/desktop/initializer/assets/people-fill.svg
 app/frontend/apps/desktop/initializer/assets/twitter.svg
 app/frontend/apps/desktop/initializer/assets/x.svg
 app/frontend/apps/desktop/initializer/assets/openid-connect.svg
@@ -8057,6 +8075,7 @@ app/frontend/apps/desktop/initializer/assets/exclamation-triangle.svg
 app/frontend/apps/desktop/initializer/assets/chat-left-text.svg
 app/frontend/apps/desktop/initializer/assets/camera-video.svg
 app/frontend/apps/desktop/initializer/assets/link-45deg.svg
+app/frontend/apps/desktop/initializer/assets/arrow-left.svg
 app/frontend/apps/desktop/initializer/assets/check-all.svg
 app/frontend/apps/desktop/initializer/assets/sun.svg
 app/frontend/apps/desktop/initializer/assets/whatsapp.svg
@@ -8074,6 +8093,7 @@ app/frontend/apps/desktop/initializer/assets/delete-table.svg
 app/frontend/apps/desktop/initializer/assets/check2-square.svg
 app/frontend/apps/desktop/initializer/assets/facebook.svg
 app/frontend/apps/desktop/initializer/assets/file-calendar.svg
+app/frontend/apps/desktop/initializer/assets/arrow-right.svg
 app/frontend/apps/desktop/initializer/assets/card-list.svg
 app/frontend/apps/desktop/initializer/assets/square.svg
 app/frontend/apps/desktop/initializer/assets/star-fill.svg
@@ -10933,6 +10953,7 @@ app/graphql/gql/types/input/ticket/external_references/issue_tracker_list_input_
 app/graphql/gql/types/input/ticket/external_references/idoit_object_list_input_type.rb
 app/graphql/gql/types/input/ticket/update_input_type.rb
 app/graphql/gql/types/input/ticket/checklist/item_input_type.rb
+app/graphql/gql/types/input/ticket/macros/selector_input_type.rb
 app/graphql/gql/types/input/ticket/shared_draft/start_input_type.rb
 app/graphql/gql/types/input/ticket/shared_draft/zoom_input_type.rb
 app/graphql/gql/types/input/ticket/link_input_type.rb
