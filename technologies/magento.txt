@@ -27058,6 +27058,7 @@ app/code/Magento/Customer/Model/Validator/Dob.php
 app/code/Magento/Customer/Model/Validator/Name.php
 app/code/Magento/Customer/Model/Validator/Street.php
 app/code/Magento/Customer/Model/Validator/Telephone.php
+app/code/Magento/Customer/Model/Validator/AbstractAddressFieldValidator.php
 app/code/Magento/Customer/Model/Validator/City.php
 app/code/Magento/Customer/Model/Validator/Address/File.php
 app/code/Magento/Customer/Model/Vat.php
@@ -29749,6 +29750,7 @@ app/code/Magento/Sales/Test/Unit/Observer/AssignOrderToCustomerObserverTest.php
 app/code/Magento/Sales/Test/Unit/Observer/Backend/CatalogPriceRuleTest.php
 app/code/Magento/Sales/Test/Unit/Observer/Backend/CatalogProductSaveAfterObserverTest.php
 app/code/Magento/Sales/Test/Unit/Observer/Backend/SubtractQtyFromQuotesObserverTest.php
+app/code/Magento/Sales/Test/Unit/Cron/CleanExpiredQuotesTest.php
 app/code/Magento/Sales/Test/Unit/CustomerData/LastOrderedItemsTest.php
 app/code/Magento/Sales/Test/Unit/Block/Adminhtml/Rss/Order/Grid/LinkTest.php
 app/code/Magento/Sales/Test/Unit/Block/Adminhtml/Order/Invoice/ViewTest.php
@@ -29972,6 +29974,7 @@ app/code/Magento/Sales/Test/Unit/Model/ResourceModel/Order/Status/HistoryTest.ph
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/Order/Handler/StateTest.php
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/Order/Handler/AddressTest.php
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/Order/Tax/ItemTest.php
+app/code/Magento/Sales/Test/Unit/Model/ResourceModel/Quote/DeleteTest.php
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/AttributeTest.php
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/OrderTest.php
 app/code/Magento/Sales/Test/Unit/Model/ResourceModel/HelperTest.php
@@ -30874,6 +30877,7 @@ app/code/Magento/Sales/Model/ResourceModel/Order/Handler/State.php
 app/code/Magento/Sales/Model/ResourceModel/Order/Tax/Item/Collection.php
 app/code/Magento/Sales/Model/ResourceModel/Order/Tax/Collection.php
 app/code/Magento/Sales/Model/ResourceModel/Order/Tax/Item.php
+app/code/Magento/Sales/Model/ResourceModel/Quote/Delete.php
 app/code/Magento/Sales/Model/ResourceModel/GridPool.php
 app/code/Magento/Sales/Model/ResourceModel/Grid/Collection.php
 app/code/Magento/Sales/Model/ResourceModel/Sale/Collection.php

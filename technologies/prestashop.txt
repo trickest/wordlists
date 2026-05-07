@@ -2093,6 +2093,7 @@ tests/UI/data/xml/order.ts
 tests/UI/data/xml/store.ts
 tests/UI/data/xml/country.ts
 tests/UI/data/xml/product.ts
+tests/UI/data/xml/category.ts
 tests/UI/campaigns/audit/FO/classic/03_cart.ts
 tests/UI/campaigns/audit/FO/classic/02_connected.ts
 tests/UI/campaigns/audit/FO/classic/01_guest.ts
@@ -2846,6 +2847,7 @@ tests/UI/campaigns/functional/API/02_endpoints/08_product/01_deleteProductImageI
 tests/UI/campaigns/functional/API/02_endpoints/08_product/05_getProductIdImages.ts
 tests/UI/campaigns/functional/API/02_endpoints/08_product/04_postProductIdImage.ts
 tests/UI/campaigns/functional/API/02_endpoints/06_language/01_getLanguages.ts
+tests/UI/campaigns/functional/WS/05_categoriesCRUD.ts
 tests/UI/campaigns/functional/WS/01_countriesCRUD.ts
 tests/UI/campaigns/functional/WS/04_storesCRUD.ts
 tests/UI/campaigns/functional/WS/03_productsCRUD.ts
@@ -2936,6 +2938,8 @@ tests/UI/.mocharc.json
 tests/UI/.eslintrc.js
 tests/UI/webservices/country/countryXml.ts
 tests/UI/webservices/country/countryWs.ts
+tests/UI/webservices/category/categoryWs.ts
+tests/UI/webservices/category/categoryXml.ts
 tests/UI/webservices/baseXml.ts
 tests/UI/webservices/product/productXml.ts
 tests/UI/webservices/product/productWs.ts

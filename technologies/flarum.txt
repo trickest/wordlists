@@ -1707,6 +1707,7 @@ framework/core/migrations/2015_10_24_194000_add_ip_address_to_posts.php
 framework/core/migrations/2025_10_11_000001_create_queue_failed_jobs.php
 framework/core/migrations/2021_04_18_145100_change_posts_content_column_to_mediumtext.php
 framework/core/migrations/2021_03_02_040500_change_access_tokens_add_id.php
+framework/core/migrations/2026_05_07_000000_add_avatar_variant_flags_to_users.php
 framework/core/migrations/2018_01_18_130500_change_group_permission_add_foreign_keys.php
 framework/core/migrations/2015_02_24_000000_create_users_discussions_table.php
 framework/core/migrations/2025_10_11_000000_create_queue_jobs.php
@@ -2524,6 +2525,7 @@ framework/core/tests/integration/api/users/SendPasswordResetEmailTest.php
 framework/core/tests/integration/api/users/SendActivationEmailTest.php
 framework/core/tests/integration/api/users/PasswordResetTokenAccumulationTest.php
 framework/core/tests/integration/api/users/DeleteTest.php
+framework/core/tests/integration/api/users/ShowGroupsRelationshipTest.php
 framework/core/tests/integration/api/users/GroupSearchTest.php
 framework/core/tests/integration/api/users/PasswordChangeSessionInvalidationTest.php
 framework/core/tests/integration/api/users/CreateTest.php
@@ -2571,6 +2573,8 @@ framework/core/tests/fixtures/less/Imported.less
 framework/core/tests/fixtures/less/override_filesource.less
 framework/core/tests/fixtures/views/override/frontend/app.blade.php
 framework/core/tests/fixtures/views/test.blade.php
+framework/core/tests/unit/Log/Context/RepositoryTest.php
+framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
 framework/core/tests/unit/Settings/MemoryCacheSettingsRepositoryTest.php
 framework/core/tests/unit/Settings/DatabaseSettingsRepositoryTest.php
 framework/core/tests/unit/.gitkeep
@@ -2856,6 +2860,7 @@ framework/core/src/User/AccountActivationMailerTrait.php
 framework/core/src/User/SelfDemotionGuard.php
 framework/core/src/User/TokensClearer.php
 framework/core/src/User/Console/ConvertAvatarsToWebpCommand.php
+framework/core/src/User/Console/BackfillAvatarVariantsCommand.php
 framework/core/src/User/UserMetadataUpdater.php
 framework/core/src/User/Job/RequestPasswordResetJob.php
 framework/core/src/User/User.php

@@ -20,6 +20,7 @@ docker/dev-gateway/README.md
 docker/dev-gateway/Dockerfile
 docker/dev-gateway/Caddyfile
 docker/dev-gateway/Caddyfile.build
+knip.json
 .devcontainer/start-dev-stack.sh
 .devcontainer/devcontainer.json
 .devcontainer/postCreate.sh
@@ -763,6 +764,7 @@ apps/portal/src/components/notification.js
 apps/portal/src/components/trigger-button.styles.js
 apps/portal/src/data-attributes.js
 apps/portal/src/images/ghost-logo-small.svg
+apps/portal/src/images/gift-card-orb.svg
 apps/portal/src/images/icons/logout.svg
 apps/portal/src/images/icons/lock.svg
 apps/portal/src/images/icons/thumbs-up.svg
@@ -1746,16 +1748,19 @@ apps/posts/test/utils/msw-helpers.ts
 apps/posts/test/utils/MSW_USAGE_GUIDE.md
 apps/posts/test/acceptance/posts.test.ts
 apps/posts/test/unit/utils/chart-helpers.test.tsx
+apps/posts/test/unit/utils/filter-normalization.test.ts
 apps/posts/test/unit/utils/link-helpers.test.tsx
 apps/posts/test/unit/utils/get-site-timezone.test.ts
 apps/posts/test/unit/utils/kpi-helpers.test.tsx
 apps/posts/test/unit/hooks/use-edit-links.test.tsx
 apps/posts/test/unit/hooks/use-responsive-chart-size.test.tsx
+apps/posts/test/unit/hooks/create-combined-value-source.test.tsx
 apps/posts/test/unit/hooks/use-post-success-modal.test.tsx
 apps/posts/test/unit/hooks/use-post-feedback.test.tsx
 apps/posts/test/unit/hooks/use-post-referrers.test.tsx
 apps/posts/test/unit/hooks/create-hybrid-value-source.test.tsx
 apps/posts/test/unit/hooks/with-feature-flag.test.tsx
+apps/posts/test/unit/hooks/create-remote-value-source.test.tsx
 apps/posts/test/unit/hooks/use-post-newsletter-stats.test.tsx
 apps/posts/test/unit/hooks/use-feature-flag.test.tsx
 apps/posts/test/unit/views/members/import-members/upload.test.ts
@@ -1768,6 +1773,10 @@ apps/posts/test/unit/views/members/members-header-search.test.tsx
 apps/posts/test/unit/views/members/members-actions.test.tsx
 apps/posts/test/unit/views/members/members-list.test.ts
 apps/posts/test/unit/views/automations/automations-list.test.tsx
+apps/posts/test/unit/views/comments/use-filter-state.test.tsx
+apps/posts/test/unit/views/comments/comment-fields.test.ts
+apps/posts/test/unit/views/comments/use-comment-filter-fields.test.tsx
+apps/posts/test/unit/views/comments/comment-filter-query.test.ts
 apps/posts/test/.eslintrc.cjs
 apps/posts/tsconfig.json
 apps/posts/src/utils/chart-helpers.ts
@@ -1878,9 +1887,10 @@ apps/posts/src/views/filters/filter-ast.test.ts
 apps/posts/src/views/filters/filter-types.ts
 apps/posts/src/views/filters/filter-ast.ts
 apps/posts/src/views/filters/resolve-field.ts
+apps/posts/src/views/filters/filter-operator-options.ts
 apps/posts/src/views/filters/filter-codecs.ts
-apps/posts/src/views/filters/filter-normalization.test.ts
 apps/posts/src/views/filters/filter-query-core.test.ts
+apps/posts/src/views/filters/filter-date.ts
 apps/posts/src/views/filters/filter-codecs.test.ts
 apps/posts/src/views/filters/filter-types.test.ts
 apps/posts/src/views/filters/resolve-field.test.ts
@@ -1915,7 +1925,9 @@ apps/posts/src/views/Tags/components/tags-content.tsx
 apps/posts/src/views/Tags/components/tags-layout.tsx
 apps/posts/src/views/Tags/components/tags-list.tsx
 apps/posts/src/views/Tags/tags.tsx
+apps/posts/src/views/comments/comment-filter-query.ts
 apps/posts/src/views/comments/hooks/use-filter-state.ts
+apps/posts/src/views/comments/legacy-comment-filter-query.ts
 apps/posts/src/views/comments/comments.tsx
 apps/posts/src/views/comments/components/comment-header.tsx
 apps/posts/src/views/comments/components/comment-avatar.tsx
@@ -1932,6 +1944,8 @@ apps/posts/src/views/comments/components/comment-likes-modal.tsx
 apps/posts/src/views/comments/components/comments-list.tsx
 apps/posts/src/views/comments/components/comment-reports-modal.tsx
 apps/posts/src/views/comments/components/comments-content.tsx
+apps/posts/src/views/comments/use-comment-filter-fields.ts
+apps/posts/src/views/comments/comment-fields.ts
 apps/posts/src/views/Automations/automations.tsx
 apps/posts/src/views/Automations/components/automations-list.tsx
 apps/posts/src/views/Automations/components/automations-content.tsx
@@ -3417,6 +3431,7 @@ ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-12-drop-suppr
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/6.2/2025-09-30-14-28-09-add-utm-fields.js
 ghost/core/core/server/data/migrations/versions/5.69/2023-10-06-15-06-00-rename-recommendations-reason-to-description.js
+ghost/core/core/server/data/migrations/versions/6.37/2026-05-04-07-51-14-add-members-created-at-id-index.js
 ghost/core/core/server/data/migrations/versions/6.28/2026-04-08-13-05-35-drop-automated-emails-table.js
 ghost/core/core/server/data/migrations/versions/6.28/2026-04-09-15-50-08-add-gift-subscription-redemption-notification-column.js
 ghost/core/core/server/data/migrations/versions/6.28/2026-04-09-02-30-06-disable-default-header-fields-for-existing-welcome-emails.js
