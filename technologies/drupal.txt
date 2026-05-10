@@ -5034,7 +5034,6 @@ core/modules/content_moderation/tests/src/Functional/ViewsModerationStateFilterT
 core/modules/content_moderation/tests/src/Unit/StateTransitionValidationTest.php
 core/modules/content_moderation/tests/src/Unit/ModerationInformationTest.php
 core/modules/content_moderation/tests/src/Unit/ContentModerationRouteSubscriberTest.php
-core/modules/content_moderation/tests/src/Unit/ContentPreprocessTest.php
 core/modules/content_moderation/tests/src/Unit/LatestRevisionCheckTest.php
 core/modules/content_moderation/tests/src/Traits/ContentModerationTestTrait.php
 core/modules/content_moderation/tests/src/Kernel/NodeAccessTest.php
@@ -5104,11 +5103,9 @@ core/modules/content_moderation/src/Entity/Handler/NodeModerationHandler.php
 core/modules/content_moderation/src/Entity/Handler/TaxonomyTermModerationHandler.php
 core/modules/content_moderation/src/Entity/Routing/EntityModerationRouteProvider.php
 core/modules/content_moderation/src/Entity/ContentModerationStateInterface.php
-core/modules/content_moderation/src/ContentPreprocess.php
 core/modules/content_moderation/src/StateTransitionValidationInterface.php
 core/modules/content_moderation/src/ContentModerationStateStorageSchema.php
 core/modules/content_moderation/src/EntityTypeInfo.php
-core/modules/content_moderation/src/Hook/ContentModerationThemeHooks.php
 core/modules/content_moderation/src/Hook/ContentModerationViewsHooks.php
 core/modules/content_moderation/src/Hook/ContentModerationHooks.php
 core/modules/content_moderation/src/Hook/ContentModerationViewsExecutionHooks.php
