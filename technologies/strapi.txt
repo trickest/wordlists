@@ -281,6 +281,7 @@ tests/api/core/upload/admin/file-folder.test.api.js
 tests/api/core/upload/content-api/upload.test.api.js
 tests/api/core/upload/content-api/private-file-signing.test.api.js
 tests/api/core/upload/content-api/graphql.test.api.js
+tests/api/core/upload/content-api/upload-concurrency.test.api.js
 tests/api/core/upload/content-api/upload-automatic-folder.test.api.js
 tests/api/core/upload/content-api/upload-signing.test.api.js
 tests/api/core/content-releases/settings.test.api.ts
@@ -1485,6 +1486,10 @@ packages/admin-test-utils/tsconfig.json
 packages/admin-test-utils/tsconfig.build.json
 packages/admin-test-utils/src/global-setup.ts
 packages/admin-test-utils/src/setup.ts
+packages/admin-test-utils/src/patches/response-json-realm.ts
+packages/admin-test-utils/src/patches/request-body-stash.ts
+packages/admin-test-utils/src/patches/node-globals.ts
+packages/admin-test-utils/src/patches/types.ts
 packages/admin-test-utils/src/fixtures/collection-types/address.ts
 packages/admin-test-utils/src/fixtures/collection-types/index.ts
 packages/admin-test-utils/src/fixtures/store/index.ts
@@ -2056,6 +2061,7 @@ packages/plugins/cloud/admin/src/components/CLIDeployTabs.tsx
 packages/plugins/cloud/admin/src/translations/it.json
 packages/plugins/cloud/admin/src/translations/cs.json
 packages/plugins/cloud/admin/src/translations/ru.json
+packages/plugins/cloud/admin/src/translations/tr.json
 packages/plugins/cloud/admin/src/translations/es.json
 packages/plugins/cloud/admin/src/translations/fr.json
 packages/plugins/cloud/admin/src/translations/nl.json
@@ -2878,6 +2884,7 @@ packages/core/upload/server/src/utils/mime-validation.ts
 packages/core/upload/server/src/utils/__mocks__/file-type.js
 packages/core/upload/server/src/utils/index.ts
 packages/core/upload/server/src/__tests__/bootstrap.test.ts
+packages/core/upload/server/src/__tests__/config.test.ts
 packages/core/upload/server/src/__tests__/register.test.ts
 packages/core/upload/server/src/content-types/folder.ts
 packages/core/upload/server/src/content-types/file.ts

@@ -3209,6 +3209,7 @@ core/tests/Drupal/FunctionalTests/Core/Recipe/RecipeCommandTest.php
 core/tests/Drupal/FunctionalTests/Core/Container/ServiceDeprecationTest.php
 core/tests/Drupal/FunctionalTests/Core/Test/ModuleInstallBatchTest.php
 core/tests/Drupal/FunctionalTests/Bootstrap/ErrorContainer.php
+core/tests/Drupal/FunctionalTests/Bootstrap/LegacyFrontControllerTest.php
 core/tests/Drupal/FunctionalTests/Bootstrap/UncaughtExceptionTest.php
 core/tests/Drupal/FunctionalTests/Bootstrap/ExceptionContainer.php
 core/tests/Drupal/FunctionalTests/Breadcrumb/Breadcrumb404Test.php
@@ -5696,6 +5697,10 @@ core/modules/system/tests/modules/error_service_test/error_service_test.routing.
 core/modules/system/tests/modules/error_service_test/error_service_test.info.yml
 core/modules/system/tests/modules/js_displace/js_displace.info.yml
 core/modules/system/tests/modules/js_displace/src/Hook/JsDisplaceThemeHooks.php
+core/modules/system/tests/modules/legacy_front_controller_test/src/Controller/TestController.php
+core/modules/system/tests/modules/legacy_front_controller_test/legacy_front_controller_test.info.yml
+core/modules/system/tests/modules/legacy_front_controller_test/legacy_front_controller_test.routing.yml
+core/modules/system/tests/modules/legacy_front_controller_test/test_index.php.template
 core/modules/system/tests/modules/database_test/src/Controller/DatabaseTestController.php
 core/modules/system/tests/modules/database_test/src/EventSubscriber/DatabaseEventSubscriber.php
 core/modules/system/tests/modules/database_test/src/Hook/DatabaseTestHooks.php
@@ -16120,6 +16125,8 @@ core/lib/Drupal/Core/Password/DefaultPasswordGenerator.php
 core/lib/Drupal/Core/Password/PhpassHashedPasswordBase.php
 core/lib/Drupal/Core/Password/PasswordInterface.php
 core/lib/Drupal/Core/Password/PasswordGeneratorInterface.php
+core/lib/Drupal/Core/Runtime/DeprecatedAutoloadAccess.php
+core/lib/Drupal/Core/Runtime/DrupalRuntime.php
 core/lib/Drupal/Core/GeneratedButton.php
 core/.yarnrc.yml
 core/INSTALL.mysql.txt
@@ -16133,6 +16140,7 @@ core/core.libraries.yml
 .editorconfig
 index.php
 .gitattributes
+autoload_runtime.php
 .gitlab-ci.yml
 update.php
 sites/README.txt
@@ -16177,6 +16185,7 @@ composer/Plugin/Scaffold/Interpolator.php
 composer/Plugin/Scaffold/ScaffoldFilePath.php
 composer/Plugin/Scaffold/TESTING.txt
 composer/Plugin/Scaffold/PostPackageEventListenerInterface.php
+composer/Plugin/Scaffold/GenerateAutoloadRuntimeReferenceFile.php
 composer/Plugin/ProjectMessage/README.md
 composer/Plugin/ProjectMessage/composer.json
 composer/Plugin/ProjectMessage/LICENSE.txt

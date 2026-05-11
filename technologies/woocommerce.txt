@@ -9012,9 +9012,7 @@ plugins/woocommerce/templates/global/sidebar.php
 plugins/woocommerce/readme.txt
 plugins/woocommerce/changelog/fix-add-color-input-to-create-value
 plugins/woocommerce/changelog/fix-63774-clear-transients-does-not-clear-transient_wc_attribute_taxonomies
-plugins/woocommerce/changelog/64395-wooplug-6589-schedule-review-request-email
 plugins/woocommerce/changelog/fix-issue-64229
-plugins/woocommerce/changelog/64393-wooplug-6590-add-wc-email-customer-review-request
 plugins/woocommerce/changelog/64325-graphql-settings-query-limits
 plugins/woocommerce/changelog/wccom-2349-site-not-connected-typo
 plugins/woocommerce/changelog/64010-30819-php8-warning
@@ -9022,14 +9020,12 @@ plugins/woocommerce/changelog/update-product-filters-no-multiple
 plugins/woocommerce/changelog/rsm-140-add-update-available-indicator-email-list
 plugins/woocommerce/changelog/63270-update-53125-implement-preview-mode-flag
 plugins/woocommerce/changelog/64480-opr-issue-64452
-plugins/woocommerce/changelog/64526-wooplug-6595-per-item-review-form-row
 plugins/woocommerce/changelog/performance-checkout-thruput-storeapi-checkout
 plugins/woocommerce/changelog/fix-64177-transient-cache-key-datetime
 plugins/woocommerce/changelog/tweak-order-preview-action-buttons-wp70
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/performance-checkout-thruput-stock-and-validation
 plugins/woocommerce/changelog/flexibilize-graphql-status-codes
-plugins/woocommerce/changelog/64232-fix-order-refunds-cache
 plugins/woocommerce/changelog/tweak-admin-hardcoded-blues-theme-color
 plugins/woocommerce/changelog/rsm-142-change-summary
 plugins/woocommerce/changelog/64435-fix-use-wpdb-identifier-placeholder-in-order-stats
@@ -9044,8 +9040,6 @@ plugins/woocommerce/changelog/add-inner-block-protocols
 plugins/woocommerce/changelog/fix-products-dashboard-admin-footer
 plugins/woocommerce/changelog/tweak-admin-gray-colors-wp7-align
 plugins/woocommerce/changelog/fix-inbox-note-remove-image-thumbnail
-plugins/woocommerce/changelog/64525-wooplug-6594-accessible-star-rating-control
-plugins/woocommerce/changelog/63905-cursor-WOOPLUG-6417-php-8-5-unset-string-4251
 plugins/woocommerce/changelog/60314-migrate-catalog-sorting-block-iapi
 plugins/woocommerce/changelog/64406-phpstan-baseline-refresh
 plugins/woocommerce/changelog/pr-64360
@@ -9061,6 +9055,7 @@ plugins/woocommerce/changelog/rsm-438-wire-bis-emails
 plugins/woocommerce/changelog/pr-64548
 plugins/woocommerce/changelog/experiment-remove-store-api-draft-order
 plugins/woocommerce/changelog/64426-add-stock-status-admin-order-selector
+plugins/woocommerce/changelog/64999-sprinkle-order-notes-visibility
 plugins/woocommerce/changelog/pr-64380
 plugins/woocommerce/changelog/tweak-focus-ring-width-density-responsive
 plugins/woocommerce/changelog/fix-typo-received
@@ -9069,10 +9064,7 @@ plugins/woocommerce/changelog/64246-patch-2
 plugins/woocommerce/changelog/64345-fix-38153-clean-category-image-height
 plugins/woocommerce/changelog/64461-rename-is-overridden-by-custom-template-content
 plugins/woocommerce/changelog/rsm-143-selective-apply-drawer
-plugins/woocommerce/changelog/64523-wooplug-6560-wcship-row-layout
 plugins/woocommerce/changelog/add-product-variations-classic-redesign-stage1
-plugins/woocommerce/changelog/64522-wooplug-6633-show-all-shipping-recommendations
-plugins/woocommerce/changelog/wooplug-6594-star-rating-control
 plugins/woocommerce/changelog/update-create-term-modal-ii
 plugins/woocommerce/changelog/64467-fix-hpos-customer-note-query
 plugins/woocommerce/changelog/wooplug-6660-iapi-catalog-sorting-block-404-css-and-js
@@ -9081,8 +9073,8 @@ plugins/woocommerce/changelog/rsm-143-selective-apply
 plugins/woocommerce/changelog/64242-fix-transient-file-url-uses-home-url
 plugins/woocommerce/changelog/64540-trunk
 plugins/woocommerce/changelog/rsm-141-update-banner
-plugins/woocommerce/changelog/revert-62843
 plugins/woocommerce/changelog/tweak-remove-facebook-obw-plugin-rotation
+plugins/woocommerce/changelog/64693-fix-product-filter-aria-labels
 plugins/woocommerce/changelog/fix-product-filters-spacing
 plugins/woocommerce/changelog/fix-tax-label-percent-sign-corruption
 plugins/woocommerce/changelog/64488-64301-graphql-settings-cache-ttl
@@ -9091,7 +9083,6 @@ plugins/woocommerce/changelog/update-product-filter-style-handling
 plugins/woocommerce/changelog/64410-fix-64405-variation-selector-attribute-product-type-guard
 plugins/woocommerce/changelog/fix-store-alerts-widows
 plugins/woocommerce/changelog/64448-64298-graphql-settings-apq
-plugins/woocommerce/changelog/64483-wooplug-6592-6593-review-order-endpoint-and-template
 plugins/woocommerce/changelog/64092-wooplug-4230-highest-shipping-cost-shown-before-en
 plugins/woocommerce/changelog/add-graphql-infrastructure-unit-tests
 plugins/woocommerce/changelog/tweak-admin-grayscale-tokenize-wp7-align
@@ -12180,6 +12171,7 @@ packages/js/experimental-products-app/src/app.tsx
 packages/js/experimental-products-app/src/fields/button_text/field.tsx
 packages/js/experimental-products-app/src/fields/weight/field.tsx
 packages/js/experimental-products-app/src/fields/length/field.tsx
+packages/js/experimental-products-app/src/fields/date/field.tsx
 packages/js/experimental-products-app/src/fields/registry.tsx
 packages/js/experimental-products-app/src/fields/utils/currency.ts
 packages/js/experimental-products-app/src/fields/height/field.tsx
@@ -12197,6 +12189,7 @@ packages/js/experimental-products-app/src/fields/shipping_summary/field.tsx
 packages/js/experimental-products-app/src/fields/schedule_sale/field.tsx
 packages/js/experimental-products-app/src/fields/width/field.tsx
 packages/js/experimental-products-app/src/fields/external_url/field.tsx
+packages/js/experimental-products-app/src/fields/tags/field.test.tsx
 packages/js/experimental-products-app/src/fields/tags/field.tsx
 packages/js/experimental-products-app/src/fields/name/field.tsx
 packages/js/experimental-products-app/src/fields/product_status/field.tsx
@@ -12231,9 +12224,11 @@ packages/js/experimental-products-app/src/fields/types.ts
 packages/js/experimental-products-app/src/fields/images_count/field.test.tsx
 packages/js/experimental-products-app/src/fields/images_count/field.tsx
 packages/js/experimental-products-app/src/fields/featured/field.tsx
+packages/js/experimental-products-app/src/fields/brands/field.tsx
 packages/js/experimental-products-app/src/fields/tax_status/field.tsx
 packages/js/experimental-products-app/src/fields/linked_products_count/field.tsx
 packages/js/experimental-products-app/src/fields/cross_sell_ids/field.tsx
+packages/js/experimental-products-app/src/fields/global_unique_id/field.tsx
 packages/js/experimental-products-app/src/fields/upsell_ids/field.tsx
 packages/js/experimental-products-app/src/fields/visibility_summary/style.scss
 packages/js/experimental-products-app/src/fields/visibility_summary/field.tsx
@@ -12280,10 +12275,12 @@ packages/js/experimental-products-app/changelog/add-categories-default-column
 packages/js/experimental-products-app/changelog/add-products-fields-pricing
 packages/js/experimental-products-app/changelog/fix-edit-variations
 packages/js/experimental-products-app/changelog/add-product-list-variations
+packages/js/experimental-products-app/changelog/update-images-field-label-drag-and-size
 packages/js/experimental-products-app/changelog/add-products-fields-integration
 packages/js/experimental-products-app/changelog/update-remove-type-from-quick-edit
 packages/js/experimental-products-app/changelog/add-quick-edit-bulk-action
 packages/js/experimental-products-app/changelog/update-sku-remove-description
+packages/js/experimental-products-app/changelog/add-properties-tags-brands-date-gtin
 packages/js/experimental-products-app/changelog/fix-product-field-visibility
 packages/js/experimental-products-app/changelog.md
 packages/js/experimental-products-app/tsconfig-cjs.json
@@ -14136,6 +14133,7 @@ packages/php/woocommerce-analytics/README.md
 packages/php/woocommerce-analytics/composer.json
 packages/php/woocommerce-analytics/webpack.config.js
 packages/php/woocommerce-analytics/tests/.phpcs.dir.xml
+packages/php/woocommerce-analytics/tests/php/WC_Analytics_Tracking_Test.php
 packages/php/woocommerce-analytics/tests/php/bootstrap.php
 packages/php/woocommerce-analytics/tests/php/Woocommerce_Analytics_Test.php
 packages/php/woocommerce-analytics/tests/php/mocks/class-wc-tracks.php
@@ -14172,7 +14170,6 @@ packages/php/woocommerce-analytics/tasks/mirror-github/workflows/autotagger.yml
 packages/php/woocommerce-analytics/tasks/build-package.sh
 packages/php/woocommerce-analytics/composer.lock
 packages/php/woocommerce-analytics/LICENSE.txt
-packages/php/woocommerce-analytics/changelog/renovate-wordpress-monorepo
 packages/php/woocommerce-analytics/.gitattributes
 packages/php/woocommerce-analytics/CHANGELOG.md
 packages/php/woocommerce-analytics/phpcs.xml
