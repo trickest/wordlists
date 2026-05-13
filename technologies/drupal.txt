@@ -1921,6 +1921,7 @@ core/tests/Drupal/Tests/Component/Annotation/Fixtures/PluginNamespace/DiscoveryT
 core/tests/Drupal/Tests/Component/Annotation/Fixtures/PluginNamespace/discoverytest2.yml
 core/tests/Drupal/Tests/Component/Transliteration/PhpTransliterationTest.php
 core/tests/Drupal/Tests/Component/Gettext/PoStreamWriterTest.php
+core/tests/Drupal/Tests/Component/Gettext/PoStreamReaderTest.php
 core/tests/Drupal/Tests/Component/Gettext/PoItemTest.php
 core/tests/Drupal/Tests/Component/Gettext/PoHeaderTest.php
 core/tests/Drupal/Tests/Component/PhpStorage/MTimeProtectedFileStorageBase.php
@@ -4651,6 +4652,7 @@ core/modules/filter/tests/src/Functional/Rest/FilterFormatResourceTestBase.php
 core/modules/filter/tests/src/Unit/FilterUninstallValidatorTest.php
 core/modules/filter/tests/src/Unit/FilterHtmlTest.php
 core/modules/filter/tests/src/Unit/FilterImageLazyLoadTest.php
+core/modules/filter/tests/src/Traits/ProcessedTextTestTrait.php
 core/modules/filter/tests/src/Kernel/EntityLinksTest.php
 core/modules/filter/tests/src/Kernel/FilterSecurityKernelTest.php
 core/modules/filter/tests/src/Kernel/FilterCaptionTwigDebugTest.php
@@ -4661,6 +4663,7 @@ core/modules/filter/tests/src/Kernel/FilterDefaultConfigTest.php
 core/modules/filter/tests/src/Kernel/FilterKernelTest.php
 core/modules/filter/tests/src/Kernel/TextFormatElementFormTest.php
 core/modules/filter/tests/src/Kernel/FilterFormatRepositoryTest.php
+core/modules/filter/tests/src/Kernel/CheckMarkupDeprecationTest.php
 core/modules/filter/tests/src/Kernel/FilterNoFormatTest.php
 core/modules/filter/tests/filter.url-input.txt
 core/modules/filter/tests/filter_test/config/install/filter.format.filter_test.yml

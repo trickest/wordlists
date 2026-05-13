@@ -330,6 +330,7 @@ extensions/sticky/js/dist-typings/forum/addStickyControl.d.ts
 extensions/sticky/js/dist-typings/forum/addStickyExcerpt.d.ts
 extensions/sticky/js/dist-typings/forum/addStickyBadge.d.ts
 extensions/sticky/js/dist-typings/forum/components/DiscussionStickiedPost.d.ts
+extensions/sticky/js/dist-typings/forum/extendRealtime.d.ts
 extensions/sticky/js/dist-typings/forum/addStickyClass.d.ts
 extensions/sticky/js/dist-typings/forum/index.d.ts
 extensions/sticky/js/dist-typings/admin/extend.d.ts
@@ -341,6 +342,7 @@ extensions/sticky/js/src/common/extend.ts
 extensions/sticky/js/src/forum/addStickyControl.js
 extensions/sticky/js/src/forum/index.js
 extensions/sticky/js/src/forum/addStickyExcerpt.js
+extensions/sticky/js/src/forum/extendRealtime.ts
 extensions/sticky/js/src/forum/addStickyClass.js
 extensions/sticky/js/src/forum/addStickyBadge.js
 extensions/sticky/js/src/forum/components/DiscussionStickiedPost.js
@@ -678,6 +680,8 @@ extensions/flags/js/forum.ts
 extensions/flags/js/dist/admin.js
 extensions/flags/js/dist/admin.js.map
 extensions/flags/js/dist/forum.js
+extensions/flags/js/dist/forum/components/FlagPostModal.js.map
+extensions/flags/js/dist/forum/components/FlagPostModal.js
 extensions/flags/js/dist/forum.js.map
 extensions/flags/js/admin.ts
 extensions/flags/js/package.json
@@ -755,6 +759,7 @@ extensions/tags/js/dist-typings/forum/components/TagsPage.d.ts
 extensions/tags/js/dist-typings/forum/components/TagLinkButton.d.ts
 extensions/tags/js/dist-typings/forum/components/TagHero.d.ts
 extensions/tags/js/dist-typings/forum/components/TagDiscussionModal.d.ts
+extensions/tags/js/dist-typings/forum/extendRealtime.d.ts
 extensions/tags/js/dist-typings/forum/addTagFilter.d.ts
 extensions/tags/js/dist-typings/forum/index.d.ts
 extensions/tags/js/dist-typings/admin/addTagSelectionSettingComponent.d.ts
@@ -784,6 +789,7 @@ extensions/tags/js/src/forum/addTagList.js
 extensions/tags/js/src/forum/utils/getSelectableTags.ts
 extensions/tags/js/src/forum/addTagLabels.js
 extensions/tags/js/src/forum/addTagControl.js
+extensions/tags/js/src/forum/extendRealtime.ts
 extensions/tags/js/src/forum/forum.ts
 extensions/tags/js/src/forum/addTagComposer.js
 extensions/tags/js/src/forum/components/ToggleButton.js
@@ -2529,6 +2535,7 @@ framework/core/tests/integration/api/discussions/ListTest.php
 framework/core/tests/integration/api/discussions/ListWithFulltextSearchTest.php
 framework/core/tests/integration/api/discussions/DeletionTest.php
 framework/core/tests/integration/api/discussions/CreateTest.php
+framework/core/tests/integration/api/discussions/UpdateTest.php
 framework/core/tests/integration/api/discussions/ShowTest.php
 framework/core/tests/integration/api/users/AvatarSrcsetTest.php
 framework/core/tests/integration/api/users/ListTest.php
@@ -2594,6 +2601,7 @@ framework/core/tests/unit/Settings/DatabaseSettingsRepositoryTest.php
 framework/core/tests/unit/.gitkeep
 framework/core/tests/unit/Queue/DatabaseWorkerArgsTest.php
 framework/core/tests/unit/Queue/ExceptionHandlerTest.php
+framework/core/tests/unit/Queue/AbstractJobTest.php
 framework/core/tests/unit/Mail/PostmarkDriverTest.php
 framework/core/tests/unit/Mail/MailgunDriverTest.php
 framework/core/tests/unit/Mail/MailerTest.php

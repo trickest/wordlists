@@ -605,6 +605,7 @@ tests/Support/AssertHasActionLogs.php
 tests/TestCase.php
 tests/Feature/Licenses/Ui/StoreLicenseWithFullMultipleCompanySupportTest.php
 tests/Feature/Licenses/Ui/CreateLicenseTest.php
+tests/Feature/Licenses/Ui/BulkDeleteLicensesTest.php
 tests/Feature/Licenses/Ui/LicenseViewTest.php
 tests/Feature/Licenses/Ui/UpdateLicenseTest.php
 tests/Feature/Licenses/Ui/LicenseIndexTest.php
@@ -773,6 +774,7 @@ tests/Feature/Importing/Api/ImportLocationsTest.php
 tests/Feature/Importing/Api/ImportDataTestCase.php
 tests/Feature/Importing/Api/ImportConsumablesTest.php
 tests/Feature/Importing/Api/ImportAssetModelsTest.php
+tests/Feature/Importing/AssetImportCreatedAtTest.php
 tests/Feature/Search/SearchableTraitTest.php
 tests/Feature/Redirects/ModelNotFoundRedirectTest.php
 tests/Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
@@ -7761,6 +7763,7 @@ app/Http/Kernel.php
 app/Http/Controllers/ReportTemplatesController.php
 app/Http/Controllers/NotesController.php
 app/Http/Controllers/LocationsController.php
+app/Http/Controllers/Licenses/BulkLicensesController.php
 app/Http/Controllers/Licenses/LicenseCheckinController.php
 app/Http/Controllers/Licenses/LicenseCheckoutController.php
 app/Http/Controllers/Licenses/LicensesController.php

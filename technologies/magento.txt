@@ -5617,6 +5617,8 @@ dev/tests/api-functional/phpunit_soap.xml.dist
 dev/tests/api-functional/testsuite/Magento/GraphQl/UrlRewrite/UrlResolverTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/UrlRewrite/RouteTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GetCustomerAuthenticationHeader.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceCeGraphQl/Customer/ClearCartTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceCeGraphQl/Guest/ClearCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/DownloadableProduct/UpdateDownloadableCartItemsTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/DownloadableProduct/Options/Uid/DownloadableLinksValueUidTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/DownloadableProduct/AddDownloadableProductToCartTest.php
@@ -5636,9 +5638,11 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/CacheIdFactorPro
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/CacheIdFactorProviders/Customer/IsLoggedInProviderTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/GraphQlCache/GraphQlTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/IntegrationGraphQl/CustomerAccessTokenLifetimeResolverTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Framework/RequestBodySizeLimitTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Framework/ErrorHandlerTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Framework/QueryComplexityLimiterTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Framework/RequiredInputArgumentTest.php
+dev/tests/api-functional/testsuite/Magento/GraphQl/Framework/QueryNestingDepthTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/PaymentGraphQl/StoreConfigTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/PaymentGraphQl/GetIsDeferredPaymentMethodTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/SendFriend/SendFriendTest.php
@@ -6025,8 +6029,6 @@ dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/CategoryListTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/VirtualProductViewTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/Catalog/ProductVisibilitySearchTest.php
-dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceGraphQl/Customer/ClearCartTest.php
-dev/tests/api-functional/testsuite/Magento/GraphQl/QuoteCommerceGraphQl/Guest/ClearCartTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/PageCache/UrlRewrite/UrlResolverCacheTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/PageCache/UrlRewrite/RouteCacheTest.php
 dev/tests/api-functional/testsuite/Magento/GraphQl/PageCache/ProductInMultipleStoresCacheTest.php
@@ -8934,6 +8936,7 @@ lib/internal/Magento/Framework/GraphQl/Query/BatchResolverWrapper.php
 lib/internal/Magento/Framework/GraphQl/Query/Uid.php
 lib/internal/Magento/Framework/GraphQl/Query/FieldTranslator.php
 lib/internal/Magento/Framework/GraphQl/Query/PostFetchProcessorInterface.php
+lib/internal/Magento/Framework/GraphQl/Query/QueryLengthConfiguration.php
 lib/internal/Magento/Framework/GraphQl/Query/QueryComplexityLimiter.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/QueryDataFormatterTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/FieldsTest.php
@@ -8941,6 +8944,7 @@ lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/PromiseFactoryTe
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/Argument/Validator/CompositeValidatorTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/Resolver/Argument/Validator/SearchCriteriaValidatorTest.php
 lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/EnumLookupTest.php
+lib/internal/Magento/Framework/GraphQl/Test/Unit/Query/QueryParserTest.php
 lib/internal/Magento/Framework/GraphQl/Schema/Type/BooleanType.php
 lib/internal/Magento/Framework/GraphQl/Schema/Type/IntType.php
 lib/internal/Magento/Framework/GraphQl/Schema/Type/Output/OutputTypeObject.php
@@ -14267,6 +14271,14 @@ app/code/Magento/Rule/Model/Action/Collection.php
 app/code/Magento/Rule/Model/Action/ActionInterface.php
 app/code/Magento/Rule/Model/Action/AbstractAction.php
 app/code/Magento/Rule/LICENSE_AFL.txt
+app/code/Magento/QuoteCommerceCeGraphQl/etc/module.xml
+app/code/Magento/QuoteCommerceCeGraphQl/etc/schema.graphqls
+app/code/Magento/QuoteCommerceCeGraphQl/README.md
+app/code/Magento/QuoteCommerceCeGraphQl/composer.json
+app/code/Magento/QuoteCommerceCeGraphQl/registration.php
+app/code/Magento/QuoteCommerceCeGraphQl/Model/Resolver/ClearCart.php
+app/code/Magento/QuoteCommerceCeGraphQl/Model/Cart/ClearCartError.php
+app/code/Magento/QuoteCommerceCeGraphQl/Model/Cart/ClearCartItems.php
 app/code/Magento/MediaGalleryRenditions/etc/queue_topology.xml
 app/code/Magento/MediaGalleryRenditions/etc/media_content.xml
 app/code/Magento/MediaGalleryRenditions/etc/module.xml
@@ -15017,6 +15029,7 @@ app/code/Magento/GraphQl/Test/Unit/Model/Backpressure/BackpressureContextFactory
 app/code/Magento/GraphQl/Test/Unit/Helper/Error/AggregateExceptionMessageFormatterTest.php
 app/code/Magento/GraphQl/Test/Mftf/README.md
 app/code/Magento/GraphQl/Model/Config/DisableSession.php
+app/code/Magento/GraphQl/Model/GraphQl/RequestConfiguration.php
 app/code/Magento/GraphQl/Model/Mutation/BatchResult.php
 app/code/Magento/GraphQl/Model/Mutation/Resolver/ErrorTypeResolver.php
 app/code/Magento/GraphQl/Model/Backpressure/CompositeRequestTypeExtractor.php
@@ -39957,6 +39970,7 @@ app/code/Magento/Catalog/Helper/Category.php
 app/code/Magento/Catalog/Helper/Catalog.php
 app/code/Magento/Catalog/Helper/Product/ConfigurationPool.php
 app/code/Magento/Catalog/Helper/Product/Edit/Action/Attribute.php
+app/code/Magento/Catalog/Helper/Product/Validator/ProductOptionValidator.php
 app/code/Magento/Catalog/Helper/Product/Configuration/ConfigurationInterface.php
 app/code/Magento/Catalog/Helper/Product/Compare.php
 app/code/Magento/Catalog/Helper/Product/Flat/Indexer.php
@@ -40102,14 +40116,6 @@ app/code/Magento/NewRelicReporting/Model/Config.php
 app/code/Magento/NewRelicReporting/Model/Counter.php
 app/code/Magento/NewRelicReporting/Model/Users.php
 app/code/Magento/NewRelicReporting/LICENSE_AFL.txt
-app/code/Magento/QuoteCommerceGraphQl/etc/module.xml
-app/code/Magento/QuoteCommerceGraphQl/etc/schema.graphqls
-app/code/Magento/QuoteCommerceGraphQl/README.md
-app/code/Magento/QuoteCommerceGraphQl/composer.json
-app/code/Magento/QuoteCommerceGraphQl/registration.php
-app/code/Magento/QuoteCommerceGraphQl/Model/Resolver/ClearCart.php
-app/code/Magento/QuoteCommerceGraphQl/Model/Cart/ClearCartError.php
-app/code/Magento/QuoteCommerceGraphQl/Model/Cart/ClearCartItems.php
 app/code/Magento/QuoteConfigurableOptions/etc/module.xml
 app/code/Magento/QuoteConfigurableOptions/etc/graphql/di.xml
 app/code/Magento/QuoteConfigurableOptions/README.md
