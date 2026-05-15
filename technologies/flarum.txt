@@ -1326,6 +1326,7 @@ extensions/realtime/extend.php
 extensions/realtime/js/webpack.config.js
 extensions/realtime/js/dist-typings/@types/shims.d.ts
 extensions/realtime/js/dist-typings/forum/RealtimeState.d.ts
+extensions/realtime/js/dist-typings/forum/utils/isIOS.d.ts
 extensions/realtime/js/dist-typings/forum/extend.d.ts
 extensions/realtime/js/dist-typings/forum/extenders/Realtime.d.ts
 extensions/realtime/js/dist-typings/forum/states/NotificationToastState.d.ts
@@ -1347,6 +1348,7 @@ extensions/realtime/js/dist-typings/admin/extend.d.ts
 extensions/realtime/js/dist-typings/admin/index.d.ts
 extensions/realtime/js/tsconfig.json
 extensions/realtime/js/src/@types/shims.d.ts
+extensions/realtime/js/src/forum/utils/isIOS.ts
 extensions/realtime/js/src/forum/extenders/Realtime.ts
 extensions/realtime/js/src/forum/states/NotificationToastState.ts
 extensions/realtime/js/src/forum/extend/Post.ts
@@ -2534,6 +2536,7 @@ framework/core/tests/integration/policy/PostPolicyTest.php
 framework/core/tests/integration/api/discussions/ListTest.php
 framework/core/tests/integration/api/discussions/ListWithFulltextSearchTest.php
 framework/core/tests/integration/api/discussions/DeletionTest.php
+framework/core/tests/integration/api/discussions/PgsqlSearchConfigurationInjectionTest.php
 framework/core/tests/integration/api/discussions/CreateTest.php
 framework/core/tests/integration/api/discussions/UpdateTest.php
 framework/core/tests/integration/api/discussions/ShowTest.php

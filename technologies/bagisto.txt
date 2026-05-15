@@ -9,6 +9,16 @@ database/migrations/2026_02_03_151924_create_sessions_table.php
 database/migrations/2014_10_12_000000_create_users_table.php
 database/migrations/2014_10_12_100000_create_password_resets_table.php
 database/seeders/DatabaseSeeder.php
+docker/production/entrypoint.sh
+docker/production/mysql-init.sql
+docker/production/build-install.sh
+docker/production/README.md
+docker/production/nginx.conf
+docker/production/Dockerfile
+docker/production/php.ini
+docker/production/php-fpm.conf
+docker/production/.dockerignore
+docker/production/supervisord.conf
 UPGRADE.md
 tests/Pest.php
 tests/TestCase.php
@@ -621,8 +631,8 @@ packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/product-attributes/
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/product-attributes/cost.spec.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/product-attributes/size.spec.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/product-attributes/urlKey.spec.ts
-packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/butXgetYfree.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/validation.spec.ts
+packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/buyXgetYfree.spec.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/cart-item-attribute/price-in.cart.spec.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/cart-item-attribute/subtotal.spec.ts
 packages/Webkul/Shop/tests/e2e-pw/tests/promotion/cart-rules/cart-item-attribute/quantity-in-cart.spec.ts
@@ -1281,6 +1291,7 @@ packages/Webkul/Admin/tests/e2e-pw/tests/configuration/customer/google-captcha.s
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/email/email-settings.spec.ts
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/email/notification.spec.ts
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/catalog/inventory.spec.ts
+packages/Webkul/Admin/tests/e2e-pw/tests/configuration/catalog/product/products.spec.ts
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/catalog/products.spec.ts
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/catalog/rich-snippets.spec.ts
 packages/Webkul/Admin/tests/e2e-pw/tests/configuration/general/general.spec.ts

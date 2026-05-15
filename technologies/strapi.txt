@@ -1327,6 +1327,7 @@ packages/utils/upgrade/src/modules/codemod/constants.ts
 packages/utils/upgrade/src/modules/codemod/index.ts
 packages/utils/upgrade/src/modules/common/types.ts
 packages/utils/upgrade/src/modules/upgrader/upgrader.ts
+packages/utils/upgrade/src/modules/upgrader/__tests__/upgrader.test.ts
 packages/utils/upgrade/src/modules/upgrader/types.ts
 packages/utils/upgrade/src/modules/upgrader/constants.ts
 packages/utils/upgrade/src/modules/upgrader/index.ts
@@ -3468,6 +3469,7 @@ packages/core/core/src/configuration/config-loader.ts
 packages/core/core/src/configuration/index.ts
 packages/core/core/src/providers/cron.ts
 packages/core/core/src/providers/session-manager.ts
+packages/core/core/src/providers/__tests__/session-manager.test.ts
 packages/core/core/src/providers/ai.ts
 packages/core/core/src/providers/coreStore.ts
 packages/core/core/src/providers/registries.ts
@@ -4607,6 +4609,7 @@ packages/core/admin/server/src/services/__tests__/metrics.test.ts
 packages/core/admin/server/src/services/__tests__/token.test.ts
 packages/core/admin/server/src/services/__tests__/permissions-manager-sanitize.test.ts
 packages/core/admin/server/src/services/__tests__/permissions-manager.test.ts
+packages/core/admin/server/src/services/__tests__/services-api-token-alias.test.ts
 packages/core/admin/server/src/services/__tests__/permission.test.ts
 packages/core/admin/server/src/services/__tests__/homepage.test.ts
 packages/core/admin/server/src/services/passport/local-strategy.ts
@@ -5286,6 +5289,7 @@ packages/core/content-manager/admin/src/hooks/tests/useLazyComponents.test.ts
 packages/core/content-manager/admin/src/hooks/tests/usePersistentQueryParams.test.ts
 packages/core/content-manager/admin/src/hooks/tests/useDocumentLayout.test.ts
 packages/core/content-manager/admin/src/hooks/tests/convertListLayoutToFieldLayouts.test.ts
+packages/core/content-manager/admin/src/hooks/tests/convertEditLayoutToFieldLayouts.test.ts
 packages/core/content-manager/admin/src/hooks/tests/useContentManagerInitData.test.tsx
 packages/core/content-manager/admin/src/hooks/tests/useDocument.test.tsx
 packages/core/content-manager/admin/src/hooks/tests/useKeyboardDragAndDrop.test.ts
@@ -5311,8 +5315,10 @@ packages/core/content-manager/admin/src/modules/hooks.ts
 packages/core/content-manager/admin/src/modules/app.ts
 packages/core/content-manager/admin/src/pages/tests/NoPermissions.test.tsx
 packages/core/content-manager/admin/src/pages/tests/NoContentType.test.tsx
+packages/core/content-manager/admin/src/pages/tests/formatComponentConfigurationEditLayout.test.ts
 packages/core/content-manager/admin/src/pages/tests/EditConfigurationPage.test.tsx
 packages/core/content-manager/admin/src/pages/ComponentConfigurationPage.tsx
+packages/core/content-manager/admin/src/pages/formatComponentConfigurationEditLayout.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/data.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/forms.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/data.ts
