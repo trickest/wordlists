@@ -8390,6 +8390,7 @@ core/modules/file/tests/src/Kernel/Upload/StreamFileUploaderTest.php
 core/modules/file/tests/src/Kernel/FileUriItemTest.php
 core/modules/file/tests/src/Kernel/LoadTest.php
 core/modules/file/tests/src/Kernel/CopyTest.php
+core/modules/file/tests/src/Kernel/FileReferencesDeprecationTest.php
 core/modules/file/tests/src/Kernel/AccessTest.php
 core/modules/file/tests/src/Kernel/FileSaveUploadTest.php
 core/modules/file/tests/src/Kernel/MoveTest.php
@@ -8443,6 +8444,7 @@ core/modules/file/src/FileUsage/DatabaseFileUsageBackend.php
 core/modules/file/src/FileUsage/FileUsageBase.php
 core/modules/file/src/ComputedFileUrl.php
 core/modules/file/src/FileRepository.php
+core/modules/file/src/FileReferenceUsage.php
 core/modules/file/src/FileStorageSchema.php
 core/modules/file/src/Plugin/rest/resource/FileUploadResource.php
 core/modules/file/src/Plugin/EntityReferenceSelection/FileSelection.php
@@ -8526,6 +8528,7 @@ core/modules/file/src/Validation/Constraint/UploadedFileConstraintValidator.php
 core/modules/file/src/Validation/RecursiveValidatorFactory.php
 core/modules/file/src/Validation/FileValidatorSettingsTrait.php
 core/modules/file/src/Validation/FileValidator.php
+core/modules/file/src/FileReferenceResolver.php
 core/modules/file/src/FileStorage.php
 core/modules/file/file.services.yml
 core/modules/file/file.libraries.yml
