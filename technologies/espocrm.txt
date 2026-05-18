@@ -4250,6 +4250,7 @@ application/Espo/Resources/metadata/entityAcl/AppSecret.json
 application/Espo/Resources/metadata/entityAcl/Email.json
 application/Espo/Resources/metadata/entityAcl/Export.json
 application/Espo/Resources/metadata/entityAcl/EmailAccount.json
+application/Espo/Resources/metadata/entityAcl/MassAction.json
 application/Espo/Resources/metadata/entityAcl/AuthLogRecord.json
 application/Espo/Resources/metadata/entityAcl/Preferences.json
 application/Espo/Resources/metadata/entityAcl/Attachment.json
@@ -7172,6 +7173,7 @@ application/Espo/Hooks/Note/WebSocketSubmit.php
 application/Espo/Hooks/Note/Notifications.php
 application/Espo/Hooks/Email/NoteRemove.php
 application/Espo/Hooks/EmailFilter/CacheClearing.php
+application/Espo/Hooks/User/IncrementPasswordVersion.php
 application/Espo/Hooks/User/ApiKey.php
 application/Espo/Hooks/Portal/WriteConfig.php
 application/Espo/Hooks/LayoutSet/Removal.php
@@ -7540,6 +7542,7 @@ tests/integration/Espo/Export/ExportTest.php
 tests/integration/Espo/Attachment/RemoveDuplicateTest.php
 tests/integration/Espo/GlobalSearch/GlobalSearchTest.php
 tests/integration/Espo/Password/RecoveryTest.php
+tests/integration/Espo/Password/VersionTest.php
 tests/integration/Espo/Role/ServiceTest.php
 tests/integration/Core/BaseTestCase.php
 tests/integration/Core/Utils.php
@@ -7822,6 +7825,7 @@ tests/unit/Espo/Tools/FieldManagerTest.php
 tests/unit/Espo/Tools/Meeting/IcsTest.php
 tests/unit/Espo/Tools/WorkingTime/CalendarUtilityTest.php
 tests/unit/Espo/Tools/WorkingTime/ExtractorTest.php
+tests/unit/Espo/Tools/Export/ParamsTest.php
 tests/unit/Espo/Tools/DynamicLogic/CheckerTest.php
 tsconfig.json
 custom/Espo/Modules/.htaccess

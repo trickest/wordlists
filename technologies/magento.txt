@@ -13937,7 +13937,6 @@ app/code/Magento/Config/Test/Mftf/ActionGroup/AdminNavigateToDefaultLocaleSettin
 app/code/Magento/Config/Test/Mftf/ActionGroup/UnselectStatesForStatesOptionsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/UseStaticURLForMediaContentInWYSIWYGActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminSetTaxClassForShippingActionGroup.xml
-app/code/Magento/Config/Test/Mftf/ActionGroup/AdminEnableDHLWithoutSpecificCountryConfigurationActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminConfigCollapseStorefrontTabActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/ResetTaxClassForShippingActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminConfigureSalesGiftOptionsActionGroup.xml
@@ -20697,7 +20696,6 @@ app/code/Magento/MediaGalleryCmsUi/registration.php
 app/code/Magento/MediaGalleryCmsUi/LICENSE.txt
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/test-dependency-errors-detailed
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/test-dependency-allowlist
-app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryAssertUsedInLinkBlocksGridTest.xml
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryCmsUiUsedInBlocksFilterTest.xml
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryCmsUiUsedInPagesFilterTest.xml
 app/code/Magento/MediaGalleryCmsUi/Test/Mftf/Test/AdminMediaGalleryAssertImageUsedInLinkBlocksGridTest.xml
@@ -22511,7 +22509,6 @@ app/code/Magento/Shipping/Test/Mftf/Test/AdminVerifyPermissionsRoleForDeliveryMe
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckShippingPolicyParamsInDifferentScopesTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminPlaceOrderWithUSPSOnlineShippingCarrierTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateShipmentEntityWithTrackingNumberTest.xml
-app/code/Magento/Shipping/Test/Mftf/Test/StorefrontMultishippingCheckoutWithOnlineShippingMethodTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminCreatePartialShipmentEntityTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminOpenShipmentViewPageWithWrongShipmentIdTest.xml
 app/code/Magento/Shipping/Test/Mftf/Test/AdminConfigUPSShippingMethodAndAddProductInStorefrontTest.xml
@@ -22540,10 +22537,7 @@ app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableUPSActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontSetShippingMethodActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/VerifyBasicShipmentInformationActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminDisableFedexConfigurationActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontSelectShippingMethodBasedOnAddressActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminDisableUSPSActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminAssertCreatedShipmentsInShipmentsTabActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontVerifyOrderInformationBeforePlacingOrderActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontCheckoutCartFillEstimateShippingAndTaxInShoppingCartActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminShipmentCreateShippingLabelActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontCheckoutCartFillEstimateShippingAndTaxWithoutZipCodeActionGroup.xml
@@ -22561,17 +22555,14 @@ app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminAssertExistingTrackingNumbe
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminDisableUPSActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminSetShippingOriginConfigForStateFieldActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AssertStoreFrontNoQuotesMessageActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontUpdateShippingAddressActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminUPSDisableActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/SeeProductInShipmentItemsActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminSetShippingOriginConfigActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableFedExConfigurationActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableUSPSActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminChangeTableRatesShippingMethodConditionActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableFlatRateToSpecificCountriesActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableUpsWithWeightUnitActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminSetShippingOriginConfigurationActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminSelectAddressInShippingInformationActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminEnableFreeShippingToAllCountriesActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AssertStoreFrontShippingMethodUnavailableActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminImportFileTableRatesShippingMethodActionGroup.xml
@@ -22583,7 +22574,6 @@ app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminGoToCreditMemoTabActionGrou
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminAssertShipmentInShipmentsGridActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/GoToShipmentIntoOrderActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminCreateShipmentFromOrderPageActionGroup.xml
-app/code/Magento/Shipping/Test/Mftf/ActionGroup/StorefrontVerifyOrderInformationActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminDeleteTrackingNumberActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminGoToShipmentViewActionGroup.xml
 app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminGoToShipmentTabActionGroup.xml
@@ -27002,7 +26992,6 @@ app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminNavigateToCustomerOnlinePag
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerSaveAndContinueActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerAccountPageTitleActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertSignedUpNewsletterActionGroup.xml
-app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenOrderLinkOnMyOrdersPageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerWelcomeMessageActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontDeleteStoredPaymentMethodActionGroup.xml
 app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminLoginAsCustomerLoginFromCustomerPageActionGroup.xml

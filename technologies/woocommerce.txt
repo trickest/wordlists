@@ -9110,6 +9110,7 @@ plugins/woocommerce/changelog/64435-fix-use-wpdb-identifier-placeholder-in-order
 plugins/woocommerce/changelog/fix-border-radius-inputs-buttons-wp7-align
 plugins/woocommerce/changelog/bis-alpha-cr-fixes-and-cleanup
 plugins/woocommerce/changelog/64260-wooplug-6528-check-fulfillment-datetime-storage-and-ui-timezone-handling
+plugins/woocommerce/changelog/64509-issue-RSM-1550
 plugins/woocommerce/changelog/64411-fix-64176-mini-cart-badge-colors
 plugins/woocommerce/changelog/fix-eval-math-preg-match-null-deprecation
 plugins/woocommerce/changelog/64960-wooplug-6704-skip-scheduling-review-request-email-when-nothing-is
@@ -9166,6 +9167,7 @@ plugins/woocommerce/changelog/rsm-143-selective-apply-drawer
 plugins/woocommerce/changelog/64492-fix-harden-order-details-actions-validation
 plugins/woocommerce/changelog/add-product-variations-classic-redesign-stage1
 plugins/woocommerce/changelog/update-create-term-modal-ii
+plugins/woocommerce/changelog/fix-attribute-name-color
 plugins/woocommerce/changelog/64467-fix-hpos-customer-note-query
 plugins/woocommerce/changelog/wooplug-6660-iapi-catalog-sorting-block-404-css-and-js
 plugins/woocommerce/changelog/fix-plugin-install-error-message-copy
@@ -11781,7 +11783,6 @@ packages/js/email-editor/jest.setup.ts
 packages/js/email-editor/composer.lock
 packages/js/email-editor/development.md
 packages/js/email-editor/changelog/.gitkeep
-packages/js/email-editor/changelog/add-template-canvas-affordance
 packages/js/email-editor/CHANGELOG.md
 packages/js/email-editor/tsconfig-cjs.json
 packages/js/email-editor/typings/monorepo-enhancements.d.ts
@@ -12331,6 +12332,7 @@ packages/js/experimental-products-app/src/fields/product_status/field.tsx
 packages/js/experimental-products-app/src/fields/sale_price/test/field.test.ts
 packages/js/experimental-products-app/src/fields/sale_price/field.tsx
 packages/js/experimental-products-app/src/fields/sale_price/validation.ts
+packages/js/experimental-products-app/src/fields/downloadable/field.test.tsx
 packages/js/experimental-products-app/src/fields/downloadable/utils.tsx
 packages/js/experimental-products-app/src/fields/downloadable/style.scss
 packages/js/experimental-products-app/src/fields/downloadable/field.tsx
@@ -12399,6 +12401,7 @@ packages/js/experimental-products-app/src/dataviews-actions/index.ts
 packages/js/experimental-products-app/jest.config.json
 packages/js/experimental-products-app/composer.lock
 packages/js/experimental-products-app/changelog/add-products-fields-inventory-shipping
+packages/js/experimental-products-app/changelog/add-downloadable-files-section
 packages/js/experimental-products-app/changelog/fix-images-field-label-spacing
 packages/js/experimental-products-app/changelog/update-always-show-sale-price
 packages/js/experimental-products-app/changelog/update-categories-remove-description
@@ -12411,12 +12414,15 @@ packages/js/experimental-products-app/changelog/64161-dev-64111-post-cleanup
 packages/js/experimental-products-app/changelog/add-quick-edit-row-action
 packages/js/experimental-products-app/changelog/add-products-app-brand-filter
 packages/js/experimental-products-app/changelog/add-products-fields-organization
+packages/js/experimental-products-app/changelog/tweak-variation-filter-padding
 packages/js/experimental-products-app/changelog/fix-quick-edit-sale-price-visibility
 packages/js/experimental-products-app/changelog/add-products-app-shipping-class-filter
+packages/js/experimental-products-app/changelog/update-product-edit-field-groups
 packages/js/experimental-products-app/changelog/update-dimensions-row-layout
 packages/js/experimental-products-app/changelog/add-products-app-stock-quantity-filter
 packages/js/experimental-products-app/changelog/64424-add-filters
 packages/js/experimental-products-app/changelog/update-products-app-admin-theme-color
+packages/js/experimental-products-app/changelog/update-sale-schedule-fields
 packages/js/experimental-products-app/changelog/64255-fix-all-products-experiment-composer
 packages/js/experimental-products-app/changelog/update-remove-tags-helper-text
 packages/js/experimental-products-app/changelog/fix-bulk-edit-variations
@@ -12432,6 +12438,7 @@ packages/js/experimental-products-app/changelog/update-stock-column-badge
 packages/js/experimental-products-app/changelog/add-products-app-empty-states
 packages/js/experimental-products-app/changelog/fix-quick-edit-bulk-selection
 packages/js/experimental-products-app/changelog/add-variation-view-bundle
+packages/js/experimental-products-app/changelog/update-taxonomy-fields-chip-select
 packages/js/experimental-products-app/changelog/update-remove-product-title-underline
 packages/js/experimental-products-app/changelog/add-products-fields-media-seo
 packages/js/experimental-products-app/changelog/update-remove-featured-helper-text
@@ -12450,6 +12457,7 @@ packages/js/experimental-products-app/changelog/add-quick-edit-bulk-action
 packages/js/experimental-products-app/changelog/update-sku-remove-description
 packages/js/experimental-products-app/changelog/64845-wooplug-6696-gate-the-customer-review-request-feature-behind-a
 packages/js/experimental-products-app/changelog/fix-product-image-field-selection
+packages/js/experimental-products-app/changelog/update-remove-shipping-class-filter
 packages/js/experimental-products-app/changelog/update-select-fields-use-ui-primitive
 packages/js/experimental-products-app/changelog/add-properties-tags-brands-date-gtin
 packages/js/experimental-products-app/changelog/fix-product-field-visibility
