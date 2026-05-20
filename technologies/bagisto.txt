@@ -1052,6 +1052,7 @@ packages/Webkul/Shop/src/Mail/Order/CommentedNotification.php
 packages/Webkul/Shop/src/Mail/Order/ShippedNotification.php
 packages/Webkul/Shop/src/Mail/Order/RefundedNotification.php
 packages/Webkul/Shop/src/Mail/Order/CreatedNotification.php
+packages/Webkul/Shop/src/Helpers/CatalogApiCache.php
 packages/Webkul/Shop/src/CacheFilters/Large.php
 packages/Webkul/Shop/src/CacheFilters/Small.php
 packages/Webkul/Shop/src/CacheFilters/Medium.php
@@ -1066,6 +1067,7 @@ packages/Webkul/Shop/src/Listeners/Base.php
 packages/Webkul/Shop/src/Listeners/Shipment.php
 packages/Webkul/Shop/src/Listeners/Refund.php
 packages/Webkul/Shop/src/Listeners/Invoice.php
+packages/Webkul/Shop/src/Listeners/CatalogCache.php
 packages/Webkul/Shop/src/Resources/manifest.php
 packages/Webkul/Shop/src/Resources/assets/fonts/bagisto-shop.woff
 packages/Webkul/Shop/src/Resources/assets/locales/hi_IN.json
@@ -1356,6 +1358,7 @@ packages/Webkul/Shop/src/Http/Resources/AddressResource.php
 packages/Webkul/Shop/src/Http/Resources/CategoryResource.php
 packages/Webkul/Shop/src/Http/Resources/ProductResource.php
 packages/Webkul/Shop/src/Http/Resources/CompareItemResource.php
+packages/Webkul/Shop/src/Http/Resources/ProductCardResource.php
 packages/Webkul/Shop/src/Http/Resources/AttributeResource.php
 packages/Webkul/Shop/src/Http/Resources/WishlistResource.php
 packages/Webkul/Shop/src/Http/Resources/CartItemResource.php
@@ -1369,7 +1372,12 @@ packages/Webkul/Shop/tests/e2e-pw/pages/admin/marketing/promotion/RuleDeletePage
 packages/Webkul/Shop/tests/e2e-pw/pages/admin/marketing/promotion/RuleCreatePage.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/BasePage.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/rules/RuleApplyPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/AuthPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/WishlistPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/ComparePage.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/RmaCreatePage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/SearchPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/ReviewPage.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/MultipleCheckout.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/product-types/BundleProductCheckout.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/product-types/DownloadableProductCheckout.ts
@@ -1379,6 +1387,12 @@ packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/product-types/GroupProduct
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/product-types/BookingProductCheckout.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/product-types/ConfigurableProductCheckout.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/shop/checkout/CheckoutHelper.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/AddressPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/OrderPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/HomePage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/CustomerPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/CartPage.ts
+packages/Webkul/Shop/tests/e2e-pw/pages/shop/FilterPage.ts
 packages/Webkul/Shop/tests/e2e-pw/pages/types/product.types.ts
 packages/Webkul/Shop/tests/e2e-pw/setup.ts
 packages/Webkul/Shop/tests/e2e-pw/utils/faker.ts
@@ -1470,13 +1484,17 @@ packages/Webkul/Shop/tests/e2e-pw/data/images/2.webp
 packages/Webkul/Shop/tests/e2e-pw/playwright.config.ts
 packages/Webkul/Shop/tests/Concerns/ShopTestBench.php
 packages/Webkul/Shop/tests/Feature/LoginPageTest.php
+packages/Webkul/Shop/tests/Feature/API/MiniCartTest.php
+packages/Webkul/Shop/tests/Feature/API/ProductCardResourceTest.php
 packages/Webkul/Shop/tests/Feature/API/ProductTest.php
 packages/Webkul/Shop/tests/Feature/API/CategoryProductTest.php
+packages/Webkul/Shop/tests/Feature/API/CatalogApiCacheTest.php
 packages/Webkul/Shop/tests/Feature/Customers/WishlistTest.php
 packages/Webkul/Shop/tests/Feature/Customers/AccountTest.php
 packages/Webkul/Shop/tests/Feature/Customers/OrdersTest.php
 packages/Webkul/Shop/tests/Feature/RegistrationPageTest.php
 packages/Webkul/Shop/tests/Feature/HomePageTest.php
+packages/Webkul/Shop/tests/Feature/CarouselTest.php
 packages/Webkul/Shop/tests/Feature/Product/Prices/SimpleTest.php
 packages/Webkul/Shop/tests/Feature/Product/Prices/DownloadableTest.php
 packages/Webkul/Shop/tests/Feature/Product/Prices/VirtualTest.php

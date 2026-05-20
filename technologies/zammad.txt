@@ -804,6 +804,7 @@ config/initializers/permissions_policy.rb
 config/initializers/models_preload.rb
 config/initializers/active_record_as_batches.rb
 config/initializers/store_provider_check.rb
+config/initializers/auth_sanitizer_compat.rb
 config/initializers/rszr.rb
 config/initializers/rack_attack.rb
 config/initializers/assets.rb
@@ -843,6 +844,7 @@ config/initializers/omniauth_openid_connect.rb
 config/initializers/active_record_lock_issue_3664.rb
 config/pre_initializers/email_address.rb
 config/pre_initializers/safe_mode.rb
+config/pre_initializers/auth_sanitizer_compat.rb
 config/pre_initializers/database_url.rb
 config/pre_initializers/load_asset_gems.rb
 config/environments/production.rb
@@ -9272,6 +9274,7 @@ db/migrate/20180719033247_add_confidential_to_doorkeeper_application.rb
 db/migrate/20221012075517_rename_max_tabs_setting.rb
 db/migrate/20180306084119_custom_html_email_css_font.rb
 db/migrate/20190408000001_issue_2541_fix_notification_email_without_body.rb
+db/migrate/20260513153605_issue_6126_ticket_state_default_close.rb
 db/migrate/20180202000001_sidebar_customer_open_ticket_colored.rb
 db/migrate/20170529000002_setting_delivery_permanent_failed.rb
 db/migrate/20210428125300_issue_3523_new_operator.rb
@@ -11882,6 +11885,7 @@ spec/system/knowledge_base/locale/answer/edit_spec.rb
 spec/system/knowledge_base/locale/answer/reader_spec.rb
 spec/system/knowledge_base/locale/knowledge_base/permissions_spec.rb
 spec/system/knowledge_base/locale/search_spec.rb
+spec/system/knowledge_base/granular_permissions_spec.rb
 spec/system/knowledge_base/feed_spec.rb
 spec/system/admin_password_auth_spec.rb
 spec/system/navigation_spec.rb
@@ -12363,6 +12367,7 @@ public/assets/chat/znuny_open_by_button.html
 public/assets/chat/chat-no-jquery.coffee
 public/assets/chat/gulpfile.js
 public/assets/chat/jquery-3.6.0.min.js
+public/assets/chat/pnpm-workspace.yaml
 public/assets/chat/znuny-no-jquery-open_by_button.html
 public/assets/chat/views/chat.eco
 public/assets/chat/views/message.eco

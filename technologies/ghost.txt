@@ -415,6 +415,7 @@ apps/admin-x-settings/test/utils/files/upload.zip
 apps/admin-x-settings/test/acceptance/growth/explore.test.ts
 apps/admin-x-settings/test/acceptance/growth/network.test.ts
 apps/admin-x-settings/test/acceptance/growth/tips-and-donations.test.ts
+apps/admin-x-settings/test/acceptance/membership/membership-settings.test.ts
 apps/admin-x-settings/test/acceptance/membership/offers.test.ts
 apps/admin-x-settings/test/acceptance/membership/recommendations.test.ts
 apps/admin-x-settings/test/acceptance/membership/analytics.test.ts
@@ -607,6 +608,7 @@ apps/admin-x-settings/src/components/settings/membership/tiers/tier-detail-previ
 apps/admin-x-settings/src/components/settings/membership/tiers/tiers-list.tsx
 apps/admin-x-settings/src/components/settings/membership/membership-settings.tsx
 apps/admin-x-settings/src/components/settings/membership/portal.tsx
+apps/admin-x-settings/src/components/settings/membership/gift-subscriptions.tsx
 apps/admin-x-settings/src/components/settings/membership/stripe/stripe-connect-modal.tsx
 apps/admin-x-settings/src/components/settings/general/invite-user-modal.tsx
 apps/admin-x-settings/src/components/settings/general/user-detail-modal.tsx
@@ -1079,6 +1081,7 @@ apps/admin-x-framework/test/utils/mock-fetch.ts
 apps/admin-x-framework/test/.eslintrc.cjs
 apps/admin-x-framework/test/unit/api/automated-email-design.test.tsx
 apps/admin-x-framework/test/unit/api/tinybird.test.tsx
+apps/admin-x-framework/test/unit/api/automations.test.ts
 apps/admin-x-framework/test/unit/utils/api/fetch-api.test.tsx
 apps/admin-x-framework/test/unit/utils/api/settings.test.tsx
 apps/admin-x-framework/test/unit/utils/api/hooks.test.tsx
@@ -1323,6 +1326,7 @@ apps/activitypub/test/utils/responses/ghost/site.json
 apps/activitypub/test/utils/responses/ghost/identities.json
 apps/activitypub/test/acceptance/dom-validation.test.ts
 apps/activitypub/test/acceptance/inbox.test.ts
+apps/activitypub/test/acceptance/preferences.test.ts
 apps/activitypub/test/acceptance/my-profile.test.ts
 apps/activitypub/test/acceptance/feed.test.ts
 apps/activitypub/test/.eslintrc.cjs
@@ -1382,6 +1386,7 @@ apps/activitypub/src/views/preferences/preferences.tsx
 apps/activitypub/src/views/preferences/components/dots-pattern.tsx
 apps/activitypub/src/views/preferences/components/profile.tsx
 apps/activitypub/src/views/preferences/components/settings.tsx
+apps/activitypub/src/views/preferences/components/account-migration.tsx
 apps/activitypub/src/views/preferences/components/edit-profile.tsx
 apps/activitypub/src/views/preferences/components/moderation.tsx
 apps/activitypub/src/views/preferences/components/bluesky-sharing.tsx
@@ -1520,6 +1525,7 @@ apps/admin-x-design-system/src/assets/icons/email-check.svg
 apps/admin-x-design-system/src/assets/icons/home.svg
 apps/admin-x-design-system/src/assets/icons/mailchimp.svg
 apps/admin-x-design-system/src/assets/icons/portal-icon-1.svg
+apps/admin-x-design-system/src/assets/icons/gift.svg
 apps/admin-x-design-system/src/assets/icons/send.svg
 apps/admin-x-design-system/src/assets/icons/zapier.svg
 apps/admin-x-design-system/src/assets/icons/user-add.svg
@@ -1926,11 +1932,13 @@ apps/posts/src/views/PostAnalytics/components/post-analytics-view.tsx
 apps/posts/src/views/Automations/editor.tsx
 apps/posts/src/views/Automations/automations.tsx
 apps/posts/src/views/Automations/types.ts
+apps/posts/src/views/Automations/components/add-step-edge.tsx
 apps/posts/src/views/Automations/components/automation-canvas.tsx
 apps/posts/src/views/Automations/components/automations-list.tsx
 apps/posts/src/views/Automations/components/automations-layout.tsx
 apps/posts/src/views/Automations/components/automations-header.tsx
 apps/posts/src/views/Automations/components/automations-content.tsx
+apps/posts/src/views/Automations/components/step-picker.tsx
 apps/posts/src/views/Automations/components/automation-status-badge.tsx
 apps/posts/src/views/Automations/components/automation-header.tsx
 apps/posts/src/views/members/members-view-state.test.ts
@@ -1974,9 +1982,7 @@ apps/posts/src/views/members/components/bulk-action-modals/unsubscribe-modal.tsx
 apps/posts/src/views/members/components/bulk-action-modals/delete-modal.tsx
 apps/posts/src/views/members/components/bulk-action-modals/add-label-modal.tsx
 apps/posts/src/views/members/components/bulk-action-modals/remove-label-modal.tsx
-apps/posts/src/views/members/components/members-layout.tsx
 apps/posts/src/views/members/components/members-header-search.tsx
-apps/posts/src/views/members/components/members-header.tsx
 apps/posts/src/views/members/components/members-list.tsx
 apps/posts/src/views/members/components/members-help-cards.tsx
 apps/posts/src/views/members/components/members-actions.tsx
@@ -1984,7 +1990,6 @@ apps/posts/src/views/members/components/manage-view-popover.tsx
 apps/posts/src/views/members/components/members-empty-state.tsx
 apps/posts/src/views/members/components/members-filters.tsx
 apps/posts/src/views/members/components/member-table-layout.ts
-apps/posts/src/views/members/components/members-content.tsx
 apps/posts/src/views/members/member-query-params.test.ts
 apps/posts/src/views/comments/legacy-comment-filter-query.ts
 apps/posts/src/views/comments/use-comment-filter-fields.ts
@@ -4322,6 +4327,7 @@ ghost/core/test/unit/api/endpoints/gift-reminders.test.js
 ghost/core/test/unit/api/endpoints/previews.test.js
 ghost/core/test/unit/api/cache-invalidation.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/members.test.js
+ghost/core/test/unit/api/canary/utils/serializers/output/posts-export-csv.test.ts
 ghost/core/test/unit/api/canary/utils/serializers/output/pages.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/posts.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/default.test.js
@@ -4331,6 +4337,7 @@ ghost/core/test/unit/api/canary/utils/serializers/output/utils/preview-rendering
 ghost/core/test/unit/api/canary/utils/serializers/output/utils/extra-attrs.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/utils/date.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/utils/post-gating.test.js
+ghost/core/test/unit/api/canary/utils/serializers/output/posts-csv-transform.test.ts
 ghost/core/test/unit/api/canary/utils/serializers/output/tags.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/previews.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/all.test.js
@@ -4626,6 +4633,7 @@ ghost/core/test/unit/server/services/custom-redirects/helpers/in-memory-store.ts
 ghost/core/test/unit/server/services/custom-redirects/gcs-store.test.ts
 ghost/core/test/unit/server/services/posts/post-email-handler.test.js
 ghost/core/test/unit/server/services/posts/utils/index.js
+ghost/core/test/unit/server/services/posts/__snapshots__/posts-exporter.test.js.snap
 ghost/core/test/unit/server/services/posts/posts-exporter.test.js
 ghost/core/test/unit/server/services/posts/posts-service.test.js
 ghost/core/test/unit/server/services/newsletters/service.test.js
@@ -5067,6 +5075,7 @@ ghost/core/core/server/api/endpoints/utils/serializers/output/oembed.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/all.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/session.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/email-posts.js
+ghost/core/core/server/api/endpoints/utils/serializers/output/posts-csv-transform.ts
 ghost/core/core/server/api/endpoints/utils/serializers/output/themes.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/default.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/utils/post-gating.js

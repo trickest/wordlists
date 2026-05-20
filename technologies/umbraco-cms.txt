@@ -4369,6 +4369,7 @@ src/Umbraco.Core/DependencyInjection/UmbracoBuilderExtensions.cs
 src/Umbraco.Core/DependencyInjection/UmbracoBuilder.Composers.cs
 src/Umbraco.Core/DependencyInjection/UmbracoBuilder.cs
 src/Umbraco.Core/DependencyInjection/StaticServiceProvider.cs
+src/Umbraco.Core/DependencyInjection/IUmbracoManagedOutputCacheMarker.cs
 src/Umbraco.Core/DependencyInjection/UmbracoBuilder.Collections.cs
 src/Umbraco.Core/DependencyInjection/ServiceProviderExtensions.cs
 src/Umbraco.Core/DependencyInjection/UmbracoBuilder.Events.cs
@@ -15423,7 +15424,10 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Routing/ControllerActionSearch
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Cache/PartialViewCacheInvalidators/MemberPartialViewCacheInvalidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/ApplicationUrlConfigurationNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Templates/DockerFileTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/PublishedContentTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DocumentCacheSyncFastPathTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/ElementBreadthFirstKeyProviderTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/ElementCacheSyncFastPathTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DeferredCacheRebuildServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DocumentBreadthFirstKeyProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/CacheRefreshingNotificationHandlerTests.cs
@@ -15630,6 +15634,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/DeepCloneHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/CultureImpactTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/DictionaryTranslationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/UserExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Navigation/NavigationNodeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/MemberTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Mapping/CommonMapperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/DataTypeTests.cs
@@ -15745,6 +15750,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentTypeServiceExtensions
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DefaultContentVersionCleanupPolicyTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/AuditServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DocumentUrlAliasServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/Navigation/ContentNavigationOrderedChildrenCacheTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/Navigation/ContentNavigationDescendantsCacheTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentNavigationServiceBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/EntityServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/UserGroupServiceTests.cs
@@ -15755,6 +15762,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/TreeEntitySortingServiceTest
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ElementPermissionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/LongRunningOperationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/PublishStatus/PublishedContentStatusFilteringServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/PublishStatus/PublishedMediaStatusFilteringServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/SystemInformationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/AuditEntryServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DocumentUrlServiceTests.cs
@@ -16665,8 +16673,10 @@ tests/Umbraco.Tests.Benchmarks/CtorInvokeBenchmarks.cs.bak
 tests/Umbraco.Tests.Benchmarks/ConcurrentDictionaryBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/DetectJsonBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/StringExtensionsBenchmarks.cs
+tests/Umbraco.Tests.Benchmarks/HybridCacheNavigationBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/HexStringBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/StringFileExtensionBenchmark.cs
+tests/Umbraco.Tests.Benchmarks/Fixtures/SyntheticPublishedTreeFixture.cs
 tests/Umbraco.Tests.Benchmarks/LinqCastBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/ContentTypeCachePolicyBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/GuidUdiBenchmarks.cs

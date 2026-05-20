@@ -2606,6 +2606,7 @@ app/bundles/CampaignBundle/Tests/Command/ValidateEventCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/CampaignDeleteEventLogsCommandFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Command/campaign_schema.sql
 app/bundles/CampaignBundle/Tests/Command/CampaignSummarizationFunctionalTest.php
+app/bundles/CampaignBundle/Tests/Command/ResumeStuckCampaignCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/ExecuteEventCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/TriggerCampaignCommandTest.php
 app/bundles/CampaignBundle/Tests/Command/Api/CampaignApiControllerFunctionalTest.php
@@ -2641,6 +2642,7 @@ app/bundles/CampaignBundle/DataFixtures/ORM/CampaignData.php
 app/bundles/CampaignBundle/Event/CampaignBuilderEvent.php
 app/bundles/CampaignBundle/Event/CampaignDecisionEvent.php
 app/bundles/CampaignBundle/Event/CampaignLeadChangeEvent.php
+app/bundles/CampaignBundle/Event/MaxAllowedRecordsReachedInSingleProcessEvent.php
 app/bundles/CampaignBundle/Event/FailedEvent.php
 app/bundles/CampaignBundle/Event/CampaignEvent.php
 app/bundles/CampaignBundle/Event/ExecutedEvent.php
@@ -2756,6 +2758,7 @@ app/bundles/CampaignBundle/Assets/js/campaign.js
 app/bundles/CampaignBundle/DependencyInjection/MauticCampaignExtension.php
 app/bundles/CampaignBundle/Command/WriteCountTrait.php
 app/bundles/CampaignBundle/Command/ValidateEventCommand.php
+app/bundles/CampaignBundle/Command/ResumeStuckCampaignCommand.php
 app/bundles/CampaignBundle/Command/SummarizeCommand.php
 app/bundles/CampaignBundle/Command/TriggerCampaignCommand.php
 app/bundles/CampaignBundle/Command/CampaignDeleteEventLogsCommand.php
@@ -3717,6 +3720,7 @@ app/bundles/CoreBundle/Entity/PublishStatusIconAttributesInterface.php
 app/bundles/CoreBundle/Entity/CommonRepository.php
 app/bundles/CoreBundle/Entity/UuidInterface.php
 app/bundles/CoreBundle/Entity/DynamicContentEntityTrait.php
+app/bundles/CoreBundle/Entity/DateAddedTrait.php
 app/bundles/CoreBundle/Entity/DeprecatedInterface.php
 app/bundles/CoreBundle/Entity/CacheInvalidateInterface.php
 app/bundles/CoreBundle/Entity/UuidTrait.php
@@ -4823,6 +4827,7 @@ app/migrations/Version20230424083829.php
 app/migrations/Version20221010121758.php
 app/migrations/Version20230311195347.php
 app/migrations/Version20250425134835.php
+app/migrations/Version20250904111834.php
 app/migrations/Version20250207035735.php
 app/migrations/Version20240708153845.php
 app/migrations/Version20221014081742.php

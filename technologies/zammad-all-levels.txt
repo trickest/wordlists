@@ -3701,6 +3701,9 @@ active_record_as_batches.rb
 config/initializers/store_provider_check.rb
 initializers/store_provider_check.rb
 store_provider_check.rb
+config/initializers/auth_sanitizer_compat.rb
+initializers/auth_sanitizer_compat.rb
+auth_sanitizer_compat.rb
 config/initializers/rszr.rb
 initializers/rszr.rb
 rszr.rb
@@ -3818,6 +3821,9 @@ email_address.rb
 config/pre_initializers/safe_mode.rb
 pre_initializers/safe_mode.rb
 safe_mode.rb
+config/pre_initializers/auth_sanitizer_compat.rb
+pre_initializers/auth_sanitizer_compat.rb
+auth_sanitizer_compat.rb
 config/pre_initializers/database_url.rb
 pre_initializers/database_url.rb
 database_url.rb
@@ -58282,6 +58288,9 @@ migrate/20180306084119_custom_html_email_css_font.rb
 db/migrate/20190408000001_issue_2541_fix_notification_email_without_body.rb
 migrate/20190408000001_issue_2541_fix_notification_email_without_body.rb
 20190408000001_issue_2541_fix_notification_email_without_body.rb
+db/migrate/20260513153605_issue_6126_ticket_state_default_close.rb
+migrate/20260513153605_issue_6126_ticket_state_default_close.rb
+20260513153605_issue_6126_ticket_state_default_close.rb
 db/migrate/20180202000001_sidebar_customer_open_ticket_colored.rb
 migrate/20180202000001_sidebar_customer_open_ticket_colored.rb
 20180202000001_sidebar_customer_open_ticket_colored.rb
@@ -70516,6 +70525,10 @@ system/knowledge_base/locale/search_spec.rb
 knowledge_base/locale/search_spec.rb
 locale/search_spec.rb
 search_spec.rb
+spec/system/knowledge_base/granular_permissions_spec.rb
+system/knowledge_base/granular_permissions_spec.rb
+knowledge_base/granular_permissions_spec.rb
+granular_permissions_spec.rb
 spec/system/knowledge_base/feed_spec.rb
 system/knowledge_base/feed_spec.rb
 knowledge_base/feed_spec.rb
@@ -72659,6 +72672,10 @@ public/assets/chat/jquery-3.6.0.min.js
 assets/chat/jquery-3.6.0.min.js
 chat/jquery-3.6.0.min.js
 jquery-3.6.0.min.js
+public/assets/chat/pnpm-workspace.yaml
+assets/chat/pnpm-workspace.yaml
+chat/pnpm-workspace.yaml
+pnpm-workspace.yaml
 public/assets/chat/znuny-no-jquery-open_by_button.html
 assets/chat/znuny-no-jquery-open_by_button.html
 chat/znuny-no-jquery-open_by_button.html
