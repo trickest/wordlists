@@ -5636,6 +5636,7 @@ src/Umbraco.Core/Services/Changes/TreeChangeTypes.cs
 src/Umbraco.Core/Services/Changes/ContentTypeChange.cs
 src/Umbraco.Core/Services/IAuditEntryService.cs
 src/Umbraco.Core/Services/IDataTypeService.cs
+src/Umbraco.Core/Services/DocumentUrlServiceContentTreeChangeNotificationHandler.cs
 src/Umbraco.Core/Services/IPublicAccessService.cs
 src/Umbraco.Core/Services/ILogViewerRepository.cs
 src/Umbraco.Core/Services/UserServiceExtensions.cs
@@ -8158,6 +8159,7 @@ src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/prope
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.element.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.token.ts
+src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/picker-collection/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/picker-collection/entity-data-picker-collection.repository.ts
@@ -13969,6 +13971,10 @@ src/Umbraco.Web.UI.Client/src/packages/core/components/input-date/input-date.ele
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-date/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-date/input-date.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-date/input-date.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/entity-frame/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/entity-frame/entity-frame.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/entity-frame/entity-frame.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/entity-frame/entity-frame.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-dropdown/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-dropdown/input-dropdown-list.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-dropdown/input-dropdown-list.stories.ts
@@ -15767,6 +15773,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/SystemInformationServiceTest
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/AuditEntryServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DocumentUrlServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/PreviewServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/DocumentUrlServiceContentTreeChangeNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentValidationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ElementContainerPermissionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/IsoCodeValidatorTests.cs
@@ -16587,6 +16594,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MemberGroupServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MemberTypeEditingServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/PublishedUrlInfoProviderTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentUrlServiceContentTreeChangeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/WebhookServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MediaNavigationServiceTests.Restore.cs
@@ -17299,6 +17307,7 @@ templates/UmbracoExtension/Client/src/bundle.manifests.ts
 templates/UmbracoExtension/Client/vite.config.ts
 templates/UmbracoExtension/Client/public/umbraco-package.json
 templates/UmbracoExtension/Umbraco.Extension.csproj
+templates/UmbracoExtension/ViewModels/WhoAmIResponseModel.cs
 templates/UmbracoExtension/Directory.Packages.props
 templates/UmbracoExtension/Constants.cs
 templates/UmbracoExtension/.template.config/readme.md

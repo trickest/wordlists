@@ -863,6 +863,8 @@ admin-dev/themes/new-theme/js/pages/alias/components/aliases-collection-manager.
 admin-dev/themes/new-theme/js/pages/customer-groups/index.ts
 admin-dev/themes/new-theme/js/pages/customer-preferences/index.ts
 admin-dev/themes/new-theme/js/pages/customer-preferences/customer-preferences-map.ts
+admin-dev/themes/new-theme/js/pages/email-body-translation/index.ts
+admin-dev/themes/new-theme/js/pages/email-body-translation/form.ts
 admin-dev/themes/new-theme/js/pages/store/index.ts
 admin-dev/themes/new-theme/js/pages/permission/index.ts
 admin-dev/themes/new-theme/js/pages/order-return-states/form.ts
@@ -3299,6 +3301,7 @@ src/Core/Search/Filters/OrderStatesFilters.php
 src/Core/Search/Filters/ShipmentFilters.php
 src/Core/Search/Filters/CustomerDiscountFilters.php
 src/Core/Search/Filters/AttributeGroupFilters.php
+src/Core/Search/Filters/EmailBodyTemplateFilters.php
 src/Core/Search/Filters/RequestSqlFilters.php
 src/Core/Search/Filters/CategoryFilters.php
 src/Core/Search/Filters/AddressFilters.php
@@ -3762,6 +3765,7 @@ src/Core/Grid/Presenter/GridPresenterInterface.php
 src/Core/Grid/Definition/Factory/OrderReturnStatesGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/FeatureValueGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/ProfileGridDefinitionFactory.php
+src/Core/Grid/Definition/Factory/EmailBodyTemplateDefinitionFactory.php
 src/Core/Grid/Definition/Factory/RequestSqlGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/CreditSlipGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/AttributeGridDefinitionFactory.php
@@ -3862,6 +3866,7 @@ src/Core/Grid/Data/Factory/CategoryDataFactory.php
 src/Core/Grid/Data/Factory/CarrierGridDataFactory.php
 src/Core/Grid/Data/Factory/AttributeGridDataFactory.php
 src/Core/Grid/Data/Factory/AttachmentGridDataFactoryDecorator.php
+src/Core/Grid/Data/Factory/EmailBodyTemplateGridDataFactory.php
 src/Core/Grid/Data/Factory/LanguageGridDataFactory.php
 src/Core/Grid/Data/Factory/CatalogPriceRuleGridDataFactory.php
 src/Core/Grid/Data/Factory/CustomerDiscountGridDataFactoryDecorator.php
@@ -5282,8 +5287,20 @@ src/Core/Domain/Alias/CommandHandler/DeleteSearchTermAliasesHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/BulkDeleteSearchTermsAliasesHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/UpdateSearchTermAliasesHandlerInterface.php
 src/Core/Domain/Alias/CommandHandler/AddSearchTermAliasesHandlerInterface.php
+src/Core/Domain/MailTemplate/QueryHandler/GetEmailBodyTemplateForEditingHandlerInterface.php
+src/Core/Domain/MailTemplate/QueryHandler/GetEmailBodyTemplatesForListingHandlerInterface.php
+src/Core/Domain/MailTemplate/Exception/EmailTemplateException.php
+src/Core/Domain/MailTemplate/Exception/EmailTemplateNotFoundException.php
+src/Core/Domain/MailTemplate/Exception/EmailTemplateConstraintException.php
+src/Core/Domain/MailTemplate/Query/GetEmailBodyTemplatesForListing.php
+src/Core/Domain/MailTemplate/Query/GetEmailBodyTemplateForEditing.php
+src/Core/Domain/MailTemplate/QueryResult/EditableEmailBodyTemplate.php
 src/Core/Domain/MailTemplate/Command/GenerateThemeMailTemplatesCommand.php
+src/Core/Domain/MailTemplate/Command/EditEmailBodyTemplateCommand.php
+src/Core/Domain/MailTemplate/ValueObject/EmailTemplateName.php
+src/Core/Domain/MailTemplate/ValueObject/EmailTemplateSource.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandler.php
+src/Core/Domain/MailTemplate/CommandHandler/EditEmailBodyTemplateHandlerInterface.php
 src/Core/Domain/MailTemplate/CommandHandler/GenerateThemeMailTemplatesHandlerInterface.php
 src/Core/Domain/Address/QueryHandler/GetCustomerAddressForEditingHandlerInterface.php
 src/Core/Domain/Address/QueryHandler/GetManufacturerAddressForEditingHandlerInterface.php
@@ -7055,6 +7072,7 @@ src/PrestaShopBundle/Form/Admin/Improve/Design/Theme/AdaptThemeToRTLLanguagesTyp
 src/PrestaShopBundle/Form/Admin/Improve/Design/Theme/PageLayoutCustomizationFormFactoryInterface.php
 src/PrestaShopBundle/Form/Admin/Improve/Design/MailTheme/TranslateMailsBodyType.php
 src/PrestaShopBundle/Form/Admin/Improve/Design/MailTheme/MailThemeFormDataProvider.php
+src/PrestaShopBundle/Form/Admin/Improve/Design/MailTheme/EmailBodyTemplateEditType.php
 src/PrestaShopBundle/Form/Admin/Improve/Design/MailTheme/MailThemeConfigurationType.php
 src/PrestaShopBundle/Form/Admin/Improve/Design/MailTheme/GenerateMailsType.php
 src/PrestaShopBundle/Form/Admin/Improve/Design/Pages/CmsPageType.php
@@ -7611,6 +7629,7 @@ src/PrestaShopBundle/Resources/config/routing/admin/improve/international/geoloc
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/state.yml
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/tax_rules_groups.yml
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/tax.yml
+src/PrestaShopBundle/Resources/config/routing/admin/improve/international/email_body_translation.yml
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/currencies.yml
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/country.yml
 src/PrestaShopBundle/Resources/config/routing/admin/improve/international/language.yml
@@ -7866,6 +7885,8 @@ src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/create.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Improve/International/EmailBodyTranslation/edit.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Improve/International/EmailBodyTranslation/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Localization/Blocks/advanced_configuration.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Localization/Blocks/configuration.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Localization/Blocks/import_localization_pack_block.html.twig
@@ -8357,6 +8378,7 @@ src/PrestaShopBundle/Controller/Admin/Improve/Design/MailThemeController.php
 src/PrestaShopBundle/Controller/Admin/Improve/Design/CmsPageController.php
 src/PrestaShopBundle/Controller/Admin/Improve/ModuleController.php
 src/PrestaShopBundle/Controller/Admin/Improve/International/GeolocationController.php
+src/PrestaShopBundle/Controller/Admin/Improve/International/EmailBodyTranslationController.php
 src/PrestaShopBundle/Controller/Admin/Improve/International/TaxRulesGroupController.php
 src/PrestaShopBundle/Controller/Admin/Improve/International/LanguageController.php
 src/PrestaShopBundle/Controller/Admin/Improve/International/TaxController.php
@@ -8832,8 +8854,12 @@ src/Adapter/Debug/DebugMode.php
 src/Adapter/Debug/DebugModeConfiguration.php
 src/Adapter/Debug/DebugProfiling.php
 src/Adapter/Assets/AssetUrlGeneratorTrait.php
+src/Adapter/MailTemplate/QueryHandler/GetEmailBodyTemplatesForListingHandler.php
+src/Adapter/MailTemplate/QueryHandler/GetEmailBodyTemplateForEditingHandler.php
+src/Adapter/MailTemplate/EmailBodyTemplateRepository.php
 src/Adapter/MailTemplate/MailTemplateTwigRenderer.php
 src/Adapter/MailTemplate/MailPreviewVariablesBuilder.php
+src/Adapter/MailTemplate/CommandHandler/EditEmailBodyTemplateHandler.php
 src/Adapter/MailTemplate/MailPartialTemplateRenderer.php
 src/Adapter/Address/QueryHandler/GetCustomerAddressForEditingHandler.php
 src/Adapter/Address/QueryHandler/GetManufacturerAddressForEditingHandler.php
@@ -10924,6 +10950,7 @@ tests/Unit/Adapter/ContextStateManagerTest.php
 tests/Unit/Adapter/Cart/Comparator/CartProductsComparatorTest.php
 tests/Unit/Classes/Smarty/TemplateFinderTest.php
 tests/Unit/Classes/Module/ModuleCoreTest.php
+tests/Unit/Classes/ConnectionIsBotTest.php
 tests/Unit/Classes/ValidateCoreTest.php
 tests/Unit/Classes/RequestSqlTest.php
 tests/Unit/Classes/ModuleGraphTest.php
@@ -12174,6 +12201,7 @@ tests/Integration/Behaviour/Features/Scenario/Discount/BO/add_free_shipping_disc
 tests/Integration/Behaviour/Features/Scenario/Discount/BO/add_order_level_discount.feature
 tests/Integration/Behaviour/Features/Scenario/Discount/BO/add_and_update_discount_quantities.feature
 tests/Integration/Behaviour/Features/Scenario/Language/language.feature
+tests/Integration/Behaviour/Features/Scenario/MailTemplate/email_body_translation.feature
 tests/Integration/Behaviour/Features/Scenario/Address/manufacturer_address.feature
 tests/Integration/Behaviour/Features/Scenario/Address/customer_address.feature
 tests/Integration/Behaviour/Features/Scenario/Category/category_management.feature
@@ -12429,6 +12457,7 @@ tests/Integration/Behaviour/Features/Context/Domain/ThemeMailTemplatesFeatureCon
 tests/Integration/Behaviour/Features/Context/Domain/SupplierFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CountryFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/EmailBodyTranslationFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CmsPageFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/SearchEngineFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/AbstractDomainFeatureContext.php

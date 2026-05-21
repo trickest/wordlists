@@ -851,6 +851,7 @@ app/bundles/EmailBundle/EventListener/SearchSubscriber.php
 app/bundles/EmailBundle/EventListener/ReportSubscriber.php
 app/bundles/EmailBundle/EventListener/FormSubscriber.php
 app/bundles/EmailBundle/EventListener/GraphAggregateStatsSubscriber.php
+app/bundles/EmailBundle/EventListener/EmailDefaultsSubscriber.php
 app/bundles/EmailBundle/EventListener/MessageQueueSubscriber.php
 app/bundles/EmailBundle/EventListener/StatsSubscriber.php
 app/bundles/EmailBundle/EventListener/PageSubscriber.php
@@ -933,6 +934,7 @@ app/bundles/EmailBundle/Tests/Model/SendEmailToUserTest.php
 app/bundles/EmailBundle/Tests/Model/EmailStatModelTest.php
 app/bundles/EmailBundle/Tests/Form/Type/EmailTypeTest.php
 app/bundles/EmailBundle/Tests/Form/Type/FormSubmitActionUserEmailTypeTest.php
+app/bundles/EmailBundle/Tests/Form/Type/ConfigTypeTest.php
 app/bundles/EmailBundle/Tests/Form/Type/ExampleSendTypeTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailDraftFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/PreviewSettingsFunctionalTest.php
@@ -940,6 +942,7 @@ app/bundles/EmailBundle/Tests/Controller/EmailMapStatsControllerTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailControllerTest.php
 app/bundles/EmailBundle/Tests/Controller/PreviewFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailGraphStatsControllerFunctionalTest.php
+app/bundles/EmailBundle/Tests/Controller/EmailDefaultsFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/AjaxControllerTest.php
 app/bundles/EmailBundle/Tests/Controller/AjaxControllerFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailListTypeFunctionalTest.php
@@ -949,11 +952,13 @@ app/bundles/EmailBundle/Tests/Controller/EmailControllerFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailExampleFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailProjectSearchFunctionalTest.php
+app/bundles/EmailBundle/Tests/Controller/Api/EmailApiDefaultsFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/Api/EmailApiControllerFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/Api/SMimeFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/PublicControllerFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailSendDisabledTrackingFunctionalTest.php
 app/bundles/EmailBundle/Tests/Helper/EventListener/EmailValidationSubscriber.php
+app/bundles/EmailBundle/Tests/Helper/EmailDefaultsHelperTest.php
 app/bundles/EmailBundle/Tests/Helper/PointEventHelperTest.php
 app/bundles/EmailBundle/Tests/Helper/Transport/BcInterfaceTokenTransport.php
 app/bundles/EmailBundle/Tests/Helper/Transport/BatchTransport.php
@@ -1131,6 +1136,7 @@ app/bundles/EmailBundle/Helper/EmailConfigInterface.php
 app/bundles/EmailBundle/Helper/MailHashHelper.php
 app/bundles/EmailBundle/Helper/FromEmailHelper.php
 app/bundles/EmailBundle/Helper/PointEventHelper.php
+app/bundles/EmailBundle/Helper/EmailDefaultsHelper.php
 app/bundles/EmailBundle/Helper/BotRatioHelper.php
 app/bundles/EmailBundle/Helper/EmailConfig.php
 app/bundles/ConfigBundle/EventListener/ConfigSubscriber.php

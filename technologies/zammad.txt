@@ -804,7 +804,6 @@ config/initializers/permissions_policy.rb
 config/initializers/models_preload.rb
 config/initializers/active_record_as_batches.rb
 config/initializers/store_provider_check.rb
-config/initializers/auth_sanitizer_compat.rb
 config/initializers/rszr.rb
 config/initializers/rack_attack.rb
 config/initializers/assets.rb
@@ -844,7 +843,6 @@ config/initializers/omniauth_openid_connect.rb
 config/initializers/active_record_lock_issue_3664.rb
 config/pre_initializers/email_address.rb
 config/pre_initializers/safe_mode.rb
-config/pre_initializers/auth_sanitizer_compat.rb
 config/pre_initializers/database_url.rb
 config/pre_initializers/load_asset_gems.rb
 config/environments/production.rb
@@ -1782,6 +1780,7 @@ lib/mixin/rails_logger.rb
 lib/calendar_subscriptions/tickets.rb
 lib/validations/mention_validator.rb
 lib/validations/object_manager/attribute_validator/min_max.rb
+lib/validations/object_manager/attribute_validator/external_data_source.rb
 lib/validations/object_manager/attribute_validator/option.rb
 lib/validations/object_manager/attribute_validator/required.rb
 lib/validations/object_manager/attribute_validator/backend.rb
@@ -6601,6 +6600,7 @@ app/frontend/apps/desktop/composables/accessibility/__tests__/useAnnouncer.spec.
 app/frontend/apps/desktop/composables/useConnection.ts
 app/frontend/apps/desktop/composables/useScrollPosition.ts
 app/frontend/apps/desktop/composables/useTransitionConfig.ts
+app/frontend/apps/desktop/composables/useKeepAliveHooks.ts
 app/frontend/apps/desktop/composables/authentication/useSignupForm.ts
 app/frontend/apps/desktop/composables/useUserTaskbarTab.ts
 app/frontend/apps/desktop/composables/useFilePreviewViewer.ts
@@ -6611,6 +6611,7 @@ app/frontend/apps/desktop/composables/useResizeGridColumns.ts
 app/frontend/apps/desktop/composables/__tests__/useTransitionConfig.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useResizeGridColumns.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useElementScroll.spec.ts
+app/frontend/apps/desktop/composables/__tests__/useKeepAliveHooks.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useOverlayContainer.spec.ts
 app/frontend/apps/desktop/composables/__tests__/usePrintMode.spec.ts
 app/frontend/apps/desktop/router/index.ts
@@ -6687,6 +6688,8 @@ app/frontend/apps/desktop/components/Search/QuickSearch/QuickSearchResultList/__
 app/frontend/apps/desktop/components/Search/QuickSearch/QuickSearchInput/QuickSearchInput.vue
 app/frontend/apps/desktop/components/Search/QuickSearch/QuickSearchInput/__tests__/QuickSearchInput.spec.ts
 app/frontend/apps/desktop/components/Search/QuickSearch/__tests__/QuickSearch.spec.ts
+app/frontend/apps/desktop/components/Search/composables/__tests__/useSearchTitle.spec.ts
+app/frontend/apps/desktop/components/Search/composables/useSearchTitle.ts
 app/frontend/apps/desktop/components/Search/types.ts
 app/frontend/apps/desktop/components/Search/plugins/index.ts
 app/frontend/apps/desktop/components/Search/plugins/user.ts
@@ -10749,6 +10752,7 @@ spec/lib/validations/object_manager/attribute_validator/data_types_spec.rb
 spec/lib/validations/object_manager/attribute_validator/option_spec.rb
 spec/lib/validations/object_manager/attribute_validator/min_max_spec.rb
 spec/lib/validations/object_manager/attribute_validator/max_length_spec.rb
+spec/lib/validations/object_manager/attribute_validator/external_data_source_spec.rb
 spec/lib/validations/object_manager/attribute_validator/backend_examples.rb
 spec/lib/validations/object_manager/attribute_validator/future_past_spec.rb
 spec/lib/validations/object_manager/attribute_validator_spec.rb

@@ -736,6 +736,8 @@ packages/js/experimental-products-app/src/fields/images_count/field.test.tsx
 packages/js/experimental-products-app/src/fields/categories/field.tsx
 packages/js/experimental-products-app/src/fields/shipping_summary/field.tsx
 packages/js/experimental-products-app/src/fields/global_unique_id/field.tsx
+packages/js/experimental-products-app/src/fields/grouped_products/style.scss
+packages/js/experimental-products-app/src/fields/grouped_products/field.tsx
 packages/js/experimental-products-app/src/fields/height/field.tsx
 packages/js/experimental-products-app/src/fields/visibility_summary/style.scss
 packages/js/experimental-products-app/src/fields/visibility_summary/field.tsx
@@ -782,6 +784,7 @@ packages/js/experimental-products-app/src/fields/components/currency-input.tsx
 packages/js/experimental-products-app/src/fields/components/dimension.tsx
 packages/js/experimental-products-app/src/fields/components/date-picker.tsx
 packages/js/experimental-products-app/src/fields/components/product-status-badge.tsx
+packages/js/experimental-products-app/src/fields/components/dimension.test.tsx
 packages/js/experimental-products-app/src/fields/components/taxonomy-edit/style.scss
 packages/js/experimental-products-app/src/fields/components/taxonomy-edit/index.tsx
 packages/js/experimental-products-app/src/fields/components/taxonomy-edit/use-elements.ts
@@ -799,6 +802,7 @@ packages/js/experimental-products-app/src/fields/components/searchable-chip-sele
 packages/js/experimental-products-app/src/fields/components/searchable-chip-select/types.ts
 packages/js/experimental-products-app/src/fields/components/searchable-chip-select/chip-with-remove.tsx
 packages/js/experimental-products-app/src/fields/manage_stock/field.tsx
+packages/js/experimental-products-app/src/fields/schedule_sale/style.scss
 packages/js/experimental-products-app/src/fields/schedule_sale/field.tsx
 packages/js/experimental-products-app/src/fields/brands/field.tsx
 packages/js/experimental-products-app/src/style.scss
@@ -817,6 +821,7 @@ packages/js/experimental-products-app/src/product-list/page/README.md
 packages/js/experimental-products-app/src/product-list/utils.ts
 packages/js/experimental-products-app/src/product-list/layouts.ts
 packages/js/experimental-products-app/src/product-list/query.test.ts
+packages/js/experimental-products-app/src/product-list/empty-state/style.scss
 packages/js/experimental-products-app/src/product-list/empty-state/index.tsx
 packages/js/experimental-products-app/src/product-list/empty-state/icon.tsx
 packages/js/experimental-products-app/src/product-list/fields.tsx
@@ -855,6 +860,7 @@ packages/js/experimental-products-app/README.md
 packages/js/experimental-products-app/changelog/add-products-fields-integration
 packages/js/experimental-products-app/changelog/update-categories-remove-description
 packages/js/experimental-products-app/changelog/64845-wooplug-6696-gate-the-customer-review-request-feature-behind-a
+packages/js/experimental-products-app/changelog/update-products-app-rest-api-v4-blueprint
 packages/js/experimental-products-app/changelog/add-variation-view-bundle
 packages/js/experimental-products-app/changelog/64481-add-dataform-component
 packages/js/experimental-products-app/changelog/update-remove-tags-helper-text
@@ -865,6 +871,8 @@ packages/js/experimental-products-app/changelog/fix-rsm-3550-empty-filters
 packages/js/experimental-products-app/changelog/tweak-products-app-drawer-title-20px
 packages/js/experimental-products-app/changelog/update-remove-featured-helper-text
 packages/js/experimental-products-app/changelog/update-taxonomy-fields-chip-select
+packages/js/experimental-products-app/changelog/update-schedule-sale-control
+packages/js/experimental-products-app/changelog/fix-variation-parent-edit-link
 packages/js/experimental-products-app/changelog/update-status-options-and-labels
 packages/js/experimental-products-app/changelog/fix-product-image-field-selection
 packages/js/experimental-products-app/changelog/add-products-app-tag-filter
@@ -881,6 +889,8 @@ packages/js/experimental-products-app/changelog/64424-add-filters
 packages/js/experimental-products-app/changelog/tweak-products-app-drawer-header-padding-24px
 packages/js/experimental-products-app/changelog/fix-rsm-3550-stock-multiselect
 packages/js/experimental-products-app/changelog/update-product-status-and-catalog-visibility-dropdowns
+packages/js/experimental-products-app/changelog/fix-products-dashboard-mobile-layout
+packages/js/experimental-products-app/changelog/fix-variation-image-save
 packages/js/experimental-products-app/changelog/update-sale-schedule-fields
 packages/js/experimental-products-app/changelog/fix-edit-variations
 packages/js/experimental-products-app/changelog/update-remove-shipping-class-filter
@@ -890,6 +900,7 @@ packages/js/experimental-products-app/changelog/add-product-list-variations
 packages/js/experimental-products-app/changelog/update-dimensions-row-layout
 packages/js/experimental-products-app/changelog/64812-fix-bulk-editing-field
 packages/js/experimental-products-app/changelog/update-products-app-drawer
+packages/js/experimental-products-app/changelog/fix-disable-name-price-sort
 packages/js/experimental-products-app/changelog/add-products-app-shipping-class-filter
 packages/js/experimental-products-app/changelog/add-products-fields-media-seo
 packages/js/experimental-products-app/changelog/add-products-fields-organization
@@ -899,6 +910,7 @@ packages/js/experimental-products-app/changelog/fix-quick-edit-bulk-selection
 packages/js/experimental-products-app/changelog/add-products-app-empty-states
 packages/js/experimental-products-app/changelog/fix-quick-edit-sale-price-visibility
 packages/js/experimental-products-app/changelog/add-products-app-stock-quantity-filter
+packages/js/experimental-products-app/changelog/fix-products-dashboard-undefined-url
 packages/js/experimental-products-app/changelog/update-sku-remove-description
 packages/js/experimental-products-app/changelog/add-products-fields-inventory-shipping
 packages/js/experimental-products-app/changelog/add-quick-edit-row-action
@@ -906,17 +918,21 @@ packages/js/experimental-products-app/changelog/update-remove-product-title-unde
 packages/js/experimental-products-app/changelog/add-cost-of-goods-field
 packages/js/experimental-products-app/changelog/add-products-app-brand-filter
 packages/js/experimental-products-app/changelog/add-properties-tags-brands-date-gtin
+packages/js/experimental-products-app/changelog/dev-products-app-blueprint-rest-v4
+packages/js/experimental-products-app/changelog/fix-products-app-drawer-close-query
 packages/js/experimental-products-app/changelog/update-featured-product-checkbox
 packages/js/experimental-products-app/changelog/fix-images-field-label-spacing
 packages/js/experimental-products-app/changelog/add-downloadable-files-section
 packages/js/experimental-products-app/changelog/fix-products-table-polish
 packages/js/experimental-products-app/changelog/update-images-field-label-drag-and-size
 packages/js/experimental-products-app/changelog/fix-rsm-3550-price-range-spacing
+packages/js/experimental-products-app/changelog/update-products-app-grouped-products-field
 packages/js/experimental-products-app/changelog/fix-products-app-drawer-animated-close
 packages/js/experimental-products-app/changelog/update-product-edit-field-groups
 packages/js/experimental-products-app/changelog/update-products-app-add-new-menu
 packages/js/experimental-products-app/changelog/update-select-fields-use-ui-primitive
 packages/js/experimental-products-app/changelog/update-products-quick-edit-fields
+packages/js/experimental-products-app/changelog/fix-products-dashboard-filter-empty-state
 packages/js/experimental-products-app/changelog/tweak-products-app-delete-modal-no-quotes
 packages/js/experimental-products-app/changelog/64255-fix-all-products-experiment-composer
 packages/js/experimental-products-app/changelog/add-tree-select-control
@@ -929,6 +945,7 @@ packages/js/experimental-products-app/changelog/update-products-app-variation-ro
 packages/js/experimental-products-app/changelog/add-products-app-beta-feedback-badge
 packages/js/experimental-products-app/changelog/fix-quick-edit-drawer-title-and-spacing
 packages/js/experimental-products-app/changelog/add-categories-default-column
+packages/js/experimental-products-app/changelog/fix-products-dimension-quick-edit
 packages/js/experimental-products-app/changelog/update-products-app-admin-theme-color
 packages/js/experimental-products-app/changelog/add-products-fields-pricing
 packages/js/notices/package.json
@@ -4551,6 +4568,7 @@ packages/php/email-editor/phpunit-integration.xml.dist
 packages/php/email-editor/email-editor.php
 packages/php/email-editor/changelog/stomail-8060-quote-child-blocks
 packages/php/email-editor/changelog/.gitkeep
+packages/php/email-editor/changelog/fix-media-text-rtl-test-assertion
 packages/php/monorepo-plugin/phpcs.xml
 packages/php/monorepo-plugin/composer.lock
 packages/php/monorepo-plugin/autoload-dev.php
@@ -5627,6 +5645,7 @@ plugins/woocommerce/src/Blocks/BlockTypes/CartOrderSummaryBlock.php
 plugins/woocommerce/src/Blocks/BlockTypes/EmailContent.php
 plugins/woocommerce/src/Blocks/BlockTypes/PaymentMethodIcons.php
 plugins/woocommerce/src/Blocks/BlockTypes/RatingFilter.php
+plugins/woocommerce/src/Blocks/BlockTypes/Dropdown.php
 plugins/woocommerce/src/Blocks/BlockTypes/ProductDetails.php
 plugins/woocommerce/src/Blocks/BlockTypes/CatalogSorting.php
 plugins/woocommerce/src/Blocks/BlockTypes/PageContentWrapper.php
@@ -5689,7 +5708,6 @@ plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/VariationSelector
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/VariationSelector.php
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/Utils.php
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/GroupedProductSelector.php
-plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/VariationSelectorAttributeOptions.php
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/GroupedProductItemSelector.php
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/VariationDescription.php
 plugins/woocommerce/src/Blocks/BlockTypes/AddToCartWithOptions/GroupedProductItemLabel.php
@@ -8539,6 +8557,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/template_wp69
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/render_with_hook_expected_result_wp69.html
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductDetails/render_with_hook_expected_result.html
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CartCheckoutIncompatibleExtensionsTest.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/VariationSelectorAttribute.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductFilterAttributeTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CouponCodeTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AddToCartWithOptions.php
@@ -8553,7 +8572,6 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductSaleBadge.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductFilters.php
 plugins/woocommerce/tests/php/src/Blocks/Assets/AssetDataRegistry.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/ProductCollectionMock.php
-plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsVariationSelectorAttributeOptionsMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/ProductDetailsNoRegisterMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AssetDataRegistryMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/MockTestDependency.php
@@ -11399,19 +11417,17 @@ plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/bloc
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/edit/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/edit/skeleton.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/edit/edit-template-part.tsx
-plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/set-styles.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/index.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/test/deprecated.ts
+plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/style.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/block.json
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/constants.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/edit.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/deprecated.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute/save.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/frontend.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/block.json
-plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-options/style.scss
-plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-options/index.tsx
-plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-options/block.json
-plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-options/edit.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-name/style.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-name/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/add-to-cart-with-options/variation-selector/attribute-name/block.json
@@ -12144,6 +12160,13 @@ plugins/woocommerce/client/blocks/assets/js/blocks/cart/metadata.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/category-title/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/category-title/block.json
 plugins/woocommerce/client/blocks/assets/js/blocks/category-title/edit.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/style.scss
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/index.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/frontend.ts
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/editor.scss
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/block.json
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/edit.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/save.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/editor.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/block.json
@@ -14052,6 +14075,7 @@ plugins/woocommerce/templates/brands/widgets/brand-thumbnails.php
 plugins/woocommerce/templates/brands/brand-description.php
 plugins/woocommerce/templates/single-product.php
 plugins/woocommerce/changelog/64845-wooplug-6696-gate-the-customer-review-request-feature-behind-a
+plugins/woocommerce/changelog/fix-products-dashboard-snackbar-z-index
 plugins/woocommerce/changelog/64984-wooplug-6705-support-per-variation-reviews-on-the-review-order-page
 plugins/woocommerce/changelog/reorder-product-data-tabs-redesign
 plugins/woocommerce/changelog/65151-make-graphql-code-accessible-externally-not-internal
@@ -14098,6 +14122,7 @@ plugins/woocommerce/changelog/tweak-admin-notice-padding-wp70-align
 plugins/woocommerce/changelog/64960-wooplug-6704-skip-scheduling-review-request-email-when-nothing-is
 plugins/woocommerce/changelog/64345-fix-38153-clean-category-image-height
 plugins/woocommerce/changelog/64480-opr-issue-64452
+plugins/woocommerce/changelog/fix-color-swatches-tweaks
 plugins/woocommerce/changelog/fix-63918-product-collection-fixedwidth-undefined
 plugins/woocommerce/changelog/64509-issue-RSM-1550
 plugins/woocommerce/changelog/64325-graphql-settings-query-limits
@@ -14111,6 +14136,7 @@ plugins/woocommerce/changelog/64092-wooplug-4230-highest-shipping-cost-shown-bef
 plugins/woocommerce/changelog/fix-tax-label-percent-sign-corruption
 plugins/woocommerce/changelog/64411-fix-64176-mini-cart-badge-colors
 plugins/woocommerce/changelog/fix-payment-provider-needs-setup-message
+plugins/woocommerce/changelog/65207-claude-pensive-nightingale-ad626c
 plugins/woocommerce/changelog/rsm-1335-domain-abilities
 plugins/woocommerce/changelog/64448-64298-graphql-settings-apq
 plugins/woocommerce/changelog/64467-fix-hpos-customer-note-query
@@ -14118,6 +14144,7 @@ plugins/woocommerce/changelog/pr-64358
 plugins/woocommerce/changelog/64527-wooplug-6596-ajax-submission-handler
 plugins/woocommerce/changelog/fix-cache-prefix-invalid-values
 plugins/woocommerce/changelog/64410-fix-64405-variation-selector-attribute-product-type-guard
+plugins/woocommerce/changelog/fix-email-checkout-ci-tests
 plugins/woocommerce/changelog/rsm-146-e2e-update-propagation
 plugins/woocommerce/changelog/64426-add-stock-status-admin-order-selector
 plugins/woocommerce/changelog/fix-63774-clear-transients-does-not-clear-transient_wc_attribute_taxonomies
@@ -14127,7 +14154,9 @@ plugins/woocommerce/changelog/fix-rsm-3550-stock-status-filter
 plugins/woocommerce/changelog/64351-issue-RSM-693
 plugins/woocommerce/changelog/update-WOOPRD-3539-readd-mercadopago-to-nox
 plugins/woocommerce/changelog/rsm-145-tracks-block-email-update
+plugins/woocommerce/changelog/65207-fix-mcp-provider-test-lifecycle
 plugins/woocommerce/changelog/64730-add-schema-metadata-to-dual-api
+plugins/woocommerce/changelog/update-add-to-cart-with-options-filter-inner-blocks-backwards-compatibility
 plugins/woocommerce/changelog/wooplug-6524-incorrect-analytics-calculation-when-refunding-orders-via
 plugins/woocommerce/changelog/fix-php-warnings-debug-log-mockery
 plugins/woocommerce/changelog/60314-migrate-catalog-sorting-block-iapi
@@ -14135,6 +14164,7 @@ plugins/woocommerce/changelog/experiment-remove-store-api-draft-order
 plugins/woocommerce/changelog/tweak-align-shipping-destructive-red
 plugins/woocommerce/changelog/64530-wooplug-6599-empty-state-thank-you
 plugins/woocommerce/changelog/rsm-353-log-level-disabled-skipped-notice
+plugins/woocommerce/changelog/update-inner-blocks-protocol-unify-context-prefix
 plugins/woocommerce/changelog/64529-wooplug-6598-already-reviewed-row
 plugins/woocommerce/changelog/add-filters-for-graphql-debug-and-introspection
 plugins/woocommerce/changelog/rsm-353-new-order-restore-locale-fix
@@ -14170,7 +14200,9 @@ plugins/woocommerce/changelog/64889-fix-wooplug-6573-gtin-isbn-10
 plugins/woocommerce/changelog/64999-sprinkle-order-notes-visibility
 plugins/woocommerce/changelog/fix-store-alerts-widows
 plugins/woocommerce/changelog/64524-feature-merge-additional-variation-images
+plugins/woocommerce/changelog/update-add-to-cart-with-options-filter-inner-blocks
 plugins/woocommerce/changelog/rsm-143-selective-apply
+plugins/woocommerce/changelog/add-v4-product-list-filters
 plugins/woocommerce/changelog/dev-payment-setup-fallback-tests
 plugins/woocommerce/changelog/fix-wooplug-6619-install-jp-wcs-plugins-cap-check
 plugins/woocommerce/changelog/fix-add-to-cart-form-steppers-extension-inputs
@@ -14188,6 +14220,8 @@ plugins/woocommerce/changelog/64797-dev-circular-deps-tdz
 plugins/woocommerce/changelog/update-product-filters-no-multiple
 plugins/woocommerce/changelog/wccom-2349-site-not-connected-typo
 plugins/woocommerce/changelog/add-graphql-infrastructure-unit-tests
+plugins/woocommerce/changelog/fix-filters-wrapper-styling-files
+plugins/woocommerce/changelog/update-move-init-colors-to-chips-block
 plugins/woocommerce/changelog/64461-rename-is-overridden-by-custom-template-content
 plugins/woocommerce/changelog/tweak-focus-ring-width-density-responsive
 plugins/woocommerce/changelog/64881-fix-graphql-early-textdomain-regression
@@ -14195,7 +14229,9 @@ plugins/woocommerce/changelog/64010-30819-php8-warning
 plugins/woocommerce/changelog/performance-product-filter-data-faster-sqls
 plugins/woocommerce/changelog/64435-fix-use-wpdb-identifier-placeholder-in-order-stats
 plugins/woocommerce/changelog/64693-fix-product-filter-aria-labels
+plugins/woocommerce/changelog/issue-RSM-1552
 plugins/woocommerce/changelog/fix-add-color-input-to-create-value
+plugins/woocommerce/changelog/64888-fix-wooplug-6580-tooltip-aria-label
 plugins/woocommerce/changelog/64260-wooplug-6528-check-fulfillment-datetime-storage-and-ui-timezone-handling
 plugins/woocommerce/changelog/flexibilize-graphql-auth
 plugins/woocommerce/changelog/64492-fix-harden-order-details-actions-validation

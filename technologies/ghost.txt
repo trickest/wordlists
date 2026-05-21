@@ -1146,6 +1146,7 @@ apps/admin-x-framework/src/api/offers.ts
 apps/admin-x-framework/src/api/newsletters.ts
 apps/admin-x-framework/src/api/recommendations.ts
 apps/admin-x-framework/src/api/email-verification.ts
+apps/admin-x-framework/src/api/security.ts
 apps/admin-x-framework/src/api/automated-email-design.ts
 apps/admin-x-framework/src/api/api-keys.ts
 apps/admin-x-framework/src/api/invites.ts
@@ -1243,7 +1244,6 @@ apps/stats/test/unit/components/growth/new-subscribers-cadence.test.tsx
 apps/stats/test/unit/components/chart/custom-tooltip-content.test.tsx
 apps/stats/index.html
 apps/stats/package.json
-apps/stats/playwright.config.mjs
 apps/stats/.env.example
 apps/stats/vitest.config.ts
 apps/stats/tsconfig.json
@@ -1935,9 +1935,6 @@ apps/posts/src/views/Automations/types.ts
 apps/posts/src/views/Automations/components/add-step-edge.tsx
 apps/posts/src/views/Automations/components/automation-canvas.tsx
 apps/posts/src/views/Automations/components/automations-list.tsx
-apps/posts/src/views/Automations/components/automations-layout.tsx
-apps/posts/src/views/Automations/components/automations-header.tsx
-apps/posts/src/views/Automations/components/automations-content.tsx
 apps/posts/src/views/Automations/components/step-picker.tsx
 apps/posts/src/views/Automations/components/automation-status-badge.tsx
 apps/posts/src/views/Automations/components/automation-header.tsx
@@ -2063,6 +2060,7 @@ e2e/Dockerfile.e2e
 e2e/tests/admin/settings/portal-settings.test.ts
 e2e/tests/admin/settings/integrations.test.ts
 e2e/tests/admin/settings/staff.test.ts
+e2e/tests/admin/settings/danger-zone.test.ts
 e2e/tests/admin/settings/publication-language.test.ts
 e2e/tests/admin/settings/announcement-bar.test.ts
 e2e/tests/admin/settings/member-welcome-emails.test.ts
@@ -2184,6 +2182,7 @@ e2e/helpers/pages/admin/settings/index.ts
 e2e/helpers/pages/admin/settings/staff-details-page.ts
 e2e/helpers/pages/admin/settings/settings-page.ts
 e2e/helpers/pages/admin/settings/sections/index.ts
+e2e/helpers/pages/admin/settings/sections/danger-zone-section.ts
 e2e/helpers/pages/admin/settings/sections/design-section.ts
 e2e/helpers/pages/admin/settings/sections/staff-section.ts
 e2e/helpers/pages/admin/settings/sections/tiers-section.ts
@@ -2992,6 +2991,7 @@ ghost/admin/tests/integration/services/ajax-test.js
 ghost/admin/tests/integration/services/config-test.js
 ghost/admin/tests/integration/services/labels-manager-test.js
 ghost/admin/tests/integration/services/local-revisions-test.js
+ghost/admin/tests/integration/components/gh-billing-iframe-test.js
 ghost/admin/tests/integration/components/gh-member-avatar-test.js
 ghost/admin/tests/integration/components/gh-date-time-picker-test.js
 ghost/admin/tests/integration/components/gh-cm-editor-test.js
@@ -3904,7 +3904,6 @@ ghost/core/test/integration/services/q-email-addresses.test.js
 ghost/core/test/integration/services/comments-service.test.js
 ghost/core/test/integration/services/last-seen-at-updater.test.js
 ghost/core/test/integration/services/__snapshots__/member-welcome-emails-snapshot.test.js.snap
-ghost/core/test/integration/services/custom-redirects/gcs-store.test.ts
 ghost/core/test/integration/services/members/send-gift-reminders.test.js
 ghost/core/test/integration/services/members/clean-tokens.test.js
 ghost/core/test/integration/services/mailgun-email-suppression-list.test.js
@@ -3918,6 +3917,7 @@ ghost/core/test/integration/importer/legacy.test.js
 ghost/core/test/integration/importer/v1.test.js
 ghost/core/test/integration/url-service.test.js
 ghost/core/test/integration/adapters/redis/adapter-cache-redis.test.js
+ghost/core/test/integration/adapters/redirects/s3-redirects-store.test.ts
 ghost/core/test/utils/assertions.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
@@ -3941,6 +3941,7 @@ ghost/core/test/utils/url-service-utils.js
 ghost/core/test/utils/api.js
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/mocks/index.js
+ghost/core/test/utils/deferred.js
 ghost/core/test/utils/fixtures/settings/notyaml.md
 ghost/core/test/utils/fixtures/settings/newroutes.yaml
 ghost/core/test/utils/fixtures/settings/routes.yaml
@@ -3979,6 +3980,7 @@ ghost/core/test/utils/fixtures/files/test.pdf
 ghost/core/test/utils/fixtures/filter-param/index.js
 ghost/core/test/utils/fixtures/media/sample_640x360.ogv
 ghost/core/test/utils/fixtures/media/sample.mp3
+ghost/core/test/utils/fixtures/media/sample.ogg
 ghost/core/test/utils/fixtures/media/sample_640x360.mp4
 ghost/core/test/utils/fixtures/media/sample.m4a
 ghost/core/test/utils/fixtures/media/sample_640x360.webm
@@ -4506,7 +4508,7 @@ ghost/core/test/unit/server/services/link-tracking/link-click-repository.test.js
 ghost/core/test/unit/server/services/public-config/config.test.js
 ghost/core/test/unit/server/services/public-config/site.test.js
 ghost/core/test/unit/server/services/update-check.test.js
-ghost/core/test/unit/server/services/post-scheduling/post-scheduler-service.test.js
+ghost/core/test/unit/server/services/post-scheduling/post-scheduling.test.js
 ghost/core/test/unit/server/services/email-address/email-address-parser.test.ts
 ghost/core/test/unit/server/services/email-address/email-address-service.test.ts
 ghost/core/test/unit/server/services/tiers/tier-repository.test.js
@@ -4557,6 +4559,7 @@ ghost/core/test/unit/server/services/offers/domain/models/offer-redemption-type.
 ghost/core/test/unit/server/services/offers/application/unique-checker.test.js
 ghost/core/test/unit/server/services/offers/application/offers-api.test.js
 ghost/core/test/unit/server/services/gifts/gift-email-service.test.js
+ghost/core/test/unit/server/services/gifts/gift-reminder-scheduler.test.ts
 ghost/core/test/unit/server/services/gifts/gift-service.test.ts
 ghost/core/test/unit/server/services/gifts/gift.test.ts
 ghost/core/test/unit/server/services/gifts/gift-bookshelf-repository.test.ts
@@ -4627,10 +4630,8 @@ ghost/core/test/unit/server/services/custom-redirects/in-memory-store.test.ts
 ghost/core/test/unit/server/services/custom-redirects/redirects-service.test.ts
 ghost/core/test/unit/server/services/custom-redirects/validation.test.js
 ghost/core/test/unit/server/services/custom-redirects/redirect-config-parser.test.ts
-ghost/core/test/unit/server/services/custom-redirects/file-store.test.ts
 ghost/core/test/unit/server/services/custom-redirects/helpers/store-contract.ts
 ghost/core/test/unit/server/services/custom-redirects/helpers/in-memory-store.ts
-ghost/core/test/unit/server/services/custom-redirects/gcs-store.test.ts
 ghost/core/test/unit/server/services/posts/post-email-handler.test.js
 ghost/core/test/unit/server/services/posts/utils/index.js
 ghost/core/test/unit/server/services/posts/__snapshots__/posts-exporter.test.js.snap
@@ -4655,6 +4656,7 @@ ghost/core/test/unit/server/services/auth/session/store.test.js
 ghost/core/test/unit/server/services/auth/api-key/admin.test.js
 ghost/core/test/unit/server/services/auth/api-key/content.test.js
 ghost/core/test/unit/server/services/auth/session-from-token.test.js
+ghost/core/test/unit/server/services/auth/reset-authentication.test.ts
 ghost/core/test/unit/server/services/auth/members/index.test.js
 ghost/core/test/unit/server/services/users/users-service.test.js
 ghost/core/test/unit/server/services/members/content-gating.test.js
@@ -4752,6 +4754,8 @@ ghost/core/test/unit/server/web/members/middleware/cors.test.js
 ghost/core/test/unit/server/adapters/cache/memory.test.js
 ghost/core/test/unit/server/adapters/cache/adapter-cache-memory-ttl.test.js
 ghost/core/test/unit/server/adapters/cache/cache.test.js
+ghost/core/test/unit/server/adapters/redirects/file-store.test.ts
+ghost/core/test/unit/server/adapters/redirects/s3-redirects-store.test.ts
 ghost/core/test/unit/server/adapters/lib/redis/redis-store-factory.test.js
 ghost/core/test/unit/server/adapters/lib/redis/adapter-cache-redis.test.js
 ghost/core/test/unit/server/adapters/storage/s3-storage.test.ts
@@ -4759,6 +4763,7 @@ ghost/core/test/unit/server/adapters/storage/local-images-storage.test.js
 ghost/core/test/unit/server/adapters/storage/local-base-storage.test.js
 ghost/core/test/unit/server/adapters/storage/utils.test.js
 ghost/core/test/unit/server/adapters/storage/index.test.js
+ghost/core/test/unit/server/adapters/scheduling/scheduling-base.test.js
 ghost/core/test/unit/server/adapters/scheduling/utils.test.js
 ghost/core/test/unit/server/adapters/scheduling/scheduling-default.test.js
 ghost/core/test/unit/frontend/apps/private-blogging/input-password.test.js
@@ -5428,8 +5433,8 @@ ghost/core/core/server/services/public-config/index.js
 ghost/core/core/server/services/indexnow.js
 ghost/core/core/server/services/integrations/integrations-service.js
 ghost/core/core/server/services/i18n.js
-ghost/core/core/server/services/post-scheduling/post-scheduler-service.js
-ghost/core/core/server/services/post-scheduling/index.js
+ghost/core/core/server/services/post-scheduling/index.ts
+ghost/core/core/server/services/post-scheduling/post-scheduling.ts
 ghost/core/core/server/services/email-address/email-address-service-wrapper.js
 ghost/core/core/server/services/email-address/email-address-parser.js.d.ts
 ghost/core/core/server/services/email-address/email-address-service.ts
@@ -5519,6 +5524,7 @@ ghost/core/core/server/services/gifts/gift.ts
 ghost/core/core/server/services/gifts/gift-service.ts
 ghost/core/core/server/services/gifts/gift-email-renderer.ts
 ghost/core/core/server/services/gifts/index.js
+ghost/core/core/server/services/gifts/gift-reminder-scheduler.ts
 ghost/core/core/server/services/gifts/events/start-gift-cleanup-event.js
 ghost/core/core/server/services/gifts/events/start-gift-reminder-flush-event.js
 ghost/core/core/server/services/files/file-type-utils.ts
@@ -5640,9 +5646,7 @@ ghost/core/core/server/services/custom-redirects/utils.ts
 ghost/core/core/server/services/custom-redirects/validation.js
 ghost/core/core/server/services/custom-redirects/redirects-service.ts
 ghost/core/core/server/services/custom-redirects/index.js
-ghost/core/core/server/services/custom-redirects/gcs-store.ts
 ghost/core/core/server/services/custom-redirects/types.ts
-ghost/core/core/server/services/custom-redirects/file-store.ts
 ghost/core/core/server/services/posts-public/service.js
 ghost/core/core/server/services/posts-public/index.js
 ghost/core/core/server/services/explore/explore-service.js
@@ -5691,6 +5695,7 @@ ghost/core/core/server/services/auth/authenticate.js
 ghost/core/core/server/services/auth/otp.js
 ghost/core/core/server/services/auth/authorize.js
 ghost/core/core/server/services/auth/index.js
+ghost/core/core/server/services/auth/reset-authentication.ts
 ghost/core/core/server/services/auth/passwordreset.js
 ghost/core/core/server/services/auth/members/index.js
 ghost/core/core/server/services/members/commenting/index.ts
@@ -5873,6 +5878,7 @@ ghost/core/core/server/data/migrations/versions/5.53/2023-06-20-10-18-add-collec
 ghost/core/core/server/data/migrations/versions/5.53/2023-06-13-12-24-add-temp-mail-events-table.js
 ghost/core/core/server/data/migrations/versions/5.53/2023-06-20-10-19-add-collections-posts-table.js
 ghost/core/core/server/data/migrations/versions/6.40/2026-05-18-19-32-45-rename-welcome-email-automations-table-to-automations.js
+ghost/core/core/server/data/migrations/versions/6.40/2026-05-20-00-00-00-add-llms-enabled-setting.js
 ghost/core/core/server/data/migrations/versions/6.40/2026-05-18-10-08-40-add-pinned-at-to-comments.js
 ghost/core/core/server/data/migrations/versions/5.45/2023-04-19-13-45-add-pintura-settings.js
 ghost/core/core/server/data/migrations/versions/5.45/2023-04-21-13-01-add-feature-image-meta-to-post-revisions.js
@@ -6084,6 +6090,7 @@ ghost/core/core/server/data/migrations/versions/5.42/2023-04-04-07-03-add-portal
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-13-add-suppressions-table.js
 ghost/core/core/server/data/migrations/versions/5.27/2023-01-04-04-12-drop-suppressions-table.js
 ghost/core/core/server/data/migrations/versions/5.27/2022-12-13-16-15-add-usage-colums-to-tokens.js
+ghost/core/core/server/data/migrations/versions/6.41/2026-05-13-12-00-00-rename-reset-all-passwords-permission.js
 ghost/core/core/server/data/migrations/versions/1.25/02-noop.js
 ghost/core/core/server/data/migrations/versions/1.25/01-final-v1.js
 ghost/core/core/server/data/migrations/versions/6.16/2026-01-27-12-55-51-add-discount-start-end-to-subscriptions.js
@@ -6307,6 +6314,10 @@ ghost/core/core/server/adapters/cache/MemoryCache.js
 ghost/core/core/server/adapters/cache/Redis.js
 ghost/core/core/server/adapters/cache/AdapterCacheMemoryTTL.js
 ghost/core/core/server/adapters/cache/index.js
+ghost/core/core/server/adapters/redirects/FileStore.ts
+ghost/core/core/server/adapters/redirects/S3RedirectsStore.ts
+ghost/core/core/server/adapters/redirects/RedirectsStoreBase.js
+ghost/core/core/server/adapters/redirects/RedirectsStoreBase.d.ts
 ghost/core/core/server/adapters/lib/redis/redis-store-factory.js
 ghost/core/core/server/adapters/lib/redis/AdapterCacheRedis.js
 ghost/core/core/server/adapters/storage/S3Storage.ts
@@ -6319,6 +6330,7 @@ ghost/core/core/server/adapters/storage/LocalStorageBase.js
 ghost/core/core/server/adapters/scheduling/scheduling-default.js
 ghost/core/core/server/adapters/scheduling/scheduling-base.js
 ghost/core/core/server/adapters/scheduling/utils.js
+ghost/core/core/server/adapters/scheduling/types.ts
 ghost/core/core/app.js
 ghost/core/core/frontend/apps/private-blogging/lib/views/private.hbs
 ghost/core/core/frontend/apps/private-blogging/lib/router.js

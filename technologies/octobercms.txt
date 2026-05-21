@@ -1006,6 +1006,7 @@ modules/backend/lang/bg/lang.php
 modules/backend/lang/lv/lang.php
 modules/backend/lang/es.json
 modules/backend/tests/models/ExportModelTest.php
+modules/backend/tests/models/BackendUserResetPasswordTest.php
 modules/backend/tests/models/ImportModelTest.php
 modules/backend/tests/widgets/FilterWidgetTest.php
 modules/backend/tests/widgets/FormWidgetTest.php
@@ -1022,6 +1023,7 @@ modules/backend/database/migrations/2023_10_01_000013_Db_Add_Site_To_Preferences
 modules/backend/database/migrations/2013_10_01_000002_Db_Backend_User_Groups.php
 modules/backend/database/migrations/2017_10_01_000010_Db_Backend_User_Roles.php
 modules/backend/database/migrations/2018_12_16_000011_Db_Backend_Add_Deleted_At.php
+modules/backend/database/migrations/2026_10_01_000018_Db_Add_Reset_Password_At.php
 modules/backend/database/migrations/2013_10_01_000001_Db_Backend_Users.php
 modules/backend/database/migrations/2014_01_04_000005_Db_Backend_User_Preferences.php
 modules/backend/database/migrations/2024_10_01_000017_Db_Migrate_v4_0_0.php
@@ -3260,6 +3262,7 @@ modules/system/tests/classes/MarkupExtensionItemTest.php
 modules/system/tests/classes/SiteManagerTest.php
 modules/system/tests/classes/ChangelogWidgetTest.php
 modules/system/tests/classes/DependencyResolverTest.php
+modules/system/tests/classes/ResizeImagesTest.php
 modules/system/tests/classes/CoreLangTest.php
 modules/system/tests/classes/VersionManagerTest.php
 modules/system/tests/concerns/PerformsRegistrations.php
@@ -3344,6 +3347,11 @@ modules/system/tests/database/MorphToModelTest.php
 modules/system/tests/database/BelongsToManyModelTest.php
 modules/system/tests/database/MorphManyModelTest.php
 modules/system/tests/database/HasManyThroughModelTest.php
+modules/system/tests/twig/SecurityPolicyRequestTest.php
+modules/system/tests/twig/SecurityPolicySessionStoreTest.php
+modules/system/tests/twig/SafeSessionStoreTest.php
+modules/system/tests/twig/SafeRequestTest.php
+modules/system/tests/twig/SecurityPolicyRawSqlBlocklistTest.php
 modules/system/tests/helpers/SystemTest.php
 modules/system/database/migrations/2023_10_01_000029_Db_System_Site_Groups.php
 modules/system/database/migrations/2023_10_01_000028_Db_Add_Restrict_Roles_To_Sites.php
@@ -3379,6 +3387,9 @@ modules/system/database/seeds/SeedSetupMailLayouts.php
 modules/system/database/seeds/DatabaseSeeder.php
 modules/system/twig/tokenparser/MailPartialTokenParser.php
 modules/system/twig/Engine.php
+modules/system/twig/securitypolicy/SafeRequest.php
+modules/system/twig/securitypolicy/SafeCollection.php
+modules/system/twig/securitypolicy/SafeSessionStore.php
 modules/system/twig/node/MailPartialNode.php
 modules/system/twig/node/GetAttrNode.php
 modules/system/twig/GetAttrAdjuster.php
