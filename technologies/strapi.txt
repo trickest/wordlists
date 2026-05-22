@@ -672,8 +672,13 @@ packages/providers/upload-local/README.md
 packages/providers/upload-local/.npmignore
 packages/providers/email-amazon-ses/package.json
 packages/providers/email-amazon-ses/rollup.config.mjs
+packages/providers/email-amazon-ses/vitest.config.ts
 packages/providers/email-amazon-ses/tsconfig.json
 packages/providers/email-amazon-ses/src/index.ts
+packages/providers/email-amazon-ses/src/utils.ts
+packages/providers/email-amazon-ses/src/__tests__/backwards-compat.vitest.test.ts
+packages/providers/email-amazon-ses/src/__tests__/utils.vitest.test.ts
+packages/providers/email-amazon-ses/src/__tests__/index.vitest.test.ts
 packages/providers/email-amazon-ses/LICENSE
 packages/providers/email-amazon-ses/tsconfig.build.json
 packages/providers/email-amazon-ses/tsconfig.eslint.json
@@ -2055,7 +2060,6 @@ packages/core/admin/admin/src/router.tsx
 packages/core/admin/admin/src/selectors.ts
 packages/core/admin/admin/src/render.ts
 packages/core/admin/admin/src/tests/StrapiApp.test.tsx
-packages/core/admin/admin/src/tests/adminTokensFutureFlag.test.ts
 packages/core/admin/admin/src/tests/reducer.test.ts
 packages/core/admin/admin/src/constants/theme.ts
 packages/core/admin/admin/src/constants/filters.ts
@@ -2325,9 +2329,7 @@ packages/core/admin/server/src/ai/services/__tests__/ai.test.ts
 packages/core/admin/server/src/policies/index.ts
 packages/core/admin/server/src/policies/isTelemetryEnabled.ts
 packages/core/admin/server/src/policies/hasPermissions.ts
-packages/core/admin/server/src/policies/isAdminTokensEnabled.ts
 packages/core/admin/server/src/policies/isAuthenticatedAdmin.ts
-packages/core/admin/server/src/policies/__tests__/isAdminTokensEnabled.test.ts
 packages/core/admin/server/src/strategies/api-token-utils.ts
 packages/core/admin/server/src/strategies/index.ts
 packages/core/admin/server/src/strategies/content-api-token.ts
@@ -5058,7 +5060,6 @@ tests/api/core/admin/admin-permissions-custom-conditions.test.api.js
 tests/api/core/admin/admin-legacy-migration.test.api.ts
 tests/api/core/admin/admin-role.test.api.js
 tests/api/core/admin/admin-homepage.test.api.ts
-tests/api/core/admin/admin-admin-token-future-flag.test.api.ts
 tests/api/core/content-manager/search.test.api.js
 tests/api/core/content-manager/fields/biginteger.test.api.js
 tests/api/core/content-manager/fields/text.test.api.js

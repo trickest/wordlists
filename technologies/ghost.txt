@@ -1101,6 +1101,7 @@ apps/admin-x-framework/test/unit/hooks/use-koenig-link-suggestions.test.ts
 apps/admin-x-framework/test/unit/hooks/use-koenig-fetch-embed.test.ts
 apps/admin-x-framework/test/unit/hooks/use-permissions.test.ts
 apps/admin-x-framework/test/unit/hooks/use-pintura-config.test.ts
+apps/admin-x-framework/test/unit/hooks/use-confirm-unload.test.ts
 apps/admin-x-framework/test/unit/hooks/use-handle-error.test.tsx
 apps/admin-x-framework/test/unit/hooks/use-koenig-file-upload.test.ts
 apps/admin-x-framework/test/unit/hooks/use-tinybird-token.test.tsx
@@ -1204,6 +1205,7 @@ apps/admin-x-framework/src/utils/query-client.ts
 apps/admin-x-framework/src/utils/stats-config.ts
 apps/admin-x-framework/src/hooks.ts
 apps/admin-x-framework/src/hooks/use-handle-error.ts
+apps/admin-x-framework/src/hooks/use-confirm-unload.ts
 apps/admin-x-framework/src/hooks/use-filterable-api.ts
 apps/admin-x-framework/src/hooks/use-tinybird-token.ts
 apps/admin-x-framework/src/hooks/use-koenig-file-upload.ts
@@ -2296,6 +2298,7 @@ docker/dev-gateway/README.md
 docker/analytics/entrypoint.sh
 docker/stripe/entrypoint.sh
 docker/stripe/with-stripe.sh
+vitest.config.mjs
 SECURITY.md
 .gitmodules
 pnpm-workspace.yaml

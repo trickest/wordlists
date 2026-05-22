@@ -399,6 +399,7 @@ resources/views/hardware/audit.blade.php
 resources/views/hardware/history.blade.php
 resources/views/hardware/quickscan-checkin.blade.php
 resources/views/hardware/bulk-checkout.blade.php
+resources/views/hardware/bulk-checkin.blade.php
 resources/views/hardware/view.blade.php
 resources/views/hardware/bulk.blade.php
 resources/views/hardware/quickscan.blade.php
@@ -7248,6 +7249,7 @@ tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Notes/CreateNotesTest.php
+tests/Feature/Requests/Ui/CancelRequestTest.php
 tests/Feature/Requests/Ui/AssetRequestIndexTest.php
 tests/Feature/Groups/Api/UpdateGroupTest.php
 tests/Feature/Groups/Api/DeleteGroupsTest.php
@@ -7260,6 +7262,7 @@ tests/Feature/Checkins/Api/LicenseCheckInTest.php
 tests/Feature/Checkins/Api/AssetCheckinTest.php
 tests/Feature/Checkins/Api/ComponentCheckinTest.php
 tests/Feature/Checkins/Api/AccessoryCheckinTest.php
+tests/Feature/Checkins/Ui/BulkAssetCheckinTest.php
 tests/Feature/Checkins/Ui/AssetCheckinTest.php
 tests/Feature/Checkins/Ui/ComponentCheckinTest.php
 tests/Feature/Checkins/Ui/AccessoryCheckinTest.php
@@ -7290,7 +7293,9 @@ tests/Feature/Users/Ui/EmailAssignedToUserTest.php
 tests/Feature/Users/Ui/ExportUsersTest.php
 tests/Feature/Users/Ui/ResendAcceptanceReminderTest.php
 tests/Feature/Users/Ui/UpdateUserTest.php
+tests/Feature/Users/Ui/BulkActions/BulkMergeUsersTest.php
 tests/Feature/Users/Ui/BulkActions/BulkDeleteUsersTest.php
+tests/Feature/Users/Ui/BulkActions/BulkEditUsersTest.php
 tests/Feature/Users/Ui/PrintUserInventoryTest.php
 tests/Feature/Users/Ui/DeleteUserTest.php
 tests/Feature/Users/Ui/IndexUsersTest.php
@@ -7323,6 +7328,7 @@ tests/Feature/Consumables/Api/ConsumableUpdateTest.php
 tests/Feature/Consumables/Api/ConsumableFileTest.php
 tests/Feature/Consumables/Api/ConsumableViewTest.php
 tests/Feature/Consumables/Api/DeleteConsumablesTest.php
+tests/Feature/Consumables/Api/ConsumablesForSelectListTest.php
 tests/Feature/Consumables/Ui/ConsumableIndexTest.php
 tests/Feature/Consumables/Ui/StoreConsumableWithFullMultipleCompanySupportTest.php
 tests/Feature/Consumables/Ui/ConsumableViewTest.php
@@ -7431,16 +7437,19 @@ tests/Feature/Suppliers/Ui/IndexSuppliersTest.php
 tests/Feature/Licenses/Api/LicenseUploadTest.php
 tests/Feature/Licenses/Api/DeleteLicensesTest.php
 tests/Feature/Licenses/Api/LicenseIndexTest.php
+tests/Feature/Licenses/Api/LicensesForSelectListTest.php
 tests/Feature/Licenses/Ui/StoreLicenseWithFullMultipleCompanySupportTest.php
 tests/Feature/Licenses/Ui/CreateLicenseTest.php
 tests/Feature/Licenses/Ui/BulkDeleteLicensesTest.php
 tests/Feature/Licenses/Ui/LicenseIndexTest.php
 tests/Feature/Licenses/Ui/LicenseViewTest.php
+tests/Feature/Licenses/Ui/BulkCheckinSelectedLicenseSeatsTest.php
 tests/Feature/Licenses/Ui/UpdateLicenseTest.php
 tests/Feature/Security/FilenameTraversalMitigationTest.php
 tests/Feature/LicenseSeats/Api/LicenseSeatUpdateTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdBackfillTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdTest.php
+tests/Feature/ActionLogs/DisplaySigTest.php
 tests/Feature/PredefinedKits/Api/DeletePredefinedKitsTest.php
 tests/Feature/PredefinedKits/Ui/IndexPredefinedKitsTest.php
 tests/Feature/PredefinedKits/Ui/ShowPredefinedKitTest.php

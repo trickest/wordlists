@@ -2795,7 +2795,10 @@ src/Umbraco.Infrastructure/Security/SignOutSuccessResult.cs
 src/Umbraco.Infrastructure/Security/MemberIdentityUser.cs
 src/Umbraco.Infrastructure/Security/MemberPasswordHasher.cs
 src/Umbraco.Infrastructure/Security/BackOfficeUserStore.cs
+src/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobBase.cs
 src/Umbraco.Infrastructure/BackgroundJobs/DistributedBackgroundJobHostedService.cs
+src/Umbraco.Infrastructure/BackgroundJobs/IRecurringBackgroundJobTrigger.cs
+src/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobTrigger.cs
 src/Umbraco.Infrastructure/BackgroundJobs/IDistributedBackgroundJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/IRecurringBackgroundJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/DelayCalculator.cs
@@ -2813,6 +2816,7 @@ src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/InstructionPro
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/TouchServerJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ReportSiteJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/TempFileCleanupJob.cs
+src/Umbraco.Infrastructure/BackgroundJobs/ITriggerableRecurringBackgroundJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedServiceRunner.cs
 src/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedService.cs
 src/Umbraco.Infrastructure/Scoping/AmbientScopeStack.cs
@@ -2875,6 +2879,7 @@ src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobFailedNotificatio
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobStartedNotification.cs
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobExecutingNotification.cs
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobIgnoredNotification.cs
+src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobCanceledNotification.cs
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobStoppingNotification.cs
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobStartingNotification.cs
 src/Umbraco.Infrastructure/Notifications/RecurringBackgroundJobStoppedNotification.cs
@@ -3042,6 +3047,7 @@ src/Umbraco.Infrastructure/Media/SvgDimensionExtractor.cs
 src/Umbraco.Infrastructure/HostedServices/RecurringHostedServiceBase.cs
 src/Umbraco.Infrastructure/HostedServices/QueuedHostedService.cs
 src/Umbraco.Infrastructure/HostedServices/BackgroundTaskQueue.cs
+src/Umbraco.Infrastructure/HostedServices/NextExecutionStrategy.cs
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/SqliteMigrationProvider.cs
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20230807123456_AddOpenIddict.cs
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/Migrations/20251006140958_UpdateOpenIddictToV7.Designer.cs
@@ -11171,13 +11177,16 @@ src/Umbraco.Web.UI.Client/src/packages/core/workspace/workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/submittable-tree-entity-workspace-context.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/notify-workspace-action-starting.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/saveable-workspace-context.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/submittable-workspace-context.interface.ts
+src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/workspace-action-execution-options.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/saveable-workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/submittable-workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/publishable-workspace-context.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/publishable-workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/routable-workspace.context-token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/notify-workspace-action-starting.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/submittable-tree-entity-workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/entity-workspace.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/contexts/tokens/invariant-dataset-workspace-context.interface.ts
@@ -11231,6 +11240,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-actio
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/common/save/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/common/save/save.action.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/common/save/types.ts
+src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/workspace-action-base.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/workspace-action-base.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action/default/index.ts
@@ -15529,6 +15539,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberPasswordHash
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/BackOfficeUserReaderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberIdentityUserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/DelayCalculatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/HealthCheckNotifierJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/TempFileCleanupJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ScheduledPublishingJobTests.cs
@@ -15536,6 +15547,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/LogScru
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/TouchServerJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/InstructionProcessJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/CacheInstructionsPruningJobTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedServiceRunnerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeUnitTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonUdiConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/SystemTextJsonSerializerTests.cs

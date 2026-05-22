@@ -2439,6 +2439,7 @@ app/models/form_updater/updater/guided_setup/email_inbound.rb
 app/models/form_updater/updater/guided_setup/email_archive.rb
 app/models/form_updater/updater/guided_setup/email_outbound.rb
 app/models/form_updater/updater/organization/edit.rb
+app/models/form_updater/updater/search/advanced_filters.rb
 app/models/form_updater/updater/user/notifications.rb
 app/models/form_updater/updater/user/invite.rb
 app/models/form_updater/updater/user/create.rb
@@ -5624,10 +5625,12 @@ app/frontend/apps/desktop/pages/search/utils/__tests__/searchFilterQuery.spec.ts
 app/frontend/apps/desktop/pages/search/utils/__tests__/searchRouteLink.spec.ts
 app/frontend/apps/desktop/pages/search/composables/useDetailSearchCache.ts
 app/frontend/apps/desktop/pages/search/composables/useSearchAdvancedFilters.ts
+app/frontend/apps/desktop/pages/search/composables/__tests__/useSearchAdvancedFilters.spec.ts
 app/frontend/apps/desktop/pages/search/views/Search.vue
 app/frontend/apps/desktop/pages/search/routes.ts
 app/frontend/apps/desktop/pages/search/__tests__/search-a11y.spec.ts
 app/frontend/apps/desktop/pages/search/__tests__/search.spec.ts
+app/frontend/apps/desktop/pages/search/components/SearchControls/SearchEntityFiltersForm.vue
 app/frontend/apps/desktop/pages/search/components/SearchContent.vue
 app/frontend/apps/desktop/pages/search/components/SearchEmptyMessage.vue
 app/frontend/apps/desktop/pages/search/components/SearchControls.vue
@@ -6960,6 +6963,7 @@ app/frontend/apps/desktop/components/Form/fields/FieldSecurity/FieldSecurityInpu
 app/frontend/apps/desktop/components/Form/fields/FieldSecurity/__tests__/FieldSecurity.spec.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/index.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/FieldFilterSelectorInput.vue
+app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/is.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/index.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/matches.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/types.ts
@@ -9379,6 +9383,7 @@ db/migrate/20211220145252_create_ticket_shared_drafts.rb
 db/migrate/20230209083829_html_sanitizer_processing_timeout.rb
 db/migrate/20211213105441_drop_text_module_foreign_id.rb
 db/migrate/20210923172256_issue_2619_kb_header_link_color.rb
+db/migrate/20260520124322_tag_unique_index.rb
 db/migrate/20190419000001_setting_add_import_archive.rb
 db/migrate/20260422120000_add_meta_to_online_notifications.rb
 db/migrate/20200707000001_data_privacy_init.rb
@@ -9908,6 +9913,7 @@ spec/models/avatar_spec.rb
 spec/models/form_updater/graphql/serializer_spec.rb
 spec/models/form_updater/updater/guided_setup/email_archive_spec.rb
 spec/models/form_updater/updater/organization/edit_spec.rb
+spec/models/form_updater/updater/search/advanced_filters_spec.rb
 spec/models/form_updater/updater/user/edit_spec.rb
 spec/models/form_updater/updater/user/invite_spec.rb
 spec/models/form_updater/updater/user/create_spec.rb
@@ -11159,6 +11165,7 @@ spec/db/migrate/issue_2867_footer_header_public_link_spec.rb
 spec/db/migrate/issue_5170_pgp_mail_response_spec.rb
 spec/db/migrate/issue_3810_custom_date_attribute_no_default_spec.rb
 spec/db/migrate/role_signup_column_fix_spec.rb
+spec/db/migrate/tag_unique_index_spec.rb
 spec/db/migrate/set_user_source_ldap_from_external_sync_spec.rb
 spec/db/migrate/change_token_expiration_handling_spec.rb
 spec/db/migrate/issue_2185_and_or_conditions_spec.rb
