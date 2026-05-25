@@ -14217,7 +14217,6 @@ plugins/woocommerce/templates/brands/widgets/brand-thumbnails.php
 plugins/woocommerce/templates/brands/brand-description.php
 plugins/woocommerce/templates/single-product.php
 plugins/woocommerce/changelog/65179-refactor-saved-for-later-standalone
-plugins/woocommerce/changelog/64845-wooplug-6696-gate-the-customer-review-request-feature-behind-a
 plugins/woocommerce/changelog/update-variation-selector-color-swatches
 plugins/woocommerce/changelog/add-cart-save-for-later-link
 plugins/woocommerce/changelog/fix-products-dashboard-snackbar-z-index
@@ -14234,9 +14233,9 @@ plugins/woocommerce/changelog/performance-checkout-thruput-storeapi-checkout
 plugins/woocommerce/changelog/fix-attribute-name-color
 plugins/woocommerce/changelog/64643-sprinkle-embedded-header-no-duplicate-title
 plugins/woocommerce/changelog/rsm-139-auto-apply-core-template-updates
+plugins/woocommerce/changelog/add-attribute-type-tracking
 plugins/woocommerce/changelog/pr-64360
 plugins/woocommerce/changelog/tweak-admin-grayscale-tokenize-wp7-align
-plugins/woocommerce/changelog/fix-meta-key-value-index-removal
 plugins/woocommerce/changelog/fix-border-radius-inputs-buttons-wp7-align
 plugins/woocommerce/changelog/update-rsm-108-ability-category-description
 plugins/woocommerce/changelog/performance-product-filterer-slow-sql
@@ -14246,7 +14245,6 @@ plugins/woocommerce/changelog/64885-sprinkle-preview-store-icon
 plugins/woocommerce/changelog/64076-remove-legacy-rest-api-options
 plugins/woocommerce/changelog/64771-fix-shopper-collection-variation-hydration
 plugins/woocommerce/changelog/tweak-align-admin-destructive-red
-plugins/woocommerce/changelog/64531-wooplug-6600-phpunit-coverage
 plugins/woocommerce/changelog/add-wc-visual-attribute-type-feature-flag
 plugins/woocommerce/changelog/rsm-438-wire-bis-emails
 plugins/woocommerce/changelog/fix-64177-transient-cache-key-datetime
@@ -14262,6 +14260,7 @@ plugins/woocommerce/changelog/add-graphql-granular-authorization
 plugins/woocommerce/changelog/sprinkle-floating-header-meta-icon-tracks
 plugins/woocommerce/changelog/replace-shopper-collection-error-row-with-store-notice
 plugins/woocommerce/changelog/rsm-140-add-update-available-indicator-email-list
+plugins/woocommerce/changelog/pr-64346
 plugins/woocommerce/changelog/fix-shopper-collection-atomic-styles
 plugins/woocommerce/changelog/fix-typos-round-3
 plugins/woocommerce/changelog/64716-rsm-three-way-diff
@@ -14270,7 +14269,6 @@ plugins/woocommerce/changelog/fix-order-milestone-easter-egg-performance
 plugins/woocommerce/changelog/64415-64297-graphql-settings-object-cache
 plugins/woocommerce/changelog/rsm-143-selective-apply-drawer
 plugins/woocommerce/changelog/max-width-order-detail-page
-plugins/woocommerce/changelog/64906-wooplug-fix-email-test-flag-isolation
 plugins/woocommerce/changelog/fix-issue-64229
 plugins/woocommerce/changelog/tweak-admin-notice-padding-wp70-align
 plugins/woocommerce/changelog/64960-wooplug-6704-skip-scheduling-review-request-email-when-nothing-is
@@ -14298,20 +14296,16 @@ plugins/woocommerce/changelog/64448-64298-graphql-settings-apq
 plugins/woocommerce/changelog/add-shopper-collections-wishlists-base
 plugins/woocommerce/changelog/64467-fix-hpos-customer-note-query
 plugins/woocommerce/changelog/pr-64358
-plugins/woocommerce/changelog/64527-wooplug-6596-ajax-submission-handler
-plugins/woocommerce/changelog/fix-cache-prefix-invalid-values
 plugins/woocommerce/changelog/64410-fix-64405-variation-selector-attribute-product-type-guard
 plugins/woocommerce/changelog/fix-email-checkout-ci-tests
 plugins/woocommerce/changelog/rsm-146-e2e-update-propagation
 plugins/woocommerce/changelog/64426-add-stock-status-admin-order-selector
 plugins/woocommerce/changelog/fix-63774-clear-transients-does-not-clear-transient_wc_attribute_taxonomies
-plugins/woocommerce/changelog/64756-wooplug-6672-cancel-review-email-on-status-change
 plugins/woocommerce/changelog/add-shopper-collections-feature-flag
 plugins/woocommerce/changelog/wooplug-6660-iapi-catalog-sorting-block-404-css-and-js
 plugins/woocommerce/changelog/fix-rsm-3550-stock-status-filter
 plugins/woocommerce/changelog/64351-issue-RSM-693
 plugins/woocommerce/changelog/feature-shopper-collection-empty-message-gating
-plugins/woocommerce/changelog/update-WOOPRD-3539-readd-mercadopago-to-nox
 plugins/woocommerce/changelog/rsm-145-tracks-block-email-update
 plugins/woocommerce/changelog/65207-fix-mcp-provider-test-lifecycle
 plugins/woocommerce/changelog/64730-add-schema-metadata-to-dual-api
@@ -14322,10 +14316,8 @@ plugins/woocommerce/changelog/60314-migrate-catalog-sorting-block-iapi
 plugins/woocommerce/changelog/experiment-remove-store-api-draft-order
 plugins/woocommerce/changelog/tweak-align-shipping-destructive-red
 plugins/woocommerce/changelog/rsm-shopper-collections-nonce-stopgap
-plugins/woocommerce/changelog/64530-wooplug-6599-empty-state-thank-you
 plugins/woocommerce/changelog/rsm-353-log-level-disabled-skipped-notice
 plugins/woocommerce/changelog/update-inner-blocks-protocol-unify-context-prefix
-plugins/woocommerce/changelog/64529-wooplug-6598-already-reviewed-row
 plugins/woocommerce/changelog/add-filters-for-graphql-debug-and-introspection
 plugins/woocommerce/changelog/rsm-353-new-order-restore-locale-fix
 plugins/woocommerce/changelog/64491-woo-email-log
@@ -14336,7 +14328,6 @@ plugins/woocommerce/changelog/pr-64548
 plugins/woocommerce/changelog/add-inner-block-protocols
 plugins/woocommerce/changelog/fix-plugin-install-error-message-copy
 plugins/woocommerce/changelog/remove-tasklist-reminder-bar
-plugins/woocommerce/changelog/fix-default-input-height-add-to-cart-with-options
 plugins/woocommerce/changelog/rsm-353-capture-email-outcomes
 plugins/woocommerce/changelog/rsm-shopper-collections-add-storeapi-endpoints
 plugins/woocommerce/changelog/fix-64793-deferred-email-object-args
@@ -14351,7 +14342,6 @@ plugins/woocommerce/changelog/tweak-admin-gray-colors-wp7-align
 plugins/woocommerce/changelog/pr-64735
 plugins/woocommerce/changelog/update-create-term-modal-ii
 plugins/woocommerce/changelog/bis-alpha-cr-fixes-and-cleanup
-plugins/woocommerce/changelog/64833-wooplug-6687-audit-review-order-page-for-missing-ui-states-vs-figma
 plugins/woocommerce/changelog/add-shopper-collections-iapi-store
 plugins/woocommerce/changelog/fix-marketplace-header-account-button-height
 plugins/woocommerce/changelog/fix-products-dashboard-admin-footer
@@ -14362,7 +14352,6 @@ plugins/woocommerce/changelog/64505-fix-64502-webhook-topic-pair-validation
 plugins/woocommerce/changelog/63270-update-53125-implement-preview-mode-flag
 plugins/woocommerce/changelog/add-add-to-wishlist-button-block
 plugins/woocommerce/changelog/tweak-remove-facebook-obw-plugin-rotation
-plugins/woocommerce/changelog/64825-wooplug-6686-hide-the-wc-page-title-on-the-review-order-page
 plugins/woocommerce/changelog/refactor-extract-shopper-list-renderer
 plugins/woocommerce/changelog/64889-fix-wooplug-6573-gtin-isbn-10
 plugins/woocommerce/changelog/64999-sprinkle-order-notes-visibility
@@ -14373,8 +14362,8 @@ plugins/woocommerce/changelog/rsm-143-selective-apply
 plugins/woocommerce/changelog/add-v4-product-list-filters
 plugins/woocommerce/changelog/dev-payment-setup-fallback-tests
 plugins/woocommerce/changelog/fix-wooplug-6619-install-jp-wcs-plugins-cap-check
+plugins/woocommerce/changelog/pr-64376
 plugins/woocommerce/changelog/add-order-milestone-easter-egg
-plugins/woocommerce/changelog/fix-add-to-cart-form-steppers-extension-inputs
 plugins/woocommerce/changelog/64350-graphql-settings-endpoint-url
 plugins/woocommerce/changelog/tweak-admin-hardcoded-blues-theme-color
 plugins/woocommerce/changelog/performance-checkout-thruput-order-model-composition

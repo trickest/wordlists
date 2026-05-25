@@ -9384,7 +9384,6 @@ db/migrate/20211220145252_create_ticket_shared_drafts.rb
 db/migrate/20230209083829_html_sanitizer_processing_timeout.rb
 db/migrate/20211213105441_drop_text_module_foreign_id.rb
 db/migrate/20210923172256_issue_2619_kb_header_link_color.rb
-db/migrate/20260520124322_tag_unique_index.rb
 db/migrate/20190419000001_setting_add_import_archive.rb
 db/migrate/20260422120000_add_meta_to_online_notifications.rb
 db/migrate/20200707000001_data_privacy_init.rb
@@ -11168,7 +11167,6 @@ spec/db/migrate/issue_2867_footer_header_public_link_spec.rb
 spec/db/migrate/issue_5170_pgp_mail_response_spec.rb
 spec/db/migrate/issue_3810_custom_date_attribute_no_default_spec.rb
 spec/db/migrate/role_signup_column_fix_spec.rb
-spec/db/migrate/tag_unique_index_spec.rb
 spec/db/migrate/set_user_source_ldap_from_external_sync_spec.rb
 spec/db/migrate/change_token_expiration_handling_spec.rb
 spec/db/migrate/issue_2185_and_or_conditions_spec.rb
