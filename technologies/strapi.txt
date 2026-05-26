@@ -482,6 +482,7 @@ examples/getstarted/src/plugins/local-plugin/admin/src/pages/App/index.jsx
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/en.json
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/tr.json
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/uk.json
+examples/getstarted/src/plugins/local-plugin/admin/src/translations/sk.json
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/ru.json
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/cs.json
 examples/getstarted/src/plugins/local-plugin/admin/src/translations/es.json
@@ -1583,6 +1584,7 @@ packages/core/review-workflows/admin/src/index.ts
 packages/core/review-workflows/admin/src/translations/en.json
 packages/core/review-workflows/admin/src/translations/uk.json
 packages/core/review-workflows/admin/src/translations/de.json
+packages/core/review-workflows/admin/src/translations/sk.json
 packages/core/review-workflows/admin/src/translations/nl.json
 packages/core/review-workflows/admin/src/translations/fr.json
 packages/core/review-workflows/admin/src/translations/ru.json
@@ -2076,6 +2078,8 @@ packages/core/admin/admin/src/core/apis/rbac.ts
 packages/core/admin/admin/src/core/apis/CustomFields.ts
 packages/core/admin/admin/src/components/Layouts/ContentLayout.tsx
 packages/core/admin/admin/src/components/Layouts/ActionLayout.tsx
+packages/core/admin/admin/src/components/Layouts/utils/getMatchingDocLink.ts
+packages/core/admin/admin/src/components/Layouts/utils/tests/getMatchingDocLink.test.ts
 packages/core/admin/admin/src/components/Layouts/GridLayout.tsx
 packages/core/admin/admin/src/components/Layouts/Layout.tsx
 packages/core/admin/admin/src/components/Layouts/HeaderLayout.tsx
@@ -2208,6 +2212,7 @@ packages/core/admin/server/src/routes/serve-admin-panel.ts
 packages/core/admin/server/src/routes/admin-tokens.ts
 packages/core/admin/server/src/routes/webhooks.ts
 packages/core/admin/server/src/routes/homepage.ts
+packages/core/admin/server/src/routes/__tests__/serve-admin-panel.test.ts
 packages/core/admin/server/src/index.ts
 packages/core/admin/server/src/controllers/index.ts
 packages/core/admin/server/src/controllers/permission.ts
@@ -2578,6 +2583,7 @@ packages/core/content-manager/admin/src/history/components/VersionContent.tsx
 packages/core/content-manager/admin/src/history/components/VersionHeader.tsx
 packages/core/content-manager/admin/src/history/components/HistoryAction.tsx
 packages/core/content-manager/admin/src/history/components/tests/VersionsList.test.tsx
+packages/core/content-manager/admin/src/history/components/tests/VersionInputRenderer.test.tsx
 packages/core/content-manager/admin/src/history/components/tests/VersionHeader.test.tsx
 packages/core/content-manager/admin/src/history/components/VersionInputRenderer.tsx
 packages/core/content-manager/admin/src/history/components/VersionsList.tsx
@@ -2809,6 +2815,7 @@ packages/core/content-releases/admin/src/pages/tests/ReleaseDetailsPage.test.tsx
 packages/core/content-releases/admin/src/pages/ReleasesPage.tsx
 packages/core/content-releases/admin/src/translations/en.json
 packages/core/content-releases/admin/src/translations/uk.json
+packages/core/content-releases/admin/src/translations/sk.json
 packages/core/content-releases/admin/src/translations/nl.json
 packages/core/content-releases/admin/src/translations/tests/plural.test.ts
 packages/core/content-releases/admin/src/translations/cs.json
@@ -4295,6 +4302,7 @@ packages/plugins/graphql/admin/src/pluginId.ts
 packages/plugins/graphql/admin/src/translations/en.json
 packages/plugins/graphql/admin/src/translations/tr.json
 packages/plugins/graphql/admin/src/translations/uk.json
+packages/plugins/graphql/admin/src/translations/sk.json
 packages/plugins/graphql/admin/src/translations/fr.json
 packages/plugins/graphql/admin/src/translations/ru.json
 packages/plugins/graphql/admin/src/translations/dk.json
@@ -4616,6 +4624,7 @@ packages/plugins/i18n/admin/src/translations/en.json
 packages/plugins/i18n/admin/src/translations/tr.json
 packages/plugins/i18n/admin/src/translations/uk.json
 packages/plugins/i18n/admin/src/translations/de.json
+packages/plugins/i18n/admin/src/translations/sk.json
 packages/plugins/i18n/admin/src/translations/nl.json
 packages/plugins/i18n/admin/src/translations/ko.json
 packages/plugins/i18n/admin/src/translations/fr.json
@@ -4752,6 +4761,7 @@ packages/plugins/sentry/admin/src/pluginId.ts
 packages/plugins/sentry/admin/src/translations/en.json
 packages/plugins/sentry/admin/src/translations/tr.json
 packages/plugins/sentry/admin/src/translations/uk.json
+packages/plugins/sentry/admin/src/translations/sk.json
 packages/plugins/sentry/admin/src/translations/ko.json
 packages/plugins/sentry/admin/src/translations/fr.json
 packages/plugins/sentry/admin/src/translations/vi.json
@@ -4792,6 +4802,7 @@ packages/plugins/cloud/admin/src/pages/App.tsx
 packages/plugins/cloud/admin/src/translations/en.json
 packages/plugins/cloud/admin/src/translations/tr.json
 packages/plugins/cloud/admin/src/translations/uk.json
+packages/plugins/cloud/admin/src/translations/sk.json
 packages/plugins/cloud/admin/src/translations/nl.json
 packages/plugins/cloud/admin/src/translations/fr.json
 packages/plugins/cloud/admin/src/translations/ru.json
@@ -4820,6 +4831,7 @@ packages/plugins/color-picker/admin/src/pluginId.ts
 packages/plugins/color-picker/admin/src/translations/en.json
 packages/plugins/color-picker/admin/src/translations/tr.json
 packages/plugins/color-picker/admin/src/translations/uk.json
+packages/plugins/color-picker/admin/src/translations/sk.json
 packages/plugins/color-picker/admin/src/translations/ru.json
 packages/plugins/color-picker/admin/src/translations/zh.json
 packages/plugins/color-picker/admin/src/translations/sv.json

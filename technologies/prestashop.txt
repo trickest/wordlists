@@ -4026,6 +4026,7 @@ src/Core/PDF/PDFGeneratorInterface.php
 src/Core/PDF/PDFTemplateTypeProviderInterface.php
 src/Core/PDF/Exception/PdfException.php
 src/Core/PDF/Exception/MissingDataException.php
+src/Core/PDF/GeneratedPdf.php
 src/Core/Configuration/AbstractMultistoreConfiguration.php
 src/Core/Configuration/DataConfigurationInterface.php
 src/Core/Configuration/UploadSizeConfiguration.php
@@ -4584,7 +4585,9 @@ src/Core/Domain/Country/Exception/CountryException.php
 src/Core/Domain/Country/Exception/CountryConstraintException.php
 src/Core/Domain/Country/Exception/DeleteCountryException.php
 src/Core/Domain/Country/Exception/CannotAddCountryException.php
+src/Core/Domain/Country/Exception/CannotToggleCountryStatusException.php
 src/Core/Domain/Country/Exception/CannotEditCountryException.php
+src/Core/Domain/Country/Exception/BulkCountryException.php
 src/Core/Domain/Country/Exception/CountryNotFoundException.php
 src/Core/Domain/Country/ZipCodePatternResolverInterface.php
 src/Core/Domain/Country/Query/GetCountryForEditing.php
@@ -4593,6 +4596,9 @@ src/Core/Domain/Country/QueryResult/CountryForEditing.php
 src/Core/Domain/Country/QueryResult/CountryRequiredFields.php
 src/Core/Domain/Country/Command/DeleteCountryCommand.php
 src/Core/Domain/Country/Command/AddCountryCommand.php
+src/Core/Domain/Country/Command/ToggleCountryStatusCommand.php
+src/Core/Domain/Country/Command/BulkUpdateCountryZoneCommand.php
+src/Core/Domain/Country/Command/BulkToggleCountriesStatusCommand.php
 src/Core/Domain/Country/Command/EditCountryCommand.php
 src/Core/Domain/Country/ValueObject/CountryId.php
 src/Core/Domain/Country/ValueObject/CountryIdInterface.php
@@ -4600,6 +4606,9 @@ src/Core/Domain/Country/ValueObject/NoCountryId.php
 src/Core/Domain/Country/ValueObject/CountryZipCodeFormat.php
 src/Core/Domain/Country/CommandHandler/DeleteCountryHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/EditCountryHandlerInterface.php
+src/Core/Domain/Country/CommandHandler/BulkToggleCountriesStatusHandlerInterface.php
+src/Core/Domain/Country/CommandHandler/ToggleCountryStatusHandlerInterface.php
+src/Core/Domain/Country/CommandHandler/BulkUpdateCountryZoneHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/AddCountryHandlerInterface.php
 src/Core/Domain/Position/Exception/PositionConstraintException.php
 src/Core/Domain/Position/ValueObject/RowPosition.php
@@ -7110,6 +7119,7 @@ src/PrestaShopBundle/Form/Admin/Improve/International/Translations/ExportCatalog
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/ChangeStatesZoneType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/StateType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/CountryType.php
+src/PrestaShopBundle/Form/Admin/Improve/International/Locations/ChangeCountriesZoneType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/CountryOptionsType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/ZoneType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Locations/CountryOptionsFormDataProvider.php
@@ -7882,6 +7892,7 @@ src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/i
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/options.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/change_countries_zone_modal.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/create.html.twig
@@ -8529,6 +8540,9 @@ src/Adapter/Country/QueryHandler/GetCountryRequiredFieldsHandler.php
 src/Adapter/Country/QueryHandler/GetCountryForEditingHandler.php
 src/Adapter/Country/CountryRequiredFieldsProvider.php
 src/Adapter/Country/Validate/CountryValidator.php
+src/Adapter/Country/CommandHandler/BulkToggleCountriesStatusHandler.php
+src/Adapter/Country/CommandHandler/BulkUpdateCountryZoneHandler.php
+src/Adapter/Country/CommandHandler/ToggleCountryStatusHandler.php
 src/Adapter/Country/CommandHandler/DeleteCountryHandler.php
 src/Adapter/Country/CommandHandler/EditCountryHandler.php
 src/Adapter/Country/CommandHandler/AddCountryHandler.php
@@ -8536,6 +8550,7 @@ src/Adapter/Country/CountryZipCodeRequirementsProvider.php
 src/Adapter/Country/CountryDataProvider.php
 src/Adapter/Country/CountryOptionsConfiguration.php
 src/Adapter/Country/Repository/CountryRepository.php
+src/Adapter/Country/Repository/CountryRepositoryInterface.php
 src/Adapter/RoundingMapper.php
 src/Adapter/ContainerFinder.php
 src/Adapter/ServiceLocator.php
@@ -12108,6 +12123,9 @@ tests/Integration/Behaviour/Features/Scenario/Module/install_module.feature
 tests/Integration/Behaviour/Features/Scenario/Module/upgrade_module.feature
 tests/Integration/Behaviour/Features/Scenario/Contact/contact.feature
 tests/Integration/Behaviour/Features/Scenario/Country/country_management.feature
+tests/Integration/Behaviour/Features/Scenario/Country/bulk_update_country_zone.feature
+tests/Integration/Behaviour/Features/Scenario/Country/bulk_toggle_countries_status.feature
+tests/Integration/Behaviour/Features/Scenario/Country/toggle_country_status.feature
 tests/Integration/Behaviour/Features/Scenario/Tag/tag_management.feature
 tests/Integration/Behaviour/Features/Scenario/State/state_management.feature
 tests/Integration/Behaviour/Features/Scenario/CustomerService/customer_service.feature

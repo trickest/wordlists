@@ -1684,6 +1684,7 @@ src/Umbraco.Web.Common/Middleware/PreviewAuthenticationMiddleware.cs
 src/Umbraco.Web.Common/Middleware/UmbracoRequestLoggingMiddleware.cs
 src/Umbraco.Web.Common/Middleware/UmbracoRequestMiddleware.cs
 src/Umbraco.Web.Common/Middleware/ProtectRecycleBinMediaMiddleware.cs
+src/Umbraco.Web.Common/Middleware/UmbracoBackOfficeCacheHeadersMiddleware.cs
 src/Umbraco.Web.Common/Middleware/BootFailedMiddleware.cs
 src/Umbraco.Web.Common/TagHelpers/CspNonceTagHelper.cs
 src/Umbraco.Web.Common/ModelBinders/HttpQueryStringModelBinder.cs
@@ -16220,6 +16221,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/TestFiles/
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineDemoDataMediaService.cs
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineExternalIndexSearcherTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/TestFiles.resx
+tests/Umbraco.Tests.Integration/Umbraco.Web.Common/ApplicationBuilder/UseUmbracoBackOfficeCacheHeadersTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/MembersServiceCollectionExtensionsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/Security/MemberManagerTests.cs
 tests/Umbraco.Tests.Integration/Testing/BaseTestDatabase.cs

@@ -95,7 +95,9 @@ apps/comments-ui/src/utils/thread-graph.ts
 apps/comments-ui/src/utils/api.ts
 apps/comments-ui/src/utils/helpers.ts
 apps/comments-ui/src/images/icons/pin-off.svg
+apps/comments-ui/src/images/icons/thumbs-up.svg
 apps/comments-ui/src/images/icons/eye-off.svg
+apps/comments-ui/src/images/icons/thumbs-down.svg
 apps/comments-ui/src/images/icons/pin.svg
 apps/comments-ui/src/images/icons/close.svg
 apps/comments-ui/src/images/icons/eye.svg
@@ -851,7 +853,6 @@ apps/signup-form/test/utils/is-test-env.js
 apps/signup-form/test/utils/e2e.ts
 apps/signup-form/test/e2e/form.test.ts
 apps/signup-form/test/e2e/attribution.test.ts
-apps/signup-form/test/unit/hello.test.js
 apps/signup-form/index.html
 apps/signup-form/package.json
 apps/signup-form/postcss.config.cjs
@@ -3932,7 +3933,6 @@ ghost/core/test/utils/assertions.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
 ghost/core/test/utils/minio.ts
-ghost/core/test/utils/vitest-global-setup.ts
 ghost/core/test/utils/url-utils.js
 ghost/core/test/utils/email-verification-utils.ts
 ghost/core/test/utils/e2e-framework-mock-manager.js
@@ -4354,6 +4354,7 @@ ghost/core/test/unit/api/canary/utils/serializers/output/posts-csv-transform.tes
 ghost/core/test/unit/api/canary/utils/serializers/output/tags.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/previews.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/all.test.js
+ghost/core/test/unit/api/canary/utils/serializers/input/comments.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/members.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/pages.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/posts.test.js
@@ -4373,6 +4374,7 @@ ghost/core/test/unit/server/models/set-is-roles.test.js
 ghost/core/test/unit/server/models/invite.test.js
 ghost/core/test/unit/server/models/member-paid-subscription-event.test.js
 ghost/core/test/unit/server/models/welcome-email-automated-email.test.js
+ghost/core/test/unit/server/models/comment.test.js
 ghost/core/test/unit/server/models/custom-theme-setting.test.js
 ghost/core/test/unit/server/models/settings.test.js
 ghost/core/test/unit/server/models/milestone.test.js
@@ -4718,7 +4720,9 @@ ghost/core/test/unit/server/services/stripe/services/webhooks/invoice-event-serv
 ghost/core/test/unit/server/services/stripe/stripe-api.test.js
 ghost/core/test/unit/server/services/stripe/config.test.js
 ghost/core/test/unit/server/services/stripe/webhook-controller.test.js
+ghost/core/test/unit/server/services/comments/comments-service.test.js
 ghost/core/test/unit/server/services/comments/comments-service-emails.test.js
+ghost/core/test/unit/server/services/comments/comments-controller.test.js
 ghost/core/test/unit/server/services/comments/comments-service-emails-renderer.test.js
 ghost/core/test/unit/server/data/schema/validator.test.js
 ghost/core/test/unit/server/data/schema/commands.test.js
@@ -5074,6 +5078,7 @@ ghost/core/core/server/api/endpoints/oembed.js
 ghost/core/core/server/api/endpoints/session.js
 ghost/core/core/server/api/endpoints/comment-replies.js
 ghost/core/core/server/api/endpoints/search-index-public.js
+ghost/core/core/server/api/endpoints/comment-dislikes.js
 ghost/core/core/server/api/endpoints/recommendations.js
 ghost/core/core/server/api/endpoints/recommendations-public.js
 ghost/core/core/server/api/endpoints/offers.js
@@ -6057,6 +6062,7 @@ ghost/core/core/server/data/migrations/versions/5.97/2024-10-10-01-02-03-add-sig
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-08-14-36-58-added-heading-font-setting.js
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-08-14-25-27-added-body-font-settings.js
 ghost/core/core/server/data/migrations/versions/5.28/2023-01-05-15-13-add-active-theme-permissions.js
+ghost/core/core/server/data/migrations/versions/6.42/2026-05-21-06-56-05-add-score-to-comment-likes.js
 ghost/core/core/server/data/migrations/versions/6.24/2026-03-26-15-46-51-add-email-design-settings-table.js
 ghost/core/core/server/data/migrations/versions/5.100/2024-11-05-14-48-08-add-comments-in-reply-to-id.js
 ghost/core/core/server/data/migrations/versions/5.100/2024-11-06-04-45-15-add-activitypub-integration.js
