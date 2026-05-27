@@ -147,14 +147,11 @@ core/profiles/standard/config/optional/core.entity_view_display.media.image.medi
 core/profiles/standard/config/install/field.storage.user.user_picture.yml
 core/profiles/standard/config/install/field.field.block_content.basic.body.yml
 core/profiles/standard/config/install/user.role.authenticated.yml
-core/profiles/standard/config/install/core.entity_view_display.comment.comment.default.yml
 core/profiles/standard/config/install/user.role.anonymous.yml
 core/profiles/standard/config/install/field.storage.block_content.body.yml
 core/profiles/standard/config/install/filter.format.full_html.yml
 core/profiles/standard/config/install/filter.format.basic_html.yml
 core/profiles/standard/config/install/user.settings.yml
-core/profiles/standard/config/install/comment.type.comment.yml
-core/profiles/standard/config/install/field.field.comment.comment.comment_body.yml
 core/profiles/standard/config/install/system.cron.yml
 core/profiles/standard/config/install/core.menu.static_menu_link_overrides.yml
 core/profiles/standard/config/install/editor.editor.full_html.yml
@@ -167,7 +164,6 @@ core/profiles/standard/config/install/system.site.yml
 core/profiles/standard/config/install/core.entity_view_display.user.user.default.yml
 core/profiles/standard/config/install/filter.format.restricted_html.yml
 core/profiles/standard/config/install/system.theme.yml
-core/profiles/standard/config/install/core.entity_form_display.comment.comment.default.yml
 core/profiles/standard/config/install/core.entity_form_display.user.user.default.yml
 core/profiles/standard/config/install/field.field.user.user.user_picture.yml
 core/profiles/standard/config/install/editor.editor.basic_html.yml
@@ -7047,7 +7043,6 @@ core/modules/rest/rest.post_update.php
 core/modules/rest/config/schema/rest.views.schema.yml
 core/modules/rest/config/schema/rest.schema.yml
 core/modules/rest/config/optional/rest.resource.entity.node.yml
-core/modules/rest/rest.routing.yml
 core/modules/rest/src/Attribute/RestResource.php
 core/modules/rest/src/ResourceResponseInterface.php
 core/modules/rest/src/ResourceResponse.php
@@ -7070,10 +7065,8 @@ core/modules/rest/src/Routing/ResourceRoutes.php
 core/modules/rest/src/ResourceResponseTrait.php
 core/modules/rest/src/EventSubscriber/ResourceResponseSubscriber.php
 core/modules/rest/src/EventSubscriber/EntityResourcePostRouteSubscriber.php
-core/modules/rest/src/EventSubscriber/DeprecatedUserRoutesSubscriber.php
 core/modules/rest/src/RestResourceConfigInterface.php
 core/modules/rest/src/ModifiedResourceResponse.php
-core/modules/rest/src/Controller/RestAuthenticationController.php
 core/modules/rest/src/Hook/RestHooks.php
 core/modules/rest/src/RequestHandler.php
 core/modules/rest/rest.services.yml
@@ -7094,7 +7087,6 @@ core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNod
 core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeJsonAnonTest.php
 core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeJsonBasicAuthTest.php
 core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeXmlBasicAuthTest.php
-core/modules/rest/tests/src/Functional/RestLoginHttpTest.php
 core/modules/rest/tests/src/Functional/Views/FieldCounterTest.php
 core/modules/rest/tests/src/Functional/Views/ExcludedFieldTokenTest.php
 core/modules/rest/tests/src/Functional/Views/RestExportAuthTest.php

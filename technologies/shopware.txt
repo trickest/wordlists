@@ -641,6 +641,7 @@ src/Core/System/SalesChannel/Entity/SalesChannelDefinitionInstanceRegistry.php
 src/Core/System/SalesChannel/Entity/PartialSalesChannelEntityLoadedEvent.php
 src/Core/System/SalesChannel/Exception/LanguageOfSalesChannelDomainDeleteException.php
 src/Core/System/SalesChannel/Exception/DefaultSalesChannelTypeCannotBeDeleted.php
+src/Core/System/SalesChannel/Exception/NoContextDataException.php
 src/Core/System/SalesChannel/Exception/SalesChannelRepositoryNotFoundException.php
 src/Core/System/SalesChannel/SalesChannel/ContextLoadRouteResponse.php
 src/Core/System/SalesChannel/SalesChannel/AbstractContextRoute.php
@@ -3410,6 +3411,7 @@ src/Core/Framework/Adapter/Twig/NamespaceHierarchy/TemplateNamespaceHierarchyBui
 src/Core/Framework/Adapter/Twig/NamespaceHierarchy/BundleHierarchyBuilder.php
 src/Core/Framework/Adapter/Twig/NamespaceHierarchy/NamespaceHierarchyBuilder.php
 src/Core/Framework/Adapter/Twig/TwigVariableParser.php
+src/Core/Framework/Adapter/Twig/TwigContextHelper.php
 src/Core/Framework/Adapter/Twig/TokenParser/UseTokenParser.php
 src/Core/Framework/Adapter/Twig/TokenParser/ImportTokenParser.php
 src/Core/Framework/Adapter/Twig/TokenParser/FromTokenParser.php
@@ -3926,6 +3928,7 @@ src/Core/Framework/App/Lifecycle/Registration/StoreHandshake.php
 src/Core/Framework/App/Lifecycle/Registration/AppHandshakeInterface.php
 src/Core/Framework/App/Lifecycle/AppLifecycleContext.php
 src/Core/Framework/App/Lifecycle/AppLoader.php
+src/Core/Framework/App/Lifecycle/AppManager.php
 src/Core/Framework/App/Lifecycle/AbstractAppLifecycle.php
 src/Core/Framework/App/Lifecycle/AppLifecycle.php
 src/Core/Framework/App/Lifecycle/RefreshableAppDryRun.php
@@ -4860,6 +4863,7 @@ src/Core/Content/MailTemplate/Request/Resolver/SimulateRequestResolver.php
 src/Core/Content/MailTemplate/Request/Resolver/AbstractMailTemplateRequestResolver.php
 src/Core/Content/MailTemplate/Request/PreviewRequest.php
 src/Core/Content/MailTemplate/Service/MailDataSimulator.php
+src/Core/Content/MailTemplate/Service/Event/MailTemplateRenderContextEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailErrorEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailSentEvent.php
@@ -11821,6 +11825,8 @@ src/Storefront/Theme/ThemeSalesChannelCollection.php
 src/Storefront/Theme/Validator/SCSSValidator.php
 src/Storefront/Theme/ThemeScripts.php
 src/Storefront/Theme/ThemeCollection.php
+src/Storefront/Theme/Mail/MailThemeConfigSubscriber.php
+src/Storefront/Theme/Mail/MailThemeIdLoader.php
 src/Storefront/Theme/Event/ThemeAssignedEvent.php
 src/Storefront/Theme/Event/ThemeIndexerEvent.php
 src/Storefront/Theme/Event/ThemeConfigChangedEvent.php
@@ -14494,8 +14500,8 @@ tests/integration/Core/Framework/App/Lifecycle/Registration/_fixtures/no-setup/m
 tests/integration/Core/Framework/App/Lifecycle/Registration/PrivateHandshakeTest.php
 tests/integration/Core/Framework/App/Lifecycle/Registration/StoreHandshakeTest.php
 tests/integration/Core/Framework/App/Lifecycle/AppSecretRotationServiceTest.php
+tests/integration/Core/Framework/App/Lifecycle/AppManagerTest.php
 tests/integration/Core/Framework/App/Lifecycle/AppLoaderTest.php
-tests/integration/Core/Framework/App/Lifecycle/AppLifecycleTest.php
 tests/integration/Core/Framework/App/ActiveAppsLoaderTest.php
 tests/integration/Core/Framework/App/_fixtures/valid-jwks.json
 tests/integration/Core/Framework/App/ScheduledTask/DeleteCascadeAppsHandlerTest.php
@@ -15169,6 +15175,7 @@ tests/integration/Elasticsearch/Product/Fixture/DateHistogram.php
 tests/integration/Elasticsearch/Product/CustomFieldUpdaterTest.php
 tests/integration/Elasticsearch/.gitkeep
 tests/integration/Storefront/Theme/ThemeTest.php
+tests/integration/Storefront/Theme/Mail/MailThemeIdLoaderTest.php
 tests/integration/Storefront/Theme/ThemeInheritanceBuilderTest.php
 tests/integration/Storefront/Theme/ThemeLifecycleServiceTest.php
 tests/integration/Storefront/Theme/ThemeCompilerPluginConfigurationTest.php
@@ -16513,6 +16520,7 @@ tests/unit/Core/Framework/Adapter/Kernel/HttpKernelTest.php
 tests/unit/Core/Framework/Adapter/Kernel/KernelFactoryTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorTest.php
 tests/unit/Core/Framework/Adapter/Twig/TwigVariableParserTest.php
+tests/unit/Core/Framework/Adapter/Twig/TwigContextHelperTest.php
 tests/unit/Core/Framework/Adapter/Twig/TwigEnvironmentTest.php
 tests/unit/Core/Framework/Adapter/Twig/EntityTemplateLoaderTest.php
 tests/unit/Core/Framework/Adapter/Twig/Node/FeatureCallSilentTokenTest.php
@@ -16530,10 +16538,12 @@ tests/unit/Core/Framework/Adapter/Twig/StringTemplateRendererTest.php
 tests/unit/Core/Framework/Adapter/Twig/Filter/EmailIdnTwigFilterTest.php
 tests/unit/Core/Framework/Adapter/Twig/Filter/ReplaceRecursiveFilterTest.php
 tests/unit/Core/Framework/Adapter/Twig/Filter/LeadingSpacesFilterTest.php
+tests/unit/Core/Framework/Adapter/Twig/Filter/CurrencyFilterTest.php
 tests/unit/Core/Framework/Adapter/Twig/SwTwigFunctionTest.php
 tests/unit/Core/Framework/Adapter/Twig/AppTemplateIteratorTest.php
 tests/unit/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeResetterTest.php
 tests/unit/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeTest.php
+tests/unit/Core/Framework/Adapter/Twig/Extension/CategoryUrlExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/NodeExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/TemplateDataExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/BuildBreadcrumbExtensionTest.php
@@ -16807,6 +16817,7 @@ tests/unit/Core/Framework/App/Lifecycle/Persister/McpToolPersisterTest.php
 tests/unit/Core/Framework/App/Lifecycle/Persister/McpResourcePersisterTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppLifecycleIteratorTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppSecretRotationServiceTest.php
+tests/unit/Core/Framework/App/Lifecycle/AppManagerTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppFeatureValidatorTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppLoaderTest.php
 tests/unit/Core/Framework/App/Lifecycle/AppLifecycleTest.php
@@ -17086,7 +17097,7 @@ tests/unit/Core/Content/Cms/SalesChannel/Struct/ImageStructTest.php
 tests/unit/Core/Content/Cms/DataResolver/FieldConfigTest.php
 tests/unit/Core/Content/Cms/DataResolver/Element/ElementDataCollectionTest.php
 tests/unit/Core/Content/Cms/DataResolver/Element/TextCmsElementResolverTest.php
-tests/unit/Core/Content/Cms/DataResolver/Element/Fixtures/TestCmsElementResolver.php
+tests/unit/Core/Content/Cms/DataResolver/Element/Fixtures/StubCmsElementResolver.php
 tests/unit/Core/Content/Cms/DataResolver/Element/AbstractCmsElementResolverTest.php
 tests/unit/Core/Content/Cms/DataResolver/Element/HtmlCmsElementResolverTest.php
 tests/unit/Core/Content/Cms/DataResolver/Element/FormCmsElementResolverTest.php
@@ -17232,6 +17243,7 @@ tests/unit/Core/Content/MailTemplate/Request/GetDataAndSendRequestResolverTest.p
 tests/unit/Core/Content/MailTemplate/Service/MailDataSimulatorTest.php
 tests/unit/Core/Content/MailTemplate/Service/MailDataProviderTest.php
 tests/unit/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEventTest.php
+tests/unit/Core/Content/MailTemplate/Service/Event/MailTemplateRenderContextEventTest.php
 tests/unit/Core/Content/MailTemplate/Service/Event/MailSentEventTest.php
 tests/unit/Core/Content/MailTemplate/Service/Event/MailBeforeSentEventTest.php
 tests/unit/Core/Content/MailTemplate/Service/Event/MailErrorEventTest.php
@@ -18154,6 +18166,7 @@ tests/unit/Storefront/Theme/MockedCacheInvalidator.php
 tests/unit/Storefront/Theme/ThemeFilesystemResolverTest.php
 tests/unit/Storefront/Theme/MD5ThemePathBuilderTest.php
 tests/unit/Storefront/Theme/Validator/SCSSValidatorTest.php
+tests/unit/Storefront/Theme/Mail/MailThemeConfigSubscriberTest.php
 tests/unit/Storefront/Theme/Event/ThemeAssignedEventTest.php
 tests/unit/Storefront/Theme/Event/ThemeConfigChangedEventTest.php
 tests/unit/Storefront/Theme/Event/ThemeConfigResetEventTest.php
