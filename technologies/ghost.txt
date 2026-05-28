@@ -813,6 +813,7 @@ apps/admin/src/assets/videos/logo-loader.mp4
 apps/admin/src/utils/fetch-koenig-lexical.ts
 apps/admin/src/utils/navigation.ts
 apps/admin/src/utils/navigation.test.ts
+apps/admin/src/utils/admin-toolbar-url.ts
 apps/admin/src/utils/deferred.ts
 apps/admin/src/utils/deferred.test.ts
 apps/admin/src/utils/deep-merge.ts
@@ -1316,6 +1317,24 @@ apps/stats/.eslintignore
 apps/stats/tsconfig.declaration.json
 apps/stats/.eslintrc.cjs
 apps/stats/README.md
+apps/admin-toolbar/test/admin-toolbar.test.js
+apps/admin-toolbar/package.json
+apps/admin-toolbar/umd/admin-toolbar.min.js
+apps/admin-toolbar/vite.config.mjs
+apps/admin-toolbar/src/user.js
+apps/admin-toolbar/src/config.js
+apps/admin-toolbar/src/styles.js
+apps/admin-toolbar/src/actions.js
+apps/admin-toolbar/src/body-offset.js
+apps/admin-toolbar/src/components.js
+apps/admin-toolbar/src/constants.js
+apps/admin-toolbar/src/icons.js
+apps/admin-toolbar/src/links.js
+apps/admin-toolbar/src/index.js
+apps/admin-toolbar/src/auth.js
+apps/admin-toolbar/src/storage.js
+apps/admin-toolbar/LICENSE
+apps/admin-toolbar/README.md
 apps/activitypub/test/utils/initial-api-requests.ts
 apps/activitypub/test/utils/responses/activitypub/users.json
 apps/activitypub/test/utils/responses/activitypub/my-profile-liked.json
@@ -2338,7 +2357,6 @@ e2e/helpers/services/stripe/fake-stripe-server.ts
 e2e/helpers/services/stripe/webhook-client.ts
 e2e/helpers/services/stripe/fake-checkout-page-renderer.ts
 e2e/helpers/services/stripe/stripe-service.ts
-.npmrc
 LICENSE
 docker/tb-cli/entrypoint.sh
 docker/tb-cli/Dockerfile
@@ -4859,7 +4877,7 @@ ghost/core/test/unit/frontend/utils/member-count.test.js
 ghost/core/test/unit/frontend/utils/frontend-apps.test.js
 ghost/core/test/unit/frontend/src/url-attribution.test.js
 ghost/core/test/unit/frontend/src/admin-auth-message-handler.test.js
-ghost/core/test/unit/frontend/src/privacy.test.js
+ghost/core/test/unit/frontend/src/privacy.test.ts
 ghost/core/test/unit/frontend/services/assets-minification/minifier.test.js
 ghost/core/test/unit/frontend/services/assets-minification/fixtures/basic-cards/js/empty.js
 ghost/core/test/unit/frontend/services/assets-minification/fixtures/basic-cards/js/gallery.js
@@ -4904,6 +4922,7 @@ ghost/core/test/unit/frontend/services/rss/renderer.test.js
 ghost/core/test/unit/frontend/services/rss/cache.test.js
 ghost/core/test/unit/frontend/public/ghost-stats.test.js
 ghost/core/test/unit/frontend/public/private.test.js
+ghost/core/test/unit/frontend/web/middleware/admin-toolbar.test.js
 ghost/core/test/unit/frontend/web/middleware/error-handler.test.js
 ghost/core/test/unit/frontend/web/middleware/redirect-ghost-to-admin.test.js
 ghost/core/test/unit/frontend/web/middleware/serve-public-file.test.js
@@ -5467,6 +5486,7 @@ ghost/core/core/server/services/explore-ping/index.js
 ghost/core/core/server/services/verification-trigger.js
 ghost/core/core/server/services/automations/automations-api.ts
 ghost/core/core/server/services/automations/temporary-fake-database.js
+ghost/core/core/server/services/automations/poll.ts
 ghost/core/core/server/services/automations/index.js
 ghost/core/core/server/services/automations/automations-repository.ts
 ghost/core/core/server/services/automations/fake-database-automations-repository.ts
@@ -6433,8 +6453,8 @@ ghost/core/core/frontend/utils/member-count.js
 ghost/core/core/frontend/utils/images.js
 ghost/core/core/frontend/utils/frontend-apps.js
 ghost/core/core/frontend/src/member-attribution/member-attribution.js
+ghost/core/core/frontend/src/utils/privacy.ts
 ghost/core/core/frontend/src/utils/url-attribution.js
-ghost/core/core/frontend/src/utils/privacy.js
 ghost/core/core/frontend/src/admin-auth/index.html
 ghost/core/core/frontend/src/admin-auth/message-handler.js
 ghost/core/core/frontend/src/comment-counts/comment-counts.js
@@ -6535,6 +6555,7 @@ ghost/core/core/frontend/web/middleware/handle-image-sizes.js
 ghost/core/core/frontend/web/middleware/redirect-ghost-to-admin.js
 ghost/core/core/frontend/web/middleware/cors.js
 ghost/core/core/frontend/web/middleware/serve-indexnow-key.js
+ghost/core/core/frontend/web/middleware/admin-toolbar.js
 ghost/core/core/frontend/web/middleware/error-handler.js
 ghost/core/core/frontend/web/middleware/static-theme.js
 ghost/core/core/frontend/web/middleware/index.js

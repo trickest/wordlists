@@ -1613,6 +1613,7 @@ src/Core/Migration/V6_7/Migration1752750171AddIndexToOrderAddressCreateAndUpdate
 src/Core/Migration/V6_7/Migration1773829000MigrateLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1777020096AppMcpToolRequiredPrivileges.php
 src/Core/Migration/V6_7/Migration1775200001IncreaseProductDisplayGroupLength.php
+src/Core/Migration/V6_7/Migration1779798444FixGuestOrderStatusMailTemplates.php
 src/Core/Migration/V6_7/Migration1717572627RemoveImportExportProfileName.php
 src/Core/Migration/V6_7/Migration1774366000MigrateLineItemStockRuleCondition.php
 src/Core/Migration/V6_7/Migration1763125891AddProductTypeColumn.php
@@ -5645,6 +5646,9 @@ src/Core/Content/Media/Util/PathHelper.php
 src/Core/Content/Media/Thumbnail/ExternalThumbnailDataNormalizer.php
 src/Core/Content/Media/Thumbnail/ExternalThumbnailsParameters.php
 src/Core/Content/Media/Thumbnail/ExternalThumbnailCollectionNormalizer.php
+src/Core/Content/Media/Thumbnail/Processor/ThumbnailProcessorInterface.php
+src/Core/Content/Media/Thumbnail/Processor/ImagickThumbnailProcessor.php
+src/Core/Content/Media/Thumbnail/Processor/GdImageThumbnailProcessor.php
 src/Core/Content/Media/Thumbnail/ThumbnailService.php
 src/Core/Content/Media/Thumbnail/ExternalThumbnailCollection.php
 src/Core/Content/Media/Thumbnail/ExternalThumbnailData.php
@@ -5670,6 +5674,7 @@ src/Core/Content/Media/DataAbstractionLayer/MediaIndexingMessage.php
 src/Core/Content/Media/DataAbstractionLayer/MediaFolderConfigurationIndexer.php
 src/Core/Content/Media/DataAbstractionLayer/MediaIndexer.php
 src/Core/Content/Media/MediaUrlPlaceholderHandler.php
+src/Core/Content/Media/DependencyInjection/ThumbnailProcessorCompilerPass.php
 src/Core/Content/Media/MediaDefinition.php
 src/Core/Content/Media/MediaException.php
 src/Core/Content/Media/Api/MediaVideoCoverController.php
@@ -6639,6 +6644,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoExpectExceptionMessageRule.p
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitMethodAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertsOnObjectsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestReflectionClassInterface.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/DataProviderRowArityRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoRuntimeExceptionInDomainExceptionsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/ShopwareNamespaceStyleRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoSuperGlobalsInsideCompilerPassRule.php
@@ -11281,12 +11287,14 @@ src/Administration/Resources/app/administration/src/app/mixin/form-field.mixin.t
 src/Administration/Resources/app/administration/src/app/mixin/user-settings.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/sw-inline-snippet.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/discard-detail-page-changes.mixin.ts
+src/Administration/Resources/app/administration/src/app/mixin/translate-with-fallback.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/generic-condition.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/placeholder.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/discard-detail-page-changes.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/notification.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/rule-container.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/listing.mixin.ts
+src/Administration/Resources/app/administration/src/app/mixin/translate-with-fallback.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/generic-condition.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/validation.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/index.js
@@ -11691,15 +11699,23 @@ src/Administration/.gitattributes
 src/Administration/Administration.php
 src/Elasticsearch/Test/ElasticsearchTestTestBehaviour.php
 src/Elasticsearch/Test/AdminElasticsearchTestBehaviour.php
+src/Elasticsearch/ExplainFieldQueryBuilder.php
 src/Elasticsearch/ElasticsearchException.php
+src/Elasticsearch/TranslatedFieldQueryBuilder.php
 src/Elasticsearch/Event/ElasticsearchCustomFieldsMappingEvent.php
+src/Elasticsearch/AbstractFieldQueryBuilder.php
 src/Elasticsearch/TokenQueryBuilder.php
+src/Elasticsearch/FieldQueryBuilder.php
 src/Elasticsearch/Elasticsearch.php
+src/Elasticsearch/ResolvedField.php
 src/Elasticsearch/Migration/V6_5/Migration1689083660ElasticsearchIndexTask.php
 src/Elasticsearch/Migration/V6_5/Migration1689084023AdminElasticsearchIndexTask.php
 src/Elasticsearch/Migration/Traits/ElasticsearchTriggerTrait.php
+src/Elasticsearch/NestedFieldQueryBuilder.php
 src/Elasticsearch/composer.json
 src/Elasticsearch/LICENSE
+src/Elasticsearch/AbstractTokenQueryBuilder.php
+src/Elasticsearch/TranslatedResolvedField.php
 src/Elasticsearch/Sort/CountSort.php
 src/Elasticsearch/Framework/ElasticsearchHelper.php
 src/Elasticsearch/Framework/ElasticsearchIndexingUtils.php
@@ -13756,6 +13772,7 @@ tests/migration/Core/V6_7/Migration1770903396AddRequirementsToServiceSourceConfi
 tests/migration/Core/V6_7/Migration1778573083ConvertCategoryNameBlockToDedicatedElementTest.php
 tests/migration/Core/V6_7/Migration1742563555AddNotificationTableTest.php
 tests/migration/Core/V6_7/Migration1728119898AddRobotsTxtTest.php
+tests/migration/Core/V6_7/Migration1779798444FixGuestOrderStatusMailTemplatesTest.php
 tests/migration/Core/V6_7/Migration1726135997CreateMessengerStatsTableTest.php
 tests/migration/Core/V6_7/Migration1748326970UpdateMailTemplatesForAccessibilityTest.php
 tests/migration/Core/V6_7/Migration1743064966CartConfigSubtotalTaxColumnTest.php
@@ -14477,6 +14494,7 @@ tests/integration/Core/Framework/App/Lifecycle/_fixtures/withInvalidConfig/Resou
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/withInvalidConfig/Resources/views/storefront/layout/header/logo.html.twig
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/withInvalidConfig/manifest.xml
 tests/integration/Core/Framework/App/Lifecycle/_fixtures/shippingMethodUpdateName/test/manifest.xml
+tests/integration/Core/Framework/App/Lifecycle/_fixtures/paymentMethodWithIcon/test/manifest.xml
 tests/integration/Core/Framework/App/Lifecycle/Update/DefaultAppUpdaterTest.php
 tests/integration/Core/Framework/App/Lifecycle/Persister/FlowEventPersisterTest.php
 tests/integration/Core/Framework/App/Lifecycle/Persister/_fixtures/withFlowExtension/Resources/flow-v3.xml
@@ -14493,6 +14511,7 @@ tests/integration/Core/Framework/App/Lifecycle/Persister/FlowActionPersisterTest
 tests/integration/Core/Framework/App/Lifecycle/Persister/RuleConditionPersisterTest.php
 tests/integration/Core/Framework/App/Lifecycle/Persister/CustomFieldPersisterTest.php
 tests/integration/Core/Framework/App/Lifecycle/Persister/ShippingMethodPersisterTest.php
+tests/integration/Core/Framework/App/Lifecycle/Persister/PaymentMethodPersisterTest.php
 tests/integration/Core/Framework/App/Lifecycle/Registration/HandshakeFactoryTest.php
 tests/integration/Core/Framework/App/Lifecycle/Registration/AppRegistrationServiceTest.php
 tests/integration/Core/Framework/App/Lifecycle/Registration/_fixtures/minimal/manifest.xml
@@ -15172,6 +15191,7 @@ tests/integration/Elasticsearch/Product/Fixture/MultiFilterWithOneToManyRelation
 tests/integration/Elasticsearch/Product/Fixture/CheapestPriceSorting.php
 tests/integration/Elasticsearch/Product/Fixture/ProductsFixture.php
 tests/integration/Elasticsearch/Product/Fixture/DateHistogram.php
+tests/integration/Elasticsearch/Product/TieBreakerRankingTest.php
 tests/integration/Elasticsearch/Product/CustomFieldUpdaterTest.php
 tests/integration/Elasticsearch/.gitkeep
 tests/integration/Storefront/Theme/ThemeTest.php
@@ -15530,6 +15550,7 @@ tests/devops/Core/DevOps/Docs/Command/Script/ScriptReferenceGeneratorTest.php
 tests/devops/Core/DevOps/Docs/Command/App/DocsAppEventCommandTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoLegacySqlHashFunctionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoExpectExceptionMessageRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/DataProviderRowArityRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoAssertsOnObjectsRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/TestRuleHelperTest.php
@@ -15553,6 +15574,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleT
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AddColumnRule/Migration1769435682ValidPattern.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AddColumnRule/Migration1769435681ProblematicPattern.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AttributeFinalRule/FinalAttributeClass.php
@@ -16804,6 +16826,7 @@ tests/unit/Core/Framework/App/Lifecycle/Persister/FlowEventPersisterTest.php
 tests/unit/Core/Framework/App/Lifecycle/Persister/TaxProviderPersisterTest.php
 tests/unit/Core/Framework/App/Lifecycle/Persister/McpPromptPersisterTest.php
 tests/unit/Core/Framework/App/Lifecycle/Persister/_fixtures/manifest_basic.xml
+tests/unit/Core/Framework/App/Lifecycle/Persister/_fixtures/manifest_payment_method_with_icon.xml
 tests/unit/Core/Framework/App/Lifecycle/Persister/_fixtures/manifest_payment_methods.xml
 tests/unit/Core/Framework/App/Lifecycle/Persister/_fixtures/update_basic.xml
 tests/unit/Core/Framework/App/Lifecycle/Persister/ScriptPersisterTest.php
@@ -17448,6 +17471,7 @@ tests/unit/Core/Content/Media/File/FileServiceTest.php
 tests/unit/Core/Content/Media/File/FileSaverTest.php
 tests/unit/Core/Content/Media/File/FileNameValidatorTest.php
 tests/unit/Core/Content/Media/File/SvgContentValidatorTest.php
+tests/unit/Core/Content/Media/File/_fixtures/empty
 tests/unit/Core/Content/Media/File/_fixtures/image1x1
 tests/unit/Core/Content/Media/File/_fixtures/binary
 tests/unit/Core/Content/Media/File/DownloadResponseGeneratorTest.php
@@ -17485,6 +17509,8 @@ tests/unit/Core/Content/Media/Util/PathHelperTest.php
 tests/unit/Core/Content/Media/MediaExceptionTest.php
 tests/unit/Core/Content/Media/Thumbnail/ThumbnailSizeCalculatorTest.php
 tests/unit/Core/Content/Media/Thumbnail/ExternalThumbnailCollectionNormalizerTest.php
+tests/unit/Core/Content/Media/Thumbnail/Processor/ImagickThumbnailProcessorTest.php
+tests/unit/Core/Content/Media/Thumbnail/Processor/GdImageThumbnailProcessorTest.php
 tests/unit/Core/Content/Media/Thumbnail/ExternalThumbnailDataNormalizerTest.php
 tests/unit/Core/Content/Media/Thumbnail/ExternalThumbnailsParametersTest.php
 tests/unit/Core/Content/Media/Thumbnail/ThumbnailServiceTest.php
@@ -17498,6 +17524,7 @@ tests/unit/Core/Content/Media/Upload/MediaUploadServiceTest.php
 tests/unit/Core/Content/Media/Upload/MediaFileCleanupServiceTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadFinalizePayloadTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadUrlGeneratorTest.php
+tests/unit/Core/Content/Media/DependencyInjection/ThumbnailProcessorCompilerPassTest.php
 tests/unit/Core/Content/Media/MediaEntityTest.php
 tests/unit/Core/Content/Media/MediaUrlPlaceholderHandlerTest.php
 tests/unit/Core/Content/Media/fixtures/animated.avif
@@ -18078,7 +18105,10 @@ tests/unit/Administration/Controller/UserConfigControllerTest.php
 tests/unit/Administration/Controller/AdminExtensionApiControllerTest.php
 tests/unit/Administration/Controller/AdminProductStreamControllerTest.php
 tests/unit/Elasticsearch/Event/ElasticsearchCustomFieldsMappingEventTest.php
+tests/unit/Elasticsearch/TranslatedFieldQueryBuilderTest.php
+tests/unit/Elasticsearch/NestedFieldQueryBuilderTest.php
 tests/unit/Elasticsearch/TokenQueryBuilderTest.php
+tests/unit/Elasticsearch/ResolvedFieldTest.php
 tests/unit/Elasticsearch/Sort/CountSortTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchHelperTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchRangeAggregationTest.php
@@ -18155,6 +18185,8 @@ tests/unit/Elasticsearch/Product/ElasticsearchCustomFieldsMappingHelperTest.php
 tests/unit/Elasticsearch/Product/ProductUpdaterTest.php
 tests/unit/Elasticsearch/Product/LanguageSubscriberTest.php
 tests/unit/Elasticsearch/Product/CustomFieldUpdaterTest.php
+tests/unit/Elasticsearch/FieldQueryBuilderTest.php
+tests/unit/Elasticsearch/ExplainFieldQueryBuilderTest.php
 tests/unit/Elasticsearch/Profiler/DataCollectorTest.php
 tests/unit/Elasticsearch/Profiler/ElasticsearchProfileCompilerPassTest.php
 tests/unit/Elasticsearch/Profiler/ClientProfilerTest.php

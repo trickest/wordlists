@@ -6393,6 +6393,7 @@ plugins/woocommerce/src/Internal/PushNotifications/Controllers/PushNotificationR
 plugins/woocommerce/src/Internal/PushNotifications/Controllers/PushTokenRestController.php
 plugins/woocommerce/src/Internal/PushNotifications/Triggers/NewOrderNotificationTrigger.php
 plugins/woocommerce/src/Internal/PushNotifications/Triggers/NewReviewNotificationTrigger.php
+plugins/woocommerce/src/Internal/PushNotifications/Triggers/StockNotificationTrigger.php
 plugins/woocommerce/src/Internal/PushNotifications/Validators/PushTokenValidator.php
 plugins/woocommerce/src/Internal/PushNotifications/Entities/PushToken.php
 plugins/woocommerce/src/Internal/PushNotifications/Traits/ConvertsExceptionsToWpError.php
@@ -6406,6 +6407,7 @@ plugins/woocommerce/src/Internal/PushNotifications/Exceptions/PushTokenNotFoundE
 plugins/woocommerce/src/Internal/PushNotifications/Notifications/Notification.php
 plugins/woocommerce/src/Internal/PushNotifications/Notifications/NewReviewNotification.php
 plugins/woocommerce/src/Internal/PushNotifications/Notifications/NewOrderNotification.php
+plugins/woocommerce/src/Internal/PushNotifications/Notifications/StockNotification.php
 plugins/woocommerce/src/Internal/PushNotifications/Services/NotificationPreferencesService.php
 plugins/woocommerce/src/Internal/PushNotifications/Services/PendingNotificationStore.php
 plugins/woocommerce/src/Internal/PushNotifications/Services/NotificationProcessor.php
@@ -8741,6 +8743,16 @@ plugins/woocommerce/tests/php/src/Api/Infrastructure/Schema/AliasesTest.php
 plugins/woocommerce/tests/php/src/Api/Infrastructure/QueryInfoExtractorTest.php
 plugins/woocommerce/tests/php/src/Api/Infrastructure/DesignTime/StalenessCheckerTest.php
 plugins/woocommerce/tests/php/src/Api/Infrastructure/ResolverHelpersTest.php
+plugins/woocommerce/tests/php/src/Api/Queries/Products/GetProductTest.php
+plugins/woocommerce/tests/php/src/Api/Queries/Products/ListProductsTest.php
+plugins/woocommerce/tests/php/src/Api/Queries/Coupons/ListCouponsTest.php
+plugins/woocommerce/tests/php/src/Api/Queries/Coupons/GetCouponTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Products/UpdateProductTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Products/DeleteProductTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Products/CreateProductTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Coupons/UpdateCouponTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Coupons/CreateCouponTest.php
+plugins/woocommerce/tests/php/src/Api/Mutations/Coupons/DeleteCouponTest.php
 plugins/woocommerce/tests/php/src/Internal/WCCom/ConnectionHelperTest.php
 plugins/woocommerce/tests/php/src/Internal/ProductFeed/Utils/StringHelperTest.php
 plugins/woocommerce/tests/php/src/Internal/ProductFeed/Feed/ProductWalkerTest.php
@@ -8755,6 +8767,7 @@ plugins/woocommerce/tests/php/src/Internal/PushNotifications/Controllers/PushTok
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Controllers/PushNotificationRestControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Triggers/NewOrderNotificationTriggerTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Triggers/NewReviewNotificationTriggerTest.php
+plugins/woocommerce/tests/php/src/Internal/PushNotifications/Triggers/StockNotificationTriggerTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/PushNotificationsTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Validators/PushTokenValidatorTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Entities/PushTokenTest.php
@@ -8763,6 +8776,7 @@ plugins/woocommerce/tests/php/src/Internal/PushNotifications/DataStores/Notifica
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/DataStores/PushTokensDataStoreTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Dispatchers/InternalNotificationDispatcherTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Dispatchers/WpcomNotificationDispatcherTest.php
+plugins/woocommerce/tests/php/src/Internal/PushNotifications/Notifications/StockNotificationTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Notifications/NewReviewNotificationTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Notifications/NewOrderNotificationTest.php
 plugins/woocommerce/tests/php/src/Internal/PushNotifications/Notifications/NotificationTest.php
@@ -10188,6 +10202,7 @@ plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/w
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/finish/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/index.test.tsx
+plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/business-details-flow.test.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/translations/descriptions.tsx
@@ -10221,6 +10236,7 @@ plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/w
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/data/onboarding-context.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/banner-notice/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/banner-notice/index.tsx
+plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/custom-select-control/test/index.test.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/custom-select-control/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/custom-select-control/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/components/snackbar/index.tsx
@@ -14169,6 +14185,7 @@ plugins/woocommerce/changelog/fix-products-dashboard-snackbar-z-index
 plugins/woocommerce/changelog/64984-wooplug-6705-support-per-variation-reviews-on-the-review-order-page
 plugins/woocommerce/changelog/reorder-product-data-tabs-redesign
 plugins/woocommerce/changelog/65151-make-graphql-code-accessible-externally-not-internal
+plugins/woocommerce/changelog/65194-64169-graphql-api-tests
 plugins/woocommerce/changelog/64488-64301-graphql-settings-cache-ttl
 plugins/woocommerce/changelog/64242-fix-transient-file-url-uses-home-url
 plugins/woocommerce/changelog/64481-add-dataform-component
@@ -14202,6 +14219,7 @@ plugins/woocommerce/changelog/64406-phpstan-baseline-refresh
 plugins/woocommerce/changelog/update-block-references-may-2026
 plugins/woocommerce/changelog/woomob-2607-stripe-ipp-channel-pos-identification
 plugins/woocommerce/changelog/tweak-plugin-install-upgrader-failure-copy
+plugins/woocommerce/changelog/65269-first-name-greeting-customer-emails
 plugins/woocommerce/changelog/64776-fix-cart-save-for-later-visibility
 plugins/woocommerce/changelog/fix-inbox-note-remove-image-thumbnail
 plugins/woocommerce/changelog/add-email-editor-text-domain-define-plugin
@@ -14230,6 +14248,7 @@ plugins/woocommerce/changelog/add-shopper-collections-cart-hook
 plugins/woocommerce/changelog/fix-color-swatches-tweaks
 plugins/woocommerce/changelog/fix-63918-product-collection-fixedwidth-undefined
 plugins/woocommerce/changelog/add-wishlist-block
+plugins/woocommerce/changelog/add-woopayments-onboarding-regression-tests
 plugins/woocommerce/changelog/64509-issue-RSM-1550
 plugins/woocommerce/changelog/64325-graphql-settings-query-limits
 plugins/woocommerce/changelog/update-wc-visual-attribute-feature-toggle
@@ -14308,6 +14327,7 @@ plugins/woocommerce/changelog/dev-64837-type-check-only-on-lint
 plugins/woocommerce/changelog/add-shopper-collections-iapi-store
 plugins/woocommerce/changelog/fix-marketplace-header-account-button-height
 plugins/woocommerce/changelog/fix-products-dashboard-admin-footer
+plugins/woocommerce/changelog/issue-RSM-1551
 plugins/woocommerce/changelog/35a20742-decouple-filter-inner-block-types
 plugins/woocommerce/changelog/64792-fix-store-api-checkout-duplicate-orders-on-retry
 plugins/woocommerce/changelog/64195-fix-mcp-output-schema-data-mismatch
