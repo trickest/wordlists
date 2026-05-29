@@ -1442,6 +1442,8 @@ lib/tasks/zammad/package/uninstall_all_files.rb
 lib/tasks/zammad/package/pnpm_hoisted_mode.rake
 lib/tasks/zammad/translations/sync_from_po.rake
 lib/tasks/zammad/command.rb
+lib/tasks/zammad/email_parser/debug/regenerate_all_ymls.rake
+lib/tasks/zammad/email_parser/debug/generate_yml.rake
 lib/tasks/zammad/email_parser/failed_article/reprocess.rake
 lib/tasks/zammad/email_parser/failed_email/delete.rake
 lib/tasks/zammad/email_parser/failed_email/export_all.rake
@@ -9200,6 +9202,7 @@ db/migrate/20230207152500_ticket_article_note_hint.rb
 db/migrate/20201111133905_maintenance_associations_cleanup.rb
 db/migrate/20230120163410_taskbars_add_apps_support.rb
 db/migrate/20251208121330_multi_tree_select_add_historical_options.rb
+db/migrate/20260527120000_issue6158_ai_summary_disabled_option.rb
 db/migrate/20230510102126_two_factor_authentication_setup.rb
 db/migrate/20180502015927_issue_1219_zhtw_locale_typo.rb
 db/migrate/20250401083100_add_ai_assistance_ticket_summarize.rb
@@ -11192,6 +11195,7 @@ spec/db/migrate/inactivate_es_ca_locale_spec.rb
 spec/db/migrate/issue4505_inconsistent_screen_view_active_attribute_spec.rb
 spec/db/migrate/set_mail_ssl_default_spec.rb
 spec/db/migrate/issue_3446_microsoft_365_tenants_spec.rb
+spec/db/migrate/issue6158_ai_summary_disabled_option_spec.rb
 spec/db/migrate/issue_3851_spec.rb
 spec/db/migrate/setting_update_password_max_login_failed_spec.rb
 spec/db/migrate/issue_5666_external_data_field_spec.rb

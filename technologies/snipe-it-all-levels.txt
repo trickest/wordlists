@@ -37323,6 +37323,10 @@ docker/startup_alpine_fpm.sh
 startup_alpine_fpm.sh
 docker/001-default-ssl.conf
 001-default-ssl.conf
+app/View/Composers/SidebarComposer.php
+View/Composers/SidebarComposer.php
+Composers/SidebarComposer.php
+SidebarComposer.php
 app/View/Label.php
 View/Label.php
 Label.php
@@ -39177,10 +39181,6 @@ app/Http/Middleware/TrimStrings.php
 Http/Middleware/TrimStrings.php
 Middleware/TrimStrings.php
 TrimStrings.php
-app/Http/Middleware/AssetCountForSidebar.php
-Http/Middleware/AssetCountForSidebar.php
-Middleware/AssetCountForSidebar.php
-AssetCountForSidebar.php
 app/Http/Middleware/PreventBackHistory.php
 Http/Middleware/PreventBackHistory.php
 Middleware/PreventBackHistory.php
@@ -40190,6 +40190,9 @@ Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
 CustomFields/Ui/DeleteCustomFieldsTest.php
 Ui/DeleteCustomFieldsTest.php
 DeleteCustomFieldsTest.php
+tests/Feature/QueryCountBenchmarkTest.php
+Feature/QueryCountBenchmarkTest.php
+QueryCountBenchmarkTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 Feature/Manufacturers/Api/DeleteManufacturersTest.php
 Manufacturers/Api/DeleteManufacturersTest.php
@@ -40499,6 +40502,9 @@ Feature/Depreciations/Ui/ShowDepreciationTest.php
 Depreciations/Ui/ShowDepreciationTest.php
 Ui/ShowDepreciationTest.php
 ShowDepreciationTest.php
+tests/Feature/QueryShapeTest.php
+Feature/QueryShapeTest.php
+QueryShapeTest.php
 tests/Feature/Departments/Api/DeleteDepartmentsTest.php
 Feature/Departments/Api/DeleteDepartmentsTest.php
 Departments/Api/DeleteDepartmentsTest.php
@@ -40878,6 +40884,11 @@ tests/Feature/Console/OptimizeTest.php
 Feature/Console/OptimizeTest.php
 Console/OptimizeTest.php
 OptimizeTest.php
+tests/Feature/Locations/Api/LocationsFmcsScopingTest.php
+Feature/Locations/Api/LocationsFmcsScopingTest.php
+Locations/Api/LocationsFmcsScopingTest.php
+Api/LocationsFmcsScopingTest.php
+LocationsFmcsScopingTest.php
 tests/Feature/Locations/Api/CreateLocationsTest.php
 Feature/Locations/Api/CreateLocationsTest.php
 Locations/Api/CreateLocationsTest.php

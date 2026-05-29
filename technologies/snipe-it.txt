@@ -6776,6 +6776,7 @@ docker/column-statistics.cnf
 docker/README.md
 docker/startup_alpine_fpm.sh
 docker/001-default-ssl.conf
+app/View/Composers/SidebarComposer.php
 app/View/Label.php
 app/Mail/CheckoutLicenseMail.php
 app/Mail/UnacceptedAssetReminderMail.php
@@ -7262,7 +7263,6 @@ app/Http/Middleware/SecurityHeaders.php
 app/Http/Middleware/NoSessionStore.php
 app/Http/Middleware/CheckPermissions.php
 app/Http/Middleware/TrimStrings.php
-app/Http/Middleware/AssetCountForSidebar.php
 app/Http/Middleware/PreventBackHistory.php
 app/Http/Traits/ConvertsBase64ToFiles.php
 app/Http/Traits/CheckInOutTrait.php
@@ -7499,6 +7499,7 @@ tests/Feature/CheckoutAcceptances/Ui/ConsumableAcceptanceTest.php
 tests/Feature/CheckoutAcceptances/Ui/AccessoryAcceptanceTest.php
 tests/Feature/CustomFields/Api/DeleteCustomFieldsTest.php
 tests/Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
+tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/Api/UpdateManufacturersTest.php
 tests/Feature/Manufacturers/Api/CreateManufacturersTest.php
@@ -7561,6 +7562,7 @@ tests/Feature/Depreciations/Ui/CreateDepreciationTest.php
 tests/Feature/Depreciations/Ui/UpdateDepreciationTest.php
 tests/Feature/Depreciations/Ui/DepreciationsIndexTest.php
 tests/Feature/Depreciations/Ui/ShowDepreciationTest.php
+tests/Feature/QueryShapeTest.php
 tests/Feature/Departments/Api/DeleteDepartmentsTest.php
 tests/Feature/Departments/Api/UpdateDepartmentsTest.php
 tests/Feature/Departments/Api/CreateDepartmentsTest.php
@@ -7641,6 +7643,7 @@ tests/Feature/Console/CleanOldCheckoutRequestsTest.php
 tests/Feature/Console/ValidateAssetsTest.php
 tests/Feature/Console/MergeUsersTest.php
 tests/Feature/Console/OptimizeTest.php
+tests/Feature/Locations/Api/LocationsFmcsScopingTest.php
 tests/Feature/Locations/Api/CreateLocationsTest.php
 tests/Feature/Locations/Api/UpdateLocationsTest.php
 tests/Feature/Locations/Api/LocationsViewTest.php
