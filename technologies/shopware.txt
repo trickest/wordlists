@@ -1604,6 +1604,7 @@ src/Core/Migration/V6_7/Migration1756068709FixCustomerAddressFirstNameLength.php
 src/Core/Migration/V6_7/Migration1773928850AddSalesChannelTrackingTables.php
 src/Core/Migration/V6_7/Migration1775208486AddUniqueIndexToProductCrossSellingAssignedProducts.php
 src/Core/Migration/V6_7/Migration1773647849AlignFlowNameWithEventName.php
+src/Core/Migration/V6_7/Migration1775641887AddDoubleOptInResendInterval.php
 src/Core/Migration/V6_7/Migration1751623078AddMeasurementSystemPrivileges.php
 src/Core/Migration/V6_7/Migration1778142666AddMcpAllowlistToUser.php
 src/Core/Migration/V6_7/Migration1774359918ProductPriceQuantityRangeMinValues.php
@@ -5855,6 +5856,7 @@ src/Core/Checkout/Customer/Event/CustomerConfirmRegisterUrlEvent.php
 src/Core/Checkout/Customer/Event/CustomerGroupRegistrationDeclined.php
 src/Core/Checkout/Customer/Event/CustomerWishlistLoaderCriteriaEvent.php
 src/Core/Checkout/Customer/Service/ProductReviewCountService.php
+src/Core/Checkout/Customer/Service/DoubleOptInService.php
 src/Core/Checkout/Customer/Service/EmailIdnConverter.php
 src/Core/Checkout/Customer/Service/GuestAuthenticator.php
 src/Core/Checkout/Customer/CustomerEntity.php
@@ -13519,6 +13521,7 @@ src/Storefront/Checkout/Customer/CustomerGroupSubscriber.php
 src/Storefront/Checkout/Payment/BlockedPaymentMethodSwitcher.php
 src/Storefront/Checkout/Shipping/BlockedShippingMethodSwitcher.php
 src/Storefront/Checkout/Cart/SalesChannel/StorefrontCartFacade.php
+src/Storefront/Checkout/Cart/SalesChannel/StorefrontCartGatewayResult.php
 src/Storefront/Checkout/Cart/Error/ShippingMethodChangedError.php
 src/Storefront/Checkout/Cart/Error/PaymentMethodChangedError.php
 src/Storefront/Mcp/Tool/ThemeConfigTool.php
@@ -13763,6 +13766,7 @@ tests/migration/Core/V6_7/Migration1743151679AddContextGatewayUrlTest.php
 tests/migration/Core/V6_7/Migration1720610755RemoveDefaultPaymentMethodFromCustomerTest.php
 tests/migration/Core/V6_7/Migration1740321707SetAutoplayTimeoutAndSpeedSettingsForProductSliderTest.php
 tests/migration/Core/V6_7/Migration1740563553AddAppRequestedPrivilegesTest.php
+tests/migration/Core/V6_7/Migration1775641887AddDoubleOptInResendIntervalTest.php
 tests/migration/Core/V6_7/Migration1773047964AddZugferdCancellationInvoiceTest.php
 tests/migration/Core/V6_7/Migration1765287398AddConsentLogTableTest.php
 tests/migration/Core/V6_7/Migration1765205483AddTrackOffcanvasCartToAnalyticsTest.php
@@ -14981,6 +14985,7 @@ tests/integration/Core/Checkout/Document/Renderer/InvoiceRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdCancellationInvoiceRendererTest.php
 tests/integration/Core/Checkout/Customer/Service/ProductReviewCountServiceTest.php
+tests/integration/Core/Checkout/Customer/Service/DoubleOptInServiceTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/ListAddressRouteTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/MergeWishlistProductRouteTest.php
 tests/integration/Core/Checkout/Customer/SalesChannel/RemoveWishlistProductRouteTest.php
@@ -17653,6 +17658,7 @@ tests/unit/Core/Checkout/Customer/Event/CustomerDoubleOptInRegistrationEventTest
 tests/unit/Core/Checkout/Customer/Service/GuestAuthenticatorTest.php
 tests/unit/Core/Checkout/Customer/Service/ProductReviewCountServiceTest.php
 tests/unit/Core/Checkout/Customer/Service/EmailIdnConverterTest.php
+tests/unit/Core/Checkout/Customer/Service/DoubleOptInServiceTest.php
 tests/unit/Core/Checkout/Customer/ImitateCustomerTokenGeneratorTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ListAddressRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/SalesChannelCustomerAddressCollectionTest.php
