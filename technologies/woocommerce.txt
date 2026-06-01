@@ -4707,6 +4707,7 @@ packages/php/woocommerce-analytics/tests/php/Woocommerce_Analytics_Test.php
 packages/php/woocommerce-analytics/tests/php/Pixel_Builder_Socks_Proxy_Test.php
 packages/php/woocommerce-analytics/tests/.phpcs.dir.xml
 packages/php/woocommerce-analytics/README.md
+packages/php/woocommerce-analytics/changelog/fix-cart-item-warnings
 packages/php/woocommerce-analytics/changelog/.gitkeep
 packages/php/woocommerce-analytics/.gitattributes
 packages/php/.gitkeep
@@ -5492,6 +5493,7 @@ plugins/woocommerce/src/StoreApi/Schemas/V1/OrderItemSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/OrderSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/AbstractAddressSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/PatternsSchema.php
+plugins/woocommerce/src/StoreApi/Schemas/V1/ProductAttributeTermSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/CartItemSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/BatchSchema.php
 plugins/woocommerce/src/StoreApi/Schemas/V1/OrderCouponSchema.php
@@ -6547,6 +6549,8 @@ plugins/woocommerce/src/Internal/ShopperLists/ShopperListRenderer.php
 plugins/woocommerce/src/Internal/ShopperLists/ShopperListsController.php
 plugins/woocommerce/src/Internal/ShopperLists/ShopperList.php
 plugins/woocommerce/src/Internal/ShopperLists/ShopperListItem.php
+plugins/woocommerce/src/Internal/ProductAttributes/VisualAttributeTermMeta.php
+plugins/woocommerce/src/Internal/ProductAttributes/VisualAttributeTermAdmin.php
 plugins/woocommerce/src/Internal/MCP/Transport/WooCommerceRestTransport.php
 plugins/woocommerce/src/Internal/MCP/MCPAdapterProvider.php
 plugins/woocommerce/src/Internal/RestockRefundedItemsAdjuster.php
@@ -8927,6 +8931,7 @@ plugins/woocommerce/tests/php/src/Internal/DependencyManagement/RuntimeContainer
 plugins/woocommerce/tests/php/src/Internal/ShopperLists/ShopperListTests.php
 plugins/woocommerce/tests/php/src/Internal/ShopperLists/ShopperListsControllerTests.php
 plugins/woocommerce/tests/php/src/Internal/ShopperLists/ShopperListItemTests.php
+plugins/woocommerce/tests/php/src/Internal/ProductAttributes/VisualAttributeTermMetaTest.php
 plugins/woocommerce/tests/php/src/Internal/MCP/WooCommerceRestTransportTest.php
 plugins/woocommerce/tests/php/src/Internal/MCP/MCPAdapterProviderTest.php
 plugins/woocommerce/tests/php/src/Internal/McStatsTest.php
@@ -9911,6 +9916,9 @@ plugins/woocommerce/client/admin/client/wp-admin-scripts/product-tracking/shared
 plugins/woocommerce/client/admin/client/wp-admin-scripts/product-tracking/utils.ts
 plugins/woocommerce/client/admin/client/wp-admin-scripts/product-tracking/product-edit.ts
 plugins/woocommerce/client/admin/client/wp-admin-scripts/visual-attribute-color-picker/index.tsx
+plugins/woocommerce/client/admin/client/wp-admin-scripts/visual-attribute-color-picker/type-switcher.tsx
+plugins/woocommerce/client/admin/client/wp-admin-scripts/visual-attribute-color-picker/utils.ts
+plugins/woocommerce/client/admin/client/wp-admin-scripts/visual-attribute-color-picker/image-field.tsx
 plugins/woocommerce/client/admin/client/wp-admin-scripts/onboarding-product-import-notice/index.js
 plugins/woocommerce/client/admin/client/wp-admin-scripts/tags-tracking/index.js
 plugins/woocommerce/client/admin/client/wp-admin-scripts/settings-tracking/index.ts
@@ -12355,7 +12363,6 @@ plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/frontend.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/editor.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/block.json
 plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/edit.tsx
-plugins/woocommerce/client/blocks/assets/js/blocks/dropdown/save.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/editor.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/product-on-sale/block.json
@@ -13218,6 +13225,7 @@ plugins/woocommerce/client/blocks/assets/js/base/utils/use-return-focus.ts
 plugins/woocommerce/client/blocks/assets/js/base/utils/camel-case-keys.ts
 plugins/woocommerce/client/blocks/assets/js/base/utils/debounce.ts
 plugins/woocommerce/client/blocks/assets/js/base/utils/snake-case-keys.ts
+plugins/woocommerce/client/blocks/assets/js/base/utils/visual-attribute-terms.ts
 plugins/woocommerce/client/blocks/assets/js/base/utils/index.js
 plugins/woocommerce/client/blocks/assets/js/base/utils/calculate-sale-amount.ts
 plugins/woocommerce/client/blocks/assets/js/base/utils/get-navigation-type.ts
@@ -13747,7 +13755,6 @@ plugins/woocommerce/client/blocks/bin/hook-docs/utilities/generate-introduction.
 plugins/woocommerce/client/blocks/bin/hook-docs/utilities/create-docs.js
 plugins/woocommerce/client/blocks/bin/webpack-interactivity-entries.js
 plugins/woocommerce/client/blocks/bin/webpack-config-interactive-blocks.js
-plugins/woocommerce/client/blocks/bin/webpack-config-interactivity.js
 plugins/woocommerce/client/blocks/bin/webpack-shared-config.js
 plugins/woocommerce/client/blocks/bin/docker/wp-cli/entrypoint.sh
 plugins/woocommerce/client/blocks/bin/docker/wp-cli/Dockerfile
@@ -14318,6 +14325,7 @@ plugins/woocommerce/changelog/dev-cjs-prepack-only
 plugins/woocommerce/changelog/fix-64177-transient-cache-key-datetime
 plugins/woocommerce/changelog/fix-marketplace-product-card-title-focus-ring
 plugins/woocommerce/changelog/64406-phpstan-baseline-refresh
+plugins/woocommerce/changelog/fix-analytics-import-failure-diagnostics
 plugins/woocommerce/changelog/update-block-references-may-2026
 plugins/woocommerce/changelog/fix-blocks-jest-patterns-singleton
 plugins/woocommerce/changelog/woomob-2607-stripe-ipp-channel-pos-identification
@@ -14345,9 +14353,11 @@ plugins/woocommerce/changelog/64415-64297-graphql-settings-object-cache
 plugins/woocommerce/changelog/fix-duplicated-attributes-variation-selector
 plugins/woocommerce/changelog/rsm-143-selective-apply-drawer
 plugins/woocommerce/changelog/max-width-order-detail-page
+plugins/woocommerce/changelog/59464-use-toolspanel-in-coming-soon-block
 plugins/woocommerce/changelog/fix-issue-64229
 plugins/woocommerce/changelog/tweak-admin-notice-padding-wp70-align
 plugins/woocommerce/changelog/64960-wooplug-6704-skip-scheduling-review-request-email-when-nothing-is
+plugins/woocommerce/changelog/add-wc-visual-images
 plugins/woocommerce/changelog/64345-fix-38153-clean-category-image-height
 plugins/woocommerce/changelog/64480-opr-issue-64452
 plugins/woocommerce/changelog/add-shopper-collections-cart-hook
@@ -14374,6 +14384,7 @@ plugins/woocommerce/changelog/fix-chips-style-editor
 plugins/woocommerce/changelog/64092-wooplug-4230-highest-shipping-cost-shown-before-en
 plugins/woocommerce/changelog/fix-tax-label-percent-sign-corruption
 plugins/woocommerce/changelog/64411-fix-64176-mini-cart-badge-colors
+plugins/woocommerce/changelog/update-store-stock-order-pn-icon-emoji
 plugins/woocommerce/changelog/fix-payment-provider-needs-setup-message
 plugins/woocommerce/changelog/65207-claude-pensive-nightingale-ad626c
 plugins/woocommerce/changelog/rsm-1335-domain-abilities
@@ -14384,6 +14395,7 @@ plugins/woocommerce/changelog/pr-64358
 plugins/woocommerce/changelog/64410-fix-64405-variation-selector-attribute-product-type-guard
 plugins/woocommerce/changelog/fix-email-checkout-ci-tests
 plugins/woocommerce/changelog/rsm-146-e2e-update-propagation
+plugins/woocommerce/changelog/fix-dropdown-simplify-save
 plugins/woocommerce/changelog/64426-add-stock-status-admin-order-selector
 plugins/woocommerce/changelog/woomob-2947-security-review-hardening
 plugins/woocommerce/changelog/update-display-style-switch-to-editor-components
@@ -14433,6 +14445,7 @@ plugins/woocommerce/changelog/64069-prime-caches-variations-rest
 plugins/woocommerce/changelog/rsm-shopper-collections-add-storeapi-endpoints
 plugins/woocommerce/changelog/fix-64793-deferred-email-object-args
 plugins/woocommerce/changelog/fix-shopper-collection-drop-editor-stylesheet
+plugins/woocommerce/changelog/fix-nonvisual-attribute-term-response
 plugins/woocommerce/changelog/tweak-shopper-collection-custom-grid
 plugins/woocommerce/changelog/add-product-variations-classic-redesign-stage1
 plugins/woocommerce/changelog/fix-rsm-2894-filter-blocks-show-more-visible
@@ -14497,6 +14510,7 @@ plugins/woocommerce/changelog/add-graphql-infrastructure-unit-tests
 plugins/woocommerce/changelog/fix-filters-wrapper-styling-files
 plugins/woocommerce/changelog/add-shopper-collection-heading
 plugins/woocommerce/changelog/update-move-init-colors-to-chips-block
+plugins/woocommerce/changelog/dev-remove-experimental-iapi-runtime
 plugins/woocommerce/changelog/64461-rename-is-overridden-by-custom-template-content
 plugins/woocommerce/changelog/update-iapi-wp-min-catalog
 plugins/woocommerce/changelog/tweak-focus-ring-width-density-responsive
