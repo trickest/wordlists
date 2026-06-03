@@ -71,6 +71,7 @@ docs/docs/docs/01-core/admin/04-features/hooks/use-admin-roles.mdx
 docs/docs/docs/01-core/admin/04-features/hooks/_category_.json
 docs/docs/docs/01-core/admin/04-features/hooks/use-enterprise.mdx
 docs/docs/docs/01-core/admin/04-features/nps.md
+docs/docs/docs/01-core/admin/04-features/telemetry.md
 docs/docs/docs/01-core/admin/03-settings/00-intro.mdx
 docs/docs/docs/01-core/admin/03-settings/01-review-workflows.mdx
 docs/docs/docs/01-core/admin/03-settings/_category_.json
@@ -119,6 +120,7 @@ docs/docs/docs/01-core/strapi/commands/00-overview.md
 docs/docs/docs/01-core/strapi/commands/_category_.json
 docs/docs/docs/01-core/strapi/event-hub.md
 docs/docs/docs/01-core/strapi/_category_.json
+docs/docs/docs/01-core/strapi/telemetry.md
 docs/docs/docs/01-core/authentication/00-sessions-and-jwt.md
 docs/docs/docs/01-core/_category_.json
 docs/docs/docs/01-core/permissions/01-engine.md
@@ -3222,6 +3224,7 @@ packages/core/strapi/src/node/vite/build.ts
 packages/core/strapi/src/node/develop.ts
 packages/core/strapi/src/node/build.ts
 packages/core/strapi/src/node/create-build-context.ts
+packages/core/strapi/src/node/core/ensure-admin-dependencies.ts
 packages/core/strapi/src/node/core/aliases.ts
 packages/core/strapi/src/node/core/dependencies.ts
 packages/core/strapi/src/node/core/monorepo.ts
@@ -3235,6 +3238,7 @@ packages/core/strapi/src/node/core/files.ts
 packages/core/strapi/src/node/core/managers.ts
 packages/core/strapi/src/node/core/resolve-module.ts
 packages/core/strapi/src/node/core/linked-packages.ts
+packages/core/strapi/src/node/core/__tests__/dependencies.test.ts
 packages/core/strapi/src/node/types.ts
 packages/core/strapi/src/admin.ts
 packages/core/strapi/src/types/index.d.ts
@@ -3728,9 +3732,16 @@ packages/core/core/src/services/mcp/utils/__tests__/sendJsonRpcError.test.ts
 packages/core/core/src/services/mcp/utils/sendJsonRpcError.ts
 packages/core/core/src/services/mcp/resource-registry.ts
 packages/core/core/src/services/mcp/authentication.ts
+packages/core/core/src/services/mcp/metrics/normalizeMcpCapability.ts
+packages/core/core/src/services/mcp/metrics/wrapCapabilityHandlerForMetrics.ts
+packages/core/core/src/services/mcp/metrics/metrics.ts
+packages/core/core/src/services/mcp/metrics/__tests__/normalizeMcpCapability.test.ts
+packages/core/core/src/services/mcp/metrics/__tests__/metrics.test.ts
+packages/core/core/src/services/mcp/metrics/__tests__/wrapCapabilityHandlerForMetrics.test.ts
 packages/core/core/src/services/mcp/routes.ts
 packages/core/core/src/services/mcp/__tests__/routes.test.ts
 packages/core/core/src/services/mcp/__tests__/service-integration.test.ts
+packages/core/core/src/services/mcp/__tests__/authentication.test.ts
 packages/core/core/src/services/request-context.ts
 packages/core/core/src/services/worker-queue.ts
 packages/core/core/src/services/core-store.ts
@@ -3814,6 +3825,7 @@ packages/core/core/src/migrations/draft-publish.ts
 packages/core/core/src/migrations/first-published-at.ts
 packages/core/core/src/migrations/i18n.ts
 packages/core/core/src/migrations/database/5.0.0-discard-drafts.ts
+packages/core/core/src/migrations/__tests__/5.0.0-discard-drafts.test.ts
 packages/core/core/src/migrations/__tests__/i18n.test.ts
 packages/core/core/src/compile.ts
 packages/core/core/LICENSE

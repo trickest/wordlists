@@ -6715,6 +6715,7 @@ plugins/woocommerce/src/Internal/Admin/RemoteFreeExtensions/ProcessCoreProfilerP
 plugins/woocommerce/src/Internal/Admin/RemoteFreeExtensions/RemoteFreeExtensionsDataSourcePoller.php
 plugins/woocommerce/src/Internal/Admin/EmailPreview/EmailPreview.php
 plugins/woocommerce/src/Internal/Admin/EmailPreview/EmailPreviewRestController.php
+plugins/woocommerce/src/Internal/Admin/EmailPreview/PreviewOrder.php
 plugins/woocommerce/src/Internal/Admin/WcPayWelcomePage.php
 plugins/woocommerce/src/Internal/Admin/ProductReviews/ReviewsCommentsOverrides.php
 plugins/woocommerce/src/Internal/Admin/ProductReviews/ReviewsListTable.php
@@ -7343,7 +7344,6 @@ plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-shippin
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-system-status-tools-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-webhooks-controller.php
-plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-products-catalog-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-reports-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-report-customers-totals-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-variations-controller.php
@@ -8632,6 +8632,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductFilterAttributeTest.p
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CouponCodeTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AddToCartWithOptions.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductGallery.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/ControllerTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/Utils.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/QueryBuilder.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/RendererDimensions.php
@@ -12837,7 +12838,7 @@ plugins/woocommerce/client/blocks/assets/js/editor-components/external-link-card
 plugins/woocommerce/client/blocks/assets/js/editor-components/external-link-card/index.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/external-link-card/editor.scss
 plugins/woocommerce/client/blocks/assets/js/editor-components/edit-product-link/index.tsx
-plugins/woocommerce/client/blocks/assets/js/editor-components/products-control/index.js
+plugins/woocommerce/client/blocks/assets/js/editor-components/products-control/index.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/grid-content-control/index.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/display-style-switcher/test/index.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/display-style-switcher/index.tsx
@@ -14233,12 +14234,14 @@ plugins/woocommerce/changelog/64984-wooplug-6705-support-per-variation-reviews-o
 plugins/woocommerce/changelog/reorder-product-data-tabs-redesign
 plugins/woocommerce/changelog/65151-make-graphql-code-accessible-externally-not-internal
 plugins/woocommerce/changelog/65194-64169-graphql-api-tests
+plugins/woocommerce/changelog/remove-products-catalog-api
 plugins/woocommerce/changelog/64488-64301-graphql-settings-cache-ttl
 plugins/woocommerce/changelog/64242-fix-transient-file-url-uses-home-url
 plugins/woocommerce/changelog/64481-add-dataform-component
 plugins/woocommerce/changelog/register-settings-entity
 plugins/woocommerce/changelog/woomob-task6-qr-login-signin-email
 plugins/woocommerce/changelog/64720-fix-update-rest-api-docs-references
+plugins/woocommerce/changelog/product-gallery-block-variation-image-decision-tree
 plugins/woocommerce/changelog/62037-patch-1
 plugins/woocommerce/changelog/performance-checkout-thruput-storeapi-checkout
 plugins/woocommerce/changelog/fix-attribute-name-color
@@ -14311,6 +14314,7 @@ plugins/woocommerce/changelog/add-woopayments-onboarding-regression-tests
 plugins/woocommerce/changelog/64509-issue-RSM-1550
 plugins/woocommerce/changelog/64351-followup-authorize-trait
 plugins/woocommerce/changelog/64325-graphql-settings-query-limits
+plugins/woocommerce/changelog/remove-use-wp-horizon-flag
 plugins/woocommerce/changelog/update-wc-visual-attribute-feature-toggle
 plugins/woocommerce/changelog/woomob-2765-show-qr-direct-login-for-all-admins
 plugins/woocommerce/changelog/fix-eval-math-preg-match-null-deprecation
@@ -14318,6 +14322,7 @@ plugins/woocommerce/changelog/remove-reviews-moved-notice
 plugins/woocommerce/changelog/rsm-142-change-summary
 plugins/woocommerce/changelog/performance-checkout-thruput-stock-and-validation
 plugins/woocommerce/changelog/fix-product-collection-location-flake
+plugins/woocommerce/changelog/enable-product-object-caching-new-installs
 plugins/woocommerce/changelog/woomob-task6-email-failure-logging
 plugins/woocommerce/changelog/wooplug-5442-product-offer-price-currency
 plugins/woocommerce/changelog/fix-admin-status-notice
@@ -14348,6 +14353,7 @@ plugins/woocommerce/changelog/woomob-2947-modal-text-alignment
 plugins/woocommerce/changelog/64487-followup-since-tags
 plugins/woocommerce/changelog/wooplug-6660-iapi-catalog-sorting-block-404-css-and-js
 plugins/woocommerce/changelog/decouple-wp-internal-type-imports
+plugins/woocommerce/changelog/stomail-8111-prevent-preview-overwriting-real-order
 plugins/woocommerce/changelog/fix-rsm-3550-stock-status-filter
 plugins/woocommerce/changelog/64351-issue-RSM-693
 plugins/woocommerce/changelog/feature-shopper-collection-empty-message-gating
@@ -14369,6 +14375,7 @@ plugins/woocommerce/changelog/rsm-353-log-level-disabled-skipped-notice
 plugins/woocommerce/changelog/update-inner-blocks-protocol-unify-context-prefix
 plugins/woocommerce/changelog/update-rest-api-docs
 plugins/woocommerce/changelog/add-filters-for-graphql-debug-and-introspection
+plugins/woocommerce/changelog/wooplug-6670-untrash-customer-emails
 plugins/woocommerce/changelog/rsm-353-new-order-restore-locale-fix
 plugins/woocommerce/changelog/fix-analytics-lump-sum-refund-net-sales
 plugins/woocommerce/changelog/64491-woo-email-log
@@ -14377,6 +14384,7 @@ plugins/woocommerce/changelog/64596-64166-graphql-opcache-cache
 plugins/woocommerce/changelog/64890-fix-wooplug-6572-tab-focus-indicator
 plugins/woocommerce/changelog/64540-trunk
 plugins/woocommerce/changelog/pr-64548
+plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/add-inner-block-protocols
 plugins/woocommerce/changelog/fix-plugin-install-error-message-copy
 plugins/woocommerce/changelog/add-product-editor-deprecation-notices
@@ -14387,7 +14395,9 @@ plugins/woocommerce/changelog/rsm-353-capture-email-outcomes
 plugins/woocommerce/changelog/restore-draft-pr-milestone-section
 plugins/woocommerce/changelog/64069-prime-caches-variations-rest
 plugins/woocommerce/changelog/rsm-shopper-collections-add-storeapi-endpoints
+plugins/woocommerce/changelog/64057-fix-product-filters-full-page-reload
 plugins/woocommerce/changelog/fix-64793-deferred-email-object-args
+plugins/woocommerce/changelog/fix-get-variation-parent-visibility
 plugins/woocommerce/changelog/fix-shopper-collection-drop-editor-stylesheet
 plugins/woocommerce/changelog/fix-nonvisual-attribute-term-response
 plugins/woocommerce/changelog/tweak-shopper-collection-custom-grid
@@ -14462,6 +14472,7 @@ plugins/woocommerce/changelog/dev-remove-experimental-iapi-runtime
 plugins/woocommerce/changelog/64461-rename-is-overridden-by-custom-template-content
 plugins/woocommerce/changelog/update-iapi-wp-min-catalog
 plugins/woocommerce/changelog/tweak-focus-ring-width-density-responsive
+plugins/woocommerce/changelog/65390-fix-log-dir-size-fatal
 plugins/woocommerce/changelog/64881-fix-graphql-early-textdomain-regression
 plugins/woocommerce/changelog/64010-30819-php8-warning
 plugins/woocommerce/changelog/performance-product-filter-data-faster-sqls
@@ -14477,6 +14488,7 @@ plugins/woocommerce/changelog/64492-fix-harden-order-details-actions-validation
 plugins/woocommerce/changelog/65276-performance-reduce-number-of-sqls-products-listings
 plugins/woocommerce/changelog/add-dataform-component
 plugins/woocommerce/changelog/64246-patch-2
+plugins/woocommerce/changelog/performance-products-instance-caching-groundwork
 plugins/woocommerce/changelog/add-v4-rest-api-variations
 plugins/woocommerce/changelog/performance-65313-stock-reservation-bottleneck
 plugins/woocommerce/changelog/fix-typo-received

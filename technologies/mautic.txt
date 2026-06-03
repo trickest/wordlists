@@ -1586,6 +1586,7 @@ app/bundles/LeadBundle/Tests/Validator/Constraints/LengthValidatorTest.php
 app/bundles/LeadBundle/Tests/Validator/Constraints/EmailAddressTest.php
 app/bundles/LeadBundle/Tests/Validator/Constraints/EmailAddressValidatorTest.php
 app/bundles/LeadBundle/Tests/Validator/Constraints/LengthTest.php
+app/bundles/LeadBundle/Tests/Unit/Services/CompanyColumnsDictionaryTest.php
 app/bundles/LeadBundle/Tests/Field/IdentifierFieldsTest.php
 app/bundles/LeadBundle/Tests/Field/CustomFieldIndexTest.php
 app/bundles/LeadBundle/Tests/Field/Notification/CustomFieldNotificationTest.php
@@ -1650,6 +1651,7 @@ app/bundles/LeadBundle/Tests/Functional/Controller/ImportControllerFunctionalTes
 app/bundles/LeadBundle/Tests/Functional/Controller/CompanyControllerTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/SendEmailToContactTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/ImportUrlValidationTest.php
+app/bundles/LeadBundle/Tests/Functional/Controller/CompanyListColumnConfigurationFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/AbstractSearchTestCase.php
 app/bundles/LeadBundle/Tests/Functional/Helper/SegmentCountCacheHelperTest.php
 app/bundles/LeadBundle/Tests/StandardImportTestHelper.php
@@ -2107,6 +2109,7 @@ app/bundles/LeadBundle/Form/Type/PreferenceChannelsType.php
 app/bundles/LeadBundle/Form/Type/DeviceType.php
 app/bundles/LeadBundle/Form/Type/ModifyLeadTagsType.php
 app/bundles/LeadBundle/Form/Type/ConfigType.php
+app/bundles/LeadBundle/Form/Type/CompanyColumnsType.php
 app/bundles/LeadBundle/Form/Type/DashboardLeadsLifetimeWidgetType.php
 app/bundles/LeadBundle/Form/Type/ActionRemoveDoNotContact.php
 app/bundles/LeadBundle/Form/Type/CampaignActionRemoveDNCType.php
@@ -2156,13 +2159,20 @@ app/bundles/LeadBundle/Resources/views/List/list.html.twig
 app/bundles/LeadBundle/Resources/views/List/details.html.twig
 app/bundles/LeadBundle/Resources/views/List/filterpropform.html.twig
 app/bundles/LeadBundle/Resources/views/List/_list_row.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_id.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_companyname.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_companywebsite.html.twig
 app/bundles/LeadBundle/Resources/views/Company/list.html.twig
 app/bundles/LeadBundle/Resources/views/Company/merge.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_header_default.html.twig
 app/bundles/LeadBundle/Resources/views/Company/list_rows_contacts.html.twig
 app/bundles/LeadBundle/Resources/views/Company/form_fields.html.twig
 app/bundles/LeadBundle/Resources/views/Company/form_standalone.html.twig
 app/bundles/LeadBundle/Resources/views/Company/company.html.twig
 app/bundles/LeadBundle/Resources/views/Company/form_embedded.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_leadcount.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_score.html.twig
+app/bundles/LeadBundle/Resources/views/Company/_list_column_default.html.twig
 app/bundles/LeadBundle/Resources/views/Batch/form.html.twig
 app/bundles/LeadBundle/Resources/views/Batch/channel.html.twig
 app/bundles/LeadBundle/Resources/views/Integration/index.html.twig
@@ -2258,6 +2268,7 @@ app/bundles/LeadBundle/Translations/en_US/messages.ini
 app/bundles/LeadBundle/Translations/en_US/flashes.ini
 app/bundles/LeadBundle/Services/PeakInteractionTimer.php
 app/bundles/LeadBundle/Services/ContactColumnsDictionary.php
+app/bundles/LeadBundle/Services/CompanyColumnsDictionary.php
 app/bundles/LeadBundle/Services/SegmentDependencyTreeFactory.php
 app/bundles/LeadBundle/Services/ContactSegmentFilterDictionary.php
 app/bundles/LeadBundle/Segment/Decorator/ContactDecoratorForeignInterface.php
@@ -4915,6 +4926,7 @@ media/images/.htaccess
 media/files/.htaccess
 patches/chosen-js+1.8.7.patch
 patches/at.js+1.5.4.patch
+rector/UnserializeToSerializerDecodeRector.php
 .all-contributorsrc
 codeception.yml
 bin/console

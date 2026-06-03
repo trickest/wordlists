@@ -513,9 +513,11 @@ application/Espo/Core/Authentication/Oidc/TokenValidator.php
 application/Espo/Core/Authentication/Oidc/Logout.php
 application/Espo/Core/Authentication/Oidc/UserProvider/Sync.php
 application/Espo/Core/Authentication/Oidc/UserProvider/UserInfo.php
+application/Espo/Core/Authentication/Oidc/UserProvider/UserInfoPopulator.php
 application/Espo/Core/Authentication/Oidc/UserProvider/UsernameValidator.php
 application/Espo/Core/Authentication/Oidc/UserProvider/DefaultUserProvider.php
 application/Espo/Core/Authentication/Oidc/UserProvider/UserRepository.php
+application/Espo/Core/Authentication/Oidc/UserProvider/DefaultUserInfoPopulator.php
 application/Espo/Core/Authentication/Hook/Manager.php
 application/Espo/Core/Authentication/Hook/Hooks/UsernameFailedAttemptsLimit.php
 application/Espo/Core/Authentication/Hook/Hooks/IpAddressWhitelist.php
@@ -7628,6 +7630,7 @@ tests/integration/Espo/Core/Field/ValueObjectTest.php
 tests/integration/Espo/Core/Formula/FormulaTest.php
 tests/integration/Espo/Core/Authentication/FailedLoginAttemptsTest.php
 tests/integration/Espo/Core/Authentication/AuthToken/AuthTokenManagerTest.php
+tests/integration/Espo/Core/Authentication/Oidc/UserInfoPopulatorTest.php
 tests/integration/Espo/Core/Mail/ParentFinderTest.php
 tests/integration/Espo/Core/Job/JobTest.php
 tests/integration/Espo/Core/FulltextIndex/CheckCreatedIndexTest.php
