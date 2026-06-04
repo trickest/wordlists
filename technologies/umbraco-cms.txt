@@ -9567,6 +9567,11 @@ src/Umbraco.Web.UI.Client/src/packages/media/media/reference/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/reference/info-app/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/property-dataset-context/media-property-dataset-context.token.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/property-dataset-context/media-property-dataset-context.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/utils/index.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/utils/to-friendly-name.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/utils/to-friendly-name.function.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/utils/ensure-media-name-from-file.function.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/utils/ensure-media-name-from-file.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/audit-log/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/audit-log/manifests.ts
@@ -14666,6 +14671,7 @@ src/Umbraco.Web.UI.Client/src/packages/management-api/server-event/types.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/inflight-request/cache.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/vite.config.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/tree/index.ts
+src/Umbraco.Web.UI.Client/src/packages/management-api/tree/tree-data.request-manager.test.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/tree/types.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/tree/tree-data.request-manager.ts
 src/Umbraco.Web.UI.Client/src/packages/management-api/types.ts
@@ -15923,6 +15929,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/HashGeneratorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HashCodeCombinerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/HttpsCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/ImagingHMACSecretKeyCheckTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/UmbracoApplicationUrlCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Media/EmbedProviders/XEmbedProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Media/EmbedProviders/IssuuEmbedProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Media/EmbedProviders/DailyMotionEmbedProviderTests.cs
@@ -16421,6 +16428,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Runtime/FileSystemMainDom
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Examine/DeliveryApiContentIndexHelperTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Security/MemberUserStoreConcurrencyTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Security/BackOfficeUserStoreTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/BackgroundJobs/TouchServerJobTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/ScopedRepositoryTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/ScopedNuCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Scoping/ScopeFileSystemsTests.cs

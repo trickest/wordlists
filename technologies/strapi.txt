@@ -113,6 +113,14 @@ docs/docs/docs/01-core/openapi/03-usage.md
 docs/docs/docs/01-core/openapi/00-intro.md
 docs/docs/docs/01-core/openapi/01-technologies.md
 docs/docs/docs/01-core/openapi/_category_.json
+docs/docs/docs/01-core/openapi/contributing/02-routes-matcher-rule.md
+docs/docs/docs/01-core/openapi/contributing/04-context-factory.md
+docs/docs/docs/01-core/openapi/contributing/05-processors.md
+docs/docs/docs/01-core/openapi/contributing/00-overview.md
+docs/docs/docs/01-core/openapi/contributing/_category_.json
+docs/docs/docs/01-core/openapi/contributing/01-routes-provider.md
+docs/docs/docs/01-core/openapi/contributing/03-assemblers.md
+docs/docs/docs/01-core/openapi/contributing/06-testing.md
 docs/docs/docs/01-core/openapi/02-architecture.md
 docs/docs/docs/01-core/strapi/commands/02-develop.md
 docs/docs/docs/01-core/strapi/commands/01-build.md
@@ -1209,6 +1217,7 @@ packages/core/upload/admin/src/future/services/folders.ts
 packages/core/upload/admin/src/future/services/settings.ts
 packages/core/upload/admin/src/future/services/api.ts
 packages/core/upload/admin/src/future/services/assets.ts
+packages/core/upload/admin/src/future/services/tests/assets.test.ts
 packages/core/upload/admin/src/future/store/uploadProgress.ts
 packages/core/upload/admin/src/future/store/hooks.ts
 packages/core/upload/admin/src/future/App.tsx
@@ -1519,6 +1528,7 @@ packages/core/upload/server/src/services/folder.ts
 packages/core/upload/server/src/services/ai-metadata-jobs.ts
 packages/core/upload/server/src/services/image-manipulation.ts
 packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
+packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/upload/uploadImage.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
@@ -2971,6 +2981,7 @@ packages/core/utils/src/content-api-route-params.ts
 packages/core/utils/src/convert-query-params.ts
 packages/core/utils/src/zod.ts
 packages/core/utils/src/content-api-constants.ts
+packages/core/utils/src/sort-query.ts
 packages/core/utils/src/errors.ts
 packages/core/utils/src/model-cache.ts
 packages/core/utils/src/sanitize/index.ts
@@ -3029,6 +3040,7 @@ packages/core/utils/src/__tests__/publication-filter.test.ts
 packages/core/utils/src/__tests__/validate-query.test.ts
 packages/core/utils/src/__tests__/env-helper.test.ts
 packages/core/utils/src/__tests__/sanitize-input.test.ts
+packages/core/utils/src/__tests__/sort-query.test.ts
 packages/core/utils/src/__tests__/validators.test.ts
 packages/core/utils/src/__tests__/package-manager.test.ts
 packages/core/utils/src/__tests__/parse-type.test.ts
@@ -3501,6 +3513,7 @@ packages/core/database/src/query/helpers/streams/readable.ts
 packages/core/database/src/query/helpers/join.ts
 packages/core/database/src/connection.ts
 packages/core/database/src/__tests__/index.test.ts
+packages/core/database/src/__tests__/numeric-fields.test.ts
 packages/core/database/src/__tests__/lifecycles.test.ts
 packages/core/database/src/errors/invalid-relation.ts
 packages/core/database/src/errors/index.ts
@@ -5101,6 +5114,7 @@ tests/api/core/upload/admin/file.test.api.js
 tests/api/core/upload/admin/file-image.test.api.js
 tests/api/core/upload/admin/settings.test.api.js
 tests/api/core/upload/admin/file-size-limit.test.api.js
+tests/api/core/upload/admin/folder-nested-permissions.test.api.js
 tests/api/core/upload/admin/file-folder.test.api.js
 tests/api/core/upload/scripts/generate-rec-docx.js
 tests/api/core/upload/content-api/upload-concurrency.test.api.js
@@ -5287,6 +5301,7 @@ tests/api/core/strapi/document-service/relations/no-dp.test.api.ts
 tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts
 tests/api/core/strapi/document-service/relations/bidirectional-relations.test.api.ts
 tests/api/core/strapi/document-service/relations/polymorphic.test.api.ts
+tests/api/core/strapi/document-service/relations/empty-populate-sort.test.api.ts
 tests/api/core/strapi/document-service/middlewares.test.api.ts
 tests/api/core/strapi/document-service/discard-draft.test.api.ts
 tests/api/core/strapi/document-service/publication-filter.test.api.ts
@@ -5329,11 +5344,13 @@ tests/api/plugins/graphql/relations.test.api.js
 tests/api/plugins/graphql/has-published-version.test.api.js
 tests/api/plugins/graphql/utils.test.api.js
 tests/api/plugins/graphql/cors.test.api.js
+tests/api/plugins/graphql/relation-order.test.api.js
 tests/api/plugins/graphql/dp-relations.test.api.js
 tests/api/plugins/graphql/publication-filter.test.api.js
 tests/api/plugins/graphql/crud.test.api.js
 tests/api/plugins/graphql/components.test.api.js
 tests/api/plugins/graphql/single-type.test.api.js
+tests/api/plugins/graphql/repeatable-component-order.test.api.js
 tests/api/plugins/content-releases/releases.test.api.ts
 tests/api/plugins/content-releases/homepage.test.api.ts
 tests/api/plugins/users-permissions/admin/roles-api.test.api.js
@@ -5411,6 +5428,7 @@ tests/utils/cli-transfer-remote-e2e/upload-db.js
 tests/utils/cli-transfer-remote-e2e/seed-media.js
 tests/utils/cli-transfer-remote-e2e/index.js
 tests/utils/cli-transfer-remote-e2e/http.js
+tests/utils/cli-transfer-remote-e2e/stop-remote-process.js
 tests/utils/cli-transfer-remote-e2e/timeouts.js
 tests/utils/fs.js
 tests/utils/file-reset.ts
