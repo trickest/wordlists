@@ -11806,6 +11806,7 @@ src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearchHydrat
 src/Elasticsearch/Framework/DataAbstractionLayer/CriteriaParser.php
 src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregatorHydrator.php
 src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregator.php
+src/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchTokenizer.php
 src/Elasticsearch/Framework/DataAbstractionLayer/AbstractElasticsearchAggregationHydrator.php
 src/Elasticsearch/Framework/AsyncAwsSigner.php
 src/Elasticsearch/Framework/Command/ElasticsearchTestAnalyzerCommand.php
@@ -17361,6 +17362,7 @@ tests/unit/Core/Content/Category/SalesChannel/CategoryRouteTest.php
 tests/unit/Core/Content/Category/SalesChannel/NavigationRouteTest.php
 tests/unit/Core/Content/Category/CategoryExceptionTest.php
 tests/unit/Core/Content/Category/Tree/CategoryTreePathResolverTest.php
+tests/unit/Core/Content/Category/DataAbstractionLayer/CategoryIndexerTest.php
 tests/unit/Core/Content/Category/DataAbstractionLayer/CategoryNonExistentExceptionHandlerTest.php
 tests/unit/Core/Content/Category/Subscriber/CategoryTreeMovedSubscriberTest.php
 tests/unit/Core/Content/Category/Subscriber/CategorySubscriberTest.php
@@ -18210,6 +18212,7 @@ tests/unit/Elasticsearch/Framework/ElasticsearchIndexingUtilsTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchFieldMapperTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchFieldBuilderTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/CriteriaParserTest.php
+tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchTokenizerTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearcherTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntityAggregatorTest.php
 tests/unit/Elasticsearch/Framework/DataAbstractionLayer/ElasticsearchEntitySearchHydratorTest.php

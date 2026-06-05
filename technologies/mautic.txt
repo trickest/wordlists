@@ -2877,6 +2877,7 @@ app/bundles/FormBundle/EventListener/FormConditionalSubscriber.php
 app/bundles/FormBundle/EventListener/DashboardSubscriber.php
 app/bundles/FormBundle/EventListener/DetermineWinnerSubscriber.php
 app/bundles/FormBundle/EventListener/WebhookSubscriber.php
+app/bundles/FormBundle/EventListener/SubmissionSubscriber.php
 app/bundles/FormBundle/EventListener/FormImportExportSubscriber.php
 app/bundles/FormBundle/EventListener/CampaignSubscriber.php
 app/bundles/FormBundle/EventListener/ConfigSubscriber.php
@@ -2892,6 +2893,7 @@ app/bundles/FormBundle/EventListener/CustomFieldSubscriber.php
 app/bundles/FormBundle/Tests/EventListener/FormSubscriberTest.php
 app/bundles/FormBundle/Tests/EventListener/FormConditionalSubscriberTest.php
 app/bundles/FormBundle/Tests/EventListener/FormFieldSubscriberTest.php
+app/bundles/FormBundle/Tests/EventListener/SubmissionSubscriberTest.php
 app/bundles/FormBundle/Tests/EventListener/FormValidationSubscriberTest.php
 app/bundles/FormBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/FormBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
@@ -4912,6 +4914,7 @@ app/migrations/Version20230506113812.php
 app/migrations/Version20230506113422.php
 app/migrations/Version20260107152512.php
 app/migrations/Version20240226114528.php
+app/migrations/Version20260604000000.php
 app/migrations/Version20230307083702.php
 app/migrations/Version20250425125026.php
 app/.github/workflows/close_pull_requests.yml

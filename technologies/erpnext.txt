@@ -179,6 +179,7 @@ erpnext/controllers/queries.py
 erpnext/controllers/budget_controller.py
 erpnext/controllers/status_updater.py
 erpnext/controllers/accounts_controller.py
+erpnext/controllers/ledger_preview.py
 erpnext/controllers/taxes_and_totals.py
 erpnext/controllers/stock_controller.py
 erpnext/controllers/tests/test_qty_based_taxes.py
@@ -2634,6 +2635,9 @@ erpnext/manufacturing/doctype/production_plan_item/production_plan_item.py
 erpnext/manufacturing/doctype/production_plan_item/production_plan_item.json
 erpnext/manufacturing/doctype/production_plan_item/README.md
 erpnext/manufacturing/doctype/production_plan_item/__init__.py
+erpnext/manufacturing/doctype/work_order_additional_item/work_order_additional_item.json
+erpnext/manufacturing/doctype/work_order_additional_item/work_order_additional_item.py
+erpnext/manufacturing/doctype/work_order_additional_item/__init__.py
 erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.js
 erpnext/manufacturing/doctype/master_production_schedule/test_master_production_schedule.py
 erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.py
@@ -2756,13 +2760,13 @@ erpnext/manufacturing/doctype/job_card_scheduled_time/__init__.py
 erpnext/manufacturing/doctype/production_plan/production_plan.js
 erpnext/manufacturing/doctype/production_plan/production_plan.py
 erpnext/manufacturing/doctype/production_plan/production_plan_dashboard.py
-erpnext/manufacturing/doctype/production_plan/services/sales_order_sourcing.py
-erpnext/manufacturing/doctype/production_plan/services/work_order_creation.py
-erpnext/manufacturing/doctype/production_plan/services/planning_helpers.py
-erpnext/manufacturing/doctype/production_plan/services/stock_reservation.py
+erpnext/manufacturing/doctype/production_plan/services/planning_queries.py
+erpnext/manufacturing/doctype/production_plan/services/reservation.py
 erpnext/manufacturing/doctype/production_plan/services/bom_explosion.py
 erpnext/manufacturing/doctype/production_plan/services/sub_assembly.py
-erpnext/manufacturing/doctype/production_plan/services/sub_assembly_planning.py
+erpnext/manufacturing/doctype/production_plan/services/sales_order_planning.py
+erpnext/manufacturing/doctype/production_plan/services/work_order_planning.py
+erpnext/manufacturing/doctype/production_plan/services/sub_assembly_queries.py
 erpnext/manufacturing/doctype/production_plan/services/__init__.py
 erpnext/manufacturing/doctype/production_plan/services/material_request.py
 erpnext/manufacturing/doctype/production_plan/test_production_plan.py
@@ -3547,6 +3551,7 @@ erpnext/stock/doctype/item/item.json
 erpnext/stock/doctype/item/item_dashboard.py
 erpnext/stock/doctype/item/item.py
 erpnext/stock/doctype/item/item_list.js
+erpnext/stock/doctype/item/item_prices.html
 erpnext/stock/doctype/item/README.md
 erpnext/stock/doctype/item/test_item.py
 erpnext/stock/doctype/item/templates/item_row.html
@@ -3601,6 +3606,10 @@ erpnext/stock/number_card/total_warehouses/total_warehouses.json
 erpnext/stock/number_card/total_stock_value/total_stock_value.json
 erpnext/stock/number_card/total_active_items/total_active_items.json
 erpnext/stock/services/base_stock_gl_composer.py
+erpnext/stock/services/serial_batch_bundle_service.py
+erpnext/stock/services/stock_ledger_service.py
+erpnext/stock/services/internal_transfer.py
+erpnext/stock/services/quality_inspection_service.py
 erpnext/stock/services/__init__.py
 erpnext/stock/reorder_item.py
 erpnext/stock/page/stock_balance/stock_balance.json
