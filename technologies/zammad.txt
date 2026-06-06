@@ -9500,6 +9500,7 @@ db/migrate/20210311130946_remove_unfixable_generic_oauth2_login.rb
 db/migrate/20230622095629_drop_models_searchable_setting.rb
 db/migrate/20231016120344_search_index_settings.rb
 db/migrate/20230823082823_update_format_settings.rb
+db/migrate/20260529101015_signature_convert_images_to_cid.rb
 db/migrate/20221006075341_drop_karma.rb
 db/migrate/20210728103633_move_auth_backends_to_database.rb
 db/migrate/20230508101744_tech_debt_297_three_state_boolean.rb
@@ -11131,6 +11132,7 @@ spec/db/migrate/issue_3346_xoauth2_token_not_fetched_spec.rb
 spec/db/migrate/issue_3550_set_pretty_spec.rb
 spec/db/migrate/issue_3627_outdated_urls_security_page_spec.rb
 spec/db/migrate/issue_4243_permission_fix_spec.rb
+spec/db/migrate/signature_convert_images_to_cid_spec.rb
 spec/db/migrate/issue_1219_zhtw_locale_typo_spec.rb
 spec/db/migrate/update_api_password_access_frontend_spec.rb
 spec/db/migrate/remove_duplicate_translations_spec.rb

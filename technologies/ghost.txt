@@ -4478,6 +4478,7 @@ ghost/core/test/unit/server/notify.test.js
 ghost/core/test/unit/server/lib/package-json/parse.test.js
 ghost/core/test/unit/server/lib/package-json/read.test.js
 ghost/core/test/unit/server/lib/package-json/filter.test.js
+ghost/core/test/unit/server/lib/bootstrap-socket.test.ts
 ghost/core/test/unit/server/lib/post-revisions.test.ts
 ghost/core/test/unit/server/lib/get-inbox-links.test.ts
 ghost/core/test/unit/server/lib/common/to-plain.test.js
@@ -4486,7 +4487,6 @@ ghost/core/test/unit/server/lib/request-external.test.js
 ghost/core/test/unit/server/lib/lexical.test.js
 ghost/core/test/unit/server/lib/events.test.js
 ghost/core/test/unit/server/lib/mobiledoc.test.js
-ghost/core/test/unit/server/lib/bootstrap-socket.test.js
 ghost/core/test/unit/server/lib/image/gravatar.test.js
 ghost/core/test/unit/server/lib/image/image-utils.test.js
 ghost/core/test/unit/server/lib/image/blog-icon.test.js
@@ -5333,7 +5333,6 @@ ghost/core/core/server/lib/get-inbox-links.ts
 ghost/core/core/server/lib/package-json/parse.js
 ghost/core/core/server/lib/package-json/index.js
 ghost/core/core/server/lib/package-json/package-json.js
-ghost/core/core/server/lib/bootstrap-socket.js
 ghost/core/core/server/lib/validate-password.js
 ghost/core/core/server/lib/common/events.js
 ghost/core/core/server/lib/common/to-plain.ts
@@ -5348,6 +5347,7 @@ ghost/core/core/server/lib/image/image-size.js
 ghost/core/core/server/lib/image/gravatar.js
 ghost/core/core/server/lib/image/index.js
 ghost/core/core/server/lib/request-external.js
+ghost/core/core/server/lib/bootstrap-socket.ts
 ghost/core/core/server/services/verification/verification-webhook-service.ts
 ghost/core/core/server/services/internal-keys/index.ts
 ghost/core/core/server/services/link-redirection/redirect-event.js
@@ -6316,9 +6316,9 @@ ghost/core/core/server/data/seeders/importers/posts-tags-importer.js
 ghost/core/core/server/data/seeders/importers/roles-users-importer.js
 ghost/core/core/server/data/seeders/utils/blog-info.js
 ghost/core/core/server/data/seeders/utils/random.js
+ghost/core/core/server/data/seeders/utils/topological-sort.ts
 ghost/core/core/server/data/seeders/utils/event-generator.js
 ghost/core/core/server/data/seeders/utils/json-importer.js
-ghost/core/core/server/data/seeders/utils/topological-sort.js
 ghost/core/core/server/data/seeders/utils/database-date.js
 ghost/core/core/server/data/seeders/data-generator.js
 ghost/core/core/server/data/importer/importers/importer-revue.js
