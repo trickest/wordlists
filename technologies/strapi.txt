@@ -1474,6 +1474,8 @@ packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/upload/uploadImage.test.ts
+packages/core/upload/server/src/services/__tests__/upload/animated-test.webp
+packages/core/upload/server/src/services/__tests__/image-manipulation.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
 packages/core/upload/server/src/services/__tests__/ai-metadata.test.ts
 packages/core/upload/server/src/services/__tests__/metrics.test.ts
@@ -2680,7 +2682,9 @@ packages/core/content-manager/server/src/homepage/index.ts
 packages/core/content-manager/server/src/homepage/controllers/index.ts
 packages/core/content-manager/server/src/homepage/controllers/homepage.ts
 packages/core/content-manager/server/src/homepage/services/index.ts
+packages/core/content-manager/server/src/homepage/services/homepage-query-utils.ts
 packages/core/content-manager/server/src/homepage/services/homepage.ts
+packages/core/content-manager/server/src/homepage/services/__tests__/homepage-query-utils.test.ts
 packages/core/content-manager/server/src/utils/index.ts
 packages/core/content-manager/server/src/services/index.ts
 packages/core/content-manager/server/src/services/permission.ts
@@ -3719,12 +3723,14 @@ packages/core/core/src/services/server/http-server.ts
 packages/core/core/src/services/server/routing.ts
 packages/core/core/src/services/server/admin-api.ts
 packages/core/core/src/services/server/register-middlewares.ts
+packages/core/core/src/services/server/openapi.ts
 packages/core/core/src/services/server/compose-endpoint.ts
 packages/core/core/src/services/server/content-api.ts
 packages/core/core/src/services/server/middleware.ts
 packages/core/core/src/services/server/koa.ts
 packages/core/core/src/services/server/register-routes.ts
 packages/core/core/src/services/server/api.ts
+packages/core/core/src/services/server/__tests__/openapi.test.ts
 packages/core/core/src/services/server/policy.ts
 packages/core/core/src/services/config.ts
 packages/core/core/src/services/content-source-maps.ts
@@ -4301,6 +4307,7 @@ packages/core/types/src/core/commands/index.ts
 packages/core/types/src/core/config/index.ts
 packages/core/types/src/core/config/plugin.ts
 packages/core/types/src/core/config/middlewares.ts
+packages/core/types/src/core/config/openapi.ts
 packages/core/types/src/core/config/shared.ts
 packages/core/types/src/core/config/server.ts
 packages/core/types/src/core/config/api.ts

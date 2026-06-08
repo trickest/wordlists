@@ -6612,7 +6612,6 @@ app/frontend/apps/desktop/composables/responsiveness/useAppBreakpoints.ts
 app/frontend/apps/desktop/composables/responsiveness/useMobileNavigation.ts
 app/frontend/apps/desktop/composables/responsiveness/useMobileDetection.ts
 app/frontend/apps/desktop/composables/responsiveness/__tests__/useMobileDetection.spec.ts
-app/frontend/apps/desktop/composables/BetaUi/useAppUsage.ts
 app/frontend/apps/desktop/composables/BetaUi/useTimeTracker.ts
 app/frontend/apps/desktop/composables/accessibility/useAnnouncer.ts
 app/frontend/apps/desktop/composables/accessibility/types.ts
@@ -9825,7 +9824,7 @@ spec/models/ai/agent/type/ticket_group_dispatcher_spec.rb
 spec/models/ai/agent/type/ticket_text_extractor_spec.rb
 spec/models/ai/agent/type/ticket_categorizer_spec.rb
 spec/models/ai/agent_spec.rb
-spec/models/ai/stored_results_spec.rb
+spec/models/ai/stored_result_spec.rb
 spec/models/ai/analytics/usage_spec.rb
 spec/models/ai/analytics/run_spec.rb
 spec/models/object_manager_spec.rb
@@ -10616,7 +10615,7 @@ spec/lib/certificate/x509/smime_spec.rb
 spec/lib/user_agent_spec.rb
 spec/lib/microsoft_graph/api_error_spec.rb
 spec/lib/timeplan_calculation_spec.rb
-spec/lib/active_model/errors_spec.rb
+spec/lib/active_model/error_spec.rb
 spec/lib/tasks/zammad/command_spec.rb
 spec/lib/tasks/zammad/db/max_connections_spec.rb
 spec/lib/tasks/zammad/store/move_files_spec.rb
@@ -11157,6 +11156,7 @@ spec/db/migrate/geo_location_backend_osm_spec.rb
 spec/db/migrate/object_manager_update_user_password_spec.rb
 spec/db/migrate/issue_2345_es_attachment_max_size_in_mb_setting_lower_default_spec.rb
 spec/db/migrate/move_checklist_ticket_relation_to_ticket_spec.rb
+spec/db/migrate/checklist_tables_wrong_column_type_spec.rb
 spec/db/migrate/issue_4316_template_options_migration_spec.rb
 spec/db/migrate/change_to_ai_provider_flag_spec.rb
 spec/db/migrate/issue_4410_account_linking_notification_spec.rb
@@ -11185,7 +11185,6 @@ spec/db/migrate/issue_5908_cleanup_ticket_ai_agent_running_falgs_spec.rb
 spec/db/migrate/cleanup_obsolete_translations_spec.rb
 spec/db/migrate/auth_third_party_no_create_user_spec.rb
 spec/db/migrate/issue_5091_timezone_default_spec.rb
-spec/db/migrate/20250827060616_checklist_tables_wrong_column_type_spec.rb
 spec/db/migrate/tech_debt297_three_state_boolean_spec.rb
 spec/db/migrate/add_checklist_item_ticket_association_spec.rb
 spec/db/migrate/issue_3617_user_image_source_fix_spec.rb

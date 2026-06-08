@@ -8240,6 +8240,7 @@ core/modules/user/src/Hook/UserViewsExecutionHooks.php
 core/modules/user/src/Hook/UserViewsHooks.php
 core/modules/user/src/RoleStorageInterface.php
 core/modules/user/src/ContextProvider/CurrentUserContext.php
+core/modules/user/src/OneTimeAuthentication.php
 core/modules/user/user.services.yml
 core/modules/user/user.permissions.yml
 core/modules/user/user.post_update.php
@@ -8331,6 +8332,7 @@ core/modules/user/tests/src/Kernel/UserNameValidatorTest.php
 core/modules/user/tests/src/Kernel/UserConfigValidationTest.php
 core/modules/user/tests/src/Kernel/UserActionConfigSchemaTest.php
 core/modules/user/tests/src/Kernel/UserSaveTest.php
+core/modules/user/tests/src/Kernel/OneTimeAuthenticationTest.php
 core/modules/user/tests/src/Kernel/UserMailNotifyTest.php
 core/modules/user/tests/src/Kernel/Views/ArgumentDefaultTest.php
 core/modules/user/tests/src/Kernel/Views/UserViewsDataTest.php
@@ -8354,7 +8356,6 @@ core/modules/user/tests/src/Kernel/WhoIsOnlineBlockTest.php
 core/modules/user/tests/src/Kernel/UserAccountFormPasswordResetTest.php
 core/modules/user/tests/src/Kernel/UserFieldsTest.php
 core/modules/user/tests/src/Kernel/UserNameThemeCacheTest.php
-core/modules/user/tests/src/Kernel/UserPassRehashTest.php
 core/modules/user/tests/src/Kernel/RoleValidationTest.php
 core/modules/user/tests/src/Kernel/UserAdminSettingsFormTest.php
 core/modules/user/tests/src/Kernel/UserAccountFormFieldsTest.php

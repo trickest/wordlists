@@ -278,6 +278,7 @@ src/Core/Test/Stub/DataAbstractionLayer/StaticEntityRepository.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 src/Core/Test/Stub/Doctrine/FakeResultFactory.php
 src/Core/Test/Stub/Doctrine/FakeConnection.php
+src/Core/Test/Stub/Doctrine/FailingDeleteConnection.php
 src/Core/Test/Stub/Doctrine/FakeQueryBuilder.php
 src/Core/Test/Stub/Doctrine/TestExceptionFactory.php
 src/Core/Test/Stub/Doctrine/QueryBuilderDataExtractor.php
@@ -4394,6 +4395,7 @@ src/Core/Framework/Api/Controller/SyncController.php
 src/Core/Framework/Api/Controller/FeatureFlagController.php
 src/Core/Framework/Api/Controller/UserController.php
 src/Core/Framework/Api/ApiException.php
+src/Core/Framework/Console/OutputFormatTrait.php
 src/Core/Framework/Mcp/AllowList/McpAllowlistFilter.php
 src/Core/Framework/Mcp/AllowList/McpAllowlistProvider.php
 src/Core/Framework/Mcp/Authentication/McpExceptionListener.php
@@ -10868,6 +10870,7 @@ src/Administration/Resources/app/administration/src/app/component/media/sw-model
 src/Administration/Resources/app/administration/src/app/component/media/sw-media-modal-replace/sw-media-modal-replace.html.twig
 src/Administration/Resources/app/administration/src/app/component/media/sw-media-modal-replace/sw-media-modal-replace.scss
 src/Administration/Resources/app/administration/src/app/component/media/sw-media-modal-replace/index.js
+src/Administration/Resources/app/administration/src/app/component/media/sw-media-modal-replace/sw-media-modal-replace.spec.js
 src/Administration/Resources/app/administration/src/app/component/media/sw-vector-field/index.ts
 src/Administration/Resources/app/administration/src/app/component/media/sw-vector-field/sw-vector-field.scss
 src/Administration/Resources/app/administration/src/app/component/media/sw-vector-field/sw-vector-field.html.twig
@@ -18461,6 +18464,7 @@ tests/unit/Storefront/Controller/CookieControllerTest.php
 tests/unit/Storefront/Controller/AccountProfileControllerTest.php
 tests/unit/Storefront/Controller/AuthControllerTest.php
 tests/unit/Storefront/Controller/Stub/ProductControllerStub.php
+tests/unit/Storefront/Controller/Stub/AccountProfileControllerStub.php
 tests/unit/Storefront/Controller/Exception/StorefrontExceptionTest.php
 tests/unit/Storefront/Controller/MaintenanceControllerTest.php
 tests/unit/Storefront/Controller/StorefrontControllerTest.php

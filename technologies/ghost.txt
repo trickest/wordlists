@@ -4524,6 +4524,7 @@ ghost/core/test/unit/server/services/mentions/resource-service.test.js
 ghost/core/test/unit/server/services/mentions/mention-discovery-service.test.js
 ghost/core/test/unit/server/services/mentions/utils/index.js
 ghost/core/test/unit/server/services/mentions/routing-service.test.js
+ghost/core/test/unit/server/services/mentions/webmention-metadata.test.js
 ghost/core/test/unit/server/services/mentions/mentions-api.test.js
 ghost/core/test/unit/server/services/recommendations/service/recommendation.test.ts
 ghost/core/test/unit/server/services/recommendations/service/bookshelf-repository.test.ts
@@ -6208,6 +6209,7 @@ ghost/core/core/server/data/migrations/versions/6.29/2026-04-13-09-12-13-drop-gi
 ghost/core/core/server/data/migrations/versions/6.18/2026-02-04-10-42-20-offers-nullable-product-id.js
 ghost/core/core/server/data/migrations/versions/5.102/2024-12-02-17-32-40-alter-length-redirects-from.js
 ghost/core/core/server/data/migrations/versions/5.102/2024-12-02-17-48-40-add-index-redirects-from.js
+ghost/core/core/server/data/migrations/versions/6.45/2026-06-08-11-23-46-add-revalidation-failure-count-to-mentions.js
 ghost/core/core/server/data/migrations/versions/5.29/2023-01-11-02-45-truncate-suppressions.js
 ghost/core/core/server/data/migrations/versions/5.115/2025-03-24-07-19-27-add-identity-read-permission-to-administrators.js
 ghost/core/core/server/data/migrations/versions/5.3/2022-07-05-10-00-add-comment-related-fields-to-members.js
@@ -6564,6 +6566,7 @@ ghost/core/core/frontend/services/rss/cache.js
 ghost/core/core/frontend/services/rss/index.js
 ghost/core/core/frontend/services/handlebars.js
 ghost/core/core/frontend/services/helpers/registry.js
+ghost/core/core/frontend/services/helpers/register-ghost-helpers.js
 ghost/core/core/frontend/services/helpers/index.js
 ghost/core/core/frontend/services/helpers/handlebars.js
 ghost/core/core/frontend/views/unsubscribe.hbs
