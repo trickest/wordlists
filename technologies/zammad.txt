@@ -642,6 +642,7 @@ browserlist
 .devcontainer/with-mailserver/certs/.gitkeep
 .devcontainer/with-mailserver/compose.yaml
 .devcontainer/with-mailserver/devcontainer-lock.json
+.devcontainer/with-selenium/scripts/post_create.sh
 .devcontainer/with-selenium/devcontainer.json
 .devcontainer/with-selenium/compose.yaml
 .devcontainer/with-selenium/devcontainer-lock.json
@@ -6999,9 +7000,11 @@ app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/index.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/FieldFilterSelectorInput.vue
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/is.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/index.ts
+app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/within-last-relative.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/in-range.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/contains-one.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/matches.ts
+app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/__tests__/within-last-relative.spec.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/__tests__/contains-one.spec.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/__tests__/in-range.spec.ts
 app/frontend/apps/desktop/components/Form/fields/FieldFilterSelector/operators/__tests__/is.spec.ts
@@ -8366,8 +8369,6 @@ app/frontend/shared/form/utils/extendSchemaDefinition.ts
 app/frontend/shared/form/defineFormSchema.ts
 app/frontend/shared/form/useFormBlock.ts
 app/frontend/shared/form/validation/rules/.keep
-app/frontend/shared/form/validation/rules/date-range.ts
-app/frontend/shared/form/validation/rules/__tests__/date-range.spec.ts
 app/frontend/shared/form/theme/global/index.ts
 app/frontend/shared/form/theme/global/extensions/.keep
 app/frontend/shared/form/i18n/locales.ts
@@ -8713,8 +8714,12 @@ app/frontend/shared/components/Form/fields/FieldOrganization/useFieldOrganizatio
 app/frontend/shared/components/Form/fields/FieldOrganization/types.ts
 app/frontend/shared/components/Form/fields/FieldDate/useDateTime.ts
 app/frontend/shared/components/Form/fields/FieldDate/useDateFnsLocale.ts
+app/frontend/shared/components/Form/fields/FieldDate/usePickerModel.ts
+app/frontend/shared/components/Form/fields/FieldDate/healDateRange.ts
 app/frontend/shared/components/Form/fields/FieldDate/types.ts
+app/frontend/shared/components/Form/fields/FieldDate/__tests__/usePickerModel.spec.ts
 app/frontend/shared/components/Form/fields/FieldDate/__tests__/useDateFnsLocale.spec.ts
+app/frontend/shared/components/Form/fields/FieldDate/__tests__/healDateRange.spec.ts
 app/frontend/shared/components/Form/fields/FieldFile/graphql/mutations/uploadCache/add.graphql
 app/frontend/shared/components/Form/fields/FieldFile/graphql/mutations/uploadCache/remove.api.ts
 app/frontend/shared/components/Form/fields/FieldFile/graphql/mutations/uploadCache/remove.graphql

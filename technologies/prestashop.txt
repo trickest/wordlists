@@ -839,7 +839,10 @@ admin-dev/themes/new-theme/js/pages/country/components/initAddressFormatBuilder.
 admin-dev/themes/new-theme/js/pages/meta/index.ts
 admin-dev/themes/new-theme/js/pages/meta/meta-page-name-option-handler.ts
 admin-dev/themes/new-theme/js/pages/tax-rules/index.ts
+admin-dev/themes/new-theme/js/pages/tax-rules/tax-rules-manager.ts
+admin-dev/themes/new-theme/js/pages/tax-rules/service/paginated-tax-rules-service.ts
 admin-dev/themes/new-theme/js/pages/tax-rules/form.ts
+admin-dev/themes/new-theme/js/pages/tax-rules/tax-rules-list-renderer.ts
 admin-dev/themes/new-theme/js/pages/tax-rules/country-state-selector.ts
 admin-dev/themes/new-theme/js/pages/catalog/product/index.ts
 admin-dev/themes/new-theme/js/pages/catalog/product/specific-price-form-handler.ts
@@ -4446,8 +4449,11 @@ src/Core/Domain/TaxRulesGroup/TaxRule/Exception/CannotAddTaxRuleException.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Exception/TaxRuleNotFoundException.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Exception/TaxRuleConstraintException.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Exception/CannotBulkDeleteTaxRuleException.php
+src/Core/Domain/TaxRulesGroup/TaxRule/Query/GetTaxRuleList.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Query/GetTaxRuleForEditing.php
 src/Core/Domain/TaxRulesGroup/TaxRule/QueryResult/EditableTaxRule.php
+src/Core/Domain/TaxRulesGroup/TaxRule/QueryResult/TaxRuleForList.php
+src/Core/Domain/TaxRulesGroup/TaxRule/QueryResult/TaxRuleList.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Command/EditTaxRuleCommand.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Command/DeleteTaxRuleCommand.php
 src/Core/Domain/TaxRulesGroup/TaxRule/Command/AddTaxRuleCommand.php
@@ -7218,6 +7224,7 @@ src/PrestaShopBundle/Form/Admin/Improve/International/Geolocation/GeolocationByI
 src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxOptionsType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxRulesGroupType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxType.php
+src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxRulesType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxRuleType.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Tax/TaxOptionsFormDataProvider.php
 src/PrestaShopBundle/Form/Admin/Improve/International/Translations/ModifyTranslationsType.php
@@ -8010,10 +8017,12 @@ src/PrestaShopBundle/Resources/views/Admin/Improve/Design/positions.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/create_tax_rule.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/edit_tax_rule.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/Blocks/form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/Blocks/tax_rules_list.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/Blocks/tax_rule_grid_panel.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/Blocks/tax_rule_form.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/FormTheme/tax_rules.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/TaxRulesGroup/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/options.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Improve/International/Country/Blocks/form.html.twig
@@ -8601,6 +8610,7 @@ src/Adapter/Kpi/AverageCustomerAgeKpi.php
 src/Adapter/Kpi/OrdersPerCustomerKpi.php
 src/Adapter/Kpi/EmptyCategoriesKpi.php
 src/Adapter/Environment.php
+src/Adapter/TaxRulesGroup/QueryHandler/GetTaxRuleListHandler.php
 src/Adapter/TaxRulesGroup/QueryHandler/GetTaxRuleForEditingHandler.php
 src/Adapter/TaxRulesGroup/QueryHandler/GetTaxRulesGroupForEditingHandler.php
 src/Adapter/TaxRulesGroup/Validate/TaxRulesGroupValidator.php

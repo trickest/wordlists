@@ -1154,15 +1154,20 @@ packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDro
 packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolderDialog.test.tsx
 packages/core/upload/admin/src/future/utils/getAssetIcon.ts
 packages/core/upload/admin/src/future/utils/translations.ts
+packages/core/upload/admin/src/future/utils/createRafBatcher.ts
 packages/core/upload/admin/src/future/utils/downloadFile.ts
 packages/core/upload/admin/src/future/utils/files.ts
+packages/core/upload/admin/src/future/utils/tests/createRafBatcher.test.ts
 packages/core/upload/admin/src/future/services/folders.ts
+packages/core/upload/admin/src/future/services/uploadFileViaXHR.ts
 packages/core/upload/admin/src/future/services/settings.ts
 packages/core/upload/admin/src/future/services/api.ts
 packages/core/upload/admin/src/future/services/assets.ts
 packages/core/upload/admin/src/future/services/tests/assets.test.ts
+packages/core/upload/admin/src/future/services/tests/uploadFileViaXHR.test.ts
 packages/core/upload/admin/src/future/store/uploadProgress.ts
 packages/core/upload/admin/src/future/store/hooks.ts
+packages/core/upload/admin/src/future/store/tests/uploadProgress.test.ts
 packages/core/upload/admin/src/future/App.tsx
 packages/core/upload/admin/src/future/enums.ts
 packages/core/upload/admin/src/future/components/Drawer.tsx
@@ -3198,6 +3203,7 @@ packages/core/strapi/src/node/core/managers.ts
 packages/core/strapi/src/node/core/resolve-module.ts
 packages/core/strapi/src/node/core/linked-packages.ts
 packages/core/strapi/src/node/core/__tests__/dependencies.test.ts
+packages/core/strapi/src/node/core/__tests__/plugins.test.ts
 packages/core/strapi/src/node/types.ts
 packages/core/strapi/src/admin.ts
 packages/core/strapi/src/types/index.d.ts
@@ -5058,7 +5064,6 @@ tests/api/core/upload/admin/folder.test.api.js
 tests/api/core/upload/admin/configure-view.test.api.js
 tests/api/core/upload/admin/folder-structure.test.api.js
 tests/api/core/upload/admin/private-file-signing.test.api.js
-tests/api/core/upload/admin/upload-stream.test.api.js
 tests/api/core/upload/admin/image-dimension.test.api.js
 tests/api/core/upload/admin/file.test.api.js
 tests/api/core/upload/admin/file-image.test.api.js
@@ -5066,6 +5071,7 @@ tests/api/core/upload/admin/settings.test.api.js
 tests/api/core/upload/admin/file-size-limit.test.api.js
 tests/api/core/upload/admin/folder-nested-permissions.test.api.js
 tests/api/core/upload/admin/file-folder.test.api.js
+tests/api/core/upload/admin/upload-unstable.test.api.js
 tests/api/core/upload/scripts/generate-rec-docx.js
 tests/api/core/upload/content-api/upload-concurrency.test.api.js
 tests/api/core/upload/content-api/private-file-signing.test.api.js
@@ -5180,6 +5186,7 @@ tests/api/core/strapi/api/populate/populate.test.api.js
 tests/api/core/strapi/api/populate/query-array-limit-populate.test.api.js
 tests/api/core/strapi/api/populate/filtering/index.test.api.js
 tests/api/core/strapi/api/populate/sanitize.test.api.js
+tests/api/core/strapi/api/openapi-access.test.api.ts
 tests/api/core/strapi/api/basic-dp.test.api.js
 tests/api/core/strapi/api/basic-dp-compo-repeatable.test.api.js
 tests/api/core/strapi/api/sanitize/sanitize-input.test.api.js
