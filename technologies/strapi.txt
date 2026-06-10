@@ -505,6 +505,7 @@ examples/plugins/workspace-plugin/admin/src/index.js
 examples/plugins/workspace-plugin/server/register.js
 examples/plugins/workspace-plugin/server/config/index.js
 examples/plugins/workspace-plugin/server/index.js
+CLAUDE.md
 jsconfig.json
 .husky/pre-commit
 .husky/commit-msg
@@ -3298,8 +3299,11 @@ packages/core/data-transfer/src/strapi/providers/local-destination/strategies/re
 packages/core/data-transfer/src/strapi/providers/local-destination/strategies/restore/configuration.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/index.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/assets.test.ts
+packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-links.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/assets-destination-writable.test.ts
+packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-entities.test.ts
+packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-mapper-integration.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/index.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/index.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/push-assets-write-stream.test.ts
@@ -5113,6 +5117,7 @@ tests/api/core/admin/admin-password-change-revokes-sessions.test.api.ts
 tests/api/core/admin/admin-guided-tour-meta.test.api.ts
 tests/api/core/admin/admin-strategy-sessions.test.api.ts
 tests/api/core/admin/admin-auth.test.api.js
+tests/api/core/admin/register-admin-first-user.test.api.ts
 tests/api/core/admin/admin-permissions-custom-conditions.test.api.js
 tests/api/core/admin/admin-legacy-migration.test.api.ts
 tests/api/core/admin/admin-role.test.api.js
@@ -5761,6 +5766,7 @@ templates/website/public/robots.txt
 templates/website/types/generated/contentTypes.d.ts
 templates/website/types/generated/components.d.ts
 .editorconfig
+.ai/skills/writing-a-skill/SKILL.md
 .gitattributes
 .prettierrc.js
 docker-compose.test.yml

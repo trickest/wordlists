@@ -1637,6 +1637,7 @@ src/Core/Migration/V6_7/Migration1779176196AddFeedLabelToProductExport.php
 src/Core/Migration/V6_7/Migration1768545322AssignRevocationPageToSystemConfigSetting.php
 src/Core/Migration/V6_7/Migration1765205483AddTrackOffcanvasCartToAnalytics.php
 src/Core/Migration/V6_7/Migration1752750086AddIndexToOrderLineItemCreateAndUpdate.php
+src/Core/Migration/V6_7/Migration1780645634AddProductDescriptionTeaser.php
 src/Core/Migration/V6_7/Migration1779173129RepairRevocationRequestCmsPageVersion.php
 src/Core/Migration/V6_7/Migration1778487892AddProductTranslationReadPrivilege.php
 src/Core/Migration/V6_7/Migration1717573310ImportExportTechnicalNameRequired.php
@@ -5431,6 +5432,7 @@ src/Core/Content/Product/DataAbstractionLayer/ProductStreamMappingIndexingMessag
 src/Core/Content/Product/DataAbstractionLayer/StatesUpdater.php
 src/Core/Content/Product/DataAbstractionLayer/VariantListingUpdater.php
 src/Core/Content/Product/DataAbstractionLayer/ProductStreamUpdater.php
+src/Core/Content/Product/DataAbstractionLayer/ProductDescriptionTeaserBuilder.php
 src/Core/Content/Product/DataAbstractionLayer/StockUpdate/AbstractStockUpdateFilter.php
 src/Core/Content/Product/DataAbstractionLayer/StockUpdate/StockUpdateFilterProvider.php
 src/Core/Content/Product/DataAbstractionLayer/AbstractProductStreamUpdater.php
@@ -5439,6 +5441,7 @@ src/Core/Content/Product/DataAbstractionLayer/ProductIndexingMessage.php
 src/Core/Content/Product/DataAbstractionLayer/CheapestPriceUpdater.php
 src/Core/Content/Product/DataAbstractionLayer/VariantListingConfig.php
 src/Core/Content/Product/DataAbstractionLayer/UpdatedStates.php
+src/Core/Content/Product/DataAbstractionLayer/ProductDescriptionTeaserIndexer.php
 src/Core/Content/Product/DataAbstractionLayer/CheapestPriceQuantitySelector.php
 src/Core/Content/Product/DataAbstractionLayer/AbstractCheapestPriceQuantitySelector.php
 src/Core/Content/Product/DataAbstractionLayer/ProductIndexer.php
@@ -5490,6 +5493,7 @@ src/Core/Content/Product/Hook/Pricing/PriceCollectionFacade.php
 src/Core/Content/Product/Api/ProductActionController.php
 src/Core/Content/Product/Api/ProductNumberFkResolver.php
 src/Core/Content/Product/Subscriber/RepairDigitalProductStatesSubscriber.php
+src/Core/Content/Product/Subscriber/ProductDescriptionTeaserSubscriber.php
 src/Core/Content/Product/Subscriber/ProductSubscriber.php
 src/Core/Content/Product/Subscriber/CustomFieldSearchableSubscriber.php
 src/Core/Content/Product/Cart/ProductGateway.php
@@ -9522,6 +9526,10 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/manuf
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/component/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/component/component.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/manufacturer-logo.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/preview/sw-cms-el-preview-manufacturer-logo.scss
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/preview/preview.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/preview/sw-cms-el-preview-manufacturer-logo.html.twig
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/manufacturer-logo/preview/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/config/config.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/config/index.js
@@ -9529,6 +9537,10 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/produ
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/component/sw-cms-el-product-name.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/component/component.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/product-name.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/preview/sw-cms-el-preview-product-name.html.twig
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/preview/preview.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/preview/sw-cms-el-preview-product-name.scss
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-name/preview/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-box/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-box/config/config.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-box/config/sw-cms-el-config-product-box.html.twig
@@ -10330,7 +10342,6 @@ src/Administration/Resources/app/administration/src/app/component/rule/condition
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-not-found/sw-condition-not-found.scss
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-not-found/sw-condition-not-found.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-not-found/index.js
-src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic-line-item/sw-condition-generic-line-item.scss
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic-line-item/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/sw-condition-time-range.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/sw-condition-time-range.scss
@@ -13910,6 +13921,7 @@ tests/migration/Core/V6_7/Migration1760438732AddConsumedToPaymentTokenTest.php
 tests/migration/Core/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequiredTest.php
 tests/migration/Core/V6_7/Migration1762356839AddInternalCommentToStateMachineHistoryTest.php
 tests/migration/Core/V6_7/Migration1778146739AddSalesChannelTrackingCustomerPrivilegeTest.php
+tests/migration/Core/V6_7/Migration1780645634AddProductDescriptionTeaserTest.php
 tests/migration/Core/V6_7/Migration1720603803RemoveDefaultPaymentMethodFlowsTest.php
 tests/migration/Core/V6_7/Migration1752750086AddIndexToOrderLineItemCreateAndUpdateTest.php
 tests/migration/Core/V6_7/Migration1773826242RenameAgenticCommerceSalesChannelTypeTest.php
@@ -14950,6 +14962,7 @@ tests/integration/Core/Content/Product/SalesChannel/Review/ProductReviewRouteTes
 tests/integration/Core/Content/Product/SalesChannel/Listing/ProductListingLoaderTest.php
 tests/integration/Core/Content/Product/SalesChannel/Listing/Processor/CompositeProcessorTest.php
 tests/integration/Core/Content/Product/SalesChannel/Listing/ProductListingRouteTest.php
+tests/integration/Core/Content/Product/SalesChannel/Listing/ProductListingPartialLoadingTest.php
 tests/integration/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRouteTest.php
 tests/integration/Core/Content/Product/SalesChannel/ProductListingFilterOutOfStockTest.php
 tests/integration/Core/Content/Product/SearchKeyword/ProductSearchKeywordAnalyzerTest.php
@@ -14958,6 +14971,7 @@ tests/integration/Core/Content/Product/ProductFeatureSet/ProductFeatureSetEntity
 tests/integration/Core/Content/Product/ProductFeatureSet/ProductFeatureSetPropertyTest.php
 tests/integration/Core/Content/Product/ProductFeatureSet/ProductFeatureSetTranslationEntityTest.php
 tests/integration/Core/Content/Product/ProductFeatureSet/ProductFeatureSetCrudTest.php
+tests/integration/Core/Content/Product/DataAbstractionLayer/ProductDescriptionTeaserIndexerTest.php
 tests/integration/Core/Content/Product/DataAbstractionLayer/Indexing/VariantListingIndexerTest.php
 tests/integration/Core/Content/Product/DataAbstractionLayer/Indexing/ProductRatingAverageIndexerTest.php
 tests/integration/Core/Content/Product/DataAbstractionLayer/SearchKeywordUpdaterTest.php
@@ -14980,6 +14994,7 @@ tests/integration/Core/Content/Product/Repository/ProductRepositoryTest.php
 tests/integration/Core/Content/Product/Repository/ProductSearchKeywordTest.php
 tests/integration/Core/Content/Product/Api/ProductApiTest.php
 tests/integration/Core/Content/Product/Subscriber/ProductSubscriberBeforeDeleteIntegrationTest.php
+tests/integration/Core/Content/Product/Subscriber/ProductDescriptionTeaserSubscriberTest.php
 tests/integration/Core/Content/Product/Subscriber/ProductLoadedSubscriberTest.php
 tests/integration/Core/Content/Product/Cart/ProductLineItemCommandValidatorTest.php
 tests/integration/Core/Content/Product/Cart/ProductCartTest.php
@@ -17562,6 +17577,7 @@ tests/unit/Core/Content/Product/SearchKeyword/ProductSearchKeywordAnalyzerTest.p
 tests/unit/Core/Content/Product/SearchKeyword/ProductSearchTermInterpreterTest.php
 tests/unit/Core/Content/Product/SearchKeyword/ProductSearchBuilderTest.php
 tests/unit/Core/Content/Product/SearchKeyword/KeywordLoaderTest.php
+tests/unit/Core/Content/Product/DataAbstractionLayer/ProductDescriptionTeaserIndexerTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/SearchKeywordUpdaterTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/VariantListingConfigTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/CheapestPrice/CheapestPriceContainerSalesChannelTest.php
@@ -17572,6 +17588,7 @@ tests/unit/Core/Content/Product/DataAbstractionLayer/StockUpdate/TestStockUpdate
 tests/unit/Core/Content/Product/DataAbstractionLayer/StockUpdate/StockUpdateFilterProviderTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/ProductStreamUpdaterTest.php
 tests/unit/Core/Content/Product/DataAbstractionLayer/UpdatedStatesTest.php
+tests/unit/Core/Content/Product/DataAbstractionLayer/ProductDescriptionTeaserBuilderTest.php
 tests/unit/Core/Content/Product/Events/ProductStatesBeforeChangeEventTest.php
 tests/unit/Core/Content/Product/Events/ProductStatesChangedEventTest.php
 tests/unit/Core/Content/Product/Events/ProductListingResolvePreviewEventTest.php
@@ -17579,6 +17596,7 @@ tests/unit/Core/Content/Product/Hook/ProductProxyTest.php
 tests/unit/Core/Content/Product/Hook/Pricing/ProductPricingHookTest.php
 tests/unit/Core/Content/Product/Hook/Pricing/CheapestPriceFacadeTest.php
 tests/unit/Core/Content/Product/Subscriber/RepairDigitalProductStatesSubscriberTest.php
+tests/unit/Core/Content/Product/Subscriber/ProductDescriptionTeaserSubscriberTest.php
 tests/unit/Core/Content/Product/Subscriber/ProductSubscriberTest.php
 tests/unit/Core/Content/Product/Subscriber/CustomFieldSearchableSubscriberTest.php
 tests/unit/Core/Content/Product/ProductExceptionTest.php
@@ -17598,6 +17616,7 @@ tests/unit/Core/Content/Seo/SalesChannel/MockSeoUrlAwareExtension.php
 tests/unit/Core/Content/Seo/Validation/SeoUrlValidationFactoryTest.php
 tests/unit/Core/Content/Seo/SeoUrlGeneratorTest.php
 tests/unit/Core/Content/Seo/SeoExceptionTest.php
+tests/unit/Core/Content/Seo/Api/SeoActionControllerTest.php
 tests/unit/Core/Content/Seo/SeoUrlUpdaterTest.php
 tests/unit/Core/Content/RevocationRequest/SalesChannel/RevocationRequestRouteTest.php
 tests/unit/Core/Content/Media/Core/Event/UpdateThumbnailPathEventTest.php
@@ -17692,6 +17711,7 @@ tests/unit/Core/Content/Media/Api/MediaUploadV2ControllerTest.php
 tests/unit/Core/Content/Media/Api/PresignedUploadControllerTest.php
 tests/unit/Core/Content/Media/Api/MediaUploadControllerTest.php
 tests/unit/Core/Content/Media/Subscriber/MediaCreationSubscriberTest.php
+tests/unit/Core/Content/Media/Subscriber/MediaLoadedSubscriberTest.php
 tests/unit/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscriberTest.php
 tests/unit/Core/Content/Media/Subscriber/VideoCoverLoadedSubscriberTest.php
 tests/unit/Core/Content/Media/Subscriber/MediaVisibilityRestrictionSubscriberTest.php

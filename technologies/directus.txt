@@ -1260,12 +1260,14 @@ sdk/src/rest/commands/create/permissions.ts
 sdk/src/rest/commands/create/shares.ts
 sdk/src/rest/commands/create/folders.ts
 sdk/src/rest/commands/create/flows.ts
+sdk/src/rest/commands/create/extensions.ts
 sdk/src/rest/commands/create/operations.ts
 sdk/src/rest/commands/create/translations.ts
 sdk/src/rest/commands/create/notifications.ts
 sdk/src/rest/commands/create/dashboards.ts
 sdk/src/rest/commands/create/users.ts
 sdk/src/rest/commands/create/roles.ts
+sdk/src/rest/commands/create/extensions.test.ts
 sdk/src/rest/commands/create/versions.ts
 sdk/src/rest/commands/create/files.ts
 sdk/src/rest/commands/create/deployment.ts
@@ -1293,6 +1295,7 @@ sdk/src/rest/commands/read/singleton.ts
 sdk/src/rest/commands/read/revisions.ts
 sdk/src/rest/commands/read/users.ts
 sdk/src/rest/commands/read/roles.ts
+sdk/src/rest/commands/read/extensions.test.ts
 sdk/src/rest/commands/read/assets.ts
 sdk/src/rest/commands/read/versions.ts
 sdk/src/rest/commands/read/files.ts
@@ -1320,6 +1323,7 @@ sdk/src/rest/commands/update/dashboards.ts
 sdk/src/rest/commands/update/singleton.ts
 sdk/src/rest/commands/update/users.ts
 sdk/src/rest/commands/update/roles.ts
+sdk/src/rest/commands/update/extensions.test.ts
 sdk/src/rest/commands/update/versions.ts
 sdk/src/rest/commands/update/files.ts
 sdk/src/rest/commands/update/deployment.ts
@@ -1361,12 +1365,14 @@ sdk/src/rest/commands/delete/permissions.ts
 sdk/src/rest/commands/delete/shares.ts
 sdk/src/rest/commands/delete/folders.ts
 sdk/src/rest/commands/delete/flows.ts
+sdk/src/rest/commands/delete/extensions.ts
 sdk/src/rest/commands/delete/operations.ts
 sdk/src/rest/commands/delete/translations.ts
 sdk/src/rest/commands/delete/notifications.ts
 sdk/src/rest/commands/delete/dashboards.ts
 sdk/src/rest/commands/delete/users.ts
 sdk/src/rest/commands/delete/roles.ts
+sdk/src/rest/commands/delete/extensions.test.ts
 sdk/src/rest/commands/delete/versions.ts
 sdk/src/rest/commands/delete/files.ts
 sdk/src/rest/commands/delete/deployment.ts
@@ -4018,6 +4024,7 @@ crowdin.yml
 .changeset/flat-years-start.md
 .changeset/ready-kiwis-cheat.md
 .changeset/breezy-plants-chew.md
+.changeset/fix-pg-numeric-overflow-misattribution.md
 .changeset/warm-eagles-pay.md
 .changeset/violet-adults-hang.md
 .changeset/cold-humans-pick.md
@@ -4027,6 +4034,7 @@ crowdin.yml
 .changeset/loose-candies-stop.md
 .changeset/cms-2302-publish-without-review.md
 .changeset/tame-sheep-wait.md
+.changeset/brave-owls-dance.md
 .changeset/hot-dogs-prove.md
 .changeset/odd-pears-relate.md
 .changeset/auto-save-version-edits.md
