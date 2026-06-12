@@ -1774,6 +1774,7 @@ app/src/composables/use-field-tree.test.ts
 app/src/composables/use-folders.ts
 app/src/composables/use-relation-m2o.ts
 app/src/composables/use-validation-error-details.ts
+app/src/composables/use-focus-trap-manager.test.ts
 app/src/composables/use-window-size.ts
 app/src/composables/use-item/index.ts
 app/src/composables/use-item/index.test.ts
@@ -2647,10 +2648,13 @@ app/src/interfaces/select-dropdown-m2o/select-dropdown-m2o.test.ts
 app/src/interfaces/select-dropdown-m2o/select-dropdown-m2o.vue
 app/src/interfaces/list/index.ts
 app/src/interfaces/list/options.vue
+app/src/interfaces/list/list-drawer.vue
+app/src/interfaces/list/list-inline.vue
 app/src/interfaces/list/list.test.ts
 app/src/interfaces/list/list.vue
 app/src/interfaces/list/preview.svg
 app/src/interfaces/list/resolve-field-name.ts
+app/src/interfaces/list/types.ts
 app/src/interfaces/files/index.ts
 app/src/interfaces/files/files.vue
 app/src/interfaces/files/preview.svg
@@ -3957,10 +3961,7 @@ packages/types/src/presets.ts
 packages/types/src/accountability.ts
 codecov.yaml
 crowdin.yml
-.changeset/better-pigs-type.md
 .changeset/config.json
-.changeset/moody-maps-change.md
-.changeset/fix-batch-update-revisions.md
 contributing.md
 tests/blackbox/readme.md
 tests/blackbox/extensions/action-verify-schema/package.json

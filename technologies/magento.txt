@@ -3111,6 +3111,7 @@ dev/tests/integration/testsuite/Magento/Setup/Model/ObjectManagerProviderTest.ph
 dev/tests/integration/testsuite/Magento/Setup/Model/ConfigOptionsListCollectorTest.php
 dev/tests/integration/testsuite/Magento/Setup/Model/_files/testSkeleton/composer.lock
 dev/tests/integration/testsuite/Magento/Setup/Model/_files/testSkeleton/composer.json
+dev/tests/integration/testsuite/Magento/Setup/Model/ConfigOptionsList/BackpressureLoggerTest.php
 dev/tests/integration/testsuite/Magento/Setup/Fixtures/FixtureModelTest.php
 dev/tests/integration/testsuite/Magento/Setup/Fixtures/_files/tax_rates.csv
 dev/tests/integration/testsuite/Magento/Setup/Fixtures/_files/attributeSets.xml
@@ -12514,6 +12515,7 @@ app/code/Magento/Theme/Test/Mftf/Test/AdminContentThemesSortTest.xml
 app/code/Magento/Theme/Test/Mftf/Test/AdminWatermarkUploadTest.xml
 app/code/Magento/Theme/Test/Mftf/Test/AdminContentThemesEditTest.xml
 app/code/Magento/Theme/Test/Mftf/Test/StoreFrontCheckNotificationMessageContainerTest.xml
+app/code/Magento/Theme/Test/Mftf/Test/AdminStoreViewCodeChangePreservesDesignConfigurationTest.xml
 app/code/Magento/Theme/Test/Mftf/LICENSE.txt
 app/code/Magento/Theme/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Theme/Test/Mftf/class-file-naming-allowlist
@@ -12532,6 +12534,7 @@ app/code/Magento/Theme/Test/Mftf/ActionGroup/AdminClickViewThemeActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/ActionGroup/StorefrontCheckElementColorActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/ActionGroup/AdminClickViewThemeBySpecifiedThemeActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/ActionGroup/AdminChangeStorefrontThemeActionGroup.xml
+app/code/Magento/Theme/Test/Mftf/ActionGroup/AdminAssertStoreViewDesignThemeActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/ActionGroup/NavigateToFaviconMediaFolderActionGroup.xml
 app/code/Magento/Theme/Test/Mftf/README.md
 app/code/Magento/Theme/Test/Mftf/Data/NavigationMenuColorData.xml
@@ -23440,6 +23443,7 @@ app/code/Magento/LayeredNavigation/Test/Mftf/Test/StorefrontFilterableProductAtt
 app/code/Magento/LayeredNavigation/Test/Mftf/Test/StorefrontDropdownAttributeInLayeredNavigationTest.xml
 app/code/Magento/LayeredNavigation/Test/Mftf/Test/StorefrontSimpleProductsDisplayedAfterSwatchFilteringTest.xml
 app/code/Magento/LayeredNavigation/Test/Mftf/Test/AdminCheckResultsOfColorAndOtherFiltersTest.xml
+app/code/Magento/LayeredNavigation/Test/Mftf/Test/StorefrontLayeredNavigationDisplaysWebsiteScopedConfigurableAttributeOptionsTest.xml
 app/code/Magento/LayeredNavigation/Test/Mftf/Test/StorefrontAllAttributeOptionsAreShownInLayeredNavigationTest.xml
 app/code/Magento/LayeredNavigation/Test/Mftf/Test/ShopByButtonInMobileTest.xml
 app/code/Magento/LayeredNavigation/Test/Mftf/LICENSE.txt
@@ -24920,6 +24924,7 @@ app/code/Magento/Store/Test/Mftf/ActionGroup/EditCustomStoreGroupAcceptWarningMe
 app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreViewNotInGridActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/AdminDeleteMultipleStoreViewsActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/DeleteCustomStoreActionGroup.xml
+app/code/Magento/Store/Test/Mftf/ActionGroup/AdminUpdateStoreViewCodeActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/AdminSwitchToAllStoreViewActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/StorefrontOpenHomePageWithStoreCodeInUrlActionGroup.xml
 app/code/Magento/Store/Test/Mftf/ActionGroup/AssertWebsiteInGridActionGroup.xml
@@ -31218,6 +31223,7 @@ app/code/Magento/Bundle/Test/Unit/Observer/AppendUpsellProductsObserverTest.php
 app/code/Magento/Bundle/Test/Unit/Observer/SetAttributeTabBlockObserverTest.php
 app/code/Magento/Bundle/Test/Unit/Observer/InitOptionRendererObserverTest.php
 app/code/Magento/Bundle/Test/Mftf/Test/AdvanceCatalogSearchBundleBySkuTest.xml
+app/code/Magento/Bundle/Test/Mftf/Test/AdminBundleShipTogetherOrderCompleteAfterInvoiceAndShipmentTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontCheckBundleProductTwoWebsiteDifferentPriceOptionTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontSpecialPriceBundleProductInCartTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/MassEnableDisableBundleProductsTest.xml
@@ -39047,6 +39053,7 @@ app/code/Magento/Ui/Test/Mftf/Test/AdminGridFilterRemoveErrorMessageBeforeApplyF
 app/code/Magento/Ui/Test/Mftf/LICENSE.txt
 app/code/Magento/Ui/Test/Mftf/LICENSE_AFL.txt
 app/code/Magento/Ui/Test/Mftf/class-file-naming-allowlist
+app/code/Magento/Ui/Test/Mftf/test-dependency-allowlist
 app/code/Magento/Ui/Test/Mftf/Section/AdminGridControlsSection/AdminGridFilterControlsSection.xml
 app/code/Magento/Ui/Test/Mftf/Section/AdminGridControlsSection/AdminGridMainControlsSection.xml
 app/code/Magento/Ui/Test/Mftf/Section/AdminGridControlsSection/AdminGridDefaultViewControlsSection.xml

@@ -1451,6 +1451,7 @@ packages/core/upload/server/src/controllers/validation/admin/configureView.ts
 packages/core/upload/server/src/controllers/validation/admin/utils.ts
 packages/core/upload/server/src/controllers/validation/content-api/upload.ts
 packages/core/upload/server/src/controllers/__tests__/admin-upload.test.ts
+packages/core/upload/server/src/controllers/__tests__/content-api.test.ts
 packages/core/upload/server/src/controllers/admin-file.ts
 packages/core/upload/server/src/middlewares/upload.ts
 packages/core/upload/server/src/bootstrap.ts
@@ -1480,6 +1481,7 @@ packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/upload/uploadImage.test.ts
+packages/core/upload/server/src/services/__tests__/upload/findAndCountPage.test.ts
 packages/core/upload/server/src/services/__tests__/upload/animated-test.webp
 packages/core/upload/server/src/services/__tests__/image-manipulation.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
@@ -2470,6 +2472,7 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Blo
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/mock-schema.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/normalizeBlocksState.test.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInput.test.tsx
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInputIME.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/plugins/withStrapiSchema.ts
 packages/core/content-manager/admin/src/pages/ListConfiguration/ListConfigurationPage.tsx
 packages/core/content-manager/admin/src/pages/ListConfiguration/tests/ListConfigurationPage.test.tsx
@@ -3310,6 +3313,7 @@ packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/res
 packages/core/data-transfer/src/strapi/providers/remote-destination/index.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/index.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/push-assets-write-stream.test.ts
+packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/asset-encoding-negotiation.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/checksum-negotiation.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/utils.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-source/index.ts
@@ -5084,6 +5088,7 @@ tests/api/core/upload/content-api/upload-concurrency.test.api.js
 tests/api/core/upload/content-api/private-file-signing.test.api.js
 tests/api/core/upload/content-api/upload-automatic-folder.test.api.js
 tests/api/core/upload/content-api/upload-signing.test.api.js
+tests/api/core/upload/content-api/files-pagination.test.api.js
 tests/api/core/upload/content-api/graphql.test.api.js
 tests/api/core/upload/content-api/upload.test.api.js
 tests/api/core/upload/utils/strapi.tiff
@@ -5297,6 +5302,7 @@ tests/api/core/database/v4-self-ref-compat.test.api.js
 tests/api/core/database/knex-utils.test.api.js
 tests/api/core/database/transactions.test.api.js
 tests/api/core/database/db.test.api.js
+tests/api/core/database/schema-inspector.test.api.js
 tests/api/core/content-type-builder/collection-type.test.api.js
 tests/api/core/content-type-builder/schema.test.api.js
 tests/api/core/content-type-builder/components.test.api.js
