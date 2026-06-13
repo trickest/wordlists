@@ -7514,6 +7514,7 @@ src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/SmartyType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/OptionalFeaturesType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/DebugModeType.php
 src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/CachingType.php
+src/PrestaShopBundle/Doctrine/Middleware/SetSessionTimeZoneMiddleware.php
 src/PrestaShopBundle/Doctrine/DatabaseConnection.php
 src/PrestaShopBundle/Resources/config/services_dev.yml
 src/PrestaShopBundle/Resources/config/routing.yml
@@ -11096,6 +11097,7 @@ tests/Unit/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/For
 tests/Unit/PrestaShopBundle/Form/Admin/Sell/CustomerService/OrderReturn/OrderReturnOptionsFormDataProviderTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Sell/Product/Details/DetailsTypeTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Type/Material/MaterialChoiceTableTypeTest.php
+tests/Unit/PrestaShopBundle/Doctrine/Middleware/SetSessionTimeZoneMiddlewareTest.php
 tests/Unit/PrestaShopBundle/Security/OAuth2/Repository/ClientRepositoryTest.php
 tests/Unit/PrestaShopBundle/Security/OAuth2/Repository/AccessTokenRepositoryTest.php
 tests/Unit/PrestaShopBundle/Security/Attribute/AdminSecurityTest.php
@@ -12297,6 +12299,7 @@ tests/Integration/Classes/HookTest.php
 tests/Integration/Classes/Assets/JavascriptManagerTest.php
 tests/Integration/Classes/Assets/StylesheetManagerTest.php
 tests/Integration/Classes/LinkTest.php
+tests/Integration/Classes/db/DbSetTimeZoneTest.php
 tests/Integration/Classes/db/DbTest.php
 tests/Integration/Classes/shop/ShopTest.php
 tests/Integration/Classes/SearchTest.php

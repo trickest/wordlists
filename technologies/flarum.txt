@@ -590,6 +590,7 @@ extensions/realtime/src/Push/Jobs/SendNotificationsJob.php
 extensions/realtime/src/Push/Jobs/SendFlaggedJob.php
 extensions/realtime/src/Push/Jobs/SendDialogMessageJob.php
 extensions/realtime/src/Push/Payload/Generator.php
+extensions/realtime/src/Push/Listener/BroadcastNotifications.php
 extensions/realtime/src/Extend/Realtime.php
 extensions/realtime/src/Content/ForumContent.php
 extensions/realtime/extend.php
@@ -604,6 +605,7 @@ extensions/realtime/js/src/forum/extend.ts
 extensions/realtime/js/src/forum/utils/isIOS.ts
 extensions/realtime/js/src/forum/extenders/Realtime.ts
 extensions/realtime/js/src/forum/states/NotificationToastState.ts
+extensions/realtime/js/src/forum/states/TypingState.ts
 extensions/realtime/js/src/forum/extend/Application.ts
 extensions/realtime/js/src/forum/extend/DiscussionList.ts
 extensions/realtime/js/src/forum/extend/DialogList.ts
@@ -616,6 +618,7 @@ extensions/realtime/js/src/forum/extend/Discussion.ts
 extensions/realtime/js/src/forum/extend/Discussion/NewActivity.ts
 extensions/realtime/js/src/forum/extend/Discussion/TypingIndicator.tsx
 extensions/realtime/js/src/forum/extend/Post.ts
+extensions/realtime/js/src/forum/components/TypingIndicator.tsx
 extensions/realtime/js/src/forum/components/NotificationToast.tsx
 extensions/realtime/js/yarn.lock
 extensions/realtime/js/webpack.config.js
@@ -627,6 +630,7 @@ extensions/realtime/js/dist-typings/forum/RealtimeState.d.ts
 extensions/realtime/js/dist-typings/forum/utils/isIOS.d.ts
 extensions/realtime/js/dist-typings/forum/extenders/Realtime.d.ts
 extensions/realtime/js/dist-typings/forum/states/NotificationToastState.d.ts
+extensions/realtime/js/dist-typings/forum/states/TypingState.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Discussion.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Post.d.ts
@@ -639,6 +643,7 @@ extensions/realtime/js/dist-typings/forum/extend/User.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Application.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Discussion/TypingIndicator.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Discussion/NewActivity.d.ts
+extensions/realtime/js/dist-typings/forum/components/TypingIndicator.d.ts
 extensions/realtime/js/dist-typings/forum/components/NotificationToast.d.ts
 extensions/realtime/js/dist-typings/forum/extend.d.ts
 extensions/realtime/js/forum.ts
@@ -649,6 +654,7 @@ extensions/realtime/js/dist/forum.js.map
 extensions/realtime/js/dist/admin.js.map
 extensions/realtime/js/dist/forum.js.LICENSE.txt
 extensions/realtime/tests/integration/api/notifications/ShowNotificationTest.php
+extensions/realtime/tests/integration/SendNotificationsJobTest.php
 extensions/realtime/tests/integration/payload/GeneratorTest.php
 extensions/realtime/tests/integration/setup.php
 extensions/realtime/tests/phpunit.unit.xml
@@ -1873,6 +1879,7 @@ framework/core/src/Search/Listener/ModelObserver.php
 framework/core/src/helpers.php
 framework/core/src/Notification/Notification.php
 framework/core/src/Notification/Event/DeletedAll.php
+framework/core/src/Notification/Event/Sent.php
 framework/core/src/Notification/Event/ReadAll.php
 framework/core/src/Notification/Event/Read.php
 framework/core/src/Notification/NotificationServiceProvider.php
@@ -3349,6 +3356,7 @@ framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
 framework/core/tests/integration/setup.php
 framework/core/tests/integration/notification/SyncerRaceTest.php
+framework/core/tests/integration/notification/NotificationSentEventTest.php
 framework/core/tests/integration/notification/MatchingBlueprintTest.php
 framework/core/tests/integration/policy/DiscussionPolicyTest.php
 framework/core/tests/integration/policy/PostPolicyTest.php
@@ -3395,6 +3403,7 @@ framework/core/tests/integration/forum/GlobalLogoutTest.php
 framework/core/tests/integration/forum/RegisterTest.php
 framework/core/tests/integration/forum/IndexTest.php
 framework/core/tests/integration/forum/LoginTest.php
+framework/core/tests/integration/forum/UpgradePageTest.php
 framework/core/tests/integration/forum/LogoutTest.php
 framework/core/tests/integration/forum/Auth/ResponseFactoryTest.php
 framework/core/tests/integration/forum/ErrorNegotiationTest.php

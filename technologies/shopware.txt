@@ -6695,6 +6695,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/AclValidPermissionsInRouteAttributes
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/UseCLIContextRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/MessageHandlerFinalRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDelayStampRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/ServiceDefinitionCollector.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFileExistsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RouteScopeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUpdatesInExecuteQueryRule.php
@@ -6705,6 +6706,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoDropStatementInUpdateRul
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PublicServiceDecoratorRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/StorefrontRouteUsageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/ServiceDefinitionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnconfiguredMetricAllowed.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoRouteOverrideInDecoratorsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PropertyNativeTypeRule.php
@@ -15719,6 +15721,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInRouteA
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInMethodRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoMockBuilderConstructorBypassRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ServiceDefinitionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
@@ -15759,6 +15762,15 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-test-
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/ToolWithoutTrait.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/ToolWithTrait.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/NotATool.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/CoreServiceInCore.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/PhpCoreService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/XmlCoreService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/CoreContract.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/DependencyInjection/services.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Storefront/Framework/Example/StorefrontImplementation.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Storefront/DependencyInjection/services.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Storefront/DependencyInjection/services.xml
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/container.xml
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithRouteAttributeConstant.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithRouteAttribute.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithoutRouteAttribute.php
