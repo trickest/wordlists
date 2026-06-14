@@ -5813,6 +5813,7 @@ src/Umbraco.Core/PropertyEditors/ValueConverters/ColorPickerValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/MultipleTextStringValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/MultiNodeTreePickerValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/DatePickerValueConverter.cs
+src/Umbraco.Core/PropertyEditors/AllowedContentTypeKeysParser.cs
 src/Umbraco.Core/PropertyEditors/DropDownFlexibleConfiguration.cs
 src/Umbraco.Core/PropertyEditors/EntityDataPickerConfiguration.cs
 src/Umbraco.Core/PropertyEditors/ConfigurationFieldAttribute.cs
@@ -5893,7 +5894,9 @@ src/Umbraco.Core/PropertyEditors/Validation/NestedValidationResults.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathValidator.cs
 src/Umbraco.Core/PropertyEditors/Validation/NestedJsonPathValidationResults.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathExpression.cs
+src/Umbraco.Core/PropertyEditors/Validation/TypedValidatorRunner.cs
 src/Umbraco.Core/PropertyEditors/Validation/ITypedJsonValidator.cs
+src/Umbraco.Core/PropertyEditors/Validation/ITypedValidator.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathValidationError.cs
 src/Umbraco.Core/PropertyEditors/Validation/TypedJsonValidatorRunner.cs
 src/Umbraco.Core/PropertyEditors/Validation/ValidationHelper.cs
@@ -15878,6 +15881,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/UriExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/EntityDataPickerPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RichTextPropertyEditorHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockListEditorPropertyValueEditorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/AllowedContentTypeKeysParserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ColorPickerPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MultipleTextStringPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/IntegerPropertyValueEditorTests.cs
@@ -15901,6 +15905,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/Validators/FileUpload
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RichTextAllowedMediaTypeValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockEditorComponentTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/SliderPropertyValueEditorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ContentPickerPropertyEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MediaPicker3ValueEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DataValueReferenceFactoryCollectionTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DateTimeUnspecifiedPropertyEditorTests.cs
@@ -15910,6 +15915,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockListPropertyValu
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DateTimeDataValueEditorSortableTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MultiNodeTreePickerValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/EnsureUniqueValuesValidatorTest.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ElementPickerPropertyEditorMinMaxValidationTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ElementPickerPropertyEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RadioButtonsPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/PropertyEditorValueTypeConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DataValueEditorReuseTests.cs

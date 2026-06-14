@@ -556,6 +556,7 @@ extensions/realtime/src/Websocket/Exception/OriginNotAllowed.php
 extensions/realtime/src/Websocket/Message/Factory.php
 extensions/realtime/src/Websocket/Message/Message.php
 extensions/realtime/src/Websocket/Message/ProtocolMessage.php
+extensions/realtime/src/Websocket/IndexTypingPresence.php
 extensions/realtime/src/Websocket/Server/HttpServer.php
 extensions/realtime/src/Websocket/Server/QueryParams.php
 extensions/realtime/src/Websocket/Concerns/Settings.php
@@ -593,6 +594,7 @@ extensions/realtime/src/Push/Payload/Generator.php
 extensions/realtime/src/Push/Listener/BroadcastNotifications.php
 extensions/realtime/src/Extend/Realtime.php
 extensions/realtime/src/Content/ForumContent.php
+extensions/realtime/src/Listener/RestartServerOnSettingChange.php
 extensions/realtime/extend.php
 extensions/realtime/js/package.json
 extensions/realtime/js/tsconfig.json
@@ -606,9 +608,11 @@ extensions/realtime/js/src/forum/utils/isIOS.ts
 extensions/realtime/js/src/forum/extenders/Realtime.ts
 extensions/realtime/js/src/forum/states/NotificationToastState.ts
 extensions/realtime/js/src/forum/states/TypingState.ts
+extensions/realtime/js/src/forum/states/IndexTypingState.ts
 extensions/realtime/js/src/forum/extend/Application.ts
 extensions/realtime/js/src/forum/extend/DiscussionList.ts
 extensions/realtime/js/src/forum/extend/DialogList.ts
+extensions/realtime/js/src/forum/extend/DiscussionList/IndexTyping.tsx
 extensions/realtime/js/src/forum/extend/DiscussionList/WebsocketUpdates.ts
 extensions/realtime/js/src/forum/extend/DiscussionList/NewActivity.ts
 extensions/realtime/js/src/forum/extend/User/RealtimeUserPreferences.tsx
@@ -629,12 +633,14 @@ extensions/realtime/js/dist-typings/forum/index.d.ts
 extensions/realtime/js/dist-typings/forum/RealtimeState.d.ts
 extensions/realtime/js/dist-typings/forum/utils/isIOS.d.ts
 extensions/realtime/js/dist-typings/forum/extenders/Realtime.d.ts
+extensions/realtime/js/dist-typings/forum/states/IndexTypingState.d.ts
 extensions/realtime/js/dist-typings/forum/states/NotificationToastState.d.ts
 extensions/realtime/js/dist-typings/forum/states/TypingState.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Discussion.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Post.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DialogList.d.ts
+extensions/realtime/js/dist-typings/forum/extend/DiscussionList/IndexTyping.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList/WebsocketUpdates.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList/NewActivity.d.ts
 extensions/realtime/js/dist-typings/forum/extend/User/RealtimeUserPreferences.d.ts
@@ -654,9 +660,11 @@ extensions/realtime/js/dist/forum.js.map
 extensions/realtime/js/dist/admin.js.map
 extensions/realtime/js/dist/forum.js.LICENSE.txt
 extensions/realtime/tests/integration/api/notifications/ShowNotificationTest.php
+extensions/realtime/tests/integration/api/IndexTypingTagAuthTest.php
 extensions/realtime/tests/integration/SendNotificationsJobTest.php
 extensions/realtime/tests/integration/payload/GeneratorTest.php
 extensions/realtime/tests/integration/setup.php
+extensions/realtime/tests/integration/RestartOnSettingChangeTest.php
 extensions/realtime/tests/phpunit.unit.xml
 extensions/realtime/tests/fixtures/.gitkeep
 extensions/realtime/tests/phpunit.integration.xml
