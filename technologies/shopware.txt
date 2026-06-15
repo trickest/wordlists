@@ -6672,6 +6672,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Configuration.php
 src/Core/DevOps/StaticAnalyze/PHPStan/rules.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NameConstantEntityDefinition.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NotExtendFlowEventAwareRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnsafeRequestHasSessionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/MessagesShouldNotUsePHPStanTypes.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/CoversAttributeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitClassAttributesOverAnnotationsRule.php
@@ -7366,6 +7367,10 @@ src/Administration/Resources/app/administration/src/module/sw-bulk-edit/componen
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-success/sw-bulk-edit-save-modal-success.html.twig
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-success/sw-bulk-edit-save-modal-success.spec.js
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-success/index.js
+src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-document-generation-failed-list/sw-bulk-edit-document-generation-failed-list.scss
+src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-document-generation-failed-list/sw-bulk-edit-document-generation-failed-list.spec.js
+src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-document-generation-failed-list/index.js
+src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-document-generation-failed-list/sw-bulk-edit-document-generation-failed-list.html.twig
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-confirm/sw-bulk-edit-save-modal-confirm.scss
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-confirm/sw-bulk-edit-save-modal-confirm.html.twig
 src/Administration/Resources/app/administration/src/module/sw-bulk-edit/component/sw-bulk-edit-save-modal-confirm/index.js
@@ -15826,6 +15831,8 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePH
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePHPStanTypes/AsyncMessageImportingPHPStanType.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserializeInTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserialize.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnsafeRequestHasSessionRule/UnsafeRequestHasSessionUsage.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnsafeRequestHasSessionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoStaticRuntimeExceptionReturnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AbstractClassUsageRuleTest.php
@@ -18567,6 +18574,7 @@ tests/unit/Storefront/Framework/Seo/SeoUrlRouteNameEnumProviderTest.php
 tests/unit/Storefront/Framework/Seo/SeoUrlRoute/NavigationPageSeoUrlRouteTest.php
 tests/unit/Storefront/Framework/Seo/SeoUrlRoute/SeoUrlUpdateListenerTest.php
 tests/unit/Storefront/Framework/Seo/SeoUrlRoute/ProductPageSeoUrlRouteTest.php
+tests/unit/Storefront/Framework/AffiliateTracking/AffiliateTrackingListenerTest.php
 tests/unit/Storefront/DependencyInjection/TwigComponentBundlePassTest.php
 tests/unit/Storefront/DependencyInjection/StorefrontMigrationReplacementCompilerPassTest.php
 tests/unit/Storefront/DependencyInjection/ThemeCompilerAssetCompilerPassTest.php

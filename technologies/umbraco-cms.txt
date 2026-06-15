@@ -4220,6 +4220,7 @@ src/Umbraco.Core/Configuration/Models/SystemDateMigrationSettings.cs
 src/Umbraco.Core/Configuration/Models/ContentVersionCleanupPolicySettings.cs
 src/Umbraco.Core/Configuration/Models/RuntimeMode.cs
 src/Umbraco.Core/Configuration/Models/WebRoutingSettings.cs
+src/Umbraco.Core/Configuration/Models/SessionIdLoggingMode.cs
 src/Umbraco.Core/Configuration/Models/CoreDebugSettings.cs
 src/Umbraco.Core/Configuration/Models/CharItem.cs
 src/Umbraco.Core/Configuration/Models/GlobalSettings.cs
@@ -15454,6 +15455,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ModelBinders/HttpQueryStringMod
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Views/UmbracoViewPageTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/FileNameTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/AspNetCore/AspNetCoreCookieManagerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/AspNetCore/AspNetCoreSessionManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ApplicationBuilder/CspNonceExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Routing/PreviewRoutesTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Routing/EndpointRouteBuilderExtensionsTests.cs
@@ -15578,6 +15580,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/MigrationTests.c
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlanTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/AlterMigrationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/DeliveryApi/ApiRichTextMarkupParserTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Install/UnattendedUpgraderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Install/UnattendedUpgradeBackgroundServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Install/MigrationCoordinatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Mapping/MappingTests.cs
@@ -16430,6 +16433,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/PartialMigrati
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/Upgrade/V_17_4_0/FixLabelDataTypeDbTypeFromConfigurationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/Upgrade/V_17_2_0/PopulateSortableValueForDatePropertyDataTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Migrations/Expressions/Create/Expressions/CreateTableExpressionTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Install/UnattendedPackageMigrationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Install/MigrationCoordinatorTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageDataInstallationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/CreatedPackageSchemaTests.cs
@@ -17061,6 +17065,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/UnattendedInstallConfig/AdditionalSetup
 tests/Umbraco.Tests.AcceptanceTest/tests/DeliveryApi/MediaDeliveryApi.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DeliveryApi/AdditionalSetup/appsettings.json
 tests/Umbraco.Tests.AcceptanceTest/tests/DeliveryApi/AdditionalSetup/Program.cs
+tests/Umbraco.Tests.AcceptanceTest/tests/DeliveryApi/BrokenPublishPathDeliveryApi.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DeliveryApi/ContentDeliveryApi.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ExternalLogin/AzureADB2C/AdditionalSetup/AzureB2CAuthenticationExtensions.cs
 tests/Umbraco.Tests.AcceptanceTest/tests/ExternalLogin/AzureADB2C/AdditionalSetup/AzureB2CSettings.cs
@@ -17229,6 +17234,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Members/Members.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Members/MemberLogout.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMultiNodeTreePickerDataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithCheckboxList.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/DocumentUrlBrokenPublishPath.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithImageCropper.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithCustomDataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/TrashContent/BulkTrashContent.spec.ts
@@ -17412,6 +17418,7 @@ templates/UmbracoExtension/.template.config/template.json
 templates/UmbracoExtension/README.txt
 .editorconfig
 .gitattributes
+.claude/skills/umb-release-notes/SKILL.md
 .claude/skills/umb-review/SKILL.md
 .claude/skills/umb-review/evals/evals.json
 .claude/skills/umb-review/references/gh-cli-setup.md

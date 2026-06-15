@@ -1529,6 +1529,7 @@ packages/js/email-editor/README.md
 packages/js/email-editor/changelog/dev-cjs-prepack-only
 packages/js/email-editor/changelog/fix-wooplug-6807-typography-panel-crash
 packages/js/email-editor/changelog/fix-build-missing-webpack-dep
+packages/js/email-editor/changelog/fix-wooprd-3501-global-styles-react-error-185
 packages/js/email-editor/changelog/dev-64837-type-check-only-on-lint
 packages/js/email-editor/changelog/64838-dev-esbuild-package-builds
 packages/js/email-editor/changelog/.gitkeep
@@ -3083,10 +3084,7 @@ packages/php/email-editor/tests/unit/Engine/Renderer/Html2Text_Test.php
 packages/php/email-editor/README.md
 packages/php/email-editor/phpunit-integration.xml.dist
 packages/php/email-editor/email-editor.php
-packages/php/email-editor/changelog/add-email-rendering-for-more-video-embeds
-packages/php/email-editor/changelog/stomail-8060-quote-child-blocks
 packages/php/email-editor/changelog/.gitkeep
-packages/php/email-editor/changelog/fix-media-text-rtl-test-assertion
 packages/php/monorepo-plugin/phpcs.xml
 packages/php/monorepo-plugin/composer.lock
 packages/php/monorepo-plugin/autoload-dev.php
@@ -7205,7 +7203,10 @@ plugins/woocommerce/tests/Tools/CodeHacking/Hacks/FunctionsMockerHack.php
 plugins/woocommerce/tests/Tools/CodeHacking/Hacks/BypassFinalsHack.php
 plugins/woocommerce/tests/Tools/CodeHacking/Hacks/StaticMockerHack.php
 plugins/woocommerce/tests/php/src/AutoloaderTest.php
+plugins/woocommerce/tests/php/src/StoreApi/Schemas/V1/AbstractAddressSchemaTest.php
+plugins/woocommerce/tests/php/src/StoreApi/Schemas/V1/CartShippingRateSchemaTest.php
 plugins/woocommerce/tests/php/src/StoreApi/Schemas/V1/AbstractSchemaTest.php
+plugins/woocommerce/tests/php/src/StoreApi/Schemas/V1/CheckoutSchemaTest.php
 plugins/woocommerce/tests/php/src/StoreApi/Mocks/FakeRegularShippingMethod.php
 plugins/woocommerce/tests/php/src/StoreApi/Mocks/FakeLocalPickupShippingMethod.php
 plugins/woocommerce/tests/php/src/StoreApi/SessionHandlerTest.php
@@ -7284,6 +7285,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CartEmojiTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/SingleProduct.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductQuery.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/MiniCartFooterBlock.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductTemplateTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/Totals.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/DownloadsWrapper.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/Checkout.php
@@ -7917,6 +7919,7 @@ plugins/woocommerce/tests/php/includes/class-wc-tracker-test.php
 plugins/woocommerce/tests/php/includes/class-wc-comments-test.php
 plugins/woocommerce/tests/php/includes/class-wc-order-factory-test.php
 plugins/woocommerce/tests/php/includes/class-wc-payment-gateways-test.php
+plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version3/class-wc-rest-report-sales-controller-tests.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version3/class-wc-rest-product-custom-fields-controller-tests.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller-tests.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller-tests.php
@@ -12691,6 +12694,7 @@ plugins/woocommerce/changelog/fix-pos-feed-htaccess-write-logging
 plugins/woocommerce/changelog/remove-buildkite-analytics-ci
 plugins/woocommerce/changelog/fix-product-filters-e2e-template-path
 plugins/woocommerce/changelog/fix-random-product-collection-pagination
+plugins/woocommerce/changelog/58214-fix-backslash-address-store-api
 plugins/woocommerce/changelog/fix-39289
 plugins/woocommerce/changelog/fix-simplify-compatibility-layer-checks
 plugins/woocommerce/changelog/update-settings-ui-layout-width-spacing
@@ -12702,8 +12706,10 @@ plugins/woocommerce/changelog/wooplug-6663-fix-typeerror-formatted-order-total
 plugins/woocommerce/changelog/codex-remove-create-product-editor-block
 plugins/woocommerce/changelog/remove-coming-soon-newsletter-template-flag
 plugins/woocommerce/changelog/remove-block-templates-package
+plugins/woocommerce/changelog/fix-wooplug-104-sales-report-refunds
 plugins/woocommerce/changelog/remove-use-wp-horizon-flag
 plugins/woocommerce/changelog/add-pos-catalog-feed-file-access
+plugins/woocommerce/changelog/fix-storeapi-order-tax-location-from-order
 plugins/woocommerce/changelog/fix-65378-sku-duplication-hyphen
 plugins/woocommerce/changelog/qao-405-blocks-e2e-non-module-assets
 plugins/woocommerce/changelog/enable-product-object-caching-new-installs
@@ -12736,6 +12742,7 @@ plugins/woocommerce/changelog/65565-wooplug-6146-log-context-json
 plugins/woocommerce/changelog/fix-orders-query-sqlite-limit
 plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
+plugins/woocommerce/changelog/fix-swatches-in-editor-only-if-enabled
 plugins/woocommerce/changelog/remove-brands-beta-product-editor
 plugins/woocommerce/changelog/64057-fix-product-filters-full-page-reload
 plugins/woocommerce/changelog/abandoned-cart-recovery-email
@@ -12775,6 +12782,7 @@ plugins/woocommerce/changelog/performance-products-instance-caching-groundwork
 plugins/woocommerce/changelog/remove-product-block-editor
 plugins/woocommerce/changelog/performance-65313-stock-reservation-bottleneck
 plugins/woocommerce/changelog/testops-139-woocommerce-core-move-redundant-coupon-e2e-down-to-php
+plugins/woocommerce/changelog/65637-wooplug-4673-product-collection-block-several-inner-blocks-dont-work
 plugins/woocommerce/changelog/accessibility-cart-table-headers
 plugins/woocommerce/changelog/63744-fix-adjust-non-base-location-prices-manual-orders
 plugins/woocommerce/changelog/65682-64660-image-no-link-archive
