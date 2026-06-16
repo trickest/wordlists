@@ -668,6 +668,9 @@ extensions/realtime/tests/integration/RestartOnSettingChangeTest.php
 extensions/realtime/tests/phpunit.unit.xml
 extensions/realtime/tests/fixtures/.gitkeep
 extensions/realtime/tests/phpunit.integration.xml
+extensions/realtime/tests/unit/Websocket/FactoryRoutingTest.php
+extensions/realtime/tests/unit/Websocket/MessageTest.php
+extensions/realtime/tests/unit/Websocket/ChannelSubscriptionAuthTest.php
 extensions/realtime/tests/unit/Extend/RealtimeExtenderTest.php
 extensions/realtime/tests/unit/Extend/RealtimeRegistryTest.php
 extensions/realtime/tests/unit/.gitkeep
@@ -1065,6 +1068,7 @@ extensions/tags/src/Search/Filter/PostTagFilter.php
 extensions/tags/src/Search/Filter/TagFilter.php
 extensions/tags/src/Search/FulltextFilter.php
 extensions/tags/src/Search/HideHiddenTagsFromAllDiscussionsPage.php
+extensions/tags/src/IdWithSlugDriver.php
 extensions/tags/src/Tag.php
 extensions/tags/src/Event/DiscussionWasTagged.php
 extensions/tags/src/Event/Creating.php
@@ -1102,6 +1106,7 @@ extensions/tags/js/src/admin/admin.ts
 extensions/tags/js/src/admin/components/EditTagModal.tsx
 extensions/tags/js/src/admin/components/TagsPage.js
 extensions/tags/js/src/admin/components/SelectTagsSettingComponent.tsx
+extensions/tags/js/src/admin/addTagSlugDriverLabels.ts
 extensions/tags/js/src/common/models/Tag.ts
 extensions/tags/js/src/common/index.ts
 extensions/tags/js/src/common/extend.ts
@@ -1137,6 +1142,7 @@ extensions/tags/js/dist-typings/admin/admin.d.ts
 extensions/tags/js/dist-typings/admin/addTagsHomePageOption.d.ts
 extensions/tags/js/dist-typings/admin/addTagSelectionSettingComponent.d.ts
 extensions/tags/js/dist-typings/admin/addTagChangePermission.d.ts
+extensions/tags/js/dist-typings/admin/addTagSlugDriverLabels.d.ts
 extensions/tags/js/dist-typings/admin/components/TagsPage.d.ts
 extensions/tags/js/dist-typings/admin/components/SelectTagsSettingComponent.d.ts
 extensions/tags/js/dist-typings/admin/components/EditTagModal.d.ts
@@ -2441,6 +2447,7 @@ framework/core/src/Http/Middleware/CheckCsrfToken.php
 framework/core/src/Http/Middleware/InjectActorReference.php
 framework/core/src/Http/Middleware/ProcessIp.php
 framework/core/src/Http/RequestUtil.php
+framework/core/src/Http/BatchSlugDriverInterface.php
 framework/core/src/Http/Rememberer.php
 framework/core/src/Http/RouteHandlerFactory.php
 framework/core/src/Http/Access/ScopeAccessTokenVisibility.php

@@ -139,12 +139,14 @@ src/Umbraco.Cms.Api.Management/Controllers/Document/Item/SearchDocumentItemContr
 src/Umbraco.Cms.Api.Management/Controllers/Document/Item/DocumentItemControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/Item/AncestorsDocumentItemController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/Item/ItemDocumentItemController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Document/SortChildrenAtRootDocumentController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/UpdateDocumentController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/Collection/ByKeyDocumentCollectionController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/Collection/DocumentCollectionControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/DocumentControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/CreateDocumentControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/NotificationsController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Document/SortChildrenDocumentController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Document/SortDocumentController.cs
 src/Umbraco.Cms.Api.Management/Controllers/RecycleBin/RecycleBinControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Template/CreateTemplateController.cs
@@ -621,6 +623,7 @@ src/Umbraco.Cms.Api.Management/Controllers/Media/RecycleBin/RestoreMediaRecycleB
 src/Umbraco.Cms.Api.Management/Controllers/Media/RecycleBin/RootMediaRecycleBinController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/RecycleBin/ReferencedByMediaRecycleBinController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/MoveMediaController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Media/SortChildrenMediaController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/CreateMediaControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/CreateMediaController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/MoveToRecycleBinMediaController.cs
@@ -642,6 +645,7 @@ src/Umbraco.Cms.Api.Management/Controllers/Media/Item/ItemMediaItemController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/Item/MediaItemControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/Item/SearchMediaItemController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/Item/AncestorsMediaItemController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Media/SortChildrenAtRootMediaController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/UpdateMediaController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/GetAuditLogMediaController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Media/ValidateUpdateMediaController.cs
@@ -957,7 +961,10 @@ src/Umbraco.Cms.Api.Management/DependencyInjection/JsonBuilderExtensions.cs
 src/Umbraco.Cms.Api.Management/DependencyInjection/MemberGroupsBuilderExtensions.cs
 src/Umbraco.Cms.Api.Management/DependencyInjection/ManagementApiConfiguration.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Sorting/SortingRequestModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Sorting/SortDocumentChildrenByFieldRequestModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Sorting/SortMediaChildrenByFieldRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Sorting/ItemSortingRequestModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Sorting/SortChildrenByFieldRequestModelBase.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Profiling/ProfilingStatusResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Profiling/ProfilingStatusRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Profiling/ProfilingStatusPresentationBase.cs
@@ -1456,6 +1463,7 @@ src/Umbraco.Cms.Api.Management/Security/BackOfficeApplicationManager.cs
 src/Umbraco.Cms.Api.Management/Security/BackOfficeAuthenticationBuilder.cs
 src/Umbraco.Cms.Api.Management/Security/Authorization/DenyLocalLogin/DenyLocalLoginHandler.cs
 src/Umbraco.Cms.Api.Management/Security/Authorization/DenyLocalLogin/DenyLocalLoginRequirement.cs
+src/Umbraco.Cms.Api.Management/Security/Authorization/AllChildrenAuthorizer.cs
 src/Umbraco.Cms.Api.Management/Security/Authorization/MustSatisfyRequirementAuthorizationHandler.cs
 src/Umbraco.Cms.Api.Management/Security/Authorization/Element/ElementPermissionHandler.cs
 src/Umbraco.Cms.Api.Management/Security/Authorization/Element/ElementPermissionRequirement.cs
@@ -3637,6 +3645,7 @@ src/Umbraco.Core/Models/ContentEditing/ContentUpdateResult.cs
 src/Umbraco.Core/Models/ContentEditing/ContentBlueprintUpdateModel.cs
 src/Umbraco.Core/Models/ContentEditing/MemberUpdateResult.cs
 src/Umbraco.Core/Models/ContentEditing/ValueModelBase.cs
+src/Umbraco.Core/Models/ContentEditing/ContentSortField.cs
 src/Umbraco.Core/Models/ContentEditing/MemberEditingModelBase.cs
 src/Umbraco.Core/Models/ContentEditing/ContentUpdateResultBase.cs
 src/Umbraco.Core/Models/ContentEditing/ElementUpdateResult.cs
@@ -4240,8 +4249,10 @@ src/Umbraco.Core/Configuration/Models/PackageMigrationSettings.cs
 src/Umbraco.Core/Configuration/Models/RuntimeSettings.cs
 src/Umbraco.Core/Configuration/Models/Attributes/UmbracoOptionsAttribute.cs
 src/Umbraco.Core/Configuration/Models/DictionarySettings.cs
+src/Umbraco.Core/Configuration/Models/ScheduledPublishingSettings.cs
 src/Umbraco.Core/Configuration/Models/Validation/RequestHandlerSettingsValidator.cs
 src/Umbraco.Core/Configuration/Models/Validation/ConfigurationValidatorBase.cs
+src/Umbraco.Core/Configuration/Models/Validation/ScheduledPublishingSettingsValidator.cs
 src/Umbraco.Core/Configuration/Models/Validation/HostingSettingsValidator.cs
 src/Umbraco.Core/Configuration/Models/Validation/HealthChecksSettingsValidator.cs
 src/Umbraco.Core/Configuration/Models/Validation/GlobalSettingsValidator.cs
@@ -11984,7 +11995,9 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/pagination-m
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/pagination-manager/target-pagination.manager.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/fetch-all-pages.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/is-offset-request.guard.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/fetch-all-pages.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/object/deep-merge.function.ts
@@ -15414,6 +15427,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Configuration/Configure
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Security/BackOfficeAuthenticationBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Security/BackOfficeApplicationManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Security/UriProviderTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Security/Authorization/AllChildrenAuthorizerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Serialization/BackOfficeSerializationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/UserStartNodePathComparisonTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/BackOfficeExternalLoginServiceTests.cs
@@ -15620,6 +15634,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonUdiConver
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/SystemTextJsonSerializerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonStringInternConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonBlockValueConverterTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/DistributedJobServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/AmbiguousEventTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/LocalizedTextServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyValidationServiceTests.cs
@@ -15746,6 +15761,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Telemetry/SiteIdentifierServiceTests.
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Telemetry/SystemTroubleshootingInformationTelemetryProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Telemetry/TelemetryServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/RequestHandlerSettingsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/ScheduledPublishingSettingsValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/DeliveryApiSettingsValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/RequestHandlerSettingsValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/LoggingSettingsValidatorTests.cs
@@ -16001,11 +16017,13 @@ tests/Umbraco.Tests.Integration/ManagementApi/Tag/ByQueryTagControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Indexer/DetailsIndexerControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Indexer/RebuildIndexerControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Indexer/AllIndexerControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Document/SortChildrenAtRootDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/CopyDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/DeletePublicAccessDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/RecycleBin/ChildrenDocumentRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/RecycleBin/RootDocumentRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/DomainsControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Document/SortChildrenDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/CreatePublicAccessDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/GetPublicAccessDocumentControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Document/UpdateDomainsControllerTests.cs
@@ -16265,10 +16283,12 @@ tests/Umbraco.Tests.Integration/ManagementApi/DataType/Folder/CreateDataTypeFold
 tests/Umbraco.Tests.Integration/ManagementApi/DataType/CreateDataTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/ManagementApiTest.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/ByKeyMediaControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Media/SortChildrenMediaControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/MoveToRecycleBinMediaControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/RecycleBin/RootMediaRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/RecycleBin/ChildrenMediaRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/SortMediaControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Media/SortChildrenAtRootMediaControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/MoveMediaControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/Tree/RootMediaTreeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Media/Tree/ChildrenMediaTreeControllerTests.cs
@@ -16455,6 +16475,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaEditingServ
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.CopyWithBlocks.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/RedirectUrlServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/UserServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceSortChildrenWithNotificationsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.MoveToRecycleBin.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/TemplateOnly-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/MediaTypesAndMedia-Package.xml
@@ -16484,6 +16505,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprint
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ConsentServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentTypeServiceVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/DistributedJobServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaEditingServiceTests.SortByField.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentListViewServiceTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/NuCacheRebuildTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementServiceNotificationWithCacheTests.cs
@@ -16516,6 +16538,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentTypeServi
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/LanguageServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.EmptyRecycleBin.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceSortChildrenWithoutNotificationsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceVariantTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprintContainerServiceTests.cs
@@ -16526,6 +16549,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentSearchSer
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Get.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementVersionCleanupServiceTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/EntityServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceSortChildrenNotificationTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprintEditingServiceTests.GetScaffold.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Create.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.cs
@@ -16546,6 +16570,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentPublishin
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServicePerformanceTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/TagServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Delete.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.SortByField.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Sort.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.DeleteFromRecycleBin.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MemberEditingServiceTests.cs
@@ -17131,6 +17156,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/Renderin
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithBlockGrid.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithTextarea.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithDropdown.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/PublishedElementExtensions.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithRichTextEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithBlockList.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithCheckboxList.spec.ts

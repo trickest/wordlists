@@ -589,6 +589,7 @@ browserlist
 .dev/rubocop/cop/zammad/concerns/can_check_gql_operation.rb
 .dev/rubocop/cop/zammad/trigger_from_commit_hooks.rb
 .dev/rubocop/cop/zammad/to_forbid_over_not_to_permit.rb
+.dev/rubocop/cop/zammad/forbid_unprocessable_entity.rb
 .dev/rubocop/cop/zammad/prefer_models_all.rb
 .dev/rubocop/cop/zammad/forbid_loofah_fragment.rb
 .dev/rubocop/cop/zammad/forbid_translatable_marker.rb
@@ -5077,6 +5078,7 @@ app/views/mailer/password_reset/de.html.erb
 app/views/mailer/password_reset/lt.html.erb
 app/views/mailer/password_reset/en.html.erb
 app/views/mailer/password_reset/uk.html.erb
+app/views/mailer/password_reset/da.html.erb
 app/views/mailer/password_reset/id.html.erb
 app/views/mailer/password_reset/sr.html.erb
 app/views/mailer/password_reset/nl.html.erb
@@ -5321,6 +5323,7 @@ app/views/mailer/signup_taken_reset/de.html.erb
 app/views/mailer/signup_taken_reset/lt.html.erb
 app/views/mailer/signup_taken_reset/en.html.erb
 app/views/mailer/signup_taken_reset/uk.html.erb
+app/views/mailer/signup_taken_reset/da.html.erb
 app/views/mailer/signup_taken_reset/id.html.erb
 app/views/mailer/signup_taken_reset/sr.html.erb
 app/views/mailer/signup_taken_reset/nl.html.erb
@@ -5346,6 +5349,7 @@ app/views/mailer/ticket_create/de.html.erb
 app/views/mailer/ticket_create/lt.html.erb
 app/views/mailer/ticket_create/en.html.erb
 app/views/mailer/ticket_create/uk.html.erb
+app/views/mailer/ticket_create/da.html.erb
 app/views/mailer/ticket_create/id.html.erb
 app/views/mailer/ticket_create/sr.html.erb
 app/views/mailer/ticket_create/nl.html.erb
@@ -6969,11 +6973,11 @@ app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/updated.t
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/received-merge.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/checklist-item-checked.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/merged-into.ts
-app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/notification.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/set.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/email.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/removed-mention.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/time-trigger-performed.ts
+app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/notified.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/created-mention.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/added.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/created.ts
@@ -10280,6 +10284,7 @@ spec/rubocop/cop/zammad/migration_scheduler_last_run_spec.rb
 spec/rubocop/cop/zammad/forbid_redis_client_spec.rb
 spec/rubocop/cop/zammad/graphql_authorize_requires_permission_spec.rb
 spec/rubocop/cop/zammad/enforce_in_modal_spec.rb
+spec/rubocop/cop/zammad/forbid_unprocessable_entity_spec.rb
 spec/rubocop/cop/zammad/migration_ensure_integer_primary_key_spec.rb
 spec/rubocop/cop/zammad/graphql_forbid_sensitive_fields_spec.rb
 spec/support/capybara/custom_extensions.rb
@@ -11828,6 +11833,7 @@ spec/system/admin/ai/ticket_summary_spec.rb
 spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
 spec/system/admin/knowledge_base/create_spec.rb
+spec/system/admin/knowledge_base/remove_language_spec.rb
 spec/system/admin/knowledge_base/delete_spec.rb
 spec/system/overview/attribute_spec.rb
 spec/system/apps/desktop/guided_setup_spec.rb

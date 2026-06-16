@@ -2689,6 +2689,7 @@ core/lib/Drupal/Core/Hook/Attribute/Hook.php
 core/lib/Drupal/Core/Hook/Attribute/ReorderHook.php
 core/lib/Drupal/Core/Hook/Attribute/ProceduralHookScanStop.php
 core/lib/Drupal/Core/Hook/Attribute/RemoveHook.php
+core/lib/Drupal/Core/Hook/Attribute/HookDependsOnModule.php
 core/lib/Drupal/Core/Hook/Attribute/LegacyRequirementsHook.php
 core/lib/Drupal/Core/Hook/Attribute/LegacyHook.php
 core/lib/Drupal/Core/Hook/Order/RelativeOrderBase.php
@@ -10808,6 +10809,10 @@ core/modules/system/tests/modules/services_defaults_test/src/TestService.php
 core/modules/system/tests/modules/services_defaults_test/services_defaults_test.info.yml
 core/modules/system/tests/modules/unversioned_assets_test/unversioned_assets_test.info.yml
 core/modules/system/tests/modules/unversioned_assets_test/src/Hook/UnversionedAssetsTestHooks.php
+core/modules/system/tests/modules/hook_collector_depends_test/src/Hook/DependsOnModuleMethodHooks.php
+core/modules/system/tests/modules/hook_collector_depends_test/src/Hook/DependsOnModuleMultipleHooks.php
+core/modules/system/tests/modules/hook_collector_depends_test/src/Hook/DependsOnModuleClassHooks.php
+core/modules/system/tests/modules/hook_collector_depends_test/hook_collector_depends_test.info.yml
 core/modules/system/tests/modules/test_htmx/test_htmx.info.yml
 core/modules/system/tests/modules/test_htmx/test_htmx.libraries.yml
 core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestAjaxForm.php

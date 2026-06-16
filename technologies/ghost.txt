@@ -756,6 +756,7 @@ apps/admin/eslint.config.js
 apps/admin/vite-ember-assets.ts
 apps/admin/tsconfig.json
 apps/admin/tsconfig.node.json
+apps/admin/src/layout/sidebar-visibility.test.tsx
 apps/admin/src/layout/admin-layout.tsx
 apps/admin/src/layout/app-sidebar/index.ts
 apps/admin/src/layout/app-sidebar/app-sidebar-header.tsx
@@ -794,6 +795,7 @@ apps/admin/src/layout/app-sidebar/mobile-nav-bar.tsx
 apps/admin/src/layout/app-sidebar/theme-errors-dialog.tsx
 apps/admin/src/layout/app-sidebar/nav-custom-views.tsx
 apps/admin/src/layout/app-sidebar/app-sidebar-banner.test.tsx
+apps/admin/src/layout/sidebar-visibility.ts
 apps/admin/src/schemas/primitives.test.ts
 apps/admin/src/schemas/primitives.ts
 apps/admin/src/members-route.test.tsx
@@ -3995,6 +3997,7 @@ ghost/core/test/utils/assertions.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
 ghost/core/test/utils/minio.ts
+ghost/core/test/utils/automations-fixtures.js
 ghost/core/test/utils/mock-knex.js
 ghost/core/test/utils/url-utils.js
 ghost/core/test/utils/email-verification-utils.ts
@@ -5507,10 +5510,9 @@ ghost/core/core/server/services/automations/automations-api.ts
 ghost/core/core/server/services/automations/service.js
 ghost/core/core/server/services/automations/poll.ts
 ghost/core/core/server/services/automations/constants.ts
-ghost/core/core/server/services/automations/temporary-fake-database.ts
+ghost/core/core/server/services/automations/database-automations-repository.ts
 ghost/core/core/server/services/automations/index.js
 ghost/core/core/server/services/automations/automations-repository.ts
-ghost/core/core/server/services/automations/fake-database-automations-repository.ts
 ghost/core/core/server/services/automations/events/start-automations-poll-event.js
 ghost/core/core/server/services/automations/welcome-email-automation-poll.js
 ghost/core/core/server/services/stats/posts-stats-service.js
@@ -6247,6 +6249,9 @@ ghost/core/core/server/data/migrations/versions/5.19/2022-10-10-06-58-add-subscr
 ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-52-backfill-new-product-columns.js
 ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-25-add-columns-to-products-table.js
 ghost/core/core/server/data/migrations/versions/5.90/2024-08-20-09-40-24-update-default-donations-suggested-amount.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-03-36-21-backfill-welcome-email-sender-fields-to-email-design-settings.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-15-16-49-31-add-automation-action-revision-id-to-automated-email-recipients.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-02-38-59-create-automation-tables.js
 ghost/core/core/server/data/migrations/versions/5.91/2024-08-28-05-28-22-add-donation-message-column-to-donation-payment-events.js
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.94/2024-09-03-20-09-40-null-analytics-jobs-timings.js

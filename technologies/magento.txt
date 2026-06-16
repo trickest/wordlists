@@ -8664,6 +8664,7 @@ lib/internal/Magento/Framework/DB/Test/Unit/AbstractMapperTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/SelectFactoryTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/FieldDataConverterFactoryTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/Platform/QuoteTest.php
+lib/internal/Magento/Framework/DB/Test/Unit/DeadlockRecoveryExecutorTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/Adapter/Pdo/MysqlFactoryTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/Adapter/Pdo/MysqlTest.php
 lib/internal/Magento/Framework/DB/Test/Unit/Adapter/SqlVersionProviderTest.php
@@ -8712,6 +8713,7 @@ lib/internal/Magento/Framework/DB/TemporaryTableService.php
 lib/internal/Magento/Framework/DB/FieldDataConversionException.php
 lib/internal/Magento/Framework/DB/ExpressionConverter.php
 lib/internal/Magento/Framework/DB/Platform/Quote.php
+lib/internal/Magento/Framework/DB/DeadlockRecoveryExecutor.php
 lib/internal/Magento/Framework/DB/Query/BatchIterator.php
 lib/internal/Magento/Framework/DB/Query/Generator.php
 lib/internal/Magento/Framework/DB/Query/BatchRangeIterator.php
@@ -8768,6 +8770,7 @@ lib/internal/Magento/Framework/DB/Select/OrderRenderer.php
 lib/internal/Magento/Framework/DB/FieldDataConverter.php
 lib/internal/Magento/Framework/DB/MapperInterface.php
 lib/internal/Magento/Framework/DB/SubSelect.php
+lib/internal/Magento/Framework/DB/DeadlockRecoveryExecutorInterface.php
 lib/internal/Magento/Framework/DB/Sequence/SequenceInterface.php
 lib/internal/Magento/Framework/DB/Sql/ConcatExpression.php
 lib/internal/Magento/Framework/DB/Sql/Expression.php
@@ -10167,6 +10170,7 @@ lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/Symfony/MagentoD
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/Symfony/LowLevelFrontendTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/GenericTagAdapterTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/FilesystemTagAdapterTest.php
+lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/RedisTagAdapterTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/CoreTest.php
 lib/internal/Magento/Framework/Cache/ConfigInterface.php
 lib/internal/Magento/Framework/Cache/FrontendInterface.php
@@ -10789,6 +10793,7 @@ lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/SubmitTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/AbstractElementTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/MultilineTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/ButtonTest.php
+lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/SelectTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/Form/Element/CheckboxTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/Form/AbstractFormTest.php
 lib/internal/Magento/Framework/Data/Test/Unit/StructureTest.php
@@ -31969,6 +31974,7 @@ app/code/Magento/Sales/Test/Unit/Model/RefundInvoiceTest.php
 app/code/Magento/Sales/Test/Unit/Model/ValidatorResultMergerTest.php
 app/code/Magento/Sales/Test/Unit/Model/Grid/Child/CollectionUpdaterTest.php
 app/code/Magento/Sales/Test/Unit/Model/Grid/CollectionUpdaterTest.php
+app/code/Magento/Sales/Test/Unit/Model/OrderMutexTest.php
 app/code/Magento/Sales/Test/Unit/Model/RefundOrderTest.php
 app/code/Magento/Sales/Test/Unit/Model/GridAsyncInsertTest.php
 app/code/Magento/Sales/Test/Unit/Model/OrderIncrementIdCheckerTest.php
@@ -38863,6 +38869,7 @@ app/code/Magento/CustomerGraphQl/Model/Output/CustomerAttributeMetadata.php
 app/code/Magento/CustomerGraphQl/Model/Context/AddCustomerGroupToContext.php
 app/code/Magento/CustomerGraphQl/Model/Context/AddUserInfoToContext.php
 app/code/Magento/CustomerGraphQl/Model/Formatter/CustomerAddresses.php
+app/code/Magento/CustomerGraphQl/i18n/en_US.csv
 app/code/Magento/CustomerGraphQl/Controller/HttpRequestValidator/AuthorizationRequestValidator.php
 app/code/Magento/CustomerGraphQl/README.md
 app/code/Magento/CustomerGraphQl/registration.php
