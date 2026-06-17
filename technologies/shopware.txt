@@ -6563,6 +6563,7 @@ src/Core/Checkout/Cart/Rule/LineItemTotalPriceRule.php
 src/Core/Checkout/Cart/Rule/LineItemDimensionWidthRule.php
 src/Core/Checkout/Cart/Rule/LineItemTaxationRule.php
 src/Core/Checkout/Cart/Rule/CartRuleScope.php
+src/Core/Checkout/Cart/Rule/LineItemPerItemQuantityRule.php
 src/Core/Checkout/Cart/Rule/LineItemListPriceRatioRule.php
 src/Core/Checkout/Cart/Rule/CartPositionPriceRule.php
 src/Core/Checkout/Cart/Rule/LineItemIsNewRule.php
@@ -6822,11 +6823,13 @@ src/Administration/Resources/app/administration/test/_helper_/find-by-text.js
 src/Administration/Resources/app/administration/test/_helper_/flushPromises.js
 src/Administration/Resources/app/administration/test/_helper_/componentWrapper/index.js
 src/Administration/Resources/app/administration/test/_helper_/componentWrapper/syncComponents.js
+src/Administration/Resources/app/administration/test/_helper_/mock-timezone.ts
 src/Administration/Resources/app/administration/test/_helper_/jest-resolver.js
 src/Administration/Resources/app/administration/test/_helper_/uuid.js
 src/Administration/Resources/app/administration/test/_helper_/failedSpecFileReporter.js
 src/Administration/Resources/app/administration/test/_helper_/id.collection.js
 src/Administration/Resources/app/administration/test/_helper_/find-by-aria-label.js
+src/Administration/Resources/app/administration/test/_helper_/mock-timezone.spec.ts
 src/Administration/Resources/app/administration/test/_helper_/find-by-placeholder.js
 src/Administration/Resources/app/administration/test/eslint/error-reference.html.twig
 src/Administration/Resources/app/administration/test/_mocks_/lodash-es-debounce.js
@@ -8255,6 +8258,7 @@ src/Administration/Resources/app/administration/src/module/sw-order/component/sw
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-create-general-info/sw-order-create-general-info.spec.js
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-create-general-info/sw-order-create-general-info.scss
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-promotion-tag-field/sw-order-promotion-tag-field.scss
+src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-promotion-tag-field/sw-order-promotion-tag-field.spec.js
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-promotion-tag-field/index.js
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-promotion-tag-field/sw-order-promotion-tag-field.html.twig
 src/Administration/Resources/app/administration/src/module/sw-order/component/sw-order-document-settings-credit-note-modal/sw-order-document-settings-credit-note-modal.html.twig
@@ -15446,7 +15450,10 @@ tests/integration/Storefront/Framework/Twig/ThumbnailExtensionTest.php
 tests/integration/Storefront/Framework/Twig/TwigAppVariableTest.php
 tests/integration/Storefront/Framework/Twig/Extension/SlugifyExtensionTwigFilterTest.php
 tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/thumbnail-default.html.twig
+tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/product-box-thumbnail-sizes.html.twig
 tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/thumbnail-decorative.html.twig
+tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/component/product/card/box-standard.html.twig
+tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/component/product/card/box-image.html.twig
 tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/thumbnail-with-columns.html.twig
 tests/integration/Storefront/Framework/Twig/fixtures/Storefront/Resources/views/storefront/thumbnail-alt-false.html.twig
 tests/integration/Storefront/Framework/HealthCheck/ProductListingReadinessCheckTest.php
@@ -18147,6 +18154,7 @@ tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionLengthRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemReleaseDateRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemActualStockRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemCreationDateRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemPerItemQuantityRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemPropertyRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/CartHasDeliveryFreeItemRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemInCategoryRuleTest.php

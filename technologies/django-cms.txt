@@ -29,6 +29,12 @@ menus/__init__.py
 menus/models.py
 MANIFEST.in
 eslint.config.js
+tp/tp/wsgi.py
+tp/tp/urls.py
+tp/tp/settings.py
+tp/tp/asgi.py
+tp/tp/__init__.py
+tp/manage.py
 docs/tutorials/01-first-page.rst
 docs/tutorials/index.rst
 docs/tutorials/05-frontend.rst
@@ -49,6 +55,7 @@ docs/how_to/02-languages.rst
 docs/how_to/06-frontend_models.rst
 docs/how_to/20-cms-config.rst
 docs/how_to/11-apphooks.rst
+docs/how_to/24-add-to-existing-project.rst
 docs/how_to/05-caching.rst
 docs/how_to/07-sitemaps.rst
 docs/how_to/22-docker-installation.rst
@@ -1242,6 +1249,7 @@ cms/management/commands/subcommands/list.py
 cms/management/commands/subcommands/tree.py
 cms/management/commands/subcommands/base.py
 cms/management/commands/subcommands/__init__.py
+cms/management/commands/djangocms_install_rules.json
 cms/management/commands/cms.py
 cms/management/commands/__init__.py
 cms/management/djangocms.py
@@ -1386,6 +1394,7 @@ cms/tests/frontend/unit/helpers/mock-ajax.js
 cms/tests/frontend/unit/helpers/jasmine-jquery.js
 cms/tests/test_plugin_renderers.py
 cms/tests/test_log_entries.py
+cms/tests/test_startcmsproject.py
 cms/tests/test_multilingual.py
 cms/tests/test_wizards.py
 cms/tests/test_placeholder_admin.py

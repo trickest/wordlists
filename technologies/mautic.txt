@@ -1696,6 +1696,8 @@ app/bundles/LeadBundle/Tests/Command/SegmentFiltersFunctionalTest.php
 app/bundles/LeadBundle/Tests/Command/CleanupExportedFilesCommandFunctionalTest.php
 app/bundles/LeadBundle/Tests/Command/SegmentStatCommandTest.php
 app/bundles/LeadBundle/Tests/Command/SegmentFilterWithRelativeTimeFunctionalTest.php
+app/bundles/LeadBundle/Tests/Command/UpdateCompanyNameOnLeadsCommandFunctionalTest.php
+app/bundles/LeadBundle/Tests/Command/DeleteCompanyLeadsFunctionalTest.php
 app/bundles/LeadBundle/Tests/Command/ContactScheduledExportCommandTest.php
 app/bundles/LeadBundle/Tests/Command/SegmentCountCacheCommandFunctionalTest.php
 app/bundles/LeadBundle/Tests/Command/UpdateLeadListsCommandCircularDependencyTest.php
@@ -1804,6 +1806,7 @@ app/bundles/LeadBundle/Tests/Segment/SegmentFilterFunctionalTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentFilterTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentServiceFunctionalTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentFilterFactoryFunctionalTest.php
+app/bundles/LeadBundle/Tests/TestEntityCreationTrait.php
 app/bundles/LeadBundle/Tests/Helper/CustomFieldValueHelperTest.php
 app/bundles/LeadBundle/Tests/Helper/FormFieldHelperTest.php
 app/bundles/LeadBundle/Tests/Helper/TokenHelperTest.php
@@ -1849,6 +1852,7 @@ app/bundles/LeadBundle/Field/Exception/ColumnAlreadyCreatedException.php
 app/bundles/LeadBundle/Field/Exception/LeadFieldWasNotFoundException.php
 app/bundles/LeadBundle/Field/CustomFieldColumn.php
 app/bundles/LeadBundle/Field/LeadFieldDeleter.php
+app/bundles/LeadBundle/Field/DTO/CustomFieldFindReplaceCriteria.php
 app/bundles/LeadBundle/Field/DTO/CustomFieldObject.php
 app/bundles/LeadBundle/Field/BackgroundService.php
 app/bundles/LeadBundle/Field/Settings/BackgroundSettings.php
@@ -1857,6 +1861,7 @@ app/bundles/LeadBundle/Field/Command/UpdateCustomFieldCommand.php
 app/bundles/LeadBundle/Field/Command/DeleteCustomFieldCommand.php
 app/bundles/LeadBundle/Field/Command/ModifyCustomFieldCommand.php
 app/bundles/LeadBundle/Field/Command/AnalyseCustomFieldCommand.php
+app/bundles/LeadBundle/Field/CustomFieldFindReplace.php
 app/bundles/LeadBundle/Field/LeadFieldSaver.php
 app/bundles/LeadBundle/Field/FieldsWithUniqueIdentifier.php
 app/bundles/LeadBundle/Field/Helper/IndexHelper.php
@@ -2017,8 +2022,10 @@ app/bundles/LeadBundle/Assets/WebhookPayload/lead_post_delete.json
 app/bundles/LeadBundle/Assets/WebhookPayload/lead_post_save_new.json
 app/bundles/LeadBundle/Assets/js/lead.js
 app/bundles/LeadBundle/DependencyInjection/MauticLeadExtension.php
+app/bundles/LeadBundle/Command/DeleteCompanyLeads.php
 app/bundles/LeadBundle/Command/ContactScheduledExportCommand.php
 app/bundles/LeadBundle/Command/DeduplicateIdsCommand.php
+app/bundles/LeadBundle/Command/UpdateCompanyNameOnLeadsCommand.php
 app/bundles/LeadBundle/Command/ImportCommand.php
 app/bundles/LeadBundle/Command/DeduplicateCommand.php
 app/bundles/LeadBundle/Command/SegmentStatCommand.php
@@ -4093,6 +4100,7 @@ app/bundles/CoreBundle/Form/Type/ContentPreviewSettingsType.php
 app/bundles/CoreBundle/Form/Type/MultiselectType.php
 app/bundles/CoreBundle/Form/Type/BooleanType.php
 app/bundles/CoreBundle/Form/Type/PropertiesTrait.php
+app/bundles/CoreBundle/Form/Type/FindReplaceType.php
 app/bundles/CoreBundle/Form/Type/TimezoneType.php
 app/bundles/CoreBundle/Form/Type/IpLookupDownloadDataStoreButtonType.php
 app/bundles/CoreBundle/Form/Type/ConfigType.php
@@ -4483,10 +4491,12 @@ app/bundles/UserBundle/Tests/Functional/Controller/UserControllerFunctionalTest.
 app/bundles/UserBundle/Tests/Functional/Controller/PublicControllerTest.php
 app/bundles/UserBundle/Tests/Functional/SearchTest.php
 app/bundles/UserBundle/Tests/Entity/UserTest.php
+app/bundles/UserBundle/Tests/Entity/UserInviteTest.php
 app/bundles/UserBundle/Tests/Traits/CreateEntityTrait.php
 app/bundles/UserBundle/Tests/Model/UserModelTest.php
 app/bundles/UserBundle/Tests/Model/PasswordStrengthEstimatorModelTest.php
 app/bundles/UserBundle/Tests/Model/UserToken/UserTokenServiceTest.php
+app/bundles/UserBundle/Tests/Form/Type/UserInviteRegistrationTypeTest.php
 app/bundles/UserBundle/Tests/Security/Authenticator/PluginAuthenticatorTest.php
 app/bundles/UserBundle/Tests/Security/Authenticator/SsoAuthenticatorTest.php
 app/bundles/UserBundle/Tests/Security/Authenticator/TimingSafeFormLoginAuthenticatorTest.php
@@ -4522,10 +4532,14 @@ app/bundles/UserBundle/Entity/IdEntry.php
 app/bundles/UserBundle/Entity/UserTokenRepository.php
 app/bundles/UserBundle/Entity/RoleRepository.php
 app/bundles/UserBundle/Entity/UserToken.php
+app/bundles/UserBundle/Entity/UserInvite.php
+app/bundles/UserBundle/Entity/UserInviteRepository.php
+app/bundles/UserBundle/Entity/UserInviteRepositoryInterface.php
 app/bundles/UserBundle/Entity/Role.php
 app/bundles/UserBundle/Entity/User.php
 app/bundles/UserBundle/Entity/UserRepository.php
 app/bundles/UserBundle/Exception/WeakPasswordException.php
+app/bundles/UserBundle/Exception/PasswordResetTokenCreationFailedException.php
 app/bundles/UserBundle/ApiPlatform/UserProcessor.php
 app/bundles/UserBundle/Assets/js/user.js
 app/bundles/UserBundle/UserEvents.php
@@ -4545,7 +4559,9 @@ app/bundles/UserBundle/Form/Validator/Constraints/NotWeakValidator.php
 app/bundles/UserBundle/Form/Type/PermissionsType.php
 app/bundles/UserBundle/Form/Type/RoleType.php
 app/bundles/UserBundle/Form/Type/UserPreferencesType.php
+app/bundles/UserBundle/Form/Type/UserInviteRegistrationType.php
 app/bundles/UserBundle/Form/Type/UserListType.php
+app/bundles/UserBundle/Form/Type/UserInviteType.php
 app/bundles/UserBundle/Form/Type/UserType.php
 app/bundles/UserBundle/Form/Type/ContactType.php
 app/bundles/UserBundle/Form/Type/RoleListType.php
@@ -4555,6 +4571,7 @@ app/bundles/UserBundle/Form/Type/PasswordResetConfirmType.php
 app/bundles/UserBundle/Form/Type/PermissionListType.php
 app/bundles/UserBundle/Resources/views/SubscribedEvents/Search/global_user.html.twig
 app/bundles/UserBundle/Resources/views/SubscribedEvents/Search/global_role.html.twig
+app/bundles/UserBundle/Resources/views/User/invite.html.twig
 app/bundles/UserBundle/Resources/views/User/form.html.twig
 app/bundles/UserBundle/Resources/views/User/list.html.twig
 app/bundles/UserBundle/Resources/views/User/recent_activity.html.twig
@@ -4564,6 +4581,7 @@ app/bundles/UserBundle/Resources/views/Role/list.html.twig
 app/bundles/UserBundle/Resources/views/Security/login.html.twig
 app/bundles/UserBundle/Resources/views/Security/resetconfirm.html.twig
 app/bundles/UserBundle/Resources/views/Security/saml_login_retry.html.twig
+app/bundles/UserBundle/Resources/views/Security/register.html.twig
 app/bundles/UserBundle/Resources/views/Security/reset.html.twig
 app/bundles/UserBundle/Resources/views/Security/base.html.twig
 app/bundles/UserBundle/Resources/views/FormTheme/Config/_config_userconfig_widget.html.twig
@@ -4573,6 +4591,7 @@ app/bundles/UserBundle/Resources/views/Profile/images/_freire_preview.svg
 app/bundles/UserBundle/Resources/views/Profile/images/_solarized_light_preview.svg
 app/bundles/UserBundle/Resources/views/Profile/images/_solarized_dark_preview.svg
 app/bundles/UserBundle/Resources/views/Profile/index.html.twig
+app/bundles/UserBundle/Resources/views/Email/invite.html.twig
 app/bundles/UserBundle/Resources/views/Helper/theme.html.twig
 app/bundles/UserBundle/Security/Permissions/UserPermissions.php
 app/bundles/UserBundle/Security/EntryPoint/MainEntryPoint.php
@@ -4835,6 +4854,7 @@ app/migrations/Version20250909202247.php
 app/migrations/Version20230606111852.php
 app/migrations/Version20250430104345.php
 app/migrations/Version20230321133733.php
+app/migrations/Version20250127092203.php
 app/migrations/Version20250828070131.php
 app/migrations/Version20211026152443.php
 app/migrations/Version20231205094436.php
@@ -4932,6 +4952,7 @@ app/migrations/Version20240704164714.php
 app/migrations/Version20221128145933.php
 app/migrations/Version20240229101323.php
 app/migrations/.gitkeep
+app/migrations/Version20260521114026.php
 app/migrations/Version20231110103625.php
 app/migrations/Version20240607092418.php
 app/migrations/Version20230519154448.php

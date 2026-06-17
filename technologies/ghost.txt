@@ -1,5 +1,6 @@
 .nxignore
 sonar-project.properties
+.node-version
 .devcontainer/start-dev-stack.sh
 .devcontainer/compose.devcontainer.yaml
 .devcontainer/devcontainer.json
@@ -1384,7 +1385,6 @@ apps/activitypub/src/utils/render-timestamp.tsx
 apps/activitypub/src/utils/get-handle.ts
 apps/activitypub/src/utils/get-reading-time.ts
 apps/activitypub/src/utils/handle-profile-click.ts
-apps/activitypub/src/utils/truncate.ts
 apps/activitypub/src/utils/content-handlers.ts
 apps/activitypub/src/utils/cards-assets.ts
 apps/activitypub/src/utils/image.ts
@@ -2019,6 +2019,7 @@ apps/posts/src/views/members/member-query-params.ts
 apps/posts/src/views/members/member-views.test.ts
 apps/posts/src/views/members/hooks/use-member-views.ts
 apps/posts/src/views/members/hooks/resource-search-filter.ts
+apps/posts/src/views/members/hooks/use-multiple-active-subscriptions-count.ts
 apps/posts/src/views/members/hooks/use-members-filter-state.test.tsx
 apps/posts/src/views/members/hooks/use-members-filter-state.ts
 apps/posts/src/views/members/hooks/use-multiple-active-subscriptions-banner.ts
@@ -3993,6 +3994,7 @@ ghost/core/test/integration/importer/v1.test.js
 ghost/core/test/integration/url-service.test.js
 ghost/core/test/integration/adapters/redis/adapter-cache-redis.test.js
 ghost/core/test/integration/adapters/redirects/s3-redirects-store.test.ts
+ghost/core/test/integration/url-service-parity.test.js
 ghost/core/test/utils/assertions.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
@@ -4509,6 +4511,7 @@ ghost/core/test/unit/server/services/settings/settings-service.test.js
 ghost/core/test/unit/server/services/settings/settings-utils.test.js
 ghost/core/test/unit/server/services/settings/private-site-access-code.test.js
 ghost/core/test/unit/server/services/settings/__snapshots__/settings-bread-service.test.js.snap
+ghost/core/test/unit/server/services/url/permalink-matcher.test.js
 ghost/core/test/unit/server/services/url/url-generator.test.js
 ghost/core/test/unit/server/services/url/lazy-find-resource.test.js
 ghost/core/test/unit/server/services/url/local-file-cache.test.js
@@ -4518,6 +4521,7 @@ ghost/core/test/unit/server/services/url/queue.test.js
 ghost/core/test/unit/server/services/url/url-service-facade.test.js
 ghost/core/test/unit/server/services/url/urls.test.js
 ghost/core/test/unit/server/services/url/url-service.test.js
+ghost/core/test/unit/server/services/url/router-filter.test.js
 ghost/core/test/unit/server/services/mentions/mention.test.js
 ghost/core/test/unit/server/services/mentions/in-memory-mention-repository.test.js
 ghost/core/test/unit/server/services/mentions/mention-sending-service.test.js
@@ -4717,6 +4721,9 @@ ghost/core/test/unit/server/services/adapter-manager/options-resolver.test.js
 ghost/core/test/unit/server/services/members-events/last-seen-at-updater.test.js
 ghost/core/test/unit/server/services/members-events/last-seen-at-cache.test.js
 ghost/core/test/unit/server/services/members-events/event-storage.test.js
+ghost/core/test/unit/server/services/remote-flags/remote-flags-service.test.js
+ghost/core/test/unit/server/services/remote-flags/resolve.test.js
+ghost/core/test/unit/server/services/remote-flags/index.test.js
 ghost/core/test/unit/server/services/custom-redirects/in-memory-store.test.ts
 ghost/core/test/unit/server/services/custom-redirects/redirects-service.test.ts
 ghost/core/test/unit/server/services/custom-redirects/validation.test.js
@@ -5010,6 +5017,7 @@ ghost/core/test/unit/frontend/helpers/content-api-url.test.js
 ghost/core/test/unit/bin/create-migration.test.js
 ghost/core/test/unit/shared/sentry.test.js
 ghost/core/test/unit/shared/one-at-a-time.test.js
+ghost/core/test/unit/shared/labs-flag-overrides.test.js
 ghost/core/test/unit/shared/custom-theme-settings-cache/service.test.js
 ghost/core/test/unit/shared/custom-theme-settings-cache/cache.test.js
 ghost/core/test/unit/shared/config/adapter-config.test.js
@@ -5074,6 +5082,7 @@ ghost/core/core/server/models/single-use-token.js
 ghost/core/core/server/models/label.js
 ghost/core/core/server/models/offer.js
 ghost/core/core/server/models/integration.js
+ghost/core/core/server/models/gift-link.js
 ghost/core/core/server/models/member-login-event.js
 ghost/core/core/server/models/author.js
 ghost/core/core/server/models/post.js
@@ -5381,9 +5390,13 @@ ghost/core/core/server/services/settings/settings-service.js
 ghost/core/core/server/services/settings/emails/verify-email.js
 ghost/core/core/server/services/settings/index.js
 ghost/core/core/server/services/url/config.js
+ghost/core/core/server/services/url/lazy-url-service.ts
 ghost/core/core/server/services/url/urls.js
 ghost/core/core/server/services/url/url-service-facade.ts
+ghost/core/core/server/services/url/router-filter.ts
 ghost/core/core/server/services/url/resource.js
+ghost/core/core/server/services/url/permalink-matcher.ts
+ghost/core/core/server/services/url/lazy-find-resource.ts
 ghost/core/core/server/services/url/local-file-cache.js
 ghost/core/core/server/services/url/resources.js
 ghost/core/core/server/services/url/url-service.js
@@ -5748,6 +5761,9 @@ ghost/core/core/server/services/members-events/index.js
 ghost/core/core/server/services/members-events/event-storage.js
 ghost/core/core/server/services/invites/index.js
 ghost/core/core/server/services/invites/invites.js
+ghost/core/core/server/services/remote-flags/index.ts
+ghost/core/core/server/services/remote-flags/remote-flags-service.ts
+ghost/core/core/server/services/remote-flags/resolve.ts
 ghost/core/core/server/services/custom-redirects/redirect-config-parser.ts
 ghost/core/core/server/services/custom-redirects/utils.ts
 ghost/core/core/server/services/custom-redirects/validation.js
@@ -6249,9 +6265,12 @@ ghost/core/core/server/data/migrations/versions/5.19/2022-10-10-06-58-add-subscr
 ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-52-backfill-new-product-columns.js
 ghost/core/core/server/data/migrations/versions/5.19/2022-09-02-20-25-add-columns-to-products-table.js
 ghost/core/core/server/data/migrations/versions/5.90/2024-08-20-09-40-24-update-default-donations-suggested-amount.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-05-29-08-35-56-add-gift-links-permissions.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-03-36-21-backfill-welcome-email-sender-fields-to-email-design-settings.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-15-16-49-31-add-automation-action-revision-id-to-automated-email-recipients.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-05-29-08-35-51-add-gift-links-table.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-02-38-59-create-automation-tables.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-10-00-00-add-gift-links-permission-to-admin-integration.js
 ghost/core/core/server/data/migrations/versions/5.91/2024-08-28-05-28-22-add-donation-message-column-to-donation-payment-events.js
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.94/2024-09-03-20-09-40-null-analytics-jobs-timings.js
@@ -6663,6 +6682,7 @@ ghost/core/core/frontend/helpers/date.js
 ghost/core/core/frontend/helpers/comments.js
 ghost/core/core/frontend/helpers/concat.js
 ghost/core/core/frontend/helpers/match.js
+ghost/core/core/shared/labs-flag-overrides.ts
 ghost/core/core/shared/sentry.js
 ghost/core/core/shared/max-limit-cap.js
 ghost/core/core/shared/custom-theme-settings-cache/custom-theme-settings-service.js
@@ -6716,6 +6736,7 @@ ghost/core/core/shared/events/url-resource-updated-event.js
 ghost/core/core/boot.js
 ghost/core/types/ghost-storage-base.d.ts
 .lintstagedrc.cjs
+.nvmrc
 compose.dev.sqlite.yaml
 README.md
 compose.dev.yaml
