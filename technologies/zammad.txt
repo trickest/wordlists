@@ -2959,6 +2959,7 @@ app/graphql/gql/types/ticket/priority_type.rb
 app/graphql/gql/types/ticket/article_type.rb
 app/graphql/gql/types/ticket/time_accounting/type_type.rb
 app/graphql/gql/types/ticket/state_type.rb
+app/graphql/gql/types/ticket/external_references/issue_tracker_item/issue_type_type.rb
 app/graphql/gql/types/ticket/external_references/issue_tracker_item/label_type.rb
 app/graphql/gql/types/ticket/external_references/idoit_object_type.rb
 app/graphql/gql/types/ticket/external_references/issue_tracker_item_type.rb
@@ -6052,6 +6053,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExt
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/__tests__/TicketSidebarIdoit.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerLinkFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/IssueTrackerBadgeList.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/issueTypeColors.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/useIssueTracker.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList.vue
@@ -6655,7 +6657,6 @@ app/frontend/apps/desktop/router/index.ts
 app/frontend/apps/desktop/router/guards/before/activeTaskbarTab.ts
 app/frontend/apps/desktop/router/guards/before/__tests__/systemSetupInfo.spec.ts
 app/frontend/apps/desktop/router/guards/before/systemSetupInfo.ts
-app/frontend/apps/desktop/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/apps/desktop/components/layout/useSidebarDisplay.ts
 app/frontend/apps/desktop/components/layout/LayoutPage.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader.vue
@@ -7583,7 +7584,6 @@ app/frontend/apps/mobile/router/index.ts
 app/frontend/apps/mobile/router/guards/before/viewTransition.ts
 app/frontend/apps/mobile/router/guards/before/__test__/viewTransition.spec.ts
 app/frontend/apps/mobile/sw/sw.ts
-app/frontend/apps/mobile/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/apps/mobile/components/layout/LayoutBottomNavigation.vue
 app/frontend/apps/mobile/components/layout/useCustomLayout.ts
 app/frontend/apps/mobile/components/layout/LayoutHeader.vue
@@ -8296,7 +8296,6 @@ app/frontend/shared/initializer/initializeUserAvatarClasses.ts
 app/frontend/shared/initializer/initializeLinkClasses.ts
 app/frontend/shared/initializer/initializeNotificationClasses.ts
 app/frontend/shared/initializer/initializeBadgeClasses.ts
-app/frontend/shared/initializer/initializeDirectives.ts
 app/frontend/shared/initializer/initializeFakeTimer.ts
 app/frontend/shared/initializer/initializeOrganizationAvatarClasses.ts
 app/frontend/shared/initializer/initializeAlertClasses.ts
@@ -8526,6 +8525,9 @@ app/frontend/shared/sw/register.ts
 app/frontend/shared/sw/types.ts
 app/frontend/shared/plugins/directives/directives.d.ts
 app/frontend/shared/plugins/directives/tooltip/index.ts
+app/frontend/shared/plugins/directives/tooltip/types.ts
+app/frontend/shared/plugins/directives/types.ts
+app/frontend/shared/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/shared/plugins/applicationConfigPlugin.ts
 app/frontend/shared/components/CommonTranslateRenderer/CommonTranslateRenderer.vue
 app/frontend/shared/components/CommonTranslateRenderer/types.ts

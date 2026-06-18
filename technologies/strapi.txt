@@ -509,6 +509,7 @@ CLAUDE.md
 jsconfig.json
 .husky/pre-commit
 .husky/commit-msg
+.coderabbit.yaml
 CONTRIBUTING.md
 .cursor/worktrees.json
 .npmrc
@@ -1152,6 +1153,8 @@ packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/tests
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetPreview.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/FolderTree.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/tests/FolderTree.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolderDialog.test.tsx
 packages/core/upload/admin/src/future/utils/getAssetIcon.ts
 packages/core/upload/admin/src/future/utils/translations.ts
@@ -1481,9 +1484,11 @@ packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/upload/uploadImage.test.ts
+packages/core/upload/server/src/services/__tests__/upload/replace.test.ts
 packages/core/upload/server/src/services/__tests__/upload/findAndCountPage.test.ts
 packages/core/upload/server/src/services/__tests__/upload/animated-test.webp
 packages/core/upload/server/src/services/__tests__/image-manipulation.test.ts
+packages/core/upload/server/src/services/__tests__/provider.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
 packages/core/upload/server/src/services/__tests__/ai-metadata.test.ts
 packages/core/upload/server/src/services/__tests__/metrics.test.ts
@@ -3345,6 +3350,8 @@ packages/core/data-transfer/src/strapi/providers/local-source/__tests__/assets.t
 packages/core/data-transfer/src/strapi/providers/local-source/__tests__/configuration.test.ts
 packages/core/data-transfer/src/strapi/providers/local-source/__tests__/entities.test.ts
 packages/core/data-transfer/src/strapi/providers/local-source/__tests__/links.test.ts
+packages/core/data-transfer/src/strapi/utils/project-settings-logos.ts
+packages/core/data-transfer/src/strapi/utils/__tests__/project-settings-logos.test.ts
 packages/core/data-transfer/src/file/index.ts
 packages/core/data-transfer/src/file/providers/destination/index.ts
 packages/core/data-transfer/src/file/providers/destination/utils.ts
@@ -5312,6 +5319,7 @@ tests/api/core/strapi/components/repeatable-order.test.api.js
 tests/api/core/strapi/components/repeatable-required.test.api.js
 tests/api/core/strapi/components/cleanup-after-delete.test.api.ts
 tests/api/core/strapi/components/repeatable-required-min-max.test.api.js
+tests/api/core/data-transfer/project-settings-logos.test.api.ts
 tests/api/core/database/v4-self-ref-compat.test.api.js
 tests/api/core/database/knex-utils.test.api.js
 tests/api/core/database/transactions.test.api.js

@@ -19,6 +19,7 @@ build/csharp-docs/toc.yml
 build/nightly-E2E-build-template.yml
 build/nightly-E2E-run-application-template.yml
 build/nightly-E2E-run-tests-template.yml
+build/templates/npm-publish.yml
 build/templates/dependency-track.yml
 build/templates/backoffice-install.yml
 build/templates/e2e-install.yml
@@ -1932,6 +1933,7 @@ src/Umbraco.PublishedCache.HybridCache/Persistence/DatabaseCacheRepository.cs
 src/Umbraco.PublishedCache.HybridCache/Persistence/ContentSourceDto.cs
 src/Umbraco.PublishedCache.HybridCache/PropertyData.cs
 src/Umbraco.PublishedCache.HybridCache/IElementSeedKeyProvider.cs
+src/Umbraco.PublishedCache.HybridCache/NotificationHandlers/DomainCacheSeedingNotificationHandler.cs
 src/Umbraco.PublishedCache.HybridCache/NotificationHandlers/SeedingNotificationHandler.cs
 src/Umbraco.PublishedCache.HybridCache/NotificationHandlers/CacheRefreshingNotificationHandler.cs
 src/Umbraco.PublishedCache.HybridCache/NotificationHandlers/DeferredCacheRebuildNotificationHandler.cs
@@ -1985,6 +1987,7 @@ src/Umbraco.PublishedCache.HybridCache/Services/ElementCacheService.cs
 src/Umbraco.PublishedCache.HybridCache/IDocumentSeedKeyProvider.cs
 src/Umbraco.PublishedCache.HybridCache/DatabaseCacheRebuilder.cs
 src/Umbraco.PublishedCache.HybridCache/Extensions/HybridCacheExtensions.cs
+src/Umbraco.PublishedCache.HybridCache/Extensions/RuntimeStateExtensions.cs
 src/Umbraco.PublishedCache.HybridCache/IMediaSeedKeyProvider.cs
 src/Umbraco.Cms.Persistence.SqlServer/NPocoSqlServerDatabaseExtensions.cs
 src/Umbraco.Cms.Persistence.SqlServer/UmbracoBuilderExtensions.cs
@@ -4411,6 +4414,7 @@ src/Umbraco.Core/Cache/NotificationHandlers/Implement/PublicAccessEntrySavedDist
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/DomainSavedDistributedCacheNotificationHandler.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/UserDeletedDistributedCacheNotificationHandler.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/UserGroupDeletedDistributedCacheNotificationHandler.cs
+src/Umbraco.Core/Cache/NotificationHandlers/Implement/ElementContainerDeletedDistributedCacheNotificationHandler.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/MemberTypeChangedDistributedCacheNotificationHandler.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/DomainDeletedDistributedCacheNotificationHandler.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/MediaTreeChangeDistributedCacheNotificationHandler.cs
@@ -4446,6 +4450,7 @@ src/Umbraco.Core/Cache/Refreshers/Implement/MemberCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/Implement/ContentCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/Implement/ValueEditorCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/Implement/RelationTypeCacheRefresher.cs
+src/Umbraco.Core/Cache/Refreshers/Implement/ElementContainerCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/Implement/ExternalMemberCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/Implement/UserGroupCacheRefresher.cs
 src/Umbraco.Core/Cache/Refreshers/CacheRefresherCollection.cs
@@ -5238,6 +5243,7 @@ src/Umbraco.Core/Notifications/UserGroupWithUsersSavedNotification.cs
 src/Umbraco.Core/Notifications/CancelableObjectNotification.cs
 src/Umbraco.Core/Notifications/ExternalMemberRolesNotification.cs
 src/Umbraco.Core/Notifications/DataTypeMovingNotification.cs
+src/Umbraco.Core/Notifications/ElementContainerCacheRefresherNotification.cs
 src/Umbraco.Core/Notifications/ElementDeletingVersionsNotification.cs
 src/Umbraco.Core/Notifications/DomainSavingNotification.cs
 src/Umbraco.Core/HashCodeHelper.cs
@@ -8304,7 +8310,9 @@ src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/blockquote/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/blockquote/blockquote.tiptap-api.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/blockquote/blockquote.tiptap-toolbar-api.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/media-picker/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/media-picker/media-picker.tiptap-toolbar.utils.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/media-picker/media-picker.tiptap-toolbar-api.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/media-picker/media-picker.tiptap-toolbar.utils.test.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/heading/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/heading/heading2.tiptap-toolbar-api.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/heading/heading6.tiptap-toolbar-api.ts
@@ -8528,6 +8536,7 @@ src/Umbraco.Web.UI.Client/src/packages/tiptap/components/cascading-menu-popover/
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-button-disabled.element.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar.element.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-color-picker-button.element.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-button.test.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-menu.element.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-button.element.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/toolbar/tiptap-toolbar-button-action.element.ts
@@ -11153,6 +11162,9 @@ src/Umbraco.Web.UI.Client/src/packages/core/repository/detail/read/read-detail-d
 src/Umbraco.Web.UI.Client/src/packages/core/repository/detail/read/read-detail-repository.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/detail/detail-repository.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/detail/detail-repository-base.ts
+src/Umbraco.Web.UI.Client/src/packages/core/repository/pagination/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/repository/pagination/fetch-all-pages.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/repository/pagination/fetch-all-pages.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/item/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/item/item-server-data-source-base.ts
@@ -11995,9 +12007,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/pagination-m
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/pagination-manager/target-pagination.manager.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/index.ts
-src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/fetch-all-pages.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/is-offset-request.guard.ts
-src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/fetch-all-pages.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/offset/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/object/deep-merge.function.ts
@@ -15528,6 +15538,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DocumentBreadth
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/CacheRefreshingNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/MediaBreadthFirstKeyProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/Extensions/HybridCacheExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/Extensions/RuntimeStateExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DeferredCacheRebuildNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlServerSyntaxProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlAzureDatabaseProviderMetadataTests.cs
@@ -16401,6 +16412,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MemberHybridC
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheDocumentTypeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/PropertyCacheLevelTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheScopeTests.cs
+tests/Umbraco.Tests.Integration/CLAUDE.md
 tests/Umbraco.Tests.Integration/GlobalSetupTeardown.cs
 tests/Umbraco.Tests.Integration/TestData/Packages/Document_Type_Picker_1.1.package.xml
 tests/Umbraco.Tests.Integration/TestData/Packages/Hello_1.0.0.package.xml
@@ -16645,6 +16657,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/Packaging/CreatedPackagesRepository
 tests/Umbraco.Tests.Integration/Umbraco.Core/Telemetry/TelemetryServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/RuntimeCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/PublishedContentTypeCacheTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/ElementContainerDeletedDistributedCacheNotificationHandlerTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/ContentCacheRefresherStaleCacheInstructionTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/DistributedCacheRefresherTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Events/EventAggregatorTests.cs
@@ -16691,6 +16704,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/Services/UserServiceCrudTests.Delet
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MetricsConsentServiceTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/UserGroupServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceTests.Delete.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Services/UserGroupLanguageCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MediaNavigationServiceTests.Move.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceTests.Rebuild.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceTests.MoveToRecycleBin.cs

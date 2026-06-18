@@ -4072,6 +4072,7 @@ src/Sylius/Bundle/PaymentBundle/Form/Type/PaymentMethodTranslationType.php
 src/Sylius/Bundle/PaymentBundle/Form/Type/PaymentType.php
 src/Sylius/Bundle/PaymentBundle/Form/Type/PaymentGatewayChoiceType.php
 src/Sylius/Bundle/PaymentBundle/Form/Type/PaymentMethodType.php
+src/Sylius/Bundle/PaymentBundle/Doctrine/DBAL/Type/ObjectType.php
 src/Sylius/Bundle/PaymentBundle/Doctrine/ORM/PaymentRequestRepository.php
 src/Sylius/Bundle/PaymentBundle/Doctrine/ORM/PaymentMethodRepository.php
 src/Sylius/Bundle/PaymentBundle/Resources/config/services.php
@@ -9026,6 +9027,7 @@ src/Sylius/Bundle/CoreBundle/Form/DataTransformer/ProductVariantsToCodesTransfor
 src/Sylius/Bundle/CoreBundle/Doctrine/Migrations/AbstractPostgreSQLMigration.php
 src/Sylius/Bundle/CoreBundle/Doctrine/Migrations/MigrationSkipInterface.php
 src/Sylius/Bundle/CoreBundle/Doctrine/Migrations/AbstractMigration.php
+src/Sylius/Bundle/CoreBundle/Doctrine/Platform/PlatformHelper.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Cast.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Month.php
 src/Sylius/Bundle/CoreBundle/Doctrine/DQL/Day.php
@@ -10986,8 +10988,10 @@ tests/Functional/app/AppKernel.php
 tests/Functional/Doctrine/Mock/ConnectionMock.php
 tests/Functional/Doctrine/Mock/DatabasePlatformMock.php
 tests/Functional/Doctrine/Mock/DriverResultMock.php
+tests/Functional/Doctrine/Mock/Dbal4DriverConnectionMock.php
 tests/Functional/Doctrine/Mock/StatementMock.php
 tests/Functional/Doctrine/Mock/DriverConnectionMock.php
+tests/Functional/Doctrine/Mock/Dbal4StatementMock.php
 tests/Functional/Doctrine/Mock/DriverMock.php
 tests/Functional/Doctrine/Dump/Model.php
 tests/Functional/Doctrine/Dump/CompositeKeysModel.php

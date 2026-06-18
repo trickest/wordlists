@@ -589,11 +589,13 @@ extensions/realtime/src/Push/Jobs/SendTriggerJob.php
 extensions/realtime/src/Push/Jobs/Job.php
 extensions/realtime/src/Push/Jobs/SendNotificationsJob.php
 extensions/realtime/src/Push/Jobs/SendFlaggedJob.php
+extensions/realtime/src/Push/Jobs/BroadcastAssetsRevisionJob.php
 extensions/realtime/src/Push/Jobs/SendDialogMessageJob.php
 extensions/realtime/src/Push/Payload/Generator.php
 extensions/realtime/src/Push/Listener/BroadcastNotifications.php
 extensions/realtime/src/Extend/Realtime.php
 extensions/realtime/src/Content/ForumContent.php
+extensions/realtime/src/Listener/BroadcastAssetsRevision.php
 extensions/realtime/src/Listener/RestartServerOnSettingChange.php
 extensions/realtime/extend.php
 extensions/realtime/js/package.json
@@ -608,10 +610,12 @@ extensions/realtime/js/src/forum/utils/isIOS.ts
 extensions/realtime/js/src/forum/extenders/Realtime.ts
 extensions/realtime/js/src/forum/states/NotificationToastState.ts
 extensions/realtime/js/src/forum/states/TypingState.ts
+extensions/realtime/js/src/forum/states/IndexTagTypingState.ts
 extensions/realtime/js/src/forum/states/IndexTypingState.ts
 extensions/realtime/js/src/forum/extend/Application.ts
 extensions/realtime/js/src/forum/extend/DiscussionList.ts
 extensions/realtime/js/src/forum/extend/DialogList.ts
+extensions/realtime/js/src/forum/extend/Tags/IndexTyping.tsx
 extensions/realtime/js/src/forum/extend/DiscussionList/IndexTyping.tsx
 extensions/realtime/js/src/forum/extend/DiscussionList/WebsocketUpdates.ts
 extensions/realtime/js/src/forum/extend/DiscussionList/NewActivity.ts
@@ -622,6 +626,7 @@ extensions/realtime/js/src/forum/extend/Discussion.ts
 extensions/realtime/js/src/forum/extend/Discussion/NewActivity.ts
 extensions/realtime/js/src/forum/extend/Discussion/TypingIndicator.tsx
 extensions/realtime/js/src/forum/extend/Post.ts
+extensions/realtime/js/src/forum/extend/Tags.ts
 extensions/realtime/js/src/forum/components/TypingIndicator.tsx
 extensions/realtime/js/src/forum/components/NotificationToast.tsx
 extensions/realtime/js/yarn.lock
@@ -636,8 +641,11 @@ extensions/realtime/js/dist-typings/forum/extenders/Realtime.d.ts
 extensions/realtime/js/dist-typings/forum/states/IndexTypingState.d.ts
 extensions/realtime/js/dist-typings/forum/states/NotificationToastState.d.ts
 extensions/realtime/js/dist-typings/forum/states/TypingState.d.ts
+extensions/realtime/js/dist-typings/forum/states/IndexTagTypingState.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList.d.ts
+extensions/realtime/js/dist-typings/forum/extend/Tags.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Discussion.d.ts
+extensions/realtime/js/dist-typings/forum/extend/Tags/IndexTyping.d.ts
 extensions/realtime/js/dist-typings/forum/extend/Post.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DialogList.d.ts
 extensions/realtime/js/dist-typings/forum/extend/DiscussionList/IndexTyping.d.ts
@@ -660,9 +668,11 @@ extensions/realtime/js/dist/forum.js.map
 extensions/realtime/js/dist/admin.js.map
 extensions/realtime/js/dist/forum.js.LICENSE.txt
 extensions/realtime/tests/integration/api/notifications/ShowNotificationTest.php
+extensions/realtime/tests/integration/api/IndexTypingTagsAttributeTest.php
 extensions/realtime/tests/integration/api/IndexTypingTagAuthTest.php
 extensions/realtime/tests/integration/SendNotificationsJobTest.php
 extensions/realtime/tests/integration/payload/GeneratorTest.php
+extensions/realtime/tests/integration/IndexTypingPresenceRoutingTest.php
 extensions/realtime/tests/integration/setup.php
 extensions/realtime/tests/integration/RestartOnSettingChangeTest.php
 extensions/realtime/tests/phpunit.unit.xml
@@ -1133,7 +1143,7 @@ extensions/tags/js/src/forum/components/DiscussionTaggedPost.js
 extensions/tags/js/src/forum/components/TagHero.tsx
 extensions/tags/js/src/forum/components/TagsPage.tsx
 extensions/tags/js/src/forum/components/ToggleButton.js
-extensions/tags/js/src/forum/components/TagLinkButton.js
+extensions/tags/js/src/forum/components/TagLinkButton.tsx
 extensions/tags/js/src/forum/components/TagDiscussionModal.tsx
 extensions/tags/js/webpack.config.js
 extensions/tags/js/dist-typings/admin/addTagsPermissionScope.d.ts
@@ -1185,7 +1195,6 @@ extensions/tags/js/dist/forum.js.map
 extensions/tags/js/dist/admin.js.map
 extensions/tags/js/dist/forum/components/TagDiscussionModal.js
 extensions/tags/js/dist/forum/components/TagDiscussionModal.js.map
-extensions/tags/js/dist/admin.js.LICENSE.txt
 extensions/tags/migrations/2015_02_24_000000_create_users_tags_table.php
 extensions/tags/migrations/2019_04_21_000000_add_icon_to_tags_table.php
 extensions/tags/migrations/2018_06_27_090400_rename_users_tags_to_tag_user.php
@@ -2257,6 +2266,7 @@ framework/core/src/Foundation/Console/AssetsPublishCommand.php
 framework/core/src/Foundation/Console/InfoCommand.php
 framework/core/src/Foundation/AppInterface.php
 framework/core/src/Frontend/RecompileFrontendAssets.php
+framework/core/src/Frontend/Event/AssetsRecompiled.php
 framework/core/src/Frontend/Driver/BasicTitleDriver.php
 framework/core/src/Frontend/Driver/TitleDriverInterface.php
 framework/core/src/Frontend/Assets.php
@@ -2271,6 +2281,7 @@ framework/core/src/Frontend/Compiler/CompilerInterface.php
 framework/core/src/Frontend/Compiler/RevisionCompiler.php
 framework/core/src/Frontend/Compiler/JsDirectoryCompiler.php
 framework/core/src/Frontend/Compiler/Concerns/HasSources.php
+framework/core/src/Frontend/Compiler/AssetsRevision.php
 framework/core/src/Frontend/Compiler/Source/SourceCollector.php
 framework/core/src/Frontend/Compiler/Source/SourceInterface.php
 framework/core/src/Frontend/Compiler/Source/StringSource.php
@@ -2316,6 +2327,7 @@ framework/core/src/Post/PostFactory.php
 framework/core/src/Post/CommentPost.php
 framework/core/src/Post/Post.php
 framework/core/src/Image/ImageServiceProvider.php
+framework/core/src/Api/Middleware/AddAssetsRevisionHeader.php
 framework/core/src/Api/Middleware/ThrottleApi.php
 framework/core/src/Api/Middleware/FakeHttpMethods.php
 framework/core/src/Api/Resource/UserResource.php
@@ -2482,6 +2494,7 @@ framework/core/js/src/admin/utils/saveSettings.js
 framework/core/js/src/admin/utils/isExtensionEnabled.js
 framework/core/js/src/admin/utils/getCategorizedExtensions.js
 framework/core/js/src/admin/utils/AdminRegistry.ts
+framework/core/js/src/admin/utils/loadSortable.ts
 framework/core/js/src/admin/states/GeneralSearchIndex.ts
 framework/core/js/src/admin/admin.ts
 framework/core/js/src/admin/routes.ts
@@ -2786,6 +2799,7 @@ framework/core/js/dist-typings/admin/index.d.ts
 framework/core/js/dist-typings/admin/AdminApplication.d.ts
 framework/core/js/dist-typings/admin/app.d.ts
 framework/core/js/dist-typings/admin/admin.d.ts
+framework/core/js/dist-typings/admin/utils/loadSortable.d.ts
 framework/core/js/dist-typings/admin/utils/saveSettings.d.ts
 framework/core/js/dist-typings/admin/utils/isExtensionEnabled.d.ts
 framework/core/js/dist-typings/admin/utils/getCategorizedExtensions.d.ts
@@ -3089,6 +3103,9 @@ framework/core/js/dist-typings/forum/routes.d.ts
 framework/core/js/forum.ts
 framework/core/js/jest.config.cjs
 framework/core/js/admin.ts
+framework/core/js/dist/admin/utils/loadSortable.js
+framework/core/js/dist/admin/utils/loadSortable.js.map
+framework/core/js/dist/admin/utils/loadSortable.js.LICENSE.txt
 framework/core/js/dist/admin/components/ResetExtensionSettingsModal.js.map
 framework/core/js/dist/admin/components/ResetExtensionSettingsModal.js
 framework/core/js/dist/admin/components/FontAwesomePreviewModal.js.map
@@ -3130,6 +3147,7 @@ framework/core/js/dist/forum/components/NotificationsPage.js
 framework/core/js/dist/forum/components/PostStream.js.map
 framework/core/js/dist/forum/components/Composer.js
 framework/core/js/dist/admin.js.LICENSE.txt
+framework/core/js/tests/integration/admin/AssetsRevision.test.ts
 framework/core/js/tests/integration/admin/Application.test.ts
 framework/core/js/tests/integration/admin/components/DashboardPage.test.ts
 framework/core/js/tests/integration/admin/components/UserListPage.test.ts
@@ -3140,6 +3158,7 @@ framework/core/js/tests/integration/admin/components/AdvancedPage.test.ts
 framework/core/js/tests/integration/admin/components/GeneralSearchSource.test.ts
 framework/core/js/tests/integration/admin/components/Modals.test.ts
 framework/core/js/tests/integration/admin/components/PermissionsPage.test.ts
+framework/core/js/tests/integration/common/AssetsRevision.test.ts
 framework/core/js/tests/integration/common/AlertManager.test.ts
 framework/core/js/tests/integration/common/extenders/PostTypes.test.ts
 framework/core/js/tests/integration/common/extenders/Notification.test.ts
@@ -3368,6 +3387,7 @@ framework/core/tests/integration/api/users/PasswordEmailTokensTest.php
 framework/core/tests/integration/api/users/UpdateTest.php
 framework/core/tests/integration/api/users/PasswordChangeSessionInvalidationTest.php
 framework/core/tests/integration/api/EloquentBufferTest.php
+framework/core/tests/integration/middleware/AssetsRevisionHeaderTest.php
 framework/core/tests/integration/middleware/ReferrerPolicyTest.php
 framework/core/tests/integration/middleware/ContentTypeOptionsTest.php
 framework/core/tests/integration/admin/IndexTest.php
@@ -3414,6 +3434,7 @@ framework/core/tests/integration/extenders/NotificationTest.php
 framework/core/tests/integration/extenders/FrontendPreloadTest.php
 framework/core/tests/integration/extenders/SessionTest.php
 framework/core/tests/integration/frontend/FontAwesomeLoadingTest.php
+framework/core/tests/integration/frontend/AssetsRevisionPayloadTest.php
 framework/core/tests/integration/frontend/XsltPolyfillTest.php
 framework/core/tests/integration/console/AssetsPublishTest.php
 framework/core/tests/integration/forum/DefaultRouteTest.php
@@ -3479,6 +3500,8 @@ framework/core/tests/unit/Foundation/ErrorHandling/ExceptionHandler/ValidationEx
 framework/core/tests/unit/Foundation/ErrorHandling/ExceptionHandler/IlluminateValidationExceptionHandlerTest.php
 framework/core/tests/unit/Foundation/ContainerUtilTest.php
 framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
+framework/core/tests/unit/Frontend/Compiler/AssetsRevisionTest.php
+framework/core/tests/unit/Frontend/RecompileFrontendAssetsTest.php
 framework/core/tests/unit/Formatter/XsltPolyfillTest.php
 framework/core/tests/unit/.gitkeep
 framework/core/tests/unit/Http/CookieFactoryTest.php

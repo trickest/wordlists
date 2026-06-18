@@ -1337,7 +1337,6 @@ apps/admin-toolbar/src/user.js
 apps/admin-toolbar/src/config.js
 apps/admin-toolbar/src/styles.js
 apps/admin-toolbar/src/actions.js
-apps/admin-toolbar/src/body-offset.js
 apps/admin-toolbar/src/components.js
 apps/admin-toolbar/src/constants.js
 apps/admin-toolbar/src/icons.js
@@ -2238,12 +2237,14 @@ e2e/.claude/E2E_TEST_WRITING_GUIDE.md
 e2e/types.d.ts
 e2e/helpers/environment/index.ts
 e2e/helpers/environment/environment-factory.ts
+e2e/helpers/environment/Corefile
 e2e/helpers/environment/constants.ts
 e2e/helpers/environment/environment-manager.ts
 e2e/helpers/environment/service-availability.ts
 e2e/helpers/environment/service-managers/index.ts
 e2e/helpers/environment/service-managers/mysql-manager.ts
 e2e/helpers/environment/service-managers/ghost-manager.ts
+e2e/helpers/environment/service-managers/egress-monitor.ts
 e2e/helpers/playwright/index.ts
 e2e/helpers/playwright/isolation.ts
 e2e/helpers/playwright/with-isolated-page.ts
@@ -3158,6 +3159,7 @@ ghost/admin/tests/unit/utils/ghost-paths-test.js
 ghost/admin/tests/unit/utils/sentry-test.js
 ghost/admin/tests/unit/services/notifications-test.js
 ghost/admin/tests/unit/services/post-analytics-test.js
+ghost/admin/tests/unit/services/session-test.js
 ghost/admin/tests/unit/services/member-stats-test.js
 ghost/admin/tests/unit/services/billing-test.js
 ghost/admin/tests/unit/services/migrate-test.js
@@ -3530,7 +3532,6 @@ ghost/admin/mirage/config/slugs.js
 ghost/admin/mirage/config/users.js
 ghost/admin/mirage/config/settings.js
 ghost/admin/mirage/config/invites.js
-ghost/admin/mirage/config/emails.js
 ghost/admin/mirage/factories/user.js
 ghost/admin/mirage/factories/invite.js
 ghost/admin/mirage/factories/member.js
@@ -4009,6 +4010,7 @@ ghost/core/test/utils/logging-utils.js
 ghost/core/test/utils/redirects.js
 ghost/core/test/utils/overrides.js
 ghost/core/test/utils/mocha-retry-reporter.js
+ghost/core/test/utils/vitest-setup-db.ts
 ghost/core/test/utils/agents/test-agent.js
 ghost/core/test/utils/agents/index.js
 ghost/core/test/utils/agents/admin-api-test-agent.js
@@ -5026,6 +5028,7 @@ ghost/core/test/unit/shared/config/helpers.test.js
 ghost/core/test/unit/shared/config/utils.test.js
 ghost/core/test/unit/shared/max-limit-cap.test.js
 ghost/core/test/unit/shared/events-ts/post-events.test.ts
+ghost/core/test/unit/shared/errify.test.ts
 ghost/core/test/unit/shared/settings-cache.test.js
 ghost/core/test/unit/shared/labs.test.js
 ghost/core/test/unit/shared/events/url-resource-updated-event.test.js
@@ -5047,6 +5050,7 @@ ghost/core/nodemon.json
 ghost/core/.eslintignore
 ghost/core/MigratorConfig.js
 ghost/core/ghost.js
+ghost/core/vitest.config.db.ts
 ghost/core/loggingrc.js
 ghost/core/bin/create-migration.js
 ghost/core/bin/minify-assets.js
@@ -6271,6 +6275,7 @@ ghost/core/core/server/data/migrations/versions/6.46/2026-06-15-16-49-31-add-aut
 ghost/core/core/server/data/migrations/versions/6.46/2026-05-29-08-35-51-add-gift-links-table.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-02-38-59-create-automation-tables.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-10-00-00-add-gift-links-permission-to-admin-integration.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-16-09-07-add-enable-updates-and-announcements-to-members.js
 ghost/core/core/server/data/migrations/versions/5.91/2024-08-28-05-28-22-add-donation-message-column-to-donation-payment-events.js
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.94/2024-09-03-20-09-40-null-analytics-jobs-timings.js
@@ -6712,6 +6717,7 @@ ghost/core/core/shared/events-ts/posts-bulk-unpublished-event.ts
 ghost/core/core/shared/events-ts/posts-bulk-unfeatured-event.ts
 ghost/core/core/shared/labs.js
 ghost/core/core/shared/express.js
+ghost/core/core/shared/errify.ts
 ghost/core/core/shared/prometheus-client.js
 ghost/core/core/shared/sentry-knex-tracing-integration.js
 ghost/core/core/shared/settings-cache/public.js

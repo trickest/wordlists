@@ -46,6 +46,7 @@ adr/2023-06-28-default-handle-for-non-specified-salutations.md
 adr/2023-04-11-new-language-inheritance-mechanism-for-opensearch.md
 adr/2026-05-06-split-large-administration-test-files.md
 adr/2022-04-06-add-default-cms-layouts-to-products-and-categories.md
+adr/2026-05-28-agentic-files-for-sales-channels.md
 adr/2026-03-18-new-document-generation-architecture.md
 adr/2023-02-01-app-script-product-pricing.md
 adr/2025-09-01-adding-a-country-agnostic-language-layer.md
@@ -600,6 +601,23 @@ src/Core/System/Snippet/DataTransfer/Language/LanguageCollection.php
 src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMapping.php
 src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingCollection.php
 src/Core/System/SalesChannel/SalesChannelExceptionHandler.php
+src/Core/System/SalesChannel/File/SalesChannelFileNotFoundSubscriber.php
+src/Core/System/SalesChannel/File/Discovery/SalesChannelFile.php
+src/Core/System/SalesChannel/File/Discovery/SalesChannelFileDiscovery.php
+src/Core/System/SalesChannel/File/Loader/SalesChannelFileLoader.php
+src/Core/System/SalesChannel/File/Loader/SalesChannelFileConfigurationLoader.php
+src/Core/System/SalesChannel/File/SalesChannelFileCacheInvalidator.php
+src/Core/System/SalesChannel/File/SalesChannelFileRequestPathResolver.php
+src/Core/System/SalesChannel/File/Rendering/SalesChannelFileRenderer.php
+src/Core/System/SalesChannel/File/Rendering/SalesChannelFileTemplateOverrideLoader.php
+src/Core/System/SalesChannel/File/Rendering/SalesChannelFileRenderResult.php
+src/Core/System/SalesChannel/File/README.md
+src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationListItem.php
+src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationTemplate.php
+src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationDetail.php
+src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationReader.php
+src/Core/System/SalesChannel/File/Api/SalesChannelFileController.php
+src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationConfiguration.php
 src/Core/System/SalesChannel/Cookie/AnalyticsCookieCollectListener.php
 src/Core/System/SalesChannel/Event/SwitchContextEvent.php
 src/Core/System/SalesChannel/Event/ContextCreatedEvent.php
@@ -632,6 +650,9 @@ src/Core/System/SalesChannel/Aggregate/SalesChannelCurrency/SalesChannelCurrency
 src/Core/System/SalesChannel/Aggregate/SalesChannelTypeTranslation/SalesChannelTypeTranslationDefinition.php
 src/Core/System/SalesChannel/Aggregate/SalesChannelTypeTranslation/SalesChannelTypeTranslationCollection.php
 src/Core/System/SalesChannel/Aggregate/SalesChannelTypeTranslation/SalesChannelTypeTranslationEntity.php
+src/Core/System/SalesChannel/Aggregate/SalesChannelFile/SalesChannelFileCollection.php
+src/Core/System/SalesChannel/Aggregate/SalesChannelFile/SalesChannelFileDefinition.php
+src/Core/System/SalesChannel/Aggregate/SalesChannelFile/SalesChannelFileEntity.php
 src/Core/System/SalesChannel/SalesChannelEntity.php
 src/Core/System/SalesChannel/StoreApiRequestHook.php
 src/Core/System/SalesChannel/ContextTokenResponse.php
@@ -674,6 +695,7 @@ src/Core/System/SalesChannel/Context/Cleanup/CleanupSalesChannelContextTask.php
 src/Core/System/SalesChannel/Context/Cleanup/CleanupSalesChannelContextTaskHandler.php
 src/Core/System/SalesChannel/Context/SalesChannelContextServiceInterface.php
 src/Core/System/SalesChannel/Context/SalesChannelContextValueResolver.php
+src/Core/System/SalesChannel/Context/SalesChannelContextRequestRestorer.php
 src/Core/System/SalesChannel/Context/SalesChannelContextFactory.php
 src/Core/System/SalesChannel/Context/LanguageInfo.php
 src/Core/System/SalesChannel/Context/BaseSalesChannelContextFactory.php
@@ -1650,6 +1672,7 @@ src/Core/Migration/V6_7/Migration1752499887UpdateAppRequestedPrivileges.php
 src/Core/Migration/V6_7/Migration1742568836CreateThemeRuntimeConfigTable.php
 src/Core/Migration/V6_7/Migration1773225412AddZugferdEmbeddedCancellationInvoice.php
 src/Core/Migration/V6_7/Migration1737430168RemoveFileTypeOfDocumentTable.php
+src/Core/Migration/V6_7/Migration1780062008CreateSalesChannelFile.php
 src/Core/Migration/V6_7/Migration1743151679AddContextGatewayUrl.php
 src/Core/Migration/V6_7/Migration1758612662UpdateDateRangeRuleDateTimeFormat.php
 src/Core/Migration/V6_7/Migration1768545321RevocationRequestFlow.php
@@ -1675,12 +1698,14 @@ src/Core/Migration/V6_7/Migration1728119898AddRobotsTxt.php
 src/Core/Migration/V6_7/Migration1765287397AddConsentTable.php
 src/Core/Migration/V6_7/Migration1776691515SetDefaultCmsPageIdForCategories.php
 src/Core/Migration/V6_7/Migration1770705203AddPaymentMethodChangedFlowAndMailTemplate.php
+src/Core/Migration/V6_7/Migration1781703825AddSalesChannelFileAclPrivileges.php
 src/Core/Migration/V6_7/Migration1774531821AddImportMapToThemeRuntimeConfig.php
 src/Core/Migration/V6_7/Migration1773409343AppMcpResource.php
 src/Core/Migration/V6_7/Migration1776770187AddDocumentFileTable.php
 src/Core/Migration/V6_7/Migration1763316536ChangeProductManufacturerLink.php
 src/Core/Migration/V6_7/Migration1774345867AddProductOpenGraphFields.php
 src/Core/Migration/V6_7/Migration1726135997CreateMessengerStatsTable.php
+src/Core/Migration/V6_7/Migration1775430000AddDisplayAsGroupToProductStream.php
 src/Core/Migration/V6_7/Migration1770903396AddRequirementsToServiceSourceConfig.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodFlows.php
 src/Core/Migration/V6_7/Migration1746176773AddIntegrationIdStateHistory.php
@@ -3456,6 +3481,7 @@ src/Core/Framework/Adapter/Twig/Filter/EmailIdnTwigFilter.php
 src/Core/Framework/Adapter/Twig/Filter/CurrencyFilter.php
 src/Core/Framework/Adapter/Twig/Filter/ReplaceRecursiveFilter.php
 src/Core/Framework/Adapter/Twig/Filter/LeadingSpacesFilter.php
+src/Core/Framework/Adapter/Twig/TemplatePathIteratorInterface.php
 src/Core/Framework/Adapter/Twig/TemplateFinderInterface.php
 src/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeResetter.php
 src/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntime.php
@@ -3465,6 +3491,7 @@ src/Core/Framework/Adapter/Twig/Extension/PcreExtension.php
 src/Core/Framework/Adapter/Twig/Extension/TwigFeaturesWithInheritanceExtension.php
 src/Core/Framework/Adapter/Twig/Extension/InstanceOfExtension.php
 src/Core/Framework/Adapter/Twig/Extension/FeatureFlagExtension.php
+src/Core/Framework/Adapter/Twig/Extension/ConfigExtension.php
 src/Core/Framework/Adapter/Twig/Extension/BuildBreadcrumbExtension.php
 src/Core/Framework/Adapter/Twig/Extension/RawUrlFunctionExtension.php
 src/Core/Framework/Adapter/Twig/Extension/ComparisonExtension.php
@@ -3619,6 +3646,8 @@ src/Core/Framework/Resources/views/snippets/symbol/tilde.html.twig
 src/Core/Framework/Resources/views/snippets/render.html.twig
 src/Core/Framework/Resources/views/stoplightio.html.twig
 src/Core/Framework/Resources/views/profile.html.twig
+src/Core/Framework/Resources/views/files/agentic/agents.md.twig
+src/Core/Framework/Resources/views/files/agentic/llms.txt.twig
 src/Core/Framework/Resources/snippet/messages.de.base.json
 src/Core/Framework/Resources/snippet/messages.en.base.json
 src/Core/Framework/Rule/DateRangeRule.php
@@ -4281,6 +4310,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/indexing.js
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/app.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/index-products.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/validation.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/sales-channel-file.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/sync.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/media.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_transaction.json
@@ -4838,6 +4868,7 @@ src/Core/Content/ProductExport/Subscriber/AgenticCommerceProductExportProviderCo
 src/Core/Content/ProductExport/ProductExportHydrator.php
 src/Core/Content/ProductStream/ProductStreamDefinition.php
 src/Core/Content/ProductStream/Event/ProductStreamIndexerEvent.php
+src/Core/Content/ProductStream/Service/AbstractProductStreamBuilder.php
 src/Core/Content/ProductStream/Service/ProductStreamBuilder.php
 src/Core/Content/ProductStream/Service/ProductStreamBuilderInterface.php
 src/Core/Content/ProductStream/Aggregate/ProductStreamFilter/ProductStreamFilterEntity.php
@@ -5998,9 +6029,11 @@ src/Core/Checkout/Customer/Validation/Constraint/CustomerVatIdentificationValida
 src/Core/Checkout/Customer/Validation/Constraint/CustomerEmailUnique.php
 src/Core/Checkout/Customer/Validation/Constraint/CustomerZipCodeValidator.php
 src/Core/Checkout/Customer/Validation/Constraint/CustomerEmailUniqueValidator.php
+src/Core/Checkout/Customer/Validation/CustomerEmailUniqueCheck.php
 src/Core/Checkout/Customer/Validation/CustomerValidationFactory.php
 src/Core/Checkout/Customer/Validation/AddressValidationFactory.php
 src/Core/Checkout/Customer/Validation/CustomerProfileValidationFactory.php
+src/Core/Checkout/Customer/Validation/CustomerEmailUniqueChecker.php
 src/Core/Checkout/Customer/Validation/PasswordValidationFactory.php
 src/Core/Checkout/Customer/Command/DeleteUnusedGuestCustomersCommand.php
 src/Core/Checkout/Customer/Rule/IsCompanyRule.php
@@ -6049,6 +6082,7 @@ src/Core/Checkout/Customer/Password/LegacyEncoder/Sha256.php
 src/Core/Checkout/Customer/Password/LegacyEncoder/Md5.php
 src/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionController.php
 src/Core/Checkout/Customer/Subscriber/CustomerTokenSubscriber.php
+src/Core/Checkout/Customer/Subscriber/CustomerEmailUniqueSubscriber.php
 src/Core/Checkout/Customer/Subscriber/CustomerMetaFieldSubscriber.php
 src/Core/Checkout/Customer/Subscriber/CustomerChangePasswordSubscriber.php
 src/Core/Checkout/Customer/Subscriber/CustomerLanguageSalesChannelSubscriber.php
@@ -6682,6 +6716,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NameConstantEntityDefinition.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NotExtendFlowEventAwareRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnsafeRequestHasSessionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/MessagesShouldNotUsePHPStanTypes.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAnyInvocationMatcherRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/CoversAttributeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitClassAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestRuleHelper.php
@@ -7127,6 +7162,8 @@ src/Administration/Resources/app/administration/src/module/sw-settings-search/sn
 src/Administration/Resources/app/administration/src/module/sw-settings-search/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/sales-channel-favorites.service.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/export-template.service.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/sales-channel-file.api.service.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/sales-channel-file.api.service.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/domain-link.service.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/service/sales-channel-favorites.service.ts
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/agentic-product-export-templates/open-ai/body.json.twig
@@ -7136,6 +7173,10 @@ src/Administration/Resources/app/administration/src/module/sw-sales-channel/agen
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/agentic-product-export-templates/google/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/agentic-product-export-templates/google/body.xml.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/agentic-product-export-templates/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-files/sw-sales-channel-detail-agentic-files.html.twig
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-files/sw-sales-channel-detail-agentic-files.scss
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-files/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-files/sw-sales-channel-detail-agentic-files.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-product-comparison/sw-sales-channel-detail-product-comparison.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-product-comparison/sw-sales-channel-detail-product-comparison.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-product-comparison/sw-sales-channel-detail-product-comparison.html.twig
@@ -7144,6 +7185,10 @@ src/Administration/Resources/app/administration/src/module/sw-sales-channel/view
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-products/sw-sales-channel-detail-products.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-products/sw-sales-channel-detail-products.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-products/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-file/sw-sales-channel-detail-agentic-file.html.twig
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-file/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-file/sw-sales-channel-detail-agentic-file.spec.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-agentic-file/sw-sales-channel-detail-agentic-file.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-create-base/sw-sales-channel-create-base.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-create-base/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/view/sw-sales-channel-detail-product-export-insights/sw-sales-channel-detail-product-export-insights.html.twig
@@ -7236,6 +7281,7 @@ src/Administration/Resources/app/administration/src/module/sw-sales-channel/comp
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/structure/sw-sales-channel-menu/sw-sales-channel-menu.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/structure/sw-sales-channel-menu/sw-sales-channel-menu.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/structure/sw-sales-channel-menu/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/acl/index.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/acl/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/snippet/en.json
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/snippet/de.json
@@ -10371,6 +10417,7 @@ src/Administration/Resources/app/administration/src/app/component/rule/condition
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-not-found/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-generic-line-item/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/sw-condition-time-range.html.twig
+src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/sw-condition-time-range.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/sw-condition-time-range.scss
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-time-range/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-line-item-custom-field/sw-condition-line-item-custom-field.scss
@@ -10407,6 +10454,10 @@ src/Administration/Resources/app/administration/src/app/component/rule/condition
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-goods-count/sw-condition-goods-count.html.twig
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-goods-count/sw-condition-goods-count.scss
 src/Administration/Resources/app/administration/src/app/component/rule/condition-type/sw-condition-goods-count/index.js
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-field-errors/sw-condition-field-errors.scss
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-field-errors/sw-condition-field-errors.html.twig
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-field-errors/sw-condition-field-errors.spec.js
+src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-field-errors/index.js
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-base/sw-condition-base.spec.js
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-base/sw-condition-base.scss
 src/Administration/Resources/app/administration/src/app/component/rule/sw-condition-base/index.js
@@ -13876,6 +13927,7 @@ tests/migration/Core/V6_7/Migration1742199552SalesChannelMeasurementUnitsTest.ph
 tests/migration/Core/V6_7/Migration1759390536CartConfigShowTosCheckboxTest.php
 tests/migration/Core/V6_7/Migration1777020096AppMcpToolRequiredPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1779440795AddMissingAdministrationReadPrivilegesTest.php
+tests/migration/Core/V6_7/Migration1775430000AddDisplayAsGroupToProductStreamTest.php
 tests/migration/Core/V6_7/Migration1771342632AddCorruptedMediaHandlerIndicesTest.php
 tests/migration/Core/V6_7/Migration1780325388AddMediaFolderCreatedAtIndexTest.php
 tests/migration/Core/V6_7/Migration1763125902AddOrderLineItemProductTypePayloadTest.php
@@ -13923,6 +13975,7 @@ tests/migration/Core/V6_7/Migration1768233956AddThemeRuntimeConfigUniqueConstrai
 tests/migration/Core/V6_7/Migration1758612662UpdateDateRangeRuleDateTimeFormatTest.php
 tests/migration/Core/V6_7/Migration1776848421RepairDigitalProductTypeTest.php
 tests/migration/Core/V6_7/Migration1742484083TransitionToAddressInputFieldArrangementTest.php
+tests/migration/Core/V6_7/Migration1780062008CreateSalesChannelFileTest.php
 tests/migration/Core/V6_7/Migration1742199551SalesChannelDomainMeasurementUnitsTest.php
 tests/migration/Core/V6_7/Migration1756305375AddCategoriesIndexToProductTest.php
 tests/migration/Core/V6_7/Migration1756068710FixCustomerAddressLastNameLengthTest.php
@@ -13947,6 +14000,7 @@ tests/migration/Core/V6_7/Migration1743064966CartConfigSubtotalTaxColumnTest.php
 tests/migration/Core/V6_7/Migration1772007509ProductMainCategoryInheritanceTest.php
 tests/migration/Core/V6_7/Migration1697112043TemporaryPaymentAndShippingTechnicalNamesTest.php
 tests/migration/Core/V6_7/Migration1737430168RemoveFileTypeOfDocumentTableTest.php
+tests/migration/Core/V6_7/Migration1781703825AddSalesChannelFileAclPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1777030522FixContainerStructureOfDefaultRuleConditionsTest.php
 tests/migration/Core/V6_7/Migration1760438732AddConsumedToPaymentTokenTest.php
 tests/migration/Core/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequiredTest.php
@@ -14045,6 +14099,10 @@ tests/integration/Core/System/Snippet/Mock/_fixtures/.gitkeep
 tests/integration/Core/System/Snippet/Mock/MockSnippetFile.php
 tests/integration/Core/System/Snippet/SnippetServiceTest.php
 tests/integration/Core/System/Snippet/Subscriber/CustomFieldSubscriberTest.php
+tests/integration/Core/System/SalesChannel/File/Loader/SalesChannelFileConfigurationLoaderTest.php
+tests/integration/Core/System/SalesChannel/File/SalesChannelFileRepositoryTest.php
+tests/integration/Core/System/SalesChannel/File/SalesChannelFilePublicRequestTest.php
+tests/integration/Core/System/SalesChannel/File/Api/SalesChannelFileControllerTest.php
 tests/integration/Core/System/SalesChannel/Cleanup/CleanupSalesChannelContextTaskHandlerTest.php
 tests/integration/Core/System/SalesChannel/Entity/SalesChannelDefinitionTest.php
 tests/integration/Core/System/SalesChannel/SalesChannel/ContextRouteTest.php
@@ -14471,7 +14529,6 @@ tests/integration/Core/Framework/Adapter/Twig/TwigSwExtendsTest.php
 tests/integration/Core/Framework/Adapter/Twig/EntityTemplateLoaderTest.php
 tests/integration/Core/Framework/Adapter/Twig/NamespaceHierarchy/BundleHierarchyBuilderTest.php
 tests/integration/Core/Framework/Adapter/Twig/NamespaceHierarchy/NamespaceHierarchyBuilderTest.php
-tests/integration/Core/Framework/Adapter/Twig/TemplateIteratorTest.php
 tests/integration/Core/Framework/Adapter/Twig/StringTemplateRendererTest.php
 tests/integration/Core/Framework/Adapter/Twig/BackwardCompatibleIntlExtensionTest.php
 tests/integration/Core/Framework/Adapter/Twig/AppTemplateIteratorTest.php
@@ -15183,6 +15240,7 @@ tests/integration/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionCont
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerBeforeDeleteSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerSalutationSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerTokenSubscriberTest.php
+tests/integration/Core/Checkout/Customer/Subscriber/CustomerEmailUniqueSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerChangePasswordSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/ProductReviewSubscriberTest.php
 tests/integration/Core/Checkout/Payment/PaymentMethodRepositoryTest.php
@@ -15583,7 +15641,6 @@ tests/acceptance/tasks/ShopAdmin/Orders/AddCreditItemViaAPI.ts
 tests/acceptance/tasks/ShopAdmin/Orders/CreateDocumentViaAPI.ts
 tests/acceptance/tasks/ShopAdmin/FRW/FRWSalesChannelSelectionPossibility.ts
 tests/acceptance/tasks/ShopAdmin/Category/CreateLandingPage.ts
-tests/acceptance/tasks/ShopAdmin/RuleBuilder/CreateRule.ts
 tests/acceptance/tasks/ShopAdmin/RuleBuilder/CreateRuleBillingCountry.ts
 tests/acceptance/tasks/ShopAdmin/FlowBuilder/CreateFlowForValidation.ts
 tests/acceptance/tasks/ShopAdmin/Product/GenerateVariants.ts
@@ -15730,6 +15787,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/MessagesShouldNotUsePHPStan
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DeprecatedMethodsThrowDeprecationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnserializeUsageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/UseCLIContextRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAnyInvocationMatcherRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsHelperTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/RouteScopeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoDALAutoloadTest.php
@@ -15800,6 +15858,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithRouteAttributeConstant.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithRouteAttribute.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithoutRouteAttribute.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAnyInvocationMatcherRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoExpectExceptionMessage/shopware-unit-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/FluentSetterClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipEmptyReturn.php
@@ -16069,6 +16128,16 @@ tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataCollectionTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataEntryTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Language/LanguageTest.php
 tests/unit/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingTest.php
+tests/unit/Core/System/SalesChannel/File/SalesChannelFileCacheInvalidatorTest.php
+tests/unit/Core/System/SalesChannel/File/Discovery/SalesChannelFileDiscoveryTest.php
+tests/unit/Core/System/SalesChannel/File/SalesChannelFileNotFoundSubscriberTest.php
+tests/unit/Core/System/SalesChannel/File/Loader/SalesChannelFileConfigurationLoaderTest.php
+tests/unit/Core/System/SalesChannel/File/Loader/SalesChannelFileLoaderTest.php
+tests/unit/Core/System/SalesChannel/File/SalesChannelFileRequestPathResolverTest.php
+tests/unit/Core/System/SalesChannel/File/Rendering/SalesChannelFileRendererTest.php
+tests/unit/Core/System/SalesChannel/File/Rendering/SalesChannelFileTemplateOverrideLoaderTest.php
+tests/unit/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationReaderTest.php
+tests/unit/Core/System/SalesChannel/File/Api/SalesChannelFileControllerTest.php
 tests/unit/Core/System/SalesChannel/Cookie/AnalyticsCookieCollectListenerTest.php
 tests/unit/Core/System/SalesChannel/Event/SalesChannelContextCreatedEventTest.php
 tests/unit/Core/System/SalesChannel/SalesChannelContextTest.php
@@ -16078,6 +16147,7 @@ tests/unit/Core/System/SalesChannel/Entity/DefinitionRegistryChainTest.php
 tests/unit/Core/System/SalesChannel/Entity/SalesChannelDefinitionInstanceRegistryTest.php
 tests/unit/Core/System/SalesChannel/SalesChannel/ContextSwitchRouteTest.php
 tests/unit/Core/System/SalesChannel/Validation/SalesChannelValidatorTest.php
+tests/unit/Core/System/SalesChannel/Context/SalesChannelContextRequestRestorerTest.php
 tests/unit/Core/System/SalesChannel/Context/SalesChannelContextFactoryTest.php
 tests/unit/Core/System/SalesChannel/Context/SalesChannelContextServiceTest.php
 tests/unit/Core/System/SalesChannel/Context/CartRestorerTest.php
@@ -16754,6 +16824,7 @@ tests/unit/Core/Framework/Adapter/Twig/EntityTemplateLoaderTest.php
 tests/unit/Core/Framework/Adapter/Twig/Node/FeatureCallSilentTokenTest.php
 tests/unit/Core/Framework/Adapter/Twig/Node/SwBlockReferenceExpressionTest.php
 tests/unit/Core/Framework/Adapter/Twig/NamespaceHierarchy/BundleHierarchyBuilderTest.php
+tests/unit/Core/Framework/Adapter/Twig/TemplateIteratorTest.php
 tests/unit/Core/Framework/Adapter/Twig/TemplateFinderTest.php
 tests/unit/Core/Framework/Adapter/Twig/TokenParser/FeatureFlagCallTokenParserTest.php
 tests/unit/Core/Framework/Adapter/Twig/TokenParser/FromTokenParserTest.php
@@ -16761,6 +16832,8 @@ tests/unit/Core/Framework/Adapter/Twig/TokenParser/ImportTokenParserTest.php
 tests/unit/Core/Framework/Adapter/Twig/TokenParser/EmbedTokenParserTest.php
 tests/unit/Core/Framework/Adapter/Twig/TokenParser/ExtendsTokenParserTest.php
 tests/unit/Core/Framework/Adapter/Twig/TokenParser/UseTokenParserTest.php
+tests/unit/Core/Framework/Adapter/Twig/_fixtures/template-iterator/TemplateIteratorShopwareFixtureBundle/Resources/views/files/agentic/llms.txt.twig
+tests/unit/Core/Framework/Adapter/Twig/_fixtures/template-iterator/TemplateIteratorShopwareFixtureBundle/Resources/views/files/agentic/.well-known/ucp.json.twig
 tests/unit/Core/Framework/Adapter/Twig/SecurityExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/StringTemplateRendererTest.php
 tests/unit/Core/Framework/Adapter/Twig/Filter/EmailIdnTwigFilterTest.php
@@ -16773,6 +16846,7 @@ tests/unit/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeResetterTest.
 tests/unit/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/CategoryUrlExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/NodeExtensionTest.php
+tests/unit/Core/Framework/Adapter/Twig/Extension/ConfigExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/TemplateDataExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/BuildBreadcrumbExtensionTest.php
 tests/unit/Core/Framework/Adapter/Twig/Extension/PhpSyntaxExtensionTest.php
@@ -16947,6 +17021,7 @@ tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/cms/blocks/my-fi
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/cms/blocks/my-second-block/previewExpected.html
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/cms/blocks/my-second-block/preview.html
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/cms.xml
+tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/views/files/agentic/.well-known/ucp.json.twig
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/views/administration/index.html.twig
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/views/storefront/layout/header/logo.html.twig
 tests/unit/Core/Framework/App/Manifest/_fixtures/test/Resources/views/storefront/layout/header/header.html.twig
@@ -17855,6 +17930,7 @@ tests/unit/Core/Checkout/Customer/SalesChannel/RegisterConfirmRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ImitateCustomerRouteTest.php
 tests/unit/Core/Checkout/Customer/SalesChannel/ConvertGuestRouteTest.php
 tests/unit/Core/Checkout/Customer/DataAbstractionLayer/CustomerIndexerTest.php
+tests/unit/Core/Checkout/Customer/Validation/Constraint/CustomerEmailUniqueValidatorTest.php
 tests/unit/Core/Checkout/Customer/Validation/CustomerZipcodeValidatorTest.php
 tests/unit/Core/Checkout/Customer/Validation/CustomerProfileValidationFactoryTest.php
 tests/unit/Core/Checkout/Customer/Validation/CustomerValidationFactoryTest.php
