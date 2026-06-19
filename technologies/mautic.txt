@@ -712,9 +712,11 @@ app/bundles/PointBundle/EventListener/SearchSubscriber.php
 app/bundles/PointBundle/EventListener/ReportSubscriber.php
 app/bundles/PointBundle/EventListener/EntityTypeDetailRouteSubscriber.php
 app/bundles/PointBundle/EventListener/StatsSubscriber.php
+app/bundles/PointBundle/EventListener/PointInsightSubscriber.php
 app/bundles/PointBundle/Tests/Unit/Model/PointModelTest.php
 app/bundles/PointBundle/Tests/Unit/Model/TriggerModelTest.php
 app/bundles/PointBundle/Tests/Unit/Helper/EventHelperTest.php
+app/bundles/PointBundle/Tests/Functional/PointInsightsFunctionalTest.php
 app/bundles/PointBundle/Tests/Functional/PointActionFunctionalTest.php
 app/bundles/PointBundle/Tests/Functional/TriggerTrait.php
 app/bundles/PointBundle/Tests/Functional/SegmentFilterFunctionalTest.php
@@ -728,7 +730,9 @@ app/bundles/PointBundle/Tests/Functional/EmailTriggerTest.php
 app/bundles/PointBundle/Tests/Functional/PointTriggerFunctionalTest.php
 app/bundles/PointBundle/Tests/Entity/PointEntityValidationTest.php
 app/bundles/PointBundle/Tests/Controller/TriggerControllerTest.php
+app/bundles/PointBundle/Tests/Controller/InsightControllerTest.php
 app/bundles/PointBundle/Tests/Controller/PointControllerTest.php
+app/bundles/PointBundle/Tests/Controller/Api/PointInsightApiControllerTest.php
 app/bundles/PointBundle/Tests/Controller/Api/PointGroupsApiControllerTest.php
 app/bundles/PointBundle/Event/TriggerBuilderEvent.php
 app/bundles/PointBundle/Event/PointBuilderEvent.php
@@ -740,6 +744,8 @@ app/bundles/PointBundle/Event/PointEvent.php
 app/bundles/PointBundle/Event/TriggerEvent.php
 app/bundles/PointBundle/Entity/GroupContactScoreRepository.php
 app/bundles/PointBundle/Entity/LeadPointLogRepository.php
+app/bundles/PointBundle/Entity/PointInsightRepository.php
+app/bundles/PointBundle/Entity/PointInsight.php
 app/bundles/PointBundle/Entity/LeadTriggerLogRepository.php
 app/bundles/PointBundle/Entity/PointRepository.php
 app/bundles/PointBundle/Entity/Group.php
@@ -757,8 +763,10 @@ app/bundles/PointBundle/DependencyInjection/MauticPointExtension.php
 app/bundles/PointBundle/Model/TriggerEventModel.php
 app/bundles/PointBundle/Model/PointModel.php
 app/bundles/PointBundle/Model/TriggerModel.php
+app/bundles/PointBundle/Model/InsightModel.php
 app/bundles/PointBundle/Model/PointGroupModel.php
 app/bundles/PointBundle/Form/Type/PointType.php
+app/bundles/PointBundle/Form/Type/PointInsightType.php
 app/bundles/PointBundle/Form/Type/TriggerEventType.php
 app/bundles/PointBundle/Form/Type/TriggerType.php
 app/bundles/PointBundle/Form/Type/GroupType.php
@@ -775,6 +783,8 @@ app/bundles/PointBundle/Resources/views/Trigger/form.html.twig
 app/bundles/PointBundle/Resources/views/Trigger/_list.html.twig
 app/bundles/PointBundle/Resources/views/Trigger/list.html.twig
 app/bundles/PointBundle/Resources/views/Trigger/details.html.twig
+app/bundles/PointBundle/Resources/views/Insight/form.html.twig
+app/bundles/PointBundle/Resources/views/Insight/list.html.twig
 app/bundles/PointBundle/Resources/views/Group/form.html.twig
 app/bundles/PointBundle/Resources/views/Group/list.html.twig
 app/bundles/PointBundle/Resources/views/FormTheme/Action/_pointaction_properties_row.html.twig
@@ -786,12 +796,14 @@ app/bundles/PointBundle/Security/Permissions/PointPermissions.php
 app/bundles/PointBundle/Config/services.php
 app/bundles/PointBundle/Config/config.php
 app/bundles/PointBundle/Controller/PointController.php
+app/bundles/PointBundle/Controller/InsightController.php
 app/bundles/PointBundle/Controller/TriggerController.php
 app/bundles/PointBundle/Controller/TriggerEventController.php
 app/bundles/PointBundle/Controller/GroupController.php
 app/bundles/PointBundle/Controller/AjaxController.php
 app/bundles/PointBundle/Controller/Api/PointGroupsApiController.php
 app/bundles/PointBundle/Controller/Api/PointApiController.php
+app/bundles/PointBundle/Controller/Api/PointInsightApiController.php
 app/bundles/PointBundle/Controller/Api/TriggerApiController.php
 app/bundles/PointBundle/Translations/en_US/validators.ini
 app/bundles/PointBundle/Translations/en_US/messages.ini
@@ -4883,6 +4895,7 @@ app/migrations/Version20250430135003.php
 app/migrations/Version20210819201726.php
 app/migrations/Version20250618122908.php
 app/migrations/Version20220429091934.php
+app/migrations/Version20260616075543.php
 app/migrations/Version20230525202700.php
 app/migrations/Version20240228132306.php
 app/migrations/Version20250618141525.php

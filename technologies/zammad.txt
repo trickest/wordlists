@@ -1339,6 +1339,7 @@ lib/enrichment/clearbit/organization.rb
 lib/enrichment/clearbit/user.rb
 lib/models.rb
 lib/redlock/client.rb
+lib/rack_attack_setup.rb
 lib/filter_processor/match/is_any_of.rb
 lib/filter_processor/match/email_regex.rb
 lib/filter_processor/match/starts_with.rb
@@ -1653,6 +1654,7 @@ lib/knowledge_base/permissions_update.rb
 lib/knowledge_base/effective_permission.rb
 lib/knowledge_base/server_snippet_nginx.rb
 lib/knowledge_base/server_snippet.rb
+lib/knowledge_base/adjacent_answer.rb
 lib/microsoft_graph.rb
 lib/sensitive_params_helper.rb
 lib/hostname_safety_check.rb
@@ -1728,6 +1730,8 @@ lib/core_ext/activejob/lib/active_job/queue_adapters/delayed_job_adapter.rb
 lib/core_ext/string.rb
 lib/core_ext/class.rb
 lib/templates/active_record/migration/migration.rb.tt
+lib/rack_attack_setup/form_endpoint.rb
+lib/rack_attack_setup/public_endpoint.rb
 lib/image_helper.rb
 lib/active_support/cache/zammad_file_store.rb
 lib/bulk_import_info.rb
@@ -3244,6 +3248,7 @@ app/assets/stylesheets/zammad.scss
 app/assets/builds/.keep
 app/assets/javascripts/ie11CustomProperties.min.js
 app/assets/javascripts/knowledge_base_public.js
+app/assets/javascripts/knowledge_base_public/image_preview.js
 app/assets/javascripts/knowledge_base_public/search.js
 app/assets/javascripts/knowledge_base_public/namespace.js
 app/assets/javascripts/knowledge_base_public/language.js
@@ -6092,6 +6097,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TimeAccountin
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReply.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/DeliveryMessage.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/SystemMessage.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/useArticleReply.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TicketDetailTopBar.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/TicketInformation/TicketInformationBadgeList/ChecklistBadgeList.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/TicketInformation/TicketInformationBadgeList/ReferencingTicketsBadgePopover.vue
@@ -6109,6 +6115,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/HighlightMenu.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/TopBarHeader.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/support/testOptions.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/useActiveArticle.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/TicketSimpleTable.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/types.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/__tests__/TicketSimpleTable.spec.ts
@@ -6120,6 +6127,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenB
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/useTicketScreenBehavior.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/__tests__/TicketScreenBehavior.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/FloatingToolbar.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketRelationAndRecentLists/__tests__/TicketRelationAndRecentLists.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketRelationAndRecentLists/TicketRelationAndRecentLists.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/actions/TicketMerge/TicketMergeFlyout.vue
@@ -6176,20 +6184,20 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/article-type/
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/useUnreadArticle.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/ArticleReply.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/ArticleMore.spec.ts
-app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/TicketDetailScrollToBottomButton.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/DeliveryMessage.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/TimeAccountingFlyout.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/support/article-detail-view-mocks.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/TicketLiveUsers.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/useActiveArticle.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/mocks/live-user-list.json
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/SystemMessage.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/FloatingToolbar.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/__tests__/TicketDetailBottomBar.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/TicketSharedDraftZoom.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/TicketDetailBottomBar.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/TicketAgentUpdateButton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/AdditionalTicketEditSubmitActions.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailBottomBar/TicketLiveUsers.vue
-app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailScrollToBottomButton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketLinksFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSharedDraftFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketCreate/TicketDuplicateDetectionAlert.vue
@@ -10654,6 +10662,7 @@ spec/lib/tasks/zammad/store/verify_files_spec.rb
 spec/lib/auth_spec.rb
 spec/lib/notification_factory_spec.rb
 spec/lib/excel_sheet/ticket_spec.rb
+spec/lib/rack_attack_setup_spec.rb
 spec/lib/session_helper_spec.rb
 spec/lib/pseudonymisation_spec.rb
 spec/lib/html_sanitizer/strict_spec.rb
@@ -10745,6 +10754,7 @@ spec/lib/knowledge_base/accessible_categories_spec.rb
 spec/lib/knowledge_base/effective_permission_spec.rb
 spec/lib/knowledge_base/category/permission_spec.rb
 spec/lib/knowledge_base/internal_assets_spec.rb
+spec/lib/knowledge_base/adjacent_answer_spec.rb
 spec/lib/knowledge_base/permissions_update_spec.rb
 spec/lib/external_data_source_spec.rb
 spec/lib/password_policy/digit_spec.rb
@@ -10786,6 +10796,8 @@ spec/lib/core_ext/active_record/calculations/pluck_as_hash_spec.rb
 spec/lib/core_ext/relation/as_batches_spec.rb
 spec/lib/core_ext/string_spec.rb
 spec/lib/core_ext/rszr_spec.rb
+spec/lib/rack_attack_setup/form_endpoint_spec.rb
+spec/lib/rack_attack_setup/public_endpoint_spec.rb
 spec/lib/microsoft_graph_spec.rb
 spec/lib/user_context_spec.rb
 spec/lib/sensitive_params_helper_spec.rb
@@ -11861,6 +11873,7 @@ spec/system/apps/desktop/admin_password_auth_spec.rb
 spec/system/apps/desktop/login_spec.rb
 spec/system/apps/desktop/ticket/github_integration_spec.rb
 spec/system/apps/desktop/ticket/overview_bulk_actions_spec.rb
+spec/system/apps/desktop/ticket/reply_advanced_spec.rb
 spec/system/apps/desktop/ticket/split_spec.rb
 spec/system/apps/desktop/ticket/shared_drafts_spec.rb
 spec/system/apps/desktop/ticket/checklist_spec.rb

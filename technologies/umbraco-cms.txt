@@ -2682,6 +2682,7 @@ src/Umbraco.Infrastructure/Cache/SingleItemsOnlyRepositoryCachePolicy.cs
 src/Umbraco.Infrastructure/Cache/MemberRepositoryUsernameCachePolicy.cs
 src/Umbraco.Infrastructure/Strings/MarkdigMarkdownToHtmlConverter.cs
 src/Umbraco.Infrastructure/Strings/HeyRedMarkdownToHtmlConverter.cs
+src/Umbraco.Infrastructure/Examine/ValueSetIndexer.cs
 src/Umbraco.Infrastructure/Examine/IndexPopulator.cs
 src/Umbraco.Infrastructure/Examine/IndexTypes.cs
 src/Umbraco.Infrastructure/Examine/ExamineSearcherModel.cs
@@ -6442,6 +6443,7 @@ src/Umbraco.Web.UI.Client/src/libs/extension-api/functions/has-on-unload-export.
 src/Umbraco.Web.UI.Client/src/libs/extension-api/initializers/index.ts
 src/Umbraco.Web.UI.Client/src/libs/extension-api/initializers/extension-initializer-base.ts
 src/Umbraco.Web.UI.Client/src/libs/extension-api/initializers/bundle-extension-initializer.ts
+src/Umbraco.Web.UI.Client/src/libs/extension-api/initializers/extension-initializer-base.test.ts
 src/Umbraco.Web.UI.Client/src/libs/extension-api/controller/extensions-api-initializer.race.test.ts
 src/Umbraco.Web.UI.Client/src/libs/extension-api/controller/index.ts
 src/Umbraco.Web.UI.Client/src/libs/extension-api/controller/extension-element-and-api-initializer.race.test.ts
@@ -7554,7 +7556,9 @@ src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker/index.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/index.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/content-property-dataset.context-token.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/merge-variant-values.function.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/content-property-dataset.context.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/merge-variant-values.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/element-property-data-owner.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/element-property-dataset.context.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/global-components/index.ts
@@ -10808,6 +10812,8 @@ src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/block-workspace.modal-token.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/block-element-property-dataset.context.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/block-workspace-label-index.function.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/block-workspace-label-value.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/block-workspace-label-value.function.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/views/edit/block-workspace-view-edit-properties.element.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/views/edit/block-workspace-view-edit-tab.element.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/workspace/views/edit/block-workspace-view-edit-content-no-router.element.ts
@@ -14662,6 +14668,8 @@ src/Umbraco.Web.UI.Client/src/packages/ufm/components/ufm-render/ufm-render.cont
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/ufm-render/ufm-render.element.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/localize/localize.element.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/localize/localize.component.ts
+src/Umbraco.Web.UI.Client/src/packages/ufm/components/member-name/member-name.component.ts
+src/Umbraco.Web.UI.Client/src/packages/ufm/components/member-name/member-name.element.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/ufm-element-base.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/ufm-component-base.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/components/link/link.element.ts
@@ -15619,6 +15627,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PublishedContentQueryTests.
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Strings/MarkdownToHtmlConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoContentValueSetValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoFieldDefinitionCollectionTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/ValueSetIndexerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/ContentValueSetBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoIndexUniqueKeyFieldNameTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberManagerTests.cs
@@ -16554,6 +16563,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingSe
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceVariantTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprintContainerServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaEditingServiceTests.Validate.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprintEditingServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceTagsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/RelationServiceTests.cs
@@ -17098,6 +17108,9 @@ tests/Umbraco.Tests.AcceptanceTest/tests/EntityDataPicker/Content/EntityPickerCo
 tests/Umbraco.Tests.AcceptanceTest/tests/EntityDataPicker/Content/EntityPickerTree.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/EntityDataPicker/DataType/EntityPickerCollection.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/EntityDataPicker/DataType/EntityPickerTree.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/AuthProviderLateRegistration/AdditionalSetup/App_Plugins/LateAuthProvider/entry-point.js
+tests/Umbraco.Tests.AcceptanceTest/tests/AuthProviderLateRegistration/AdditionalSetup/App_Plugins/LateAuthProvider/umbraco-package.json
+tests/Umbraco.Tests.AcceptanceTest/tests/AuthProviderLateRegistration/LateAuthProvider.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/UnattendedInstallConfig/Install/InstallSQLite.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/UnattendedInstallConfig/Install/InstallSQLServer.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/UnattendedInstallConfig/AdditionalSetup/appsettings.json

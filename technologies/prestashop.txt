@@ -6947,6 +6947,7 @@ src/PrestaShopBundle/ApiPlatform/Validator/CQRSApiValidator.php
 src/PrestaShopBundle/ApiPlatform/Serializer/DecimalNumberTypeExtractor.php
 src/PrestaShopBundle/ApiPlatform/Serializer/CQRSApiSerializer.php
 src/PrestaShopBundle/ApiPlatform/Encoder/MultipartDecoder.php
+src/PrestaShopBundle/ApiPlatform/OpenApi/FileUploadRequestBodyBuilder.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Factory/CQRSOpenApiFactory.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/LocalizedValueAdapter.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/CommandMappingAdapter.php
@@ -7062,9 +7063,11 @@ src/PrestaShopBundle/Cache/CacheWarmer.php
 src/PrestaShopBundle/Cache/LocalizationWarmer.php
 src/PrestaShopBundle/Cache/LegacyCacheClearer.php
 src/PrestaShopBundle/Command/AppendHooksListForSqlUpgradeFileCommand.php
+src/PrestaShopBundle/Command/PasswordPromptTrait.php
 src/PrestaShopBundle/Command/DebugCommand.php
 src/PrestaShopBundle/Command/AboutCommand.php
 src/PrestaShopBundle/Command/RegenerateThumbnailsCommand.php
+src/PrestaShopBundle/Command/EmployeeCreateCommand.php
 src/PrestaShopBundle/Command/GenerateMailTemplatesCommand.php
 src/PrestaShopBundle/Command/UpdateSchemaCommand.php
 src/PrestaShopBundle/Command/FeatureFlagCommand.php
@@ -7075,6 +7078,7 @@ src/PrestaShopBundle/Command/ThemeEnablerCommand.php
 src/PrestaShopBundle/Command/LegacyLinkLinterCommand.php
 src/PrestaShopBundle/Command/AppendConfigurationFileHooksListCommand.php
 src/PrestaShopBundle/Command/NamingConventionLinterCommand.php
+src/PrestaShopBundle/Command/EmployeeChangePasswordCommand.php
 src/PrestaShopBundle/Command/UpdateEUTaxruleGroupsCommand.php
 src/PrestaShopBundle/Command/ExportModuleTranslationsCommand.php
 src/PrestaShopBundle/Command/CheckTranslationFixtures.php
@@ -9607,6 +9611,7 @@ src/Adapter/Employee/FormLanguageChanger.php
 src/Adapter/Employee/EmployeeLanguageUpdater.php
 src/Adapter/Employee/EmployeeRepository.php
 src/Adapter/Employee/EmployeeDataProvider.php
+src/Adapter/Employee/EmployeeContextInitializer.php
 src/Adapter/Employee/ContextEmployeeProvider.php
 src/Adapter/Employee/AvatarProvider.php
 src/Adapter/Employee/EmployeeFormAccessChecker.php
@@ -11126,6 +11131,8 @@ tests/Unit/PrestaShopBundle/Command/ExportThemeCommandTest.php
 tests/Unit/PrestaShopBundle/Command/RegenerateThumbnailsCommandTest.php
 tests/Unit/PrestaShopBundle/Command/ListCommandsAndQueriesCommandTest.php
 tests/Unit/PrestaShopBundle/Command/DebugCommandTest.php
+tests/Unit/PrestaShopBundle/Command/EmployeeChangePasswordCommandTest.php
+tests/Unit/PrestaShopBundle/Command/EmployeeCreateCommandTest.php
 tests/Unit/PrestaShopBundle/Command/SearchIndexationCommandTest.php
 tests/Unit/PrestaShopBundle/Command/UpdateSchemaCommandTest.php
 tests/Unit/PrestaShopBundle/Form/Validator/TinyMceMaxLengthValidatorTest.php
@@ -11762,6 +11769,7 @@ tests/UI/campaigns/functional/BO/02_orders/01_orders/06_bulkOpenInNewTab.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/01_helpCard.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/10_pagination.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/08_viewCustomer.ts
+tests/UI/campaigns/functional/BO/02_orders/01_orders/createOrders/createGuest.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/createOrders/02_createCustomer.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/createOrders/01_searchViewCustomer.ts
 tests/UI/campaigns/functional/BO/02_orders/01_orders/createOrders/10_checkSummary.ts
@@ -12892,6 +12900,7 @@ tests/Resources/legacy-to-standard-locales.json
 tests/Resources/Translator/DummyTranslator.php
 tests/Resources/ApiPlatform/Resources/ApiTest.php
 tests/Resources/ApiPlatform/Resources/UpdatePositionResource.php
+tests/Resources/ApiPlatform/Resources/FileUploadResource.php
 tests/Resources/ApiPlatform/Resources/LocalizedResource.php
 tests/Resources/classes/TestableObjectModel.php
 tests/Resources/classes/TestCookie.php

@@ -713,6 +713,7 @@ src/Core/System/SalesChannel/Api/StructEncoder.php
 src/Core/System/SalesChannel/Api/StoreApiResponseListener.php
 src/Core/System/SalesChannel/SalesChannelEvents.php
 src/Core/System/SalesChannel/Subscriber/SalesChannelTypeValidator.php
+src/Core/System/SalesChannel/Mcp/Tool/StoreApiContextTool.php
 src/Core/System/User/UserDefinition.php
 src/Core/System/User/Service/UserValidationService.php
 src/Core/System/User/Aggregate/UserRecovery/UserRecoveryCollection.php
@@ -3384,6 +3385,7 @@ src/Core/Framework/DependencyInjection/FrameworkExtension.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetBundleRegistrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FilesystemConfigMigrationCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/HttpCacheConfigCompilerPass.php
+src/Core/Framework/DependencyInjection/CompilerPass/StoreApiMcpServerBuilderCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/McpToolDiscoveryCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/FrameworkMigrationReplacementCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/AssetRegistrationCompilerPass.php
@@ -4203,6 +4205,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/customer-gr
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/search.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/country.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/contact-form.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/mcp.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/seo-url.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/sitemap.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/script.json
@@ -4437,8 +4440,10 @@ src/Core/Framework/Api/Controller/FeatureFlagController.php
 src/Core/Framework/Api/Controller/UserController.php
 src/Core/Framework/Api/ApiException.php
 src/Core/Framework/Console/OutputFormatTrait.php
+src/Core/Framework/Mcp/RateLimit/McpRateLimiter.php
 src/Core/Framework/Mcp/AllowList/McpAllowlistFilter.php
 src/Core/Framework/Mcp/AllowList/McpAllowlistProvider.php
+src/Core/Framework/Mcp/AllowList/McpAllowlist.php
 src/Core/Framework/Mcp/Authentication/McpExceptionListener.php
 src/Core/Framework/Mcp/Authentication/McpAuthenticationListener.php
 src/Core/Framework/Mcp/Attribute/McpToolDependsOn.php
@@ -4456,6 +4461,7 @@ src/Core/Framework/Mcp/Resource/ExtensionsResource.php
 src/Core/Framework/Mcp/ToolResultCacheStorage.php
 src/Core/Framework/Mcp/docs/product-epic-backlog.md
 src/Core/Framework/Mcp/docs/gaps-user-allowlist.md
+src/Core/Framework/Mcp/docs/store-api-mcp.md
 src/Core/Framework/Mcp/docs/agent-user-stories.md
 src/Core/Framework/Mcp/docs/spec-coverage.md
 src/Core/Framework/Mcp/docs/README.md
@@ -4487,9 +4493,13 @@ src/Core/Framework/Mcp/AGENTS.md
 src/Core/Framework/Mcp/Command/DebugMcpCommand.php
 src/Core/Framework/Mcp/Command/AGENTS.md
 src/Core/Framework/Mcp/Session/McpSessionCleanupSubscriber.php
+src/Core/Framework/Mcp/Session/McpSessionIdValidator.php
+src/Core/Framework/Mcp/Context/McpContextProviderInterface.php
 src/Core/Framework/Mcp/Context/McpContextProvider.php
 src/Core/Framework/Mcp/Context/AGENTS.md
+src/Core/Framework/Mcp/Context/StoreApiMcpContextProvider.php
 src/Core/Framework/Mcp/Controller/McpServerController.php
+src/Core/Framework/Mcp/Controller/StoreApiMcpServerController.php
 src/Core/Framework/Mcp/Controller/McpToolListController.php
 src/Core/Framework/Mcp/Controller/UserMcpAllowlistController.php
 src/Core/Framework/Mcp/Controller/IntegrationMcpAllowlistController.php
@@ -7228,6 +7238,7 @@ src/Administration/Resources/app/administration/src/module/sw-sales-channel/page
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-list/sw-sales-channel-list.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-list/sw-sales-channel-list.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-list/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-detail/sw-sales-channel-detail.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-detail/sw-sales-channel-detail.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-detail/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/page/sw-sales-channel-detail/sw-sales-channel-detail.html.twig
@@ -7241,6 +7252,7 @@ src/Administration/Resources/app/administration/src/module/sw-sales-channel/comp
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-sales-channel-modal-grid/sw-sales-channel-modal-grid.scss
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-sales-channel-modal-grid/sw-sales-channel-modal-grid.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-sales-channel-modal-grid/index.js
+src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-sales-channel-modal-grid/sw-sales-channel-modal-grid.spec.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-agentic-commerce-tracking-config/index.js
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-agentic-commerce-tracking-config/sw-agentic-commerce-tracking-config.html.twig
 src/Administration/Resources/app/administration/src/module/sw-sales-channel/component/sw-agentic-commerce-tracking-config/sw-agentic-commerce-tracking-config.spec.js
@@ -14857,6 +14869,7 @@ tests/integration/Core/Framework/Mcp/Scenario/AdminDataExplorationScenarioTest.p
 tests/integration/Core/Framework/Mcp/Scenario/CustomerInsightsScenarioTest.php
 tests/integration/Core/Framework/Mcp/McpCapabilityDiscoveryTest.php
 tests/integration/Core/Framework/Mcp/Tool/EntitySearchToolIntegrationTest.php
+tests/integration/Core/Framework/Mcp/StoreApiMcpCapabilityDiscoveryTest.php
 tests/integration/Core/Framework/Mcp/McpSessionPersistenceTest.php
 tests/integration/Core/Framework/CustomField/CustomFieldServiceTest.php
 tests/integration/Core/Framework/CustomField/CustomFieldSetRepositoryTest.php
@@ -15756,6 +15769,7 @@ tests/acceptance/tests/Checkout/CheckoutWithDigitalProduct.spec.ts
 tests/acceptance/tests/Checkout/RegisteredUserBuysProduct.spec.ts
 tests/acceptance/tests/SalesChannels/StorefrontCurrencies.spec.ts
 tests/acceptance/tests/SalesChannels/StorefrontLanguages.spec.ts
+tests/acceptance/tests/SalesChannels/AgenticCommerceDeprecationBanner.spec.ts
 tests/acceptance/tests/ProductAnalytics/ConsentModalValidation.spec.ts
 tests/acceptance/tests/ProductAnalytics/ValidatePRAEvents.spec.ts
 tests/acceptance/.eslintrc.cjs
@@ -16776,6 +16790,7 @@ tests/unit/Core/Framework/DependencyInjection/CompilerPass/MessengerMiddlewareCo
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/AssetBundleRegistrationCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/AssetRegistrationCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/McpToolAnalysisCompilerPassTest.php
+tests/unit/Core/Framework/DependencyInjection/CompilerPass/StoreApiMcpServerBuilderCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/McpToolDiscoveryCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/FrameworkMigrationReplacementCompilerPassTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/TwigLoaderConfigCompilerPassTest.php
@@ -17233,6 +17248,7 @@ tests/unit/Core/Framework/RateLimiter/Policy/TimeBackoffTest.php
 tests/unit/Core/Framework/RateLimiter/RateLimiterTest.php
 tests/unit/Core/Framework/Api/EventListener/ExpectationSubscriberTest.php
 tests/unit/Core/Framework/Api/EventListener/JsonRequestTransformerListenerTest.php
+tests/unit/Core/Framework/Api/EventListener/CorsListenerTest.php
 tests/unit/Core/Framework/Api/EventListener/ErrorResponseFactoryTest.php
 tests/unit/Core/Framework/Api/Sync/SyncServiceTest.php
 tests/unit/Core/Framework/Api/Sync/SyncFkResolverTest.php
@@ -17242,6 +17258,7 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiDefinitionS
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/StoreApiTestOtherRoute.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/ComplexDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/SimpleExtendedDefinition.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiSchemaBuilderTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/BundleSchemaPathCollectionTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/SimpleDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithPredeclaredSwLanguageId/BundleWithPredeclaredSwLanguageId.php
@@ -17312,6 +17329,8 @@ tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Bundle
 tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/custom-snippet/custom-snippet.html.twig
 tests/unit/Core/Framework/Api/Controller/Fixtures/BundleWithCustomSnippet/Resources/views/snippets/address/first_name.html.twig
 tests/unit/Core/Framework/Api/Controller/FeatureFlagControllerTest.php
+tests/unit/Core/Framework/Mcp/RateLimit/McpRateLimiterTest.php
+tests/unit/Core/Framework/Mcp/AllowList/McpAllowlistTest.php
 tests/unit/Core/Framework/Mcp/AllowList/McpAllowlistFilterTest.php
 tests/unit/Core/Framework/Mcp/AllowList/McpAllowlistProviderTest.php
 tests/unit/Core/Framework/Mcp/McpExceptionTest.php
@@ -17339,6 +17358,7 @@ tests/unit/Core/Framework/Mcp/Tool/McpToolResponseConventionTest.php
 tests/unit/Core/Framework/Mcp/Tool/McpToolResponseTest.php
 tests/unit/Core/Framework/Mcp/Tool/MediaUploadToolTest.php
 tests/unit/Core/Framework/Mcp/Tool/EntityUpsertToolTest.php
+tests/unit/Core/Framework/Mcp/Tool/StoreApiContextToolTest.php
 tests/unit/Core/Framework/Mcp/Tool/McpEntityIncludesTest.php
 tests/unit/Core/Framework/Mcp/Tool/EntitySearchToolTest.php
 tests/unit/Core/Framework/Mcp/Tool/SystemConfigWriteToolTest.php
@@ -17349,7 +17369,10 @@ tests/unit/Core/Framework/Mcp/Tool/EntityAggregateToolTest.php
 tests/unit/Core/Framework/Mcp/Tool/SystemConfigReadToolTest.php
 tests/unit/Core/Framework/Mcp/Command/DebugMcpCommandTest.php
 tests/unit/Core/Framework/Mcp/Session/McpSessionCleanupSubscriberTest.php
+tests/unit/Core/Framework/Mcp/Session/McpSessionIdValidatorTest.php
+tests/unit/Core/Framework/Mcp/Context/StoreApiMcpContextProviderTest.php
 tests/unit/Core/Framework/Mcp/Context/McpContextProviderTest.php
+tests/unit/Core/Framework/Mcp/Controller/StoreApiMcpServerControllerTest.php
 tests/unit/Core/Framework/Mcp/Controller/McpServerControllerTest.php
 tests/unit/Core/Framework/Mcp/Controller/IntegrationMcpAllowlistControllerTest.php
 tests/unit/Core/Framework/Mcp/Controller/UserMcpAllowlistControllerTest.php
