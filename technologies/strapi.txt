@@ -2397,6 +2397,8 @@ packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tes
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/CellValue.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/EditViewPage.tsx
 packages/core/content-manager/admin/src/pages/EditView/utils/data.ts
+packages/core/content-manager/admin/src/pages/EditView/utils/keyboardShortcuts.ts
+packages/core/content-manager/admin/src/pages/EditView/utils/tests/keyboardShortcuts.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/forms.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/data.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/forms.ts
@@ -2530,6 +2532,7 @@ packages/core/content-manager/admin/src/translations/zh.json
 packages/core/content-manager/admin/src/translations/sv.json
 packages/core/content-manager/admin/src/translations/it.json
 packages/core/content-manager/admin/src/translations/ml.json
+packages/core/content-manager/admin/src/translations/tests/editViewShortcutHints.test.ts
 packages/core/content-manager/admin/src/translations/cs.json
 packages/core/content-manager/admin/src/translations/zh-Hans.json
 packages/core/content-manager/admin/src/translations/es.json
@@ -2691,6 +2694,7 @@ packages/core/content-manager/server/src/mcp/schemas/filters-schema.ts
 packages/core/content-manager/server/src/mcp/schemas/input-schemas.ts
 packages/core/content-manager/server/src/mcp/schemas/output-schemas.ts
 packages/core/content-manager/server/src/mcp/schemas/data-schema.ts
+packages/core/content-manager/server/src/mcp/schemas/__tests__/output-schemas.test.ts
 packages/core/content-manager/server/src/mcp/permissions.ts
 packages/core/content-manager/server/src/mcp/handlers/index.ts
 packages/core/content-manager/server/src/mcp/handlers/constants.ts
@@ -2702,6 +2706,8 @@ packages/core/content-manager/server/src/mcp/types.ts
 packages/core/content-manager/server/src/mcp/__tests__/derive-content-type-mcp-tools.test.ts
 packages/core/content-manager/server/src/mcp/__tests__/blocks-schema.test.ts
 packages/core/content-manager/server/src/mcp/derive-content-type-mcp-tools.ts
+packages/core/content-manager/server/src/mcp/sanitizers/shape-relations.ts
+packages/core/content-manager/server/src/mcp/sanitizers/__tests__/shape-relations.test.ts
 packages/core/content-manager/server/src/middlewares/index.ts
 packages/core/content-manager/server/src/middlewares/routing.ts
 packages/core/content-manager/server/src/bootstrap.ts
@@ -5212,6 +5218,7 @@ tests/api/core/content-manager/components/repeatable-required.test.api.js
 tests/api/core/content-manager/components/repeatable-required-min-max.test.api.js
 tests/api/core/content-releases/settings.test.api.ts
 tests/api/core/mcp/mcp-content-manager-rbac.test.api.ts
+tests/api/core/mcp/mcp-content-manager-shaping.test.api.ts
 tests/api/core/mcp/mcp-auth.test.api.ts
 tests/api/core/strapi/search.test.api.js
 tests/api/core/strapi/api/fields/fields.test.api.js

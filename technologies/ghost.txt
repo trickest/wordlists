@@ -678,6 +678,7 @@ apps/admin-x-settings/src/components/settings/site/site-settings.tsx
 apps/admin-x-settings/src/components/settings/site/change-theme.tsx
 apps/admin-x-settings/src/components/settings/site/navigation.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-file-tree.tsx
+apps/admin-x-settings/src/components/settings/site/theme/theme-validation-details.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-installed-modal.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-preview.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-editor-styles.ts
@@ -3973,6 +3974,7 @@ ghost/core/test/integration/services/email-service/__snapshots__/batch-sending.t
 ghost/core/test/integration/services/email-service/domain-warming.test.js
 ghost/core/test/integration/services/email-service/cards.test.js
 ghost/core/test/integration/services/email-service/README.md
+ghost/core/test/integration/services/email-service/tier-segmentation.test.js
 ghost/core/test/integration/services/webhook-request.test.js
 ghost/core/test/integration/services/automations/welcome-email-automation-poll.test.js
 ghost/core/test/integration/services/offer-bookshelf-repository.test.js
@@ -4006,10 +4008,9 @@ ghost/core/test/utils/email-verification-utils.ts
 ghost/core/test/utils/e2e-framework-mock-manager.js
 ghost/core/test/utils/admin-utils.js
 ghost/core/test/utils/logging-utils.js
+ghost/core/test/utils/vitest-global-db-setup.ts
 ghost/core/test/utils/clock-utils.js
 ghost/core/test/utils/redirects.js
-ghost/core/test/utils/overrides.js
-ghost/core/test/utils/mocha-retry-reporter.js
 ghost/core/test/utils/vitest-setup-db.ts
 ghost/core/test/utils/agents/test-agent.js
 ghost/core/test/utils/agents/index.js
@@ -4020,6 +4021,7 @@ ghost/core/test/utils/agents/members-api-test-agent.js
 ghost/core/test/utils/i18n-test-utils.js
 ghost/core/test/utils/url-service-utils.js
 ghost/core/test/utils/api.js
+ghost/core/test/utils/db-template.js
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/mocks/index.js
 ghost/core/test/utils/deferred.js
@@ -4210,6 +4212,7 @@ ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-2.md
 ghost/core/test/utils/fixtures/import/published-2014-12-19-test-1.md
 ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-3.md
 ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-1.md
+ghost/core/test/utils/db-template-paths.js
 ghost/core/test/utils/batch-email-utils.js
 ghost/core/test/utils/e2e-framework.js
 ghost/core/test/utils/index.js
@@ -4218,6 +4221,7 @@ ghost/core/test/utils/browser-test-utils.js
 ghost/core/test/utils/automations-fixtures.ts
 ghost/core/test/utils/config-utils.js
 ghost/core/test/utils/fixture-utils.js
+ghost/core/test/utils/vitest-globalsetup-services.ts
 ghost/core/test/utils/vitest-setup.ts
 ghost/core/test/e2e-frontend/members.test.js
 ghost/core/test/e2e-frontend/middleware.test.js

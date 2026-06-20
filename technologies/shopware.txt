@@ -6733,6 +6733,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestRuleHelper.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoExpectExceptionMessageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoDependsWithDataProviderRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitMethodAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertsOnObjectsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoMockBuilderConstructorBypassRule.php
@@ -14028,6 +14029,7 @@ tests/migration/Core/V6_7/Migration1773420826AddSalutationPositionColumnTest.php
 tests/migration/Core/V6_7/Migration1773829001MigrateProductStreamProductStatesFilterTest.php
 tests/migration/Core/V6_7/Migration1773815272SalesChannelNameTranslationTest.php
 tests/migration/Core/V6_7/Migration1770740885AddRevisionToConsentStateTest.php
+tests/migration/Core/V6_7/Migration1773329152AddAgenticAiSalesChannelTypeTest.php
 tests/migration/Core/V6_7/Migration1779176196AddFeedLabelToProductExportTest.php
 tests/migration/Core/V6_7/Migration1763125891AddProductTypeColumnTest.php
 tests/migration/Core/V6_7/Migration1756068712FixOrderAddressLastNameLengthTest.php
@@ -15800,6 +15802,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AttributeFinalRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/MessagesShouldNotUsePHPStanTypesTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DeprecatedMethodsThrowDeprecationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnserializeUsageRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAssertEqualsOnClosureRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/UseCLIContextRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAnyInvocationMatcherRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsHelperTest.php
@@ -15923,6 +15926,8 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePH
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePHPStanTypes/AsyncMessageNotUsingPHPStanType.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePHPStanTypes/AsyncMessageUsingPHPStanType.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePHPStanTypes/AsyncMessageImportingPHPStanType.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAssertEqualsOnClosureRule/MethodCalls.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAssertEqualsOnClosureRule/StaticCalls.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserializeInTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserialize.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnsafeRequestHasSessionRule/UnsafeRequestHasSessionUsage.php

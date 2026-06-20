@@ -197,6 +197,7 @@ api/src/schedules/utils/duration-to-cron.ts
 api/src/schedules/utils/duration-to-cron.test.ts
 api/src/schedules/license.test.ts
 api/src/schedules/tus.ts
+api/src/schedules/cloudflare-queue-consumer.ts
 api/src/schedules/project.test.ts
 api/src/schedules/retention.ts
 api/src/schedules/license.ts
@@ -482,6 +483,7 @@ api/src/services/mail/templates/password-reset.liquid
 api/src/services/mail/rate-limiter.test.ts
 api/src/services/deployment-projects.ts
 api/src/services/folders.test.ts
+api/src/services/cloudflare-queue-consumer.test.ts
 api/src/services/collections.ts
 api/src/services/deployment.test.ts
 api/src/services/permissions.ts
@@ -525,6 +527,7 @@ api/src/services/roles.test.ts
 api/src/services/websocket.test.ts
 api/src/services/extensions.test.ts
 api/src/services/server.test.ts
+api/src/services/cloudflare-queue-consumer.ts
 api/src/services/authentication.ts
 api/src/services/fields.test.ts
 api/src/services/assets.ts
@@ -558,8 +561,10 @@ api/src/logger/redact-query.test.ts
 api/src/server.ts
 api/src/deployment/index.ts
 api/src/deployment/drivers/index.ts
+api/src/deployment/drivers/cloudflare.test.ts
 api/src/deployment/drivers/netlify.ts
 api/src/deployment/drivers/vercel.ts
+api/src/deployment/drivers/cloudflare.ts
 api/src/deployment/drivers/vercel.test.ts
 api/src/deployment/drivers/netlify.test.ts
 api/src/deployment/deployment.ts
@@ -2054,6 +2059,7 @@ app/src/modules/deployment/routes/provider/settings.vue
 app/src/modules/deployment/routes/overview.vue
 app/src/modules/deployment/index.ts
 app/src/modules/deployment/config/providers.ts
+app/src/modules/deployment/config/providers.test.ts
 app/src/modules/deployment/composables/use-deployment-navigation.test.ts
 app/src/modules/deployment/composables/use-deployment-navigation.ts
 app/src/modules/deployment/components/provider-setup-drawer.vue
@@ -2864,6 +2870,7 @@ app/src/components/v-icon/custom-icons/grid_6.vue
 app/src/components/v-icon/custom-icons/flip_horizontal.vue
 app/src/components/v-icon/custom-icons/signal_wifi_2_bar.vue
 app/src/components/v-icon/custom-icons/folder_move.vue
+app/src/components/v-icon/custom-icons/cloudflare.vue
 app/src/components/v-icon/custom-icons/grid_5.vue
 app/src/components/v-icon/custom-icons/vercel.vue
 app/src/components/v-icon/custom-icons/signal_wifi_1_bar.vue
@@ -3968,8 +3975,10 @@ codecov.yaml
 crowdin.yml
 .changeset/floppy-keys-relax.md
 .changeset/config.json
+.changeset/calm-years-wave.md
 .changeset/dry-pillows-hope.md
 .changeset/full-trees-type.md
+.changeset/common-plums-sneeze.md
 contributing.md
 tests/blackbox/readme.md
 tests/blackbox/extensions/action-verify-schema/package.json

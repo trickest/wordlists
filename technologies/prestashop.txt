@@ -3002,6 +3002,7 @@ tools/build/Library/InstallUnpacker/classes/Download.php
 tools/build/Library/InstallUnpacker/classes/ConfigurationValidator.php
 tools/build/Library/InstallUnpacker/classes/PrestashopCouldNotUnzipLatestVersionException.php
 tools/build/Library/InstallUnpacker/compile.php
+tools/build/tests/Unit/Library/ReleaseCreatorTest.php
 tools/build/tests/Unit/Library/InstallUnpacker/classes/VersionNumberTest.php
 tools/build/README.md
 tools/assets/build.sh
@@ -4678,6 +4679,7 @@ src/Core/Domain/Country/Exception/CountryException.php
 src/Core/Domain/Country/Exception/CountryConstraintException.php
 src/Core/Domain/Country/Exception/DeleteCountryException.php
 src/Core/Domain/Country/Exception/CannotAddCountryException.php
+src/Core/Domain/Country/Exception/DuplicateCountryIsoCodeException.php
 src/Core/Domain/Country/Exception/InvalidAddressFormatException.php
 src/Core/Domain/Country/Exception/CannotToggleCountryStatusException.php
 src/Core/Domain/Country/Exception/CannotEditCountryException.php

@@ -5087,6 +5087,7 @@ dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Order/Grid/Col
 dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Order/AddressTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Order/Address/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Order/StatusTest.php
+dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Provider/UpdatedIdListProviderAsyncIndexerTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Provider/UpdatedAtListProviderTiedTimestampTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/ResourceModel/Sale/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/OrderTest.php
@@ -12892,7 +12893,6 @@ app/code/Magento/Search/Test/Unit/Ui/Component/Listing/Column/SynonymActionsTest
 app/code/Magento/Search/Test/Unit/Helper/DataTest.php
 app/code/Magento/Search/Test/Mftf/Test/StorefrontCustomerQuicklySearchesForProductByAttributeTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchSuggestionByProductDescriptionTest.xml
-app/code/Magento/Search/Test/Mftf/Test/ElasticsearchProductCanBeFoundByValueOfSearchableAttributeTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchSuggestionByProductShortDescriptionTest.xml
 app/code/Magento/Search/Test/Mftf/Test/AdminVerifySearchLongPhraseWithSomeWordsInQuotesWorksWithoutErrorsTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchTermEntityRedirectTest.xml
@@ -12903,6 +12903,7 @@ app/code/Magento/Search/Test/Mftf/Test/AdminProductCanBeFoundByAttributeValueTes
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchButtonEnabledAfterMinimumSearchLengthHitTest.xml
 app/code/Magento/Search/Test/Mftf/Test/UseLayeredNavigationToFilterProductsByOutOfStockOptionOfConfigurableProductTest.xml
 app/code/Magento/Search/Test/Mftf/Test/AdminNewSearchSynonymsFormResetTest.xml
+app/code/Magento/Search/Test/Mftf/Test/StorefrontOpenSearchProductCanBeFoundByValueOfSearchableAttributeTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchSuggestionByProductSkuTest.xml
 app/code/Magento/Search/Test/Mftf/Test/AdminGlobalSearchOnProductPageTest.xml
 app/code/Magento/Search/Test/Mftf/Test/StorefrontVerifySearchFieldVisibilityWhenSuggestionDisabledTest.xml
@@ -31298,6 +31299,7 @@ app/code/Magento/Bundle/Test/Mftf/Test/AdminAddBundleProductToCartFromWishListPa
 app/code/Magento/Bundle/Test/Mftf/Test/AdminAddBundleItemsTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/AdminCheckingBundleSKUsCreationTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontFixedBundleUserDefinedChildQtyOnOrderViewTest.xml
+app/code/Magento/Bundle/Test/Mftf/Test/AdminCanRemoveBundleProductOptionTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontVerifyDiscountOnDynamicBundleProductDifferentCartRulesTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/AdminFilterProductListByBundleProductTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/NewProductsListWidgetBundleProductTest.xml
@@ -32699,6 +32701,7 @@ app/code/Magento/Sales/Test/Mftf/Data/AdminMenuData.xml
 app/code/Magento/Sales/Test/Mftf/Data/ConfigData.xml
 app/code/Magento/Sales/Test/Mftf/Helper/SalesHelper.php
 app/code/Magento/Sales/Test/Mftf/Helper/AdminProductPage.php
+app/code/Magento/Sales/Test/Fixture/TwoOrdersWithOrderItems.php
 app/code/Magento/Sales/Test/Fixture/Transaction.php
 app/code/Magento/Sales/Test/Fixture/Creditmemo.php
 app/code/Magento/Sales/Test/Fixture/Shipment.php
@@ -35082,6 +35085,7 @@ app/code/Magento/Config/Test/Mftf/ActionGroup/AdminNavigateToConfigurationSystem
 app/code/Magento/Config/Test/Mftf/ActionGroup/EnabledWYSIWYGEditorActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/SetTaxClassForGiftOptionsAndShoppingCartDisplaySettingsActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/ResetIncludeTaxInTotalForShippingActionGroup.xml
+app/code/Magento/Config/Test/Mftf/ActionGroup/AdminChooseOpenSearchAsSearchEngineActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminUncheckUseSystemValueActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/SetTaxApplyOnSettingActionGroup.xml
 app/code/Magento/Config/Test/Mftf/ActionGroup/AdminDisableDHLConfigurationActionGroup.xml
