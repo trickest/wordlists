@@ -783,7 +783,6 @@ apps/admin/src/layout/app-sidebar/user-menu-item.tsx
 apps/admin/src/layout/app-sidebar/upgrade-banner.tsx
 apps/admin/src/layout/app-sidebar/nav-saved-views.tsx
 apps/admin/src/layout/app-sidebar/hooks/use-sidebar-banner-state.tsx
-apps/admin/src/layout/app-sidebar/hooks/use-featurebase.ts
 apps/admin/src/layout/app-sidebar/hooks/use-whats-new-status.ts
 apps/admin/src/layout/app-sidebar/hooks/use-navigation-preferences.ts
 apps/admin/src/layout/app-sidebar/hooks/use-sidebar-banner-state.test.tsx
@@ -1213,6 +1212,7 @@ apps/admin-x-framework/src/utils/post-utils.ts
 apps/admin-x-framework/src/utils/nql.ts
 apps/admin-x-framework/src/utils/errors.ts
 apps/admin-x-framework/src/utils/post-helpers.ts
+apps/admin-x-framework/src/utils/deferred.ts
 apps/admin-x-framework/src/utils/currency.ts
 apps/admin-x-framework/src/utils/helpers.ts
 apps/admin-x-framework/src/utils/lazy-component.ts
@@ -1220,6 +1220,7 @@ apps/admin-x-framework/src/utils/query-client.ts
 apps/admin-x-framework/src/utils/stats-config.ts
 apps/admin-x-framework/src/hooks.ts
 apps/admin-x-framework/src/hooks/use-handle-error.ts
+apps/admin-x-framework/src/hooks/use-featurebase.ts
 apps/admin-x-framework/src/hooks/use-confirm-unload.ts
 apps/admin-x-framework/src/hooks/use-filterable-api.ts
 apps/admin-x-framework/src/hooks/use-tinybird-token.ts
@@ -1993,6 +1994,7 @@ apps/posts/src/views/Automations/components/email-modal/email-editor.tsx
 apps/posts/src/views/Automations/components/email-modal/koenig-lexical.d.ts
 apps/posts/src/views/Automations/components/email-modal/preview-frame.tsx
 apps/posts/src/views/Automations/components/email-modal/use-email-preview.ts
+apps/posts/src/views/Automations/components/automations-help-cards.tsx
 apps/posts/src/views/Automations/components/automation-status-badge.tsx
 apps/posts/src/views/Automations/components/canvas/step-sidebar.tsx
 apps/posts/src/views/Automations/components/canvas/add-step-edge.tsx

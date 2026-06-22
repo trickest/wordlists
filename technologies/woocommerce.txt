@@ -691,7 +691,6 @@ packages/js/navigation/README.md
 packages/js/navigation/changelog/65662-dev-65627-postrelease-cleanup
 packages/js/navigation/changelog/.gitkeep
 packages/js/navigation/build.mjs
-packages/js/internal-ts-config/changelog/dev-wp-6-9-vendored-types-upgrade
 packages/js/internal-build/package.json
 packages/js/internal-build/scripts/generate-types.mjs
 packages/js/internal-build/src/index.ts
@@ -1202,7 +1201,6 @@ packages/js/csv-export/README.md
 packages/js/csv-export/changelog/.gitkeep
 packages/js/csv-export/build.mjs
 packages/js/csv-export/.prettierrc.js
-packages/js/settings-editor/changelog/64838-dev-esbuild-package-builds
 packages/js/dependency-extraction-webpack-plugin/package.json
 packages/js/dependency-extraction-webpack-plugin/composer.lock
 packages/js/dependency-extraction-webpack-plugin/.eslintrc.js
@@ -3143,6 +3141,7 @@ packages/php/email-editor/tests/unit/Engine/Renderer/Html2Text_Test.php
 packages/php/email-editor/README.md
 packages/php/email-editor/phpunit-integration.xml.dist
 packages/php/email-editor/email-editor.php
+packages/php/email-editor/changelog/stomail-8193-column-width-doesnt-work-in-the-alpha-block-editor
 packages/php/email-editor/changelog/.gitkeep
 packages/php/monorepo-plugin/phpcs.xml
 packages/php/monorepo-plugin/composer.lock
@@ -12743,6 +12742,7 @@ plugins/woocommerce/changelog/fix-blocks-site-editor-save-panel
 plugins/woocommerce/changelog/63793-fix-wcag-metabox-delete-contrast
 plugins/woocommerce/changelog/remove-products-catalog-api
 plugins/woocommerce/changelog/update-rename-visual-attribute-picker
+plugins/woocommerce/changelog/testops-181-coupon-e2e-downgrade-move-discount-arithmetic-to-phpunit
 plugins/woocommerce/changelog/fix-email-preview-downloadable-items
 plugins/woocommerce/changelog/qao-404-blocks-e2e-specs-core-isolation-guard
 plugins/woocommerce/changelog/65544-65104-stale-user-meta
@@ -12774,6 +12774,7 @@ plugins/woocommerce/changelog/woomob-2683-remove-pos-feature-flag
 plugins/woocommerce/changelog/65749-fix-blocks-build-warnings
 plugins/woocommerce/changelog/wooplug-6663-fix-typeerror-formatted-order-total
 plugins/woocommerce/changelog/codex-remove-create-product-editor-block
+plugins/woocommerce/changelog/fix-shopper-lists-non-published-products
 plugins/woocommerce/changelog/fix-e2e-helper-plugin-mounts
 plugins/woocommerce/changelog/65879-40653-country-code
 plugins/woocommerce/changelog/remove-coming-soon-newsletter-template-flag
@@ -12831,6 +12832,7 @@ plugins/woocommerce/changelog/fix-orders-query-sqlite-limit
 plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
 plugins/woocommerce/changelog/fix-65618
+plugins/woocommerce/changelog/performance-features-and-gateways-options-priming
 plugins/woocommerce/changelog/remove-brands-beta-product-editor
 plugins/woocommerce/changelog/abandoned-cart-recovery-email
 plugins/woocommerce/changelog/dev-65710-stricter-types-control-in-tax-class
@@ -12848,6 +12850,7 @@ plugins/woocommerce/changelog/fix-64009-get-images-signature-bc
 plugins/woocommerce/changelog/65723-fix-site-health-upload-loopback
 plugins/woocommerce/changelog/fix-product-query-fixes
 plugins/woocommerce/changelog/fix-hardcoded-wp-content-paths
+plugins/woocommerce/changelog/wooplug-6880-pending-cancelled-admin-email
 plugins/woocommerce/changelog/sprinkle-orders-empty-state
 plugins/woocommerce/changelog/add-filter-for-variable-product-taxes-influence-price
 plugins/woocommerce/changelog/fix-39366

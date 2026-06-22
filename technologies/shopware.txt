@@ -6736,6 +6736,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoDependsWithDataProviderRule.
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitMethodAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertsOnObjectsRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/AssertEqualsCanonicalizingListArgumentRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoMockBuilderConstructorBypassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestReflectionClassInterface.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/DataProviderRowArityRule.php
@@ -10965,6 +10966,7 @@ src/Administration/Resources/app/administration/src/app/component/form/sw-colorp
 src/Administration/Resources/app/administration/src/app/component/form/sw-select-field-deprecated/sw-select-field.scss
 src/Administration/Resources/app/administration/src/app/component/form/sw-select-field-deprecated/index.js
 src/Administration/Resources/app/administration/src/app/component/form/sw-select-field-deprecated/sw-select-field-deprecated.html.twig
+src/Administration/Resources/app/administration/src/app/component/form/sw-select-field-deprecated/sw-select-field-deprecated.spec.ts
 src/Administration/Resources/app/administration/src/app/component/form/sw-password-field-deprecated/sw-password-field-deprecated.html.twig
 src/Administration/Resources/app/administration/src/app/component/form/sw-password-field-deprecated/sw-password-field-deprecated.spec.js
 src/Administration/Resources/app/administration/src/app/component/form/sw-password-field-deprecated/sw-password-field.scss
@@ -14344,6 +14346,7 @@ tests/integration/Core/Framework/Plugin/PluginServiceTest.php
 tests/integration/Core/Framework/Plugin/BundleConfigGeneratorTest.php
 tests/integration/Core/Framework/Plugin/PluginLifecycleServiceMigrationTest.php
 tests/integration/Core/Framework/Plugin/ExtensionExtractorTest.php
+tests/integration/Core/Framework/Update/Services/FilesystemTest.php
 tests/integration/Core/Framework/Migration/MigrationStepTest.php
 tests/integration/Core/Framework/Translation/TranslatorTest.php
 tests/integration/Core/Framework/Translation/Fixtures/storefront.unitTest.json
@@ -14621,6 +14624,7 @@ tests/integration/Core/Framework/Adapter/Cache/Script/_fixtures/InvalidationCase
 tests/integration/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStorageTest.php
 tests/integration/Core/Framework/Adapter/Cache/InvalidatorStorage/MySQLInvalidatorStorageTest.php
 tests/integration/Core/Framework/Adapter/Cache/Http/CacheResponseSubscriberTest.php
+tests/integration/Core/Framework/Adapter/Command/CacheWatchDelayedCommandTest.php
 tests/integration/Core/Framework/Adapter/Storage/MySQLKeyValueStorageTest.php
 tests/integration/Core/Framework/_snapshots/redis_test.yaml
 tests/integration/Core/Framework/_snapshots/routes_without_schema/snapshot.json
@@ -15412,6 +15416,7 @@ tests/integration/Administration/Controller/AdminExtensionApiControllerTest.php
 tests/integration/Administration/Controller/AdminProductStreamControllerTest.php
 tests/integration/Administration/RateLimiter/RateLimiterTest.php
 tests/integration/Elasticsearch/Migration/Traits/ElasticsearchTriggerTraitTest.php
+tests/integration/Elasticsearch/Framework/Indexing/IndexManagerTest.php
 tests/integration/Elasticsearch/Framework/Indexing/ElasticsearchIndexerTest.php
 tests/integration/Elasticsearch/Framework/Command/ElasticsearchAdminResetCommandTest.php
 tests/integration/Elasticsearch/Framework/Command/ElasticsearchResetCommandTest.php
@@ -15821,6 +15826,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleT
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoMockBuilderConstructorBypassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ServiceDefinitionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AssertEqualsCanonicalizingListArgumentRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
@@ -15900,6 +15906,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctio
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/shopware-unit-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/parent-class-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/commercial-unit-test.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AssertEqualsCanonicalizingListArgumentRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/MyTranslatedField.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/NotInCoreNamespace.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/NotRegisteredField.php
@@ -15944,6 +15951,7 @@ tests/unit/Core/Profiling/Twig/DoctrineExtensionTest.php
 tests/unit/Core/Profiling/Doctrine/BacktraceDebugDataHolderTest.php
 tests/unit/Core/Profiling/Doctrine/ConnectionProfilerTest.php
 tests/unit/Core/Profiling/Doctrine/ProfilingMiddlewareTest.php
+tests/unit/Core/Profiling/Compiler/RemoveDevServicesTest.php
 tests/unit/Core/Profiling/Controller/ProfilerControllerTest.php
 tests/unit/Core/Profiling/ProfilerTest.php
 tests/unit/Core/Profiling/Subscriber/ActiveRulesDataCollectorSubscriberTest.php
@@ -16394,6 +16402,7 @@ tests/unit/Core/Framework/Store/InAppPurchases/Services/InAppPurchaseUpdaterTest
 tests/unit/Core/Framework/Store/InAppPurchases/Handler/InAppPurchaseUpdateHandlerTest.php
 tests/unit/Core/Framework/Store/InAppPurchases/Api/InAppPurchasesControllerTest.php
 tests/unit/Core/Framework/Store/InAppPurchases/Subscriber/InAppPurchaseConfigSubscriberTest.php
+tests/unit/Core/Framework/Store/Struct/FrwStateTest.php
 tests/unit/Core/Framework/Store/Struct/ReviewStructTest.php
 tests/unit/Core/Framework/Store/Struct/ExtensionStructTest.php
 tests/unit/Core/Framework/Store/Struct/PermissionCollectionTest.php
@@ -16502,6 +16511,7 @@ tests/unit/Core/Framework/Plugin/Composer/_fixture/valid/composer.json
 tests/unit/Core/Framework/Plugin/Composer/_fixture/invalid/composer.json
 tests/unit/Core/Framework/Plugin/Composer/PackageProviderTest.php
 tests/unit/Core/Framework/Plugin/PluginAclTest.php
+tests/unit/Core/Framework/SystemCheck/Command/SystemCheckCommandTest.php
 tests/unit/Core/Framework/Update/Event/UpdatePreFinishEventTest.php
 tests/unit/Core/Framework/Update/Event/UpdatePostPrepareEventTest.php
 tests/unit/Core/Framework/Update/Event/UpdatePostFinishEventTest.php
@@ -16575,6 +16585,7 @@ tests/unit/Core/Framework/Telemetry/Metrics/Config/MetricConfigProviderTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/Config/MetricConfigTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/Config/LabelPolicyTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/Config/TransportConfigProviderTest.php
+tests/unit/Core/Framework/Telemetry/Metrics/Config/LabelConfigTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/MeterTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/Subscriber/TelemetryFlushListenerTest.php
 tests/unit/Core/Framework/Telemetry/TelemetryExceptionTest.php
@@ -16910,6 +16921,7 @@ tests/unit/Core/Framework/Adapter/Cache/Http/CacheStoreTest.php
 tests/unit/Core/Framework/Adapter/Cache/Http/DefaultPoliciesTest.php
 tests/unit/Core/Framework/Adapter/Cache/Http/CacheAttributeTest.php
 tests/unit/Core/Framework/Adapter/Command/CacheClearHttpCommandTest.php
+tests/unit/Core/Framework/Adapter/Command/CacheWatchDelayedCommandTest.php
 tests/unit/Core/Framework/Adapter/Command/CacheClearAllCommandTest.php
 tests/unit/Core/Framework/Adapter/Session/StatefulFlashBagTest.php
 tests/unit/Core/Framework/Adapter/Session/SessionFactoryTest.php
@@ -16952,6 +16964,7 @@ tests/unit/Core/Framework/Feature/Command/FeatureDisableCommandTest.php
 tests/unit/Core/Framework/Extensions/ExtensionTest.php
 tests/unit/Core/Framework/Extensions/ExtensionDispatcherTest.php
 tests/unit/Core/Framework/Webhook/Outbox/RetryDelayCalculatorTest.php
+tests/unit/Core/Framework/Webhook/Outbox/DeliveryResponseTest.php
 tests/unit/Core/Framework/Webhook/WebhookExceptionTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookManagerTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookCleanupTest.php
@@ -18231,6 +18244,7 @@ tests/unit/Core/Checkout/Cart/CartExceptionTest.php
 tests/unit/Core/Checkout/Cart/Order/Stubs/CartOrderConversionStub.php
 tests/unit/Core/Checkout/Cart/Order/LineItemDownloadLoaderTest.php
 tests/unit/Core/Checkout/Cart/Order/OrderPersisterTest.php
+tests/unit/Core/Checkout/Cart/Order/OrderConversionContextTest.php
 tests/unit/Core/Checkout/Cart/Order/ErrorCollectionTest.php
 tests/unit/Core/Checkout/Cart/Order/Transformer/DeliveryTransformerTest.php
 tests/unit/Core/Checkout/Cart/Order/Transformer/TransactionTransformerTest.php

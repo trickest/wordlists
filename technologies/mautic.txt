@@ -585,9 +585,11 @@ app/bundles/PageBundle/Tests/Functional/Model/PageHitCookieTest.php
 app/bundles/PageBundle/Tests/Functional/Controller/ThemeHelperSandboxTest.php
 app/bundles/PageBundle/Tests/Entity/PageRepositoryTest.php
 app/bundles/PageBundle/Tests/Entity/HitRepositoryTest.php
+app/bundles/PageBundle/Tests/Entity/PageRepositoryFunctionalTest.php
 app/bundles/PageBundle/Tests/Entity/HitTest.php
 app/bundles/PageBundle/Tests/Entity/RedirectTest.php
 app/bundles/PageBundle/Tests/Entity/PageTest.php
+app/bundles/PageBundle/Tests/Entity/TrackableRepositoryFunctionalTest.php
 app/bundles/PageBundle/Tests/Model/PageModelTest.php
 app/bundles/PageBundle/Tests/Model/TrackableModelTest.php
 app/bundles/PageBundle/Tests/Model/Tracking404ModelTest.php
@@ -716,6 +718,7 @@ app/bundles/PointBundle/EventListener/PointInsightSubscriber.php
 app/bundles/PointBundle/Tests/Unit/Model/PointModelTest.php
 app/bundles/PointBundle/Tests/Unit/Model/TriggerModelTest.php
 app/bundles/PointBundle/Tests/Unit/Helper/EventHelperTest.php
+app/bundles/PointBundle/Tests/Functional/EventListener/LeadSubscriberTest.php
 app/bundles/PointBundle/Tests/Functional/PointInsightsFunctionalTest.php
 app/bundles/PointBundle/Tests/Functional/PointActionFunctionalTest.php
 app/bundles/PointBundle/Tests/Functional/TriggerTrait.php
@@ -1564,6 +1567,7 @@ app/bundles/LeadBundle/Report/DncReportService.php
 app/bundles/LeadBundle/Report/FieldsBuilder.php
 app/bundles/LeadBundle/Tests/EventListener/FormSubscriberTest.php
 app/bundles/LeadBundle/Tests/EventListener/CampaignSubscriberTest.php
+app/bundles/LeadBundle/Tests/EventListener/SearchSubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/EventListener/ImportContactSubscriberTest.php
 app/bundles/LeadBundle/Tests/EventListener/SearchSubscriberTest.php
 app/bundles/LeadBundle/Tests/EventListener/SegmentSubscriberTest.php
@@ -1647,9 +1651,11 @@ app/bundles/LeadBundle/Tests/Tracker/ContactTrackerFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/CompanySubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/CampaignSubscriberTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/SegmentSubscriberTest.php
+app/bundles/LeadBundle/Tests/Functional/EventListener/LeadSubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/SearchWithSpecialCharactersInFieldTest.php
 app/bundles/LeadBundle/Tests/Functional/DncSearchFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/ContactExportLimitFunctionalTest.php
+app/bundles/LeadBundle/Tests/Functional/Entity/DoNotContactFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/Entity/CompanyRepositoryTest.php
 app/bundles/LeadBundle/Tests/Functional/Entity/LeadRepositoryTest.php
 app/bundles/LeadBundle/Tests/Functional/ApiPlatform/ContactOwnershipApiV2AuthorizationRegressionTest.php
@@ -1720,6 +1726,7 @@ app/bundles/LeadBundle/Tests/Model/LeadListModelTest.php
 app/bundles/LeadBundle/Tests/Model/ListModelTest.php
 app/bundles/LeadBundle/Tests/Model/CompanyReportDataTest.php
 app/bundles/LeadBundle/Tests/Model/FieldModelCustomFieldsFunctionalTest.php
+app/bundles/LeadBundle/Tests/Model/TagModelFunctionalTest.php
 app/bundles/LeadBundle/Tests/Model/CompanyModelTest.php
 app/bundles/LeadBundle/Tests/Model/IpAddressModelTest.php
 app/bundles/LeadBundle/Tests/Model/FieldModelTest.php
@@ -2613,10 +2620,14 @@ app/bundles/CampaignBundle/Tests/Membership/MembershipManagerTest.php
 app/bundles/CampaignBundle/Tests/Membership/MembershipBuilderTest.php
 app/bundles/CampaignBundle/Tests/Service/PublishStateServiceTest.php
 app/bundles/CampaignBundle/Tests/Service/CampaignAuditServiceTest.php
+app/bundles/CampaignBundle/Tests/Functional/EventListener/LeadSubscriberFunctionalTest.php
+app/bundles/CampaignBundle/Tests/Functional/EventListener/CampaignSubscriberFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Validator/OrphanEventsValidationFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Service/CampaignAuditServiceFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Entity/LeadEventLogRepositoryTest.php
+app/bundles/CampaignBundle/Tests/Functional/Entity/CampaignRepositoryFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Executioner/InactiveExecutionerFunctionalTest.php
+app/bundles/CampaignBundle/Tests/Functional/Model/EventModelFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Form/Validator/Constraints/InfiniteLoopValidatorFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Fixtures/entity_data.json
 app/bundles/CampaignBundle/Tests/Functional/Fixtures/FixtureHelper.php
@@ -2944,6 +2955,7 @@ app/bundles/FormBundle/Tests/Validator/UploadFieldValidatorTest.php
 app/bundles/FormBundle/Tests/Finder/Tokens/RedirectUrlTokensFinderTest.php
 app/bundles/FormBundle/Tests/Event/FormFieldEventTest.php
 app/bundles/FormBundle/Tests/Event/Service/FieldValueTransformerTest.php
+app/bundles/FormBundle/Tests/Functional/FormSubmissionFunctionalTest.php
 app/bundles/FormBundle/Tests/Functional/UpdateLeadFormActionFunctionalTest.php
 app/bundles/FormBundle/Tests/Functional/Model/SubmissionOwnerAndStageFunctionalTest.php
 app/bundles/FormBundle/Tests/FormTestHelperTrait.php
@@ -2960,6 +2972,7 @@ app/bundles/FormBundle/Tests/Model/DummyFiles/2/fieldId2/upload2.txt
 app/bundles/FormBundle/Tests/Model/FieldModelFunctionalTest.php
 app/bundles/FormBundle/Tests/Model/FormUploaderTest.php
 app/bundles/FormBundle/Tests/Model/FieldModelTest.php
+app/bundles/FormBundle/Tests/Model/FormSubmissionTrait.php
 app/bundles/FormBundle/Tests/Model/FormModelTest.php
 app/bundles/FormBundle/Tests/Model/DeleteFormTest.php
 app/bundles/FormBundle/Tests/Model/SubmissionModelTest.php
@@ -3666,10 +3679,12 @@ app/bundles/CoreBundle/Tests/Event/BuildJsEventTest.php
 app/bundles/CoreBundle/Tests/Service/FlashBagTest.php
 app/bundles/CoreBundle/Tests/Functional/EventListener/EditorFontsSubscriberTest.php
 app/bundles/CoreBundle/Tests/Functional/EventListener/ConfigSubscriberTest.php
+app/bundles/CoreBundle/Tests/Functional/EventListener/MaintenanceSubscriberTest.php
 app/bundles/CoreBundle/Tests/Functional/EventListener/MigrationCommandSubscriberTest.php
 app/bundles/CoreBundle/Tests/Functional/Validator/SafeRemoteUrlValidatorTest.php
 app/bundles/CoreBundle/Tests/Functional/Field/Notification/CustomFieldNotificationFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Service/LocalFileAdapterServiceTest.php
+app/bundles/CoreBundle/Tests/Functional/Entity/AuditLogRepositoryTest.php
 app/bundles/CoreBundle/Tests/Functional/Entity/NotificationRepositoryTest.php
 app/bundles/CoreBundle/Tests/Functional/Entity/CommonRepositoryTest.php
 app/bundles/CoreBundle/Tests/Functional/Entity/CommonRepositoryUpsertTest.php
@@ -4416,6 +4431,7 @@ app/bundles/CoreBundle/Helper/ListParser/ValueListParser.php
 app/bundles/CoreBundle/Helper/ListParser/Exception/FormatNotSupportedException.php
 app/bundles/CoreBundle/Helper/ListParser/JsonListParser.php
 app/bundles/CoreBundle/Helper/ListParser/ListParserInterface.php
+app/bundles/CoreBundle/Helper/QueryBuilderManipulatorTrait.php
 app/bundles/CoreBundle/Helper/ClickthroughHelper.php
 app/bundles/CoreBundle/Helper/PageHelperInterface.php
 app/bundles/CoreBundle/Helper/Serializer.php
@@ -4508,6 +4524,7 @@ app/bundles/UserBundle/Tests/Functional/Controller/PublicControllerTest.php
 app/bundles/UserBundle/Tests/Functional/SearchTest.php
 app/bundles/UserBundle/Tests/Entity/UserTest.php
 app/bundles/UserBundle/Tests/Entity/UserInviteTest.php
+app/bundles/UserBundle/Tests/Entity/RoleRepositoryFunctionalTest.php
 app/bundles/UserBundle/Tests/Traits/CreateEntityTrait.php
 app/bundles/UserBundle/Tests/Model/UserModelTest.php
 app/bundles/UserBundle/Tests/Model/PasswordStrengthEstimatorModelTest.php
@@ -4656,6 +4673,7 @@ app/bundles/StageBundle/EventListener/SearchSubscriber.php
 app/bundles/StageBundle/EventListener/EntityTypeDetailRouteSubscriber.php
 app/bundles/StageBundle/EventListener/StatsSubscriber.php
 app/bundles/StageBundle/Tests/Unit/EventListener/CampaignSubscriberTest.php
+app/bundles/StageBundle/Tests/Functional/EventListener/LeadSubscriberTest.php
 app/bundles/StageBundle/Tests/Functional/Controller/StageControllerFunctionalTest.php
 app/bundles/StageBundle/Tests/Functional/Controller/StageProjectSearchFunctionalTest.php
 app/bundles/StageBundle/Event/StageBuilderEvent.php

@@ -1417,6 +1417,7 @@ lib/microsoft_graph/api_error.rb
 lib/github/http_client.rb
 lib/github/linked_issue.rb
 lib/github/credentials.rb
+lib/tasks/calendar_sync.rake
 lib/tasks/cache/measure_io_performance.rake
 lib/tasks/cache/clear.rake
 lib/tasks/zammad/bootstrap/reset.rake
@@ -4938,6 +4939,7 @@ app/views/layouts/tests.html.erb
 app/views/layouts/application.html.erb
 app/views/mailer/ticket_escalation/sr-latn-rs.html.erb
 app/views/mailer/ticket_escalation/zh-tw.html.erb
+app/views/mailer/ticket_escalation/fa.html.erb
 app/views/mailer/ticket_escalation/pt-br.html.erb
 app/views/mailer/ticket_escalation/zh-cn.html.erb
 app/views/mailer/ticket_escalation/es.html.erb
@@ -4964,6 +4966,7 @@ app/views/mailer/ticket_escalation/sr.html.erb
 app/views/mailer/ticket_escalation/nl.html.erb
 app/views/mailer/test_ticket/sr-latn-rs.html.erb
 app/views/mailer/test_ticket/zh-tw.html.erb
+app/views/mailer/test_ticket/fa.html.erb
 app/views/mailer/test_ticket/pt-br.html.erb
 app/views/mailer/test_ticket/zh-cn.html.erb
 app/views/mailer/test_ticket/es.html.erb
@@ -4983,11 +4986,13 @@ app/views/mailer/test_ticket/de.html.erb
 app/views/mailer/test_ticket/lt.html.erb
 app/views/mailer/test_ticket/en.html.erb
 app/views/mailer/test_ticket/uk.html.erb
+app/views/mailer/test_ticket/da.html.erb
 app/views/mailer/test_ticket/id.html.erb
 app/views/mailer/test_ticket/sr.html.erb
 app/views/mailer/test_ticket/nl.html.erb
 app/views/mailer/ticket_update_merged_into/sr-latn-rs.html.erb
 app/views/mailer/ticket_update_merged_into/zh-tw.html.erb
+app/views/mailer/ticket_update_merged_into/fa.html.erb
 app/views/mailer/ticket_update_merged_into/pt-br.html.erb
 app/views/mailer/ticket_update_merged_into/es.html.erb
 app/views/mailer/ticket_update_merged_into/cs.html.erb
@@ -5006,11 +5011,13 @@ app/views/mailer/ticket_update_merged_into/de.html.erb
 app/views/mailer/ticket_update_merged_into/lt.html.erb
 app/views/mailer/ticket_update_merged_into/en.html.erb
 app/views/mailer/ticket_update_merged_into/uk.html.erb
+app/views/mailer/ticket_update_merged_into/da.html.erb
 app/views/mailer/ticket_update_merged_into/id.html.erb
 app/views/mailer/ticket_update_merged_into/sr.html.erb
 app/views/mailer/ticket_update_merged_into/nl.html.erb
 app/views/mailer/ticket_article_update_reaction/sr-latn-rs.html.erb
 app/views/mailer/ticket_article_update_reaction/zh-tw.html.erb
+app/views/mailer/ticket_article_update_reaction/fa.html.erb
 app/views/mailer/ticket_article_update_reaction/pt-br.html.erb
 app/views/mailer/ticket_article_update_reaction/cs.html.erb
 app/views/mailer/ticket_article_update_reaction/it.html.erb
@@ -5037,6 +5044,7 @@ app/views/mailer/user_device_new_location/sr-latn-rs.html.erb
 app/views/mailer/user_device_new_location/sl.html.erb
 app/views/mailer/user_device_new_location/ar.html.erb
 app/views/mailer/user_device_new_location/zh-tw.html.erb
+app/views/mailer/user_device_new_location/fa.html.erb
 app/views/mailer/user_device_new_location/pt-br.html.erb
 app/views/mailer/user_device_new_location/zh-cn.html.erb
 app/views/mailer/user_device_new_location/es.html.erb
@@ -5068,6 +5076,7 @@ app/views/mailer/user_device_new_location/sr.html.erb
 app/views/mailer/user_device_new_location/nl.html.erb
 app/views/mailer/password_reset/sr-latn-rs.html.erb
 app/views/mailer/password_reset/zh-tw.html.erb
+app/views/mailer/password_reset/fa.html.erb
 app/views/mailer/password_reset/pt-br.html.erb
 app/views/mailer/password_reset/zh-cn.html.erb
 app/views/mailer/password_reset/es.html.erb
@@ -5095,6 +5104,7 @@ app/views/mailer/password_reset/sr.html.erb
 app/views/mailer/password_reset/nl.html.erb
 app/views/mailer/ticket_escalation_warning/sr-latn-rs.html.erb
 app/views/mailer/ticket_escalation_warning/zh-tw.html.erb
+app/views/mailer/ticket_escalation_warning/fa.html.erb
 app/views/mailer/ticket_escalation_warning/pt-br.html.erb
 app/views/mailer/ticket_escalation_warning/zh-cn.html.erb
 app/views/mailer/ticket_escalation_warning/es.html.erb
@@ -5114,11 +5124,13 @@ app/views/mailer/ticket_escalation_warning/de.html.erb
 app/views/mailer/ticket_escalation_warning/lt.html.erb
 app/views/mailer/ticket_escalation_warning/en.html.erb
 app/views/mailer/ticket_escalation_warning/uk.html.erb
+app/views/mailer/ticket_escalation_warning/da.html.erb
 app/views/mailer/ticket_escalation_warning/id.html.erb
 app/views/mailer/ticket_escalation_warning/sr.html.erb
 app/views/mailer/ticket_escalation_warning/nl.html.erb
 app/views/mailer/ticket_reminder_reached/sr-latn-rs.html.erb
 app/views/mailer/ticket_reminder_reached/zh-tw.html.erb
+app/views/mailer/ticket_reminder_reached/fa.html.erb
 app/views/mailer/ticket_reminder_reached/pt-br.html.erb
 app/views/mailer/ticket_reminder_reached/zh-cn.html.erb
 app/views/mailer/ticket_reminder_reached/es.html.erb
@@ -5138,6 +5150,7 @@ app/views/mailer/ticket_reminder_reached/de.html.erb
 app/views/mailer/ticket_reminder_reached/lt.html.erb
 app/views/mailer/ticket_reminder_reached/en.html.erb
 app/views/mailer/ticket_reminder_reached/uk.html.erb
+app/views/mailer/ticket_reminder_reached/da.html.erb
 app/views/mailer/ticket_reminder_reached/id.html.erb
 app/views/mailer/ticket_reminder_reached/sr.html.erb
 app/views/mailer/ticket_reminder_reached/nl.html.erb
@@ -5146,6 +5159,7 @@ app/views/mailer/user_device_new/sr-latn-rs.html.erb
 app/views/mailer/user_device_new/sl.html.erb
 app/views/mailer/user_device_new/ar.html.erb
 app/views/mailer/user_device_new/zh-tw.html.erb
+app/views/mailer/user_device_new/fa.html.erb
 app/views/mailer/user_device_new/pt-br.html.erb
 app/views/mailer/user_device_new/zh-cn.html.erb
 app/views/mailer/user_device_new/es.html.erb
@@ -5177,6 +5191,7 @@ app/views/mailer/user_device_new/id.html.erb
 app/views/mailer/user_device_new/sr.html.erb
 app/views/mailer/user_device_new/nl.html.erb
 app/views/mailer/email_oversized/uk.txt.erb
+app/views/mailer/email_oversized/fa.txt.erb
 app/views/mailer/email_oversized/ru.txt.erb
 app/views/mailer/email_oversized/hr.txt.erb
 app/views/mailer/email_oversized/cs.txt.erb
@@ -5188,6 +5203,7 @@ app/views/mailer/email_oversized/sr-latn-rs.txt.erb
 app/views/mailer/email_oversized/ro.txt.erb
 app/views/mailer/email_oversized/sl.txt.erb
 app/views/mailer/email_oversized/sk.txt.erb
+app/views/mailer/email_oversized/da.txt.erb
 app/views/mailer/email_oversized/pt-br.txt.erb
 app/views/mailer/email_oversized/sr.txt.erb
 app/views/mailer/email_oversized/nl.txt.erb
@@ -5233,6 +5249,7 @@ app/views/mailer/ticket_update_received_merge/sr.html.erb
 app/views/mailer/ticket_update_received_merge/nl.html.erb
 app/views/mailer/password_change/sr-latn-rs.html.erb
 app/views/mailer/password_change/zh-tw.html.erb
+app/views/mailer/password_change/fa.html.erb
 app/views/mailer/password_change/pt-br.html.erb
 app/views/mailer/password_change/zh-cn.html.erb
 app/views/mailer/password_change/es.html.erb
@@ -5252,12 +5269,14 @@ app/views/mailer/password_change/de.html.erb
 app/views/mailer/password_change/lt.html.erb
 app/views/mailer/password_change/en.html.erb
 app/views/mailer/password_change/uk.html.erb
+app/views/mailer/password_change/da.html.erb
 app/views/mailer/password_change/id.html.erb
 app/views/mailer/password_change/sr.html.erb
 app/views/mailer/password_change/nl.html.erb
 app/views/mailer/README.i18n.md
 app/views/mailer/signup/sr-latn-rs.html.erb
 app/views/mailer/signup/zh-tw.html.erb
+app/views/mailer/signup/fa.html.erb
 app/views/mailer/signup/pt-br.html.erb
 app/views/mailer/signup/zh-cn.html.erb
 app/views/mailer/signup/es.html.erb
@@ -5287,6 +5306,7 @@ app/views/mailer/signup/nl.html.erb
 app/views/mailer/user_invite/sr-latn-rs.html.erb
 app/views/mailer/user_invite/pt-br.erb
 app/views/mailer/user_invite/zh-tw.html.erb
+app/views/mailer/user_invite/fa.html.erb
 app/views/mailer/user_invite/pt-br.html.erb
 app/views/mailer/user_invite/zh-cn.html.erb
 app/views/mailer/user_invite/es.html.erb
@@ -5313,6 +5333,7 @@ app/views/mailer/user_invite/sr.html.erb
 app/views/mailer/user_invite/nl.html.erb
 app/views/mailer/signup_taken_reset/sr-latn-rs.html.erb
 app/views/mailer/signup_taken_reset/zh-tw.html.erb
+app/views/mailer/signup_taken_reset/fa.html.erb
 app/views/mailer/signup_taken_reset/pt-br.html.erb
 app/views/mailer/signup_taken_reset/zh-cn.html.erb
 app/views/mailer/signup_taken_reset/es.html.erb
@@ -5366,6 +5387,7 @@ app/views/mailer/ticket_create/sr.html.erb
 app/views/mailer/ticket_create/nl.html.erb
 app/views/mailer/admin_password_auth/sr-latn-rs.html.erb
 app/views/mailer/admin_password_auth/zh-tw.html.erb
+app/views/mailer/admin_password_auth/fa.html.erb
 app/views/mailer/admin_password_auth/pt-br.html.erb
 app/views/mailer/admin_password_auth/zh-cn.html.erb
 app/views/mailer/admin_password_auth/es.html.erb
@@ -5416,6 +5438,7 @@ app/views/mailer/ticket_update/de.html.erb
 app/views/mailer/ticket_update/lt.html.erb
 app/views/mailer/ticket_update/en.html.erb
 app/views/mailer/ticket_update/uk.html.erb
+app/views/mailer/ticket_update/da.html.erb
 app/views/mailer/ticket_update/id.html.erb
 app/views/mailer/ticket_update/sr.html.erb
 app/views/mailer/ticket_update/nl.html.erb
@@ -11977,6 +12000,7 @@ spec/system/login/message_spec.rb
 spec/system/login/public_link_spec.rb
 spec/system/login/disable_login_form_spec.rb
 spec/system/login/maintenance_mode_spec.rb
+spec/system/knowledge_base/search_shortcuts_spec.rb
 spec/system/knowledge_base/locale/category/count_spec.rb
 spec/system/knowledge_base/locale/category/permissions_spec.rb
 spec/system/knowledge_base/locale/answer/read_spec.rb
@@ -12220,6 +12244,7 @@ public/assets/images/icons/mood-ok.svg
 public/assets/images/icons/checkbox-checked.svg
 public/assets/images/icons/in-process.svg
 public/assets/images/icons/knowledge-base.svg
+public/assets/images/icons/lightbulb.svg
 public/assets/images/icons/github-logo.svg
 public/assets/images/icons/hashtag.svg
 public/assets/images/icons/eyedropper.svg

@@ -4189,6 +4189,7 @@ erpnext/patches/v16_0/migrate_asset_type_checkboxes_to_select.py
 erpnext/patches/v16_0/set_posting_datetime_for_sabb_and_drop_indexes.py
 erpnext/patches/v16_0/set_mr_picked_qty.py
 erpnext/patches/v16_0/remove_payables_receivables_workspace.py
+erpnext/patches/v16_0/set_default_close_opportunity_after_days.py
 erpnext/patches/v16_0/drop_redundant_serial_no_index_from_sabb.py
 erpnext/patches/v16_0/make_workstation_operating_components.py
 erpnext/patches/v16_0/migrate_transaction_deletion_task_flags_to_status.py
@@ -4213,6 +4214,7 @@ erpnext/patches/v16_0/migrate_subscription_generate_invoice_at.py
 erpnext/patches/v16_0/depends_on_inv_dimensions.py
 erpnext/patches/v16_0/co_by_product_patch.py
 erpnext/patches/v16_0/update_serial_batch_entries.py
+erpnext/patches/v16_0/convert_commission_rate_to_percent.py
 erpnext/patches/v16_0/set_root_type_in_account_categories.py
 erpnext/patches/v16_0/fix_titles.py
 erpnext/patches/v16_0/migrate_address_contact_custom_fields.py
@@ -4851,7 +4853,6 @@ erpnext/public/js/utils/party.js
 erpnext/public/js/utils/sales_common.js
 erpnext/public/js/utils/supplier_quick_entry.js
 erpnext/public/js/utils/barcode_scanner.js
-erpnext/public/js/utils/naming_series.js
 erpnext/public/js/utils/landed_taxes_and_charges_common.js
 erpnext/public/js/utils/contact_address_quick_entry.js
 erpnext/public/js/website_theme.js
@@ -5103,6 +5104,7 @@ erpnext/buying/report/subcontracted_item_to_be_received/subcontracted_item_to_be
 erpnext/buying/report/subcontracted_item_to_be_received/test_subcontracted_item_to_be_received.py
 erpnext/buying/report/subcontracted_item_to_be_received/subcontracted_item_to_be_received.py
 erpnext/buying/report/subcontracted_item_to_be_received/__init__.py
+erpnext/buying/report/purchase_order_trends/test_purchase_order_trends.py
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.js
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.json
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.py
