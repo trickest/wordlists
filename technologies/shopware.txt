@@ -2410,6 +2410,7 @@ src/Core/Framework/Store/Event/InstalledExtensionsListingLoadedEvent.php
 src/Core/Framework/Store/Event/FirstRunWizardFinishedEvent.php
 src/Core/Framework/Store/Event/ShopwareAccountLogoutEvent.php
 src/Core/Framework/Store/Event/FirstRunWizardStartedEvent.php
+src/Core/Framework/Store/Event/ExtensionLoadedEvent.php
 src/Core/Framework/Store/InAppPurchase.php
 src/Core/Framework/Store/Exception/ExtensionUpdateRequiresConsentAffirmationException.php
 src/Core/Framework/Store/Exception/ExtensionNotFoundException.php
@@ -2565,6 +2566,7 @@ src/Core/Framework/Plugin/Util/PluginIdProvider.php
 src/Core/Framework/Plugin/Util/ZipUtils.php
 src/Core/Framework/Plugin/Util/VersionSanitizer.php
 src/Core/Framework/Plugin/PluginZipDetector.php
+src/Core/Framework/Plugin/BundleConfigStyleFileResolver.php
 src/Core/Framework/Plugin/PluginManagementService.php
 src/Core/Framework/Plugin/Command/PluginCreateCommand.php
 src/Core/Framework/Plugin/Command/BundleDumpCommand.php
@@ -2632,6 +2634,7 @@ src/Core/Framework/Plugin/Context/ActivateContext.php
 src/Core/Framework/Plugin/Context/DeactivateContext.php
 src/Core/Framework/Plugin/PluginException.php
 src/Core/Framework/Plugin/Struct/PluginFromFileSystemStruct.php
+src/Core/Framework/Plugin/NullBundleConfigStyleFileResolver.php
 src/Core/Framework/Plugin/Composer/PackageProvider.php
 src/Core/Framework/Plugin/Composer/Factory.php
 src/Core/Framework/Plugin/Composer/CommandExecutor.php
@@ -6765,6 +6768,10 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/StorefrontRouteUsageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/ServiceDefinitionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnconfiguredMetricAllowed.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/ExemptionResolver.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/UseMap.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/LogicDetector.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/Errors.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoRouteOverrideInDecoratorsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PropertyNativeTypeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PackageAnnotationRule.php
@@ -6786,6 +6793,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/UseHasherRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoLegacySqlHashFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DomainExceptionRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnoreEvaluationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleAreasFlagNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalMethodRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
@@ -9025,7 +9033,6 @@ src/Administration/Resources/app/administration/src/module/sw-customer/component
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-address-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/sw-customer-base-form.html.twig
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/sw-customer-base-form.spec.js
-src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/sw-customer-base-form.scss
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-customer/acl/index.js
 src/Administration/Resources/app/administration/src/module/sw-customer/snippet/en.json
@@ -9945,6 +9952,7 @@ src/Administration/Resources/app/administration/src/module/sw-settings-snippet/p
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-list/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-list/sw-settings-snippet-list.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-list/sw-settings-snippet-list.scss
+src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-detail/sw-settings-snippet-detail.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-detail/sw-settings-snippet-detail.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-detail/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-snippet/page/sw-settings-snippet-detail/sw-settings-snippet-detail.spec.js
@@ -12057,6 +12065,7 @@ src/Elasticsearch/Profiler/DataCollector.php
 src/Elasticsearch/Profiler/ElasticsearchProfileCompilerPass.php
 src/Storefront/Theme/ThemeLifecycleService.php
 src/Storefront/Theme/ThemeSalesChannelCollection.php
+src/Storefront/Theme/BundleConfig/StorefrontBundleConfigStyleFileResolver.php
 src/Storefront/Theme/Validator/SCSSValidator.php
 src/Storefront/Theme/ThemeScripts.php
 src/Storefront/Theme/ThemeCollection.php
@@ -12227,6 +12236,7 @@ src/Storefront/LICENSE
 src/Storefront/Framework/Cookie/CookieProvider.php
 src/Storefront/Framework/Cookie/CookieProviderInterface.php
 src/Storefront/Framework/Cookie/AppCookieProvider.php
+src/Storefront/Framework/Store/Subscriber/ExtensionThemeDetectionSubscriber.php
 src/Storefront/Framework/SystemCheck/ProductDetailReadinessCheck.php
 src/Storefront/Framework/SystemCheck/ProductListingReadinessCheck.php
 src/Storefront/Framework/SystemCheck/Util/SalesChannelDomainUtil.php
@@ -15826,6 +15836,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleT
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoMockBuilderConstructorBypassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ServiceDefinitionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CodeCoverageIgnoreEvaluationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AssertEqualsCanonicalizingListArgumentRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
@@ -15894,6 +15905,35 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoStaticRuntimeExcepti
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610756Bar.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610755Foo.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610754FooBar.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/MethodLevelIgnoreOnLogicClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/FeatureDeprecationOnlyClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/BinaryOpClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ValidatingConstructorClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentChainConstructorClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/AbstractWithConcreteLogicClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/IgnoreStartEndOnlyClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/MethodLevelIgnoreOnPureGetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/DelegatingWithArgsClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeExistingIntegrationTestClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ArrayCoalesceGetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ArraySetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ConfigConstructionClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/OtherStaticCallClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentChainWithCallArgClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/PromotedConstructorClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeMissingIntegrationTestClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/MethodSeeIntegrationTestClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/CoalesceClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/DelegatingGetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/EmptyDtoClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ExceptionWithLogicClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeShortFormIntegrationTestClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/IfBranchClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ExceptionWithoutLogicClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentChainConstructorParent.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/MagicMethodClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/PureGetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeUnitTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/invalid-acl-name-in-route-attribute.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/entity-schema-invalid.json
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/skipping-route-attribute-check-in-non-controller.php
@@ -16425,6 +16465,7 @@ tests/unit/Core/Framework/Store/Subscriber/ExtensionChangedSubscriberTest.php
 tests/unit/Core/Framework/Store/Subscriber/LicenseHostChangedSubscriberTest.php
 tests/unit/Core/Framework/Plugin/Event/PluginPostDeactivationFailedEventTest.php
 tests/unit/Core/Framework/Plugin/PluginTest.php
+tests/unit/Core/Framework/Plugin/NullBundleConfigStyleFileResolverTest.php
 tests/unit/Core/Framework/Plugin/PluginExceptionTest.php
 tests/unit/Core/Framework/Plugin/PluginZipDetectorTest.php
 tests/unit/Core/Framework/Plugin/_fixtures/ExampleBundle/ExampleBundle.php
@@ -18072,6 +18113,7 @@ tests/unit/Core/Checkout/Order/Aggregate/OrderTransaction/OrderTransactionStateH
 tests/unit/Core/Checkout/Order/Aggregate/OrderLineItemDownload/OrderLineItemDownloadCollectionTest.php
 tests/unit/Core/Checkout/Order/Aggregate/OrderTransactionCapture/OrderTransactionCaptureStateHandlerTest.php
 tests/unit/Core/Checkout/Order/Aggregate/OrderLineItem/OrderLineItemCollectionTest.php
+tests/unit/Core/Checkout/Order/Aggregate/OrderLineItem/OrderLineItemEntityTest.php
 tests/unit/Core/Checkout/Order/Aggregate/OrderTransactionCaptureRefund/OrderTransactionCaptureRefundStateHandlerTest.php
 tests/unit/Core/Checkout/Order/SalesChannel/SetPaymentOrderRouteTest.php
 tests/unit/Core/Checkout/Order/SalesChannel/OrderServiceTest.php
@@ -18407,6 +18449,9 @@ tests/unit/Core/DevOps/Docs/Script/HooksReferenceGeneratorTest.php
 tests/unit/Core/DevOps/Docs/App/DocsAppEventCommandTest.php
 tests/unit/Core/DevOps/Docs/App/HookableEventDocTest.php
 tests/unit/Core/DevOps/Docs/ArrayWriterTest.php
+tests/unit/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/UseMapTest.php
+tests/unit/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/ExemptionResolverTest.php
+tests/unit/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/LogicDetectorTest.php
 tests/unit/Core/DevOps/DevOpsTest.php
 tests/unit/Core/DevOps/Environment/EnvironmentHelperTest.php
 tests/unit/Administration/System/SalesChannel/Subscriber/SalesChannelUserConfigSubscriberTest.php
@@ -18546,6 +18591,7 @@ tests/unit/Storefront/Theme/ThemeFileResolverTest.php
 tests/unit/Storefront/Theme/MockedCacheInvalidator.php
 tests/unit/Storefront/Theme/ThemeFilesystemResolverTest.php
 tests/unit/Storefront/Theme/MD5ThemePathBuilderTest.php
+tests/unit/Storefront/Theme/BundleConfig/StorefrontBundleConfigStyleFileResolverTest.php
 tests/unit/Storefront/Theme/Validator/SCSSValidatorTest.php
 tests/unit/Storefront/Theme/Mail/MailThemeConfigSubscriberTest.php
 tests/unit/Storefront/Theme/Event/ThemeAssignedEventTest.php
@@ -18676,6 +18722,7 @@ tests/unit/Storefront/Event/Subscriber/CartMergedSubscriberTest.php
 tests/unit/Storefront/Pagelet/Menu/Offcanvas/MenuOffcanvasPageletLoaderTest.php
 tests/unit/Storefront/Pagelet/Footer/FooterPageletLoaderTest.php
 tests/unit/Storefront/Pagelet/Header/HeaderPageletLoaderTest.php
+tests/unit/Storefront/Framework/Store/Subscriber/ExtensionThemeDetectionSubscriberTest.php
 tests/unit/Storefront/Framework/Twig/TemplateConfigAccessorTest.php
 tests/unit/Storefront/Framework/Twig/Extension/ConfigExtensionTest.php
 tests/unit/Storefront/Framework/Twig/Extension/fixtures/Storefront/Resources/views/test/base.html.twig
@@ -24692,3 +24739,4 @@ deprecation.ignore
 .claude/skills/triage/references/TOOLS.md
 .claude/skills/triage/references/CLASSIFICATION.md
 .claude/skills/README.md
+.claude/skills/bugfixer/SKILL.md

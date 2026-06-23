@@ -2727,6 +2727,7 @@ src/Umbraco.Infrastructure/Examine/DeliveryApiContentIndexFieldDefinitionBuilder
 src/Umbraco.Infrastructure/Examine/UmbracoExamineFieldNames.cs
 src/Umbraco.Infrastructure/Examine/IIndexDiagnosticsFactory.cs
 src/Umbraco.Infrastructure/Examine/ExamineUmbracoIndexingHandler.cs
+src/Umbraco.Infrastructure/Examine/RebuildOnStartedHandler.cs
 src/Umbraco.Infrastructure/Examine/RebuildOnStartupHandler.cs
 src/Umbraco.Infrastructure/Examine/ContentValueSetBuilder.cs
 src/Umbraco.Infrastructure/Examine/IContentValueSetValidator.cs
@@ -8201,6 +8202,7 @@ src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/prope
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/property-editor/types.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.element.ts
+src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.token.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.ts
@@ -9687,6 +9689,7 @@ src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-media.context.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-media.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/index.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/input-rich-media.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/input-rich-media.element.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/manifests.ts
@@ -10797,6 +10800,9 @@ src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entr
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry.test.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry.element.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry-inline.test.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/index.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/unsupported-rte-block.element.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/unsupported-rte-block.test.ts
 src/Umbraco.Web.UI.Client/src/packages/block/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/index.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/manifests.ts
@@ -13713,6 +13719,9 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/parent.entity-context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/parent.entity-context-token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/entity-input-interaction-memory.manager.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/entity-input-interaction-memory.manager.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/entity.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/entity.context.ts
@@ -16416,6 +16425,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DatabaseCache
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheMediaTypeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheMockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaCacheServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheStaleSetRaceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentPropertyCacheLevelTests.cs

@@ -28,6 +28,7 @@ compose.dev.mailgun.yaml
 apps/announcement-bar/test/utils/api.test.js
 apps/announcement-bar/test/setup-tests.js
 apps/announcement-bar/package.json
+apps/announcement-bar/eslint.config.js
 apps/announcement-bar/vite.config.mjs
 apps/announcement-bar/src/icons/clear.svg
 apps/announcement-bar/src/utils/api.js
@@ -74,7 +75,7 @@ apps/comments-ui/test/unit/components/content-box.test.jsx
 apps/comments-ui/tailwind.config.js
 apps/comments-ui/package.json
 apps/comments-ui/vite-plugin-strip-fingerprinting.ts
-apps/comments-ui/.eslintrc.js
+apps/comments-ui/eslint.config.js
 apps/comments-ui/postcss.config.cjs
 apps/comments-ui/tsconfig.json
 apps/comments-ui/tsconfig.node.json
@@ -187,6 +188,7 @@ apps/shade/test/unit/components/ui/button.test.tsx
 apps/shade/test/unit/components/ui/indicator.test.tsx
 apps/shade/package.json
 apps/shade/scripts/extract-adoption.ts
+apps/shade/eslint.config.js
 apps/shade/postcss.config.cjs
 apps/shade/tsconfig.json
 apps/shade/tsconfig.node.json
@@ -499,6 +501,7 @@ apps/admin-x-settings/test/unit/email-design/section-title-color.test.tsx
 apps/admin-x-settings/index.html
 apps/admin-x-settings/package.json
 apps/admin-x-settings/playwright.config.mjs
+apps/admin-x-settings/eslint.config.js
 apps/admin-x-settings/vitest.config.ts
 apps/admin-x-settings/postcss.config.cjs
 apps/admin-x-settings/tsconfig.json
@@ -747,9 +750,7 @@ apps/admin-x-settings/src/components/providers/settings-app-provider.tsx
 apps/admin-x-settings/src/components/exit-settings-button.tsx
 apps/admin-x-settings/src/components/top-level-group.tsx
 apps/admin-x-settings/src/components/sidebar.tsx
-apps/admin-x-settings/.eslintignore
 apps/admin-x-settings/tsconfig.declaration.json
-apps/admin-x-settings/.eslintrc.cjs
 apps/admin-x-settings/node-shim.cjs
 apps/admin-x-settings/README.md
 apps/admin/index.html
@@ -864,6 +865,7 @@ apps/signup-form/test/e2e/form.test.ts
 apps/signup-form/test/e2e/attribution.test.ts
 apps/signup-form/index.html
 apps/signup-form/package.json
+apps/signup-form/eslint.config.js
 apps/signup-form/postcss.config.cjs
 apps/signup-form/preview.html
 apps/signup-form/assets/icons/email.svg
@@ -898,7 +900,6 @@ apps/signup-form/.env.development
 apps/signup-form/.storybook/preview.tsx
 apps/signup-form/.storybook/main.tsx
 apps/signup-form/tailwind.config.cjs
-apps/signup-form/.eslintrc.cjs
 apps/signup-form/playwright.config.ts
 apps/signup-form/README.md
 apps/portal/.env.development.local.example
@@ -951,6 +952,7 @@ apps/portal/test/unit/components/common/input-field.test.js
 apps/portal/test/unit/components/common/switch.test.js
 apps/portal/test/unit/components/trigger-button.test.js
 apps/portal/package.json
+apps/portal/eslint.config.js
 apps/portal/jsconfig.json
 apps/portal/tsconfig.json
 apps/portal/vite.config.mjs
@@ -1119,6 +1121,7 @@ apps/admin-x-framework/test/unit/hooks/use-handle-error.test.tsx
 apps/admin-x-framework/test/unit/hooks/use-koenig-file-upload.test.ts
 apps/admin-x-framework/test/unit/hooks/use-tinybird-token.test.tsx
 apps/admin-x-framework/package.json
+apps/admin-x-framework/eslint.config.js
 apps/admin-x-framework/tsconfig.json
 apps/admin-x-framework/tsconfig.node.json
 apps/admin-x-framework/src/index.ts
@@ -1245,7 +1248,6 @@ apps/stats/test/utils/mock-factories.ts
 apps/stats/test/utils/tinybird-helpers.ts
 apps/stats/test/utils/README.md
 apps/stats/test/utils/test-helpers.ts
-apps/stats/test/.eslintrc.cjs
 apps/stats/test/unit/setup.ts
 apps/stats/test/unit/utils/chart-helpers.test.ts
 apps/stats/test/unit/utils/content-helpers.test.ts
@@ -1263,6 +1265,7 @@ apps/stats/test/unit/components/chart/custom-tooltip-content.test.tsx
 apps/stats/index.html
 apps/stats/package.json
 apps/stats/.env.example
+apps/stats/eslint.config.js
 apps/stats/vitest.config.ts
 apps/stats/tsconfig.json
 apps/stats/vite.config.mjs
@@ -1327,12 +1330,11 @@ apps/stats/src/components/errors/stats-error-boundary.tsx
 apps/stats/src/types/kpi.ts
 apps/stats/src/types/svg.d.ts
 apps/stats/src/types/svg-maps.d.ts
-apps/stats/.eslintignore
 apps/stats/tsconfig.declaration.json
-apps/stats/.eslintrc.cjs
 apps/stats/README.md
 apps/admin-toolbar/test/admin-toolbar.test.js
 apps/admin-toolbar/package.json
+apps/admin-toolbar/eslint.config.js
 apps/admin-toolbar/umd/admin-toolbar.min.js
 apps/admin-toolbar/vite.config.mjs
 apps/admin-toolbar/src/user.js
@@ -1347,6 +1349,7 @@ apps/admin-toolbar/src/index.js
 apps/admin-toolbar/src/auth.js
 apps/admin-toolbar/src/storage.js
 apps/admin-toolbar/LICENSE
+apps/admin-toolbar/vitest.config.mjs
 apps/admin-toolbar/README.md
 apps/activitypub/test/utils/initial-api-requests.ts
 apps/activitypub/test/utils/responses/activitypub/users.json
@@ -1364,7 +1367,6 @@ apps/activitypub/test/acceptance/inbox.test.ts
 apps/activitypub/test/acceptance/preferences.test.ts
 apps/activitypub/test/acceptance/my-profile.test.ts
 apps/activitypub/test/acceptance/feed.test.ts
-apps/activitypub/test/.eslintrc.cjs
 apps/activitypub/test/unit/utils/get-handle.test.tsx
 apps/activitypub/test/unit/utils/posts.test.ts
 apps/activitypub/test/unit/utils/pending-activity.ts
@@ -1373,6 +1375,7 @@ apps/activitypub/test/unit/utils/screenshot.test.ts
 apps/activitypub/index.html
 apps/activitypub/package.json
 apps/activitypub/playwright.config.mjs
+apps/activitypub/eslint.config.js
 apps/activitypub/tsconfig.json
 apps/activitypub/vite.config.mjs
 apps/activitypub/src/api/activitypub.test.ts
@@ -1479,15 +1482,14 @@ apps/activitypub/src/components/feed/feed-item.tsx
 apps/activitypub/src/components/feed/feed-item-stats.tsx
 apps/activitypub/src/components/feed/feed-item-menu.tsx
 apps/activitypub/src/components/feed/table-of-contents.tsx
-apps/activitypub/.eslintignore
 apps/activitypub/tsconfig.declaration.json
-apps/activitypub/.eslintrc.cjs
 apps/sodo-search/test/setup-tests.js
 apps/sodo-search/test/acceptance/search-index.test.js
 apps/sodo-search/test/acceptance/app.test.js
 apps/sodo-search/test/unit/popup-modal.test.js
 apps/sodo-search/tailwind.config.js
 apps/sodo-search/package.json
+apps/sodo-search/eslint.config.js
 apps/sodo-search/vite.config.mjs
 apps/sodo-search/src/logo.svg
 apps/sodo-search/src/app-context.js
@@ -1506,6 +1508,7 @@ apps/admin-x-design-system/test/unit/utils/format-url.test.ts
 apps/admin-x-design-system/test/unit/hooks/use-sortable-indexed-list.test.ts
 apps/admin-x-design-system/test/unit/hooks/use-pagination.test.ts
 apps/admin-x-design-system/package.json
+apps/admin-x-design-system/eslint.config.js
 apps/admin-x-design-system/postcss.config.cjs
 apps/admin-x-design-system/tsconfig.json
 apps/admin-x-design-system/tsconfig.node.json
@@ -1849,7 +1852,6 @@ apps/posts/test/utils/MSW_USAGE_GUIDE.md
 apps/posts/test/utils/msw-helpers.ts
 apps/posts/test/utils/test-helpers.ts
 apps/posts/test/acceptance/posts.test.ts
-apps/posts/test/.eslintrc.cjs
 apps/posts/test/unit/utils/chart-helpers.test.tsx
 apps/posts/test/unit/utils/kpi-helpers.test.tsx
 apps/posts/test/unit/utils/link-helpers.test.tsx
@@ -1892,6 +1894,7 @@ apps/posts/test/unit/components/label-picker/can-create-label.test.ts
 apps/posts/index.html
 apps/posts/package.json
 apps/posts/playwright.config.mjs
+apps/posts/eslint.config.js
 apps/posts/vitest.config.ts
 apps/posts/tsconfig.json
 apps/posts/vite.config.mjs
@@ -2091,7 +2094,6 @@ apps/posts/src/components/label-picker/edit-row.tsx
 apps/posts/src/components/errors/posts-error-page.tsx
 apps/posts/src/components/errors/posts-error-boundary.tsx
 apps/posts/tsconfig.declaration.json
-apps/posts/.eslintrc.cjs
 .secretlintrc.json
 docs/README.md
 skills-lock.json
@@ -3565,22 +3567,20 @@ ghost/admin/mirage/fixtures/roles.js
 ghost/admin/mirage/fixtures/configs.js
 ghost/admin/mirage/fixtures/settings.js
 ghost/admin/mirage/utils.js
-ghost/parse-email-address/test/.eslintrc.js
 ghost/parse-email-address/test/index.test.ts
 ghost/parse-email-address/package.json
-ghost/parse-email-address/.eslintrc.js
+ghost/parse-email-address/vitest.config.ts
 ghost/parse-email-address/tsconfig.json
 ghost/parse-email-address/src/index.ts
 ghost/parse-email-address/LICENSE
 ghost/parse-email-address/README.md
+ghost/parse-email-address/eslint.config.mjs
 ghost/i18n/test/i18n.lint.js
 ghost/i18n/test/i18n.test.js
-ghost/i18n/test/.eslintrc.js
 ghost/i18n/test/i18n-ignores.json
 ghost/i18n/test/utils.js
 ghost/i18n/package.json
 ghost/i18n/generate-context.js
-ghost/i18n/.eslintrc.js
 ghost/i18n/locales/th/comments.json
 ghost/i18n/locales/th/search.json
 ghost/i18n/locales/th/signup-form.json
@@ -3895,8 +3895,10 @@ ghost/i18n/locales/lv/ghost.json
 ghost/i18n/i18next-parser.config.js
 ghost/i18n/lib/locale-data.json
 ghost/i18n/lib/i18n.js
+ghost/i18n/vitest.config.mjs
 ghost/i18n/index.js
 ghost/i18n/README.md
+ghost/i18n/eslint.config.mjs
 ghost/core/test/e2e-webhooks/members.test.js
 ghost/core/test/e2e-webhooks/pages.test.js
 ghost/core/test/e2e-webhooks/posts.test.js
@@ -3984,6 +3986,7 @@ ghost/core/test/integration/services/q-email-addresses.test.js
 ghost/core/test/integration/services/comments-service.test.js
 ghost/core/test/integration/services/last-seen-at-updater.test.js
 ghost/core/test/integration/services/__snapshots__/member-welcome-emails-snapshot.test.js.snap
+ghost/core/test/integration/services/gift-links.test.ts
 ghost/core/test/integration/services/members/subscription-resolution.test.ts
 ghost/core/test/integration/services/members/send-gift-reminders.test.js
 ghost/core/test/integration/services/members/clean-tokens.test.js
@@ -4332,6 +4335,7 @@ ghost/core/test/e2e-api/admin/__snapshots__/offers.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/stats.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/member-commenting.test.js.snap
 ghost/core/test/e2e-api/admin/__snapshots__/members-stripe-connect.test.js.snap
+ghost/core/test/e2e-api/admin/gift-links.test.ts
 ghost/core/test/e2e-api/admin/invites.test.js
 ghost/core/test/e2e-api/admin/newsletters.test.js
 ghost/core/test/e2e-api/admin/images.test.js
@@ -4414,6 +4418,7 @@ ghost/core/test/e2e-api/members/gift-subscriptions.test.js
 ghost/core/test/unit/api/endpoints/members.test.js
 ghost/core/test/unit/api/endpoints/db.test.js
 ghost/core/test/unit/api/endpoints/utils/serializers/input/utils/slug-filter-order.test.js
+ghost/core/test/unit/api/endpoints/utils/validate-email-sender-fields.test.ts
 ghost/core/test/unit/api/endpoints/utils/csv-export-filename.test.js
 ghost/core/test/unit/api/endpoints/automations.test.js
 ghost/core/test/unit/api/endpoints/gift-reminders.test.js
@@ -4609,6 +4614,7 @@ ghost/core/test/unit/server/services/stats/utils/tinybird.test.js
 ghost/core/test/unit/server/services/stats/content.test.js
 ghost/core/test/unit/server/services/stats/subscriptions.test.js
 ghost/core/test/unit/server/services/stats/referrers.test.js
+ghost/core/test/unit/server/services/gift-links/gift-link-token.test.ts
 ghost/core/test/unit/server/services/link-tracking/link-click-tracking-service.test.js
 ghost/core/test/unit/server/services/link-tracking/post-link-repository.test.js
 ghost/core/test/unit/server/services/link-tracking/link-click-repository.test.js
@@ -5097,7 +5103,6 @@ ghost/core/core/server/models/single-use-token.js
 ghost/core/core/server/models/label.js
 ghost/core/core/server/models/offer.js
 ghost/core/core/server/models/integration.js
-ghost/core/core/server/models/gift-link.js
 ghost/core/core/server/models/member-login-event.js
 ghost/core/core/server/models/author.js
 ghost/core/core/server/models/post.js
@@ -5186,6 +5191,7 @@ ghost/core/core/server/api/endpoints/actions.js
 ghost/core/core/server/api/endpoints/oembed.js
 ghost/core/core/server/api/endpoints/session.js
 ghost/core/core/server/api/endpoints/comment-replies.js
+ghost/core/core/server/api/endpoints/automation-email-previews.js
 ghost/core/core/server/api/endpoints/search-index-public.js
 ghost/core/core/server/api/endpoints/comment-dislikes.js
 ghost/core/core/server/api/endpoints/recommendations.js
@@ -5250,6 +5256,7 @@ ghost/core/core/server/api/endpoints/utils/serializers/output/links.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/tinybird.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/files.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/members.js
+ghost/core/core/server/api/endpoints/utils/serializers/output/gift-links.ts
 ghost/core/core/server/api/endpoints/utils/serializers/output/pages.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/index.js
 ghost/core/core/server/api/endpoints/utils/serializers/output/media.js
@@ -5305,10 +5312,12 @@ ghost/core/core/server/api/endpoints/utils/validators/input/index.js
 ghost/core/core/server/api/endpoints/utils/validators/input/media.js
 ghost/core/core/server/api/endpoints/utils/validators/input/webhooks.js
 ghost/core/core/server/api/endpoints/utils/validators/input/users.js
+ghost/core/core/server/api/endpoints/utils/validators/input/automation_email_previews.js
 ghost/core/core/server/api/endpoints/utils/validators/input/invitations.js
 ghost/core/core/server/api/endpoints/utils/validators/input/settings.js
 ghost/core/core/server/api/endpoints/utils/validators/input/invites.js
 ghost/core/core/server/api/endpoints/utils/validators/index.js
+ghost/core/core/server/api/endpoints/utils/validate-email-sender-fields.ts
 ghost/core/core/server/api/endpoints/utils/index.js
 ghost/core/core/server/api/endpoints/integrations.js
 ghost/core/core/server/api/endpoints/comment-reports.js
@@ -5337,6 +5346,7 @@ ghost/core/core/server/api/endpoints/tinybird.js
 ghost/core/core/server/api/endpoints/files.js
 ghost/core/core/server/api/endpoints/labels.js
 ghost/core/core/server/api/endpoints/members.js
+ghost/core/core/server/api/endpoints/gift-links.ts
 ghost/core/core/server/api/endpoints/snippets.js
 ghost/core/core/server/api/endpoints/email-previews.js
 ghost/core/core/server/api/endpoints/stats.js
@@ -5556,6 +5566,10 @@ ghost/core/core/server/services/stats/mrr-stats-service.js
 ghost/core/core/server/services/stats/members-stats-service.js
 ghost/core/core/server/services/stats/subscription-stats-service.js
 ghost/core/core/server/services/stats/referrers-stats-service.js
+ghost/core/core/server/services/gift-links/index.ts
+ghost/core/core/server/services/gift-links/queries.ts
+ghost/core/core/server/services/gift-links/service.ts
+ghost/core/core/server/services/gift-links/model.ts
 ghost/core/core/server/services/link-tracking/link-click-repository.js
 ghost/core/core/server/services/link-tracking/link-click-tracking-service.js
 ghost/core/core/server/services/link-tracking/full-post-link.js
@@ -6290,6 +6304,8 @@ ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-02-38-59-create-
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-10-00-00-add-gift-links-permission-to-admin-integration.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-16-09-07-add-enable-updates-and-announcements-to-members.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-19-10-00-00-grandfather-llms.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-12-00-00-redesign-gift-links-table.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-13-00-00-rename-gift-links-revoke-all-permission.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-18-16-37-27-rename-welcome-email-automation-names.js
 ghost/core/core/server/data/migrations/versions/5.91/2024-08-28-05-28-22-add-donation-message-column-to-donation-payment-events.js
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js

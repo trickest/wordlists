@@ -3401,6 +3401,7 @@ src/Core/ExtraProperty/Definition/ExtraPropertyDefinitionRepository.php
 src/Core/ExtraProperty/Definition/ExtraPropertyDefinitionRepositoryInterface.php
 src/Core/ExtraProperty/Definition/ExtraPropertyRegistry.php
 src/Core/ExtraProperty/Definition/ExtraPropertyScope.php
+src/Core/ExtraProperty/Api/ExtraPropertyApiListRecordCollector.php
 src/Core/Country/CountryRequiredFieldsProviderInterface.php
 src/Core/Country/CountryZipCodeRequirements.php
 src/Core/Country/CountryZipCodeRequirementsProviderInterface.php
@@ -6693,6 +6694,7 @@ src/PrestaShopBundle/EventListener/API/ScopeCheckerListener.php
 src/PrestaShopBundle/EventListener/API/AdminAPIFeatureListener.php
 src/PrestaShopBundle/EventListener/API/BulkCommandExceptionListener.php
 src/PrestaShopBundle/EventListener/API/SSLMiddlewareListener.php
+src/PrestaShopBundle/EventListener/API/ExtraPropertyApiSubscriber.php
 src/PrestaShopBundle/EventListener/API/Context/ApiClientContextListener.php
 src/PrestaShopBundle/EventListener/API/Context/CurrencyContextListener.php
 src/PrestaShopBundle/EventListener/API/Context/ApiLegacyContextListener.php
@@ -6946,11 +6948,14 @@ src/PrestaShopBundle/Twig/Extension/GridExtension.php
 src/PrestaShopBundle/Twig/TranslationsExtension.php
 src/PrestaShopBundle/Twig/ContextIsoCodeProviderExtension.php
 src/PrestaShopBundle/ApiPlatform/Validator/CQRSApiValidator.php
+src/PrestaShopBundle/ApiPlatform/Validator/CQRSApiValidatorInterface.php
+src/PrestaShopBundle/ApiPlatform/Validator/ExtraPropertyCQRSApiValidator.php
 src/PrestaShopBundle/ApiPlatform/Serializer/DecimalNumberTypeExtractor.php
 src/PrestaShopBundle/ApiPlatform/Serializer/CQRSApiSerializer.php
 src/PrestaShopBundle/ApiPlatform/Encoder/MultipartDecoder.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/FileUploadRequestBodyBuilder.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Factory/CQRSOpenApiFactory.php
+src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/ExtraPropertiesSchemaAdapter.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/LocalizedValueAdapter.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/CommandMappingAdapter.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/SchemaAdapterChain.php
@@ -6962,7 +6967,6 @@ src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/DecimalNumberAdapter.php
 src/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/SchemaSynchronizer.php
 src/PrestaShopBundle/ApiPlatform/Pagination/PaginationElements.php
 src/PrestaShopBundle/ApiPlatform/DomainObjectDetector.php
-src/PrestaShopBundle/ApiPlatform/ExtraProperties/ExtraPropertiesApiService.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DateTimeImmutableNormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/CQRSApiNormalizer.php
 src/PrestaShopBundle/ApiPlatform/Normalizer/DateImmutableNormalizer.php
@@ -7072,6 +7076,7 @@ src/PrestaShopBundle/Command/RegenerateThumbnailsCommand.php
 src/PrestaShopBundle/Command/EmployeeCreateCommand.php
 src/PrestaShopBundle/Command/GenerateMailTemplatesCommand.php
 src/PrestaShopBundle/Command/UpdateSchemaCommand.php
+src/PrestaShopBundle/Command/GenerateHtaccessCommand.php
 src/PrestaShopBundle/Command/FeatureFlagCommand.php
 src/PrestaShopBundle/Command/CheckTranslationDuplicatesCommand.php
 src/PrestaShopBundle/Command/APIClientCommand.php
@@ -12206,6 +12211,7 @@ tests/Integration/Core/Stock/StockManagerTest.php
 tests/Integration/Core/Module/ModuleRepositoryTest.php
 tests/Integration/Core/Module/HookRepositoryTest.php
 tests/Integration/Core/ExtraProperty/ExtraPropertiesFormBuilderModifierTest.php
+tests/Integration/Core/ExtraProperty/Value/ExtraPropertyReaderTest.php
 tests/Integration/Core/Addon/Theme/ThemeRepositoryTest.php
 tests/Integration/Core/Addon/Module/ModuleManagerBuilderTest.php
 tests/Integration/Core/Import/File/FileFinderTest.php
@@ -12240,6 +12246,7 @@ tests/Integration/Utility/PaymentModuleFake.php
 tests/Integration/Utility/LoginTrait.php
 tests/Integration/Utility/PageVoter.php
 tests/Integration/Utility/ContextMockerTrait.php
+tests/Integration/ApiPlatform/EndPoint/ExtraPropertyEndpointTest.php
 tests/Integration/ApiPlatform/EndPoint/ApiClientEndpointTest.php
 tests/Integration/ApiPlatform/EndPoint/ApiAccessTokenEndpointTest.php
 tests/Integration/ApiPlatform/EndPoint/ApiTestCase.php
@@ -12267,6 +12274,7 @@ tests/Integration/PrestaShopBundle/Routing/Linter/SecurityAttributeLinterTest.ph
 tests/Integration/PrestaShopBundle/Routing/Converter/LegacyUrlConverterTest.php
 tests/Integration/PrestaShopBundle/Routing/Converter/RoutingCacheKeyGeneratorTest.php
 tests/Integration/PrestaShopBundle/Command/FeatureFlagCommandTest.php
+tests/Integration/PrestaShopBundle/Command/GenerateHtaccessCommandTest.php
 tests/Integration/PrestaShopBundle/Command/GenerateMailTemplatesCommandTest.php
 tests/Integration/PrestaShopBundle/Command/LoadLegacyClassesinCommandTest.php
 tests/Integration/PrestaShopBundle/Form/FormListenerTestCase.php
@@ -13289,6 +13297,8 @@ tests/Resources/modules_tests/pscsx3241/pscsx3241.php
 tests/Resources/modules_tests/pscsx3241/override/controllers/admin/DummyAdminController.php
 tests/Resources/modules_tests/pscsx3241/override/classes/Cart.php
 tests/Resources/modules_tests/pscsx3241/config.xml
+tests/Resources/modules_tests/extrapropertytest2/extrapropertytest2.php
+tests/Resources/modules_tests/extrapropertytest2/config.xml
 tests/Resources/modules_tests/testbasicconflict/override/classes/Cart.php
 tests/Resources/modules_tests/testbasicconflict/config.xml
 tests/Resources/modules_tests/testbasicconflict/testbasicconflict.php
@@ -13304,6 +13314,8 @@ tests/Resources/modules_tests/testtypedpropertyoverride/config.xml
 tests/Resources/modules_tests/testconstantconflict/override/classes/Cart.php
 tests/Resources/modules_tests/testconstantconflict/config.xml
 tests/Resources/modules_tests/testconstantconflict/testconstantconflict.php
+tests/Resources/modules_tests/extrapropertytest/config.xml
+tests/Resources/modules_tests/extrapropertytest/extrapropertytest.php
 tests/Resources/modules_tests/testmultilinepropertyoverride/testmultilinepropertyoverride.php
 tests/Resources/modules_tests/testmultilinepropertyoverride/override/classes/Cart.php
 tests/Resources/modules_tests/testmultilinepropertyoverride/config.xml
