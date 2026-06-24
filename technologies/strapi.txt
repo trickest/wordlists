@@ -24,6 +24,10 @@ scripts/open-api/serve.js
 scripts/open-api/public/index.html
 scripts/remove-dist-tag.sh
 scripts/yalc-publish.js
+scripts/ai-tooling/index.ts
+scripts/ai-tooling/links.ts
+scripts/ai-tooling/post-setup.ts
+scripts/ai-tooling/__tests__/links.test.ts
 scripts/check-package-versions.mjs
 scripts/link.js
 scripts/publish.sh
@@ -1943,6 +1947,7 @@ packages/core/admin/admin/src/translations/es.json
 packages/core/admin/admin/src/assets/images/logo-strapi-2022.svg
 packages/core/admin/admin/src/assets/images/icon_offline-cloud.svg
 packages/core/admin/admin/src/utils/jwt.ts
+packages/core/admin/admin/src/utils/retryDynamicImport.ts
 packages/core/admin/admin/src/utils/urls.ts
 packages/core/admin/admin/src/utils/baseQuery.ts
 packages/core/admin/admin/src/utils/widgetLayout.ts
@@ -1973,6 +1978,7 @@ packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts
 packages/core/admin/admin/src/utils/tests/rulesEngine.test.ts
 packages/core/admin/admin/src/utils/tests/widgetVisibility.test.ts
 packages/core/admin/admin/src/utils/strings.ts
+packages/core/admin/admin/src/utils/__tests__/retryDynamicImport.test.ts
 packages/core/admin/admin/src/utils/once.ts
 packages/core/admin/admin/src/utils/cookies.ts
 packages/core/admin/admin/src/constants.ts
@@ -2075,6 +2081,7 @@ packages/core/admin/admin/src/components/RelativeTime.tsx
 packages/core/admin/admin/src/components/ContentBox.tsx
 packages/core/admin/admin/src/components/NpsSurvey.tsx
 packages/core/admin/admin/src/components/PageHelpers.tsx
+packages/core/admin/admin/src/components/LazyOutlet.tsx
 packages/core/admin/admin/src/components/PluginsInitializer.tsx
 packages/core/admin/admin/src/components/WidgetHelpers.tsx
 packages/core/admin/admin/src/components/DragLayer.tsx
@@ -2092,6 +2099,7 @@ packages/core/admin/admin/src/components/Providers.tsx
 packages/core/admin/admin/src/components/tests/Table.test.tsx
 packages/core/admin/admin/src/components/tests/Widget.test.tsx
 packages/core/admin/admin/src/components/tests/Widgets.test.tsx
+packages/core/admin/admin/src/components/tests/LazyOutlet.test.tsx
 packages/core/admin/admin/src/components/tests/PrivateRoute.test.tsx
 packages/core/admin/admin/src/components/tests/SearchInput.test.tsx
 packages/core/admin/admin/src/components/tests/NpsSurvey.test.tsx

@@ -8778,6 +8778,9 @@ src/Adapter/Tag/CommandHandler/DeleteTagHandler.php
 src/Adapter/Tag/CommandHandler/AddTagHandler.php
 src/Adapter/Tag/CommandHandler/BulkDeleteTagHandler.php
 src/Adapter/Tag/CommandHandler/EditTagHandler.php
+src/Adapter/Validator/NoOpConstraintValidator.php
+src/Adapter/Validator/GracefulConstraintValidatorFactory.php
+src/Adapter/Validator/LegacyValidatorFactory.php
 src/Adapter/File/Validator/VirtualProductFileValidator.php
 src/Adapter/File/Uploader/VirtualProductFileUploader.php
 src/Adapter/File/Uploader/AttachmentFileUploader.php
@@ -8912,6 +8915,7 @@ src/Adapter/Container/ContainerParametersExtension.php
 src/Adapter/Container/LegacyContainerInterface.php
 src/Adapter/Container/LegacyContainerBuilder.php
 src/Adapter/Container/DoctrineBuilderExtension.php
+src/Adapter/Container/ValidatorBuilderExtension.php
 src/Adapter/Container/LegacyContainer.php
 src/Adapter/Container/ContainerBuilderExtensionInterface.php
 src/Adapter/Supplier/QueryHandler/GetSupplierForViewingHandler.php
@@ -10746,6 +10750,7 @@ tests/Unit/Core/ExtraProperty/Grid/ExtraPropertiesGridQueryBuilderModifierTest.p
 tests/Unit/Core/ExtraProperty/ExtraPropertiesGridCastTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyDefinitionFromRowTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyDefinitionNamingTest.php
+tests/Unit/Core/ExtraProperty/Validation/ExtraPropertyValidatorTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyRegistryTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertiesBagTest.php
 tests/Unit/Core/Addon/Theme/ThemeValidatorTest.php
@@ -11110,6 +11115,7 @@ tests/Unit/PrestaShopBundle/Twig/Extension/EntitySearchExtensionTest.php
 tests/Unit/PrestaShopBundle/Twig/Extension/PathWithBackUrlExtensionTest.php
 tests/Unit/PrestaShopBundle/Twig/Fixtures/modules/dummy.md
 tests/Unit/PrestaShopBundle/Twig/Fixtures/modules/template.html.twig
+tests/Unit/PrestaShopBundle/ApiPlatform/OpenApi/Adapter/ExtraPropertiesSchemaAdapterTest.php
 tests/Unit/PrestaShopBundle/ApiPlatform/Normalizer/BulkCommandExceptionNormalizerTest.php
 tests/Unit/PrestaShopBundle/ApiPlatform/Normalizer/ValueObjectNormalizerTest.php
 tests/Unit/PrestaShopBundle/ApiPlatform/Metadata/CQRSGetTest.php
@@ -11635,6 +11641,7 @@ tests/UI/campaigns/functional/BO/05_customerService/03_merchandiseReturns/03_upd
 tests/UI/campaigns/functional/BO/05_customerService/02_orderMessages/01_CRUDOrderMessage.ts
 tests/UI/campaigns/functional/BO/05_customerService/02_orderMessages/03_paginationAndSortOrderMessages.ts
 tests/UI/campaigns/functional/BO/05_customerService/02_orderMessages/02_filterAndBulkDeleteOrderMessages.ts
+tests/UI/campaigns/functional/BO/16_wallOfFame/05_howToContribute.ts
 tests/UI/campaigns/functional/BO/16_wallOfFame/02_topCompanies.ts
 tests/UI/campaigns/functional/BO/16_wallOfFame/03_topContributors.ts
 tests/UI/campaigns/functional/BO/16_wallOfFame/01_OurCommunity.ts
@@ -13545,5 +13552,6 @@ themes/javascript.tpl
 .ai/Domain/Employee/CONTEXT.md
 .ai/Domain/Currency/CONTEXT.md
 .ai/Domain/Cart/CONTEXT.md
+.ai/CONTAINERS.md
 webservice/index.php
 webservice/dispatcher.php

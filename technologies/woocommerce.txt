@@ -2777,6 +2777,7 @@ packages/php/woocommerce-subscriptions-engine/src/Core/ValueObject/BillingPolicy
 packages/php/woocommerce-subscriptions-engine/src/Core/ValueObject/DeliveryPolicy.php
 packages/php/woocommerce-subscriptions-engine/src/Core/ValueObject/InstrumentRef.php
 packages/php/woocommerce-subscriptions-engine/src/Core/ValueObject/OrderRef.php
+packages/php/woocommerce-subscriptions-engine/src/Core/Support/ScalarCoercion.php
 packages/php/woocommerce-subscriptions-engine/src/Core/Gateway/GatewayCapabilities.php
 packages/php/woocommerce-subscriptions-engine/src/Integration/Bootstrap.php
 packages/php/woocommerce-subscriptions-engine/src/Integration/Renewal/RenewalEngine.php
@@ -2811,9 +2812,11 @@ packages/php/woocommerce-subscriptions-engine/tests/unit/Integration/Gateway/cap
 packages/php/woocommerce-subscriptions-engine/tests/unit/Integration/Gateway/CapabilityRegistryTest.php
 packages/php/woocommerce-subscriptions-engine/README.md
 packages/php/woocommerce-subscriptions-engine/phpunit-integration.xml.dist
+packages/php/woocommerce-subscriptions-engine/changelog/update-woosubs-engine-make-phpstan-ci-required
 packages/php/woocommerce-subscriptions-engine/changelog/fix-linting-issues-in-core-entities
 packages/php/woocommerce-subscriptions-engine/changelog/add-subscriptions-engine-psr4-conversion
 packages/php/woocommerce-subscriptions-engine/changelog/add-subscriptions-engine-renewal-money-path
+packages/php/woocommerce-subscriptions-engine/changelog/fix-subscriptions-engine-phpstan-findings
 packages/php/woocommerce-subscriptions-engine/changelog/add-subscriptions-engine-status-machine-capabilities
 packages/php/woocommerce-subscriptions-engine/changelog/add-subscriptions-engine-boundary-guards
 packages/php/woocommerce-subscriptions-engine/changelog/add-phpstan-validation-for-woocommerce-subscriptions-engine
@@ -5091,6 +5094,11 @@ plugins/woocommerce/src/Internal/DataStores/Orders/DataSynchronizer.php
 plugins/woocommerce/src/Internal/DataStores/Orders/LegacyDataHandler.php
 plugins/woocommerce/src/Internal/DataStores/StockNotifications/StockNotificationsDataStore.php
 plugins/woocommerce/src/Internal/DataStores/StockNotifications/StockNotificationsMetaDataStore.php
+plugins/woocommerce/src/Internal/CustomerEmailVerification/VerificationEventListener.php
+plugins/woocommerce/src/Internal/CustomerEmailVerification/CustomerEmailVerification.php
+plugins/woocommerce/src/Internal/CustomerEmailVerification/EmailVerificationService.php
+plugins/woocommerce/src/Internal/CustomerEmailVerification/Emails/CustomerVerifyEmail.php
+plugins/woocommerce/src/Internal/CustomerEmailVerification/VerificationController.php
 plugins/woocommerce/src/Internal/CostOfGoodsSold/CogsAwareTrait.php
 plugins/woocommerce/src/Internal/CostOfGoodsSold/CostOfGoodsSoldController.php
 plugins/woocommerce/src/Internal/CostOfGoodsSold/CogsAwareRestControllerTrait.php
@@ -7678,6 +7686,11 @@ plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableDataStor
 plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableDataStoreTests.php
 plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableQueryTests.php
 plugins/woocommerce/tests/php/src/Internal/DataStores/StockNotifications/StockNotificationsDataStoreTests.php
+plugins/woocommerce/tests/php/src/Internal/CustomerEmailVerification/ImplicitVerificationTest.php
+plugins/woocommerce/tests/php/src/Internal/CustomerEmailVerification/MyAccountPromptTest.php
+plugins/woocommerce/tests/php/src/Internal/CustomerEmailVerification/VerificationControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/CustomerEmailVerification/EmailVerificationServiceTest.php
+plugins/woocommerce/tests/php/src/Internal/CustomerEmailVerification/Emails/CustomerVerifyEmailTest.php
 plugins/woocommerce/tests/php/src/Internal/RestApi/Routes/V4/Products/ProductsAddToCartTest.php
 plugins/woocommerce/tests/php/src/Internal/RestApi/Routes/V4/Products/ProductsControllerTest.php
 plugins/woocommerce/tests/php/src/Internal/RestApi/Routes/V4/Refunds/DataUtilsTest.php
@@ -12611,6 +12624,7 @@ plugins/woocommerce/templates/emails/customer-invoice.php
 plugins/woocommerce/templates/emails/customer-pos-refunded-order.php
 plugins/woocommerce/templates/emails/customer-stock-notification-verify.php
 plugins/woocommerce/templates/emails/email-styles.php
+plugins/woocommerce/templates/emails/customer-verify-email.php
 plugins/woocommerce/templates/emails/email-order-items.php
 plugins/woocommerce/templates/emails/admin-failed-order.php
 plugins/woocommerce/templates/emails/email-order-details.php
@@ -12632,6 +12646,7 @@ plugins/woocommerce/templates/emails/plain/customer-fulfillment-updated.php
 plugins/woocommerce/templates/emails/plain/customer-invoice.php
 plugins/woocommerce/templates/emails/plain/customer-pos-refunded-order.php
 plugins/woocommerce/templates/emails/plain/customer-stock-notification-verify.php
+plugins/woocommerce/templates/emails/plain/customer-verify-email.php
 plugins/woocommerce/templates/emails/plain/email-order-items.php
 plugins/woocommerce/templates/emails/plain/admin-failed-order.php
 plugins/woocommerce/templates/emails/plain/email-order-details.php
@@ -12670,6 +12685,7 @@ plugins/woocommerce/templates/emails/block/customer-fulfillment-created.php
 plugins/woocommerce/templates/emails/block/customer-fulfillment-updated.php
 plugins/woocommerce/templates/emails/block/customer-invoice.php
 plugins/woocommerce/templates/emails/block/customer-pos-refunded-order.php
+plugins/woocommerce/templates/emails/block/customer-verify-email.php
 plugins/woocommerce/templates/emails/block/admin-failed-order.php
 plugins/woocommerce/templates/emails/block/general-block-email.php
 plugins/woocommerce/templates/emails/block/customer-abandoned-cart-recovery.php
@@ -12747,6 +12763,7 @@ plugins/woocommerce/templates/brands/brand-description.php
 plugins/woocommerce/templates/single-product.php
 plugins/woocommerce/changelog/65338-composer-psr4-upgrade-fallback
 plugins/woocommerce/changelog/fix-blocks-site-editor-save-panel
+plugins/woocommerce/changelog/fix-wooplug-6446-remove-all-data
 plugins/woocommerce/changelog/63793-fix-wcag-metabox-delete-contrast
 plugins/woocommerce/changelog/remove-products-catalog-api
 plugins/woocommerce/changelog/update-rename-visual-attribute-picker
@@ -12759,6 +12776,7 @@ plugins/woocommerce/changelog/65701-add-wc-cli-debug-group
 plugins/woocommerce/changelog/63517-fix-duplicate-scheduled-sale-events
 plugins/woocommerce/changelog/disable-playwright-report-on-failure
 plugins/woocommerce/changelog/fix-pos-feed-htaccess-write-logging
+plugins/woocommerce/changelog/fix-feed-interface-bc-break-get-entry-count
 plugins/woocommerce/changelog/fix-blocks-e2e-nightly-sample-data-path
 plugins/woocommerce/changelog/wooplug-6829-can-be-refunded-fee-shipping-parity
 plugins/woocommerce/changelog/remove-buildkite-analytics-ci
@@ -12801,10 +12819,12 @@ plugins/woocommerce/changelog/fix-breadcrumbs-block-custom-font-size
 plugins/woocommerce/changelog/fix-65378-sku-duplication-hyphen
 plugins/woocommerce/changelog/qao-405-blocks-e2e-non-module-assets
 plugins/woocommerce/changelog/update-tell-agents-not-to-write-jquery
+plugins/woocommerce/changelog/fix-has-block-in-page-recursive-search
 plugins/woocommerce/changelog/remove-redundant-basic-e2e-spec
 plugins/woocommerce/changelog/enable-product-object-caching-new-installs
 plugins/woocommerce/changelog/fix-line-item-subtotal-display
 plugins/woocommerce/changelog/abandoned-cart-recovery-recommendations
+plugins/woocommerce/changelog/65864-34487-different-border
 plugins/woocommerce/changelog/fix-customer-session-empty-field-persistence
 plugins/woocommerce/changelog/fix-59464-use-toolspanel-in-stock-filter
 plugins/woocommerce/changelog/performance-64471-jetpack-connection-status
@@ -12818,6 +12838,7 @@ plugins/woocommerce/changelog/65335-woomob-2684-refund-preview-endpoint
 plugins/woocommerce/changelog/fix-product-block-editor-block-registry-compat
 plugins/woocommerce/changelog/65439-woomob-2685-simplify-refund-creation
 plugins/woocommerce/changelog/checkout-recovery-unsubscribe
+plugins/woocommerce/changelog/update-swatches-improvements
 plugins/woocommerce/changelog/checkout-recovery-manual-send
 plugins/woocommerce/changelog/65436-performance-batch-prime-product-collection-images
 plugins/woocommerce/changelog/wooplug-3697-deprecate-queryfilters-class
@@ -12832,9 +12853,9 @@ plugins/woocommerce/changelog/pr-64362
 plugins/woocommerce/changelog/wooplug-6670-untrash-customer-emails
 plugins/woocommerce/changelog/65460-add-theme-json-support-to-breadcrumb-block
 plugins/woocommerce/changelog/fix-do_deferred_product_sync-undefined-behavior
+plugins/woocommerce/changelog/65420-fix-store-api-collection-data-dos
 plugins/woocommerce/changelog/fix-synced-product-filters-instances
 plugins/woocommerce/changelog/65565-wooplug-6146-log-context-json
-plugins/woocommerce/changelog/fix-add-to-cart-with-options-any-attribute-legacy-mode
 plugins/woocommerce/changelog/fix-orders-query-sqlite-limit
 plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
@@ -12848,8 +12869,10 @@ plugins/woocommerce/changelog/fix-get-variation-parent-visibility
 plugins/woocommerce/changelog/dev-actions-scheduler-api-usage-audit
 plugins/woocommerce/changelog/fix-storeapi-order-auth-refund-guard
 plugins/woocommerce/changelog/qao-403-blocks-e2e-leaf-utils-content-templates
+plugins/woocommerce/changelog/performance-centralize-wp_count_posts-invocation
 plugins/woocommerce/changelog/65591-fix-rest-batch-transient-coalescing
 plugins/woocommerce/changelog/site-health-admin-notice-migration
+plugins/woocommerce/changelog/fix-woopayments-activate-payments-lock
 plugins/woocommerce/changelog/update-wordpress-package-catalog-wp-6-9
 plugins/woocommerce/changelog/testops-189-product-reviews-delete-flake
 plugins/woocommerce/changelog/remove-render_block_with_context_util
@@ -12863,6 +12886,7 @@ plugins/woocommerce/changelog/fix-hardcoded-wp-content-paths
 plugins/woocommerce/changelog/wooplug-6880-pending-cancelled-admin-email
 plugins/woocommerce/changelog/sprinkle-orders-empty-state
 plugins/woocommerce/changelog/add-filter-for-variable-product-taxes-influence-price
+plugins/woocommerce/changelog/add-customer-email-verification-order-linking
 plugins/woocommerce/changelog/fix-39366
 plugins/woocommerce/changelog/add-product-filters-disable-responsive
 plugins/woocommerce/changelog/63967-fix-order-totals-mobile-width
@@ -12895,6 +12919,7 @@ plugins/woocommerce/changelog/fix-64744-product-id-contrast
 plugins/woocommerce/changelog/63792-fix-placeholder-contrast
 plugins/woocommerce/changelog/remove-deprecated-blocks-bootstrap-dependencies
 plugins/woocommerce/changelog/65390-fix-log-dir-size-fatal
+plugins/woocommerce/changelog/env-restart-force-destroy
 plugins/woocommerce/changelog/fix-settings-ui-tabs-horizontal-overflow
 plugins/woocommerce/changelog/add-eslint-restrict-wp-components-storefront
 plugins/woocommerce/changelog/fix-e2e-replace-dead-demo-image-urls

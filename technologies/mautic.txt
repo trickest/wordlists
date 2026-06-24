@@ -2,6 +2,7 @@ phpstan-bootstrap.php
 rector-older-symfony.php
 .devcontainer/devcontainer.json
 .devcontainer/setup-project.sh
+.devcontainer/prebuild-project.sh
 package.json
 LICENSE.txt
 GEMINI.md
@@ -1821,6 +1822,7 @@ app/bundles/LeadBundle/Tests/Segment/SegmentFilterFunctionalTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentFilterTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentServiceFunctionalTest.php
 app/bundles/LeadBundle/Tests/Segment/ContactSegmentFilterFactoryFunctionalTest.php
+app/bundles/LeadBundle/Tests/Segment/LeadEmailReadDateSegmentFunctionalTest.php
 app/bundles/LeadBundle/Tests/TestEntityCreationTrait.php
 app/bundles/LeadBundle/Tests/Helper/CustomFieldValueHelperTest.php
 app/bundles/LeadBundle/Tests/Helper/FormFieldHelperTest.php
@@ -2627,11 +2629,13 @@ app/bundles/CampaignBundle/Tests/Functional/Model/EventModelFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Form/Validator/Constraints/InfiniteLoopValidatorFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Fixtures/entity_data.json
 app/bundles/CampaignBundle/Tests/Functional/Fixtures/FixtureHelper.php
+app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignRestartFromSegmentTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignEventDetailsTimelineFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignEntitiesTrait.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignActionJumpToEventWithIntervalTriggerModeFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/JumpToActionTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/DetailsTest.php
+app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignMembershipFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignRotationTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignDecisionTest.php
 app/bundles/CampaignBundle/Tests/Functional/Controller/CampaignControllerTrait.php
@@ -3501,6 +3505,7 @@ app/bundles/CoreBundle/Tests/Unit/Monolog/Handler/FileLogHandlerTest.php
 app/bundles/CoreBundle/Tests/Unit/Event/CustomTemplateEventTest.php
 app/bundles/CoreBundle/Tests/Unit/Service/BulkNotificationTest.php
 app/bundles/CoreBundle/Tests/Unit/Shortener/ShortenerTest.php
+app/bundles/CoreBundle/Tests/Unit/ErrorHandler/ErrorHandlerTest.php
 app/bundles/CoreBundle/Tests/Unit/ProcessSignal/ProcessSignalServiceTest.php
 app/bundles/CoreBundle/Tests/Unit/ProcessSignal/Exception/SignalCaughtExceptionTest.php
 app/bundles/CoreBundle/Tests/Unit/ProcessSignal/ProcessSignalTest.php
@@ -4768,6 +4773,7 @@ app/bundles/AssetBundle/EventListener/StatsSubscriber.php
 app/bundles/AssetBundle/EventListener/PageSubscriber.php
 app/bundles/AssetBundle/EventListener/BuilderSubscriber.php
 app/bundles/AssetBundle/EventListener/AssetExportListEventSubscriber.php
+app/bundles/AssetBundle/Tests/EventListener/LeadSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
