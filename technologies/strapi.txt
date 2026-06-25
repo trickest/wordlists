@@ -191,6 +191,7 @@ docs/docs/rfcs/02-publication-filter-query-modes.md
 docs/docs/rfcs/00-intro.md
 docs/docs/rfcs/example.md
 docs/docs/rfcs/01-custom-fields.md
+docs/vercel.json
 docs/static/img/logo.svg
 docs/static/img/content-manager/blocks/components-structure.tldr
 docs/static/img/logo_dark.svg
@@ -202,7 +203,6 @@ docs/remark-design-system-links.ts
 docs/sidebars.ts
 docs/README.md
 vitest.config.ts
-vercel.json
 nx.json
 examples/empty/package.json
 examples/empty/.env.example
@@ -313,6 +313,7 @@ examples/kitchensink/src/admin/extensions/theme.js
 examples/kitchensink/src/admin/webpack.config.example.js
 examples/kitchensink/src/admin/app.js
 examples/kitchensink/src/admin/app.example.js
+examples/kitchensink/lint-staged.config.mjs
 examples/kitchensink/.eslintrc.cjs
 examples/kitchensink/README.md
 examples/kitchensink/public/uploads/.gitkeep
@@ -516,6 +517,7 @@ jsconfig.json
 .coderabbit.yaml
 CONTRIBUTING.md
 .cursor/worktrees.json
+lint-staged.shared.mjs
 .npmrc
 LICENSE
 yarn.lock
@@ -552,6 +554,7 @@ packages/admin-test-utils/src/file-mock.ts
 packages/admin-test-utils/src/global-setup.ts
 packages/admin-test-utils/LICENSE
 packages/admin-test-utils/tsconfig.build.json
+packages/admin-test-utils/lint-staged.config.mjs
 packages/admin-test-utils/.eslintrc.cjs
 packages/admin-test-utils/README.md
 packages/admin-test-utils/custom.d.ts
@@ -564,6 +567,7 @@ packages/providers/email-mailgun/LICENSE
 packages/providers/email-mailgun/tsconfig.build.json
 packages/providers/email-mailgun/jest.config.js
 packages/providers/email-mailgun/tsconfig.eslint.json
+packages/providers/email-mailgun/lint-staged.config.mjs
 packages/providers/email-mailgun/.eslintrc.cjs
 packages/providers/email-mailgun/README.md
 packages/providers/email-mailgun/.npmignore
@@ -579,6 +583,7 @@ packages/providers/upload-aws-s3/LICENSE
 packages/providers/upload-aws-s3/tsconfig.build.json
 packages/providers/upload-aws-s3/jest.config.js
 packages/providers/upload-aws-s3/tsconfig.eslint.json
+packages/providers/upload-aws-s3/lint-staged.config.mjs
 packages/providers/upload-aws-s3/.eslintrc.cjs
 packages/providers/upload-aws-s3/README.md
 packages/providers/upload-aws-s3/.npmignore
@@ -594,6 +599,7 @@ packages/providers/email-sendmail/LICENSE
 packages/providers/email-sendmail/tsconfig.build.json
 packages/providers/email-sendmail/jest.config.js
 packages/providers/email-sendmail/tsconfig.eslint.json
+packages/providers/email-sendmail/lint-staged.config.mjs
 packages/providers/email-sendmail/.eslintrc.cjs
 packages/providers/email-sendmail/README.md
 packages/providers/email-sendmail/.npmignore
@@ -615,6 +621,7 @@ packages/providers/email-nodemailer/LICENSE
 packages/providers/email-nodemailer/tsconfig.build.json
 packages/providers/email-nodemailer/jest.config.js
 packages/providers/email-nodemailer/tsconfig.eslint.json
+packages/providers/email-nodemailer/lint-staged.config.mjs
 packages/providers/email-nodemailer/.eslintrc.cjs
 packages/providers/email-nodemailer/README.md
 packages/providers/email-nodemailer/.npmignore
@@ -627,6 +634,7 @@ packages/providers/upload-local/LICENSE
 packages/providers/upload-local/tsconfig.build.json
 packages/providers/upload-local/jest.config.js
 packages/providers/upload-local/tsconfig.eslint.json
+packages/providers/upload-local/lint-staged.config.mjs
 packages/providers/upload-local/.eslintrc.cjs
 packages/providers/upload-local/README.md
 packages/providers/upload-local/.npmignore
@@ -642,6 +650,7 @@ packages/providers/email-amazon-ses/src/__tests__/index.vitest.test.ts
 packages/providers/email-amazon-ses/LICENSE
 packages/providers/email-amazon-ses/tsconfig.build.json
 packages/providers/email-amazon-ses/tsconfig.eslint.json
+packages/providers/email-amazon-ses/lint-staged.config.mjs
 packages/providers/email-amazon-ses/.eslintrc.cjs
 packages/providers/email-amazon-ses/README.md
 packages/providers/email-amazon-ses/.npmignore
@@ -652,6 +661,7 @@ packages/providers/upload-cloudinary/src/index.ts
 packages/providers/upload-cloudinary/LICENSE
 packages/providers/upload-cloudinary/tsconfig.build.json
 packages/providers/upload-cloudinary/tsconfig.eslint.json
+packages/providers/upload-cloudinary/lint-staged.config.mjs
 packages/providers/upload-cloudinary/.eslintrc.cjs
 packages/providers/upload-cloudinary/README.md
 packages/providers/upload-cloudinary/.npmignore
@@ -663,6 +673,7 @@ packages/providers/email-sendgrid/src/index.ts
 packages/providers/email-sendgrid/LICENSE
 packages/providers/email-sendgrid/tsconfig.build.json
 packages/providers/email-sendgrid/tsconfig.eslint.json
+packages/providers/email-sendgrid/lint-staged.config.mjs
 packages/providers/email-sendgrid/.eslintrc.cjs
 packages/providers/email-sendgrid/README.md
 packages/providers/email-sendgrid/.npmignore
@@ -684,6 +695,7 @@ packages/cli/create-strapi-app/src/utils/check-requirements.ts
 packages/cli/create-strapi-app/src/utils/package-json.ts
 packages/cli/create-strapi-app/src/utils/dot-env.ts
 packages/cli/create-strapi-app/src/utils/git.ts
+packages/cli/create-strapi-app/src/utils/pnpm-config.ts
 packages/cli/create-strapi-app/src/utils/check-install-path.ts
 packages/cli/create-strapi-app/src/utils/parse-to-chalk.ts
 packages/cli/create-strapi-app/src/utils/logger.ts
@@ -695,6 +707,7 @@ packages/cli/create-strapi-app/src/types.ts
 packages/cli/create-strapi-app/LICENSE
 packages/cli/create-strapi-app/tsconfig.build.json
 packages/cli/create-strapi-app/tsconfig.eslint.json
+packages/cli/create-strapi-app/lint-staged.config.mjs
 packages/cli/create-strapi-app/bin/index.js
 packages/cli/create-strapi-app/.eslintrc.cjs
 packages/cli/create-strapi-app/README.md
@@ -886,6 +899,7 @@ packages/cli/cloud/LICENSE
 packages/cli/cloud/tsconfig.build.json
 packages/cli/cloud/jest.config.js
 packages/cli/cloud/tsconfig.eslint.json
+packages/cli/cloud/lint-staged.config.mjs
 packages/cli/cloud/bin/index.js
 packages/cli/cloud/.eslintrc.cjs
 packages/cli/cloud/README.md
@@ -919,6 +933,7 @@ packages/utils/logger/src/configs/default-configuration.ts
 packages/utils/logger/LICENSE
 packages/utils/logger/tsconfig.build.json
 packages/utils/logger/tsconfig.eslint.json
+packages/utils/logger/lint-staged.config.mjs
 packages/utils/logger/.eslintrc.cjs
 packages/utils/typescript/package.json
 packages/utils/typescript/index.d.ts
@@ -954,6 +969,7 @@ packages/utils/typescript/LICENSE
 packages/utils/typescript/jest.config.js
 packages/utils/typescript/tsconfigs/admin.json
 packages/utils/typescript/tsconfigs/server.json
+packages/utils/typescript/lint-staged.config.mjs
 packages/utils/typescript/.eslintrc.cjs
 packages/utils/upgrade/package.json
 packages/utils/upgrade/rollup.config.mjs
@@ -1085,6 +1101,7 @@ packages/utils/upgrade/LICENSE
 packages/utils/upgrade/tsconfig.build.json
 packages/utils/upgrade/jest.config.js
 packages/utils/upgrade/tsconfig.eslint.json
+packages/utils/upgrade/lint-staged.config.mjs
 packages/utils/upgrade/bin/upgrade.js
 packages/utils/upgrade/.eslintrc.cjs
 packages/utils/upgrade/README.md
@@ -1511,6 +1528,7 @@ packages/core/upload/server/src/__tests__/register.test.ts
 packages/core/upload/server/tsconfig.build.json
 packages/core/upload/server/tsconfig.eslint.json
 packages/core/upload/server/.eslintrc.cjs
+packages/core/upload/lint-staged.config.mjs
 packages/core/upload/.eslintrc.cjs
 packages/core/upload/shared/contracts/folders.ts
 packages/core/upload/shared/contracts/ai-metadata-jobs.ts
@@ -1645,6 +1663,7 @@ packages/core/review-workflows/server/src/content-types/workflow-stage/index.ts
 packages/core/review-workflows/server/src/content-types/workflow/index.ts
 packages/core/review-workflows/server/tsconfig.build.json
 packages/core/review-workflows/server/tsconfig.eslint.json
+packages/core/review-workflows/lint-staged.config.mjs
 packages/core/review-workflows/.eslintrc.cjs
 packages/core/review-workflows/shared/contracts/review-workflows.ts
 packages/core/review-workflows/shared/contracts/homepage.ts
@@ -1764,6 +1783,7 @@ packages/core/admin/admin/src/features/tests/ConfigurationProvider.test.tsx
 packages/core/admin/admin/src/features/tests/Notifications.test.tsx
 packages/core/admin/admin/src/features/Configuration.tsx
 packages/core/admin/admin/src/pages/ProfilePage.tsx
+packages/core/admin/admin/src/pages/SessionsPage.tsx
 packages/core/admin/admin/src/pages/InternalErrorPage.tsx
 packages/core/admin/admin/src/pages/UseCasePage.tsx
 packages/core/admin/admin/src/pages/NotFoundPage.tsx
@@ -1887,6 +1907,7 @@ packages/core/admin/admin/src/pages/Settings/components/Tokens/FormApiTokenConta
 packages/core/admin/admin/src/pages/Settings/components/Tokens/LifeSpanInput.tsx
 packages/core/admin/admin/src/pages/Settings/components/Tokens/Table.tsx
 packages/core/admin/admin/src/pages/tests/ProfilePage.test.tsx
+packages/core/admin/admin/src/pages/tests/SessionsPage.test.tsx
 packages/core/admin/admin/src/pages/tests/UseCasePage.test.tsx
 packages/core/admin/admin/src/pages/Auth/AuthPage.tsx
 packages/core/admin/admin/src/pages/Auth/constants.ts
@@ -2207,6 +2228,7 @@ packages/core/admin/server/src/controllers/transfer/index.ts
 packages/core/admin/server/src/controllers/transfer/runner.ts
 packages/core/admin/server/src/controllers/transfer/token.ts
 packages/core/admin/server/src/controllers/api-token.ts
+packages/core/admin/server/src/controllers/authenticated-session.ts
 packages/core/admin/server/src/controllers/user.ts
 packages/core/admin/server/src/controllers/content-api.ts
 packages/core/admin/server/src/controllers/validation/schema.ts
@@ -2224,6 +2246,7 @@ packages/core/admin/server/src/controllers/__tests__/admin-token.test.ts
 packages/core/admin/server/src/controllers/__tests__/content-api.test.ts
 packages/core/admin/server/src/controllers/__tests__/authenticated-user.test.ts
 packages/core/admin/server/src/controllers/__tests__/admin.test.ts
+packages/core/admin/server/src/controllers/__tests__/authenticated-session.test.ts
 packages/core/admin/server/src/controllers/__tests__/user.test.ts
 packages/core/admin/server/src/controllers/__tests__/api-token.test.ts
 packages/core/admin/server/src/controllers/__tests__/role.test.ts
@@ -2348,6 +2371,7 @@ packages/core/admin/server/tsconfig.build.json
 packages/core/admin/server/tsconfig.eslint.json
 packages/core/admin/server/test-utils/create-context.ts
 packages/core/admin/server/.eslintrc.cjs
+packages/core/admin/lint-staged.config.mjs
 packages/core/admin/.eslintrc.cjs
 packages/core/admin/shared/contracts/audit-logs.ts
 packages/core/admin/shared/contracts/permissions.ts
@@ -2369,6 +2393,7 @@ packages/core/admin/shared/contracts/admin.ts
 packages/core/admin/shared/contracts/webhooks.ts
 packages/core/admin/shared/contracts/homepage.ts
 packages/core/admin/shared/contracts/admin-token.ts
+packages/core/admin/shared/contracts/sessions.ts
 packages/core/admin/shared/utils/session-auth.ts
 packages/core/admin/README.md
 packages/core/admin/jest.config.front.js
@@ -2809,6 +2834,7 @@ packages/core/content-manager/server/src/preview/utils.ts
 packages/core/content-manager/server/tsconfig.build.json
 packages/core/content-manager/server/tsconfig.eslint.json
 packages/core/content-manager/server/.eslintrc.cjs
+packages/core/content-manager/lint-staged.config.mjs
 packages/core/content-manager/.eslintrc.cjs
 packages/core/content-manager/shared/contracts/index.ts
 packages/core/content-manager/shared/contracts/preview.ts
@@ -2932,6 +2958,7 @@ packages/core/content-releases/server/tsconfig.build.json
 packages/core/content-releases/server/tsconfig.eslint.json
 packages/core/content-releases/server/.eslintrc.cjs
 packages/core/content-releases/server/custom.d.ts
+packages/core/content-releases/lint-staged.config.mjs
 packages/core/content-releases/.eslintrc.cjs
 packages/core/content-releases/shared/contracts/releases.ts
 packages/core/content-releases/shared/contracts/release-actions.ts
@@ -2944,6 +2971,7 @@ packages/core/content-releases/.npmignore
 packages/core/content-releases/.editorconfig
 packages/core/utils/package.json
 packages/core/utils/rollup.config.mjs
+packages/core/utils/vitest.config.ts
 packages/core/utils/tsconfig.json
 packages/core/utils/src/print-value.ts
 packages/core/utils/src/route-serialization.ts
@@ -3016,21 +3044,26 @@ packages/core/utils/src/async.ts
 packages/core/utils/src/content-types.ts
 packages/core/utils/src/validators.ts
 packages/core/utils/src/format-yup-error.ts
+packages/core/utils/src/user-agent.ts
 packages/core/utils/src/relations.ts
 packages/core/utils/src/types.ts
 packages/core/utils/src/__tests__/sanitize-query.test.ts
 packages/core/utils/src/__tests__/yup-formatter.test.ts
 packages/core/utils/src/__tests__/convert-query-params.test.ts
+packages/core/utils/src/__tests__/user-agent.test.ts
 packages/core/utils/src/__tests__/security.test.ts
 packages/core/utils/src/__tests__/sanitize.visitors.test.ts
 packages/core/utils/src/__tests__/content-types.test.ts
 packages/core/utils/src/__tests__/validate.visitors.test.ts
 packages/core/utils/src/__tests__/hooks.test.ts
+packages/core/utils/src/__tests__/validation-utilities-schema.vitest.test.ts
 packages/core/utils/src/__tests__/query-populate.test.ts
 packages/core/utils/src/__tests__/publication-filter.test.ts
 packages/core/utils/src/__tests__/validate-query.test.ts
 packages/core/utils/src/__tests__/env-helper.test.ts
 packages/core/utils/src/__tests__/sanitize-input.test.ts
+packages/core/utils/src/__tests__/content-api-constants.vitest.test.ts
+packages/core/utils/src/__tests__/sessions.test.ts
 packages/core/utils/src/__tests__/sort-query.test.ts
 packages/core/utils/src/__tests__/validators.test.ts
 packages/core/utils/src/__tests__/package-manager.test.ts
@@ -3045,7 +3078,11 @@ packages/core/utils/src/__tests__/has-published-version-param.test.ts
 packages/core/utils/src/__tests__/provider-factory.test.ts
 packages/core/utils/src/__tests__/traverse-entity.test.ts
 packages/core/utils/src/__tests__/relations.test.ts
+packages/core/utils/src/__tests__/route-serialization.vitest.test.ts
 packages/core/utils/src/__tests__/morph.test.ts
+packages/core/utils/src/__tests__/operators.vitest.test.ts
+packages/core/utils/src/__tests__/validate-utils.vitest.test.ts
+packages/core/utils/src/__tests__/content-api-router.vitest.test.ts
 packages/core/utils/src/__tests__/model-cache.test.ts
 packages/core/utils/src/__tests__/pagination.test.ts
 packages/core/utils/src/__tests__/uid-transformation.test.ts
@@ -3054,10 +3091,12 @@ packages/core/utils/src/publication-filter.ts
 packages/core/utils/src/env-helper.ts
 packages/core/utils/src/parse-type.ts
 packages/core/utils/src/policy.ts
+packages/core/utils/src/sessions.ts
 packages/core/utils/LICENSE
 packages/core/utils/tsconfig.build.json
 packages/core/utils/jest.config.js
 packages/core/utils/tsconfig.eslint.json
+packages/core/utils/lint-staged.config.mjs
 packages/core/utils/.eslintrc.cjs
 packages/core/utils/README.md
 packages/core/utils/.npmignore
@@ -3131,6 +3170,7 @@ packages/core/openapi/LICENSE
 packages/core/openapi/tsconfig.build.json
 packages/core/openapi/jest.config.js
 packages/core/openapi/tsconfig.eslint.json
+packages/core/openapi/lint-staged.config.mjs
 packages/core/openapi/.eslintrc.cjs
 packages/core/openapi/README.md
 packages/core/openapi/.npmignore
@@ -3253,15 +3293,18 @@ packages/core/strapi/LICENSE
 packages/core/strapi/tsconfig.build.json
 packages/core/strapi/jest.config.js
 packages/core/strapi/tsconfig.eslint.json
+packages/core/strapi/lint-staged.config.mjs
 packages/core/strapi/bin/strapi.js
 packages/core/strapi/.eslintrc.cjs
 packages/core/strapi/README.md
 packages/core/strapi/.npmignore
 packages/core/permissions/package.json
 packages/core/permissions/rollup.config.mjs
+packages/core/permissions/vitest.config.ts
 packages/core/permissions/tsconfig.json
 packages/core/permissions/src/domain/index.ts
 packages/core/permissions/src/domain/permission/index.ts
+packages/core/permissions/src/domain/permission/__tests__/permission.vitest.test.ts
 packages/core/permissions/src/index.ts
 packages/core/permissions/src/engine/index.ts
 packages/core/permissions/src/engine/abilities/index.ts
@@ -3274,11 +3317,13 @@ packages/core/permissions/LICENSE
 packages/core/permissions/tsconfig.build.json
 packages/core/permissions/jest.config.js
 packages/core/permissions/tsconfig.eslint.json
+packages/core/permissions/lint-staged.config.mjs
 packages/core/permissions/.eslintrc.cjs
 packages/core/permissions/README.md
 packages/core/permissions/.npmignore
 packages/core/data-transfer/package.json
 packages/core/data-transfer/rollup.config.mjs
+packages/core/data-transfer/vitest.config.ts
 packages/core/data-transfer/tsconfig.json
 packages/core/data-transfer/src/index.ts
 packages/core/data-transfer/src/directory/index.ts
@@ -3314,6 +3359,7 @@ packages/core/data-transfer/src/utils/__tests__/transfer-websocket-json.test.ts
 packages/core/data-transfer/src/utils/__tests__/transfer-asset-chunk.test.ts
 packages/core/data-transfer/src/utils/__tests__/components.test.ts
 packages/core/data-transfer/src/utils/__tests__/writable-async-write.test.ts
+packages/core/data-transfer/src/utils/__tests__/json.vitest.test.ts
 packages/core/data-transfer/src/utils/transaction.ts
 packages/core/data-transfer/src/strapi/index.ts
 packages/core/data-transfer/src/strapi/remote/index.ts
@@ -3406,10 +3452,12 @@ packages/core/data-transfer/LICENSE
 packages/core/data-transfer/tsconfig.build.json
 packages/core/data-transfer/jest.config.js
 packages/core/data-transfer/tsconfig.eslint.json
+packages/core/data-transfer/lint-staged.config.mjs
 packages/core/data-transfer/.eslintrc.cjs
 packages/core/data-transfer/.npmignore
 packages/core/database/package.json
 packages/core/database/rollup.config.mjs
+packages/core/database/vitest.config.ts
 packages/core/database/tsconfig.json
 packages/core/database/src/index.ts
 packages/core/database/src/fields/index.ts
@@ -3422,7 +3470,12 @@ packages/core/database/src/fields/datetime.ts
 packages/core/database/src/fields/field.ts
 packages/core/database/src/fields/number.ts
 packages/core/database/src/fields/shared/parsers.ts
+packages/core/database/src/fields/shared/__tests__/parsers.vitest.test.ts
 packages/core/database/src/fields/time.ts
+packages/core/database/src/fields/__tests__/boolean.vitest.test.ts
+packages/core/database/src/fields/__tests__/string.vitest.test.ts
+packages/core/database/src/fields/__tests__/json.vitest.test.ts
+packages/core/database/src/fields/__tests__/datetime-fields.vitest.test.ts
 packages/core/database/src/fields/string.ts
 packages/core/database/src/dialects/index.ts
 packages/core/database/src/dialects/mysql/index.ts
@@ -3461,6 +3514,7 @@ packages/core/database/src/utils/identifiers/__tests__/identifiers.test.ts
 packages/core/database/src/utils/knex.ts
 packages/core/database/src/utils/async-curry.ts
 packages/core/database/src/utils/types.ts
+packages/core/database/src/utils/__tests__/async-curry.vitest.test.ts
 packages/core/database/src/global.d.ts
 packages/core/database/src/metadata/index.ts
 packages/core/database/src/metadata/metadata.ts
@@ -3523,6 +3577,7 @@ packages/core/database/src/errors/invalid-date.ts
 packages/core/database/src/errors/not-null.ts
 packages/core/database/src/errors/database.ts
 packages/core/database/src/errors/invalid-time.ts
+packages/core/database/src/errors/__tests__/database-errors.vitest.test.ts
 packages/core/database/src/transaction-context.ts
 packages/core/database/src/validations/index.ts
 packages/core/database/src/validations/relations/index.ts
@@ -3532,6 +3587,7 @@ packages/core/database/LICENSE
 packages/core/database/tsconfig.build.json
 packages/core/database/jest.config.js
 packages/core/database/tsconfig.eslint.json
+packages/core/database/lint-staged.config.mjs
 packages/core/database/.eslintrc.cjs
 packages/core/database/README.md
 packages/core/database/.npmignore
@@ -3582,9 +3638,11 @@ packages/core/core/src/loaders/plugins/get-user-plugins-config.ts
 packages/core/core/src/loaders/plugins/get-enabled-plugins.ts
 packages/core/core/src/Strapi.ts
 packages/core/core/src/configuration/index.ts
+packages/core/core/src/configuration/server-config.ts
 packages/core/core/src/configuration/urls.ts
 packages/core/core/src/configuration/get-dirs.ts
 packages/core/core/src/configuration/config-loader.ts
+packages/core/core/src/configuration/__tests__/server-config.test.ts
 packages/core/core/src/mcp.ts
 packages/core/core/src/middlewares/body.ts
 packages/core/core/src/middlewares/index.ts
@@ -3851,6 +3909,7 @@ packages/core/core/LICENSE
 packages/core/core/tsconfig.build.json
 packages/core/core/jest.config.js
 packages/core/core/tsconfig.eslint.json
+packages/core/core/lint-staged.config.mjs
 packages/core/core/.eslintrc.cjs
 packages/core/core/README.md
 packages/core/core/.npmignore
@@ -3912,6 +3971,7 @@ packages/core/email/server/src/types.ts
 packages/core/email/server/tsconfig.build.json
 packages/core/email/server/tsconfig.eslint.json
 packages/core/email/server/.eslintrc.cjs
+packages/core/email/lint-staged.config.mjs
 packages/core/email/.eslintrc.cjs
 packages/core/email/shared/email-address-parser.ts
 packages/core/email/shared/types.ts
@@ -4162,6 +4222,7 @@ packages/core/content-type-builder/admin/tsconfig.build.json
 packages/core/content-type-builder/admin/.eslintrc.cjs
 packages/core/content-type-builder/admin/custom.d.ts
 packages/core/content-type-builder/rollup.config.mjs
+packages/core/content-type-builder/vitest.config.ts
 packages/core/content-type-builder/LICENSE
 packages/core/content-type-builder/tsconfig.build.json
 packages/core/content-type-builder/jest.config.js
@@ -4200,6 +4261,9 @@ packages/core/content-type-builder/server/src/bootstrap.ts
 packages/core/content-type-builder/server/src/utils/index.ts
 packages/core/content-type-builder/server/src/utils/attributes.ts
 packages/core/content-type-builder/server/src/utils/helpers.ts
+packages/core/content-type-builder/server/src/utils/__tests__/attributes.vitest.test.ts
+packages/core/content-type-builder/server/src/utils/__tests__/typeguards.vitest.test.ts
+packages/core/content-type-builder/server/src/utils/__tests__/helpers.vitest.test.ts
 packages/core/content-type-builder/server/src/utils/typeguards.ts
 packages/core/content-type-builder/server/src/services/index.ts
 packages/core/content-type-builder/server/src/services/component-categories.ts
@@ -4222,6 +4286,7 @@ packages/core/content-type-builder/server/src/config.ts
 packages/core/content-type-builder/server/tsconfig.build.json
 packages/core/content-type-builder/server/tsconfig.eslint.json
 packages/core/content-type-builder/server/.eslintrc.cjs
+packages/core/content-type-builder/lint-staged.config.mjs
 packages/core/content-type-builder/.eslintrc.cjs
 packages/core/content-type-builder/README.md
 packages/core/content-type-builder/jest.config.front.js
@@ -4362,6 +4427,7 @@ packages/core/types/src/core/index.ts
 packages/core/types/src/core/plugin.ts
 packages/core/types/src/core/commands/index.ts
 packages/core/types/src/core/config/index.ts
+packages/core/types/src/core/config/features.ts
 packages/core/types/src/core/config/plugin.ts
 packages/core/types/src/core/config/middlewares.ts
 packages/core/types/src/core/config/openapi.ts
@@ -4370,6 +4436,7 @@ packages/core/types/src/core/config/server.ts
 packages/core/types/src/core/config/api.ts
 packages/core/types/src/core/config/admin.ts
 packages/core/types/src/core/config/database.ts
+packages/core/types/src/core/config/typescript.ts
 packages/core/types/src/core/controller.ts
 packages/core/types/src/core/core-api/index.ts
 packages/core/types/src/core/core-api/controller.ts
@@ -4387,6 +4454,7 @@ packages/core/types/src/core/policy.ts
 packages/core/types/LICENSE
 packages/core/types/tsconfig.build.json
 packages/core/types/tsconfig.eslint.json
+packages/core/types/lint-staged.config.mjs
 packages/core/types/.eslintrc.cjs
 packages/core/types/README.md
 packages/core/types/.npmignore
@@ -4524,6 +4592,7 @@ packages/plugins/graphql/server/src/format-graphql-error.ts
 packages/plugins/graphql/server/tsconfig.build.json
 packages/plugins/graphql/server/tsconfig.eslint.json
 packages/plugins/graphql/server/.eslintrc.cjs
+packages/plugins/graphql/lint-staged.config.mjs
 packages/plugins/graphql/.eslintrc.cjs
 packages/plugins/graphql/README.md
 packages/plugins/graphql/.npmignore
@@ -4668,6 +4737,7 @@ packages/plugins/users-permissions/server/controllers/validation/__tests__/auth.
 packages/plugins/users-permissions/server/controllers/validation/__tests__/email-template.test.js
 packages/plugins/users-permissions/server/controllers/index.js
 packages/plugins/users-permissions/server/controllers/auth.js
+packages/plugins/users-permissions/server/controllers/__tests__/auth-sessions.test.js
 packages/plugins/users-permissions/server/controllers/settings.js
 packages/plugins/users-permissions/server/controllers/content-manager-user.js
 packages/plugins/users-permissions/server/config.js
@@ -4701,6 +4771,7 @@ packages/plugins/users-permissions/server/content-types/permission/index.js
 packages/plugins/users-permissions/server/content-types/user/schema-config.js
 packages/plugins/users-permissions/server/content-types/user/index.js
 packages/plugins/users-permissions/server/content-types/index.js
+packages/plugins/users-permissions/lint-staged.config.mjs
 packages/plugins/users-permissions/.eslintrc.cjs
 packages/plugins/users-permissions/README.md
 packages/plugins/users-permissions/jest.config.front.js
@@ -4840,6 +4911,7 @@ packages/plugins/i18n/server/src/content-types/locale/schema.json
 packages/plugins/i18n/server/tsconfig.build.json
 packages/plugins/i18n/server/tsconfig.eslint.json
 packages/plugins/i18n/server/.eslintrc.cjs
+packages/plugins/i18n/lint-staged.config.mjs
 packages/plugins/i18n/.eslintrc.cjs
 packages/plugins/i18n/shared/contracts/ai-localization-jobs.ts
 packages/plugins/i18n/shared/contracts/iso-locales.ts
@@ -4886,6 +4958,7 @@ packages/plugins/sentry/server/src/config.ts
 packages/plugins/sentry/server/tsconfig.build.json
 packages/plugins/sentry/server/tsconfig.eslint.json
 packages/plugins/sentry/server/.eslintrc.cjs
+packages/plugins/sentry/lint-staged.config.mjs
 packages/plugins/sentry/.eslintrc.cjs
 packages/plugins/sentry/README.md
 packages/plugins/sentry/.npmignore
@@ -4918,6 +4991,7 @@ packages/plugins/cloud/admin/.eslintrc.cjs
 packages/plugins/cloud/admin/module.d.ts
 packages/plugins/cloud/rollup.config.mjs
 packages/plugins/cloud/LICENSE
+packages/plugins/cloud/lint-staged.config.mjs
 packages/plugins/cloud/.eslintrc.cjs
 packages/plugins/cloud/README.md
 packages/plugins/cloud/.npmignore
@@ -4936,12 +5010,14 @@ packages/plugins/color-picker/admin/src/translations/cs.json
 packages/plugins/color-picker/admin/src/translations/es.json
 packages/plugins/color-picker/admin/src/utils/getTrad.ts
 packages/plugins/color-picker/admin/src/utils/prefixPluginTranslations.ts
+packages/plugins/color-picker/admin/src/utils/tests/prefixPluginTranslations.vitest.test.ts
 packages/plugins/color-picker/admin/src/components/ColorPickerInput.tsx
 packages/plugins/color-picker/admin/src/components/tests/ColorPickerInput.test.tsx
 packages/plugins/color-picker/admin/src/components/ColorPickerIcon.tsx
 packages/plugins/color-picker/admin/tsconfig.build.json
 packages/plugins/color-picker/admin/.eslintrc.cjs
 packages/plugins/color-picker/rollup.config.mjs
+packages/plugins/color-picker/vitest.config.ts
 packages/plugins/color-picker/LICENSE
 packages/plugins/color-picker/server/tsconfig.json
 packages/plugins/color-picker/server/src/index.ts
@@ -4949,6 +5025,7 @@ packages/plugins/color-picker/server/src/register.ts
 packages/plugins/color-picker/server/tsconfig.build.json
 packages/plugins/color-picker/server/tsconfig.eslint.json
 packages/plugins/color-picker/server/.eslintrc.cjs
+packages/plugins/color-picker/lint-staged.config.mjs
 packages/plugins/color-picker/.eslintrc.cjs
 packages/plugins/color-picker/README.md
 packages/plugins/color-picker/jest.config.front.js
@@ -5037,6 +5114,7 @@ packages/plugins/documentation/server/src/types.ts
 packages/plugins/documentation/server/tsconfig.build.json
 packages/plugins/documentation/server/tsconfig.eslint.json
 packages/plugins/documentation/server/.eslintrc.cjs
+packages/plugins/documentation/lint-staged.config.mjs
 packages/plugins/documentation/tests/setup.ts
 packages/plugins/documentation/tests/server.ts
 packages/plugins/documentation/.eslintrc.cjs
@@ -5103,12 +5181,14 @@ packages/generators/generators/LICENSE
 packages/generators/generators/tsconfig.build.json
 packages/generators/generators/jest.config.js
 packages/generators/generators/tsconfig.eslint.json
+packages/generators/generators/lint-staged.config.mjs
 packages/generators/generators/.eslintrc.cjs
 packages/generators/generators/README.md
 packages/generators/generators/.npmignore
 packages/generators/generators/.gitattributes
 playwright.base.config.js
 .nvmrc
+lint-staged.config.mjs
 docker-compose.dev.yml
 tests/api/utils/index.ts
 tests/api/utils/builder-helper.ts
@@ -5157,6 +5237,7 @@ tests/api/core/admin/admin-token-role-sync.test.api.ts
 tests/api/core/admin/admin-webhooks.test.api.ts
 tests/api/core/admin/admin-permission.test.api.js
 tests/api/core/admin/admin-access-token-exchange.test.api.ts
+tests/api/core/admin/admin-sessions-management.test.api.ts
 tests/api/core/admin/admin-project-settings.test.api.js
 tests/api/core/admin/session-manager.test.api.ts
 tests/api/core/admin/admin-jwt-configuration.test.api.ts
@@ -5375,6 +5456,7 @@ tests/api/plugins/users-permissions/content-api/auth-jwt-algorithm.test.api.js
 tests/api/plugins/users-permissions/content-api/auth.test.api.js
 tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts
+tests/api/plugins/users-permissions/content-api/auth-sessions.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js
 tests/api/plugins/users-permissions/content-api/users-api.test.api.js
 tests/api/plugins/users-permissions/utils.js
@@ -5398,6 +5480,7 @@ tests/cli/jest.config.js
 tests/cli/constants.js
 tests/cli/tests/create-strapi-app/package-json.test.cli.ts
 tests/cli/tests/create-strapi-app/config.js
+tests/cli/tests/create-strapi-app/pnpm-config.test.cli.ts
 tests/cli/tests/create-strapi-app/scaffold.test.cli.js
 tests/cli/tests/create-strapi-app/README.md
 tests/cli/tests/strapi/config.js
@@ -5828,5 +5911,4 @@ templates/website/types/generated/components.d.ts
 .prettierrc.js
 docker-compose.test.yml
 jest.config.cli.js
-lint-staged.config.js
 jest-preset.front.js

@@ -904,6 +904,7 @@ lib/excel_sheet.rb
 lib/external_data_source.rb
 lib/monitoring_helper.rb
 lib/rack/middleware/secure_context.rb
+lib/form_spam_protection.rb
 lib/pseudonymisation.rb
 lib/escalation.rb
 lib/application_lib.rb
@@ -1355,6 +1356,16 @@ lib/stats/ticket_channel_distribution.rb
 lib/stats/ticket_reopen.rb
 lib/stats/ticket_in_process.rb
 lib/stats/ticket_escalation.rb
+lib/form_spam_protection/captcha.rb
+lib/form_spam_protection/verifier.rb
+lib/form_spam_protection/honeypot.rb
+lib/form_spam_protection/captcha/hcaptcha.rb
+lib/form_spam_protection/captcha/recaptcha.rb
+lib/form_spam_protection/captcha/recaptcha_enterprise.rb
+lib/form_spam_protection/captcha/altcha.rb
+lib/form_spam_protection/captcha/concerns/token_verification.rb
+lib/form_spam_protection/captcha/turnstile.rb
+lib/form_spam_protection/captcha/friendly_captcha.rb
 lib/email_helper/verify.rb
 lib/email_helper/idn.rb
 lib/email_helper/probe.rb
@@ -4713,6 +4724,7 @@ app/services/service/ticket/merge.rb
 app/services/service/ticket/create.rb
 app/services/service/ticket/ai_assistance/create_knowledge_base_answer.rb
 app/services/service/ticket/ai_assistance/summarize.rb
+app/services/service/ticket/ai_assistance/summary_enabled.rb
 app/services/service/ticket/ai_assistance/generate_knowledge_base_answer_content.rb
 app/services/service/ticket/article/list.rb
 app/services/service/ticket/article/create.rb
@@ -9117,6 +9129,7 @@ db/migrate/20220504133218_setting_updates3.rb
 db/migrate/20231129085408_drop_removed_state.rb
 db/migrate/20170314000001_fixed_translation2.rb
 db/migrate/20240416163429_calendar_public_holiday_cleanup.rb
+db/migrate/20260622120000_issue5863_form_spam_protection_settings.rb
 db/migrate/20170126091128_application_secret_setting.rb
 db/migrate/20190713000001_group_dependent_macros.rb
 db/migrate/20210923075329_remove_otrs_diff_worker_scheduler_entry.rb
@@ -9295,6 +9308,7 @@ db/migrate/20250401083100_add_ai_assistance_ticket_summarize.rb
 db/migrate/20210731132202_setting_update_password_max_login_failed.rb
 db/migrate/20220124141828_overview_updates.rb
 db/migrate/20250923051839_summary_generation_editable.rb
+db/migrate/20260623150000_ai_assistance_ticket_summary_selector.rb
 db/migrate/20250210105644_open_id_connect_pkce.rb
 db/migrate/20220622110749_issue4012_missing_rows_for_textarea_fields.rb
 db/migrate/20180220000002_setting_user_organization_selector_with_email.rb
@@ -10659,6 +10673,17 @@ spec/lib/filter_processor/match/contains_spec.rb
 spec/lib/filter_processor/match/is_any_of_spec.rb
 spec/lib/filter_processor/match/ends_with_spec.rb
 spec/lib/stats/ticket_waiting_time_spec.rb
+spec/lib/form_spam_protection/honeypot_spec.rb
+spec/lib/form_spam_protection/captcha_spec.rb
+spec/lib/form_spam_protection/verifier_spec.rb
+spec/lib/form_spam_protection/captcha/turnstile_spec.rb
+spec/lib/form_spam_protection/captcha/altcha_spec.rb
+spec/lib/form_spam_protection/captcha/recaptcha_enterprise_spec.rb
+spec/lib/form_spam_protection/captcha/recaptcha_spec.rb
+spec/lib/form_spam_protection/captcha/hcaptcha_spec.rb
+spec/lib/form_spam_protection/captcha/shared_examples/secret_free_frontend_config.rb
+spec/lib/form_spam_protection/captcha/shared_examples/token_verification.rb
+spec/lib/form_spam_protection/captcha/friendly_captcha_spec.rb
 spec/lib/operations_rate_limiter_spec.rb
 spec/lib/email_helper/probe_spec.rb
 spec/lib/email_helper/idn_spec.rb
@@ -10697,6 +10722,8 @@ spec/lib/tasks/zammad/store/move_files_spec.rb
 spec/lib/tasks/zammad/store/verify_files_spec.rb
 spec/lib/auth_spec.rb
 spec/lib/notification_factory_spec.rb
+spec/lib/sessions_spec.rb
+spec/lib/form_spam_protection_spec.rb
 spec/lib/excel_sheet/ticket_spec.rb
 spec/lib/rack_attack_setup_spec.rb
 spec/lib/session_helper_spec.rb
@@ -11155,6 +11182,7 @@ spec/services/service/ticket/create_spec.rb
 spec/services/service/ticket/forced_update_spec.rb
 spec/services/service/ticket/ai_assistance/create_knowledge_base_answer_spec.rb
 spec/services/service/ticket/ai_assistance/generate_knowledge_base_answer_content_spec.rb
+spec/services/service/ticket/ai_assistance/summary_enabled_spec.rb
 spec/services/service/ticket/update_spec.rb
 spec/services/service/ticket/article/change_visibility_spec.rb
 spec/services/service/ticket/article/list_spec.rb
@@ -11313,6 +11341,7 @@ spec/db/migrate/pgp_key_email_addresses_spec.rb
 spec/db/migrate/issue3123_external_sync_ticket_merge_spec.rb
 spec/db/migrate/issue_2943_add_setting_enforce_special_character_spec.rb
 spec/db/migrate/issue_1977_remove_invalid_user_foreign_keys_spec.rb
+spec/db/migrate/ai_assistance_ticket_summary_selector_spec.rb
 spec/db/migrate/object_manager_attribute_date_remove_future_past_spec.rb
 spec/views/eco_spec.rb
 spec/policies/macro_policy/scope_spec.rb

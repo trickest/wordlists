@@ -533,6 +533,7 @@ application/Espo/Core/Mail/Sender/TransportPreparatorFactory.php
 application/Espo/Core/Mail/Sender/MessageContainer.php
 application/Espo/Core/Mail/Sender/Message.php
 application/Espo/Core/Mail/Sender/TransportPreparator.php
+application/Espo/Core/Mail/Sender/AttachmentContainer.php
 application/Espo/Core/Mail/SenderParams.php
 application/Espo/Core/Mail/SmtpParams.php
 application/Espo/Core/Mail/Event/EventFactory.php
@@ -3511,6 +3512,7 @@ application/Espo/Classes/ConsoleCommands/PopulateArrayValues.php
 application/Espo/Classes/ConsoleCommands/Import.php
 application/Espo/Classes/ConsoleCommands/CreateAdminUser.php
 application/Espo/Classes/ConsoleCommands/GetConfigParam.php
+application/Espo/Classes/ConsoleCommands/AppCheck.php
 application/Espo/Classes/TemplateHelpers/TdTag.php
 application/Espo/Classes/TemplateHelpers/CurrencySymbol.php
 application/Espo/Classes/TemplateHelpers/TrTag.php
@@ -7685,6 +7687,7 @@ tests/integration/Espo/Record/CascadeRemovalTest.php
 tests/integration/Espo/Record/ReadOnlyTest.php
 tests/integration/Espo/Record/UpdateTest.php
 tests/integration/Espo/Attachment/RemoveDuplicateTest.php
+tests/integration/Espo/Commands/AppCheckTest.php
 tests/integration/Espo/Account/ChangeFieldsTest.php
 tests/integration/Espo/Account/CreateTest.php
 tests/integration/Espo/Account/SearchTest.php
@@ -9395,7 +9398,6 @@ client/res/templates/admin/index.tpl
 client/res/templates/admin/upgrade/done.tpl
 client/res/templates/admin/upgrade/ready.tpl
 client/res/templates/admin/upgrade/index.tpl
-client/res/templates/modals/save-filters.tpl
 client/res/templates/modals/image-crop.tpl
 client/res/templates/modals/duplicate.tpl
 client/res/templates/modals/add-dashlet.tpl

@@ -39161,6 +39161,10 @@ app/Http/Requests/StoreAssetRequest.php
 Http/Requests/StoreAssetRequest.php
 Requests/StoreAssetRequest.php
 StoreAssetRequest.php
+app/Http/Middleware/EnforceApiUserAgent.php
+Http/Middleware/EnforceApiUserAgent.php
+Middleware/EnforceApiUserAgent.php
+EnforceApiUserAgent.php
 app/Http/Middleware/CheckForDebug.php
 Http/Middleware/CheckForDebug.php
 Middleware/CheckForDebug.php
@@ -40718,6 +40722,10 @@ tests/Feature/Settings/BrandingSettingsTest.php
 Feature/Settings/BrandingSettingsTest.php
 Settings/BrandingSettingsTest.php
 BrandingSettingsTest.php
+tests/Feature/Settings/ApiRequestFiltersTest.php
+Feature/Settings/ApiRequestFiltersTest.php
+Settings/ApiRequestFiltersTest.php
+ApiRequestFiltersTest.php
 tests/Feature/Livewire/ImporterTest.php
 Feature/Livewire/ImporterTest.php
 Livewire/ImporterTest.php
@@ -40956,6 +40964,10 @@ Feature/CustomFieldsets/Api/DeleteCustomFieldsetsTest.php
 CustomFieldsets/Api/DeleteCustomFieldsetsTest.php
 Api/DeleteCustomFieldsetsTest.php
 DeleteCustomFieldsetsTest.php
+tests/Feature/Api/EnforceApiUserAgentTest.php
+Feature/Api/EnforceApiUserAgentTest.php
+Api/EnforceApiUserAgentTest.php
+EnforceApiUserAgentTest.php
 tests/Feature/Console/BulkDeleteTest.php
 Feature/Console/BulkDeleteTest.php
 Console/BulkDeleteTest.php
@@ -42236,6 +42248,9 @@ migrations/2017_08_03_160105_set_asset_archived_to_zero_default.php
 database/migrations/2015_02_25_022931_add_eula_fields.php
 migrations/2015_02_25_022931_add_eula_fields.php
 2015_02_25_022931_add_eula_fields.php
+database/migrations/2026_06_23_000001_add_blocked_api_user_agents_to_settings.php
+migrations/2026_06_23_000001_add_blocked_api_user_agents_to_settings.php
+2026_06_23_000001_add_blocked_api_user_agents_to_settings.php
 database/migrations/2014_06_19_191508_add_asset_name_to_settings.php
 migrations/2014_06_19_191508_add_asset_name_to_settings.php
 2014_06_19_191508_add_asset_name_to_settings.php

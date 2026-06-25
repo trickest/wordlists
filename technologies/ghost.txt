@@ -4010,6 +4010,7 @@ ghost/core/test/utils/mock-knex.js
 ghost/core/test/utils/url-utils.js
 ghost/core/test/utils/email-verification-utils.ts
 ghost/core/test/utils/e2e-framework-mock-manager.js
+ghost/core/test/utils/console-guard.ts
 ghost/core/test/utils/admin-utils.js
 ghost/core/test/utils/logging-utils.js
 ghost/core/test/utils/vitest-global-db-setup.ts
@@ -4239,7 +4240,9 @@ ghost/core/test/e2e-frontend/custom-routes.test.js
 ghost/core/test/e2e-frontend/rendered-content.test.js
 ghost/core/test/e2e-frontend/static-files.test.js
 ghost/core/test/e2e-frontend/member-stats.test.js
+ghost/core/test/e2e-frontend/gift-links.test.ts
 ghost/core/test/e2e-frontend/preview-routes.test.js
+ghost/core/test/e2e-frontend/gift-links-toast-override.test.ts
 ghost/core/test/e2e-frontend/helpers/get.test.js
 ghost/core/test/e2e-frontend/helpers/next-post.test.js
 ghost/core/test/e2e-api/admin/actions.test.js
@@ -4599,6 +4602,7 @@ ghost/core/test/unit/server/services/notifications/notifications.test.js
 ghost/core/test/unit/server/services/verification-trigger.test.js
 ghost/core/test/unit/server/services/email-rendering/email-design.test.js
 ghost/core/test/unit/server/services/explore-ping/explore-ping-service.test.js
+ghost/core/test/unit/server/services/automations/stale-lock-cutoff.test.ts
 ghost/core/test/unit/server/services/automations/automations-api.test.js
 ghost/core/test/unit/server/services/automations/automations-repository.test.ts
 ghost/core/test/unit/server/services/automations/service.test.js
@@ -4791,6 +4795,7 @@ ghost/core/test/unit/server/services/members/members-api/services/geolocation-se
 ghost/core/test/unit/server/services/members/members-api/services/payments-service.test.js
 ghost/core/test/unit/server/services/members/middleware.test.js
 ghost/core/test/unit/server/services/members/clean-expired-comped.test.js
+ghost/core/test/unit/server/services/members/create-paid-member-shim.test.ts
 ghost/core/test/unit/server/services/members/utils.test.js
 ghost/core/test/unit/server/services/members/single-use-token-provider.test.js
 ghost/core/test/unit/server/services/members/config.test.js
@@ -4937,8 +4942,8 @@ ghost/core/test/unit/frontend/services/theme-engine/handlebars/template.test.js
 ghost/core/test/unit/frontend/services/theme-engine/handlebars/helpers.test.js
 ghost/core/test/unit/frontend/services/theme-engine/active.test.js
 ghost/core/test/unit/frontend/services/theme-engine/config.test.js
-ghost/core/test/unit/frontend/services/routing/controllers/entry.test.js
 ghost/core/test/unit/frontend/services/routing/controllers/channel.test.js
+ghost/core/test/unit/frontend/services/routing/controllers/entry.test.ts
 ghost/core/test/unit/frontend/services/routing/controllers/rss.test.js
 ghost/core/test/unit/frontend/services/routing/controllers/static.test.js
 ghost/core/test/unit/frontend/services/routing/controllers/collection.test.js
@@ -5551,6 +5556,7 @@ ghost/core/core/server/services/automations/database-automations-repository.ts
 ghost/core/core/server/services/automations/index.js
 ghost/core/core/server/services/automations/automations-repository.ts
 ghost/core/core/server/services/automations/events/start-automations-poll-event.js
+ghost/core/core/server/services/automations/stale-lock-cutoff.ts
 ghost/core/core/server/services/automations/welcome-email-automation-poll.js
 ghost/core/core/server/services/stats/posts-stats-service.js
 ghost/core/core/server/services/stats/stats-service.js
@@ -5569,6 +5575,7 @@ ghost/core/core/server/services/gift-links/serializers.ts
 ghost/core/core/server/services/gift-links/service.ts
 ghost/core/core/server/services/gift-links/models.ts
 ghost/core/core/server/services/gift-links/database.ts
+ghost/core/core/server/services/gift-links/case-keys.ts
 ghost/core/core/server/services/link-tracking/link-click-repository.js
 ghost/core/core/server/services/link-tracking/link-click-tracking-service.js
 ghost/core/core/server/services/link-tracking/full-post-link.js
@@ -5880,6 +5887,7 @@ ghost/core/core/server/services/members/stats/members-stats.js
 ghost/core/core/server/services/members/service.js
 ghost/core/core/server/services/members/single-use-token-provider.js
 ghost/core/core/server/services/members/members-config-provider.js
+ghost/core/core/server/services/members/create-paid-member-shim.ts
 ghost/core/core/server/services/members/members-ssr.js
 ghost/core/core/server/services/members/emails/update-email.js
 ghost/core/core/server/services/members/emails/signup.js
@@ -6109,6 +6117,9 @@ ghost/core/core/server/data/migrations/versions/5.10/2022-08-19-14-15-fix-commen
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-16-14-25-add-subscription-created-events-table.js
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-16-14-25-add-member-created-events-table.js
 ghost/core/core/server/data/migrations/versions/5.10/2022-08-15-05-34-add-expiry-at-column-to-members-products.js
+ghost/core/core/server/data/migrations/versions/6.48/2026-06-23-00-00-01-rename-gift-links-revoke-all-permission-to-remove-all.js
+ghost/core/core/server/data/migrations/versions/6.48/2026-06-23-00-00-00-drop-gift-links-revoked-at.js
+ghost/core/core/server/data/migrations/versions/6.48/2026-06-24-00-00-00-drop-gift-links-redemption-columns.js
 ghost/core/core/server/data/migrations/versions/6.37/2026-05-04-07-51-14-add-members-created-at-id-index.js
 ghost/core/core/server/data/migrations/versions/5.69/2023-10-06-15-06-00-rename-recommendations-reason-to-description.js
 ghost/core/core/server/data/migrations/versions/5.35/2023-02-13-06-24-add-mentions-verified-column.js
@@ -6587,8 +6598,11 @@ ghost/core/core/frontend/services/theme-engine/i18next/index.js
 ghost/core/core/frontend/services/theme-engine/i18next/theme-i18n.js
 ghost/core/core/frontend/services/theme-engine/index.js
 ghost/core/core/frontend/services/routing/controllers/collection.js
-ghost/core/core/frontend/services/routing/controllers/entry.js
+ghost/core/core/frontend/services/routing/controllers/entry/canonical-url.ts
+ghost/core/core/frontend/services/routing/controllers/entry/markdown.ts
+ghost/core/core/frontend/services/routing/controllers/entry/gift-links.ts
 ghost/core/core/frontend/services/routing/controllers/static.js
+ghost/core/core/frontend/services/routing/controllers/entry.ts
 ghost/core/core/frontend/services/routing/controllers/unsubscribe.js
 ghost/core/core/frontend/services/routing/controllers/channel.js
 ghost/core/core/frontend/services/routing/controllers/email-post.js
@@ -6708,6 +6722,7 @@ ghost/core/core/frontend/helpers/link.js
 ghost/core/core/frontend/helpers/tpl/pagination.hbs
 ghost/core/core/frontend/helpers/tpl/styles.js
 ghost/core/core/frontend/helpers/tpl/recommendations.hbs
+ghost/core/core/frontend/helpers/tpl/gift-toast.hbs
 ghost/core/core/frontend/helpers/tpl/cancel_link.hbs
 ghost/core/core/frontend/helpers/tpl/navigation.hbs
 ghost/core/core/frontend/helpers/tpl/content-cta.hbs

@@ -161,6 +161,7 @@ adr/2020-07-02-control-clone-behavior.md
 adr/2024-04-01-checkout-gateway.md
 adr/2025-10-28-changelog-release-info-process.md
 adr/2022-06-24-add-typescript-support-for-storefront-js.md
+adr/2026-06-24-sales-channel-business-timezone.md
 adr/2022-01-06-custom-app-api-endpoints.md
 adr/2021-05-14-when-to-use-plain-sql-or-dal.md
 adr/2022-03-29-specify-priority-of-translations-in-dal-write-payloads.md
@@ -603,6 +604,7 @@ src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMapping.php
 src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingCollection.php
 src/Core/System/SalesChannel/SalesChannelExceptionHandler.php
 src/Core/System/SalesChannel/File/SalesChannelFileNotFoundSubscriber.php
+src/Core/System/SalesChannel/File/Event/SalesChannelFileTemplateResolveEvent.php
 src/Core/System/SalesChannel/File/Discovery/SalesChannelFile.php
 src/Core/System/SalesChannel/File/Discovery/SalesChannelFileDiscovery.php
 src/Core/System/SalesChannel/File/Loader/SalesChannelFileLoader.php
@@ -611,7 +613,10 @@ src/Core/System/SalesChannel/File/SalesChannelFileCacheInvalidator.php
 src/Core/System/SalesChannel/File/SalesChannelFileRequestPathResolver.php
 src/Core/System/SalesChannel/File/Rendering/SalesChannelFileRenderer.php
 src/Core/System/SalesChannel/File/Rendering/SalesChannelFileTemplateOverrideLoader.php
+src/Core/System/SalesChannel/File/Rendering/Extension/SalesChannelFileRenderParametersExtension.php
+src/Core/System/SalesChannel/File/Rendering/SalesChannelFileStoreApiMcpSubscriber.php
 src/Core/System/SalesChannel/File/Rendering/SalesChannelFileRenderResult.php
+src/Core/System/SalesChannel/File/SalesChannelFileTemplateResolver.php
 src/Core/System/SalesChannel/File/README.md
 src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationListItem.php
 src/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationTemplate.php
@@ -713,6 +718,7 @@ src/Core/System/SalesChannel/Api/ResponseFields.php
 src/Core/System/SalesChannel/Api/StructEncoder.php
 src/Core/System/SalesChannel/Api/StoreApiResponseListener.php
 src/Core/System/SalesChannel/SalesChannelEvents.php
+src/Core/System/SalesChannel/Subscriber/SalesChannelMaintenanceIpAllowlistSyncSubscriber.php
 src/Core/System/SalesChannel/Subscriber/SalesChannelTypeValidator.php
 src/Core/System/SalesChannel/Mcp/Tool/StoreApiContextTool.php
 src/Core/System/User/UserDefinition.php
@@ -1674,6 +1680,8 @@ src/Core/Migration/V6_7/Migration1717572627RemoveImportExportProfileName.php
 src/Core/Migration/V6_7/Migration1774366000MigrateLineItemStockRuleCondition.php
 src/Core/Migration/V6_7/Migration1763125891AddProductTypeColumn.php
 src/Core/Migration/V6_7/Migration1778146739AddSalesChannelTrackingCustomerPrivilege.php
+src/Core/Migration/V6_7/Migration1782308630AddBusinessTimeZoneToSalesChannel.php
+src/Core/Migration/V6_7/Migration1781614580AddMaintenanceIpAllowlistToSalesChannel.php
 src/Core/Migration/V6_7/Migration1780386453EnableStateDisplayForCountriesWithStates.php
 src/Core/Migration/V6_7/Migration1754398573ChangeAllLineItemsRuleValueType.php
 src/Core/Migration/V6_7/Migration1772007509ProductMainCategoryInheritance.php
@@ -3680,6 +3688,7 @@ src/Core/Framework/Resources/views/stoplightio.html.twig
 src/Core/Framework/Resources/views/profile.html.twig
 src/Core/Framework/Resources/views/files/agentic/agents.md.twig
 src/Core/Framework/Resources/views/files/agentic/llms.txt.twig
+src/Core/Framework/Resources/views/files/agentic/.well-known/ai-catalog.json.twig
 src/Core/Framework/Resources/snippet/messages.de.base.json
 src/Core/Framework/Resources/snippet/messages.en.base.json
 src/Core/Framework/Rule/DateRangeRule.php
@@ -6749,6 +6758,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.ph
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitMethodAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertsOnObjectsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/AssertEqualsCanonicalizingListArgumentRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoCreateMockWithoutExpectationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoMockBuilderConstructorBypassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestReflectionClassInterface.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/DataProviderRowArityRule.php
@@ -6781,6 +6791,8 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/ExemptionResolver
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/UseMap.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/LogicDetector.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/Errors.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoNativeTimeClassRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoNativeTimeFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoRouteOverrideInDecoratorsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PropertyNativeTypeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PackageAnnotationRule.php
@@ -6797,6 +6809,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoEnvironmentHelperInsideCompilerPas
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/McpToolResponseRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleConditionHasRuleConfigRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NativeTimeReadHelper.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DecorationPatternRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/UseHasherRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
@@ -12290,6 +12303,8 @@ src/Storefront/Framework/Routing/StorefrontRouteEventSubscriber.php
 src/Storefront/Framework/Routing/StorefrontRouteScope.php
 src/Storefront/Framework/Routing/RobotsRouteScopeWhitelist.php
 src/Storefront/Framework/Routing/AbstractDomainLoader.php
+src/Storefront/Framework/Routing/Struct/DomainCollection.php
+src/Storefront/Framework/Routing/Struct/DomainStruct.php
 src/Storefront/Framework/Routing/DomainNotMappedListener.php
 src/Storefront/Framework/Routing/StorybookRouteScopeAllowList.php
 src/Storefront/Framework/Routing/MaintenanceModeResolver.php
@@ -13996,6 +14011,7 @@ tests/migration/Core/V6_7/Migration1752750234AddIndexToOrderTransactionCreateAnd
 tests/migration/Core/V6_7/Migration1752219159AddLanguageActiveTest.php
 tests/migration/Core/V6_7/Migration1743151679AddContextGatewayUrlTest.php
 tests/migration/Core/V6_7/Migration1720610755RemoveDefaultPaymentMethodFromCustomerTest.php
+tests/migration/Core/V6_7/Migration1781614580AddMaintenanceIpAllowlistToSalesChannelTest.php
 tests/migration/Core/V6_7/Migration1740321707SetAutoplayTimeoutAndSpeedSettingsForProductSliderTest.php
 tests/migration/Core/V6_7/Migration1740563553AddAppRequestedPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1775641887AddDoubleOptInResendIntervalTest.php
@@ -14024,6 +14040,7 @@ tests/migration/Core/V6_7/Migration1763377570CreatePasswordChangeMailTemplateTes
 tests/migration/Core/V6_7/Migration1754398573ChangeAllLineItemsRuleValueTypeTest.php
 tests/migration/Core/V6_7/Migration1773647849AlignFlowNameWithEventNameTest.php
 tests/migration/Core/V6_7/Migration1764064757SetSearchableForExistingCustomFieldsInProductSearchTest.php
+tests/migration/Core/V6_7/Migration1782308630AddBusinessTimeZoneToSalesChannelTest.php
 tests/migration/Core/V6_7/Migration1746176773AddIntegrationIdStateHistoryTest.php
 tests/migration/Core/V6_7/Migration1778072247AddDocumentBaseConfigTypedColumnsTest.php
 tests/migration/Core/V6_7/Migration1764064756AddCustomFieldSearchableTest.php
@@ -14156,6 +14173,7 @@ tests/integration/Core/System/SalesChannel/Context/CartRestorerTest.php
 tests/integration/Core/System/SalesChannel/Context/SalesChannelContextRestorerTest.php
 tests/integration/Core/System/SalesChannel/Context/SalesChannelContextPersisterTest.php
 tests/integration/Core/System/SalesChannel/Repository/SalesChannelRepositoryTest.php
+tests/integration/Core/System/SalesChannel/Subscriber/SalesChannelMaintenanceIpAllowlistSyncSubscriberTest.php
 tests/integration/Core/System/SalesChannel/Subscriber/SalesChannelTypeValidatorTest.php
 tests/integration/Core/System/User/Service/UserValidationServiceTest.php
 tests/integration/Core/System/User/UserCrudTest.php
@@ -14179,6 +14197,7 @@ tests/integration/Core/System/SystemConfig/Service/ConfigurationServiceTest.php
 tests/integration/Core/System/SystemConfig/MemoizedSystemConfigLoaderTest.php
 tests/integration/Core/System/SystemConfig/SystemConfigServiceTest.php
 tests/integration/Core/System/SystemConfig/Validation/SystemConfigValidatorTest.php
+tests/integration/Core/System/SystemConfig/Api/SystemConfigControllerTest.php
 tests/integration/Core/System/SystemConfig/Facade/_fixtures/apps/withoutSystemConfigPermission/manifest.xml
 tests/integration/Core/System/SystemConfig/Facade/_fixtures/apps/withSystemConfigPermission/manifest.xml
 tests/integration/Core/System/SystemConfig/Facade/_fixtures/apps/systemConfigExample/Resources/scripts/test-config/script.twig
@@ -15839,6 +15858,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAnyInvocationMatcherRuleT
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsHelperTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/RouteScopeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoDALAutoloadTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoNativeTimeClassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/NoDropStatementInUpdateRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/AddColumnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoRouteOverrideInDecoratorsRuleTest.php
@@ -15846,6 +15866,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DomainExceptionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/McpToolResponseTraitRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PropertyNativeTypeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DALFieldsMustBeRegisteredWithSchemaBuilderTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoNativeTimeFunctionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInRouteAttributesRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInMethodRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleTest.php
@@ -15854,6 +15875,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ServiceDefinitionRuleTest.p
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CodeCoverageIgnoreEvaluationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AssertEqualsCanonicalizingListArgumentRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoCreateMockWithoutExpectationsRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
@@ -15863,6 +15885,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrow
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/DeprecatedClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AttributeFinalRule/FinalAttributeClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AttributeFinalRule/NonFinalAttributeClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoNativeTimeClassRule/NativeTimeClassUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NameConstantEntityDefinition/constant-present-but-no-entity-definition.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NameConstantEntityDefinition/no-constant-in-custom-entity.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NameConstantEntityDefinition/no-constant-in-entity-definition.php
@@ -15957,6 +15980,9 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRul
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/attributes-to-be-skipped.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/entity-schema-value.json
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/invalid-acl-name-in-method-call.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/CasesOutOfScope.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/Cases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/PropertyCases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoMockBuilderConstructorBypassRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctionRule/LegacySqlHashUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/shopware-unit-test.php
@@ -15993,6 +16019,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAssertEqualsOnClosur
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAssertEqualsOnClosureRule/StaticCalls.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserializeInTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnserializeUsageRule/HasUnserialize.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoNativeTimeFunctionRule/NativeTimeFunctionUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoUnsafeRequestHasSessionRule/UnsafeRequestHasSessionUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnsafeRequestHasSessionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleTest.php
@@ -16211,6 +16238,7 @@ tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataCollectionTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataEntryTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Language/LanguageTest.php
 tests/unit/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingTest.php
+tests/unit/Core/System/SalesChannel/File/SalesChannelFileTemplateResolverTest.php
 tests/unit/Core/System/SalesChannel/File/SalesChannelFileCacheInvalidatorTest.php
 tests/unit/Core/System/SalesChannel/File/Discovery/SalesChannelFileDiscoveryTest.php
 tests/unit/Core/System/SalesChannel/File/SalesChannelFileNotFoundSubscriberTest.php
@@ -16218,6 +16246,7 @@ tests/unit/Core/System/SalesChannel/File/Loader/SalesChannelFileConfigurationLoa
 tests/unit/Core/System/SalesChannel/File/Loader/SalesChannelFileLoaderTest.php
 tests/unit/Core/System/SalesChannel/File/SalesChannelFileRequestPathResolverTest.php
 tests/unit/Core/System/SalesChannel/File/Rendering/SalesChannelFileRendererTest.php
+tests/unit/Core/System/SalesChannel/File/Rendering/SalesChannelFileStoreApiMcpSubscriberTest.php
 tests/unit/Core/System/SalesChannel/File/Rendering/SalesChannelFileTemplateOverrideLoaderTest.php
 tests/unit/Core/System/SalesChannel/File/Api/SalesChannelFileAdministrationReaderTest.php
 tests/unit/Core/System/SalesChannel/File/Api/SalesChannelFileControllerTest.php
@@ -16239,10 +16268,12 @@ tests/unit/Core/System/SalesChannel/Context/ContextFactoryTest.php
 tests/unit/Core/System/SalesChannel/Context/SalesChannelContextPersisterTest.php
 tests/unit/Core/System/SalesChannel/Rule/SalesChannelRuleTest.php
 tests/unit/Core/System/SalesChannel/SalesChannelExceptionTest.php
+tests/unit/Core/System/SalesChannel/SalesChannelEntityTest.php
 tests/unit/Core/System/SalesChannel/ContextTokenResponseTest.php
 tests/unit/Core/System/SalesChannel/Api/StoreApiResponseListenerTest.php
 tests/unit/Core/System/SalesChannel/Api/StructEncoderTest.php
 tests/unit/Core/System/SalesChannel/Api/ResponseFieldsTest.php
+tests/unit/Core/System/SalesChannel/Subscriber/SalesChannelMaintenanceIpAllowlistSyncSubscriberTest.php
 tests/unit/Core/System/User/UserExceptionTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryRequestEventTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryServiceTest.php
