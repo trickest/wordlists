@@ -744,6 +744,12 @@ tests/fake/nested-site/user/pages/03.item3/02.item3-2/03.item3-2-3/default.md
 tests/fake/single-page-translated/user/pages/01.simple-page/default.fr.md
 tests/fake/single-page-translated/user/pages/01.simple-page/default.en.md
 tests/fake/single-pages/01.simple-page/default.md
+tests/fake/twig-leak-site/user/pages/01.home/default.md
+tests/fake/twig-leak-site/user/pages/04.requested/default.md
+tests/fake/twig-leak-site/user/pages/05.pageoff/default.md
+tests/fake/twig-leak-site/user/pages/03.clean/default.md
+tests/fake/twig-leak-site/user/pages/02.leaky/default.md
+tests/fake/twig-leak-site/user/pages/06.scan/default.md
 tests/fake/simple-site/user/pages/01.home/default.md
 tests/fake/simple-site/user/pages/03.about/default.md
 tests/fake/simple-site/user/pages/02.blog/post-one/item.md
@@ -784,6 +790,7 @@ tests/unit/Grav/Common/Security/AdminSecurityTest.php
 tests/unit/Grav/Common/Security/TwigSandboxTest.php
 tests/unit/Grav/Common/Security/MediaAttributeSecurityTest.php
 tests/unit/Grav/Common/Security/FilePathSecurityTest.php
+tests/unit/Grav/Common/Security/TwigContentDiagnosticsTest.php
 tests/unit/Grav/Common/Security/MediaResizeSecurityTest.php
 tests/unit/Grav/Common/Security/NonceKeySecurityTest.php
 tests/unit/Grav/Common/Security/SvgXxeSecurityTest.php

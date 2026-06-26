@@ -1577,6 +1577,7 @@ packages/core/review-workflows/admin/src/routes/purchase-review-workflows.tsx
 packages/core/review-workflows/admin/src/index.ts
 packages/core/review-workflows/admin/src/translations/en.json
 packages/core/review-workflows/admin/src/translations/uk.json
+packages/core/review-workflows/admin/src/translations/ja.json
 packages/core/review-workflows/admin/src/translations/de.json
 packages/core/review-workflows/admin/src/translations/sk.json
 packages/core/review-workflows/admin/src/translations/nl.json
@@ -2430,7 +2431,9 @@ packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tes
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/CellValue.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/EditViewPage.tsx
 packages/core/content-manager/admin/src/pages/EditView/utils/data.ts
+packages/core/content-manager/admin/src/pages/EditView/utils/draftRelationCounts.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/keyboardShortcuts.ts
+packages/core/content-manager/admin/src/pages/EditView/utils/tests/draftRelationCounts.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/keyboardShortcuts.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/forms.test.ts
 packages/core/content-manager/admin/src/pages/EditView/utils/tests/data.test.ts
@@ -2653,7 +2656,6 @@ packages/core/content-manager/admin/src/constants/attributes.ts
 packages/core/content-manager/admin/src/preview/index.ts
 packages/core/content-manager/admin/src/preview/pages/Preview.tsx
 packages/core/content-manager/admin/src/preview/routes.tsx
-packages/core/content-manager/admin/src/preview/utils/previewScript.ts
 packages/core/content-manager/admin/src/preview/utils/fieldUtils.ts
 packages/core/content-manager/admin/src/preview/utils/constants.ts
 packages/core/content-manager/admin/src/preview/utils/getSendMessage.ts
@@ -2763,6 +2765,7 @@ packages/core/content-manager/server/src/services/metrics.ts
 packages/core/content-manager/server/src/services/field-sizes.ts
 packages/core/content-manager/server/src/services/data-mapper.ts
 packages/core/content-manager/server/src/services/permission-checker.ts
+packages/core/content-manager/server/src/services/utils/draft-relations.ts
 packages/core/content-manager/server/src/services/utils/configuration/index.ts
 packages/core/content-manager/server/src/services/utils/configuration/settings.ts
 packages/core/content-manager/server/src/services/utils/configuration/attributes.ts
@@ -2778,6 +2781,7 @@ packages/core/content-manager/server/src/services/utils/draft.ts
 packages/core/content-manager/server/src/services/utils/__tests__/populate.test.ts
 packages/core/content-manager/server/src/services/utils/__tests__/query-populate.test.ts
 packages/core/content-manager/server/src/services/utils/__tests__/count.test.ts
+packages/core/content-manager/server/src/services/utils/__tests__/draft-relations.test.ts
 packages/core/content-manager/server/src/services/utils/__tests__/validatable-fields-populate.test.ts
 packages/core/content-manager/server/src/services/document-metadata.ts
 packages/core/content-manager/server/src/services/content-types.ts
@@ -2824,6 +2828,7 @@ packages/core/content-manager/server/src/preview/index.ts
 packages/core/content-manager/server/src/preview/controllers/index.ts
 packages/core/content-manager/server/src/preview/controllers/preview.ts
 packages/core/content-manager/server/src/preview/controllers/validation/preview.ts
+packages/core/content-manager/server/src/preview/controllers/previewScript.js
 packages/core/content-manager/server/src/preview/services/index.ts
 packages/core/content-manager/server/src/preview/services/preview.ts
 packages/core/content-manager/server/src/preview/services/preview-config.ts
@@ -2833,6 +2838,7 @@ packages/core/content-manager/server/src/preview/LICENSE
 packages/core/content-manager/server/src/preview/utils.ts
 packages/core/content-manager/server/tsconfig.build.json
 packages/core/content-manager/server/tsconfig.eslint.json
+packages/core/content-manager/server/tsconfig.preview-script.json
 packages/core/content-manager/server/.eslintrc.cjs
 packages/core/content-manager/lint-staged.config.mjs
 packages/core/content-manager/.eslintrc.cjs
@@ -2870,6 +2876,7 @@ packages/core/content-releases/admin/src/pages/tests/ReleaseDetailsPage.test.tsx
 packages/core/content-releases/admin/src/pages/ReleasesPage.tsx
 packages/core/content-releases/admin/src/translations/en.json
 packages/core/content-releases/admin/src/translations/uk.json
+packages/core/content-releases/admin/src/translations/ja.json
 packages/core/content-releases/admin/src/translations/sk.json
 packages/core/content-releases/admin/src/translations/nl.json
 packages/core/content-releases/admin/src/translations/tests/plural.test.ts
@@ -3844,7 +3851,9 @@ packages/core/core/src/services/server/middleware.ts
 packages/core/core/src/services/server/koa.ts
 packages/core/core/src/services/server/register-routes.ts
 packages/core/core/src/services/server/api.ts
+packages/core/core/src/services/server/koa-methods.ts
 packages/core/core/src/services/server/__tests__/openapi.test.ts
+packages/core/core/src/services/server/__tests__/koa.test.ts
 packages/core/core/src/services/server/policy.ts
 packages/core/core/src/services/config.ts
 packages/core/core/src/services/content-source-maps.ts
@@ -4791,6 +4800,7 @@ packages/plugins/i18n/admin/src/pages/tests/SettingsPage.test.tsx
 packages/plugins/i18n/admin/src/translations/en.json
 packages/plugins/i18n/admin/src/translations/tr.json
 packages/plugins/i18n/admin/src/translations/uk.json
+packages/plugins/i18n/admin/src/translations/ja.json
 packages/plugins/i18n/admin/src/translations/de.json
 packages/plugins/i18n/admin/src/translations/sk.json
 packages/plugins/i18n/admin/src/translations/da.json
@@ -4972,6 +4982,7 @@ packages/plugins/cloud/admin/src/pages/App.tsx
 packages/plugins/cloud/admin/src/translations/en.json
 packages/plugins/cloud/admin/src/translations/tr.json
 packages/plugins/cloud/admin/src/translations/uk.json
+packages/plugins/cloud/admin/src/translations/ja.json
 packages/plugins/cloud/admin/src/translations/sk.json
 packages/plugins/cloud/admin/src/translations/nl.json
 packages/plugins/cloud/admin/src/translations/fr.json
@@ -4981,9 +4992,9 @@ packages/plugins/cloud/admin/src/translations/cs.json
 packages/plugins/cloud/admin/src/translations/es.json
 packages/plugins/cloud/admin/src/utils/getTrad.ts
 packages/plugins/cloud/admin/src/utils/prefixPluginTranslations.ts
-packages/plugins/cloud/admin/src/components/CloudFree.tsx
 packages/plugins/cloud/admin/src/components/CloudDeploy.tsx
 packages/plugins/cloud/admin/src/components/Initializer.tsx
+packages/plugins/cloud/admin/src/components/CloudFeatures.tsx
 packages/plugins/cloud/admin/src/components/CLIDeployTabs.tsx
 packages/plugins/cloud/admin/tsconfig.build.json
 packages/plugins/cloud/admin/global.d.ts
@@ -5282,6 +5293,7 @@ tests/api/core/content-manager/api/number-of-draft-relations.test.api.js
 tests/api/core/content-manager/api/many-relations-update.test.api.js
 tests/api/core/content-manager/api/first-published-at.test.api.js
 tests/api/core/content-manager/api/document-metadata.test.api.js
+tests/api/core/content-manager/api/draft-relations-bidirectional-m2m.test.api.ts
 tests/api/core/content-manager/api/relations-permissions.test.api.js
 tests/api/core/content-manager/api/basic-pagination.test.api.js
 tests/api/core/content-manager/api/basic-dp-compo.test.api.js
@@ -5390,6 +5402,7 @@ tests/api/core/strapi/document-service/validation/validation.test.api.ts
 tests/api/core/strapi/document-service/clone.test.api.ts
 tests/api/core/strapi/document-service/relations/invisible-relation-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/basic.test.api.ts
+tests/api/core/strapi/document-service/relations/m2m-order-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/i18n.test.api.ts
 tests/api/core/strapi/document-service/relations/no-dp.test.api.ts
 tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts
@@ -5443,6 +5456,7 @@ tests/api/plugins/graphql/cors.test.api.js
 tests/api/plugins/graphql/relation-order.test.api.js
 tests/api/plugins/graphql/dp-relations.test.api.js
 tests/api/plugins/graphql/publication-filter.test.api.js
+tests/api/plugins/graphql/collection-relation-order.test.api.js
 tests/api/plugins/graphql/crud.test.api.js
 tests/api/plugins/graphql/components.test.api.js
 tests/api/plugins/graphql/single-type.test.api.js
@@ -5589,6 +5603,7 @@ tests/e2e/tests/content-manager/conditional-fields/boolean-conditional-select-re
 tests/e2e/tests/content-manager/home-widgets.spec.ts
 tests/e2e/tests/content-manager/self-referential-relation-publish.spec.ts
 tests/e2e/tests/content-manager/bulk-actions.spec.ts
+tests/e2e/tests/content-manager/publish-draft-relations-warning.spec.ts
 tests/e2e/tests/content-manager/preview.spec.ts
 tests/e2e/tests/content-manager/date.spec.ts
 tests/e2e/tests/content-manager/decimal-field-hint.spec.ts

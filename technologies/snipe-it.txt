@@ -7265,6 +7265,7 @@ app/Http/Middleware/CheckLocale.php
 app/Http/Middleware/EncryptCookies.php
 app/Http/Middleware/TrustHosts.php
 app/Http/Middleware/CheckForTwoFactor.php
+app/Http/Middleware/IssueFreshApiTokenIfTwoFactorComplete.php
 app/Http/Middleware/CheckUserIsActivated.php
 app/Http/Middleware/VerifyCsrfToken.php
 app/Http/Middleware/RedirectIfAuthenticated.php
@@ -7416,6 +7417,7 @@ tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
+tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Notes/CreateNotesTest.php
@@ -7517,6 +7519,7 @@ tests/Feature/CheckoutAcceptances/Ui/ConsumableAcceptanceTest.php
 tests/Feature/CheckoutAcceptances/Ui/AccessoryAcceptanceTest.php
 tests/Feature/CustomFields/Api/DeleteCustomFieldsTest.php
 tests/Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
+tests/Feature/CustomFields/Ui/CreateCustomFieldsTest.php
 tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/Api/UpdateManufacturersTest.php

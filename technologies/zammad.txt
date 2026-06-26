@@ -5646,8 +5646,10 @@ app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingAvata
 app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingNewAccessTokenFlyout.vue
 app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingAvatarCropImageFlyout.vue
 app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingOverviewOrder.vue
+app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingAvatarSkeleton.vue
 app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingSidebar.vue
 app/frontend/apps/desktop/pages/personal-setting/components/__tests__/PersonalSettingNewAccessTokenFlyout.spec.ts
+app/frontend/apps/desktop/pages/personal-setting/components/PersonalSettingOverviewsSkeleton.vue
 app/frontend/apps/desktop/pages/personal-setting/types/linked-accounts.ts
 app/frontend/apps/desktop/pages/personal-setting/types/token-access.ts
 app/frontend/apps/desktop/pages/personal-setting/types/notifications.ts
@@ -5679,6 +5681,7 @@ app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view-
 app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view.spec.ts
 app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view-edit-organization.spec.ts
 app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view-history.spec.ts
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContentSkeleton.vue
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/index.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/newUser.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/history.ts
@@ -5878,6 +5881,7 @@ app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/Custo
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/skeleton/CustomerTicketListSkeleton.vue
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/__tests__/CustomerTicketList.spec.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar.vue
+app/frontend/apps/desktop/pages/user/components/UserDetailViewContentSkeleton.vue
 app/frontend/apps/desktop/pages/dashboard/views/Playground.vue
 app/frontend/apps/desktop/pages/dashboard/views/Dashboard.vue
 app/frontend/apps/desktop/pages/dashboard/routes.ts
@@ -6041,6 +6045,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarSum
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarWrapper.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/TicketSidebarChecklistContent.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/useTicketChecklist.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/TicketSidebarChecklistContentSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/TicketSidebarChecklistContent/ChecklistItems.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/TicketSidebarChecklistContent/ChecklistTemplates.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarChecklist/TicketSidebarChecklistContent/ChecklistItem.vue
@@ -6064,6 +6069,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInf
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketLinks.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketAIKnowledgeBaseAnswers.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketSubscribers.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/TicketLinksSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformation.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketSidebarInformationContent.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketSubscribers.spec.ts
@@ -6074,6 +6080,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInf
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarContent.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarAttachment/TicketSidebarAttachment.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarAttachment/useTicketAttachments.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarAttachment/TicketSidebarAttachmentContentSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarAttachment/TicketSidebarAttachmentContent.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarAttachment/__tests__/TicketSidebarAttachmentContent.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarCustomer/TicketSidebarCustomer.vue
@@ -6096,6 +6103,8 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExt
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/types.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/__tests__/IdoitFlyout.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/__tests__/TicketSidebarIdoit.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/TicketSidebarIdoitContentSkeleton.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerListSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerLinkFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/IssueTrackerBadgeList.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/issueTypeColors.ts
@@ -6150,6 +6159,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/TicketInformation.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/types.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader/HighlightMenu.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TicketDetailTopBarSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TopBarHeader.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/useTicketEditTitle.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/HighlightMenu.spec.ts
@@ -6162,6 +6172,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReactionBadge.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMore.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReplyPanel.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleListSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/TicketScreenBehavior.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/useTicketScreenBehavior.ts
@@ -6169,6 +6180,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenB
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailViewContent.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/FloatingToolbar.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketRelationAndRecentLists/__tests__/TicketRelationAndRecentLists.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketRelationAndRecentLists/TicketRelationAndRecentListsSkeleton.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketRelationAndRecentLists/TicketRelationAndRecentLists.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/actions/TicketMerge/TicketMergeFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/actions/TicketMerge/__tests__/TicketMergeFlyout.spec.ts
@@ -6672,6 +6684,7 @@ app/frontend/apps/desktop/form/__tests__/useSSLVerificationWarningHandler.spec.t
 app/frontend/apps/desktop/form/__tests__/useAlertFormHandler.spec.ts
 app/frontend/apps/desktop/form/__tests__/useArchiveBeforeWarningHandler.spec.ts
 app/frontend/apps/desktop/composables/useOverlayContainer.ts
+app/frontend/apps/desktop/composables/useDelayTimings.ts
 app/frontend/apps/desktop/composables/useTopBarHeaderHover.ts
 app/frontend/apps/desktop/composables/useElementScroll.ts
 app/frontend/apps/desktop/composables/dragAndDrop/useAccessibleDragAndDrop.ts
@@ -6696,6 +6709,7 @@ app/frontend/apps/desktop/composables/usePage.ts
 app/frontend/apps/desktop/composables/usePrintMode.ts
 app/frontend/apps/desktop/composables/useResizeGridColumns.ts
 app/frontend/apps/desktop/composables/__tests__/useTransitionConfig.spec.ts
+app/frontend/apps/desktop/composables/__tests__/useDelayTimings.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useResizeGridColumns.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useElementScroll.spec.ts
 app/frontend/apps/desktop/composables/__tests__/useKeepAliveHooks.spec.ts
@@ -6711,6 +6725,7 @@ app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSideba
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/NotificationList.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/NotificationList/NotificationItem.vue
+app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/NotificationListSkeleton.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/NotificationHeader.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/__tests__/NotificationHeader.spec.ts
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader/OnlineNotification/NotificationPopover/__tests__/NotificationList.spec.ts
@@ -6791,7 +6806,6 @@ app/frontend/apps/desktop/components/Search/plugins/organization.ts
 app/frontend/apps/desktop/components/Search/plugins/ticket.ts
 app/frontend/apps/desktop/components/CommonTable/TableCaption.vue
 app/frontend/apps/desktop/components/CommonTable/TableHeader.vue
-app/frontend/apps/desktop/components/CommonTable/Skeleton/CommonTableRowsSkeleton.vue
 app/frontend/apps/desktop/components/CommonTable/Skeleton/CommonTableSkeleton.vue
 app/frontend/apps/desktop/components/CommonTable/TableRowGroupBy.vue
 app/frontend/apps/desktop/components/CommonTable/CellContent/BulkCheckbox.vue
@@ -7016,6 +7030,7 @@ app/frontend/apps/desktop/components/CommonHistoryFlyout/utils/eventHelpers.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/utils/historyEventIssuerNames.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/HistoryEventIssuer.vue
 app/frontend/apps/desktop/components/CommonHistoryFlyout/CommonHistoryFlyout.vue
+app/frontend/apps/desktop/components/CommonHistoryFlyout/CommonHistoryFlyoutSkeleton.vue
 app/frontend/apps/desktop/components/CommonHistoryFlyout/useHistoryEvents.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/HistoryEventDetails/HistoryEventDetailsTimeTriggerPerformed.vue
 app/frontend/apps/desktop/components/CommonHistoryFlyout/HistoryEventDetails/HistoryEventDetailsEmail.vue
@@ -7191,6 +7206,7 @@ app/frontend/apps/desktop/components/UserTaskbarTabs/Search/Search.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/UserTaskbarTabs.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/Ticket/Ticket.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/Ticket/TicketCreate.vue
+app/frontend/apps/desktop/components/UserTaskbarTabs/UserTaskbarTabsSkeleton.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/UserTaskbarTabForbidden.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/User/User.vue
 app/frontend/apps/desktop/components/UserTaskbarTabs/Organization/Organization.vue
@@ -8478,6 +8494,7 @@ app/frontend/shared/composables/useLocaleUpdate.ts
 app/frontend/shared/composables/useAvatarIndicator.ts
 app/frontend/shared/composables/useApplicationLoaded.ts
 app/frontend/shared/composables/useConfirmation.ts
+app/frontend/shared/composables/useReducedMotion.ts
 app/frontend/shared/composables/useSelectPreselect.ts
 app/frontend/shared/composables/useSharedVisualConfig.ts
 app/frontend/shared/composables/useDebouncedLoading.ts
@@ -8538,6 +8555,7 @@ app/frontend/shared/composables/__tests__/useCopyToClipboard.spec.ts
 app/frontend/shared/composables/__tests__/useAppMaintenanceCheck.spec.ts
 app/frontend/shared/composables/__tests__/useLocaleUpdate.spec.ts
 app/frontend/shared/composables/__tests__/useEscalationState.spec.ts
+app/frontend/shared/composables/__tests__/useReducedMotion.spec.ts
 app/frontend/shared/composables/__tests__/useAbortNavigation.spec.ts
 app/frontend/shared/composables/__tests__/useBaseUrl.spec.ts
 app/frontend/shared/composables/__tests__/useTouchDevice.spec.ts
