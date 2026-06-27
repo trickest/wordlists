@@ -885,6 +885,7 @@ application/Espo/Core/Utils/ApiKey.php
 application/Espo/Core/Utils/Address/CountryDataProvider.php
 application/Espo/Core/Utils/ObjectUtil.php
 application/Espo/Core/Utils/Acl/UserAclManagerProvider.php
+application/Espo/Core/Utils/ScheduledJob/Populator.php
 application/Espo/Core/Utils/Crypt.php
 application/Espo/Core/Utils/FieldUtil.php
 application/Espo/Core/Utils/ThemeManager.php
@@ -2060,6 +2061,7 @@ application/Espo/Modules/Crm/Resources/metadata/entityDefs/KnowledgeBaseArticle.
 application/Espo/Modules/Crm/Resources/metadata/app/acl.json
 application/Espo/Modules/Crm/Resources/metadata/app/jsLibs.json
 application/Espo/Modules/Crm/Resources/metadata/app/templates.json
+application/Espo/Modules/Crm/Resources/metadata/app/scheduledJobs.json
 application/Espo/Modules/Crm/Resources/metadata/app/calendar.json
 application/Espo/Modules/Crm/Resources/metadata/app/metadata.json
 application/Espo/Modules/Crm/Resources/metadata/app/language.json
@@ -3507,6 +3509,7 @@ application/Espo/Classes/AppInfo/Binding.php
 application/Espo/Classes/AppInfo/Version.php
 application/Espo/Classes/ConsoleCommands/PopulateNumbers.php
 application/Espo/Classes/ConsoleCommands/CheckFilePermissions.php
+application/Espo/Classes/ConsoleCommands/PopulateScheduledJobs.php
 application/Espo/Classes/ConsoleCommands/SetConfigParam.php
 application/Espo/Classes/ConsoleCommands/RebuildCategoryPaths.php
 application/Espo/Classes/ConsoleCommands/ConfigPopulate.php
@@ -7661,6 +7664,7 @@ tests/integration/Espo/Core/Utils/Database/TextFieldTest.php
 tests/integration/Espo/Core/Utils/Database/IntegerFieldTest.php
 tests/integration/Espo/Core/Utils/Database/AutoIncrementFieldTest.php
 tests/integration/Espo/Core/Utils/Database/ArrayFieldTest.php
+tests/integration/Espo/Core/Utils/ScheduledJob/PopulatorTest.php
 tests/integration/Espo/Core/Utils/MetadataTest.php
 tests/integration/Espo/Core/Utils/FieldManager/VarcharTypeTest.php
 tests/integration/Espo/Core/Utils/FieldManager/ArrayTypeTest.php
@@ -7708,6 +7712,7 @@ tests/integration/Espo/Actions/MassActionTest.php
 tests/integration/Espo/Actions/ActionTest.php
 tests/integration/Espo/Note/AclTest.php
 tests/integration/Espo/Tools/WorkingTime/UtilityTest.php
+tests/integration/Espo/Tools/Notification/RecordServiceTest.php
 tests/integration/Espo/Tools/Pipeline/PipelineTest.php
 tests/integration/Espo/Tools/DynamicLogic/CascadingFieldsTest.php
 tests/integration/Espo/Tools/Activities/ComposeEmailAddressListTest.php
@@ -8878,6 +8883,7 @@ client/src/views/site-portal/navbar.js
 client/src/views/site-portal/header.js
 client/src/views/list-related.ts
 client/src/views/header.js
+client/src/views/last-viewed/fields/target.ts
 client/src/views/last-viewed/fields/created-at.ts
 client/src/views/last-viewed/fields/target-type.ts
 client/src/views/last-viewed/record/list.js

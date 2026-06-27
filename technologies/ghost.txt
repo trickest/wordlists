@@ -835,6 +835,7 @@ apps/admin/src/onboarding/components/onboarding-checklist.tsx
 apps/admin/src/onboarding/components/onboarding-logo-video.tsx
 apps/admin/src/onboarding/components/share-publication-dialog.tsx
 apps/admin/src/onboarding/components/onboarding-step-item.tsx
+apps/admin/src/hooks/use-theme.ts
 apps/admin/src/hooks/user-preferences.test.tsx
 apps/admin/src/hooks/user-preferences.ts
 apps/admin/src/hooks/use-feature-flag.ts
@@ -929,6 +930,7 @@ apps/portal/test/unit/components/pages/account-plan-page.test.js
 apps/portal/test/unit/components/pages/signup-page.test.js
 apps/portal/test/unit/components/pages/AccountHomePage/account-home-page.test.js
 apps/portal/test/unit/components/pages/AccountHomePage/transistor-podcasts-action.test.js
+apps/portal/test/unit/components/pages/AccountHomePage/email-newsletter-action.test.js
 apps/portal/test/unit/components/pages/AccountHomePage/account-actions.test.js
 apps/portal/test/unit/components/pages/AccountHomePage/continue-gift-subscription-banner.test.js
 apps/portal/test/unit/components/pages/AccountHomePage/paid-account-actions.test.js
@@ -946,6 +948,7 @@ apps/portal/test/unit/components/pages/gift-redemption-page.test.js
 apps/portal/test/unit/components/pages/email-suppressed-page.test.js
 apps/portal/test/unit/components/notification.test.js
 apps/portal/test/unit/components/common/member-gravatar.test.js
+apps/portal/test/unit/components/common/newsletter-management.test.js
 apps/portal/test/unit/components/common/action-button.test.js
 apps/portal/test/unit/components/common/input-field.test.js
 apps/portal/test/unit/components/common/switch.test.js
@@ -1334,7 +1337,6 @@ apps/stats/README.md
 apps/admin-toolbar/test/admin-toolbar.test.js
 apps/admin-toolbar/package.json
 apps/admin-toolbar/eslint.config.js
-apps/admin-toolbar/umd/admin-toolbar.min.js
 apps/admin-toolbar/vite.config.mjs
 apps/admin-toolbar/src/user.js
 apps/admin-toolbar/src/config.js
@@ -6091,6 +6093,7 @@ ghost/core/core/server/data/migrations/versions/6.28/2026-04-09-02-30-06-disable
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-23-10-40-set-outbound-link-tagging-based-on-source-tracking.js
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-20-12-22-add-milestones-table.js
 ghost/core/core/server/data/migrations/versions/5.36/2023-02-21-12-29-add-milestone-notifications-column.js
+ghost/core/core/server/data/migrations/versions/6.50/2026-06-18-18-02-46-add-comments-moderation-indexes.js
 ghost/core/core/server/data/migrations/versions/5.128/2025-06-26-09-36-41-add-social-web-setting.js
 ghost/core/core/server/data/migrations/versions/6.15/2026-01-26-12-00-00-add-commenting-column-to-members.js
 ghost/core/core/server/data/migrations/versions/6.15/2026-01-26-18-06-00-add-billing-portal-setting.js

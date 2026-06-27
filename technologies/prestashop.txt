@@ -944,6 +944,7 @@ admin-dev/themes/new-theme/js/pages/email/EmailPageMap.ts
 admin-dev/themes/new-theme/js/pages/email/smtp-configuration-toggler.ts
 admin-dev/themes/new-theme/js/pages/email/dkim-configuration-toggler.ts
 admin-dev/themes/new-theme/js/pages/email/email-sending-test.ts
+admin-dev/themes/new-theme/js/pages/extra-property-definition/index.ts
 admin-dev/themes/new-theme/js/pages/order_message/index.ts
 admin-dev/themes/new-theme/js/pages/order_message/form.ts
 admin-dev/themes/new-theme/js/pages/discount/index.ts
@@ -3277,6 +3278,7 @@ src/Core/Search/Filters/CreditSlipFilters.php
 src/Core/Search/Filters/CustomerViewedProductFilters.php
 src/Core/Search/Filters/EmailLogsFilter.php
 src/Core/Search/Filters/AliasFilters.php
+src/Core/Search/Filters/ExtraPropertyDefinitionFilters.php
 src/Core/Search/Filters/CurrencyFilters.php
 src/Core/Search/Filters/WebserviceKeyFilters.php
 src/Core/Search/Filters/CatalogPriceRuleFilters.php
@@ -3377,8 +3379,11 @@ src/Core/ExtraProperty/Schema/ColumnDefinitionMapper.php
 src/Core/ExtraProperty/Schema/ExtraPropertySchemaManagerInterface.php
 src/Core/ExtraProperty/Grid/ExtraPropertiesGridQueryBuilderModifier.php
 src/Core/ExtraProperty/Grid/ExtraPropertiesGridDefinitionModifier.php
+src/Core/ExtraProperty/Exception/InvalidExtraPropertyConstraintException.php
 src/Core/ExtraProperty/Exception/ExtraPropertyException.php
+src/Core/ExtraProperty/Exception/UnknownExtraPropertyConstraintException.php
 src/Core/ExtraProperty/Exception/InvalidExtraPropertyDefinitionException.php
+src/Core/ExtraProperty/Validation/ExtraPropertyConstraintMapper.php
 src/Core/ExtraProperty/Validation/ExtraPropertyValidatorInterface.php
 src/Core/ExtraProperty/Validation/ExtraPropertyValidator.php
 src/Core/ExtraProperty/Value/ExtraPropertyReaderInterface.php
@@ -3633,12 +3638,14 @@ src/Core/Grid/Action/Bulk/BulkActionInterface.php
 src/Core/Grid/Action/Bulk/AbstractBulkAction.php
 src/Core/Grid/Action/Row/RowActionCollection.php
 src/Core/Grid/Action/Row/AccessibilityChecker/DeleteProfileAccessibilityChecker.php
+src/Core/Grid/Action/Row/AccessibilityChecker/NonModuleExtraPropertyDefinitionAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/DeleteOrderStatesAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/DeleteCartAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/ProductMultipleShopsAssociatedAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/AccessibilityCheckerInterface.php
 src/Core/Grid/Action/Row/AccessibilityChecker/PrintInvoiceAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/ProductSingleShopAssociatedAccessibilityChecker.php
+src/Core/Grid/Action/Row/AccessibilityChecker/ModuleExtraPropertyDefinitionAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/PrintDeliverySlipAccessibilityChecker.php
 src/Core/Grid/Action/Row/AccessibilityChecker/DeleteOrderReturnStatesAccessibilityChecker.php
 src/Core/Grid/Action/Row/AbstractRowAction.php
@@ -3750,6 +3757,7 @@ src/Core/Grid/Query/MetaQueryBuilder.php
 src/Core/Grid/Query/TaxRulesGroupQueryBuilder.php
 src/Core/Grid/Query/CountryQueryBuilder.php
 src/Core/Grid/Query/CategoryQueryBuilder.php
+src/Core/Grid/Query/ExtraPropertyDefinitionQueryBuilder.php
 src/Core/Grid/Query/DoctrineQueryBuilderInterface.php
 src/Core/Grid/Query/EmployeeQueryBuilder.php
 src/Core/Grid/Query/WebserviceKeyQueryBuilder.php
@@ -3812,6 +3820,7 @@ src/Core/Grid/Query/CmsPageQueryBuilder.php
 src/Core/Grid/GridInterface.php
 src/Core/Grid/Presenter/GridPresenter.php
 src/Core/Grid/Presenter/GridPresenterInterface.php
+src/Core/Grid/Definition/Factory/ExtraPropertyDefinitionGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/OrderReturnStatesGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/FeatureValueGridDefinitionFactory.php
 src/Core/Grid/Definition/Factory/ProfileGridDefinitionFactory.php
@@ -4199,6 +4208,7 @@ src/Core/Form/ChoiceProvider/LocalizationPackByIsoCodeChoiceProvider.php
 src/Core/Form/ChoiceProvider/ThemeByNameWithEmailsChoiceProvider.php
 src/Core/Form/ChoiceProvider/StatusChoiceProvider.php
 src/Core/Form/ChoiceProvider/TaxInclusionChoiceProvider.php
+src/Core/Form/ChoiceProvider/ExtraPropertyScopeChoiceProvider.php
 src/Core/Form/ChoiceProvider/AddressRequiredFieldsChoiceProvider.php
 src/Core/Form/ChoiceProvider/TabChoiceProvider.php
 src/Core/Form/ChoiceProvider/CmsCategoriesChoiceProvider.php
@@ -4211,6 +4221,7 @@ src/Core/Form/ChoiceProvider/LanguageChoiceProvider.php
 src/Core/Form/ChoiceProvider/PackStockTypeChoiceProvider.php
 src/Core/Form/ChoiceProvider/GenderChoiceProvider.php
 src/Core/Form/ChoiceProvider/CustomerServiceOrderMessagesChoiceProvider.php
+src/Core/Form/ChoiceProvider/ExtraPropertySqlIndexChoiceProvider.php
 src/Core/Form/ChoiceProvider/CustomizationFieldTypeChoiceProvider.php
 src/Core/Form/ChoiceProvider/CountryByIdChoiceProvider.php
 src/Core/Form/ChoiceProvider/MailMethodChoiceProvider.php
@@ -4227,6 +4238,7 @@ src/Core/Form/ChoiceProvider/ProductImagesChoiceProvider.php
 src/Core/Form/ChoiceProvider/AttributeGroupChoiceProvider.php
 src/Core/Form/ChoiceProvider/CountryByIdConfigurableChoiceProvider.php
 src/Core/Form/ChoiceProvider/NonInstalledLocalizationChoiceProvider.php
+src/Core/Form/ChoiceProvider/ExtraPropertyTypeChoiceProvider.php
 src/Core/Form/ChoiceProvider/ThemePageLayoutsChoiceProvider.php
 src/Core/Form/ChoiceProvider/InvoiceModelByNameChoiceProvider.php
 src/Core/Form/ChoiceProvider/CarrierByReferenceChoiceProvider.php
@@ -4256,6 +4268,7 @@ src/Core/Form/IdentifiableObject/DataProvider/ContactFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CancelProductFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/CmsPageFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/TitleFormDataProvider.php
+src/Core/Form/IdentifiableObject/DataProvider/ExtraPropertyDefinitionFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/ManufacturerFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/AttributeFormDataProvider.php
 src/Core/Form/IdentifiableObject/DataProvider/FulfillShipmentFormDataProvider.php
@@ -4342,6 +4355,7 @@ src/Core/Form/IdentifiableObject/DataHandler/OrderMessageFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CartSummaryFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/FeatureValueFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/OrderReturnFormDataHandler.php
+src/Core/Form/IdentifiableObject/DataHandler/ExtraPropertyDefinitionFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/CountryFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/SupplierFormDataHandler.php
 src/Core/Form/IdentifiableObject/DataHandler/AddressFormDataHandler.php
@@ -4657,6 +4671,24 @@ src/Core/Domain/Module/CommandHandler/BulkToggleModuleStatusHandlerInterface.php
 src/Core/Domain/Module/CommandHandler/UpdateModuleStatusHandlerInterface.php
 src/Core/Domain/Module/CommandHandler/UninstallModuleHandlerInterface.php
 src/Core/Domain/Module/CommandHandler/ResetModuleHandlerInterface.php
+src/Core/Domain/ExtraProperty/QueryHandler/GetExtraPropertyDefinitionForEditingHandlerInterface.php
+src/Core/Domain/ExtraProperty/Exception/BulkExtraPropertyException.php
+src/Core/Domain/ExtraProperty/Exception/ExtraPropertyRegistrationFailureException.php
+src/Core/Domain/ExtraProperty/Exception/ExtraPropertyException.php
+src/Core/Domain/ExtraProperty/Exception/ExtraPropertyDefinitionNotFoundException.php
+src/Core/Domain/ExtraProperty/Exception/ExtraPropertyConstraintException.php
+src/Core/Domain/ExtraProperty/Exception/ProtectedModuleExtraPropertyDefinitionException.php
+src/Core/Domain/ExtraProperty/Query/GetExtraPropertyDefinitionForEditing.php
+src/Core/Domain/ExtraProperty/QueryResult/EditableExtraPropertyDefinition.php
+src/Core/Domain/ExtraProperty/Command/UpdateExtraPropertyDefinitionCommand.php
+src/Core/Domain/ExtraProperty/Command/AddExtraPropertyDefinitionCommand.php
+src/Core/Domain/ExtraProperty/Command/DeleteExtraPropertyDefinitionCommand.php
+src/Core/Domain/ExtraProperty/Command/BulkDeleteExtraPropertyDefinitionCommand.php
+src/Core/Domain/ExtraProperty/ValueObject/ExtraPropertyDefinitionId.php
+src/Core/Domain/ExtraProperty/CommandHandler/DeleteExtraPropertyDefinitionHandlerInterface.php
+src/Core/Domain/ExtraProperty/CommandHandler/UpdateExtraPropertyDefinitionHandlerInterface.php
+src/Core/Domain/ExtraProperty/CommandHandler/BulkDeleteExtraPropertyDefinitionHandlerInterface.php
+src/Core/Domain/ExtraProperty/CommandHandler/AddExtraPropertyDefinitionHandlerInterface.php
 src/Core/Domain/TaxRule/TaxRuleSettings.php
 src/Core/Domain/Contact/QueryHandler/GetContactForEditingHandlerInterface.php
 src/Core/Domain/Contact/Exception/ContactNotFoundException.php
@@ -7214,6 +7246,12 @@ src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/FormDataPr
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/GeneralType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/PasswordPolicyType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/QuickAccess/QuickAccessType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionValidationType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionAdvancedType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionVisibilityType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionLabelsType.php
+src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionFieldDefinitionType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Profile/ProfileType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/RequestSql/SqlRequestSettingsType.php
 src/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/RequestSql/SqlRequestType.php
@@ -7857,6 +7895,7 @@ src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameter
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/feature_flags.yml
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/backup.yml
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/import.yml
+src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/extra_property_definition.yml
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/sql_request.yml
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/webservice.yml
 src/PrestaShopBundle/Resources/config/routing/admin/configure/advanced_parameters/system_information.yml
@@ -7998,6 +8037,12 @@ src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/QuickAcc
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/QuickAccess/edit.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/QuickAccess/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/QuickAccess/create.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/view.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/Blocks/form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/Blocks/view_form.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/edit.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/index.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/RequestSql/view.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/RequestSql/Blocks/db_tables_panel.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Configure/AdvancedParameters/RequestSql/Blocks/form.html.twig
@@ -8566,6 +8611,7 @@ src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/SystemInforma
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/BackupController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/AdminAPIController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/PermissionController.php
+src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/ExtraPropertyDefinitionController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/EmailController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/EmployeeController.php
 src/PrestaShopBundle/Controller/Admin/Configure/AdvancedParameters/ProfileController.php
@@ -8752,6 +8798,11 @@ src/Adapter/Module/Module.php
 src/Adapter/Module/ModuleDataUpdater.php
 src/Adapter/Module/Repository/ModuleRepository.php
 src/Adapter/Module/Repository/CachedModuleRepository.php
+src/Adapter/ExtraProperty/QueryHandler/GetExtraPropertyDefinitionForEditingHandler.php
+src/Adapter/ExtraProperty/CommandHandler/DeleteExtraPropertyDefinitionHandler.php
+src/Adapter/ExtraProperty/CommandHandler/UpdateExtraPropertyDefinitionHandler.php
+src/Adapter/ExtraProperty/CommandHandler/BulkDeleteExtraPropertyDefinitionHandler.php
+src/Adapter/ExtraProperty/CommandHandler/AddExtraPropertyDefinitionHandler.php
 src/Adapter/Contact/QueryHandler/GetContactForEditingHandler.php
 src/Adapter/Contact/CommandHandler/AddContactHandler.php
 src/Adapter/Contact/CommandHandler/EditContactHandler.php
@@ -10752,6 +10803,7 @@ tests/Unit/Core/ExtraProperty/ExtraPropertiesGridCastTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyDefinitionFromRowTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyDefinitionNamingTest.php
 tests/Unit/Core/ExtraProperty/Validation/ExtraPropertyValidatorTest.php
+tests/Unit/Core/ExtraProperty/Validation/ExtraPropertyConstraintMapperTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertyRegistryTest.php
 tests/Unit/Core/ExtraProperty/ExtraPropertiesBagTest.php
 tests/Unit/Core/Addon/Theme/ThemeValidatorTest.php
@@ -11050,6 +11102,7 @@ tests/Unit/Core/Domain/Currency/ValueObject/CurrencyNumericIsoCodeTest.php
 tests/Unit/Core/ConstraintValidator/TypedRegexValidatorTest.php
 tests/Unit/Core/ConstraintValidator/PositiveOrZeroValidatorTest.php
 tests/Unit/Core/ConstraintValidator/CustomerNameValidatorTest.php
+tests/Unit/Core/ConstraintValidator/DefaultLanguageTest.php
 tests/Unit/Core/ConstraintValidator/IsUrlRewriteValidatorTest.php
 tests/Unit/Core/ConstraintValidator/InstalledApiResourceScopeValidatorTest.php
 tests/Unit/Core/ConstraintValidator/DefaultLanguageValidatorTest.php
@@ -12404,6 +12457,7 @@ tests/Integration/Behaviour/Features/Scenario/Module/module.feature
 tests/Integration/Behaviour/Features/Scenario/Module/uninstall_module.feature
 tests/Integration/Behaviour/Features/Scenario/Module/install_module.feature
 tests/Integration/Behaviour/Features/Scenario/Module/upgrade_module.feature
+tests/Integration/Behaviour/Features/Scenario/ExtraProperty/extra_property_definition_management.feature
 tests/Integration/Behaviour/Features/Scenario/Contact/contact.feature
 tests/Integration/Behaviour/Features/Scenario/Country/country_management.feature
 tests/Integration/Behaviour/Features/Scenario/Country/bulk_update_country_zone.feature
@@ -12766,6 +12820,7 @@ tests/Integration/Behaviour/Features/Context/Domain/SupplierFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/TaxRuleFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CountryFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/AttributeGroupFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/ExtraPropertyDefinitionFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/EmailBodyTranslationFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/CmsPageFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/SearchEngineFeatureContext.php
