@@ -1,6 +1,9 @@
 phpstan-bootstrap.php
 rector-older-symfony.php
+.devcontainer/post-attach.sh
 .devcontainer/devcontainer.json
+.devcontainer/CODESPACES.md
+.devcontainer/CODESPACES-READY.tpl.md
 .devcontainer/setup-project.sh
 .devcontainer/prebuild-project.sh
 package.json
@@ -867,6 +870,7 @@ app/bundles/EmailBundle/EventListener/ConfigSubscriber.php
 app/bundles/EmailBundle/EventListener/ChannelSubscriber.php
 app/bundles/EmailBundle/EventListener/SearchSubscriber.php
 app/bundles/EmailBundle/EventListener/ReportSubscriber.php
+app/bundles/EmailBundle/EventListener/EmailDetailsRightColumnSubscriber.php
 app/bundles/EmailBundle/EventListener/FormSubscriber.php
 app/bundles/EmailBundle/EventListener/GraphAggregateStatsSubscriber.php
 app/bundles/EmailBundle/EventListener/EmailDefaultsSubscriber.php
@@ -896,6 +900,7 @@ app/bundles/EmailBundle/Tests/MonitoredEmail/Processor/Unsubscription/ParserTest
 app/bundles/EmailBundle/Tests/MonitoredEmail/Transport/TestTransport.php
 app/bundles/EmailBundle/Tests/MonitoredEmail/Accessor/ConfigAccessorTest.php
 app/bundles/EmailBundle/Tests/MonitoredEmail/MailboxTest.php
+app/bundles/EmailBundle/Tests/EventListener/BroadcastSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/FormSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/EmailToUserSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/PointSubscriberFunctionalTest.php
@@ -936,6 +941,7 @@ app/bundles/EmailBundle/Tests/Functional/PendingCountTest.php
 app/bundles/EmailBundle/Tests/Functional/EmailTokenTest.php
 app/bundles/EmailBundle/Tests/Stat/StatHelperTest.php
 app/bundles/EmailBundle/Tests/Entity/StatTest.php
+app/bundles/EmailBundle/Tests/Entity/StatRepositoryFunctionalTest.php
 app/bundles/EmailBundle/Tests/Entity/EmailRepositoryIncrementReadTest.php
 app/bundles/EmailBundle/Tests/Entity/EmailRepositoryTest.php
 app/bundles/EmailBundle/Tests/Entity/EmailRepositoryFunctionalTest.php
@@ -1054,6 +1060,7 @@ app/bundles/EmailBundle/Entity/EmailRepository.php
 app/bundles/EmailBundle/Entity/EmailDraftRepository.php
 app/bundles/EmailBundle/Entity/Email.php
 app/bundles/EmailBundle/Exception/FailedToSendToContactException.php
+app/bundles/EmailBundle/Exception/NotReadyToSendWinnerException.php
 app/bundles/EmailBundle/Exception/InvalidEmailException.php
 app/bundles/EmailBundle/Exception/EmailCouldNotBeSentException.php
 app/bundles/EmailBundle/Exception/MailboxException.php
@@ -1076,11 +1083,15 @@ app/bundles/EmailBundle/Mailer/Transport/TokenTransportInterface.php
 app/bundles/EmailBundle/Mailer/Transport/TokenTransportTrait.php
 app/bundles/EmailBundle/Mailer/Message/MauticMessage.php
 app/bundles/EmailBundle/Command/ProcessFetchEmailCommand.php
+app/bundles/EmailBundle/Command/SendWinnerEmailCommand.php
 app/bundles/EmailBundle/Model/EmailActionModel.php
 app/bundles/EmailBundle/Model/SendEmailToContact.php
 app/bundles/EmailBundle/Model/SendEmailToUser.php
 app/bundles/EmailBundle/Model/EmailModel.php
 app/bundles/EmailBundle/Model/EmailDraftModel.php
+app/bundles/EmailBundle/Model/AbTest/EmailStatus.php
+app/bundles/EmailBundle/Model/AbTest/SendWinnerService.php
+app/bundles/EmailBundle/Model/AbTest/EmailVariantConverterService.php
 app/bundles/EmailBundle/Model/TransportCallback.php
 app/bundles/EmailBundle/Model/EmailStatModel.php
 app/bundles/EmailBundle/Form/Type/FormSubmitActionUserEmailType.php
@@ -1088,6 +1099,7 @@ app/bundles/EmailBundle/Form/Type/DashboardMostHitEmailRedirectsWidgetType.php
 app/bundles/EmailBundle/Form/Type/ScheduleSendType.php
 app/bundles/EmailBundle/Form/Type/EmailSendType.php
 app/bundles/EmailBundle/Form/Type/EmailType.php
+app/bundles/EmailBundle/Form/Type/GenerateABTestType.php
 app/bundles/EmailBundle/Form/Type/BatchSendType.php
 app/bundles/EmailBundle/Form/Type/VariantType.php
 app/bundles/EmailBundle/Form/Type/DashboardEmailsInTimeWidgetType.php
@@ -1111,6 +1123,7 @@ app/bundles/EmailBundle/Resources/views/Action/email.html.twig
 app/bundles/EmailBundle/Resources/views/KeyboardShortcuts/emails_shortcuts.html.twig
 app/bundles/EmailBundle/Resources/views/Batch/form.html.twig
 app/bundles/EmailBundle/Resources/views/Send/form.html.twig
+app/bundles/EmailBundle/Resources/views/Send/abform.html.twig
 app/bundles/EmailBundle/Resources/views/Send/progress.html.twig
 app/bundles/EmailBundle/Resources/views/Heatmap/heatmap_legend.html.twig
 app/bundles/EmailBundle/Resources/views/AbTest/form.html.twig
@@ -1123,18 +1136,24 @@ app/bundles/EmailBundle/Resources/views/FormTheme/Config/monitored_mailboxes_wid
 app/bundles/EmailBundle/Resources/views/FormTheme/Config/monitored_email_widget.html.twig
 app/bundles/EmailBundle/Resources/views/FormTheme/Email/layout.html.twig
 app/bundles/EmailBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
+app/bundles/EmailBundle/Resources/views/Variant/index.html.twig
+app/bundles/EmailBundle/Resources/views/Variant/row.html.twig
 app/bundles/EmailBundle/Resources/views/Email/recipients.html.twig
+app/bundles/EmailBundle/Resources/views/Email/abdetails.html.twig
 app/bundles/EmailBundle/Resources/views/Email/form.html.twig
 app/bundles/EmailBundle/Resources/views/Email/_list.html.twig
 app/bundles/EmailBundle/Resources/views/Email/graph.html.twig
 app/bundles/EmailBundle/Resources/views/Email/schedule.html.twig
 app/bundles/EmailBundle/Resources/views/Email/list.html.twig
 app/bundles/EmailBundle/Resources/views/Email/details.html.twig
+app/bundles/EmailBundle/Resources/views/Email/abtest.html.twig
+app/bundles/EmailBundle/Resources/views/Email/absettings.html.twig
 app/bundles/EmailBundle/Resources/views/Email/template_graph.html.twig
 app/bundles/EmailBundle/Security/Permissions/EmailPermissions.php
 app/bundles/EmailBundle/Config/services.php
 app/bundles/EmailBundle/Config/config.php
 app/bundles/EmailBundle/Controller/EmailGraphStatsController.php
+app/bundles/EmailBundle/Controller/ABTestController.php
 app/bundles/EmailBundle/Controller/PublicController.php
 app/bundles/EmailBundle/Controller/BatchEmailController.php
 app/bundles/EmailBundle/Controller/EmailController.php
@@ -3462,6 +3481,7 @@ app/bundles/CoreBundle/Test/IsolatedTestTrait.php
 app/bundles/CoreBundle/Test/EventListener/MaintenanceSubscriberTest.php
 app/bundles/CoreBundle/Test/PhpUnitConfigCommand.php
 app/bundles/CoreBundle/Test/Event/TokenReplacementEventTest.php
+app/bundles/CoreBundle/Test/Service/AbTestSettingsServiceTest.php
 app/bundles/CoreBundle/Test/MauticMysqlTestCase.php
 app/bundles/CoreBundle/Test/Container/TestContainer.php
 app/bundles/CoreBundle/Test/EnvLoader.php
@@ -3473,6 +3493,7 @@ app/bundles/CoreBundle/Test/Doctrine/DBALMocker.php
 app/bundles/CoreBundle/Test/Doctrine/RepositoryConfiguratorTrait.php
 app/bundles/CoreBundle/Test/Session/FixedMockFileSessionStorage.php
 app/bundles/CoreBundle/Test/Session/InMemoryTokenStorage.php
+app/bundles/CoreBundle/Test/ReflectionHelper.php
 app/bundles/CoreBundle/Test/Extensions/SlowTest/SlowTest.php
 app/bundles/CoreBundle/Test/Extensions/SlowTest/Subscriber/TestFinishedSubscriber.php
 app/bundles/CoreBundle/Test/Extensions/SlowTest/Subscriber/Subscriber.php
@@ -4115,6 +4136,9 @@ app/bundles/CoreBundle/Model/TranslationModelTrait.php
 app/bundles/CoreBundle/Model/AjaxLookupModelInterface.php
 app/bundles/CoreBundle/Model/MauticModelInterface.php
 app/bundles/CoreBundle/Model/BuilderModelTrait.php
+app/bundles/CoreBundle/Model/AbTest/VariantConverterService.php
+app/bundles/CoreBundle/Model/AbTest/AbTestResultService.php
+app/bundles/CoreBundle/Model/AbTest/AbTestSettingsService.php
 app/bundles/CoreBundle/Model/FormModel.php
 app/bundles/CoreBundle/Model/AbstractCommonModel.php
 app/bundles/CoreBundle/Form/ChoiceLoader/EntityLookupChoiceLoader.php
@@ -4780,6 +4804,7 @@ app/bundles/AssetBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/Asset/AbstractAssetTestCase.php
 app/bundles/AssetBundle/Tests/DataFixtures/LoadAssetDataTest.php
+app/bundles/AssetBundle/Tests/Functional/Entity/DownloadRepositoryFunctionalTest.php
 app/bundles/AssetBundle/Tests/Functional/ApiPlatform/DownloadOwnershipApiV2AuthorizationRegressionTest.php
 app/bundles/AssetBundle/Tests/Entity/AssetTest.php
 app/bundles/AssetBundle/Tests/Entity/AssetRepositoryTest.php
@@ -4882,6 +4907,7 @@ app/assets/dashboards/alternative-default.json
 app/assets/libraries/ckeditor/src/ckeditor.ts
 app/assets/libraries/ckeditor/src/css.d.ts
 app/assets/libraries/ckeditor/src/TokenPlugin.js
+app/assets/libraries/ckeditor/src/translations.ts
 app/assets/images/mejs/controls.svg
 app/assets/images/mejs/bigplay.svg
 app/assets/images/mejs/mejs-controls.svg
@@ -5039,6 +5065,7 @@ media/images/.htaccess
 media/files/.htaccess
 patches/chosen-js+1.8.7.patch
 patches/at.js+1.5.4.patch
+patches/twig-integration-testcase-static-data-providers.patch
 rector/AssertTrueResponseIsOkToAssertResponseIsSuccessfulRector.php
 rector/UnserializeToSerializerDecodeRector.php
 .all-contributorsrc

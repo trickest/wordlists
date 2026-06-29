@@ -1977,6 +1977,8 @@ src/Umbraco.PublishedCache.HybridCache/Serialization/IContentCacheDataSerializer
 src/Umbraco.PublishedCache.HybridCache/Serialization/MsgPackContentNestedDataSerializer.cs
 src/Umbraco.PublishedCache.HybridCache/ISeedKeyProvider.cs
 src/Umbraco.PublishedCache.HybridCache/Services/MemberCacheService.cs
+src/Umbraco.PublishedCache.HybridCache/Services/ConvertedPublishedContentCache.cs
+src/Umbraco.PublishedCache.HybridCache/Services/ContentCacheNodeSizeEstimator.cs
 src/Umbraco.PublishedCache.HybridCache/Services/IMemberCacheService.cs
 src/Umbraco.PublishedCache.HybridCache/Services/DomainCacheService.cs
 src/Umbraco.PublishedCache.HybridCache/Services/BlockElementService.cs
@@ -2808,6 +2810,7 @@ src/Umbraco.Infrastructure/BackgroundJobs/Jobs/DistributedJobs/ScheduledPublishi
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/DistributedJobs/LongRunningOperationsCleanupJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/DistributedJobs/CacheInstructionsPruningJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/DistributedJobs/HealthCheckNotifierJob.cs
+src/Umbraco.Infrastructure/BackgroundJobs/Jobs/MemoryCacheSizeReportingJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/InstructionProcessJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/TouchServerJob.cs
 src/Umbraco.Infrastructure/BackgroundJobs/Jobs/ReportSiteJob.cs
@@ -4389,12 +4392,14 @@ src/Umbraco.Core/DependencyInjection/UniqueServiceDescriptor.cs
 src/Umbraco.Core/DependencyInjection/IBackOfficeEnabledMarker.cs
 src/Umbraco.Core/Constants-ObjectTypes.cs
 src/Umbraco.Core/Constants-Composing.cs
+src/Umbraco.Core/Cache/SampledSizeEstimator.cs
 src/Umbraco.Core/Cache/IValueEditorCache.cs
 src/Umbraco.Core/Cache/AppCacheExtensions.cs
 src/Umbraco.Core/Cache/AppCaches.cs
 src/Umbraco.Core/Cache/NoCacheRepositoryCachePolicy.cs
 src/Umbraco.Core/Cache/FastDictionaryAppCacheBase.cs
 src/Umbraco.Core/Cache/IWebsiteOutputCacheDurationProvider.cs
+src/Umbraco.Core/Cache/IMemoryCacheSizeReporter.cs
 src/Umbraco.Core/Cache/AppPolicedCacheDictionary.cs
 src/Umbraco.Core/Cache/IDeliveryApiOutputCacheTagProvider.cs
 src/Umbraco.Core/Cache/NotificationHandlers/Implement/LanguageDeletedDistributedCacheNotificationHandler.cs
@@ -15514,6 +15519,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ModelBinders/ContentModelBinder
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ModelBinders/HttpQueryStringModelBinderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Views/UmbracoViewPageTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/FileNameTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ThrowingFormFeature.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/AspNetCore/AspNetCoreRequestAccessorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/AspNetCore/AspNetCoreCookieManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/AspNetCore/AspNetCoreSessionManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ApplicationBuilder/CspNonceExtensionsTests.cs
@@ -15532,6 +15539,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Security/AspNetCoreCspNonceServ
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Security/EncryptionHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Security/PublicAccessCheckerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/HtmlHelperExtensionMethodsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/HttpContextExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/HttpRequestExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/FriendlyPublishedElementExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/HttpContextExtensionTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/ImageCropperTemplateCoreExtensionsTests.cs
@@ -15670,6 +15679,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBac
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/DelayCalculatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/HealthCheckNotifierJobTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/MemoryCacheSizeReportingJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/TempFileCleanupJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ScheduledPublishingJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/LogScrubberJobTests.cs
@@ -15688,6 +15698,9 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/LocalizedTextServi
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyValidationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyEditorSchemaServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Extensions/EmailMessageExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HybridCache/LazyCompressedStringTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HybridCache/ContentCacheNodeSizeEstimatorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HybridCache/ConvertedPublishedContentCacheTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateTimeUnspecifiedPropertyIndexValueFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/TimeOnlyPropertyIndexValueFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PropertyEditors/DateTimeWithTimeZonePropertyIndexValueFactoryTests.cs
@@ -15865,6 +15878,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/NonLockingCache.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/DistributedCache/DistributedCacheTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/RefresherTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/FastDictionaryAppCacheTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/SampledSizeEstimatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/RepositoryCacheVersionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Cache/DistributedCacheExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Strings/DefaultUrlSegmentProviderTests.cs
@@ -16415,6 +16429,7 @@ tests/Umbraco.Tests.Integration/Testing/UmbracoIntegrationTestBase.cs
 tests/Umbraco.Tests.Integration/Testing/LocalDbTestDatabase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Routing/FrontEndApiControllerTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Routing/SurfaceControllerTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Routing/MalformedFormRoutingTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Website/Security/MemberAuthorizeTests.cs
 tests/Umbraco.Tests.Integration/NewBackoffice/OpenAPIContractTest.cs
 tests/Umbraco.Tests.Integration/Implementations/TestUmbracoBootPermissionChecker.cs

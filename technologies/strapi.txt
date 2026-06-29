@@ -1826,6 +1826,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/createPermissionC
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/difference.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/updateConditionsToFalse.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/permissions.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/localePermissionValidation.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/removeConditionKeyFromData.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/constants.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/layouts.ts
@@ -1833,6 +1834,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/updateValues.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/getCheckboxState.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/removeConditionKeyFromData.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/layouts.test.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/localePermissionValidation.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/data.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/updateValues.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/difference.test.ts
@@ -1840,6 +1842,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/getCheckbox
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/updateConditionsToFalse.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/permissions.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/createPermissionChecker.test.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/forms.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/createArrayOfValues.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/forms.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/createArrayOfValues.ts
@@ -4898,6 +4901,8 @@ packages/plugins/i18n/server/src/services/permissions/actions.ts
 packages/plugins/i18n/server/src/services/permissions/sections-builder.ts
 packages/plugins/i18n/server/src/services/permissions/engine.ts
 packages/plugins/i18n/server/src/services/permissions/conditions.ts
+packages/plugins/i18n/server/src/services/permissions/__tests__/sections-builder.test.ts
+packages/plugins/i18n/server/src/services/permissions/__tests__/actions.test.ts
 packages/plugins/i18n/server/src/services/locales.ts
 packages/plugins/i18n/server/src/services/localizations.ts
 packages/plugins/i18n/server/src/services/__tests__/ai-localizations.test.ts
@@ -5476,6 +5481,7 @@ tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js
 tests/api/plugins/users-permissions/content-api/users-api.test.api.js
 tests/api/plugins/users-permissions/utils.js
 tests/api/plugins/users-permissions/graphql.test.api.js
+tests/api/plugins/i18n/admin/role-locale-permissions.test.api.ts
 tests/api/plugins/i18n/content-manager/find-available-relations.test.api.js
 tests/api/plugins/i18n/content-manager/fill-from-locale.test.api.js
 tests/api/plugins/i18n/content-manager/crud.test.api.js

@@ -2673,9 +2673,7 @@ packages/js/components/jest.config.json
 packages/js/components/webpack.config.js
 packages/js/components/PREVIOUS_CHANGELOG.md
 packages/js/components/README.md
-packages/js/components/changelog/add-timeline-timezone-prop
 packages/js/components/changelog/.gitkeep
-packages/js/components/changelog/fix-63721-summary-trend-contrast
 packages/js/components/build.mjs
 packages/js/admin-layout/package.json
 packages/js/admin-layout/composer.lock
@@ -12848,6 +12846,7 @@ plugins/woocommerce/changelog/fix-simplify-compatibility-layer-checks
 plugins/woocommerce/changelog/fix-order-admin-color-contrast
 plugins/woocommerce/changelog/add-tax-display-mode-enum
 plugins/woocommerce/changelog/add-65454-list-failed-order-imports
+plugins/woocommerce/changelog/wooplug-6866-fix-backslash-agentic-checkout
 plugins/woocommerce/changelog/add-shopper-lists-privacy-exporter-eraser
 plugins/woocommerce/changelog/fix-non-persistable-preview-state-products-collection
 plugins/woocommerce/changelog/performance-tax-rates-sqls-number
@@ -12865,6 +12864,7 @@ plugins/woocommerce/changelog/remove-block-templates-package
 plugins/woocommerce/changelog/fix-63757-variation-custom-order
 plugins/woocommerce/changelog/add-admin-email-verified-field
 plugins/woocommerce/changelog/add-settings-ui-shell-header-fields
+plugins/woocommerce/changelog/wooplug-6248-express-payment-incompatible-notice
 plugins/woocommerce/changelog/65426-security-unserialize-allowed-classes
 plugins/woocommerce/changelog/fix-blocks-e2e-provisioning-log-errors
 plugins/woocommerce/changelog/fix-wooplug-104-sales-report-refunds
@@ -12890,6 +12890,7 @@ plugins/woocommerce/changelog/enable-product-object-caching-new-installs
 plugins/woocommerce/changelog/fix-line-item-subtotal-display
 plugins/woocommerce/changelog/abandoned-cart-recovery-recommendations
 plugins/woocommerce/changelog/fix-wooplug-6639-analytics-division-by-zero
+plugins/woocommerce/changelog/wooplug-6930-prettier-ignore-decouple
 plugins/woocommerce/changelog/65864-34487-different-border
 plugins/woocommerce/changelog/fix-customer-session-empty-field-persistence
 plugins/woocommerce/changelog/fix-59464-use-toolspanel-in-stock-filter
@@ -12913,16 +12914,19 @@ plugins/woocommerce/changelog/wooplug-3697-deprecate-queryfilters-class
 plugins/woocommerce/changelog/fix-psr4-fallback-validate-getprefixespsr4
 plugins/woocommerce/changelog/65496-wooplug-6699-variation-parent-int-cast
 plugins/woocommerce/changelog/64009-37525-image-size-restapi
+plugins/woocommerce/changelog/63146-feat-63009-public-taxonomy
 plugins/woocommerce/changelog/fix-checkout-address-fill-idempotent
 plugins/woocommerce/changelog/sprinkle-analytics-date-range-alignment
 plugins/woocommerce/changelog/abandoned-cart-recovery-experimental-optin
 plugins/woocommerce/changelog/fix-embedded-kyc-loader-failure-hardening
+plugins/woocommerce/changelog/64634-fix-variation-bulk-sale-schedule-end-before-start
 plugins/woocommerce/changelog/wccom-2623-marketplace-react-19-compatibility
 plugins/woocommerce/changelog/pr-64362
 plugins/woocommerce/changelog/update-e2e-core-serial-parallel-projects
 plugins/woocommerce/changelog/wooplug-6670-untrash-customer-emails
 plugins/woocommerce/changelog/65460-add-theme-json-support-to-breadcrumb-block
 plugins/woocommerce/changelog/fix-46349-asset-data-registry-deprecated-argument
+plugins/woocommerce/changelog/66014-fix-extension-cart-update-shipping-mode-sync
 plugins/woocommerce/changelog/fix-do_deferred_product_sync-undefined-behavior
 plugins/woocommerce/changelog/65420-fix-store-api-collection-data-dos
 plugins/woocommerce/changelog/fix-synced-product-filters-instances
@@ -13003,6 +13007,7 @@ plugins/woocommerce/changelog/env-restart-force-destroy
 plugins/woocommerce/changelog/fix-settings-ui-tabs-horizontal-overflow
 plugins/woocommerce/changelog/add-eslint-restrict-wp-components-storefront
 plugins/woocommerce/changelog/fix-e2e-replace-dead-demo-image-urls
+plugins/woocommerce/changelog/testops-199-fix-flaky-create-product-attributes-e2e
 plugins/woocommerce/changelog/pr-64374
 plugins/woocommerce/changelog/codex-remove-integrate-plugin
 plugins/woocommerce/changelog/wooplug-6536-email-reply-to-always-visible

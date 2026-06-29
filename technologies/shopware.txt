@@ -6822,6 +6822,7 @@ src/Core/DevOps/StaticAnalyze/phpstan-bootstrap.php
 src/Core/DevOps/StaticAnalyze/console-application.php
 src/Core/DevOps/StaticAnalyze/StaticAnalyzeKernel.php
 src/Core/DevOps/StaticAnalyze/print-ignored-errors-by-area.php
+src/Core/DevOps/StaticAnalyze/PHPStan/tagged-service-contracts.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Configuration.php
 src/Core/DevOps/StaticAnalyze/PHPStan/rules.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NameConstantEntityDefinition.php
@@ -6892,6 +6893,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleConditionHasRuleConfigRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NativeTimeReadHelper.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/DecorationPatternRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/TaggedServiceContractRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/UseHasherRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoDALAutoload.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoLegacySqlHashFunctionRule.php
@@ -16074,6 +16076,19 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExp
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/PropertyCases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoMockBuilderConstructorBypassRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctionRule/LegacySqlHashUsage.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/BadTaggedService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/InternalContractConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/UnionMappedConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/WrongContract.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/InternalContract.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/UnmappedConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/LocatorConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/Contract.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/WrongMappedConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/GoodTaggedService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/MappedConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/UnmappedContract.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/container.xml
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/shopware-unit-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/parent-class-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/commercial-unit-test.php
@@ -16114,6 +16129,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnsafeRequestHasSessionRu
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoStaticRuntimeExceptionReturnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AbstractClassUsageRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/TaggedServiceContractRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Type/CollectionHasSpecifyingExtensionTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Type/data/collection_has.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Type/data/extension.neon
