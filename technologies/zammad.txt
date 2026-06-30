@@ -829,6 +829,7 @@ config/initializers/delayed_jobs_log_level.rb
 config/initializers/zzz_action_cable_preferences.rb
 config/initializers/backtrace_silencers.rb
 config/initializers/cookies_serializer.rb
+config/initializers/knowledge_base_custom_css_presence.rb
 config/initializers/omniauth.rb
 config/initializers/generators.rb
 config/initializers/delayed_jobs_settings_reset.rb
@@ -3258,6 +3259,7 @@ app/assets/stylesheets/custom/README.txt
 app/assets/stylesheets/print.scss
 app/assets/stylesheets/addons/README.txt
 app/assets/stylesheets/zammad.scss
+app/assets/stylesheets/custom_knowledge_base_public/README.txt
 app/assets/builds/.keep
 app/assets/javascripts/ie11CustomProperties.min.js
 app/assets/javascripts/knowledge_base_public.js
@@ -11590,6 +11592,7 @@ spec/fixtures/files/smime/smime-sender-ca@example.com.key
 spec/fixtures/files/smime/issue_3727.key
 spec/fixtures/files/smime/alice@acme.corp+sign+encrypt.csr
 spec/fixtures/files/smime/smime-sender-ca@example.com.secret
+spec/fixtures/files/smime/wrong_mime_type.eml
 spec/fixtures/files/smime/alice@acme.corp+sign+encrypt+ec.csr
 spec/fixtures/files/smime/smime2@example.com.key
 spec/fixtures/files/smime/expiredsmime1@example.com.key

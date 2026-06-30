@@ -4737,6 +4737,7 @@ src/Core/Domain/Country/ValueObject/CountryId.php
 src/Core/Domain/Country/ValueObject/CountryIdInterface.php
 src/Core/Domain/Country/ValueObject/NoCountryId.php
 src/Core/Domain/Country/ValueObject/CountryZipCodeFormat.php
+src/Core/Domain/Country/ValueObject/CallPrefix.php
 src/Core/Domain/Country/CommandHandler/DeleteCountryHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/EditCountryHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/BulkToggleCountriesStatusHandlerInterface.php
@@ -11018,6 +11019,7 @@ tests/Unit/Core/Domain/Contact/Command/AddContactCommandTest.php
 tests/Unit/Core/Domain/Country/ZipCodePatternResolverTest.php
 tests/Unit/Core/Domain/Country/AddressFormat/AddressFormatFieldsProviderTest.php
 tests/Unit/Core/Domain/Country/AddressFormat/AddressFormatCheckerTest.php
+tests/Unit/Core/Domain/Country/ValueObject/CallPrefixTest.php
 tests/Unit/Core/Domain/Position/ValueObject/RowPositionTest.php
 tests/Unit/Core/Domain/CustomerService/ValueObject/CustomerThreadStatusTest.php
 tests/Unit/Core/Domain/CmsPageCategory/Command/EditCmsPageCategoryCommandTest.php

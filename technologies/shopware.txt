@@ -3832,6 +3832,7 @@ src/Core/Framework/Webhook/BusinessEventEncoder.php
 src/Core/Framework/Webhook/Webhook.php
 src/Core/Framework/Webhook/WebhookException.php
 src/Core/Framework/Webhook/Service/WebhookRequest.php
+src/Core/Framework/Webhook/Service/WebhookSigningSecretResolver.php
 src/Core/Framework/Webhook/Service/WebhookLoader.php
 src/Core/Framework/Webhook/Service/WebhookCleanup.php
 src/Core/Framework/Webhook/Service/WebhookHealthService.php
@@ -15099,6 +15100,7 @@ tests/integration/Core/Content/Category/SalesChannel/NavigationRouteTest.php
 tests/integration/Core/Content/Category/SalesChannel/fixtures/CategoryRouteInheritanceFixtures.php
 tests/integration/Core/Content/Category/DataAbstractionLayer/CategoryIndexerTest.php
 tests/integration/Core/Content/Category/DataAbstractionLayer/CategoryIndexerVersioningTest.php
+tests/integration/Core/Content/Category/DataAbstractionLayer/CategoryIndexerQueryAmplificationTest.php
 tests/integration/Core/Content/Category/DataAbstractionLayer/CategoryBreadcrumbUpdaterTest.php
 tests/integration/Core/Content/Category/Validation/EntryPointValidatorTest.php
 tests/integration/Core/Content/Category/Repository/CategoryRepositoryTest.php
@@ -15953,6 +15955,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoNativeTimeClassRuleTest.p
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/NoDropStatementInUpdateRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/AddColumnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoRouteOverrideInDecoratorsRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CoversAttributeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DomainExceptionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/McpToolResponseTraitRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PropertyNativeTypeRuleTest.php
@@ -16024,6 +16027,8 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerW
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/RouteScope/ControllerWithoutRouteAttribute.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAnyInvocationMatcherRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoExpectExceptionMessage/shopware-unit-test.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversAttributeRule/Unit/ConfiguredUnitFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversAttributeRule/Integration/IntegrationFixture.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/FluentSetterClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipEmptyReturn.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReturnSetterMethod/SkipArrayFilter.php
@@ -17200,6 +17205,7 @@ tests/unit/Core/Framework/Webhook/WebhookExceptionTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookManagerTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookCleanupTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookHealthServiceTest.php
+tests/unit/Core/Framework/Webhook/Service/WebhookSigningSecretResolverTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookDeliveryServiceTest.php
 tests/unit/Core/Framework/Webhook/Service/WebhookClientTest.php
 tests/unit/Core/Framework/Webhook/ScheduledTask/CleanupWebhookEventLogTaskHandlerTest.php

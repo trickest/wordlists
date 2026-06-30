@@ -108,13 +108,14 @@ resources/assets/js/signature_pad.js
 resources/assets/js/FileSaver.min.js
 resources/assets/js/bootstrap-table-reorder-columns.js
 resources/views/reports/unaccepted_assets.blade.php
+resources/views/reports/custom/asset.blade.php
+resources/views/reports/custom/component.blade.php
 resources/views/reports/audit.blade.php
 resources/views/reports/activity.blade.php
 resources/views/reports/asset.blade.php
 resources/views/reports/depreciation.blade.php
 resources/views/reports/index.blade.php
 resources/views/reports/maintenances.blade.php
-resources/views/reports/custom.blade.php
 resources/views/reports/accessories.blade.php
 resources/views/reports/licenses.blade.php
 resources/views/models/edit.blade.php
@@ -210,6 +211,7 @@ resources/views/blade/table/users.blade.php
 resources/views/blade/table/bulk-actions.blade.php
 resources/views/blade/table/index.blade.php
 resources/views/blade/table/assets.blade.php
+resources/views/blade/table/maintenances.blade.php
 resources/views/blade/table/bulk-models.blade.php
 resources/views/blade/table/locations.blade.php
 resources/views/blade/table/bulk-users.blade.php
@@ -423,6 +425,7 @@ resources/views/notifications.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/slack-settings-form.blade.php
 resources/views/livewire/importer.blade.php
+resources/views/livewire/report-template-select.blade.php
 resources/views/livewire/oauth-clients.blade.php
 resources/views/livewire/location-scope-check.blade.php
 resources/views/livewire/category-edit-form.blade.php
@@ -7000,6 +7003,7 @@ app/Livewire/PersonalAccessTokens.php
 app/Livewire/LocationScopeCheck.php
 app/Livewire/AdminPersonalAccessTokens.php
 app/Livewire/OauthClients.php
+app/Livewire/ReportTemplateSelect.php
 app/Livewire/SlackSettingsForm.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/Importer.php
@@ -7149,6 +7153,7 @@ app/Http/Controllers/ViewAssetsController.php
 app/Http/Controllers/Consumables/ConsumablesController.php
 app/Http/Controllers/Consumables/ConsumableCheckoutController.php
 app/Http/Controllers/CompaniesController.php
+app/Http/Controllers/Reports/CustomComponentReportController.php
 app/Http/Controllers/ReportsController.php
 app/Http/Controllers/QrCodeController.php
 app/Http/Controllers/AssetModelsController.php
@@ -7249,6 +7254,7 @@ app/Http/Requests/UploadFileRequest.php
 app/Http/Requests/StoreNotificationSettings.php
 app/Http/Requests/StoreLabelSettings.php
 app/Http/Requests/Request.php
+app/Http/Requests/CustomComponentReportRequest.php
 app/Http/Requests/SettingsLdapRequest.php
 app/Http/Requests/SetupUserRequest.php
 app/Http/Requests/SettingsSamlRequest.php
@@ -7349,6 +7355,7 @@ tests/Unit/Models/AssetOrphanedAssignmentTest.php
 tests/Unit/Models/ReportTemplates/ReportTemplateParsingValuesTest.php
 tests/Unit/Models/Company/CompanyTest.php
 tests/Unit/Models/Company/GetIdForCurrentUserTest.php
+tests/Unit/Models/UserTotalCostTest.php
 tests/Unit/Models/Labels/DefaultLabelTest.php
 tests/Unit/Models/Labels/FieldOptionTest.php
 tests/Unit/Models/UserPendingAcceptanceItemsTest.php
@@ -7616,6 +7623,7 @@ tests/Feature/Settings/ApiRequestFiltersTest.php
 tests/Feature/Livewire/ImporterTest.php
 tests/Feature/Livewire/PersonalAccessTokensTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
+tests/Feature/Livewire/ReportTemplateSelectTest.php
 tests/Feature/Suppliers/Api/DeleteSuppliersTest.php
 tests/Feature/Suppliers/Ui/CreateSupplierTest.php
 tests/Feature/Suppliers/Ui/UpdateSupplierTest.php
@@ -7692,7 +7700,8 @@ tests/Feature/Locations/Ui/ShowLocationTest.php
 tests/Feature/Reporting/SentReminderAuthorizationTest.php
 tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
 tests/Feature/Reporting/ActivityReportTest.php
-tests/Feature/Reporting/CustomReportTest.php
+tests/Feature/Reporting/Custom/CustomAssetReportTest.php
+tests/Feature/Reporting/Custom/CustomComponentReportTest.php
 tests/Feature/Reporting/AccessoryReportTest.php
 tests/Feature/Reporting/UnacceptedAssetReportTest.php
 tests/Feature/Maintenances/Api/MaintenanceTypesPaginationTest.php
@@ -8020,6 +8029,7 @@ database/migrations/2013_11_13_075347_create_manufacturers_table.php
 database/migrations/2015_02_19_222322_add_logo_and_colors_to_settings.php
 database/migrations/2025_10_07_113331_add_url_to_maintenances.php
 database/migrations/2014_06_20_004847_make_asset_log_checkedout_to_nullable.php
+database/migrations/2026_04_28_001156_add_type_column_to_report_templates_table.php
 database/migrations/2018_04_02_150700_labels_display_model_name.php
 database/migrations/2018_10_19_154013_add_kits_models_table.php
 database/migrations/2012_12_06_225988_migration_cartalyst_sentry_install_throttle.php

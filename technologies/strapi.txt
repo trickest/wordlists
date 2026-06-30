@@ -105,6 +105,7 @@ docs/docs/docs/01-core/content-releases/02-frontend/02-release-details-page.mdx
 docs/docs/docs/01-core/content-releases/02-frontend/01-releases-page.mdx
 docs/docs/docs/01-core/content-releases/03-scheduling.md
 docs/docs/docs/01-core/content-releases/_category_.json
+docs/docs/docs/01-core/configuration/01-security-defaults.md
 docs/docs/docs/01-core/configuration/00-intro.md
 docs/docs/docs/01-core/configuration/_category_.json
 docs/docs/docs/01-core/helper-plugin/_category_.json
@@ -1175,15 +1176,26 @@ packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/tests
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetPreview.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/DragOverlayChip.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/useAssetDnd.ts
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/tests/AssetsDndProvider.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/dndIds.ts
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/AssetsDndProvider.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/FolderTree.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/tests/FolderTree.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolderDialog.test.tsx
+packages/core/upload/admin/src/future/utils/getBulkMoveErrorMessage.ts
 packages/core/upload/admin/src/future/utils/getAssetIcon.ts
 packages/core/upload/admin/src/future/utils/translations.ts
+packages/core/upload/admin/src/future/utils/canDropItemOnFolder.ts
 packages/core/upload/admin/src/future/utils/createRafBatcher.ts
+packages/core/upload/admin/src/future/utils/buildBulkMovePayload.ts
 packages/core/upload/admin/src/future/utils/downloadFile.ts
 packages/core/upload/admin/src/future/utils/files.ts
+packages/core/upload/admin/src/future/utils/tests/canDropItemOnFolder.test.ts
+packages/core/upload/admin/src/future/utils/tests/getBulkMoveErrorMessage.test.ts
 packages/core/upload/admin/src/future/utils/tests/createRafBatcher.test.ts
+packages/core/upload/admin/src/future/utils/tests/buildBulkMovePayload.test.ts
 packages/core/upload/admin/src/future/services/folders.ts
 packages/core/upload/admin/src/future/services/uploadFileViaXHR.ts
 packages/core/upload/admin/src/future/services/settings.ts
@@ -1199,6 +1211,7 @@ packages/core/upload/admin/src/future/components/Drawer.tsx
 packages/core/upload/admin/src/future/components/UploadProgressDialog.tsx
 packages/core/upload/admin/src/future/components/tests/Drawer.test.tsx
 packages/core/upload/admin/src/future/components/tests/UploadProgressDialog.test.tsx
+packages/core/upload/admin/src/future/types/dnd.ts
 packages/core/upload/admin/src/translations/en.json
 packages/core/upload/admin/src/translations/tr.json
 packages/core/upload/admin/src/translations/uk.json
@@ -2177,6 +2190,7 @@ packages/core/admin/admin/src/components/FormInputs/Date.tsx
 packages/core/admin/admin/src/components/FormInputs/Email.tsx
 packages/core/admin/admin/src/components/FormInputs/Json.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Boolean.test.tsx
+packages/core/admin/admin/src/components/FormInputs/tests/Enumeration.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Time.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/HandleDateChange.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Renderer.test.tsx
@@ -5320,6 +5334,7 @@ tests/api/core/content-manager/content-manager/history/history.test.api.ts
 tests/api/core/content-manager/index.test.api.js
 tests/api/core/content-manager/homepage/admin-homepage.test.api.ts
 tests/api/core/content-manager/dynamiczones/simple.test.api.js
+tests/api/core/content-manager/dynamiczones/null-entry.test.api.js
 tests/api/core/content-manager/dynamiczones/with-media.test.api.js
 tests/api/core/content-manager/single-type.test.api.js
 tests/api/core/content-manager/preview/preview.test.api.ts
@@ -5408,6 +5423,7 @@ tests/api/core/strapi/document-service/validation/validation.test.api.ts
 tests/api/core/strapi/document-service/clone.test.api.ts
 tests/api/core/strapi/document-service/relations/invisible-relation-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/basic.test.api.ts
+tests/api/core/strapi/document-service/relations/non-localized-stale-locale.test.api.ts
 tests/api/core/strapi/document-service/relations/m2m-order-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/i18n.test.api.ts
 tests/api/core/strapi/document-service/relations/no-dp.test.api.ts
@@ -5637,6 +5653,7 @@ tests/e2e/tests/i18n/settings.spec.ts
 tests/e2e/tests/i18n/fill-from-locale.spec.ts
 tests/e2e/tests/media-library/cancel-deletion.spec.ts
 tests/e2e/tests/media-library/future/grid-view.spec.ts
+tests/e2e/tests/media-library/future/drag-drop-shallow.spec.ts
 tests/e2e/tests/media-library/future/asset-details.spec.ts
 tests/e2e/tests/media-library/future/folder-creation.spec.ts
 tests/e2e/tests/media-library/future/page-objects/AssetsPage.ts

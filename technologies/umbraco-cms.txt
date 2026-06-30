@@ -7601,6 +7601,9 @@ src/Umbraco.Web.UI.Client/src/packages/content/content/audit-log/info-app/conten
 src/Umbraco.Web.UI.Client/src/packages/content/content/audit-log/info-app/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/controller/merge-content-variant-data.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/controller/merge-content-variant-data.controller.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/content-published-pending-changes-manager-base.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/manager/index.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/manager/element-data-manager.test.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/manager/element-data-manager.ts
@@ -7726,9 +7729,11 @@ src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/data-type-detail.store.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/data-type-detail.repository.ts
+src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/data-type-detail.repository.test.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/server-data-source/data-type-detail.server.cache-invalidation.manager.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/server-data-source/data-type-detail.server.data-source.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/server-data-source/data-type-detail.server.cache.ts
+src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/server-data-source/data-type-detail.server.data-source.test.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/server-data-source/data-type-detail.server.request-manager.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/detail/data-type-detail.store.ts
 src/Umbraco.Web.UI.Client/src/packages/data-type/repository/manager/data-type-item-repository-manager.ts
@@ -12105,8 +12110,10 @@ src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/json-path.function.
 src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/query-mapper-json-paths.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/replace-start-of-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/data-path-property-value-query.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/data-path-variant-query.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/extract-json-query-properties.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/replace-start-of-path.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/validation/utils/data-path-property-value-query.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/mixins/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/mixins/form-control.mixin.ts
 src/Umbraco.Web.UI.Client/src/packages/core/validation/directives/bind-to-validation.lit-directive.ts
@@ -14153,10 +14160,12 @@ src/Umbraco.Web.UI.Client/src/packages/core/auth/models/openApiConfiguration.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/controllers/auth-session-timeout.controller.ts
+src/Umbraco.Web.UI.Client/src/packages/core/auth/controllers/auth-session-timeout.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/auth.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/umb-app-auth-modal.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/umb-auth-timeout-modal.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/umb-auth-timeout-modal.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/umb-app-auth-modal.token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/auth/modals/umb-auth-timeout-modal.token.ts
@@ -14680,9 +14689,11 @@ src/Umbraco.Web.UI.Client/src/packages/ufm/extensions/ufmjs-marked-extension.api
 src/Umbraco.Web.UI.Client/src/packages/ufm/extensions/ufm-marked-extension.api.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/package.json
 src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/index.ts
+src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/ufm-filter-alias.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/ufm.context.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/ufm.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/manifest.ts
+src/Umbraco.Web.UI.Client/src/packages/ufm/contexts/ufm-filter-alias.function.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/vite.config.ts
 src/Umbraco.Web.UI.Client/src/packages/ufm/types.ts
@@ -15918,6 +15929,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/Navigation/ContentNavigation
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentNavigationServiceBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/EntityServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/UserGroupServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/NavigationServiceMemoryReportingTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentTypeSchemaServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/OEmbedServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/BasicAuthServiceTests.cs
@@ -15967,6 +15979,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ColorPickerPropertyVa
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MultipleTextStringPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/IntegerPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ConvertersTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/PlainStringPropertyEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/TrueFalsePropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ValueConverters/DatePickerValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ValueConverters/DateOnlyValueConverterTests.cs
@@ -16407,6 +16420,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineDem
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineExternalIndexSearcherTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/TestFiles.resx
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/ApplicationBuilder/UseUmbracoBackOfficeCacheHeadersTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Web.Common/ApplicationBuilder/UseUmbracoHealthChecksTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/MembersServiceCollectionExtensionsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/Security/MemberManagerTests.cs
 tests/Umbraco.Tests.Integration/Testing/BaseTestDatabase.cs
@@ -16449,6 +16463,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCa
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheMockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaCacheServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheStaleSetRaceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheStaleSetRaceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentPropertyCacheLevelTests.cs
