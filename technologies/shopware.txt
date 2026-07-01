@@ -1805,6 +1805,7 @@ src/Core/Migration/V6_7/Migration1776770187AddDocumentFileTable.php
 src/Core/Migration/V6_7/Migration1763316536ChangeProductManufacturerLink.php
 src/Core/Migration/V6_7/Migration1774345867AddProductOpenGraphFields.php
 src/Core/Migration/V6_7/Migration1726135997CreateMessengerStatsTable.php
+src/Core/Migration/V6_7/Migration1775430000AddDisplayAsGroupToProductStream.php
 src/Core/Migration/V6_7/Migration1770903396AddRequirementsToServiceSourceConfig.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodFlows.php
 src/Core/Migration/V6_7/Migration1746176773AddIntegrationIdStateHistory.php
@@ -4976,6 +4977,7 @@ src/Core/Content/ProductExport/Subscriber/AgenticCommerceProductExportProviderCo
 src/Core/Content/ProductExport/ProductExportHydrator.php
 src/Core/Content/ProductStream/ProductStreamDefinition.php
 src/Core/Content/ProductStream/Event/ProductStreamIndexerEvent.php
+src/Core/Content/ProductStream/Service/AbstractProductStreamBuilder.php
 src/Core/Content/ProductStream/Service/ProductStreamBuilder.php
 src/Core/Content/ProductStream/Service/ProductStreamBuilderInterface.php
 src/Core/Content/ProductStream/Aggregate/ProductStreamFilter/ProductStreamFilterEntity.php
@@ -5663,6 +5665,7 @@ src/Core/Content/Seo/SeoUrlUpdater.php
 src/Core/Content/Seo/Event/SeoEvents.php
 src/Core/Content/Seo/Event/SeoUrlUpdateEvent.php
 src/Core/Content/Seo/HreflangLoaderInterface.php
+src/Core/Content/Seo/ResolvedSeoUrl.php
 src/Core/Content/Seo/HreflangLoader.php
 src/Core/Content/Seo/HreflangLoaderParameter.php
 src/Core/Content/Seo/SeoUrl/SeoUrlDefinition.php
@@ -5686,6 +5689,9 @@ src/Core/Content/Seo/EmptyPathInfoResolver.php
 src/Core/Content/Seo/Hreflang/HreflangStruct.php
 src/Core/Content/Seo/Hreflang/HreflangCollection.php
 src/Core/Content/Seo/AbstractSeoResolver.php
+src/Core/Content/Seo/Validation/Constraint/ValidSeoPathInfo.php
+src/Core/Content/Seo/Validation/Constraint/ValidSeoPathInfoValidator.php
+src/Core/Content/Seo/Validation/SeoUrlWriteValidator.php
 src/Core/Content/Seo/Validation/SeoUrlValidationFactory.php
 src/Core/Content/Seo/Validation/SeoUrlDataValidationFactoryInterface.php
 src/Core/Content/Seo/SeoUrlGenerator.php
@@ -5708,6 +5714,7 @@ src/Core/Content/Seo/MainCategory/MainCategoryEntity.php
 src/Core/Content/Seo/MainCategory/MainCategoryCollection.php
 src/Core/Content/Seo/MainCategory/SalesChannel/SalesChannelMainCategoryDefinition.php
 src/Core/Content/Seo/MainCategory/MainCategoryDefinition.php
+src/Core/Content/Seo/SeoUrlRequestContext.php
 src/Core/Content/Seo/SeoResolver.php
 src/Core/Content/Seo/SeoException.php
 src/Core/Content/RevocationRequest/Event/RevocationRequestEvent.php
@@ -14071,6 +14078,7 @@ tests/migration/Core/V6_7/Migration1742199552SalesChannelMeasurementUnitsTest.ph
 tests/migration/Core/V6_7/Migration1759390536CartConfigShowTosCheckboxTest.php
 tests/migration/Core/V6_7/Migration1777020096AppMcpToolRequiredPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1779440795AddMissingAdministrationReadPrivilegesTest.php
+tests/migration/Core/V6_7/Migration1775430000AddDisplayAsGroupToProductStreamTest.php
 tests/migration/Core/V6_7/Migration1771342632AddCorruptedMediaHandlerIndicesTest.php
 tests/migration/Core/V6_7/Migration1780325388AddMediaFolderCreatedAtIndexTest.php
 tests/migration/Core/V6_7/Migration1763125902AddOrderLineItemProductTypePayloadTest.php
@@ -17785,6 +17793,7 @@ tests/unit/Core/Content/ProductExport/Provider/AbstractAgenticCommerceProductExp
 tests/unit/Core/Content/ProductExport/Error/ProviderValidationErrorTest.php
 tests/unit/Core/Content/ProductExport/Error/JsonlValidationErrorTest.php
 tests/unit/Core/Content/ProductExport/Subscriber/AgenticCommerceProductExportProviderContextSubscriberTest.php
+tests/unit/Core/Content/ProductStream/Service/ProductStreamBuilderTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexerTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamWriteResultHelperTest.php
 tests/unit/Core/Content/MeasurementSystem/Unit/MeasurementUnitConverterTest.php
@@ -17991,13 +18000,20 @@ tests/unit/Core/Content/Product/Cart/ProductFeatureBuilderTest.php
 tests/unit/Core/Content/Seo/SeoUrlTwigFactoryTest.php
 tests/unit/Core/Content/Seo/SeoResolverTest.php
 tests/unit/Core/Content/Seo/Event/SeoUrlUpdateEventTest.php
+tests/unit/Core/Content/Seo/SeoUrlRequestContextTest.php
 tests/unit/Core/Content/Seo/SeoUrlPersisterTest.php
+tests/unit/Core/Content/Seo/EmptyPathInfoResolverTest.php
 tests/unit/Core/Content/Seo/SeoUrl/SalesChannel/SalesChannelSeoUrlDefinitionTest.php
 tests/unit/Core/Content/Seo/SeoUrlPlaceholderHandlerTest.php
 tests/unit/Core/Content/Seo/Exception/SeoUrlRouteConfigExceptionTest.php
 tests/unit/Core/Content/Seo/SalesChannel/SeoResolverDataTest.php
 tests/unit/Core/Content/Seo/SalesChannel/StoreApiSeoResolverTest.php
 tests/unit/Core/Content/Seo/SalesChannel/MockSeoUrlAwareExtension.php
+tests/unit/Core/Content/Seo/ResolvedSeoUrlTest.php
+tests/unit/Core/Content/Seo/AbstractSeoResolverTest.php
+tests/unit/Core/Content/Seo/Validation/Constraint/ValidSeoPathInfoTest.php
+tests/unit/Core/Content/Seo/Validation/Constraint/ValidSeoPathInfoValidatorTest.php
+tests/unit/Core/Content/Seo/Validation/SeoUrlWriteValidatorTest.php
 tests/unit/Core/Content/Seo/Validation/SeoUrlValidationFactoryTest.php
 tests/unit/Core/Content/Seo/SeoUrlGeneratorTest.php
 tests/unit/Core/Content/Seo/SeoExceptionTest.php

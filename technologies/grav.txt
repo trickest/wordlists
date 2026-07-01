@@ -143,9 +143,11 @@ system/src/Grav/Installer/Install.php
 system/src/Grav/Installer/VersionUpdate.php
 system/src/Grav/Installer/InstallException.php
 system/src/Grav/Installer/Versions.php
+system/src/Grav/Installer/updates/1.8.0_2026-06-30_1.php
 system/src/Grav/Installer/updates/1.8.0_2025-09-21_0.php
 system/src/Grav/Installer/updates/1.7.0_2020-11-20_1.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-26_0.php
+system/src/Grav/Installer/updates/1.8.0_2026-06-30_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-04-15_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-09_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-15_0.php
@@ -268,6 +270,7 @@ system/src/Grav/Common/Twig/Exception/TwigException.php
 system/src/Grav/Common/Twig/TwigClockworkDataSource.php
 system/src/Grav/Common/Twig/Extension/GravExtension.php
 system/src/Grav/Common/Twig/Extension/FilesystemExtension.php
+system/src/Grav/Common/Twig/Cache/ResilientFilesystemCache.php
 system/src/Grav/Common/Twig/TwigExtension.php
 system/src/Grav/Common/Twig/WriteCacheFileTrait.php
 system/src/Grav/Common/Twig/TwigEnvironment.php
@@ -760,6 +763,8 @@ tests/fake/simple-site/user/pages/04.page-translated/default.fr.md
 tests/fake/simple-site/user/pages/04.page-translated/default.en.md
 tests/fake/simple-site/user/pages/05.translatedlong/part2/default.fr.md
 tests/fake/simple-site/user/pages/05.translatedlong/part2/default.en.md
+tests/fake/simple-site/user/pages/06.localized-slug/default.fr.md
+tests/fake/simple-site/user/pages/06.localized-slug/default.en.md
 tests/unit/_bootstrap.php
 tests/unit/Grav/Installer/InstallCompatibilityTest.php
 tests/unit/Grav/Common/UriTest.php
