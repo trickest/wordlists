@@ -6821,6 +6821,7 @@ app/Rules/ValidJson.php
 app/Rules/RegexEncrypted.php
 app/Rules/IPv4Encrypted.php
 app/Rules/BooleanEncrypted.php
+app/Rules/ExternalUrl.php
 app/Rules/IPv6Encrypted.php
 app/Rules/CssColor.php
 app/Helpers/IconHelper.php
@@ -6928,6 +6929,7 @@ app/Models/Labels/Tapes/Generic/GenericTape.php
 app/Models/Labels/Tapes/Generic/Continuous_Landscape_0_59in.php
 app/Models/Labels/Tapes/Dymo/LabelWriter.php
 app/Models/Labels/Tapes/Dymo/LabelWriter_2112283.php
+app/Models/Labels/Tapes/Dymo/LabelWriter_2112284.php
 app/Models/Labels/Tapes/Dymo/LabelWriter_11354.php
 app/Models/Labels/Tapes/Dymo/LabelWriter_1933081.php
 app/Models/Labels/Tapes/Dymo/LabelWriter_30252.php
@@ -7015,6 +7017,7 @@ app/Actions/Categories/DestroyCategoryAction.php
 app/Actions/Manufacturers/DeleteManufacturerAction.php
 app/Actions/Breadcrumbs/BuildAcceptanceBreadcrumbs.php
 app/Actions/Suppliers/DestroySupplierAction.php
+app/Actions/Acceptances/CreateCheckoutAcceptanceAction.php
 app/Jobs/Job.php
 app/Events/CheckoutableCheckedIn.php
 app/Events/CheckoutablesCheckedOutInBulk.php
@@ -7346,6 +7349,7 @@ tests/Unit/Mail/CheckoutAssetMailTest.php
 tests/Unit/DepreciationTest.php
 tests/Unit/AssetTest.php
 tests/Unit/Rules/CssColorTest.php
+tests/Unit/Rules/ExternalUrlTest.php
 tests/Unit/Helpers/HelperTest.php
 tests/Unit/Importer/AssetImportTest.php
 tests/Unit/CustomFieldTest.php
@@ -7377,6 +7381,7 @@ tests/Unit/UserTest.php
 tests/Unit/MaintenanceTest.php
 tests/Unit/Actions/Permissions/PreserveUnauthorizedPrivilegedPermissionsActionTest.php
 tests/Unit/Actions/Permissions/NormalizePermissionsPayloadActionTest.php
+tests/Unit/Actions/Acceptances/CreateCheckoutAcceptanceActionTest.php
 tests/Unit/Labels/LabelTest.php
 tests/Unit/LdapTest.php
 tests/Unit/NotificationTest.php
@@ -7424,6 +7429,7 @@ tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
+tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
@@ -7565,6 +7571,7 @@ tests/Feature/Assets/Api/AuditAssetTest.php
 tests/Feature/Assets/Api/AssetNotesTest.php
 tests/Feature/Assets/Api/AssetHistoryTest.php
 tests/Feature/Assets/Api/AssignedAssetsTest.php
+tests/Feature/Assets/Api/UploadedFilesInlineTest.php
 tests/Feature/Assets/Api/AssetFilesTest.php
 tests/Feature/Assets/Api/StoreAssetTest.php
 tests/Feature/Assets/Api/RequestableAssetTest.php
@@ -7889,6 +7896,7 @@ database/migrations/2014_11_20_203007_add_username_to_user.php
 database/migrations/2016_03_11_185621_add_label_settings_to_settings.php
 database/migrations/2013_11_21_024531_remove_deployable_boolean_from_status_labels.php
 database/migrations/2016_12_27_212631_make_asset_assigned_to_polymorphic.php
+database/migrations/2026_07_01_000001_clear_unsafe_webhook_endpoints.php
 database/migrations/2022_03_10_175740_add_eula_to_action_logs.php
 database/migrations/2017_07_07_191533_add_login_text.php
 database/migrations/2024_10_31_212512_update_new_and_drop_old_barcode_settings.php

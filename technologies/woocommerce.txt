@@ -62,6 +62,14 @@ docs/extensions/settings-and-config/email-editor-integration.md
 docs/extensions/settings-and-config/registering-settings-ui-components.md
 docs/extensions/settings-and-config/using-custom-attributes-in-menus.md
 docs/extensions/settings-and-config/settings-api.md
+docs/extensions/review-guidelines/responding-to-negative-reviews.md
+docs/extensions/review-guidelines/when-to-request-reviews.md
+docs/extensions/review-guidelines/utilizing-your-support-team.md
+docs/extensions/review-guidelines/misc-guidelines.md
+docs/extensions/review-guidelines/utilizing-feature-requests.md
+docs/extensions/review-guidelines/notifying-users-about-important-events.md
+docs/extensions/review-guidelines/README.md
+docs/extensions/review-guidelines/how-to-request-reviews.md
 docs/extensions/core-concepts/class-reference.md
 docs/extensions/core-concepts/handling-deactivation-and-uninstallation.md
 docs/extensions/core-concepts/example-header-plugin-comment.md
@@ -223,14 +231,6 @@ docs/best-practices/data-management/_category_.json
 docs/best-practices/security/prevent-data-leaks.md
 docs/best-practices/security/security-best-practices.md
 docs/best-practices/security/_category_.json
-docs/best-practices/review-guidelines/responding-to-negative-reviews.md
-docs/best-practices/review-guidelines/when-to-request-reviews.md
-docs/best-practices/review-guidelines/utilizing-your-support-team.md
-docs/best-practices/review-guidelines/misc-guidelines.md
-docs/best-practices/review-guidelines/utilizing-feature-requests.md
-docs/best-practices/review-guidelines/notifying-users-about-important-events.md
-docs/best-practices/review-guidelines/README.md
-docs/best-practices/review-guidelines/how-to-request-reviews.md
 docs/best-practices/_category_.json
 docs/best-practices/performance/performance-best-practices.md
 docs/best-practices/performance/configuring-caching-plugins.md
@@ -5019,6 +5019,7 @@ plugins/woocommerce/src/Internal/ProductFeed/Feed/WalkerProgress.php
 plugins/woocommerce/src/Internal/ProductFeed/Feed/ProductWalker.php
 plugins/woocommerce/src/Internal/ProductFeed/Feed/ProductLoader.php
 plugins/woocommerce/src/Internal/ProductFeed/Feed/FeedValidatorInterface.php
+plugins/woocommerce/src/Internal/ProductFeed/Feed/ResumableFeedInterface.php
 plugins/woocommerce/src/Internal/ProductFeed/Storage/JsonFileFeed.php
 plugins/woocommerce/src/Internal/ProductFeed/Integrations/POSCatalog/POSIntegration.php
 plugins/woocommerce/src/Internal/ProductFeed/Integrations/POSCatalog/ApiController.php
@@ -9107,6 +9108,7 @@ plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/w
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/business-details-flow.test.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/embedded-kyc.test.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/embedded-account-onboarding.test.tsx
+plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/test/actions.test.ts
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/business-verification/translations/descriptions.tsx
@@ -11340,6 +11342,7 @@ plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/icon.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/block-settings/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/legacy-jquery-form.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/frontend.ts
+plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/editor.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-thumbnails/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-thumbnails/icon.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-thumbnails/block-settings/index.tsx
@@ -11738,8 +11741,6 @@ plugins/woocommerce/client/blocks/assets/js/editor-components/error-placeholder/
 plugins/woocommerce/client/blocks/assets/js/editor-components/error-placeholder/error-message.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/default-notice/index.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/default-notice/editor.scss
-plugins/woocommerce/client/blocks/assets/js/editor-components/ces-feedback-button/index.tsx
-plugins/woocommerce/client/blocks/assets/js/editor-components/ces-feedback-button/feedback-icon.tsx
 plugins/woocommerce/client/blocks/assets/js/editor-components/text-toolbar-button/style.scss
 plugins/woocommerce/client/blocks/assets/js/editor-components/text-toolbar-button/index.js
 plugins/woocommerce/client/blocks/assets/js/editor-components/text-toolbar-button/README.md
@@ -12876,6 +12877,8 @@ plugins/woocommerce/changelog/testops-181-coupon-e2e-downgrade-move-discount-ari
 plugins/woocommerce/changelog/fix-email-preview-downloadable-items
 plugins/woocommerce/changelog/qao-404-blocks-e2e-specs-core-isolation-guard
 plugins/woocommerce/changelog/65544-65104-stale-user-meta
+plugins/woocommerce/changelog/fix-30612-stock-reservation-default
+plugins/woocommerce/changelog/66148-fix-billing-address-response-checkout-block
 plugins/woocommerce/changelog/pcb-201-harden-cart-item-product-guards
 plugins/woocommerce/changelog/65701-add-wc-cli-debug-group
 plugins/woocommerce/changelog/63517-fix-duplicate-scheduled-sale-events
@@ -12897,6 +12900,7 @@ plugins/woocommerce/changelog/fix-39289
 plugins/woocommerce/changelog/fix-simplify-compatibility-layer-checks
 plugins/woocommerce/changelog/fix-order-admin-color-contrast
 plugins/woocommerce/changelog/add-tax-display-mode-enum
+plugins/woocommerce/changelog/64564-sprinkle-order-edit-wp7-alignment
 plugins/woocommerce/changelog/add-65454-list-failed-order-imports
 plugins/woocommerce/changelog/wooplug-6866-fix-backslash-agentic-checkout
 plugins/woocommerce/changelog/add-shopper-lists-privacy-exporter-eraser
@@ -12904,6 +12908,7 @@ plugins/woocommerce/changelog/fix-non-persistable-preview-state-products-collect
 plugins/woocommerce/changelog/performance-tax-rates-sqls-number
 plugins/woocommerce/changelog/65417-fix-storeapi-create-order-default-order-status-filter-leak
 plugins/woocommerce/changelog/woomob-2683-remove-pos-feature-flag
+plugins/woocommerce/changelog/fix-66046-add-to-cart-with-options-unit-tests-to-e2e
 plugins/woocommerce/changelog/65749-fix-blocks-build-warnings
 plugins/woocommerce/changelog/update-product-filter-status-availability
 plugins/woocommerce/changelog/65389-dev-product-shape-mapper-interface
@@ -12912,6 +12917,7 @@ plugins/woocommerce/changelog/codex-remove-create-product-editor-block
 plugins/woocommerce/changelog/fix-e2e-helper-plugin-mounts
 plugins/woocommerce/changelog/65879-40653-country-code
 plugins/woocommerce/changelog/remove-coming-soon-newsletter-template-flag
+plugins/woocommerce/changelog/fix-woopayments-optional-business-structure
 plugins/woocommerce/changelog/remove-block-templates-package
 plugins/woocommerce/changelog/fix-63757-variation-custom-order
 plugins/woocommerce/changelog/add-admin-email-verified-field
@@ -12924,6 +12930,7 @@ plugins/woocommerce/changelog/fix-wooplug-104-sales-report-refunds
 plugins/woocommerce/changelog/add-pos-staff-foundation
 plugins/woocommerce/changelog/fix-e2e-core-parallel-customer-order-flakiness
 plugins/woocommerce/changelog/62695-remove-nvm-from-blocks-build-notice
+plugins/woocommerce/changelog/fix-email-send-notification-bool-typeerror
 plugins/woocommerce/changelog/add-orders-screen-marketplace-promo
 plugins/woocommerce/changelog/65867-customer-history-cpt-order
 plugins/woocommerce/changelog/fix-drawer-overlay-color
@@ -12940,8 +12947,10 @@ plugins/woocommerce/changelog/perf-lazy-block-patterns
 plugins/woocommerce/changelog/fix-65378-sku-duplication-hyphen
 plugins/woocommerce/changelog/qao-405-blocks-e2e-non-module-assets
 plugins/woocommerce/changelog/update-tell-agents-not-to-write-jquery
+plugins/woocommerce/changelog/update-product-filter-copy
 plugins/woocommerce/changelog/fix-has-block-in-page-recursive-search
 plugins/woocommerce/changelog/fix-shop-page-permalink-rewrite
+plugins/woocommerce/changelog/wooprd-3555-settings-container-radius
 plugins/woocommerce/changelog/remove-redundant-basic-e2e-spec
 plugins/woocommerce/changelog/fix-product-description-editor-alignment
 plugins/woocommerce/changelog/enable-product-object-caching-new-installs
@@ -13004,6 +13013,7 @@ plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
 plugins/woocommerce/changelog/fix-65618
 plugins/woocommerce/changelog/performance-features-and-gateways-options-priming
 plugins/woocommerce/changelog/remove-brands-beta-product-editor
+plugins/woocommerce/changelog/update-product-publish-panel-catalog-visibility
 plugins/woocommerce/changelog/abandoned-cart-recovery-email
 plugins/woocommerce/changelog/dev-65710-stricter-types-control-in-tax-class
 plugins/woocommerce/changelog/testops-185-restricted-coupon-e2e-downgrade
@@ -13011,6 +13021,8 @@ plugins/woocommerce/changelog/fix-get-variation-parent-visibility
 plugins/woocommerce/changelog/dev-actions-scheduler-api-usage-audit
 plugins/woocommerce/changelog/fix-storeapi-order-auth-refund-guard
 plugins/woocommerce/changelog/qao-403-blocks-e2e-leaf-utils-content-templates
+plugins/woocommerce/changelog/65614-site-visibility-badge-toggle
+plugins/woocommerce/changelog/performance-slow-sql-on-admin-products-page
 plugins/woocommerce/changelog/performance-centralize-wp_count_posts-invocation
 plugins/woocommerce/changelog/65591-fix-rest-batch-transient-coalescing
 plugins/woocommerce/changelog/site-health-admin-notice-migration
@@ -13019,10 +13031,13 @@ plugins/woocommerce/changelog/update-wordpress-package-catalog-wp-6-9
 plugins/woocommerce/changelog/testops-189-product-reviews-delete-flake
 plugins/woocommerce/changelog/remove-render_block_with_context_util
 plugins/woocommerce/changelog/fix-65094-grouped-product-a11y
+plugins/woocommerce/changelog/performance-product-collection-inspector-import
 plugins/woocommerce/changelog/61900-update-offline-payment-forms-dataform
+plugins/woocommerce/changelog/codex-hide-gallery-arrows-single-image
 plugins/woocommerce/changelog/fix-flaky-non-utc-refund-report-test
 plugins/woocommerce/changelog/improve-woocommerce-analytics-settings-label
 plugins/woocommerce/changelog/codex-fix-65992-non-null-assertions
+plugins/woocommerce/changelog/65860-feature-pos-catalog-chunked-generation
 plugins/woocommerce/changelog/wooplug-6831-cart-rowheader-grid-aria
 plugins/woocommerce/changelog/65334-woomob-2684-refund-preview-helpers
 plugins/woocommerce/changelog/fix-64009-get-images-signature-bc
@@ -13032,6 +13047,7 @@ plugins/woocommerce/changelog/fix-hardcoded-wp-content-paths
 plugins/woocommerce/changelog/61018-cart-short-desc-format
 plugins/woocommerce/changelog/wooplug-6880-pending-cancelled-admin-email
 plugins/woocommerce/changelog/sprinkle-orders-empty-state
+plugins/woocommerce/changelog/65725-56586-variation-cart
 plugins/woocommerce/changelog/add-filter-for-variable-product-taxes-influence-price
 plugins/woocommerce/changelog/add-customer-email-verification-order-linking
 plugins/woocommerce/changelog/fix-39366
@@ -13039,6 +13055,7 @@ plugins/woocommerce/changelog/add-product-filters-disable-responsive
 plugins/woocommerce/changelog/63967-fix-order-totals-mobile-width
 plugins/woocommerce/changelog/fix-block-templates-compat
 plugins/woocommerce/changelog/49120-remove-async-product-editor-category-field
+plugins/woocommerce/changelog/fix-log-cleanup-20-file-cap
 plugins/woocommerce/changelog/add-dimension-unit-enum
 plugins/woocommerce/changelog/32831-fix-regenerate-attributes-lookup-table-via-rest-api
 plugins/woocommerce/changelog/fix-store-api-checkout-order-address-validation

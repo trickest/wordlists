@@ -4732,6 +4732,7 @@ src/Core/Domain/Country/Command/AddCountryCommand.php
 src/Core/Domain/Country/Command/ToggleCountryStatusCommand.php
 src/Core/Domain/Country/Command/BulkUpdateCountryZoneCommand.php
 src/Core/Domain/Country/Command/BulkToggleCountriesStatusCommand.php
+src/Core/Domain/Country/Command/BulkDeleteCountriesCommand.php
 src/Core/Domain/Country/Command/EditCountryCommand.php
 src/Core/Domain/Country/ValueObject/CountryId.php
 src/Core/Domain/Country/ValueObject/CountryIdInterface.php
@@ -4744,6 +4745,7 @@ src/Core/Domain/Country/CommandHandler/BulkToggleCountriesStatusHandlerInterface
 src/Core/Domain/Country/CommandHandler/ToggleCountryStatusHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/BulkUpdateCountryZoneHandlerInterface.php
 src/Core/Domain/Country/CommandHandler/AddCountryHandlerInterface.php
+src/Core/Domain/Country/CommandHandler/BulkDeleteCountriesHandlerInterface.php
 src/Core/Domain/Position/Exception/PositionConstraintException.php
 src/Core/Domain/Position/ValueObject/RowPosition.php
 src/Core/Domain/Tag/QueryHandler/GetTagForEditingHandlerInterface.php
@@ -8814,6 +8816,7 @@ src/Adapter/Country/CountryRequiredFieldsProvider.php
 src/Adapter/Country/Validate/CountryValidator.php
 src/Adapter/Country/CommandHandler/BulkToggleCountriesStatusHandler.php
 src/Adapter/Country/CommandHandler/BulkUpdateCountryZoneHandler.php
+src/Adapter/Country/CommandHandler/BulkDeleteCountriesHandler.php
 src/Adapter/Country/CommandHandler/ToggleCountryStatusHandler.php
 src/Adapter/Country/CommandHandler/DeleteCountryHandler.php
 src/Adapter/Country/CommandHandler/EditCountryHandler.php
@@ -12465,6 +12468,7 @@ tests/Integration/Behaviour/Features/Scenario/Country/country_management.feature
 tests/Integration/Behaviour/Features/Scenario/Country/bulk_update_country_zone.feature
 tests/Integration/Behaviour/Features/Scenario/Country/bulk_toggle_countries_status.feature
 tests/Integration/Behaviour/Features/Scenario/Country/toggle_country_status.feature
+tests/Integration/Behaviour/Features/Scenario/Country/bulk_delete_countries.feature
 tests/Integration/Behaviour/Features/Scenario/Tag/tag_management.feature
 tests/Integration/Behaviour/Features/Scenario/State/state_management.feature
 tests/Integration/Behaviour/Features/Scenario/CustomerService/customer_service.feature

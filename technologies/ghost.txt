@@ -1873,6 +1873,7 @@ apps/posts/test/unit/utils/gift-link.test.ts
 apps/posts/test/unit/hooks/create-remote-value-source.test.tsx
 apps/posts/test/unit/hooks/with-feature-flag.test.tsx
 apps/posts/test/unit/hooks/use-tier-value-source.test.tsx
+apps/posts/test/unit/hooks/use-gift-link-usage.test.tsx
 apps/posts/test/unit/hooks/create-combined-value-source.test.tsx
 apps/posts/test/unit/hooks/use-post-success-modal.test.tsx
 apps/posts/test/unit/hooks/create-hybrid-value-source.test.tsx
@@ -2237,6 +2238,7 @@ e2e/tests/public/member-signup-types.test.ts
 e2e/tests/public/comments-permissions.test.ts
 e2e/tests/public/comment-replies.test.ts
 e2e/tests/public/stripe-subscription-mutations.test.ts
+e2e/Dockerfile.runner
 e2e/README.md
 e2e/data-factory/index.ts
 e2e/data-factory/setup.ts
@@ -4076,7 +4078,6 @@ ghost/core/test/utils/fixtures/config/env/config.testing.json
 ghost/core/test/utils/fixtures/config/env/config.testing-mysql.json
 ghost/core/test/utils/fixtures/config/env/config.development.json
 ghost/core/test/utils/fixtures/context.js
-ghost/core/test/utils/fixtures/cache-rules.js
 ghost/core/test/utils/fixtures/data-generator.js
 ghost/core/test/utils/fixtures/images/svgz-with-unsafe-script.svgz
 ghost/core/test/utils/fixtures/images/ghost-logo.pngx
@@ -4101,6 +4102,7 @@ ghost/core/test/utils/fixtures/media/sample.ogg
 ghost/core/test/utils/fixtures/media/sample_640x360.mp4
 ghost/core/test/utils/fixtures/media/sample.m4a
 ghost/core/test/utils/fixtures/media/sample_640x360.webm
+ghost/core/test/utils/fixtures/cache-rules.ts
 ghost/core/test/utils/fixtures/export/body-generator.js
 ghost/core/test/utils/fixtures/export/v4_export.json
 ghost/core/test/utils/fixtures/export/valid.json
@@ -5023,6 +5025,7 @@ ghost/core/test/unit/frontend/helpers/raw.test.js
 ghost/core/test/unit/frontend/helpers/meta-title.test.js
 ghost/core/test/unit/frontend/helpers/plural.test.js
 ghost/core/test/unit/frontend/helpers/tiers.test.js
+ghost/core/test/unit/frontend/helpers/ghost-head-jsonld-escaping.test.js
 ghost/core/test/unit/frontend/helpers/pagination.test.js
 ghost/core/test/unit/frontend/helpers/excerpt.test.js
 ghost/core/test/unit/frontend/helpers/contrast-text-color.test.js
@@ -5579,10 +5582,10 @@ ghost/core/core/server/services/explore-ping/explore-ping-service.js
 ghost/core/core/server/services/explore-ping/index.js
 ghost/core/core/server/services/verification-trigger.js
 ghost/core/core/server/services/automations/automations-api.ts
-ghost/core/core/server/services/automations/service.js
 ghost/core/core/server/services/automations/poll.ts
 ghost/core/core/server/services/automations/fake-wait-hours-multiplier.ts
 ghost/core/core/server/services/automations/constants.ts
+ghost/core/core/server/services/automations/service.ts
 ghost/core/core/server/services/automations/database-automations-repository.ts
 ghost/core/core/server/services/automations/index.js
 ghost/core/core/server/services/automations/automations-repository.ts
@@ -5982,6 +5985,7 @@ ghost/core/core/server/data/exporter/index.js
 ghost/core/core/server/data/exporter/table-lists.js
 ghost/core/core/server/data/tinybird/endpoints/api_monitoring_ingestion.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_monitoring_ingestion_aggregated.pipe
+ghost/core/core/server/data/tinybird/endpoints/api_gift_link_visits.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_top_locations.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_top_utm_campaigns_v2.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_top_utm_terms.pipe
@@ -6054,6 +6058,7 @@ ghost/core/core/server/data/tinybird/tests/api_post_visitor_counts.yaml
 ghost/core/core/server/data/tinybird/tests/api_top_utm_contents.yaml
 ghost/core/core/server/data/tinybird/tests/api_top_utm_terms_v2.yaml
 ghost/core/core/server/data/tinybird/tests/api_top_utm_mediums_v2.yaml
+ghost/core/core/server/data/tinybird/tests/api_gift_link_visits.yaml
 ghost/core/core/server/data/tinybird/tests/api_post_visitor_counts_v2.yaml
 ghost/core/core/server/data/tinybird/tests/api_top_utm_sources.yaml
 ghost/core/core/server/data/tinybird/README.md
