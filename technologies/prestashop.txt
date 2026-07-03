@@ -3991,6 +3991,7 @@ src/Core/Translation/Storage/Provider/Finder/DefaultCatalogueFinder.php
 src/Core/Translation/Storage/Provider/CoreCatalogueLayersProvider.php
 src/Core/Translation/Storage/Provider/ModuleCatalogueProviderFactory.php
 src/Core/Translation/Storage/Provider/ModuleCatalogueLayersProvider.php
+src/Core/Translation/Storage/Provider/CatalogueDomainConverter.php
 src/Core/Translation/Storage/Provider/Definition/AbstractCoreProviderDefinition.php
 src/Core/Translation/Storage/Provider/Definition/BackofficeProviderDefinition.php
 src/Core/Translation/Storage/Provider/Definition/ModulesProviderDefinition.php
@@ -4006,6 +4007,7 @@ src/Core/Translation/Storage/Provider/Definition/ThemeProviderDefinition.php
 src/Core/Translation/Storage/Provider/ThemeCatalogueLayersProvider.php
 src/Core/Translation/Storage/Provider/CatalogueProviderFactory.php
 src/Core/Translation/Storage/Extractor/LegacyModuleExtractorInterface.php
+src/Core/Translation/Storage/Extractor/ExtraPropertyTranslationExtractor.php
 src/Core/Translation/Storage/Extractor/LegacyModuleExtractor.php
 src/Core/Translation/Storage/Extractor/ThemeExtractor.php
 src/Core/Translation/Builder/TranslationCatalogueBuilder.php
@@ -6901,6 +6903,7 @@ src/PrestaShopBundle/Translation/Loader/LegacyTranslationKey.php
 src/PrestaShopBundle/Translation/Loader/DatabaseTranslationLoader.php
 src/PrestaShopBundle/Translation/Loader/LegacyFileLoader.php
 src/PrestaShopBundle/Translation/Loader/SqlTranslationLoader.php
+src/PrestaShopBundle/Translation/Loader/ExtraPropertyTranslationLoader.php
 src/PrestaShopBundle/Translation/Loader/LegacyFileReader.php
 src/PrestaShopBundle/Translation/Translator.php
 src/PrestaShopBundle/Translation/Factory/ThemeTranslationsFactory.php
@@ -10863,11 +10866,13 @@ tests/Unit/Core/CommandBus/MessengerCommandBusTest.php
 tests/Unit/Core/CommandBus/Parser/CommandDefinitionTest.php
 tests/Unit/Core/CommandBus/Parser/CommandDefinitionParserTest.php
 tests/Unit/Core/Exception/ExceptionBuilderTest.php
+tests/Unit/Core/Translation/Storage/Provider/CatalogueDomainConverterTest.php
 tests/Unit/Core/Translation/Storage/Provider/Finder/UserTranslatedCatalogueFinderTest.php
 tests/Unit/Core/Translation/Storage/Provider/Finder/FileTranslatedCatalogueFinderTest.php
 tests/Unit/Core/Translation/Storage/Provider/Finder/DefaultCatalogueFinderTest.php
 tests/Unit/Core/Translation/Storage/Provider/Definition/ProviderDefinitionFactoryTest.php
 tests/Unit/Core/Translation/Storage/Provider/CatalogueProviderFactoryTest.php
+tests/Unit/Core/Translation/Storage/Extractor/ExtraPropertyTranslationExtractorTest.php
 tests/Unit/Core/Translation/Resources/fr-FR/AdminCatalogFeature.fr-FR.xlf
 tests/Unit/Core/Translation/Resources/fr-FR/AdminActions.fr-FR.xlf
 tests/Unit/Core/Translation/Resources/fr-FR/AdminDashboardFeature.fr-FR.xlf
@@ -11164,6 +11169,7 @@ tests/Unit/PrestaShopBundle/Entity/AdminFilterTest.php
 tests/Unit/PrestaShopBundle/Entity/Repository/LangRepositoryTest.php
 tests/Unit/PrestaShopBundle/Entity/FeatureFlagTest.php
 tests/Unit/PrestaShopBundle/Translation/Loader/LegacyFileLoaderTest.php
+tests/Unit/PrestaShopBundle/Translation/Loader/ExtraPropertyTranslationLoaderTest.php
 tests/Unit/PrestaShopBundle/Translation/Loader/LegacyTranslationKeyTest.php
 tests/Unit/PrestaShopBundle/Translation/Factory/ThemeTranslationsFactoryTest.php
 tests/Unit/PrestaShopBundle/Translation/Factory/TranslationsFactoryTest.php
@@ -12324,6 +12330,7 @@ tests/Integration/ApiPlatform/AdminAPIFeatureListenerTest.php
 tests/Integration/PrestaShopBundle/EventListener/Admin/AccessDeniedListenerTest.php
 tests/Integration/PrestaShopBundle/EventListener/MultishopCommandListenerTest.php
 tests/Integration/PrestaShopBundle/Entity/Repository/LangRepositoryTest.php
+tests/Integration/PrestaShopBundle/Translation/TranslatorLanguageLoaderTest.php
 tests/Integration/PrestaShopBundle/Translation/Loader/LegacyFileLoaderTest.php
 tests/Integration/PrestaShopBundle/Translation/Provider/ModuleProviderTest.php
 tests/Integration/PrestaShopBundle/Translation/Provider/ThemeProviderTest.php

@@ -1254,6 +1254,7 @@ erpnext/accounts/general_ledger.py
 erpnext/accounts/README.md
 erpnext/accounts/report/custom_financial_statement/custom_financial_statement.py
 erpnext/accounts/report/custom_financial_statement/custom_financial_statement.json
+erpnext/accounts/report/custom_financial_statement/test_custom_financial_statement.py
 erpnext/accounts/report/custom_financial_statement/custom_financial_statement.js
 erpnext/accounts/report/custom_financial_statement/__init__.py
 erpnext/accounts/report/consolidated_trial_balance/consolidated_trial_balance.js
@@ -1272,6 +1273,7 @@ erpnext/accounts/report/consolidated_financial_statement/consolidated_financial_
 erpnext/accounts/report/consolidated_financial_statement/test_consolidated_financial_statement.py
 erpnext/accounts/report/consolidated_financial_statement/consolidated_financial_statement.json
 erpnext/accounts/report/consolidated_financial_statement/__init__.py
+erpnext/accounts/report/dimension_wise_accounts_balance_report/test_dimension_wise_accounts_balance_report.py
 erpnext/accounts/report/dimension_wise_accounts_balance_report/dimension_wise_accounts_balance_report.js
 erpnext/accounts/report/dimension_wise_accounts_balance_report/dimension_wise_accounts_balance_report.py
 erpnext/accounts/report/dimension_wise_accounts_balance_report/__init__.py
@@ -1388,6 +1390,7 @@ erpnext/accounts/report/item_wise_sales_register/item_wise_sales_register.py
 erpnext/accounts/report/item_wise_sales_register/item_wise_sales_register.js
 erpnext/accounts/report/item_wise_sales_register/__init__.py
 erpnext/accounts/report/accounts_payable_summary/accounts_payable_summary.js
+erpnext/accounts/report/accounts_payable_summary/test_accounts_payable_summary.py
 erpnext/accounts/report/accounts_payable_summary/accounts_payable_summary.py
 erpnext/accounts/report/accounts_payable_summary/accounts_payable_summary.json
 erpnext/accounts/report/accounts_payable_summary/accounts_payable_summary.html
@@ -1693,6 +1696,7 @@ erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.json
 erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.js
 erpnext/projects/report/daily_timesheet_summary/__init__.py
 erpnext/projects/report/timesheet_billing_summary/timesheet_billing_summary.js
+erpnext/projects/report/timesheet_billing_summary/test_timesheet_billing_summary.py
 erpnext/projects/report/timesheet_billing_summary/timesheet_billing_summary.json
 erpnext/projects/report/timesheet_billing_summary/timesheet_billing_summary.py
 erpnext/projects/report/timesheet_billing_summary/__init__.py
@@ -1703,6 +1707,7 @@ erpnext/projects/report/delayed_tasks_summary/test_delayed_tasks_summary.py
 erpnext/projects/report/delayed_tasks_summary/__init__.py
 erpnext/projects/report/project_summary/project_summary.json
 erpnext/projects/report/project_summary/project_summary.js
+erpnext/projects/report/project_summary/test_project_summary.py
 erpnext/projects/report/project_summary/project_summary.py
 erpnext/projects/report/project_summary/__init__.py
 erpnext/projects/report/project_wise_stock_tracking/test_project_wise_stock_tracking.py
@@ -2275,6 +2280,7 @@ erpnext/selling/module_onboarding/selling_onboarding/selling_onboarding.json
 erpnext/selling/module_onboarding/stock_onboarding/stock_onboarding.json
 erpnext/selling/selling_dashboard/selling/selling.json
 erpnext/selling/README.md
+erpnext/selling/report/quotation_trends/test_quotation_trends.py
 erpnext/selling/report/quotation_trends/quotation_trends.py
 erpnext/selling/report/quotation_trends/quotation_trends.js
 erpnext/selling/report/quotation_trends/quotation_trends.json
@@ -2296,6 +2302,7 @@ erpnext/selling/report/item_wise_sales_history/item_wise_sales_history.py
 erpnext/selling/report/item_wise_sales_history/item_wise_sales_history.json
 erpnext/selling/report/item_wise_sales_history/test_item_wise_sales_history.py
 erpnext/selling/report/item_wise_sales_history/__init__.py
+erpnext/selling/report/sales_person_commission_summary/test_sales_person_commission_summary.py
 erpnext/selling/report/sales_person_commission_summary/sales_person_commission_summary.js
 erpnext/selling/report/sales_person_commission_summary/sales_person_commission_summary.py
 erpnext/selling/report/sales_person_commission_summary/sales_person_commission_summary.json
@@ -2323,6 +2330,7 @@ erpnext/selling/report/pending_so_items_for_purchase_request/test_pending_so_ite
 erpnext/selling/report/pending_so_items_for_purchase_request/__init__.py
 erpnext/selling/report/customer_wise_item_price/customer_wise_item_price.json
 erpnext/selling/report/customer_wise_item_price/customer_wise_item_price.py
+erpnext/selling/report/customer_wise_item_price/test_customer_wise_item_price.py
 erpnext/selling/report/customer_wise_item_price/customer_wise_item_price.js
 erpnext/selling/report/customer_wise_item_price/__init__.py
 erpnext/selling/report/sales_person_target_variance_based_on_item_group/test_sales_person_target_variance_based_on_item_group.py
@@ -2372,9 +2380,11 @@ erpnext/selling/report/sales_partner_target_variance_based_on_item_group/item_gr
 erpnext/selling/report/sales_partner_target_variance_based_on_item_group/__init__.py
 erpnext/selling/report/territory_wise_sales/territory_wise_sales.js
 erpnext/selling/report/territory_wise_sales/territory_wise_sales.py
+erpnext/selling/report/territory_wise_sales/test_territory_wise_sales.py
 erpnext/selling/report/territory_wise_sales/territory_wise_sales.json
 erpnext/selling/report/territory_wise_sales/__init__.py
 erpnext/selling/report/sales_person_wise_transaction_summary/sales_person_wise_transaction_summary.py
+erpnext/selling/report/sales_person_wise_transaction_summary/test_sales_person_wise_transaction_summary.py
 erpnext/selling/report/sales_person_wise_transaction_summary/sales_person_wise_transaction_summary.json
 erpnext/selling/report/sales_person_wise_transaction_summary/sales_person_wise_transaction_summary.js
 erpnext/selling/report/sales_person_wise_transaction_summary/__init__.py
@@ -3198,6 +3208,7 @@ erpnext/crm/report/lead_details/test_lead_details.py
 erpnext/crm/report/lead_details/lead_details.py
 erpnext/crm/report/lead_details/__init__.py
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.json
+erpnext/crm/report/lead_owner_efficiency/test_lead_owner_efficiency.py
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.js
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.py
 erpnext/crm/report/lead_owner_efficiency/__init__.py
@@ -5225,14 +5236,17 @@ erpnext/buying/report/procurement_tracker/test_procurement_tracker.py
 erpnext/buying/report/procurement_tracker/__init__.py
 erpnext/buying/report/subcontract_order_summary/subcontract_order_summary.py
 erpnext/buying/report/subcontract_order_summary/subcontract_order_summary.json
+erpnext/buying/report/subcontract_order_summary/test_subcontract_order_summary.py
 erpnext/buying/report/subcontract_order_summary/subcontract_order_summary.js
 erpnext/buying/report/subcontract_order_summary/__init__.py
 erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.js
 erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.html
+erpnext/buying/report/supplier_quotation_comparison/test_supplier_quotation_comparison.py
 erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.py
 erpnext/buying/report/supplier_quotation_comparison/supplier_quotation_comparison.json
 erpnext/buying/report/supplier_quotation_comparison/__init__.py
 erpnext/buying/report/purchase_analytics/purchase_analytics.js
+erpnext/buying/report/purchase_analytics/test_purchase_analytics.py
 erpnext/buying/report/purchase_analytics/purchase_analytics.py
 erpnext/buying/report/purchase_analytics/purchase_analytics.json
 erpnext/buying/report/purchase_analytics/__init__.py

@@ -18,8 +18,14 @@ custom/static-plugins/.gitkeep
 custom/plugins/.gitkeep
 .agents/skills/shopware-admin-js/SKILL.md
 .agents/skills/shopware-admin-js/agents/openai.yaml
+.agents/skills/sw-triage/SKILL.md
+.agents/skills/sw-triage/assets/examples.md
+.agents/skills/sw-triage/references/DOMAINS.md
+.agents/skills/sw-triage/references/TOOLS.md
+.agents/skills/sw-triage/references/CLASSIFICATION.md
 .agents/skills/shopware-pr-hygiene/SKILL.md
 .agents/skills/shopware-pr-hygiene/agents/openai.yaml
+.agents/skills/sw-bugfixer/SKILL.md
 .agents/skills/shopware-release-docs/SKILL.md
 .agents/skills/shopware-release-docs/agents/openai.yaml
 .agents/skills/shopware-php-code/SKILL.md
@@ -72,15 +78,9 @@ custom/plugins/.gitkeep
 .agents/skills/sw-review/tests/persona/open-source/catch/grader.sh
 .agents/skills/sw-review/tests/persona/open-source/catch/input.json
 .agents/skills/sw-review/tests/persona/open-source/catch/diff.patch
-.agents/skills/triage/SKILL.md
-.agents/skills/triage/assets/examples.md
-.agents/skills/triage/references/DOMAINS.md
-.agents/skills/triage/references/TOOLS.md
-.agents/skills/triage/references/CLASSIFICATION.md
 .agents/skills/shopware-change-scope/SKILL.md
 .agents/skills/shopware-change-scope/agents/openai.yaml
 .agents/skills/README.md
-.agents/skills/bugfixer/SKILL.md
 phpstan-paths.php
 releases.json
 devenv.nix
@@ -602,6 +602,7 @@ src/Core/System/Salutation/SalesChannel/AbstractSalutationRoute.php
 src/Core/System/Salutation/SalutationEntity.php
 src/Core/System/Salutation/AbstractSalutationsSorter.php
 src/Core/System/Salutation/Api/SalutationKeyFkResolver.php
+src/Core/System/Snippet/Request/InstallTranslationRequest.php
 src/Core/System/Snippet/SnippetException.php
 src/Core/System/Snippet/Files/SnippetFileCollection.php
 src/Core/System/Snippet/Files/SnippetFileLoaderInterface.php
@@ -612,9 +613,12 @@ src/Core/System/Snippet/Files/GenericSnippetFile.php
 src/Core/System/Snippet/Files/AbstractSnippetFile.php
 src/Core/System/Snippet/Files/SnippetFileLoader.php
 src/Core/System/Snippet/Event/SnippetsThemeResolveEvent.php
+src/Core/System/Snippet/Event/TranslationRemovedEvent.php
+src/Core/System/Snippet/Event/TranslationLoadedEvent.php
+src/Core/System/Snippet/Service/TranslationMetadataStore.php
 src/Core/System/Snippet/Service/AbstractTranslationLoader.php
 src/Core/System/Snippet/Service/AbstractTranslationConfigLoader.php
-src/Core/System/Snippet/Service/TranslationMetadataLoader.php
+src/Core/System/Snippet/Service/TranslationRemover.php
 src/Core/System/Snippet/Service/TranslationConfigLoader.php
 src/Core/System/Snippet/Service/TranslationLoader.php
 src/Core/System/Snippet/Aggregate/SnippetSet/SnippetSetCollection.php
@@ -656,6 +660,7 @@ src/Core/System/Snippet/SnippetValidator.php
 src/Core/System/Snippet/SnippetEvents.php
 src/Core/System/Snippet/SnippetValidatorInterface.php
 src/Core/System/Snippet/SnippetService.php
+src/Core/System/Snippet/Api/TranslationController.php
 src/Core/System/Snippet/Api/SnippetController.php
 src/Core/System/Snippet/SnippetDefinition.php
 src/Core/System/Snippet/Subscriber/CustomFieldSubscriber.php
@@ -4447,6 +4452,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/index.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/consent.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/info.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/translation.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/openapi3.json.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/infoConfigResponse.json
@@ -14296,7 +14302,9 @@ tests/integration/Core/System/Snippet/Files/AppSnippetFileLoaderTest.php
 tests/integration/Core/System/Snippet/Service/TranslationLoaderTest.php
 tests/integration/Core/System/Snippet/Mock/_fixtures/.gitkeep
 tests/integration/Core/System/Snippet/Mock/MockSnippetFile.php
+tests/integration/Core/System/Snippet/TranslationClientBehaviour.php
 tests/integration/Core/System/Snippet/SnippetServiceTest.php
+tests/integration/Core/System/Snippet/Api/TranslationControllerTest.php
 tests/integration/Core/System/Snippet/Subscriber/CustomFieldSubscriberTest.php
 tests/integration/Core/System/SalesChannel/File/Loader/SalesChannelFileConfigurationLoaderTest.php
 tests/integration/Core/System/SalesChannel/File/SalesChannelFileRepositoryTest.php
@@ -16357,6 +16365,7 @@ tests/unit/Core/System/Snippet/Files/SnippetFileLoaderTest.php
 tests/unit/Core/System/Snippet/Files/RemoteSnippetFileTest.php
 tests/unit/Core/System/Snippet/Service/TranslationConfigLoaderTest.php
 tests/unit/Core/System/Snippet/Service/TranslationLoaderTest.php
+tests/unit/Core/System/Snippet/Service/TranslationRemoverTest.php
 tests/unit/Core/System/Snippet/Service/TestableTranslationConfigLoader.php
 tests/unit/Core/System/Snippet/Service/fixtures/translation_non_string_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_broken_url.yaml
@@ -16364,7 +16373,7 @@ tests/unit/Core/System/Snippet/Service/fixtures/translation_invalid_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_empty_string_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_empty.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation.yaml
-tests/unit/Core/System/Snippet/Service/TranslationMetadataLoaderTest.php
+tests/unit/Core/System/Snippet/Service/TranslationMetadataStoreTest.php
 tests/unit/Core/System/Snippet/Mock/TestPlugin.php
 tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.de.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/extension.de-DE.json
@@ -16393,6 +16402,7 @@ tests/unit/Core/System/Snippet/Command/Util/TranslationCommandHelperTest.php
 tests/unit/Core/System/Snippet/Struct/TranslationConfigTest.php
 tests/unit/Core/System/Snippet/SnippetServiceTest.php
 tests/unit/Core/System/Snippet/Api/SnippetControllerTest.php
+tests/unit/Core/System/Snippet/Api/TranslationControllerTest.php
 tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathTest.php
 tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathCollectionTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataCollectionTest.php

@@ -699,6 +699,9 @@ application/Espo/Core/Application/ApplicationParams.php
 application/Espo/Core/Job/JobSchedulerFactory.php
 application/Espo/Core/Job/JobTask.php
 application/Espo/Core/Job/QueueProcessor/Params.php
+application/Espo/Core/Job/QueueProcessor/QueueProcessors/SequentialQueueProcessor.php
+application/Espo/Core/Job/QueueProcessor/QueueProcessors/ProcessPoolQueueProcessor.php
+application/Espo/Core/Job/QueueProcessor/QueueProcessors/DefaultQueueProcessor.php
 application/Espo/Core/Job/QueueProcessor/Picker.php
 application/Espo/Core/Job/JobDataLess.php
 application/Espo/Core/Job/AsyncPoolFactory.php
@@ -718,7 +721,9 @@ application/Espo/Core/Job/JobScheduler.php
 application/Espo/Core/Job/ConfigDataProvider.php
 application/Espo/Core/Job/JobFactory.php
 application/Espo/Core/Job/QueuePortionNumberProvider.php
+application/Espo/Core/Job/Exceptions/TooFrequentRun.php
 application/Espo/Core/Job/MetadataProvider.php
+application/Espo/Core/Job/CronUtil.php
 application/Espo/Core/Job/JobScheduler/Creators/EntityCreator.php
 application/Espo/Core/Job/JobScheduler/Creator.php
 application/Espo/Core/Job/JobScheduler/Creator/Data.php
@@ -6717,6 +6722,7 @@ application/Espo/Tools/Notification/HookProcessor/Params.php
 application/Espo/Tools/Notification/NoteMentionHookProcessor.php
 application/Espo/Tools/Notification/NoteHookProcessor.php
 application/Espo/Tools/Notification/HookProcessor.php
+application/Espo/Tools/Notification/NoteNotifyParams.php
 application/Espo/Tools/Notification/RecordService.php
 application/Espo/Tools/Notification/GroupAllService.php
 application/Espo/Tools/Notification/Api/DeleteGroup.php

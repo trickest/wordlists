@@ -482,23 +482,15 @@ apps/admin-x-settings/test/acceptance/email/default-recipients.test.ts
 apps/admin-x-settings/test/unit/api/custom-theme-settings.test.ts
 apps/admin-x-settings/test/unit/membership/welcome-email-customize-modal.test.tsx
 apps/admin-x-settings/test/unit/utils/link-to-github-releases.test.ts
-apps/admin-x-settings/test/unit/utils/linkedin-urls.test.ts
 apps/admin-x-settings/test/unit/utils/show-database-warning.test.ts
-apps/admin-x-settings/test/unit/utils/bluesky-urls.test.ts
-apps/admin-x-settings/test/unit/utils/twitter-urls.test.ts
 apps/admin-x-settings/test/unit/utils/analytics.test.ts
 apps/admin-x-settings/test/unit/utils/theme-editor-utils.test.ts
 apps/admin-x-settings/test/unit/utils/welcome-email-sender-details.test.ts
 apps/admin-x-settings/test/unit/utils/platform-config.test.ts
-apps/admin-x-settings/test/unit/utils/facebook-urls.test.ts
-apps/admin-x-settings/test/unit/utils/youtube-urls.test.ts
 apps/admin-x-settings/test/unit/utils/generate-embed-code.test.ts
 apps/admin-x-settings/test/unit/utils/url.test.ts
-apps/admin-x-settings/test/unit/utils/tiktok.test.ts
-apps/admin-x-settings/test/unit/utils/threads-urls.test.ts
-apps/admin-x-settings/test/unit/utils/instagram-urls.test.ts
 apps/admin-x-settings/test/unit/utils/locale-validation.test.ts
-apps/admin-x-settings/test/unit/utils/mastodon-urls.test.ts
+apps/admin-x-settings/test/unit/utils/social-urls.test.ts
 apps/admin-x-settings/test/unit/hooks/use-welcome-email-preview.test.tsx
 apps/admin-x-settings/test/unit/components/settings/growth/offers/offer-helpers.test.ts
 apps/admin-x-settings/test/unit/components/settings/search-keywords.test.ts
@@ -542,6 +534,7 @@ apps/admin-x-settings/src/utils/social-urls/platform-config.ts
 apps/admin-x-settings/src/utils/social-urls/twitter.ts
 apps/admin-x-settings/src/utils/social-urls/bluesky.ts
 apps/admin-x-settings/src/utils/social-urls/youtube.ts
+apps/admin-x-settings/src/utils/social-urls/platform-validator.ts
 apps/admin-x-settings/src/utils/get-tiers-cadences.ts
 apps/admin-x-settings/src/utils/generate-embed-code.ts
 apps/admin-x-settings/src/utils/link-to-github-releases.ts
@@ -1401,6 +1394,7 @@ apps/activitypub/src/utils/render-timestamp.tsx
 apps/activitypub/src/utils/get-handle.ts
 apps/activitypub/src/utils/get-reading-time.ts
 apps/activitypub/src/utils/handle-profile-click.ts
+apps/activitypub/src/utils/social-web-handle.ts
 apps/activitypub/src/utils/content-handlers.ts
 apps/activitypub/src/utils/cards-assets.ts
 apps/activitypub/src/utils/image.ts
@@ -1433,6 +1427,7 @@ apps/activitypub/src/views/inbox/components/reader.tsx
 apps/activitypub/src/views/inbox/components/customizer.tsx
 apps/activitypub/src/views/preferences/index.tsx
 apps/activitypub/src/views/preferences/preferences.tsx
+apps/activitypub/src/views/preferences/components/domain.tsx
 apps/activitypub/src/views/preferences/components/dots-pattern.tsx
 apps/activitypub/src/views/preferences/components/profile.tsx
 apps/activitypub/src/views/preferences/components/settings.tsx
@@ -4536,7 +4531,6 @@ ghost/core/test/unit/server/lib/auto-filling-map.test.ts
 ghost/core/test/unit/server/lib/request-external.test.js
 ghost/core/test/unit/server/lib/lexical.test.js
 ghost/core/test/unit/server/lib/events.test.js
-ghost/core/test/unit/server/lib/mobiledoc.test.js
 ghost/core/test/unit/server/lib/image/gravatar.test.js
 ghost/core/test/unit/server/lib/image/image-utils.test.js
 ghost/core/test/unit/server/lib/image/blog-icon.test.js

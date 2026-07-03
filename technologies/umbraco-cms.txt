@@ -11971,6 +11971,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/get-processed-image-url.functi
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/generate-umbraco-alias/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/generate-umbraco-alias/generate-umbraco-alias.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/string/generate-umbraco-alias/generate-umbraco-alias.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/split-string-to-array/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/split-string-to-array/split-string-to-array.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/string/split-string-to-array/split-string-to-array.function.ts
@@ -12029,17 +12030,25 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-decode.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/stored-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/get-file-extension.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/umbraco-path.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-encode.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/remove-initial-slash-from-path.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/transform-server-path-to-client-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/ensure-local-path.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/umbraco-path.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-decode.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/remove-last-slash-from-path.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/url-pattern-to-string.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/ensure-path-ends-with-slash.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/transform-server-path-to-client-path.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-encode.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/get-file-extension.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/remove-initial-slash-from-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/has-own-opener.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/ensure-path-ends-with-slash.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-folder-name.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/ensure-local-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/url-pattern-to-string.function.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-folder-name.function.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/remove-last-slash-from-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/is-production-build.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/is-test-environment.function.ts
@@ -15555,6 +15564,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEven
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventSenderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventAuthorizerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventRouterTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Mapping/Permissions/ElementPermissionMapperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Mapping/Content/PublishableVariantStateHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/DocumentCollectionPresentationFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/DocumentNotificationPresentationFactoryTests.cs
@@ -15883,6 +15893,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/PropertyTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/LanguageTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/PropertyGroupTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Collections/PropertyCollectionTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Membership/IdentityCreationResultTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/PropertyTypeExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/DeepCloneHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/CultureImpactTests.cs
@@ -16626,6 +16637,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Install/MigrationCoordina
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageDataInstallationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/CreatedPackageSchemaTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageInstallationTest.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/ElementPackagingTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Routing/RedirectTrackerTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Runtime/FileSystemMainDomLockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Examine/DeliveryApiContentIndexHelperTests.cs
@@ -16888,6 +16900,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/Services/DocumentNavigationServiceT
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/WebhookServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MediaNavigationServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/ContentPublishingServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Services/ElementPermissionServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/PublishStatusServiceTests.Query.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/MediaTypeEditingServiceTests.GetMediaTypesForFileExtension.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Services/ContentTypeEditingServiceTestsBase.cs
@@ -17620,6 +17633,7 @@ templates/UmbracoExtension/.template.config/template.json
 templates/UmbracoExtension/README.txt
 .editorconfig
 .gitattributes
+.claude/skills/umb-update-server-dependencies-for-minor/SKILL.md
 .claude/skills/umb-release-notes/SKILL.md
 .claude/skills/umb-review/SKILL.md
 .claude/skills/umb-review/evals/evals.json
