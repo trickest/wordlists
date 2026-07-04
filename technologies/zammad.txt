@@ -1378,6 +1378,11 @@ lib/session_helper/collection_checklist_template.rb
 lib/session_helper/collection_admin.rb
 lib/session_helper/collection_ticket.rb
 lib/session_helper/collection_base.rb
+lib/video_embed/peertube.rb
+lib/video_embed/youtube.rb
+lib/video_embed/vimeo.rb
+lib/video_embed/mediacms.rb
+lib/video_embed/backend.rb
 lib/text/quote_remover/attribution_pattern.rb
 lib/text/quote_remover/signature/standard.rb
 lib/text/quote_remover/signature/mobile.rb
@@ -1575,6 +1580,7 @@ lib/html_sanitizer.rb
 lib/calendar_subscriptions.rb
 lib/assets_set.rb
 lib/user_info.rb
+lib/video_embed.rb
 lib/search_knowledge_base_backend.rb
 lib/event_buffer.rb
 lib/ai/provider/ollama.rb
@@ -2167,6 +2173,7 @@ app/models/setting/validation/saml/required_attributes.rb
 app/models/setting/validation/saml/security.rb
 app/models/setting/validation/saml/tls.rb
 app/models/setting/validation/base.rb
+app/models/setting/validation/kb_self_hosted_video_servers.rb
 app/models/setting/validation/time_zone.rb
 app/models/setting/validation/ai_provider_config.rb
 app/models/setting/validation/storage_provider.rb
@@ -3758,6 +3765,7 @@ app/assets/javascripts/app/controllers/knowledge_base/knowledge_base_reader_pagi
 app/assets/javascripts/app/controllers/knowledge_base/delete_action.coffee
 app/assets/javascripts/app/controllers/knowledge_base/navigation.coffee
 app/assets/javascripts/app/controllers/knowledge_base/reader_controller.coffee
+app/assets/javascripts/app/controllers/knowledge_base/video_servers_manager.coffee
 app/assets/javascripts/app/controllers/knowledge_base/content_controller.coffee
 app/assets/javascripts/app/controllers/knowledge_base/reader_list_container.coffee
 app/assets/javascripts/app/controllers/knowledge_base/search_controller.coffee
@@ -4183,6 +4191,7 @@ app/assets/javascripts/app/views/calendar/index.jst.eco
 app/assets/javascripts/app/views/search/index.jst.eco
 app/assets/javascripts/app/views/agent_ticket_merge.jst.eco
 app/assets/javascripts/app/views/ssl_certificate_binary_or_text.jst.eco
+app/assets/javascripts/app/views/knowledge_base_video_servers/index.jst.eco
 app/assets/javascripts/app/views/avatar.jst.eco
 app/assets/javascripts/app/views/microsoft_graph/error_message.jst.eco
 app/assets/javascripts/app/views/microsoft_graph/app_config.jst.eco
@@ -5673,10 +5682,15 @@ app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view.
 app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view-edit-organization.spec.ts
 app/frontend/apps/desktop/pages/organization/__tests__/organization-detail-view-history.spec.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContentSkeleton.vue
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/TopBarHeaderCompact.vue
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/TopBarHeaderFull.vue
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/useTopBarHeader.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/index.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/newUser.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/history.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/actions/edit.ts
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/__tests__/TopBarHeaderCompact.spec.ts
+app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar/__tests__/TopBarHeaderFull.spec.ts
 app/frontend/apps/desktop/pages/organization/components/OrganizationRelatedTickets.vue
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailViewContent.vue
 app/frontend/apps/desktop/pages/organization/components/OrganizationDetailTopBar.vue
@@ -5861,13 +5875,17 @@ app/frontend/apps/desktop/pages/user/__tests__/user-detail-view-history.spec.ts
 app/frontend/apps/desktop/pages/user/__tests__/user-detail-view-delete-user.spec.ts
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets.vue
 app/frontend/apps/desktop/pages/user/components/UserDetailViewContent.vue
-app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/TopBarHeader.vue
+app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/TopBarHeaderCompact.vue
+app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/TopBarHeaderFull.vue
+app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/useTopBarHeader.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/index.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/newTicket.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/resendVerificationEmail.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/history.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/delete.ts
 app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/actions/edit.ts
+app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/__tests__/TopBarHeaderCompact.spec.ts
+app/frontend/apps/desktop/pages/user/components/UserDetailTopBar/__tests__/TopBarHeaderFull.spec.ts
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/CustomerTicketList.vue
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/skeleton/CustomerTicketListSkeleton.vue
 app/frontend/apps/desktop/pages/user/components/UserRelatedCustomerTickets/__tests__/CustomerTicketList.spec.ts
@@ -6151,6 +6169,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/composables/useHighlightMenuState.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/composables/useTicketEditTitle.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/types.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/TicketDetailTopBar.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/__tests__/support/testOptions.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/TopBarHeaderCompact.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/TopBarHeaderFull.vue
@@ -6161,6 +6180,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/TicketInformationFull/TicketInformationBadgeList/__tests__/ChecklistBadgeList.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/TicketInformationFull/TicketInformationBadgeList.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/TicketInformationFull/__tests__/TicketInformationBadgeList.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/useTopBarHeader.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/__tests__/TopBarHeaderCompact.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/__tests__/HighlightMenu.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/components/__tests__/TopBarHeaderFull.spec.ts
@@ -7195,6 +7215,8 @@ app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfigurationWizard/TwoF
 app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfigurationWizard.vue
 app/frontend/apps/desktop/components/TwoFactor/TwoFactorConfigurationFlyout.vue
 app/frontend/apps/desktop/components/TwoFactor/types.ts
+app/frontend/apps/desktop/components/CommonFloatingToolbar/CommonFloatingToolbar.vue
+app/frontend/apps/desktop/components/CommonFloatingToolbar/__tests__/CommonFloatingToolbar.spec.ts
 app/frontend/apps/desktop/components/CommonTicketLabel/CommonTicketLabel.vue
 app/frontend/apps/desktop/components/CommonTicketLabel/__tests__/CommonTicketLabel.spec.ts
 app/frontend/apps/desktop/components/CommonCalendarPreviewFlyout/CommonCalendarPreviewFlyout.vue
@@ -9251,6 +9273,7 @@ db/migrate/20201202080338_issue3270_selector_update.rb
 db/migrate/20171024000001_monit_integration.rb
 db/migrate/20210910112200_issue_3732_add_core_workflow_permission.rb
 db/migrate/20240909062111_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb
+db/migrate/20260630120000_issue6177_kb_video_embed_servers.rb
 db/migrate/20200709094556_issue_3110_service_now_provider.rb
 db/migrate/20221121193551_issue_4368_user_preferences_appearance.rb
 db/migrate/20210528092410_issue_3567_auto_assignment.rb
@@ -9896,6 +9919,7 @@ spec/models/setting/validation/saml/required_attributes_spec.rb
 spec/models/setting/validation/saml/security_spec.rb
 spec/models/setting/validation/sso_trusted_ips_spec.rb
 spec/models/setting/validation/storage_provider_spec.rb
+spec/models/setting/validation/kb_self_hosted_video_servers_spec.rb
 spec/models/setting/validation/time_zone_spec.rb
 spec/models/setting/validation/ai_provider_spec.rb
 spec/models/setting/validation/ai_provider_config_spec.rb
@@ -10704,6 +10728,7 @@ spec/lib/sequencer/unit/import/ldap/sources/lost/deactivate_spec.rb
 spec/lib/url_information_spec.rb
 spec/lib/models_spec.rb
 spec/lib/search_index_backend/version_handling_spec.rb
+spec/lib/video_embed_spec.rb
 spec/lib/filter_processor/match/email_regex_spec.rb
 spec/lib/filter_processor/match/starts_with_spec.rb
 spec/lib/filter_processor/match/contains_spec.rb
@@ -11973,6 +11998,7 @@ spec/system/admin/ai/provider_spec.rb
 spec/system/admin/ai/ticket_summary_spec.rb
 spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
+spec/system/admin/knowledge_base/video_servers_spec.rb
 spec/system/admin/knowledge_base/create_spec.rb
 spec/system/admin/knowledge_base/remove_language_spec.rb
 spec/system/admin/knowledge_base/delete_spec.rb
@@ -12208,6 +12234,7 @@ spec/system/import/freshdesk_spec.rb
 spec/system/import/kayako_spec.rb
 spec/system/import/zendesk_spec.rb
 spec/rails_helper.rb
+spec/helpers/knowledge_base_rich_text_helper_spec.rb
 tmp/pids/.keep
 tmp/README.md
 .rspec

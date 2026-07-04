@@ -2445,6 +2445,7 @@ packages/core/content-manager/admin/src/pages/ListView/components/TableCells/Med
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/CellValue.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/CellContent.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/Relation.test.tsx
+packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/CellContent.test.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/Media.test.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/CellValue.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/EditViewPage.tsx
@@ -5146,6 +5147,7 @@ packages/plugins/documentation/server/src/services/helpers/utils/loop-content-ty
 packages/plugins/documentation/server/src/services/helpers/utils/get-api-responses.ts
 packages/plugins/documentation/server/src/services/helpers/utils/clean-schema-attributes.ts
 packages/plugins/documentation/server/src/services/helpers/utils/routes.ts
+packages/plugins/documentation/server/src/services/helpers/utils/__tests__/query-params.test.ts
 packages/plugins/documentation/server/src/services/helpers/build-component-schema.ts
 packages/plugins/documentation/server/src/global.d.ts
 packages/plugins/documentation/server/src/register.ts
@@ -5268,6 +5270,7 @@ tests/api/core/review-workflows/review-workflows-homepage.test.api.ts
 tests/api/core/review-workflows/review-workflows-stage-permissions.test.api.ts
 tests/api/core/review-workflows/review-workflows.test.api.ts
 tests/api/core/review-workflows/review-workflows-content-types.test.api.ts
+tests/api/core/review-workflows/review-workflows-filter-by-content-type.test.api.ts
 tests/api/core/review-workflows/review-workflows-webhooks.test.api.ts
 tests/api/core/admin/admin-sessions-auth.test.api.ts
 tests/api/core/admin/admin-user.test.api.js
@@ -5421,6 +5424,7 @@ tests/api/core/strapi/document-service/resources/schemas/dz-comp.js
 tests/api/core/strapi/document-service/resources/schemas/index.js
 tests/api/core/strapi/document-service/resources/schemas/dz-other-comp.js
 tests/api/core/strapi/document-service/resources/index.ts
+tests/api/core/strapi/document-service/resources/minimal-article-category.ts
 tests/api/core/strapi/document-service/resources/middlewares.ts
 tests/api/core/strapi/document-service/resources/article-query.ts
 tests/api/core/strapi/document-service/resources/fixtures/mixed-content.js
@@ -5436,6 +5440,8 @@ tests/api/core/strapi/document-service/utils/index.ts
 tests/api/core/strapi/document-service/validation/validation.test.api.ts
 tests/api/core/strapi/document-service/clone.test.api.ts
 tests/api/core/strapi/document-service/relations/invisible-relation-republish.test.api.ts
+tests/api/core/strapi/document-service/relations/empty-populate-sort-rest.test.api.ts
+tests/api/core/strapi/document-service/relations/empty-populate-sort-document-service.test.api.ts
 tests/api/core/strapi/document-service/relations/basic.test.api.ts
 tests/api/core/strapi/document-service/relations/non-localized-stale-locale.test.api.ts
 tests/api/core/strapi/document-service/relations/m2m-order-republish.test.api.ts
@@ -5444,11 +5450,11 @@ tests/api/core/strapi/document-service/relations/no-dp.test.api.ts
 tests/api/core/strapi/document-service/relations/unidirectional-relations.test.api.ts
 tests/api/core/strapi/document-service/relations/bidirectional-relations.test.api.ts
 tests/api/core/strapi/document-service/relations/polymorphic.test.api.ts
-tests/api/core/strapi/document-service/relations/empty-populate-sort.test.api.ts
 tests/api/core/strapi/document-service/middlewares.test.api.ts
 tests/api/core/strapi/document-service/discard-draft.test.api.ts
 tests/api/core/strapi/document-service/publication-filter.test.api.ts
 tests/api/core/strapi/document-service/find-one.test.api.ts
+tests/api/core/strapi/document-service/delete-morph-join-order.test.api.ts
 tests/api/core/strapi/document-service/find-first.test.api.ts
 tests/api/core/strapi/document-service/update.test.api.ts
 tests/api/core/strapi/publication-state.test.api.js

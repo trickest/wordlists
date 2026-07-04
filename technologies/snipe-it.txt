@@ -192,6 +192,7 @@ resources/views/blade/tabs/nav-item.blade.php
 resources/views/blade/tabs/accessory-tab.blade.php
 resources/views/blade/tabs/model-files-tab.blade.php
 resources/views/blade/tabs/upload-tab.blade.php
+resources/views/blade/tabs/company-tab.blade.php
 resources/views/blade/tabs/details-tab.blade.php
 resources/views/blade/tabs/asset-rtd-tab.blade.php
 resources/views/blade/tabs/note-tab.blade.php
@@ -204,6 +205,7 @@ resources/views/blade/tabs/consumable-tab.blade.php
 resources/views/blade/alert-menu.blade.php
 resources/views/blade/table/files.blade.php
 resources/views/blade/table/bulk-assets.blade.php
+resources/views/blade/table/companies.blade.php
 resources/views/blade/table/history.blade.php
 resources/views/blade/table/components.blade.php
 resources/views/blade/table/consumables.blade.php
@@ -7009,12 +7011,13 @@ app/Livewire/ReportTemplateSelect.php
 app/Livewire/SlackSettingsForm.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/Importer.php
+app/Actions/Companies/DestroyCompanyAction.php
 app/Actions/Permissions/NormalizePermissionsPayloadAction.php
 app/Actions/Permissions/PreserveUnauthorizedPrivilegedPermissionsAction.php
 app/Actions/CheckoutRequests/CreateCheckoutRequestAction.php
 app/Actions/CheckoutRequests/CancelCheckoutRequestAction.php
 app/Actions/Categories/DestroyCategoryAction.php
-app/Actions/Manufacturers/DeleteManufacturerAction.php
+app/Actions/Manufacturers/DestroyManufacturerAction.php
 app/Actions/Breadcrumbs/BuildAcceptanceBreadcrumbs.php
 app/Actions/Suppliers/DestroySupplierAction.php
 app/Actions/Acceptances/CreateCheckoutAcceptanceAction.php
@@ -7031,6 +7034,7 @@ app/Exceptions/AssetNotRequestable.php
 app/Exceptions/ItemStillHasAccessories.php
 app/Exceptions/ItemStillHasComponents.php
 app/Exceptions/ItemStillHasAssets.php
+app/Exceptions/ItemStillHasChildCompanies.php
 app/Exceptions/ItemStillHasConsumables.php
 app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/UserDoestExistException.php
@@ -7038,6 +7042,7 @@ app/Exceptions/ItemStillHasMaintenances.php
 app/Exceptions/ItemStillHasChildren.php
 app/Exceptions/ItemStillHasLicenses.php
 app/Exceptions/ItemStillHasAssetModels.php
+app/Exceptions/ItemStillHasUsers.php
 app/Notifications/FirstAdminNotification.php
 app/Notifications/CheckoutAssetNotification.php
 app/Notifications/WelcomeNotification.php
@@ -7173,6 +7178,7 @@ app/Http/Controllers/Controller.php
 app/Http/Controllers/Accessories/AccessoryCheckinController.php
 app/Http/Controllers/Accessories/AccessoryCheckoutController.php
 app/Http/Controllers/Accessories/AccessoriesController.php
+app/Http/Controllers/BulkCompaniesController.php
 app/Http/Controllers/DepreciationsController.php
 app/Http/Controllers/Assets/AssetsController.php
 app/Http/Controllers/Assets/AssetCheckinController.php
@@ -7393,10 +7399,13 @@ tests/CreatesApplication.php
 tests/TestCase.php
 tests/Concerns/TestsFullMultipleCompaniesSupport.php
 tests/Concerns/TestsPermissionsRequirement.php
+tests/Feature/Companies/Api/CompanyHierarchyTest.php
 tests/Feature/Companies/Api/CreateCompaniesTest.php
+tests/Feature/Companies/Api/BulkSelectableTest.php
 tests/Feature/Companies/Api/IndexCompaniesTest.php
 tests/Feature/Companies/Api/DeleteCompaniesTest.php
 tests/Feature/Companies/Api/UpdateCompaniesTest.php
+tests/Feature/Companies/Ui/BulkDeleteCompaniesTest.php
 tests/Feature/Companies/Ui/ShowCompanyTest.php
 tests/Feature/Companies/Ui/CompanyIndexTest.php
 tests/Feature/Companies/Ui/CreateCompaniesTest.php
@@ -7686,6 +7695,7 @@ tests/Feature/Console/CheckinAndDeleteItemsTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
 tests/Feature/Console/FixupAssignedToAssignedTypeTest.php
 tests/Feature/Console/Commands/PurgeEulaPDFTest.php
+tests/Feature/Console/Commands/PurgeCompaniesTest.php
 tests/Feature/Console/TestLocationsFmcsTest.php
 tests/Feature/Console/CleanIncorrectCheckoutAcceptancesTest.php
 tests/Feature/Console/CleanOldCheckoutRequestsTest.php
@@ -7791,6 +7801,7 @@ database/migrations/2014_12_09_082500_add_fields_maintained_term_to_licenses.php
 database/migrations/2019_07_23_140906_add_show_assigned_assets_to_settings.php
 database/migrations/2026_05_18_094309_add_maintenance_types_and_tracking_fields.php
 database/migrations/2023_05_08_132921_increase_state_to_more_than_3.php
+database/migrations/2026_06_22_000001_add_parent_id_to_companies_table.php
 database/migrations/2017_01_25_063357_fix_utf8_custom_field_column_names.php
 database/migrations/2022_06_28_234539_add_username_index_to_users.php
 database/migrations/2023_07_14_004221_add_show_in_list_view_to_custom_fields.php

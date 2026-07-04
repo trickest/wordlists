@@ -4847,6 +4847,7 @@ plugins/woocommerce/src/Admin/Settings/SettingsUISchema.php
 plugins/woocommerce/src/Admin/Settings/SettingsSection.php
 plugins/woocommerce/src/Admin/Settings/SettingsSectionInterface.php
 plugins/woocommerce/src/Admin/Settings/SettingsSectionRegistry.php
+plugins/woocommerce/src/Admin/Settings/SettingsSectionUIPageProviderInterface.php
 plugins/woocommerce/src/Admin/RemoteSpecs/RemoteSpecsEngine.php
 plugins/woocommerce/src/Admin/RemoteSpecs/DataSourcePoller.php
 plugins/woocommerce/src/Admin/RemoteSpecs/RuleProcessors/PluginVersionRuleProcessor.php
@@ -5492,6 +5493,7 @@ plugins/woocommerce/src/Internal/Admin/Settings/SettingsUISchema.php
 plugins/woocommerce/src/Internal/Admin/Settings/SettingsUIRequestContext.php
 plugins/woocommerce/src/Internal/Admin/Settings/Payments.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsRestController.php
+plugins/woocommerce/src/Internal/Admin/Settings/SettingsSectionNavigation.php
 plugins/woocommerce/src/Internal/Admin/Settings/Exceptions/ApiArgumentException.php
 plugins/woocommerce/src/Internal/Admin/Settings/Exceptions/ApiException.php
 plugins/woocommerce/src/Internal/Admin/Settings/RegisteredSettingsSectionAdapter.php
@@ -12917,6 +12919,7 @@ plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/pos-catalog-feed-file-lock
 plugins/woocommerce/changelog/add-weight-unit-enum
 plugins/woocommerce/changelog/wooplug-6842-email-preview-shipping-details-filter
+plugins/woocommerce/changelog/fix-66160-list-table-prepare-items-cache-gate
 plugins/woocommerce/changelog/fix-random-product-collection-pagination
 plugins/woocommerce/changelog/58214-fix-backslash-address-store-api
 plugins/woocommerce/changelog/fix-39289
@@ -12927,6 +12930,7 @@ plugins/woocommerce/changelog/64564-sprinkle-order-edit-wp7-alignment
 plugins/woocommerce/changelog/add-65454-list-failed-order-imports
 plugins/woocommerce/changelog/wooplug-6866-fix-backslash-agentic-checkout
 plugins/woocommerce/changelog/add-shopper-lists-privacy-exporter-eraser
+plugins/woocommerce/changelog/add-settings-section-ui-page-provider
 plugins/woocommerce/changelog/fix-non-persistable-preview-state-products-collection
 plugins/woocommerce/changelog/performance-tax-rates-sqls-number
 plugins/woocommerce/changelog/fix-add-variation-id-to-add-to-cart-quantity-filter
@@ -13056,6 +13060,7 @@ plugins/woocommerce/changelog/fix-get-variation-parent-visibility
 plugins/woocommerce/changelog/dev-actions-scheduler-api-usage-audit
 plugins/woocommerce/changelog/fix-storeapi-order-auth-refund-guard
 plugins/woocommerce/changelog/qao-403-blocks-e2e-leaf-utils-content-templates
+plugins/woocommerce/changelog/fix-66031-settings-ui-registry-resolution-guard
 plugins/woocommerce/changelog/65614-site-visibility-badge-toggle
 plugins/woocommerce/changelog/performance-slow-sql-on-admin-products-page
 plugins/woocommerce/changelog/performance-centralize-wp_count_posts-invocation
@@ -13078,6 +13083,7 @@ plugins/woocommerce/changelog/46099-fix-geolocation-https
 plugins/woocommerce/changelog/65334-woomob-2684-refund-preview-helpers
 plugins/woocommerce/changelog/fix-64009-get-images-signature-bc
 plugins/woocommerce/changelog/65723-fix-site-health-upload-loopback
+plugins/woocommerce/changelog/add-settings-ui-default-section-navigation
 plugins/woocommerce/changelog/fix-product-query-fixes
 plugins/woocommerce/changelog/fix-hardcoded-wp-content-paths
 plugins/woocommerce/changelog/61018-cart-short-desc-format
@@ -13088,6 +13094,7 @@ plugins/woocommerce/changelog/add-filter-for-variable-product-taxes-influence-pr
 plugins/woocommerce/changelog/add-customer-email-verification-order-linking
 plugins/woocommerce/changelog/fix-39366
 plugins/woocommerce/changelog/fix-66103-duplicate-password-changed-email
+plugins/woocommerce/changelog/fix-highlight-template-analyzer-checkout
 plugins/woocommerce/changelog/add-product-filters-disable-responsive
 plugins/woocommerce/changelog/63967-fix-order-totals-mobile-width
 plugins/woocommerce/changelog/fix-block-templates-compat
@@ -13114,6 +13121,7 @@ plugins/woocommerce/changelog/use-public-postcode-validator-api
 plugins/woocommerce/changelog/add-new-functions-check-script
 plugins/woocommerce/changelog/remove-product-filters-store-locks
 plugins/woocommerce/changelog/fix-wooplug-6319-blueprint-import-table-prefix
+plugins/woocommerce/changelog/66233-fix-account-display-name-description
 plugins/woocommerce/changelog/fix-psr4-fallback-degrade-guards
 plugins/woocommerce/changelog/54584-fix-order-status-key-length
 plugins/woocommerce/changelog/fix-wc-update-10802-missing-orders-meta-table-check
