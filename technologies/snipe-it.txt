@@ -7017,8 +7017,11 @@ app/Actions/Permissions/PreserveUnauthorizedPrivilegedPermissionsAction.php
 app/Actions/CheckoutRequests/CreateCheckoutRequestAction.php
 app/Actions/CheckoutRequests/CancelCheckoutRequestAction.php
 app/Actions/Categories/DestroyCategoryAction.php
+app/Actions/StatusLabels/DestroyStatuslabelAction.php
 app/Actions/Manufacturers/DestroyManufacturerAction.php
 app/Actions/Breadcrumbs/BuildAcceptanceBreadcrumbs.php
+app/Actions/Depreciations/DestroyDepreciationAction.php
+app/Actions/Departments/DestroyDepartmentAction.php
 app/Actions/Suppliers/DestroySupplierAction.php
 app/Actions/Acceptances/CreateCheckoutAcceptanceAction.php
 app/Jobs/Job.php
@@ -7147,6 +7150,7 @@ app/Console/Commands/SendExpectedCheckinAlerts.php
 app/Console/Kernel.php
 app/Http/Controllers/LocationsController.php
 app/Http/Controllers/MaintenancesController.php
+app/Http/Controllers/BulkDepartmentsController.php
 app/Http/Controllers/MaintenanceTypesController.php
 app/Http/Controllers/Kits/CheckoutKitController.php
 app/Http/Controllers/Kits/PredefinedKitsController.php
@@ -7158,6 +7162,7 @@ app/Http/Controllers/BulkAssetModelsController.php
 app/Http/Controllers/BulkManufacturersController.php
 app/Http/Controllers/CustomFieldsetsController.php
 app/Http/Controllers/ViewAssetsController.php
+app/Http/Controllers/BulkStatuslabelsController.php
 app/Http/Controllers/Consumables/ConsumablesController.php
 app/Http/Controllers/Consumables/ConsumableCheckoutController.php
 app/Http/Controllers/CompaniesController.php
@@ -7239,6 +7244,7 @@ app/Http/Controllers/Auth/LoginController.php
 app/Http/Controllers/Auth/RegisterController.php
 app/Http/Controllers/Auth/ResetPasswordController.php
 app/Http/Controllers/Auth/SamlController.php
+app/Http/Controllers/BulkDepreciationsController.php
 app/Http/Requests/StoreLdapSettings.php
 app/Http/Requests/StoreSecuritySettings.php
 app/Http/Requests/UpdateComponentRequest.php
@@ -7522,6 +7528,8 @@ tests/Feature/Checkouts/Ui/BulkAssetCheckoutTest.php
 tests/Feature/Checkouts/Ui/LicenseCheckoutTest.php
 tests/Feature/Setup/Ui/IndexSetupTest.php
 tests/Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
+tests/Feature/StatusLabels/Api/BulkSelectableTest.php
+tests/Feature/StatusLabels/Ui/BulkDeleteStatusLabelsTest.php
 tests/Feature/StatusLabels/Ui/CreateStatusLabelTest.php
 tests/Feature/StatusLabels/Ui/ShowStatusLabelTest.php
 tests/Feature/StatusLabels/Ui/UpdateStatusLabelTest.php
@@ -7608,17 +7616,21 @@ tests/Feature/Assets/Ui/AssetBySerialTest.php
 tests/Feature/Assets/Ui/BulkDeleteAssetsTest.php
 tests/Feature/Depreciations/Api/DeleteDepreciationsTest.php
 tests/Feature/Depreciations/Api/DepreciationsIndexTest.php
+tests/Feature/Depreciations/Api/BulkSelectableTest.php
 tests/Feature/Depreciations/Ui/CreateDepreciationTest.php
 tests/Feature/Depreciations/Ui/UpdateDepreciationTest.php
 tests/Feature/Depreciations/Ui/DepreciationsIndexTest.php
 tests/Feature/Depreciations/Ui/ShowDepreciationTest.php
+tests/Feature/Depreciations/Ui/BulkDeleteDepreciationsTest.php
 tests/Feature/QueryShapeTest.php
 tests/Feature/Departments/Api/DeleteDepartmentsTest.php
 tests/Feature/Departments/Api/UpdateDepartmentsTest.php
 tests/Feature/Departments/Api/CreateDepartmentsTest.php
 tests/Feature/Departments/Api/DepartmentsIndexTest.php
+tests/Feature/Departments/Api/BulkSelectableTest.php
 tests/Feature/Departments/Ui/UpdateDepartmentsTest.php
 tests/Feature/Departments/Ui/ShowDepartmentTest.php
+tests/Feature/Departments/Ui/BulkDeleteDepartmentsTest.php
 tests/Feature/Departments/Ui/IndexDepartmentsTest.php
 tests/Feature/Departments/Ui/CreateDepartmentsTest.php
 tests/Feature/Components/Api/ComponentIndexTest.php
