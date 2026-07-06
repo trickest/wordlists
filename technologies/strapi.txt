@@ -955,6 +955,7 @@ packages/utils/typescript/lib/index.js
 packages/utils/typescript/lib/__tests__/generators/schemas/imports.test.js
 packages/utils/typescript/lib/__tests__/generators/schemas/utils.test.js
 packages/utils/typescript/lib/__tests__/generators/schemas/attributes.test.js
+packages/utils/typescript/lib/__tests__/generators/utils.test.js
 packages/utils/typescript/lib/generators/common/models/attributes.js
 packages/utils/typescript/lib/generators/common/models/mappers.js
 packages/utils/typescript/lib/generators/common/models/schema.js
@@ -1662,7 +1663,6 @@ packages/core/review-workflows/server/src/services/metrics/weekly-metrics.ts
 packages/core/review-workflows/server/src/validation/review-workflows.ts
 packages/core/review-workflows/server/src/migrations/set-stages-default-color.ts
 packages/core/review-workflows/server/src/migrations/setup-stage-transfer-to-roles.ts
-packages/core/review-workflows/server/src/migrations/shorten-stage-attribute.ts
 packages/core/review-workflows/server/src/migrations/set-stages-roles.ts
 packages/core/review-workflows/server/src/migrations/handle-deleted-ct-in-workflows.ts
 packages/core/review-workflows/server/src/migrations/multiple-workflows.ts
@@ -1677,6 +1677,7 @@ packages/core/review-workflows/server/src/content-types/workflow-stage/index.ts
 packages/core/review-workflows/server/src/content-types/workflow/index.ts
 packages/core/review-workflows/server/tsconfig.build.json
 packages/core/review-workflows/server/tsconfig.eslint.json
+packages/core/review-workflows/server/.eslintrc.cjs
 packages/core/review-workflows/lint-staged.config.mjs
 packages/core/review-workflows/.eslintrc.cjs
 packages/core/review-workflows/shared/contracts/review-workflows.ts
@@ -5608,12 +5609,14 @@ tests/utils/runners/shared-setup.js
 tests/e2e/.env.example
 tests/e2e/constants.ts
 tests/e2e/tests/settings/rbac/readme.md
+tests/e2e/tests/settings/rbac/scenarios/permissions-enforcement.spec.ts
 tests/e2e/tests/settings/rbac/scenarios/create-new-role.scenario.spec.ts
 tests/e2e/tests/settings/rbac/actions/see-role.spec.ts
 tests/e2e/tests/settings/rbac/actions/edit-role.spec.ts
 tests/e2e/tests/settings/rbac/actions/delete-role.spec.ts
 tests/e2e/tests/settings/rbac/actions/create-role.spec.ts
 tests/e2e/tests/settings/rbac/actions/assign-role-to-user.spec.ts
+tests/e2e/tests/settings/users-permissions/role-matrix.spec.ts
 tests/e2e/tests/settings/smoke-test.spec.ts
 tests/e2e/tests/review-workflows/home.spec.ts
 tests/e2e/tests/review-workflows/content-manager.spec.ts
@@ -5674,6 +5677,7 @@ tests/e2e/tests/i18n/create-edit.spec.ts
 tests/e2e/tests/i18n/listview.spec.ts
 tests/e2e/tests/i18n/localized-fields.spec.ts
 tests/e2e/tests/i18n/settings.spec.ts
+tests/e2e/tests/i18n/create-publish-fetch-per-locale.spec.ts
 tests/e2e/tests/i18n/fill-from-locale.spec.ts
 tests/e2e/tests/media-library/cancel-deletion.spec.ts
 tests/e2e/tests/media-library/future/grid-view.spec.ts
@@ -5686,6 +5690,7 @@ tests/e2e/tests/content-type-builder/ctb-edit-view.spec.ts
 tests/e2e/tests/content-type-builder/single-type/create-single-type.spec.ts
 tests/e2e/tests/content-type-builder/single-type/edit-single-type.spec.ts
 tests/e2e/tests/content-type-builder/guided-tour.spec.ts
+tests/e2e/tests/content-type-builder/collection-type/edit-schema-no-data-loss.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/create-collection-type.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/uid-generation.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/edit-collection-type.spec.ts
