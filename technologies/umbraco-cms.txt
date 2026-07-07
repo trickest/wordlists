@@ -3582,11 +3582,17 @@ src/Umbraco.Core/DistributedLocking/IDistributedLock.cs
 src/Umbraco.Core/Constants-Applications.cs
 src/Umbraco.Core/Factories/IUserSettingsFactory.cs
 src/Umbraco.Core/Factories/IMachineInfoFactory.cs
+src/Umbraco.Core/Factories/DefaultMachineIdentityProvider.cs
+src/Umbraco.Core/Factories/MachineIdentityProviderCollection.cs
 src/Umbraco.Core/Factories/IUpgradeSettingsFactory.cs
+src/Umbraco.Core/Factories/MachineIdentityProviderCollectionBuilder.cs
 src/Umbraco.Core/Factories/MachineInfoFactory.cs
 src/Umbraco.Core/Factories/InstallSettingsFactory.cs
+src/Umbraco.Core/Factories/AzureWebsiteInstanceIdMachineIdentityProvider.cs
 src/Umbraco.Core/Factories/UserSettingsFactory.cs
 src/Umbraco.Core/Factories/IInstallSettingsFactory.cs
+src/Umbraco.Core/Factories/ConfiguredMachineIdentityProvider.cs
+src/Umbraco.Core/Factories/IMachineIdentityProvider.cs
 src/Umbraco.Core/Factories/IDatabaseSettingsFactory.cs
 src/Umbraco.Core/Factories/UpgradeSettingsFactory.cs
 src/Umbraco.Core/Templates/HtmlLocalLinkParser.cs
@@ -15880,7 +15886,11 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/ContentBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/DeliveryApiTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/DeliveryApi/RichTextParserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HexEncoderTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineIdentityProviderTests.Configured.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineInfoFactoryTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineIdentityProviderTests.AzureWebsiteInstanceId.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineIdentityProviderTests.Default.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Factories/MachineIdentityProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Templates/HtmlImageSourceParserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Templates/HtmlLocalLinkParserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Templates/DefaultViewContentProviderTests.cs
@@ -16951,6 +16961,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Api.Delivery/OpenApi/ExpectedContracts/d
 tests/Umbraco.Tests.Integration/Umbraco.Api.Delivery/OpenApi/ExpectedContracts/generic-schemas-with-sample-types.json
 tests/Umbraco.Tests.Integration/Umbraco.Api.Delivery/OpenApi/ExpectedContracts/typed-schemas-empty-project.json
 tests/Umbraco.Tests.Integration/Umbraco.Api.Delivery/OpenApi/OpenApiCustomDerivedTypeTest.cs
+tests/Umbraco.Tests.Integration/Umbraco.Api.Delivery/Rendering/OutputExpansionStrategyAccessControlTests.cs
 tests/Umbraco.Tests.Integration/Extensions/ServiceCollectionExtensions.cs
 tests/Umbraco.Tests.AcceptanceTest.UmbracoProject/Umbraco.Tests.AcceptanceTest.UmbracoProject.csproj
 tests/Umbraco.Tests.AcceptanceTest.UmbracoProject/SuspendScheduledPublishingComposer.cs

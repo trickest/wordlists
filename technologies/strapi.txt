@@ -1173,8 +1173,11 @@ packages/core/upload/admin/src/future/pages/Assets/components/CreateFolderDialog
 packages/core/upload/admin/src/future/pages/Assets/components/ImportFromUrlDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsTable.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetDetailsDrawer.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/useCropImg.ts
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/tests/AssetDetailsDrawer.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/tests/cropGeometry.test.ts
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetPreview.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetCropEditor.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/Dnd/DragOverlayChip.tsx
@@ -2010,6 +2013,7 @@ packages/core/admin/admin/src/utils/tests/normalizeAPIError.test.ts
 packages/core/admin/admin/src/utils/tests/strings.test.ts
 packages/core/admin/admin/src/utils/tests/widgetLayout.test.ts
 packages/core/admin/admin/src/utils/tests/locales.test.ts
+packages/core/admin/admin/src/utils/tests/baseQuery.test.ts
 packages/core/admin/admin/src/utils/tests/resizeHandlers.test.ts
 packages/core/admin/admin/src/utils/tests/jwt.test.ts
 packages/core/admin/admin/src/utils/tests/objects.test.ts
@@ -2357,6 +2361,7 @@ packages/core/admin/server/src/validation/action-provider.ts
 packages/core/admin/server/src/validation/admin-tokens.ts
 packages/core/admin/server/src/validation/role.ts
 packages/core/admin/server/src/validation/__tests__/common-functions.test.ts
+packages/core/admin/server/src/validation/__tests__/common-validators.test.ts
 packages/core/admin/server/src/validation/__tests__/user.test.ts
 packages/core/admin/server/src/migrations/database/migrate-prefered-language-dk-to-da.ts
 packages/core/admin/server/src/register.ts
@@ -3636,6 +3641,7 @@ packages/core/core/src/domain/module/index.ts
 packages/core/core/src/domain/module/validation.ts
 packages/core/core/src/domain/content-type/index.ts
 packages/core/core/src/domain/content-type/validator.ts
+packages/core/core/src/domain/content-type/__tests__/validator.test.ts
 packages/core/core/src/index.ts
 packages/core/core/src/factories.ts
 packages/core/core/src/registries/index.ts
@@ -4072,6 +4078,7 @@ packages/core/content-type-builder/admin/src/utils/prefixPluginTranslations.ts
 packages/core/content-type-builder/admin/src/utils/conditions.ts
 packages/core/content-type-builder/admin/src/utils/tests/getRelationType.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/formAPI.test.ts
+packages/core/content-type-builder/admin/src/utils/tests/conditions.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/makeUnique.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/prefixPluginTranslations.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/getYupInnerErrors.test.ts
@@ -4079,6 +4086,8 @@ packages/core/content-type-builder/admin/src/utils/tests/parseDateValue.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/timeFormat.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/getMaxDepth.test.ts
 packages/core/content-type-builder/admin/src/utils/tests/isAllowedContentTypesForRelations.test.ts
+packages/core/content-type-builder/admin/src/utils/tests/parseNumberInputValue.test.ts
+packages/core/content-type-builder/admin/src/utils/parseNumberInputValue.ts
 packages/core/content-type-builder/admin/src/constants.ts
 packages/core/content-type-builder/admin/src/exports.ts
 packages/core/content-type-builder/admin/src/types.ts
@@ -4143,7 +4152,9 @@ packages/core/content-type-builder/admin/src/components/FormModal/utils/canEditC
 packages/core/content-type-builder/admin/src/components/FormModal/utils/createUid.ts
 packages/core/content-type-builder/admin/src/components/FormModal/utils/getFormInputNames.ts
 packages/core/content-type-builder/admin/src/components/FormModal/utils/tests/rawData.ts
+packages/core/content-type-builder/admin/src/components/FormModal/utils/tests/getFormInputNames.test.ts
 packages/core/content-type-builder/admin/src/components/FormModal/utils/tests/canEditContentType.test.ts
+packages/core/content-type-builder/admin/src/components/FormModal/utils/tests/customFieldDefaultOptionsReducer.test.ts
 packages/core/content-type-builder/admin/src/components/FormModal/utils/relations.ts
 packages/core/content-type-builder/admin/src/components/FormModal/utils/getAttributesToDisplay.ts
 packages/core/content-type-builder/admin/src/components/FormModal/component/componentField.ts
@@ -4155,6 +4166,7 @@ packages/core/content-type-builder/admin/src/components/FormModal/attributes/nam
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/ConditionForm.tsx
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/commonBaseForm.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/baseForm.ts
+packages/core/content-type-builder/admin/src/components/FormModal/attributes/tests/ConditionForm.test.tsx
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/advancedForm.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/types.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/attributeOptions.ts
@@ -4189,6 +4201,9 @@ packages/core/content-type-builder/admin/src/components/SelectCategory.tsx
 packages/core/content-type-builder/admin/src/components/SingularName.tsx
 packages/core/content-type-builder/admin/src/components/ContentTypeRadioGroup.tsx
 packages/core/content-type-builder/admin/src/components/tests/AutoReloadOverlayBlocker.test.tsx
+packages/core/content-type-builder/admin/src/components/tests/SelectCategory.test.tsx
+packages/core/content-type-builder/admin/src/components/tests/GenericInputs.test.tsx
+packages/core/content-type-builder/admin/src/components/tests/TabForm.test.tsx
 packages/core/content-type-builder/admin/src/components/List.tsx
 packages/core/content-type-builder/admin/src/components/TabForm.tsx
 packages/core/content-type-builder/admin/src/components/AutoReloadOverlayBlocker.tsx
@@ -5512,6 +5527,7 @@ tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-jwt-algorithm.test.api.js
 tests/api/plugins/users-permissions/content-api/auth.test.api.js
 tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js
+tests/api/plugins/users-permissions/content-api/email-confirmation.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts
 tests/api/plugins/users-permissions/content-api/auth-sessions.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js
@@ -5686,6 +5702,7 @@ tests/e2e/tests/media-library/future/asset-details.spec.ts
 tests/e2e/tests/media-library/future/folder-creation.spec.ts
 tests/e2e/tests/media-library/future/page-objects/AssetsPage.ts
 tests/e2e/tests/media-library/future/file-upload.spec.ts
+tests/e2e/tests/media-library/future/asset-crop.spec.ts
 tests/e2e/tests/content-type-builder/ctb-edit-view.spec.ts
 tests/e2e/tests/content-type-builder/single-type/create-single-type.spec.ts
 tests/e2e/tests/content-type-builder/single-type/edit-single-type.spec.ts

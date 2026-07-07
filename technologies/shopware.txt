@@ -887,6 +887,7 @@ src/Core/System/DependencyInjection/tax.xml
 src/Core/System/DependencyInjection/DependencyInjectionException.php
 src/Core/System/DependencyInjection/unit.xml
 src/Core/System/DependencyInjection/sales_channel.xml
+src/Core/System/DependencyInjection/services_test.php
 src/Core/System/DependencyInjection/currency.xml
 src/Core/System/DependencyInjection/CompilerPass/NumberRangeIncrementerCompilerPass.php
 src/Core/System/DependencyInjection/CompilerPass/SalesChannelEntityCompilerPass.php
@@ -4381,6 +4382,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schema
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/Price.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/LandingPage.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/CartDeliveryInformation.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/SeoUrl.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/NewsletterStatus.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/Category.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/Document.json
@@ -5889,6 +5891,7 @@ src/Core/Content/Media/DependencyInjection/ThumbnailProcessorCompilerPass.php
 src/Core/Content/Media/MediaDefinition.php
 src/Core/Content/Media/MediaException.php
 src/Core/Content/Media/Api/MediaVideoCoverController.php
+src/Core/Content/Media/Api/MediaDownloadController.php
 src/Core/Content/Media/Api/MediaFolderController.php
 src/Core/Content/Media/Api/MediaUploadV2Controller.php
 src/Core/Content/Media/Api/MediaUploadController.php
@@ -5958,6 +5961,7 @@ src/Core/Checkout/DocumentV2/Struct/RenderInput.php
 src/Core/Checkout/DocumentV2/Struct/RenderResult.php
 src/Core/Checkout/DocumentV2/Subscriber/DocumentBaseConfigSyncSubscriber.php
 src/Core/Checkout/DocumentV2/Renderer/AbstractDocumentRenderer.php
+src/Core/Checkout/DocumentV2/Renderer/PdfRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/DocumentRendererRegistry.php
 src/Core/Checkout/DocumentV2/Renderer/HtmlRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/XmlRenderer.php
@@ -14018,8 +14022,6 @@ tests/migration/Core/V6_8/Migration1743256470RemoveDebitPaymentTest.php
 tests/migration/Core/V6_8/Migration1777952601BackfillPrimaryOrderTransactionTest.php
 tests/migration/Core/V6_8/Migration1763125892RemoveProductStatesColumnTest.php
 tests/migration/Core/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfileTest.php
-tests/migration/Core/MigrationLoaderTest.php
-tests/migration/Core/DateTimeTest.php
 tests/migration/Core/MigrationNameAndTimestampTest.php
 tests/migration/Core/MigrationForeignDefaultLanguageTest.php
 tests/migration/Core/V6_6/Migration1776803396RegisterProductIndexerTest.php
@@ -14233,13 +14235,6 @@ tests/migration/Core/V6_7/Migration1756068712FixOrderAddressLastNameLengthTest.p
 tests/migration/Core/V6_7/Migration1774359918ProductPriceQuantityRangeMinValuesTest.php
 tests/migration/Core/V6_7/Migration1741163941AddOrderInternalCommentTest.php
 tests/migration/Core/V6_7/Migration1775570251AddWebhookTransportTablesTest.php
-tests/migration/Core/MigrationSourceTest.php
-tests/migration/Core/MigrationExecuteQueryTest.php
-tests/migration/Core/ImportTranslationTraitTest.php
-tests/migration/Core/CreateMailTemplateTraitTest.php
-tests/migration/Core/MigrationCollectionRuntimeTest.php
-tests/migration/Core/IndexerQueuerTest.php
-tests/migration/Core/MigrationCommandTest.php
 tests/migration/Administration/V6_7/Migration1744203319MailTemplateTest.php
 tests/migration/Administration/V6_7/Migration1757057005MailTemplateTest.php
 tests/migration/SalesChannelTranslatedNameResult.json
@@ -14364,6 +14359,8 @@ tests/integration/Core/Service/PermissionsServiceTest.php
 tests/integration/Core/Service/Api/ServiceControllerTest.php
 tests/integration/Core/Service/Api/PermissionControllerTest.php
 tests/integration/Core/Installer/Configuration/ShopConfigurationServiceTest.php
+tests/integration/Core/Migration/Traits/ImportTranslationTraitTest.php
+tests/integration/Core/Migration/Traits/CreateMailTemplateTraitTest.php
 tests/integration/Core/Framework/ApiRoutesHaveASchemaTest.php
 tests/integration/Core/Framework/Notification/Api/NotificationControllerTest.php
 tests/integration/Core/Framework/TestCaseBase/KernelTestBehaviourTest.php
@@ -14546,7 +14543,13 @@ tests/integration/Core/Framework/Plugin/BundleConfigGeneratorTest.php
 tests/integration/Core/Framework/Plugin/PluginLifecycleServiceMigrationTest.php
 tests/integration/Core/Framework/Plugin/ExtensionExtractorTest.php
 tests/integration/Core/Framework/Update/Services/FilesystemTest.php
+tests/integration/Core/Framework/Migration/MigrationLoaderTest.php
+tests/integration/Core/Framework/Migration/DateTimeTest.php
+tests/integration/Core/Framework/Migration/MigrationExecuteQueryTest.php
 tests/integration/Core/Framework/Migration/MigrationStepTest.php
+tests/integration/Core/Framework/Migration/MigrationCollectionRuntimeTest.php
+tests/integration/Core/Framework/Migration/IndexerQueuerTest.php
+tests/integration/Core/Framework/Migration/MigrationCommandTest.php
 tests/integration/Core/Framework/Translation/TranslatorTest.php
 tests/integration/Core/Framework/Translation/Fixtures/storefront.unitTest.json
 tests/integration/Core/Framework/Translation/Fixtures/UnitTest_SnippetFile.php
@@ -15371,9 +15374,12 @@ tests/integration/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscribe
 tests/integration/Core/Content/Media/Subscriber/MediaVisibilityRestrictionSubscriberTest.php
 tests/integration/Core/Content/Media/Subscriber/VideoCoverCleanupSubscriberTest.php
 tests/integration/Core/Checkout/BasicOrderProductTest.php
+tests/integration/Core/Checkout/DocumentV2/DocumentV2Trait.php
 tests/integration/Core/Checkout/DocumentV2/Renderer/DocumentRendererSnapshotTest.php
+tests/integration/Core/Checkout/DocumentV2/Renderer/PdfRendererTest.php
 tests/integration/Core/Checkout/DocumentV2/Renderer/_snapshots/invoice/snapshot.xml
 tests/integration/Core/Checkout/DocumentV2/Renderer/_snapshots/invoice/snapshot.html
+tests/integration/Core/Checkout/DocumentV2/Renderer/_snapshots/invoice_paginated/snapshot.html
 tests/integration/Core/Checkout/Document/Service/DocumentConfigLoaderTest.php
 tests/integration/Core/Checkout/Document/Service/DocumentMergerTest.php
 tests/integration/Core/Checkout/Document/Service/DocumentGeneratorTest.php
@@ -16112,11 +16118,13 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEval
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentChainConstructorClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/AbstractWithConcreteLogicClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/IgnoreStartEndOnlyClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ExceptionForkClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/MethodLevelIgnoreOnPureGetterClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/DelegatingWithArgsClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeExistingIntegrationTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ArrayCoalesceGetterClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ArraySetterClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ExceptionWithAggregationClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ConfigConstructionClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/OtherStaticCallClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentChainWithCallArgClass.php
@@ -16482,6 +16490,7 @@ tests/unit/Core/System/SystemConfig/Service/ConfigurationServiceTest.php
 tests/unit/Core/System/SystemConfig/ConfiguredSystemConfigLoaderTest.php
 tests/unit/Core/System/SystemConfig/_fixtures/invalid_config.xml
 tests/unit/Core/System/SystemConfig/_fixtures/valid_config.xml
+tests/unit/Core/System/SystemConfig/Exception/InvalidSettingValueExceptionTest.php
 tests/unit/Core/System/SystemConfig/DecoratedMemoizedResetTestSystemConfigLoader.php
 tests/unit/Core/System/SystemConfig/MemoizedSystemConfigLoaderTest.php
 tests/unit/Core/System/SystemConfig/SystemConfigServiceTest.php
@@ -16625,6 +16634,7 @@ tests/unit/Core/Framework/Event/EventData/EntityCollectionTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ScalarValueTypeTest.php
 tests/unit/Core/Framework/Event/EventData/EntityTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ObjectTypeTest.php
+tests/unit/Core/Framework/ShopwareHttpExceptionTest.php
 tests/unit/Core/Framework/FeatureFlag/FeatureTest.php
 tests/unit/Core/Framework/FeatureFlag/_fixture/featuretest_unregistered.html.twig
 tests/unit/Core/Framework/FeatureFlag/_fixture/featuretest.html.twig
@@ -16746,6 +16756,7 @@ tests/unit/Core/Framework/Plugin/PluginLifecycleServiceTest.php
 tests/unit/Core/Framework/Plugin/PluginManagementServiceTest.php
 tests/unit/Core/Framework/Plugin/KernelPluginLoader/KernelPluginLoaderTest.php
 tests/unit/Core/Framework/Plugin/Telemetry/PluginTelemetrySubscriberTest.php
+tests/unit/Core/Framework/Plugin/Requirement/Exception/RequirementStackExceptionTest.php
 tests/unit/Core/Framework/Plugin/Requirement/RequirementsValidatorTest.php
 tests/unit/Core/Framework/Plugin/Util/ZipUtilsTest.php
 tests/unit/Core/Framework/Plugin/Util/PluginFinderTest.php
@@ -16835,6 +16846,10 @@ tests/unit/Core/Framework/Migration/InstallEnvironmentTest.php
 tests/unit/Core/Framework/Migration/MigrationExceptionTest.php
 tests/unit/Core/Framework/Migration/MigrationIndexerSafeguardTest.php
 tests/unit/Core/Framework/Migration/MigrationInfoTest.php
+tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/Migration1000000003FkFailing.php
+tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/TestableMigrationRuntime.php
+tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/Migration1000000002Failing.php
+tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/Migration1000000001Successful.php
 tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/OrphanFile/V6_90/Migration1000000001NoNamespace.php
 tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/OrphanFile/V6_90/Migration1000000002Miss.php
 tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/OptedOut/V6_90/Migration1000000001OptedOut.php
@@ -16866,12 +16881,17 @@ tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/FormatLa
 tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/FormatLabels/V6_91/Migration2000000001Miss.php
 tests/unit/Core/Framework/Migration/_fixtures/MigrationIndexerSafeguard/FormatLabels/V6_91/Migration2000000002Partial.php
 tests/unit/Core/Framework/Migration/AddColumnTraitTest.php
+tests/unit/Core/Framework/Migration/MigrationSourceTest.php
+tests/unit/Core/Framework/Migration/MigrationCollectionLoaderTest.php
 tests/unit/Core/Framework/Migration/Command/CreateMigrationCommandTest.php
 tests/unit/Core/Framework/Migration/Command/_fixtures/Migration1772030791Test.php.bak
 tests/unit/Core/Framework/Migration/Command/_fixtures/InvalidMigration.php
 tests/unit/Core/Framework/Migration/Command/RefreshMigrationCommandTest.php
+tests/unit/Core/Framework/Migration/Command/MigrationCommandTest.php
 tests/unit/Core/Framework/Migration/MigrationStepTest.php
+tests/unit/Core/Framework/Migration/IndexerQueuerTest.php
 tests/unit/Core/Framework/Migration/MakeVersionableMigrationHelperTest.php
+tests/unit/Core/Framework/Migration/MigrationRuntimeTest.php
 tests/unit/Core/Framework/BundleTest.php
 tests/unit/Core/Framework/FeatureTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/Metric/MetricTest.php
@@ -16893,7 +16913,6 @@ tests/unit/Core/Framework/Telemetry/TelemetryTest.php
 tests/unit/Core/Framework/Util/UrlEncoderTest.php
 tests/unit/Core/Framework/Util/HtmlSanitizerTest.php
 tests/unit/Core/Framework/Util/ArrayNormalizerTest.php
-tests/unit/Core/Framework/Util/UtilExceptionTest.php
 tests/unit/Core/Framework/Util/FilesystemTest.php
 tests/unit/Core/Framework/Util/FloatComparatorTest.php
 tests/unit/Core/Framework/Util/HtmlPurifierConfigProviderTest.php
@@ -16912,7 +16931,6 @@ tests/unit/Core/Framework/Routing/MaintenanceModeResolverTest.php
 tests/unit/Core/Framework/Routing/ApiRouteScopeTest.php
 tests/unit/Core/Framework/Routing/Event/MaintenanceModeRequestEventTest.php
 tests/unit/Core/Framework/Routing/SalesChannelRequestContextResolverTest.php
-tests/unit/Core/Framework/Routing/Exception/CustomerNotLoggedInRoutingExceptionTest.php
 tests/unit/Core/Framework/Routing/RoutingExceptionTest.php
 tests/unit/Core/Framework/Routing/CanonicalRedirectServiceTest.php
 tests/unit/Core/Framework/Routing/Validation/Constraint/RouteNotBlockedValidatorTest.php
@@ -16938,6 +16956,7 @@ tests/unit/Core/Framework/Sso/UserService/ExternalAuthUserTest.php
 tests/unit/Core/Framework/Script/AppContextCreatorTest.php
 tests/unit/Core/Framework/Script/Service/ArrayFacadeTest.php
 tests/unit/Core/Framework/Script/ScriptExceptionTest.php
+tests/unit/Core/Framework/Script/Exception/ScriptExecutionFailedExceptionTest.php
 tests/unit/Core/Framework/Script/Execution/ScriptExecutorTest.php
 tests/unit/Core/Framework/Script/Execution/ScriptEnvironmentFactoryTest.php
 tests/unit/Core/Framework/Script/Api/ScriptResponseFactoryFacadeHookFactoryTest.php
@@ -17005,6 +17024,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/MigrationFileRendererTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FilteredBulkEntityExtensionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Exception/InvalidEntityUuidExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Exception/PropertyNotFoundExceptionTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Exception/SearchRequestExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Exception/EntityRepositoryNotFoundExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/DataAbstractionLayerExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/EntityTelemetrySubscriberTest.php
@@ -17017,8 +17037,10 @@ tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionWit
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionStub.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityRepositoryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/WriteCommandExtractorTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Write/WriteExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/FieldException/ExpectedArrayExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/WriteInputValidatorTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Write/Validation/RestrictDeleteViolationExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/Validation/PostWriteValidationEventTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/Validation/ParentRelationValidatorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Write/Validation/PreWriteValidationEventTest.php
@@ -17090,7 +17112,9 @@ tests/unit/Core/Framework/Validation/Exception/ConstraintViolationExceptionTest.
 tests/unit/Core/Framework/Validation/ValidatorFactoryTest.php
 tests/unit/Core/Framework/Validation/DataValidationDefinitionTest.php
 tests/unit/Core/Framework/Validation/HappyPathValidatorTest.php
+tests/unit/Core/Framework/Validation/WriteConstraintViolationExceptionTest.php
 tests/unit/Core/Framework/FrameworkExceptionTest.php
+tests/unit/Core/Framework/DependencyInjection/FrameworkExtensionTest.php
 tests/unit/Core/Framework/DependencyInjection/McpServiceConfigTest.php
 tests/unit/Core/Framework/DependencyInjection/ConfigurationTest.php
 tests/unit/Core/Framework/DependencyInjection/CompilerPass/McpServerBuilderCompilerPassTest.php
@@ -17465,9 +17489,9 @@ tests/unit/Core/Framework/App/_fixtures/App/TestApp/manifest.xml
 tests/unit/Core/Framework/App/_fixtures/AppInvalidPrefix/some-file.txt
 tests/unit/Core/Framework/App/_fixtures/AppInvalidPrefix/TestApp/manifest.xml
 tests/unit/Core/Framework/App/_fixtures/AppNoTobLevelFolder/some-file.txt
+tests/unit/Core/Framework/App/Exception/AppValidationExceptionTest.php
 tests/unit/Core/Framework/App/Exception/ShopIdChangeStrategyNotFoundExceptionTest.php
 tests/unit/Core/Framework/App/Exception/AppDownloadExceptionTest.php
-tests/unit/Core/Framework/App/Exception/AppAlreadyInstalledExceptionTest.php
 tests/unit/Core/Framework/App/Exception/ShopIdChangeSuggestedExceptionTest.php
 tests/unit/Core/Framework/App/Exception/AppArchiveValidationFailureTest.php
 tests/unit/Core/Framework/App/ScheduledTask/UpdateAppsTaskTest.php
@@ -17555,6 +17579,10 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/SimpleEx
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiSchemaBuilderTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/BundleSchemaPathCollectionTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/SimpleDefinition.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/DefinitionWithJsonOverride.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginExtensionForJsonOverride.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginBundleWithSchema/PluginBundleWithSchema.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginBundleWithSchema/Resources/Schema/StoreApi/components/schemas/JsonOverrideEntity.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithPredeclaredSwLanguageId/BundleWithPredeclaredSwLanguageId.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithPredeclaredSwLanguageId/Resources/Schema/StoreApi/paths/predeclared.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/CustomBundleWithApiSchema/ShopwareBundleWithName.php
@@ -17572,6 +17600,7 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinitio
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse2.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/JsonOverrideEntity.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/parameters/x-parameter-groups.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_delivery.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
@@ -17594,6 +17623,7 @@ tests/unit/Core/Framework/Api/Serializer/RecordTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonEntityEncoderTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonSalesChannelEntityEncoderTest.php
 tests/unit/Core/Framework/Api/ApiExceptionTest.php
+tests/unit/Core/Framework/Api/Exception/ResourceNotFoundExceptionTest.php
 tests/unit/Core/Framework/Api/Util/AccessKeyHelperTest.php
 tests/unit/Core/Framework/Api/OAuth/ClientRepositoryTest.php
 tests/unit/Core/Framework/Api/OAuth/JWTConfigurationFactoryTest.php
@@ -17707,6 +17737,7 @@ tests/unit/Core/Saas/SsoServiceTest.php
 tests/unit/Core/Content/ContentTest.php
 tests/unit/Core/Content/Cookie/Service/CookieProviderTest.php
 tests/unit/Core/Content/Cookie/SalesChannel/CookieRouteTest.php
+tests/unit/Core/Content/Cookie/CookieExceptionTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieGroupTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieGroupCollectionTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieEntryCollectionTest.php
@@ -17995,12 +18026,14 @@ tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewLoaderTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/Event/ReviewFormEventTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewsWidgetLoadedHookTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewSaveRouteTest.php
+tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewResultTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/RatingMatrixTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/ProductReviewRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Review/MatrixElementTest.php
 tests/unit/Core/Content/Product/SalesChannel/Suggest/ProductSuggestRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Suggest/ResolvedCriteriaProductSuggestRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/SalesChannelProductDefinitionTest.php
+tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingResultTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingCriteriaExtensionTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingLoaderTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingLoaderExtensionsTests.php
@@ -18176,6 +18209,7 @@ tests/unit/Core/Content/Media/UnusedMediaPurgerTest.php
 tests/unit/Core/Content/Media/Api/MediaUploadV2ControllerTest.php
 tests/unit/Core/Content/Media/Api/PresignedUploadControllerTest.php
 tests/unit/Core/Content/Media/Api/MediaUploadControllerTest.php
+tests/unit/Core/Content/Media/Api/MediaDownloadControllerTest.php
 tests/unit/Core/Content/Media/Subscriber/MediaCreationSubscriberTest.php
 tests/unit/Core/Content/Media/Subscriber/MediaLoadedSubscriberTest.php
 tests/unit/Core/Content/Media/Subscriber/CustomFieldsUnusedMediaSubscriberTest.php
@@ -18214,6 +18248,7 @@ tests/unit/Core/Checkout/DocumentV2/Struct/RenderStateTest.php
 tests/unit/Core/Checkout/DocumentV2/Struct/RenderInputTest.php
 tests/unit/Core/Checkout/DocumentV2/Subscriber/DocumentBaseConfigSyncSubscriberTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/DocumentRendererRegistryTest.php
+tests/unit/Core/Checkout/DocumentV2/Renderer/PdfRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/HtmlRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/XmlRendererTest.php
 tests/unit/Core/Checkout/Document/DocumentConfigurationFactoryTest.php
@@ -18865,6 +18900,7 @@ tests/unit/Storefront/Theme/ThemeAssetPackageTest.php
 tests/unit/Storefront/Theme/StorefrontPluginConfigurationTest.php
 tests/unit/Storefront/Theme/Exception/ThemeConfigExceptionTest.php
 tests/unit/Storefront/Theme/Exception/ThemeExceptionTest.php
+tests/unit/Storefront/Theme/Exception/ThemeAssignmentExceptionTest.php
 tests/unit/Storefront/Theme/ScheduledTask/DeleteThemeFilesTaskHandlerTest.php
 tests/unit/Storefront/Theme/ThemeMergedConfigBuilderTest.php
 tests/unit/Storefront/Theme/DatabaseSalesChannelThemeLoaderTest.php

@@ -3989,7 +3989,7 @@ ghost/core/test/integration/settings/settings.test.js
 ghost/core/test/integration/exporter/exporter.test.js
 ghost/core/test/integration/jobs/update-check.test.js
 ghost/core/test/integration/lib/image/image-size-storage.test.ts
-ghost/core/test/integration/utils/minio.test.js
+ghost/core/test/integration/utils/minio.test.ts
 ghost/core/test/integration/services/member-welcome-emails-snapshot.test.js
 ghost/core/test/integration/services/offers-api.test.js
 ghost/core/test/integration/services/email-service/resume-interrupted-sends.test.js
@@ -4054,9 +4054,9 @@ ghost/core/test/utils/i18n-test-utils.js
 ghost/core/test/utils/url-service-utils.js
 ghost/core/test/utils/api.js
 ghost/core/test/utils/db-template.js
+ghost/core/test/utils/deferred.ts
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/mocks/index.js
-ghost/core/test/utils/deferred.js
 ghost/core/test/utils/fixtures/settings/notyaml.md
 ghost/core/test/utils/fixtures/settings/newroutes.yaml
 ghost/core/test/utils/fixtures/settings/routes.yaml
@@ -4643,6 +4643,7 @@ ghost/core/test/unit/server/services/stats/content.test.js
 ghost/core/test/unit/server/services/stats/subscriptions.test.js
 ghost/core/test/unit/server/services/stats/referrers.test.js
 ghost/core/test/unit/server/services/gift-links/gift-link-token.test.ts
+ghost/core/test/unit/server/services/gift-links/actions.test.ts
 ghost/core/test/unit/server/services/link-tracking/link-click-tracking-service.test.js
 ghost/core/test/unit/server/services/link-tracking/post-link-repository.test.js
 ghost/core/test/unit/server/services/link-tracking/link-click-repository.test.js
@@ -5600,11 +5601,12 @@ ghost/core/core/server/services/stats/members-stats-service.js
 ghost/core/core/server/services/stats/subscription-stats-service.js
 ghost/core/core/server/services/stats/referrers-stats-service.js
 ghost/core/core/server/services/gift-links/index.ts
-ghost/core/core/server/services/gift-links/queries.ts
+ghost/core/core/server/services/gift-links/actions.ts
 ghost/core/core/server/services/gift-links/serializers.ts
+ghost/core/core/server/services/gift-links/schema.ts
 ghost/core/core/server/services/gift-links/service.ts
 ghost/core/core/server/services/gift-links/models.ts
-ghost/core/core/server/services/gift-links/database.ts
+ghost/core/core/server/services/gift-links/codec.ts
 ghost/core/core/server/services/gift-links/case-keys.ts
 ghost/core/core/server/services/link-tracking/link-click-repository.js
 ghost/core/core/server/services/link-tracking/link-click-tracking-service.js

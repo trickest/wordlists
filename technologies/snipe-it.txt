@@ -101,12 +101,14 @@ resources/assets/less/app.less
 resources/assets/less/overrides.less
 resources/assets/js/extensions/pGenerator.jquery.js
 resources/assets/js/extensions/jquery.base64.js
+resources/assets/js/build-jspdf-dejavu-fonts.js
 resources/assets/js/dragtable.js
 resources/assets/js/snipeit_modals.js
 resources/assets/js/snipeit.js
 resources/assets/js/signature_pad.js
 resources/assets/js/FileSaver.min.js
 resources/assets/js/bootstrap-table-reorder-columns.js
+resources/assets/js/jspdf-dejavu-fonts.js
 resources/views/reports/unaccepted_assets.blade.php
 resources/views/reports/custom/asset.blade.php
 resources/views/reports/custom/component.blade.php
@@ -131,6 +133,8 @@ resources/views/settings/branding.blade.php
 resources/views/settings/security.blade.php
 resources/views/settings/slack.blade.php
 resources/views/settings/phpinfo.blade.php
+resources/views/settings/partials/labels-legacy-engine.blade.php
+resources/views/settings/partials/labels-new-engine.blade.php
 resources/views/settings/asset_tags.blade.php
 resources/views/settings/logins.blade.php
 resources/views/settings/localization.blade.php
@@ -227,9 +231,12 @@ resources/views/blade/form/label.blade.php
 resources/views/blade/form/legend-help.blade.php
 resources/views/blade/form/tooltip.blade.php
 resources/views/blade/form/row.blade.php
+resources/views/blade/form/radio-row.blade.php
+resources/views/blade/form/checkbox-inline.blade.php
 resources/views/blade/form/legend.blade.php
 resources/views/blade/form/static.blade.php
 resources/views/blade/form/index.blade.php
+resources/views/blade/form/checkbox-row.blade.php
 resources/views/blade/data-row.blade.php
 resources/views/blade/input/textarea.blade.php
 resources/views/blade/input/username-select.blade.php
@@ -238,6 +245,7 @@ resources/views/blade/input/select.blade.php
 resources/views/blade/input/minimum-quantity.blade.php
 resources/views/blade/input/company-select.blade.php
 resources/views/blade/input/purchase-cost.blade.php
+resources/views/blade/input/checkbox.blade.php
 resources/views/blade/input/button.blade.php
 resources/views/blade/input/text.blade.php
 resources/views/blade/input/country-select.blade.php
@@ -248,6 +256,7 @@ resources/views/blade/input/email-format-select.blade.php
 resources/views/blade/input/datepicker.blade.php
 resources/views/blade/input/category-select.blade.php
 resources/views/blade/input/quantity.blade.php
+resources/views/blade/input/radio.blade.php
 resources/views/blade/input/colorpicker.blade.php
 resources/views/blade/input/time-display-format.blade.php
 resources/views/blade/input/location-select.blade.php
@@ -338,6 +347,7 @@ resources/views/partials/licenses-assigned.blade.php
 resources/views/partials/assets-assigned.blade.php
 resources/views/partials/confetti-js.blade.php
 resources/views/partials/users-bulk-actions.blade.php
+resources/views/partials/labels-legacy-engine.blade.php
 resources/views/partials/forms/edit/uploadLogo.blade.php
 resources/views/partials/forms/edit/model_number.blade.php
 resources/views/partials/forms/edit/image-upload.blade.php
@@ -386,6 +396,7 @@ resources/views/partials/forms/demo-mode.blade.php
 resources/views/partials/asset-bulk-actions.blade.php
 resources/views/partials/label2-field-definitions.blade.php
 resources/views/partials/bootstrap-table.blade.php
+resources/views/partials/labels-new-engine.blade.php
 resources/views/depreciations/edit.blade.php
 resources/views/depreciations/view.blade.php
 resources/views/depreciations/index.blade.php
@@ -7041,6 +7052,7 @@ app/Exceptions/ItemStillHasChildCompanies.php
 app/Exceptions/ItemStillHasConsumables.php
 app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/UserDoestExistException.php
+app/Exceptions/MissingLogTarget.php
 app/Exceptions/ItemStillHasMaintenances.php
 app/Exceptions/ItemStillHasChildren.php
 app/Exceptions/ItemStillHasLicenses.php
@@ -7158,6 +7170,7 @@ app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/Users/LDAPImportController.php
 app/Http/Controllers/Users/BulkUsersController.php
 app/Http/Controllers/SuppliersController.php
+app/Http/Controllers/BulkAccessoriesController.php
 app/Http/Controllers/BulkAssetModelsController.php
 app/Http/Controllers/BulkManufacturersController.php
 app/Http/Controllers/CustomFieldsetsController.php
@@ -7266,6 +7279,7 @@ app/Http/Requests/AssetCheckinRequest.php
 app/Http/Requests/StoreAccessoryRequest.php
 app/Http/Requests/ItemImportRequest.php
 app/Http/Requests/UploadFileRequest.php
+app/Http/Requests/BulkUpdateAssetsRequest.php
 app/Http/Requests/StoreNotificationSettings.php
 app/Http/Requests/StoreLabelSettings.php
 app/Http/Requests/Request.php
@@ -7365,11 +7379,13 @@ tests/Unit/Rules/ExternalUrlTest.php
 tests/Unit/Helpers/HelperTest.php
 tests/Unit/Importer/AssetImportTest.php
 tests/Unit/CustomFieldTest.php
+tests/Unit/Codebase/ForbiddenFmcsPatternsTest.php
 tests/Unit/DatabaseSslConfigurationTest.php
 tests/Unit/Models/LicenseTest.php
 tests/Unit/Models/AssetOrphanedAssignmentTest.php
 tests/Unit/Models/ReportTemplates/ReportTemplateParsingValuesTest.php
 tests/Unit/Models/UserCanReceiveFromCompanyTest.php
+tests/Unit/Models/LoggableTest.php
 tests/Unit/Models/Company/CompanyTest.php
 tests/Unit/Models/Company/GetIdForCurrentUserTest.php
 tests/Unit/Models/UserTotalCostTest.php
@@ -7445,6 +7461,7 @@ tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
 tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
+tests/Feature/Permissions/PermissionsFormPreCheckTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
 tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
@@ -7569,6 +7586,7 @@ tests/Feature/Accessories/Api/StoreAccessoryTest.php
 tests/Feature/Accessories/Api/AccessoriesForSelectListTest.php
 tests/Feature/Accessories/Api/ShowAccessoryTest.php
 tests/Feature/Accessories/Api/IndexAccessoryCheckoutsTest.php
+tests/Feature/Accessories/Api/BulkSelectableTest.php
 tests/Feature/Accessories/Api/UpdateAccessoryTest.php
 tests/Feature/Accessories/Api/DeleteAccessoriesTest.php
 tests/Feature/Accessories/Api/AccessoryPaginationTest.php
@@ -7579,6 +7597,7 @@ tests/Feature/Accessories/Ui/DeleteAccessoryTest.php
 tests/Feature/Accessories/Ui/ShowAccessoryTest.php
 tests/Feature/Accessories/Ui/CreateAccessoryWithFullMultipleCompanySupportTest.php
 tests/Feature/Accessories/Ui/CreateAccessoriesTest.php
+tests/Feature/Accessories/Ui/BulkDeleteAccessoriesTest.php
 tests/Feature/Accessories/Ui/UpdateAccessoryTest.php
 tests/Feature/Redirects/ModelNotFoundRedirectTest.php
 tests/Feature/Assets/Api/CheckinCheckoutCounters.php
@@ -7587,11 +7606,13 @@ tests/Feature/Assets/Api/AssetPaginationTest.php
 tests/Feature/Assets/Api/AssignedComponentsTest.php
 tests/Feature/Assets/Api/UploadedFilesPaginationTest.php
 tests/Feature/Assets/Api/DeleteAssetsTest.php
+tests/Feature/Assets/Api/BulkUpdateAssetsTest.php
 tests/Feature/Assets/Api/AuditAssetTest.php
 tests/Feature/Assets/Api/AssetNotesTest.php
 tests/Feature/Assets/Api/AssetHistoryTest.php
 tests/Feature/Assets/Api/AssignedAssetsTest.php
 tests/Feature/Assets/Api/UploadedFilesInlineTest.php
+tests/Feature/Assets/Api/BulkAuditAssetsTest.php
 tests/Feature/Assets/Api/AssetFilesTest.php
 tests/Feature/Assets/Api/StoreAssetTest.php
 tests/Feature/Assets/Api/RequestableAssetTest.php
@@ -7661,6 +7682,9 @@ tests/Feature/Suppliers/Ui/UpdateSupplierTest.php
 tests/Feature/Suppliers/Ui/BulkDeleteSuppliersTest.php
 tests/Feature/Suppliers/Ui/ShowSupplierTest.php
 tests/Feature/Suppliers/Ui/IndexSuppliersTest.php
+tests/Feature/Blade/RadioRowTest.php
+tests/Feature/Blade/CheckboxRowTest.php
+tests/Feature/Blade/CheckboxInlineTest.php
 tests/Feature/Licenses/Api/LicenseUploadTest.php
 tests/Feature/Licenses/Api/DeleteLicensesTest.php
 tests/Feature/Licenses/Api/LicenseCheckoutCheckinTest.php
@@ -7700,6 +7724,7 @@ tests/Feature/Notifications/Email/CheckoutResponseEmailTest.php
 tests/Feature/Notifications/Email/EmailNotificationsToAdminAlertEmailUponCheckinTest.php
 tests/Feature/Notifications/Email/AcceptanceReminderTest.php
 tests/Feature/History/Api/IndexHistoryTest.php
+tests/Feature/Fmcs/HttpCrossCompanyLeakTest.php
 tests/Feature/CustomFieldsets/Api/DeleteCustomFieldsetsTest.php
 tests/Feature/Api/EnforceApiUserAgentTest.php
 tests/Feature/Console/BulkDeleteTest.php
