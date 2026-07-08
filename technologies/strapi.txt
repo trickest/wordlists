@@ -1011,7 +1011,9 @@ packages/utils/upgrade/src/tasks/codemods/list-codemods.ts
 packages/utils/upgrade/src/tasks/codemods/types.ts
 packages/utils/upgrade/src/tasks/upgrade/index.ts
 packages/utils/upgrade/src/tasks/upgrade/prompts/index.ts
+packages/utils/upgrade/src/tasks/upgrade/prompts/pin-versions.ts
 packages/utils/upgrade/src/tasks/upgrade/prompts/latest.ts
+packages/utils/upgrade/src/tasks/upgrade/prompts/__tests__/pin-versions.test.ts
 packages/utils/upgrade/src/tasks/upgrade/requirements/index.ts
 packages/utils/upgrade/src/tasks/upgrade/requirements/major.ts
 packages/utils/upgrade/src/tasks/upgrade/requirements/common.ts
@@ -1029,10 +1031,12 @@ packages/utils/upgrade/src/modules/json/__tests__/file.test.ts
 packages/utils/upgrade/src/modules/json/__tests__/json-transform-api.test.ts
 packages/utils/upgrade/src/modules/project/index.ts
 packages/utils/upgrade/src/modules/project/constants.ts
+packages/utils/upgrade/src/modules/project/strapi-dependencies.ts
 packages/utils/upgrade/src/modules/project/utils.ts
 packages/utils/upgrade/src/modules/project/project.ts
 packages/utils/upgrade/src/modules/project/types.ts
 packages/utils/upgrade/src/modules/project/__tests__/project.test.ts
+packages/utils/upgrade/src/modules/project/__tests__/strapi-dependencies.test.ts
 packages/utils/upgrade/src/modules/timer/index.ts
 packages/utils/upgrade/src/modules/timer/constants.ts
 packages/utils/upgrade/src/modules/timer/timer.ts
@@ -2420,6 +2424,9 @@ packages/core/admin/shared/contracts/homepage.ts
 packages/core/admin/shared/contracts/admin-token.ts
 packages/core/admin/shared/contracts/sessions.ts
 packages/core/admin/shared/utils/session-auth.ts
+packages/core/admin/shared/utils/auth-cookie-name.ts
+packages/core/admin/shared/utils/__tests__/session-auth.test.ts
+packages/core/admin/shared/utils/__tests__/auth-cookie-name.test.ts
 packages/core/admin/README.md
 packages/core/admin/jest.config.front.js
 packages/core/admin/.npmignore
@@ -3326,6 +3333,7 @@ packages/core/strapi/src/node/core/__tests__/plugins.test.ts
 packages/core/strapi/src/node/core/__tests__/admin-vite-aliases.test.ts
 packages/core/strapi/src/node/core/__tests__/resolve-module.test.ts
 packages/core/strapi/src/node/types.ts
+packages/core/strapi/src/node/__tests__/create-build-context.test.ts
 packages/core/strapi/src/admin.ts
 packages/core/strapi/src/types/index.d.ts
 packages/core/strapi/LICENSE
@@ -3595,6 +3603,7 @@ packages/core/database/src/entity-manager/entity-repository.ts
 packages/core/database/src/query/index.ts
 packages/core/database/src/query/query-builder.ts
 packages/core/database/src/query/types.ts
+packages/core/database/src/query/__tests__/status-sort-distinct.test.ts
 packages/core/database/src/query/helpers/index.ts
 packages/core/database/src/query/helpers/search.ts
 packages/core/database/src/query/helpers/transform.ts
@@ -3666,6 +3675,7 @@ packages/core/core/src/registries/__tests__/config.test.ts
 packages/core/core/src/registries/__tests__/components.test.ts
 packages/core/core/src/ee/index.ts
 packages/core/core/src/ee/license.ts
+packages/core/core/src/ee/__tests__/license.test.ts
 packages/core/core/src/loaders/index.ts
 packages/core/core/src/loaders/middlewares.ts
 packages/core/core/src/loaders/components.ts
@@ -3996,6 +4006,7 @@ packages/core/email/admin/tsconfig.build.json
 packages/core/email/admin/.eslintrc.cjs
 packages/core/email/rollup.config.mjs
 packages/core/email/LICENSE
+packages/core/email/jest.config.js
 packages/core/email/server/tsconfig.json
 packages/core/email/server/src/routes/index.ts
 packages/core/email/server/src/routes/content-api.ts
@@ -4012,6 +4023,7 @@ packages/core/email/server/src/services/index.ts
 packages/core/email/server/src/services/email.ts
 packages/core/email/server/src/config.ts
 packages/core/email/server/src/types.ts
+packages/core/email/server/src/__tests__/bootstrap.test.ts
 packages/core/email/server/tsconfig.build.json
 packages/core/email/server/tsconfig.eslint.json
 packages/core/email/server/.eslintrc.cjs
@@ -5346,6 +5358,7 @@ tests/api/core/content-manager/api/number-of-draft-relations.test.api.js
 tests/api/core/content-manager/api/many-relations-update.test.api.js
 tests/api/core/content-manager/api/first-published-at.test.api.js
 tests/api/core/content-manager/api/document-metadata.test.api.js
+tests/api/core/content-manager/api/status-sort-relation-filter.test.api.ts
 tests/api/core/content-manager/api/draft-relations-bidirectional-m2m.test.api.ts
 tests/api/core/content-manager/api/relations-permissions.test.api.js
 tests/api/core/content-manager/api/basic-pagination.test.api.js

@@ -81,6 +81,10 @@ custom/plugins/.gitkeep
 .agents/skills/shopware-change-scope/SKILL.md
 .agents/skills/shopware-change-scope/agents/openai.yaml
 .agents/skills/README.md
+.agents/skills/nightly-triage/SKILL.md
+.agents/skills/nightly-triage/references/PIPELINE.md
+.agents/skills/nightly-triage/references/REPRODUCTION.md
+.agents/skills/nightly-triage/references/ROUTING.md
 phpstan-paths.php
 releases.json
 devenv.nix
@@ -5873,6 +5877,7 @@ src/Core/Content/Media/Upload/PresignedUploadPreparePayload.php
 src/Core/Content/Media/Upload/PresignedUploadFinalizePayload.php
 src/Core/Content/Media/Upload/MediaFileCleanupService.php
 src/Core/Content/Media/Upload/MediaUploadParameters.php
+src/Core/Content/Media/Upload/MediaFileExtensionListProvider.php
 src/Core/Content/Media/Upload/MediaUploadService.php
 src/Core/Content/Media/Upload/PresignedUrlResult.php
 src/Core/Content/Media/Upload/PresignedUrlGeneratorInterface.php
@@ -11655,6 +11660,7 @@ src/Administration/Resources/app/administration/src/app/directive/click-outside.
 src/Administration/Resources/app/administration/src/app/directive/tooltip.directive.spec.js
 src/Administration/Resources/app/administration/src/app/directive/dragdrop.directive.ts
 src/Administration/Resources/app/administration/src/app/mixin/salutation.mixin.spec.js
+src/Administration/Resources/app/administration/src/app/mixin/notification-translation.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/rule-between-operator.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/placeholder.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/validation.mixin.ts
@@ -11663,6 +11669,7 @@ src/Administration/Resources/app/administration/src/app/mixin/rule-container.mix
 src/Administration/Resources/app/administration/src/app/mixin/user-settings.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/position.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/remove-api-error.mixin.ts
+src/Administration/Resources/app/administration/src/app/mixin/notification-translation.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/form-field.mixin.ts
 src/Administration/Resources/app/administration/src/app/mixin/user-settings.mixin.spec.js
 src/Administration/Resources/app/administration/src/app/mixin/sw-inline-snippet.mixin.spec.js
@@ -14064,7 +14071,6 @@ tests/migration/Core/V6_6/Migration1707807389ChangeAvailableDefaultTest.php
 tests/migration/Core/V6_6/Migration1718615305AddEuToCountryTableTest.php
 tests/migration/Core/V6_6/Migration1739198249FixOrderDeliveryStateMachineNameTest.php
 tests/migration/Core/V6_6/Migration1713345551AddAppManagedColumnTest.php
-tests/migration/Core/V6_6/Migration1671723392AddWebhookLifetimeConfigTest.php
 tests/migration/Core/V6_6/Migration1765983627CreateDeletedAppsTableTest.php
 tests/migration/Core/V6_6/Migration1735112885AddDefaultSearchResultSortingTest.php
 tests/migration/Core/V6_6/Migration1733745893createTagStorageTableTest.php
@@ -14239,7 +14245,6 @@ tests/migration/Administration/V6_7/Migration1744203319MailTemplateTest.php
 tests/migration/Administration/V6_7/Migration1757057005MailTemplateTest.php
 tests/migration/SalesChannelTranslatedNameResult.json
 tests/migration/MigrationTestTrait.php
-tests/migration/Elasticsearch/V6_5/Migration1689084023AdminElasticsearchIndexTaskTest.php
 tests/migration/Translations.php
 tests/migration/MailTemplateTranslationResult.php
 tests/migration/MigrationUntouchedDbTestTrait.php
@@ -18185,6 +18190,7 @@ tests/unit/Core/Content/Media/Upload/MediaUploadParametersTest.php
 tests/unit/Core/Content/Media/Upload/PresignedMediaUploadServiceTest.php
 tests/unit/Core/Content/Media/Upload/ExternalThumbnailDataTest.php
 tests/unit/Core/Content/Media/Upload/MediaUploadServiceTest.php
+tests/unit/Core/Content/Media/Upload/MediaFileExtensionListProviderTest.php
 tests/unit/Core/Content/Media/Upload/MediaFileCleanupServiceTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadFinalizePayloadTest.php
 tests/unit/Core/Content/Media/Upload/PresignedUploadUrlGeneratorTest.php

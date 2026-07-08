@@ -2201,6 +2201,7 @@ e2e/tests/admin/members/label-lifecycle.test.ts
 e2e/tests/admin/members/search-and-filter.test.ts
 e2e/tests/admin/members/import.test.ts
 e2e/tests/admin/analytics/newsletters.test.ts
+e2e/tests/admin/analytics/gift-link-journey.test.ts
 e2e/tests/admin/analytics/growth.test.ts
 e2e/tests/admin/analytics/web-traffic.test.ts
 e2e/tests/admin/analytics/web-filters.test.ts
@@ -2334,6 +2335,7 @@ e2e/helpers/pages/admin/analytics/analytics-web-traffic-page.ts
 e2e/helpers/pages/admin/analytics/analytics-newsletters-page.ts
 e2e/helpers/pages/admin/analytics/analytics-overview-page.ts
 e2e/helpers/pages/admin/analytics/post-analytics/index.ts
+e2e/helpers/pages/admin/analytics/post-analytics/post-analytics-overview-page.ts
 e2e/helpers/pages/admin/analytics/post-analytics/post-analytics-web-traffic-page.ts
 e2e/helpers/pages/admin/analytics/post-analytics/post-analytics-growth-page.ts
 e2e/helpers/pages/admin/analytics/post-analytics/post-analytics-page.ts
@@ -3600,7 +3602,8 @@ ghost/i18n/test/i18n-ignores.json
 ghost/i18n/test/utils.js
 ghost/i18n/package.json
 ghost/i18n/generate-context.js
-ghost/i18n/index.browser.js
+ghost/i18n/registry.d.ts
+ghost/i18n/index.d.ts
 ghost/i18n/locales/th/comments.json
 ghost/i18n/locales/th/search.json
 ghost/i18n/locales/th/signup-form.json
@@ -3914,9 +3917,16 @@ ghost/i18n/locales/lv/portal.json
 ghost/i18n/locales/lv/ghost.json
 ghost/i18n/i18next-parser.config.js
 ghost/i18n/lib/locale-data.json
+ghost/i18n/lib/esm-factory.mjs
 ghost/i18n/lib/i18n-core.js
 ghost/i18n/lib/i18n.js
-ghost/i18n/lib/i18n.browser.js
+ghost/i18n/lib/registry/comments.mjs
+ghost/i18n/lib/registry/signup-form.mjs
+ghost/i18n/lib/registry/portal.mjs
+ghost/i18n/lib/registry/search.mjs
+ghost/i18n/lib/registry/ghost.mjs
+ghost/i18n/lib/require-loader.js
+ghost/i18n/lib/i18n-core.mjs
 ghost/i18n/vitest.config.mjs
 ghost/i18n/index.js
 ghost/i18n/README.md
@@ -4470,6 +4480,7 @@ ghost/core/test/unit/api/canary/utils/serializers/output/previews.test.js
 ghost/core/test/unit/api/canary/utils/serializers/output/all.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/comments.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/members.test.js
+ghost/core/test/unit/api/canary/utils/serializers/input/users.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/pages.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/posts.test.js
 ghost/core/test/unit/api/canary/utils/serializers/input/utils/settings-filter-type-group-mapper.test.js
@@ -6376,9 +6387,7 @@ ghost/core/core/server/data/migrations/utils/settings.js
 ghost/core/core/server/data/migrations/hooks/init/shutdown.js
 ghost/core/core/server/data/migrations/hooks/init/index.js
 ghost/core/core/server/data/migrations/hooks/migrate/shutdown.js
-ghost/core/core/server/data/migrations/hooks/migrate/after-each.js
 ghost/core/core/server/data/migrations/hooks/migrate/before.js
-ghost/core/core/server/data/migrations/hooks/migrate/before-each.js
 ghost/core/core/server/data/migrations/hooks/migrate/index.js
 ghost/core/core/server/data/db/database-state-manager.js
 ghost/core/core/server/data/db/backup.js

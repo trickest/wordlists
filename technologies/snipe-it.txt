@@ -339,6 +339,7 @@ resources/views/layouts/basic.blade.php
 resources/views/layouts/debug.blade.php
 resources/views/layouts/default.blade.php
 resources/views/layouts/setup.blade.php
+resources/views/partials/impersonation-banner.blade.php
 resources/views/partials/models-bulk-actions.blade.php
 resources/views/partials/label2-preview.blade.php
 resources/views/partials/more-info.blade.php
@@ -522,6 +523,7 @@ resources/views/users/confirm-bulk-delete.blade.php
 resources/views/users/print.blade.php
 resources/views/users/view.blade.php
 resources/views/users/index.blade.php
+resources/views/users/impersonate-confirm-modal.blade.php
 resources/views/users/bulk-edit.blade.php
 resources/views/users/ldap.blade.php
 resources/views/users/confirm-merge.blade.php
@@ -6802,6 +6804,7 @@ docker/README.md
 docker/startup_alpine_fpm.sh
 docker/001-default-ssl.conf
 app/View/Composers/SidebarComposer.php
+app/View/Composers/ImpersonationBannerComposer.php
 app/View/Label.php
 app/Mail/CheckoutLicenseMail.php
 app/Mail/UnacceptedAssetReminderMail.php
@@ -7168,6 +7171,7 @@ app/Http/Controllers/Kits/CheckoutKitController.php
 app/Http/Controllers/Kits/PredefinedKitsController.php
 app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/Users/LDAPImportController.php
+app/Http/Controllers/Users/ImpersonateController.php
 app/Http/Controllers/Users/BulkUsersController.php
 app/Http/Controllers/SuppliersController.php
 app/Http/Controllers/BulkAccessoriesController.php
@@ -7497,6 +7501,7 @@ tests/Feature/Categories/Ui/UpdateCategoriesTest.php
 tests/Feature/Categories/Ui/BulkDeleteCategoriesTest.php
 tests/Feature/Categories/Ui/ShowCategoryTest.php
 tests/Feature/Categories/Ui/DeleteCategoriesTest.php
+tests/Feature/Users/ImpersonateUserTest.php
 tests/Feature/Users/UserPermissionLoggingTest.php
 tests/Feature/Users/UserCompanyLoggingTest.php
 tests/Feature/Users/Api/CreateUserTest.php
@@ -7510,6 +7515,7 @@ tests/Feature/Users/Api/IndexUsersTest.php
 tests/Feature/Users/Api/UsersForSelectListTest.php
 tests/Feature/Users/Api/DeleteUsersTest.php
 tests/Feature/Users/Ui/CreateUserTest.php
+tests/Feature/Users/Ui/TwoFactorResetTest.php
 tests/Feature/Users/Ui/ViewUserTest.php
 tests/Feature/Users/Ui/CloneUserTest.php
 tests/Feature/Users/Ui/UserCompanyMembershipTest.php
@@ -7664,6 +7670,7 @@ tests/Feature/Components/Ui/ShowComponentTest.php
 tests/Feature/Components/Ui/DeleteComponentTest.php
 tests/Feature/Components/Ui/StoreComponentWithFullMultipleCompanySupportTest.php
 tests/Feature/Components/Ui/CloneComponentTest.php
+tests/Feature/Settings/ImpersonationSettingsRowTest.php
 tests/Feature/Settings/LdapSettingsTest.php
 tests/Feature/Settings/OauthSettingsTest.php
 tests/Feature/Settings/LabelSettingTest.php

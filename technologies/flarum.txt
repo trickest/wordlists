@@ -58,6 +58,7 @@ extensions/likes/migrations/2015_09_04_000000_add_default_like_permissions.php
 extensions/likes/migrations/2018_06_27_100600_rename_posts_likes_to_post_likes.php
 extensions/likes/migrations/2018_06_27_100700_change_post_likes_add_foreign_keys.php
 extensions/likes/tests/integration/api/ListPostsTest.php
+extensions/likes/tests/integration/api/ListDiscussionsTest.php
 extensions/likes/tests/integration/api/LikePostTest.php
 extensions/likes/tests/integration/setup.php
 extensions/likes/tests/phpunit.unit.xml
@@ -77,6 +78,7 @@ extensions/approval/src/Access/ScopePrivateDiscussionVisibility.php
 extensions/approval/src/Api/PostResourceFields.php
 extensions/approval/src/Listener/UpdateDiscussionAfterPostApproval.php
 extensions/approval/src/Listener/UnapproveNewContent.php
+extensions/approval/src/Listener/UpdateTagMetadataAfterApproval.php
 extensions/approval/src/Listener/ApproveContent.php
 extensions/approval/LICENSE
 extensions/approval/extend.php
@@ -104,6 +106,7 @@ extensions/approval/tests/integration/api/ListDiscussionsTest.php
 extensions/approval/tests/integration/api/CreatePostsTest.php
 extensions/approval/tests/integration/InteractsWithUnapprovedContent.php
 extensions/approval/tests/integration/AuditTest.php
+extensions/approval/tests/integration/TagMetadataTest.php
 extensions/approval/tests/integration/setup.php
 extensions/approval/tests/phpunit.unit.xml
 extensions/approval/tests/fixtures/.gitkeep
@@ -629,7 +632,6 @@ extensions/realtime/js/src/forum/extend/Post.ts
 extensions/realtime/js/src/forum/extend/Tags.ts
 extensions/realtime/js/src/forum/components/TypingIndicator.tsx
 extensions/realtime/js/src/forum/components/NotificationToast.tsx
-extensions/realtime/js/yarn.lock
 extensions/realtime/js/webpack.config.js
 extensions/realtime/js/dist-typings/admin/index.d.ts
 extensions/realtime/js/dist-typings/admin/extend.d.ts
@@ -904,7 +906,6 @@ extensions/audit/tests/integration/thirdparty/FoFUsernameRequestTest.php
 extensions/audit/tests/integration/thirdparty/FoFUserBioTest.php
 extensions/audit/tests/integration/thirdparty/FoFImpersonateTest.php
 extensions/audit/tests/integration/thirdparty/FoFBanIpsTest.php
-extensions/audit/tests/integration/thirdparty/ClarkWinkelmannAuthorChangeTest.php
 extensions/audit/tests/integration/thirdparty/FoFSplitTest.php
 extensions/audit/tests/integration/thirdparty/FoFMergeTest.php
 extensions/audit/tests/integration/RegisteredActionsTest.php
@@ -1664,7 +1665,6 @@ extensions/gdpr/js/src/forum/components/ErasureRequestsList.tsx
 extensions/gdpr/js/src/forum/components/DeleteUserModal.tsx
 extensions/gdpr/js/src/forum/components/ExportAvailableNotification.ts
 extensions/gdpr/js/src/forum/components/RequestErasureModal.tsx
-extensions/gdpr/js/yarn.lock
 extensions/gdpr/js/webpack.config.js
 extensions/gdpr/js/dist-typings/admin/models/DataType.d.ts
 extensions/gdpr/js/dist-typings/admin/extendAdminNav.d.ts
@@ -1708,6 +1708,7 @@ extensions/gdpr/migrations/2026_03_06_000000_add_confirmation_ip_to_gdpr_erasure
 extensions/gdpr/migrations/2024_11_03_000000_migrate_settings_keys.php
 extensions/gdpr/migrations/2024_10_31_000001_create_gdpr_erasure_table.php
 extensions/gdpr/migrations/2024_11_03_000001_remove_previous_migration_keys.php
+extensions/gdpr/tests/integration/api/ErasureConfirmationEmailTest.php
 extensions/gdpr/tests/integration/api/ExtenderTest.php
 extensions/gdpr/tests/integration/api/ListDataTypesControllerTest.php
 extensions/gdpr/tests/integration/api/CancelErasureTest.php
@@ -3204,6 +3205,7 @@ framework/core/js/tests/unit/common/states/PaginatedListState.test.ts
 framework/core/js/tests/unit/common/helpers/highlight.test.ts
 framework/core/js/tests/unit/common/helpers/textContrastClass.test.ts
 framework/core/js/tests/unit/common/helpers/listItems.test.ts
+framework/core/js/tests/unit/forum/utils/slidable.test.ts
 framework/core/js/tests/unit/forum/states/DiscussionListState.test.ts
 framework/core/js/tests/unit/forum/states/PostStreamState.test.ts
 framework/core/js/tests/factory.ts
@@ -3369,6 +3371,7 @@ framework/core/tests/integration/api/posts/DeleteTest.php
 framework/core/tests/integration/api/posts/ShowTest.php
 framework/core/tests/integration/api/posts/ListTest.php
 framework/core/tests/integration/api/posts/CreateTest.php
+framework/core/tests/integration/api/posts/ListDiscussionStateQueryCountTest.php
 framework/core/tests/integration/api/posts/ListGroupsQueryCountTest.php
 framework/core/tests/integration/api/posts/UpdateTest.php
 framework/core/tests/integration/api/info/ShowTest.php
@@ -3387,6 +3390,7 @@ framework/core/tests/integration/api/users/PasswordEmailTokensTest.php
 framework/core/tests/integration/api/users/UpdateTest.php
 framework/core/tests/integration/api/users/PasswordChangeSessionInvalidationTest.php
 framework/core/tests/integration/api/EloquentBufferTest.php
+framework/core/tests/integration/mail/AbandonedExtensionsEmailBodyTest.php
 framework/core/tests/integration/mail/EmailTitleLeakTest.php
 framework/core/tests/integration/middleware/AssetsRevisionHeaderTest.php
 framework/core/tests/integration/middleware/ReferrerPolicyTest.php
@@ -3448,6 +3452,7 @@ framework/core/tests/integration/forum/UpgradePageTest.php
 framework/core/tests/integration/forum/LogoutTest.php
 framework/core/tests/integration/forum/Auth/ResponseFactoryTest.php
 framework/core/tests/integration/forum/ErrorNegotiationTest.php
+framework/core/tests/integration/database/AfterCommitTest.php
 framework/core/tests/integration/extension/ScheduledAbandonedSyncTest.php
 framework/core/tests/phpunit.unit.xml
 framework/core/tests/fixtures/less/custom_variable.less

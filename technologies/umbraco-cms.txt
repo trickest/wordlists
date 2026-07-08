@@ -6029,6 +6029,7 @@ src/Umbraco.Core/HealthChecks/HealthCheckGroup.cs
 src/Umbraco.Core/HealthChecks/ConfigurationServiceResult.cs
 src/Umbraco.Core/HealthChecks/HealthCheckNotificationMethodCollectionBuilder.cs
 src/Umbraco.Core/Media/ImageDimensionExtractorExtensions.cs
+src/Umbraco.Core/Media/IImageUrlTokenGenerator.cs
 src/Umbraco.Core/Media/NoopImageDimensionExtractor.cs
 src/Umbraco.Core/Media/EmbedProviders/GettyImages.cs
 src/Umbraco.Core/Media/EmbedProviders/EmbedProviderBase.cs
@@ -6051,6 +6052,7 @@ src/Umbraco.Core/Media/EmbedProviders/LottieFiles.cs
 src/Umbraco.Core/Media/EmbedProviders/OEmbedResponse.cs
 src/Umbraco.Core/Media/EmbedProviders/Ted.cs
 src/Umbraco.Core/Media/EmbedProviders/OEmbedResponseBase.cs
+src/Umbraco.Core/Media/NoopImageUrlTokenGenerator.cs
 src/Umbraco.Core/Media/NoopImageUrlGenerator.cs
 src/Umbraco.Core/Media/ImageUrlGeneratorExtensions.cs
 src/Umbraco.Core/Media/TypeDetector/JpegDetector.cs
@@ -6120,6 +6122,7 @@ src/Umbraco.Cms.Imaging.ImageSharp/ConfigureImageSharpMiddlewareOptions.cs
 src/Umbraco.Cms.Imaging.ImageSharp/ImageSharpComposer.cs
 src/Umbraco.Cms.Imaging.ImageSharp/ConfigurePhysicalFileSystemCacheOptions.cs
 src/Umbraco.Cms.Imaging.ImageSharp/ImageProcessors/CropWebProcessor.cs
+src/Umbraco.Cms.Imaging.ImageSharp/Media/ImageSharpImageUrlTokenGenerator.cs
 src/Umbraco.Cms.Imaging.ImageSharp/Media/ImageSharpImageUrlGenerator.cs
 src/Umbraco.Cms.Imaging.ImageSharp/Media/ImageSharpDimensionExtractor.cs
 src/Umbraco.Web.UI/appsettings.template.json
@@ -11881,6 +11884,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity-item/utils.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-item/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/notification/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/notification/controllers/peek-error/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/notification/controllers/peek-error/peek-error-notification.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/notification/controllers/peek-error/peek-error-notification.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/notification/controllers/peek-error/peek-error.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/core/notification/layouts/default/index.ts
@@ -14107,6 +14111,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/tree/default/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/default/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/default/default-tree.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/default/default-tree.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/tree/default/default-tree.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/folder/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/folder/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/tree/folder/workspace/index.ts
@@ -15653,6 +15658,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Extensions/ImageCropperTemplate
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/ImageProcessors/CropWebProcessorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/HealthChecks/UmbracoReadinessHealthCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Media/ImageSharpImageUrlGeneratorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Web.Common/Media/ImageSharpImageUrlTokenGeneratorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Controllers/SurfaceControllerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Controllers/UmbTwoFactorLoginControllerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Controllers/UmbRegisterControllerTests.cs
