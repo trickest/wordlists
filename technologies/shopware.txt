@@ -2388,6 +2388,7 @@ src/Core/Framework/Event/MailAware.php
 src/Core/Framework/Event/OrderAware.php
 src/Core/Framework/Event/BeforeSendResponseEvent.php
 src/Core/Framework/Event/EventData/EventDataCollection.php
+src/Core/Framework/Event/EventData/FormDataObjectType.php
 src/Core/Framework/Event/EventData/EntityType.php
 src/Core/Framework/Event/EventData/MailRecipientStruct.php
 src/Core/Framework/Event/EventData/ArrayType.php
@@ -5070,6 +5071,7 @@ src/Core/Content/MailTemplate/Service/MailDataSimulator.php
 src/Core/Content/MailTemplate/Service/Event/MailTemplateRenderContextEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailErrorEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailBeforeValidateEvent.php
+src/Core/Content/MailTemplate/Service/Event/MailDataSimulatorFormDataEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailSentEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailDataSimulatorFieldEvent.php
 src/Core/Content/MailTemplate/Service/Event/MailBeforeSentEvent.php
@@ -14663,6 +14665,7 @@ tests/integration/Core/Framework/DataAbstractionLayer/Field/RemoteAddressFieldTe
 tests/integration/Core/Framework/DataAbstractionLayer/Field/ListFieldTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Event/EntityWrittenEventSerializationTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Event/EntityLoadedEventFactoryTest.php
+tests/integration/Core/Framework/DataAbstractionLayer/ExcludeFieldsReaderTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/EntityProtection/EntityProtectionValidatorTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/EntityExtensionRegisteredTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Commands/RefreshIndexCommandTest.php
@@ -15891,7 +15894,6 @@ tests/acceptance/tsconfig.json
 tests/acceptance/.eslintignore
 tests/acceptance/package-lock.json
 tests/acceptance/.prettierignore
-tests/acceptance/.prettierrc
 tests/acceptance/fixtures/AcceptanceTest.ts
 tests/acceptance/fixtures/HomeProducts.ts
 tests/acceptance/bin/createTask.js
@@ -16634,6 +16636,7 @@ tests/unit/Core/Framework/Notification/NotificationServiceTest.php
 tests/unit/Core/Framework/Notification/Api/NotificationControllerTest.php
 tests/unit/Core/Framework/Serializer/StructNormalizerTest.php
 tests/unit/Core/Framework/Event/EventData/EventDataCollectionTest.php
+tests/unit/Core/Framework/Event/EventData/FormDataObjectTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ArrayTypeTest.php
 tests/unit/Core/Framework/Event/EventData/EntityCollectionTypeTest.php
 tests/unit/Core/Framework/Event/EventData/ScalarValueTypeTest.php
@@ -16999,6 +17002,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Search/Aggregation/Bucket/BucketA
 tests/unit/Core/Framework/DataAbstractionLayer/Search/SearchConfigLoaderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/Query/ScoreQueryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/Grouping/FieldGroupingTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Search/CriteriaExcludeFieldsTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Search/CachedCompressedCriteriaDecoderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityCollectionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/TechnicalNameExceptionHandlerTest.php
@@ -17100,6 +17104,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Exception/InvalidSortingDire
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityForeignKeyResolverTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Common/IteratorFactoryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityDefinitionQueryHelperTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityReaderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SqlHelperTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityHydratorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/JoinGroupBuilderTest.php
@@ -17620,9 +17625,13 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/StoreApiGeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi3GeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/CachedEntitySchemaGeneratorTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApiFileLoaderTest.php
+tests/unit/Core/Framework/Api/Serializer/JsonApiEncodingResultTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonSalesChannelApiEncoderTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonApiEncoderTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonApiDecoderTest.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestItemEntity.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestParentEntity.php
+tests/unit/Core/Framework/Api/Serializer/_fixtures/TestChildEntity.php
 tests/unit/Core/Framework/Api/Serializer/_fixtures/TestAttributeEntity.php
 tests/unit/Core/Framework/Api/Serializer/RecordTest.php
 tests/unit/Core/Framework/Api/Serializer/JsonEntityEncoderTest.php
@@ -19066,6 +19075,7 @@ tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV2Test.php
 tests/unit/Storefront/Framework/Captcha/GoogleReCaptchaV3Test.php
 tests/unit/Storefront/Framework/Captcha/BasicCaptchaTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaRouteListenerTest.php
+tests/unit/Storefront/Framework/Captcha/HoneypotCaptchaTest.php
 tests/unit/Storefront/Framework/Captcha/CaptchaCookieCollectListenerTest.php
 tests/unit/Storefront/Framework/App/Template/IconTemplateLoaderTest.php
 tests/unit/Storefront/Framework/Seo/StorefrontCategoryUrlGeneratorTest.php

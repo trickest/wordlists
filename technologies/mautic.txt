@@ -875,6 +875,7 @@ app/bundles/EmailBundle/EventListener/FormSubscriber.php
 app/bundles/EmailBundle/EventListener/GraphAggregateStatsSubscriber.php
 app/bundles/EmailBundle/EventListener/EmailDefaultsSubscriber.php
 app/bundles/EmailBundle/EventListener/MessageQueueSubscriber.php
+app/bundles/EmailBundle/EventListener/SegmentSubscriber.php
 app/bundles/EmailBundle/EventListener/StatsSubscriber.php
 app/bundles/EmailBundle/EventListener/PageSubscriber.php
 app/bundles/EmailBundle/EventListener/DashboardBestHoursSubscriber.php
@@ -905,6 +906,7 @@ app/bundles/EmailBundle/Tests/EventListener/FormSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/EmailToUserSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/PointSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/CampaignSubscriberTest.php
+app/bundles/EmailBundle/Tests/EventListener/SegmentSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/EmailImportExportSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/TrackingSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/WebhookSubscriberTest.php
@@ -914,6 +916,7 @@ app/bundles/EmailBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/BuilderSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/BuilderSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
+app/bundles/EmailBundle/Tests/EventListener/SegmentSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/CampaignConditionSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/MatchFilterForLeadTraitTest.php
@@ -2411,6 +2414,7 @@ app/bundles/MessengerBundle/Tests/MessageHandler/PageHitNotificationHandlerTest.
 app/bundles/MessengerBundle/Tests/MessageHandler/EmailHitNotificationHandlerTest.php
 app/bundles/MessengerBundle/Tests/Message/PageHitNotificationTest.php
 app/bundles/MessengerBundle/Tests/Message/EmailHitNotificationTest.php
+app/bundles/MessengerBundle/Tests/Form/Type/ConfigTypeTest.php
 app/bundles/MessengerBundle/MessageHandler/EmailHitNotificationHandler.php
 app/bundles/MessengerBundle/MessageHandler/RemoveReportAttachmentHandler.php
 app/bundles/MessengerBundle/MessageHandler/PageHitNotificationHandler.php
@@ -3771,6 +3775,8 @@ app/bundles/CoreBundle/Tests/Fixtures/Transifex/resources-upload.json
 app/bundles/CoreBundle/Tests/Fixtures/Transifex/language-stats.json
 app/bundles/CoreBundle/Tests/Fixtures/test.json
 app/bundles/CoreBundle/Tests/Fixtures/non_utf_8.csv
+app/bundles/CoreBundle/Tests/IpLookup/MaxmindDownloadLookupTest.php
+app/bundles/CoreBundle/Tests/IpLookup/AbstractLocalDataLookupTest.php
 app/bundles/CoreBundle/Tests/Helper/Chart/SeriesPieChartTest.php
 app/bundles/CoreBundle/Tests/Helper/Chart/PieChartTest.php
 app/bundles/CoreBundle/Tests/Helper/MapHelperTest.php
@@ -4285,6 +4291,7 @@ app/bundles/CoreBundle/Resources/views/Exception/base.html.twig
 app/bundles/CoreBundle/Resources/views/Default/slim.html.twig
 app/bundles/CoreBundle/Resources/views/Default/script.html.twig
 app/bundles/CoreBundle/Resources/views/Default/form.html.twig
+app/bundles/CoreBundle/Resources/views/Default/ajax_form.html.twig
 app/bundles/CoreBundle/Resources/views/Default/content.html.twig
 app/bundles/CoreBundle/Resources/views/Default/output.html.twig
 app/bundles/CoreBundle/Resources/views/Default/form_end.html.twig

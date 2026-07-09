@@ -218,6 +218,7 @@ src/Umbraco.Cms.Api.Management/Controllers/Element/RecycleBin/DeleteElementRecyc
 src/Umbraco.Cms.Api.Management/Controllers/Element/RecycleBin/ElementRecycleBinControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/RecycleBin/SiblingsElementRecycleBinController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/RecycleBin/RestoreElementFolderRecycleBinController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Element/ByKeyPublishedElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/ByKeyElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/UpdateElementControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/CopyElementController.cs
@@ -1119,6 +1120,7 @@ src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementVariantRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementValueModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/Item/ElementItemResponseModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Element/PublishedElementResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Dictionary/UploadDictionaryResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Dictionary/DictionaryOverviewResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Dictionary/ImportDictionaryItemsPresentationModel.cs
@@ -7024,6 +7026,13 @@ src/Umbraco.Web.UI.Client/src/packages/documents/documents/collection/types.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/collection/item/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/collection/item/document-collection-item-card.element.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/collection/item/types.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/index.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/configuration.server.data-source.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/configuration.repository.test.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/configuration.repository.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/configuration/types.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/index.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/document-search.repository.ts
@@ -7177,7 +7186,6 @@ src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/document-unpublish-modal.element.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/constants.ts
-src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/document-unpublish-modal.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/types.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/modal/document-unpublish-modal.token.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/workspace-action/manifests.ts
@@ -7185,7 +7193,7 @@ src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/entity-action/index.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/entity-action/manifests.ts
-src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/entity-action/unpublish.action.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/entity-action/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/unpublish/types.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/publishing/publish/entity-bulk-action/manifests.ts
@@ -7589,7 +7597,10 @@ src/Umbraco.Web.UI.Client/src/packages/content/content/collection/content-collec
 src/Umbraco.Web.UI.Client/src/packages/content/content/collection/content-collection-workspace-view.element.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/collection/manager/content-collection-manager.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/collection/types.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/configuration/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/configuration/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker/content-variant-language-picker.element.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/variant-picker/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/index.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/property-dataset-context/content-property-dataset.context-token.ts
@@ -7633,7 +7644,20 @@ src/Umbraco.Web.UI.Client/src/packages/content/content/audit-log/info-app/types.
 src/Umbraco.Web.UI.Client/src/packages/content/content/controller/merge-content-variant-data.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/controller/merge-content-variant-data.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/content-published-pending-changes-manager-base.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/modal/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/modal/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/modal/content-unpublish-modal.element.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/modal/types.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/modal/content-unpublish-modal.token.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/entity-action/index.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/entity-action/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/entity-action/content-unpublish.action.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/entity-action/types.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/unpublish/entity-action/content-unpublish.action.kind.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/manager/index.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/manager/element-data-manager.test.ts
@@ -16255,6 +16279,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserGroupPresentationFac
 tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserPresentationFactoryTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/PropertyType/IsUsedPropertyTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/ValidateCreateElementControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Element/ByKeyPublishedElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/OriginalParentElementRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/EmptyElementRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/DeleteElementRecycleBinControllerTests.cs
@@ -16684,6 +16709,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/Inheri
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/ImportResources.resx
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/SingleDocType-WithCleanupPolicy.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/CompositionsTestPackage-Random.xml
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/ContentWithNonDefaultTemplate-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/XsltSearch-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/Fanoe-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/CheckboxList-Content-Package.xml

@@ -836,7 +836,6 @@ extensions/audit/src/ForumAttributes.php
 extensions/audit/src/LogSelfEnabled.php
 extensions/audit/src/Extend/Audit.php
 extensions/audit/src/Integration/CoreUserIntegration.php
-extensions/audit/src/Integration/FoFUsernameRequestIntegration.php
 extensions/audit/src/Integration/CoreSettingIntegration.php
 extensions/audit/src/AuditLog.php
 extensions/audit/src/Content/AdminPayload.php
@@ -899,15 +898,8 @@ extensions/audit/js/dist/forum/components/DiscussionAuditModal.js.map
 extensions/audit/js/dist/forum/components/ActorAuditModal.js.map
 extensions/audit/js/dist/forum/components/AuditModal.js
 extensions/audit/js/dist/forum/components/ActorAuditModal.js
-extensions/audit/extend.thirdparty.php
 extensions/audit/migrations/2026_06_09_000000_verify_json_column_support.php
 extensions/audit/migrations/2026_06_09_000001_create_audit_log_table.php
-extensions/audit/tests/integration/thirdparty/FoFUsernameRequestTest.php
-extensions/audit/tests/integration/thirdparty/FoFUserBioTest.php
-extensions/audit/tests/integration/thirdparty/FoFImpersonateTest.php
-extensions/audit/tests/integration/thirdparty/FoFBanIpsTest.php
-extensions/audit/tests/integration/thirdparty/FoFSplitTest.php
-extensions/audit/tests/integration/thirdparty/FoFMergeTest.php
 extensions/audit/tests/integration/RegisteredActionsTest.php
 extensions/audit/tests/integration/CorePostTest.php
 extensions/audit/tests/integration/FilterTest.php

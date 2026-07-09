@@ -3236,6 +3236,7 @@ dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ItemTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ColumnSetTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ExtendedTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/TextTest.php
+dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/CurrencyTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/ActionTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/MassactionTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ContainerTest.php
@@ -32211,6 +32212,7 @@ app/code/Magento/Sales/Test/Mftf/Test/AdminUpdatePaymentMethodTitleTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontVerifySecureURLRedirectSalesTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontVerifyOrderShipmentForDecimalQuantityTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminIsNotAbleToSendOrderCommentEmailWithoutSalesEmailPrivilegesTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/AdminFilterOrdersGridByShippingAddressCountryTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOpenCreditmemoViewPageWithWrongCreditmemoIdTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminReorderOrderWithOfflinePaymentMethodTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminProductInTheShoppingCartCouldBeReachedByAdminDuringOrderCreationWithMultiWebsiteConfigTest.xml
@@ -32619,6 +32621,7 @@ app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderViewCheckStatusActionGrou
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertTotalsWithTaxOnInvoiceTotalsExcludingShippingAndHandlingPricesPageActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertTransactionTypeInTransactionTabActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOpenAndFillCreditMemoRefundActionGroup.xml
+app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminFilterOrderGridByShippingAddressActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/SelectPurchaseOrderPaymentMethodActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminSelectDropdownOptionOnConfigureProductSlidingModalActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminClickUpdateChangesOnCreateOrderPageActionGroup.xml

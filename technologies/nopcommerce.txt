@@ -7,6 +7,7 @@ LICENSE.md
 Dockerfile
 src/Directory.Build.props
 src/Tests/Nop.Tests/BaseNopTest.cs
+src/Tests/Nop.Tests/TestHelper.cs
 src/Tests/Nop.Tests/SqLiteNopDataProvider.cs
 src/Tests/Nop.Tests/NopTestConfiguration.cs
 src/Tests/Nop.Tests/Nop.Tests.csproj
@@ -151,7 +152,7 @@ src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Validators/Catalog/ReviewTypeValidatorTe
 src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Validators/Catalog/ProductAttributeValidatorTests.cs
 src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Validators/Blogs/BlogPostValidatorTests.cs
 src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Validators/Vendors/VendorValidatorTests.cs
-src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Infrastructure/AutoMapperConfigurationTest.cs
+src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Infrastructure/AdminMapperConfigurationTest.cs
 src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Factories/CommonModelFactoryTests.cs
 src/Tests/Nop.Tests/Nop.Web.Tests/Admin/Readme.txt
 src/Tests/Nop.Tests/Nop.Web.Tests/Events/DateTimeConsumer.cs
@@ -306,7 +307,7 @@ src/Plugins/Nop.Plugin.Misc.Polls/Notes.txt
 src/Plugins/Nop.Plugin.Misc.Polls/PollsDefaults.cs
 src/Plugins/Nop.Plugin.Misc.Polls/Infrastructure/RouteProvider.cs
 src/Plugins/Nop.Plugin.Misc.Polls/Infrastructure/NopStartup.cs
-src/Plugins/Nop.Plugin.Misc.Polls/Infrastructure/AutoMapperConfiguration.cs
+src/Plugins/Nop.Plugin.Misc.Polls/Infrastructure/MapperConfiguration.cs
 src/Plugins/Nop.Plugin.Misc.Polls/PollSettings.cs
 src/Plugins/Nop.Plugin.Misc.Polls/Public/Controllers/PollController.cs
 src/Plugins/Nop.Plugin.Misc.Polls/Public/Views/HomepagePolls.cshtml
@@ -357,7 +358,7 @@ src/Plugins/Nop.Plugin.Misc.Forums/ForumDefaults.cs
 src/Plugins/Nop.Plugin.Misc.Forums/ForumSettings.cs
 src/Plugins/Nop.Plugin.Misc.Forums/Infrastructure/RouteProvider.cs
 src/Plugins/Nop.Plugin.Misc.Forums/Infrastructure/NopStartup.cs
-src/Plugins/Nop.Plugin.Misc.Forums/Infrastructure/AutoMapperConfiguration.cs
+src/Plugins/Nop.Plugin.Misc.Forums/Infrastructure/MapperConfiguration.cs
 src/Plugins/Nop.Plugin.Misc.Forums/TagHelpers/NopBBCodeEditorTagHelper.cs
 src/Plugins/Nop.Plugin.Misc.Forums/Public/Controllers/BoardsController.cs
 src/Plugins/Nop.Plugin.Misc.Forums/Public/Validators/EditForumTopicValidator.cs
@@ -830,7 +831,7 @@ src/Plugins/Nop.Plugin.Misc.WebApi.Frontend/plugin.json
 src/Plugins/Nop.Plugin.Misc.News/Notes.txt
 src/Plugins/Nop.Plugin.Misc.News/Infrastructure/RouteProvider.cs
 src/Plugins/Nop.Plugin.Misc.News/Infrastructure/NopStartup.cs
-src/Plugins/Nop.Plugin.Misc.News/Infrastructure/AutoMapperConfiguration.cs
+src/Plugins/Nop.Plugin.Misc.News/Infrastructure/MapperConfiguration.cs
 src/Plugins/Nop.Plugin.Misc.News/Infrastructure/GenericUrlRouteProvider.cs
 src/Plugins/Nop.Plugin.Misc.News/Nop.Plugin.Misc.News.csproj
 src/Plugins/Nop.Plugin.Misc.News/NewsSettings.cs
@@ -1982,7 +1983,10 @@ src/Libraries/Nop.Core/Infrastructure/Singleton.cs
 src/Libraries/Nop.Core/Infrastructure/ITypeFinder.cs
 src/Libraries/Nop.Core/Infrastructure/INopFileProvider.cs
 src/Libraries/Nop.Core/Infrastructure/INopStartup.cs
-src/Libraries/Nop.Core/Infrastructure/Mapper/AutoMapperConfiguration.cs
+src/Libraries/Nop.Core/Infrastructure/Mapper/BaseMapperProfile.cs
+src/Libraries/Nop.Core/Infrastructure/Mapper/MapperConfiguration.cs
+src/Libraries/Nop.Core/Infrastructure/Mapper/MapOptions.cs
+src/Libraries/Nop.Core/Infrastructure/Mapper/MapTypeTuple.cs
 src/Libraries/Nop.Core/Infrastructure/Mapper/IOrderedMapperProfile.cs
 src/Libraries/Nop.Core/Infrastructure/IEngine.cs
 src/Libraries/Nop.Core/Infrastructure/ConcurrentTrie.cs

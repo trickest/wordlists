@@ -9320,6 +9320,7 @@ db/migrate/20240718192329_rename_ticket_overview_priority_icon_setting.rb
 db/migrate/20221111124620_issue4306_delete_setting.rb
 db/migrate/20260225170815_add_ai_kb_answer_settings.rb
 db/migrate/20180320000001_setting_table_group_by_show_count.rb
+db/migrate/20260709080524_add_user_name_format_setting.rb
 db/migrate/20170421000001_pretty_date_options_added.rb
 db/migrate/20230830100819_create_ssl_certificates.rb
 db/migrate/20191129102720_active_job_lock_cleanup_job_scheduler.rb
@@ -9974,6 +9975,7 @@ spec/models/user/out_of_office_spec.rb
 spec/models/user/updates_ticket_organization_spec.rb
 spec/models/user/merge_spec.rb
 spec/models/user/can_lookup_search_index_attributes_examples.rb
+spec/models/template_spec.rb
 spec/models/activity_stream_spec.rb
 spec/models/ai/text_tool_spec.rb
 spec/models/ai/agent/type_spec.rb
@@ -11437,6 +11439,7 @@ spec/db/migrate/issue_2943_add_setting_enforce_special_character_spec.rb
 spec/db/migrate/issue_1977_remove_invalid_user_foreign_keys_spec.rb
 spec/db/migrate/ai_assistance_ticket_summary_selector_spec.rb
 spec/db/migrate/object_manager_attribute_date_remove_future_past_spec.rb
+spec/db/seeds/setting_user_name_format_spec.rb
 spec/views/eco_spec.rb
 spec/policies/macro_policy/scope_spec.rb
 spec/policies/taskbar_policy/scope_spec.rb
