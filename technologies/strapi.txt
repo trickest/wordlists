@@ -6,6 +6,7 @@ rollup.utils.mjs
 package.json
 .yarn/releases/yarn-4.12.0.cjs
 scripts/unlink.js
+scripts/jsconfig.json
 scripts/release.js
 scripts/front/package.json
 scripts/front/merge-duplicated-translations/allowed-keys.js
@@ -680,6 +681,7 @@ packages/providers/email-sendgrid/.eslintrc.cjs
 packages/providers/email-sendgrid/README.md
 packages/providers/email-sendgrid/.npmignore
 packages/cli/create-strapi/package.json
+packages/cli/create-strapi/jsconfig.json
 packages/cli/create-strapi/LICENSE
 packages/cli/create-strapi/bin/index.js
 packages/cli/create-strapi/README.md
@@ -869,7 +871,6 @@ packages/cli/cloud/src/utils/analytics.ts
 packages/cli/cloud/src/utils/get-local-config.ts
 packages/cli/cloud/src/utils/error-message-factories.ts
 packages/cli/cloud/src/utils/helpers.ts
-packages/cli/cloud/src/utils/tests/compress-files.test.ts
 packages/cli/cloud/src/utils/__tests__/compress-files.test.ts
 packages/cli/cloud/src/utils/compress-files.ts
 packages/cli/cloud/src/services/index.ts
@@ -914,6 +915,7 @@ packages/utils/tsconfig/package.json
 packages/utils/tsconfig/base.json
 packages/utils/tsconfig/client.json
 packages/utils/eslint-config-custom/package.json
+packages/utils/eslint-config-custom/jsconfig.json
 packages/utils/eslint-config-custom/front/typescript.js
 packages/utils/eslint-config-custom/front/index.js
 packages/utils/eslint-config-custom/back/typescript.js
@@ -939,6 +941,7 @@ packages/utils/logger/lint-staged.config.mjs
 packages/utils/logger/.eslintrc.cjs
 packages/utils/typescript/package.json
 packages/utils/typescript/rollup.config.mjs
+packages/utils/typescript/jsconfig.json
 packages/utils/typescript/tsconfig.json
 packages/utils/typescript/src/index.ts
 packages/utils/typescript/src/compilers/basic.ts
@@ -1119,6 +1122,7 @@ packages/utils/api-tests/package.json
 packages/utils/api-tests/request.js
 packages/utils/api-tests/models.js
 packages/utils/api-tests/mock-fetch.js
+packages/utils/api-tests/jsconfig.json
 packages/utils/api-tests/agent.js
 packages/utils/api-tests/builder/action-registry.js
 packages/utils/api-tests/builder/context.js
@@ -1792,7 +1796,6 @@ packages/core/admin/ee/server/src/audit-logs/validation/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/content-types/audit-log.ts
 packages/core/admin/ee/server/src/content-types/index.ts
 packages/core/admin/ee/server/tsconfig.build.json
-packages/core/admin/ee/server/tsconfig.eslint.json
 packages/core/admin/admin/tsconfig.json
 packages/core/admin/admin/src/index.ts
 packages/core/admin/admin/src/features/Tracking.tsx
@@ -2833,7 +2836,6 @@ packages/core/content-manager/server/src/services/__tests__/document-metadata.te
 packages/core/content-manager/server/src/services/__tests__/uid.test.ts
 packages/core/content-manager/server/src/services/__tests__/components.test.ts
 packages/core/content-manager/server/src/services/__tests__/field-sizes.test.ts
-packages/core/content-manager/server/src/tsconfig.build.json
 packages/core/content-manager/server/src/validation/zod.ts
 packages/core/content-manager/server/src/validation/policies/hasPermissions.ts
 packages/core/content-manager/server/src/validation/__tests__/zod-yup-compat.test.ts
@@ -3264,7 +3266,6 @@ packages/core/strapi/src/cli/commands/start.ts
 packages/core/strapi/src/cli/commands/configuration/dump.ts
 packages/core/strapi/src/cli/commands/configuration/restore.ts
 packages/core/strapi/src/cli/commands/middlewares/list.ts
-packages/core/strapi/src/cli/commands/plugin/init/files/typescript.ts
 packages/core/strapi/src/cli/commands/report.ts
 packages/core/strapi/src/cli/commands/generate.ts
 packages/core/strapi/src/cli/commands/console.ts
@@ -4756,6 +4757,7 @@ packages/plugins/users-permissions/admin/src/components/Policies/index.jsx
 packages/plugins/users-permissions/admin/src/components/BoundRoute/index.jsx
 packages/plugins/users-permissions/admin/src/components/BoundRoute/getMethodColor.js
 packages/plugins/users-permissions/rollup.config.mjs
+packages/plugins/users-permissions/jsconfig.json
 packages/plugins/users-permissions/LICENSE
 packages/plugins/users-permissions/jest.config.js
 packages/plugins/users-permissions/server/bootstrap/users-permissions-actions.js
@@ -5573,6 +5575,7 @@ tests/scripts/run-test-app.js
 tests/scripts/run-tests.js
 tests/scripts/run-cli-tests.js
 tests/scripts/run-api-tests.js
+tests/jsconfig.json
 tests/cli/jest.config.js
 tests/cli/constants.js
 tests/cli/tests/create-strapi-app/package-json.test.cli.ts

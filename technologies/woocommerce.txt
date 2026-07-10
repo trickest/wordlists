@@ -20,9 +20,9 @@ docs/features/shipping/shipping-method-api.md
 docs/features/shipping/_category_.json
 docs/features/mcp/_category_.json
 docs/features/mcp/README.md
+docs/features/products/adding-a-custom-field-to-variable-products.md
 docs/features/products/wc-get-products.md
 docs/features/products/_category_.json
-docs/features/products/using-custom-attributes-in-menus.md
 docs/features/address-autocomplete.md
 docs/features/payments/payment-gateway-api.md
 docs/features/payments/_category_.json
@@ -181,6 +181,7 @@ docs/theming/theme-development/theme-design-ux-guidelines.md
 docs/theming/theme-development/fixing-outdated-woocommerce-templates.md
 docs/theming/theme-development/_category_.json
 docs/theming/theme-development/thumbnail-image-regeneration.md
+docs/theming/theme-development/using-custom-attributes-in-menus.md
 docs/theming/_category_.json
 docs/theming/theme-design.md
 docs/wc-cli/cli-faq.md
@@ -231,7 +232,6 @@ docs/best-practices/coding-standards/grammar-punctuation-capitalization.md
 docs/best-practices/coding-standards/naming-conventions.md
 docs/best-practices/coding-standards/css-sass-naming-conventions.md
 docs/best-practices/data-management/data-storage.md
-docs/best-practices/data-management/adding-a-custom-field-to-variable-products.md
 docs/best-practices/data-management/logging.md
 docs/best-practices/data-management/data-stores.md
 docs/best-practices/data-management/crud-objects.md
@@ -951,6 +951,7 @@ packages/js/experimental-products-app/changelog/update-products-app-rest-api-v4-
 packages/js/experimental-products-app/changelog/add-variation-view-bundle
 packages/js/experimental-products-app/changelog/add-variation-panel-fields
 packages/js/experimental-products-app/changelog/64481-add-dataform-component
+packages/js/experimental-products-app/changelog/update-wordpress-ui-theme-provider
 packages/js/experimental-products-app/changelog/update-remove-tags-helper-text
 packages/js/experimental-products-app/changelog/fix-product-field-visibility
 packages/js/experimental-products-app/changelog/65662-dev-65627-postrelease-cleanup
@@ -1687,6 +1688,7 @@ packages/js/onboarding/PREVIOUS_CHANGELOG.md
 packages/js/onboarding/README.md
 packages/js/onboarding/changelog/performance-woopayments-onboarding-svg-assets
 packages/js/onboarding/changelog/.gitkeep
+packages/js/onboarding/changelog/fix-dz-states-test-fixture
 packages/js/onboarding/build.mjs
 packages/js/e2e-utils-playwright/package.json
 packages/js/e2e-utils-playwright/composer.lock
@@ -1848,6 +1850,17 @@ packages/js/data/src/setting-options/reducer.ts
 packages/js/data/src/setting-options/selectors.ts
 packages/js/data/src/setting-options/README.md
 packages/js/data/src/setting-options/types.ts
+packages/js/data/src/activity-panel/index.ts
+packages/js/data/src/activity-panel/test/resolvers.ts
+packages/js/data/src/activity-panel/test/reducer.ts
+packages/js/data/src/activity-panel/test/selectors.ts
+packages/js/data/src/activity-panel/actions.ts
+packages/js/data/src/activity-panel/action-types.ts
+packages/js/data/src/activity-panel/resolvers.ts
+packages/js/data/src/activity-panel/constants.ts
+packages/js/data/src/activity-panel/reducer.ts
+packages/js/data/src/activity-panel/selectors.ts
+packages/js/data/src/activity-panel/types.ts
 packages/js/data/src/constants.ts
 packages/js/data/src/tax-classes/index.ts
 packages/js/data/src/tax-classes/resolvers.ts
@@ -1991,6 +2004,7 @@ packages/js/data/jest.config.json
 packages/js/data/PREVIOUS_CHANGELOG.md
 packages/js/data/README.md
 packages/js/data/changelog/65662-dev-65627-postrelease-cleanup
+packages/js/data/changelog/add-60393-activity-panel-store
 packages/js/data/changelog/.gitkeep
 packages/js/data/build.mjs
 packages/js/customer-effort-score/package.json
@@ -2110,6 +2124,7 @@ packages/js/settings-ui/src/types.ts
 packages/js/settings-ui/jest.config.json
 packages/js/settings-ui/README.md
 packages/js/settings-ui/changelog/update-number-spin-control
+packages/js/settings-ui/changelog/update-wordpress-admin-ui
 packages/js/settings-ui/changelog/add-wpds-shell-components
 packages/js/settings-ui/changelog/fix-number-custom-attributes
 packages/js/settings-ui/changelog/fix-form-submit-navigation-guard
@@ -2703,6 +2718,7 @@ packages/js/components/jest.config.json
 packages/js/components/webpack.config.js
 packages/js/components/PREVIOUS_CHANGELOG.md
 packages/js/components/README.md
+packages/js/components/changelog/66477-sprinkle-filter-picker-colon
 packages/js/components/changelog/.gitkeep
 packages/js/components/build.mjs
 packages/js/admin-layout/package.json
@@ -2901,6 +2917,7 @@ packages/php/woocommerce-subscriptions-engine/changelog/add-subscriptions-engine
 packages/php/woocommerce-subscriptions-engine/changelog/.gitkeep
 packages/php/woocommerce-subscriptions-engine/changelog/add-bogo-pricing-policy-type
 packages/php/woocommerce-subscriptions-engine/changelog/flatten-selling-plans-catalog
+packages/php/woocommerce-subscriptions-engine/changelog/fix-billing-policy-core-zone-purity
 packages/php/woocommerce-subscriptions-engine/changelog/add-basic-ci-config-for-woocommerce-subscriptions-engine
 packages/php/email-editor/writing-tests.md
 packages/php/email-editor/license.txt
@@ -4537,6 +4554,7 @@ plugins/woocommerce/src/Admin/API/SettingOptions.php
 plugins/woocommerce/src/Admin/API/Settings.php
 plugins/woocommerce/src/Admin/API/ProductAttributeTerms.php
 plugins/woocommerce/src/Admin/API/OnboardingProducts.php
+plugins/woocommerce/src/Admin/API/ActivityPanelCounts.php
 plugins/woocommerce/src/Admin/API/Notice.php
 plugins/woocommerce/src/Admin/API/Notes.php
 plugins/woocommerce/src/Admin/API/ProductReviews.php
@@ -7600,6 +7618,7 @@ plugins/woocommerce/tests/php/src/Admin/API/Reports/Variations/ControllerTest.ph
 plugins/woocommerce/tests/php/src/Admin/API/Reports/Revenue/Stats/ControllerTest.php
 plugins/woocommerce/tests/php/src/Admin/API/Reports/DataStore/CacheKeyTest.php
 plugins/woocommerce/tests/php/src/Admin/API/Reports/Orders/Stats/DataStoreTest.php
+plugins/woocommerce/tests/php/src/Admin/API/ActivityPanelCountsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingChannelsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignsTest.php
 plugins/woocommerce/tests/php/src/Admin/API/PaymentGatewaySuggestionsTest.php
@@ -9189,6 +9208,7 @@ plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/w
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/test-or-live-account/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/wpcom-connection/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/wpcom-connection/index.tsx
+plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/test-account/test/index.test.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/test-account/style.scss
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/test-account/index.tsx
 plugins/woocommerce/client/admin/client/settings-payments/onboarding/providers/woopayments/steps/payment-methods-selection/test/list-item.test.tsx
@@ -12928,8 +12948,10 @@ plugins/woocommerce/changelog/qao-404-blocks-e2e-specs-core-isolation-guard
 plugins/woocommerce/changelog/65544-65104-stale-user-meta
 plugins/woocommerce/changelog/fix-30612-stock-reservation-default
 plugins/woocommerce/changelog/66148-fix-billing-address-response-checkout-block
+plugins/woocommerce/changelog/update-wordpress-ui-theme-provider
 plugins/woocommerce/changelog/pcb-201-harden-cart-item-product-guards
 plugins/woocommerce/changelog/65701-add-wc-cli-debug-group
+plugins/woocommerce/changelog/fix-65946-uninstall-experimental-user-meta
 plugins/woocommerce/changelog/63517-fix-duplicate-scheduled-sale-events
 plugins/woocommerce/changelog/update-product-image-use-larger-thumbnails
 plugins/woocommerce/changelog/disable-playwright-report-on-failure
@@ -12943,12 +12965,14 @@ plugins/woocommerce/changelog/64612-fix-64065-brands-admin-deregistered
 plugins/woocommerce/changelog/remove-buildkite-analytics-ci
 plugins/woocommerce/changelog/fix-34827-shop-page-queried_object
 plugins/woocommerce/changelog/65706-fix-order-items-null-tax-rate-id
+plugins/woocommerce/changelog/fix-customer-data-store-test-duplicate-primary-key
 plugins/woocommerce/changelog/fix-coming-soon-banner-colors
 plugins/woocommerce/changelog/fix-product-filters-e2e-template-path
 plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/fix-store-api-checkout-shipping-address-fallback
 plugins/woocommerce/changelog/pos-catalog-feed-file-lock
 plugins/woocommerce/changelog/update-deflag-product-pattern-features
+plugins/woocommerce/changelog/dev-e2e-filter-label-colon
 plugins/woocommerce/changelog/add-weight-unit-enum
 plugins/woocommerce/changelog/wooplug-6842-email-preview-shipping-details-filter
 plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
@@ -12995,6 +13019,7 @@ plugins/woocommerce/changelog/remove-block-templates-package
 plugins/woocommerce/changelog/fix-63757-variation-custom-order
 plugins/woocommerce/changelog/28798-fix-import-pending-review-products
 plugins/woocommerce/changelog/add-admin-email-verified-field
+plugins/woocommerce/changelog/dev-remove-react-test-renderer
 plugins/woocommerce/changelog/add-settings-ui-shell-header-fields
 plugins/woocommerce/changelog/wooplug-6248-express-payment-incompatible-notice
 plugins/woocommerce/changelog/65426-security-unserialize-allowed-classes
@@ -13011,6 +13036,7 @@ plugins/woocommerce/changelog/fix-drawer-overlay-color
 plugins/woocommerce/changelog/testops-183-right-size-create-order-spec
 plugins/woocommerce/changelog/phpunit-at-matcher-deprecation
 plugins/woocommerce/changelog/fix-count-badge-styles
+plugins/woocommerce/changelog/66477-sprinkle-filter-picker-colon
 plugins/woocommerce/changelog/woomob-3176-partial-refunds-by-amount
 plugins/woocommerce/changelog/65881-state-code
 plugins/woocommerce/changelog/remove-use-wp-horizon-flag
@@ -13108,6 +13134,7 @@ plugins/woocommerce/changelog/woopmnt-6250-custom-place-order-button
 plugins/woocommerce/changelog/fix-orders-query-sqlite-limit
 plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/update-deflag-commerce-recommendations
+plugins/woocommerce/changelog/fix-payment-label-popover-image-alignment
 plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
 plugins/woocommerce/changelog/testops-179-fix-product-delete-quick-delete-flake
 plugins/woocommerce/changelog/fix-65618
@@ -13125,6 +13152,9 @@ plugins/woocommerce/changelog/66237-fix-order-download-permission-duplicates
 plugins/woocommerce/changelog/wooplug-6950-product-filters-category-in-taxonomy-term-labels-is-double
 plugins/woocommerce/changelog/dev-actions-scheduler-api-usage-audit
 plugins/woocommerce/changelog/fix-storeapi-order-auth-refund-guard
+plugins/woocommerce/changelog/fix-59437-nox-test-account-non-recoverable
+plugins/woocommerce/changelog/66168-fix-65686-transient-deferrer-shutdown-order
+plugins/woocommerce/changelog/59417-brand-thumbnails-description-css
 plugins/woocommerce/changelog/qao-403-blocks-e2e-leaf-utils-content-templates
 plugins/woocommerce/changelog/fix-66031-settings-ui-registry-resolution-guard
 plugins/woocommerce/changelog/65614-site-visibility-badge-toggle
@@ -13154,8 +13184,10 @@ plugins/woocommerce/changelog/65334-woomob-2684-refund-preview-helpers
 plugins/woocommerce/changelog/fix-64009-get-images-signature-bc
 plugins/woocommerce/changelog/65723-fix-site-health-upload-loopback
 plugins/woocommerce/changelog/add-settings-ui-default-section-navigation
+plugins/woocommerce/changelog/fix-66480-empty-actionable-order-statuses
 plugins/woocommerce/changelog/fix-product-query-fixes
 plugins/woocommerce/changelog/fix-hardcoded-wp-content-paths
+plugins/woocommerce/changelog/fix-60393-combine-activity-panel-count-requests
 plugins/woocommerce/changelog/revert-65595-product-create-meta-fast-path
 plugins/woocommerce/changelog/61018-cart-short-desc-format
 plugins/woocommerce/changelog/wooplug-6880-pending-cancelled-admin-email
@@ -13173,6 +13205,7 @@ plugins/woocommerce/changelog/63967-fix-order-totals-mobile-width
 plugins/woocommerce/changelog/fix-block-templates-compat
 plugins/woocommerce/changelog/49120-remove-async-product-editor-category-field
 plugins/woocommerce/changelog/fix-log-cleanup-20-file-cap
+plugins/woocommerce/changelog/testops-214-share-rest-auth-user-v4-tests
 plugins/woocommerce/changelog/fix-refund-amount-validation-message
 plugins/woocommerce/changelog/add-dimension-unit-enum
 plugins/woocommerce/changelog/32831-fix-regenerate-attributes-lookup-table-via-rest-api
@@ -13200,6 +13233,7 @@ plugins/woocommerce/changelog/66233-fix-account-display-name-description
 plugins/woocommerce/changelog/fix-psr4-fallback-degrade-guards
 plugins/woocommerce/changelog/54584-fix-order-status-key-length
 plugins/woocommerce/changelog/fix-wc-update-10802-missing-orders-meta-table-check
+plugins/woocommerce/changelog/fix-65677-e2e-save-helper-races
 plugins/woocommerce/changelog/65766-56335-stale-attribute-meta
 plugins/woocommerce/changelog/fix-store-api-non-public-product-visibility
 plugins/woocommerce/changelog/fix-wooplug-6719-property-exists-false-php8
@@ -13219,6 +13253,7 @@ plugins/woocommerce/changelog/66124-load-post-new-editor-includes
 plugins/woocommerce/changelog/remove-deprecated-blocks-bootstrap-dependencies
 plugins/woocommerce/changelog/65390-fix-log-dir-size-fatal
 plugins/woocommerce/changelog/env-restart-force-destroy
+plugins/woocommerce/changelog/66217-fix-revenue-report-refund-double-count
 plugins/woocommerce/changelog/fix-settings-ui-tabs-horizontal-overflow
 plugins/woocommerce/changelog/add-eslint-restrict-wp-components-storefront
 plugins/woocommerce/changelog/fix-e2e-replace-dead-demo-image-urls
@@ -13242,6 +13277,7 @@ plugins/woocommerce/changelog/accessibility-cart-table-headers
 plugins/woocommerce/changelog/fix-order-attribution-banner-unscoped-button-styles
 plugins/woocommerce/changelog/63744-fix-adjust-non-base-location-prices-manual-orders
 plugins/woocommerce/changelog/fix-63892-legacy-shim-loading-strategy
+plugins/woocommerce/changelog/66404-fix-local-pickup-save-notice
 plugins/woocommerce/changelog/65682-64660-image-no-link-archive
 plugins/woocommerce/changelog/add-product-gallery-videos
 plugins/woocommerce/.gitattributes

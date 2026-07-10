@@ -801,6 +801,7 @@ config/initializers/graphql_fragment_cache.rb
 config/initializers/log_cache_store.rb
 config/initializers/active_record_pending_migrations.rb
 config/initializers/permissions_policy.rb
+config/initializers/delayed_jobs_active_job_id.rb
 config/initializers/active_job_log_subscriber.rb
 config/initializers/models_preload.rb
 config/initializers/active_record_as_batches.rb
@@ -842,6 +843,7 @@ config/initializers/email_address_validator.rb
 config/initializers/add_secure_context.rb
 config/initializers/filter_parameter_logging.rb
 config/initializers/mime_types.rb
+config/initializers/execjs_runtime.rb
 config/initializers/omniauth_openid_connect.rb
 config/initializers/active_record_lock_issue_3664.rb
 config/pre_initializers/email_address.rb
@@ -1742,6 +1744,7 @@ lib/core_ext/activesupport/lib/active_support/callbacks.rb
 lib/core_ext/activesupport/lib/active_support/tagged_logging/formatter.rb
 lib/core_ext/email_address/lib/email_address/local.rb
 lib/core_ext/logger/formatter.rb
+lib/core_ext/execjs/persistent_node_runtime.rb
 lib/core_ext/activejob/lib/active_job/queue_adapters/delayed_job_adapter.rb
 lib/core_ext/string.rb
 lib/core_ext/class.rb
@@ -4680,7 +4683,6 @@ app/services/service/ai/vectordb/content/chunks/strategy/sentence.rb
 app/services/service/ai/vectordb/content/chunks.rb
 app/services/service/ai/vectordb/document/destroy.rb
 app/services/service/ai/vectordb/document/upsert.rb
-app/services/service/ai/vectordb/document/update_metadata.rb
 app/services/service/ai/vectordb/base.rb
 app/services/service/ai/vectordb/create_table.rb
 app/services/service/ai/vectordb/similarity_search.rb
@@ -9357,6 +9359,7 @@ db/migrate/20190531180304_initialize_knowledge_base.rb
 db/migrate/20220216131241_issue3964_inbound_fix_options.rb
 db/migrate/20230801092655_issue_4543_organization_vip.rb
 db/migrate/20230425094249_setting_add_ticket_agent_default_notifications.rb
+db/migrate/20260707130000_issue6226_add_active_job_id_to_delayed_jobs.rb
 db/migrate/20240729100324_add_checklists.rb
 db/migrate/20170619000001_tree_select.rb
 db/migrate/20230117074938_issue_4461_kb_feed_token_persistent.rb
@@ -11233,7 +11236,6 @@ spec/services/service/ai/vectordb/content/chunks_spec.rb
 spec/services/service/ai/vectordb/content/chunks/strategy/sentence_spec.rb
 spec/services/service/ai/vectordb/content/chunks/strategy/recursive_spec.rb
 spec/services/service/ai/vectordb/document/destroy_spec.rb
-spec/services/service/ai/vectordb/document/update_metadata_spec.rb
 spec/services/service/ai/vectordb/document/upsert_spec.rb
 spec/services/service/ai/vectordb/create_table_spec.rb
 spec/services/service/ai/vectordb/reload_spec.rb
@@ -11393,6 +11395,7 @@ spec/db/migrate/issue4012_missing_rows_for_textarea_fields_spec.rb
 spec/db/migrate/issue_5908_cleanup_ticket_ai_agent_running_falgs_spec.rb
 spec/db/migrate/cleanup_obsolete_translations_spec.rb
 spec/db/migrate/auth_third_party_no_create_user_spec.rb
+spec/db/migrate/issue6226_add_active_job_id_to_delayed_jobs_spec.rb
 spec/db/migrate/issue_5091_timezone_default_spec.rb
 spec/db/migrate/tech_debt297_three_state_boolean_spec.rb
 spec/db/migrate/add_checklist_item_ticket_association_spec.rb

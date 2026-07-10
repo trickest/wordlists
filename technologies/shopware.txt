@@ -3208,6 +3208,7 @@ src/Core/Framework/DataAbstractionLayer/Exception/InvalidLimitQueryException.php
 src/Core/Framework/DataAbstractionLayer/Exception/DefinitionNotFoundException.php
 src/Core/Framework/DataAbstractionLayer/Exception/InvalidSortQueryException.php
 src/Core/Framework/DataAbstractionLayer/Exception/UnableToLoadPathException.php
+src/Core/Framework/DataAbstractionLayer/Exception/UnmappedFieldException.php
 src/Core/Framework/DataAbstractionLayer/Exception/InvalidEntityUuidException.php
 src/Core/Framework/DataAbstractionLayer/Exception/EntityNotFoundException.php
 src/Core/Framework/DataAbstractionLayer/Exception/ApiProtectionException.php
@@ -4436,6 +4437,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/media.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_transaction.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/state_machine.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/message-queue.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/customer_convert.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/customer_impersonation.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/queue.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/AdminApi/paths/config.json
@@ -6247,6 +6249,7 @@ src/Core/Checkout/Customer/Password/LegacyEncoder/LegacyEncoderInterface.php
 src/Core/Checkout/Customer/Password/LegacyEncoder/Sha256.php
 src/Core/Checkout/Customer/Password/LegacyEncoder/Md5.php
 src/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionController.php
+src/Core/Checkout/Customer/Api/ConvertGuestController.php
 src/Core/Checkout/Customer/Subscriber/CustomerTokenSubscriber.php
 src/Core/Checkout/Customer/Subscriber/CustomerEmailUniqueSubscriber.php
 src/Core/Checkout/Customer/Subscriber/CustomerMetaFieldSubscriber.php
@@ -7022,9 +7025,9 @@ src/Administration/Framework/Adapter/Cache/Http/AdministrationCacheControlListen
 src/Administration/Framework/App/ActiveAdminAppLoader.php
 src/Administration/Framework/App/Subscriber/SystemLanguageChangedSubscriber.php
 src/Administration/Framework/Api/Subscriber/AdminInfoConfigBundlesSubscriber.php
-src/Administration/DependencyInjection/framework.xml
+src/Administration/DependencyInjection/services.php
 src/Administration/DependencyInjection/AdministrationMigrationCompilerPass.php
-src/Administration/DependencyInjection/services.xml
+src/Administration/DependencyInjection/framework.php
 src/Administration/Command/DeleteExtensionLocalPublicFilesCommand.php
 src/Administration/Command/DeleteAdminFilesAfterBuildCommand.php
 src/Administration/Resources/ide-twig.json
@@ -7648,6 +7651,9 @@ src/Administration/Resources/app/administration/src/module/sw-settings/page/sw-s
 src/Administration/Resources/app/administration/src/module/sw-settings/page/sw-settings-index/sw-settings-index.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings/page/sw-settings-index/sw-settings-index.scss
 src/Administration/Resources/app/administration/src/module/sw-settings/page/sw-settings-index/sw-settings-index.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config-media-upload/sw-system-config-media-upload.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config-media-upload/index.js
+src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config-media-upload/sw-system-config-media-upload.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config/sw-system-config.scss
 src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config/sw-system-config.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings/component/sw-system-config/sw-system-config.html.twig
@@ -7801,6 +7807,7 @@ src/Administration/Resources/app/administration/src/module/sw-newsletter-recipie
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/service/captcha.service.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/service/captcha.service.js
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/page/sw-settings-basic-information/sw-settings-basic-information.html.twig
+src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/page/sw-settings-basic-information/sw-settings-basic-information.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/page/sw-settings-basic-information/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/component/sw-settings-captcha-select-v2/index.js
 src/Administration/Resources/app/administration/src/module/sw-settings-basic-information/component/sw-settings-captcha-select-v2/sw-settings-captcha-select-v2.html.twig
@@ -9196,6 +9203,10 @@ src/Administration/Resources/app/administration/src/module/sw-customer/component
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/sw-customer-base-form.html.twig
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/sw-customer-base-form.spec.js
 src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-base-form/index.js
+src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-convert-guest-modal/sw-customer-convert-guest-modal.scss
+src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-convert-guest-modal/sw-customer-convert-guest-modal.spec.js
+src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-convert-guest-modal/index.js
+src/Administration/Resources/app/administration/src/module/sw-customer/component/sw-customer-convert-guest-modal/sw-customer-convert-guest-modal.html.twig
 src/Administration/Resources/app/administration/src/module/sw-customer/acl/index.js
 src/Administration/Resources/app/administration/src/module/sw-customer/snippet/en.json
 src/Administration/Resources/app/administration/src/module/sw-customer/snippet/de.json
@@ -11700,6 +11711,7 @@ src/Administration/Resources/app/administration/src/core/application.spec.js
 src/Administration/Resources/app/administration/src/core/service/jsonapi-parser.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/media-presigned-upload.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/index.ts
+src/Administration/Resources/app/administration/src/core/service/api/guest-customer-convert.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/known-ips.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/update.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/app-cms-blocks.service.js
@@ -11782,6 +11794,7 @@ src/Administration/Resources/app/administration/src/core/service/api/mcp-tool.ap
 src/Administration/Resources/app/administration/src/core/service/api/mail.api.service.spec.js
 src/Administration/Resources/app/administration/src/core/service/api/snippet.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/sales-channel.api.service.js
+src/Administration/Resources/app/administration/src/core/service/api/guest-customer-convert.service.js
 src/Administration/Resources/app/administration/src/core/service/api/custom-snippet.api.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/errors/InvalidActionButtonParameterError.ts
 src/Administration/Resources/app/administration/src/core/service/api/errors/InvalidActionButtonParameterError.spec.js
@@ -12184,6 +12197,7 @@ src/Elasticsearch/Framework/SystemUpdateListener.php
 src/Elasticsearch/Framework/Subscriber/InvalidateExpiredCacheSubscriber.php
 src/Elasticsearch/Framework/ElasticsearchDateHistogramAggregation.php
 src/Elasticsearch/DependencyInjection/Configuration.php
+src/Elasticsearch/DependencyInjection/services.php
 src/Elasticsearch/DependencyInjection/ElasticsearchMigrationCompilerPass.php
 src/Elasticsearch/DependencyInjection/ElasticsearchExtension.php
 src/Elasticsearch/Admin/AdminElasticsearchHelper.php
@@ -12218,7 +12232,6 @@ src/Elasticsearch/Resources/config/packages/elasticsearch.yaml
 src/Elasticsearch/Resources/config/packages/monolog.yaml
 src/Elasticsearch/Resources/config/packages/shopware.php
 src/Elasticsearch/Resources/config/packages/framework.yaml
-src/Elasticsearch/Resources/config/services.xml
 src/Elasticsearch/Resources/views/Collector/elasticsearch.html.twig
 src/Elasticsearch/Resources/views/Collector/icon.svg
 src/Elasticsearch/Product/ProductSearchBuilder.php
@@ -12917,6 +12930,7 @@ src/Storefront/Resources/app/storefront/src/scss/page/product-detail/_configurat
 src/Storefront/Resources/app/storefront/src/scss/page/product-detail/_tabs.scss
 src/Storefront/Resources/app/storefront/src/scss/page/product-detail/_product-detail.scss
 src/Storefront/Resources/app/storefront/src/scss/page/search/_search.scss
+src/Storefront/Resources/app/storefront/src/scss/page/checkout/_convert.scss
 src/Storefront/Resources/app/storefront/src/scss/page/checkout/_register.scss
 src/Storefront/Resources/app/storefront/src/scss/page/checkout/_confirm.scss
 src/Storefront/Resources/app/storefront/src/scss/page/checkout/_finish.scss
@@ -13472,6 +13486,7 @@ src/Storefront/Resources/views/storefront/page/account/customer-group-register/i
 src/Storefront/Resources/views/storefront/page/account/register/index.html.twig
 src/Storefront/Resources/views/storefront/page/account/sidebar.html.twig
 src/Storefront/Resources/views/storefront/page/account/guest-auth.html.twig
+src/Storefront/Resources/views/storefront/page/account/convert.html.twig
 src/Storefront/Resources/views/storefront/page/account/addressbook/address-manager.html.twig
 src/Storefront/Resources/views/storefront/page/account/addressbook/edit.html.twig
 src/Storefront/Resources/views/storefront/page/account/addressbook/index.html.twig
@@ -13941,6 +13956,7 @@ coding-guidelines/core/domain-exceptions.md
 coding-guidelines/core/6.5-new-php-language-features.md
 coding-guidelines/core/feature-flags.md
 coding-guidelines/core/agent-skills.md
+composer-dependency-analyser.php
 phpunit.xml.dist
 LICENSE
 UPGRADE-6.4.md
@@ -15472,6 +15488,7 @@ tests/integration/Core/Checkout/Customer/DeleteUnusedGuestCustomerServiceTest.ph
 tests/integration/Core/Checkout/Customer/Repository/CustomerRepositoryTest.php
 tests/integration/Core/Checkout/Customer/Repository/CustomerTagTest.php
 tests/integration/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionControllerTest.php
+tests/integration/Core/Checkout/Customer/Api/ConvertGuestControllerTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerBeforeDeleteSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerSalutationSubscriberTest.php
 tests/integration/Core/Checkout/Customer/Subscriber/CustomerTokenSubscriberTest.php
@@ -16892,8 +16909,8 @@ tests/unit/Core/Framework/Migration/AddColumnTraitTest.php
 tests/unit/Core/Framework/Migration/MigrationSourceTest.php
 tests/unit/Core/Framework/Migration/MigrationCollectionLoaderTest.php
 tests/unit/Core/Framework/Migration/Command/CreateMigrationCommandTest.php
-tests/unit/Core/Framework/Migration/Command/_fixtures/Migration1772030791Test.php.bak
 tests/unit/Core/Framework/Migration/Command/_fixtures/InvalidMigration.php
+tests/unit/Core/Framework/Migration/Command/_fixtures/Migration1772030791FooBar.php
 tests/unit/Core/Framework/Migration/Command/RefreshMigrationCommandTest.php
 tests/unit/Core/Framework/Migration/Command/MigrationCommandTest.php
 tests/unit/Core/Framework/Migration/MigrationStepTest.php
@@ -18355,6 +18372,7 @@ tests/unit/Core/Checkout/Customer/Rule/LastNameRuleTest.php
 tests/unit/Core/Checkout/Customer/Rule/CustomerLoggedInRuleTest.php
 tests/unit/Core/Checkout/Customer/DeleteUnusedGuestCustomerServiceTest.php
 tests/unit/Core/Checkout/Customer/Api/CustomerGroupRegistrationActionControllerTest.php
+tests/unit/Core/Checkout/Customer/Api/ConvertGuestControllerTest.php
 tests/unit/Core/Checkout/Customer/Subscriber/CustomerBeforeDeleteSubscriberTest.php
 tests/unit/Core/Checkout/Customer/Subscriber/AddressHashSubscriberTest.php
 tests/unit/Core/Checkout/Customer/Subscriber/CustomerSalutationSubscriberTest.php

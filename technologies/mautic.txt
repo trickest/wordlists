@@ -14,6 +14,7 @@ UPGRADE-6.0.md
 funding.json
 composer.lock
 MAINTAINERS.md
+build/gjs_build.php
 build/exclude_files.txt
 build/exclude_files_full.txt
 build/hooks/pre-commit.win
@@ -39,6 +40,7 @@ composer.json
 .ddev/docker-compose.phpmyadmin.yaml
 .ddev/commands/redis/redis-cli
 .ddev/commands/host/phpmyadmin
+.ddev/commands/web/gjs-build
 .ddev/commands/web/ddev-setup-mautic
 .ddev/local.config.php.dist
 .ddev/addon-metadata/ddev-selenium-standalone-chrome/manifest.yaml
@@ -3563,6 +3565,7 @@ app/bundles/CoreBundle/Tests/Unit/Update/Step/PreUpdateChecksStepTest.php
 app/bundles/CoreBundle/Tests/Unit/Update/Step/RemoveDeletedFilesStepTest.php
 app/bundles/CoreBundle/Tests/Unit/Update/StepProviderTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/DateExtensionTest.php
+app/bundles/CoreBundle/Tests/Unit/Twig/Extension/OverrideIncludeExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/HtmlExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/MenuExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/FormatterExtensionTest.php
@@ -3739,6 +3742,7 @@ app/bundles/CoreBundle/Tests/Functional/Controller/AbstractFormControllerTest.ph
 app/bundles/CoreBundle/Tests/Functional/SamlTest.php
 app/bundles/CoreBundle/Tests/Functional/UserEntityTrait.php
 app/bundles/CoreBundle/Tests/Functional/CreateTestEntitiesTrait.php
+app/bundles/CoreBundle/Tests/Functional/Helper/ChartQueryFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/CommandHelperTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/Chart/ChartQueryTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/LanguageHelperTest.php
@@ -4811,6 +4815,7 @@ app/bundles/AssetBundle/EventListener/AssetExportListEventSubscriber.php
 app/bundles/AssetBundle/Tests/EventListener/LeadSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
+app/bundles/AssetBundle/Tests/EventListener/DashboardSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/Asset/AbstractAssetTestCase.php
 app/bundles/AssetBundle/Tests/DataFixtures/LoadAssetDataTest.php
@@ -4826,6 +4831,7 @@ app/bundles/AssetBundle/Tests/Controller/AssetDownloadFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/AssetControllerFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/AssetProjectSearchFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/Api/AssetApiControllerFunctionalTest.php
+app/bundles/AssetBundle/Tests/Controller/Api/AssetWidgetDataApiControllerFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/PublicControllerFunctionalTest.php
 app/bundles/AssetBundle/Validator/Constraints/Upload.php
 app/bundles/AssetBundle/Validator/Constraints/UploadValidator.php
@@ -5834,6 +5840,7 @@ plugins/MauticSocialBundle/README.md
 plugins/MauticSocialBundle/Helper/CampaignEventHelper.php
 plugins/MauticSocialBundle/Helper/TwitterCommandHelper.php
 plugins/GrapesJsBuilderBundle/GrapesJsBuilderBundle.php
+plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/AssetsSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/PageSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/EmailSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/InjectCustomContentSubscriberTest.php
@@ -5845,6 +5852,7 @@ plugins/GrapesJsBuilderBundle/Tests/Functional/Controller/AssertCustomMjmlTest.p
 plugins/GrapesJsBuilderBundle/Tests/InstallFixtures/ORM/GrapeJsDataTest.php
 plugins/GrapesJsBuilderBundle/package.json
 plugins/GrapesJsBuilderBundle/.babelrc
+plugins/GrapesJsBuilderBundle/scripts/manifest-reporter.js
 plugins/GrapesJsBuilderBundle/easy-coding-standard.yml
 plugins/GrapesJsBuilderBundle/phpunit.xml
 plugins/GrapesJsBuilderBundle/.eslintrc
@@ -5890,7 +5898,6 @@ plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonPrev
 plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttons.service.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonPreview.command.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/builder.service.js
-plugins/GrapesJsBuilderBundle/Assets/library/js/dist/builder.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/asset.service.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/plugins/grapesjs-mjmlThemeTokens/blocks.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/plugins/grapesjs-mjmlThemeTokens/utils.js

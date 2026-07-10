@@ -4956,6 +4956,10 @@ core/modules/locale/tests/modules/locale_test_translate/config/schema/locale_tes
 core/modules/locale/tests/modules/locale_test_translate/config/install/locale_test_translate.settings.yml
 core/modules/locale/tests/modules/locale_test_translate/src/Hook/LocaleTestTranslateHooks.php
 core/modules/locale/tests/modules/locale_test_translate/locale_test_translate.info.yml
+core/modules/locale/tests/modules/locale_test_additional/src/Hook/LocaleTestAdditionalHooks.php
+core/modules/locale/tests/modules/locale_test_additional/locale_test_additional.info.yml
+core/modules/locale/tests/modules/locale_test_extra/src/Hook/LocaleTestExtraHooks.php
+core/modules/locale/tests/modules/locale_test_extra/locale_test_extra.info.yml
 core/modules/locale/tests/modules/locale_test/config/schema/locale_test.schema.yml
 core/modules/locale/tests/modules/locale_test/config/optional/block.block.test_default_config.yml
 core/modules/locale/tests/modules/locale_test/config/install/locale_test.translation.yml
@@ -5898,6 +5902,7 @@ core/modules/pgsql/src/EntityQuery/QueryFactory.php
 core/modules/pgsql/src/Hook/PgsqlRequirementsHooks.php
 core/modules/pgsql/src/Hook/PgsqlHooks.php
 core/modules/pgsql/pgsql.info.yml
+core/modules/pgsql/tests/src/Unit/EntityQuery/ConditionTest.php
 core/modules/pgsql/tests/src/Unit/SchemaTest.php
 core/modules/pgsql/tests/src/Functional/GenericTest.php
 core/modules/pgsql/tests/src/Kernel/pgsql/ConnectionUnitTest.php
@@ -14864,6 +14869,8 @@ core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal-append-s
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal-append-settings/assets/default-settings.txt
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal-append-settings/assets/append-to-settings.txt
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-fixture-allowing-core/composer.json
+core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/composer-plugin-downloads-modifier/composer.json
+core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/composer-plugin-downloads-modifier/src/DownloadsModifierPlugin.php
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-drupal-missing-scaffold-file/composer.json.tmpl
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-file/assets/empty_file.txt
 core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-file/composer.json
