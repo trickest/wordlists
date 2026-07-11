@@ -5606,6 +5606,7 @@ core/modules/search/tests/src/Unit/SearchPageRepositoryTest.php
 core/modules/search/tests/src/Functional/SearchCommentTest.php
 core/modules/search/tests/src/Functional/SearchAdvancedSearchFormTest.php
 core/modules/search/tests/src/Functional/SearchNodePunctuationTest.php
+core/modules/search/tests/src/Functional/HelpSearchHelpUpgradeTest.php
 core/modules/search/tests/src/Functional/SearchRankingTest.php
 core/modules/search/tests/src/Functional/SearchCommentCountToggleTest.php
 core/modules/search/tests/src/Functional/Rest/SearchPageResourceTestBase.php
@@ -11251,6 +11252,7 @@ core/modules/system/tests/modules/router_test_directory/src/Controller/TestClass
 core/modules/system/tests/modules/router_test_directory/src/Controller/TestInvalidController.php
 core/modules/system/tests/modules/router_test_directory/src/Controller/TestAttributes.php
 core/modules/system/tests/modules/router_test_directory/src/Controller/TestMissingDependency.php
+core/modules/system/tests/modules/router_test_directory/src/Controller/TestClassAttributeClassOnly.php
 core/modules/system/tests/modules/router_test_directory/src/Form.php
 core/modules/system/tests/modules/router_test_directory/src/TestControllers.php
 core/modules/system/tests/modules/router_test_directory/src/Hook/RouterTestThemeHooks.php
@@ -11526,7 +11528,6 @@ core/modules/system/tests/modules/form_test/src/Form/FormTestClickedButtonForm.p
 core/modules/system/tests/modules/form_test/src/Form/FormTestSubmitButtonAttributeForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestGroupFieldsetForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestTableSelectDisabledRowsForm.php
-core/modules/system/tests/modules/form_test/src/Form/FormTestDetailsContainsRequiredTextfieldForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestTableForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestResponseForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestVerticalTabsAccessForm.php
@@ -11539,6 +11540,7 @@ core/modules/system/tests/modules/form_test/src/Form/FormTestTableSelectColspanF
 core/modules/system/tests/modules/form_test/src/Form/FormTestFileForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestTableSelectJsSelectForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestPlaceholderForm.php
+core/modules/system/tests/modules/form_test/src/Form/FormTestDetailsContainsRequiredFieldsForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestMachineNameForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestGroupContainerForm.php
 core/modules/system/tests/modules/form_test/src/Form/FormTestColorForm.php
@@ -13121,6 +13123,7 @@ core/modules/help/src/HelpTopicTwig.php
 core/modules/help/src/Plugin/HelpSection/HelpSectionPluginBase.php
 core/modules/help/src/Plugin/HelpSection/HookHelpSection.php
 core/modules/help/src/Plugin/HelpSection/HelpTopicSection.php
+core/modules/help/src/Plugin/Search/HelpSearch.php
 core/modules/help/src/Plugin/Block/HelpBlock.php
 core/modules/help/src/HelpSectionPluginInterface.php
 core/modules/help/src/Annotation/HelpSection.php
@@ -13143,7 +13146,6 @@ core/modules/help/help.info.yml
 core/modules/help/tests/src/Unit/HelpTopicDiscoveryTest.php
 core/modules/help/tests/src/Unit/HelpTopicTwigTest.php
 core/modules/help/tests/src/Unit/HelpTopicTwigLoaderTest.php
-core/modules/help/tests/src/Functional/HelpSearchHelpUpgradeTest.php
 core/modules/help/tests/src/Functional/HelpTopicTranslationTest.php
 core/modules/help/tests/src/Functional/HelpTopicTranslatedTestBase.php
 core/modules/help/tests/src/Functional/HelpNoSearchUpgradeTest.php

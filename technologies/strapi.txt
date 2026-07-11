@@ -1999,6 +1999,7 @@ packages/core/admin/admin/src/translations/zh-Hans.json
 packages/core/admin/admin/src/translations/es.json
 packages/core/admin/admin/src/assets/images/logo-strapi-2022.svg
 packages/core/admin/admin/src/assets/images/icon_offline-cloud.svg
+packages/core/admin/admin/src/utils/getProjectType.ts
 packages/core/admin/admin/src/utils/jwt.ts
 packages/core/admin/admin/src/utils/retryDynamicImport.ts
 packages/core/admin/admin/src/utils/urls.ts
@@ -2020,6 +2021,7 @@ packages/core/admin/admin/src/utils/locales.ts
 packages/core/admin/admin/src/utils/tests/cookies.test.ts
 packages/core/admin/admin/src/utils/tests/users.test.ts
 packages/core/admin/admin/src/utils/tests/urls.test.ts
+packages/core/admin/admin/src/utils/tests/getProjectType.test.ts
 packages/core/admin/admin/src/utils/tests/normalizeAPIError.test.ts
 packages/core/admin/admin/src/utils/tests/strings.test.ts
 packages/core/admin/admin/src/utils/tests/widgetLayout.test.ts
@@ -2151,6 +2153,7 @@ packages/core/admin/admin/src/components/Pagination.tsx
 packages/core/admin/admin/src/components/DescriptionComponentRenderer.tsx
 packages/core/admin/admin/src/components/Providers.tsx
 packages/core/admin/admin/src/components/tests/Table.test.tsx
+packages/core/admin/admin/src/components/tests/Context.test.tsx
 packages/core/admin/admin/src/components/tests/Widget.test.tsx
 packages/core/admin/admin/src/components/tests/Widgets.test.tsx
 packages/core/admin/admin/src/components/tests/LazyOutlet.test.tsx
@@ -2559,6 +2562,7 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Blo
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/utils/types.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/BlocksInput.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/BlocksToolbar.tsx
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksEditor.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksToolbar.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/mock-schema.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/normalizeBlocksState.test.ts
@@ -3193,7 +3197,10 @@ packages/core/openapi/src/constants.ts
 packages/core/openapi/src/assemblers/index.ts
 packages/core/openapi/src/assemblers/document/index.ts
 packages/core/openapi/src/assemblers/document/info.ts
+packages/core/openapi/src/assemblers/document/query-param-styles.ts
+packages/core/openapi/src/assemblers/document/security.ts
 packages/core/openapi/src/assemblers/document/metadata.ts
+packages/core/openapi/src/assemblers/document/server.ts
 packages/core/openapi/src/assemblers/document/path/path-item/index.ts
 packages/core/openapi/src/assemblers/document/path/path-item/path-item.ts
 packages/core/openapi/src/assemblers/document/path/path-item/operation/operation-id.ts
@@ -3223,11 +3230,13 @@ packages/core/openapi/lint-staged.config.mjs
 packages/core/openapi/.eslintrc.cjs
 packages/core/openapi/README.md
 packages/core/openapi/.npmignore
+packages/core/openapi/__tests__/query-param-styles.test.ts
 packages/core/openapi/__tests__/routes/api-routes-provider.test.ts
 packages/core/openapi/__tests__/routes/plugins-route-provider.test.ts
 packages/core/openapi/__tests__/routes/collector.test.ts
 packages/core/openapi/__tests__/routes/route-matcher.test.ts
 packages/core/openapi/__tests__/operation-assemblers.test.ts
+packages/core/openapi/__tests__/document-assemblers.test.ts
 packages/core/openapi/__tests__/mocks/index.ts
 packages/core/openapi/__tests__/mocks/strapi.mock.ts
 packages/core/openapi/__tests__/mocks/routes-provider.mock.ts
@@ -3332,10 +3341,12 @@ packages/core/strapi/src/node/core/timer.ts
 packages/core/strapi/src/node/core/admin-customisations.ts
 packages/core/strapi/src/node/core/config.ts
 packages/core/strapi/src/node/core/files.ts
+packages/core/strapi/src/node/core/admin-vite-optimize-exclude.ts
 packages/core/strapi/src/node/core/managers.ts
 packages/core/strapi/src/node/core/resolve-module.ts
 packages/core/strapi/src/node/core/linked-packages.ts
 packages/core/strapi/src/node/core/__tests__/dependencies.test.ts
+packages/core/strapi/src/node/core/__tests__/admin-vite-optimize-exclude.test.ts
 packages/core/strapi/src/node/core/__tests__/plugins.test.ts
 packages/core/strapi/src/node/core/__tests__/admin-vite-aliases.test.ts
 packages/core/strapi/src/node/core/__tests__/resolve-module.test.ts

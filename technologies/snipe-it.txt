@@ -7504,6 +7504,7 @@ tests/Feature/Categories/Ui/ShowCategoryTest.php
 tests/Feature/Categories/Ui/DeleteCategoriesTest.php
 tests/Feature/Users/ImpersonateUserTest.php
 tests/Feature/Users/UserPermissionLoggingTest.php
+tests/Feature/Users/LegacyCompanyIdMirrorTest.php
 tests/Feature/Users/UserCompanyLoggingTest.php
 tests/Feature/Users/Api/CreateUserTest.php
 tests/Feature/Users/Api/RestoreUserTest.php
@@ -7962,6 +7963,7 @@ database/migrations/2024_10_31_212512_update_new_and_drop_old_barcode_settings.p
 database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php
 database/migrations/2023_04_12_135822_add_supplier_to_components.php
 database/migrations/2016_09_04_182149_migrate_asset_log_to_action_log.php
+database/migrations/2026_07_10_000001_rename_users_company_id_to_legacy_company_id.php
 database/migrations/2017_03_03_154632_add_time_date_display_to_settings.php
 database/migrations/2023_02_12_224353_fix_unescaped_customfields_format.php
 database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php

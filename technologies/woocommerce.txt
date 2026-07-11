@@ -4505,6 +4505,7 @@ plugins/woocommerce/src/Blocks/AIContent/PatternsHelper.php
 plugins/woocommerce/src/Blocks/AIContent/ContentProcessor.php
 plugins/woocommerce/src/Blocks/AIContent/PatternsDictionary.php
 plugins/woocommerce/src/Blocks/Domain/Bootstrap.php
+plugins/woocommerce/src/Blocks/Domain/BlockRegistrationContext.php
 plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFieldsSchema/json-schema-draft-07.json
 plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFieldsSchema/DocumentObject.php
 plugins/woocommerce/src/Blocks/Domain/Services/CheckoutFieldsSchema/Validation.php
@@ -6333,6 +6334,7 @@ plugins/woocommerce/bin/post-update.sh
 plugins/woocommerce/bin/lint-branch.sh
 plugins/woocommerce/bin/check-new-functions.php
 plugins/woocommerce/bin/build-lib.sh
+plugins/woocommerce/bin/sync-feature-config.js
 plugins/woocommerce/bin/build-zip.sh
 plugins/woocommerce/bin/composer/mozart/composer.lock
 plugins/woocommerce/bin/composer/mozart/composer.json
@@ -7594,6 +7596,7 @@ plugins/woocommerce/tests/php/src/Blocks/Domain/Services/CheckoutLinkTest.php
 plugins/woocommerce/tests/php/src/Blocks/Domain/Services/CheckoutFieldsTest.php
 plugins/woocommerce/tests/php/src/Blocks/Domain/Services/CheckoutFieldsFrontendTest.php
 plugins/woocommerce/tests/php/src/Blocks/Domain/Package.php
+plugins/woocommerce/tests/php/src/Blocks/Domain/BlockRegistrationContextTest.php
 plugins/woocommerce/tests/php/src/Blocks/DependencyDetectionTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockPatterns/patterns/mock-footer.php
 plugins/woocommerce/tests/php/src/Blocks/BlockPatterns/patterns/mock-header.php
@@ -12928,6 +12931,7 @@ plugins/woocommerce/templates/brands/brand-description.php
 plugins/woocommerce/templates/single-product.php
 plugins/woocommerce/changelog/php-tests-email-fixture-stdout-leak
 plugins/woocommerce/changelog/update-email-verification-magic-link
+plugins/woocommerce/changelog/fix-store-api-request-detection-plain-permalinks
 plugins/woocommerce/changelog/fix-59464-migrate-reviews-panelbody-to-toolspanel
 plugins/woocommerce/changelog/fix-analytics-legacy-admin-disable-filters
 plugins/woocommerce/changelog/65786-tax-settings-recommendations
@@ -13007,6 +13011,7 @@ plugins/woocommerce/changelog/update-product-filter-status-availability
 plugins/woocommerce/changelog/65389-dev-product-shape-mapper-interface
 plugins/woocommerce/changelog/wooplug-6663-fix-typeerror-formatted-order-total
 plugins/woocommerce/changelog/codex-remove-create-product-editor-block
+plugins/woocommerce/changelog/try-e2e-shared-build-assets
 plugins/woocommerce/changelog/fix-quantity-selector-styles-outside-add-to-cart-with-options
 plugins/woocommerce/changelog/fix-e2e-helper-plugin-mounts
 plugins/woocommerce/changelog/performance-audit-wc_product_dropdown_categories-usages-in-admin
@@ -13084,6 +13089,7 @@ plugins/woocommerce/changelog/fix-cartupdateitem-truncates-float-quantities
 plugins/woocommerce/changelog/add-woocommerce_validate_phone-filter-phone-validation
 plugins/woocommerce/changelog/refactor-59464-use-toolspanel-in-page-selector
 plugins/woocommerce/changelog/65468-performance-prime-analytics-extended-info
+plugins/woocommerce/changelog/fix-hpos-data-cache-corrupt-entry-fatal
 plugins/woocommerce/changelog/65541-fix-checkout-shipping-cache-homeboy
 plugins/woocommerce/changelog/65335-woomob-2684-refund-preview-endpoint
 plugins/woocommerce/changelog/fix-product-block-editor-block-registry-compat
@@ -13154,13 +13160,16 @@ plugins/woocommerce/changelog/dev-actions-scheduler-api-usage-audit
 plugins/woocommerce/changelog/fix-storeapi-order-auth-refund-guard
 plugins/woocommerce/changelog/fix-59437-nox-test-account-non-recoverable
 plugins/woocommerce/changelog/66168-fix-65686-transient-deferrer-shutdown-order
+plugins/woocommerce/changelog/fix-brand-thumbnails-where-selectors
 plugins/woocommerce/changelog/59417-brand-thumbnails-description-css
 plugins/woocommerce/changelog/qao-403-blocks-e2e-leaf-utils-content-templates
+plugins/woocommerce/changelog/fix-32038-line-item-meta-display-values
 plugins/woocommerce/changelog/fix-66031-settings-ui-registry-resolution-guard
 plugins/woocommerce/changelog/65614-site-visibility-badge-toggle
 plugins/woocommerce/changelog/performance-slow-sql-on-admin-products-page
 plugins/woocommerce/changelog/performance-centralize-wp_count_posts-invocation
 plugins/woocommerce/changelog/66364-fix-command-palette-e2e-modifier-detection
+plugins/woocommerce/changelog/perf-skip-block-registration-non-rendering-requests
 plugins/woocommerce/changelog/65591-fix-rest-batch-transient-coalescing
 plugins/woocommerce/changelog/site-health-admin-notice-migration
 plugins/woocommerce/changelog/fix-woopayments-activate-payments-lock
