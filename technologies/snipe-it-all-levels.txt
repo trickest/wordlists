@@ -805,6 +805,10 @@ resources/views/blade/alert-menu.blade.php
 views/blade/alert-menu.blade.php
 blade/alert-menu.blade.php
 alert-menu.blade.php
+resources/views/blade/notifications.blade.php
+views/blade/notifications.blade.php
+blade/notifications.blade.php
+notifications.blade.php
 resources/views/blade/table/files.blade.php
 views/blade/table/files.blade.php
 blade/table/files.blade.php
@@ -937,6 +941,11 @@ views/blade/form/legend.blade.php
 blade/form/legend.blade.php
 form/legend.blade.php
 legend.blade.php
+resources/views/blade/form/error.blade.php
+views/blade/form/error.blade.php
+blade/form/error.blade.php
+form/error.blade.php
+error.blade.php
 resources/views/blade/form/static.blade.php
 views/blade/form/static.blade.php
 blade/form/static.blade.php
@@ -1890,9 +1899,6 @@ resources/views/suppliers/index.blade.php
 views/suppliers/index.blade.php
 suppliers/index.blade.php
 index.blade.php
-resources/views/notifications.blade.php
-views/notifications.blade.php
-notifications.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 views/livewire/admin-personal-access-tokens.blade.php
 livewire/admin-personal-access-tokens.blade.php
@@ -39400,6 +39406,10 @@ app/Http/Middleware/SecurityHeaders.php
 Http/Middleware/SecurityHeaders.php
 Middleware/SecurityHeaders.php
 SecurityHeaders.php
+app/Http/Middleware/EnforceApiTwoFactorEnrollment.php
+Http/Middleware/EnforceApiTwoFactorEnrollment.php
+Middleware/EnforceApiTwoFactorEnrollment.php
+EnforceApiTwoFactorEnrollment.php
 app/Http/Middleware/NoSessionStore.php
 Http/Middleware/NoSessionStore.php
 Middleware/NoSessionStore.php
@@ -39673,6 +39683,11 @@ Unit/Models/Company/GetIdForCurrentUserTest.php
 Models/Company/GetIdForCurrentUserTest.php
 Company/GetIdForCurrentUserTest.php
 GetIdForCurrentUserTest.php
+tests/Unit/Models/User/VerifyExactUsernameMatchTest.php
+Unit/Models/User/VerifyExactUsernameMatchTest.php
+Models/User/VerifyExactUsernameMatchTest.php
+User/VerifyExactUsernameMatchTest.php
+VerifyExactUsernameMatchTest.php
 tests/Unit/Models/UserTotalCostTest.php
 Unit/Models/UserTotalCostTest.php
 Models/UserTotalCostTest.php
@@ -40021,6 +40036,10 @@ tests/Feature/Authentication/TwoFactorRateLimitTest.php
 Feature/Authentication/TwoFactorRateLimitTest.php
 Authentication/TwoFactorRateLimitTest.php
 TwoFactorRateLimitTest.php
+tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
+Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
+Authentication/EnforceApiTwoFactorEnrollmentTest.php
+EnforceApiTwoFactorEnrollmentTest.php
 tests/Feature/Notes/CreateNotesTest.php
 Feature/Notes/CreateNotesTest.php
 Notes/CreateNotesTest.php
@@ -40412,6 +40431,10 @@ Feature/Setup/Ui/IndexSetupTest.php
 Setup/Ui/IndexSetupTest.php
 Ui/IndexSetupTest.php
 IndexSetupTest.php
+tests/Feature/Helpers/CheckLowInventoryTest.php
+Feature/Helpers/CheckLowInventoryTest.php
+Helpers/CheckLowInventoryTest.php
+CheckLowInventoryTest.php
 tests/Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
 Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
 StatusLabels/Api/DeleteStatusLabelsTest.php

@@ -207,6 +207,7 @@ resources/views/blade/tabs/files-tab.blade.php
 resources/views/blade/tabs/model-tab.blade.php
 resources/views/blade/tabs/consumable-tab.blade.php
 resources/views/blade/alert-menu.blade.php
+resources/views/blade/notifications.blade.php
 resources/views/blade/table/files.blade.php
 resources/views/blade/table/bulk-assets.blade.php
 resources/views/blade/table/companies.blade.php
@@ -234,6 +235,7 @@ resources/views/blade/form/row.blade.php
 resources/views/blade/form/radio-row.blade.php
 resources/views/blade/form/checkbox-inline.blade.php
 resources/views/blade/form/legend.blade.php
+resources/views/blade/form/error.blade.php
 resources/views/blade/form/static.blade.php
 resources/views/blade/form/index.blade.php
 resources/views/blade/form/checkbox-row.blade.php
@@ -435,7 +437,6 @@ resources/views/hardware/labels.blade.php
 resources/views/suppliers/edit.blade.php
 resources/views/suppliers/view.blade.php
 resources/views/suppliers/index.blade.php
-resources/views/notifications.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/slack-settings-form.blade.php
 resources/views/livewire/importer.blade.php
@@ -7313,6 +7314,7 @@ app/Http/Middleware/SetAPIResponseHeaders.php
 app/Http/Middleware/SetPaginationDefaults.php
 app/Http/Middleware/CheckColorSettings.php
 app/Http/Middleware/SecurityHeaders.php
+app/Http/Middleware/EnforceApiTwoFactorEnrollment.php
 app/Http/Middleware/NoSessionStore.php
 app/Http/Middleware/CheckPermissions.php
 app/Http/Middleware/TrimStrings.php
@@ -7392,6 +7394,7 @@ tests/Unit/Models/UserCanReceiveFromCompanyTest.php
 tests/Unit/Models/LoggableTest.php
 tests/Unit/Models/Company/CompanyTest.php
 tests/Unit/Models/Company/GetIdForCurrentUserTest.php
+tests/Unit/Models/User/VerifyExactUsernameMatchTest.php
 tests/Unit/Models/UserTotalCostTest.php
 tests/Unit/Models/Labels/DefaultLabelTest.php
 tests/Unit/Models/Labels/FieldOptionTest.php
@@ -7472,6 +7475,7 @@ tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
+tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
 tests/Feature/Notes/CreateNotesTest.php
 tests/Feature/Requests/Ui/CancelRequestTest.php
 tests/Feature/Requests/Ui/AssetRequestIndexTest.php
@@ -7552,6 +7556,7 @@ tests/Feature/Checkouts/Ui/ConsumableCheckoutTest.php
 tests/Feature/Checkouts/Ui/BulkAssetCheckoutTest.php
 tests/Feature/Checkouts/Ui/LicenseCheckoutTest.php
 tests/Feature/Setup/Ui/IndexSetupTest.php
+tests/Feature/Helpers/CheckLowInventoryTest.php
 tests/Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
 tests/Feature/StatusLabels/Api/BulkSelectableTest.php
 tests/Feature/StatusLabels/Ui/BulkDeleteStatusLabelsTest.php
