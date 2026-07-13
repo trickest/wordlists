@@ -5086,6 +5086,12 @@ patches/twig-integration-testcase-static-data-providers.patch
 rector/AssertTrueResponseIsOkToAssertResponseIsSuccessfulRector.php
 rector/UnserializeToSerializerDecodeRector.php
 .all-contributorsrc
+phpstan/Tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
+phpstan/Tests/Rule/Fixture/FinalParserNamedAbstract.php
+phpstan/Tests/Rule/Fixture/PlainParser.php
+phpstan/Tests/Rule/Fixture/RealAbstractParser.php
+phpstan/Tests/Rule/Fixture/SomeAbstractClass.php
+phpstan/Rule/AbstractClassNameMustBeAbstractRule.php
 codeception.yml
 bin/console
 bin/.htaccess
@@ -6078,7 +6084,6 @@ plugins/MauticCloudStorageBundle/README.md
 plugins/MauticCrmBundle/EventListener/LeadListSubscriber.php
 plugins/MauticCrmBundle/EventListener/PluginSubscriber.php
 plugins/MauticCrmBundle/MauticCrmBundle.php
-plugins/MauticCrmBundle/Tests/Stubs/StubIntegration.php
 plugins/MauticCrmBundle/Tests/DynamicsIntegrationTest.php
 plugins/MauticCrmBundle/Tests/DynamicsApiTest.php
 plugins/MauticCrmBundle/Tests/CrmAbstractIntegrationTest.php

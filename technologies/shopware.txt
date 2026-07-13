@@ -1080,6 +1080,7 @@ src/Core/Service/Event/PermissionsRevokedEvent.php
 src/Core/Service/Event/PermissionsGrantedEvent.php
 src/Core/Service/Event/CommercialLicenseProvidedEvent.php
 src/Core/Service/Event/ServiceUpdatedEvent.php
+src/Core/Service/ServiceStorage.php
 src/Core/Service/LifecycleManager.php
 src/Core/Service/ServiceException.php
 src/Core/Service/ServiceLifecycle.php
@@ -1088,6 +1089,8 @@ src/Core/Service/ScheduledTask/InstallServicesTask.php
 src/Core/Service/State.php
 src/Core/Service/ServiceHookableEventDescriber.php
 src/Core/Service/Service.php
+src/Core/Service/Requirement/ServicesEnabledRequirement.php
+src/Core/Service/Requirement/Gate.php
 src/Core/Service/Requirement/ShopwareAccountRequirement.php
 src/Core/Service/Requirement/RequirementsValidator.php
 src/Core/Service/Requirement/ServiceConsentRequirement.php
@@ -1095,12 +1098,14 @@ src/Core/Service/Requirement/ServiceRequirement.php
 src/Core/Service/Message/InstallServicesMessage.php
 src/Core/Service/Message/UpdateServiceMessage.php
 src/Core/Service/Message/LogPermissionToRegistryMessage.php
+src/Core/Service/DTO/Service.php
 src/Core/Service/AppInfo.php
 src/Core/Service/ServiceClientFactory.php
 src/Core/Service/AuthenticatedServiceClient.php
 src/Core/Service/DependencyInjection/ServiceExtension.php
 src/Core/Service/DependencyInjection/services.xml
 src/Core/Service/Command/Install.php
+src/Core/Service/Command/UninstallAppCommandDecorator.php
 src/Core/Service/ServiceClient.php
 src/Core/Service/Resources/config/routes.xml
 src/Core/Service/Permission/RemoteLogger.php
@@ -1111,6 +1116,7 @@ src/Core/Service/AllServiceInstaller.php
 src/Core/Service/Api/PermissionController.php
 src/Core/Service/Api/ServiceController.php
 src/Core/Service/Subscriber/SystemUpdateSubscriber.php
+src/Core/Service/Subscriber/ServiceWriteProtectionSubscriber.php
 src/Core/Service/Subscriber/ShopwareAccountSubscriber.php
 src/Core/Service/Subscriber/LicenseSyncSubscriber.php
 src/Core/Service/Subscriber/InstalledExtensionsListingLoadedSubscriber.php
@@ -1823,6 +1829,7 @@ src/Core/Migration/V6_7/Migration1746176773AddIntegrationIdStateHistory.php
 src/Core/Migration/V6_7/Migration1774280952AddUserModifiedToMailTemplate.php
 src/Core/Migration/V6_7/Migration1773824493AddProviderColumnToProductExport.php
 src/Core/Migration/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequired.php
+src/Core/Migration/V6_7/Migration1780044452BackfillServiceRequirements.php
 src/Core/Migration/V6_7/Migration1768233956AddThemeRuntimeConfigUniqueConstraint.php
 src/Core/Migration/V6_7/Migration1767604966UpdateTotalPriceOrderDeliveryPosition.php
 src/Core/Migration/V6_7/Migration1773829001MigrateProductStreamProductStatesFilter.php
@@ -3897,10 +3904,10 @@ src/Core/Framework/Webhook/Handler/WebhookEventMessageHandler.php
 src/Core/Framework/Webhook/WebhookDefinition.php
 src/Core/Framework/Webhook/Subscriber/RetryWebhookMessageFailedSubscriber.php
 src/Core/Framework/App/ShopIdChangeResolver/MoveShopPermanentlyStrategy.php
+src/Core/Framework/App/ShopIdChangeResolver/ShopIdChangeStrategy.php
 src/Core/Framework/App/ShopIdChangeResolver/UninstallAppsStrategy.php
 src/Core/Framework/App/ShopIdChangeResolver/Resolver.php
 src/Core/Framework/App/ShopIdChangeResolver/ReinstallAppsStrategy.php
-src/Core/Framework/App/ShopIdChangeResolver/AbstractShopIdChangeStrategy.php
 src/Core/Framework/App/Manifest/XmlParserUtils.php
 src/Core/Framework/App/Manifest/Xml/XmlElement.php
 src/Core/Framework/App/Manifest/Xml/Administration/ActionButton.php
@@ -4001,7 +4008,6 @@ src/Core/Framework/App/Event/AppChangedEvent.php
 src/Core/Framework/App/Event/AppDeactivatedEvent.php
 src/Core/Framework/App/Event/CustomAppEvent.php
 src/Core/Framework/App/AppArchiveValidator.php
-src/Core/Framework/App/AppStateService.php
 src/Core/Framework/App/AppDefinition.php
 src/Core/Framework/App/Aggregate/AppShippingMethod/AppShippingMethodDefinition.php
 src/Core/Framework/App/Aggregate/AppShippingMethod/AppShippingMethodEntity.php
@@ -4222,6 +4228,7 @@ src/Core/Framework/App/Source/SourceResolver.php
 src/Core/Framework/App/Source/RemoteZip.php
 src/Core/Framework/App/Source/TemporaryDirectoryFactory.php
 src/Core/Framework/App/ActiveAppsLoader.php
+src/Core/Framework/App/AppStorage.php
 src/Core/Framework/App/Api/AppJWTGenerateRoute.php
 src/Core/Framework/App/Api/VerifyShopController.php
 src/Core/Framework/App/Api/DTO/VerifyShop.php
@@ -4696,6 +4703,7 @@ src/Core/Content/Cookie/Struct/CookieGroupCollection.php
 src/Core/Content/Cookie/Struct/CookieEntryCollection.php
 src/Core/Content/Cookie/CookieException.php
 src/Core/Content/Cms/Service/EntityCmsSlotConfigInheritanceBuilder.php
+src/Core/Content/Cms/Service/CmsFormSlotConfigResolver.php
 src/Core/Content/Cms/Aggregate/CmsPageTranslation/CmsPageTranslationEntity.php
 src/Core/Content/Cms/Aggregate/CmsPageTranslation/CmsPageTranslationDefinition.php
 src/Core/Content/Cms/Aggregate/CmsBlock/CmsBlockCollection.php
@@ -7133,6 +7141,7 @@ src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/s
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/__snapshots__/transform-script.spec.ts.snap
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/__snapshots__/transform-template.spec.ts.snap
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/__snapshots__/generate-sfc.spec.ts.snap
+src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/template-transformer/normalize-cross-block-conditionals.ts
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/generate-sfc.ts
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/generate-sfc.spec.ts
 src/Administration/Resources/app/administration/scripts/codemods/sfc-migration/README.md
@@ -7708,6 +7717,8 @@ src/Administration/Resources/app/administration/src/module/sw-settings-services/
 src/Administration/Resources/app/administration/src/module/sw-settings-services/service/service-registry-client.spec.ts
 src/Administration/Resources/app/administration/src/module/sw-settings-services/service/shopware-services.service.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-services/service/service-registry-client.ts
+src/Administration/Resources/app/administration/src/module/sw-settings-services/requirements/index.ts
+src/Administration/Resources/app/administration/src/module/sw-settings-services/requirements/index.spec.ts
 src/Administration/Resources/app/administration/src/module/sw-settings-services/page/sw-settings-services-index/index.ts
 src/Administration/Resources/app/administration/src/module/sw-settings-services/page/sw-settings-services-index/sw-settings-services-index.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-services/page/sw-settings-services-index/sw-settings-services-index.spec.js
@@ -10347,6 +10358,7 @@ src/Administration/Resources/app/administration/src/app/init-post/language.init.
 src/Administration/Resources/app/administration/src/app/main.ts
 src/Administration/Resources/app/administration/src/app/service/custom-entity-definition.service.ts
 src/Administration/Resources/app/administration/src/app/service/acl.service.ts
+src/Administration/Resources/app/administration/src/app/service/shortcut.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/recently-search.service.js
 src/Administration/Resources/app/administration/src/app/service/recently-search.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/discount-campaign.service.spec.js
@@ -10874,6 +10886,7 @@ src/Administration/Resources/app/administration/src/app/component/app/sw-app-act
 src/Administration/Resources/app/administration/src/app/component/app/sw-app-action-button/sw-app-action-button.spec.js
 src/Administration/Resources/app/administration/src/app/component/app/sw-app-action-button/sw-app-action-button.scss
 src/Administration/Resources/app/administration/src/app/component/app/sw-app-action-button/index.js
+src/Administration/Resources/app/administration/src/app/component/filter/sw-sidebar-filter-panel/sw-sidebar-filter-panel.spec.js
 src/Administration/Resources/app/administration/src/app/component/filter/sw-sidebar-filter-panel/sw-sidebar-filter-panel.html.twig
 src/Administration/Resources/app/administration/src/app/component/filter/sw-sidebar-filter-panel/sw-sidebar-filter-panel.scss
 src/Administration/Resources/app/administration/src/app/component/filter/sw-sidebar-filter-panel/index.js
@@ -11947,9 +11960,11 @@ src/Administration/Resources/app/administration/src/core/helper/store-loader.hel
 src/Administration/Resources/app/administration/src/core/helper/retry.helper.spec.js
 src/Administration/Resources/app/administration/src/core/helper/device.helper.js
 src/Administration/Resources/app/administration/src/core/helper/flattree.helper.spec.js
+src/Administration/Resources/app/administration/src/core/helper/shortcut-key.helper.spec.js
 src/Administration/Resources/app/administration/src/core/helper/mcp-privilege.helper.spec.js
 src/Administration/Resources/app/administration/src/core/helper/upload-task.helper.js
 src/Administration/Resources/app/administration/src/core/helper/mcp-privilege.helper.ts
+src/Administration/Resources/app/administration/src/core/helper/shortcut-key.helper.ts
 src/Administration/Resources/app/administration/src/core/helper/flattree.helper.js
 src/Administration/Resources/app/administration/src/core/helper/sanitizer.helper.js
 src/Administration/Resources/app/administration/src/core/telemetry/index.ts
@@ -12510,17 +12525,17 @@ src/Storefront/Framework/Media/StorefrontMediaValidatorInterface.php
 src/Storefront/Framework/Media/Exception/MediaValidatorMissingException.php
 src/Storefront/Framework/Media/StorefrontMediaValidatorRegistry.php
 src/Storefront/Framework/AffiliateTracking/AffiliateTrackingListener.php
+src/Storefront/DependencyInjection/controller.php
 src/Storefront/DependencyInjection/StorefrontExtension.php
 src/Storefront/DependencyInjection/Configuration.php
+src/Storefront/DependencyInjection/services.php
 src/Storefront/DependencyInjection/mcp.php
-src/Storefront/DependencyInjection/system.xml
-src/Storefront/DependencyInjection/controller.xml
+src/Storefront/DependencyInjection/seo.php
 src/Storefront/DependencyInjection/DisableTemplateCachePass.php
 src/Storefront/DependencyInjection/TwigComponentBundlePass.php
-src/Storefront/DependencyInjection/theme.xml
-src/Storefront/DependencyInjection/captcha.xml
-src/Storefront/DependencyInjection/seo.xml
-src/Storefront/DependencyInjection/services.xml
+src/Storefront/DependencyInjection/system.php
+src/Storefront/DependencyInjection/theme.php
+src/Storefront/DependencyInjection/captcha.php
 src/Storefront/DependencyInjection/ThemeCompilerAssetCompilerPass.php
 src/Storefront/DependencyInjection/StorefrontMigrationReplacementCompilerPass.php
 src/Storefront/Resources/theme.json
@@ -14219,6 +14234,7 @@ tests/migration/Core/V6_7/Migration1754398573ChangeAllLineItemsRuleValueTypeTest
 tests/migration/Core/V6_7/Migration1773647849AlignFlowNameWithEventNameTest.php
 tests/migration/Core/V6_7/Migration1764064757SetSearchableForExistingCustomFieldsInProductSearchTest.php
 tests/migration/Core/V6_7/Migration1782308630AddBusinessTimeZoneToSalesChannelTest.php
+tests/migration/Core/V6_7/Migration1780044452BackfillServiceRequirementsTest.php
 tests/migration/Core/V6_7/Migration1746176773AddIntegrationIdStateHistoryTest.php
 tests/migration/Core/V6_7/Migration1778072247AddDocumentBaseConfigTypedColumnsTest.php
 tests/migration/Core/V6_7/Migration1764064756AddCustomFieldSearchableTest.php
@@ -14381,6 +14397,7 @@ tests/integration/Core/System/Currency/Repository/CurrencyRepositoryTest.php
 tests/integration/Core/Service/PermissionsServiceTest.php
 tests/integration/Core/Service/Api/ServiceControllerTest.php
 tests/integration/Core/Service/Api/PermissionControllerTest.php
+tests/integration/Core/Service/Subscriber/ServiceWriteProtectionSubscriberTest.php
 tests/integration/Core/Installer/Configuration/ShopConfigurationServiceTest.php
 tests/integration/Core/Migration/Traits/ImportTranslationTraitTest.php
 tests/integration/Core/Migration/Traits/CreateMailTemplateTraitTest.php
@@ -15010,10 +15027,8 @@ tests/integration/Core/Framework/App/Command/_fixtures/withoutPermissions/manife
 tests/integration/Core/Framework/App/Command/_fixtures/withPermissions/manifest.xml
 tests/integration/Core/Framework/App/Command/_fixtures/registrationFailure/manifest.xml
 tests/integration/Core/Framework/App/Command/_fixtures/validationFailure/manifest.xml
-tests/integration/Core/Framework/App/Command/DeactivateAppCommandTest.php
 tests/integration/Core/Framework/App/Command/ValidateAppCommandTest.php
 tests/integration/Core/Framework/App/Command/UninstallAppCommandTest.php
-tests/integration/Core/Framework/App/Command/ActivateAppCommandTest.php
 tests/integration/Core/Framework/App/Delta/DomainsDeltaProviderTest.php
 tests/integration/Core/Framework/App/Delta/AppConfirmationDeltaProviderTest.php
 tests/integration/Core/Framework/App/Delta/PermissionsDeltaProviderTest.php
@@ -15787,7 +15802,7 @@ tests/integration/Storefront/Framework/Controller/XmlHttpRequestableInterfaceTes
 tests/integration/Storefront/Framework/Captcha/BasicCaptcha/BasicCaptchaGeneratorTest.php
 tests/integration/Storefront/Framework/Captcha/CaptchaRouteListenerTest.php
 tests/integration/Storefront/Framework/Captcha/HoneypotCaptchaTest.php
-tests/integration/Storefront/Framework/App/AppStateServiceThemeTest.php
+tests/integration/Storefront/Framework/App/AppLifecycleThemeTest.php
 tests/integration/Storefront/Framework/Seo/SeoUrlTemplateRepositoryTest.php
 tests/integration/Storefront/Framework/Seo/SeoUrl/SeoUrlTest.php
 tests/integration/Storefront/Framework/Seo/SeoUrlRoute/SeoUrlUpdateListenerTest.php
@@ -16569,6 +16584,7 @@ tests/unit/Core/Service/ServiceRegistry/ClientTest.php
 tests/unit/Core/Service/MessageHandler/InstallServicesHandlerTest.php
 tests/unit/Core/Service/MessageHandler/UpdateServiceHandlerTest.php
 tests/unit/Core/Service/MessageHandler/LogConsentToRegistryHandlerTest.php
+tests/unit/Core/Service/ServiceStorageTest.php
 tests/unit/Core/Service/Event/CommercialLicenseProvidedEventTest.php
 tests/unit/Core/Service/AllServiceInstallerTest.php
 tests/unit/Core/Service/ServiceLifecycleTest.php
@@ -16580,12 +16596,15 @@ tests/unit/Core/Service/ScheduledTask/InstallServicesTaskHandlerTest.php
 tests/unit/Core/Service/ScheduledTask/InstallServicesTaskTest.php
 tests/unit/Core/Service/AppInfoTest.php
 tests/unit/Core/Service/LifecycleManagerTest.php
+tests/unit/Core/Service/Requirement/ServicesEnabledRequirementTest.php
 tests/unit/Core/Service/Requirement/ServiceConsentRequirementTest.php
 tests/unit/Core/Service/Requirement/RequirementsValidatorTest.php
 tests/unit/Core/Service/Requirement/ShopwareAccountRequirementTest.php
 tests/unit/Core/Service/Message/UpdateServiceMessageTest.php
+tests/unit/Core/Service/DTO/ServiceTest.php
 tests/unit/Core/Service/ServiceClientTest.php
 tests/unit/Core/Service/Command/InstallTest.php
+tests/unit/Core/Service/Command/UninstallAppCommandDecoratorTest.php
 tests/unit/Core/Service/Permission/PermissionsServiceTest.php
 tests/unit/Core/Service/Permission/PermissionsConsentTest.php
 tests/unit/Core/Service/ServiceSourceResolverTest.php
@@ -16751,6 +16770,7 @@ tests/unit/Core/Framework/Store/Services/InstanceServiceTest.php
 tests/unit/Core/Framework/Store/Services/ExtensionListingLoaderTest.php
 tests/unit/Core/Framework/Store/Services/StoreSessionExpiredMiddlewareTest.php
 tests/unit/Core/Framework/Store/Services/ShopSecretInvalidMiddlewareTest.php
+tests/unit/Core/Framework/Store/Services/StoreAppLifecycleServiceTest.php
 tests/unit/Core/Framework/Store/Services/StoreClientTest.php
 tests/unit/Core/Framework/Store/StoreExceptionTest.php
 tests/unit/Core/Framework/Store/Api/ExtensionStoreActionsControllerTest.php
@@ -17341,7 +17361,9 @@ tests/unit/Core/Framework/Webhook/Hookable/HookableEventFactoryTest.php
 tests/unit/Core/Framework/Webhook/WebhookCacheClearerTest.php
 tests/unit/Core/Framework/Webhook/BusinessEventEncoderTest.php
 tests/unit/Core/Framework/App/ShopIdChangeResolver/UninstallAppsStrategyTest.php
+tests/unit/Core/Framework/App/ShopIdChangeResolver/MoveShopPermanentlyStrategyTest.php
 tests/unit/Core/Framework/App/ShopIdChangeResolver/ResolverTest.php
+tests/unit/Core/Framework/App/ShopIdChangeResolver/ReinstallAppsStrategyTest.php
 tests/unit/Core/Framework/App/Manifest/Xml/Administration/_fixtures/manifestWithStructureElement.xml
 tests/unit/Core/Framework/App/Manifest/Xml/Administration/_fixtures/manifestWithoutMainModule.xml
 tests/unit/Core/Framework/App/Manifest/Xml/Administration/_fixtures/manifestWithTwoMainModules.xml
@@ -17527,6 +17549,7 @@ tests/unit/Core/Framework/App/ScheduledTask/SystemCheckTaskHandlerTest.php
 tests/unit/Core/Framework/App/Telemetry/AppTelemetrySubscriberTest.php
 tests/unit/Core/Framework/App/InAppPurchases/Payload/InAppPurchasesPayloadServiceTest.php
 tests/unit/Core/Framework/App/InAppPurchases/Gateway/InAppPurchasesGatewayTest.php
+tests/unit/Core/Framework/App/AppStorageTest.php
 tests/unit/Core/Framework/App/TaxProvider/Response/TaxProviderResponseTest.php
 tests/unit/Core/Framework/App/TaxProvider/Payload/TaxProviderPayloadServiceTest.php
 tests/unit/Core/Framework/App/Hmac/RequestSignerTest.php
@@ -17543,9 +17566,11 @@ tests/unit/Core/Framework/App/Command/RotateAppSecretCommandTest.php
 tests/unit/Core/Framework/App/Command/CheckShopIdCommandTest.php
 tests/unit/Core/Framework/App/Command/_fixtures/create-app-project/.gitkeep
 tests/unit/Core/Framework/App/Command/CreateAppCommandTest.php
+tests/unit/Core/Framework/App/Command/DeactivateAppCommandTest.php
 tests/unit/Core/Framework/App/Command/UninstallAppCommandTest.php
 tests/unit/Core/Framework/App/Command/ChangeShopIdCommandTest.php
 tests/unit/Core/Framework/App/Command/AppUrlVerifyCommandTest.php
+tests/unit/Core/Framework/App/Command/ActivateAppCommandTest.php
 tests/unit/Core/Framework/App/AppDownloaderTest.php
 tests/unit/Core/Framework/App/Permission/UtilsTest.php
 tests/unit/Core/Framework/App/Context/Payload/AppContextGatewayPayloadServiceTest.php
@@ -17558,7 +17583,6 @@ tests/unit/Core/Framework/App/ShopId/Fingerprint/SalesChannelDomainUrlsTest.php
 tests/unit/Core/Framework/App/ShopId/ShopIdTest.php
 tests/unit/Core/Framework/App/ShopId/FingerprintComparisonResultTest.php
 tests/unit/Core/Framework/App/ShopId/FingerprintGeneratorTest.php
-tests/unit/Core/Framework/App/AppStateServiceTest.php
 tests/unit/Core/Framework/App/AppArchiveValidatorTest.php
 tests/unit/Core/Framework/App/Source/RemoteZipTest.php
 tests/unit/Core/Framework/App/Source/LocalTest.php
@@ -17773,6 +17797,7 @@ tests/unit/Core/Content/Cookie/CookieExceptionTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieGroupTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieGroupCollectionTest.php
 tests/unit/Core/Content/Cookie/Struct/CookieEntryCollectionTest.php
+tests/unit/Core/Content/Cms/Service/CmsFormSlotConfigResolverTest.php
 tests/unit/Core/Content/Cms/Service/EntityCmsSlotConfigInheritanceBuilderTest.php
 tests/unit/Core/Content/Cms/Aggregate/CmsBlock/CmsBlockCollectionTest.php
 tests/unit/Core/Content/Cms/Aggregate/CmsSlot/CmsSlotCollectionTest.php

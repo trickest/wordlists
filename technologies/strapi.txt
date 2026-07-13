@@ -1179,6 +1179,7 @@ packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useFolderNavigati
 packages/core/upload/admin/src/future/pages/Assets/hooks/useFolderNavigation.ts
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetsGrid.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetsTable.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/tests/AssetPreview.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsGrid.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/CreateFolderDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/ImportFromUrlDialog.tsx
@@ -1449,6 +1450,7 @@ packages/core/upload/admin/src/components/TableList/CellContent.tsx
 packages/core/upload/admin/src/components/TableList/TableList.tsx
 packages/core/upload/admin/src/components/TableList/tests/CellContent.test.tsx
 packages/core/upload/admin/src/components/TableList/tests/TableList.test.tsx
+packages/core/upload/admin/src/components/TableList/tests/PreviewCell.test.tsx
 packages/core/upload/admin/src/components/TableList/tests/TableRows.test.tsx
 packages/core/upload/admin/src/components/TableList/PreviewCell.tsx
 packages/core/upload/admin/src/components/EmptyAssets/EmptyAssetGrid.tsx
@@ -3799,6 +3801,7 @@ packages/core/core/src/services/document-service/params.ts
 packages/core/core/src/services/document-service/middlewares/index.ts
 packages/core/core/src/services/document-service/middlewares/errors.ts
 packages/core/core/src/services/document-service/middlewares/middleware-manager.ts
+packages/core/core/src/services/document-service/utils/clone-relations.ts
 packages/core/core/src/services/document-service/utils/bidirectional-relations.ts
 packages/core/core/src/services/document-service/utils/populate.ts
 packages/core/core/src/services/document-service/utils/ordered-parallel.ts
@@ -5494,8 +5497,10 @@ tests/api/core/strapi/document-service/clone.test.api.ts
 tests/api/core/strapi/document-service/relations/invisible-relation-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/empty-populate-sort-rest.test.api.ts
 tests/api/core/strapi/document-service/relations/empty-populate-sort-document-service.test.api.ts
+tests/api/core/strapi/document-service/relations/clone-relation-operations.test.api.ts
 tests/api/core/strapi/document-service/relations/basic.test.api.ts
 tests/api/core/strapi/document-service/relations/non-localized-stale-locale.test.api.ts
+tests/api/core/strapi/document-service/relations/clone-nested-relation-operations.test.api.ts
 tests/api/core/strapi/document-service/relations/m2m-order-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/i18n.test.api.ts
 tests/api/core/strapi/document-service/relations/no-dp.test.api.ts

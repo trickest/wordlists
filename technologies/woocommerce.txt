@@ -1399,6 +1399,7 @@ packages/js/email-editor/src/blocks/core/block-edit.tsx
 packages/js/email-editor/src/blocks/core/image.tsx
 packages/js/email-editor/src/blocks/core/site-logo.ts
 packages/js/email-editor/src/blocks/core/social-links.tsx
+packages/js/email-editor/src/blocks/core/full-width.tsx
 packages/js/email-editor/src/style-variables.ts
 packages/js/email-editor/src/global.d.ts
 packages/js/email-editor/src/store/index.ts
@@ -1532,6 +1533,7 @@ packages/js/email-editor/changelog/wooplug-6930-adopt-import-order
 packages/js/email-editor/changelog/fix-wooplug-6807-typography-panel-crash
 packages/js/email-editor/changelog/fix-build-missing-webpack-dep
 packages/js/email-editor/changelog/fix-wooprd-3501-global-styles-react-error-185
+packages/js/email-editor/changelog/fix-email-editor-full-width-blocks
 packages/js/email-editor/changelog/dev-64837-type-check-only-on-lint
 packages/js/email-editor/changelog/64838-dev-esbuild-package-builds
 packages/js/email-editor/changelog/qao-408-rename-e2e-pw-to-e2e
@@ -2128,6 +2130,7 @@ packages/js/settings-ui/changelog/update-wordpress-admin-ui
 packages/js/settings-ui/changelog/add-wpds-shell-components
 packages/js/settings-ui/changelog/fix-number-custom-attributes
 packages/js/settings-ui/changelog/fix-form-submit-navigation-guard
+packages/js/settings-ui/changelog/update-adopt-wpds-components
 packages/js/settings-ui/changelog/update-section-scope-semantics
 packages/js/settings-ui/changelog/tweak-settings-ui-card-design
 packages/js/settings-ui/changelog/fix-number-spin-control-scientific-precision
@@ -3249,6 +3252,7 @@ packages/php/email-editor/tests/unit/Engine/Renderer/Html2Text_Test.php
 packages/php/email-editor/README.md
 packages/php/email-editor/phpunit-integration.xml.dist
 packages/php/email-editor/email-editor.php
+packages/php/email-editor/changelog/fix-email-editor-layout-rendering-parity
 packages/php/email-editor/changelog/resync-composer-locks
 packages/php/email-editor/changelog/66097-bump-wp-env-and-playwright
 packages/php/email-editor/changelog/stomail-8193-column-width-doesnt-work-in-the-alpha-block-editor
@@ -7949,6 +7953,7 @@ plugins/woocommerce/tests/php/src/Internal/Admin/Settings/SettingsUISchemaTest.p
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProvidersTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/SettingsUIFeatureFlagTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsRestControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/SystemStatusReportTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Schedulers/OrdersSchedulerTest.php
 plugins/woocommerce/tests/php/src/Internal/Integration/WPConsentAPITest.php
 plugins/woocommerce/tests/php/src/Internal/ProductDownloads/ApprovedDirectories/RegisterTest.php
@@ -8683,6 +8688,7 @@ plugins/woocommerce/client/admin/client/settings-email/__tests__/settings-email-
 plugins/woocommerce/client/admin/client/settings-email/__tests__/settings-email-send-test.test.tsx
 plugins/woocommerce/client/admin/client/settings-email/__tests__/settings-email-listing-update-cell.test.tsx
 plugins/woocommerce/client/admin/client/settings-email/__tests__/settings-email-listing-slotfill.test.tsx
+plugins/woocommerce/client/admin/client/settings-email/__tests__/settings-email-listing-listview.test.tsx
 plugins/woocommerce/client/admin/client/settings-email/__tests__/build-email-editor-review-url.test.ts
 plugins/woocommerce/client/admin/client/index.tsx
 plugins/woocommerce/client/admin/client/tax/index.ts
@@ -12933,8 +12939,10 @@ plugins/woocommerce/templates/single-product.php
 plugins/woocommerce/changelog/php-tests-email-fixture-stdout-leak
 plugins/woocommerce/changelog/update-email-verification-magic-link
 plugins/woocommerce/changelog/fix-store-api-request-detection-plain-permalinks
+plugins/woocommerce/changelog/fix-66180-daily-cron-status-check
 plugins/woocommerce/changelog/fix-59464-migrate-reviews-panelbody-to-toolspanel
 plugins/woocommerce/changelog/fix-analytics-legacy-admin-disable-filters
+plugins/woocommerce/changelog/65452-fix-batch-processing-concurrency
 plugins/woocommerce/changelog/65786-tax-settings-recommendations
 plugins/woocommerce/changelog/65338-composer-psr4-upgrade-fallback
 plugins/woocommerce/changelog/fix-blocks-site-editor-save-panel
@@ -12965,6 +12973,7 @@ plugins/woocommerce/changelog/add-webflow-products-migrator
 plugins/woocommerce/changelog/fix-storybook-nightly-build
 plugins/woocommerce/changelog/fix-blocks-e2e-nightly-sample-data-path
 plugins/woocommerce/changelog/wooplug-6829-can-be-refunded-fee-shipping-parity
+plugins/woocommerce/changelog/wooplug-7021-ai-regression-reviewrelease110-decoding-term-names-upstream
 plugins/woocommerce/changelog/testops-212-remove-real-sleep-from-php-unit-tests
 plugins/woocommerce/changelog/64612-fix-64065-brands-admin-deregistered
 plugins/woocommerce/changelog/remove-buildkite-analytics-ci
@@ -12977,7 +12986,6 @@ plugins/woocommerce/changelog/patch-1
 plugins/woocommerce/changelog/fix-store-api-checkout-shipping-address-fallback
 plugins/woocommerce/changelog/pos-catalog-feed-file-lock
 plugins/woocommerce/changelog/update-deflag-product-pattern-features
-plugins/woocommerce/changelog/dev-e2e-filter-label-colon
 plugins/woocommerce/changelog/add-weight-unit-enum
 plugins/woocommerce/changelog/wooplug-6842-email-preview-shipping-details-filter
 plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
@@ -12989,6 +12997,7 @@ plugins/woocommerce/changelog/fix-39289
 plugins/woocommerce/changelog/fix-simplify-compatibility-layer-checks
 plugins/woocommerce/changelog/fix-order-admin-color-contrast
 plugins/woocommerce/changelog/add-tax-display-mode-enum
+plugins/woocommerce/changelog/cursor-WOOPLUG-6298-structured-data-vat-property-93ff
 plugins/woocommerce/changelog/64564-sprinkle-order-edit-wp7-alignment
 plugins/woocommerce/changelog/add-65454-list-failed-order-imports
 plugins/woocommerce/changelog/fix-66338-66331-cropped-image-sizing
@@ -13000,6 +13009,7 @@ plugins/woocommerce/changelog/fix-non-persistable-preview-state-products-collect
 plugins/woocommerce/changelog/performance-tax-rates-sqls-number
 plugins/woocommerce/changelog/testops-217-fix-flaky-variation-gallery-feature-off-test
 plugins/woocommerce/changelog/fix-add-variation-id-to-add-to-cart-quantity-filter
+plugins/woocommerce/changelog/fix-product-gallery-custom-aspect-ratios
 plugins/woocommerce/changelog/65417-fix-storeapi-create-order-default-order-status-filter-leak
 plugins/woocommerce/changelog/dev-testops-210-analytics-e2e-pools
 plugins/woocommerce/changelog/woomob-2683-remove-pos-feature-flag
@@ -13093,6 +13103,7 @@ plugins/woocommerce/changelog/65468-performance-prime-analytics-extended-info
 plugins/woocommerce/changelog/fix-hpos-data-cache-corrupt-entry-fatal
 plugins/woocommerce/changelog/65734-translators-comment-cron-interval
 plugins/woocommerce/changelog/65541-fix-checkout-shipping-cache-homeboy
+plugins/woocommerce/changelog/tweak-blank-state-generic-icon-fallback
 plugins/woocommerce/changelog/65335-woomob-2684-refund-preview-endpoint
 plugins/woocommerce/changelog/fix-product-block-editor-block-registry-compat
 plugins/woocommerce/changelog/65439-woomob-2685-simplify-refund-creation
@@ -13142,6 +13153,7 @@ plugins/woocommerce/changelog/woopmnt-6250-custom-place-order-button
 plugins/woocommerce/changelog/fix-orders-query-sqlite-limit
 plugins/woocommerce/changelog/update-products-control-ts
 plugins/woocommerce/changelog/pr-64372
+plugins/woocommerce/changelog/65875-fix-cart-link-icon-size
 plugins/woocommerce/changelog/update-deflag-commerce-recommendations
 plugins/woocommerce/changelog/fix-payment-label-popover-image-alignment
 plugins/woocommerce/changelog/wooplug-6190-order-util-data-sync-enabled-accessor
@@ -13227,6 +13239,7 @@ plugins/woocommerce/changelog/fix-51573-remove-sample-badge-on-product-update
 plugins/woocommerce/changelog/65368-fix-null-safety-and-security-bugs
 plugins/woocommerce/changelog/fix-30454-disable-continue-button-no-file
 plugins/woocommerce/changelog/update-blocks-e2e-core-cutover
+plugins/woocommerce/changelog/update-settings-ui-wpds-token-delivery
 plugins/woocommerce/changelog/fix-65095-checkout-payment-methods-a11y-grouping
 plugins/woocommerce/changelog/fix-express-payment-focus-outline
 plugins/woocommerce/changelog/65385-update-algeria-provinces
