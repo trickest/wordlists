@@ -910,6 +910,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/Permissions/User/El
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/Permissions/User/UICulture.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/Permissions/User/MediaStartNodes.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/Permissions/User/ContentStartNodes.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/ManageUsersFromGroup.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/User.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/UserGroupsDescription.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Users/CurrentUserProfile.spec.ts
@@ -982,6 +983,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithCheckb
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithElementPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/RedirectManagement.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithTrueFalse.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/AllowEditInvariantFromNonDefaultIsTrueNestedBlocks.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/TrashContent/BulkTrashContent.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/TrashContent/TrashContent.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/PublishWithDescendants.spec.ts
@@ -1027,6 +1029,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/SMTP/ForgotPassword.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ContentSettingConfig/DisableDeleteWhenReferencedIsTrue.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ContentSettingConfig/AllowEditInvariantFromNonDefaultIsFalse.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ContentSettingConfig/AdditionalSetup/appsettings.json
+tests/Umbraco.Tests.AcceptanceTest/tests/ContentSettingConfig/AllowEditInvariantFromNonDefaultIsFalseNestedBlocks.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ExtensionRegistry/CustomPropertyEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ExtensionRegistry/PropertyAction.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/ExtensionRegistry/CollectionView.spec.ts
@@ -12347,6 +12350,12 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity-sign/kinds/icon/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-sign/kinds/icon/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-sign/kinds/icon/entity-sign-icon.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-sign/kinds/icon/entity-sign-icon.api.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/sortable-list-item.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/sortable-list.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/sortable-list-item.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/sortable-list.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/core/sorter/components/sortable-list.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/sorter/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/sorter/sorter.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/sorter/replacement-resolver-as-grid.function.ts
@@ -13751,6 +13760,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-edito
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/workspace-view.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/workspace-editor.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/workspace-editor.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/workspace-editor.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-editor/workspace-view.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/workspace/components/workspace-action-menu-item/default/manifests.ts

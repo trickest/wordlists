@@ -256,6 +256,7 @@ tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
 tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
+tests/Feature/Livewire/CheckoutTargetPanelTest.php
 tests/Feature/Livewire/PersonalAccessTokensTest.php
 tests/Feature/Livewire/ReportTemplateSelectTest.php
 tests/Feature/Livewire/ImporterTest.php
@@ -629,9 +630,7 @@ resources/views/partials/labels-legacy-engine.blade.php
 resources/views/partials/models-bulk-actions.blade.php
 resources/views/partials/locations-bulk-actions.blade.php
 resources/views/partials/label2-preview.blade.php
-resources/views/partials/assets-assigned.blade.php
 resources/views/partials/label2-field-definitions.blade.php
-resources/views/partials/licenses-assigned.blade.php
 resources/views/partials/confetti-js.blade.php
 resources/views/partials/forms/checkout-selector.blade.php
 resources/views/partials/forms/edit/item_number.blade.php
@@ -854,6 +853,7 @@ resources/views/locations/bulk-delete.blade.php
 resources/views/locations/edit.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/location-scope-check.blade.php
+resources/views/livewire/checkout-target-panel.blade.php
 resources/views/livewire/report-template-select.blade.php
 resources/views/livewire/personal-access-tokens.blade.php
 resources/views/livewire/category-edit-form.blade.php
@@ -7423,6 +7423,7 @@ app/Livewire/ReportTemplateSelect.php
 app/Livewire/PersonalAccessTokens.php
 app/Livewire/LocationScopeCheck.php
 app/Livewire/AdminPersonalAccessTokens.php
+app/Livewire/CheckoutTargetPanel.php
 app/Livewire/Importer.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/SlackSettingsForm.php

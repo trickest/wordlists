@@ -2102,6 +2102,7 @@ wp-includes/js/mediaelement/renderers/vimeo.min.js
 wp-includes/js/mediaelement/renderers/vimeo.js
 wp-includes/js/mediaelement/mediaelement.min.js
 wp-includes/js/hoverIntent.js
+wp-includes/js/wp-tooltip.min.js
 wp-includes/js/customize-preview-nav-menus.js
 wp-includes/js/autosave.js
 wp-includes/js/api-request.js
@@ -2389,6 +2390,11 @@ wp-includes/js/dist/script-modules/latex-to-mathml/index.min.asset.php
 wp-includes/js/dist/script-modules/latex-to-mathml/index.min.js
 wp-includes/js/dist/script-modules/latex-to-mathml/index.js
 wp-includes/js/dist/script-modules/latex-to-mathml/loader.min.js
+wp-includes/js/dist/script-modules/video-conversion/loader.js
+wp-includes/js/dist/script-modules/video-conversion/loader.min.asset.php
+wp-includes/js/dist/script-modules/video-conversion/worker.min.js
+wp-includes/js/dist/script-modules/video-conversion/worker.min.asset.php
+wp-includes/js/dist/script-modules/video-conversion/loader.min.js
 wp-includes/js/dist/script-modules/block-library/playlist/view.js
 wp-includes/js/dist/script-modules/block-library/playlist/view.min.js
 wp-includes/js/dist/script-modules/block-library/playlist/view.min.asset.php
@@ -2429,6 +2435,9 @@ wp-includes/js/dist/script-modules/vips/loader.min.js
 wp-includes/js/dist/script-modules/abilities/index.min.asset.php
 wp-includes/js/dist/script-modules/abilities/index.min.js
 wp-includes/js/dist/script-modules/abilities/index.js
+wp-includes/js/dist/script-modules/dashboard-init/index.min.asset.php
+wp-includes/js/dist/script-modules/dashboard-init/index.min.js
+wp-includes/js/dist/script-modules/dashboard-init/index.js
 wp-includes/js/dist/script-modules/boot/index.min.asset.php
 wp-includes/js/dist/script-modules/boot/index.min.js
 wp-includes/js/dist/script-modules/boot/index.js
@@ -2471,6 +2480,7 @@ wp-includes/js/wp-list-revisions.min.js
 wp-includes/js/customize-base.min.js
 wp-includes/js/wp-sanitize.min.js
 wp-includes/js/mce-view.js
+wp-includes/js/wp-tooltip.js
 wp-includes/js/admin-bar.js
 wp-includes/js/customize-models.min.js
 wp-includes/js/jcrop/jquery.Jcrop.min.js
@@ -2804,6 +2814,7 @@ wp-includes/style-engine/class-wp-style-engine-css-rules-store.php
 wp-includes/style-engine/class-wp-style-engine.php
 wp-includes/style-engine/class-wp-style-engine-css-declarations.php
 wp-includes/style-engine/class-wp-style-engine-processor.php
+wp-includes/class-wp-icon-collections-registry.php
 wp-includes/class-walker-page-dropdown.php
 wp-includes/widgets/class-wp-nav-menu-widget.php
 wp-includes/widgets/class-wp-widget-text.php
@@ -3004,6 +3015,7 @@ wp-includes/images/icon-library/line-dotted.svg
 wp-includes/images/icon-library/format-italic.svg
 wp-includes/images/icon-library/drawer-right.svg
 wp-includes/images/icon-library/classic.svg
+wp-includes/images/icon-library/replay.svg
 wp-includes/images/icon-library/language.svg
 wp-includes/images/icon-library/contents.svg
 wp-includes/images/icon-library/audio.svg
@@ -3062,6 +3074,7 @@ wp-includes/images/icon-library/format-list-bullets.svg
 wp-includes/images/icon-library/shipping.svg
 wp-includes/images/icon-library/megaphone.svg
 wp-includes/images/icon-library/table.svg
+wp-includes/images/icon-library/skip-forward.svg
 wp-includes/images/icon-library/site-logo.svg
 wp-includes/images/icon-library/comment-edit-link.svg
 wp-includes/images/icon-library/table-row-after.svg
@@ -3070,6 +3083,7 @@ wp-includes/images/icon-library/accordion-heading.svg
 wp-includes/images/icon-library/archive.svg
 wp-includes/images/icon-library/table-column-before.svg
 wp-includes/images/icon-library/swatch.svg
+wp-includes/images/icon-library/repeat.svg
 wp-includes/images/icon-library/button.svg
 wp-includes/images/icon-library/post-featured-image.svg
 wp-includes/images/icon-library/comment-content.svg
@@ -3079,6 +3093,7 @@ wp-includes/images/icon-library/position-left.svg
 wp-includes/images/icon-library/close.svg
 wp-includes/images/icon-library/flip-vertical.svg
 wp-includes/images/icon-library/text-vertical.svg
+wp-includes/images/icon-library/repeat-all.svg
 wp-includes/images/icon-library/chevron-down.svg
 wp-includes/images/icon-library/stretch-full-width.svg
 wp-includes/images/icon-library/wordpress.svg
@@ -3118,6 +3133,7 @@ wp-includes/images/icon-library/caution.svg
 wp-includes/images/icon-library/gallery.svg
 wp-includes/images/icon-library/sides-all.svg
 wp-includes/images/icon-library/add-submenu.svg
+wp-includes/images/icon-library/pause.svg
 wp-includes/images/icon-library/code.svg
 wp-includes/images/icon-library/line-solid.svg
 wp-includes/images/icon-library/table-column-after.svg
@@ -3125,6 +3141,7 @@ wp-includes/images/icon-library/backup.svg
 wp-includes/images/icon-library/settings.svg
 wp-includes/images/icon-library/typography.svg
 wp-includes/images/icon-library/arrow-up.svg
+wp-includes/images/icon-library/play.svg
 wp-includes/images/icon-library/math.svg
 wp-includes/images/icon-library/navigation.svg
 wp-includes/images/icon-library/pull-left.svg
@@ -3151,6 +3168,7 @@ wp-includes/images/icon-library/separator.svg
 wp-includes/images/icon-library/heading-level-3.svg
 wp-includes/images/icon-library/arrow-up-right.svg
 wp-includes/images/icon-library/caption.svg
+wp-includes/images/icon-library/skip-back.svg
 wp-includes/images/icon-library/help.svg
 wp-includes/images/icon-library/verse.svg
 wp-includes/images/icon-library/symbol.svg
@@ -3590,15 +3608,19 @@ wp-includes/pomo/plural-forms.php
 wp-includes/pomo/po.php
 wp-includes/ms-site.php
 wp-includes/blocks/missing/block.json
+wp-includes/blocks/tab-panel.php
 wp-includes/blocks/site-title/block.json
 wp-includes/blocks/query.php
 wp-includes/blocks/post-comments-form.php
 wp-includes/blocks/term-description.php
+wp-includes/blocks/tab-panel/block.json
+wp-includes/blocks/tabs.php
 wp-includes/blocks/site-tagline/block.json
 wp-includes/blocks/icon.php
 wp-includes/blocks/query-pagination.php
 wp-includes/blocks/image.php
 wp-includes/blocks/post-navigation-link/block.json
+wp-includes/blocks/playlist/block.json
 wp-includes/blocks/query-pagination-numbers/block.json
 wp-includes/blocks/latest-comments.php
 wp-includes/blocks/video.php
@@ -3614,6 +3636,7 @@ wp-includes/blocks/home-link.php
 wp-includes/blocks/verse/block.json
 wp-includes/blocks/post-time-to-read.php
 wp-includes/blocks/post-comments-form/block.json
+wp-includes/blocks/playlist-track.php
 wp-includes/blocks/term-description/block.json
 wp-includes/blocks/accordion-panel/block.json
 wp-includes/blocks/comment-reply-link/block.json
@@ -3622,6 +3645,7 @@ wp-includes/blocks/archives/block.json
 wp-includes/blocks/widget-group/block.json
 wp-includes/blocks/comment-content.php
 wp-includes/blocks/gallery.php
+wp-includes/blocks/tab-list.php
 wp-includes/blocks/comments-pagination-next.php
 wp-includes/blocks/query-no-results.php
 wp-includes/blocks/query-pagination-next/block.json
@@ -3638,6 +3662,7 @@ wp-includes/blocks/buttons/block.json
 wp-includes/blocks/term-count/block.json
 wp-includes/blocks/preformatted/block.json
 wp-includes/blocks/pattern.php
+wp-includes/blocks/tab-panels/block.json
 wp-includes/blocks/social-link.php
 wp-includes/blocks/comments-pagination/block.json
 wp-includes/blocks/tag-cloud.php
@@ -3654,6 +3679,7 @@ wp-includes/blocks/search.php
 wp-includes/blocks/heading/block.json
 wp-includes/blocks/site-tagline.php
 wp-includes/blocks/page-list/block.json
+wp-includes/blocks/playlist-track/block.json
 wp-includes/blocks/paragraph.php
 wp-includes/blocks/post-template/block.json
 wp-includes/blocks/spacer/block.json
@@ -3727,6 +3753,7 @@ wp-includes/blocks/accordion.php
 wp-includes/blocks/terms-query/block.json
 wp-includes/blocks/site-logo.php
 wp-includes/blocks/comments-pagination-next/block.json
+wp-includes/blocks/playlist.php
 wp-includes/blocks/nextpage/block.json
 wp-includes/blocks/list.php
 wp-includes/blocks/read-more.php
@@ -3776,6 +3803,7 @@ wp-includes/blocks/page-list-item.php
 wp-includes/blocks/accordion-heading/block.json
 wp-includes/blocks/footnotes.php
 wp-includes/blocks/post-featured-image.php
+wp-includes/blocks/tabs/block.json
 wp-includes/blocks/tag-cloud/block.json
 wp-includes/blocks/home-link/block.json
 wp-includes/blocks/blocks-json.php
@@ -3783,6 +3811,7 @@ wp-includes/blocks/page-list-item/block.json
 wp-includes/blocks/code/block.json
 wp-includes/blocks/query-title.php
 wp-includes/blocks/block.php
+wp-includes/blocks/tab-list/block.json
 wp-includes/blocks/legacy-widget/block.json
 wp-includes/blocks/button/block.json
 wp-includes/blocks/social-links/block.json
@@ -3796,6 +3825,7 @@ wp-includes/class-wp-block.php
 wp-includes/template-canvas.php
 wp-includes/wp-diff.php
 wp-includes/class-walker-category.php
+wp-includes/icons.php
 wp-includes/l10n.php
 wp-includes/registration-functions.php
 wp-includes/nav-menu-template.php
@@ -3916,6 +3946,7 @@ wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php
+wp-includes/rest-api/endpoints/class-wp-rest-icon-collections-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-blocks-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php
