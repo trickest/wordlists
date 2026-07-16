@@ -522,11 +522,16 @@ templates/bundles/LightSamlSpBundle/discovery.html.twig
 bin/.htaccess
 bin/console
 phpstan/Tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
+phpstan/Tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
+phpstan/Tests/Rule/Fixture/DefineOtherConstantTest.php
+phpstan/Tests/Rule/Fixture/DefineTablePrefixTest.php
 phpstan/Tests/Rule/Fixture/FinalParserNamedAbstract.php
 phpstan/Tests/Rule/Fixture/PlainParser.php
 phpstan/Tests/Rule/Fixture/RealAbstractParser.php
 phpstan/Tests/Rule/Fixture/SomeAbstractClass.php
+phpstan/Tests/Rule/Fixture/TablePrefixDefiner.php
 phpstan/Rule/AbstractClassNameMustBeAbstractRule.php
+phpstan/Rule/NoTablePrefixDefinitionInTestsRule.php
 tsconfig.json
 .env.test
 .devcontainer/prebuild-project.sh
@@ -1302,6 +1307,7 @@ app/bundles/EmailBundle/Tests/Helper/DTO/AddressDTOTest.php
 app/bundles/EmailBundle/Tests/Helper/Transport/SmtpTransport.php
 app/bundles/EmailBundle/Tests/Helper/Transport/BatchTransport.php
 app/bundles/EmailBundle/Tests/Helper/Transport/BcInterfaceTokenTransport.php
+app/bundles/EmailBundle/Tests/Functional/OwnerFieldTokenEmailFunctionalTest.php
 app/bundles/EmailBundle/Tests/Functional/Fixtures/EmailFixturesHelper.php
 app/bundles/EmailBundle/Tests/Functional/Stats/Helper/UnsubscribedHelperTest.php
 app/bundles/EmailBundle/Tests/Functional/Stats/Helper/BouncedHelperTest.php
@@ -2137,6 +2143,7 @@ app/bundles/CoreBundle/Cache/ResultCacheHelper.php
 app/bundles/CoreBundle/Cache/MiddlewareCacheWarmer.php
 app/bundles/CoreBundle/Config/services.php
 app/bundles/CoreBundle/Config/config.php
+app/bundles/CoreBundle/Controller/QuickFilterSearchTrait.php
 app/bundles/CoreBundle/Controller/AbstractStandardFormController.php
 app/bundles/CoreBundle/Controller/ThemeController.php
 app/bundles/CoreBundle/Controller/VariantAjaxControllerTrait.php
@@ -2330,7 +2337,6 @@ app/bundles/CoreBundle/Test/Extensions/SeparateProcess/Subscriber/TestFinishedSu
 app/bundles/CoreBundle/Test/Extensions/SeparateProcess/Subscriber/TestPreparationFailedSubscriber.php
 app/bundles/CoreBundle/Test/Extensions/SeparateProcess/Subscriber/TestPreparedSubscriber.php
 app/bundles/CoreBundle/Test/Extensions/SeparateProcess/Subscriber/Subscriber.php
-app/bundles/CoreBundle/Test/IsolatedTestTrait.php
 app/bundles/CoreBundle/Test/Guzzle/ClientFactory.php
 app/bundles/CoreBundle/Test/Guzzle/ClientMockTrait.php
 app/bundles/CoreBundle/Test/Doctrine/DBALMocker.php
@@ -3298,6 +3304,7 @@ app/bundles/StageBundle/Resources/views/FormTheme/Action/_stageaction_properties
 app/bundles/StageBundle/Resources/views/Stage/actionform.html.twig
 app/bundles/StageBundle/Resources/views/Stage/form.html.twig
 app/bundles/StageBundle/Resources/views/Stage/list.html.twig
+app/bundles/StageBundle/Resources/views/Stage/merge.html.twig
 app/bundles/StageBundle/Entity/LeadStageLogRepository.php
 app/bundles/StageBundle/Entity/StageRepository.php
 app/bundles/StageBundle/Entity/Stage.php
@@ -3307,6 +3314,7 @@ app/bundles/StageBundle/Form/Type/GenericStageActionType.php
 app/bundles/StageBundle/Form/Type/StageActionChangeType.php
 app/bundles/StageBundle/Form/Type/StageListType.php
 app/bundles/StageBundle/Form/Type/StageType.php
+app/bundles/StageBundle/Form/Type/StageMergeType.php
 app/bundles/StageBundle/Form/Type/StageActionType.php
 app/bundles/StageBundle/Model/StageModel.php
 app/bundles/ApiBundle/Tests/Extension/OwnershipScopedCollectionExtensionTest.php
@@ -3759,6 +3767,7 @@ app/bundles/LeadBundle/Tests/Functional/Command/CreateCustomFieldCommandTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/CompanySubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/CampaignSubscriberTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/LeadSubscriberFunctionalTest.php
+app/bundles/LeadBundle/Tests/Functional/EventListener/OwnerSubscriberFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/EventListener/SegmentSubscriberTest.php
 app/bundles/LeadBundle/Tests/Functional/Helper/SegmentCountCacheHelperTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/ImportUrlValidationTest.php
@@ -5427,7 +5436,6 @@ app/config/config_dev.php
 app/config/bootstrap.php
 app/README.md
 app/phpunit.xml.dist
-app/codingstandards/PhpCSFixer/NoTablePrefixDefinitionInTestsFixer.php
 app/middlewares/Tests/HSTSMiddlewareTest.php
 app/middlewares/Tests/Dev/IpRestrictMiddlewareTest.php
 app/middlewares/PrioritizedMiddlewareInterface.php

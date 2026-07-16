@@ -170,6 +170,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/HealthC
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Runtime/DefaultMainDomKeyGeneratorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Runtime/ContentRoutingReadinessTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Runtime/CoreRuntimeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Media/SvgDimensionExtractorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Install/UnattendedUpgraderTests.cs
@@ -1558,6 +1559,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaTypeService
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.UpdateAndPublish.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaServiceNotificationWithCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.Restore.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.UpdateAndPublish.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Get.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceSortChildrenNotificationTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprintEditingServiceTests.Move.cs
@@ -1622,8 +1624,10 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainer
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Update.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Validate.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceNotificationTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementServiceNotificationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/AuditEntryServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.Copy.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.CreateAndPublish.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Copy.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementServiceNotificationWithCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/PropertyTypeUsageServiceTests.cs
@@ -2069,6 +2073,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/DeleteElementRe
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/EmptyElementRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/Item/AncestorsElementItemControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/Item/ItemElementItemControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Element/CreateAndPublishElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/ByKeyPublishedElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/DeleteElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/Folder/UpdateElementFolderControllerTests.cs
@@ -2082,6 +2087,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/Element/Tree/SiblingsElementTreeCo
 tests/Umbraco.Tests.Integration/ManagementApi/Element/Tree/AncestorsElementTreeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/Tree/ChildrenElementTreeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/PublishElementControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Element/UpdateAndPublishElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/UnpublishElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/ByKeyElementControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/UpdateElementControllerTests.cs
@@ -2900,6 +2906,7 @@ src/Umbraco.Infrastructure/Runtime/RuntimeModeValidators/JITOptimizerValidator.c
 src/Umbraco.Infrastructure/Runtime/RuntimeState.cs
 src/Umbraco.Infrastructure/Runtime/FileSystemMainDomLock.cs
 src/Umbraco.Infrastructure/Runtime/RuntimeModeValidationService.cs
+src/Umbraco.Infrastructure/Runtime/ContentRoutingReadiness.cs
 src/Umbraco.Infrastructure/Runtime/IRuntimeModeValidationService.cs
 src/Umbraco.Infrastructure/Runtime/SqlMainDomLock.cs
 src/Umbraco.Infrastructure/Runtime/CoreRuntime.cs
@@ -4477,9 +4484,11 @@ src/Umbraco.Cms.Api.Management/Controllers/Element/Tree/RootElementTreeControlle
 src/Umbraco.Cms.Api.Management/Controllers/Element/Tree/ChildrenElementTreeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/Tree/ElementTreeControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/Tree/AncestorsElementTreeController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Element/UpdateAndPublishElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/UnpublishElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/DeleteElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/ValidateUpdateElementController.cs
+src/Umbraco.Cms.Api.Management/Controllers/Element/CreateAndPublishElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/ElementControllerBase.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/CopyElementController.cs
 src/Umbraco.Cms.Api.Management/Controllers/Element/References/AreReferencedElementController.cs
@@ -5061,10 +5070,12 @@ src/Umbraco.Cms.Api.Management/ViewModels/Manifest/ManifestResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/RecycleBin/ElementRecycleBinItemResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/MoveElementRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/CopyElementRequestModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Element/UpdateAndPublishElementRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementVariantResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementValueModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/Item/ElementItemResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementVersionResponseModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/Element/CreateAndPublishElementRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementValueResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/PublishedElementResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Element/ElementVersionItemResponseModel.cs
@@ -6099,6 +6110,7 @@ src/Umbraco.Core/Services/UserDataService.cs
 src/Umbraco.Core/Services/IUserDataService.cs
 src/Umbraco.Core/Services/ContentValidationService.cs
 src/Umbraco.Core/Routing/PublishedUrlInfoProvider.cs
+src/Umbraco.Core/Routing/ContentRoutingReadinessExtensions.cs
 src/Umbraco.Core/Routing/DefaultUrlAssembler.cs
 src/Umbraco.Core/Routing/MediaUrlProviderCollection.cs
 src/Umbraco.Core/Routing/PublishedRequestOld.cs
@@ -6129,6 +6141,7 @@ src/Umbraco.Core/Routing/IPublishedRequestBuilder.cs
 src/Umbraco.Core/Routing/WebPath.cs
 src/Umbraco.Core/Routing/UmbracoRouteResult.cs
 src/Umbraco.Core/Routing/PublishedRequestExtensions.cs
+src/Umbraco.Core/Routing/IContentRoutingReadiness.cs
 src/Umbraco.Core/Routing/DomainAndUri.cs
 src/Umbraco.Core/Routing/IPublishedRouter.cs
 src/Umbraco.Core/Routing/IContentFinder.cs
@@ -10635,6 +10648,7 @@ src/Umbraco.Web.UI.Client/src/packages/elements/publishing/schedule-publish/work
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/schedule-publish/workspace-action/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/element-publishing.server.data-source.test.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/element-publishing.server.data-source.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/index.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/publishing/repository/element-publishing.repository.ts
@@ -10750,6 +10764,7 @@ src/Umbraco.Web.UI.Client/src/packages/elements/audit-log/info-app/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/element-detail-response.mappers.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/element-detail-request.mappers.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/index.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/element-detail.server.data-source.ts
 src/Umbraco.Web.UI.Client/src/packages/elements/repository/detail/element-detail.store.ts

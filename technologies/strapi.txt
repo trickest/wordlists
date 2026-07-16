@@ -1470,6 +1470,7 @@ packages/cli/cloud/src/create-growth-sso-trial/action.ts
 packages/cli/cloud/LICENSE
 packages/cli/create-strapi-app/tsconfig.eslint.json
 packages/cli/create-strapi-app/rollup.config.mjs
+packages/cli/create-strapi-app/jest.config.js
 packages/cli/create-strapi-app/lint-staged.config.mjs
 packages/cli/create-strapi-app/templates/example-js/data/data.json
 packages/cli/create-strapi-app/templates/example-js/config/middlewares.js
@@ -1624,6 +1625,7 @@ packages/cli/create-strapi-app/src/utils/git.ts
 packages/cli/create-strapi-app/src/utils/engines.ts
 packages/cli/create-strapi-app/src/utils/gitignore.ts
 packages/cli/create-strapi-app/src/index.ts
+packages/cli/create-strapi-app/src/__tests__/templates-database.test.ts
 packages/cli/create-strapi-app/src/cloud.ts
 packages/cli/create-strapi-app/LICENSE
 packages/cli/create-strapi/bin/index.js
@@ -2736,6 +2738,9 @@ packages/core/strapi/src/cli/utils/try-quick-outdir.ts
 packages/core/strapi/src/cli/utils/pkg.ts
 packages/core/strapi/src/cli/utils/__tests__/parse-restore-from-options.test.ts
 packages/core/strapi/src/cli/utils/__tests__/try-quick-outdir.test.ts
+packages/core/strapi/src/cli/utils/__tests__/validate-content-type-transfer-options.test.ts
+packages/core/strapi/src/cli/utils/__tests__/normalize-transfer-filter-options.test.ts
+packages/core/strapi/src/cli/utils/__tests__/content-type-transfer-filters.test.ts
 packages/core/strapi/src/cli/utils/__tests__/logger.test.ts
 packages/core/strapi/src/cli/utils/__tests__/log-transfer-filter-summary.test.ts
 packages/core/strapi/src/cli/utils/__tests__/data-transfer-loader.test.ts
