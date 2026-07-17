@@ -1619,6 +1619,7 @@ packages/cli/create-strapi-app/src/utils/database.ts
 packages/cli/create-strapi-app/src/utils/package-json.ts
 packages/cli/create-strapi-app/src/utils/usage.ts
 packages/cli/create-strapi-app/src/utils/check-requirements.ts
+packages/cli/create-strapi-app/src/utils/__tests__/get-package-manager-args.test.ts
 packages/cli/create-strapi-app/src/utils/logger.ts
 packages/cli/create-strapi-app/src/utils/get-package-manager-args.ts
 packages/cli/create-strapi-app/src/utils/git.ts
@@ -2362,6 +2363,7 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Blo
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInputIME.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/normalizeBlocksState.test.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksToolbar.test.tsx
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksEditorResetKey.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksEditor.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInput.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/BlocksContent.tsx
@@ -4369,6 +4371,7 @@ packages/core/admin/ee/server/src/routes/license-limit.ts
 packages/core/admin/ee/server/src/routes/utils.ts
 packages/core/admin/ee/server/src/controllers/authentication-utils/constants.ts
 packages/core/admin/ee/server/src/controllers/authentication-utils/index.ts
+packages/core/admin/ee/server/src/controllers/authentication-utils/__tests__/middlewares.test.ts
 packages/core/admin/ee/server/src/controllers/authentication-utils/utils.ts
 packages/core/admin/ee/server/src/controllers/authentication-utils/middlewares.ts
 packages/core/admin/ee/server/src/controllers/user.ts
@@ -5049,6 +5052,7 @@ packages/core/upload/admin/src/hooks/tests/useFolderStructure.test.tsx
 packages/core/upload/admin/src/hooks/tests/useRemoveAsset.test.tsx
 packages/core/upload/admin/src/hooks/tests/useAssets.test.ts
 packages/core/upload/admin/src/hooks/tests/useBulkMove.test.ts
+packages/core/upload/admin/src/hooks/tests/useUpload.test.ts
 packages/core/upload/admin/src/hooks/tests/useFolders.test.ts
 packages/core/upload/admin/src/hooks/tests/useSelectionState.test.ts
 packages/core/upload/admin/src/hooks/tests/useFolder.test.ts
@@ -5146,6 +5150,7 @@ packages/core/openapi/__tests__/mocks/index.ts
 packages/core/openapi/__tests__/mocks/route-matcher.mock.ts
 packages/core/openapi/__tests__/mocks/strapi.mock.ts
 packages/core/openapi/__tests__/operation-assemblers.test.ts
+packages/core/openapi/__tests__/zod-to-openapi.test.ts
 packages/core/openapi/src/types.ts
 packages/core/openapi/src/constants.ts
 packages/core/openapi/src/registries/types.ts
@@ -5677,9 +5682,16 @@ packages/plugins/users-permissions/server/graphql/types/create-role-payload.js
 packages/plugins/users-permissions/server/graphql/utils.js
 packages/plugins/users-permissions/server/graphql/index.js
 packages/plugins/users-permissions/server/graphql/resolvers-configs.js
+packages/plugins/users-permissions/server/utils/oauth-connect/oauth1.js
+packages/plugins/users-permissions/server/utils/oauth-connect/providers.js
+packages/plugins/users-permissions/server/utils/oauth-connect/index.js
+packages/plugins/users-permissions/server/utils/oauth-connect/oauth2.js
+packages/plugins/users-permissions/server/utils/verify-jwt-with-jwks.js
+packages/plugins/users-permissions/server/utils/provider-http.js
 packages/plugins/users-permissions/server/utils/refresh-cookie-options.js
 packages/plugins/users-permissions/server/utils/index.d.ts
 packages/plugins/users-permissions/server/utils/__tests__/index.test.js
+packages/plugins/users-permissions/server/utils/__tests__/oauth-connect.test.js
 packages/plugins/users-permissions/server/utils/__tests__/refresh-cookie-options.test.js
 packages/plugins/users-permissions/server/utils/sanitize/sanitizers.js
 packages/plugins/users-permissions/server/utils/sanitize/index.js

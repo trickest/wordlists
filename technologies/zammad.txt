@@ -315,6 +315,7 @@ db/migrate/20180220000001_setting_attachment_preview.rb
 db/migrate/20190415000001_setting_es_multi_index.rb
 db/migrate/20191107181428_issue_2715_fix_broken_twitter_urls.rb
 db/migrate/20260623150000_ai_assistance_ticket_summary_selector.rb
+db/migrate/20260716000000_groups_add_parent_id_index.rb
 db/migrate/20250918105948_issue_5781_richtext_notes.rb
 db/migrate/20221116134211_issue_2185_and_or_conditions.rb
 db/migrate/20170822000001_agend_based_sender_issue_1351.rb
@@ -3496,6 +3497,7 @@ app/models/concerns/has_taskbars.rb
 app/models/concerns/can_selector.rb
 app/models/concerns/checks_core_workflow.rb
 app/models/concerns/checks_client_notification.rb
+app/models/concerns/has_recursive_cte_query.rb
 app/models/concerns/can_search.rb
 app/models/concerns/touches_perform_references.rb
 app/models/concerns/can_selector/advanced_sorting/base_select_field_sort.rb

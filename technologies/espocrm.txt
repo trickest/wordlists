@@ -1647,6 +1647,7 @@ application/Espo/Entities/TwoFactorCode.php
 application/Espo/Entities/UserReaction.php
 application/Espo/Entities/AuthenticationProvider.php
 application/Espo/Entities/PipelineStage.php
+application/Espo/Entities/UserState.php
 application/Espo/Entities/EmailAddress.php
 application/Espo/Entities/Webhook.php
 application/Espo/Entities/OAuthAccount.php
@@ -1667,6 +1668,7 @@ application/Espo/Entities/ActionHistoryRecord.php
 application/Espo/Entities/AppLogRecord.php
 application/Espo/Entities/MassAction.php
 application/Espo/Entities/Email.php
+application/Espo/Entities/SystemState.php
 application/Espo/Hooks/EmailFilter/CacheClearing.php
 application/Espo/Hooks/CurrencyRecordRate/SetFields.php
 application/Espo/Hooks/LayoutSet/Removal.php
@@ -1703,6 +1705,7 @@ application/Espo/Hooks/Note/Mentions.php
 application/Espo/Hooks/Note/Notifications.php
 application/Espo/Hooks/User/ApiKey.php
 application/Espo/Hooks/User/IncrementPasswordVersion.php
+application/Espo/Hooks/User/DeleteUserState.php
 application/Espo/Hooks/Integration/GoogleMaps.php
 application/Espo/Hooks/Sms/Numbers.php
 application/Espo/Hooks/Email/NoteRemove.php
@@ -2073,6 +2076,7 @@ application/Espo/Tools/Currency/Conversion/EntityConverterFactory.php
 application/Espo/Tools/Currency/Conversion/DefaultEntityConverter.php
 application/Espo/Tools/Currency/Api/PutUpdate.php
 application/Espo/Tools/Currency/Api/Get.php
+application/Espo/Tools/Currency/Events/CurrencyRateUpdate.php
 application/Espo/Tools/Currency/RateEntryProvider.php
 application/Espo/Tools/Currency/SyncManager.php
 application/Espo/Tools/EmailTemplate/Formatter.php
@@ -4505,6 +4509,8 @@ application/Espo/Core/Acl/ScopeData.php
 application/Espo/Core/Acl/AccessDeleteChecker.php
 application/Espo/Core/Acl/OwnershipChecker/OwnershipCheckerFactory.php
 application/Espo/Core/Acl/AccessReadChecker.php
+application/Espo/Core/Acl/Events/InvalidatePortalUserCache.php
+application/Espo/Core/Acl/Events/InvalidateUserCache.php
 application/Espo/Core/Acl/SystemRestriction.php
 application/Espo/Core/Acl/Table/ScopeDataType.php
 application/Espo/Core/Acl/Table/ScopeDataResolver.php
@@ -4730,6 +4736,7 @@ application/Espo/Core/Name/Link.php
 application/Espo/Core/Name/Field.php
 application/Espo/Core/Rebuild/RebuildAction.php
 application/Espo/Core/Rebuild/Actions/GenerateInstanceId.php
+application/Espo/Core/Rebuild/Actions/AddSystemState.php
 application/Espo/Core/Rebuild/Actions/ConfigMetadataCheck.php
 application/Espo/Core/Rebuild/Actions/VersionUpdate.php
 application/Espo/Core/Rebuild/Actions/CurrencyRates.php
@@ -4769,6 +4776,7 @@ application/Espo/Core/Utils/File/UnifierObj.php
 application/Espo/Core/Utils/SystemUser.php
 application/Espo/Core/Utils/Acl/UserAclManagerProvider.php
 application/Espo/Core/Utils/Autoload.php
+application/Espo/Core/Utils/Cache/DataCacheAccess.php
 application/Espo/Core/Utils/Config/ConfigFileManager.php
 application/Espo/Core/Utils/Config/ConfigWriterFileManager.php
 application/Espo/Core/Utils/Config/ConfigWriter.php
@@ -4859,9 +4867,23 @@ application/Espo/Core/Utils/Resource/Reader/Params.php
 application/Espo/Core/Utils/Resource/FileReader.php
 application/Espo/Core/Utils/Resource/PathProvider.php
 application/Espo/Core/Utils/Resource/Reader.php
+application/Espo/Core/Utils/User/UserStateProvider.php
 application/Espo/Core/Utils/Hasher.php
 application/Espo/Core/Utils/EmailFilterManager.php
 application/Espo/Core/Utils/Util.php
+application/Espo/Core/Utils/Event/Exceptions/TransportNotConnected.php
+application/Espo/Core/Utils/Event/Envelope.php
+application/Espo/Core/Utils/Event/Event.php
+application/Espo/Core/Utils/Event/OriginProvider.php
+application/Espo/Core/Utils/Event/EventDispatcherTransport.php
+application/Espo/Core/Utils/Event/Configuration.php
+application/Espo/Core/Utils/Event/CrossInstanceEventDispatcher.php
+application/Espo/Core/Utils/Event/CrossInstanceEvent.php
+application/Espo/Core/Utils/Event/Context.php
+application/Espo/Core/Utils/Event/EventDispatcher.php
+application/Espo/Core/Utils/Event/EventDispatcherTransportLoader.php
+application/Espo/Core/Utils/Event/BypassEventDispatcherTransport.php
+application/Espo/Core/Utils/System/SystemState.php
 application/Espo/Core/Utils/PasswordHash.php
 application/Espo/Core/Utils/Config.php
 application/Espo/Core/Utils/Security/UrlCheck.php
@@ -5158,6 +5180,7 @@ application/Espo/Core/Loaders/PortalAclManagerContainer.php
 application/Espo/Core/Loaders/DefaultLanguage.php
 application/Espo/Core/Loaders/ApplicationState.php
 application/Espo/Core/Loaders/Log.php
+application/Espo/Core/Loaders/EventDispatcher.php
 application/Espo/Core/Loaders/BaseLanguage.php
 application/Espo/Core/Loaders/DataManager.php
 application/Espo/Core/Loaders/NumberUtil.php
@@ -5166,6 +5189,7 @@ application/Espo/Core/Loaders/Loader.php
 application/Espo/Core/Loaders/HookDataProvider.php
 application/Espo/Core/Loaders/Metadata.php
 application/Espo/Core/Loaders/DateTime.php
+application/Espo/Core/Loaders/SystemState.php
 application/Espo/Core/DataManager.php
 application/Espo/Core/Notification/EmailNotificationHandler.php
 application/Espo/Core/Notification/AssignmentNotificator/Params.php
@@ -5190,12 +5214,14 @@ application/Espo/Core/Job/PreparatorFactory.php
 application/Espo/Core/Job/CronUtil.php
 application/Espo/Core/Job/PrepareProcessor.php
 application/Espo/Core/Job/JobManager.php
+application/Espo/Core/Job/Processing/Exceptions/TickFailure.php
 application/Espo/Core/Job/Processing/EnqueueDaemon.php
 application/Espo/Core/Job/Processing/Publisher/Params.php
 application/Espo/Core/Job/Processing/Consumer/Params.php
 application/Espo/Core/Job/Processing/PrepareDaemon/Params.php
 application/Espo/Core/Job/Processing/Util/ExitPolicy.php
 application/Espo/Core/Job/Processing/Util/ExitSetup.php
+application/Espo/Core/Job/Processing/Util/Ticker.php
 application/Espo/Core/Job/Processing/WorkerDaemon.php
 application/Espo/Core/Job/Processing/EnqueueDaemon/Params.php
 application/Espo/Core/Job/Processing/JobProvider.php
@@ -8050,6 +8076,8 @@ application/Espo/Resources/metadata/entityDefs/ImportEntity.json
 application/Espo/Resources/metadata/entityDefs/PipelineStage.json
 application/Espo/Resources/metadata/entityDefs/StarSubscription.json
 application/Espo/Resources/metadata/entityDefs/EmailFilter.json
+application/Espo/Resources/metadata/entityDefs/UserState.json
+application/Espo/Resources/metadata/entityDefs/SystemState.json
 application/Espo/Resources/metadata/entityDefs/Import.json
 application/Espo/Resources/metadata/entityDefs/AuthToken.json
 application/Espo/Resources/metadata/entityDefs/EmailTemplateCategory.json
@@ -8331,6 +8359,8 @@ application/Espo/Resources/metadata/entityAcl/Attachment.json
 application/Espo/Resources/metadata/entityAcl/Export.json
 application/Espo/Resources/metadata/entityAcl/OAuthProvider.json
 application/Espo/Resources/metadata/entityAcl/MassAction.json
+application/Espo/Resources/metadata/entityAcl/UserState.json
+application/Espo/Resources/metadata/entityAcl/SystemState.json
 application/Espo/Resources/metadata/entityAcl/AuthToken.json
 application/Espo/Resources/routes.json
 application/Espo/Resources/defaults/layouts/sidePanelsDetail.json
@@ -9401,6 +9431,13 @@ tests/unit/Espo/Core/Utils/Resource/ReaderTest.php
 tests/unit/Espo/Core/Utils/DataUtilTest.php
 tests/unit/Espo/Core/Utils/PreloadTest.php
 tests/unit/Espo/Core/Utils/ConfigTest.php
+tests/unit/Espo/Core/Utils/Event/TestEvent1.php
+tests/unit/Espo/Core/Utils/Event/CrossInstanceEventDispatcherTest.php
+tests/unit/Espo/Core/Utils/Event/TestTransport.php
+tests/unit/Espo/Core/Utils/Event/EventDispatcherTest.php
+tests/unit/Espo/Core/Utils/Event/TestCiEvent1.php
+tests/unit/Espo/Core/Utils/Event/TestCiEvent2.php
+tests/unit/Espo/Core/Utils/Event/TestEvent2.php
 tests/unit/Espo/Core/Utils/JsonTest.php
 tests/unit/Espo/Core/Utils/SystemTest.php
 tests/unit/Espo/Core/Utils/Security/HostCheckTest.php

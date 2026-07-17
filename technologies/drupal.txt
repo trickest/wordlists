@@ -5997,7 +5997,6 @@ core/modules/views/tests/modules/views_test_data/src/Plugin/views/display_extend
 core/modules/views/tests/modules/views_test_data/src/Form/ViewsTestDataElementEmbedForm.php
 core/modules/views/tests/modules/views_test_data/src/Form/ViewsTestDataErrorForm.php
 core/modules/views/tests/modules/views_test_data/src/Form/ViewsTestDataElementForm.php
-core/modules/views/tests/modules/views_test_data/views_test_data.module
 core/modules/views/tests/modules/views_test_data/views_test_data.libraries.yml
 core/modules/views/tests/modules/views_test_data/views_test_data.install
 core/modules/views/tests/modules/views_test_data/test_views/views.view.test_access_static.yml
@@ -11238,7 +11237,6 @@ core/tests/Drupal/Tests/ApiRequestTrait.php
 core/tests/Drupal/Tests/UnitTestCase.php
 core/tests/Drupal/Tests/TestTools/ErrorHandler/DrupalDebugClassLoaderTest.php
 core/tests/Drupal/Tests/ExtensionListTestTrait.php
-core/tests/Drupal/Tests/ComposerIntegrationTest.php
 core/tests/Drupal/Tests/UnitTestCaseTest.php
 core/tests/Drupal/Tests/DrupalTestBrowser.php
 core/tests/Drupal/Tests/BrowserTestBase.php
@@ -11792,6 +11790,7 @@ core/tests/Drupal/Tests/Core/Layout/LayoutPluginManagerTest.php
 core/tests/Drupal/Tests/Core/Queue/QueueExceptionsTest.php
 core/tests/Drupal/Tests/UiHelperTrait.php
 core/tests/Drupal/Tests/Composer/fixtures/ensureBehatDriverVersionsFixture/composer.lock
+core/tests/Drupal/Tests/Composer/ComposerIntegrationTest.php
 core/tests/Drupal/Tests/Composer/Generator/Fixtures.php
 core/tests/Drupal/Tests/Composer/Generator/MetapackageUpdateTest.php
 core/tests/Drupal/Tests/Composer/Generator/OverlapWithTopLevelDependenciesTest.php
@@ -12273,7 +12272,9 @@ core/tests/Drupal/BuildTests/Framework/Tests/BuildTestTest.php
 core/tests/Drupal/BuildTests/Framework/BuildTestBase.php
 core/tests/Drupal/KernelTests/AssertContentTrait.php
 core/tests/Drupal/KernelTests/RouteProvider.php
+core/tests/Drupal/KernelTests/DrupalApplicationTesterTrait.php
 core/tests/Drupal/KernelTests/KernelTestHttpRequestTest.php
+core/tests/Drupal/KernelTests/KernelTestAttributeRouteDiscovery.php
 core/tests/Drupal/KernelTests/KernelTestBase.php
 core/tests/Drupal/KernelTests/ConfigFormTestBase.php
 core/tests/Drupal/KernelTests/KernelTestHttpDynamicCacheRequestTest.php

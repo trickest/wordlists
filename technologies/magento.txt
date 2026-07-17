@@ -12335,6 +12335,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductBySkuActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminEnableCategoryPathForProductUrlActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/FillMainProductFormByStringActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCategoriesSetDisplayModeActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAssertDatepickerPositionedRelativeToInputActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCheckProductPositionInCategoryProductsGridActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/RemoveProductImageByNameActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAssertProductsGridIsEmptyActionGroup.xml
@@ -12777,6 +12778,7 @@ app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductControlsAr
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCheckProductOnProductGridActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminUncheckPermanentRedirectCheckBoxActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminChangeCategoryNameOnStoreViewLevelActionGroup.xml
+app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCloseDatepickerWidgetActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductDetailPageFinalPriceActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssignAttributeToGroupActionGroup.xml
 app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductInfoOnEditPageActionGroup.xml
@@ -13029,6 +13031,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateP
 app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateProductAttributeEntityDateTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/CreateProductAttributeEntityTest/CreateBundleProductCustomAttributeEntityTextAreaTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateCategoryAndCheckDefaultUrlKeyOnStoreViewTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminAdvancedPricingDatepickerPositioningTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/NewProductsListWidgetSimpleProductTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithTierPriceOutOfStockVisibleInCategoryAndSearchTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/StorefrontAdvanceCatalogSearchSimpleProductBySkuWithHyphenTest.xml
@@ -23654,6 +23657,7 @@ app/code/Magento/Checkout/Test/Unit/CustomerData/CartTest.php
 app/code/Magento/Checkout/Test/Unit/CustomerData/DirectoryDataTest.php
 app/code/Magento/Checkout/Test/Unit/CustomerData/DefaultItemTest.php
 app/code/Magento/Checkout/Test/Unit/Plugin/ResetQuoteAddressesTest.php
+app/code/Magento/Checkout/Test/Unit/Plugin/Model/Message/AddRelatedProductsToSuccessMessagePluginTest.php
 app/code/Magento/Checkout/Test/Unit/Model/GuestPaymentInformationManagementTest.php
 app/code/Magento/Checkout/Test/Unit/Model/TotalsInformationManagementTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Session/SuccessValidatorTest.php
@@ -24291,6 +24295,7 @@ app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeAssignBil
 app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSavePaymentInformation.php
 app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSetPaymentMethod.php
 app/code/Magento/Checkout/Plugin/Api/VerifyIsGuestCheckoutEnabledBeforeSaveShippingInformation.php
+app/code/Magento/Checkout/Plugin/Model/Message/AddRelatedProductsToSuccessMessagePlugin.php
 app/code/Magento/Checkout/Plugin/Model/Quote/ResetQuoteAddresses.php
 app/code/Magento/Checkout/composer.json
 app/code/Magento/Checkout/Model/GuestShippingInformationManagement.php
@@ -25577,6 +25582,7 @@ app/code/Magento/WishlistGraphQl/etc/graphql/di.xml
 app/code/Magento/WishlistGraphQl/etc/schema.graphqls
 app/code/Magento/WishlistGraphQl/etc/module.xml
 app/code/Magento/WishlistGraphQl/README.md
+app/code/Magento/WishlistGraphQl/Test/Unit/WishlistResolverTest.php
 app/code/Magento/WishlistGraphQl/Test/Unit/CustomerWishlistResolverTest.php
 app/code/Magento/WishlistGraphQl/Test/Unit/Model/Resolver/Wishlist/AddToCartTest.php
 app/code/Magento/WishlistGraphQl/Test/Unit/Model/Resolver/WishlistItemsTest.php
@@ -32148,6 +32154,7 @@ app/code/Magento/Bundle/Test/Mftf/Test/StorefrontVerifyDiscountOnDynamicBundlePr
 app/code/Magento/Bundle/Test/Mftf/Test/AdminBundleProductPriceCalculationOnProductPageTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontBundleCartTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/AdminAddDecimalDefaultToBundleItemsTest.xml
+app/code/Magento/Bundle/Test/Mftf/Test/StorefrontSortBundleProductByPriceWithOutOfStockChildTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontCheckBundleProductTwoWebsiteDifferentPriceOptionTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/BundleProductWithOptionTierPriceInCartTest.xml
 app/code/Magento/Bundle/Test/Mftf/Test/StorefrontBundlePlaceOrderWithVirtualAndSimpleChildrenTest.xml

@@ -566,6 +566,7 @@ features/admin/redirecting_on_login_after_being_logout.feature
 features/admin/order/managing_orders/browsing_orders/seeing_orders_currency_on_index.feature
 features/admin/order/managing_orders/browsing_orders/browsing_orders.feature
 features/admin/order/managing_orders/browsing_orders/sorting_orders_by_number.feature
+features/admin/order/managing_orders/browsing_orders/browsing_orders_with_customer_type_indicator.feature
 features/admin/order/managing_orders/browsing_orders/sequential_order_number_generation.feature
 features/admin/order/managing_orders/browsing_orders/seeing_orders_payment_amount_including_all_fees.feature
 features/admin/order/managing_orders/browsing_orders/seeing_orders_with_different_currency_on_index.feature
@@ -6436,6 +6437,7 @@ src/Sylius/Bundle/AdminBundle/templates/order/show/content/header/breadcrumbs.ht
 src/Sylius/Bundle/AdminBundle/templates/order/grid/field/payment_state.html.twig
 src/Sylius/Bundle/AdminBundle/templates/order/grid/field/order_state.html.twig
 src/Sylius/Bundle/AdminBundle/templates/order/grid/field/shipping_state.html.twig
+src/Sylius/Bundle/AdminBundle/templates/order/grid/field/customer.html.twig
 src/Sylius/Bundle/AdminBundle/templates/order/grid/field/order_total.html.twig
 src/Sylius/Bundle/AdminBundle/templates/order/form/shipping_address.html.twig
 src/Sylius/Bundle/AdminBundle/templates/order/form/common/phone_number.html.twig

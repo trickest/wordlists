@@ -946,6 +946,9 @@ migrate/20191107181428_issue_2715_fix_broken_twitter_urls.rb
 db/migrate/20260623150000_ai_assistance_ticket_summary_selector.rb
 migrate/20260623150000_ai_assistance_ticket_summary_selector.rb
 20260623150000_ai_assistance_ticket_summary_selector.rb
+db/migrate/20260716000000_groups_add_parent_id_index.rb
+migrate/20260716000000_groups_add_parent_id_index.rb
+20260716000000_groups_add_parent_id_index.rb
 db/migrate/20250918105948_issue_5781_richtext_notes.rb
 migrate/20250918105948_issue_5781_richtext_notes.rb
 20250918105948_issue_5781_richtext_notes.rb
@@ -15876,6 +15879,10 @@ app/models/concerns/checks_client_notification.rb
 models/concerns/checks_client_notification.rb
 concerns/checks_client_notification.rb
 checks_client_notification.rb
+app/models/concerns/has_recursive_cte_query.rb
+models/concerns/has_recursive_cte_query.rb
+concerns/has_recursive_cte_query.rb
+has_recursive_cte_query.rb
 app/models/concerns/can_search.rb
 models/concerns/can_search.rb
 concerns/can_search.rb

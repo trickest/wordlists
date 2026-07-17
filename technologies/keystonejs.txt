@@ -1,5 +1,6 @@
 CONTRIBUTING.md
 pnpm-workspace.yaml
+.oxlintrc.json
 SECURITY.md
 .changeset/eleven-queens-fix.md
 .changeset/add-maybe-function.md
@@ -98,7 +99,6 @@ SECURITY.md
 .prettierignore
 .npmrc
 tsconfig.json
-eslint.config.mjs
 .devcontainer/devcontainer.json
 package.json
 tests2/access.field.filterableN.test.ts
@@ -1349,8 +1349,7 @@ packages/core/src/types/schema/gWithContext.ts
 packages/core/src/types/schema/g.ts
 packages/core/src/types/schema/scalars.ts
 packages/core/src/types/schema/index.ts
-packages/core/src/types/schema/legacy-alias.js
-packages/core/src/types/schema/legacy-alias.d.ts
+packages/core/src/types/schema/legacy-alias.ts
 packages/core/src/types/prisma.ts
 packages/core/src/types/index.ts
 packages/core/src/types/admin-meta.ts
@@ -1437,14 +1436,14 @@ packages/core/src/admin-ui/components/CreateItemDialog.tsx
 packages/core/src/admin-ui/components/WelcomeDialog.tsx
 packages/core/src/admin-ui/components/NullableFieldWrapper.tsx
 packages/core/src/admin-ui/templates/create-item.ts
-packages/core/src/admin-ui/templates/item.tsx
+packages/core/src/admin-ui/templates/document.ts
+packages/core/src/admin-ui/templates/item.ts
 packages/core/src/admin-ui/templates/index.ts
 packages/core/src/admin-ui/templates/next-config.ts
 packages/core/src/admin-ui/templates/home.ts
 packages/core/src/admin-ui/templates/app.ts
-packages/core/src/admin-ui/templates/document.tsx
 packages/core/src/admin-ui/templates/no-access.ts
-packages/core/src/admin-ui/templates/list.tsx
+packages/core/src/admin-ui/templates/list.ts
 packages/core/src/admin-ui/utils/utils.tsx
 packages/core/src/admin-ui/utils/pick.ts
 packages/core/src/admin-ui/utils/useCreateItem.ts

@@ -6237,6 +6237,7 @@ tests/integration/Core/System/Snippet/Files/_fixtures/Apps/SnippetsWithWrongName
 tests/integration/Core/System/Snippet/Files/_fixtures/Apps/AppWithBaseSnippets/Resources/snippet/storefront.de.base.json
 tests/integration/Core/System/Snippet/Files/_fixtures/Apps/AppWithBaseSnippets/Resources/snippet/storefront.en.base.json
 tests/integration/Core/System/Snippet/Files/_fixtures/Apps/AppWithBaseSnippets/manifest.xml
+tests/integration/Core/System/Snippet/ScheduledTask/UpdateTranslationsTaskHandlerTest.php
 tests/integration/Core/System/Snippet/Service/TranslationLoaderTest.php
 tests/integration/Core/System/Snippet/SnippetServiceTest.php
 tests/integration/Core/System/Snippet/Subscriber/CustomFieldSubscriberTest.php
@@ -7692,6 +7693,7 @@ tests/unit/Storefront/Controller/DownloadControllerTest.php
 tests/unit/Storefront/Controller/StorefrontControllerTest.php
 tests/unit/Storefront/Controller/AccountProfileControllerTest.php
 tests/unit/Storefront/Controller/CheckoutControllerTest.php
+tests/unit/Storefront/Controller/FormControllerTest.php
 tests/unit/Storefront/Controller/VerificationHashControllerTest.php
 tests/unit/Storefront/Controller/CountryStateControllerTest.php
 tests/unit/Storefront/Controller/Exception/StorefrontExceptionTest.php
@@ -7798,6 +7800,7 @@ tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/InvalidFileNameCharactersTest.
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/DangerConfigChangedTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/ComposerVersionConstraintsTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/MissingUnitTestsTest.php
+tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/RedisGroupUsageTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/LegacyTestsInSrcTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/RemovedTwigBlocksTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/MissingReleaseInfoTest.php
@@ -8153,17 +8156,21 @@ tests/unit/Core/System/Snippet/Files/_fixtures/BaseSnippetSet/Resources/snippet/
 tests/unit/Core/System/Snippet/Files/SnippetFileCollectionTest.php
 tests/unit/Core/System/Snippet/Files/SnippetFileLoaderTest.php
 tests/unit/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingTest.php
+tests/unit/Core/System/Snippet/DataTransfer/TranslationUpdate/TranslationUpdateResultTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataCollectionTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Metadata/MetadataEntryTest.php
 tests/unit/Core/System/Snippet/DataTransfer/Language/LanguageTest.php
 tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathTest.php
 tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathCollectionTest.php
+tests/unit/Core/System/Snippet/ScheduledTask/UpdateTranslationsTaskTest.php
+tests/unit/Core/System/Snippet/ScheduledTask/UpdateTranslationsTaskHandlerTest.php
 tests/unit/Core/System/Snippet/Service/fixtures/translation_broken_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_invalid_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_empty.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_non_string_url.yaml
 tests/unit/Core/System/Snippet/Service/fixtures/translation_empty_string_url.yaml
+tests/unit/Core/System/Snippet/Service/TranslationUpdaterTest.php
 tests/unit/Core/System/Snippet/Service/TranslationConfigLoaderTest.php
 tests/unit/Core/System/Snippet/Service/TranslationRemoverTest.php
 tests/unit/Core/System/Snippet/Service/TestableTranslationConfigLoader.php
@@ -10182,6 +10189,7 @@ tests/unit/Core/Framework/Adapter/Twig/Runtime/CachedEscaperRuntimeTest.php
 tests/unit/Core/Framework/Adapter/Session/StatefulFlashBagTest.php
 tests/unit/Core/Framework/Adapter/Session/SessionFactoryTest.php
 tests/unit/Core/Framework/Adapter/Translation/TranslatorTest.php
+tests/unit/Core/Framework/Adapter/Translation/ConstraintViolationTranslatorTest.php
 tests/unit/Core/Framework/Adapter/AdapterExceptionTest.php
 tests/unit/Core/Framework/Adapter/Command/CacheWatchDelayedCommandTest.php
 tests/unit/Core/Framework/Adapter/Command/CacheClearHttpCommandTest.php
@@ -10953,6 +10961,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoStaticRuntimeExcepti
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/CasesOutOfScope.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/PropertyCases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoConstraintViolationGetMessageRule/Usage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctionRule/LegacySqlHashUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/NonRestrictedClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/TaskHandler.php
@@ -11089,6 +11098,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInRouteA
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAssertEqualsOnClosureRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AbstractClassUsageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NameConstantEntityDefinitionTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoConstraintViolationGetMessageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInMethodRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/TaggedServiceContractRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/RouteScopeRuleTest.php
@@ -13924,6 +13934,7 @@ src/Core/DevOps/StaticAnalyze/print-ignored-errors-by-area.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/RouteSnapshotExtension.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/ComposerVersionConstraints.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/MissingReleaseInfo.php
+src/Core/DevOps/StaticAnalyze/Danger/Rules/RedisGroupUsage.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/ShopwareYamlConfigSchemaHint.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/InlineRuleInDangerConfig.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/DangerConfigChanged.php
@@ -14009,6 +14020,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/UseMap.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/LogicDetector.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/McpToolResponseRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFileExistsRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoConstraintViolationGetMessageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/DeprecatedMethodsThrowDeprecationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUpdatesInExecuteQueryRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleAreasFlagNotAllowedRule.php
@@ -14729,6 +14741,7 @@ src/Core/System/Snippet/Files/AppSnippetFileLoader.php
 src/Core/System/Snippet/SnippetPatterns.php
 src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMapping.php
 src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingCollection.php
+src/Core/System/Snippet/DataTransfer/TranslationUpdate/TranslationUpdateResult.php
 src/Core/System/Snippet/DataTransfer/Metadata/MetadataCollection.php
 src/Core/System/Snippet/DataTransfer/Metadata/MetadataEntry.php
 src/Core/System/Snippet/DataTransfer/Language/Language.php
@@ -14738,9 +14751,12 @@ src/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathCollection.php
 src/Core/System/Snippet/Event/TranslationRemovedEvent.php
 src/Core/System/Snippet/Event/TranslationLoadedEvent.php
 src/Core/System/Snippet/Event/SnippetsThemeResolveEvent.php
+src/Core/System/Snippet/ScheduledTask/UpdateTranslationsTask.php
+src/Core/System/Snippet/ScheduledTask/UpdateTranslationsTaskHandler.php
 src/Core/System/Snippet/Request/InstallTranslationRequest.php
 src/Core/System/Snippet/Service/TranslationLoader.php
 src/Core/System/Snippet/Service/TranslationMetadataStore.php
+src/Core/System/Snippet/Service/TranslationUpdater.php
 src/Core/System/Snippet/Service/TranslationRemover.php
 src/Core/System/Snippet/Service/AbstractTranslationConfigLoader.php
 src/Core/System/Snippet/Service/TranslationConfigLoader.php
@@ -18450,6 +18466,7 @@ src/Core/Framework/Test/TestCacheClearer.php
 src/Core/Framework/Test/TestKernel.php
 src/Core/Framework/Test/TestCaseHelper/ExtensionHelper.php
 src/Core/Framework/Test/TestCaseHelper/TestUser.php
+src/Core/Framework/Test/TestCaseHelper/StoreApiSessionListener.php
 src/Core/Framework/Test/TestCaseHelper/AssertResponseHelper.php
 src/Core/Framework/Test/TestCaseHelper/StopWorkerWhenIdleListener.php
 src/Core/Framework/Test/TestCaseHelper/TestBrowser.php
@@ -19282,6 +19299,7 @@ src/Core/Framework/Adapter/Session/StatefulFlashBag.php
 src/Core/Framework/Adapter/Session/SessionFactory.php
 src/Core/Framework/Adapter/Translation/AbstractTranslator.php
 src/Core/Framework/Adapter/Translation/Translator.php
+src/Core/Framework/Adapter/Translation/ConstraintViolationTranslator.php
 src/Core/Framework/Adapter/Command/CacheWatchDelayedCommand.php
 src/Core/Framework/Adapter/Command/CacheInvalidateDelayedCommand.php
 src/Core/Framework/Adapter/Command/CacheClearAllCommand.php

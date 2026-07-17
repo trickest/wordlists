@@ -106,6 +106,7 @@ tests/Umbraco.Tests.UnitTests/TestHelpers/Objects/TestUmbracoContextFactory.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/HealthCheckResultsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HealthChecks/MarkdownToHtmlConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/SystemTextJsonSerializerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonTolerantNumberConverterFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonBlockValueConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonUdiConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Serialization/JsonStringInternConverterTests.cs
@@ -136,6 +137,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/IO/FileSystemPathTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Search/DeferredSearchReindexServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Search/MemberIndexingNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Search/ExternalMemberIndexingNotificationHandlerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Configuration/JsonConfigManipulatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/PublishedContentQueryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/NoOpLookupNormalizerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/UmbracoPasswordHasherTests.cs
@@ -271,6 +273,7 @@ tests/Umbraco.Tests.UnitTests/AutoFixture/Customizations/OmitRecursionCustomizat
 tests/Umbraco.Tests.UnitTests/AutoFixture/UmbracoAutoMoqFixtureFactory.cs
 tests/Umbraco.Tests.UnitTests/AutoFixture/InlineAutoMoqDataAttribute.cs
 tests/Umbraco.Tests.UnitTests/AutoFixture/AutoMoqDataAttribute.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Services/ApiMediaQueryServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Services/RequestHeaderHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Services/RequestPreviewServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Services/RequestRoutingServiceTests.cs
@@ -661,8 +664,10 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/ClaimsPrincipalExtensionsT
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/StringExtensionsTests.Culture.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/ContentExtensionsTests.GetStatus.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/TypeExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/DictionaryExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/RuntimeStateExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/PublishedElementExtensionsTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/DocumentUrlAliasServiceExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/ContentExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/TreeEntityExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/VersionExtensionTests.cs
@@ -2329,6 +2334,7 @@ src/Umbraco.Infrastructure/Serialization/JsonDictionaryStringInternIgnoreCaseCon
 src/Umbraco.Infrastructure/Serialization/SystemTextWebhookJsonSerializer.cs
 src/Umbraco.Infrastructure/Serialization/ReadOnlyJsonConverter.cs
 src/Umbraco.Infrastructure/Serialization/JsonUniversalDateTimeConverter.cs
+src/Umbraco.Infrastructure/Serialization/JsonTolerantNumberConverterFactory.cs
 src/Umbraco.Infrastructure/Serialization/SystemTextConfigurationEditorJsonSerializer.cs
 src/Umbraco.Infrastructure/Serialization/JsonUdiRangeConverter.cs
 src/Umbraco.Infrastructure/Serialization/JsonObjectConverter.cs
@@ -6520,6 +6526,7 @@ src/Umbraco.Core/PropertyEditors/DeliveryApi/IDeliveryApiPropertyValueConverter.
 src/Umbraco.Core/PropertyEditors/IFileExtensionConfigItem.cs
 src/Umbraco.Core/PropertyEditors/ConfigurationField.cs
 src/Umbraco.Core/PropertyEditors/ValueSchemaPatterns.cs
+src/Umbraco.Core/PropertyEditors/CacheReferencedEntitiesSuppression.cs
 src/Umbraco.Core/PropertyEditors/ListViewConfigurationEditor.cs
 src/Umbraco.Core/PropertyEditors/ContentPickerConfiguration.cs
 src/Umbraco.Core/PropertyEditors/DefaultValueTypePropertyValueConverterAttribute.cs
@@ -12629,6 +12636,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/components/icon/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/icon/icon.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-manifest/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-manifest/input-manifest.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/table/table.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/table/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/table/table.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/table/table.stories.ts
@@ -16774,6 +16782,10 @@ src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-file-
 src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-file-picker/property-editor-ui-static-file-picker.element.ts
 src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-file-picker/property-editor-ui-static-file-picker.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-image-file-picker/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-image-file-picker/property-editor-ui-static-image-file-picker.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-image-file-picker/property-editor-ui-static-image-file-picker.element.ts
+src/Umbraco.Web.UI.Client/src/packages/static-file/property-editors/static-image-file-picker/property-editor-ui-static-image-file-picker.test.ts
 src/Umbraco.Web.UI.Client/src/packages/static-file/index.ts
 src/Umbraco.Web.UI.Client/src/packages/static-file/entry-point.ts
 src/Umbraco.Web.UI.Client/src/packages/static-file/repository/types.ts
