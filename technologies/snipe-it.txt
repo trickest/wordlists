@@ -406,6 +406,7 @@ tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
+tests/Feature/Requests/Ui/AccessoryRequestTest.php
 tests/Feature/Requests/Ui/AssetRequestIndexTest.php
 tests/Feature/Requests/Ui/CancelRequestTest.php
 tests/Feature/Fmcs/HttpCrossCompanyLeakTest.php
@@ -419,6 +420,7 @@ tests/Feature/Categories/Ui/UpdateCategoriesTest.php
 tests/Feature/Categories/Ui/IndexCategoriesTest.php
 tests/Feature/Categories/Ui/CreateCategoriesTest.php
 tests/Feature/Categories/Ui/DeleteCategoriesTest.php
+tests/Feature/CustomFields/CustomFieldValidationTest.php
 tests/Feature/CustomFields/Api/DeleteCustomFieldsTest.php
 tests/Feature/CustomFields/Ui/CreateCustomFieldsTest.php
 tests/Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
@@ -541,6 +543,7 @@ resources/views/dashboard.blade.php
 resources/views/layouts/setup.blade.php
 resources/views/layouts/debug.blade.php
 resources/views/layouts/default.blade.php
+resources/views/layouts/livewire-default.blade.php
 resources/views/layouts/basic.blade.php
 resources/views/layouts/edit-form.blade.php
 resources/views/settings/security.blade.php
@@ -710,6 +713,7 @@ resources/views/blade/alert-menu.blade.php
 resources/views/blade/box/index.blade.php
 resources/views/blade/box/footer.blade.php
 resources/views/blade/page-data.blade.php
+resources/views/blade/alert.blade.php
 resources/views/blade/gallery-card.blade.php
 resources/views/blade/full-user-name.blade.php
 resources/views/blade/redirect_submit_options.blade.php
@@ -726,6 +730,7 @@ resources/views/blade/input/category-select.blade.php
 resources/views/blade/input/select.blade.php
 resources/views/blade/input/supplier-select.blade.php
 resources/views/blade/input/colorpicker.blade.php
+resources/views/blade/input/datetimepicker.blade.php
 resources/views/blade/input/radio.blade.php
 resources/views/blade/input/text.blade.php
 resources/views/blade/input/image-upload.blade.php
@@ -734,6 +739,7 @@ resources/views/blade/input/datepicker.blade.php
 resources/views/blade/input/purchase-cost.blade.php
 resources/views/blade/input/country-select.blade.php
 resources/views/blade/input/email-format-select.blade.php
+resources/views/blade/input/date-range.blade.php
 resources/views/blade/input/quantity.blade.php
 resources/views/blade/input/file-upload.blade.php
 resources/views/blade/input/locale-select.blade.php
@@ -745,6 +751,7 @@ resources/views/blade/input/button.blade.php
 resources/views/blade/input/textarea.blade.php
 resources/views/blade/input/manufacturer-select.blade.php
 resources/views/blade/input/checkbox.blade.php
+resources/views/blade/callout.blade.php
 resources/views/blade/data-row.blade.php
 resources/views/blade/info-panel/image.blade.php
 resources/views/blade/info-panel/index.blade.php
@@ -752,6 +759,7 @@ resources/views/blade/info-panel/supplier.blade.php
 resources/views/blade/info-panel/manufacturer.blade.php
 resources/views/blade/container.blade.php
 resources/views/blade/copy-to-clipboard.blade.php
+resources/views/blade/custom-field-preview.blade.php
 resources/views/blade/table/companies.blade.php
 resources/views/blade/table/users.blade.php
 resources/views/blade/table/components.blade.php
@@ -851,6 +859,7 @@ resources/views/locations/print.blade.php
 resources/views/locations/index.blade.php
 resources/views/locations/bulk-delete.blade.php
 resources/views/locations/edit.blade.php
+resources/views/livewire/custom-field-editor.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/location-scope-check.blade.php
 resources/views/livewire/checkout-target-panel.blade.php
@@ -863,7 +872,6 @@ resources/views/livewire/slack-settings-form.blade.php
 resources/views/livewire/importer.blade.php
 resources/views/custom_fields/index.blade.php
 resources/views/custom_fields/fieldsets/view.blade.php
-resources/views/custom_fields/fields/edit.blade.php
 resources/views/vendor/maintenancemode/app-down.blade.php
 resources/views/vendor/maintenancemode/notification.blade.php
 resources/views/vendor/mail/text/promotion/button.blade.php
@@ -7425,6 +7433,7 @@ app/Livewire/LocationScopeCheck.php
 app/Livewire/AdminPersonalAccessTokens.php
 app/Livewire/CheckoutTargetPanel.php
 app/Livewire/Importer.php
+app/Livewire/CustomFieldEditor.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/SlackSettingsForm.php
 app/Http/Kernel.php
@@ -8136,6 +8145,7 @@ database/migrations/2022_03_21_162724_adds_ldap_manager.php
 database/migrations/2018_05_14_215229_add_indexes.php
 database/migrations/2015_09_28_003314_fix_default_purchase_order.php
 database/migrations/2021_09_20_183216_change_default_label_to_nullable.php
+database/migrations/2026_07_17_000003_widen_custom_fields_format_column.php
 database/migrations/2022_10_25_215520_add_label2_settings.php
 database/migrations/2016_08_09_002225_add_manufacturer_to_licenses.php
 database/migrations/2025_11_28_175733_add_link_colors_to_settings.php
@@ -8223,6 +8233,7 @@ database/migrations/2013_11_25_152903_add_depreciate_to_licenses_table.php
 database/migrations/2025_11_04_173713_add_2d_label_prefix.php
 database/migrations/2018_03_24_030738_add_show_images_in_email_setting.php
 database/migrations/2022_03_09_001334_add_eula_to_checkout_acceptance.php
+database/migrations/2026_07_17_000001_change_maintenance_dates_to_datetime.php
 database/migrations/2023_07_06_092507_add_phone_fax_to_locations.php
 database/migrations/2026_04_20_200000_backfill_action_logs_company_id_from_item.php
 database/migrations/2014_11_20_224421_add_prefix_to_settings.php
@@ -8260,6 +8271,7 @@ database/migrations/2017_10_19_130406_add_image_and_supplier_to_accessories.php
 database/migrations/2023_08_01_174150_change_webhook_settings_variable_type.php
 database/migrations/2019_02_07_190030_add_kits_accessories_table.php
 database/migrations/2025_01_07_172419_fix_label_types_on_settings_table.php
+database/migrations/2026_07_17_000002_change_expected_checkin_to_datetime.php
 database/migrations/2026_04_07_141412_add_locations_parent_id_index.php
 database/migrations/2013_11_15_015858_add_user_id_to_categories.php
 database/migrations/2015_07_24_093845_add_checkin_email_to_category_table.php

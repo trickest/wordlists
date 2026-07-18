@@ -1882,6 +1882,7 @@ application/Espo/Tools/Pipeline/Api/PostStageMove.php
 application/Espo/Tools/Pipeline/PipelineDataUserFilter.php
 application/Espo/Tools/Pipeline/MoveService.php
 application/Espo/Tools/Pipeline/UserPipelineDataProvider.php
+application/Espo/Tools/Pipeline/Events/UpdateGlobal.php
 application/Espo/Tools/Pipeline/Data/StageData.php
 application/Espo/Tools/Pipeline/Data/PipelineData.php
 application/Espo/Tools/Pipeline/CacheClearer.php
@@ -4451,6 +4452,7 @@ application/Espo/Core/Webhook/AddressUtil.php
 application/Espo/Core/Webhook/Options.php
 application/Espo/Core/Webhook/Manager.php
 application/Espo/Core/Webhook/Sender.php
+application/Espo/Core/Webhook/Events/UpdateGlobal.php
 application/Espo/Core/WebSocket/ConfigDataProvider.php
 application/Espo/Core/WebSocket/Pusher.php
 application/Espo/Core/WebSocket/SenderFactory.php
@@ -4509,8 +4511,7 @@ application/Espo/Core/Acl/ScopeData.php
 application/Espo/Core/Acl/AccessDeleteChecker.php
 application/Espo/Core/Acl/OwnershipChecker/OwnershipCheckerFactory.php
 application/Espo/Core/Acl/AccessReadChecker.php
-application/Espo/Core/Acl/Events/InvalidatePortalUserCache.php
-application/Espo/Core/Acl/Events/InvalidateUserCache.php
+application/Espo/Core/Acl/Events/UserRoleUpdate.php
 application/Espo/Core/Acl/SystemRestriction.php
 application/Espo/Core/Acl/Table/ScopeDataType.php
 application/Espo/Core/Acl/Table/ScopeDataResolver.php
@@ -4871,18 +4872,20 @@ application/Espo/Core/Utils/User/UserStateProvider.php
 application/Espo/Core/Utils/Hasher.php
 application/Espo/Core/Utils/EmailFilterManager.php
 application/Espo/Core/Utils/Util.php
+application/Espo/Core/Utils/Event/Redis/RedisEventTransport.php
+application/Espo/Core/Utils/Event/Redis/ClientProvider.php
 application/Espo/Core/Utils/Event/Exceptions/TransportNotConnected.php
 application/Espo/Core/Utils/Event/Envelope.php
 application/Espo/Core/Utils/Event/Event.php
 application/Espo/Core/Utils/Event/OriginProvider.php
-application/Espo/Core/Utils/Event/EventDispatcherTransport.php
 application/Espo/Core/Utils/Event/Configuration.php
+application/Espo/Core/Utils/Event/EventTransport.php
 application/Espo/Core/Utils/Event/CrossInstanceEventDispatcher.php
 application/Espo/Core/Utils/Event/CrossInstanceEvent.php
 application/Espo/Core/Utils/Event/Context.php
 application/Espo/Core/Utils/Event/EventDispatcher.php
-application/Espo/Core/Utils/Event/EventDispatcherTransportLoader.php
-application/Espo/Core/Utils/Event/BypassEventDispatcherTransport.php
+application/Espo/Core/Utils/Event/EventTransportLoader.php
+application/Espo/Core/Utils/Event/BypassEventTransport.php
 application/Espo/Core/Utils/System/SystemState.php
 application/Espo/Core/Utils/PasswordHash.php
 application/Espo/Core/Utils/Config.php
@@ -5384,6 +5387,7 @@ application/Espo/Core/Portal/Acl/DefaultAccessChecker.php
 application/Espo/Core/Portal/Acl/Traits/DefaultAccessCheckerDependency.php
 application/Espo/Core/Portal/Acl/OwnershipChecker/OwnershipCheckerFactory.php
 application/Espo/Core/Portal/Acl/OwnershipChecker/MetadataProvider.php
+application/Espo/Core/Portal/Acl/Events/PortalUserRoleUpdate.php
 application/Espo/Core/Portal/Acl/Table/CacheKeyProvider.php
 application/Espo/Core/Portal/Acl/Table/RoleListProvider.php
 application/Espo/Core/Portal/Acl/Table/TableFactory.php

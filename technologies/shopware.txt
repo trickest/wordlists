@@ -8620,6 +8620,7 @@ tests/unit/Core/Checkout/Customer/Subscriber/CustomerAddressSubscriberTest.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticDocumentDataProvider.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticRenderData.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticDocumentRenderer.php
+tests/unit/Core/Checkout/DocumentV2/Fixtures/CollidingRenderData.php
 tests/unit/Core/Checkout/DocumentV2/Config/DocumentNumberGeneratorTest.php
 tests/unit/Core/Checkout/DocumentV2/Config/DocumentConfigLoaderTest.php
 tests/unit/Core/Checkout/DocumentV2/Template/ZugferdTwigExtensionTest.php
@@ -8638,6 +8639,7 @@ tests/unit/Core/Checkout/DocumentV2/Renderer/ZugferdEmbeddedPdfRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/PdfRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/HtmlRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Provider/DocumentDataProviderRegistryTest.php
+tests/unit/Core/Checkout/DocumentV2/Provider/DocumentMetaProviderTest.php
 tests/unit/Core/Checkout/DocumentV2/Provider/InvoiceDataProviderTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentDependencyResolverTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentGeneratorTest.php
@@ -9793,6 +9795,7 @@ tests/unit/Core/Framework/Mcp/Resource/LanguageListResourceTest.php
 tests/unit/Core/Framework/Mcp/Resource/CurrencyListResourceTest.php
 tests/unit/Core/Framework/Mcp/Resource/StateMachineResourceTest.php
 tests/unit/Core/Framework/Mcp/Prompt/ShopwareContextPromptTest.php
+tests/unit/Core/Framework/Mcp/McpAllowedHostsProviderTest.php
 tests/unit/Core/Framework/Mcp/McpExceptionTest.php
 tests/unit/Core/Framework/Mcp/Tool/SystemConfigReadToolTest.php
 tests/unit/Core/Framework/Mcp/Tool/McpToolResponseTest.php
@@ -15685,6 +15688,8 @@ src/Core/Checkout/DocumentV2/Renderer/ZugferdXmlRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/HtmlRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/ZugferdEmbeddedPdfRenderer.php
 src/Core/Checkout/DocumentV2/Provider/DocumentDataProviderRegistry.php
+src/Core/Checkout/DocumentV2/Provider/DocumentMetaProvider.php
+src/Core/Checkout/DocumentV2/Provider/RenderData/DocumentMetaRenderData.php
 src/Core/Checkout/DocumentV2/Provider/RenderData/InvoiceRenderData.php
 src/Core/Checkout/DocumentV2/Provider/InvoiceDataProvider.php
 src/Core/Checkout/DocumentV2/Provider/AbstractDocumentDataProvider.php
@@ -18611,6 +18616,7 @@ src/Core/Framework/Mcp/Loader/AppMcpPrivilegeProvider.php
 src/Core/Framework/Mcp/Loader/AbstractAppMcpLoader.php
 src/Core/Framework/Mcp/Loader/AppMcpCapabilityExecutor.php
 src/Core/Framework/Mcp/Loader/CLAUDE.md
+src/Core/Framework/Mcp/McpAllowedHostsProvider.php
 src/Core/Framework/Mcp/Authentication/McpExceptionListener.php
 src/Core/Framework/Mcp/Authentication/McpAuthenticationListener.php
 src/Core/Framework/Mcp/McpException.php
@@ -19173,7 +19179,7 @@ src/Core/Framework/Resources/views/snippets/symbol/dash.html.twig
 src/Core/Framework/Resources/views/snippets/symbol/comma.html.twig
 src/Core/Framework/Resources/views/snippets/render.html.twig
 src/Core/Framework/Resources/views/files/agentic/.well-known/ai-catalog.json.twig
-src/Core/Framework/Resources/views/files/agentic/agents.md.twig
+src/Core/Framework/Resources/views/files/agentic/AGENTS.md.twig
 src/Core/Framework/Resources/views/files/agentic/llms.txt.twig
 src/Core/Framework/Resources/demo-media/logo-version-professionalplus.svg
 src/Core/Framework/Resources/demo-media/small.mp4

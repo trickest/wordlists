@@ -1886,9 +1886,6 @@ plugins/woocommerce/client/blocks/bin/hook-docs/utilities/json2md.js
 plugins/woocommerce/client/blocks/bin/.htaccess
 plugins/woocommerce/client/blocks/bin/copy-blocks-json.sh
 plugins/woocommerce/client/blocks/bin/add-split-chunk-dependencies.js
-plugins/woocommerce/client/blocks/bin/eslint-plugin-woocommerce/package.json
-plugins/woocommerce/client/blocks/bin/eslint-plugin-woocommerce/rules/index.js
-plugins/woocommerce/client/blocks/bin/eslint-plugin-woocommerce/index.js
 plugins/woocommerce/client/blocks/bin/docker/wp-cli/Dockerfile
 plugins/woocommerce/client/blocks/bin/docker/wp-cli/entrypoint.sh
 plugins/woocommerce/client/blocks/bin/docker/wp-cli/wait-for-it.sh
@@ -4943,9 +4940,11 @@ plugins/woocommerce/changelog/update-deflag-wc-admin-onboarding
 plugins/woocommerce/changelog/fix-pay-for-order-preserve-cart
 plugins/woocommerce/changelog/update-deflag-wc-admin-analytics
 plugins/woocommerce/changelog/fix-shipping-only-order-tax
+plugins/woocommerce/changelog/remove-dead-eslint-plugin-woocommerce
 plugins/woocommerce/changelog/27118-fix-zero-rate-tax-refund
 plugins/woocommerce/changelog/dev-testops-201-analytics-data-flaky
 plugins/woocommerce/changelog/testops-179-fix-product-delete-quick-delete-flake
+plugins/woocommerce/changelog/chore-remove-unused-wp-scripts-deps
 plugins/woocommerce/changelog/add-select2-usage-metrics
 plugins/woocommerce/changelog/update-product-image-gallery-upgrade-notice-with-add-to-cart-with-options
 plugins/woocommerce/changelog/fix-29698-dashboard-outofstock-count
@@ -5044,6 +5043,8 @@ plugins/woocommerce/changelog/65875-fix-cart-link-icon-size
 plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
 plugins/woocommerce/changelog/update-settings-ui-shell-header-top-level
 plugins/woocommerce/changelog/fix-brand-thumbnails-where-selectors
+plugins/woocommerce/changelog/fix-51490-brand-shortcode-style-units
+plugins/woocommerce/changelog/fix-66718-quick-edit-expired-sale-dates
 plugins/woocommerce/changelog/fix-lodash-orderby-import-restriction
 plugins/woocommerce/changelog/update-deflag-launch-your-store
 plugins/woocommerce/changelog/fix-29753-product-gallery-fractional-transform
@@ -5056,6 +5057,7 @@ plugins/woocommerce/changelog/fix-66180-daily-cron-status-check
 plugins/woocommerce/changelog/53959-docs-core-profiler-wpcom-connection
 plugins/woocommerce/changelog/tweak-woo-home-dashboard-visual-polish
 plugins/woocommerce/changelog/66237-fix-order-download-permission-duplicates
+plugins/woocommerce/changelog/fix-make-featured-product-category-images-responsive
 plugins/woocommerce/changelog/performance-prime-caches-variations-gallery
 plugins/woocommerce/changelog/59894-fix-local-pickup-shop-manager-perms
 plugins/woocommerce/woocommerce.php
@@ -13181,6 +13183,7 @@ packages/js/create-woo-extension/variants/table-column/webpack.config.js.mustach
 packages/js/create-woo-extension/package.json
 packages/js/create-woo-extension/changelog/64838-dev-esbuild-package-builds
 packages/js/create-woo-extension/changelog/66078-update-scaffold-flat-config
+packages/js/create-woo-extension/changelog/66078-fix-scaffold-prettier-resolution
 packages/js/create-woo-extension/changelog/.gitkeep
 packages/js/create-woo-extension/README.md
 packages/js/create-woo-extension/CHANGELOG.md
@@ -13266,6 +13269,7 @@ packages/js/sanitize/jest.config.json
 packages/js/sanitize/tsconfig.json
 packages/js/sanitize/package.json
 packages/js/sanitize/changelog/64838-dev-esbuild-package-builds
+packages/js/sanitize/changelog/chore-remove-unused-wp-scripts-deps
 packages/js/sanitize/changelog/63483-add-62921-shared-monorepo-ts-config
 packages/js/sanitize/changelog/65662-dev-65627-postrelease-cleanup
 packages/js/sanitize/changelog/dev-cjs-prepack-only
@@ -13273,7 +13277,6 @@ packages/js/sanitize/changelog/dev-64837-type-check-only-on-lint
 packages/js/sanitize/changelog/.gitkeep
 packages/js/sanitize/README.md
 packages/js/sanitize/CHANGELOG.md
-packages/js/sanitize/webpack.config.js
 packages/js/sanitize/src/test/sanitize.test.ts
 packages/js/sanitize/src/test/integration.test.ts
 packages/js/sanitize/src/test/trusted-types-policy.test.ts
