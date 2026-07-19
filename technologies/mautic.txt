@@ -530,6 +530,7 @@ tsconfig.json
 .devcontainer/devcontainer.json
 .devcontainer/post-attach.sh
 package.json
+utils/phpstan/tests/Rule/NoGetModelWithStringInControllerRuleTest.php
 utils/phpstan/tests/Rule/AutowireMethodNameMustMatchClassRuleTest.php
 utils/phpstan/tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
 utils/phpstan/tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
@@ -542,9 +543,11 @@ utils/phpstan/tests/Rule/Fixture/FinalParserNamedAbstract.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireTrait.php
 utils/phpstan/tests/Rule/Fixture/NamedAutowireController.php
 utils/phpstan/tests/Rule/Fixture/SomeBundle/AjaxController.php
+utils/phpstan/tests/Rule/Fixture/GetModelByStringController.php
 utils/phpstan/tests/Rule/Fixture/OtherBundle/AjaxController.php
 utils/phpstan/tests/Rule/Fixture/PlainParser.php
 utils/phpstan/tests/Rule/Fixture/RealAbstractParser.php
+utils/phpstan/tests/Rule/Fixture/GetModelByStringService.php
 utils/phpstan/tests/Rule/Fixture/SomeAbstractClass.php
 utils/phpstan/tests/Rule/Fixture/SetterAutowireController.php
 utils/phpstan/tests/Rule/Fixture/CollidingAutowireController.php
@@ -553,6 +556,7 @@ utils/phpstan/tests/Rule/Fixture/PlainSetterController.php
 utils/phpstan/src/Rule/AbstractClassNameMustBeAbstractRule.php
 utils/phpstan/src/Rule/AutowireMethodNameMustMatchClassRule.php
 utils/phpstan/src/Rule/NoTablePrefixDefinitionInTestsRule.php
+utils/phpstan/src/Rule/NoGetModelWithStringInControllerRule.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/config/configured_rule.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/UnserializeToSerializerDecodeRectorTest.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/allowed_classes_false.php.inc
