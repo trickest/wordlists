@@ -116,6 +116,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/DistributedJobServ
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyEditorSchemaServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyValidationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Editors/UserEditorAuthorizationHelperTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Sync/BatchedDatabaseServerMessengerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HostedServices/RecurringHostedServiceBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Mapping/MappingTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Strings/MarkdownToHtmlConverterTests.cs
@@ -412,6 +413,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentVersionCleanupService
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/IdKeyMapTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/BasicAuthServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/UserGroupServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/TemporaryFileServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentPermissionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/LongRunningOperationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ElementContainerPermissionServiceTests.cs
@@ -1504,6 +1506,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCore/Scoping/EFCoreScopedF
 tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCore/Scoping/EFCoreScopeTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/HealthChecks/UntrustedDatabaseConstraintsCheckTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.Delete.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/UserServiceTests.SetAvatar.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.DeleteFromRecycleBin.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/CachedDataTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceVariantTests.cs
@@ -1640,6 +1643,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/PropertyTypeUsag
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/CacheInstructionServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MemberTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Routing/RedirectTrackerTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/DatabaseServerMessengerMainDomTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/SyncBootStateAccessorTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/LastSyncedManagerTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/PropertyEditors/BlockEditorElementVariationTestBase.cs
@@ -2066,6 +2070,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/DataType/UpdateDataTypeControllerT
 tests/Umbraco.Tests.Integration/ManagementApi/DataType/CreateDataTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/DataType/CopyDataTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserGroupPresentationFactoryTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Factories/TemporaryFileConfigurationPresentationFactoryTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserPresentationFactoryTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/ReferencedByElementRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/OriginalParentElementRecycleBinControllerTests.cs
@@ -2287,6 +2292,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/Tree/RootStylesheetTree
 tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/DeleteStylesheetControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/ByPathStylesheetControllerTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCoreSqlite/SqliteRetryingExecutionStrategyTests.cs
+tests/Umbraco.Tests.Integration/CompatibilitySuppressions.xml
 Directory.Packages.props
 build/nightly-E2E-run-tests-template.yml
 build/nightly-build-trigger.yml

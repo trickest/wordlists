@@ -49,6 +49,7 @@ bin/install-extension-npm
 bin/shopware
 bin/pre-commit
 .gitattributes
+.yamlfmt
 .devcontainer/devcontainer.json
 devenv.yaml
 compose.yaml
@@ -8773,6 +8774,7 @@ tests/unit/Core/Content/Flow/Rule/OrderTagRuleTest.php
 tests/unit/Core/Content/Flow/Rule/OrderDeliveryStatusRuleTest.php
 tests/unit/Core/Content/Flow/Events/FlowSendMailActionEventTest.php
 tests/unit/Core/Content/Flow/Events/BeforeLoadStorableFlowDataEventTest.php
+tests/unit/Core/Content/LandingPage/SalesChannel/LandingPageRouteTest.php
 tests/unit/Core/Content/Shared/MailFlow/DataProvider/ProductProviderTest.php
 tests/unit/Core/Content/Shared/MailFlow/DataProvider/AbstractProviderTestCase.php
 tests/unit/Core/Content/Shared/MailFlow/DataProvider/OrderTransactionProviderTest.php

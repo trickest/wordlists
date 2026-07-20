@@ -4438,8 +4438,10 @@ application/Espo/Core/Binding/Binding.php
 application/Espo/Core/Binding/EspoBindingLoader.php
 application/Espo/Core/Binding/BindingProcessor.php
 application/Espo/Core/Binding/BindingLoader.php
+application/Espo/Core/Binding/Attributes/Qualify.php
 application/Espo/Core/Binding/BindingContainerBuilder.php
 application/Espo/Core/Binding/Key/NamedClassKey.php
+application/Espo/Core/Binding/Key/QualifiedClassKey.php
 application/Espo/Core/Binding/Key/NamedKey.php
 application/Espo/Core/Binding/BindingContainer.php
 application/Espo/Core/Binding/Binder.php
@@ -9331,6 +9333,7 @@ tests/integration/testClasses/Binding/SomeFactory.php
 tests/integration/testClasses/Binding/SomeService.php
 tests/integration/testClasses/Binding/SomeClassRequiringValue.php
 tests/integration/testClasses/Binding/SomeImplementation.php
+tests/integration/testClasses/Binding/SomeClassRequiringServiceAlt.php
 tests/integration/testClasses/Binding/SomeInterface.php
 tests/integration/testClasses/Entities/Account.php
 tests/integration/testClasses/Job/Job.php
@@ -9538,11 +9541,13 @@ tests/unit/Espo/ORM/DefsTest.php
 tests/unit/Espo/ORM/MapperTest.php
 tests/unit/Espo/ORM/MetadataTest.php
 tests/unit/testClasses/Core/Binding/SomeClass2.php
+tests/unit/testClasses/Core/Binding/SomeClass2Alt.php
 tests/unit/testClasses/Core/Binding/SomeClass1.php
 tests/unit/testClasses/Core/Binding/SomeInterface1.php
 tests/unit/testClasses/Core/Binding/Class1.php
 tests/unit/testClasses/Core/Binding/Class0.php
 tests/unit/testClasses/Core/Binding/SomeClass0.php
+tests/unit/testClasses/Core/Binding/SomeClass1Alt.php
 tests/unit/testClasses/Core/Binding/SomeInterface2.php
 tests/unit/testClasses/Core/Select/Where/ItemConverters/TestConverter.php
 tests/unit/testClasses/Core/Record/Hooks/BeforeDeleteHook.php

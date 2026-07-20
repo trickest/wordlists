@@ -124,6 +124,7 @@ tests/Unit/LocationTest.php
 tests/Unit/CategoryTest.php
 tests/Unit/CustomFieldTest.php
 tests/Unit/DepreciationTest.php
+tests/Unit/Presenters/UploadedFilesPresenterTest.php
 tests/Unit/Presenters/LicensePresenterTest.php
 tests/Unit/Presenters/AccessoryPresenterTest.php
 tests/Unit/Presenters/ConsumablePresenterTest.php
@@ -395,6 +396,7 @@ tests/Feature/Maintenances/Ui/CompleteMaintenanceTest.php
 tests/Feature/Maintenances/Ui/MaintenanceFileTest.php
 tests/Feature/Permissions/PermissionsFormPreCheckTest.php
 tests/Feature/Security/FilenameTraversalMitigationTest.php
+tests/Feature/AssetModels/Api/AssetModelFilesPolicyBypassTest.php
 tests/Feature/AssetModels/Api/AssetModelPaginationTest.php
 tests/Feature/AssetModels/Api/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Api/AssetModelFilesTest.php
@@ -403,6 +405,7 @@ tests/Feature/AssetModels/Api/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Api/CreateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CloneAssetModelTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
+tests/Feature/AssetModels/Ui/BulkDeleteAssetModelsTest.php
 tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
@@ -433,6 +436,7 @@ tests/Feature/Locations/Api/LocationsViewTest.php
 tests/Feature/Locations/Api/UpdateLocationsTest.php
 tests/Feature/Locations/Api/LocationFileTest.php
 tests/Feature/Locations/Api/LocationsFmcsScopingTest.php
+tests/Feature/Locations/Ui/BulkDeleteLocationsTest.php
 tests/Feature/Locations/Ui/ShowLocationTest.php
 tests/Feature/Locations/Ui/DeleteLocationsTest.php
 tests/Feature/Locations/Ui/LocationParentCompanyTest.php
@@ -441,6 +445,7 @@ tests/Feature/Locations/Ui/CreateLocationsTest.php
 tests/Feature/Locations/Ui/UpdateLocationsTest.php
 tests/Feature/PredefinedKits/Api/AttachKitItemsTest.php
 tests/Feature/PredefinedKits/Api/DeletePredefinedKitsTest.php
+tests/Feature/PredefinedKits/Api/UpdateKitItemsTest.php
 tests/Feature/PredefinedKits/Ui/ShowPredefinedKitTest.php
 tests/Feature/PredefinedKits/Ui/IndexPredefinedKitsTest.php
 tests/Feature/PredefinedKits/Ui/CreatePredefinedKitTest.php
@@ -715,6 +720,7 @@ resources/views/blade/box/footer.blade.php
 resources/views/blade/page-data.blade.php
 resources/views/blade/alert.blade.php
 resources/views/blade/gallery-card.blade.php
+resources/views/blade/side-panel/removed-assets.blade.php
 resources/views/blade/full-user-name.blade.php
 resources/views/blade/redirect_submit_options.blade.php
 resources/views/blade/progressbar/index.blade.php
