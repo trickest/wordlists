@@ -3327,6 +3327,7 @@ tests/Unit/Core/Domain/CmsPageCategory/Command/AddCmsPageCategoryCommandTest.php
 tests/Unit/Core/Domain/CmsPageCategory/Command/EditCmsPageCategoryCommandTest.php
 tests/Unit/Core/Domain/Carrier/ValueObject/CarrierReferenceIdTest.php
 tests/Unit/Core/Domain/Carrier/ShippingCost/Calculator/AdditionalProductCostCalculatorTest.php
+tests/Unit/Core/Domain/Carrier/ShippingCost/Calculator/PriceCalculatorTest.php
 tests/Unit/Core/Domain/Carrier/ShippingCost/Calculator/WeightCalculatorTest.php
 tests/Unit/Core/Domain/Position/ValueObject/RowPositionTest.php
 tests/Unit/Core/Domain/SqlManagement/ValueObject/SqlRequestIdTest.php
@@ -3348,9 +3349,11 @@ tests/Unit/Core/Domain/Currency/ValueObject/CurrencyNumericIsoCodeTest.php
 tests/Unit/Core/Domain/Attachment/SearchAttachmentTest.php
 tests/Unit/Core/Domain/Language/ValueObject/IsoCodeTest.php
 tests/Unit/Core/Domain/Language/ValueObject/TagIETFTest.php
+tests/Unit/Core/Domain/ImageSettings/Command/ImageTypeCommandTest.php
 tests/Unit/Core/Domain/ImageSettings/QueryResult/EditableImageTypeTest.php
 tests/Unit/Core/Domain/ImageSettings/QueryResult/EditableImageSettingsTest.php
 tests/Unit/Core/Domain/ImageSettings/ValueObject/ImageTypeIdTest.php
+tests/Unit/Core/Domain/ImageSettings/ValueObject/ImageFitmentTest.php
 tests/Unit/Core/Domain/ImageSettings/CommandHandler/RegenerateThumbnailsHandlerTest.php
 tests/Unit/Core/Domain/Discount/ProductRuleGroupTest.php
 tests/Unit/Core/Domain/Discount/DiscountCommandTest.php
@@ -3598,6 +3601,7 @@ tests/Unit/PrestaShopBundle/Form/Admin/Type/Material/MaterialChoiceTableTypeTest
 tests/Unit/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionValidationTypeTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/ExtraPropertyDefinition/ExtraPropertyDefinitionAdvancedTypeTest.php
 tests/Unit/PrestaShopBundle/Form/Admin/Configure/AdvancedParameters/Security/FormDataProviderTest.php
+tests/Unit/PrestaShopBundle/Form/Admin/Configure/ShopParameters/TrafficSeo/Meta/MetaSettingsUrlSchemaFormDataProviderTest.php
 tests/Unit/Resources/mails/txt/account.txt
 tests/Unit/Resources/mails/templates/account.html.twig
 tests/Unit/Resources/mails/html/account.html
@@ -4594,12 +4598,13 @@ tests/UI/campaigns/functional/API/02_endpoints/discount/02_deleteDiscountsDiscou
 tests/UI/campaigns/functional/API/02_endpoints/discount/03_getDiscounts.ts
 tests/UI/campaigns/functional/API/02_endpoints/discount/01_getDiscountTypes.ts
 tests/UI/campaigns/functional/API/02_endpoints/discount/04_postDiscounts.ts
+tests/UI/campaigns/functional/API/02_endpoints/customerGroup/05_postCustomersGroup.ts
 tests/UI/campaigns/functional/API/02_endpoints/customerGroup/02_getCustomerGroupsId.ts
-tests/UI/campaigns/functional/API/02_endpoints/customerGroup/04_postCustomersGroup.ts
 tests/UI/campaigns/functional/API/02_endpoints/customerGroup/01_deleteCustomerGroupsId.ts
+tests/UI/campaigns/functional/API/02_endpoints/customerGroup/04_getCustomersGroups.ts
 tests/UI/campaigns/functional/API/02_endpoints/customerGroup/03_putCustomerGroupsId.ts
-tests/UI/campaigns/functional/API/02_endpoints/customerGroup/05_getCustomersGroups.ts
 tests/UI/campaigns/functional/API/02_endpoints/language/01_getLanguages.ts
+tests/UI/campaigns/functional/API/02_endpoints/feature/11_getFeatures.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/01_deleteProductImageId.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/12_getProducts.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/06_patchProductIdShops.ts
@@ -4612,6 +4617,7 @@ tests/UI/campaigns/functional/API/02_endpoints/product/07_deleteProductId.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/09_patchProductId.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/10_postProduct.ts
 tests/UI/campaigns/functional/API/02_endpoints/product/02_getProductImageId.ts
+tests/UI/campaigns/functional/API/02_endpoints/contact/03_getContacts.ts
 tests/UI/campaigns/functional/API/02_endpoints/attribute/12_getAttributesGroups.ts
 tests/UI/campaigns/functional/API/02_endpoints/attribute/10_postAttributesGroup.ts
 tests/UI/campaigns/functional/API/02_endpoints/attribute/11_deleteAttributesGroupsBulkDelete.ts
@@ -4633,6 +4639,7 @@ tests/UI/campaigns/functional/API/02_endpoints/module/05_putModuleTechnicalNameS
 tests/UI/campaigns/functional/API/02_endpoints/module/09_putModulesBulkUpdateStatus.ts
 tests/UI/campaigns/functional/API/02_endpoints/module/10_putModulesBulkUninstall.ts
 tests/UI/campaigns/functional/API/02_endpoints/searchAlias/01_deleteSearch.ts
+tests/UI/campaigns/functional/API/02_endpoints/searchEngine/05_getSearchEngines.ts
 tests/UI/campaigns/functional/API/02_endpoints/hook/01_putHookIdStatus.ts
 tests/UI/campaigns/functional/API/02_endpoints/hook/03_getHooks.ts
 tests/UI/campaigns/functional/API/02_endpoints/hook/02_getHookId.ts
@@ -6760,6 +6767,7 @@ src/Core/Grid/Data/Factory/EmailBodyTemplateGridDataFactory.php
 src/Core/Grid/Data/Factory/CartGridDataFactory.php
 src/Core/Grid/Data/Factory/TaxRuleGridDataFactory.php
 src/Core/Grid/Data/Factory/LanguageGridDataFactory.php
+src/Core/Grid/Data/Factory/ImageTypeGridDataFactory.php
 src/Core/Grid/Data/Factory/LogDataFactory.php
 src/Core/Grid/Data/Factory/DoctrineGridDataFactory.php
 src/Core/Grid/Data/Factory/CustomerAddressGridDataFactoryDecorator.php
@@ -7655,6 +7663,7 @@ src/Core/Domain/Carrier/CommandHandler/SetCarrierRangesHandlerInterface.php
 src/Core/Domain/Carrier/CommandHandler/EditCarrierHandlerInterface.php
 src/Core/Domain/Carrier/ShippingCost/Calculator/ShippingCostCalculator.php
 src/Core/Domain/Carrier/ShippingCost/Calculator/AdditionalProductCostCalculator.php
+src/Core/Domain/Carrier/ShippingCost/Calculator/TotalShipmentPriceCalculator.php
 src/Core/Domain/Carrier/ShippingCost/Calculator/ShippingCostCalculatorInterface.php
 src/Core/Domain/Carrier/ShippingCost/Calculator/WeightCalculator.php
 src/Core/Domain/Carrier/ShippingCost/ShippingCostPrice.php
@@ -8332,9 +8341,11 @@ src/Core/Domain/ImageSettings/Exception/BulkImageTypeException.php
 src/Core/Domain/ImageSettings/Exception/RegenerateThumbnailsWriteException.php
 src/Core/Domain/ImageSettings/Exception/RegenerateThumbnailsTimeoutException.php
 src/Core/Domain/ImageSettings/Exception/RegenerateThumbnailsException.php
+src/Core/Domain/ImageSettings/Exception/InvalidImageFitmentException.php
 src/Core/Domain/ImageSettings/Exception/ImageTypeException.php
 src/Core/Domain/ImageSettings/Exception/ImageNotDeletedException.php
 src/Core/Domain/ImageSettings/Exception/ImageTypeNotFoundException.php
+src/Core/Domain/ImageSettings/ValueObject/ImageFitment.php
 src/Core/Domain/ImageSettings/ValueObject/ImageTypeId.php
 src/Core/Domain/ImageSettings/CommandHandler/AddImageTypeHandler.php
 src/Core/Domain/ImageSettings/CommandHandler/DeleteImagesFromTypeHandlerInterface.php

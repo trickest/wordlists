@@ -4958,8 +4958,10 @@ plugins/woocommerce/changelog/fix-checkout-terms-checkbox-validation-message
 plugins/woocommerce/changelog/fix-52333-coupon-leading-zero-trim
 plugins/woocommerce/changelog/fix-44784-csv-export-unlink-warning
 plugins/woocommerce/changelog/59417-brand-thumbnails-description-css
+plugins/woocommerce/changelog/fix-66765-featured-item-ignoring-selected-image
 plugins/woocommerce/changelog/25025-payment-tokens-posts-per-page-limit
 plugins/woocommerce/changelog/65734-translators-comment-cron-interval
+plugins/woocommerce/changelog/fix-placeholder-img-src-filter
 plugins/woocommerce/changelog/30340-shipping-zone-order-warning
 plugins/woocommerce/changelog/phpunit-at-matcher-deprecation
 plugins/woocommerce/changelog/php-tests-email-fixture-stdout-leak
@@ -4969,6 +4971,7 @@ plugins/woocommerce/changelog/fix-32264-review-count-not-updating-after-moderati
 plugins/woocommerce/changelog/fix-39300-virtual-order-admin-shipping
 plugins/woocommerce/changelog/update-deflag-wc-admin-shell-features
 plugins/woocommerce/changelog/fix-65677-e2e-save-helper-races
+plugins/woocommerce/changelog/64582-robots-txt-hardcoded-wp-content
 plugins/woocommerce/changelog/update-wordpress-ui-theme-provider
 plugins/woocommerce/changelog/fix-plugin-check-env-config
 plugins/woocommerce/changelog/fix-cart-clear-filter-override
@@ -4992,6 +4995,7 @@ plugins/woocommerce/changelog/66404-fix-local-pickup-save-notice
 plugins/woocommerce/changelog/64537-fix-checkout-wc-namespace-shadowing
 plugins/woocommerce/changelog/66583-fix-csv-import-leading-empty-gallery-image
 plugins/woocommerce/changelog/38629-async-admin-notice-dismiss
+plugins/woocommerce/changelog/performance-audit-variable-product-datastore-p2
 plugins/woocommerce/changelog/65912-add-visual-attribute-default-color-terms
 plugins/woocommerce/changelog/66364-fix-command-palette-e2e-modifier-detection
 plugins/woocommerce/changelog/fix-66486-nox-test-account-skip-status-regate
@@ -5003,6 +5007,7 @@ plugins/woocommerce/changelog/perf-e2e-combined-db-restore
 plugins/woocommerce/changelog/pr-64372
 plugins/woocommerce/changelog/php-tests-unbalanced-output-buffers-risky-test
 plugins/woocommerce/changelog/fix-61598-quick-edit-stock-quantity-null
+plugins/woocommerce/changelog/perf-e2e-direct-container-db-restore
 plugins/woocommerce/changelog/59959-fix-guest-order-name-home-orders-panel
 plugins/woocommerce/changelog/fix-customer-infinite-scrolling-meta
 plugins/woocommerce/changelog/add-product-gallery-videos
@@ -5035,15 +5040,18 @@ plugins/woocommerce/changelog/fix-32001-display-name-email
 plugins/woocommerce/changelog/fix-34839-csv-import-gallery-images
 plugins/woocommerce/changelog/fix-csv-importer-image-tests
 plugins/woocommerce/changelog/66544-66537-order-details-email
+plugins/woocommerce/changelog/fix-stable-selectors-api
 plugins/woocommerce/changelog/65875-fix-cart-link-icon-size
 plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
 plugins/woocommerce/changelog/fix-brand-thumbnails-where-selectors
 plugins/woocommerce/changelog/fix-51490-brand-shortcode-style-units
 plugins/woocommerce/changelog/fix-66718-quick-edit-expired-sale-dates
+plugins/woocommerce/changelog/fix-quantity-stepper-dom-focus-order
 plugins/woocommerce/changelog/fix-email-editor-e2e-wp-7-1
 plugins/woocommerce/changelog/fix-lodash-orderby-import-restriction
 plugins/woocommerce/changelog/update-deflag-launch-your-store
 plugins/woocommerce/changelog/fix-29753-product-gallery-fractional-transform
+plugins/woocommerce/changelog/fix-core-breadcrumbs-compatibility
 plugins/woocommerce/changelog/codex-66752-restore-flexslider-bubble-phase
 plugins/woocommerce/changelog/fix-47566-ipify-ipv6-endpoint
 plugins/woocommerce/changelog/perf-skip-block-registration-non-rendering-requests
@@ -5881,6 +5889,7 @@ plugins/woocommerce/tests/php/helpers/HPOSToggleTrait.php
 plugins/woocommerce/tests/php/helpers/MetaDataAssertionTrait.php
 plugins/woocommerce/tests/php/helpers/LoggerSpyTrait.php
 plugins/woocommerce/tests/php/helpers/FakeRemoteStreamWrapper.php
+plugins/woocommerce/tests/php/src/Blocks/CoreBreadcrumbsCompatibilityTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/VariationSelectorAttribute.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductFilterAttributeTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/Cart.php
@@ -5905,6 +5914,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/RendererDi
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/HandlerRegistry.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductCollection/QueryBuilder.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/Checkout.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/FeaturedProductTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductSaleBadge.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AbstractBlockTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductImage.php
@@ -6991,6 +7001,7 @@ plugins/woocommerce/tests/e2e/utils/blocks/performance/index.ts
 plugins/woocommerce/tests/e2e/utils/blocks/performance/reports/e2e-cart-performance.json
 plugins/woocommerce/tests/e2e/utils/blocks/get-test-translation.js
 plugins/woocommerce/tests/e2e/utils/blocks/constants.ts
+plugins/woocommerce/tests/e2e/utils/blocks/wp-cli.test.mjs
 plugins/woocommerce/tests/e2e/utils/blocks/shipping/index.ts
 plugins/woocommerce/tests/e2e/utils/blocks/shipping/shipping-utils.page.ts
 plugins/woocommerce/tests/e2e/utils/blocks/editor/editor-utils.page.ts
@@ -7938,6 +7949,7 @@ plugins/woocommerce/src/Blocks/Shipping/PickupLocation.php
 plugins/woocommerce/src/Blocks/BlockTypesController.php
 plugins/woocommerce/src/Blocks/Assets/Api.php
 plugins/woocommerce/src/Blocks/Assets/AssetDataRegistry.php
+plugins/woocommerce/src/Blocks/CoreBreadcrumbsCompatibility.php
 plugins/woocommerce/src/Blocks/BlockTemplatesController.php
 plugins/woocommerce/src/Blocks/CLAUDE.md
 plugins/woocommerce/src/Blocks/AIContent/ContentProcessor.php
@@ -10820,6 +10832,7 @@ packages/php/email-editor/tasks/build-package.sh
 packages/php/email-editor/package.json
 packages/php/email-editor/email-editor.php
 packages/php/email-editor/changelog/wooprd-3572-any-user-can-read-unpublished-emails-via-post-on-the-front
+packages/php/email-editor/changelog/fix-nl-739-gallery-columns-clamp
 packages/php/email-editor/changelog/.gitkeep
 packages/php/email-editor/changelog/fix-global-email-typography-rendering
 packages/php/email-editor/changelog/wooprd-3573-email-editor-image-block-can-make-the-server-fetch-any-url

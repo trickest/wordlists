@@ -10190,6 +10190,7 @@ spec/graphql/gql/mutations/ticket/article/change_visibility_spec.rb
 spec/graphql/gql/mutations/ticket/article/email_forward_reply_spec.rb
 spec/graphql/gql/mutations/ticket/article/retry_media_download_spec.rb
 spec/graphql/gql/mutations/ticket/article/retry_security_process_spec.rb
+spec/graphql/gql/mutations/ticket/title_update_trigger_response_spec.rb
 spec/graphql/gql/mutations/ticket/create_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/zoom/delete_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/zoom/create_spec.rb
@@ -10198,6 +10199,8 @@ spec/graphql/gql/mutations/ticket/shared_draft/start/delete_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/start/create_spec.rb
 spec/graphql/gql/mutations/ticket/shared_draft/start/update_spec.rb
 spec/graphql/gql/mutations/ticket/customer_update_spec.rb
+spec/graphql/gql/mutations/ticket/create_suppress_notifications_spec.rb
+spec/graphql/gql/mutations/ticket/customer_update_trigger_response_spec.rb
 spec/graphql/gql/mutations/ticket/ai_assistance/enqueue_knowledge_base_answer_spec.rb
 spec/graphql/gql/mutations/ticket/ai_assistance/summarize_spec.rb
 spec/graphql/gql/mutations/ticket/title_update_spec.rb
@@ -10211,6 +10214,7 @@ spec/graphql/gql/mutations/ticket/external_references/idoit_object_remove_spec.r
 spec/graphql/gql/mutations/ticket/external_references/issue_tracker_item_remove_spec.rb
 spec/graphql/gql/mutations/ticket/merge_spec.rb
 spec/graphql/gql/mutations/ticket/customer_group_restriction_spec.rb
+spec/graphql/gql/mutations/ticket/update_trigger_response_spec.rb
 spec/graphql/gql/mutations/organization/note_update_spec.rb
 spec/graphql/gql/mutations/organization/update_spec.rb
 spec/graphql/gql/mutations/mention/subscribe_spec.rb

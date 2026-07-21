@@ -207,7 +207,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/Propert
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/ContentTypeMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/SqlAzureDatabaseProviderMetadataTests.cs
-tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeUnitTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoContentValueSetValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/ContentValueSetBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoFieldDefinitionCollectionTests.cs
@@ -618,6 +618,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/TopoGraphTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/StackQueueTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/OrderedHashSetTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/DeepCloneableListTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/CoreDebugSettingsConfigurationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/SecuritySettingsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/RequestHandlerSettingsValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/LoggingSettingsValidatorTests.cs
@@ -858,6 +859,8 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Settings/Stylesheet/Style
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Dictionary/Dictionary.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ContentPickerDynamicRoot.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataTypeFolder.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MemberGroupPicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/TimeOnlyPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ElementPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockListEditor/BlockListEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockListEditor/BlockListBlocks.spec.ts
@@ -871,10 +874,15 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MultiUrlPicker.s
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ListView.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Dropdown.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Textstring.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Slider.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Tiptap.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MarkdownEditor.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MultipleTextString.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/RichTextEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ImageCropper.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/EmailAddress.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Radiobox.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/CodeEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/BlockGridEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/Block/BlockGridBlockAdvanced.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/Block/BlockGridBlockSettings.spec.ts
@@ -883,10 +891,15 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MemberPicker.spe
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Numeric.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/TrueFalse.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataTypeCollectionWorkspace.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Decimal.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/UserPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ApprovedColor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ContentPicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DateTimeWithTimeZonePicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DatePicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/EyeDropper.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DateOnlyPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearchElement.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearchCrossProvider.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearch.spec.ts
@@ -934,6 +947,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BulkActionsInList
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithListViewContent.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentInfoTab.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithDropdown.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUserPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMultiNodeTreePickerDataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithImageCropper.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithContentPicker.spec.ts
@@ -955,6 +969,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUpload
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUploadAudio.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/Clipboard/ClipboardBlockGridBlocks.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/Clipboard/ClipboardBlockListBlocks.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMemberGroupPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/ContentWithBlockList.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/VariantBlockList.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/BlockListWithPropertyEditor.spec.ts
@@ -1286,6 +1301,7 @@ tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multiUrlPickerDataType
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/index.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/blockListBuilder/blockListBlockBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/blockListBuilder/index.ts
+tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/memberGroupPickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/emailAddressDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multiNodeTreePickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/tiptapDataTypeBuilder.ts
@@ -1318,6 +1334,7 @@ tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/tinyMCEBuilder/tinyMCE
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/radioboxDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/textStringDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multipleTextStringDataTypeBuilder.ts
+tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/userPickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/trueFalseDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/mediaTypes/mediaTypeAllowedMediaTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/mediaTypes/index.ts

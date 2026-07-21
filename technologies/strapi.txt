@@ -322,6 +322,9 @@ tests/api/core/content-manager/content-manager/history/history.test.api.ts
 tests/api/core/content-manager/content-manager/uid.test.api.js
 tests/api/core/content-manager/content-manager/configuration.test.api.js
 tests/api/core/content-manager/find-relations.test.api.js
+tests/api/core/content-manager/media/required-media.test.api.js
+tests/api/core/content-manager/media/required-relation.test.api.js
+tests/api/core/content-manager/media/strict-relations-publish.test.api.js
 tests/api/core/content-manager/single-type.test.api.js
 tests/api/core/content-manager/fields/time.test.api.js
 tests/api/core/content-manager/fields/boolean.test.api.js
@@ -1351,7 +1354,6 @@ packages/providers/upload-aws-s3/src/utils.ts
 packages/providers/upload-aws-s3/LICENSE
 packages/providers/email-mailgun/tsconfig.eslint.json
 packages/providers/email-mailgun/rollup.config.mjs
-packages/providers/email-mailgun/jest.config.js
 packages/providers/email-mailgun/lint-staged.config.mjs
 packages/providers/email-mailgun/tsconfig.json
 packages/providers/email-mailgun/.eslintrc.cjs
@@ -1360,7 +1362,8 @@ packages/providers/email-mailgun/.npmignore
 packages/providers/email-mailgun/tsconfig.build.json
 packages/providers/email-mailgun/README.md
 packages/providers/email-mailgun/src/index.ts
-packages/providers/email-mailgun/src/__tests__/convert-provider-options.test.ts
+packages/providers/email-mailgun/src/__tests__/convert-provider-options.vitest.test.ts
+packages/providers/email-mailgun/vitest.config.ts
 packages/providers/email-mailgun/LICENSE
 packages/providers/email-amazon-ses/tsconfig.eslint.json
 packages/providers/email-amazon-ses/rollup.config.mjs
@@ -1968,6 +1971,7 @@ packages/core/content-releases/server/tsconfig.build.json
 packages/core/content-releases/server/src/register.ts
 packages/core/content-releases/server/src/constants.ts
 packages/core/content-releases/server/src/utils/index.ts
+packages/core/content-releases/server/src/utils/__tests__/is-entry-valid.test.ts
 packages/core/content-releases/server/src/content-types/index.ts
 packages/core/content-releases/server/src/content-types/release/index.ts
 packages/core/content-releases/server/src/content-types/release/schema.ts
@@ -2566,6 +2570,7 @@ packages/core/utils/src/validators.ts
 packages/core/utils/src/errors.ts
 packages/core/utils/src/user-agent.ts
 packages/core/utils/src/install-id.ts
+packages/core/utils/src/get-preferred-pm.ts
 packages/core/utils/src/package-manager.ts
 packages/core/utils/src/set-creator-fields.ts
 packages/core/utils/src/traverse-entity.ts
@@ -2772,6 +2777,7 @@ packages/core/strapi/src/node/core/env.ts
 packages/core/strapi/src/node/core/admin-customisations.ts
 packages/core/strapi/src/node/core/__tests__/plugins.test.ts
 packages/core/strapi/src/node/core/__tests__/dependencies.test.ts
+packages/core/strapi/src/node/core/__tests__/admin-vite-aliases-tolerant.test.ts
 packages/core/strapi/src/node/core/__tests__/admin-vite-optimize-exclude.test.ts
 packages/core/strapi/src/node/core/__tests__/resolve-module.test.ts
 packages/core/strapi/src/node/core/__tests__/admin-vite-aliases.test.ts
@@ -2781,6 +2787,7 @@ packages/core/strapi/src/node/core/config.ts
 packages/core/strapi/src/node/core/managers.ts
 packages/core/strapi/src/node/core/resolve-module.ts
 packages/core/strapi/src/node/core/plugins.ts
+packages/core/strapi/src/node/core/admin-vite-singleton-modules.ts
 packages/core/strapi/src/node/webpack/build.ts
 packages/core/strapi/src/node/webpack/watch.ts
 packages/core/strapi/src/node/webpack/config.ts
@@ -3631,6 +3638,7 @@ packages/core/core/src/services/entity-validator/__tests__/relations/media-level
 packages/core/core/src/services/entity-validator/__tests__/relations/component-level.test.ts
 packages/core/core/src/services/entity-validator/__tests__/email-validators.test.ts
 packages/core/core/src/services/entity-validator/__tests__/enumeration-validators.test.ts
+packages/core/core/src/services/entity-validator/__tests__/strict-relations-validators.test.ts
 packages/core/core/src/services/entity-validator/__tests__/index.test.ts
 packages/core/core/src/services/entity-validator/__tests__/uid-validators.test.ts
 packages/core/core/src/services/mcp/tools/log.ts
@@ -4397,10 +4405,14 @@ packages/core/admin/ee/server/src/services/passport/provider-registry.ts
 packages/core/admin/ee/server/src/services/passport/sso.ts
 packages/core/admin/ee/server/src/audit-logs/content-types/audit-log.ts
 packages/core/admin/ee/server/src/audit-logs/validation/audit-logs.ts
+packages/core/admin/ee/server/src/audit-logs/validation/__tests__/audit-logs.test.ts
 packages/core/admin/ee/server/src/audit-logs/routes/audit-logs.ts
+packages/core/admin/ee/server/src/audit-logs/routes/__tests__/audit-logs.test.ts
 packages/core/admin/ee/server/src/audit-logs/controllers/audit-logs.ts
+packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts
 packages/core/admin/ee/server/src/audit-logs/services/lifecycles.ts
 packages/core/admin/ee/server/src/audit-logs/services/audit-logs.ts
+packages/core/admin/ee/server/src/audit-logs/services/__tests__/find-many-users.test.ts
 packages/core/admin/ee/server/src/audit-logs/services/__tests__/audit-logs.test.ts
 packages/core/admin/ee/admin/tsconfig.json
 packages/core/admin/ee/admin/.eslintrc.cjs
@@ -4434,6 +4446,7 @@ packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/utils/getDis
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/ListPage.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/tests/ListPage.test.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/useFormatTimeStamp.ts
+packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/tests/useAuditLogsData.test.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/useAuditLogsData.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/SingleSignOnPage.tsx
 packages/core/admin/ee/admin/src/services/ai.ts

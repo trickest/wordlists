@@ -126,6 +126,7 @@ tests/Unit/CustomFieldTest.php
 tests/Unit/DepreciationTest.php
 tests/Unit/Presenters/UploadedFilesPresenterTest.php
 tests/Unit/Presenters/LicensePresenterTest.php
+tests/Unit/Presenters/PresenterEscapingTest.php
 tests/Unit/Presenters/AccessoryPresenterTest.php
 tests/Unit/Presenters/ConsumablePresenterTest.php
 tests/Unit/Presenters/AssetPresenterTest.php
@@ -308,6 +309,7 @@ tests/Feature/Assets/Ui/AssetLabelTest.php
 tests/Feature/Assets/Ui/ShowAssetTest.php
 tests/Feature/Assets/Ui/DeleteAssetTest.php
 tests/Feature/Assets/Ui/StoreAssetsTest.php
+tests/Feature/Assets/Ui/BulkRestoreAuthorizationTest.php
 tests/Feature/Assets/Ui/AssetBySerialTest.php
 tests/Feature/Manufacturers/Api/UpdateManufacturersTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
@@ -335,6 +337,8 @@ tests/Feature/Console/FixupAssignedToAssignedTypeTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
 tests/Feature/Console/Commands/PurgeEulaPDFTest.php
 tests/Feature/Console/Commands/PurgeCompaniesTest.php
+tests/Feature/Console/Commands/CleanupOrphanActionLogsTest.php
+tests/Feature/Console/Commands/PurgeTest.php
 tests/Feature/Console/CheckinAndDeleteItemsTest.php
 tests/Feature/Console/CleanOldCheckoutRequestsTest.php
 tests/Feature/Console/ValidateAssetsTest.php
@@ -468,6 +472,7 @@ tests/Feature/Checkouts/Api/AssetCheckoutTest.php
 tests/Feature/Checkouts/Api/ComponentCheckoutTest.php
 tests/Feature/Checkouts/Api/ConsumableCheckoutTest.php
 tests/Feature/Checkouts/Api/AccessoryCheckoutTest.php
+tests/Feature/Checkouts/Api/CheckoutToSoftDeletedTargetTest.php
 tests/Feature/Checkouts/Ui/AssetCheckoutTest.php
 tests/Feature/Checkouts/Ui/LicenseCheckoutTest.php
 tests/Feature/Checkouts/Ui/ConsumableCheckoutTest.php
@@ -7660,6 +7665,7 @@ app/Console/Commands/SendUpcomingAuditReport.php
 app/Console/Commands/MigrateLicenseSeatQuantitiesInActionLogs.php
 app/Console/Commands/RemoveExplicitEols.php
 app/Console/Commands/BulkDelete.php
+app/Console/Commands/CleanupOrphanActionLogs.php
 app/Console/Commands/FixUpAssignedTypeWithoutAssignedTo.php
 app/Console/Commands/PurgeEulaPDFs.php
 app/Console/Commands/PurgeLoginAttempts.php
