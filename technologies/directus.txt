@@ -14,6 +14,8 @@ contributing.md
 .changeset/quick-melons-camp.md
 .changeset/mssql-max-length-bytes.md
 .changeset/fix-comments-path-parameter.md
+.changeset/fix-sdk-relational-filter-types.md
+.changeset/soft-lions-import.md
 .changeset/fuzzy-lions-filter.md
 .changeset/tangy-parks-doubt.md
 .changeset/fix-error-response-schema.md
@@ -23,6 +25,7 @@ contributing.md
 .changeset/proud-schools-attend.md
 .changeset/six-pears-shave.md
 .changeset/nine-shoes-prove.md
+.changeset/chatty-papers-taste.md
 .changeset/proud-otters-wait.md
 .changeset/clever-feet-ring.md
 .changeset/cool-cookies-rest.md
@@ -35,6 +38,7 @@ contributing.md
 .changeset/blue-beds-love.md
 .changeset/config.json
 .changeset/great-yaks-march.md
+.changeset/sharp-donuts-sing.md
 .prettierignore
 ai_policy.md
 Dockerfile
@@ -490,6 +494,7 @@ api/src/controllers/auth.ts
 api/src/controllers/license.ts
 api/src/controllers/comments.ts
 api/src/controllers/notifications.ts
+api/src/controllers/utils.test.ts
 api/src/controllers/utils/handle-registry-error.ts
 api/src/controllers/utils/handle-registry-error.test.ts
 api/src/controllers/flows.ts
@@ -3715,6 +3720,7 @@ packages/utils/shared/add-field-flag.test.ts
 packages/utils/shared/deep-map.ts
 packages/utils/node/path-to-relative-url.test.ts
 packages/utils/node/path-to-relative-url.ts
+packages/utils/node/tmp.test.ts
 packages/utils/node/tmp.ts
 packages/utils/node/pluralize.test.ts
 packages/utils/node/process-id.test.ts

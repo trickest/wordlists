@@ -505,6 +505,7 @@ db/migrate/20220513083500_mark_settings_as_translatable.rb
 db/migrate/20180220171219_check_for_object_attributes.rb
 db/migrate/20230207152500_ticket_article_note_hint.rb
 db/migrate/20221213145618_issue4411_setting_saml_custom_uid_attribute.rb
+db/migrate/20260713103659_create_audit_logs.rb
 db/migrate/20190806000001_setting_postmaster_send_reject_email.rb
 db/migrate/20240207144547_update_user_attributes.rb
 db/migrate/20220119102815_issue3924_confirmation_dialog.rb
@@ -630,6 +631,7 @@ config/routes/google.rb
 config/routes/message.rb
 config/routes/channel_microsoft_graph.rb
 config/routes/template.rb
+config/routes/audit_log.rb
 config/routes/sla.rb
 config/routes/ai_analytics.rb
 config/routes/chat.rb
@@ -2244,6 +2246,7 @@ app/policies/controllers/cti_controller_policy.rb
 app/policies/controllers/channels_telegram_controller_policy.rb
 app/policies/controllers/selectors_controller_policy.rb
 app/policies/controllers/time_accounting/types_controller_policy.rb
+app/policies/controllers/audit_logs_controller_policy.rb
 app/policies/controllers/user_access_token_controller_policy.rb
 app/policies/controllers/online_notifications_controller_policy.rb
 app/policies/controllers/channels_facebook_controller_policy.rb
@@ -3094,8 +3097,10 @@ app/models/sla/assets.rb
 app/models/webhook.rb
 app/models/group.rb
 app/models/checklist_template/triggers_subscriptions.rb
+app/models/checklist_template/has_audit_logs.rb
 app/models/checklist_template/item.rb
 app/models/checklist_template/assets.rb
+app/models/setting/has_audit_logs.rb
 app/models/setting/validation/ai_provider_config.rb
 app/models/setting/validation/saml/required_attributes.rb
 app/models/setting/validation/saml/tls.rb
@@ -3109,6 +3114,7 @@ app/models/setting/validation/sso_trusted_ips.rb
 app/models/setting/transformation/base.rb
 app/models/setting/transformation/sanitize_html.rb
 app/models/setting/validator.rb
+app/models/role/has_audit_logs.rb
 app/models/role/assets.rb
 app/models/activity_stream.rb
 app/models/authorization/provider/google_oauth2.rb
@@ -3285,6 +3291,7 @@ app/models/public_link/triggers_subscriptions.rb
 app/models/object_lookup.rb
 app/models/avatar.rb
 app/models/template.rb
+app/models/audit_log.rb
 app/models/sla.rb
 app/models/store/object.rb
 app/models/store/provider/db.rb
@@ -3382,10 +3389,12 @@ app/models/user/search_index.rb
 app/models/user/updates_ticket_organization.rb
 app/models/user/performs_geo_lookup.rb
 app/models/user/triggers_subscriptions.rb
+app/models/user/has_audit_logs.rb
 app/models/user/permissions.rb
 app/models/user/search.rb
 app/models/user/touches_organization.rb
 app/models/user/two_factor_preference/triggers_subscriptions.rb
+app/models/user/two_factor_preference/has_audit_logs.rb
 app/models/user/avatar.rb
 app/models/user/two_factor_preference.rb
 app/models/user/overview_sorting.rb
@@ -3467,12 +3476,15 @@ app/models/user_device/triggers_subscriptions.rb
 app/models/user_device/notification_presenter.rb
 app/models/translation/synchronizes_from_po.rb
 app/models/token.rb
+app/models/audit_log/logs_association_updates.rb
+app/models/audit_log/logs_role_assignments.rb
 app/models/session/sets_persistent_flag.rb
 app/models/signature.rb
 app/models/job.rb
 app/models/concerns/has_optional_groups.rb
 app/models/concerns/has_history.rb
 app/models/concerns/has_agent_allowed_params.rb
+app/models/concerns/has_audit_logs.rb
 app/models/concerns/can_seed.rb
 app/models/concerns/can_lookup_search_index_attributes_with_attachments.rb
 app/models/concerns/can_be_published.rb
@@ -3536,7 +3548,9 @@ app/models/link.rb
 app/models/avatar/triggers_subscriptions.rb
 app/models/knowledge_base/locale.rb
 app/models/knowledge_base/category/translation.rb
+app/models/knowledge_base/has_audit_logs.rb
 app/models/knowledge_base/has_unique_title.rb
+app/models/knowledge_base/locale/has_audit_logs.rb
 app/models/knowledge_base/menu_item.rb
 app/models/knowledge_base/category.rb
 app/models/knowledge_base/translation.rb
@@ -3843,6 +3857,7 @@ app/controllers/long_polling_controller.rb
 app/controllers/selectors_controller.rb
 app/controllers/mentions_controller.rb
 app/controllers/online_notifications_controller.rb
+app/controllers/audit_logs_controller.rb
 app/controllers/ai_agents_controller.rb
 app/services/service/execute_locked_block.rb
 app/services/service/check_feature_enabled.rb
@@ -7717,6 +7732,7 @@ app/assets/javascripts/app/views/generic/autocompletion.jst.eco
 app/assets/javascripts/app/views/generic/time_range.jst.eco
 app/assets/javascripts/app/views/generic/user_permission_group.jst.eco
 app/assets/javascripts/app/views/generic/application_selector_row.jst.eco
+app/assets/javascripts/app/views/generic/audit_log_diff.jst.eco
 app/assets/javascripts/app/views/generic/richtext.jst.eco
 app/assets/javascripts/app/views/generic/text_tools_modal.jst.eco
 app/assets/javascripts/app/views/generic/object_attribute_options_context.jst.eco
@@ -8066,6 +8082,7 @@ app/assets/javascripts/app/models/knowledge_base_locale.coffee
 app/assets/javascripts/app/models/online_notification_standalone.coffee
 app/assets/javascripts/app/models/knowledge_base_answer_translation.coffee
 app/assets/javascripts/app/models/ticket_article_type.coffee
+app/assets/javascripts/app/models/audit_log.coffee
 app/assets/javascripts/app/models/_application_model.coffee
 app/assets/javascripts/app/models/ai_agent.coffee
 app/assets/javascripts/app/models/checklist_template.coffee
@@ -8211,6 +8228,7 @@ app/assets/javascripts/app/controllers/organization_profile/organization.coffee
 app/assets/javascripts/app/controllers/organization_profile/organization_avatar.coffee
 app/assets/javascripts/app/controllers/organization_profile/member.coffee
 app/assets/javascripts/app/controllers/organization_profile/object.coffee
+app/assets/javascripts/app/controllers/audit_log.coffee
 app/assets/javascripts/app/controllers/checklist_template.coffee
 app/assets/javascripts/app/controllers/tag.coffee
 app/assets/javascripts/app/controllers/job.coffee
@@ -8391,6 +8409,7 @@ app/assets/javascripts/app/controllers/_ui_element/textarea.coffee
 app/assets/javascripts/app/controllers/_ui_element/notification_matrix.coffee
 app/assets/javascripts/app/controllers/_ui_element/switch.coffee
 app/assets/javascripts/app/controllers/_ui_element/select.coffee
+app/assets/javascripts/app/controllers/_ui_element/audit_log_diff.coffee
 app/assets/javascripts/app/controllers/_ui_element/richtext_search.coffee
 app/assets/javascripts/app/controllers/_ui_element/_application_selector_expert.coffee
 app/assets/javascripts/app/controllers/_ui_element/column_select.coffee
@@ -8878,6 +8897,7 @@ script/vite-server.rb
 script/background-worker.rb
 script/build/sync_repo.sh
 script/build/test_slice_tests.sh
+script/build/remove_superseded_system_gems.rb
 script/build/deploy_archives.sh
 script/build/cleanup.sh
 script/bootstrap.sh
@@ -9327,6 +9347,7 @@ lib/core_ext/mail/encodings/7bit.rb
 lib/core_ext/rack/session/abstract/id.rb
 lib/core_ext/active_record/store/indifferent_coder.rb
 lib/core_ext/active_record/calculations/pluck_as_hash.rb
+lib/core_ext/active_record/migration/suspends_audit_log.rb
 lib/core_ext/active_record/connection_adapters/postgresql/schema_statements.rb
 lib/core_ext/string.rb
 lib/core_ext/kernel.rb
@@ -10363,6 +10384,7 @@ spec/factories/trigger.rb
 spec/factories/object_lookup.rb
 spec/factories/avatar.rb
 spec/factories/template.rb
+spec/factories/audit_log.rb
 spec/factories/sla.rb
 spec/factories/active_record/session_store/session.rb
 spec/factories/chat.rb
@@ -10956,6 +10978,7 @@ spec/requests/knowledge_base_public/answers_spec.rb
 spec/requests/knowledge_base_public/feed_spec.rb
 spec/requests/knowledge_base_public/custom_path_spec.rb
 spec/requests/system_report_spec.rb
+spec/requests/audit_log_spec.rb
 spec/requests/attachments_controller_spec.rb
 spec/requests/organization_spec.rb
 spec/requests/settings/ticket_agent_default_notifications_controller_spec.rb
@@ -11504,6 +11527,7 @@ spec/views/eco_spec.rb
 spec/models/checklist/item/triggers_subscriptions_spec.rb
 spec/models/checklist/item_spec.rb
 spec/models/sla/has_escalation_calculation_impact_examples.rb
+spec/models/checklist_template/has_audit_logs_examples.rb
 spec/models/setting/validation/saml/security_spec.rb
 spec/models/setting/validation/saml/required_attributes_spec.rb
 spec/models/setting/validation/saml/tls_spec.rb
@@ -11527,11 +11551,13 @@ spec/models/webhook/pre_defined/slack_spec.rb
 spec/models/application_model_examples.rb
 spec/models/contexts/factory_context.rb
 spec/models/user_group_spec.rb
+spec/models/audit_log_spec.rb
 spec/models/postmaster_filter_spec.rb
 spec/models/chat/agent_spec.rb
 spec/models/chat/session_spec.rb
 spec/models/organization_spec.rb
 spec/models/overview_spec.rb
+spec/models/ldap_source_spec.rb
 spec/models/form_updater/graphql/serializer_spec.rb
 spec/models/form_updater/updater_spec.rb
 spec/models/form_updater/concerns/applies_split_ticket_article_examples.rb
@@ -11746,6 +11772,7 @@ spec/models/concerns/touches_perform_references_examples.rb
 spec/models/concerns/has_image_sanitized_note_examples.rb
 spec/models/concerns/can_csv_import_examples.rb
 spec/models/concerns/can_lookup_search_index_attributes_with_attachments_examples.rb
+spec/models/concerns/has_audit_logs_examples.rb
 spec/models/concerns/can_perform_changes_examples.rb
 spec/models/concerns/checks_kb_client_notification_examples.rb
 spec/models/concerns/has_roles_examples.rb
@@ -11809,6 +11836,7 @@ spec/models/tag/writes_to_ticket_history_examples.rb
 spec/models/tag/item_spec.rb
 spec/models/online_notification_standalone_spec.rb
 spec/models/ticket_spec.rb
+spec/models/package/migration_spec.rb
 spec/models/http_log_spec.rb
 spec/models/permission_spec.rb
 spec/models/text_module_spec.rb
@@ -12666,6 +12694,7 @@ public/assets/tests/qunit/ticket_macro.js
 public/assets/tests/qunit/form_ticket_duplicate_detection.js
 public/assets/tests/qunit/pretty_date.js
 public/assets/tests/qunit/form_object_selector.js
+public/assets/tests/qunit/form_audit_log_diff.js
 public/assets/tests/qunit/session.js
 public/assets/tests/qunit/model_binding.js
 public/assets/tests/qunit/form_core_workflow.js

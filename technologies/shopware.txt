@@ -7719,6 +7719,7 @@ tests/unit/Storefront/System/SalesChannel/SalesChannelAnalyticsLoaderTest.php
 tests/unit/Storefront/Checkout/Shipping/BlockedShippingMethodSwitcherTest.php
 tests/unit/Storefront/Checkout/Cart/SalesChannel/StorefrontCartFacadeTest.php
 tests/unit/Storefront/Checkout/Payment/BlockedPaymentMethodSwitcherTest.php
+tests/unit/Storefront/Checkout/Customer/CustomerGroupSubscriberTest.php
 tests/unit/Storefront/Mcp/McpStorefrontServiceConfigTest.php
 tests/unit/Storefront/Mcp/Tool/ThemeConfigToolTest.php
 tests/unit/Storefront/Page/GuestWishlistPageletTest.php
@@ -8916,6 +8917,7 @@ tests/unit/Core/Content/Seo/SeoUrlRoute/LandingPageStoreApiUrlRouteTest.php
 tests/unit/Core/Content/Seo/SeoUrlRoute/SeoUrlRouteConfigTest.php
 tests/unit/Core/Content/Seo/SeoUrl/SalesChannel/SalesChannelSeoUrlDefinitionTest.php
 tests/unit/Core/Content/Seo/Exception/SeoUrlRouteConfigExceptionTest.php
+tests/unit/Core/Content/Seo/HreflangLoaderTest.php
 tests/unit/Core/Content/Seo/SeoUrlTwigFactoryTest.php
 tests/unit/Core/Content/Seo/ResolvedSeoUrlTest.php
 tests/unit/Core/Content/Seo/SeoUrlPersisterTest.php
@@ -10189,6 +10191,7 @@ tests/unit/Core/Framework/Notification/NotificationServiceTest.php
 tests/unit/Core/Framework/ShopwareHttpExceptionTest.php
 tests/unit/Core/Framework/Demodata/Command/DemodataCommandTest.php
 tests/unit/Core/Framework/Demodata/Generator/ProductGeneratorTest.php
+tests/unit/Core/Framework/Demodata/Generator/NewsletterRecipientGeneratorTest.php
 tests/unit/Core/Framework/Demodata/Faker/CommerceTest.php
 tests/unit/Core/Framework/Demodata/DemodataServiceTest.php
 tests/unit/Core/Framework/Demodata/Event/DemodataRequestCreatedEventTest.php
@@ -10670,6 +10673,7 @@ tests/migration/Core/V6_8/Migration1773829004RegisterProductStreamIndexerTest.ph
 tests/migration/Core/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfileTest.php
 tests/migration/Core/V6_8/Migration1743256470RemoveElasticsearchAppConfigFlagTest.php
 tests/migration/Core/V6_8/Migration1779977359RemoveMailTemplateTypeTemplateDataColumnTest.php
+tests/migration/Core/V6_8/Migration1784628114ProductRestockTimeMinValueTest.php
 tests/migration/Core/V6_8/Migration1763125903RemoveOrderLineItemStatesColumnTest.php
 tests/migration/Core/V6_8/Migration1769676545RemoveOrderAddressVatIdColumnTest.php
 tests/migration/Core/V6_8/Migration1743256470RemoveDebitPaymentTest.php
@@ -10970,6 +10974,7 @@ tests/devops/Core/DevOps/Docs/Command/Script/ScriptReferenceGeneratorTest.php
 tests/devops/Core/DevOps/Docs/Command/App/DocsAppEventCommandTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/NoDropStatementInUpdateRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/AddColumnRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/BCChangeAttributeUsageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CodeCoverageIgnoreEvaluationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/TestRuleHelperTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/DataProviderRowArityRuleTest.php
@@ -10977,6 +10982,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoAssertsOnObjectsRul
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoDependsWithDataProviderRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoExpectExceptionMessageRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoBCPlanningDeprecationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/PublicServiceDecoratorRule/NonPublicDecorator.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/PublicServiceDecoratorRule/NonExistDecorator.php
@@ -10989,6 +10995,8 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule/skipped-implementation-used.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule/not-in-class.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule/abstract-used.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoBCPlanningDeprecationRule/BCPlanningDeprecations.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/BCChangeAttributeUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610754FooBar.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610756Bar.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610755Foo.php
@@ -13548,6 +13556,7 @@ src/Core/Migration/V6_8/Migration1743256470RemoveElasticsearchAppConfigFlag.php
 src/Core/Migration/V6_8/Migration1777952601BackfillPrimaryOrderTransaction.php
 src/Core/Migration/V6_8/Migration1773829004RegisterProductStreamIndexer.php
 src/Core/Migration/V6_8/Migration1763125903RemoveOrderLineItemStatesColumn.php
+src/Core/Migration/V6_8/Migration1784628114ProductRestockTimeMinValue.php
 src/Core/Migration/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfile.php
 src/Core/Migration/V6_8/Migration1743256470RemoveDebitPayment.php
 src/Core/Migration/V6_8/Migration1769676545RemoveOrderAddressVatIdColumn.php
@@ -14085,7 +14094,10 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/CodeCoverageIgnore/LogicDetector.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/McpToolResponseRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFileExistsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoConstraintViolationGetMessageRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/NoBCPlanningDeprecationRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/BCChangeAttributeUsageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/DeprecatedMethodsThrowDeprecationRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/BCChangeMarkers.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUpdatesInExecuteQueryRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/RuleAreasFlagNotAllowedRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/InTestClassTrait.php
@@ -14186,6 +14198,7 @@ src/Core/Test/AppSystemTestBehaviour.php
 src/Core/Test/TestBuilderTrait.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticEntityWriterGateway.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticEntityRepository.php
+src/Core/Test/Stub/DataAbstractionLayer/StaticEntityWriter.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticSalesChannelRepository.php
 src/Core/Test/Stub/DataAbstractionLayer/StaticDefinitionInstanceRegistry.php
 src/Core/Test/Stub/DataAbstractionLayer/EmptyEntityExistence.php
@@ -18338,16 +18351,16 @@ src/Core/Framework/RateLimiter/Exception/RateLimitExceededException.php
 src/Core/Framework/RateLimiter/RateLimiterException.php
 src/Core/Framework/RateLimiter/RateLimiter.php
 src/Core/Framework/DependencyInjection/data-abstraction-layer.php
+src/Core/Framework/DependencyInjection/api.php
 src/Core/Framework/DependencyInjection/app_test.php
 src/Core/Framework/DependencyInjection/telemetry.xml
-src/Core/Framework/DependencyInjection/acl.xml
 src/Core/Framework/DependencyInjection/FrameworkExtension.php
 src/Core/Framework/DependencyInjection/mcp.php
+src/Core/Framework/DependencyInjection/acl.php
 src/Core/Framework/DependencyInjection/services_test.xml
-src/Core/Framework/DependencyInjection/validation.xml
 src/Core/Framework/DependencyInjection/increment.xml
-src/Core/Framework/DependencyInjection/sso.xml
-src/Core/Framework/DependencyInjection/api.xml
+src/Core/Framework/DependencyInjection/validation.php
+src/Core/Framework/DependencyInjection/sso.php
 src/Core/Framework/DependencyInjection/scheduled-task.xml
 src/Core/Framework/DependencyInjection/CompilerPass/RedisPrefixCompilerPass.php
 src/Core/Framework/DependencyInjection/CompilerPass/CompilerPassConfigTrait.php
@@ -18399,9 +18412,9 @@ src/Core/Framework/DependencyInjection/plugin.php
 src/Core/Framework/DependencyInjection/services.xml
 src/Core/Framework/DependencyInjection/notification.xml
 src/Core/Framework/DependencyInjection/cache.xml
-src/Core/Framework/DependencyInjection/rate-limiter.xml
 src/Core/Framework/DependencyInjection/filesystem.xml
 src/Core/Framework/DependencyInjection/hydrator.php
+src/Core/Framework/DependencyInjection/rate-limiter.php
 src/Core/Framework/DependencyInjection/rule.xml
 src/Core/Framework/DependencyInjection/demodata.xml
 src/Core/Framework/DependencyInjection/seo_test.xml
@@ -19321,6 +19334,7 @@ src/Core/Framework/Demodata/Generator/MailTemplateGenerator.php
 src/Core/Framework/Demodata/Generator/SalesChannelDomainGenerator.php
 src/Core/Framework/Demodata/Generator/ProductGenerator.php
 src/Core/Framework/Demodata/Generator/CategoryGenerator.php
+src/Core/Framework/Demodata/Generator/NewsletterRecipientGenerator.php
 src/Core/Framework/Demodata/Faker/Commerce.php
 src/Core/Framework/Demodata/Event/DemodataRequestCreatedEvent.php
 src/Core/Framework/Demodata/DemodataContext.php
@@ -23259,6 +23273,7 @@ src/Administration/Resources/app/administration/src/module/sw-settings-usage-dat
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/component/sw-settings-usage-data-consent-modal/subcomponents/sw-settings-usage-data-consent-check-list/sw-settings-usage-data-consent-check-list.html.twig
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/component/sw-settings-usage-data-consent-modal/subcomponents/sw-settings-usage-data-consent-check-list/sw-settings-usage-data-consent-check-list.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/component/sw-settings-usage-data-consent-modal/sw-settings-usage-data-consent-modal.spec.js
+src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/component/sw-settings-usage-data-consent-modal/sw-settings-usage-data-consent-modal.spec/opt-out-info.spec.js
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/component/sw-settings-usage-data-consent-modal/sw-settings-usage-data-consent-modal.scss
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/index.ts
 src/Administration/Resources/app/administration/src/module/sw-settings-usage-data/view/sw-settings-usage-data-general/index.ts

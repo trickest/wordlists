@@ -533,14 +533,19 @@ package.json
 utils/phpstan/tests/Rule/NoObjectPropertyAssignToVariableInTestsRuleTest.php
 utils/phpstan/tests/Rule/NoRequiredMethodWithConstructorInControllerRuleTest.php
 utils/phpstan/tests/Rule/NoGetModelWithStringInControllerRuleTest.php
+utils/phpstan/tests/Rule/CommandMustHaveAsCommandAttributeRuleTest.php
 utils/phpstan/tests/Rule/AutowireMethodNameMustMatchClassRuleTest.php
 utils/phpstan/tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
 utils/phpstan/tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
 utils/phpstan/tests/Rule/Fixture/TraitUsingController.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireService.php
+utils/phpstan/tests/Rule/Fixture/AbstractBaseCommand.php
 utils/phpstan/tests/Rule/Fixture/AssignObjectPropertyService.php
+utils/phpstan/tests/Rule/Fixture/CommandMissingAttribute.php
+utils/phpstan/tests/Rule/Fixture/CommandWithAttribute.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringTraitUsingController.php
 utils/phpstan/tests/Rule/Fixture/SomeModel.php
+utils/phpstan/tests/Rule/Fixture/PlainNonCommand.php
 utils/phpstan/tests/Rule/Fixture/DefineOtherConstantTest.php
 utils/phpstan/tests/Rule/Fixture/DefineTablePrefixTest.php
 utils/phpstan/tests/Rule/Fixture/ConstructorAndAutowireController.php
@@ -554,6 +559,7 @@ utils/phpstan/tests/Rule/Fixture/OtherBundle/AjaxController.php
 utils/phpstan/tests/Rule/Fixture/PlainParser.php
 utils/phpstan/tests/Rule/Fixture/RealAbstractParser.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringTrait.php
+utils/phpstan/tests/Rule/Fixture/AnonymousCommand.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringService.php
 utils/phpstan/tests/Rule/Fixture/AbstractConstructorAndAutowireController.php
 utils/phpstan/tests/Rule/Fixture/SomeAbstractClass.php
@@ -562,6 +568,7 @@ utils/phpstan/tests/Rule/Fixture/SetterAutowireController.php
 utils/phpstan/tests/Rule/Fixture/CollidingAutowireController.php
 utils/phpstan/tests/Rule/Fixture/TablePrefixDefiner.php
 utils/phpstan/tests/Rule/Fixture/PlainSetterController.php
+utils/phpstan/src/Rule/CommandMustHaveAsCommandAttributeRule.php
 utils/phpstan/src/Rule/NoObjectPropertyAssignToVariableInTestsRule.php
 utils/phpstan/src/Rule/AbstractClassNameMustBeAbstractRule.php
 utils/phpstan/src/Rule/AutowireMethodNameMustMatchClassRule.php
