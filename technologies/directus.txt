@@ -13,6 +13,7 @@ contributing.md
 .changeset/afraid-buckets-hope.md
 .changeset/quick-melons-camp.md
 .changeset/mssql-max-length-bytes.md
+.changeset/fix-deployment-webhook-project-scope.md
 .changeset/fix-comments-path-parameter.md
 .changeset/fix-sdk-relational-filter-types.md
 .changeset/soft-lions-import.md
@@ -28,7 +29,9 @@ contributing.md
 .changeset/chatty-papers-taste.md
 .changeset/proud-otters-wait.md
 .changeset/clever-feet-ring.md
+.changeset/wild-pillows-cheer.md
 .changeset/cool-cookies-rest.md
+.changeset/little-ears-share.md
 .changeset/wide-mugs-wave.md
 .changeset/onboarding-dpa-replace-privacy.md
 .changeset/collect-boread-bobsled.md
@@ -39,6 +42,7 @@ contributing.md
 .changeset/config.json
 .changeset/great-yaks-march.md
 .changeset/sharp-donuts-sing.md
+.changeset/fix-vmenu-top-overflow.md
 .prettierignore
 ai_policy.md
 Dockerfile
@@ -447,6 +451,7 @@ api/src/storage/register-drivers.ts
 api/src/storage/get-storage-driver.ts
 api/src/storage/index.test.ts
 api/src/deployment.ts
+api/src/cache.test.ts
 api/src/types/auth.ts
 api/src/types/express.d.ts
 api/src/types/migration.ts
@@ -1068,6 +1073,7 @@ api/src/services/operations.ts
 api/src/services/presets.ts
 api/src/services/fields.ts
 api/src/services/relations.ts
+api/src/services/permissions.test.ts
 api/src/services/assets.ts
 api/src/services/mcp-oauth/utils/registration-debug.ts
 api/src/services/mcp-oauth/utils/cimd-egress.test.ts
@@ -1347,6 +1353,7 @@ tests/e2e/tests/license/entitlements-gate-seats.sb.test.ts
 tests/e2e/tests/license/entitlements-limits.sb.test.ts
 tests/e2e/tests/collections/collections.test.ts
 tests/e2e/tests/collections/singleton.test.ts
+tests/e2e/tests/deployments/webhook-project-scope.sb.test.ts
 tests/e2e/tests/fields/relational/snapshot.json
 tests/e2e/tests/fields/relational/relational.test.ts
 tests/e2e/tests/fields/relational/schema.d.ts

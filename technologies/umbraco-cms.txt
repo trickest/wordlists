@@ -148,6 +148,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/BackOfficeUserRead
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberUserStoreTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberIdentityUserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberManagerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Events/RelateOnTrashNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/MigrationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/MigrationPlanTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/AlterMigrationTests.cs
@@ -1566,6 +1567,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/Import
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/ImportResources.Designer.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/MediaTypesAndMedia-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/CheckboxList-Content-Package.xml
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Create.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/DataTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Delete.cs
@@ -1583,6 +1585,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprint
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentTypeServiceVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Get.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.MoveToRecycleBin.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaEditingServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ExternalLoginServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentListViewServiceTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaTypeServiceTests.cs
@@ -1844,6 +1847,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/PropertyCache
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheTemplateTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheAncestryVariantTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheBoundedTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheVarianceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaPropertyCacheLevelTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheInconsistentStateTests.cs
@@ -15335,6 +15339,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/router/contexts/route-path-addendum.
 src/Umbraco.Web.UI.Client/src/packages/core/router/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/not-found/route-not-found.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/router-slot-init.event.ts
+src/Umbraco.Web.UI.Client/src/packages/core/router/route/forbidden/route-forbidden.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/forbidden/route-forbidden.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/route.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/index.ts
@@ -16809,6 +16814,7 @@ src/Umbraco.Web.UI.Client/src/packages/preview/context/preview.context.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/context/preview.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/repository/index.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/repository/preview.repository.ts
+src/Umbraco.Web.UI.Client/src/packages/preview/controllers/preview.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/controllers/preview.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/performance-profiling/package.json

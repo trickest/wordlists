@@ -255,6 +255,9 @@ tests/Feature/Groups/Ui/UpdateGroupTest.php
 tests/Feature/Groups/Ui/IndexGroupTest.php
 tests/Feature/LicenseSeats/Api/LicenseSeatUpdateTest.php
 tests/Feature/Scim/CreateGroupWithMembersTest.php
+tests/Feature/Scim/UserEmailsShapeTest.php
+tests/Feature/Scim/UserFilterSchemaUrnTest.php
+tests/Feature/Scim/ReplaceUserWithMalformedKeyTest.php
 tests/Feature/Scim/ReplaceUserWithFilterKeyTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Authentication/LoginTest.php
@@ -324,6 +327,7 @@ tests/Feature/Manufacturers/Ui/ShowManufacturerTest.php
 tests/Feature/Manufacturers/Ui/IndexManufacturersTest.php
 tests/Feature/Manufacturers/Ui/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/Ui/UpdateManufacturerTest.php
+tests/Feature/Companies/CompanyNameUniquenessTest.php
 tests/Feature/Companies/Api/CreateCompaniesTest.php
 tests/Feature/Companies/Api/UpdateCompaniesTest.php
 tests/Feature/Companies/Api/DeleteCompaniesTest.php
@@ -422,6 +426,10 @@ tests/Feature/Requests/Ui/AccessoryRequestTest.php
 tests/Feature/Requests/Ui/AssetRequestIndexTest.php
 tests/Feature/Requests/Ui/CancelRequestTest.php
 tests/Feature/Fmcs/HttpCrossCompanyLeakTest.php
+tests/Feature/Fmcs/FmcsCompanyRuleWiringTest.php
+tests/Feature/Fmcs/FmcsStrictUsersHttpTest.php
+tests/Feature/Fmcs/FmcsCompanyValidatorTest.php
+tests/Feature/Fmcs/FmcsStrictBulkAssetEditTest.php
 tests/Feature/Categories/Api/UpdateCategoriesTest.php
 tests/Feature/Categories/Api/IndexCategoriesTest.php
 tests/Feature/Categories/Api/CreateCategoriesTest.php
@@ -446,6 +454,7 @@ tests/Feature/Locations/Api/UpdateLocationsTest.php
 tests/Feature/Locations/Api/LocationFileTest.php
 tests/Feature/Locations/Api/LocationsFmcsScopingTest.php
 tests/Feature/Locations/Ui/BulkDeleteLocationsTest.php
+tests/Feature/Locations/Ui/LocationNameUniquenessTest.php
 tests/Feature/Locations/Ui/ShowLocationTest.php
 tests/Feature/Locations/Ui/DeleteLocationsTest.php
 tests/Feature/Locations/Ui/LocationParentCompanyTest.php
@@ -472,6 +481,7 @@ tests/Feature/Consumables/Ui/StoreConsumableWithFullMultipleCompanySupportTest.p
 tests/Feature/Consumables/Ui/ConsumableIndexTest.php
 tests/Feature/Consumables/Ui/CreateConsumableTest.php
 tests/Feature/Consumables/Ui/ConsumableViewTest.php
+tests/Feature/Account/GetStoredEulaTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
 tests/Feature/Checkouts/Api/AssetCheckoutTest.php
 tests/Feature/Checkouts/Api/ComponentCheckoutTest.php

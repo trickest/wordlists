@@ -26,6 +26,8 @@ afraid-buckets-hope.md
 quick-melons-camp.md
 .changeset/mssql-max-length-bytes.md
 mssql-max-length-bytes.md
+.changeset/fix-deployment-webhook-project-scope.md
+fix-deployment-webhook-project-scope.md
 .changeset/fix-comments-path-parameter.md
 fix-comments-path-parameter.md
 .changeset/fix-sdk-relational-filter-types.md
@@ -56,8 +58,12 @@ chatty-papers-taste.md
 proud-otters-wait.md
 .changeset/clever-feet-ring.md
 clever-feet-ring.md
+.changeset/wild-pillows-cheer.md
+wild-pillows-cheer.md
 .changeset/cool-cookies-rest.md
 cool-cookies-rest.md
+.changeset/little-ears-share.md
+little-ears-share.md
 .changeset/wide-mugs-wave.md
 wide-mugs-wave.md
 .changeset/onboarding-dpa-replace-privacy.md
@@ -78,6 +84,8 @@ config.json
 great-yaks-march.md
 .changeset/sharp-donuts-sing.md
 sharp-donuts-sing.md
+.changeset/fix-vmenu-top-overflow.md
+fix-vmenu-top-overflow.md
 .prettierignore
 ai_policy.md
 Dockerfile
@@ -1909,6 +1917,9 @@ index.test.ts
 api/src/deployment.ts
 src/deployment.ts
 deployment.ts
+api/src/cache.test.ts
+src/cache.test.ts
+cache.test.ts
 api/src/types/auth.ts
 src/types/auth.ts
 types/auth.ts
@@ -5278,6 +5289,10 @@ api/src/services/relations.ts
 src/services/relations.ts
 services/relations.ts
 relations.ts
+api/src/services/permissions.test.ts
+src/services/permissions.test.ts
+services/permissions.test.ts
+permissions.test.ts
 api/src/services/assets.ts
 src/services/assets.ts
 services/assets.ts
@@ -6772,6 +6787,11 @@ e2e/tests/collections/singleton.test.ts
 tests/collections/singleton.test.ts
 collections/singleton.test.ts
 singleton.test.ts
+tests/e2e/tests/deployments/webhook-project-scope.sb.test.ts
+e2e/tests/deployments/webhook-project-scope.sb.test.ts
+tests/deployments/webhook-project-scope.sb.test.ts
+deployments/webhook-project-scope.sb.test.ts
+webhook-project-scope.sb.test.ts
 tests/e2e/tests/fields/relational/snapshot.json
 e2e/tests/fields/relational/snapshot.json
 tests/fields/relational/snapshot.json
