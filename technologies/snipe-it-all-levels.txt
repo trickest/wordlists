@@ -29,6 +29,8 @@ config/image.php
 image.php
 config/view.php
 view.php
+config/importer.php
+importer.php
 config/logging.php
 logging.php
 config/google2fa.php
@@ -908,6 +910,10 @@ tests/Feature/Scim/ReplaceUserWithFilterKeyTest.php
 Feature/Scim/ReplaceUserWithFilterKeyTest.php
 Scim/ReplaceUserWithFilterKeyTest.php
 ReplaceUserWithFilterKeyTest.php
+tests/Feature/Authentication/CheckUserIsActivatedApiTest.php
+Feature/Authentication/CheckUserIsActivatedApiTest.php
+Authentication/CheckUserIsActivatedApiTest.php
+CheckUserIsActivatedApiTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 Feature/Authentication/TwoFactorRateLimitTest.php
 Authentication/TwoFactorRateLimitTest.php
@@ -1146,6 +1152,11 @@ Feature/Assets/Ui/AuditAssetTest.php
 Assets/Ui/AuditAssetTest.php
 Ui/AuditAssetTest.php
 AuditAssetTest.php
+tests/Feature/Assets/Ui/ImportAssetHistoryTest.php
+Feature/Assets/Ui/ImportAssetHistoryTest.php
+Assets/Ui/ImportAssetHistoryTest.php
+Ui/ImportAssetHistoryTest.php
+ImportAssetHistoryTest.php
 tests/Feature/Assets/Ui/EditAssetTest.php
 Feature/Assets/Ui/EditAssetTest.php
 Assets/Ui/EditAssetTest.php
@@ -2316,6 +2327,10 @@ tests/Support/Importing/ComponentsImportFileBuilder.php
 Support/Importing/ComponentsImportFileBuilder.php
 Importing/ComponentsImportFileBuilder.php
 ComponentsImportFileBuilder.php
+tests/Support/Importing/AssetHistoryImportFileBuilder.php
+Support/Importing/AssetHistoryImportFileBuilder.php
+Importing/AssetHistoryImportFileBuilder.php
+AssetHistoryImportFileBuilder.php
 tests/Support/Importing/ManufacturersImportFileBuilder.php
 Support/Importing/ManufacturersImportFileBuilder.php
 Importing/ManufacturersImportFileBuilder.php
@@ -2486,10 +2501,6 @@ resources/views/hardware/quickscan.blade.php
 views/hardware/quickscan.blade.php
 hardware/quickscan.blade.php
 quickscan.blade.php
-resources/views/hardware/history.blade.php
-views/hardware/history.blade.php
-hardware/history.blade.php
-history.blade.php
 resources/views/hardware/index.blade.php
 views/hardware/index.blade.php
 hardware/index.blade.php
@@ -41571,6 +41582,9 @@ ConsumableImporter.php
 app/Importer/CategoryImporter.php
 Importer/CategoryImporter.php
 CategoryImporter.php
+app/Importer/AssetHistoryImporter.php
+Importer/AssetHistoryImporter.php
+AssetHistoryImporter.php
 app/Importer/AssetImporter.php
 Importer/AssetImporter.php
 AssetImporter.php
@@ -43360,6 +43374,8 @@ sample_csvs/components-sample-large.csv
 components-sample-large.csv
 sample_csvs/suppliers-sample-large.csv
 suppliers-sample-large.csv
+sample_csvs/.!14623!assets-sample-BLANKS.csv
+.!14623!assets-sample-BLANKS.csv
 sample_csvs/assets-sample-BAD.csv
 assets-sample-BAD.csv
 sample_csvs/manufacturers-sample-large.csv
@@ -43380,6 +43396,8 @@ sample_csvs/models-sample-large.csv
 models-sample-large.csv
 sample_csvs/licenses-sample.csv
 licenses-sample.csv
+sample_csvs/.!14622!assets-sample-BAD.csv
+.!14622!assets-sample-BAD.csv
 sample_csvs/users-sample.csv
 users-sample.csv
 sample_csvs/suppliers-sample.csv
@@ -43394,6 +43412,8 @@ sample_csvs/categories-sample-large.csv
 categories-sample-large.csv
 sample_csvs/manufacturers-sample.csv
 manufacturers-sample.csv
+sample_csvs/asset-history-sample.csv
+asset-history-sample.csv
 pint.json
 Dockerfile.fpm-alpine
 .env.testing.example

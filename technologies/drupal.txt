@@ -5417,7 +5417,6 @@ core/modules/user/config/install/system.action.user_unblock_user_action.yml
 core/modules/user/config/schema/user.schema.yml
 core/modules/user/config/schema/user.views.schema.yml
 core/modules/user/config/optional/views.view.who_s_new.yml
-core/modules/user/config/optional/search.page.user_search.yml
 core/modules/user/config/optional/views.view.user_admin_people.yml
 core/modules/user/config/optional/views.view.who_s_online.yml
 core/modules/user/templates/username.html.twig
@@ -9005,6 +9004,7 @@ core/modules/package_manager/tests/src/Kernel/StageConflictTest.php
 core/modules/package_manager/tests/src/Kernel/TranslatableStringTest.php
 core/modules/package_manager/tests/src/Kernel/SupportedReleaseValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/WritableFileSystemValidatorTest.php
+core/modules/package_manager/tests/src/Kernel/ComposerValidatorHelpTest.php
 core/modules/package_manager/tests/src/Kernel/StatusCheckTraitTest.php
 core/modules/package_manager/tests/src/Kernel/SettingsValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/InstalledPackagesListTest.php
@@ -9440,6 +9440,12 @@ core/modules/page_cache/src/StackMiddleware/PageCache.php
 core/modules/page_cache/src/Hook/PageCacheHooks.php
 core/modules/page_cache/page_cache.services.yml
 core/modules/search/search.services.yml
+core/modules/search/modules/search_user/search_user.install
+core/modules/search/modules/search_user/config/schema/search_user.schema.yml
+core/modules/search/modules/search_user/config/optional/search.page.user_search.yml
+core/modules/search/modules/search_user/src/Hook/SearchUserHooks.php
+core/modules/search/modules/search_user/src/Plugin/Search/SearchUser.php
+core/modules/search/modules/search_user/search_user.info.yml
 core/modules/search/modules/search_node/config/schema/search_node.schema.yml
 core/modules/search/modules/search_node/config/optional/core.entity_view_mode.node.search_result.yml
 core/modules/search/modules/search_node/config/optional/core.entity_view_mode.node.search_index.yml
@@ -9499,6 +9505,7 @@ core/modules/search/tests/src/Functional/SearchNodeUpdateAndDeletionTest.php
 core/modules/search/tests/src/Functional/GenericTest.php
 core/modules/search/tests/src/Functional/SearchBlockTest.php
 core/modules/search/tests/src/Functional/SearchCommentTest.php
+core/modules/search/tests/src/Functional/Update/SearchUpdateUserTest.php
 core/modules/search/tests/src/Functional/Update/SearchUpdateTest.php
 core/modules/search/tests/src/Functional/SearchEmbedFormTest.php
 core/modules/search/tests/src/Functional/SearchExactTest.php

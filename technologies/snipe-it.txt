@@ -21,6 +21,7 @@ Dockerfile
 config/debugbar.php
 config/image.php
 config/view.php
+config/importer.php
 config/logging.php
 config/google2fa.php
 config/hashing.php
@@ -259,6 +260,7 @@ tests/Feature/Scim/UserEmailsShapeTest.php
 tests/Feature/Scim/UserFilterSchemaUrnTest.php
 tests/Feature/Scim/ReplaceUserWithMalformedKeyTest.php
 tests/Feature/Scim/ReplaceUserWithFilterKeyTest.php
+tests/Feature/Authentication/CheckUserIsActivatedApiTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
@@ -309,6 +311,7 @@ tests/Feature/Assets/Ui/CheckinCheckoutCounters.php
 tests/Feature/Assets/Ui/BulkDeleteAssetsTest.php
 tests/Feature/Assets/Ui/StoreAssetWithFullMultipleCompanySupportTest.php
 tests/Feature/Assets/Ui/AuditAssetTest.php
+tests/Feature/Assets/Ui/ImportAssetHistoryTest.php
 tests/Feature/Assets/Ui/EditAssetTest.php
 tests/Feature/Assets/Ui/ForceCheckinAssetTest.php
 tests/Feature/Assets/Ui/CloneAssetTest.php
@@ -554,6 +557,7 @@ tests/Support/Importing/UsersImportFileBuilder.php
 tests/Support/Importing/LicensesImportFileBuilder.php
 tests/Support/Importing/AccessoriesImportFileBuilder.php
 tests/Support/Importing/ComponentsImportFileBuilder.php
+tests/Support/Importing/AssetHistoryImportFileBuilder.php
 tests/Support/Importing/ManufacturersImportFileBuilder.php
 tests/Support/Importing/CleansUpImportFiles.php
 tests/Support/InteractsWithAuthentication.php
@@ -600,7 +604,6 @@ resources/views/settings/logins.blade.php
 resources/views/hardware/view.blade.php
 resources/views/hardware/checkin-due.blade.php
 resources/views/hardware/quickscan.blade.php
-resources/views/hardware/history.blade.php
 resources/views/hardware/index.blade.php
 resources/views/hardware/bulk-delete.blade.php
 resources/views/hardware/requested.blade.php
@@ -7766,6 +7769,7 @@ app/Importer/SupplierImporter.php
 app/Importer/ComponentImporter.php
 app/Importer/ConsumableImporter.php
 app/Importer/CategoryImporter.php
+app/Importer/AssetHistoryImporter.php
 app/Importer/AssetImporter.php
 app/Importer/AssetModelImporter.php
 app/Importer/ManufacturerImporter.php
@@ -8359,6 +8363,7 @@ ansible/ubuntu/apachevirtualhost.conf.j2
 ansible/ubuntu/vagrant_playbook.yml
 sample_csvs/components-sample-large.csv
 sample_csvs/suppliers-sample-large.csv
+sample_csvs/.!14623!assets-sample-BLANKS.csv
 sample_csvs/assets-sample-BAD.csv
 sample_csvs/manufacturers-sample-large.csv
 sample_csvs/consumables-sample-large.csv
@@ -8369,6 +8374,7 @@ sample_csvs/assets-sample-BLANKS.csv
 sample_csvs/consumables-sample.csv
 sample_csvs/models-sample-large.csv
 sample_csvs/licenses-sample.csv
+sample_csvs/.!14622!assets-sample-BAD.csv
 sample_csvs/users-sample.csv
 sample_csvs/suppliers-sample.csv
 sample_csvs/models-sample.csv
@@ -8376,6 +8382,7 @@ sample_csvs/components-sample.csv
 sample_csvs/categories-sample.csv
 sample_csvs/categories-sample-large.csv
 sample_csvs/manufacturers-sample.csv
+sample_csvs/asset-history-sample.csv
 pint.json
 Dockerfile.fpm-alpine
 .env.testing.example

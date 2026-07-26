@@ -535,12 +535,14 @@ utils/phpstan/tests/Rule/NoRequiredMethodWithConstructorInControllerRuleTest.php
 utils/phpstan/tests/Rule/NoGetModelWithStringInControllerRuleTest.php
 utils/phpstan/tests/Rule/CommandMustHaveAsCommandAttributeRuleTest.php
 utils/phpstan/tests/Rule/AutowireMethodNameMustMatchClassRuleTest.php
+utils/phpstan/tests/Rule/NoContainerGetRuleTest.php
 utils/phpstan/tests/Rule/NoNullableServiceInConstructorRuleTest.php
 utils/phpstan/tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
 utils/phpstan/tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
 utils/phpstan/tests/Rule/Fixture/TraitUsingController.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireService.php
 utils/phpstan/tests/Rule/Fixture/AbstractBaseCommand.php
+utils/phpstan/tests/Rule/Fixture/ContainerGetService.php
 utils/phpstan/tests/Rule/Fixture/AssignObjectPropertyService.php
 utils/phpstan/tests/Rule/Fixture/CommandMissingAttribute.php
 utils/phpstan/tests/Rule/Fixture/CommandWithAttribute.php
@@ -549,6 +551,7 @@ utils/phpstan/tests/Rule/Fixture/NullableServiceConstructor.php
 utils/phpstan/tests/Rule/Fixture/SomeModel.php
 utils/phpstan/tests/Rule/Fixture/PlainNonCommand.php
 utils/phpstan/tests/Rule/Fixture/DefineOtherConstantTest.php
+utils/phpstan/tests/Rule/Fixture/AllowedGetService.php
 utils/phpstan/tests/Rule/Fixture/DefineTablePrefixTest.php
 utils/phpstan/tests/Rule/Fixture/ConstructorAndAutowireController.php
 utils/phpstan/tests/Rule/Fixture/GetRepositoryByEntityService.php
@@ -566,6 +569,7 @@ utils/phpstan/tests/Rule/Fixture/OtherBundle/AjaxController.php
 utils/phpstan/tests/Rule/Fixture/GetRepositoryByEntityRepository.php
 utils/phpstan/tests/Rule/Fixture/DuplicateTypeConstructor.php
 utils/phpstan/tests/Rule/Fixture/PlainParser.php
+utils/phpstan/tests/Rule/Fixture/ServiceLocatorGetService.php
 utils/phpstan/tests/Rule/Fixture/RealAbstractParser.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringTrait.php
 utils/phpstan/tests/Rule/Fixture/AnonymousCommand.php
@@ -584,6 +588,7 @@ utils/phpstan/src/Rule/CommandMustHaveAsCommandAttributeRule.php
 utils/phpstan/src/Rule/NoObjectPropertyAssignToVariableInTestsRule.php
 utils/phpstan/src/Rule/AbstractClassNameMustBeAbstractRule.php
 utils/phpstan/src/Rule/AutowireMethodNameMustMatchClassRule.php
+utils/phpstan/src/Rule/NoContainerGetRule.php
 utils/phpstan/src/Rule/NoTablePrefixDefinitionInTestsRule.php
 utils/phpstan/src/Rule/NoRequiredMethodWithConstructorInControllerRule.php
 utils/phpstan/src/Rule/NoNullableServiceInConstructorRule.php
@@ -594,6 +599,15 @@ utils/rector/tests/UnserializeToSerializerDecodeRector/UnserializeToSerializerDe
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/allowed_classes_false.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/skip_class_whitelist.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/plain_unserialize.php.inc
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/config/configured_rule.php
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/SomeModel.php
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/AbstractParentWithModel.php
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/SomeRepository.php
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/ModelGetRepositoryToRepositoryServiceRectorTest.php
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Fixture/service_injects_model_repository.php.inc
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Fixture/skip_test_case.php.inc
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Fixture/skip_non_model_get_repository.php.inc
+utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Fixture/skip_model_uses_own_repository.php.inc
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/GetRepositoryToRepositoryServiceRectorTest.php
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/config/configured_rule.php
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Source/AbstractParentWithConstructor.php
@@ -602,6 +616,7 @@ utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/reuse_existing
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/child_without_constructor_uses_autowire_method.php.inc
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/service_uses_constructor_injection.php.inc
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/test_case_uses_container.php.inc
+utils/rector/src/ModelGetRepositoryToRepositoryServiceRector.php
 utils/rector/src/UnserializeToSerializerDecodeRector.php
 utils/rector/src/AssertTrueResponseIsOkToAssertResponseIsSuccessfulRector.php
 utils/rector/src/GetRepositoryToRepositoryServiceRector.php
@@ -1812,7 +1827,12 @@ app/bundles/CoreBundle/Tests/Functional/Controller/AbstractFormControllerTest.ph
 app/bundles/CoreBundle/Tests/Functional/Controller/ThemeControllerTest.php
 app/bundles/CoreBundle/Tests/Functional/Controller/FileControllerTest.php
 app/bundles/CoreBundle/Tests/Functional/Controller/ExportControllerTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/AbstractContainerSmokeTestCase.php
 app/bundles/CoreBundle/Tests/Functional/DependencyInjection/Compiler/SystemThemeTemplatePathPassTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/CommandSmokeTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/EventSubscriberSmokeTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/ControllerSmokeTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/TestKernel.php
 app/bundles/CoreBundle/Tests/Functional/Field/Notification/CustomFieldNotificationFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Security/Permissions/CorePermissionsTest.php
 app/bundles/CoreBundle/Tests/Functional/ParametersTest.php
