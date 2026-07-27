@@ -1910,6 +1910,7 @@ plugins/woocommerce/client/blocks/readme.txt
 plugins/woocommerce/client/blocks/eslint.config.mjs
 plugins/woocommerce/client/blocks/package.json
 plugins/woocommerce/client/blocks/changelog/65429-fix-rtl-settings-modal-buttons
+plugins/woocommerce/client/blocks/changelog/dev-deprecate-wc-entities-global
 plugins/woocommerce/client/blocks/storybook/style.scss
 plugins/woocommerce/client/blocks/storybook/preview.js
 plugins/woocommerce/client/blocks/storybook/README.md
@@ -3077,6 +3078,9 @@ plugins/woocommerce/client/blocks/assets/js/blocks-registry/block-components/reg
 plugins/woocommerce/client/blocks/assets/js/blocks-registry/block-components/get-registered-block-components.ts
 plugins/woocommerce/client/blocks/assets/js/blocks-registry/block-components/index.js
 plugins/woocommerce/client/blocks/assets/js/blocks-registry/index.js
+plugins/woocommerce/client/blocks/assets/js/entity-registration/register-entities.ts
+plugins/woocommerce/client/blocks/assets/js/entity-registration/index.ts
+plugins/woocommerce/client/blocks/assets/js/entity-registration/deprecated-exports.ts
 plugins/woocommerce/client/blocks/assets/js/editor-components/incompatible-extension-notice/use-combined-incompatibility-notice.ts
 plugins/woocommerce/client/blocks/assets/js/editor-components/incompatible-extension-notice/use-incompatible-payment-gateways-notice.ts
 plugins/woocommerce/client/blocks/assets/js/editor-components/incompatible-extension-notice/editor.scss
@@ -4927,6 +4931,7 @@ plugins/woocommerce/changelog/add-order-withdrawal-endpoint
 plugins/woocommerce/changelog/fix-66480-empty-actionable-order-statuses
 plugins/woocommerce/changelog/fix-legacy-select2-analytics-guard
 plugins/woocommerce/changelog/fix-55669-settings-radio-labels
+plugins/woocommerce/changelog/fix-legacy-reports-hpos-48903
 plugins/woocommerce/changelog/fix-product-gallery-custom-aspect-ratios
 plugins/woocommerce/changelog/fix-26879-external-download-filename
 plugins/woocommerce/changelog/wooplug-7174-perf-env-storefront-activate
@@ -4945,6 +4950,7 @@ plugins/woocommerce/changelog/fix-66934-settings-ui-boolean-canonicalization
 plugins/woocommerce/changelog/65128-add-send-test-email-to-emails-listing
 plugins/woocommerce/changelog/fix-66865-providers-cache-invalidation
 plugins/woocommerce/changelog/fix-28172-csv-importer-attribute-name-sanitization
+plugins/woocommerce/changelog/fix-checkout-total-race-guard
 plugins/woocommerce/changelog/fix-66612-block-editor-deny-list
 plugins/woocommerce/changelog/fix-product-collection-carousel-styles
 plugins/woocommerce/changelog/perf-product-filters-batch-taxonomy-descendants
@@ -4975,6 +4981,7 @@ plugins/woocommerce/changelog/cursor-WOOPLUG-6298-structured-data-vat-property-9
 plugins/woocommerce/changelog/41512-fix-product-import-complete-tracks-event
 plugins/woocommerce/changelog/add-attribute-slug-locale-hint
 plugins/woocommerce/changelog/dev-wp-7-1-e2e-content-locators
+plugins/woocommerce/changelog/66078-dehoist-react
 plugins/woocommerce/changelog/testops-176-wp-env-single-container-set
 plugins/woocommerce/changelog/dev-core-e2e-blocks-spec-selector
 plugins/woocommerce/changelog/fix-stripe-install-redirect-csrf
@@ -5039,6 +5046,7 @@ plugins/woocommerce/changelog/64537-fix-checkout-wc-namespace-shadowing
 plugins/woocommerce/changelog/66952-fix-nav-menu-hidden-snapshot
 plugins/woocommerce/changelog/66583-fix-csv-import-leading-empty-gallery-image
 plugins/woocommerce/changelog/fix-WOOPMNT-6270-on-hold-email-copy
+plugins/woocommerce/changelog/fix-36143-product-image-tooltip
 plugins/woocommerce/changelog/fix-66828-non-array-gateway-settings
 plugins/woocommerce/changelog/38629-async-admin-notice-dismiss
 plugins/woocommerce/changelog/fix-multisite-login-membership-order
@@ -5048,12 +5056,14 @@ plugins/woocommerce/changelog/performance-audit-variable-product-datastore
 plugins/woocommerce/changelog/66364-fix-command-palette-e2e-modifier-detection
 plugins/woocommerce/changelog/fix-66486-nox-test-account-skip-status-regate
 plugins/woocommerce/changelog/fix-store-api-checkout-shipping-address-fallback
+plugins/woocommerce/changelog/wooplug-7093-shipping-recommendations-dismiss
 plugins/woocommerce/changelog/fix-customizer-widget-block-filtering
 plugins/woocommerce/changelog/testops-212-remove-real-sleep-from-php-unit-tests
 plugins/woocommerce/changelog/64612-fix-64065-brands-admin-deregistered
 plugins/woocommerce/changelog/perf-e2e-combined-db-restore
 plugins/woocommerce/changelog/pr-64372
 plugins/woocommerce/changelog/php-tests-unbalanced-output-buffers-risky-test
+plugins/woocommerce/changelog/fix-43351-macao-currency-symbol
 plugins/woocommerce/changelog/fix-61598-quick-edit-stock-quantity-null
 plugins/woocommerce/changelog/perf-e2e-direct-container-db-restore
 plugins/woocommerce/changelog/update-shipping-zone-method-save-action
@@ -5071,6 +5081,7 @@ plugins/woocommerce/changelog/woo6-57-codex-review-mini-cart-item-details-can-cr
 plugins/woocommerce/changelog/66217-fix-revenue-report-refund-double-count
 plugins/woocommerce/changelog/docs-clarify-legacy-price-hash-serialization
 plugins/woocommerce/changelog/update-deflag-commerce-recommendations
+plugins/woocommerce/changelog/66976-fix-nav-menu-hidden-snapshot-current-user
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/66228-fix-async-generator-lock-test
 plugins/woocommerce/changelog/65429-fix-rtl-admin-layout
@@ -5082,6 +5093,7 @@ plugins/woocommerce/changelog/38541-fix-csv-importer-mbstring-fallback
 plugins/woocommerce/changelog/phpunit-suite-sharding-cleanup
 plugins/woocommerce/changelog/fix-65832-brand-nav-cache-poisoning
 plugins/woocommerce/changelog/wooplug-6986-prime-variation-count-caches
+plugins/woocommerce/changelog/fix-abandoned-cart-recovery-order-lookup
 plugins/woocommerce/changelog/fix-44859-blank-fee-calculate-taxes-fatal
 plugins/woocommerce/changelog/fix-59437-nox-test-account-non-recoverable
 plugins/woocommerce/changelog/fix-60393-combine-activity-panel-count-requests
@@ -5116,6 +5128,7 @@ plugins/woocommerce/changelog/fix-v4-refunds-clamp-quantity-refund-to-remaining
 plugins/woocommerce/changelog/fix-29753-product-gallery-fractional-transform
 plugins/woocommerce/changelog/fix-order-review-moderation-bypass
 plugins/woocommerce/changelog/fix-core-breadcrumbs-compatibility
+plugins/woocommerce/changelog/fix-35821-coupon-line-items-dp-parameter
 plugins/woocommerce/changelog/fix-wc-separator-color-token
 plugins/woocommerce/changelog/codex-66752-restore-flexslider-bubble-phase
 plugins/woocommerce/changelog/fix-47566-ipify-ipv6-endpoint
@@ -5133,6 +5146,7 @@ plugins/woocommerce/changelog/66551-fix-hpos-virtual-meta-corruption-guard
 plugins/woocommerce/changelog/performance-prime-caches-variations-gallery
 plugins/woocommerce/changelog/59894-fix-local-pickup-shop-manager-perms
 plugins/woocommerce/changelog/66317-perf-memoize-payments-providers
+plugins/woocommerce/changelog/fix-additional-checkout-fields-order-confirmation-address
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/phpunit.xml
 plugins/woocommerce/README.md
@@ -5968,6 +5982,8 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/Cart.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/SavedForLaterTests.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/Totals.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/DownloadsWrapper.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/BillingAddress.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/OrderConfirmation/ShippingAddress.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CartCheckoutIncompatibleExtensionsTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AddToCartForm.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductGalleryLargeImageTest.php
@@ -6560,6 +6576,7 @@ plugins/woocommerce/tests/php/src/Internal/Admin/Logging/FileV2/FileControllerTe
 plugins/woocommerce/tests/php/src/Internal/Admin/Logging/FileV2/FileTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Logging/SettingsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Logging/LogHandlerFileV2Test.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Reports/HposLegacyOrderReportQueryBuilderTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Notes/InstallJPAndWCSPluginsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Notes/ScheduledUpdatesPromotionTest.php
 plugins/woocommerce/tests/php/src/Internal/Caches/ProductVersionStringInvalidatorTest.php
@@ -7679,6 +7696,7 @@ plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version3/product-revi
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version3/reports-reviews-totals.php
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version3/orders.php
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version3/customers.php
+plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version3/reports-sales.php
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version2/shipping-methods.php
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version2/coupons.php
 plugins/woocommerce/tests/legacy/unit-tests/rest-api/Tests/Version2/product-variations.php
@@ -8744,6 +8762,7 @@ plugins/woocommerce/src/Internal/Admin/Logging/FileV2/FileListTable.php
 plugins/woocommerce/src/Internal/Admin/Logging/FileV2/FileExporter.php
 plugins/woocommerce/src/Internal/Admin/Logging/FileV2/FileController.php
 plugins/woocommerce/src/Internal/Admin/Logging/Settings.php
+plugins/woocommerce/src/Internal/Admin/Reports/HposLegacyOrderReportQueryBuilder.php
 plugins/woocommerce/src/Internal/Admin/SiteHealth.php
 plugins/woocommerce/src/Internal/Admin/WCAdminAssets.php
 plugins/woocommerce/src/Internal/Admin/Marketing/MarketingSpecs.php
@@ -10059,6 +10078,7 @@ plugins/woocommerce-beta-tester/changelog/49120-remove-async-product-editor-cate
 plugins/woocommerce-beta-tester/changelog/57299-fix-wireit-in-ci
 plugins/woocommerce-beta-tester/changelog/remove-product-editor-devtools
 plugins/woocommerce-beta-tester/changelog/56746-dev-webpack-deps-review
+plugins/woocommerce-beta-tester/changelog/66078-dehoist-react
 plugins/woocommerce-beta-tester/changelog/57605-fix-wc-beta-tester-cys-reset
 plugins/woocommerce-beta-tester/changelog/add-woocommerce-beta-tester-template-load-tool
 plugins/woocommerce-beta-tester/changelog/dev-eslint-no-floating-promises
@@ -11169,14 +11189,13 @@ packages/php/woocommerce-analytics/tasks/mirror-github/workflows/autotagger.yml
 packages/php/woocommerce-analytics/tasks/mirror-github/workflows/readonly.yml
 packages/php/woocommerce-analytics/tasks/build-package.sh
 packages/php/woocommerce-analytics/package.json
-packages/php/woocommerce-analytics/changelog/resync-composer-locks
 packages/php/woocommerce-analytics/changelog/.gitkeep
-packages/php/woocommerce-analytics/changelog/fix-custom-woocommerce-plugin-directory
 packages/php/woocommerce-analytics/README.md
 packages/php/woocommerce-analytics/LICENSE.txt
 packages/php/woocommerce-analytics/CHANGELOG.md
 packages/php/woocommerce-analytics/tests/php/Pixel_Builder_Test.php
 packages/php/woocommerce-analytics/tests/php/Pixel_Builder_Socks_Proxy_Test.php
+packages/php/woocommerce-analytics/tests/php/Universal_Page_Output_Test.php
 packages/php/woocommerce-analytics/tests/php/mocks/woocommerce-functions.php
 packages/php/woocommerce-analytics/tests/php/mocks/class-wc-order.php
 packages/php/woocommerce-analytics/tests/php/mocks/class-wc-tracks.php
@@ -11594,6 +11613,7 @@ packages/js/data/package.json
 packages/js/data/changelog/add-60393-activity-panel-store
 packages/js/data/changelog/add-onboarding-task-image-metadata
 packages/js/data/changelog/consolidate-eslint-core-modules
+packages/js/data/changelog/66078-dehoist-react
 packages/js/data/changelog/dev-eslint-no-floating-promises
 packages/js/data/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/data/changelog/65662-dev-65627-postrelease-cleanup
@@ -11895,6 +11915,7 @@ packages/js/experimental/tsconfig.json
 packages/js/experimental/eslint.config.mjs
 packages/js/experimental/package.json
 packages/js/experimental/changelog/consolidate-eslint-core-modules
+packages/js/experimental/changelog/66078-dehoist-react
 packages/js/experimental/changelog/tweak-woo-home-dashboard-task-styles
 packages/js/experimental/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/experimental/changelog/.gitkeep
@@ -11980,6 +12001,7 @@ packages/js/components/tsconfig.json
 packages/js/components/eslint.config.mjs
 packages/js/components/package.json
 packages/js/components/changelog/consolidate-eslint-core-modules
+packages/js/components/changelog/66078-dehoist-react
 packages/js/components/changelog/dev-eslint-no-floating-promises
 packages/js/components/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/components/changelog/.gitkeep
@@ -13044,6 +13066,7 @@ packages/js/customer-effort-score/tsconfig.json
 packages/js/customer-effort-score/eslint.config.mjs
 packages/js/customer-effort-score/package.json
 packages/js/customer-effort-score/changelog/consolidate-eslint-core-modules
+packages/js/customer-effort-score/changelog/66078-dehoist-react
 packages/js/customer-effort-score/changelog/dev-eslint-no-floating-promises
 packages/js/customer-effort-score/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/customer-effort-score/changelog/.gitkeep
@@ -13160,6 +13183,7 @@ packages/js/internal-js-tests/changelog/update-59804
 packages/js/internal-js-tests/changelog/dev-consolidate-syncpack-config
 packages/js/internal-js-tests/changelog/57299-fix-wireit-in-ci
 packages/js/internal-js-tests/changelog/55095-dev-rewrite-wireit-deps-update
+packages/js/internal-js-tests/changelog/66078-dehoist-react
 packages/js/internal-js-tests/changelog/53865-dev-pnpm-9-15-0
 packages/js/internal-js-tests/changelog/59001-dev-build-ram-usage-batch-3
 packages/js/internal-js-tests/changelog/dev-merge-admin
@@ -13316,6 +13340,7 @@ packages/js/notices/changelog/dev-consolidate-syncpack-config
 packages/js/notices/changelog/dev-updates-to-packages-for-dependencies
 packages/js/notices/changelog/57299-fix-wireit-in-ci
 packages/js/notices/changelog/55095-dev-rewrite-wireit-deps-update
+packages/js/notices/changelog/66078-dehoist-react
 packages/js/notices/changelog/58765-dev-deps-cleanup-concurrently
 packages/js/notices/changelog/53865-dev-pnpm-9-15-0
 packages/js/notices/changelog/59001-dev-build-ram-usage-batch-3
@@ -13400,6 +13425,7 @@ packages/js/navigation/.npmrc
 packages/js/navigation/tsconfig.json
 packages/js/navigation/eslint.config.mjs
 packages/js/navigation/package.json
+packages/js/navigation/changelog/66078-dehoist-react
 packages/js/navigation/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/navigation/changelog/65662-dev-65627-postrelease-cleanup
 packages/js/navigation/changelog/.gitkeep

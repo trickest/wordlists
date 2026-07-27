@@ -7693,6 +7693,7 @@ tests/unit/Storefront/Controller/NavigationControllerTest.php
 tests/unit/Storefront/Controller/ContextGatewayControllerTest.php
 tests/unit/Storefront/Controller/RegisterControllerTest.php
 tests/unit/Storefront/Controller/fixtures/TestStorefrontController.php
+tests/unit/Storefront/Controller/WishlistControllerTest.php
 tests/unit/Storefront/Controller/Api/CaptchaControllerTest.php
 tests/unit/Storefront/Controller/CmsControllerTest.php
 tests/unit/Storefront/Controller/CartLineItemControllerTest.php
@@ -7756,6 +7757,7 @@ tests/unit/Storefront/Page/Account/Profile/AccountProfilePageLoaderTest.php
 tests/unit/Storefront/Page/Account/Login/AccountLoginPageLoaderTest.php
 tests/unit/Storefront/Page/Account/Order/AccountOrderPageLoaderTest.php
 tests/unit/Storefront/Page/Account/Order/AccountOrderEditPageLoaderTest.php
+tests/unit/Storefront/Page/Account/Order/AccountOrderDetailPageLoaderTest.php
 tests/unit/Storefront/Page/Product/ProductPageLoaderTest.php
 tests/unit/Storefront/Framework/Store/Subscriber/ExtensionThemeDetectionSubscriberTest.php
 tests/unit/Storefront/Framework/Twig/Extension/fixtures/Storefront/Resources/views/test/base.html.twig
@@ -7954,6 +7956,9 @@ tests/unit/Core/Test/Stub/Doctrine/QueryBuilderDataExtractorTest.php
 tests/unit/Core/Test/Stub/Doctrine/FakeResultFactoryTest.php
 tests/unit/Core/Test/Assert/SerializationTest.php
 tests/unit/Core/Test/Assert/StrictEmptyTest.php
+tests/unit/Core/Test/PHPUnit/CompletionGuard/CompletionGuardTest.php
+tests/unit/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionStartedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionFinishedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/DatabaseDiff/DbStateTest.php
 tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestRunnerExecutionFinishedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestErroredSubscriberTest.php
@@ -8012,6 +8017,7 @@ tests/unit/Core/System/SalesChannel/Mcp/Tool/StoreApiToolsetsListToolTest.php
 tests/unit/Core/System/SalesChannel/Validation/SalesChannelValidatorTest.php
 tests/unit/Core/System/SalesChannel/StoreApiCustomFieldMapperTest.php
 tests/unit/Core/System/SalesChannel/Entity/DefinitionRegistryChainTest.php
+tests/unit/Core/System/SalesChannel/Entity/SalesChannelRepositoryTest.php
 tests/unit/Core/System/SalesChannel/Entity/SalesChannelDefinitionInstanceRegistryTest.php
 tests/unit/Core/System/SalesChannel/Subscriber/SalesChannelMaintenanceIpAllowlistSyncSubscriberTest.php
 tests/unit/Core/System/SalesChannel/Subscriber/SalesChannelTypeValidatorTest.php
@@ -8561,6 +8567,7 @@ tests/unit/Core/Checkout/Document/Api/DocumentTypeTechnicalNameFkResolverTest.ph
 tests/unit/Core/Checkout/Document/Zugferd/ZugferdBuilderTest.php
 tests/unit/Core/Checkout/Document/Zugferd/ZugferdDocumentMock.php
 tests/unit/Core/Checkout/Document/Zugferd/ZugferdDocumentTest.php
+tests/unit/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigValidatorTest.php
 tests/unit/Core/Checkout/Document/Renderer/ZugferdEmbeddedCreditNoteRendererTest.php
 tests/unit/Core/Checkout/Document/Renderer/ZugferdCreditNoteRendererTest.php
 tests/unit/Core/Checkout/Document/Renderer/ZugferdCancellationInvoiceRendererTest.php
@@ -9429,6 +9436,8 @@ tests/unit/Core/Framework/DataAbstractionLayer/Exception/PropertyNotFoundExcepti
 tests/unit/Core/Framework/DataAbstractionLayer/Exception/InvalidEntityUuidExceptionTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Attribute/PasswordTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/EntityTelemetrySubscriberTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/EntityGroupResolverTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/DalSearchInstrumentorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionStub.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionWithNonStorageAwarePrimaryKeyStub.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/EntityNotExistsTest.php
@@ -10225,6 +10234,7 @@ tests/unit/Core/Framework/Notification/NotificationServiceTest.php
 tests/unit/Core/Framework/ShopwareHttpExceptionTest.php
 tests/unit/Core/Framework/Demodata/Command/DemodataCommandTest.php
 tests/unit/Core/Framework/Demodata/Generator/ProductGeneratorTest.php
+tests/unit/Core/Framework/Demodata/Generator/MediaGeneratorTest.php
 tests/unit/Core/Framework/Demodata/Generator/NewsletterRecipientGeneratorTest.php
 tests/unit/Core/Framework/Demodata/Faker/CommerceTest.php
 tests/unit/Core/Framework/Demodata/DemodataServiceTest.php
@@ -14305,6 +14315,9 @@ src/Core/Test/Constraint/StrictIsEmpty.php
 src/Core/Test/Assert/Serialization.php
 src/Core/Test/Assert/StrictEmpty.php
 src/Core/Test/Annotation/DisabledFeatures.php
+src/Core/Test/PHPUnit/CompletionGuard/CompletionGuard.php
+src/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionFinishedSubscriber.php
+src/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionStartedSubscriber.php
 src/Core/Test/PHPUnit/Extension/DatabaseDiff/DatabaseDiffExtension.php
 src/Core/Test/PHPUnit/Extension/DatabaseDiff/Subscriber/BeforeTestMethodCalledSubscriber.php
 src/Core/Test/PHPUnit/Extension/DatabaseDiff/Subscriber/TestFinishedSubscriber.php
@@ -15509,6 +15522,7 @@ src/Core/Checkout/Document/Aggregate/DocumentBaseConfigSalesChannel/DocumentBase
 src/Core/Checkout/Document/Aggregate/DocumentBaseConfigSalesChannel/DocumentBaseConfigSalesChannelCollection.php
 src/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigDefinition.php
 src/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigEntity.php
+src/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigValidator.php
 src/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigCollection.php
 src/Core/Checkout/Document/Aggregate/DocumentType/DocumentTypeCollection.php
 src/Core/Checkout/Document/Aggregate/DocumentType/DocumentTypeEntity.php
@@ -17637,6 +17651,8 @@ src/Core/Framework/DataAbstractionLayer/Attribute/ManyToMany.php
 src/Core/Framework/DataAbstractionLayer/Attribute/Serialized.php
 src/Core/Framework/DataAbstractionLayer/AttributeMappingDefinition.php
 src/Core/Framework/DataAbstractionLayer/Telemetry/EntityTelemetrySubscriber.php
+src/Core/Framework/DataAbstractionLayer/Telemetry/EntityGroupResolver.php
+src/Core/Framework/DataAbstractionLayer/Telemetry/DalSearchInstrumentor.php
 src/Core/Framework/DataAbstractionLayer/Validation/EntityExists.php
 src/Core/Framework/DataAbstractionLayer/Validation/EntityNotExistsValidator.php
 src/Core/Framework/DataAbstractionLayer/Validation/EntityExistsValidator.php
@@ -19350,6 +19366,7 @@ src/Core/Framework/Deprecation/BCChange/ReturnTypeNarrowing.php
 src/Core/Framework/Deprecation/BCChange/BecomesAbstract.php
 src/Core/Framework/Deprecation/BCChange/ParameterRemoval.php
 src/Core/Framework/Deprecation/BCChange/ParameterTypeWidening.php
+src/Core/Framework/Deprecation/BCChange/ParameterDefaultValueChange.php
 src/Core/Framework/Deprecation/BCChange/BecomesInternal.php
 src/Core/Framework/Deprecation/BCChange/ExtenderCompatibilityChange.php
 src/Core/Framework/Deprecation/BCChange/ReturnTypeWidening.php
@@ -20834,6 +20851,9 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/sideb
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/sidebar-filter/preview/sw-cms-el-preview-sidebar-filter.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/sidebar-filter/preview/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/sidebar-filter/sidebar-filter.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/config.spec/fixtures.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/config.spec/sorting.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/config.spec/filter.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/components/sw-cms-el-config-product-listing-config-sorting-grid/sw-cms-el-config-product-listing-config-sorting-grid.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/components/sw-cms-el-config-product-listing-config-sorting-grid/sw-cms-el-config-product-listing-config-sorting-grid.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/components/sw-cms-el-config-product-listing-config-sorting-grid/sw-cms-el-config-product-listing-config-sorting-grid.spec.js
@@ -20843,7 +20863,6 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/produ
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/components/sw-cms-el-config-product-listing-config-delete-modal/sw-cms-el-config-product-listing-config-delete-modal.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/components/sw-cms-el-config-product-listing-config-delete-modal/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/sw-cms-el-config-product-listing.scss
-src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/config.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/sw-cms-el-config-product-listing.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/config/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/product-listing/component/component.spec.js

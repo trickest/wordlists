@@ -2720,6 +2720,7 @@ framework/core/views/frontend/forum.blade.php
 framework/core/views/frontend/app.blade.php
 framework/core/tests/integration/queue/QueueCommandTest.php
 framework/core/tests/integration/queue/QueueScheduleTest.php
+framework/core/tests/integration/queue/QueuePauseTest.php
 framework/core/tests/integration/queue/QueueServiceProviderTest.php
 framework/core/tests/integration/middleware/AssetsRevisionHeaderTest.php
 framework/core/tests/integration/middleware/ContentTypeOptionsTest.php
@@ -2734,6 +2735,7 @@ framework/core/tests/integration/api/posts/UpdateTest.php
 framework/core/tests/integration/api/posts/ListTest.php
 framework/core/tests/integration/api/posts/ListDiscussionStateQueryCountTest.php
 framework/core/tests/integration/api/posts/DeleteTest.php
+framework/core/tests/integration/api/queue/PauseQueueTest.php
 framework/core/tests/integration/api/settings/MailSettingsTest.php
 framework/core/tests/integration/api/settings/SetTest.php
 framework/core/tests/integration/api/settings/DeleteTest.php
@@ -2784,6 +2786,7 @@ framework/core/tests/integration/mail/EmailTitleLeakTest.php
 framework/core/tests/integration/setup.php
 framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/user/AvatarImageValidationTest.php
+framework/core/tests/integration/user/GroupPermissionCacheTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
 framework/core/tests/integration/console/TinkerCommandTest.php
 framework/core/tests/integration/console/AssetsPublishTest.php
@@ -2962,6 +2965,7 @@ framework/core/src/Api/Controller/DeleteAllNotificationsController.php
 framework/core/src/Api/Controller/DeleteLogoDarkModeController.php
 framework/core/src/Api/Controller/TerminateAllOtherSessionsController.php
 framework/core/src/Api/Controller/SyncAbandonedExtensionsController.php
+framework/core/src/Api/Controller/PauseQueueController.php
 framework/core/src/Api/Controller/SetPermissionController.php
 framework/core/src/Api/Controller/ReadAllNotificationsController.php
 framework/core/src/Api/Controller/UploadLogoController.php
@@ -3337,6 +3341,7 @@ framework/core/src/Group/GroupFactory.php
 framework/core/src/Group/GroupRepository.php
 framework/core/src/Group/Access/ScopeGroupVisibility.php
 framework/core/src/Group/Access/GroupPolicy.php
+framework/core/src/Group/PermissionCache.php
 framework/core/src/Group/Group.php
 framework/core/src/Group/Event/Deleted.php
 framework/core/src/Group/Event/Saving.php
@@ -3503,7 +3508,9 @@ framework/core/src/Queue/QueueRestarter.php
 framework/core/src/Queue/ExceptionHandler.php
 framework/core/src/Queue/DatabaseUuidFailedJobProvider.php
 framework/core/src/Queue/Console/DatabaseWorkerArgs.php
+framework/core/src/Queue/Console/ResumeCommand.php
 framework/core/src/Queue/Console/WorkCommand.php
+framework/core/src/Queue/Console/PauseCommand.php
 framework/core/src/Queue/Console/ListenCommand.php
 framework/core/src/Queue/Listener.php
 framework/core/src/Queue/QueueServiceProvider.php

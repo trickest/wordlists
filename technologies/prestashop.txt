@@ -9793,6 +9793,7 @@ src/PrestaShopBundle/Controller/Admin/Configure/ShopParameters/TagController.php
 src/PrestaShopBundle/Controller/Admin/Configure/ShopParameters/MaintenanceController.php
 src/PrestaShopBundle/Controller/Admin/Configure/ShopParameters/ContactsController.php
 src/PrestaShopBundle/Controller/Admin/Configure/ShowcaseCardController.php
+src/PrestaShopBundle/Controller/Admin/DashboardController.php
 src/PrestaShopBundle/Controller/Admin/ErrorController.php
 src/PrestaShopBundle/Controller/Admin/LegacyController.php
 src/PrestaShopBundle/Controller/Admin/FrameworkBundleAdminController.php
@@ -10060,6 +10061,7 @@ src/PrestaShopBundle/Resources/config/routing/admin/sell/customer_service/order_
 src/PrestaShopBundle/Resources/config/routing/admin/sell/customer_service/order_return.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/customer_service/customer_threads.yml
 src/PrestaShopBundle/Resources/config/routing/admin/sell/customer_service/_customer_service.yml
+src/PrestaShopBundle/Resources/config/routing/admin/dashboard.yml
 src/PrestaShopBundle/Resources/config/routing/admin/_errors.yml
 src/PrestaShopBundle/Resources/config/routing/admin/_security.yml
 src/PrestaShopBundle/Resources/config/routing/admin/_legacy.yml
@@ -10293,6 +10295,8 @@ src/PrestaShopBundle/Resources/config/services/core/translation.yml
 src/PrestaShopBundle/Resources/config/services/alias.yml
 src/PrestaShopBundle/Resources/views/base.html.twig
 src/PrestaShopBundle/Resources/views/Admin/macros.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Dashboard/form_theme.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Dashboard/index.html.twig
 src/PrestaShopBundle/Resources/views/Admin/layout.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Common/_partials/_sidebar.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Common/_partials/_form_field.html.twig
@@ -11083,6 +11087,7 @@ src/PrestaShopBundle/Form/Admin/AdvancedParameters/Performance/CachingType.php
 src/PrestaShopBundle/Form/Admin/Catalog/Category/AbstractCategoryType.php
 src/PrestaShopBundle/Form/Admin/Catalog/Category/RootCategoryType.php
 src/PrestaShopBundle/Form/Admin/Catalog/Category/CategoryType.php
+src/PrestaShopBundle/Form/Admin/Dashboard/DashboardDateRangeType.php
 src/PrestaShopBundle/Form/Admin/Sell/CustomerService/OrderMessageType.php
 src/PrestaShopBundle/Form/Admin/Sell/CustomerService/ReplyToCustomerThreadType.php
 src/PrestaShopBundle/Form/Admin/Sell/CustomerService/OrderReturn/OrderReturnOptionsType.php
