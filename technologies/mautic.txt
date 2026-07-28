@@ -541,6 +541,7 @@ utils/phpstan/tests/Rule/NoNullableServiceInConstructorRuleTest.php
 utils/phpstan/tests/Rule/NoEntityManagerGetRepositoryRuleTest.php
 utils/phpstan/tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
 utils/phpstan/tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
+utils/phpstan/tests/Rule/NoPropertyToPropertyAssignRuleTest.php
 utils/phpstan/tests/Rule/Fixture/TraitUsingController.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireService.php
 utils/phpstan/tests/Rule/Fixture/AbstractBaseCommand.php
@@ -577,7 +578,9 @@ utils/phpstan/tests/Rule/Fixture/GetModelByStringController.php
 utils/phpstan/tests/Rule/Fixture/OtherBundle/AjaxController.php
 utils/phpstan/tests/Rule/Fixture/GetRepositoryByEntityRepository.php
 utils/phpstan/tests/Rule/Fixture/DuplicateTypeConstructor.php
+utils/phpstan/tests/Rule/Fixture/PropertyToPropertyAssignService.php
 utils/phpstan/tests/Rule/Fixture/PlainParser.php
+utils/phpstan/tests/Rule/Fixture/ContainerGetInTestCase.php
 utils/phpstan/tests/Rule/Fixture/ServiceLocatorGetService.php
 utils/phpstan/tests/Rule/Fixture/RealAbstractParser.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringTrait.php
@@ -594,6 +597,7 @@ utils/phpstan/tests/Rule/Fixture/Entity/NullableServiceInEntity.php
 utils/phpstan/tests/Rule/Fixture/CollidingAutowireController.php
 utils/phpstan/tests/Rule/Fixture/NonVendorConstructor.php
 utils/phpstan/tests/Rule/Fixture/TablePrefixDefiner.php
+utils/phpstan/tests/Rule/Fixture/PropertyToPropertyAssignAnonymousClass.php
 utils/phpstan/tests/Rule/Fixture/PlainSetterController.php
 utils/phpstan/tests/Rule/Fixture/NullableExceptionConstructor.php
 utils/phpstan/tests/Rule/NoGetRepositoryWithEntityInRepositoryRuleTest.php
@@ -609,11 +613,18 @@ utils/phpstan/src/Rule/NoRequiredMethodWithConstructorInControllerRule.php
 utils/phpstan/src/Rule/NoNullableServiceInConstructorRule.php
 utils/phpstan/src/Rule/NoGetModelWithStringInControllerRule.php
 utils/phpstan/src/Rule/NoGetRepositoryWithEntityInRepositoryRule.php
+utils/phpstan/src/Rule/NoPropertyToPropertyAssignRule.php
+utils/count-config-services.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/config/configured_rule.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/UnserializeToSerializerDecodeRectorTest.php
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/allowed_classes_false.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/skip_class_whitelist.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/plain_unserialize.php.inc
+utils/rector/tests/ConfigServiceToAutowiredServiceRector/ConfigServiceToAutowiredServiceRectorTest.php
+utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/container.xml
+utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/ParameterAwareHelper.php
+utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/LoggerAwareHelper.php
+utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/AutowirableHelper.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/config/configured_rule.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/SomeModel.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/AbstractParentWithModel.php
@@ -633,6 +644,9 @@ utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/service_uses_c
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/test_case_uses_container.php.inc
 utils/rector/src/ModelGetRepositoryToRepositoryServiceRector.php
 utils/rector/src/UnserializeToSerializerDecodeRector.php
+utils/rector/src/ValueObject/ServiceTag.php
+utils/rector/src/ValueObject/ServiceDefinition.php
+utils/rector/src/ConfigServiceToAutowiredServiceRector.php
 utils/rector/src/AssertTrueResponseIsOkToAssertResponseIsSuccessfulRector.php
 utils/rector/src/GetRepositoryToRepositoryServiceRector.php
 .all-contributorsrc
@@ -1614,7 +1628,6 @@ app/bundles/EmailBundle/MonitoredEmail/Attachment.php
 app/bundles/EmailBundle/MonitoredEmail/Organizer/MailboxOrganizer.php
 app/bundles/EmailBundle/MonitoredEmail/Organizer/MailboxContainer.php
 app/bundles/EmailBundle/DependencyInjection/EnvProcessor/MailerDsnEnvVarProcessor.php
-app/bundles/EmailBundle/DependencyInjection/Compiler/StatHelperPass.php
 app/bundles/EmailBundle/DependencyInjection/MauticEmailExtension.php
 app/bundles/EmailBundle/Assets/js/email.js
 app/bundles/EmailBundle/Assets/js/batch.js
@@ -1849,6 +1862,8 @@ app/bundles/CoreBundle/Tests/Functional/DependencyInjection/CommandSmokeTest.php
 app/bundles/CoreBundle/Tests/Functional/DependencyInjection/EventSubscriberSmokeTest.php
 app/bundles/CoreBundle/Tests/Functional/DependencyInjection/ControllerSmokeTest.php
 app/bundles/CoreBundle/Tests/Functional/DependencyInjection/TestKernel.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/TaggedServiceWiringSmokeTest.php
+app/bundles/CoreBundle/Tests/Functional/DependencyInjection/StatHelperPassTest.php
 app/bundles/CoreBundle/Tests/Functional/Field/Notification/CustomFieldNotificationFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Security/Permissions/CorePermissionsTest.php
 app/bundles/CoreBundle/Tests/Functional/ParametersTest.php
@@ -2273,11 +2288,9 @@ app/bundles/CoreBundle/DependencyInjection/EnvProcessor/NullableProcessor.php
 app/bundles/CoreBundle/DependencyInjection/EnvProcessor/MauticConstProcessor.php
 app/bundles/CoreBundle/DependencyInjection/EnvProcessor/IntNullableProcessor.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/TranslationLoaderPass.php
-app/bundles/CoreBundle/DependencyInjection/Compiler/ShortenerServicePass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/DbalPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ModelPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/SystemThemeTemplatePathPass.php
-app/bundles/CoreBundle/DependencyInjection/Compiler/PreUpdateCheckPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ORMPurgerPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/PermissionsPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ConfiguratorPass.php
@@ -2286,7 +2299,6 @@ app/bundles/CoreBundle/DependencyInjection/Compiler/TestPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/ServicePass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/RequirementsPass.php
 app/bundles/CoreBundle/DependencyInjection/Compiler/TwigPass.php
-app/bundles/CoreBundle/DependencyInjection/Compiler/UpdateStepPass.php
 app/bundles/CoreBundle/DependencyInjection/MauticCoreExtension.php
 app/bundles/CoreBundle/DependencyInjection/Builder/BundleMetadataBuilder.php
 app/bundles/CoreBundle/DependencyInjection/Builder/BundleMetadata.php
@@ -3227,6 +3239,7 @@ app/bundles/UserBundle/Tests/Functional/Controller/RoleControllerFunctionalTest.
 app/bundles/UserBundle/Tests/Functional/Controller/PublicControllerTest.php
 app/bundles/UserBundle/Tests/Functional/ApiPlatform/UserApiTest.php
 app/bundles/UserBundle/Tests/Functional/UserLogoutFunctionalTest.php
+app/bundles/UserBundle/Tests/Functional/Entity/UserTokenRepositoryTest.php
 app/bundles/UserBundle/Tests/Controller/UserControllerTest.php
 app/bundles/UserBundle/Tests/Controller/LoginUserWithSamlTrait.php
 app/bundles/UserBundle/Tests/Controller/ProfileControllerTest.php
@@ -3488,6 +3501,7 @@ app/bundles/ApiBundle/Resources/views/Authorize/oAuth2/authorize.html.twig
 app/bundles/ApiBundle/Entity/oAuth2/RefreshToken.php
 app/bundles/ApiBundle/Entity/oAuth2/ClientRepository.php
 app/bundles/ApiBundle/Entity/oAuth2/AuthCode.php
+app/bundles/ApiBundle/Entity/oAuth2/AccessTokenRepository.php
 app/bundles/ApiBundle/Entity/oAuth2/Client.php
 app/bundles/ApiBundle/Entity/oAuth2/AccessToken.php
 app/bundles/ApiBundle/Form/Validator/Constraints/OAuthCallback.php
@@ -3887,6 +3901,7 @@ app/bundles/LeadBundle/Tests/Functional/Controller/SendEmailToContactTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/ImportControllerFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/ContactExportAdminNotificationsDisabledTest.php
 app/bundles/LeadBundle/Tests/Functional/Controller/CompanyListColumnConfigurationFunctionalTest.php
+app/bundles/LeadBundle/Tests/Functional/FormSearchFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/AbstractSearchTestCase.php
 app/bundles/LeadBundle/Tests/Functional/DncSearchFunctionalTest.php
 app/bundles/LeadBundle/Tests/Functional/ApiPlatform/OwnershipScopedApiAuthorizationTestBase.php
@@ -5395,12 +5410,7 @@ app/bundles/IntegrationsBundle/Controller/AuthController.php
 app/bundles/IntegrationsBundle/Controller/ConfigController.php
 app/bundles/IntegrationsBundle/Controller/FieldPaginationController.php
 app/bundles/IntegrationsBundle/Controller/UpdateFieldController.php
-app/bundles/IntegrationsBundle/DependencyInjection/Compiler/SyncIntegrationsPass.php
-app/bundles/IntegrationsBundle/DependencyInjection/Compiler/AuthenticationIntegrationPass.php
 app/bundles/IntegrationsBundle/DependencyInjection/Compiler/TestPass.php
-app/bundles/IntegrationsBundle/DependencyInjection/Compiler/BuilderIntegrationPass.php
-app/bundles/IntegrationsBundle/DependencyInjection/Compiler/IntegrationsPass.php
-app/bundles/IntegrationsBundle/DependencyInjection/Compiler/ConfigIntegrationPass.php
 app/bundles/IntegrationsBundle/DependencyInjection/IntegrationsExtension.php
 app/bundles/IntegrationsBundle/README.md
 app/bundles/IntegrationsBundle/Assets/js/integrations.js

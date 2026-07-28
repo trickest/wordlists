@@ -6971,6 +6971,7 @@ tests/integration/Core/Framework/MessageQueue/Api/MessageQueueEndpointTest.php
 tests/integration/Core/Framework/MessageQueue/Stats/MySQLStatsRepositoryTest.php
 tests/integration/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskSchedulerTest.php
 tests/integration/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskHandlerTest.php
+tests/integration/Core/Framework/MessageQueue/ScheduledTask/Telemetry/ScheduledTaskHealthGatewayTest.php
 tests/integration/Core/Framework/MessageQueue/ScheduledTask/TaskRegistryTest.php
 tests/integration/Core/Framework/MessageQueue/ScheduledTask/RegisterScheduledTaskTest.php
 tests/integration/Core/Framework/MessageQueue/Subscriber/MessageQueueStatsSubscriberTest.php
@@ -9426,6 +9427,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexerRegistryTes
 tests/unit/Core/Framework/DataAbstractionLayer/Indexing/MessageQueue/FullEntityIndexerMessageTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Indexing/MessageQueue/IterateEntityIndexerMessageTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexingMessageTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Indexing/Telemetry/IndexerMetricsInstrumentorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/EntityIndexingSubscriberTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/RegisteredIndexerSubscriberTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityWriteResultCollectionTest.php
@@ -9524,6 +9526,10 @@ tests/unit/Core/Framework/Routing/RouteParamsCleanupListenerTest.php
 tests/unit/Core/Framework/Routing/CanonicalRedirectServiceTest.php
 tests/unit/Core/Framework/Routing/Event/MaintenanceModeRequestEventTest.php
 tests/unit/Core/Framework/Routing/RoutingExceptionTest.php
+tests/unit/Core/Framework/Routing/Telemetry/AreaResolverTest.php
+tests/unit/Core/Framework/Routing/Telemetry/DomainResolverTest.php
+tests/unit/Core/Framework/Routing/Telemetry/HttpRequestMetricSubscriberTest.php
+tests/unit/Core/Framework/Routing/Telemetry/OperationResolverTest.php
 tests/unit/Core/Framework/Routing/Validation/RouteBlocklistServiceTest.php
 tests/unit/Core/Framework/Routing/Validation/Constraint/RouteNotBlockedValidatorTest.php
 tests/unit/Core/Framework/Routing/CoreSubscriberTest.php
@@ -9546,7 +9552,11 @@ tests/unit/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskHandlerTest.ph
 tests/unit/Core/Framework/MessageQueue/ScheduledTask/SymfonyBridge/ScheduleProviderTest.php
 tests/unit/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskExecutorTest.php
 tests/unit/Core/Framework/MessageQueue/ScheduledTask/Registry/TaskRegistryTest.php
+tests/unit/Core/Framework/MessageQueue/ScheduledTask/Telemetry/ScheduledTaskHealthCollectorTest.php
+tests/unit/Core/Framework/MessageQueue/Telemetry/MessageGroupResolverTest.php
 tests/unit/Core/Framework/MessageQueue/Telemetry/MessageQueueTelemetrySubscriberTest.php
+tests/unit/Core/Framework/MessageQueue/Telemetry/MessengerQueueDepthCollectorTest.php
+tests/unit/Core/Framework/MessageQueue/Telemetry/WorkerMessageTimingHelperTest.php
 tests/unit/Core/Framework/MessageQueue/Service/MessageSizeCalculatorTest.php
 tests/unit/Core/Framework/MessageQueue/MessageHandlerCompilerPassTest.php
 tests/unit/Core/Framework/MessageQueue/SendEmailMessageJsonSerializerTest.php
@@ -10205,6 +10215,8 @@ tests/unit/Core/Framework/Telemetry/Metrics/Transport/TransportCollectionTest.ph
 tests/unit/Core/Framework/Telemetry/Metrics/Subscriber/TelemetryFlushListenerTest.php
 tests/unit/Core/Framework/Telemetry/Metrics/MeterProviderTest.php
 tests/unit/Core/Framework/Telemetry/TelemetryExceptionTest.php
+tests/unit/Core/Framework/Telemetry/Doctrine/QueryCounterTest.php
+tests/unit/Core/Framework/Telemetry/Doctrine/QueryCountMiddlewareTest.php
 tests/unit/Core/Framework/Validation/HappyPathValidatorTest.php
 tests/unit/Core/Framework/Validation/DataValidationDefinitionTest.php
 tests/unit/Core/Framework/Validation/ValidatorFactoryTest.php
@@ -17575,6 +17587,7 @@ src/Core/Framework/DataAbstractionLayer/Indexing/ChildCountUpdater.php
 src/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexer.php
 src/Core/Framework/DataAbstractionLayer/Indexing/InheritanceUpdater.php
 src/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexerRegistry.php
+src/Core/Framework/DataAbstractionLayer/Indexing/Telemetry/IndexerMetricsInstrumentor.php
 src/Core/Framework/DataAbstractionLayer/Indexing/EntityIndexingMessage.php
 src/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/RegisteredIndexerSubscriber.php
 src/Core/Framework/DataAbstractionLayer/Indexing/Subscriber/EntityIndexingSubscriber.php
@@ -17879,6 +17892,10 @@ src/Core/Framework/Routing/AbstractRouteScope.php
 src/Core/Framework/Routing/Exception/CustomerNotLoggedInRoutingException.php
 src/Core/Framework/Routing/Exception/InvalidRouteScopeException.php
 src/Core/Framework/Routing/Exception/SalesChannelNotFoundException.php
+src/Core/Framework/Routing/Telemetry/AreaResolver.php
+src/Core/Framework/Routing/Telemetry/OperationResolver.php
+src/Core/Framework/Routing/Telemetry/DomainResolver.php
+src/Core/Framework/Routing/Telemetry/HttpRequestMetricSubscriber.php
 src/Core/Framework/Routing/Validation/RouteBlocklistService.php
 src/Core/Framework/Routing/Validation/Constraint/RouteNotBlocked.php
 src/Core/Framework/Routing/Validation/Constraint/RouteNotBlockedValidator.php
@@ -17925,9 +17942,14 @@ src/Core/Framework/MessageQueue/ScheduledTask/Registry/TaskRegistry.php
 src/Core/Framework/MessageQueue/ScheduledTask/ScheduledTask.php
 src/Core/Framework/MessageQueue/ScheduledTask/README.md
 src/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskDefinition.php
+src/Core/Framework/MessageQueue/ScheduledTask/Telemetry/ScheduledTaskHealthGateway.php
+src/Core/Framework/MessageQueue/ScheduledTask/Telemetry/ScheduledTaskHealthCollector.php
 src/Core/Framework/MessageQueue/ScheduledTask/DynamicallyScheduledTaskHandler.php
 src/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskEntity.php
 src/Core/Framework/MessageQueue/ScheduledTask/ScheduledTaskMessageInterface.php
+src/Core/Framework/MessageQueue/Telemetry/MessengerQueueDepthCollector.php
+src/Core/Framework/MessageQueue/Telemetry/MessageGroupResolver.php
+src/Core/Framework/MessageQueue/Telemetry/WorkerMessageTimingHelper.php
 src/Core/Framework/MessageQueue/Telemetry/MessageQueueTelemetrySubscriber.php
 src/Core/Framework/MessageQueue/Service/MessageSizeCalculator.php
 src/Core/Framework/MessageQueue/MessageHandlerCompilerPass.php
@@ -19248,6 +19270,11 @@ src/Core/Framework/Telemetry/Metrics/Metric/Metric.php
 src/Core/Framework/Telemetry/Metrics/Transport/TransportCollection.php
 src/Core/Framework/Telemetry/Metrics/Subscriber/TelemetryFlushListener.php
 src/Core/Framework/Telemetry/Telemetry.php
+src/Core/Framework/Telemetry/Doctrine/QueryCounter.php
+src/Core/Framework/Telemetry/Doctrine/QueryCountDriver.php
+src/Core/Framework/Telemetry/Doctrine/QueryCountConnection.php
+src/Core/Framework/Telemetry/Doctrine/QueryCountStatement.php
+src/Core/Framework/Telemetry/Doctrine/QueryCountMiddleware.php
 src/Core/Framework/Validation/Api/EmailValidationController.php
 src/Core/Framework/Validation/DataValidator.php
 src/Core/Framework/Validation/DataValidationFactoryInterface.php

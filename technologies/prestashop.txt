@@ -3285,6 +3285,7 @@ tests/Unit/Core/Security/HashingTest.php
 tests/Unit/Core/Security/HtaccessFolderGuardTest.php
 tests/Unit/Core/Payment/PaymentOptionTest.php
 tests/Unit/Core/Payment/PaymentOptionFormDecoratorTest.php
+tests/Unit/Core/Module/SourceHandler/TarSourceHandlerTest.php
 tests/Unit/Core/Module/SourceHandler/ZipSourceHandlerTest.php
 tests/Unit/Core/Module/SourceHandler/SourceHandlerFactoryTest.php
 tests/Unit/Core/Module/SourceHandler/RemoteZipSourceHandlerTest.php
@@ -5565,6 +5566,7 @@ tests/Resources/modules/ps_emailalerts/mails/en/customer_qty.txt
 tests/Resources/download/.gitkeep
 tests/Resources/Translator/DummyTranslator.php
 tests/Resources/dummyFile/dummy_zip.zip
+tests/Resources/dummyFile/valid_module.tar.gz
 tests/Resources/dummyFile/valid_module.zip
 tests/Resources/dummyFile/test_text_file.txt
 tests/Resources/dummyFile/invalid_module.zip
@@ -6937,6 +6939,7 @@ src/Core/Payment/PaymentOption.php
 src/Core/Payment/PaymentModulePreferencesConfiguration.php
 src/Core/Payment/PaymentOptionFormDecorator.php
 src/Core/Encoding/CharsetEncoding.php
+src/Core/Module/SourceHandler/TarSourceHandler.php
 src/Core/Module/SourceHandler/RemoteZipSourceHandler.php
 src/Core/Module/SourceHandler/SourceHandlerInterface.php
 src/Core/Module/SourceHandler/SourceHandlerFactory.php
