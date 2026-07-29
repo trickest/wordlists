@@ -911,7 +911,6 @@ apps/admin-x-settings/src/components/settings/advanced/labs/lab-item.tsx
 apps/admin-x-settings/src/components/settings/advanced/labs/feature-toggle.tsx
 apps/admin-x-settings/src/components/settings/advanced/labs/beta-features.tsx
 apps/admin-x-settings/src/components/settings/advanced/labs/private-features.tsx
-apps/admin-x-settings/src/components/settings/advanced/labs/migration-options.tsx
 apps/admin-x-settings/src/components/settings/advanced/labs/yaml-file-editor-modal.tsx
 apps/admin-x-settings/src/components/settings/advanced/danger-zone.tsx
 apps/admin-x-settings/src/components/settings/advanced/integrations/custom-integration-modal.tsx
@@ -1071,11 +1070,11 @@ apps/admin-x-settings/src/components/settings/general/invite-user-modal.tsx
 apps/admin-x-settings/src/components/settings/general/general-settings.tsx
 apps/admin-x-settings/src/components/settings/general/users/change-password-form.tsx
 apps/admin-x-settings/src/components/settings/general/users/profile-tab.tsx
-apps/admin-x-settings/src/components/settings/general/users/custom-header.tsx
 apps/admin-x-settings/src/components/settings/general/users/social-links-tab.tsx
 apps/admin-x-settings/src/components/settings/general/users/email-notifications-tab.tsx
 apps/admin-x-settings/src/components/settings/general/users/role-selector.tsx
 apps/admin-x-settings/src/components/settings/general/users/staff-token.tsx
+apps/admin-x-settings/src/components/providers/routing/staff-profile-paths.tsx
 apps/admin-x-settings/src/components/providers/routing/modals.tsx
 apps/admin-x-settings/src/components/providers/global-data-provider.tsx
 apps/admin-x-settings/src/components/providers/settings-router.tsx
@@ -1085,7 +1084,6 @@ apps/admin-x-settings/src/components/confirmation-modal.tsx
 apps/admin-x-settings/src/components/selectors/unsplash-selector.tsx
 apps/admin-x-settings/src/components/exit-settings-button.tsx
 apps/admin-x-settings/src/components/code-editor-view.tsx
-apps/admin-x-settings/src/components/behind-feature-flag.tsx
 apps/admin-x-settings/src/components/infinite-scroll-listener.tsx
 apps/admin-x-settings/src/components/color-swatch-field.tsx
 apps/admin-x-settings/src/components/error-boundary.tsx
@@ -2750,6 +2748,7 @@ apps/admin/src/settings/permissions.acceptance.test.tsx
 apps/admin/src/settings/search.acceptance.test.tsx
 apps/admin/src/settings/advanced/integrations.acceptance.test.tsx
 apps/admin/src/settings/advanced/advanced.acceptance.test.tsx
+apps/admin/src/settings/settings-access.ts
 apps/admin/src/settings/site/navigation.acceptance.test.tsx
 apps/admin/src/settings/site/design.acceptance.test.tsx
 apps/admin/src/settings/site/announcement-bar.acceptance.test.tsx
@@ -2762,6 +2761,7 @@ apps/admin/src/settings/membership/tiers.acceptance.test.tsx
 apps/admin/src/settings/membership/member-welcome-emails.acceptance.test.tsx
 apps/admin/src/settings/membership/portal.acceptance.test.tsx
 apps/admin/src/settings/membership/stripe.acceptance.test.tsx
+apps/admin/src/settings/settings-access.test.ts
 apps/admin/src/settings/email/mailgun.acceptance.test.tsx
 apps/admin/src/settings/email/newsletters.acceptance.test.tsx
 apps/admin/src/settings/email/default-recipients.acceptance.test.tsx
@@ -2808,6 +2808,7 @@ apps/admin/src/layout/app-sidebar/nav-main.tsx
 apps/admin/src/layout/app-sidebar/shared-views.ts
 apps/admin/src/layout/app-sidebar/use-custom-sidebar-views.ts
 apps/admin/src/layout/app-sidebar/nav-ghost-pro.tsx
+apps/admin/src/layout/app-sidebar/upgrade-banner.test.tsx
 apps/admin/src/layout/app-sidebar/theme-errors-banner.tsx
 apps/admin/src/layout/app-sidebar/nav-member-views.tsx
 apps/admin/src/layout/app-sidebar/user-menu.tsx
@@ -2973,6 +2974,7 @@ apps/admin/src/automations/editor.test.tsx
 apps/admin/src/automations/hooks/use-email-tracking-settings.ts
 apps/admin/src/automations/hooks/use-visible-automations.ts
 apps/admin/src/automations/hooks/use-welcome-email-sender-details.ts
+apps/admin/src/route-access-guard.tsx
 apps/admin/src/member-detail-gate.tsx
 apps/admin/src/ember-bridge/ember-provider.tsx
 apps/admin/src/ember-bridge/index.ts
@@ -3114,11 +3116,11 @@ apps/admin/src/members/hooks/use-label-picker.ts
 apps/admin/src/members/hooks/use-label-picker.test.tsx
 apps/admin/src/members/hooks/use-members-filter-state.test.tsx
 apps/admin/src/members/members.screen.ts
-apps/admin/src/members-route.test.tsx
+apps/admin/src/route-access.acceptance.test.tsx
 apps/admin/src/main.tsx
 apps/admin/src/gift-link-modal-host.tsx
-apps/admin/src/members-route.tsx
 apps/admin/src/my-profile-redirect.tsx
+apps/admin/src/route-access-guard.test.tsx
 apps/admin/src/analytics/providers/analytics-provider.tsx
 apps/admin/src/analytics/providers/analytics-context.ts
 apps/admin/src/analytics/components/chart/custom-tooltip-content.tsx
@@ -4922,6 +4924,7 @@ ghost/core/test/integration/services/email-service/recipient-count.test.js
 ghost/core/test/integration/services/mailgun-email-suppression-list.test.js
 ghost/core/test/integration/services/member-welcome-emails-snapshot.test.js
 ghost/core/test/integration/services/email-analytics/automation-email-analytics.test.js
+ghost/core/test/integration/services/link-redirection/automation-redirects.test.ts
 ghost/core/test/integration/services/gift-links.test.ts
 ghost/core/test/integration/services/route-settings/dynamic-routing-service.test.ts
 ghost/core/test/integration/services/last-seen-at-updater.test.js
@@ -5122,6 +5125,7 @@ ghost/core/test/unit/server/services/audience-feedback/audience-feedback-service
 ghost/core/test/unit/server/services/link-tracking/link-click-repository.test.js
 ghost/core/test/unit/server/services/link-tracking/link-click-tracking-service.test.js
 ghost/core/test/unit/server/services/link-tracking/post-link-repository.test.js
+ghost/core/test/unit/server/services/link-tracking/index.test.ts
 ghost/core/test/unit/server/services/indexnow-ping/indexnow-ping-service.test.js
 ghost/core/test/unit/server/services/themes/validate.test.js
 ghost/core/test/unit/server/services/themes/upload-size-limit-reporter.test.js
@@ -5196,6 +5200,7 @@ ghost/core/test/unit/server/services/url/url-service-facade.test.js
 ghost/core/test/unit/server/services/url/resources.test.js
 ghost/core/test/unit/server/services/url/queue.test.js
 ghost/core/test/unit/server/services/automations/mailgun-message-id.test.ts
+ghost/core/test/unit/server/services/automations/scheduler-poll-time.test.ts
 ghost/core/test/unit/server/services/automations/automations-repository.test.ts
 ghost/core/test/unit/server/services/automations/stale-lock-cutoff.test.ts
 ghost/core/test/unit/server/services/automations/service.test.js
@@ -7275,6 +7280,7 @@ ghost/core/core/server/services/automations/automations-api.ts
 ghost/core/core/server/services/automations/poll.ts
 ghost/core/core/server/services/automations/fake-wait-hours-multiplier.ts
 ghost/core/core/server/services/automations/index.js
+ghost/core/core/server/services/automations/scheduler-poll-time.ts
 ghost/core/core/server/services/jobs/job-service.js
 ghost/core/core/server/services/jobs/worker-model-event-bridge.js
 ghost/core/core/server/services/jobs/index.js

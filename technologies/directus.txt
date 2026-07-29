@@ -31,10 +31,12 @@ contributing.md
 .changeset/chatty-papers-taste.md
 .changeset/proud-otters-wait.md
 .changeset/brave-otters-cheer.md
+.changeset/parse-deep-properties.md
 .changeset/clever-feet-ring.md
 .changeset/wild-pillows-cheer.md
 .changeset/cool-cookies-rest.md
 .changeset/little-ears-share.md
+.changeset/smooth-planes-wink.md
 .changeset/wide-mugs-wave.md
 .changeset/onboarding-dpa-replace-privacy.md
 .changeset/collect-boread-bobsled.md
@@ -364,6 +366,7 @@ api/src/utils/validate-env.ts
 api/src/utils/get-allowed-log-levels.test.ts
 api/src/utils/split-fields.test.ts
 api/src/utils/get-host-from-req.ts
+api/src/utils/set-deep.ts
 api/src/utils/redact-object.test.ts
 api/src/utils/user-name.test.ts
 api/src/utils/get-default-value.ts
@@ -391,6 +394,7 @@ api/src/utils/store.test.ts
 api/src/utils/require-yaml.ts
 api/src/utils/get-collection-from-alias.test.ts
 api/src/utils/destroy-piped-stream.ts
+api/src/utils/set-deep.test.ts
 api/src/utils/validate-user-count-integrity.test.ts
 api/src/utils/is-url-allowed.ts
 api/src/utils/deep-freeze.ts
@@ -903,9 +907,11 @@ api/src/ai/chat/controllers/chat.post.ts
 api/src/ai/chat/controllers/chat.post.test.ts
 api/src/ai/chat/constants/system-prompt.ts
 api/src/ai/chat/lib/transform-file-parts.test.ts
+api/src/ai/chat/lib/ip-validated-download.test.ts
 api/src/ai/chat/lib/create-ui-stream.ts
 api/src/ai/chat/lib/create-ui-stream.test.ts
 api/src/ai/chat/lib/transform-file-parts.ts
+api/src/ai/chat/lib/ip-validated-download.ts
 api/src/ai/providers/anthropic-file-support.ts
 api/src/ai/providers/types.ts
 api/src/ai/providers/anthropic-tool-search.ts

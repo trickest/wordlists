@@ -650,7 +650,6 @@ core/modules/link/tests/src/FunctionalJavascript/LinkFieldFormStatesTest.php
 core/modules/link/tests/src/Functional/Views/LinkViewsTokensTest.php
 core/modules/link/tests/src/Functional/GenericTest.php
 core/modules/link/tests/src/Functional/LinkFieldTest.php
-core/modules/link/tests/src/Functional/LinkFieldUITest.php
 core/modules/link/tests/src/Unit/LinkFormatterTest.php
 core/modules/link/tests/src/Unit/AttributeXssTest.php
 core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkAccessConstraintValidatorTest.php
@@ -1223,7 +1222,9 @@ core/modules/field_ui/tests/src/Unit/FieldUiTableTest.php
 core/modules/field_ui/tests/src/Unit/FieldConfigEditFormTest.php
 core/modules/field_ui/tests/src/Traits/FieldUiJSTestTrait.php
 core/modules/field_ui/tests/src/Traits/FieldUiTestTrait.php
+core/modules/field_ui/tests/src/Traits/FieldUiAssertTrait.php
 core/modules/field_ui/tests/src/Kernel/EntityDisplayTest.php
+core/modules/field_ui/tests/src/Kernel/ManageFieldsTest.php
 core/modules/field_ui/tests/src/Kernel/EntityFormDisplayTest.php
 core/modules/field_ui/field_ui.permissions.yml
 core/modules/field_ui/field_ui.links.task.yml
@@ -1416,6 +1417,7 @@ core/modules/locale/tests/src/Functional/LocalePathTest.php
 core/modules/locale/tests/src/Functional/LocaleTranslationDownloadTest.php
 core/modules/locale/tests/src/Functional/LocaleExportTest.php
 core/modules/locale/tests/src/Functional/LocaleLocaleLookupTest.php
+core/modules/locale/tests/src/Functional/LocaleThemeInstallTest.php
 core/modules/locale/tests/src/Functional/LocaleUpdateDevelopmentReleaseTest.php
 core/modules/locale/tests/src/Unit/LocaleLookupTest.php
 core/modules/locale/tests/src/Unit/Menu/LocaleLocalTasksTest.php
@@ -11084,6 +11086,7 @@ core/tests/Drupal/Tests/TestFileCreationTrait.php
 core/tests/Drupal/Tests/ApiRequestTrait.php
 core/tests/Drupal/Tests/UnitTestCase.php
 core/tests/Drupal/Tests/TestTools/ErrorHandler/DrupalDebugClassLoaderTest.php
+core/tests/Drupal/Tests/ProxyClass/Core/DependencyInjection/Fixture/LazyService.php
 core/tests/Drupal/Tests/ExtensionListTestTrait.php
 core/tests/Drupal/Tests/UnitTestCaseTest.php
 core/tests/Drupal/Tests/DrupalTestBrowser.php
@@ -11362,6 +11365,7 @@ core/tests/Drupal/Tests/Core/DependencyInjection/ContainerBuilderTest.php
 core/tests/Drupal/Tests/Core/DependencyInjection/ContainerTest.php
 core/tests/Drupal/Tests/Core/DependencyInjection/DependencySerializationTest.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/TestCompatClosureHttpMiddlewareClass.php
+core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/LazyService.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/BazClass.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/TestHttpMiddlewareClass.php
 core/tests/Drupal/Tests/Core/DependencyInjection/Fixture/TestClosureHttpMiddlewareClass.php
@@ -12385,6 +12389,7 @@ core/tests/Drupal/KernelTests/Core/DependencyInjection/AutoconfigurationTest.php
 core/tests/Drupal/KernelTests/Core/ServiceProvider/ServiceProviderTest.php
 core/tests/Drupal/KernelTests/Core/StreamWrapper/StreamWrapperManagerTest.php
 core/tests/Drupal/KernelTests/Core/StreamWrapper/ExtensionStreamTest.php
+core/tests/Drupal/KernelTests/Core/Access/CsrfRequestHeaderAccessCheckTest.php
 core/tests/Drupal/KernelTests/Core/Http/LinkRelationsTest.php
 core/tests/Drupal/KernelTests/Core/Http/BinaryFileResponseTest.php
 core/tests/Drupal/KernelTests/Core/Field/FieldItemTest.php
@@ -13991,8 +13996,6 @@ core/lib/Drupal/Core/ProxyClass/PageCache/ChainResponsePolicy.php
 core/lib/Drupal/Core/ProxyClass/Batch/BatchStorage.php
 core/lib/Drupal/Core/ProxyClass/Render/BareHtmlPageRenderer.php
 core/lib/Drupal/Core/ProxyClass/Menu/MenuActiveTrail.php
-core/lib/Drupal/Core/ProxyClass/Lock/DatabaseLockBackend.php
-core/lib/Drupal/Core/ProxyClass/Lock/PersistentDatabaseLockBackend.php
 core/lib/Drupal/Core/PageCache/RequestPolicyInterface.php
 core/lib/Drupal/Core/PageCache/DefaultRequestPolicy.php
 core/lib/Drupal/Core/PageCache/ChainRequestPolicyInterface.php

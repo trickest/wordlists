@@ -97,6 +97,7 @@ tests/pa11y/.gitkeep
 tests/TestCase.php
 tests/Unit/MaintenanceTest.php
 tests/Unit/AccessoryTest.php
+tests/Unit/Rules/AllowedUploadExtensionTest.php
 tests/Unit/Rules/ExternalUrlTest.php
 tests/Unit/Rules/CssColorTest.php
 tests/Unit/LdapTest.php
@@ -161,6 +162,7 @@ tests/Feature/Reporting/Custom/CustomAssetReportTest.php
 tests/Feature/Reporting/Custom/CustomComponentReportTest.php
 tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
 tests/Feature/Blade/RadioRowTest.php
+tests/Feature/Blade/ButtonSubmitTest.php
 tests/Feature/Blade/CheckboxInlineTest.php
 tests/Feature/Blade/CheckboxRowTest.php
 tests/Feature/Departments/Api/DeleteDepartmentsTest.php
@@ -175,6 +177,7 @@ tests/Feature/Departments/Ui/ShowDepartmentTest.php
 tests/Feature/Departments/Ui/UpdateDepartmentsTest.php
 tests/Feature/Settings/SecuritySettingTest.php
 tests/Feature/Settings/LdapSettingsTest.php
+tests/Feature/Settings/LdapWizardTest.php
 tests/Feature/Settings/ShowSetUpPageTest.php
 tests/Feature/Settings/BrandingSettingsTest.php
 tests/Feature/Settings/ApiRequestFiltersTest.php
@@ -262,9 +265,11 @@ tests/Feature/Scim/ReplaceUserWithMalformedKeyTest.php
 tests/Feature/Scim/ReplaceUserWithFilterKeyTest.php
 tests/Feature/Authentication/CheckUserIsActivatedApiTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
+tests/Feature/Authentication/SamlRelayStateSanitizationTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
+tests/Feature/Authentication/LoginBackUrlSanitizationTest.php
 tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Livewire/AlertMenuTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
@@ -273,6 +278,7 @@ tests/Feature/Livewire/PersonalAccessTokensTest.php
 tests/Feature/Livewire/ReportTemplateSelectTest.php
 tests/Feature/Livewire/ImporterTest.php
 tests/Feature/History/Api/IndexHistoryTest.php
+tests/Feature/Seeders/ImportSeederTest.php
 tests/Feature/Components/Api/ComponentIndexTest.php
 tests/Feature/Components/Api/DeleteComponentTest.php
 tests/Feature/Components/Api/ComponentAssetsTest.php
@@ -398,6 +404,7 @@ tests/Feature/Users/TransferUserItemsPageAccessTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdTest.php
 tests/Feature/ActionLogs/DisplaySigTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdBackfillTest.php
+tests/Feature/FileUploads/UploadFileValidationTest.php
 tests/Feature/Search/SearchableTraitTest.php
 tests/Feature/Maintenances/Api/DeleteMaintenancesTest.php
 tests/Feature/Maintenances/Api/MaintenanceTypesPaginationTest.php
@@ -414,6 +421,7 @@ tests/Feature/Maintenances/Ui/CreateMaintenanceTrackingTest.php
 tests/Feature/Maintenances/Ui/EditMaintenanceTest.php
 tests/Feature/Maintenances/Ui/ShowMaintenanceTest.php
 tests/Feature/Maintenances/Ui/CreateMaintenanceTest.php
+tests/Feature/Maintenances/Ui/BulkMaintenanceActionsTest.php
 tests/Feature/Maintenances/Ui/CompleteMaintenanceTest.php
 tests/Feature/Maintenances/Ui/MaintenanceFileTest.php
 tests/Feature/Permissions/PermissionsFormPreCheckTest.php
@@ -600,6 +608,7 @@ resources/views/settings/labels.blade.php
 resources/views/settings/api.blade.php
 resources/views/settings/purge.blade.php
 resources/views/settings/ldap.blade.php
+resources/views/settings/ldap-wizard.blade.php
 resources/views/settings/logins.blade.php
 resources/views/hardware/view.blade.php
 resources/views/hardware/checkin-due.blade.php
@@ -664,6 +673,8 @@ resources/views/partials/asset-bulk-actions.blade.php
 resources/views/partials/more-info.blade.php
 resources/views/partials/users-bulk-actions.blade.php
 resources/views/partials/labels-legacy-engine.blade.php
+resources/views/partials/theme-mode-toggle.blade.php
+resources/views/partials/theme-mode-tenant-vars.blade.php
 resources/views/partials/models-bulk-actions.blade.php
 resources/views/partials/locations-bulk-actions.blade.php
 resources/views/partials/label2-preview.blade.php
@@ -671,27 +682,21 @@ resources/views/partials/label2-field-definitions.blade.php
 resources/views/partials/confetti-js.blade.php
 resources/views/partials/forms/checkout-selector.blade.php
 resources/views/partials/forms/edit/item_number.blade.php
-resources/views/partials/forms/edit/purchase_cost.blade.php
 resources/views/partials/forms/edit/category-select.blade.php
 resources/views/partials/forms/edit/supplier-select.blade.php
 resources/views/partials/forms/edit/accessory-select.blade.php
-resources/views/partials/forms/edit/order_number.blade.php
 resources/views/partials/forms/edit/uploadLogo.blade.php
 resources/views/partials/forms/edit/model_number.blade.php
 resources/views/partials/forms/edit/permissions-base.blade.php
 resources/views/partials/forms/edit/consumable-select.blade.php
 resources/views/partials/forms/edit/notes.blade.php
-resources/views/partials/forms/edit/warranty.blade.php
 resources/views/partials/forms/edit/license-select.blade.php
 resources/views/partials/forms/edit/email.blade.php
 resources/views/partials/forms/edit/status.blade.php
-resources/views/partials/forms/edit/requestable.blade.php
 resources/views/partials/forms/edit/image-upload.blade.php
 resources/views/partials/forms/edit/phone.blade.php
 resources/views/partials/forms/edit/location-select.blade.php
 resources/views/partials/forms/edit/maintenance_type.blade.php
-resources/views/partials/forms/edit/datepicker.blade.php
-resources/views/partials/forms/edit/serial.blade.php
 resources/views/partials/forms/edit/asset-select.blade.php
 resources/views/partials/forms/edit/quantity.blade.php
 resources/views/partials/forms/edit/department-select.blade.php
@@ -711,6 +716,7 @@ resources/views/partials/forms/edit/address.blade.php
 resources/views/partials/forms/edit/manufacturer-select.blade.php
 resources/views/partials/forms/edit/depreciation.blade.php
 resources/views/partials/forms/demo-mode.blade.php
+resources/views/partials/theme-mode-preflight.blade.php
 resources/views/partials/bootstrap-table.blade.php
 resources/views/partials/impersonation-banner.blade.php
 resources/views/mail/markdown/checkout-component.blade.php
@@ -765,6 +771,7 @@ resources/views/blade/input/datetimepicker.blade.php
 resources/views/blade/input/radio.blade.php
 resources/views/blade/input/text.blade.php
 resources/views/blade/input/user-select.blade.php
+resources/views/blade/input/password.blade.php
 resources/views/blade/input/image-upload.blade.php
 resources/views/blade/input/location-select.blade.php
 resources/views/blade/input/datepicker.blade.php
@@ -805,6 +812,7 @@ resources/views/blade/table/locations.blade.php
 resources/views/blade/table/models.blade.php
 resources/views/blade/table/licenses.blade.php
 resources/views/blade/table/accessories.blade.php
+resources/views/blade/table/bulk-maintenances.blade.php
 resources/views/blade/table/bulk-assets.blade.php
 resources/views/blade/table/consumables.blade.php
 resources/views/blade/table/maintenances.blade.php
@@ -826,6 +834,7 @@ resources/views/blade/form/radio-row.blade.php
 resources/views/blade/form/label.blade.php
 resources/views/blade/form/error.blade.php
 resources/views/blade/page-column.blade.php
+resources/views/blade/demo-callout.blade.php
 resources/views/blade/well.blade.php
 resources/views/blade/tabs/files-tab.blade.php
 resources/views/blade/tabs/location-tab.blade.php
@@ -859,6 +868,7 @@ resources/views/blade/button/restore.blade.php
 resources/views/blade/button/audit.blade.php
 resources/views/blade/button/edit.blade.php
 resources/views/blade/button/add.blade.php
+resources/views/blade/button/submit.blade.php
 resources/views/blade/button/checkout.blade.php
 resources/views/blade/button/checkin.blade.php
 resources/views/blade/button/label.blade.php
@@ -895,6 +905,7 @@ resources/views/locations/bulk-delete.blade.php
 resources/views/locations/edit.blade.php
 resources/views/livewire/alert-menu.blade.php
 resources/views/livewire/custom-field-editor.blade.php
+resources/views/livewire/ldap-settings.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/location-scope-check.blade.php
 resources/views/livewire/checkout-target-panel.blade.php
@@ -904,6 +915,7 @@ resources/views/livewire/category-edit-form.blade.php
 resources/views/livewire/custom-field-set-default-values-for-model.blade.php
 resources/views/livewire/oauth-clients.blade.php
 resources/views/livewire/slack-settings-form.blade.php
+resources/views/livewire/asset-additional-tags.blade.php
 resources/views/livewire/importer.blade.php
 resources/views/custom_fields/index.blade.php
 resources/views/custom_fields/fieldsets/view.blade.php
@@ -7308,6 +7320,7 @@ app/Rules/AssetCannotBeCheckedOutToNondeployableStatus.php
 app/Rules/ExternalUrl.php
 app/Rules/EmailEncrypted.php
 app/Rules/UniqueUndeleted.php
+app/Rules/AllowedUploadExtension.php
 app/Rules/RegexEncrypted.php
 app/Rules/MacEncrypted.php
 app/Rules/IPv4Encrypted.php
@@ -7462,9 +7475,11 @@ app/Policies/SnipePermissionsPolicy.php
 app/Policies/LocationPolicy.php
 app/Policies/LicensePolicy.php
 app/Livewire/OauthClients.php
+app/Livewire/LdapSettings.php
 app/Livewire/CustomFieldSetDefaultValuesForModel.php
 app/Livewire/ReportTemplateSelect.php
 app/Livewire/PersonalAccessTokens.php
+app/Livewire/AssetAdditionalTags.php
 app/Livewire/LocationScopeCheck.php
 app/Livewire/AdminPersonalAccessTokens.php
 app/Livewire/CheckoutTargetPanel.php
@@ -7641,6 +7656,7 @@ app/Http/Controllers/BulkSuppliersController.php
 app/Http/Controllers/UploadedFilesController.php
 app/Http/Controllers/CustomFieldsetsController.php
 app/Http/Controllers/BulkDepartmentsController.php
+app/Http/Controllers/BulkMaintenancesController.php
 app/Http/Controllers/Accessories/AccessoryCheckoutController.php
 app/Http/Controllers/Accessories/AccessoriesController.php
 app/Http/Controllers/Accessories/AccessoryCheckinController.php
@@ -7899,6 +7915,7 @@ database/seeders/LicenseSeeder.php
 database/seeders/.gitkeep
 database/seeders/DepreciationSeeder.php
 database/seeders/Concerns/ReportsMemory.php
+database/seeders/ImportSeeder.php
 database/migrations/2015_09_09_195301_add_custom_css_to_settings.php
 database/migrations/2017_10_27_192423_migrate_denormed_asset_locations.php
 database/migrations/2015_02_12_001312_add_mac_address_to_asset.php
