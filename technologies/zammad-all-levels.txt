@@ -718,6 +718,9 @@ migrate/20170629000001_exchange_integration.rb
 db/migrate/20180719033247_add_confidential_to_doorkeeper_application.rb
 migrate/20180719033247_add_confidential_to_doorkeeper_application.rb
 20180719033247_add_confidential_to_doorkeeper_application.rb
+db/migrate/20260724130000_refactor_recent_views_upsert.rb
+migrate/20260724130000_refactor_recent_views_upsert.rb
+20260724130000_refactor_recent_views_upsert.rb
 db/migrate/20230705074628_ticket_conditions_regular_expression_operators.rb
 migrate/20230705074628_ticket_conditions_regular_expression_operators.rb
 20230705074628_ticket_conditions_regular_expression_operators.rb
@@ -15732,10 +15735,6 @@ app/models/application_model/can_destroy_dependent_associations.rb
 models/application_model/can_destroy_dependent_associations.rb
 application_model/can_destroy_dependent_associations.rb
 can_destroy_dependent_associations.rb
-app/models/application_model/has_recent_views.rb
-models/application_model/has_recent_views.rb
-application_model/has_recent_views.rb
-has_recent_views.rb
 app/models/application_model/can_query_case_insensitive_where_or_sql.rb
 models/application_model/can_query_case_insensitive_where_or_sql.rb
 application_model/can_query_case_insensitive_where_or_sql.rb
@@ -16074,6 +16073,10 @@ app/models/concerns/has_recent_closes.rb
 models/concerns/has_recent_closes.rb
 concerns/has_recent_closes.rb
 has_recent_closes.rb
+app/models/concerns/has_recent_views.rb
+models/concerns/has_recent_views.rb
+concerns/has_recent_views.rb
+has_recent_views.rb
 app/models/concerns/has_tags.rb
 models/concerns/has_tags.rb
 concerns/has_tags.rb
@@ -61901,6 +61904,10 @@ spec/db/migrate/issue_3194_update_permissions_spec.rb
 db/migrate/issue_3194_update_permissions_spec.rb
 migrate/issue_3194_update_permissions_spec.rb
 issue_3194_update_permissions_spec.rb
+spec/db/migrate/refactor_recent_views_upsert_spec.rb
+db/migrate/refactor_recent_views_upsert_spec.rb
+migrate/refactor_recent_views_upsert_spec.rb
+refactor_recent_views_upsert_spec.rb
 spec/db/migrate/issue3123_external_sync_ticket_merge_spec.rb
 db/migrate/issue3123_external_sync_ticket_merge_spec.rb
 migrate/issue3123_external_sync_ticket_merge_spec.rb
@@ -67484,6 +67491,9 @@ import_otrs_spec.rb
 spec/requests/channels_email_spec.rb
 requests/channels_email_spec.rb
 channels_email_spec.rb
+spec/requests/recent_view_spec.rb
+requests/recent_view_spec.rb
+recent_view_spec.rb
 spec/requests/time_accounting_spec.rb
 requests/time_accounting_spec.rb
 time_accounting_spec.rb
@@ -70702,6 +70712,10 @@ spec/models/concerns/can_csv_import_user_examples.rb
 models/concerns/can_csv_import_user_examples.rb
 concerns/can_csv_import_user_examples.rb
 can_csv_import_user_examples.rb
+spec/models/concerns/has_recent_views_examples.rb
+models/concerns/has_recent_views_examples.rb
+concerns/has_recent_views_examples.rb
+has_recent_views_examples.rb
 spec/models/online_notification_spec.rb
 models/online_notification_spec.rb
 online_notification_spec.rb

@@ -4950,6 +4950,7 @@ plugins/woocommerce/changelog/65128-add-send-test-email-to-emails-listing
 plugins/woocommerce/changelog/fix-66865-providers-cache-invalidation
 plugins/woocommerce/changelog/fix-28172-csv-importer-attribute-name-sanitization
 plugins/woocommerce/changelog/fix-checkout-total-race-guard
+plugins/woocommerce/changelog/fix-47831-widget-editor-wp-editor-dependency
 plugins/woocommerce/changelog/fix-66612-block-editor-deny-list
 plugins/woocommerce/changelog/update-wpcs-3-4-1-phpcs-tooling
 plugins/woocommerce/changelog/fix-product-collection-carousel-styles
@@ -4983,7 +4984,6 @@ plugins/woocommerce/changelog/cursor-WOOPLUG-6298-structured-data-vat-property-9
 plugins/woocommerce/changelog/41512-fix-product-import-complete-tracks-event
 plugins/woocommerce/changelog/add-attribute-slug-locale-hint
 plugins/woocommerce/changelog/dev-wp-7-1-e2e-content-locators
-plugins/woocommerce/changelog/fix-67083-checkout-fieldset-country-fatal
 plugins/woocommerce/changelog/66078-dehoist-react
 plugins/woocommerce/changelog/add-catalog-sort-order-enum
 plugins/woocommerce/changelog/testops-176-wp-env-single-container-set
@@ -5026,8 +5026,10 @@ plugins/woocommerce/changelog/fix-free-shipping-method-name-duplicated-in-shippi
 plugins/woocommerce/changelog/dev-deflag-wc-admin-feature-config
 plugins/woocommerce/changelog/add-unit-tests-to-better-validate-use-of-orders-in-hooks
 plugins/woocommerce/changelog/33773-fix-csv-importer-special-column-matching
+plugins/woocommerce/changelog/33517-fix-add-products-modal-keyboard
 plugins/woocommerce/changelog/dev-testops-210-analytics-e2e-pools
 plugins/woocommerce/changelog/fix-66821-core-breadcrumbs-callback-compatibility
+plugins/woocommerce/changelog/order-withdrawal-content-max-width
 plugins/woocommerce/changelog/31746-fix-coupon-save-draft
 plugins/woocommerce/changelog/update-deflag-product-pattern-features
 plugins/woocommerce/changelog/37870-guard-current-screen
@@ -5053,6 +5055,7 @@ plugins/woocommerce/changelog/testops-234-remove-redundant-blocks-e2e-tests
 plugins/woocommerce/changelog/66404-fix-local-pickup-save-notice
 plugins/woocommerce/changelog/64537-fix-checkout-wc-namespace-shadowing
 plugins/woocommerce/changelog/66952-fix-nav-menu-hidden-snapshot
+plugins/woocommerce/changelog/fix-layout-templates-upgrade-stub
 plugins/woocommerce/changelog/66583-fix-csv-import-leading-empty-gallery-image
 plugins/woocommerce/changelog/fix-WOOPMNT-6270-on-hold-email-copy
 plugins/woocommerce/changelog/fix-36143-product-image-tooltip
@@ -5069,14 +5072,18 @@ plugins/woocommerce/changelog/wooplug-7093-shipping-recommendations-dismiss
 plugins/woocommerce/changelog/fix-customizer-widget-block-filtering
 plugins/woocommerce/changelog/testops-212-remove-real-sleep-from-php-unit-tests
 plugins/woocommerce/changelog/64612-fix-64065-brands-admin-deregistered
+plugins/woocommerce/changelog/fix-add-item-temp-key-collision
 plugins/woocommerce/changelog/perf-e2e-combined-db-restore
 plugins/woocommerce/changelog/pr-64372
 plugins/woocommerce/changelog/update-woopayments-onboarding-troubleshooting-link
 plugins/woocommerce/changelog/php-tests-unbalanced-output-buffers-risky-test
+plugins/woocommerce/changelog/fix-reviews-list-table-check-column-test
+plugins/woocommerce/changelog/add-order-withdrawal-rate-limit
 plugins/woocommerce/changelog/fix-43351-macao-currency-symbol
 plugins/woocommerce/changelog/fix-61598-quick-edit-stock-quantity-null
 plugins/woocommerce/changelog/perf-e2e-direct-container-db-restore
 plugins/woocommerce/changelog/update-shipping-zone-method-save-action
+plugins/woocommerce/changelog/fix-revert-63744-net-amount-on-tax-inclusive-stores
 plugins/woocommerce/changelog/59959-fix-guest-order-name-home-orders-panel
 plugins/woocommerce/changelog/add-product-gallery-videos
 plugins/woocommerce/changelog/fix-66613-physical-order-admin-shipping-summary
@@ -5088,6 +5095,7 @@ plugins/woocommerce/changelog/add-whats-next-task-click-tracking
 plugins/woocommerce/changelog/task-remove-the-stale-wp-env-tests-port
 plugins/woocommerce/changelog/31815-fix-variation-uncategorized-csv-import
 plugins/woocommerce/changelog/woo6-57-codex-review-mini-cart-item-details-can-crash-when-no-item
+plugins/woocommerce/changelog/fix-35361-scope-review-order-page-creation
 plugins/woocommerce/changelog/66217-fix-revenue-report-refund-double-count
 plugins/woocommerce/changelog/docs-clarify-legacy-price-hash-serialization
 plugins/woocommerce/changelog/update-deflag-commerce-recommendations
@@ -5095,6 +5103,7 @@ plugins/woocommerce/changelog/66976-fix-nav-menu-hidden-snapshot-current-user
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/66228-fix-async-generator-lock-test
 plugins/woocommerce/changelog/65429-fix-rtl-admin-layout
+plugins/woocommerce/changelog/fix-35276-variation-stock-filter
 plugins/woocommerce/changelog/fix-blocks-bootstrap-translation-loading
 plugins/woocommerce/changelog/dev-remove-react-test-renderer
 plugins/woocommerce/changelog/dev-deflag-wc-admin-feature-compatibility-shims
@@ -5102,6 +5111,7 @@ plugins/woocommerce/changelog/testops-174-organize-e2e-test-plugins
 plugins/woocommerce/changelog/testops-207-split-wp-env-configs
 plugins/woocommerce/changelog/38541-fix-csv-importer-mbstring-fallback
 plugins/woocommerce/changelog/phpunit-suite-sharding-cleanup
+plugins/woocommerce/changelog/52292-set-product-reset-variation-id
 plugins/woocommerce/changelog/fix-65832-brand-nav-cache-poisoning
 plugins/woocommerce/changelog/wooplug-6986-prime-variation-count-caches
 plugins/woocommerce/changelog/fix-blocks-e2e-template-search-race
@@ -5112,7 +5122,6 @@ plugins/woocommerce/changelog/fix-facebook-webview-gallery-gestures
 plugins/woocommerce/changelog/wooplug-7014-fix-plugin-check-job-env
 plugins/woocommerce/changelog/dsgwoo-1343-hide-downloads-metabox
 plugins/woocommerce/changelog/fix-payment-label-popover-image-alignment
-plugins/woocommerce/changelog/fix-counters-relax-product-status-type-requirements
 plugins/woocommerce/changelog/add-stock-display-format-enum
 plugins/woocommerce/changelog/fix-duplicate-shipping-marketplace-link
 plugins/woocommerce/changelog/fix-32001-display-name-email
@@ -5124,6 +5133,7 @@ plugins/woocommerce/changelog/65875-fix-cart-link-icon-size
 plugins/woocommerce/changelog/perf-callbackutil-memoise-hook-signatures
 plugins/woocommerce/changelog/fix-clear-logs-20-file-cap
 plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
+plugins/woocommerce/changelog/39281-fix-coupon-updated-props-reset
 plugins/woocommerce/changelog/dev-66517-orders-meta-schema-union-coverage
 plugins/woocommerce/changelog/fix-order-fully-refunded-ghost-zero-refund
 plugins/woocommerce/changelog/fix-55501-placeholder-image-filter-attr
@@ -5132,7 +5142,6 @@ plugins/woocommerce/changelog/performance-unify-blocks-editor-assets
 plugins/woocommerce/changelog/fix-51490-brand-shortcode-style-units
 plugins/woocommerce/changelog/fix-quantity-stepper-dom-focus-order
 plugins/woocommerce/changelog/fix-wooplug-7135-rest-route-detection
-plugins/woocommerce/changelog/fix-email-editor-e2e-wp-7-1
 plugins/woocommerce/changelog/fix-lodash-orderby-import-restriction
 plugins/woocommerce/changelog/update-deflag-launch-your-store
 plugins/woocommerce/changelog/fix-v4-refunds-clamp-quantity-refund-to-remaining
@@ -5678,6 +5687,7 @@ plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-shippin
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-system-status-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-data-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-data-countries-controller.php
+plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-layout-templates-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-shipping-zones-controller-base.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-report-top-sellers-controller.php
@@ -5703,6 +5713,7 @@ plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-shippin
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-report-customers-totals-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-product-attribute-terms-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-setting-options-controller.php
+plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-products-catalog-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-coupons-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-refunds-controller.php
 plugins/woocommerce/includes/rest-api/Controllers/Version3/class-wc-rest-paypal-webhooks-controller.php
@@ -5858,6 +5869,7 @@ plugins/woocommerce/tests/php/includes/admin/helper/class-wc-helper-sanitization
 plugins/woocommerce/tests/php/includes/admin/helper/class-wc-helper-test.php
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-attributes-test.php
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-dashboard-setup-test.php
+plugins/woocommerce/tests/php/includes/admin/list-tables/class-wc-admin-list-table-products-test.php
 plugins/woocommerce/tests/php/includes/admin/list-tables/class-wc-admin-list-table-orders-test.php
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-marketplace-promotions-test.php
 plugins/woocommerce/tests/php/includes/admin/meta-boxes/class-wc-meta-box-coupon-data-test.php
@@ -5880,6 +5892,7 @@ plugins/woocommerce/tests/php/includes/class-wc-template-loader-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-product-variable-data-store-cpt-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-shipping-zone-data-store-test.php
+plugins/woocommerce/tests/php/includes/data-stores/class-wc-coupon-data-store-cpt-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-order-item-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-download-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-webhook-data-store-test.php
@@ -7394,6 +7407,7 @@ plugins/woocommerce/tests/e2e/tests/blocks/patterns/add-new-pattern.classic_them
 plugins/woocommerce/tests/e2e/tests/blocks/patterns/utils.ts
 plugins/woocommerce/tests/e2e/tests/blocks/patterns/add-new-pattern.block_theme.spec.ts
 plugins/woocommerce/tests/e2e/tests/blocks/handpicked-products/handpicked-products.block_theme.spec.ts
+plugins/woocommerce/tests/e2e/tests/blocks/widget-area/widget-area.classic_theme.spec.ts
 plugins/woocommerce/tests/e2e/tests/blocks/add-to-cart-with-options/add-to-cart-with-options.block_theme_with_templates.spec.ts
 plugins/woocommerce/tests/e2e/tests/blocks/add-to-cart-with-options/add-to-cart-with-options.page.ts
 plugins/woocommerce/tests/e2e/tests/blocks/add-to-cart-with-options/add-to-cart-with-options.block_theme.spec.ts
@@ -10339,6 +10353,7 @@ docs/best-practices/_category_.json
 docs/contribution/contributing/CSS-SASS-coding-guidelines-and-naming-conventions.md
 docs/contribution/contributing/minification-of-SCSS-and-JS.md
 docs/contribution/contributing/common-issues.md
+docs/contribution/contributing/version-support-policy.md
 docs/contribution/contributing/README.md
 docs/contribution/contributing/woocommerce-git-flow.md
 docs/contribution/contributing/naming-conventions.md
@@ -10949,7 +10964,6 @@ packages/php/email-editor/tasks/mirror-readme.md
 packages/php/email-editor/tasks/build-package.sh
 packages/php/email-editor/package.json
 packages/php/email-editor/email-editor.php
-packages/php/email-editor/changelog/update-wpcs-3-4-1
 packages/php/email-editor/changelog/.gitkeep
 packages/php/email-editor/changelog.md
 packages/php/email-editor/development.md

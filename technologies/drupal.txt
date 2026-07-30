@@ -6050,6 +6050,7 @@ core/modules/views/tests/modules/views_test_config/test_views/views.view.test_vi
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_argument_dependency.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_area_view.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_attachment_ui.yml
+core/modules/views/tests/modules/views_test_config/test_views/views.view.test_aggregate_count_numeric.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_token_view.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_display_attachment.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_remember_selected.yml
@@ -8096,6 +8097,7 @@ core/modules/content_translation/tests/src/Kernel/ContentTranslationSyncUnitTest
 core/modules/content_translation/tests/src/Kernel/ContentTranslationSettingsApiTest.php
 core/modules/content_translation/tests/src/Kernel/ContentTranslationPermissionsTest.php
 core/modules/content_translation/tests/src/Kernel/ContentTranslationHandlerTest.php
+core/modules/content_translation/tests/src/Kernel/ContentTranslationConcurrencyTest.php
 core/modules/content_translation/content_translation.permissions.yml
 core/modules/content_translation/src/ContentTranslationHandlerInterface.php
 core/modules/content_translation/src/FieldTranslationSynchronizerInterface.php
@@ -9021,7 +9023,6 @@ core/modules/package_manager/tests/src/Kernel/SupportedReleaseValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/WritableFileSystemValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/ComposerValidatorHelpTest.php
 core/modules/package_manager/tests/src/Kernel/StatusCheckTraitTest.php
-core/modules/package_manager/tests/src/Kernel/SettingsValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/InstalledPackagesListTest.php
 core/modules/package_manager/tests/src/Kernel/ComposerValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/FakeSiteFixtureTest.php
@@ -9080,7 +9081,6 @@ core/modules/package_manager/src/Validator/SandboxDirectoryValidator.php
 core/modules/package_manager/src/Validator/DiskSpaceValidator.php
 core/modules/package_manager/src/Validator/RsyncValidator.php
 core/modules/package_manager/src/Validator/DuplicateInfoFileValidator.php
-core/modules/package_manager/src/Validator/SettingsValidator.php
 core/modules/package_manager/src/Validator/BaseRequirementValidatorTrait.php
 core/modules/package_manager/src/Validator/SymlinkValidator.php
 core/modules/package_manager/src/Validator/ComposerValidator.php
@@ -11096,6 +11096,7 @@ core/tests/Drupal/Tests/XdebugRequestTrait.php
 core/tests/Drupal/Tests/WebAssert.php
 core/tests/Drupal/Tests/ConfigTestTrait.php
 core/tests/Drupal/Tests/TestRequirementsTrait.php
+core/tests/Drupal/Tests/DrupalTestCase.php
 core/tests/Drupal/Tests/CSpell/SortTest.php
 core/tests/Drupal/Tests/DrupalTestCaseTrait.php
 core/tests/Drupal/Tests/SessionTestTrait.php
@@ -11327,7 +11328,6 @@ core/tests/Drupal/Tests/Core/Database/fixtures/core/modules/driver_missing_depen
 core/tests/Drupal/Tests/Core/Database/fixtures/core/modules/driver_missing_dependency_test/src/Driver/Database/MissingDependency/Install/Tasks.php
 core/tests/Drupal/Tests/Core/Database/DriverModuleMissingDependenciesTest.php
 core/tests/Drupal/Tests/Core/Database/Stub/Driver/Schema.php
-core/tests/Drupal/Tests/Core/Database/Stub/StubPDO.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubSchema.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubUpsert.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubCondition.php
@@ -12540,6 +12540,7 @@ core/tests/Drupal/KernelTests/Core/Entity/EntityAutocompleteTest.php
 core/tests/Drupal/KernelTests/Core/Entity/ImmutablePropertiesConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityViewBuilderTest.php
 core/tests/Drupal/KernelTests/Core/Entity/ContentEntityCacheTest.php
+core/tests/Drupal/KernelTests/Core/Entity/EntityDefinitionUpdateBundleTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityFormModeValidationTest.php
 core/tests/Drupal/KernelTests/Core/Entity/EntityDisplayBaseTest.php
 core/tests/Drupal/KernelTests/Core/Entity/BaseFieldOverrideValidationTest.php

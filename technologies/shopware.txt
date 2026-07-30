@@ -6129,6 +6129,7 @@ tests/integration/Storefront/Framework/Media/fixtures/empty.pdf
 tests/integration/Storefront/Framework/Media/StorefrontMediaUploaderTest.php
 tests/integration/Core/Migration/Traits/CreateMailTemplateTraitTest.php
 tests/integration/Core/Migration/Traits/ImportTranslationTraitTest.php
+tests/integration/Core/KernelTest.php
 tests/integration/Core/Maintenance/SalesChannel/Command/SalesChannelUpdateDomainCommandTest.php
 tests/integration/Core/Maintenance/SalesChannel/Command/SalesChannelMaintenanceDisableCommandTest.php
 tests/integration/Core/Maintenance/SalesChannel/Command/SalesChannelReplaceUrlCommandTest.php
@@ -6471,6 +6472,7 @@ tests/integration/Core/Checkout/DocumentV2/Renderer/_snapshots/storno/snapshot.x
 tests/integration/Core/Checkout/DocumentV2/Renderer/_snapshots/storno/snapshot.html
 tests/integration/Core/Checkout/DocumentV2/Renderer/PdfRendererTest.php
 tests/integration/Core/Checkout/DocumentV2/DocumentV2Trait.php
+tests/integration/Core/Checkout/DocumentV2/Generation/DocumentGeneratorTest.php
 tests/integration/Core/Checkout/Order/SalesChannel/OrderServiceTest.php
 tests/integration/Core/Checkout/Order/SalesChannel/OrderRouteTest.php
 tests/integration/Core/Checkout/Order/SalesChannel/CancelOrderRouteTest.php
@@ -7722,6 +7724,7 @@ tests/unit/Storefront/Controller/StorybookControllerTest.php
 tests/unit/Storefront/Controller/AppControllerTest.php
 tests/unit/Storefront/DependencyInjection/StorefrontMigrationReplacementCompilerPassTest.php
 tests/unit/Storefront/DependencyInjection/TwigComponentBundlePassTest.php
+tests/unit/Storefront/DependencyInjection/ConfigurationTest.php
 tests/unit/Storefront/DependencyInjection/ThemeCompilerAssetCompilerPassTest.php
 tests/unit/Storefront/Event/StorefrontRedirectEventTest.php
 tests/unit/Storefront/Event/Subscriber/CartMergedSubscriberTest.php
@@ -7771,6 +7774,7 @@ tests/unit/Storefront/Framework/Twig/TwigDateRequestListenerTest.php
 tests/unit/Storefront/Framework/Routing/StorefrontRouteEventSubscriberTest.php
 tests/unit/Storefront/Framework/Routing/CanonicalLinkListenerTest.php
 tests/unit/Storefront/Framework/Routing/MaintenanceModeResolverTest.php
+tests/unit/Storefront/Framework/Routing/ClearSiteDataListenerTest.php
 tests/unit/Storefront/Framework/Routing/CachedDomainLoaderTest.php
 tests/unit/Storefront/Framework/Routing/DomainNotMappedListenerTest.php
 tests/unit/Storefront/Framework/Routing/AbstractDomainLoaderTest.php
@@ -8404,6 +8408,7 @@ tests/unit/Core/Checkout/Cart/Event/BeforeCartMergeEventTest.php
 tests/unit/Core/Checkout/Cart/Event/SalesChannelContextAssembledEventTest.php
 tests/unit/Core/Checkout/Cart/Event/CartBeforeSerializationEventTest.php
 tests/unit/Core/Checkout/Cart/Event/CartContextHashEventTest.php
+tests/unit/Core/Checkout/Cart/ProcessorTest.php
 tests/unit/Core/Checkout/Cart/Exception/TaxProviderExceptionsTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemProductTypeRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemDimensionHeightRuleTest.php
@@ -8426,6 +8431,7 @@ tests/unit/Core/Checkout/Cart/Rule/CartHasDeliveryFreeItemRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemPerItemQuantityRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemPromotedRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemCustomFieldRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemOfManufacturerRuleUnitTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemIsNewRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/ShippingMethodRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemReleaseDateRuleTest.php
@@ -8669,9 +8675,12 @@ tests/unit/Core/Checkout/Customer/Subscriber/CustomerTokenSubscriberTest.php
 tests/unit/Core/Checkout/Customer/Subscriber/ProductReviewSubscriberTest.php
 tests/unit/Core/Checkout/Customer/Subscriber/CustomerAddressSubscriberTest.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticDocumentDataProvider.php
+tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticReferencedSnapshotDocumentDataProvider.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticRenderData.php
+tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticDocumentType.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticDocumentRenderer.php
 tests/unit/Core/Checkout/DocumentV2/Fixtures/CollidingRenderData.php
+tests/unit/Core/Checkout/DocumentV2/Fixtures/StaticReferencingDocumentDataProvider.php
 tests/unit/Core/Checkout/DocumentV2/Config/DocumentNumberGeneratorTest.php
 tests/unit/Core/Checkout/DocumentV2/Config/DocumentConfigLoaderTest.php
 tests/unit/Core/Checkout/DocumentV2/Template/ZugferdTwigExtensionTest.php
@@ -8691,6 +8700,7 @@ tests/unit/Core/Checkout/DocumentV2/Renderer/DocumentRendererRegistryTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/ZugferdEmbeddedPdfRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/PdfRendererTest.php
 tests/unit/Core/Checkout/DocumentV2/Renderer/HtmlRendererTest.php
+tests/unit/Core/Checkout/DocumentV2/Type/DocumentTypeRegistryTest.php
 tests/unit/Core/Checkout/DocumentV2/Provider/DocumentDataProviderRegistryTest.php
 tests/unit/Core/Checkout/DocumentV2/Provider/DocumentMetaProviderTest.php
 tests/unit/Core/Checkout/DocumentV2/Provider/DeliveryNoteDataProviderTest.php
@@ -8701,6 +8711,7 @@ tests/unit/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequestResolver
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentDependencyResolverTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentGeneratorTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentPersisterTest.php
+tests/unit/Core/Checkout/DocumentV2/Generation/ReferencedDocumentResolverTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequestTest.php
 tests/unit/Core/Checkout/DocumentV2/Struct/RenderInputTest.php
 tests/unit/Core/Checkout/DocumentV2/Struct/RenderStateTest.php
@@ -9224,6 +9235,8 @@ tests/unit/Core/Content/MeasurementSystem/Field/MeasurementUnitsFieldSerializerT
 tests/unit/Core/Content/MeasurementSystem/ProductMeasurement/ProductMeasurementUnitBuilderTest.php
 tests/unit/Core/Content/MeasurementSystem/MeasurementSystemExceptionTest.php
 tests/unit/Core/Content/MeasurementSystem/TwigExtension/MeasurementConvertUnitTwigFilterTest.php
+tests/unit/Core/_fixtures/Kernel/project-with-twig-component-bundle/config/bundles.php
+tests/unit/Core/_fixtures/Kernel/project-without-twig-component-bundle/config/bundles.php
 tests/unit/Core/_fixtures/TestBootstrapper/project/custom/static-plugins/SwagStaticAnalysis/src/SwagStaticAnalysis.php
 tests/unit/Core/_fixtures/TestBootstrapper/project/custom/static-plugins/SwagStaticAnalysis/composer.json
 tests/unit/Core/_fixtures/TestBootstrapper/project/vendor/autoload.php
@@ -9461,6 +9474,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityForeignKeyResolverTest
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityWriteGatewayTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/EntityReaderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/CriteriaFieldsResolverTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Common/SalesChannelRepositoryIteratorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/Common/IteratorFactoryTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/SchemaBuilderTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Dbal/FieldAccessorBuilder/PriceFieldAccessorBuilderTest.php
@@ -9655,6 +9669,8 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginExtensionF
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/SimpleDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/DefinitionWithJsonOverride.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithOverride/Resources/Schema/StoreApi/paths/order_delivery.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithAssociationEnrichmentPaths/BundleWithAssociationEnrichmentPaths.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithAssociationEnrichmentPaths/Resources/Schema/StoreApi/paths/association_enrichment.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginBundleWithSchema/PluginBundleWithSchema.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginBundleWithSchema/Resources/Schema/StoreApi/components/schemas/JsonOverrideEntity.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/CustomBundleWithApiSchema/ShopwareBundleWithName.php
@@ -9674,6 +9690,7 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithPredec
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithPredeclaredSwLanguageId/Resources/Schema/StoreApi/paths/predeclared.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/DefinitionWithAssociations.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithoutApiSchema/Resources/.gitkeep
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/SEOUrlDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApiFileLoaderTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/CoreStoreApiSchemaMigrationScopeProviderTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi3GeneratorTest.php
@@ -13008,6 +13025,7 @@ src/Storefront/Framework/Routing/StorefrontRouteEventSubscriber.php
 src/Storefront/Framework/Routing/TemplateDataSubscriber.php
 src/Storefront/Framework/Routing/CachedDomainLoaderInvalidator.php
 src/Storefront/Framework/Routing/RequestTransformer.php
+src/Storefront/Framework/Routing/ClearSiteDataListener.php
 src/Storefront/Framework/AffiliateTracking/AffiliateTrackingListener.php
 src/Storefront/Framework/Command/SalesChannelCreateStorefrontCommand.php
 src/Storefront/Framework/Script/Api/StorefrontScriptResponseFactoryFacadeHookFactory.php
@@ -15867,7 +15885,13 @@ src/Core/Checkout/DocumentV2/Renderer/AbstractDocumentRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/ZugferdXmlRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/HtmlRenderer.php
 src/Core/Checkout/DocumentV2/Renderer/ZugferdEmbeddedPdfRenderer.php
+src/Core/Checkout/DocumentV2/Type/DocumentTypeRegistry.php
+src/Core/Checkout/DocumentV2/Type/AbstractDocumentType.php
+src/Core/Checkout/DocumentV2/Type/CancellationInvoiceDocumentType.php
+src/Core/Checkout/DocumentV2/Type/InvoiceDocumentType.php
+src/Core/Checkout/DocumentV2/Type/DeliveryNoteDocumentType.php
 src/Core/Checkout/DocumentV2/Provider/DocumentDataProviderRegistry.php
+src/Core/Checkout/DocumentV2/Provider/ReferencesDocument.php
 src/Core/Checkout/DocumentV2/Provider/DocumentMetaProvider.php
 src/Core/Checkout/DocumentV2/Provider/CancellationInvoiceDataProvider.php
 src/Core/Checkout/DocumentV2/Provider/DeliveryNoteDataProvider.php
@@ -15876,7 +15900,9 @@ src/Core/Checkout/DocumentV2/Provider/RenderData/InvoiceRenderData.php
 src/Core/Checkout/DocumentV2/Provider/RenderData/DeliveryNoteRenderData.php
 src/Core/Checkout/DocumentV2/Provider/RenderData/CancellationInvoiceRenderData.php
 src/Core/Checkout/DocumentV2/Provider/InvoiceDataProvider.php
+src/Core/Checkout/DocumentV2/Provider/RendersReferencedSnapshot.php
 src/Core/Checkout/DocumentV2/Provider/AbstractDocumentDataProvider.php
+src/Core/Checkout/DocumentV2/Generation/ReferencedDocumentResolver.php
 src/Core/Checkout/DocumentV2/Generation/DocumentGenerator.php
 src/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequestResolver.php
 src/Core/Checkout/DocumentV2/Generation/DocumentArchiveGenerator.php
@@ -15886,7 +15912,9 @@ src/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequest.php
 src/Core/Checkout/DocumentV2/DocumentFormat.php
 src/Core/Checkout/DocumentV2/Struct/AbstractRenderData.php
 src/Core/Checkout/DocumentV2/Struct/RenderInput.php
+src/Core/Checkout/DocumentV2/Struct/ReferencedDocument.php
 src/Core/Checkout/DocumentV2/Struct/RenderState.php
+src/Core/Checkout/DocumentV2/Struct/ProviderInput.php
 src/Core/Checkout/DocumentV2/Struct/RenderResult.php
 src/Core/Checkout/DocumentV2/Xml/XmlFormatter.php
 src/Core/Checkout/DocumentV2/Subscriber/DocumentBaseConfigSyncSubscriber.php

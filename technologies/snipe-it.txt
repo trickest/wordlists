@@ -193,6 +193,7 @@ tests/Feature/Checkins/Api/AssetCheckinByTagTest.php
 tests/Feature/Checkins/Api/AccessoryCheckinTest.php
 tests/Feature/Checkins/Ui/ComponentCheckinTest.php
 tests/Feature/Checkins/Ui/BulkAssetCheckinTest.php
+tests/Feature/Checkins/Ui/AssetCheckinInvalidModelTest.php
 tests/Feature/Checkins/Ui/AssetCheckinTest.php
 tests/Feature/Checkins/Ui/LicenseCheckinTest.php
 tests/Feature/Checkins/Ui/AccessoryCheckinTest.php
@@ -207,6 +208,7 @@ tests/Feature/Licenses/Ui/LicenseCheckoutTest.php
 tests/Feature/Licenses/Ui/LicenseViewTest.php
 tests/Feature/Licenses/Ui/LicenseIndexTest.php
 tests/Feature/Licenses/Ui/BulkDeleteLicensesTest.php
+tests/Feature/Licenses/Ui/ExportLicensesCsvTest.php
 tests/Feature/Licenses/Ui/BulkCheckinSelectedLicenseSeatsTest.php
 tests/Feature/Licenses/Ui/UpdateLicenseTest.php
 tests/Feature/Licenses/Ui/StoreLicenseWithFullMultipleCompanySupportTest.php
@@ -235,6 +237,7 @@ tests/Feature/Importing/Api/ImportAccessoriesTest.php
 tests/Feature/Importing/Api/ImportLocationsTest.php
 tests/Feature/Importing/Api/ImportConsumablesTest.php
 tests/Feature/Importing/Api/ImportOwnershipTest.php
+tests/Feature/Importing/AssetImportCreatedByTest.php
 tests/Feature/Importing/Ui/ImportTest.php
 tests/Feature/Importing/AssetImportCreatedAtTest.php
 tests/Feature/Suppliers/Api/DeleteSuppliersTest.php
@@ -258,6 +261,7 @@ tests/Feature/Groups/Ui/CreateGroupTest.php
 tests/Feature/Groups/Ui/UpdateGroupTest.php
 tests/Feature/Groups/Ui/IndexGroupTest.php
 tests/Feature/LicenseSeats/Api/LicenseSeatUpdateTest.php
+tests/Feature/Scim/MappedTableComplexValueTest.php
 tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Scim/UserEmailsShapeTest.php
 tests/Feature/Scim/UserFilterSchemaUrnTest.php
@@ -311,6 +315,7 @@ tests/Feature/Assets/Api/BulkAuditAssetsTest.php
 tests/Feature/Assets/Api/AssetFilesTest.php
 tests/Feature/Assets/Api/AssetHistoryTest.php
 tests/Feature/Assets/Api/AssetBySerialTest.php
+tests/Feature/Assets/AssetZeroIdNormalizationTest.php
 tests/Feature/Assets/Ui/AssetIndexTest.php
 tests/Feature/Assets/Ui/BulkEditAssetsTest.php
 tests/Feature/Assets/Ui/CheckinCheckoutCounters.php
@@ -324,6 +329,7 @@ tests/Feature/Assets/Ui/CloneAssetTest.php
 tests/Feature/Assets/Ui/BulkAuditAssetsTest.php
 tests/Feature/Assets/Ui/AssetLabelTest.php
 tests/Feature/Assets/Ui/ShowAssetTest.php
+tests/Feature/Assets/Ui/EncryptedCustomFieldFormDisclosureTest.php
 tests/Feature/Assets/Ui/DeleteAssetTest.php
 tests/Feature/Assets/Ui/StoreAssetsTest.php
 tests/Feature/Assets/Ui/BulkRestoreAuthorizationTest.php
@@ -7944,6 +7950,7 @@ database/migrations/2016_03_10_135519_add_locale_to_settings.php
 database/migrations/2013_11_25_033008_delete_bad_licenses_table.php
 database/migrations/2016_10_19_145520_fix_order_number_in_components_to_string.php
 database/migrations/2026_06_10_000001_add_null_company_is_floater_to_settings.php
+database/migrations/2026_07_30_000001_add_next_audit_date_index_to_assets.php
 database/migrations/2013_11_16_103258_create_locations_table.php
 database/migrations/2025_08_06_192954_add_image_to_maintenances.php
 database/migrations/2018_01_17_184354_add_archived_in_list_setting.php
@@ -8097,6 +8104,7 @@ database/migrations/2021_12_27_151849_change_supplier_address_length.php
 database/migrations/2015_02_12_024100_change_license_notes_type.php
 database/migrations/2018_04_02_150700_labels_display_model_name.php
 database/migrations/2014_11_07_021042_add_image_to_supplier.php
+database/migrations/2026_07_29_220000_make_departments_created_by_nullable.php
 database/migrations/2018_03_24_050108_add_cc_alerts.php
 database/migrations/2015_11_06_134742_add_company_id_to_licenses_table.php
 database/migrations/2022_03_10_175740_add_eula_to_action_logs.php

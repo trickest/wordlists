@@ -925,6 +925,7 @@ features/admin/pending_actions_per_channel.feature
 features/admin/securing_access_to_account_after_using_back_button_after_logging_out.feature
 features/admin/statistics_per_channel.feature
 features/admin/signing_in_to_administration_panel.feature
+features/admin/navbar_notifications_visibility.feature
 features/admin/payment/managing_payment_methods/adding_payment_method.feature
 features/admin/payment/managing_payment_methods/preventing_deletion_of_used_payment_method.feature
 features/admin/payment/managing_payment_methods/payment_method_unique_code_validation.feature
@@ -1449,8 +1450,10 @@ tests/Api/DataFixtures/ORM/tax_rates.yaml
 tests/Api/DataFixtures/ORM/shipping_category.yaml
 tests/Api/DataFixtures/ORM/payment_request/order.yaml
 tests/Api/DataFixtures/ORM/payment_request/order_with_customer.yaml
+tests/Api/DataFixtures/ORM/payment_request/payment_request_not_placed.yaml
 tests/Api/DataFixtures/ORM/payment_request/order_with_customer_created_as_guest.yaml
 tests/Api/DataFixtures/ORM/payment_request/payment_request.yaml
+tests/Api/DataFixtures/ORM/payment_request/order_not_placed.yaml
 tests/Api/DataFixtures/ORM/payment_request/payment_request_payum.yaml
 tests/Api/DataFixtures/ORM/exchange_rate.yaml
 tests/Api/DataFixtures/ORM/catalog_promotion/product_variant.yaml
@@ -4198,12 +4201,18 @@ src/Sylius/Bundle/CoreBundle/LICENSE
 src/Sylius/Bundle/CoreBundle/Context/SessionAndChannelBasedCartContext.php
 src/Sylius/Bundle/CoreBundle/Context/CustomerContext.php
 src/Sylius/Bundle/CoreBundle/Context/CustomerAndChannelBasedCartContext.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/CountrySetupInterface.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/LocaleSetupInterface.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/ChannelSetupInterface.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/ZoneSetupInterface.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/ChannelDefaultTaxZoneSetup.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/LocaleSetup.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/CurrencySetup.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/ChannelSetup.php
 src/Sylius/Bundle/CoreBundle/Installer/Setup/CurrencySetupInterface.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/ChannelDefaultTaxZoneSetupInterface.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/CountrySetup.php
+src/Sylius/Bundle/CoreBundle/Installer/Setup/ZoneSetup.php
 src/Sylius/Bundle/CoreBundle/Installer/Renderer/TableRenderer.php
 src/Sylius/Bundle/CoreBundle/Installer/Provider/DatabaseSetupCommandsProvider.php
 src/Sylius/Bundle/CoreBundle/Installer/Provider/DatabaseSetupCommandsProviderInterface.php
@@ -4839,10 +4848,12 @@ src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderProductEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenPaymentRequestActionEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UpdateCartEmailNotAllowed.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/UniqueReviewerEmailValidator.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderPaymentRequestEligibility.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/AdminResetPasswordTokenNonExpired.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ConfirmResetPasswordValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenShippingMethodEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderShippingMethodEligibility.php
+src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderPaymentRequestEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChangedItemQuantityInCartValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/OrderPaymentMethodEligibilityValidator.php
 src/Sylius/Bundle/ApiBundle/Validator/Constraints/ChosenShippingMethodEligibility.php
@@ -5013,6 +5024,7 @@ src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/OrderItemAvailabilityVal
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/AddingEligibleProductVariantToCartValidatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/OrderShippingMethodEligibilityValidatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/CorrectOrderAddressValidatorTest.php
+src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/OrderPaymentRequestEligibilityValidatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/ShopUserNotVerifiedValidatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/UniqueReviewerEmailValidatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Validator/Constraints/ShipmentAlreadyShippedValidatorTest.php
@@ -5074,6 +5086,7 @@ src/Sylius/Bundle/ApiBundle/tests/Creator/AvatarImageCreatorTest.php
 src/Sylius/Bundle/ApiBundle/tests/Security/ShopUserVoterTest.php
 src/Sylius/Bundle/ApiBundle/tests/Security/OrderAdjustmentsVoterTest.php
 src/Sylius/Bundle/ApiBundle/tests/Checker/AppliedCouponEligibilityCheckerTest.php
+src/Sylius/Bundle/ApiBundle/tests/Checker/OrderPaymentRequestEligibilityCheckerTest.php
 src/Sylius/Bundle/ApiBundle/tests/CommandHandler/Catalog/AddProductReviewHandlerTest.php
 src/Sylius/Bundle/ApiBundle/tests/CommandHandler/Promotion/GeneratePromotionCouponHandlerTest.php
 src/Sylius/Bundle/ApiBundle/tests/CommandHandler/Cart/AddItemToCartHandlerTest.php
@@ -5314,7 +5327,9 @@ src/Sylius/Bundle/ApiBundle/Security/OrderAdjustmentsVoter.php
 src/Sylius/Bundle/ApiBundle/Security/ShopUserVoter.php
 src/Sylius/Bundle/ApiBundle/Payment/PaymentConfigurationProviderInterface.php
 src/Sylius/Bundle/ApiBundle/Checker/AppliedCouponEligibilityChecker.php
+src/Sylius/Bundle/ApiBundle/Checker/OrderPaymentRequestEligibilityChecker.php
 src/Sylius/Bundle/ApiBundle/Checker/AppliedCouponEligibilityCheckerInterface.php
+src/Sylius/Bundle/ApiBundle/Checker/OrderPaymentRequestEligibilityCheckerInterface.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Catalog/AddProductReviewHandler.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Promotion/GeneratePromotionCouponHandler.php
 src/Sylius/Bundle/ApiBundle/CommandHandler/Cart/ChangeItemQuantityInCartHandler.php
@@ -5401,6 +5416,7 @@ src/Sylius/Bundle/ApiBundle/Resources/config/validation/AccountResetPassword.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ProductVariant.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddProductReview.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddPaymentRequest.xml
+src/Sylius/Bundle/ApiBundle/Resources/config/validation/UpdatePaymentRequest.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ShipShipment.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/ChangePaymentMethod.xml
 src/Sylius/Bundle/ApiBundle/Resources/config/validation/AddItemToCart.xml
@@ -11600,6 +11616,7 @@ src/Sylius/Behat/Context/Ui/Admin/ErrorPageContext.php
 src/Sylius/Behat/Context/Ui/Admin/NotificationContext.php
 src/Sylius/Behat/Context/Ui/Admin/ManagingCountriesContext.php
 src/Sylius/Behat/Context/Ui/Admin/ManagingExchangeRatesContext.php
+src/Sylius/Behat/Context/Ui/Admin/NavbarNotificationsContext.php
 src/Sylius/Behat/Context/Ui/Admin/ManagingPromotionsContext.php
 src/Sylius/Behat/Context/Ui/Admin/ManagingCatalogPromotionsContext.php
 src/Sylius/Behat/Context/Ui/Admin/ManagingOrdersContext.php

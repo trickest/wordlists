@@ -657,6 +657,7 @@ utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/service_uses_c
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/test_case_uses_container.php.inc
 utils/rector/src/ModelGetRepositoryToRepositoryServiceRector.php
 utils/rector/src/UnserializeToSerializerDecodeRector.php
+utils/rector/src/ValueObject/ServiceMethodCall.php
 utils/rector/src/ValueObject/ServiceTag.php
 utils/rector/src/ValueObject/ServiceArgument.php
 utils/rector/src/ValueObject/ServiceDefinition.php
@@ -708,6 +709,7 @@ tests/acceptance/ContactManagementCest.php
 tests/acceptance/GrapesJsBuilderPageCest.php
 tests/acceptance.suite.yml
 tests/object-manager.php
+rector-flip-services.php
 package-lock.json
 UPGRADE-5.0.md
 index.php
@@ -1900,6 +1902,7 @@ app/bundles/CoreBundle/Tests/Unit/Twig/Extension/HtmlExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Helper/ConfigHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Helper/DateHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Helper/AssetsHelperTest.php
+app/bundles/CoreBundle/Tests/Unit/Twig/Helper/TableHeaderTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Helper/ContentHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Helper/FormatterHelperTest.php
 app/bundles/CoreBundle/Tests/Unit/ErrorHandler/ErrorHandlerTest.php

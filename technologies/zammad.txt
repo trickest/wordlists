@@ -239,6 +239,7 @@ db/migrate/20171203000001_setting_es_pipeline.rb
 db/migrate/20180410000001_cleanup_user_preferences_notification_sound2.rb
 db/migrate/20170629000001_exchange_integration.rb
 db/migrate/20180719033247_add_confidential_to_doorkeeper_application.rb
+db/migrate/20260724130000_refactor_recent_views_upsert.rb
 db/migrate/20230705074628_ticket_conditions_regular_expression_operators.rb
 db/migrate/20190814000001_object_manager_attribute_ticket_article_body_maxlength_change.rb
 db/migrate/20231129085408_drop_removed_state.rb
@@ -3458,7 +3459,6 @@ app/models/application_model/can_cleanup_param.rb
 app/models/application_model/has_external_sync.rb
 app/models/application_model/can_lookup_search_index_attributes.rb
 app/models/application_model/can_destroy_dependent_associations.rb
-app/models/application_model/has_recent_views.rb
 app/models/application_model/can_query_case_insensitive_where_or_sql.rb
 app/models/application_model/has_exists_check_by_object_and_id.rb
 app/models/application_model/has_cache.rb
@@ -3537,6 +3537,7 @@ app/models/concerns/can_selector/advanced_sorting/translated_relation_sort.rb
 app/models/concerns/can_selector/advanced_sorting/external_data_source_field_sort.rb
 app/models/concerns/can_selector/advanced_sorting.rb
 app/models/concerns/has_recent_closes.rb
+app/models/concerns/has_recent_views.rb
 app/models/concerns/has_tags.rb
 app/models/concerns/has_group_relation_definition.rb
 app/models/concerns/has_activity_stream_log.rb
@@ -10005,6 +10006,7 @@ spec/db/migrate/issue_5268_update_state_object_manager_attribute_spec.rb
 spec/db/migrate/setting_update_password_max_login_failed_spec.rb
 spec/db/migrate/issue_5409_wrong_db_column_array_type_spec.rb
 spec/db/migrate/issue_3194_update_permissions_spec.rb
+spec/db/migrate/refactor_recent_views_upsert_spec.rb
 spec/db/migrate/issue3123_external_sync_ticket_merge_spec.rb
 spec/db/migrate/postmaster_filter_regex_operator_spec.rb
 spec/db/migrate/issue_4219_ldap_wizard_spec.rb
@@ -11060,6 +11062,7 @@ spec/requests/ai_assistance_spec.rb
 spec/requests/ai_text_tool_spec.rb
 spec/requests/import_otrs_spec.rb
 spec/requests/channels_email_spec.rb
+spec/requests/recent_view_spec.rb
 spec/requests/time_accounting_spec.rb
 spec/requests/monitoring_spec.rb
 spec/requests/admin/knowledge_base/public_menu_spec.rb
@@ -11822,6 +11825,7 @@ spec/models/concerns/checks_kb_client_notification_examples.rb
 spec/models/concerns/has_roles_examples.rb
 spec/models/concerns/checks_core_workflow_examples.rb
 spec/models/concerns/can_csv_import_user_examples.rb
+spec/models/concerns/has_recent_views_examples.rb
 spec/models/online_notification_spec.rb
 spec/models/link_spec.rb
 spec/models/template_spec.rb
