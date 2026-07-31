@@ -181,6 +181,7 @@ tests/Feature/Settings/LdapWizardTest.php
 tests/Feature/Settings/ShowSetUpPageTest.php
 tests/Feature/Settings/BrandingSettingsTest.php
 tests/Feature/Settings/ApiRequestFiltersTest.php
+tests/Feature/Settings/PostRestoreDataLossGuardsTest.php
 tests/Feature/Settings/LabelSettingTest.php
 tests/Feature/Settings/AlertsSettingTest.php
 tests/Feature/Settings/ImpersonationSettingsRowTest.php
@@ -202,8 +203,10 @@ tests/Feature/Licenses/Api/LicenseCheckoutCheckinTest.php
 tests/Feature/Licenses/Api/LicensesForSelectListTest.php
 tests/Feature/Licenses/Api/LicenseIndexTest.php
 tests/Feature/Licenses/Api/DeleteLicensesTest.php
+tests/Feature/Licenses/Api/BulkSelectableTest.php
 tests/Feature/Licenses/Api/UpdateLicenseTest.php
 tests/Feature/Licenses/Api/LicenseUploadTest.php
+tests/Feature/Licenses/Ui/BulkDeleteWithCheckinLicensesTest.php
 tests/Feature/Licenses/Ui/LicenseCheckoutTest.php
 tests/Feature/Licenses/Ui/LicenseViewTest.php
 tests/Feature/Licenses/Ui/LicenseIndexTest.php
@@ -275,6 +278,8 @@ tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
 tests/Feature/Authentication/LoginBackUrlSanitizationTest.php
 tests/Feature/QueryCountBenchmarkTest.php
+tests/Feature/Auth/PassportPersonalAccessTokenGateTest.php
+tests/Feature/Auth/PassportOAuthClientGateTest.php
 tests/Feature/Livewire/AlertMenuTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
 tests/Feature/Livewire/CheckoutTargetPanelTest.php
@@ -312,6 +317,7 @@ tests/Feature/Assets/Api/AssignedComponentsTest.php
 tests/Feature/Assets/Api/AssignedAssetsTest.php
 tests/Feature/Assets/Api/StoreAssetTest.php
 tests/Feature/Assets/Api/BulkAuditAssetsTest.php
+tests/Feature/Assets/Api/BulkSelectableTest.php
 tests/Feature/Assets/Api/AssetFilesTest.php
 tests/Feature/Assets/Api/AssetHistoryTest.php
 tests/Feature/Assets/Api/AssetBySerialTest.php
@@ -327,6 +333,8 @@ tests/Feature/Assets/Ui/EditAssetTest.php
 tests/Feature/Assets/Ui/ForceCheckinAssetTest.php
 tests/Feature/Assets/Ui/CloneAssetTest.php
 tests/Feature/Assets/Ui/BulkAuditAssetsTest.php
+tests/Feature/Assets/Ui/BulkAuditSelectedAssetsTest.php
+tests/Feature/Assets/Ui/BulkAuditSelectedAssetsSubmissionTest.php
 tests/Feature/Assets/Ui/AssetLabelTest.php
 tests/Feature/Assets/Ui/ShowAssetTest.php
 tests/Feature/Assets/Ui/EncryptedCustomFieldFormDisclosureTest.php
@@ -334,6 +342,7 @@ tests/Feature/Assets/Ui/DeleteAssetTest.php
 tests/Feature/Assets/Ui/StoreAssetsTest.php
 tests/Feature/Assets/Ui/BulkRestoreAuthorizationTest.php
 tests/Feature/Assets/Ui/AssetBySerialTest.php
+tests/Feature/Assets/Fmcs/CrossCompanyAuditAttemptTest.php
 tests/Feature/Manufacturers/Api/UpdateManufacturersTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/Api/CreateManufacturersTest.php
@@ -378,6 +387,7 @@ tests/Feature/Users/Api/CreateUserTest.php
 tests/Feature/Users/Api/UserSearchTest.php
 tests/Feature/Users/Api/UsersForSelectListTest.php
 tests/Feature/Users/Api/DeleteUsersTest.php
+tests/Feature/Users/Api/BulkSelectableTest.php
 tests/Feature/Users/Api/UserFileTest.php
 tests/Feature/Users/Api/UserItemsPaginationTest.php
 tests/Feature/Users/Api/IndexUsersTest.php
@@ -410,6 +420,7 @@ tests/Feature/Users/TransferUserItemsPageAccessTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdTest.php
 tests/Feature/ActionLogs/DisplaySigTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdBackfillTest.php
+tests/Feature/FileUploads/SvgUploadSanitizationTest.php
 tests/Feature/FileUploads/UploadFileValidationTest.php
 tests/Feature/Search/SearchableTraitTest.php
 tests/Feature/Maintenances/Api/DeleteMaintenancesTest.php
@@ -431,6 +442,7 @@ tests/Feature/Maintenances/Ui/BulkMaintenanceActionsTest.php
 tests/Feature/Maintenances/Ui/CompleteMaintenanceTest.php
 tests/Feature/Maintenances/Ui/MaintenanceFileTest.php
 tests/Feature/Permissions/PermissionsFormPreCheckTest.php
+tests/Feature/Uploads/ImageUploadRequestFailurePathsTest.php
 tests/Feature/Security/FilenameTraversalMitigationTest.php
 tests/Feature/AssetModels/Api/AssetModelFilesPolicyBypassTest.php
 tests/Feature/AssetModels/Api/AssetModelPaginationTest.php
@@ -438,6 +450,7 @@ tests/Feature/AssetModels/Api/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Api/AssetModelFilesTest.php
 tests/Feature/AssetModels/Api/DeleteAssetModelsTest.php
 tests/Feature/AssetModels/Api/IndexAssetModelsTest.php
+tests/Feature/AssetModels/Api/BulkSelectableTest.php
 tests/Feature/AssetModels/Api/CreateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CloneAssetModelTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
@@ -445,6 +458,7 @@ tests/Feature/AssetModels/Ui/BulkDeleteAssetModelsTest.php
 tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
+tests/Feature/Requests/AssetModelRequestGateTest.php
 tests/Feature/Requests/Ui/AccessoryRequestTest.php
 tests/Feature/Requests/Ui/AssetRequestIndexTest.php
 tests/Feature/Requests/Ui/CancelRequestTest.php
@@ -624,6 +638,7 @@ resources/views/hardware/bulk-delete.blade.php
 resources/views/hardware/requested.blade.php
 resources/views/hardware/audit.blade.php
 resources/views/hardware/edit.blade.php
+resources/views/hardware/bulk-audit.blade.php
 resources/views/hardware/labels.blade.php
 resources/views/hardware/bulk-restore.blade.php
 resources/views/hardware/bulk-checkin.blade.php
@@ -807,21 +822,31 @@ resources/views/blade/copy-to-clipboard.blade.php
 resources/views/blade/custom-field-preview.blade.php
 resources/views/blade/table/companies.blade.php
 resources/views/blade/table/users.blade.php
+resources/views/blade/table/bulk-locations.blade.php
 resources/views/blade/table/components.blade.php
 resources/views/blade/table/history.blade.php
 resources/views/blade/table/files.blade.php
+resources/views/blade/table/bulk-accessories.blade.php
 resources/views/blade/table/index.blade.php
+resources/views/blade/table/bulk-departments.blade.php
+resources/views/blade/table/bulk-licenses.blade.php
 resources/views/blade/table/bulk-actions.blade.php
+resources/views/blade/table/bulk-companies.blade.php
 resources/views/blade/table/bulk-models.blade.php
 resources/views/blade/table/assets.blade.php
+resources/views/blade/table/bulk-statuslabels.blade.php
+resources/views/blade/table/bulk-depreciations.blade.php
 resources/views/blade/table/locations.blade.php
 resources/views/blade/table/models.blade.php
 resources/views/blade/table/licenses.blade.php
 resources/views/blade/table/accessories.blade.php
+resources/views/blade/table/bulk-manufacturers.blade.php
 resources/views/blade/table/bulk-maintenances.blade.php
 resources/views/blade/table/bulk-assets.blade.php
 resources/views/blade/table/consumables.blade.php
 resources/views/blade/table/maintenances.blade.php
+resources/views/blade/table/bulk-suppliers.blade.php
+resources/views/blade/table/bulk-categories.blade.php
 resources/views/blade/table/bulk-users.blade.php
 resources/views/blade/notifications.blade.php
 resources/views/blade/demo-lock.blade.php
@@ -7839,6 +7864,7 @@ app/Mail/CheckinComponentMail.php
 app/Mail/CheckoutAccessoryMail.php
 app/Mail/BulkAssetCheckoutMail.php
 app/Mail/CheckoutConsumableMail.php
+app/Mail/BlockImagesMarkdownExtension.php
 app/Mail/BaseMailable.php
 app/Mail/CheckoutComponentMail.php
 app/Mail/UnacceptedAssetReminderMail.php
@@ -8387,8 +8413,8 @@ ansible/freebsd/vagrant_playbook.yml
 ansible/ubuntu/apachevirtualhost.conf.j2
 ansible/ubuntu/vagrant_playbook.yml
 sample_csvs/components-sample-large.csv
+sample_csvs/blank-licenses-sample.csv
 sample_csvs/suppliers-sample-large.csv
-sample_csvs/.!14623!assets-sample-BLANKS.csv
 sample_csvs/assets-sample-BAD.csv
 sample_csvs/manufacturers-sample-large.csv
 sample_csvs/consumables-sample-large.csv
@@ -8399,7 +8425,6 @@ sample_csvs/assets-sample-BLANKS.csv
 sample_csvs/consumables-sample.csv
 sample_csvs/models-sample-large.csv
 sample_csvs/licenses-sample.csv
-sample_csvs/.!14622!assets-sample-BAD.csv
 sample_csvs/users-sample.csv
 sample_csvs/suppliers-sample.csv
 sample_csvs/models-sample.csv

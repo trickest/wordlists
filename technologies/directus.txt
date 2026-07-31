@@ -8,7 +8,10 @@ contributing.md
 .claude/hooks/stylelint.mjs
 .claude/hooks/eslint.mjs
 .claude/hooks/prettier.mjs
+.changeset/mssql-request-queue.md
+.changeset/shy-rockets-smile.md
 .changeset/config.json
+.changeset/purple-boxes-bake.md
 .prettierignore
 ai_policy.md
 Dockerfile
@@ -1444,6 +1447,7 @@ tests/blackbox/setup/sequential-tests.ts
 tests/blackbox/setup/global.ts
 tests/blackbox/setup/sequencer.ts
 tests/blackbox/setup/migrations/20220112001234_create_tests_flow.js
+tests/blackbox/setup/migrations/20221108000000_add_gate_tripped_flag.js
 tests/blackbox/setup/migrations/20221107_add_extensions_testing.js
 tests/blackbox/package.json
 tests/blackbox/utils/await-connection.ts
@@ -3253,6 +3257,8 @@ sdk/tests/fields.test-d.ts
 sdk/tests/merge-collection.test-d.ts
 sdk/tests/no-schema.test-d.ts
 sdk/tests/relations.test-d.ts
+sdk/tests/realtime/handshake.test.ts
+sdk/tests/realtime/helpers/fake-websocket.ts
 sdk/tests/realtime/heartbeat.test.ts
 sdk/tests/schema.ts
 sdk/tests/exports.test.ts

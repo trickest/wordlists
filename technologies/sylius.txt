@@ -513,6 +513,7 @@ features/admin/promotion/managing_promotions/promotions_filter_validation.featur
 features/admin/promotion/managing_promotions/adding_promotion_with_action.feature
 features/admin/promotion/managing_promotions/adding_promotion_in_different_languages.feature
 features/admin/promotion/managing_promotions/adding_promotion_with_filter.feature
+features/admin/promotion/managing_promotions/restoring_removed_rules_and_actions.feature
 features/admin/promotion/managing_promotions/browsing_promotions.feature
 features/admin/promotion/managing_promotions/sorting_promotions_by_priority.feature
 features/admin/promotion/managing_promotions/seeing_correct_percentage_discounts_while_editing_promotion_with_action_and_decimal_places.feature
@@ -528,10 +529,14 @@ features/admin/promotion/managing_promotions/adding_promotion_with_rule.feature
 features/admin/promotion/managing_promotions/prevent_from_removing_taxons_that_are_used_in_promotion_rules.feature
 features/admin/promotion/managing_promotions/preventing_deletion_of_promotions_in_use.feature
 features/admin/promotion/managing_promotions/promotion_validation.feature
+features/admin/promotion/tracking_usage/not_decreasing_promotion_coupon_usage_with_disabled_track_usage_after_cancelling_order.feature
 features/admin/promotion/tracking_usage/decreasing_promotion_coupon_usage_after_cancelling_order.feature
+features/admin/promotion/tracking_usage/not_increasing_promotion_usage_with_disabled_track_usage_after_placing_order.feature
 features/admin/promotion/tracking_usage/decreasing_promotion_usage_after_cancelling_order.feature
 features/admin/promotion/tracking_usage/increasing_promotion_usage_after_placing_order.feature
 features/admin/promotion/tracking_usage/increasing_promotion_coupon_usage_after_placing_order.feature
+features/admin/promotion/tracking_usage/not_decreasing_promotion_usage_with_disabled_track_usage_after_cancelling_order.feature
+features/admin/promotion/tracking_usage/not_increasing_promotion_coupon_usage_with_disabled_track_usage_after_placing_order.feature
 features/admin/promotion/tracking_usage/checking_promotion_usage.feature
 features/admin/promotion/managing_coupons/preventing_deletion_of_coupons_in_use.feature
 features/admin/promotion/managing_coupons/being_unable_to_generate_too_many_coupons_with_prefix_and_suffix.feature
@@ -1154,6 +1159,7 @@ tests/Api/Responses/admin/promotion/get_promotions_response.json
 tests/Api/Responses/admin/promotion/restore_promotion.json
 tests/Api/Responses/admin/promotion/archive_promotion.json
 tests/Api/Responses/admin/promotion/post_promotion_with_taken_code_response.json
+tests/Api/Responses/admin/promotion/post_promotion_with_invalid_usage_limit_response.json
 tests/Api/Responses/admin/promotion/put_promotion_to_last_priority_when_priority_is_minus_one_response.json
 tests/Api/Responses/admin/promotion/post_promotion_response.json
 tests/Api/Responses/admin/promotion/post_promotion_with_invalid_actions_response.json
@@ -1349,9 +1355,11 @@ tests/Api/Responses/admin/catalog_promotion/post_catalog_promotion_response.json
 tests/Api/Responses/admin/catalog_promotion/post_catalog_promotion_with_taken_code_response.json
 tests/Api/Responses/admin/catalog_promotion/put_catalog_promotion_response.json
 tests/Api/Responses/admin/promotion_coupon/generate_promotion_coupons_response.json
+tests/Api/Responses/admin/promotion_coupon/post_promotion_coupon_with_invalid_usage_limit_response.json
 tests/Api/Responses/admin/promotion_coupon/get_promotion_coupon_response.json
 tests/Api/Responses/admin/promotion_coupon/get_empty_promotion_coupons_response.json
 tests/Api/Responses/admin/promotion_coupon/put_promotion_coupon_response.json
+tests/Api/Responses/admin/promotion_coupon/generate_promotion_coupons_without_tracking_usage_response.json
 tests/Api/Responses/admin/promotion_coupon/generate_promotion_coupons_with_invalid_promotion_code_response.json
 tests/Api/Responses/admin/promotion_coupon/post_promotion_coupon_response.json
 tests/Api/Responses/admin/promotion_coupon/get_promotion_coupons_response.json
@@ -1942,6 +1950,7 @@ src/Sylius/Bundle/UiBundle/templates/macro/rtl.html.twig
 src/Sylius/Bundle/UiBundle/templates/macro/messages.html.twig
 src/Sylius/Bundle/UiBundle/.gitattributes
 src/Sylius/Bundle/UiBundle/Controller/SecurityController.php
+src/Sylius/Bundle/UiBundle/DependencyInjection/Compiler/UxIconsIconFinderPass.php
 src/Sylius/Bundle/UiBundle/DependencyInjection/Compiler/TwigComponentTagPass.php
 src/Sylius/Bundle/UiBundle/DependencyInjection/Compiler/LiveComponentTagPass.php
 src/Sylius/Bundle/UiBundle/DependencyInjection/Configuration.php
@@ -1960,6 +1969,7 @@ src/Sylius/Bundle/UiBundle/tests/Functional/composer.json
 src/Sylius/Bundle/UiBundle/tests/Controller/SecurityControllerTest.php
 src/Sylius/Bundle/UiBundle/tests/DependencyInjection/Compiler/LiveComponentTagPassTest.php
 src/Sylius/Bundle/UiBundle/tests/DependencyInjection/Compiler/TwigComponentTagPassTest.php
+src/Sylius/Bundle/UiBundle/tests/DependencyInjection/Compiler/UxIconsIconFinderPassTest.php
 src/Sylius/Bundle/UiBundle/tests/DependencyInjection/ConfigurationTest.php
 src/Sylius/Bundle/UiBundle/phpunit.xml.dist
 src/Sylius/Bundle/UiBundle/Resources/config/services.php
@@ -3430,8 +3440,10 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20251113054741.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241010135921.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20251113054740.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131614.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20260407120001.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20160101084139.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131504.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20260616120001.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131407.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131432.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20251126120001.php
@@ -3439,10 +3451,12 @@ src/Sylius/Bundle/CoreBundle/Migrations/Version20241024174728.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20260216120001.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241126095850.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241024174729.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20260616120000.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131510.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20160101092155.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131533.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20260216120000.php
+src/Sylius/Bundle/CoreBundle/Migrations/Version20260407120000.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131444.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131539.php
 src/Sylius/Bundle/CoreBundle/Migrations/Version20241020131604.php
@@ -6287,6 +6301,7 @@ src/Sylius/Bundle/AdminBundle/Twig/Component/Shared/Navbar/NotificationsComponen
 src/Sylius/Bundle/AdminBundle/Twig/Component/Shared/Navbar/ShopPreviewComponent.php
 src/Sylius/Bundle/AdminBundle/Twig/Component/Shared/Navbar/UserDropdownComponent.php
 src/Sylius/Bundle/AdminBundle/Twig/Component/ProductOption/FormComponent.php
+src/Sylius/Bundle/AdminBundle/Twig/Component/Promotion/FormComponent.php
 src/Sylius/Bundle/AdminBundle/Twig/Component/PromotionCoupon/GeneratorInstructionFormComponent.php
 src/Sylius/Bundle/AdminBundle/Twig/Component/Product/FormComponent.php
 src/Sylius/Bundle/AdminBundle/Twig/Component/Product/Form/ProductTaxonsComponent.php
@@ -6337,6 +6352,7 @@ src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/pr
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/applies_to_discounted.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/coupon_based.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/exclusive.html.twig
+src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/track_usage.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/starts_at.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration/usage_limit.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion/form/sections/configuration.html.twig
@@ -7225,6 +7241,7 @@ src/Sylius/Bundle/AdminBundle/templates/catalog_promotion/form/sections.html.twi
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/form.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/content/header/title_block/actions/generate.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/content/header/breadcrumbs.html.twig
+src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/form/sections/configuration/track_usage.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/form/sections/configuration/expires_at.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/form/sections/configuration/usage_limit.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate/form/sections/configuration/amount.html.twig
@@ -7238,6 +7255,7 @@ src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/index/content/header/br
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/grid/field/used.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/generate.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/form/sections/configuration/per_customer_usage_limit.html.twig
+src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/form/sections/configuration/track_usage.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/form/sections/configuration/expires_at.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/form/sections/configuration/usage_limit.html.twig
 src/Sylius/Bundle/AdminBundle/templates/promotion_coupon/form/sections/configuration/reusable_from_cancelled_orders.html.twig
@@ -7296,6 +7314,7 @@ src/Sylius/Bundle/AdminBundle/Action/RemoveAvatarAction.php
 src/Sylius/Bundle/AdminBundle/tests/Twig/ErrorTemplateFinder/ErrorTemplateFinderTest.php
 src/Sylius/Bundle/AdminBundle/tests/Twig/Component/Dashboard/PendingActionCountComponentTest.php
 src/Sylius/Bundle/AdminBundle/tests/Twig/Component/Shared/Navbar/NotificationsComponentTest.php
+src/Sylius/Bundle/AdminBundle/tests/Twig/Component/Promotion/FormComponentTest.php
 src/Sylius/Bundle/AdminBundle/tests/Twig/PaymentMethodExtensionTest.php
 src/Sylius/Bundle/AdminBundle/tests/Generator/TaxonSlugGeneratorTest.php
 src/Sylius/Bundle/AdminBundle/tests/EventListener/ResourceDeleteExceptionListenerTest.php
@@ -7571,6 +7590,7 @@ src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/order.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/product_variant.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/shipment.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/promotion_coupon.php
+src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/promotion.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/zone.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/product.php
 src/Sylius/Bundle/AdminBundle/Resources/config/services/twig/component/dashboard.php

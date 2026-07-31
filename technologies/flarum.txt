@@ -714,6 +714,8 @@ extensions/tags/js/tsconfig.json
 extensions/tags/js/package.json
 extensions/tags/js/admin.ts
 extensions/tags/js/forum.ts
+extensions/tags/js/tests/stubs/TagHero.ts
+extensions/tags/js/tests/unit/forum/addTagFilter.test.ts
 extensions/tags/js/dist/common/components/TagSelectionModal.js.map
 extensions/tags/js/dist/common/components/TagSelectionModal.js
 extensions/tags/js/dist/admin.js.map
@@ -761,6 +763,7 @@ extensions/tags/js/dist-typings/forum/addTagLabels.d.ts
 extensions/tags/js/dist-typings/forum/addTagFilter.d.ts
 extensions/tags/js/dist-typings/forum/addTagComposer.d.ts
 extensions/tags/js/dist-typings/forum/addTagControl.d.ts
+extensions/tags/js/jest.config.cjs
 extensions/tags/js/webpack.config.js
 extensions/tags/js/src/common/components/TagSelectionModal.tsx
 extensions/tags/js/src/common/utils/sortTags.tsx
@@ -820,6 +823,7 @@ extensions/tags/tests/integration/api/tags/ListWithFulltextSearchTest.php
 extensions/tags/tests/integration/api/tags/CreateTest.php
 extensions/tags/tests/integration/api/tags/SchemaTest.php
 extensions/tags/tests/integration/api/tags/ListTest.php
+extensions/tags/tests/integration/GlobalPolicyTagCountsTest.php
 extensions/tags/tests/integration/setup.php
 extensions/tags/tests/integration/visibility/DiscussionVisibilityTest.php
 extensions/tags/tests/integration/RetrievesRepresentativeTags.php
@@ -2004,6 +2008,7 @@ framework/core/js/tests/integration/admin/components/AppearencePage.test.ts
 framework/core/js/tests/integration/admin/AssetsRevision.test.ts
 framework/core/js/tests/integration/admin/Application.test.ts
 framework/core/js/tests/integration/forum/components/Modals.test.ts
+framework/core/js/tests/integration/forum/components/DiscussionPage.test.ts
 framework/core/js/tests/integration/forum/components/PostStream.test.ts
 framework/core/js/tests/integration/forum/components/IndexPage.test.ts
 framework/core/js/tests/integration/forum/components/HeaderSecondary.test.ts
@@ -2743,6 +2748,7 @@ framework/core/tests/integration/api/posts/ListGroupsQueryCountTest.php
 framework/core/tests/integration/api/posts/ShowTest.php
 framework/core/tests/integration/api/posts/CreateTest.php
 framework/core/tests/integration/api/posts/UpdateTest.php
+framework/core/tests/integration/api/posts/PostVisibilityTest.php
 framework/core/tests/integration/api/posts/ListTest.php
 framework/core/tests/integration/api/posts/ListDiscussionStateQueryCountTest.php
 framework/core/tests/integration/api/posts/DeleteTest.php
@@ -2757,6 +2763,7 @@ framework/core/tests/integration/api/discussions/ListWithFulltextSearchTest.php
 framework/core/tests/integration/api/discussions/CreateTest.php
 framework/core/tests/integration/api/discussions/UpdateTest.php
 framework/core/tests/integration/api/discussions/ListTest.php
+framework/core/tests/integration/api/discussions/PostIdsVisibilityTest.php
 framework/core/tests/integration/api/discussions/ShowGroupsQueryCountTest.php
 framework/core/tests/integration/api/discussions/PgsqlSearchConfigurationInjectionTest.php
 framework/core/tests/integration/api/discussions/DeletionTest.php
@@ -2879,6 +2886,7 @@ framework/core/tests/unit/User/LoginProviderTest.php
 framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
 framework/core/tests/unit/Frontend/Compiler/RevisionCompilerTest.php
 framework/core/tests/unit/Frontend/Compiler/AssetsRevisionTest.php
+framework/core/tests/unit/Frontend/Content/AssetsTest.php
 framework/core/tests/unit/Frontend/RecompileFrontendAssetsTest.php
 framework/core/tests/unit/.gitkeep
 framework/core/tests/unit/Notification/NotificationMailerTest.php
@@ -3384,6 +3392,7 @@ framework/core/src/Post/Filter/TypeFilter.php
 framework/core/src/Post/Filter/AuthorFilter.php
 framework/core/src/Post/RegisteredTypesScope.php
 framework/core/src/Post/PostServiceProvider.php
+framework/core/src/Post/Access/ScopesPostVisibilityWithinDiscussion.php
 framework/core/src/Post/Access/PostPolicy.php
 framework/core/src/Post/Access/ScopePostVisibility.php
 framework/core/src/Post/Event/Revised.php

@@ -26,7 +26,6 @@ MAINTAINERS.md
 rector.php
 SECURITY.md
 autoload.php
-rector-older-symfony.php
 UPGRADE-3.0.md
 patches/at.js+1.5.4.patch
 patches/twig-integration-testcase-static-data-providers.patch
@@ -543,6 +542,7 @@ utils/phpstan/tests/Rule/NoEntityManagerGetRepositoryRuleTest.php
 utils/phpstan/tests/Rule/AbstractClassNameMustBeAbstractRuleTest.php
 utils/phpstan/tests/Rule/NoTablePrefixDefinitionInTestsRuleTest.php
 utils/phpstan/tests/Rule/NoPropertyToPropertyAssignRuleTest.php
+utils/phpstan/tests/Rule/NoParentConstructorForwardingRuleTest.php
 utils/phpstan/tests/Rule/NoUnusedServiceAliasRuleTest.php
 utils/phpstan/tests/Rule/Fixture/TraitUsingController.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireService.php
@@ -570,6 +570,7 @@ utils/phpstan/tests/Rule/Fixture/FinalParserNamedAbstract.php
 utils/phpstan/tests/Rule/Fixture/NullableServiceInBadge.php
 utils/phpstan/tests/Rule/Fixture/CommonConstructorAndAutowireController.php
 utils/phpstan/tests/Rule/Fixture/SomeAutowireTrait.php
+utils/phpstan/tests/Rule/Fixture/BundleWithMenusOnly/config.php
 utils/phpstan/tests/Rule/Fixture/NamedAutowireController.php
 utils/phpstan/tests/Rule/Fixture/BundleWithoutServices/config.php
 utils/phpstan/tests/Rule/Fixture/NullableScalarConstructor.php
@@ -580,6 +581,7 @@ utils/phpstan/tests/Rule/Fixture/AliasBundle/AliasHelperConsumer.php
 utils/phpstan/tests/Rule/Fixture/AliasBundle/UnusedAliasHelper.php
 utils/phpstan/tests/Rule/Fixture/SomeBundle/AjaxController.php
 utils/phpstan/tests/Rule/Fixture/NullableServiceAnonymousClass.php
+utils/phpstan/tests/Rule/Fixture/BundleWithMenus/config.php
 utils/phpstan/tests/Rule/Fixture/SomeRepositoryHolder.php
 utils/phpstan/tests/Rule/Fixture/ConcreteClassConstructor.php
 utils/phpstan/tests/Rule/Fixture/GetModelByStringController.php
@@ -605,7 +607,15 @@ utils/phpstan/tests/Rule/Fixture/Entity/NullableServiceInEntity.php
 utils/phpstan/tests/Rule/Fixture/CollidingAutowireController.php
 utils/phpstan/tests/Rule/Fixture/NonVendorConstructor.php
 utils/phpstan/tests/Rule/Fixture/TablePrefixDefiner.php
+utils/phpstan/tests/Rule/Fixture/BundleWithServices/Tests/config.php
 utils/phpstan/tests/Rule/Fixture/BundleWithServices/config.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/OwnConstructorChildService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/HalfOwnChildService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/PromotedChildService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/ShortForwardingChildService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/ParentService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/ForwardingChildService.php
+utils/phpstan/tests/Rule/Fixture/ParentConstructor/ManyOwnChildService.php
 utils/phpstan/tests/Rule/Fixture/PropertyToPropertyAssignAnonymousClass.php
 utils/phpstan/tests/Rule/Fixture/PlainSetterController.php
 utils/phpstan/tests/Rule/Fixture/NullableExceptionConstructor.php
@@ -624,6 +634,7 @@ utils/phpstan/src/Rule/NoContainerGetRule.php
 utils/phpstan/src/Rule/NoTablePrefixDefinitionInTestsRule.php
 utils/phpstan/src/Rule/NoRequiredMethodWithConstructorInControllerRule.php
 utils/phpstan/src/Rule/NoNullableServiceInConstructorRule.php
+utils/phpstan/src/Rule/NoParentConstructorForwardingRule.php
 utils/phpstan/src/Rule/NoGetModelWithStringInControllerRule.php
 utils/phpstan/src/Rule/NoGetRepositoryWithEntityInRepositoryRule.php
 utils/phpstan/src/Rule/NoPropertyToPropertyAssignRule.php
@@ -634,10 +645,6 @@ utils/rector/tests/UnserializeToSerializerDecodeRector/UnserializeToSerializerDe
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/allowed_classes_false.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/skip_class_whitelist.php.inc
 utils/rector/tests/UnserializeToSerializerDecodeRector/Fixture/plain_unserialize.php.inc
-utils/rector/tests/ConfigServiceToAutowiredServiceRector/ConfigServiceToAutowiredServiceRectorTest.php
-utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/ServiceAwareHelper.php
-utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/ParameterAwareHelper.php
-utils/rector/tests/ConfigServiceToAutowiredServiceRector/Source/AutowirableHelper.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/config/configured_rule.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/SomeModel.php
 utils/rector/tests/ModelGetRepositoryToRepositoryServiceRector/Source/AbstractParentWithModel.php
@@ -657,11 +664,6 @@ utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/service_uses_c
 utils/rector/tests/GetRepositoryToRepositoryServiceRector/Fixture/test_case_uses_container.php.inc
 utils/rector/src/ModelGetRepositoryToRepositoryServiceRector.php
 utils/rector/src/UnserializeToSerializerDecodeRector.php
-utils/rector/src/ValueObject/ServiceMethodCall.php
-utils/rector/src/ValueObject/ServiceTag.php
-utils/rector/src/ValueObject/ServiceArgument.php
-utils/rector/src/ValueObject/ServiceDefinition.php
-utils/rector/src/ConfigServiceToAutowiredServiceRector.php
 utils/rector/src/AssertTrueResponseIsOkToAssertResponseIsSuccessfulRector.php
 utils/rector/src/GetRepositoryToRepositoryServiceRector.php
 .all-contributorsrc
@@ -709,7 +711,6 @@ tests/acceptance/ContactManagementCest.php
 tests/acceptance/GrapesJsBuilderPageCest.php
 tests/acceptance.suite.yml
 tests/object-manager.php
-rector-flip-services.php
 package-lock.json
 UPGRADE-5.0.md
 index.php
