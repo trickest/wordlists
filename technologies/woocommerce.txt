@@ -5057,6 +5057,7 @@ plugins/woocommerce/changelog/try-e2e-shared-build-assets
 plugins/woocommerce/changelog/65498-centralize-product-is-viewable
 plugins/woocommerce/changelog/fix-mini-cart-contents-css-enqueue
 plugins/woocommerce/changelog/66075-fix-paid-extensions-helper-link
+plugins/woocommerce/changelog/fix-legacy-review-rejected-check-variations
 plugins/woocommerce/changelog/pr-64363
 plugins/woocommerce/changelog/testops-234-remove-redundant-blocks-e2e-tests
 plugins/woocommerce/changelog/66404-fix-local-pickup-save-notice
@@ -5118,6 +5119,7 @@ plugins/woocommerce/changelog/dev-deflag-wc-admin-feature-compatibility-shims
 plugins/woocommerce/changelog/testops-174-organize-e2e-test-plugins
 plugins/woocommerce/changelog/testops-207-split-wp-env-configs
 plugins/woocommerce/changelog/38541-fix-csv-importer-mbstring-fallback
+plugins/woocommerce/changelog/fix-test-filters-registered-in-static-hooks
 plugins/woocommerce/changelog/phpunit-suite-sharding-cleanup
 plugins/woocommerce/changelog/52292-set-product-reset-variation-id
 plugins/woocommerce/changelog/fix-65832-brand-nav-cache-poisoning
@@ -5156,6 +5158,7 @@ plugins/woocommerce/changelog/add-addcartitem-outcome
 plugins/woocommerce/changelog/update-deflag-launch-your-store
 plugins/woocommerce/changelog/fix-v4-refunds-clamp-quantity-refund-to-remaining
 plugins/woocommerce/changelog/fix-29753-product-gallery-fractional-transform
+plugins/woocommerce/changelog/fix-notice-handler-docblock
 plugins/woocommerce/changelog/fix-order-review-moderation-bypass
 plugins/woocommerce/changelog/fix-core-breadcrumbs-compatibility
 plugins/woocommerce/changelog/fix-35821-coupon-line-items-dp-parameter
@@ -6083,6 +6086,7 @@ plugins/woocommerce/tests/php/src/Blocks/Mocks/CouponCodeMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/CartCheckoutUtilsMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/OrderConfirmation/TotalsMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsVariationSelectorAttributeMock.php
+plugins/woocommerce/tests/php/src/Blocks/Mocks/BlockHooksLowerVersionTestBlock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/ProductCollectionMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsGroupedProductSelectorMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsVariationSelectorMock.php
@@ -6092,6 +6096,7 @@ plugins/woocommerce/tests/php/src/Blocks/Mocks/AssetDataRegistryMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/ProductQueryMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsGroupedProductItemMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/MockTestDependency.php
+plugins/woocommerce/tests/php/src/Blocks/Mocks/BlockHooksNoVersionTestBlock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/AddToCartWithOptionsQuantitySelectorMock.php
 plugins/woocommerce/tests/php/src/Blocks/Mocks/CheckoutMock.php
