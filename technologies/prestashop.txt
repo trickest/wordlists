@@ -3379,6 +3379,7 @@ tests/Unit/Core/Domain/Product/Query/SearchCombinationsForAssociationTest.php
 tests/Unit/Core/Domain/Product/Query/SearchProductsForAssociationTest.php
 tests/Unit/Core/Domain/Product/SpecificPrice/ValueObject/SpecificPriceIdTest.php
 tests/Unit/Core/Domain/Product/Combination/Command/UpdateCombinationStockAvailableCommandTest.php
+tests/Unit/Core/Domain/Product/Combination/FeatureValue/Command/SetCombinationFeatureValuesCommandTest.php
 tests/Unit/Core/Domain/Product/ValueObject/ProductIdTest.php
 tests/Unit/Core/Domain/Product/ValueObject/ReferenceTest.php
 tests/Unit/Core/Domain/Product/ValueObject/RedirectOptionTest.php
@@ -3458,6 +3459,7 @@ tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/Combi
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationImagesCommandsBuilderTest.php
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationSuppliersCommandsBuilderTest.php
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/UpdateCombinationCommandsBuilderTest.php
+tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationFeatureValuesCommandsBuilderTest.php
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/UpdateCombinationStockAvailableCommandsBuilderTest.php
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/AbstractProductCommandBuilderTestCase.php
 tests/Unit/Core/Form/IdentifiableObject/CommandBuilder/Product/PackedProductsCommandsBuilderTest.php
@@ -4848,6 +4850,7 @@ tests/Integration/Classes/Checkout/CheckoutAddressesStepTest.php
 tests/Integration/Classes/AccessTest.php
 tests/Integration/Classes/Smarty/SmartySettingsTest.php
 tests/Integration/Classes/ImageGetCoverShopScopeTest.php
+tests/Integration/Classes/GetFrontFeaturesStaticTest.php
 tests/Integration/Classes/LinkTest.php
 tests/Integration/Classes/TabTest.php
 tests/Integration/Behaviour/behat.yml
@@ -5099,6 +5102,7 @@ tests/Integration/Behaviour/Features/Scenario/Product/Combination/Shop/delete_co
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/combinations_listing.feature
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/generate_combinations.feature
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/set_default_combination.feature
+tests/Integration/Behaviour/Features/Scenario/Product/Combination/update_combination_feature_values.feature
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/delete_combination.feature
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/update_combination_images.feature
 tests/Integration/Behaviour/Features/Scenario/Product/Combination/search_combinations_for_association.feature
@@ -5313,6 +5317,7 @@ tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/SearchPr
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/CombinationStockMovementsFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/CombinationAssertionFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/UpdateCombinationFeatureContext.php
+tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/UpdateCombinationFeatureValuesFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/CombinationShopFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/UpdateCombinationImagesFeatureContext.php
 tests/Integration/Behaviour/Features/Context/Domain/Product/Combination/CombinationListingFeatureContext.php
@@ -8676,6 +8681,14 @@ src/Core/Domain/Product/Combination/QueryHandler/SearchProductCombinationsHandle
 src/Core/Domain/Product/Combination/QueryHandler/SearchProductCombinationsHandler.php
 src/Core/Domain/Product/Combination/QueryHandler/GetCombinationIdsHandler.php
 src/Core/Domain/Product/Combination/QueryHandler/GetCombinationIdsHandlerInterface.php
+src/Core/Domain/Product/Combination/FeatureValue/Command/RemoveAllFeatureValuesFromCombinationCommand.php
+src/Core/Domain/Product/Combination/FeatureValue/Command/SetCombinationFeatureValuesCommand.php
+src/Core/Domain/Product/Combination/FeatureValue/Query/GetCombinationFeatureValues.php
+src/Core/Domain/Product/Combination/FeatureValue/QueryResult/CombinationFeatureValue.php
+src/Core/Domain/Product/Combination/FeatureValue/ValueObject/CombinationFeatureValue.php
+src/Core/Domain/Product/Combination/FeatureValue/CommandHandler/SetCombinationFeatureValuesHandlerInterface.php
+src/Core/Domain/Product/Combination/FeatureValue/CommandHandler/RemoveAllFeatureValuesFromCombinationHandlerInterface.php
+src/Core/Domain/Product/Combination/FeatureValue/QueryHandler/GetCombinationFeatureValuesHandlerInterface.php
 src/Core/Domain/Product/Pack/Command/RemoveAllProductsFromPackCommand.php
 src/Core/Domain/Product/Pack/Command/SetPackProductsCommand.php
 src/Core/Domain/Product/Pack/Query/GetPackedProducts.php
@@ -9261,6 +9274,7 @@ src/Core/Form/IdentifiableObject/CommandBuilder/Product/PackedProductsCommandsBu
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationCommandsBuilderInterface.php
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/UpdateCombinationStockAvailableCommandsBuilder.php
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationImagesCommandsBuilder.php
+src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationFeatureValuesCommandsBuilder.php
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationSuppliersCommandsBuilder.php
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/UpdateCombinationCommandsBuilder.php
 src/Core/Form/IdentifiableObject/CommandBuilder/Product/Combination/CombinationCommandsBuilder.php
@@ -10158,6 +10172,7 @@ src/PrestaShopBundle/Resources/config/services/adapter/tab.yml
 src/PrestaShopBundle/Resources/config/services/adapter/employee.yml
 src/PrestaShopBundle/Resources/config/services/adapter/currency.yml
 src/PrestaShopBundle/Resources/config/services/adapter/admin.yml
+src/PrestaShopBundle/Resources/config/services/adapter/product/_combination_feature_value.yml
 src/PrestaShopBundle/Resources/config/services/adapter/product/_pack.yml
 src/PrestaShopBundle/Resources/config/services/adapter/product/_image.yml
 src/PrestaShopBundle/Resources/config/services/adapter/product/_specific_prices.yml
@@ -10520,6 +10535,7 @@ src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/SpecificPrice/Fo
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/SpecificPrice/create.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/header.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/features.html.twig
+src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/combination_features.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/customizations.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/combination_listing.html.twig
 src/PrestaShopBundle/Resources/views/Admin/Sell/Catalog/Product/FormTheme/extra_modules.html.twig
@@ -11211,6 +11227,10 @@ src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/CombinationManagerType.
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/BulkCombinationType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/CombinationListType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/BulkCombinationReferencesType.php
+src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/Feature/CombinationFeaturesType.php
+src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/Feature/CombinationFeatureCollectionItemType.php
+src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/Feature/CombinationFeatureCollectionType.php
+src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/Feature/CombinationFeatureValueType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/LowStockThresholdType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/CombinationPriceImpactType.php
 src/PrestaShopBundle/Form/Admin/Sell/Product/Combination/CombinationStockType.php
@@ -12330,6 +12350,10 @@ src/Adapter/Product/Combination/QueryHandler/GetEditableCombinationsListHandler.
 src/Adapter/Product/Combination/QueryHandler/SearchCombinationsForAssociationHandler.php
 src/Adapter/Product/Combination/QueryHandler/GetCombinationSuppliersHandler.php
 src/Adapter/Product/Combination/QueryHandler/GetCombinationForEditingHandler.php
+src/Adapter/Product/Combination/FeatureValue/Update/CombinationFeatureValueUpdater.php
+src/Adapter/Product/Combination/FeatureValue/CommandHandler/SetCombinationFeatureValuesHandler.php
+src/Adapter/Product/Combination/FeatureValue/CommandHandler/RemoveAllFeatureValuesFromCombinationHandler.php
+src/Adapter/Product/Combination/FeatureValue/QueryHandler/GetCombinationFeatureValuesHandler.php
 src/Adapter/Product/Pack/Repository/ProductPackRepository.php
 src/Adapter/Product/Pack/Update/ProductPackUpdater.php
 src/Adapter/Product/Pack/CommandHandler/RemoveAllProductsFromPackHandler.php

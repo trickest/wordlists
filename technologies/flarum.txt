@@ -17,13 +17,19 @@ extensions/akismet/.gitattributes
 extensions/akismet/locale/en.yml
 extensions/akismet/node_modules/.yarn-integrity
 extensions/akismet/CHANGELOG.md
+extensions/akismet/tests/integration/ValidatePostTest.php
 extensions/akismet/tests/integration/setup.php
+extensions/akismet/tests/integration/VerifyKeySettingTest.php
 extensions/akismet/tests/unit/.gitkeep
+extensions/akismet/tests/unit/AkismetTest.php
 extensions/akismet/tests/fixtures/.gitkeep
+extensions/akismet/tests/fixtures/FakeAkismetProvider.php
 extensions/akismet/tests/phpunit.integration.xml
 extensions/akismet/tests/phpunit.unit.xml
+extensions/akismet/src/AkismetUnexpectedResponseException.php
 extensions/akismet/src/Listener/SubmitHam.php
 extensions/akismet/src/Listener/ValidatePost.php
+extensions/akismet/src/Listener/ValidateApiKey.php
 extensions/akismet/src/Listener/SubmitSpam.php
 extensions/akismet/src/Provider/AkismetProvider.php
 extensions/akismet/src/Akismet.php
@@ -704,6 +710,7 @@ extensions/tags/less/common/TagLabel.less
 extensions/tags/less/common/common.less
 extensions/tags/less/common/TagSelectionModal.less
 extensions/tags/less/admin/EditTagModal.less
+extensions/tags/less/admin/SelectTagsSettingComponent.less
 extensions/tags/less/admin/TagsPage.less
 extensions/tags/less/forum.less
 extensions/tags/less/admin.less
@@ -1199,13 +1206,16 @@ extensions/realtime/tests/integration/SendNotificationsJobTest.php
 extensions/realtime/tests/integration/RestartOnSettingChangeTest.php
 extensions/realtime/tests/integration/api/IndexTypingTagsAttributeTest.php
 extensions/realtime/tests/integration/api/notifications/ShowNotificationTest.php
+extensions/realtime/tests/integration/api/TypingIdentifiedAuthTest.php
 extensions/realtime/tests/integration/api/IndexTypingTagAuthTest.php
 extensions/realtime/tests/integration/payload/GeneratorTest.php
 extensions/realtime/tests/integration/setup.php
+extensions/realtime/tests/integration/WebsocketBindingsTest.php
 extensions/realtime/tests/integration/IndexTypingPresenceRoutingTest.php
 extensions/realtime/tests/unit/Extend/RealtimeExtenderTest.php
 extensions/realtime/tests/unit/Extend/RealtimeRegistryTest.php
 extensions/realtime/tests/unit/Websocket/FactoryRoutingTest.php
+extensions/realtime/tests/unit/Websocket/TypingRelayTest.php
 extensions/realtime/tests/unit/Websocket/ChannelSubscriptionAuthTest.php
 extensions/realtime/tests/unit/Websocket/MessageTest.php
 extensions/realtime/tests/unit/.gitkeep
@@ -1239,6 +1249,7 @@ extensions/realtime/src/Websocket/Logger/ConnectionLogger.php
 extensions/realtime/src/Websocket/Logger/WebsocketLogger.php
 extensions/realtime/src/Websocket/Logger/Logger.php
 extensions/realtime/src/Websocket/Logger/HttpLogger.php
+extensions/realtime/src/Websocket/TypingIdentity.php
 extensions/realtime/src/Websocket/Exception/InvalidSignature.php
 extensions/realtime/src/Websocket/Exception/WebsocketException.php
 extensions/realtime/src/Websocket/Exception/AppKeyNotAllowed.php
@@ -1810,6 +1821,7 @@ LICENSE.md
 php-packages/phpstan/stubs/Tobyz/JsonApiServer/Context.stub
 php-packages/phpstan/stubs/Tobyz/JsonApiServer/JsonApi.stub
 php-packages/phpstan/stubs/Illuminate/Log/Context/Repository.stub
+php-packages/phpstan/stubs/Illuminate/Console/CommandMutex.stub
 php-packages/phpstan/stubs/Illuminate/Filesystem/FilesystemManager.stub
 php-packages/phpstan/stubs/Illuminate/Filesystem/Filesystem.stub
 php-packages/phpstan/stubs/Illuminate/Support/ServiceProvider.stub
@@ -2016,6 +2028,7 @@ framework/core/js/tests/integration/admin/AssetsRevision.test.ts
 framework/core/js/tests/integration/admin/Application.test.ts
 framework/core/js/tests/integration/forum/components/Modals.test.ts
 framework/core/js/tests/integration/forum/components/DiscussionPage.test.ts
+framework/core/js/tests/integration/forum/components/IndexSidebar.test.ts
 framework/core/js/tests/integration/forum/components/PostStream.test.ts
 framework/core/js/tests/integration/forum/components/IndexPage.test.ts
 framework/core/js/tests/integration/forum/components/HeaderSecondary.test.ts
@@ -2820,6 +2833,7 @@ framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/user/AvatarImageValidationTest.php
 framework/core/tests/integration/user/GroupPermissionCacheTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
+framework/core/tests/integration/console/MigrateCommandIsolationTest.php
 framework/core/tests/integration/console/TinkerCommandTest.php
 framework/core/tests/integration/console/AssetsPublishTest.php
 framework/core/tests/integration/policy/DiscussionPolicyTest.php
@@ -2897,6 +2911,7 @@ framework/core/tests/unit/User/AbstractPolicyTest.php
 framework/core/tests/unit/User/AvatarUploaderTest.php
 framework/core/tests/unit/User/LoginProviderTest.php
 framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
+framework/core/tests/unit/Frontend/Compiler/LessFontUrlTest.php
 framework/core/tests/unit/Frontend/Compiler/RevisionCompilerTest.php
 framework/core/tests/unit/Frontend/Compiler/AssetsRevisionTest.php
 framework/core/tests/unit/Frontend/Content/AssetsTest.php

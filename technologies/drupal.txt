@@ -4958,6 +4958,8 @@ core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_reorder/oop_h
 core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_reorder/src/Hook/TestInvalidHookCollectionHooks.php
 core/modules/system/tests/themes/HookCollector/oop_hook_theme/oop_hook_theme.info.yml
 core/modules/system/tests/themes/HookCollector/oop_hook_theme/src/Hook/TestHookCollectionHooks.php
+core/modules/system/tests/themes/HookCollector/test_theme_discovery_deprecation/test_theme_discovery_deprecation.theme
+core/modules/system/tests/themes/HookCollector/test_theme_discovery_deprecation/test_theme_discovery_deprecation.info.yml
 core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_remove/oop_hook_theme_with_remove.info.yml
 core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_remove/src/Hook/TestInvalidHookCollectionHooks.php
 core/modules/system/tests/themes/HookCollector/oop_hook_theme_with_module/src/Hook/TestInvalidHookCollectionHooks.php
@@ -5232,6 +5234,7 @@ core/modules/system/tests/src/Kernel/Theme/TwigFilterTest.php
 core/modules/system/tests/src/Kernel/Theme/TwigRawTest.php
 core/modules/system/tests/src/Kernel/Theme/TwigNamespaceTest.php
 core/modules/system/tests/src/Kernel/Theme/ThemeTest.php
+core/modules/system/tests/src/Kernel/Theme/ThemeDeprecationTest.php
 core/modules/system/tests/src/Kernel/Theme/TwigLoaderTest.php
 core/modules/system/tests/src/Kernel/Theme/EngineNyanCatTest.php
 core/modules/system/tests/src/Kernel/Theme/TwigIncludeTest.php
@@ -11335,6 +11338,8 @@ core/tests/Drupal/Tests/Core/Database/Stub/StubUpsert.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubCondition.php
 core/tests/Drupal/Tests/Core/Database/Stub/StubConnection.php
 core/tests/Drupal/Tests/Core/Database/Stub/Select.php
+core/tests/Drupal/Tests/Core/Database/SchemaDefinitionConversionTest.php
+core/tests/Drupal/Tests/Core/Database/SchemaDefinitionTest.php
 core/tests/Drupal/Tests/Core/Database/ConnectionTest.php
 core/tests/Drupal/Tests/Core/Database/RowCountExceptionTest.php
 core/tests/Drupal/Tests/Core/Database/SchemaIntrospectionTestTrait.php
@@ -14486,6 +14491,7 @@ core/lib/Drupal/Core/Database/Exception/SchemaPrimaryKeyMustBeDroppedException.p
 core/lib/Drupal/Core/Database/Exception/EventException.php
 core/lib/Drupal/Core/Database/Exception/SchemaTableColumnSizeTooLargeException.php
 core/lib/Drupal/Core/Database/Exception/SchemaTableKeyTooLargeException.php
+core/lib/Drupal/Core/Database/Exception/SchemaDefinitionException.php
 core/lib/Drupal/Core/Database/SupportsTemporaryTablesInterface.php
 core/lib/Drupal/Core/Database/ConnectionNotDefinedException.php
 core/lib/Drupal/Core/Database/SchemaObjectExistsException.php
@@ -14502,6 +14508,23 @@ core/lib/Drupal/Core/Database/Transaction/TransactionManagerBase.php
 core/lib/Drupal/Core/Database/Transaction/ClientConnectionTransactionState.php
 core/lib/Drupal/Core/Database/Transaction/StackItemType.php
 core/lib/Drupal/Core/Database/Transaction/StackItem.php
+core/lib/Drupal/Core/Database/SchemaDefinition/ColumnSize.php
+core/lib/Drupal/Core/Database/SchemaDefinition/UniqueKey.php
+core/lib/Drupal/Core/Database/SchemaDefinition/NullValue.php
+core/lib/Drupal/Core/Database/SchemaDefinition/KeyColumn.php
+core/lib/Drupal/Core/Database/SchemaDefinition/Index.php
+core/lib/Drupal/Core/Database/SchemaDefinition/KeyBase.php
+core/lib/Drupal/Core/Database/SchemaDefinition/ForeignKey.php
+core/lib/Drupal/Core/Database/SchemaDefinition/FloatValue.php
+core/lib/Drupal/Core/Database/SchemaDefinition/SchemaDefinitionType.php
+core/lib/Drupal/Core/Database/SchemaDefinition/SchemaDefinitionInterface.php
+core/lib/Drupal/Core/Database/SchemaDefinition/StringValue.php
+core/lib/Drupal/Core/Database/SchemaDefinition/PrimaryKey.php
+core/lib/Drupal/Core/Database/SchemaDefinition/IntValue.php
+core/lib/Drupal/Core/Database/SchemaDefinition/Table.php
+core/lib/Drupal/Core/Database/SchemaDefinition/Schema.php
+core/lib/Drupal/Core/Database/SchemaDefinition/Column.php
+core/lib/Drupal/Core/Database/SchemaDefinition/ColumnType.php
 core/lib/Drupal/Core/Database/Schema.php
 core/lib/Drupal/Core/Database/Install/Tasks.php
 core/lib/Drupal/Core/Database/FetchModeTrait.php
@@ -14955,6 +14978,7 @@ core/lib/Drupal/Core/Hook/Attribute/Hook.php
 core/lib/Drupal/Core/Hook/Attribute/LegacyRequirementsHook.php
 core/lib/Drupal/Core/Hook/Attribute/ReorderHook.php
 core/lib/Drupal/Core/Hook/Attribute/LegacyHook.php
+core/lib/Drupal/Core/Hook/Attribute/ExtensionFileIsConverted.php
 core/lib/Drupal/Core/Hook/Attribute/HookAttributeInterface.php
 core/lib/Drupal/Core/Hook/Attribute/ProceduralHookScanStop.php
 core/lib/Drupal/Core/Hook/OrderOperation/FirstOrLast.php

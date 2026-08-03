@@ -4973,12 +4973,15 @@ plugins/woocommerce/changelog/remove-dead-eslint-plugin-woocommerce
 plugins/woocommerce/changelog/27118-fix-zero-rate-tax-refund
 plugins/woocommerce/changelog/perfromance-reduce-sqls-cart-page
 plugins/woocommerce/changelog/dev-testops-201-analytics-data-flaky
+plugins/woocommerce/changelog/codex-prevent-classic-template-save-prompt
 plugins/woocommerce/changelog/66078-dehoist-eslint-prettier
+plugins/woocommerce/changelog/fix-42449-customer-account-avatar
 plugins/woocommerce/changelog/testops-179-fix-product-delete-quick-delete-flake
 plugins/woocommerce/changelog/fix-product-price-block-responsive-styles
 plugins/woocommerce/changelog/chore-remove-unused-wp-scripts-deps
 plugins/woocommerce/changelog/add-select2-usage-metrics
 plugins/woocommerce/changelog/update-product-image-gallery-upgrade-notice-with-add-to-cart-with-options
+plugins/woocommerce/changelog/fix-67048-quick-edit-sale-date-validation
 plugins/woocommerce/changelog/fix-29698-dashboard-outofstock-count
 plugins/woocommerce/changelog/66940-fix-csv-import-variation-term-deletion
 plugins/woocommerce/changelog/fix-product-link-nofollow
@@ -4992,6 +4995,7 @@ plugins/woocommerce/changelog/add-catalog-sort-order-enum
 plugins/woocommerce/changelog/testops-176-wp-env-single-container-set
 plugins/woocommerce/changelog/fix-47831-widget-editor-notice
 plugins/woocommerce/changelog/fix-wc-66768-quick-edit-sale-dates
+plugins/woocommerce/changelog/add-gocardless-uk-gb
 plugins/woocommerce/changelog/dev-core-e2e-blocks-spec-selector
 plugins/woocommerce/changelog/32085-prevent-product-search-deselect
 plugins/woocommerce/changelog/fix-61682-report-custom-date-contrast
@@ -5027,6 +5031,7 @@ plugins/woocommerce/changelog/64582-robots-txt-hardcoded-wp-content
 plugins/woocommerce/changelog/update-wordpress-ui-theme-provider
 plugins/woocommerce/changelog/fix-plugin-check-env-config
 plugins/woocommerce/changelog/fix-cart-store-batch-cycle-side-effects
+plugins/woocommerce/changelog/fix-tax-settings-structured-options-validation
 plugins/woocommerce/changelog/fix-cart-clear-filter-override
 plugins/woocommerce/changelog/wooplug-6930-eslint-v10-flat-config
 plugins/woocommerce/changelog/fix-free-shipping-method-name-duplicated-in-shipping-amount
@@ -5127,6 +5132,7 @@ plugins/woocommerce/changelog/wooplug-6986-prime-variation-count-caches
 plugins/woocommerce/changelog/woo6-44-codex-review-cache-miss-returning-null-can-crash
 plugins/woocommerce/changelog/fix-test-teardown-missing-parent-call
 plugins/woocommerce/changelog/fix-blocks-e2e-template-search-race
+plugins/woocommerce/changelog/fix-product-gallery-thumbnails-aria-label
 plugins/woocommerce/changelog/fix-44859-blank-fee-calculate-taxes-fatal
 plugins/woocommerce/changelog/fix-59437-nox-test-account-non-recoverable
 plugins/woocommerce/changelog/fix-60393-combine-activity-panel-count-requests
@@ -5148,10 +5154,12 @@ plugins/woocommerce/changelog/update-deflag-mini-cart-iapi
 plugins/woocommerce/changelog/dev-66517-orders-meta-schema-union-coverage
 plugins/woocommerce/changelog/fix-order-fully-refunded-ghost-zero-refund
 plugins/woocommerce/changelog/fix-55501-placeholder-image-filter-attr
+plugins/woocommerce/changelog/fix-cli-skipped-theme-rewrite-rules
 plugins/woocommerce/changelog/fix-brand-thumbnails-where-selectors
 plugins/woocommerce/changelog/performance-unify-blocks-editor-assets
 plugins/woocommerce/changelog/fix-51490-brand-shortcode-style-units
 plugins/woocommerce/changelog/fix-quantity-stepper-dom-focus-order
+plugins/woocommerce/changelog/54066-align-product-collection-elements
 plugins/woocommerce/changelog/fix-wooplug-7135-rest-route-detection
 plugins/woocommerce/changelog/fix-lodash-orderby-import-restriction
 plugins/woocommerce/changelog/add-addcartitem-outcome
@@ -5955,6 +5963,7 @@ plugins/woocommerce/tests/php/includes/class-wc-countries-test.php
 plugins/woocommerce/tests/php/includes/class-wc-product-downloads-test.php
 plugins/woocommerce/tests/php/includes/class-wc-webhook-tests.php
 plugins/woocommerce/tests/php/includes/class-wc-structured-data-test.php
+plugins/woocommerce/tests/php/includes/class-wc-post-types-test.php
 plugins/woocommerce/tests/php/includes/rest-api/class-wc-rest-authentication-tests.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version4/Settings/class-wc-rest-general-settings-v4-controller-test.php
 plugins/woocommerce/tests/php/includes/rest-api/Controllers/Version4/OfflinePaymentMethods/class-wc-rest-offline-payment-methods-v4-controller-tests.php
@@ -6026,6 +6035,7 @@ plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AddToCartForm.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductGalleryLargeImageTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductQuery.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/AddToCartWithOptions.php
+plugins/woocommerce/tests/php/src/Blocks/BlockTypes/CustomerAccountTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/MiniCart.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductFilterTaxonomyTest.php
 plugins/woocommerce/tests/php/src/Blocks/BlockTypes/ProductTemplateTest.php

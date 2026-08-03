@@ -6314,7 +6314,6 @@ tests/integration/Core/Checkout/Cart/Rule/GoodsPriceRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/LineItemWithQuantityRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/ShippingMethodRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/CartTaxDisplayRuleTest.php
-tests/integration/Core/Checkout/Cart/Rule/LineItemPurchasePriceRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/CartVolumeRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/LineItemListPriceRuleTest.php
 tests/integration/Core/Checkout/Cart/Rule/PromotionsInCartCountRuleTest.php
@@ -6375,12 +6374,12 @@ tests/integration/Core/Checkout/Document/Renderer/ZugferdCancellationInvoiceRend
 tests/integration/Core/Checkout/Document/Renderer/StornoRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/delivery_note_renderer_default/snapshot.html
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/zugferd_invoice_document_default/snapshot.xml
-tests/integration/Core/Checkout/Document/Renderer/_snapshots/zugferd_credit_note_document_default/snapshot.xml
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/storno_renderer_default/snapshot.html
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/zugferd_cancellation_invoice_document_default/snapshot.xml
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/credit_note_renderer_default/snapshot.html
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/zugferd_credit_note_document_default_v6_8/snapshot.xml
 tests/integration/Core/Checkout/Document/Renderer/_snapshots/invoice_renderer_default/snapshot.html
+tests/integration/Core/Checkout/Document/Renderer/_snapshots/zugferd_credit_note_document_default_v6_7/snapshot.xml
 tests/integration/Core/Checkout/Document/Renderer/ZugferdRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/InvoiceRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/CreditNoteRendererTest.php
@@ -8437,6 +8436,7 @@ tests/unit/Core/Checkout/Cart/Rule/LineItemIsNewRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/ShippingMethodRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemReleaseDateRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/AffiliateCodeOfOrderRuleTest.php
+tests/unit/Core/Checkout/Cart/Rule/LineItemPurchasePriceRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemTaxationRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemStockRuleTest.php
 tests/unit/Core/Checkout/Cart/Rule/LineItemGroupRuleTest.php
@@ -9335,6 +9335,7 @@ tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/Migration10000000
 tests/unit/Core/Framework/Migration/_fixtures/MigrationRuntime/TestableMigrationRuntime.php
 tests/unit/Core/Framework/Migration/IndexerQueuerTest.php
 tests/unit/Core/Framework/Migration/AddColumnTraitTest.php
+tests/unit/Core/Framework/Migration/NonStandardFkGuardTest.php
 tests/unit/Core/Framework/Migration/MigrationExceptionTest.php
 tests/unit/Core/Framework/Migration/MigrationIndexerSafeguardTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/EntityDefinitionTest.php
@@ -9566,6 +9567,7 @@ tests/unit/Core/Framework/Routing/SalesChannelRequestContextResolverTest.php
 tests/unit/Core/Framework/Routing/ApiRouteScopeTest.php
 tests/unit/Core/Framework/FeatureTest.php
 tests/unit/Core/Framework/MessageQueue/Api/ConsumeMessagesControllerTest.php
+tests/unit/Core/Framework/MessageQueue/Api/ScheduledTaskControllerTest.php
 tests/unit/Core/Framework/MessageQueue/Command/RunSingleScheduledTaskCommandTest.php
 tests/unit/Core/Framework/MessageQueue/Command/ScheduledTaskRunnerTest.php
 tests/unit/Core/Framework/MessageQueue/Command/ListScheduledTaskCommandTest.php
@@ -11072,12 +11074,14 @@ tests/examples/ResolveListingIdsExample.php
 tests/examples/GetSitemapFileExample.php
 tests/examples/ProductListingCriteriaExtensionExample.php
 tests/devops/Core/Migration/MigrationNameAndTimestampTest.php
+tests/devops/Core/Migration/NonStandardFkGuardTest.php
 tests/devops/Core/Migration/MigrationIndexerSafeguardTest.php
 tests/devops/Core/DefaultsTest.php
 tests/devops/Core/DevOps/ADRValidationTest.php
 tests/devops/Core/DevOps/Docs/Command/Script/ScriptReferenceGeneratorTest.php
 tests/devops/Core/DevOps/Docs/Command/App/DocsAppEventCommandTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/NoDropStatementInUpdateRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/NonStandardFkGuardRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Migration/AddColumnRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/BCChangeAttributeUsageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CodeCoverageIgnoreEvaluationRuleTest.php
@@ -11142,6 +11146,8 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctio
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/NonRestrictedClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/TaskHandler.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/TestCommand.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NonStandardFkGuardRule/Migration1785000001UnguardedDdl.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NonStandardFkGuardRule/Migration1785000002GuardedDdl.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/DeprecatedMethods.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/DeprecatedClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MessagesShouldNotUsePHPStanTypes/RegularClassUsingPHPStanType.php
@@ -12190,6 +12196,7 @@ src/Storefront/Resources/app/storefront/test/helper/element-replace.helper.templ
 src/Storefront/Resources/app/storefront/test/helper/arrow-navigation.helper.template.html
 src/Storefront/Resources/app/storefront/test/helper/arrow-navigation.helper.test.js
 src/Storefront/Resources/app/storefront/test/globalTeardown.js
+src/Storefront/Resources/app/storefront/test/build/hmr-browser-url.test.js
 src/Storefront/Resources/app/storefront/test/plugin/wishlist/wishlist-persist-storage.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/wishlist/add-to-wishlist.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/wishlist/wishlist-guest-page.plugin.test.js
@@ -12684,6 +12691,7 @@ src/Storefront/Resources/app/storefront/webpack.config.js
 src/Storefront/Resources/app/storefront/build/start-hot-reload.js
 src/Storefront/Resources/app/storefront/build/live-reload-server/index.js
 src/Storefront/Resources/app/storefront/build/README.md
+src/Storefront/Resources/app/storefront/build/hmr-browser-url.js
 src/Storefront/Resources/app/storefront/build/link-component-node-modules.js
 src/Storefront/Resources/app/storefront/build/webpack/FilenameToChunkNamePlugin.js
 src/Storefront/Resources/app/storefront/build/vite/theme-scss-watcher-plugin.ts
@@ -14148,6 +14156,7 @@ src/Core/DevOps/StaticAnalyze/console-application.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/AddColumnRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/InMigrationClassTrait.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoAfterStatementRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NonStandardFkGuardRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoDropStatementInUpdateRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowStoreFunctionRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.php
@@ -17339,6 +17348,7 @@ src/Core/Framework/Migration/Trigger.php
 src/Core/Framework/Migration/Exception/UnknownMigrationSourceException.php
 src/Core/Framework/Migration/InheritanceUpdaterTrait.php
 src/Core/Framework/Migration/MigrationException.php
+src/Core/Framework/Migration/NonStandardFkGuard.php
 src/Core/Framework/Migration/MigrationCollectionLoader.php
 src/Core/Framework/Migration/IndexerQueuer.php
 src/Core/Framework/DataAbstractionLayer/EntityGenerator.php
@@ -25208,6 +25218,7 @@ src/Administration/Resources/app/administration/src/app/filter/stock-color-varia
 src/Administration/Resources/app/administration/src/app/filter/unicode-uri.spec.js
 src/Administration/Resources/app/administration/src/app/filter/truncate.filter.ts
 src/Administration/Resources/app/administration/src/app/composables/use-system.spec.ts
+src/Administration/Resources/app/administration/src/app/composables/use-snackbar.ts
 src/Administration/Resources/app/administration/src/app/composables/use-block-context.spec.js
 src/Administration/Resources/app/administration/src/app/composables/use-block-context.ts
 src/Administration/Resources/app/administration/src/app/composables/use-system.ts
@@ -25215,6 +25226,7 @@ src/Administration/Resources/app/administration/src/app/composables/use-session.
 src/Administration/Resources/app/administration/src/app/composables/use-context.spec.ts
 src/Administration/Resources/app/administration/src/app/composables/use-session.ts
 src/Administration/Resources/app/administration/src/app/composables/use-context.ts
+src/Administration/Resources/app/administration/src/app/composables/use-snackbar.spec.ts
 src/Administration/Resources/app/administration/src/app/service/custom-field.service.js
 src/Administration/Resources/app/administration/src/app/service/product-type.api.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/privileges.service.spec.js
@@ -25223,6 +25235,7 @@ src/Administration/Resources/app/administration/src/app/service/cache.service.sp
 src/Administration/Resources/app/administration/src/app/service/entity-validation.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/file-validation.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/api.service.spec.js
+src/Administration/Resources/app/administration/src/app/service/snackbar.service.ts
 src/Administration/Resources/app/administration/src/app/service/custom-field.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/language-auto-fetching.service.js
 src/Administration/Resources/app/administration/src/app/service/language-auto-fetching.service.spec.js
@@ -25246,6 +25259,7 @@ src/Administration/Resources/app/administration/src/app/service/filter.service.s
 src/Administration/Resources/app/administration/src/app/service/acl.service.ts
 src/Administration/Resources/app/administration/src/app/service/map-errors.service.ts
 src/Administration/Resources/app/administration/src/app/service/filter.service.js
+src/Administration/Resources/app/administration/src/app/service/snackbar.service.spec.ts
 src/Administration/Resources/app/administration/src/app/service/custom-entity-definition.service.ts
 src/Administration/Resources/app/administration/src/app/service/state-style.service.spec.js
 src/Administration/Resources/app/administration/src/app/service/app-cms.service.spec.js
