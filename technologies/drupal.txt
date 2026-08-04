@@ -284,6 +284,7 @@ core/modules/config_translation/tests/src/Functional/ConfigTranslationRoleUiTest
 core/modules/config_translation/tests/src/Functional/ConfigTranslationUiTestBase.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationViewListUiTest.php
 core/modules/config_translation/tests/src/Functional/ConfigTranslationUiSiteInformationTest.php
+core/modules/config_translation/tests/src/Functional/ConfigTranslationPluralUiTest.php
 core/modules/config_translation/tests/src/Unit/ConfigFieldMapperTest.php
 core/modules/config_translation/tests/src/Unit/ConfigNamesMapperTest.php
 core/modules/config_translation/tests/src/Unit/ConfigMapperManagerTest.php
@@ -1765,6 +1766,7 @@ core/modules/views_ui/tests/modules/views_ui_test_field/src/Hook/ViewsUiTestFiel
 core/modules/views_ui/tests/modules/views_ui_test_field/src/Hook/ViewsUiTestFieldViewsHooks.php
 core/modules/views_ui/tests/modules/views_ui_test_field/views_ui_test_field.info.yml
 core/modules/views_ui/tests/modules/views_ui_test/views_ui_test.libraries.yml
+core/modules/views_ui/tests/modules/views_ui_test/config/install/views.view.test_glossary.yml
 core/modules/views_ui/tests/modules/views_ui_test/config/install/views.view.sa_contrib_2013_035.yml
 core/modules/views_ui/tests/modules/views_ui_test/views_ui_test.info.yml
 core/modules/views_ui/tests/modules/views_ui_test/src/Hook/ViewsUiTestHooks.php
@@ -2651,9 +2653,6 @@ core/modules/node/config/install/system.action.node_delete_action.yml
 core/modules/node/config/install/system.action.node_make_unsticky_action.yml
 core/modules/node/config/schema/node.views.schema.yml
 core/modules/node/config/schema/node.schema.yml
-core/modules/node/config/optional/views.view.content_recent.yml
-core/modules/node/config/optional/views.view.glossary.yml
-core/modules/node/config/optional/views.view.archive.yml
 core/modules/node/config/optional/views.view.promoted_content.yml
 core/modules/node/config/optional/views.view.content.yml
 core/modules/node/templates/field--node--created.html.twig
@@ -2670,6 +2669,7 @@ core/modules/node/tests/modules/node_test/src/Hook/NodeTestHooks.php
 core/modules/node/tests/modules/node_test/node_test.info.yml
 core/modules/node/tests/modules/node_display_configurable_test/src/Hook/NodeDisplayConfigurableTestHooks.php
 core/modules/node/tests/modules/node_display_configurable_test/node_display_configurable_test.info.yml
+core/modules/node/tests/modules/node_block_test/config/install/views.view.test_content_recent.yml
 core/modules/node/tests/modules/node_block_test/src/Plugin/Block/NodeContextTestBlock.php
 core/modules/node/tests/modules/node_block_test/node_block_test.info.yml
 core/modules/node/tests/modules/node_access_test/node_access_test.permissions.yml
@@ -6207,6 +6207,7 @@ core/modules/views/tests/modules/views_test_config/test_views/views.view.test_fi
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_filter.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_entity_row.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_self_tokens.yml
+core/modules/views/tests/modules/views_test_config/test_views/views.view.test_archive.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_groupwise_term_ui.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_style_mapping.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_page_display_route.yml
@@ -6313,6 +6314,7 @@ core/modules/views/tests/src/Functional/Entity/EntityQueryAccessTest.php
 core/modules/views/tests/src/Functional/Entity/BaseFieldAccessTest.php
 core/modules/views/tests/src/Functional/UserBatchActionTest.php
 core/modules/views/tests/src/Functional/ViewsFormMultipleTest.php
+core/modules/views/tests/src/Functional/ArchiveTest.php
 core/modules/views/tests/src/Functional/BulkFormTest.php
 core/modules/views/tests/src/Functional/ViewsConfigUpdaterTest.php
 core/modules/views/tests/src/Functional/Plugin/CacheTagTest.php

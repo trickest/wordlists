@@ -76,6 +76,7 @@ db/migrate/20170713000002_ticket_zoom_setting2.rb
 db/migrate/20250124112935_reserved_words_per_model.rb
 db/migrate/20190613000001_group_dependent_text_modules.rb
 db/migrate/20240318132554_issue_5091_timezone_default.rb
+db/migrate/20260706093055_add_require_verified_email_domain_to_microsoft_office365_credentials.rb
 db/migrate/20221107081315_issue4306_excludes_setting.rb
 db/migrate/20170123000002_fixed_translation.rb
 db/migrate/20220314080801_issue4009_fix_title.rb
@@ -293,6 +294,7 @@ db/migrate/20240416163429_calendar_public_holiday_cleanup.rb
 db/migrate/20221110150329_issue_4322_session_timeout_stringify.rb
 db/migrate/20230425094249_setting_add_ticket_agent_default_notifications.rb
 db/migrate/20220920084800_setting_add_store_provider_s3.rb
+db/migrate/20260610120000_http_log_bearer_token_cleanup.rb
 db/migrate/20200507095900_imap_authentication_migration_cleanup_job_scheduler.rb
 db/migrate/20200716124141_issue_3123_external_sync_ticket_merge.rb
 db/migrate/20170214000001_reload_online_browser_after_cors_csrf_changes.rb
@@ -10033,6 +10035,7 @@ spec/db/migrate/issue4012_missing_rows_for_textarea_fields_spec.rb
 spec/db/migrate/issue_4266_fix_field_spec.rb
 spec/db/migrate/ldap_source_config_spec.rb
 spec/db/migrate/issue_5908_cleanup_ticket_ai_agent_running_falgs_spec.rb
+spec/db/migrate/http_log_bearer_token_cleanup_spec.rb
 spec/db/migrate/issue_5147_modified_operator_spec.rb
 spec/db/migrate/issue_3618_google_calendar_url_https_spec.rb
 spec/db/migrate/issue_5191_ensure_single_merged_state_spec.rb
@@ -10667,6 +10670,7 @@ spec/fixtures/files/pgp/pgp1@example.com.fingerprint
 spec/fixtures/files/pgp/expiredpgp1@example.com.pub.pgp
 spec/fixtures/files/pgp/ocbpgp1@example.com.expires_at
 spec/fixtures/files/pgp/expiredpgp1@example.com.asc
+spec/fixtures/files/pgp/zammad@localhost.data.opaque.asc
 spec/fixtures/files/pgp/pgp2@example.com.pub.asc
 spec/fixtures/files/pgp/pgp2@example.com-other.created_at
 spec/fixtures/files/pgp/pgp3@example.com.pgp
@@ -10911,6 +10915,7 @@ spec/fixtures/files/smime/DSA.secret
 spec/fixtures/files/smime/smime-sender-ca@example.com.csr
 spec/fixtures/files/smime/sender_is_signer_with_ca.eml.head.txt
 spec/fixtures/files/smime/ExpiredIntermediateCA.csr
+spec/fixtures/files/smime/forged_extra_certificate.eml
 spec/fixtures/files/smime/wrong_mime_type.eml
 spec/fixtures/files/smime/ExpiredCA.key
 spec/fixtures/files/smime/smime3@example.com.key
@@ -10999,6 +11004,7 @@ spec/fixtures/files/smime/chain@example.com.crt
 spec/fixtures/files/smime/pgp+smime-sender@example.com.key
 spec/fixtures/files/smime/expiredsmime2@example.com.crt
 spec/fixtures/files/smime/SenderIntermediateCA.key
+spec/fixtures/files/smime/forged_cloned_subject.eml
 spec/fixtures/files/smime/alice@acme.corp+sign+encrypt+future.csr
 spec/fixtures/files/smime/smime1@example.com.crt
 spec/fixtures/files/smime/SenderIntermediateCA.csr
@@ -11636,6 +11642,7 @@ spec/models/data_privacy_task_spec.rb
 spec/models/pgp_key_spec.rb
 spec/models/setting_spec.rb
 spec/models/authorization/provider_spec.rb
+spec/models/authorization/authorization_sso_account_linking_spec.rb
 spec/models/failed_email_spec.rb
 spec/models/system_report_spec.rb
 spec/models/webhook/pre_defined_spec.rb
@@ -12344,6 +12351,7 @@ spec/lib/report/ticket_merged_spec.rb
 spec/lib/report/ticket_reopened_spec.rb
 spec/lib/report/ticket_first_solution_spec.rb
 spec/lib/report/ticket_backlog_spec.rb
+spec/lib/omni_auth/strategies/microsoft_office365_database_spec.rb
 spec/lib/notification_factory/renderer/date_time_format_spec.rb
 spec/lib/notification_factory/renderer/article_tags_spec.rb
 spec/lib/notification_factory/renderer/notification_templates_spec.rb
