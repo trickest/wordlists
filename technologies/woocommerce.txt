@@ -4944,6 +4944,7 @@ plugins/woocommerce/changelog/fix-product-gallery-custom-aspect-ratios
 plugins/woocommerce/changelog/fix-26879-external-download-filename
 plugins/woocommerce/changelog/wooplug-7174-perf-env-storefront-activate
 plugins/woocommerce/changelog/fix-legacy-select2-frontend-analytics
+plugins/woocommerce/changelog/fix-WOOPRD-3644-align-nox-partner-recommendations
 plugins/woocommerce/changelog/fix-orders-list-hidden-columns
 plugins/woocommerce/changelog/fix-coupon-validate-filter-polarity
 plugins/woocommerce/changelog/woo6-97-add-blueprint-import-disclosure
@@ -4968,12 +4969,15 @@ plugins/woocommerce/changelog/fix-mini-cart-variation-e2e-race
 plugins/woocommerce/changelog/perf-product-filters-batch-taxonomy-descendants
 plugins/woocommerce/changelog/fix-67301
 plugins/woocommerce/changelog/fix-66861-malformed-gateway-transition-defaults
+plugins/woocommerce/changelog/fix-product-summary-responsive-styles
 plugins/woocommerce/changelog/testops-255-await-webhooks-cleanup
 plugins/woocommerce/changelog/add-onboarding-task-image-metadata
+plugins/woocommerce/changelog/wooprd-3590-new-payment-partner-helcim
 plugins/woocommerce/changelog/fix-store-api-request-detection-plain-permalinks
 plugins/woocommerce/changelog/fix-66528-strpos-typeerror-visual-attribute-admin
 plugins/woocommerce/changelog/testops-214-share-rest-auth-user-v4-tests
 plugins/woocommerce/changelog/update-deflag-wc-admin-onboarding
+plugins/woocommerce/changelog/33729-skip-non-resizable-image-regeneration
 plugins/woocommerce/changelog/consolidate-eslint-core-modules
 plugins/woocommerce/changelog/fix-pay-for-order-preserve-cart
 plugins/woocommerce/changelog/woo6-44-version-cache-cleanup-hardening
@@ -5003,6 +5007,7 @@ plugins/woocommerce/changelog/testops-257-normalize-is-multisite
 plugins/woocommerce/changelog/add-attribute-slug-locale-hint
 plugins/woocommerce/changelog/dev-wp-7-1-e2e-content-locators
 plugins/woocommerce/changelog/66078-dehoist-react
+plugins/woocommerce/changelog/switch-from-wp-fast-hash-to-hash
 plugins/woocommerce/changelog/add-catalog-sort-order-enum
 plugins/woocommerce/changelog/fix-analytics-overview-e2e-waitforresponse-race
 plugins/woocommerce/changelog/testops-176-wp-env-single-container-set
@@ -5017,6 +5022,7 @@ plugins/woocommerce/changelog/fix-65698-show-wc-taxonomies-in-nav-menus-by-defau
 plugins/woocommerce/changelog/fix-checkout-terms-checkbox-validation-message
 plugins/woocommerce/changelog/add-context-aware-personalization
 plugins/woocommerce/changelog/fix-52333-coupon-leading-zero-trim
+plugins/woocommerce/changelog/add-withdraw-order-note
 plugins/woocommerce/changelog/fix-44784-csv-export-unlink-warning
 plugins/woocommerce/changelog/rename-v4-refunds-amount-to-total
 plugins/woocommerce/changelog/59417-brand-thumbnails-description-css
@@ -5039,11 +5045,13 @@ plugins/woocommerce/changelog/fix-53155-export-variable-products-includes-variat
 plugins/woocommerce/changelog/wooplug-7165-ai-regression-reviewtrunk-drill-down-css-hides-the-legacy
 plugins/woocommerce/changelog/fix-39300-virtual-order-admin-shipping
 plugins/woocommerce/changelog/update-deflag-wc-admin-shell-features
+plugins/woocommerce/changelog/fix-product-editor-content-shift
 plugins/woocommerce/changelog/fix-65677-e2e-save-helper-races
 plugins/woocommerce/changelog/64582-robots-txt-hardcoded-wp-content
 plugins/woocommerce/changelog/update-wordpress-ui-theme-provider
 plugins/woocommerce/changelog/fix-plugin-check-env-config
 plugins/woocommerce/changelog/fix-cart-store-batch-cycle-side-effects
+plugins/woocommerce/changelog/wooprd-3640-new-payment-partner-airwallex-jp
 plugins/woocommerce/changelog/fix-tax-settings-structured-options-validation
 plugins/woocommerce/changelog/fix-cart-clear-filter-override
 plugins/woocommerce/changelog/wooplug-6930-eslint-v10-flat-config
@@ -5069,6 +5077,7 @@ plugins/woocommerce/changelog/fix-order-list-wordpress-71-compatibility
 plugins/woocommerce/changelog/fix-manual-order-shipping-method-name
 plugins/woocommerce/changelog/fix-register-deprecated-block-bundle-handles
 plugins/woocommerce/changelog/67121-fix-blueprint-themes-api-fatal
+plugins/woocommerce/changelog/64310-add-ajax-submit-order-reviews
 plugins/woocommerce/changelog/66314-keep-woocommerce-blocks-registered
 plugins/woocommerce/changelog/task-declare-e2e-themes-in-wp-env-config
 plugins/woocommerce/changelog/66197-fix-coming-soon-null-script-handle-deprecation
@@ -5095,6 +5104,7 @@ plugins/woocommerce/changelog/38629-async-admin-notice-dismiss
 plugins/woocommerce/changelog/fix-multisite-login-membership-order
 plugins/woocommerce/changelog/performance-audit-variable-product-datastore-p2
 plugins/woocommerce/changelog/65912-add-visual-attribute-default-color-terms
+plugins/woocommerce/changelog/64098-add-WOOPRD-3412-payment-partnership-updates-mastercard
 plugins/woocommerce/changelog/performance-audit-variable-product-datastore
 plugins/woocommerce/changelog/66364-fix-command-palette-e2e-modifier-detection
 plugins/woocommerce/changelog/fix-66486-nox-test-account-skip-status-regate
@@ -5111,6 +5121,7 @@ plugins/woocommerce/changelog/pr-64372
 plugins/woocommerce/changelog/update-woopayments-onboarding-troubleshooting-link
 plugins/woocommerce/changelog/php-tests-unbalanced-output-buffers-risky-test
 plugins/woocommerce/changelog/fix-reviews-list-table-check-column-test
+plugins/woocommerce/changelog/fix-wccom-2747-malformed-subscriptions
 plugins/woocommerce/changelog/add-order-withdrawal-rate-limit
 plugins/woocommerce/changelog/fix-43351-macao-currency-symbol
 plugins/woocommerce/changelog/fix-61598-quick-edit-stock-quantity-null
@@ -5142,6 +5153,7 @@ plugins/woocommerce/changelog/dev-deflag-wc-admin-feature-compatibility-shims
 plugins/woocommerce/changelog/testops-174-organize-e2e-test-plugins
 plugins/woocommerce/changelog/testops-207-split-wp-env-configs
 plugins/woocommerce/changelog/38541-fix-csv-importer-mbstring-fallback
+plugins/woocommerce/changelog/wooprd-3639-new-payment-partner-komoju
 plugins/woocommerce/changelog/fix-test-filters-registered-in-static-hooks
 plugins/woocommerce/changelog/phpunit-suite-sharding-cleanup
 plugins/woocommerce/changelog/52292-set-product-reset-variation-id
@@ -5166,6 +5178,7 @@ plugins/woocommerce/changelog/fix-34839-csv-import-gallery-images
 plugins/woocommerce/changelog/fix-csv-importer-image-tests
 plugins/woocommerce/changelog/66544-66537-order-details-email
 plugins/woocommerce/changelog/fix-stable-selectors-api
+plugins/woocommerce/changelog/66815-add-order-step-logging-opt-out-filter
 plugins/woocommerce/changelog/65875-fix-cart-link-icon-size
 plugins/woocommerce/changelog/perf-callbackutil-memoise-hook-signatures
 plugins/woocommerce/changelog/fix-clear-logs-20-file-cap
@@ -5174,6 +5187,7 @@ plugins/woocommerce/changelog/dev-66517-orders-meta-schema-union-coverage
 plugins/woocommerce/changelog/fix-order-fully-refunded-ghost-zero-refund
 plugins/woocommerce/changelog/fix-55501-placeholder-image-filter-attr
 plugins/woocommerce/changelog/fix-cli-skipped-theme-rewrite-rules
+plugins/woocommerce/changelog/fix-WOO6-93
 plugins/woocommerce/changelog/fix-brand-thumbnails-where-selectors
 plugins/woocommerce/changelog/performance-unify-blocks-editor-assets
 plugins/woocommerce/changelog/woo6-96-fix-restricted-options-case-bypass
@@ -5189,6 +5203,7 @@ plugins/woocommerce/changelog/fix-29753-product-gallery-fractional-transform
 plugins/woocommerce/changelog/fix-notice-handler-docblock
 plugins/woocommerce/changelog/fix-order-review-moderation-bypass
 plugins/woocommerce/changelog/fix-core-breadcrumbs-compatibility
+plugins/woocommerce/changelog/add-payment-gateway-provider-resilience-tests
 plugins/woocommerce/changelog/fix-35821-coupon-line-items-dp-parameter
 plugins/woocommerce/changelog/fix-wc-separator-color-token
 plugins/woocommerce/changelog/codex-66752-restore-flexslider-bubble-phase
@@ -5202,8 +5217,10 @@ plugins/woocommerce/changelog/tweak-woo-home-dashboard-visual-polish
 plugins/woocommerce/changelog/add-order-withdrawal-form
 plugins/woocommerce/changelog/66237-fix-order-download-permission-duplicates
 plugins/woocommerce/changelog/performance-email-editor-canvas-typing-latency
+plugins/woocommerce/changelog/66815-fix-log-write-glob-and-order-log-cleanup
 plugins/woocommerce/changelog/fix-make-featured-product-category-images-responsive
 plugins/woocommerce/changelog/fix-woopayments-incentive-ignore-test-mode-orders
+plugins/woocommerce/changelog/add-withdraw-order-window-warning
 plugins/woocommerce/changelog/performance-prime-caches-variations-gallery
 plugins/woocommerce/changelog/59894-fix-local-pickup-shop-manager-perms
 plugins/woocommerce/changelog/66417-fix-classic-theme-block-notice-styles
@@ -6552,6 +6569,7 @@ plugins/woocommerce/tests/php/src/Internal/DataStores/Orders/OrdersTableRefundDa
 plugins/woocommerce/tests/php/src/Internal/DataStores/StockNotifications/StockNotificationsDataStoreTests.php
 plugins/woocommerce/tests/php/src/Internal/OrderReviews/EndpointTest.php
 plugins/woocommerce/tests/php/src/Internal/OrderReviews/SubmissionHandlerTest.php
+plugins/woocommerce/tests/php/src/Internal/OrderReviews/SubmissionHandlerRoutingTest.php
 plugins/woocommerce/tests/php/src/Internal/OrderReviews/StarRatingTest.php
 plugins/woocommerce/tests/php/src/Internal/OrderReviews/ItemEligibilityTest.php
 plugins/woocommerce/tests/php/src/Internal/OrderReviews/SchedulerTest.php
@@ -6589,6 +6607,7 @@ plugins/woocommerce/tests/php/src/Internal/ProductFilters/FilterDataNormalisatio
 plugins/woocommerce/tests/php/src/Internal/ProductFilters/FilterDataTest.php
 plugins/woocommerce/tests/php/src/Internal/ProductFilters/QueryClausesTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/ShippingPartnerSuggestions/ShippingPartnerSuggestionsTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/RemoteInboxNotificationsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/LoaderTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Suggestions/PaymentsExtensionSuggestionsTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Suggestions/Incentives/IncentiveTest.php
@@ -6600,8 +6619,12 @@ plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/WCCo
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/WooPayments/WooPaymentsServiceTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/WooPayments/WooPaymentsRestControllerIntegrationTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/WooPayments/WooPaymentsRestControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/HelcimTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/WooPaymentsTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/MastercardTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsProviders/KomojuTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/SettingsUIPages/ProductsSettingsPageAdapterTest.php
+plugins/woocommerce/tests/php/src/Internal/Admin/Settings/Mocks/FakeKomojuPaymentGateway.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/Mocks/FakePaymentGateway.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/SettingsUIFeatureFlagTest.php
 plugins/woocommerce/tests/php/src/Internal/Admin/Settings/PaymentsRestControllerTest.php
@@ -8722,6 +8745,7 @@ plugins/woocommerce/src/Internal/Admin/Settings/SettingsUIPageInterface.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/WCCore.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Monei.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/WooPayments.php
+plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Komoju.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/PseudoWCPaymentGateway.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Paymob.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/GoCardless.php
@@ -8741,12 +8765,14 @@ plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/AfterpayClearp
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Klarna.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Vivacom.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/HelioPay.php
+plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Mastercard.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/NexiCheckout.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Paystack.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Eway.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/AmazonPay.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Paytrail.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Affirm.php
+plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Helcim.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/PayPal.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/Tilopay.php
 plugins/woocommerce/src/Internal/Admin/Settings/PaymentsProviders/PaymentGateway.php
@@ -9607,6 +9633,7 @@ plugins/woocommerce/assets/images/onboarding/bacs.svg
 plugins/woocommerce/assets/images/onboarding/cod.svg
 plugins/woocommerce/assets/images/onboarding/icons/amazonpay.svg
 plugins/woocommerce/assets/images/onboarding/icons/monei.svg
+plugins/woocommerce/assets/images/onboarding/icons/mastercard.svg
 plugins/woocommerce/assets/images/onboarding/icons/vivacom.svg
 plugins/woocommerce/assets/images/onboarding/icons/payu.svg
 plugins/woocommerce/assets/images/onboarding/icons/woo.svg
@@ -9616,6 +9643,7 @@ plugins/woocommerce/assets/images/onboarding/icons/mercadopago.svg
 plugins/woocommerce/assets/images/onboarding/icons/elavon.svg
 plugins/woocommerce/assets/images/onboarding/icons/affirm.svg
 plugins/woocommerce/assets/images/onboarding/icons/payfast.svg
+plugins/woocommerce/assets/images/onboarding/icons/komoju.svg
 plugins/woocommerce/assets/images/onboarding/icons/paystack.svg
 plugins/woocommerce/assets/images/onboarding/icons/square.svg
 plugins/woocommerce/assets/images/onboarding/icons/coinbase.svg
@@ -9625,6 +9653,7 @@ plugins/woocommerce/assets/images/onboarding/icons/eway.svg
 plugins/woocommerce/assets/images/onboarding/icons/afterpay-clearpay.svg
 plugins/woocommerce/assets/images/onboarding/icons/nexi.svg
 plugins/woocommerce/assets/images/onboarding/icons/paymob.svg
+plugins/woocommerce/assets/images/onboarding/icons/helcim.svg
 plugins/woocommerce/assets/images/onboarding/icons/bolt.svg
 plugins/woocommerce/assets/images/onboarding/icons/razorpay.svg
 plugins/woocommerce/assets/images/onboarding/icons/ngenius.svg
@@ -10421,6 +10450,7 @@ docs/contribution/releases/building-and-publishing.md
 docs/contribution/releases/package-releases.md
 docs/contribution/releases/README.md
 docs/contribution/releases/schedule.md
+docs/contribution/releases/security-support.md
 docs/contribution/releases/readiness.md
 docs/contribution/releases/point-releases.md
 docs/contribution/releases/troubleshooting.md
@@ -12056,6 +12086,7 @@ packages/js/e2e-utils-playwright/tsconfig.json
 packages/js/e2e-utils-playwright/eslint.config.mjs
 packages/js/e2e-utils-playwright/package.json
 packages/js/e2e-utils-playwright/changelog/wooplug-6930-eslint-v10-flat-config
+packages/js/e2e-utils-playwright/changelog/fix-get-canvas-iframe-wait
 packages/js/e2e-utils-playwright/changelog/66097-bump-wp-env-and-playwright
 packages/js/e2e-utils-playwright/changelog/.gitkeep
 packages/js/e2e-utils-playwright/README.md

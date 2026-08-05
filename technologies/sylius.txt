@@ -1534,6 +1534,7 @@ tests/Functional/Encryption/GatewayConfigEncryptionTest.php
 tests/Functional/AbstractWebTestCase.php
 tests/Functional/fixtures/Bundles/LocaleBundle/Context/LocaleResolving/fixtures.yaml
 tests/Functional/OrderByIdentifierSqlWalkerTest.php
+tests/Functional/CartPostFlushEventsTest.php
 tests/Functional/Repository/ShippingMethodRepositoryTest.php
 tests/Functional/AdminBasicRouteTests.php
 tests/Functional/CartCollectorTest.php
@@ -1648,12 +1649,15 @@ src/Sylius/Bundle/OrderBundle/tests/DependencyInjection/SyliusOrderExtensionTest
 src/Sylius/Bundle/OrderBundle/tests/DependencyInjection/Compiler/RegisterOrderProcessorPassTest.php
 src/Sylius/Bundle/OrderBundle/tests/DependencyInjection/Compiler/TagResettableCartContextsPassTest.php
 src/Sylius/Bundle/OrderBundle/tests/Factory/AddToCartCommandFactoryTest.php
+src/Sylius/Bundle/OrderBundle/tests/Adder/CartItemAdderTest.php
 src/Sylius/Bundle/OrderBundle/tests/NumberAssigner/OrderNumberAssignerTest.php
 src/Sylius/Bundle/OrderBundle/tests/NumberGenerator/SequentialOrderNumberGeneratorTest.php
 src/Sylius/Bundle/OrderBundle/tests/Resetter/CartChangesResetterTest.php
 src/Sylius/Bundle/OrderBundle/tests/Form/DataMapper/OrderItemQuantityDataMapperTest.php
 src/Sylius/Bundle/OrderBundle/tests/Context/SessionBasedCartContextTest.php
 src/Sylius/Bundle/OrderBundle/phpunit.xml.dist
+src/Sylius/Bundle/OrderBundle/Adder/CartItemAdder.php
+src/Sylius/Bundle/OrderBundle/Adder/CartItemAdderInterface.php
 src/Sylius/Bundle/OrderBundle/Attribute/AsCartContext.php
 src/Sylius/Bundle/OrderBundle/Attribute/AsOrderProcessor.php
 src/Sylius/Bundle/OrderBundle/SyliusOrderBundle.php

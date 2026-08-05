@@ -5133,6 +5133,7 @@ core/modules/system/tests/src/Functional/Render/HtmlResponseAttachmentsTest.php
 core/modules/system/tests/src/Functional/Render/UrlBubbleableMetadataBubblingTest.php
 core/modules/system/tests/src/Functional/Pager/PagerTest.php
 core/modules/system/tests/src/Functional/Module/GenericModuleTestBase.php
+core/modules/system/tests/src/Functional/Module/DeprecatedModulesTest.php
 core/modules/system/tests/src/Functional/Module/HookRequirementsTest.php
 core/modules/system/tests/src/Functional/Module/ModuleTestBase.php
 core/modules/system/tests/src/Functional/Module/ClassLoaderTest.php
@@ -7348,6 +7349,7 @@ core/modules/ckeditor5/tests/src/FunctionalJavascript/LanguageTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/ImageUrlTestBase.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5FragmentLinkTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaPreviewTest.php
+core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaViewModeTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/SourceEditingEmptyElementTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5AllowedTagsTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/ImageTestBase.php
@@ -8601,7 +8603,6 @@ core/modules/update/tests/fixtures/release-history/drupal.9.0.0-10.0.0.xml
 core/modules/update/tests/fixtures/release-history/aaa_update_test.1_0-supported.xml
 core/modules/update/tests/themes/update_test_base_theme/update_test_base_theme.info.yml
 core/modules/update/tests/themes/update_test_subtheme/update_test_subtheme.info.yml
-core/modules/update/tests/aaa_update_test.tar.gz
 core/modules/update/tests/src/Functional/UpdateSemverCoreSecurityAvailabilityTest.php
 core/modules/update/tests/src/Functional/UpdateSemverCoreTest.php
 core/modules/update/tests/src/Functional/UpdateContribTest.php
@@ -14465,7 +14466,9 @@ core/lib/Drupal/Core/Database/Query/NoUniqueFieldException.php
 core/lib/Drupal/Core/Database/Query/InvalidMergeQueryException.php
 core/lib/Drupal/Core/Database/Query/SelectExtender.php
 core/lib/Drupal/Core/Database/Query/Select.php
+core/lib/Drupal/Core/Database/Query/UpsertUpdateExpression.php
 core/lib/Drupal/Core/Database/Query/SelectInterface.php
+core/lib/Drupal/Core/Database/Expression.php
 core/lib/Drupal/Core/Database/DriverNotSpecifiedException.php
 core/lib/Drupal/Core/Database/Statement/PdoTrait.php
 core/lib/Drupal/Core/Database/Statement/ResultBase.php
@@ -15436,6 +15439,7 @@ core/lib/Drupal/Core/Plugin/Discovery/InfoHookDecorator.php
 core/lib/Drupal/Core/Plugin/Discovery/YamlDiscovery.php
 core/lib/Drupal/Core/Plugin/Discovery/ContainerDeriverInterface.php
 core/lib/Drupal/Core/Plugin/Discovery/AttributeClassDiscovery.php
+core/lib/Drupal/Core/Plugin/Discovery/YamlCacheCollectorDiscovery.php
 core/lib/Drupal/Core/Plugin/CachedDiscoveryClearerInterface.php
 core/lib/Drupal/Core/Plugin/DefaultLazyPluginCollection.php
 core/lib/Drupal/Core/Plugin/PluginFormInterface.php

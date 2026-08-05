@@ -7672,6 +7672,7 @@ tests/unit/Storefront/Theme/Exception/ThemeConfigExceptionTest.php
 tests/unit/Storefront/Theme/ThemeServiceTest.php
 tests/unit/Storefront/Theme/ThemeAssetPackageTest.php
 tests/unit/Storefront/Theme/ScheduledTask/DeleteThemeFilesTaskHandlerTest.php
+tests/unit/Storefront/Theme/ThemeRuntimeConfigStorageTest.php
 tests/unit/Storefront/Theme/StorefrontPluginRegistryTest.php
 tests/unit/Storefront/Theme/ThemeCompilerTest.php
 tests/unit/Storefront/Theme/SeedingThemePathBuilderTest.php
@@ -7831,14 +7832,12 @@ tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/RemovedTwigBlocksTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/MissingReleaseInfoTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/InlineRuleInDangerConfigTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/SingleCoversClassInTestsTest.php
-tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/ReflectionOnPrivateMethodsInTestsTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/ShopwareYamlConfigSchemaHintTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/SqlHeredocUsageTest.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/phpunit.xml.dist
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Checkout/Fixture/FixtureException.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Checkout/Fixture/MinorityDiscoveryService.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Checkout/Fixture/AnotherCheckoutService.php
-tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Checkout/Fixture/ServiceWithHiddenMethods.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Content/Fixture/ScopedEntity.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/_fixtures/src/Core/Content/Fixture/InlineException.php
 tests/unit/Core/DevOps/StaticAnalyze/Danger/Rules/PhpstanBaselineGrowthTest.php
@@ -8120,6 +8119,7 @@ tests/unit/Core/System/Locale/Subscriber/LocaleValidatorTest.php
 tests/unit/Core/System/DependencyInjection/CompilerPass/NumberRangeIncrementerCompilerPassTest.php
 tests/unit/Core/System/DependencyInjection/CompilerPass/SalesChannelEntityCompilerPassTest.php
 tests/unit/Core/System/User/Api/UserRecoveryControllerTest.php
+tests/unit/Core/System/User/Api/UserValidationControllerTest.php
 tests/unit/Core/System/User/UserExceptionTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryServiceTest.php
 tests/unit/Core/System/User/Recovery/UserRecoveryRequestEventTest.php
@@ -10012,6 +10012,7 @@ tests/unit/Core/Framework/App/Flow/Event/Xml/CustomEventTest.php
 tests/unit/Core/Framework/App/Flow/Event/FlowEventTest.php
 tests/unit/Core/Framework/App/Payload/AppPayloadServiceHelperTest.php
 tests/unit/Core/Framework/App/Manifest/ManifestFixture.php
+tests/unit/Core/Framework/App/Manifest/ModuleLoaderTest.php
 tests/unit/Core/Framework/App/Manifest/XmlParserUtilsTest.php
 tests/unit/Core/Framework/App/Manifest/ManifestTest.php
 tests/unit/Core/Framework/App/Manifest/_fixtures/invalidShippingMethods-manifest.xml
@@ -11153,6 +11154,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoStaticRuntimeExcepti
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/CasesOutOfScope.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/PropertyCases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/HelperReturnCases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoConstraintViolationGetMessageRule/Usage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoLegacySqlHashFunctionRule/LegacySqlHashUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/NonRestrictedClass.php
@@ -11231,6 +11233,9 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/CoreServiceInCore.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/XmlCoreService.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/ServiceDefinitionRule/src/Core/Framework/Example/PhpCoreService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReflectionOnNonPublicMethodsRule/Cases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReflectionOnNonPublicMethodsRule/TestSupportTarget.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoReflectionOnNonPublicMethodsRule/NonTestClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/not-in-namespace.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/not-in-class.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDalAutoload/in-core-namespace.php
@@ -11289,6 +11294,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleT
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DeprecatedMethodsThrowDeprecationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoMockBuilderConstructorBypassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AssertEqualsCanonicalizingListArgumentRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoReflectionOnNonPublicMethodsRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AclValidPermissionsInRouteAttributesRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAssertEqualsOnClosureRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AbstractClassUsageRuleTest.php
@@ -14155,7 +14161,6 @@ src/Core/DevOps/StaticAnalyze/Danger/Rules/EntityRepositoryInFrontendLayer.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/RemovedTwigBlocks.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/InvalidFileNameCharacters.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/DeprecatedChangelogFormat.php
-src/Core/DevOps/StaticAnalyze/Danger/Rules/ReflectionOnPrivateMethodsInTests.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/MissingPackageAttributeInTests.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/MissingMigrationTests.php
 src/Core/DevOps/StaticAnalyze/Danger/Rules/PhpstanBaselineGrowth.php
@@ -14171,6 +14176,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoAfterStatementRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NonStandardFkGuardRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoDropStatementInUpdateRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowStoreFunctionRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoReflectionOnNonPublicMethodsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/AssertEqualsCanonicalizingListArgumentRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoMockBuilderConstructorBypassRule.php
@@ -14183,6 +14189,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/DataProviderRowArityRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/PHPUnitMethodAttributesOverAnnotationsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertsOnObjectsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/Fixture/ReflectionTarget.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestReflectionClassInterface.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoExpectExceptionMessageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoCreateMockWithoutExpectationsRule.php
@@ -21911,6 +21918,7 @@ src/Administration/Resources/app/administration/src/module/sw-media/component/sw
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-collapse/sw-media-collapse.scss
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-collapse/sw-media-collapse.html.twig
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-collapse/index.js
+src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo-multiple/sw-media-quickinfo-multiple.spec.js
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo-multiple/sw-media-quickinfo-multiple.scss
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo-multiple/sw-media-quickinfo-multiple.html.twig
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo-multiple/index.js
@@ -25585,6 +25593,7 @@ adr/2021-05-28-introduce-eslint-on-vue-admin.md
 adr/2023-05-16-php-enums.md
 adr/2022-02-21-rule-scripting-in-apps.md
 adr/2022-02-28-consistent-deprecation-notices-in-core.md
+adr/2026-07-13-app-feature-storage.md
 adr/2024-07-31-add-more-unit-tests-namespaces-to-featureflag-extension.md
 adr/2022-09-27-vue-2.7-update.md
 adr/2020-11-19-dal-join-filter.md

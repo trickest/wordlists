@@ -543,6 +543,8 @@ tests/api/core/upload/admin/settings.test.api.js
 tests/api/core/upload/admin/private-file-signing.test.api.js
 tests/api/core/upload/admin/file.test.api.js
 tests/api/core/mcp/mcp-content-manager-rbac.test.api.ts
+tests/api/core/mcp/utils/mcp-client.ts
+tests/api/core/mcp/mcp-audit-logs.test.api.ts
 tests/api/core/mcp/mcp-content-manager-shaping.test.api.ts
 tests/api/core/mcp/mcp-auth.test.api.ts
 tests/api/core/database/v4-self-ref-compat.test.api.js
@@ -1250,10 +1252,12 @@ examples/complex/scripts/db-utils.js
 examples/complex/scripts/seed-v4.js
 examples/complex/scripts/db-mysql.js
 examples/complex/scripts/seed-v5.js
+examples/complex/scripts/run-bench-hook-smoke.js
 examples/complex/scripts/db-sqlite.js
 examples/complex/scripts/db-mariadb.js
 examples/complex/scripts/db-postgres.js
 examples/complex/scripts/bench.js
+examples/complex/scripts/bench-hook-smoke.js
 examples/complex/scripts/compose.js
 examples/complex/scripts/validate-migration.js
 examples/complex/scripts/bench-hook.js
@@ -2031,7 +2035,9 @@ packages/core/content-releases/server/custom.d.ts
 packages/core/content-releases/.editorconfig
 packages/core/content-releases/.eslintrc.cjs
 packages/core/content-releases/package.json
+packages/core/content-releases/shared/tsconfig.eslint.json
 packages/core/content-releases/shared/types.ts
+packages/core/content-releases/shared/.eslintrc.cjs
 packages/core/content-releases/shared/contracts/homepage.ts
 packages/core/content-releases/shared/contracts/releases.ts
 packages/core/content-releases/shared/contracts/release-actions.ts
@@ -2575,6 +2581,7 @@ packages/core/utils/.eslintrc.cjs
 packages/core/utils/package.json
 packages/core/utils/.npmignore
 packages/core/utils/tsconfig.build.json
+packages/core/utils/scripts/bench-sanitize-output.js
 packages/core/utils/README.md
 packages/core/utils/src/content-api-route-params.ts
 packages/core/utils/src/global.d.ts
@@ -4534,6 +4541,7 @@ packages/core/types/src/modules/documents/params/pagination.ts
 packages/core/types/src/modules/documents/params/locale.ts
 packages/core/types/src/modules/documents/params/search.ts
 packages/core/types/src/modules/documents/component-extension.ts
+packages/core/types/src/modules/audit-logs.ts
 packages/core/types/src/modules/mcp.ts
 packages/core/types/src/modules/content-api.ts
 packages/core/types/src/modules/cron.ts
@@ -5126,6 +5134,8 @@ packages/core/upload/admin/src/future/components/tests/Drawer.test.tsx
 packages/core/upload/admin/src/future/components/UploadProgressDialog.tsx
 packages/core/upload/admin/src/future/utils/getFolderLabel.ts
 packages/core/upload/admin/src/future/utils/buildBulkMovePayload.ts
+packages/core/upload/admin/src/future/utils/getRelationId.ts
+packages/core/upload/admin/src/future/utils/isEventFromWithin.ts
 packages/core/upload/admin/src/future/utils/canDropItemOnFolder.ts
 packages/core/upload/admin/src/future/utils/searchQueryParam.ts
 packages/core/upload/admin/src/future/utils/files.ts
@@ -5134,9 +5144,12 @@ packages/core/upload/admin/src/future/utils/translations.ts
 packages/core/upload/admin/src/future/utils/tests/canDropItemOnFolder.test.ts
 packages/core/upload/admin/src/future/utils/tests/buildBulkMovePayload.test.ts
 packages/core/upload/admin/src/future/utils/tests/getBulkMoveErrorMessage.test.ts
+packages/core/upload/admin/src/future/utils/tests/getRelationId.test.ts
+packages/core/upload/admin/src/future/utils/tests/isEventFromWithin.test.ts
 packages/core/upload/admin/src/future/utils/tests/flattenFolderStructure.test.ts
 packages/core/upload/admin/src/future/utils/tests/createRafBatcher.test.ts
 packages/core/upload/admin/src/future/utils/tests/buildDragSetFromSelection.test.ts
+packages/core/upload/admin/src/future/utils/tests/itemLocations.test.ts
 packages/core/upload/admin/src/future/utils/tests/formatMoveSuccessMessage.test.ts
 packages/core/upload/admin/src/future/utils/tests/getFolderLabel.test.ts
 packages/core/upload/admin/src/future/utils/tests/searchQueryParam.test.ts
@@ -5146,6 +5159,7 @@ packages/core/upload/admin/src/future/utils/flattenFolderStructure.ts
 packages/core/upload/admin/src/future/utils/downloadFile.ts
 packages/core/upload/admin/src/future/utils/createRafBatcher.ts
 packages/core/upload/admin/src/future/utils/buildDragSetFromSelection.ts
+packages/core/upload/admin/src/future/utils/itemLocations.ts
 packages/core/upload/admin/src/future/store/tests/uploadProgress.test.ts
 packages/core/upload/admin/src/future/store/uploadProgress.ts
 packages/core/upload/admin/src/future/store/hooks.ts
@@ -5155,6 +5169,7 @@ packages/core/upload/admin/src/future/pages/Assets/AssetsPage.tsx
 packages/core/upload/admin/src/future/pages/Assets/constants.ts
 packages/core/upload/admin/src/future/pages/Assets/components/DateRangeCalendar.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/CreateFolderDialog.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/FolderActionsMenu.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsGrid.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
@@ -5162,10 +5177,14 @@ packages/core/upload/admin/src/future/pages/Assets/components/AssetsTable.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FilterBadges.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsSearchInput.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolderDialog.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/tests/FolderActionsMenu.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/AssetsSearchInput.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/tests/BulkMoveDialog.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/tests/DeleteItemsDialog.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/BulkMoveDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/BulkActionsBar.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/ImportFromUrlDialog.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/DeleteItemsDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FilterMenu.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/SortMenu.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/useCropImg.ts
@@ -5440,7 +5459,10 @@ packages/core/database/src/metadata/relations.ts
 packages/core/database/src/validations/index.ts
 packages/core/database/src/validations/relations/bidirectional.ts
 packages/core/database/src/validations/relations/index.ts
+packages/core/database/src/migrations/runner.ts
 packages/core/database/src/migrations/users.ts
+packages/core/database/src/migrations/resolver.ts
+packages/core/database/src/migrations/discover.ts
 packages/core/database/src/migrations/storage.ts
 packages/core/database/src/migrations/common.ts
 packages/core/database/src/migrations/index.ts
@@ -5453,7 +5475,12 @@ packages/core/database/src/migrations/internal-migrations/__tests__/5.0.0-06-add
 packages/core/database/src/migrations/internal-migrations/5.0.0-05-drop-slug-unique-index.ts
 packages/core/database/src/migrations/internal-migrations/5.0.0-06-add-document-id-indexes.ts
 packages/core/database/src/migrations/internal-migrations/5.0.0-03-locale.ts
+packages/core/database/src/migrations/__tests__/discover.test.ts
+packages/core/database/src/migrations/__tests__/providers.test.ts
+packages/core/database/src/migrations/__tests__/runner.test.ts
 packages/core/database/src/migrations/__tests__/common.test.ts
+packages/core/database/src/migrations/__tests__/internal-upgrade-simulation.test.ts
+packages/core/database/src/migrations/__tests__/resolver.test.ts
 packages/core/database/src/migrations/__tests__/storage.test.ts
 packages/core/database/src/migrations/logger.ts
 packages/core/database/src/migrations/internal.ts
