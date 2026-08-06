@@ -6672,6 +6672,7 @@ tests/integration/Core/Content/Product/SalesChannel/Detail/ProductDetailRouteTes
 tests/integration/Core/Content/Product/SalesChannel/Detail/AvailableCombinationLoaderTest.php
 tests/integration/Core/Content/Product/SalesChannel/Detail/_fixtures/recursion_encoding_with_layout_result.json
 tests/integration/Core/Content/Product/SalesChannel/ProductSearchRouteTest.php
+tests/integration/Core/Content/Product/SalesChannel/Garan/GaranLabelRouteTest.php
 tests/integration/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRouteTest.php
 tests/integration/Core/Content/Product/Api/ProductApiTest.php
 tests/integration/Core/Content/Product/Cleanup/CleanupProductKeywordDictionaryTaskHandlerTest.php
@@ -6767,6 +6768,7 @@ tests/integration/Core/Content/ImportExport/Service/ImportExportServiceTest.php
 tests/integration/Core/Content/ImportExport/Service/MappingServiceTest.php
 tests/integration/Core/Content/ImportExport/Subscriber/ProductCategoryPathsSubscriberTest.php
 tests/integration/Core/Content/ImportExport/ImportExportTest.php
+tests/integration/Core/Content/LegalGuaranteeNotice/SalesChannel/LegalGuaranteeNoticeRouteTest.php
 tests/integration/Core/Content/MeasurementSystem/TwigExtension/MeasurementConvertUnitTwigFilterTest.php
 tests/integration/Core/Service/Api/ServiceControllerTest.php
 tests/integration/Core/Service/Api/PermissionControllerTest.php
@@ -7202,6 +7204,7 @@ tests/integration/Core/Framework/App/Cookie/_fixtures/cookieGroup/manifest.xml
 tests/integration/Core/Framework/App/Cookie/_fixtures/coreGroup/manifest.xml
 tests/integration/Core/Framework/App/Cookie/_fixtures/mergeAppGroups/app2/manifest.xml
 tests/integration/Core/Framework/App/Cookie/_fixtures/mergeAppGroups/app1/manifest.xml
+tests/integration/Core/Framework/App/Cookie/_fixtures/conditionalCookie/manifest.xml
 tests/integration/Core/Framework/App/Cookie/_fixtures/singleCookie/manifest.xml
 tests/integration/Core/Framework/App/Cookie/CookieGroupCollectListenerTest.php
 tests/integration/Core/Framework/App/Checkout/_fixtures/testGateway/manifest.xml
@@ -8285,6 +8288,7 @@ tests/unit/Core/Checkout/Promotion/Cart/PromotionCalculatorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/AdvancedPackageRulesTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Calculator/DiscountAbsoluteCalculatorTest.php
+tests/unit/Core/Checkout/Promotion/Cart/Discount/Calculator/DiscountFixedPriceCalculatorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/ScopePackager/SetScopeDiscountPackagerTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/ScopePackager/CartScopeDiscountPackagerTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/ScopePackager/SetGroupScopeDiscountPackagerTest.php
@@ -8656,6 +8660,7 @@ tests/unit/Core/Checkout/Customer/Validation/CustomerProfileValidationFactoryTes
 tests/unit/Core/Checkout/Customer/Validation/PasswordValidationFactoryTest.php
 tests/unit/Core/Checkout/Customer/Validation/CustomerZipcodeValidatorTest.php
 tests/unit/Core/Checkout/Customer/Validation/Constraint/CustomerEmailUniqueValidatorTest.php
+tests/unit/Core/Checkout/Customer/Validation/Constraint/CustomerEmailUniqueTest.php
 tests/unit/Core/Checkout/Customer/Validation/CustomerValidationFactoryTest.php
 tests/unit/Core/Checkout/Customer/Validation/AddressValidationFactoryTest.php
 tests/unit/Core/Checkout/Customer/ImitateCustomerTokenGeneratorTest.php
@@ -9138,6 +9143,8 @@ tests/unit/Core/Content/Product/SalesChannel/ProductCloseoutFilterFactoryTest.ph
 tests/unit/Core/Content/Product/SalesChannel/Detail/ProductDetailRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Detail/AvailableCombinationLoaderTest.php
 tests/unit/Core/Content/Product/SalesChannel/Detail/ProductConfiguratorLoaderTest.php
+tests/unit/Core/Content/Product/SalesChannel/Garan/GaranLabelRouteTest.php
+tests/unit/Core/Content/Product/SalesChannel/Garan/GaranLabelRouteResponseTest.php
 tests/unit/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRouteResponseTest.php
 tests/unit/Core/Content/Product/SalesChannel/FindVariant/FoundCombinationTest.php
 tests/unit/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRouteTest.php
@@ -9181,6 +9188,11 @@ tests/unit/Core/Content/Product/Subscriber/RepairDigitalProductStatesSubscriberT
 tests/unit/Core/Content/Product/Subscriber/ProductDescriptionTeaserSubscriberTest.php
 tests/unit/Core/Content/Product/Subscriber/ProductSubscriberTest.php
 tests/unit/Core/Content/Product/Subscriber/CustomFieldSearchableSubscriberTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelResolverTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelTwigFilterTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelDurationFormatterTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelRendererTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelProductValidatorTest.php
 tests/unit/Core/Content/Product/SearchKeyword/ProductSearchBuilderTest.php
 tests/unit/Core/Content/Product/SearchKeyword/ProductSearchKeywordAnalyzerTest.php
 tests/unit/Core/Content/Product/SearchKeyword/KeywordLoaderTest.php
@@ -9227,6 +9239,10 @@ tests/unit/Core/Content/ImportExport/Service/DownloadServiceTest.php
 tests/unit/Core/Content/ImportExport/Service/SupportedFeaturesServiceTest.php
 tests/unit/Core/Content/ImportExport/Service/ImportExportServiceTest.php
 tests/unit/Core/Content/ImportExport/ImportExportTest.php
+tests/unit/Core/Content/LegalGuaranteeNotice/SalesChannel/LegalGuaranteeNoticeRouteResponseTest.php
+tests/unit/Core/Content/LegalGuaranteeNotice/SalesChannel/LegalGuaranteeNoticeRouteTest.php
+tests/unit/Core/Content/LegalGuaranteeNotice/LegalGuaranteeNoticeRendererTest.php
+tests/unit/Core/Content/LegalGuaranteeNotice/LegalGuaranteeNoticeTwigFilterTest.php
 tests/unit/Core/Content/MeasurementSystem/DataAbstractionLayer/ConvertedUnitSetTest.php
 tests/unit/Core/Content/MeasurementSystem/MeasurementUnitsTest.php
 tests/unit/Core/Content/MeasurementSystem/Unit/MeasurementUnitProviderTest.php
@@ -9473,6 +9489,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/EntityGroupResolverTest
 tests/unit/Core/Framework/DataAbstractionLayer/Telemetry/DalSearchInstrumentorTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionStub.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/Fixtures/DefinitionWithNonStorageAwarePrimaryKeyStub.php
+tests/unit/Core/Framework/DataAbstractionLayer/Validation/EntityExistsTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Validation/EntityNotExistsTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldType/CronIntervalTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/FieldType/DateIntervalTest.php
@@ -9504,6 +9521,7 @@ tests/unit/Core/Framework/Store/Services/InstanceServiceTest.php
 tests/unit/Core/Framework/Store/Services/StoreAppLifecycleServiceTest.php
 tests/unit/Core/Framework/Store/Services/FirstRunWizardClientTest.php
 tests/unit/Core/Framework/Store/Services/ExtensionListingLoaderTest.php
+tests/unit/Core/Framework/Store/Services/_fixtures/LocalApp/manifest.xml
 tests/unit/Core/Framework/Store/Services/FirstRunWizardServiceTest.php
 tests/unit/Core/Framework/Store/Services/ShopSecretInvalidMiddlewareTest.php
 tests/unit/Core/Framework/Store/Services/StoreClientFactoryTest.php
@@ -9658,6 +9676,8 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/BundleSchemaPathCollection
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_extensionFixtures/ExtensionDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiSchemaBuilderTest.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/SimpleExtendedDefinition.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/DefinitionWithHiddenRequiredTranslation.php
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/DefinitionWithHiddenRequiredTranslationTranslation.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/ComplexDefinition.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/_fixtures/StoreApiTestOtherRoute.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiDefinitionSchemaBuilderTest.php
@@ -9671,7 +9691,9 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinitio
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/parameters/x-parameter-groups.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/JsonOverrideEntity.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/JsonApiBase.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse2.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/SchemaWithInvalidRequiredProperty.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/PluginExtensionForJsonOverride.php
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/SimpleDefinition.php
@@ -10833,6 +10855,7 @@ tests/migration/Core/V6_7/Migration1781654400RepairDefaultLanguageMailTranslatio
 tests/migration/Core/V6_7/Migration1775200001IncreaseProductDisplayGroupLengthTest.php
 tests/migration/Core/V6_7/Migration1761739065IncreaseProductWeightPrecisionTest.php
 tests/migration/Core/V6_7/Migration1776827954AddExactSubfieldFlagToProductSearchConfigFieldTest.php
+tests/migration/Core/V6_7/Migration1785810496ConvertLineItemProductStatesRuleConditionTest.php
 tests/migration/Core/V6_7/Migration1741163941AddOrderInternalCommentTest.php
 tests/migration/Core/V6_7/Migration1756068711FixOrderAddressFirstNameLengthTest.php
 tests/migration/Core/V6_7/Migration1773829001MigrateProductStreamProductStatesFilterTest.php
@@ -10883,6 +10906,7 @@ tests/migration/Core/V6_7/Migration1764064756AddCustomFieldSearchableTest.php
 tests/migration/Core/V6_7/Migration1774359918ProductPriceQuantityRangeMinValuesTest.php
 tests/migration/Core/V6_7/Migration1739197440ChangeCmsBlockDefaultMarginTest.php
 tests/migration/Core/V6_7/Migration1740563553AddAppRequestedPrivilegesTest.php
+tests/migration/Core/V6_7/Migration1783944800AddGaranLabelTest.php
 tests/migration/Core/V6_7/Migration1775180400AddNextGenerationAtToProductExportTest.php
 tests/migration/Core/V6_7/Migration1772098113AddEnhancedConversionsToAnalyticsTest.php
 tests/migration/Core/V6_7/Migration1776848421RepairDigitalProductTypeTest.php
@@ -10933,6 +10957,7 @@ tests/migration/Core/V6_7/Migration1753799632FixStateMachineHistoryIntegrationCo
 tests/migration/Core/V6_7/Migration1743151679AddContextGatewayUrlTest.php
 tests/migration/Core/V6_7/Migration1768545321RevocationRequestFlowTest.php
 tests/migration/Core/V6_7/Migration1773048327UpdateZugferdInvoiceTranslationsTest.php
+tests/migration/Core/V6_7/Migration1785810497ConvertProductStreamProductStatesFilterTest.php
 tests/migration/Core/V6_7/Migration1752750086AddIndexToOrderLineItemCreateAndUpdateTest.php
 tests/migration/Core/V6_7/Migration1759390536CartConfigShowTosCheckboxTest.php
 tests/migration/Core/V6_7/Migration1743064966CartConfigSubtotalTaxColumnTest.php
@@ -11921,6 +11946,7 @@ src/Storefront/Resources/views/storefront/component/line-item/type/discount.html
 src/Storefront/Resources/views/storefront/component/line-item/type/generic.html.twig
 src/Storefront/Resources/views/storefront/component/line-item/type/container.html.twig
 src/Storefront/Resources/views/storefront/component/line-item/type/product.html.twig
+src/Storefront/Resources/views/storefront/component/line-item/element/garan-label.html.twig
 src/Storefront/Resources/views/storefront/component/line-item/element/label.html.twig
 src/Storefront/Resources/views/storefront/component/line-item/element/delivery-date.html.twig
 src/Storefront/Resources/views/storefront/component/line-item/element/variant-characteristics.html.twig
@@ -12903,6 +12929,7 @@ src/Storefront/Resources/app/storefront/src/plugin/offcanvas-filter/offcanvas-fi
 src/Storefront/Resources/app/storefront/src/plugin/speculation-rules/speculation-rules.plugin.js
 src/Storefront/Resources/app/storefront/src/plugin/buy-box/buy-box.plugin.js
 src/Storefront/Resources/app/storefront/src/plugin/zoom-modal/zoom-modal.plugin.js
+src/Storefront/Resources/app/storefront/src/plugin/garan-label/garan-label-toggle.plugin.js
 src/Storefront/Resources/app/storefront/src/plugin/offcanvas/ajax-offcanvas.plugin.js
 src/Storefront/Resources/app/storefront/src/plugin/offcanvas/offcanvas.plugin.js
 src/Storefront/Resources/app/storefront/src/plugin/offcanvas/html-offcanvas.plugin.js
@@ -13834,6 +13861,7 @@ src/Core/Migration/V6_7/Migration1773824493AddProviderColumnToProductExport.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodFlows.php
 src/Core/Migration/V6_7/Migration1742199552SalesChannelMeasurementUnits.php
 src/Core/Migration/V6_7/Migration1739197440ChangeCmsBlockDefaultMargin.php
+src/Core/Migration/V6_7/Migration1785810496ConvertLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1773829000MigrateLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1773322284ChangeDocumentReferencedDocumentIdConstraint.php
 src/Core/Migration/V6_7/Migration1785227700AddAdminActionAclPrivileges.php
@@ -13846,8 +13874,10 @@ src/Core/Migration/V6_7/Migration1767861589AddOpenOffcanvasAfterAddToCartConfigS
 src/Core/Migration/V6_7/Migration1768233956AddThemeRuntimeConfigUniqueConstraint.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodRule.php
 src/Core/Migration/V6_7/Migration1764064756AddCustomFieldSearchable.php
+src/Core/Migration/V6_7/Migration1783944800AddGaranLabel.php
 src/Core/Migration/V6_7/Migration1742302302RenamePaidTransitionActions.php
 src/Core/Migration/V6_7/Migration1768545321RevocationRequestFlow.php
+src/Core/Migration/V6_7/Migration1785810497ConvertProductStreamProductStatesFilter.php
 src/Core/Migration/V6_7/Migration1764580028AddAltAttributeToOrderConfirmationMailImages.php
 src/Core/Migration/V6_7/Migration1756068710FixCustomerAddressLastNameLength.php
 src/Core/Migration/V6_7/Migration1767604966UpdateTotalPriceOrderDeliveryPosition.php
@@ -16440,6 +16470,7 @@ src/Core/Content/ProductExport/ProductExportEntity.php
 src/Core/Content/ProductExport/Subscriber/AgenticCommerceProductExportProviderContextSubscriber.php
 src/Core/Content/DependencyInjection/media_test.php
 src/Core/Content/DependencyInjection/landing_page.php
+src/Core/Content/DependencyInjection/legal_guarantee_notice.php
 src/Core/Content/DependencyInjection/media_path.php
 src/Core/Content/DependencyInjection/measurement_system.php
 src/Core/Content/DependencyInjection/shared.php
@@ -16582,6 +16613,30 @@ src/Core/Content/Rule/Event/RuleIndexerEvent.php
 src/Core/Content/Rule/RuleValidator.php
 src/Core/Content/Resources/config/routes_test.php
 src/Core/Content/Resources/config/routes.php
+src/Core/Content/Resources/views/legal-guarantee-notice/el.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/sl.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/fi.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/et.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/en.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/ro.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/lt.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/cs.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/pl.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/sk.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/lv.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/sv.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/pt.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/ga.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/it.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/hu.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/de.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/hr.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/da.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/es.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/nl.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/bg.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/fr.svg
+src/Core/Content/Resources/views/legal-guarantee-notice/mt.svg
 src/Core/Content/Seo/SeoUrlUpdater.php
 src/Core/Content/Seo/SeoUrlPlaceholderHandler.php
 src/Core/Content/Seo/SalesChannel/SeoUrlRoute.php
@@ -16946,6 +17001,9 @@ src/Core/Content/Product/SalesChannel/Detail/Event/ResolveVariantIdEvent.php
 src/Core/Content/Product/SalesChannel/Detail/ProductConfiguratorLoader.php
 src/Core/Content/Product/SalesChannel/Detail/ProductDetailRouteResponse.php
 src/Core/Content/Product/SalesChannel/Detail/AbstractProductDetailRoute.php
+src/Core/Content/Product/SalesChannel/Garan/AbstractGaranLabelRoute.php
+src/Core/Content/Product/SalesChannel/Garan/GaranLabelRoute.php
+src/Core/Content/Product/SalesChannel/Garan/GaranLabelRouteResponse.php
 src/Core/Content/Product/SalesChannel/ProductCloseoutFilterFactory.php
 src/Core/Content/Product/SalesChannel/FindVariant/FindProductVariantRoute.php
 src/Core/Content/Product/SalesChannel/FindVariant/FoundCombination.php
@@ -17131,6 +17189,11 @@ src/Core/Content/Product/Subscriber/RepairDigitalProductStatesSubscriber.php
 src/Core/Content/Product/Subscriber/ProductDescriptionTeaserSubscriber.php
 src/Core/Content/Product/Subscriber/CustomFieldSearchableSubscriber.php
 src/Core/Content/Product/Subscriber/ProductSubscriber.php
+src/Core/Content/Product/Garan/GaranLabelProductValidator.php
+src/Core/Content/Product/Garan/GaranLabelTwigFilter.php
+src/Core/Content/Product/Garan/GaranLabelRenderer.php
+src/Core/Content/Product/Garan/GaranLabelDurationFormatter.php
+src/Core/Content/Product/Garan/GaranLabelResolver.php
 src/Core/Content/Product/SearchKeyword/AnalyzedKeyword.php
 src/Core/Content/Product/SearchKeyword/ProductSearchBuilderInterface.php
 src/Core/Content/Product/SearchKeyword/ProductSearchBuilder.php
@@ -17271,6 +17334,11 @@ src/Core/Content/ImportExport/Struct/Progress.php
 src/Core/Content/ImportExport/Struct/Config.php
 src/Core/Content/ImportExport/ImportExportException.php
 src/Core/Content/ImportExport/ImportExportProfileTranslationDefinition.php
+src/Core/Content/LegalGuaranteeNotice/SalesChannel/LegalGuaranteeNoticeRouteResponse.php
+src/Core/Content/LegalGuaranteeNotice/SalesChannel/AbstractLegalGuaranteeNoticeRoute.php
+src/Core/Content/LegalGuaranteeNotice/SalesChannel/LegalGuaranteeNoticeRoute.php
+src/Core/Content/LegalGuaranteeNotice/LegalGuaranteeNoticeTwigFilter.php
+src/Core/Content/LegalGuaranteeNotice/LegalGuaranteeNoticeRenderer.php
 src/Core/Content/MeasurementSystem/DataAbstractionLayer/MeasurementDisplayUnitEntity.php
 src/Core/Content/MeasurementSystem/DataAbstractionLayer/MeasurementSystemEntity.php
 src/Core/Content/MeasurementSystem/Unit/ConvertedUnit.php
@@ -18229,6 +18297,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/country.jso
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/newsletter.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/info.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/cms.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/garan-label.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/product-export.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/openapi3.json.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/document.json
@@ -18243,6 +18312,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/checkout.js
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/country-state.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/search.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/product.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/legal-guarantee-notice.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/language.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/category.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/paths/order.json
@@ -18356,6 +18426,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schema
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/MailHeaderFooter.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/FlowTemplate.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/ProductSearchConfigField.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/JsonApiBase.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/AppScriptCondition.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/ProductListingResult.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/OrderLineItemDownload.json
@@ -19553,6 +19624,8 @@ src/Core/Framework/Resources/config/packages/dev/routing.yaml
 src/Core/Framework/Resources/config/packages/routing.yaml
 src/Core/Framework/Resources/config/packages/twig.yaml
 src/Core/Framework/Resources/views/stoplightio.html.twig
+src/Core/Framework/Resources/views/garan/nested-label.svg.twig
+src/Core/Framework/Resources/views/garan/label.svg.twig
 src/Core/Framework/Resources/views/documents/storno.html.twig
 src/Core/Framework/Resources/views/documents/zugferd/includes/line_item.xml.twig
 src/Core/Framework/Resources/views/documents/zugferd/includes/allowance_charge.xml.twig
@@ -22562,6 +22635,10 @@ src/Administration/Resources/app/administration/src/module/sw-product/component/
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-packaging-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-packaging-form/sw-product-packaging-form.html.twig
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-packaging-form/index.spec.js
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-guarantee-form/sw-product-guarantee-form.scss
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-guarantee-form/sw-product-guarantee-form.spec.js
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-guarantee-form/index.js
+src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-guarantee-form/sw-product-guarantee-form.html.twig
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-deliverability-form/sw-product-deliverability-form.spec.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-deliverability-form/index.js
 src/Administration/Resources/app/administration/src/module/sw-product/component/sw-product-deliverability-form/sw-product-deliverability-form.html.twig

@@ -4967,6 +4967,7 @@ plugins/woocommerce/changelog/fix-test-hygiene-followups
 plugins/woocommerce/changelog/fix-product-collection-carousel-styles
 plugins/woocommerce/changelog/fix-mini-cart-variation-e2e-race
 plugins/woocommerce/changelog/perf-product-filters-batch-taxonomy-descendants
+plugins/woocommerce/changelog/67119-preserve-rest-variation
 plugins/woocommerce/changelog/fix-67301
 plugins/woocommerce/changelog/fix-66861-malformed-gateway-transition-defaults
 plugins/woocommerce/changelog/fix-product-summary-responsive-styles
@@ -4981,6 +4982,7 @@ plugins/woocommerce/changelog/33729-skip-non-resizable-image-regeneration
 plugins/woocommerce/changelog/consolidate-eslint-core-modules
 plugins/woocommerce/changelog/fix-pay-for-order-preserve-cart
 plugins/woocommerce/changelog/woo6-44-version-cache-cleanup-hardening
+plugins/woocommerce/changelog/update-order-withdrawal-notice-copy
 plugins/woocommerce/changelog/performance-audit-variable-product-datastore-p3
 plugins/woocommerce/changelog/update-deflag-wc-admin-analytics
 plugins/woocommerce/changelog/fix-shipping-only-order-tax
@@ -5004,6 +5006,7 @@ plugins/woocommerce/changelog/fix-storybook-nightly-build
 plugins/woocommerce/changelog/cursor-WOOPLUG-6298-structured-data-vat-property-93ff
 plugins/woocommerce/changelog/41512-fix-product-import-complete-tracks-event
 plugins/woocommerce/changelog/testops-257-normalize-is-multisite
+plugins/woocommerce/changelog/fix-58771
 plugins/woocommerce/changelog/add-attribute-slug-locale-hint
 plugins/woocommerce/changelog/dev-wp-7-1-e2e-content-locators
 plugins/woocommerce/changelog/66078-dehoist-react
@@ -5012,7 +5015,9 @@ plugins/woocommerce/changelog/add-catalog-sort-order-enum
 plugins/woocommerce/changelog/fix-analytics-overview-e2e-waitforresponse-race
 plugins/woocommerce/changelog/testops-176-wp-env-single-container-set
 plugins/woocommerce/changelog/fix-47831-widget-editor-notice
+plugins/woocommerce/changelog/codex-fix-mini-cart-inner-block-registration
 plugins/woocommerce/changelog/fix-wc-66768-quick-edit-sale-dates
+plugins/woocommerce/changelog/update-stabilize-order-withdrawal
 plugins/woocommerce/changelog/add-gocardless-uk-gb
 plugins/woocommerce/changelog/dev-core-e2e-blocks-spec-selector
 plugins/woocommerce/changelog/32085-prevent-product-search-deselect
@@ -5028,6 +5033,7 @@ plugins/woocommerce/changelog/rename-v4-refunds-amount-to-total
 plugins/woocommerce/changelog/59417-brand-thumbnails-description-css
 plugins/woocommerce/changelog/fix-66765-featured-item-ignoring-selected-image
 plugins/woocommerce/changelog/65734-translators-comment-cron-interval
+plugins/woocommerce/changelog/fix-hydration-path-docblock
 plugins/woocommerce/changelog/fix-placeholder-img-src-filter
 plugins/woocommerce/changelog/dev-eslint-no-floating-promises
 plugins/woocommerce/changelog/30340-shipping-zone-order-warning
@@ -5089,6 +5095,7 @@ plugins/woocommerce/changelog/fix-mini-cart-contents-css-enqueue
 plugins/woocommerce/changelog/66075-fix-paid-extensions-helper-link
 plugins/woocommerce/changelog/fix-legacy-review-rejected-check-variations
 plugins/woocommerce/changelog/pr-64363
+plugins/woocommerce/changelog/fix-wc-blocks-compatibility-handles
 plugins/woocommerce/changelog/testops-234-remove-redundant-blocks-e2e-tests
 plugins/woocommerce/changelog/66404-fix-local-pickup-save-notice
 plugins/woocommerce/changelog/64537-fix-checkout-wc-namespace-shadowing
@@ -5118,6 +5125,7 @@ plugins/woocommerce/changelog/fix-add-item-temp-key-collision
 plugins/woocommerce/changelog/perf-e2e-combined-db-restore
 plugins/woocommerce/changelog/update-docs-for-conditional-functions
 plugins/woocommerce/changelog/pr-64372
+plugins/woocommerce/changelog/update-order-withdrawal-doc-link
 plugins/woocommerce/changelog/update-woopayments-onboarding-troubleshooting-link
 plugins/woocommerce/changelog/php-tests-unbalanced-output-buffers-risky-test
 plugins/woocommerce/changelog/fix-reviews-list-table-check-column-test
@@ -5137,6 +5145,8 @@ plugins/woocommerce/changelog/reduce-pattern-placeholder-image-size
 plugins/woocommerce/changelog/add-whats-next-task-click-tracking
 plugins/woocommerce/changelog/task-remove-the-stale-wp-env-tests-port
 plugins/woocommerce/changelog/31815-fix-variation-uncategorized-csv-import
+plugins/woocommerce/changelog/fix-67378-helcim-account-connected
+plugins/woocommerce/changelog/67324-copilot-fix-reviews-by-category-issue
 plugins/woocommerce/changelog/woo6-57-codex-review-mini-cart-item-details-can-crash-when-no-item
 plugins/woocommerce/changelog/fix-35361-scope-review-order-page-creation
 plugins/woocommerce/changelog/66217-fix-revenue-report-refund-double-count
@@ -5156,7 +5166,10 @@ plugins/woocommerce/changelog/38541-fix-csv-importer-mbstring-fallback
 plugins/woocommerce/changelog/wooprd-3639-new-payment-partner-komoju
 plugins/woocommerce/changelog/fix-test-filters-registered-in-static-hooks
 plugins/woocommerce/changelog/phpunit-suite-sharding-cleanup
+plugins/woocommerce/changelog/fix-40931-zambian-kwacha-symbol
+plugins/woocommerce/changelog/65703-add-customer-session-empty-value-tests
 plugins/woocommerce/changelog/52292-set-product-reset-variation-id
+plugins/woocommerce/changelog/fix-42323-old-filters-markup-e2e-tests
 plugins/woocommerce/changelog/fix-65832-brand-nav-cache-poisoning
 plugins/woocommerce/changelog/wooplug-6986-prime-variation-count-caches
 plugins/woocommerce/changelog/woo6-44-codex-review-cache-miss-returning-null-can-crash
@@ -5208,6 +5221,8 @@ plugins/woocommerce/changelog/fix-35821-coupon-line-items-dp-parameter
 plugins/woocommerce/changelog/fix-wc-separator-color-token
 plugins/woocommerce/changelog/codex-66752-restore-flexslider-bubble-phase
 plugins/woocommerce/changelog/fix-47566-ipify-ipv6-endpoint
+plugins/woocommerce/changelog/add-order-withdrawal-inbox-notification
+plugins/woocommerce/changelog/fix-35554-variation-pagination-cancel
 plugins/woocommerce/changelog/perf-skip-block-registration-non-rendering-requests
 plugins/woocommerce/changelog/38116-fix-csv-import-weight-decimal-separator
 plugins/woocommerce/changelog/fix-analytics-legacy-admin-disable-filters
@@ -6247,6 +6262,7 @@ plugins/woocommerce/tests/php/src/Caching/WPCacheEngineTest.php
 plugins/woocommerce/tests/php/src/Database/BlockHooksVersionTests.php
 plugins/woocommerce/tests/php/src/Database/StoreNoticeOnThemeSwitch.php
 plugins/woocommerce/tests/php/src/Database/Migrations/CustomOrderTable/PostsToOrdersMigrationControllerTest.php
+plugins/woocommerce/tests/php/src/Internal/OrderWithdrawal/OrderWithdrawalFeatureHighlightNotificationTest.php
 plugins/woocommerce/tests/php/src/Internal/OrderWithdrawal/OrderWithdrawalTest.php
 plugins/woocommerce/tests/php/src/Internal/ProductAttributesLookup/FiltererTest.php
 plugins/woocommerce/tests/php/src/Internal/ProductAttributesLookup/TaxQueryTest.php
@@ -7240,6 +7256,7 @@ plugins/woocommerce/tests/e2e/content-templates/blocks/template_archive-product_
 plugins/woocommerce/tests/e2e/content-templates/blocks/template_archive-product_multiple-product-filters.handlebars
 plugins/woocommerce/tests/e2e/content-templates/blocks/template_archive-product_rating-filter.handlebars
 plugins/woocommerce/tests/e2e/content-templates/blocks/post_filters-with-all-products.handlebars
+plugins/woocommerce/tests/e2e/content-templates/blocks/post_legacy-filters-with-all-products.handlebars
 plugins/woocommerce/tests/e2e/content-templates/blocks/template_archive-product_price-filter.handlebars
 plugins/woocommerce/tests/e2e/content-templates/blocks/template_archive-product_stock-status.handlebars
 plugins/woocommerce/tests/e2e/test-plugins/woocommerce-e2e-test-helper/woocommerce-e2e-test-helper.php
@@ -8297,6 +8314,7 @@ plugins/woocommerce/src/Database/Migrations/TableMigrator.php
 plugins/woocommerce/src/Database/Migrations/MetaToCustomTableMigrator.php
 plugins/woocommerce/src/Internal/OrderWithdrawal/OrderWithdrawalController.php
 plugins/woocommerce/src/Internal/OrderWithdrawal/OrderWithdrawalFormState.php
+plugins/woocommerce/src/Internal/OrderWithdrawal/OrderWithdrawalFeatureHighlightNotification.php
 plugins/woocommerce/src/Internal/OrderWithdrawal/OrderWithdrawalFormView.php
 plugins/woocommerce/src/Internal/OrderWithdrawal/OrderWithdrawalFormProcessor.php
 plugins/woocommerce/src/Internal/AssignDefaultCategory.php

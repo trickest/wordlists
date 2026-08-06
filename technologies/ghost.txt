@@ -15,6 +15,7 @@ e2e/data-factory/factories/member-factory.ts
 e2e/data-factory/factories/post-factory.ts
 e2e/data-factory/factories/automated-email-factory.ts
 e2e/data-factory/factories/comment-factory.ts
+e2e/data-factory/factories/staff-account-factory.ts
 e2e/data-factory/factories/tag-factory.ts
 e2e/data-factory/factories/offer-factory.ts
 e2e/data-factory/factories/user-factory.ts
@@ -224,6 +225,7 @@ e2e/helpers/pages/admin/members/index.ts
 e2e/helpers/pages/admin/members/members-page.ts
 e2e/helpers/pages/admin/members/member-details-page.ts
 e2e/helpers/pages/admin/members/members-list-page.ts
+e2e/helpers/pages/admin/site-page.ts
 e2e/helpers/pages/admin/sidebar/index.ts
 e2e/helpers/pages/admin/sidebar/sidebar-page.ts
 e2e/helpers/pages/admin/analytics/post-analytics/post-analytics-growth-page.ts
@@ -417,6 +419,7 @@ apps/admin-toolbar/src/links.js
 apps/admin-toolbar/src/constants.js
 apps/admin-toolbar/LICENSE
 apps/admin-x-framework/test/setup.ts
+apps/admin-x-framework/test/unit/providers/router-provider.test.tsx
 apps/admin-x-framework/test/unit/api/tinybird.test.tsx
 apps/admin-x-framework/test/unit/api/member-custom-fields.test.ts
 apps/admin-x-framework/test/unit/api/members.test.tsx
@@ -465,7 +468,6 @@ apps/admin-x-framework/src/providers/navigation-stack-provider.tsx
 apps/admin-x-framework/src/providers/router-provider.tsx
 apps/admin-x-framework/src/providers/framework-provider.tsx
 apps/admin-x-framework/src/providers/app-provider.tsx
-apps/admin-x-framework/src/providers/routing-provider.tsx
 apps/admin-x-framework/src/errors.ts
 apps/admin-x-framework/src/vite.ts
 apps/admin-x-framework/src/api/redirects.ts
@@ -540,7 +542,6 @@ apps/admin-x-framework/src/utils/helpers.ts
 apps/admin-x-framework/src/utils/focus-koenig-editor-on-bottom-click.ts
 apps/admin-x-framework/src/index.ts
 apps/admin-x-framework/src/playwright.ts
-apps/admin-x-framework/src/routing.ts
 apps/admin-x-framework/src/helpers.ts
 apps/admin-x-framework/src/hooks/use-handle-error.ts
 apps/admin-x-framework/src/hooks/use-form.ts
@@ -1103,15 +1104,11 @@ apps/shade/src/components/patterns/view-bar.tsx
 apps/shade/src/components/patterns/settings-modal.stories.tsx
 apps/shade/src/components/patterns/kpi-tabs.tsx
 apps/shade/src/components/patterns/utm-campaign-tabs.tsx
-apps/shade/src/components/posts-stats/post-share-modal.tsx
-apps/shade/src/components/posts-stats/post-share-modal.stories.tsx
 apps/shade/src/typings.d.ts
 apps/shade/src/index.ts
 apps/shade/src/tokens.ts
-apps/shade/src/posts-stats.ts
 apps/shade/src/utils.ts
 apps/shade/src/docs/page-types.mdx
-apps/shade/src/docs/posts-stats.mdx
 apps/shade/src/docs/recipes-guide.mdx
 apps/shade/src/docs/adoption-data.json
 apps/shade/src/docs/introduction.mdx
@@ -2385,6 +2382,7 @@ apps/admin/test-utils/acceptance/matchers.ts
 apps/admin/test-utils/acceptance/tinybird.ts
 apps/admin/test-utils/acceptance/README.md
 apps/admin/test-utils/acceptance/index.ts
+apps/admin/test-utils/acceptance/analytics.ts
 apps/admin/test-utils/acceptance/public/mockServiceWorker.js
 apps/admin/test-utils/analytics/README.md
 apps/admin/test-utils/analytics/date-testing-utils.ts
@@ -2657,9 +2655,7 @@ apps/admin/src/settings/app/components/settings/general/users/email-notification
 apps/admin/src/settings/app/components/settings/general/users/role-selector.tsx
 apps/admin/src/settings/app/components/settings/general/users/staff-token.tsx
 apps/admin/src/settings/app/components/providers/routing/staff-profile-paths.tsx
-apps/admin/src/settings/app/components/providers/routing/modals.tsx
 apps/admin/src/settings/app/components/providers/global-data-provider.tsx
-apps/admin/src/settings/app/components/providers/settings-router.tsx
 apps/admin/src/settings/app/components/providers/settings-app-provider.tsx
 apps/admin/src/settings/app/components/koenig-editor-base.tsx
 apps/admin/src/settings/app/components/confirmation-modal.tsx
@@ -2755,6 +2751,7 @@ apps/admin/src/settings/app/assets/images/integrations/typeform.svg
 apps/admin/src/settings/app/assets/images/stripe-verified.svg
 apps/admin/src/settings/app/main-content.tsx
 apps/admin/src/settings/app/hooks/use-sortable-indexed-list.ts
+apps/admin/src/settings/app/hooks/use-settings-navigation.ts
 apps/admin/src/settings/app/hooks/use-setting-group.tsx
 apps/admin/src/settings/app/hooks/use-welcome-email-link-suggestions.ts
 apps/admin/src/settings/app/hooks/use-limiter.tsx
@@ -2778,6 +2775,7 @@ apps/admin/src/settings/growth/network.acceptance.test.tsx
 apps/admin/src/settings/growth/explore.acceptance.test.tsx
 apps/admin/src/settings/growth/recommendations.acceptance.test.tsx
 apps/admin/src/settings/growth/tips-and-donations.acceptance.test.tsx
+apps/admin/src/settings/navigation-history.acceptance.test.tsx
 apps/admin/src/settings/routing.acceptance.test.tsx
 apps/admin/src/settings/layout.acceptance.test.tsx
 apps/admin/src/settings/settings.tsx
@@ -2794,6 +2792,7 @@ apps/admin/src/settings/general/staff-roles.acceptance.test.tsx
 apps/admin/src/settings/general/title-and-description.acceptance.test.tsx
 apps/admin/src/settings/general/seo-meta.acceptance.test.tsx
 apps/admin/src/settings/settings.screen.ts
+apps/admin/src/settings/routes.tsx
 apps/admin/src/flag-gated-route.test.tsx
 apps/admin/src/home.acceptance.test.tsx
 apps/admin/src/providers/app-provider.tsx
@@ -2937,6 +2936,7 @@ apps/admin/src/shared/analytics/kpi.ts
 apps/admin/src/shared/analytics/use-analytics-data.test.tsx
 apps/admin/src/shared/analytics/use-analytics-data.ts
 apps/admin/src/shared/analytics/chart-helpers.test.ts
+apps/admin/src/shared/analytics/post-share-modal.tsx
 apps/admin/src/shared/analytics/chart-helpers.ts
 apps/admin/src/member-detail-gate.test.tsx
 apps/admin/src/not-found.tsx
@@ -3327,9 +3327,9 @@ eslint.config.mjs
 package.json
 compose.dev.yaml
 .env.example
-skills-lock.json
 .codex/environments/environment.toml
 scripts/build-public-apps-matrix.js
+scripts/test/check-agent-skill-links.test.js
 scripts/test/public-apps.test.js
 scripts/test/resolve-base-tag.test.cjs
 scripts/test/build-public-apps-matrix.test.js
@@ -3341,6 +3341,7 @@ scripts/package.json
 scripts/change-check.js
 scripts/enforce-package-manager.js
 scripts/create-package.js
+scripts/check-agent-skill-links.js
 scripts/release-apps.js
 scripts/README.md
 scripts/check-migration-integrity.cjs
@@ -4920,11 +4921,7 @@ ghost/core/test/integration/adapters/route-settings/s3-route-settings-store.test
 ghost/core/test/integration/adapters/storage/s3-storage.test.ts
 ghost/core/test/integration/adapters/redirects/s3-redirects-store.test.ts
 ghost/core/test/integration/adapters/redis/adapter-cache-redis.test.js
-ghost/core/test/integration/sitemap-parity.test.js
-ghost/core/test/integration/url-service.test.js
 ghost/core/test/integration/settings/settings.test.js
-ghost/core/test/integration/url-serializer-parity.test.js
-ghost/core/test/integration/url-service-parity.test.js
 ghost/core/test/integration/utils/minio.test.ts
 ghost/core/test/integration/jobs/update-check.test.js
 ghost/core/test/integration/models/member-deep-pagination.test.js
@@ -4964,10 +4961,12 @@ ghost/core/test/integration/services/member-welcome-emails.test.js
 ghost/core/test/integration/services/comments-service.test.js
 ghost/core/test/integration/services/offers-api.test.js
 ghost/core/test/integration/exporter/exporter.test.js
+ghost/core/test/integration/url-serialization.test.js
 ghost/core/test/integration/lib/image/image-size-storage.test.ts
 ghost/core/test/integration/migrations/view-security.test.js
 ghost/core/test/integration/migrations/nullable-utils.test.js
 ghost/core/test/integration/migrations/migration.test.js
+ghost/core/test/unit/bridge.test.js
 ghost/core/test/unit/server/adapters/route-settings/file-store.test.ts
 ghost/core/test/unit/server/adapters/route-settings/in-memory-store.test.ts
 ghost/core/test/unit/server/adapters/route-settings/utils.test.ts
@@ -5215,16 +5214,9 @@ ghost/core/test/unit/server/services/mentions/webmention-metadata.test.js
 ghost/core/test/unit/server/services/mentions/mentions-api.test.js
 ghost/core/test/unit/server/services/url/routable-resources.test.js
 ghost/core/test/unit/server/services/url/lazy-find-resource.test.js
-ghost/core/test/unit/server/services/url/url-service.test.js
 ghost/core/test/unit/server/services/url/permalink-matcher.test.js
-ghost/core/test/unit/server/services/url/local-file-cache.test.js
-ghost/core/test/unit/server/services/url/urls.test.js
 ghost/core/test/unit/server/services/url/router-filter.test.js
-ghost/core/test/unit/server/services/url/url-generator.test.js
 ghost/core/test/unit/server/services/url/lazy-url-service.test.js
-ghost/core/test/unit/server/services/url/url-service-facade.test.js
-ghost/core/test/unit/server/services/url/resources.test.js
-ghost/core/test/unit/server/services/url/queue.test.js
 ghost/core/test/unit/server/services/automations/mailgun-message-id.test.ts
 ghost/core/test/unit/server/services/automations/scheduler-poll-time.test.ts
 ghost/core/test/unit/server/services/automations/automations-repository.test.ts
@@ -5447,7 +5439,6 @@ ghost/core/test/unit/api/canary/utils/validators/input/pages.test.js
 ghost/core/test/unit/api/canary/utils/validators/input/tags.test.js
 ghost/core/test/unit/api/cache-invalidation.test.js
 ghost/core/test/unit/bin/create-migration.test.js
-ghost/core/test/unit/shared/events/url-resource-updated-event.test.js
 ghost/core/test/unit/shared/custom-theme-settings-cache/service.test.js
 ghost/core/test/unit/shared/custom-theme-settings-cache/cache.test.js
 ghost/core/test/unit/shared/sentry.test.js
@@ -5473,13 +5464,13 @@ ghost/core/test/unit/frontend/meta/rss-url.test.js
 ghost/core/test/unit/frontend/meta/canonical-url.test.js
 ghost/core/test/unit/frontend/meta/og-type.test.ts
 ghost/core/test/unit/frontend/meta/generate-excerpt.test.js
-ghost/core/test/unit/frontend/meta/author-image.test.js
 ghost/core/test/unit/frontend/meta/author-url.test.js
 ghost/core/test/unit/frontend/meta/cover-image.test.js
 ghost/core/test/unit/frontend/meta/published-date.test.js
 ghost/core/test/unit/frontend/meta/twitter-image.test.js
 ghost/core/test/unit/frontend/meta/keywords.test.js
 ghost/core/test/unit/frontend/meta/paginated-url.test.js
+ghost/core/test/unit/frontend/meta/author-image.test.ts
 ghost/core/test/unit/frontend/meta/image-dimensions.test.js
 ghost/core/test/unit/frontend/meta/creator-url.test.js
 ghost/core/test/unit/frontend/meta/schema.test.js
@@ -5771,8 +5762,6 @@ ghost/core/test/utils/fixtures/themes/locale-theme/locales/en.json
 ghost/core/test/utils/fixtures/themes/locale-theme/locales/de.json
 ghost/core/test/utils/fixtures/themes/locale-theme/post.hbs
 ghost/core/test/utils/fixtures/themes/invalid.zip
-ghost/core/test/utils/fixtures/urls/urls.json
-ghost/core/test/utils/fixtures/urls/resources.json
 ghost/core/test/utils/fixtures/admin-build/index.html
 ghost/core/test/utils/fixtures/test.hbs
 ghost/core/test/utils/fixtures/media/sample.mp3
@@ -6120,8 +6109,10 @@ ghost/core/test/e2e-api/members-comments/comments.test.js
 ghost/core/test/e2e-api/members-comments/max-limit-cap.test.js
 ghost/core/test/e2e-api/members-comments/__snapshots__/comments.test.js.snap
 ghost/core/test/e2e-api/members-comments/comments-lazy-url-parity.test.js
+ghost/core/bin/warm-compile-cache.sh
 ghost/core/bin/create-migration.js
 ghost/core/bin/generate-golden-email.js
+ghost/core/bin/validate-adapters.ts
 ghost/core/jsconfig.json
 ghost/core/tsconfig.json
 ghost/core/config.development.json
@@ -6440,6 +6431,7 @@ ghost/core/core/server/data/migrations/versions/5.97/2024-10-09-14-04-10-add-ses
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-08-14-36-58-added-heading-font-setting.js
 ghost/core/core/server/data/migrations/versions/5.97/2024-10-10-01-02-03-add-signin-urls-permissions.js
 ghost/core/core/server/data/migrations/versions/6.57/2026-08-04-18-00-00-store-custom-field-values-as-leaf-rows.js
+ghost/core/core/server/data/migrations/versions/6.57/2026-08-04-18-54-14-reset-automation-email-analytics.js
 ghost/core/core/server/data/migrations/versions/6.15/2026-01-26-18-06-00-add-billing-portal-setting.js
 ghost/core/core/server/data/migrations/versions/6.15/2026-01-26-12-00-00-add-commenting-column-to-members.js
 ghost/core/core/server/data/migrations/versions/5.35/2023-02-13-06-24-add-mentions-verified-column.js
@@ -7144,6 +7136,8 @@ ghost/core/core/server/services/adapter-manager/types.ts
 ghost/core/core/server/services/adapter-manager/adapter-manager.ts
 ghost/core/core/server/services/adapter-manager/index.ts
 ghost/core/core/server/services/adapter-manager/utils.ts
+ghost/core/core/server/services/adapter-manager/base-classes.ts
+ghost/core/core/server/services/adapter-manager/adapter-paths.ts
 ghost/core/core/server/services/route-settings/validation-errors.ts
 ghost/core/core/server/services/route-settings/yaml-parser.js
 ghost/core/core/server/services/route-settings/yaml-parser.d.ts
@@ -7293,18 +7287,10 @@ ghost/core/core/server/services/mentions/resource-service.js
 ghost/core/core/server/services/mentions/bookshelf-mention-repository.js
 ghost/core/core/server/services/url/permalink-matcher.ts
 ghost/core/core/server/services/url/routable-resources.js
-ghost/core/core/server/services/url/url-service-facade.ts
-ghost/core/core/server/services/url/local-file-cache.js
 ghost/core/core/server/services/url/router-filter.ts
-ghost/core/core/server/services/url/url-service.js
-ghost/core/core/server/services/url/urls.js
 ghost/core/core/server/services/url/config.js
-ghost/core/core/server/services/url/resources.js
-ghost/core/core/server/services/url/resource.js
 ghost/core/core/server/services/url/index.js
-ghost/core/core/server/services/url/url-generator.js
 ghost/core/core/server/services/url/lazy-find-resource.ts
-ghost/core/core/server/services/url/queue.js
 ghost/core/core/server/services/url/lazy-url-service.ts
 ghost/core/core/server/services/posts-public/service.js
 ghost/core/core/server/services/posts-public/index.js
@@ -7590,7 +7576,6 @@ ghost/core/core/cli/generate-data.js
 ghost/core/core/cli/command.js
 ghost/core/core/shared/events/member-unsubscribe-event.js
 ghost/core/core/shared/events/subscription-activated-event.js
-ghost/core/core/shared/events/url-resource-updated-event.js
 ghost/core/core/shared/events/subscription-cancelled-event.js
 ghost/core/core/shared/events/member-subscribe-event.js
 ghost/core/core/shared/events/member-paid-conversion-event.js

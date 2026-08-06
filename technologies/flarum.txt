@@ -1218,6 +1218,7 @@ extensions/realtime/tests/unit/Websocket/FactoryRoutingTest.php
 extensions/realtime/tests/unit/Websocket/TypingRelayTest.php
 extensions/realtime/tests/unit/Websocket/ChannelSubscriptionAuthTest.php
 extensions/realtime/tests/unit/Websocket/MessageTest.php
+extensions/realtime/tests/unit/Websocket/PusherClientRetryTest.php
 extensions/realtime/tests/unit/.gitkeep
 extensions/realtime/tests/fixtures/.gitkeep
 extensions/realtime/tests/phpunit.integration.xml
@@ -1233,6 +1234,7 @@ extensions/realtime/src/Content/ForumContent.php
 extensions/realtime/src/Websocket/Api/ForumAttributes.php
 extensions/realtime/src/Websocket/Api/AuthController.php
 extensions/realtime/src/Websocket/Api/PresenceChannelAuthorizer.php
+extensions/realtime/src/Websocket/PusherClientFactory.php
 extensions/realtime/src/Websocket/Server/HttpServer.php
 extensions/realtime/src/Websocket/Server/QueryParams.php
 extensions/realtime/src/Websocket/Channel/PresenceChannel.php
@@ -2002,6 +2004,7 @@ framework/core/js/tests/integration/common/components/LoadingIndicator.test.ts
 framework/core/js/tests/integration/common/components/Avatar.test.ts
 framework/core/js/tests/integration/common/components/Select.test.ts
 framework/core/js/tests/integration/common/components/FormGroup.test.ts
+framework/core/js/tests/integration/common/components/OverflowingList.test.ts
 framework/core/js/tests/integration/common/components/ColorPreviewInput.test.ts
 framework/core/js/tests/integration/common/components/Alert.test.ts
 framework/core/js/tests/integration/common/components/SelectDropdown.test.ts
@@ -2022,6 +2025,7 @@ framework/core/js/tests/integration/admin/components/UserListPage.test.ts
 framework/core/js/tests/integration/admin/components/AdvancedPage.test.ts
 framework/core/js/tests/integration/admin/components/MailPage.test.ts
 framework/core/js/tests/integration/admin/components/GeneralSearchSource.test.ts
+framework/core/js/tests/integration/admin/components/AdminPageSetting.test.ts
 framework/core/js/tests/integration/admin/components/DashboardPage.test.ts
 framework/core/js/tests/integration/admin/components/PermissionsPage.test.ts
 framework/core/js/tests/integration/admin/components/AppearencePage.test.ts
@@ -2029,6 +2033,7 @@ framework/core/js/tests/integration/admin/AssetsRevision.test.ts
 framework/core/js/tests/integration/admin/Application.test.ts
 framework/core/js/tests/integration/forum/components/Modals.test.ts
 framework/core/js/tests/integration/forum/components/DiscussionPage.test.ts
+framework/core/js/tests/integration/forum/components/GlobalSearch.test.ts
 framework/core/js/tests/integration/forum/components/IndexSidebar.test.ts
 framework/core/js/tests/integration/forum/components/PostStream.test.ts
 framework/core/js/tests/integration/forum/components/IndexPage.test.ts
@@ -2037,6 +2042,7 @@ framework/core/js/tests/unit/common/extend.test.ts
 framework/core/js/tests/unit/common/utils/isDark.test.ts
 framework/core/js/tests/unit/common/utils/extractText.test.ts
 framework/core/js/tests/unit/common/utils/applyIconStyle.test.ts
+framework/core/js/tests/unit/common/utils/countItemsThatFit.test.ts
 framework/core/js/tests/unit/common/utils/Translator.test.ts
 framework/core/js/tests/unit/common/utils/string.test.ts
 framework/core/js/tests/unit/common/utils/abbreviateNumber.test.ts
@@ -2116,6 +2122,7 @@ framework/core/js/dist-typings/common/components/ThemeMode.d.ts
 framework/core/js/dist-typings/common/components/Icon.d.ts
 framework/core/js/dist-typings/common/components/Checkbox.d.ts
 framework/core/js/dist-typings/common/components/MultiSelect.d.ts
+framework/core/js/dist-typings/common/components/OverflowingList.d.ts
 framework/core/js/dist-typings/common/components/InfoTile.d.ts
 framework/core/js/dist-typings/common/components/AlertManager.d.ts
 framework/core/js/dist-typings/common/components/Tooltip.d.ts
@@ -2166,6 +2173,7 @@ framework/core/js/dist-typings/common/utils/isDark.d.ts
 framework/core/js/dist-typings/common/utils/RequestError.d.ts
 framework/core/js/dist-typings/common/utils/classList.d.ts
 framework/core/js/dist-typings/common/utils/formatAmount.d.ts
+framework/core/js/dist-typings/common/utils/countItemsThatFit.d.ts
 framework/core/js/dist-typings/common/utils/styleSelectedText.d.ts
 framework/core/js/dist-typings/common/utils/BasicEditorDriver.d.ts
 framework/core/js/dist-typings/common/utils/haptic.d.ts
@@ -2441,6 +2449,7 @@ framework/core/js/src/common/components/Separator.js
 framework/core/js/src/common/components/ModalManager.tsx
 framework/core/js/src/common/components/RequestErrorModal.tsx
 framework/core/js/src/common/components/TextEditor.js
+framework/core/js/src/common/components/OverflowingList.tsx
 framework/core/js/src/common/components/InfoTile.tsx
 framework/core/js/src/common/components/IPAddress.tsx
 framework/core/js/src/common/components/Button.tsx
@@ -2461,6 +2470,7 @@ framework/core/js/src/common/components/DetailedDropdownItem.tsx
 framework/core/js/src/common/components/Modal.tsx
 framework/core/js/src/common/components/FormModal.tsx
 framework/core/js/src/common/utils/subclassOf.js
+framework/core/js/src/common/utils/countItemsThatFit.ts
 framework/core/js/src/common/utils/focusTrap.ts
 framework/core/js/src/common/utils/haptic.ts
 framework/core/js/src/common/utils/styleSelectedText.ts

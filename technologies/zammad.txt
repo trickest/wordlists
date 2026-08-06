@@ -77,6 +77,7 @@ db/migrate/20250124112935_reserved_words_per_model.rb
 db/migrate/20190613000001_group_dependent_text_modules.rb
 db/migrate/20240318132554_issue_5091_timezone_default.rb
 db/migrate/20260706093055_add_require_verified_email_domain_to_microsoft_office365_credentials.rb
+db/migrate/20260805141312_ai_knowledge_base_answer_suggestions.rb
 db/migrate/20221107081315_issue4306_excludes_setting.rb
 db/migrate/20170123000002_fixed_translation.rb
 db/migrate/20220314080801_issue4009_fix_title.rb
@@ -331,6 +332,7 @@ db/migrate/20190718140450_forget_insecure_sessions.rb
 db/migrate/20240930184012_checklist_improve_reference_tracking.rb
 db/migrate/20220124124658_permission_updates.rb
 db/migrate/20181203000000_setting_add_email_full_quote_header.rb
+db/migrate/20260804000000_vectordb_setting_validation.rb
 db/migrate/20170419000001_ldap_support.rb
 db/migrate/20210414000000_init_session_timeout.rb
 db/migrate/20210903085041_translation_add_sync_columns.rb
@@ -631,6 +633,7 @@ config/routes/search.rb
 config/routes/checklist.rb
 config/routes/system_assets.rb
 config/routes/ssl_certificate.rb
+config/routes/ai_vector_index.rb
 config/routes/postmaster_filter.rb
 config/routes/channel_facebook.rb
 config/routes/macro.rb
@@ -2100,6 +2103,7 @@ app/jobs/ticket_online_notification_seen_job.rb
 app/jobs/communicate_facebook_job.rb
 app/jobs/async_otrs_import_job.rb
 app/jobs/data_privacy_task_job.rb
+app/jobs/vector_index_sync_job.rb
 app/jobs/application_job.rb
 app/jobs/taskbar_update_related_tasks_job.rb
 app/jobs/cache_clear_job.rb
@@ -2234,6 +2238,7 @@ app/policies/controllers/knowledge_base/answer/attachments_controller_policy.rb
 app/policies/controllers/knowledge_base/feeds_controller_policy.rb
 app/policies/controllers/knowledge_base/public/categories_controller_policy.rb
 app/policies/controllers/http_logs_controller_policy.rb
+app/policies/controllers/ai/vector_index_controller_policy.rb
 app/policies/controllers/ai/provider_connections_controller_policy.rb
 app/policies/controllers/ai/feature_providers_controller_policy.rb
 app/policies/controllers/ai/analytics/downloads_controller_policy.rb
@@ -3080,7 +3085,9 @@ app/models/setting/validation/ai_provider.rb
 app/models/setting/validation/time_zone.rb
 app/models/setting/validation/storage_provider.rb
 app/models/setting/validation/kb_self_hosted_video_servers.rb
+app/models/setting/validation/ai_relevance_score.rb
 app/models/setting/validation/sso_trusted_ips.rb
+app/models/setting/validation/vectordb.rb
 app/models/setting/transformation/base.rb
 app/models/setting/transformation/sanitize_html.rb
 app/models/setting/validator.rb
@@ -3808,6 +3815,7 @@ app/controllers/ai/provider_connections_controller.rb
 app/controllers/ai/feature_providers_controller.rb
 app/controllers/ai/analytics/usages_controller.rb
 app/controllers/ai/analytics/downloads_controller.rb
+app/controllers/ai/vector_index_controller.rb
 app/controllers/slas_controller.rb
 app/controllers/import_otrs_controller.rb
 app/controllers/checklists_controller.rb
@@ -5541,6 +5549,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInf
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/composables/useKnowledgeBaseLinkList.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/composables/__tests__/useKnowledgeBaseLinkList.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/composables/__tests__/useKnowledgeBaseAiSuggestedAnswers.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/TicketSidebarInformationContent/composables/__tests__/useAiSuggestedAnswersAvailability.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketRelatedKnowledge.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketTags.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarInformation/__tests__/TicketAccountedTime.spec.ts
@@ -7980,8 +7989,9 @@ app/assets/javascripts/app/views/ai/ai_feedback_widget.jst.eco
 app/assets/javascripts/app/views/ai/provider_connections_toggle.jst.eco
 app/assets/javascripts/app/views/ai/ticket_summary.jst.eco
 app/assets/javascripts/app/views/ai/text_tool_feedback.jst.eco
-app/assets/javascripts/app/views/ai/kb_answer_from_ticket.jst.eco
+app/assets/javascripts/app/views/ai/knowledge_base_features.jst.eco
 app/assets/javascripts/app/views/ai/missing_embedding_provider_alert.jst.eco
+app/assets/javascripts/app/views/ai/missing_knowledge_base_alert.jst.eco
 app/assets/javascripts/app/views/data_privacy/tasks.jst.eco
 app/assets/javascripts/app/views/data_privacy/preview.jst.eco
 app/assets/javascripts/app/views/data_privacy/index.jst.eco
@@ -8205,10 +8215,10 @@ app/assets/javascripts/app/controllers/_ai/feedback_logs.coffee
 app/assets/javascripts/app/controllers/_ai/form_handler_ai_agent_unused_warning.coffee
 app/assets/javascripts/app/controllers/_ai/_feature_base.coffee
 app/assets/javascripts/app/controllers/_ai/ai_feature_provider_modal.coffee
-app/assets/javascripts/app/controllers/_ai/kb_answer_from_ticket.coffee
 app/assets/javascripts/app/controllers/_ai/text_tool.coffee
 app/assets/javascripts/app/controllers/_ai/ticket_summary.coffee
 app/assets/javascripts/app/controllers/_ai/form_handler_ai_agent_type_help.coffee
+app/assets/javascripts/app/controllers/_ai/knowledge_base_features.coffee
 app/assets/javascripts/app/controllers/_ai/provider_connections.coffee
 app/assets/javascripts/app/controllers/ticket_zoom.coffee
 app/assets/javascripts/app/controllers/text_module.coffee
@@ -11106,6 +11116,7 @@ spec/requests/knowledge_base/answer_spec.rb
 spec/requests/knowledge_base/translation_update_spec.rb
 spec/requests/ai/provider_connections_spec.rb
 spec/requests/ai/feature_providers_spec.rb
+spec/requests/ai/vector_index_spec.rb
 spec/requests/ai/analytics/downloads_spec.rb
 spec/requests/ai/analytics/usages_spec.rb
 spec/requests/import_kayako_spec.rb
@@ -11245,6 +11256,7 @@ spec/jobs/session_timeout_job_spec.rb
 spec/jobs/vector_index_knowledge_base_category_resync_job_spec.rb
 spec/jobs/search_index_associations_job_spec.rb
 spec/jobs/ticket_bulk_update_job_spec.rb
+spec/jobs/vector_index_sync_job_spec.rb
 spec/jobs/ticket_escalation_rebuild_job_spec.rb
 spec/jobs/scheduled_whatsapp_reminder_job_spec.rb
 spec/jobs/ticket_ai_related_knowledge_base_answers_embed_job_spec.rb
@@ -11488,8 +11500,8 @@ spec/system/admin/knowledge_base/video_servers_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
 spec/system/admin/ai/provider_connections_spec.rb
 spec/system/admin/ai/ticket_summary_spec.rb
-spec/system/admin/ai/kb_answer_from_ticket_spec.rb
 spec/system/admin/ai/feedback_logs_spec.rb
+spec/system/admin/ai/knowledge_base_features_spec.rb
 spec/system/admin/ai/text_tool_spec.rb
 spec/system/user/profile_spec.rb
 spec/system/user/history_spec.rb
@@ -11611,6 +11623,7 @@ spec/models/checklist_template/has_audit_logs_examples.rb
 spec/models/setting/validation/saml/security_spec.rb
 spec/models/setting/validation/saml/required_attributes_spec.rb
 spec/models/setting/validation/saml/tls_spec.rb
+spec/models/setting/validation/vectordb_spec.rb
 spec/models/setting/validation/kb_self_hosted_video_servers_spec.rb
 spec/models/setting/validation/storage_provider_spec.rb
 spec/models/setting/validation/ai_provider_spec.rb

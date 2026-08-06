@@ -2596,8 +2596,10 @@ src/Sylius/Bundle/PromotionBundle/Validator/PromotionSubjectCouponValidator.php
 src/Sylius/Bundle/PromotionBundle/Validator/PromotionActionGroupValidator.php
 src/Sylius/Bundle/PromotionBundle/Validator/PromotionRuleTypeValidator.php
 src/Sylius/Bundle/PromotionBundle/Validator/PromotionRuleGroupValidator.php
+src/Sylius/Bundle/PromotionBundle/Validator/ComparisonOperatorExistsValidator.php
 src/Sylius/Bundle/PromotionBundle/Validator/Constraints/PromotionRuleType.php
 src/Sylius/Bundle/PromotionBundle/Validator/Constraints/PromotionActionGroup.php
+src/Sylius/Bundle/PromotionBundle/Validator/Constraints/ComparisonOperatorExists.php
 src/Sylius/Bundle/PromotionBundle/Validator/Constraints/CatalogPromotionScopeType.php
 src/Sylius/Bundle/PromotionBundle/Validator/Constraints/CouponPossibleGenerationAmount.php
 src/Sylius/Bundle/PromotionBundle/Validator/Constraints/CatalogPromotionScopeGroup.php
@@ -2641,6 +2643,7 @@ src/Sylius/Bundle/PromotionBundle/tests/Validator/PromotionRuleGroupValidatorTes
 src/Sylius/Bundle/PromotionBundle/tests/Validator/PromotionRuleTypeValidatorTest.php
 src/Sylius/Bundle/PromotionBundle/tests/Validator/CatalogPromotionScopeTypeValidatorTest.php
 src/Sylius/Bundle/PromotionBundle/tests/Validator/CouponGenerationAmountValidatorTest.php
+src/Sylius/Bundle/PromotionBundle/tests/Validator/ComparisonOperatorExistsValidatorTest.php
 src/Sylius/Bundle/PromotionBundle/tests/Validator/PromotionActionTypeValidatorTest.php
 src/Sylius/Bundle/PromotionBundle/tests/Validator/CatalogPromotionActionTypeValidatorTest.php
 src/Sylius/Bundle/PromotionBundle/tests/Validator/PromotionSubjectCouponValidatorTest.php
@@ -8194,6 +8197,7 @@ src/Sylius/Bundle/ShopBundle/templates/shared/components/confirmation_modal.html
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base.html.twig
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/menu.html.twig
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/copy.html.twig
+src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/payment_methods/providers/stripe.html.twig
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/payment_methods/providers/mollie.html.twig
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/payment_methods/providers/adyen.html.twig
 src/Sylius/Bundle/ShopBundle/templates/shared/layout/base/footer/content/payment_methods/providers/paypal.html.twig
@@ -8673,6 +8677,7 @@ src/Sylius/Bundle/ShopBundle/Resources/assets/controllers.json
 src/Sylius/Bundle/ShopBundle/Resources/assets/package.json
 src/Sylius/Bundle/ShopBundle/Resources/assets/scripts/bootstrap.js
 src/Sylius/Bundle/ShopBundle/Resources/assets/scripts/spotlight.js
+src/Sylius/Bundle/ShopBundle/Resources/assets/images/stripe-logo.svg
 src/Sylius/Bundle/ShopBundle/Resources/assets/images/homepage-new-collection-photo-2.webp
 src/Sylius/Bundle/ShopBundle/Resources/assets/images/mollie-logo.svg
 src/Sylius/Bundle/ShopBundle/Resources/assets/images/adyen-logo.svg
@@ -10061,6 +10066,7 @@ src/Sylius/Component/Promotion/tests/Factory/PromotionCouponGeneratorInstruction
 src/Sylius/Component/Promotion/tests/Action/PromotionApplicatorTest.php
 src/Sylius/Component/Promotion/tests/Provider/ActivePromotionsProviderTest.php
 src/Sylius/Component/Promotion/tests/Exception/FailedGenerationExceptionTest.php
+src/Sylius/Component/Promotion/tests/Checker/Comparison/ComparisonOperatorMatcherTest.php
 src/Sylius/Component/Promotion/tests/Checker/Eligibility/PromotionCouponUsageLimitEligibilityCheckerTest.php
 src/Sylius/Component/Promotion/tests/Checker/Eligibility/PromotionDurationEligibilityCheckerTest.php
 src/Sylius/Component/Promotion/tests/Checker/Eligibility/PromotionUsageLimitEligibilityCheckerTest.php
@@ -10090,6 +10096,8 @@ src/Sylius/Component/Promotion/Exception/UnsupportedTypeException.php
 src/Sylius/Component/Promotion/Exception/CatalogPromotionNotFoundException.php
 src/Sylius/Component/Promotion/Exception/FailedGenerationException.php
 src/Sylius/Component/Promotion/Exception/InvalidCatalogPromotionStateException.php
+src/Sylius/Component/Promotion/Checker/Comparison/ComparisonOperatorMatcher.php
+src/Sylius/Component/Promotion/Checker/Comparison/ComparisonOperatorMatcherInterface.php
 src/Sylius/Component/Promotion/Checker/Eligibility/CompositePromotionCouponEligibilityChecker.php
 src/Sylius/Component/Promotion/Checker/Eligibility/PromotionArchivalEligibilityChecker.php
 src/Sylius/Component/Promotion/Checker/Eligibility/PromotionDurationEligibilityChecker.php
@@ -10409,6 +10417,7 @@ src/Sylius/Component/Core/tests/Promotion/Checker/Rule/TotalOfItemsFromTaxonRule
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/TaxonInPromotionRuleCheckerTest.php
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/ShippingCountryRuleCheckerTest.php
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/HasTaxonRuleCheckerTest.php
+src/Sylius/Component/Core/tests/Promotion/Checker/Rule/CartQuantityRuleCheckerTest.php
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/ItemTotalRuleCheckerTest.php
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/NthOrderRuleCheckerTest.php
 src/Sylius/Component/Core/tests/Promotion/Checker/Rule/ContainsProductRuleCheckerTest.php
