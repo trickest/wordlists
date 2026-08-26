@@ -350,6 +350,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEven
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventAccessServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/ServerEventRouterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/ServerEvents/FakeAuthorizer.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Extensions/MemberResponseModelExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/MediaType/Item/SearchMediaTypeItemControllerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/MemberType/Item/SearchMemberTypeItemControllerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/DataType/Item/SearchDataTypeItemControllerTests.cs
@@ -2186,8 +2187,11 @@ tests/Umbraco.Tests.Integration/ManagementApi/Relation/ByRelationTypeKeyRelation
 tests/Umbraco.Tests.Integration/ManagementApi/PropertyType/IsUsedPropertyTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/ManagementApiUserGroupTestBase.cs
 tests/Umbraco.Tests.Integration/ManagementApi/ObjectTypes/AllowedObjectTypesControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Member/Filter/FilterMemberFilterControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Member/Item/ItemMemberItemControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Member/Item/AncestorsMemberItemControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Member/MemberSensitiveDataTestBase.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Member/ByKeyMemberControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Policies/AllCultureControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/UpdateTemplateControllerProductionModeTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Template/Item/ItemTemplateItemControllerTests.cs
@@ -4345,6 +4349,7 @@ src/Umbraco.Cms.Api.Management/Telemetry/ExternalLoginTelemetryProvider.cs
 src/Umbraco.Cms.Api.Management/Extensions/UmbracoApplicationBuilder.Preview.cs
 src/Umbraco.Cms.Api.Management/Extensions/ContentEditingExtensions.cs
 src/Umbraco.Cms.Api.Management/Extensions/UmbracoApplicationBuilder.BackOffice.cs
+src/Umbraco.Cms.Api.Management/Extensions/MemberResponseModelExtensions.cs
 src/Umbraco.Cms.Api.Management/Extensions/OpenIdDictTokenManagerExtensions.cs
 src/Umbraco.Cms.Api.Management/Extensions/HttpContextExtensions.cs
 src/Umbraco.Cms.Api.Management/Extensions/HtmlHelperBackOfficeExtensions.cs
@@ -13522,6 +13527,8 @@ src/Umbraco.Web.UI.Client/src/packages/core/property/components/unsupported-prop
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/unsupported-property/utils.ts
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/unsupported-property/unsupported-property.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/property/components/sensitive-value/sensitive-value.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/property/components/sensitive-value/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/property/property.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/property/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/property/components/property/property.context.ts

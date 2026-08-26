@@ -59,7 +59,6 @@ core/modules/announcements_feed/src/LazyBuilders.php
 core/modules/announcements_feed/src/AnnounceFetcher.php
 core/modules/announcements_feed/src/Hook/AnnouncementsFeedHelpHooks.php
 core/modules/announcements_feed/src/Hook/AnnouncementsFeedCronHooks.php
-core/modules/announcements_feed/src/Hook/AnnouncementsFeedToolbarHooks.php
 core/modules/announcements_feed/src/Hook/AnnouncementsFeedThemeHooks.php
 core/modules/announcements_feed/src/AnnounceRenderer.php
 core/modules/announcements_feed/src/Plugin/Block/AnnounceBlock.php
@@ -688,6 +687,12 @@ core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/jsonapi_test_fiel
 core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/src/ResourceType/AliasingResourceTypeRepository.php
 core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/jsonapi_test_field_aliasing.info.yml
 core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTest.php
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_node_individual_invalidated.sql
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_individual_hot_cache.sql
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_individual_cool_cache.sql
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_individual_cool_cache.yml
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_node_individual_invalidated.yml
+core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTestAssertions/jsonapi_individual_hot_cache.yml
 core/modules/jsonapi/tests/src/Functional/CommentTest.php
 core/modules/jsonapi/tests/src/Functional/FileUploadTest.php
 core/modules/jsonapi/tests/src/Functional/BlockContentTest.php
@@ -1047,7 +1052,7 @@ core/modules/config/tests/config_test_language/config/install/config_test.dynami
 core/modules/config/tests/config_test_language/config_test_language.info.yml
 core/modules/config/tests/config_schema_deprecated_test/config/schema/config_schema_deprecated_test.schema.yml
 core/modules/config/tests/config_schema_deprecated_test/config_schema_deprecated_test.info.yml
-core/modules/config/tests/config_override_integration_test/config/install/block.block.config_override_test.yml
+core/modules/config/tests/config_override_integration_test/config/optional/block.block.config_override_test.yml
 core/modules/config/tests/config_override_integration_test/config_override_integration_test.info.yml
 core/modules/config/tests/config_override_integration_test/src/CacheabilityMetadataConfigOverride.php
 core/modules/config/tests/config_override_integration_test/src/Cache/ConfigOverrideIntegrationTestCacheContext.php
@@ -2608,6 +2613,10 @@ core/modules/node/tests/node_access_test_auto_bubbling/node_access_test_auto_bub
 core/modules/node/tests/node_access_test_auto_bubbling/src/Controller/NodeAccessTestAutoBubblingController.php
 core/modules/node/tests/node_access_test_auto_bubbling/node_access_test_auto_bubbling.routing.yml
 core/modules/node/tests/src/FunctionalJavascript/CollapsedSummariesTest.php
+core/modules/node/tests/src/FunctionalJavascript/NodePerformanceTestAssertions/nodePromotedContentAfterInvalidation.sql
+core/modules/node/tests/src/FunctionalJavascript/NodePerformanceTestAssertions/nodePromotedContentPage.yml
+core/modules/node/tests/src/FunctionalJavascript/NodePerformanceTestAssertions/nodePromotedContentPage.sql
+core/modules/node/tests/src/FunctionalJavascript/NodePerformanceTestAssertions/nodePromotedContentAfterInvalidation.yml
 core/modules/node/tests/src/FunctionalJavascript/NodePerformanceTest.php
 core/modules/node/tests/src/FunctionalJavascript/NodeDeleteConfirmTest.php
 core/modules/node/tests/src/FunctionalJavascript/SettingSummariesContentTypeTest.php
@@ -3646,6 +3655,8 @@ core/modules/system/tests/modules/logger_aware_test/logger_aware_test.info.yml
 core/modules/system/tests/modules/logger_aware_test/src/LoggerStub.php
 core/modules/system/tests/modules/logger_aware_test/src/LoggerAwareStub.php
 core/modules/system/tests/modules/logger_aware_test/logger_aware_test.services.yml
+core/modules/system/tests/modules/body_field/config/optional/field.storage.node.body.yml
+core/modules/system/tests/modules/body_field/body_field.info.yml
 core/modules/system/tests/modules/theme_page_test/theme_page_test.info.yml
 core/modules/system/tests/modules/theme_page_test/src/Hook/ThemePageTestHooks.php
 core/modules/system/tests/modules/update_test_failing/update_test_failing.info.yml
@@ -5045,6 +5056,7 @@ core/modules/system/tests/src/Functional/Module/HookRequirementsTest.php
 core/modules/system/tests/src/Functional/Module/ModuleTestBase.php
 core/modules/system/tests/src/Functional/Module/ClassLoaderTest.php
 core/modules/system/tests/src/Functional/Module/DeprecatedTemplateTest.php
+core/modules/system/tests/src/Functional/Module/ModuleInstallOrderTest.php
 core/modules/system/tests/src/Functional/Module/NonStableModulesTest.php
 core/modules/system/tests/src/Functional/Module/DependencyFormTest.php
 core/modules/system/tests/src/Functional/Module/PrepareUninstallTest.php
@@ -7844,8 +7856,8 @@ core/modules/block/tests/modules/block_test_views/block_test_views.info.yml
 core/modules/block/tests/modules/block_test_views/test_views/views.view.test_view_block_with_context.yml
 core/modules/block/tests/modules/block_test_views/test_views/views.view.test_view_block.yml
 core/modules/block/tests/modules/block_test_views/test_views/views.view.test_view_block2.yml
-core/modules/block/tests/modules/block_test/config/install/block.block.test_block.yml
 core/modules/block/tests/modules/block_test/config/schema/block_test.schema.yml
+core/modules/block/tests/modules/block_test/config/optional/block.block.test_block.yml
 core/modules/block/tests/modules/block_test/themes/block_test_theme/block_test_theme.info.yml
 core/modules/block/tests/modules/block_test/themes/block_test_special_chars_theme/block_test_special_chars_theme.info.yml
 core/modules/block/tests/modules/block_test/block_test.services.yml
@@ -8684,7 +8696,7 @@ core/modules/block_content/tests/modules/block_content_theme_suggestions_test/bl
 core/modules/block_content/tests/modules/block_content_theme_suggestions_test/templates/block--block-content--view-type--basic--full.html.twig
 core/modules/block_content/tests/modules/block_content_theme_suggestions_test/src/Hook/BlockContentThemeSuggestionsTestHooks.php
 core/modules/block_content/tests/modules/block_content_theme_suggestions_test/src/Hook/BlockContentThemeSuggestionsTestThemeHooks.php
-core/modules/block_content/tests/modules/block_content_test/config/install/block.block.foobar_gorilla.yml
+core/modules/block_content/tests/modules/block_content_test/config/optional/block.block.foobar_gorilla.yml
 core/modules/block_content/tests/modules/block_content_test/block_content_test.info.yml
 core/modules/block_content/tests/modules/block_content_test/src/Hook/BlockContentTestHooks.php
 core/modules/block_content/tests/modules/block_content_test/src/Plugin/EntityReferenceSelection/TestSelection.php
@@ -8933,6 +8945,7 @@ core/modules/package_manager/tests/src/Traits/InstalledPackagesListTrait.php
 core/modules/package_manager/tests/src/Traits/ValidationTestTrait.php
 core/modules/package_manager/tests/src/Kernel/StageConflictTest.php
 core/modules/package_manager/tests/src/Kernel/TranslatableStringTest.php
+core/modules/package_manager/tests/src/Kernel/ComposerPluginsValidatorSimpleInvalidTrustingTest.php
 core/modules/package_manager/tests/src/Kernel/SupportedReleaseValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/WritableFileSystemValidatorTest.php
 core/modules/package_manager/tests/src/Kernel/ComposerValidatorHelpTest.php
@@ -8987,6 +9000,7 @@ core/modules/package_manager/tests/src/Kernel/StagedDBUpdateValidatorTest.php
 core/modules/package_manager/src/EventSubscriber/UpdateDataSubscriber.php
 core/modules/package_manager/src/EventSubscriber/ChangeLogger.php
 core/modules/package_manager/src/EventSubscriber/DirectWriteSubscriber.php
+core/modules/package_manager/src/EventSubscriber/LongLivedSandboxSubscriber.php
 core/modules/package_manager/src/InstalledPackage.php
 core/modules/package_manager/src/DirectWritePreconditionBypass.php
 core/modules/package_manager/src/Validator/ComposerPatchesValidator.php
@@ -9043,6 +9057,7 @@ core/modules/package_manager/src/Exception/SandboxException.php
 core/modules/package_manager/src/Attribute/AllowDirectWrite.php
 core/modules/package_manager/src/FailureMarker.php
 core/modules/package_manager/src/Hook/PackageManagerRequirementsHooks.php
+core/modules/package_manager/src/Hook/CronHook.php
 core/modules/package_manager/src/Hook/PackageManagerHooks.php
 core/modules/package_manager/src/ProjectInfo.php
 core/modules/package_manager/src/InstalledPackagesList.php
@@ -9057,6 +9072,7 @@ core/modules/package_manager/src/PathExcluder/SiteConfigurationExcluder.php
 core/modules/package_manager/src/SandboxManagerBase.php
 core/modules/package_manager/src/LoggingStager.php
 core/modules/package_manager/src/Install/Requirements/PackageManagerRequirements.php
+core/modules/package_manager/src/StagingDirDoesNotExist.php
 core/modules/package_manager/src/LoggingCommitter.php
 core/modules/package_manager/src/ValidationResult.php
 core/modules/package_manager/src/ImmutablePathList.php
@@ -10556,7 +10572,6 @@ core/themes/starterkit_theme/src/StarterKit.php
 core/themes/starterkit_theme/src/Hook/StarterkitThemeHooks.php
 core/themes/starterkit_theme/starterkit_theme.info.yml
 core/themes/starterkit_theme/starterkit_theme.starterkit.yml
-core/.gitattributes
 core/MAINTAINERS.txt
 core/core.api.php
 core/phpcs.xml.dist
@@ -11986,6 +12001,7 @@ core/tests/Drupal/FunctionalTests/Installer/DrupalFlushAllCachesInInstallerTest.
 core/tests/Drupal/FunctionalTests/Installer/StandardInstallerTest.php
 core/tests/Drupal/FunctionalTests/Installer/TestingProfileHooksTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerTranslationTest.php
+core/tests/Drupal/FunctionalTests/Installer/ProfileSkipInstallTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerLanguagePageTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigProfileHookInstallTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigSyncDirectoryMultilingualTest.php
@@ -12700,6 +12716,18 @@ core/profiles/standard/config/optional/core.entity_form_display.media.video.defa
 core/profiles/standard/templates/standard-welcome-page.html.twig
 core/profiles/standard/standard.libraries.yml
 core/profiles/standard/tests/src/FunctionalJavascript/StandardJavascriptTest.php
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/testAdmin.yml
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardLogin.yml
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardBlockLogin.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardNodePage.yml
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/testAdmin.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardUserPage.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardFrontPage.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardBlockLogin.yml
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardFrontPage.yml
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardLogin.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardNodePage.sql
+core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTestAssertions/standardUserPage.yml
 core/profiles/standard/tests/src/FunctionalJavascript/StandardPerformanceTest.php
 core/profiles/standard/tests/src/Functional/StandardTest.php
 core/profiles/standard/tests/src/Traits/StandardTestTrait.php
@@ -13167,6 +13195,21 @@ core/profiles/demo_umami/themes/umami/fonts/source-sans-pro-v21-latin-italic.wof
 core/profiles/demo_umami/themes/umami/fonts/source-sans-pro-v21-latin-regular.woff2
 core/profiles/demo_umami/themes/umami/src/Hook/UmamiHooks.php
 core/profiles/demo_umami/demo_umami.install
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontAndRecipePages.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontPageColdCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontPageHotCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodePageWarmCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodeAddEditor.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodePageColdCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontAndRecipePagesAuthenticated.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontAndRecipePagesEditor.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/authenticatedFrontPage.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodePageWarmCache.sql
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiFrontPageCoolCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/authenticatedFrontPage.sql
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodePageCoolCache.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/administratorNodePage.yml
+core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTestAssertions/umamiNodePageHotCache.yml
 core/profiles/demo_umami/tests/src/FunctionalJavascript/OpenTelemetryPerformanceTest.php
 core/profiles/demo_umami/tests/src/Functional/UmamiMultilingualInstallTest.php
 core/profiles/demo_umami/tests/src/Functional/DemoUmamiProfileTest.php
@@ -13177,6 +13220,8 @@ core/profiles/demo_umami/demo_umami.libraries.yml
 core/profiles/tests/testing_multilingual_with_english/config/install/language.entity.es.yml
 core/profiles/tests/testing_multilingual_with_english/config/install/language.entity.de.yml
 core/profiles/tests/testing_multilingual_with_english/testing_multilingual_with_english.info.yml
+core/profiles/tests/testing_skip_install/testing_skip_install.info.yml
+core/profiles/tests/testing_skip_install/testing_skip_install.install
 core/profiles/tests/test_language_negotiation/test_language_negotiation.info.yml
 core/profiles/tests/test_language_negotiation/config/install/language.types.yml
 core/profiles/tests/profile_install_requirements/src/Install/Requirements/ProfileInstallRequirementsRequirements.php
@@ -13189,7 +13234,6 @@ core/profiles/tests/testing_site_config/src/Hook/TestingSiteConfigHooks.php
 core/profiles/tests/testing_auto_uninstall/testing_auto_uninstall.info.yml
 core/profiles/tests/testing_requirements/testing_requirements.info.yml
 core/profiles/tests/testing_requirements/src/Install/Requirements/TestingRequirementsRequirements.php
-core/profiles/tests/nightwatch_testing/config/optional/locale.settings.yml
 core/profiles/tests/nightwatch_testing/nightwatch_testing.info.yml
 core/profiles/tests/testing_hooks/testing_hooks.profile
 core/profiles/tests/testing_hooks/testing_hooks.info.yml
@@ -13229,6 +13273,8 @@ core/profiles/tests/testing/testing.info.yml
 core/profiles/tests/testing/config/optional/field.storage.node.body.yml
 core/profiles/tests/testing/config/optional/locale.settings.yml
 core/profiles/tests/testing_with_recipes/testing_with_recipes.info.yml
+core/profiles/tests/testing_locale/config/optional/locale.settings.yml
+core/profiles/tests/testing_locale/testing_locale.info.yml
 core/profiles/tests/testing_install_profile_dependencies/testing_install_profile_dependencies.info.yml
 core/profiles/tests/testing_config_overrides/modules/testing_config_overrides_module/testing_config_overrides_module.info.yml
 core/profiles/tests/testing_config_overrides/modules/testing_config_overrides_module/config/optional/entity_test.entity_test_bundle.testing_config_overrides_module.yml
