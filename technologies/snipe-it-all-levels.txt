@@ -305,6 +305,10 @@ LoggableTest.php
 tests/Unit/LocationTest.php
 Unit/LocationTest.php
 LocationTest.php
+tests/Unit/Users/SyncCompaniesPreservingInvisibleTest.php
+Unit/Users/SyncCompaniesPreservingInvisibleTest.php
+Users/SyncCompaniesPreservingInvisibleTest.php
+SyncCompaniesPreservingInvisibleTest.php
 tests/Unit/CategoryTest.php
 Unit/CategoryTest.php
 CategoryTest.php
@@ -858,6 +862,11 @@ Feature/Importing/Api/ImportUsersTest.php
 Importing/Api/ImportUsersTest.php
 Api/ImportUsersTest.php
 ImportUsersTest.php
+tests/Feature/Importing/Api/ImportAssetsFmcsIsolationTest.php
+Feature/Importing/Api/ImportAssetsFmcsIsolationTest.php
+Importing/Api/ImportAssetsFmcsIsolationTest.php
+Api/ImportAssetsFmcsIsolationTest.php
+ImportAssetsFmcsIsolationTest.php
 tests/Feature/Importing/Api/ImportConcurrencyTest.php
 Feature/Importing/Api/ImportConcurrencyTest.php
 Importing/Api/ImportConcurrencyTest.php
@@ -1088,6 +1097,10 @@ tests/Feature/Auth/PassportOAuthClientGateTest.php
 Feature/Auth/PassportOAuthClientGateTest.php
 Auth/PassportOAuthClientGateTest.php
 PassportOAuthClientGateTest.php
+tests/Feature/Auth/GoogleLoginTest.php
+Feature/Auth/GoogleLoginTest.php
+Auth/GoogleLoginTest.php
+GoogleLoginTest.php
 tests/Feature/Livewire/OauthClientsAuthorizationTest.php
 Feature/Livewire/OauthClientsAuthorizationTest.php
 Livewire/OauthClientsAuthorizationTest.php
@@ -40394,6 +40407,9 @@ ItemStillHasChildren.php
 app/Exceptions/ItemNotRequestable.php
 Exceptions/ItemNotRequestable.php
 ItemNotRequestable.php
+app/Exceptions/ImportRowRejected.php
+Exceptions/ImportRowRejected.php
+ImportRowRejected.php
 app/Exceptions/ItemStillHasAssets.php
 Exceptions/ItemStillHasAssets.php
 ItemStillHasAssets.php
@@ -42166,6 +42182,10 @@ app/Console/Commands/FixUpAssignedTypeWithoutAssignedTo.php
 Console/Commands/FixUpAssignedTypeWithoutAssignedTo.php
 Commands/FixUpAssignedTypeWithoutAssignedTo.php
 FixUpAssignedTypeWithoutAssignedTo.php
+app/Console/Commands/DedupeAssets.php
+Console/Commands/DedupeAssets.php
+Commands/DedupeAssets.php
+DedupeAssets.php
 app/Console/Commands/PurgeEulaPDFs.php
 Console/Commands/PurgeEulaPDFs.php
 Commands/PurgeEulaPDFs.php

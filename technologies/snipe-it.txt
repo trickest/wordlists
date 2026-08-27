@@ -130,6 +130,7 @@ tests/Unit/Models/Labels/FieldOptionTest.php
 tests/Unit/Models/Labels/DefaultLabelTest.php
 tests/Unit/Models/LoggableTest.php
 tests/Unit/LocationTest.php
+tests/Unit/Users/SyncCompaniesPreservingInvisibleTest.php
 tests/Unit/CategoryTest.php
 tests/Unit/CustomFieldTest.php
 tests/Unit/DepreciationTest.php
@@ -254,6 +255,7 @@ tests/Feature/Importing/Api/GeneralImportTest.php
 tests/Feature/Importing/Api/ImportDataTestCase.php
 tests/Feature/Importing/Api/ImportUsersFmcsLocationTest.php
 tests/Feature/Importing/Api/ImportUsersTest.php
+tests/Feature/Importing/Api/ImportAssetsFmcsIsolationTest.php
 tests/Feature/Importing/Api/ImportConcurrencyTest.php
 tests/Feature/Importing/Api/ImportAccessoriesTest.php
 tests/Feature/Importing/Api/ImportLocationsTest.php
@@ -305,6 +307,7 @@ tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Auth/ApiLogoutTest.php
 tests/Feature/Auth/PassportPersonalAccessTokenGateTest.php
 tests/Feature/Auth/PassportOAuthClientGateTest.php
+tests/Feature/Auth/GoogleLoginTest.php
 tests/Feature/Livewire/OauthClientsAuthorizationTest.php
 tests/Feature/Livewire/AlertMenuTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
@@ -7452,6 +7455,7 @@ app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/ItemStillHasUsers.php
 app/Exceptions/ItemStillHasChildren.php
 app/Exceptions/ItemNotRequestable.php
+app/Exceptions/ImportRowRejected.php
 app/Exceptions/ItemStillHasAssets.php
 app/Exceptions/ItemStillHasLicenses.php
 app/Exceptions/UserDoestExistException.php
@@ -7889,6 +7893,7 @@ app/Console/Commands/RemoveExplicitEols.php
 app/Console/Commands/BulkDelete.php
 app/Console/Commands/CleanupOrphanActionLogs.php
 app/Console/Commands/FixUpAssignedTypeWithoutAssignedTo.php
+app/Console/Commands/DedupeAssets.php
 app/Console/Commands/PurgeEulaPDFs.php
 app/Console/Commands/PurgeLoginAttempts.php
 app/Console/Commands/MoveUploadsToNewDisk.php

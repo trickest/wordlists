@@ -4741,7 +4741,6 @@ core/modules/system/tests/fixtures/HtaccessTest/access_test.install
 core/modules/system/tests/fixtures/HtaccessTest/access_test.theme
 core/modules/system/tests/fixtures/update/drupal-8.update-test-semver-update-n-enabled.php
 core/modules/system/tests/fixtures/update/drupal-11.3.0.bare.standard.php.gz
-core/modules/system/tests/fixtures/update/uninstall-shortcut.php
 core/modules/system/tests/fixtures/update/drupal-8.update-test-schema-enabled.php
 core/modules/system/tests/fixtures/update/drupal-11.3.0.filled.standard.php.gz
 core/modules/system/tests/fixtures/IgnoreDirectories/a.txt
@@ -5505,8 +5504,11 @@ core/modules/user/tests/src/Kernel/UserConfigValidationTest.php
 core/modules/user/tests/src/Kernel/UserNameValidatorTest.php
 core/modules/user/tests/src/Kernel/UserRequirementsTest.php
 core/modules/user/tests/src/Kernel/Command/LoginCommandTest.php
+core/modules/user/tests/src/Kernel/NotificationHandlerTest.php
+core/modules/user/tests/src/Kernel/LoginFinalizerTest.php
 core/modules/user/tests/src/Kernel/UserEntityLabelTest.php
 core/modules/user/tests/src/Kernel/UserSaveStatusTest.php
+core/modules/user/tests/src/Kernel/LogoutFinalizerTest.php
 core/modules/user/tests/src/Kernel/UserAnonymousActivateTest.php
 core/modules/user/tests/src/Kernel/UserRoleEntityTest.php
 core/modules/user/tests/src/Kernel/ModulePermissionsLinkHelperTest.php
@@ -5566,6 +5568,7 @@ core/modules/user/src/Access/RegisterAccessCheck.php
 core/modules/user/src/Access/LoginStatusCheck.php
 core/modules/user/src/Access/PermissionAccessCheck.php
 core/modules/user/src/Access/RoleAccessCheck.php
+core/modules/user/src/LoginFinalizer.php
 core/modules/user/src/UserFloodControl.php
 core/modules/user/src/UserAuthenticationInterface.php
 core/modules/user/src/ProfileTranslationHandler.php
@@ -5573,6 +5576,7 @@ core/modules/user/src/ContextProvider/CurrentUserContext.php
 core/modules/user/src/UserListBuilder.php
 core/modules/user/src/Event/UserEvents.php
 core/modules/user/src/Event/UserFloodEvent.php
+core/modules/user/src/LogoutFinalizer.php
 core/modules/user/src/UserNameValidator.php
 core/modules/user/src/ToolbarLinkBuilder.php
 core/modules/user/src/PermissionHandlerInterface.php
@@ -5658,6 +5662,7 @@ core/modules/user/src/Form/UserPasswordForm.php
 core/modules/user/src/Form/UserPermissionsRoleSpecificForm.php
 core/modules/user/src/Form/UserCancelForm.php
 core/modules/user/src/Form/RoleSettingsForm.php
+core/modules/user/src/NotificationHandler.php
 core/modules/user/src/RegisterForm.php
 core/modules/user/user.libraries.yml
 core/modules/user/user.links.task.yml
@@ -8292,7 +8297,6 @@ core/modules/navigation/navigation.icons.yml
 core/modules/navigation/navigation.links.menu.yml
 core/modules/navigation/navigation.libraries.yml
 core/modules/navigation/navigation.permissions.yml
-core/modules/navigation/tests/fixtures/navigation_post_update.php
 core/modules/navigation/tests/navigation_test_block/navigation_test_block.info.yml
 core/modules/navigation/tests/navigation_test_block/src/Hook/NavigationTestBlockHooks.php
 core/modules/navigation/tests/navigation_test_block/src/Plugin/Block/NavigationTestBlock.php
@@ -8625,7 +8629,6 @@ core/modules/help/tests/modules/more_help_page_test/src/Hook/MoreHelpPageTestHoo
 core/modules/help/tests/modules/help_test/src/SupernovaGenerator.php
 core/modules/help/tests/modules/help_test/src/Hook/HelpTestHooks.php
 core/modules/help/tests/modules/help_test/help_test.info.yml
-core/modules/help/tests/fixtures/uninstall-search.php
 core/modules/help/tests/themes/help_topics_test_theme/help_topics/help_topics_test_theme.test.html.twig
 core/modules/help/tests/themes/help_topics_test_theme/help_topics_test_theme.info.yml
 core/modules/help/tests/src/Functional/GenericTest.php
@@ -9461,8 +9464,6 @@ core/modules/search/tests/src/Functional/SearchNodeUpdateAndDeletionTest.php
 core/modules/search/tests/src/Functional/GenericTest.php
 core/modules/search/tests/src/Functional/SearchBlockTest.php
 core/modules/search/tests/src/Functional/SearchCommentTest.php
-core/modules/search/tests/src/Functional/Update/SearchUpdateUserTest.php
-core/modules/search/tests/src/Functional/Update/SearchUpdateTest.php
 core/modules/search/tests/src/Functional/SearchEmbedFormTest.php
 core/modules/search/tests/src/Functional/SearchExactTest.php
 core/modules/search/tests/src/Functional/SearchNumbersTest.php
@@ -9488,7 +9489,6 @@ core/modules/search/tests/src/Functional/SearchCommentCountToggleTest.php
 core/modules/search/tests/src/Functional/SearchAdvancedSearchFormTest.php
 core/modules/search/tests/src/Functional/SearchPageCacheTagsTest.php
 core/modules/search/tests/src/Functional/SearchLanguageTest.php
-core/modules/search/tests/src/Functional/HelpSearchHelpUpgradeTest.php
 core/modules/search/tests/src/Functional/SearchNodeDiacriticsTest.php
 core/modules/search/tests/src/Functional/Jsonapi/SearchPageTest.php
 core/modules/search/tests/src/Unit/Database/ConnectionTest.php
@@ -10026,7 +10026,6 @@ core/themes/default_admin/src/Helper.php
 core/themes/default_admin/font/inter.woff2
 core/themes/default_admin/default_admin.info.yml
 core/themes/olivero/olivero.breakpoints.yml
-core/themes/olivero/theme-settings.php
 core/themes/olivero/js/messages.js
 core/themes/olivero/js/color-picker.js
 core/themes/olivero/js/message.theme.js
@@ -10160,6 +10159,7 @@ core/themes/olivero/tests/src/FunctionalJavascript/OliveroAvoidStorageUsingTest.
 core/themes/olivero/tests/src/Functional/OliveroTest.php
 core/themes/olivero/tests/src/Functional/NodeTitleTest.php
 core/themes/olivero/tests/src/Unit/OliveroHexToHslTest.php
+core/themes/olivero/tests/src/FunctionalJavaScript/AjaxTest.php
 core/themes/olivero/logo.svg
 core/themes/olivero/fonts/lora/lora-v14-latin-italic.woff2
 core/themes/olivero/fonts/lora/lora-v14-latin-regular.woff2
@@ -10168,6 +10168,7 @@ core/themes/olivero/fonts/metropolis/Metropolis-Regular.woff2
 core/themes/olivero/fonts/metropolis/Metropolis-Bold.woff2
 core/themes/olivero/fonts/metropolis/Metropolis-SemiBold.woff2
 core/themes/olivero/src/HexToHslTrait.php
+core/themes/olivero/src/Hook/OliveroThemeSettingsHooks.php
 core/themes/olivero/src/Hook/OliveroHooks.php
 core/themes/olivero/src/Hook/OliveroPagePreprocessHooks.php
 core/themes/olivero/src/OliveroPreRender.php
@@ -14155,6 +14156,7 @@ core/lib/Drupal/Core/File/HtaccessWriterInterface.php
 core/lib/Drupal/Core/File/FileSystemInterface.php
 core/lib/Drupal/Core/File/ProtectedDirectory.php
 core/lib/Drupal/Core/File/FileSystem.php
+core/lib/Drupal/Core/File/UploadedFilesExtractor.php
 core/lib/Drupal/Core/File/FileUrlGenerator.php
 core/lib/Drupal/Core/File/Event/FileUploadSanitizeNameEvent.php
 core/lib/Drupal/Core/File/Event/MimeTypeMapLoadedEvent.php
