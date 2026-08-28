@@ -10155,11 +10155,11 @@ core/themes/olivero/tests/src/Nightwatch/oliveroPreprocessInputTest.js
 core/themes/olivero/tests/src/Nightwatch/oliveroRemoveBlockConsoleTest.js
 core/themes/olivero/tests/src/Nightwatch/oliveroMobileMenuTest.js
 core/themes/olivero/tests/src/FunctionalJavascript/OliveroMessagesTest.php
+core/themes/olivero/tests/src/FunctionalJavascript/AjaxTest.php
 core/themes/olivero/tests/src/FunctionalJavascript/OliveroAvoidStorageUsingTest.php
 core/themes/olivero/tests/src/Functional/OliveroTest.php
 core/themes/olivero/tests/src/Functional/NodeTitleTest.php
 core/themes/olivero/tests/src/Unit/OliveroHexToHslTest.php
-core/themes/olivero/tests/src/FunctionalJavaScript/AjaxTest.php
 core/themes/olivero/logo.svg
 core/themes/olivero/fonts/lora/lora-v14-latin-italic.woff2
 core/themes/olivero/fonts/lora/lora-v14-latin-regular.woff2
@@ -12567,6 +12567,7 @@ core/tests/Drupal/KernelTests/Core/Installer/InstallerLanguageTest.php
 core/tests/Drupal/KernelTests/Core/Installer/InstallRequirementsTest.php
 core/tests/Drupal/KernelTests/Core/Queue/QueueSerializationTest.php
 core/tests/Drupal/KernelTests/Core/Queue/QueueTest.php
+core/tests/Drupal/KernelTests/Core/Queue/InstantQueueRunnerTest.php
 core/tests/Drupal/KernelTests/KernelTestBaseDatabaseDriverModuleTest.php
 core/tests/Drupal/KernelTests/Component/ComponentRenderTest.php
 core/tests/Drupal/KernelTests/Component/Render/FormattableMarkupKernelTest.php
@@ -15580,12 +15581,15 @@ core/lib/Drupal/Core/Installer/Form/SiteSettingsForm.php
 core/lib/Drupal/Core/Queue/QueueWorkerManager.php
 core/lib/Drupal/Core/Queue/QueueInterface.php
 core/lib/Drupal/Core/Queue/QueueWorkerInterface.php
+core/lib/Drupal/Core/Queue/QueueProcessTrait.php
 core/lib/Drupal/Core/Queue/QueueFactory.php
 core/lib/Drupal/Core/Queue/QueueDatabaseFactory.php
 core/lib/Drupal/Core/Queue/BatchMemory.php
 core/lib/Drupal/Core/Queue/RequeueException.php
+core/lib/Drupal/Core/Queue/InstantQueueRunner.php
 core/lib/Drupal/Core/Queue/QueueWorkerManagerInterface.php
 core/lib/Drupal/Core/Queue/QueueGarbageCollectionInterface.php
+core/lib/Drupal/Core/Queue/InstantQueueRunnerInterface.php
 core/lib/Drupal/Core/Queue/Attribute/QueueWorker.php
 core/lib/Drupal/Core/Queue/QueueWorkerBase.php
 core/lib/Drupal/Core/Queue/DatabaseQueue.php

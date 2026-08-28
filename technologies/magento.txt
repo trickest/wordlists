@@ -38174,9 +38174,12 @@ lib/internal/Magento/Framework/Cache/Frontend/Decorator/Logger.php
 lib/internal/Magento/Framework/Cache/Frontend/Decorator/Profiler.php
 lib/internal/Magento/Framework/Cache/Frontend/Decorator/Bare.php
 lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
+lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/RedisBase.php
+lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/SlaveAwareRedis.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/MagentoDatabaseAdapter.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/LowLevelFrontend.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/BackendWrapper.php
+lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/IdentifierNormalizer.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony/LowLevelBackend.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/Symfony.php
 lib/internal/Magento/Framework/Cache/Frontend/Adapter/PreloadingSymfonyAdapter.php
@@ -38200,6 +38203,7 @@ lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/Symfony/LowLevel
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/Symfony/LowLevelFrontendTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/Symfony/BackendWrapperTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/ZendTest.php
+lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/PreloadingSymfonyAdapterTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/FilesystemTagAdapterTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/RedisTagAdapterTest.php
 lib/internal/Magento/Framework/Cache/Test/Unit/Frontend/Adapter/SymfonyAdapters/GenericTagAdapterTest.php

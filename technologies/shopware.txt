@@ -7500,6 +7500,7 @@ tests/integration/Elasticsearch/Framework/Command/ElasticsearchAdminResetCommand
 tests/integration/Elasticsearch/Framework/Command/ElasticsearchResetCommandTest.php
 tests/integration/Elasticsearch/Framework/Indexing/ElasticsearchIndexerTest.php
 tests/integration/Elasticsearch/Framework/Indexing/IndexManagerTest.php
+tests/integration/Elasticsearch/Framework/SystemInstallListenerTest.php
 tests/integration/Elasticsearch/Product/ProductCustomFieldsUsedUpdaterTest.php
 tests/integration/Elasticsearch/Product/StopwordTokenFilterTest.php
 tests/integration/Elasticsearch/Product/ElasticsearchProductTest.php
@@ -8743,6 +8744,7 @@ tests/unit/Core/Checkout/DocumentV2/Generation/DocumentPersisterTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/ReferencedDocumentResolverTest.php
 tests/unit/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequestTest.php
 tests/unit/Core/Checkout/DocumentV2/Service/DocumentFileResolverTest.php
+tests/unit/Core/Checkout/DocumentV2/Service/DocumentReaderTest.php
 tests/unit/Core/Checkout/DocumentV2/Service/CreditItemResolverTest.php
 tests/unit/Core/Checkout/DocumentV2/Struct/ResolvedDocumentFileTest.php
 tests/unit/Core/Checkout/DocumentV2/Struct/RenderInputTest.php
@@ -9505,6 +9507,7 @@ tests/unit/Core/Framework/DataAbstractionLayer/Util/StatementHelperTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/Flag/IgnoreInUnusedMediaSearchTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/Flag/ApiAwareTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/Flag/WriteProtectedTest.php
+tests/unit/Core/Framework/DataAbstractionLayer/Field/JsonFieldTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/PasswordFieldTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/TranslatedFieldTest.php
 tests/unit/Core/Framework/DataAbstractionLayer/Field/AbstractFieldSerializerTest.php
@@ -9673,6 +9676,7 @@ tests/unit/Core/Framework/Routing/Validation/Constraint/RouteNotBlockedValidator
 tests/unit/Core/Framework/Routing/CoreSubscriberTest.php
 tests/unit/Core/Framework/Routing/Facade/RequestFacadeFactoryTest.php
 tests/unit/Core/Framework/Routing/Facade/RequestFacadeTest.php
+tests/unit/Core/Framework/Routing/Annotation/CriteriaValueResolverTest.php
 tests/unit/Core/Framework/Routing/SalesChannelRequestContextResolverTest.php
 tests/unit/Core/Framework/Routing/ApiRouteScopeTest.php
 tests/unit/Core/Framework/FeatureTest.php
@@ -10735,6 +10739,7 @@ tests/unit/Elasticsearch/Framework/AsyncAwsSignerTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchFieldBuilderTest.php
 tests/unit/Elasticsearch/Framework/ClientFactoryTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchOutdatedIndexDetectorTest.php
+tests/unit/Elasticsearch/Framework/SystemInstallListenerTest.php
 tests/unit/Elasticsearch/Framework/Subscriber/InvalidateExpiredCacheSubscriberTest.php
 tests/unit/Elasticsearch/Framework/ElasticsearchHelperTest.php
 tests/unit/Elasticsearch/ElasticsearchTest.php
@@ -10918,6 +10923,7 @@ tests/migration/Core/V6_8/Migration1763125892RemoveProductStatesColumnTest.php
 tests/migration/Core/V6_8/Migration1773829002RemoveRepairedDigitalProductStatesFlagTest.php
 tests/migration/Core/V6_8/Migration1777952601BackfillPrimaryOrderTransactionTest.php
 tests/migration/Core/V6_8/Migration1773829004RegisterProductStreamIndexerTest.php
+tests/migration/Core/V6_8/Migration1785810496ConvertLineItemProductStatesRuleConditionTest.php
 tests/migration/Core/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfileTest.php
 tests/migration/Core/V6_8/Migration1743256470RemoveElasticsearchAppConfigFlagTest.php
 tests/migration/Core/V6_8/Migration1779977359RemoveMailTemplateTypeTemplateDataColumnTest.php
@@ -10970,7 +10976,6 @@ tests/migration/Core/V6_7/Migration1761739065IncreaseProductWeightPrecisionTest.
 tests/migration/Core/V6_7/Migration1784801509AddIsExternalStorefrontToSalesChannelDomainTest.php
 tests/migration/Core/V6_7/Migration1776827954AddExactSubfieldFlagToProductSearchConfigFieldTest.php
 tests/migration/Core/V6_7/Migration1786378835AddDocumentBaseConfigFilenameInfixesTest.php
-tests/migration/Core/V6_7/Migration1785810496ConvertLineItemProductStatesRuleConditionTest.php
 tests/migration/Core/V6_7/Migration1741163941AddOrderInternalCommentTest.php
 tests/migration/Core/V6_7/Migration1756068711FixOrderAddressFirstNameLengthTest.php
 tests/migration/Core/V6_7/Migration1773829001MigrateProductStreamProductStatesFilterTest.php
@@ -11263,6 +11268,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoAssertsOnObjectsRul
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoDependsWithDataProviderRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/MockingSimpleObjectsNotAllowedRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoExpectExceptionMessageRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoCreateMockWithoutExpectationsRuleDisabledTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoBCPlanningDeprecationRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/PublicServiceDecoratorRule/NonPublicDecorator.php
@@ -11277,7 +11283,11 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule/not-in-class.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AbstractClassUsageRule/abstract-used.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoBCPlanningDeprecationRule/BCPlanningDeprecations.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/NewHierarchyParent.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/OldHierarchyParent.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/DirectHierarchyMethodTrait.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/BCChangeAttributeUsage.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/BCChangeAttributeUsageRule/HierarchyRoot.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610754FooBar.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610756Bar.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoDropStatementInUpdateRule/Migration1720610755Foo.php
@@ -11345,6 +11355,10 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/Task
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/UseCLIContextRule/TestCommand.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NonStandardFkGuardRule/Migration1785000001UnguardedDdl.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NonStandardFkGuardRule/Migration1785000002GuardedDdl.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyCompatibilityRule/FutureNarrowedProperty.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyCompatibilityRule/FutureReadonlyPropertyConsumer.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyCompatibilityRule/FutureReadonlyProperty.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyCompatibilityRule/FuturePropertyConsumer.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/container.xml
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/DeprecatedMethods.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DeprecatedMethodsThrowDeprecationRule/DeprecatedClass.php
@@ -11363,6 +11377,9 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRu
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/ToolWithoutTrait.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/ToolWithAbstractResponse.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/McpToolResponseTraitRule/ToolWithTrait.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyVisibilityChangeRule/property-access.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyVisibilityChangeRule/FutureProtectedProperty.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/FuturePropertyVisibilityChangeRule/FuturePrivateProperty.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DomainExceptionRule/ExcludedNamespace.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DomainExceptionRule/DomainExceptionViolations.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoNativeTimeClassRule/NativeTimeClassUsage.php
@@ -11463,6 +11480,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/s
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/MockingSimpleObjects/parent-class-test.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoAnyInvocationMatcherRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DomainExceptionRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/FuturePropertyVisibilityChangeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/MessagesShouldNotUsePHPStanTypesTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoAnyInvocationMatcherRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/UseCLIContextRuleTest.php
@@ -11472,11 +11490,13 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/TestPackageMatchRuleTest.ph
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PropertyNativeTypeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DALFieldsMustBeRegisteredWithSchemaBuilderTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/AttributeFinalRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoCreateMockWithoutExpectationsRuleNarrowingTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnserializeUsageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/PublicServiceDecoratorRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/config/configured_rule.neon
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Symplify/NoReturnSetterMethodWithFluentSettersRule/NoReturnSetterMethodWithFluentSettersRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ServiceDefinitionRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/FuturePropertyCompatibilityRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoNativeTimeFunctionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/ShopwareNamespaceStyleRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/DeprecatedMethodsThrowDeprecationRuleTest.php
@@ -13907,6 +13927,7 @@ src/Core/Migration/V6_8/Migration1743256470RemoveDebitPayment.php
 src/Core/Migration/V6_8/Migration1769676545RemoveOrderAddressVatIdColumn.php
 src/Core/Migration/V6_8/Migration1779977359RemoveMailTemplateTypeTemplateDataColumn.php
 src/Core/Migration/V6_8/Migration1777952600BackfillPrimaryOrderDelivery.php
+src/Core/Migration/V6_8/Migration1785810496ConvertLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1773409343AppMcpResource.php
 src/Core/Migration/V6_7/Migration1784801407AddHeadlessSeoUrlTemplate.php
 src/Core/Migration/V6_7/Migration1740563553AddAppRequestedPrivileges.php
@@ -14057,7 +14078,6 @@ src/Core/Migration/V6_7/Migration1773824493AddProviderColumnToProductExport.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodFlows.php
 src/Core/Migration/V6_7/Migration1742199552SalesChannelMeasurementUnits.php
 src/Core/Migration/V6_7/Migration1739197440ChangeCmsBlockDefaultMargin.php
-src/Core/Migration/V6_7/Migration1785810496ConvertLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1773829000MigrateLineItemProductStatesRuleCondition.php
 src/Core/Migration/V6_7/Migration1773322284ChangeDocumentReferencedDocumentIdConstraint.php
 src/Core/Migration/V6_7/Migration1785227700AddAdminActionAclPrivileges.php
@@ -14472,6 +14492,8 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFileExistsRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoConstraintViolationGetMessageRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/NoBCPlanningDeprecationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/BCChangeAttributeUsageRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/FuturePropertyVisibilityChangeRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/FuturePropertyCompatibilityRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/DeprecatedMethodsThrowDeprecationRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Deprecation/BCChangeMarkers.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUpdatesInExecuteQueryRule.php
@@ -14488,6 +14510,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Configuration.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Type/EntityExistenceHasEntityNameSpecifyingExtension.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Type/CollectionHasSpecifyingExtension.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Type/FieldIsSpecifyingExtension.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Type/FuturePropertyTypeExtension.php
 src/Core/DevOps/StaticAnalyze/PHPStan/rules.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/extension.neon
 src/Core/DevOps/StaticAnalyze/PHPStan/core-rules.neon
@@ -16203,6 +16226,7 @@ src/Core/Checkout/DocumentV2/Generation/DocumentGenerationRequest.php
 src/Core/Checkout/DocumentV2/DocumentSourceEntity.php
 src/Core/Checkout/DocumentV2/DocumentFormat.php
 src/Core/Checkout/DocumentV2/Service/DocumentFileResolver.php
+src/Core/Checkout/DocumentV2/Service/DocumentReader.php
 src/Core/Checkout/DocumentV2/Service/CreditItemResolver.php
 src/Core/Checkout/DocumentV2/Struct/AbstractRenderData.php
 src/Core/Checkout/DocumentV2/Struct/RenderInput.php
@@ -19025,6 +19049,7 @@ src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/ProductExtensi
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/ManyToOneProductDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/WasModifiedByUserFieldDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/ScalarExtension.php
+src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/ModifyJsonFieldExtension.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/SubDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/DateDefinition.php
 src/Core/Framework/Test/DataAbstractionLayer/Field/TestDefinition/SingleEntityDependencyTestDependencyDefinition.php
@@ -19167,6 +19192,7 @@ src/Core/Framework/Event/ShopwareSalesChannelEvent.php
 src/Core/Framework/Event/BeforeSendResponseEvent.php
 src/Core/Framework/Event/ProgressFinishedEvent.php
 src/Core/Framework/Event/ProgressAdvancedEvent.php
+src/Core/Framework/Event/SystemInstallCompletedEvent.php
 src/Core/Framework/Event/ProductAware.php
 src/Core/Framework/Event/SalesChannelContextAware.php
 src/Core/Framework/Event/LanguageAware.php
@@ -19878,10 +19904,13 @@ src/Core/Framework/Deprecation/BCChange/BecomesAbstract.php
 src/Core/Framework/Deprecation/BCChange/ParameterRemoval.php
 src/Core/Framework/Deprecation/BCChange/ParameterTypeWidening.php
 src/Core/Framework/Deprecation/BCChange/ParameterDefaultValueChange.php
+src/Core/Framework/Deprecation/BCChange/BecomesReadonly.php
 src/Core/Framework/Deprecation/BCChange/BecomesInternal.php
+src/Core/Framework/Deprecation/BCChange/PropertyTypeNarrowing.php
 src/Core/Framework/Deprecation/BCChange/ExtenderCompatibilityChange.php
 src/Core/Framework/Deprecation/BCChange/ReturnTypeWidening.php
 src/Core/Framework/Deprecation/BCChange/ClassHierarchyChange.php
+src/Core/Framework/Deprecation/BCChange/PropertyTypeWidening.php
 src/Core/Framework/Deprecation/BCChange/BCChangeAttribute.php
 src/Core/Framework/Deprecation/BCChange/NewRequiredParameter.php
 src/Core/Framework/Deprecation/BCChange/VisibilityChange.php
@@ -20408,6 +20437,7 @@ src/Elasticsearch/Framework/Command/ElasticsearchStatusCommand.php
 src/Elasticsearch/Framework/Command/ElasticsearchAdminIndexingCommand.php
 src/Elasticsearch/Framework/ElasticsearchOutdatedIndexDetector.php
 src/Elasticsearch/Framework/ElasticsearchIndexingUtils.php
+src/Elasticsearch/Framework/SystemInstallListener.php
 src/Elasticsearch/Framework/ElasticsearchRangeAggregation.php
 src/Elasticsearch/Framework/AbstractElasticsearchDefinition.php
 src/Elasticsearch/Framework/ElasticsearchLanguageProvider.php
@@ -24957,6 +24987,7 @@ src/Administration/Resources/app/administration/src/app/component/utils/sw-short
 src/Administration/Resources/app/administration/src/app/component/utils/sw-license-violation/sw-license-violation.scss
 src/Administration/Resources/app/administration/src/app/component/utils/sw-license-violation/sw-license-violation.html.twig
 src/Administration/Resources/app/administration/src/app/component/utils/sw-license-violation/index.js
+src/Administration/Resources/app/administration/src/app/component/utils/sw-license-violation/index.spec.js
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/sw-inherit-wrapper.spec.js
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/sw-inherit-wrapper.html.twig
 src/Administration/Resources/app/administration/src/app/component/utils/sw-inherit-wrapper/index.js

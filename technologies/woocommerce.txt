@@ -412,6 +412,7 @@ plugins/woocommerce/client/admin/client/task-lists/components/test/task-list.tes
 plugins/woocommerce/client/admin/client/task-lists/components/test/task-list-item.test.tsx
 plugins/woocommerce/client/admin/client/task-lists/components/task.tsx
 plugins/woocommerce/client/admin/client/task-lists/components/back-button.scss
+plugins/woocommerce/client/admin/client/task-lists/components/checklist.svg
 plugins/woocommerce/client/admin/client/task-lists/components/task-list-menu.tsx
 plugins/woocommerce/client/admin/client/task-lists/components/terms-of-service.js
 plugins/woocommerce/client/admin/client/task-lists/components/task-list.tsx
@@ -1624,6 +1625,7 @@ plugins/woocommerce/client/admin/client/analytics/report/customers/test/table.te
 plugins/woocommerce/client/admin/client/analytics/report/customers/config.js
 plugins/woocommerce/client/admin/client/analytics/report/customers/index.js
 plugins/woocommerce/client/admin/client/analytics/report/revenue/table.js
+plugins/woocommerce/client/admin/client/analytics/report/revenue/test/table.test.js
 plugins/woocommerce/client/admin/client/analytics/report/revenue/config.js
 plugins/woocommerce/client/admin/client/analytics/report/revenue/index.js
 plugins/woocommerce/client/admin/client/analytics/report/orders/table.js
@@ -1912,6 +1914,7 @@ plugins/woocommerce/client/blocks/package.json
 plugins/woocommerce/client/blocks/changelog/66286-add-review-block-offset
 plugins/woocommerce/client/blocks/changelog/65429-fix-rtl-settings-modal-buttons
 plugins/woocommerce/client/blocks/changelog/dev-deprecate-wc-entities-global
+plugins/woocommerce/client/blocks/changelog/testops-234-fix-js-ci-changes-globs
 plugins/woocommerce/client/blocks/changelog/dev-remove-unused-markdown-it
 plugins/woocommerce/client/blocks/changelog/clarify-blocks-package-api-boundaries
 plugins/woocommerce/client/blocks/storybook/main.mjs
@@ -4940,6 +4943,7 @@ plugins/woocommerce/eslint.config.mjs
 plugins/woocommerce/package.json
 plugins/woocommerce/changelog/fix-53234-repair-corrupted-dashboard-sections
 plugins/woocommerce/changelog/update-php-dev-dependency-security-patches
+plugins/woocommerce/changelog/fix-order-withdrawal-intro-copy
 plugins/woocommerce/changelog/fix-external-product-category-count
 plugins/woocommerce/changelog/fix-identifier-placeholders-sessions
 plugins/woocommerce/changelog/update-react-number-format-5
@@ -4957,11 +4961,14 @@ plugins/woocommerce/changelog/wc-67498-front-page-filters-design
 plugins/woocommerce/changelog/fix-tests-base-teardown-singleton-cleanup
 plugins/woocommerce/changelog/32209-add-phone-to-customer-reports
 plugins/woocommerce/changelog/update-patterns-category-name
+plugins/woocommerce/changelog/fix-wc-get-orders-day-precision-timezone
 plugins/woocommerce/changelog/fix-55817-rtl-pagination-arrows
 plugins/woocommerce/changelog/fix-wooairr-31-stale-combined-translations
+plugins/woocommerce/changelog/fix-68092-error-notices-from-plugin-error
 plugins/woocommerce/changelog/update-mini-cart-default-labels
 plugins/woocommerce/changelog/fix-35635-account-orders-column-filter
 plugins/woocommerce/changelog/fix-product-category-display-type-normalization
+plugins/woocommerce/changelog/fix-deferred-order-item-deletion
 plugins/woocommerce/changelog/67711-fix-order-attribution-form-dedup
 plugins/woocommerce/changelog/fix-catalog-sorting-label-alignment
 plugins/woocommerce/changelog/67459-lv-postcode-validation
@@ -4997,6 +5004,7 @@ plugins/woocommerce/changelog/fix-67697-customer-history-excluded-long-statuses
 plugins/woocommerce/changelog/fix-mini-cart-pattern-wrappers
 plugins/woocommerce/changelog/fix-analytics-customer-type-import-order
 plugins/woocommerce/changelog/remove-abandoned-cart-recovery-feature
+plugins/woocommerce/changelog/wccom-2882-marketplace-tab-focus-ring
 plugins/woocommerce/changelog/30996-focus-product-search
 plugins/woocommerce/changelog/fix-phpcs-relative-sniff-path
 plugins/woocommerce/changelog/codex-fix-product-filters-zero-block-gap
@@ -5004,6 +5012,7 @@ plugins/woocommerce/changelog/fix-35607-product-search-order
 plugins/woocommerce/changelog/pr-37557
 plugins/woocommerce/changelog/wooplug-59489-coupon-error-event
 plugins/woocommerce/changelog/fix-51088-analytics-translations-combined-file
+plugins/woocommerce/changelog/performance-67913-cap-prices-transient-size
 plugins/woocommerce/changelog/fix-outofstock-update-since
 plugins/woocommerce/changelog/42469-keep-incompatible-notice-dismissed
 plugins/woocommerce/changelog/67354-fix-own-stock-reservation-lockout
@@ -5015,18 +5024,22 @@ plugins/woocommerce/changelog/67978-add-localized-thousands-separators-to-legacy
 plugins/woocommerce/changelog/performance-products-reordering-ajax
 plugins/woocommerce/changelog/67496-fix-sale-price-dates-help-tip-position
 plugins/woocommerce/changelog/move-customers-csv-role-column-to-end
+plugins/woocommerce/changelog/fix-37121-sequential-coupon-order
 plugins/woocommerce/changelog/fix-week-start-setting
 plugins/woocommerce/changelog/41225-performance-skip-review-lookup-updates
 plugins/woocommerce/changelog/fix-identifier-placeholders-orders
+plugins/woocommerce/changelog/fix-wooplug-4518-duplicate-manual-order-customers
 plugins/woocommerce/changelog/fix-wooairr-48-taxes-report-columns-bc
 plugins/woocommerce/changelog/wooplug-7554-add-tooling-catalog
 plugins/woocommerce/changelog/fix-blocks-interactivity-entries-path-substring
 plugins/woocommerce/changelog/fix-wooairr-128-editor-scoped-subtotal-sync
 plugins/woocommerce/changelog/fix-wooairr-102-settings-stale-error
+plugins/woocommerce/changelog/add-dismiss-whats-next-tasks
 plugins/woocommerce/changelog/fix-62620-hpos-order-notes-orphaned
 plugins/woocommerce/changelog/update-catalog-sorting-content-width
 plugins/woocommerce/changelog/67931-revert-67751-fix-67354-own-reserved-stock-grace-window
 plugins/woocommerce/changelog/add-payment-placement-contract-tests
+plugins/woocommerce/changelog/66520-fix-revenue-table-stale-rows
 plugins/woocommerce/changelog/dev-remove-autoprefixer-legacy-css
 plugins/woocommerce/changelog/fix-remove-dead-slowdbquery-suppression
 plugins/woocommerce/changelog/performance-tuneup-product-caches-invalidation
@@ -5061,6 +5074,7 @@ plugins/woocommerce/changelog/fix-wooplug-3391-stale-task-redirect
 plugins/woocommerce/changelog/42492-product-collection-sort-fixtures
 plugins/woocommerce/changelog/wooairr-126-product-filters-block-gap-guard
 plugins/woocommerce/changelog/fix-29727-csv-importer-plus-in-path
+plugins/woocommerce/changelog/44157-fix-paypal-api-credentials-link
 plugins/woocommerce/changelog/fix-44554-analytics-excluded-long-custom-statuses
 plugins/woocommerce/changelog/66072-perf-v4-customer-schema-gate-aggregates
 plugins/woocommerce/changelog/fix-28591-coupon-discount-on-edited-order-totals
@@ -5075,6 +5089,7 @@ plugins/woocommerce/changelog/fix-wooplug-1113-revenue-tax-refunded-orders
 plugins/woocommerce/changelog/dev-settings-request-boundary-suppressions
 plugins/woocommerce/changelog/dev-settings-registration-admin-init-priority
 plugins/woocommerce/changelog/update-action-scheduler-via-automation
+plugins/woocommerce/changelog/disable-helcim-recommendations
 plugins/woocommerce/changelog/fix-64557-transient-version-precision
 plugins/woocommerce/changelog/wooprd-3662-remove-activity-panel
 plugins/woocommerce/changelog/bis-features-screen-toggle
@@ -5090,13 +5105,16 @@ plugins/woocommerce/changelog/fix-settings-ui-dataviews-17-compatibility
 plugins/woocommerce/changelog/dev-remove-unused-grunt-phpcs-clean
 plugins/woocommerce/changelog/prepare-order-item-deletion-query
 plugins/woocommerce/changelog/65484-fix-cart-item-data-non-scalar
+plugins/woocommerce/changelog/fix-68028-deleted-product-lookup
 plugins/woocommerce/changelog/60577-featured-image-metadata-loss
+plugins/woocommerce/changelog/patch-2
 plugins/woocommerce/changelog/fix-wooprd-3593-settings-ui-components
 plugins/woocommerce/changelog/66953-unify-postcode-validation
 plugins/woocommerce/changelog/add-identifier-placeholder-sniff
 plugins/woocommerce/changelog/fix-product-description-recursion-guard
 plugins/woocommerce/changelog/fix-67169-historical-data-description-copy
 plugins/woocommerce/changelog/fix-lv-postcode-separator
+plugins/woocommerce/changelog/fix-48583-cart-empty-message-translation
 plugins/woocommerce/changelog/fix-53766-fee-tax_status-non-taxable
 plugins/woocommerce/woocommerce.php
 plugins/woocommerce/phpunit.xml
@@ -5832,6 +5850,7 @@ plugins/woocommerce/tests/php/includes/data-stores/class-wc-product-grouped-data
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-shipping-zone-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-coupon-data-store-cpt-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-order-item-data-store-test.php
+plugins/woocommerce/tests/php/includes/data-stores/class-wc-order-date-query-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-customer-download-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-webhook-data-store-test.php
 plugins/woocommerce/tests/php/includes/data-stores/class-wc-data-store-wp-test.php
@@ -10352,6 +10371,7 @@ docs/contribution/testing/beta-testing.md
 docs/contribution/testing/README.md
 docs/contribution/testing/writing-high-quality-testing-instructions.md
 docs/contribution/testing/core-critical-flows.md
+docs/contribution/releases/decision-matrix.md
 docs/contribution/releases/backporting.md
 docs/contribution/releases/workflows.md
 docs/contribution/releases/monitoring.md
@@ -11655,6 +11675,7 @@ packages/js/data/changelog/fix-wooairr-102-settings-stale-error
 packages/js/data/changelog/65662-dev-65627-postrelease-cleanup
 packages/js/data/changelog/.gitkeep
 packages/js/data/changelog/33593-isolate-leaderboard-queries
+packages/js/data/changelog/fix-dismiss-task-list-scope
 packages/js/data/README.md
 packages/js/data/CHANGELOG.md
 packages/js/data/babel.config.js
@@ -11961,6 +11982,7 @@ packages/js/experimental/changelog/tweak-woo-home-dashboard-task-styles
 packages/js/experimental/changelog/wooplug-6930-eslint-v10-flat-config
 packages/js/experimental/changelog/woo6-109-storybook-10
 packages/js/experimental/changelog/wooplug-7554-add-tooling-catalog
+packages/js/experimental/changelog/add-dismiss-whats-next-tasks
 packages/js/experimental/changelog/.gitkeep
 packages/js/experimental/README.md
 packages/js/experimental/CHANGELOG.md

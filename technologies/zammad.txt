@@ -112,6 +112,7 @@ db/migrate/20220504133218_setting_updates3.rb
 db/migrate/20220131135531_issue3940_add_index.rb
 db/migrate/20220803153227_issue_4050_image_in_note.rb
 db/migrate/20240314093207_trigger_scheduler_localization_improvements.rb
+db/migrate/20260819120000_cleanup_orphaned_cti_caller_ids.rb
 db/migrate/20180919000000_setting_update_pretty_date_format.rb
 db/migrate/20240909062110_create_active_storage_variant_records.active_storage.rb
 db/migrate/20250630120846_create_ai_agents.rb
@@ -5835,6 +5836,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/t
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/ArticleMetaAddress.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/ArticleMetaSecurity.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/useArticleMeta.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/ArticleMetaAccountedTime.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/__tests__/useArticleMeta.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/__tests__/ArticleMeta.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/ArticleMetaWhatsappMessageStatus.vue
@@ -5913,13 +5915,13 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/useArticleHighlights/useArticleHighlights.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/useArticleHighlights/utils.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleSecurityStatusBar.spec.ts
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleMetaFields.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleBody.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleSecurityWarning.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubble.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleFooter.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/useBubbleHeader.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleBlockedContentWarning.spec.ts
-app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleHeaderMetaFields.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleActionList.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleHeader.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleBubble/__tests__/ArticleBubbleMediaError.spec.ts
@@ -10341,6 +10343,7 @@ spec/db/migrate/issue_3245_office_365_microsoft_rename_spec.rb
 spec/db/migrate/issue_3446_microsoft_365_tenants_spec.rb
 spec/db/migrate/normalize_setting_ticket_number_ignore_system_id_spec.rb
 spec/db/migrate/issue_3141_multi_ldap_spec.rb
+spec/db/migrate/cleanup_orphaned_cti_caller_ids_spec.rb
 spec/db/migrate/issue_3346_xoauth2_token_not_fetched_spec.rb
 spec/db/migrate/rename_ticket_overview_priority_icon_setting_spec.rb
 spec/db/migrate/rename_notification_sender_spec.rb
