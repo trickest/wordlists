@@ -25,6 +25,7 @@ modules/dashboard/tests/classes/ReportPeriodCalculatorTest.php
 modules/dashboard/tests/classes/ReportQueryBuilderTest.php
 modules/dashboard/tests/classes/ReportFetchDataTest.php
 modules/dashboard/tests/classes/ReportDateDataSetTest.php
+modules/dashboard/tests/classes/TrafficLoggerPersistenceTest.php
 modules/dashboard/lang/pl.json
 modules/dashboard/lang/da.json
 modules/dashboard/lang/hu.json
@@ -328,6 +329,7 @@ modules/tailor/tests/fixtures/blueprints/landing/blockbuilder/featurette.yaml
 modules/tailor/tests/fixtures/blueprints/landing/blockbuilder/common.yaml
 modules/tailor/tests/fixtures/blueprints/landing/blockbuilder.yaml
 modules/tailor/tests/fixtures/blueprints/landing/landing-page.yaml
+modules/tailor/tests/components/SubmissionComponentTest.php
 modules/tailor/tests/controllers/EntriesTest.php
 modules/tailor/tests/database/EntriesFieldModelTest.php
 modules/tailor/tests/classes/BlueprintIndexerTest.php
@@ -774,6 +776,8 @@ modules/system/tests/fixtures/plugins/database/tester/updates/create_countries_t
 modules/system/tests/fixtures/plugins/database/tester/updates/create_tags_table.php
 modules/system/tests/fixtures/plugins/database/tester/updates/create_double_join_table.php
 modules/system/tests/fixtures/plugins/database/tester/blueprints/category.yaml
+modules/system/tests/fixtures/plugins/database/tester/blueprints/upload.yaml
+modules/system/tests/fixtures/plugins/database/tester/blueprints/contact.yaml
 modules/system/tests/fixtures/plugins/database/tester/blueprints/author.yaml
 modules/system/tests/fixtures/plugins/database/tester/blueprints/post-content.yaml
 modules/system/tests/fixtures/plugins/database/tester/blueprints/post.yaml
@@ -822,6 +826,7 @@ modules/system/tests/classes/SiteManagerTest.php
 modules/system/tests/classes/ResizeImageItemTest.php
 modules/system/tests/classes/DependencyResolverTest.php
 modules/system/tests/classes/ChangelogWidgetTest.php
+modules/system/tests/classes/ExceptionHandlerTest.php
 modules/system/tests/classes/PluginManagerTest.php
 modules/system/tests/classes/CoreLangTest.php
 modules/system/tests/classes/MarkupExtensionItemTest.php
@@ -2184,6 +2189,7 @@ modules/backend/tests/models/BackendUserResetPasswordTest.php
 modules/backend/tests/models/ExportModelTest.php
 modules/backend/tests/database/ImportModelDbTest.php
 modules/backend/tests/classes/WidgetManagerTest.php
+modules/backend/tests/classes/ControllerAjaxTest.php
 modules/backend/tests/classes/NavigationManagerTest.php
 modules/backend/tests/classes/RoleManagerTest.php
 modules/backend/helpers/Inspector.php
@@ -3021,6 +3027,7 @@ modules/cms/traits/ParsableAttributes.php
 modules/cms/behaviors/formcomponent/default.htm
 modules/cms/behaviors/ListComponent.php
 modules/cms/behaviors/FormComponent.php
+modules/cms/behaviors/WizardComponent.php
 modules/cms/components/TranslatableBag.php
 modules/cms/components/ViewBag.php
 modules/cms/components/UnknownComponent.php
@@ -3507,9 +3514,12 @@ themes/demo/seeds/data.yaml
 themes/demo/esbuild.config.js
 themes/demo/partials/elements/user-panel-team.htm
 themes/demo/partials/elements/social-links.htm
+themes/demo/partials/elements/success-message.htm
 themes/demo/partials/elements/user-panel-author.htm
 themes/demo/partials/elements/share-button.htm
 themes/demo/partials/elements/user-panel.htm
+themes/demo/partials/survey/survey-modal.htm
+themes/demo/partials/survey/survey-form.htm
 themes/demo/partials/site/footer.htm
 themes/demo/partials/site/nav-footer.htm
 themes/demo/partials/site/nav-mobile.htm
@@ -3550,6 +3560,7 @@ themes/demo/content/ajax/calcresult.txt
 themes/demo/theme.yaml
 themes/demo/README.md
 themes/demo/blueprints/site/menus.yaml
+themes/demo/blueprints/site/survey.yaml
 themes/demo/blueprints/site/menus/_sitemap_item.yaml
 themes/demo/blueprints/site/menus/_menu_item.yaml
 themes/demo/blueprints/blog/category.yaml
@@ -3601,6 +3612,7 @@ themes/demo/assets/images/blocks/landing-page-slice.svg
 themes/demo/assets/images/waves/footer-blue-wave.svg
 themes/demo/assets/images/waves/footer-wave.svg
 themes/demo/assets/images/waves/header-wave.svg
+themes/demo/assets/vendor/jquery-global-shim.js
 themes/demo/assets/vendor/codeblocks/codeblocks.min.js
 themes/demo/assets/vendor/codeblocks/codeblocks.js
 themes/demo/assets/vendor/slick-carousel/slick.min.js

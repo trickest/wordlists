@@ -1653,6 +1653,7 @@ plugins/woocommerce/client/admin/client/stylesheets/shared/_index.scss
 plugins/woocommerce/client/admin/client/stylesheets/shared/_reset.scss
 plugins/woocommerce/client/admin/client/stylesheets/_index.scss
 plugins/woocommerce/client/admin/client/stylesheets/_embed.scss
+plugins/woocommerce/client/admin/client/lib/async-requests/test/index.js
 plugins/woocommerce/client/admin/client/lib/async-requests/index.js
 plugins/woocommerce/client/admin/client/lib/init-remote-logging.ts
 plugins/woocommerce/client/admin/client/lib/get-selected-chart/index.js
@@ -4985,11 +4986,13 @@ plugins/woocommerce/changelog/update-patterns-category-name
 plugins/woocommerce/changelog/fix-wc-get-orders-day-precision-timezone
 plugins/woocommerce/changelog/fix-55817-rtl-pagination-arrows
 plugins/woocommerce/changelog/fix-wooairr-31-stale-combined-translations
+plugins/woocommerce/changelog/fix-wooplug-529-refunded-order-count
 plugins/woocommerce/changelog/fix-checkbox-description-markup
 plugins/woocommerce/changelog/fix-68092-error-notices-from-plugin-error
 plugins/woocommerce/changelog/update-mini-cart-default-labels
 plugins/woocommerce/changelog/fix-35635-account-orders-column-filter
 plugins/woocommerce/changelog/fix-product-category-display-type-normalization
+plugins/woocommerce/changelog/fix-wooplug-7557-report-aggregation-queries
 plugins/woocommerce/changelog/fix-39052-normalize-ces-submit-label
 plugins/woocommerce/changelog/fix-woo6-119-context-specific-output-escaping
 plugins/woocommerce/changelog/67711-fix-order-attribution-form-dedup
@@ -5009,6 +5012,7 @@ plugins/woocommerce/changelog/dev-phpcs-test-hook-sniff-exclusions
 plugins/woocommerce/changelog/refactor-wooplug-656-split-orders-stats-tests
 plugins/woocommerce/changelog/fix-46459-core-deprecation-versions
 plugins/woocommerce/changelog/add-quantity-selector-border-radius
+plugins/woocommerce/changelog/fix-woo6-121-hook-docs-and-output-suppressions
 plugins/woocommerce/changelog/fix-price-html-sanitizer-dir-attr
 plugins/woocommerce/changelog/fix-analytics-settings-report-cache
 plugins/woocommerce/changelog/67855-hook-docs-generator-guards
@@ -5024,6 +5028,7 @@ plugins/woocommerce/changelog/fix-7579-installing-rewrite-call-sites
 plugins/woocommerce/changelog/fix-wooplug-6420-taxes-report-date-type
 plugins/woocommerce/changelog/fix-cancel-order-refresh-error
 plugins/woocommerce/changelog/fix-62151-refund-fix-tool-notice
+plugins/woocommerce/changelog/fix-wooplug-7556-rest-product-query-suppressions
 plugins/woocommerce/changelog/fix-38574-tracker-retry-snapshots
 plugins/woocommerce/changelog/fix-wooplug-7659-order-key-array-guards
 plugins/woocommerce/changelog/31339-payment-method-all-methods-label
@@ -5040,11 +5045,13 @@ plugins/woocommerce/changelog/36758-product-category-list-order
 plugins/woocommerce/changelog/fix-woo6-120-mis-scoped-output-suppressions
 plugins/woocommerce/changelog/fix-toggle-bubble-cleanup
 plugins/woocommerce/changelog/fix-31637-rtl-currency-symbol-bidi
+plugins/woocommerce/changelog/revert-pr-68036
 plugins/woocommerce/changelog/fix-67697-customer-history-excluded-long-statuses
 plugins/woocommerce/changelog/fix-mini-cart-pattern-wrappers
 plugins/woocommerce/changelog/fix-analytics-customer-type-import-order
 plugins/woocommerce/changelog/fix-woo6-124-widget-html-rendering-suppressions
 plugins/woocommerce/changelog/remove-abandoned-cart-recovery-feature
+plugins/woocommerce/changelog/wooplug-7542-match-global-unique-id
 plugins/woocommerce/changelog/fix-cancel-order-redirect-callback
 plugins/woocommerce/changelog/wccom-2882-marketplace-tab-focus-ring
 plugins/woocommerce/changelog/30996-focus-product-search
@@ -5058,6 +5065,7 @@ plugins/woocommerce/changelog/fix-68084-plugin-install-error-message
 plugins/woocommerce/changelog/performance-67913-cap-prices-transient-size
 plugins/woocommerce/changelog/fix-outofstock-update-since
 plugins/woocommerce/changelog/fix-yoast-replace-editor-reentry
+plugins/woocommerce/changelog/wooa7s-1857-repeatable-report-downloads
 plugins/woocommerce/changelog/42469-keep-incompatible-notice-dismissed
 plugins/woocommerce/changelog/67354-fix-own-stock-reservation-lockout
 plugins/woocommerce/changelog/fix-68145-skip-themes-rewrite-flush
@@ -5069,9 +5077,11 @@ plugins/woocommerce/changelog/performance-products-reordering-ajax
 plugins/woocommerce/changelog/67496-fix-sale-price-dates-help-tip-position
 plugins/woocommerce/changelog/dev-clean-settings-ui-styles
 plugins/woocommerce/changelog/move-customers-csv-role-column-to-end
+plugins/woocommerce/changelog/wooa7s-1541-customer-filter-tag-label
 plugins/woocommerce/changelog/fix-37121-sequential-coupon-order
 plugins/woocommerce/changelog/fix-variation-selector-placeholder-terms
 plugins/woocommerce/changelog/dev-remove-settings-ui-group-actions
+plugins/woocommerce/changelog/fix-woo6-117-extensible-sql-contract-suppressions
 plugins/woocommerce/changelog/fix-variation-bulk-save-race
 plugins/woocommerce/changelog/fix-week-start-setting
 plugins/woocommerce/changelog/41225-performance-skip-review-lookup-updates
@@ -5087,7 +5097,6 @@ plugins/woocommerce/changelog/fix-wooairr-128-editor-scoped-subtotal-sync
 plugins/woocommerce/changelog/fix-wooairr-102-settings-stale-error
 plugins/woocommerce/changelog/fix-31068-order-item-qty-validation
 plugins/woocommerce/changelog/remove-obsolete-block-patterns
-plugins/woocommerce/changelog/68036-woopmnt-6354-tokenization-form-footer
 plugins/woocommerce/changelog/add-dismiss-whats-next-tasks
 plugins/woocommerce/changelog/fix-62620-hpos-order-notes-orphaned
 plugins/woocommerce/changelog/update-catalog-sorting-content-width
@@ -5098,6 +5107,7 @@ plugins/woocommerce/changelog/dev-remove-autoprefixer-legacy-css
 plugins/woocommerce/changelog/fix-remove-dead-slowdbquery-suppression
 plugins/woocommerce/changelog/performance-tuneup-product-caches-invalidation
 plugins/woocommerce/changelog/fix-product-widget-slowdbquery-suppressions
+plugins/woocommerce/changelog/68079-add-bis-e2e-signup-and-email-branch-coverage
 plugins/woocommerce/changelog/fix-hydration-restore-cart-context
 plugins/woocommerce/changelog/fix-woo6-113-auth-callback-suppressions
 plugins/woocommerce/changelog/fix-pos-catalog-response-url
@@ -5124,16 +5134,21 @@ plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-wccom-2840-surface-subscriptions-api-errors
 plugins/woocommerce/changelog/test-rest-api-taxes
 plugins/woocommerce/changelog/50786-add-server-side-search-opt-out
+plugins/woocommerce/changelog/fix-verbose-page-rule-detection
 plugins/woocommerce/changelog/fix-consistent-stock-threshold-sanitization
 plugins/woocommerce/changelog/update-plugin-directory-screenshots
 plugins/woocommerce/changelog/fix-woo6-126-template-markup-suppressions
+plugins/woocommerce/changelog/wooplug-1772-per-order-guest-names
 plugins/woocommerce/changelog/fix-variation-selector-custom-attribute-identity
 plugins/woocommerce/changelog/fix-blueprint-exclude-payment-settings
+plugins/woocommerce/changelog/test-rest-api-orders-refunds
+plugins/woocommerce/changelog/fix-store-api-order-item-data-schema
 plugins/woocommerce/changelog/fix-66720-scheduled-sales-churn
 plugins/woocommerce/changelog/dev-ci-jobs-job-level-ignore
 plugins/woocommerce/changelog/fix-wooplug-3391-stale-task-redirect
 plugins/woocommerce/changelog/42492-product-collection-sort-fixtures
 plugins/woocommerce/changelog/wooairr-126-product-filters-block-gap-guard
+plugins/woocommerce/changelog/fix-wooplug-7559-product-widget-sorting
 plugins/woocommerce/changelog/fix-29727-csv-importer-plus-in-path
 plugins/woocommerce/changelog/fix-store-api-item-data-hidden-type
 plugins/woocommerce/changelog/wccom-2892-quality-badge-compact-card-placement
@@ -5142,6 +5157,7 @@ plugins/woocommerce/changelog/fix-tracker-unbuildable-snapshot-retries
 plugins/woocommerce/changelog/fix-featured-items-image-editor-natural-size
 plugins/woocommerce/changelog/fix-44554-analytics-excluded-long-custom-statuses
 plugins/woocommerce/changelog/66072-perf-v4-customer-schema-gate-aggregates
+plugins/woocommerce/changelog/performance-admin-ajax-inbox-note-cleanup
 plugins/woocommerce/changelog/fix-28591-coupon-discount-on-edited-order-totals
 plugins/woocommerce/changelog/fix-receipt-payment-method-non-string
 plugins/woocommerce/changelog/fix-41577-nbsp-separator-entities
@@ -5164,6 +5180,7 @@ plugins/woocommerce/changelog/update-action-scheduler-via-automation
 plugins/woocommerce/changelog/fix-64557-transient-version-precision
 plugins/woocommerce/changelog/wooprd-3662-remove-activity-panel
 plugins/woocommerce/changelog/bis-features-screen-toggle
+plugins/woocommerce/changelog/performance-scope-product-import-cleanup
 plugins/woocommerce/changelog/fix-36937-installing-rewrite-flush
 plugins/woocommerce/changelog/fix-variation-report-order-pluralization
 plugins/woocommerce/changelog/fix-admin-dataviews-uuid-dependency
@@ -5171,6 +5188,7 @@ plugins/woocommerce/changelog/fix-blocks-hook-docs-pipeline
 plugins/woocommerce/changelog/fix-store-api-order-awaiting-payment
 plugins/woocommerce/changelog/fix-woo6-115-public-interaction-suppressions
 plugins/woocommerce/changelog/fix-67170-historical-data-actions-alignment
+plugins/woocommerce/changelog/wooa7s-1541-downloads-customer-filter
 plugins/woocommerce/changelog/65412-fix-hidden-required-fields
 plugins/woocommerce/changelog/wooplug-7407-white-classic-editor-tools
 plugins/woocommerce/changelog/deprecate-brand-recount-methods
@@ -5828,6 +5846,7 @@ plugins/woocommerce/includes/wc-page-functions.php
 plugins/woocommerce/NEXT_CHANGELOG.md
 plugins/woocommerce/tests/unit-tests/admin/class-wc-tests-admin-post-types.php
 plugins/woocommerce/tests/unit-tests/widgets/class-wc-tests-widget-layered-nav.php
+plugins/woocommerce/tests/php/templates/single-product/SingleProductReviewsTemplateTest.php
 plugins/woocommerce/tests/php/templates/single-product/SingleProductMetaTemplateTest.php
 plugins/woocommerce/tests/php/templates/checkout/ThankyouTemplateTest.php
 plugins/woocommerce/tests/php/bin/run-phpunit.sh
@@ -5919,6 +5938,8 @@ plugins/woocommerce/tests/php/includes/admin/class-wc-admin-reports-customers-co
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-notices-test.php
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-taxonomies-test.php
 plugins/woocommerce/tests/php/includes/admin/class-wc-admin-status-template-versions-test.php
+plugins/woocommerce/tests/php/includes/widgets/class-wc-widget-products-test.php
+plugins/woocommerce/tests/php/includes/widgets/class-wc-widget-top-rated-products-test.php
 plugins/woocommerce/tests/php/includes/class-woocommerce-test.php
 plugins/woocommerce/tests/php/includes/class-wc-shipping-test.php
 plugins/woocommerce/tests/php/includes/class-wc-template-loader-test.php
@@ -6720,6 +6741,7 @@ plugins/woocommerce/tests/php/src/Proxies/LegacyProxyTest.php
 plugins/woocommerce/tests/php/src/AutoloaderTest.php
 plugins/woocommerce/tests/php/src/Admin/Settings/SettingsSectionRegistryTest.php
 plugins/woocommerce/tests/php/src/Admin/PageControllerTest.php
+plugins/woocommerce/tests/php/src/Admin/ReportExporterTest.php
 plugins/woocommerce/tests/php/src/Admin/PluginsHelperTest.php
 plugins/woocommerce/tests/php/src/Admin/Features/ShippingPartnerSuggestions/DefaultShippingPartnersTest.php
 plugins/woocommerce/tests/php/src/Admin/Features/Analytics/FeatureEnabledTest.php
@@ -6763,6 +6785,7 @@ plugins/woocommerce/tests/php/src/Admin/Features/Fulfillments/FulfillmentsManage
 plugins/woocommerce/tests/php/src/Admin/Features/Fulfillments/FulfillmentsSettingsTest.php
 plugins/woocommerce/tests/php/src/Admin/PageControllerCurrentScreenTest.php
 plugins/woocommerce/tests/php/src/Admin/RemoteSpecs/RuleProcessors/TotalPaymentsVolumeProcessorTest.php
+plugins/woocommerce/tests/php/src/Admin/ReportCSVEmailTest.php
 plugins/woocommerce/tests/php/src/Admin/ReportsSyncTest.php
 plugins/woocommerce/tests/php/src/Admin/API/LaunchYourStoreTest.php
 plugins/woocommerce/tests/php/src/Admin/API/MarketingCampaignsTest.php
@@ -6793,6 +6816,7 @@ plugins/woocommerce/tests/php/src/Admin/API/Reports/Orders/Stats/OrdersStatsTest
 plugins/woocommerce/tests/php/src/Admin/API/OnboardingProfileTest.php
 plugins/woocommerce/tests/php/src/Admin/Marketing/MarketingChannelsTest.php
 plugins/woocommerce/tests/php/src/Admin/Marketing/MarketingCampaignTest.php
+plugins/woocommerce/tests/php/src/Admin/Notes/NotesTest.php
 plugins/woocommerce/tests/php/framework/class-wc-lazy-rest-server-test.php
 plugins/woocommerce/tests/performance/requests/api/orders.js
 plugins/woocommerce/tests/performance/requests/merchant/orders-search.js
@@ -12168,6 +12192,7 @@ packages/js/components/changelog/fix-select-control-inline-tag-alignment
 packages/js/components/changelog/.gitkeep
 packages/js/components/changelog/66477-sprinkle-filter-picker-colon
 packages/js/components/changelog/fix-wooplug-1016-ellipsis-menu-labels
+packages/js/components/changelog/wooa7s-1541-downloads-customer-filter
 packages/js/components/changelog/fix-wooplug-1941-tax-rate-filter-options
 packages/js/components/changelog/fix-form-setvalue-zero-segment-name
 packages/js/components/README.md
@@ -12677,13 +12702,17 @@ packages/js/components/src/search/autocompleters/types.ts
 packages/js/components/src/search/autocompleters/orders.tsx
 packages/js/components/src/search/autocompleters/attributes.tsx
 packages/js/components/src/search/autocompleters/countries.tsx
+packages/js/components/src/search/autocompleters/test/registered-customers.test.tsx
+packages/js/components/src/search/autocompleters/test/customer-names.test.tsx
 packages/js/components/src/search/autocompleters/test/variations.test.ts
 packages/js/components/src/search/autocompleters/test/taxes.tsx
 packages/js/components/src/search/autocompleters/index.ts
 packages/js/components/src/search/autocompleters/variable-product.tsx
 packages/js/components/src/search/autocompleters/customers.tsx
 packages/js/components/src/search/autocompleters/usernames.tsx
+packages/js/components/src/search/autocompleters/registered-customers.tsx
 packages/js/components/src/search/autocompleters/emails.tsx
+packages/js/components/src/search/autocompleters/customer-names.tsx
 packages/js/components/src/search/autocompleters/utils.ts
 packages/js/components/src/search/autocompleters/taxes.tsx
 packages/js/components/src/search/autocompleters/coupons.tsx

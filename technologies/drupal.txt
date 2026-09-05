@@ -1122,6 +1122,7 @@ core/modules/field_ui/tests/src/Traits/FieldUiTestTrait.php
 core/modules/field_ui/tests/src/Traits/FieldUiAssertTrait.php
 core/modules/field_ui/tests/src/Kernel/EntityDisplayTest.php
 core/modules/field_ui/tests/src/Kernel/ManageFieldsTest.php
+core/modules/field_ui/tests/src/Kernel/EntityDisplayDependenciesTest.php
 core/modules/field_ui/tests/src/Kernel/EntityFormDisplayTest.php
 core/modules/field_ui/field_ui.permissions.yml
 core/modules/field_ui/field_ui.links.task.yml
@@ -5455,6 +5456,7 @@ core/modules/user/tests/src/Functional/UserPasswordResetTest.php
 core/modules/user/tests/src/Functional/UserRoleAdminTest.php
 core/modules/user/tests/src/Functional/UserPermissionsTest.php
 core/modules/user/tests/src/Functional/UserEditTest.php
+core/modules/user/tests/src/Functional/UserCreatedFieldDisplayUpgradeTest.php
 core/modules/user/tests/src/Functional/UserRolesAssignmentTest.php
 core/modules/user/tests/src/Functional/UserAdminLanguageTest.php
 core/modules/user/tests/src/Functional/UserCacheTagsTest.php
@@ -5664,6 +5666,11 @@ core/modules/field/config/schema/field.views.schema.yml
 core/modules/field/config/schema/field.schema.yml
 core/modules/field/field.install
 core/modules/field/field.purge.inc
+core/modules/field/tests/modules/field_dynamic_dependencies_test/config/schema/field_dynamic_dependencies_test.schema.yml
+core/modules/field/tests/modules/field_dynamic_dependencies_test/src/Plugin/Field/FieldWidget/TestFieldDynamicDependenciesWidget.php
+core/modules/field/tests/modules/field_dynamic_dependencies_test/src/Plugin/Field/FieldType/TestFieldDynamicDependenciesItem.php
+core/modules/field/tests/modules/field_dynamic_dependencies_test/src/Plugin/Field/FieldFormatter/TestFieldDynamicDependenciesFormatter.php
+core/modules/field/tests/modules/field_dynamic_dependencies_test/field_dynamic_dependencies_test.info.yml
 core/modules/field/tests/modules/field_test_views/field_test_views.info.yml
 core/modules/field/tests/modules/field_test_views/test_views/views.view.test_view_field_delete.yml
 core/modules/field/tests/modules/field_test_views/test_views/views.view.test_view_fieldapi.yml
@@ -5721,6 +5728,7 @@ core/modules/field/tests/modules/field_test/src/Form/NestedEntityTestForm.php
 core/modules/field/tests/modules/field_test/field_test.routing.yml
 core/modules/field/tests/modules/field_test/field_test.info.yml
 core/modules/field/tests/modules/field_test/field_test.field_type_categories.yml
+core/modules/field/tests/fixtures/update/display_dependency_update_test.php
 core/modules/field/tests/src/FunctionalJavascript/Number/NumberFieldTest.php
 core/modules/field/tests/src/FunctionalJavascript/EntityReference/EntityReferenceAdminTest.php
 core/modules/field/tests/src/FunctionalJavascript/Boolean/BooleanFormatterSettingsTest.php
@@ -5730,6 +5738,7 @@ core/modules/field/tests/src/Functional/Views/FieldUITest.php
 core/modules/field/tests/src/Functional/ReEnableModuleFieldTest.php
 core/modules/field/tests/src/Functional/GenericTest.php
 core/modules/field/tests/src/Functional/FormTest.php
+core/modules/field/tests/src/Functional/Update/RecalculateDependenciesUpdateTest.php
 core/modules/field/tests/src/Functional/NestedFormTest.php
 core/modules/field/tests/src/Functional/FieldImportDeleteUninstallUiTest.php
 core/modules/field/tests/src/Functional/FieldDefaultValueCallbackTest.php
@@ -8552,7 +8561,10 @@ core/modules/update/tests/src/Kernel/DevReleaseTest.php
 core/modules/update/tests/src/Kernel/UpdateCalculateProjectDataTest.php
 core/modules/update/tests/src/Kernel/UpdateStorageTest.php
 core/modules/update/update.info.yml
+core/modules/update/src/UpdateProject.php
+core/modules/update/src/UpdateServerProjectInfo.php
 core/modules/update/src/UpdateFetcherInterface.php
+core/modules/update/src/UpdateCalculator.php
 core/modules/update/src/Controller/UpdateController.php
 core/modules/update/src/ProjectSecurityRequirement.php
 core/modules/update/src/MailHandler.php
@@ -9762,12 +9774,12 @@ core/themes/default_admin/templates/block/block--local-tasks-block.html.twig
 core/themes/default_admin/templates/navigation/menu-local-task--views-ui.html.twig
 core/themes/default_admin/templates/navigation/menu-local-tasks.html.twig
 core/themes/default_admin/templates/navigation/details--vertical-tabs.html.twig
-core/themes/default_admin/templates/navigation/top-bar--gin.html.twig
 core/themes/default_admin/templates/navigation/menu--toolbar.html.twig
 core/themes/default_admin/templates/navigation/container--administration-menu.html.twig
 core/themes/default_admin/templates/navigation/menu-region--middle.html.twig
 core/themes/default_admin/templates/navigation/breadcrumb.html.twig
 core/themes/default_admin/templates/navigation/menu-link-form.html.twig
+core/themes/default_admin/templates/navigation/top-bar--default-admin.html.twig
 core/themes/default_admin/templates/navigation/menu-region--top.html.twig
 core/themes/default_admin/templates/navigation/toolbar.html.twig
 core/themes/default_admin/templates/navigation/menu-region--bottom.html.twig
@@ -9916,7 +9928,10 @@ core/themes/default_admin/images/icons/545560/plus.svg
 core/themes/default_admin/images/icons/545560/pager-first.svg
 core/themes/default_admin/images/icons/545560/pager-prev.svg
 core/themes/default_admin/images/icons/545560/questionmark.svg
+core/themes/default_admin/tests/fixtures/implementation-name-allowlist.json
+core/themes/default_admin/tests/src/FunctionalJavascript/LegacyStorageTest.php
 core/themes/default_admin/tests/src/Functional/AdminTest.php
+core/themes/default_admin/tests/src/Unit/ImplementationNameTest.php
 core/themes/default_admin/tests/src/Kernel/BreadcrumbPreprocessTest.php
 core/themes/default_admin/tests/src/Kernel/ViewsViewFieldStatusTest.php
 core/themes/default_admin/migration/js/messages.js
@@ -10006,10 +10021,10 @@ core/themes/default_admin/migration/media/icons/form/toggle-unchecked.svg
 core/themes/default_admin/migration/media/icons/form/asterisk.svg
 core/themes/default_admin/migration/media/icons/general/sidebar.svg
 core/themes/default_admin/migration/media/icons/general/calendar.svg
+core/themes/default_admin/migration/media/icons/general/default-admin.svg
 core/themes/default_admin/migration/media/icons/general/tool.svg
 core/themes/default_admin/migration/media/icons/general/more.svg
 core/themes/default_admin/migration/media/icons/general/circle.svg
-core/themes/default_admin/migration/media/icons/general/gin.svg
 core/themes/default_admin/migration/media/icons/general/drop.svg
 core/themes/default_admin/migration/media/icons/general/add.svg
 core/themes/default_admin/migration/media/icons/general/close.svg
@@ -14491,6 +14506,7 @@ core/lib/Drupal/Core/Database/SchemaDefinition/KeyColumn.php
 core/lib/Drupal/Core/Database/SchemaDefinition/Index.php
 core/lib/Drupal/Core/Database/SchemaDefinition/KeyBase.php
 core/lib/Drupal/Core/Database/SchemaDefinition/ForeignKey.php
+core/lib/Drupal/Core/Database/SchemaDefinition/GeneratedColumnStorage.php
 core/lib/Drupal/Core/Database/SchemaDefinition/FloatValue.php
 core/lib/Drupal/Core/Database/SchemaDefinition/SchemaDefinitionType.php
 core/lib/Drupal/Core/Database/SchemaDefinition/SchemaDefinitionInterface.php
@@ -14501,6 +14517,7 @@ core/lib/Drupal/Core/Database/SchemaDefinition/Table.php
 core/lib/Drupal/Core/Database/SchemaDefinition/Schema.php
 core/lib/Drupal/Core/Database/SchemaDefinition/Column.php
 core/lib/Drupal/Core/Database/SchemaDefinition/ColumnType.php
+core/lib/Drupal/Core/Database/SchemaDefinition/GeneratedColumnExpression.php
 core/lib/Drupal/Core/Database/Schema.php
 core/lib/Drupal/Core/Database/Install/Tasks.php
 core/lib/Drupal/Core/Database/FetchModeTrait.php
