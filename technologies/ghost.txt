@@ -3010,6 +3010,7 @@ apps/admin/src/editor/use-onscreen-keyboard.ts
 apps/admin/src/editor/report-error.ts
 apps/admin/src/editor/unsplash-picker.test.tsx
 apps/admin/src/editor/snippet-value.test.ts
+apps/admin/src/editor/use-save-feedback.test.tsx
 apps/admin/src/editor/use-post-link-suggestions.ts
 apps/admin/src/editor/snippet-value.ts
 apps/admin/src/editor/editor-settings-save.acceptance.test.tsx
@@ -5845,6 +5846,7 @@ ghost/core/test/utils/fixtures/themes/warnings.zip
 ghost/core/test/utils/fixtures/themes/invalid.zip
 ghost/core/test/utils/fixtures/default-settings.json
 ghost/core/test/utils/fixtures/test.hbs
+ghost/core/test/utils/fixtures/sloppy-config-writer.js
 ghost/core/test/utils/fixtures/fixtures.json
 ghost/core/test/utils/fixtures/images/svg-malformed.svg
 ghost/core/test/utils/fixtures/images/ghost-logo.svgz
@@ -6106,6 +6108,7 @@ ghost/core/test/unit/frontend/public/ghost-stats.test.js
 ghost/core/test/unit/frontend/public/private.test.js
 ghost/core/test/unit/bridge.test.js
 ghost/core/test/unit/cli/command.test.ts
+ghost/core/test/unit/loggingrc.test.ts
 ghost/core/test/unit/bin/create-migration.test.ts
 ghost/core/test/unit/bin/duplicate-deps.test.ts
 ghost/core/test/unit/boot-email-analytics.test.ts
@@ -6564,6 +6567,7 @@ ghost/core/test/unit/server/data/importer/import-manager.test.ts
 ghost/core/test/unit/server/data/exporter/index.test.js
 ghost/core/test/unit/server/data/db/backup.test.js
 ghost/core/test/unit/server/data/db/better-sqlite3-patches.test.ts
+ghost/core/test/unit/server/data/db/configure-knex.test.ts
 ghost/core/test/unit/server/data/schema/metafields-schema.test.ts
 ghost/core/test/unit/server/data/schema/in-development.test.ts
 ghost/core/test/unit/server/data/schema/schema.test.js
@@ -6641,8 +6645,11 @@ ghost/core/test/unit/shared/timing-safe-string-equal.test.ts
 ghost/core/test/unit/shared/labs.test.js
 ghost/core/test/unit/shared/labs-flag-overrides.test.ts
 ghost/core/test/unit/shared/config/adapter-config.test.ts
+ghost/core/test/unit/shared/config/validated.test.ts
+ghost/core/test/unit/shared/config/guard.test.ts
 ghost/core/test/unit/shared/config/secrets.test.ts
 ghost/core/test/unit/shared/config/helpers.test.ts
+ghost/core/test/unit/shared/config/typed-get.types.ts
 ghost/core/test/unit/shared/config/utils.test.js
 ghost/core/test/unit/shared/config/loader.test.js
 ghost/core/test/unit/shared/events-ts/post-events.test.ts
@@ -8515,12 +8522,13 @@ ghost/core/core/server/data/exporter/exporter.js
 ghost/core/core/server/data/exporter/index.js
 ghost/core/core/server/data/exporter/export-filename.js
 ghost/core/core/server/data/db/index.d.ts
+ghost/core/core/server/data/db/connection.ts
 ghost/core/core/server/data/db/backup.js
 ghost/core/core/server/data/db/database-state-manager.js
 ghost/core/core/server/data/db/info.js
-ghost/core/core/server/data/db/connection.js
 ghost/core/core/server/data/db/better-sqlite3-patches.js
 ghost/core/core/server/data/db/index.js
+ghost/core/core/server/data/db/configure-knex.ts
 ghost/core/core/server/data/tinybird/datasources/automation_run_step_events.datasource
 ghost/core/core/server/data/tinybird/datasources/automation_run_events.datasource
 ghost/core/core/server/data/tinybird/datasources/analytics_events.datasource
@@ -8956,9 +8964,13 @@ ghost/core/core/shared/config/env/config.development.json
 ghost/core/core/shared/config/env/config.testing.json
 ghost/core/core/shared/config/env/config.production.json
 ghost/core/core/shared/config/loader.ts
+ghost/core/core/shared/config/validated.ts
+ghost/core/core/shared/config/SCHEMA.md
 ghost/core/core/shared/config/index.ts
+ghost/core/core/shared/config/guard.ts
 ghost/core/core/shared/config/defaults.json
 ghost/core/core/shared/config/overrides.json
+ghost/core/core/shared/config/schema.ts
 ghost/core/core/shared/config/secrets.ts
 ghost/core/core/shared/events-ts/posts-bulk-unscheduled-event.ts
 ghost/core/core/shared/events-ts/posts-bulk-featured-event.ts

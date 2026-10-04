@@ -7592,12 +7592,10 @@ core/modules/package_manager/tests/fixtures/build_test_projects/alpha/1.1.0/comp
 core/modules/package_manager/tests/fixtures/build_test_projects/alpha/1.1.0/alpha.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/updated_module.info.yml.hide
-core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/updated_module.module
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/src/PostApplySubscriber.php
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.services.yml
-core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.module
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/main_module.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/main_module_submodule/main_module_submodule.info.yml.hide
@@ -8720,7 +8718,6 @@ core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHead
 core/modules/system/tests/modules/system_test/system_test.routing.yml
 core/modules/system/tests/modules/system_test/system_test.permissions.yml
 core/modules/system/tests/modules/system_test/system_test.info.yml
-core/modules/system/tests/modules/system_test/system_test.module
 core/modules/system/tests/modules/autowire_test/src/Plugin/Block/AutowireErrorBlock.php
 core/modules/system/tests/modules/autowire_test/src/Plugin/Block/AutowireBlock.php
 core/modules/system/tests/modules/autowire_test/src/TestInjection.php
@@ -9433,8 +9430,6 @@ core/modules/system/tests/modules/render_array_non_html_subscriber_test/render_a
 core/modules/system/tests/modules/tabbingmanager_test/src/Controller/TabbingManagerTestController.php
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.info.yml
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.routing.yml
-core/modules/system/tests/modules/deprecation_hook_attribute_test/src/Hook/DeprecationHookAttributeTestHooks.php
-core/modules/system/tests/modules/deprecation_hook_attribute_test/deprecation_hook_attribute_test.info.yml
 core/modules/system/tests/modules/performance_test/src/Cache/CacheTagOperation.php
 core/modules/system/tests/modules/performance_test/src/Cache/CacheTagsChecksumDecorator.php
 core/modules/system/tests/modules/performance_test/src/Cache/CacheFactoryDecorator.php
@@ -9514,8 +9509,8 @@ core/modules/system/tests/modules/hold_test/hold_test.info.yml
 core/modules/system/tests/modules/dummydb/src/Driver/Database/dummydb/Connection.php
 core/modules/system/tests/modules/dummydb/src/Driver/Database/dummydb/Install/Tasks.php
 core/modules/system/tests/modules/dummydb/dummydb.info.yml
-core/modules/system/tests/modules/deprecation_test/deprecation_test.module
 core/modules/system/tests/modules/deprecation_test/deprecation_test.services.yml
+core/modules/system/tests/modules/deprecation_test/src/Hook/DeprecationTestHooks.php
 core/modules/system/tests/modules/deprecation_test/src/DeprecatedController.php
 core/modules/system/tests/modules/deprecation_test/src/Deprecation/FixtureDeprecatedClass.php
 core/modules/system/tests/modules/deprecation_test/deprecation_test.info.yml
